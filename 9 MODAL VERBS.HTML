@@ -1,0 +1,508 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Modal Verbs - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 9 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Modal Verbs</H1>
+<DIV CLASS="sub">Can / could / may / might &middot; Must / have to &middot; Should / ought to &middot; Will / would &middot; Modales de deducción y modales perfectos</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- SECCIÓN 1: CARACTERÍSTICAS GENERALES -->
+<H3 ID="caracteristicas">1. Características Generales de los Verbos Modales</H3>
+
+Los <B>verbos modales</B> (can, could, may, might, must, shall, should, will, would) son un grupo especial de verbos auxiliares que expresan capacidad, permiso, obligación, posibilidad, deducción o predicción. A diferencia de los verbos comunes, los modales son <B>verbos defectivos</B>: tienen una sola forma fija que nunca cambia.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Característica</TH><TH>Regla</TH><TH>Ejemplo correcto</TH></TR>
+<TR><TD>3.ª persona singular</TD><TD><B>NUNCA</B> añaden -s</TD><TD><SPAN CLASS="eng">She can swim.</SPAN> (no "cans")</TD></TR>
+<TR><TD>Verbo que les sigue</TD><TD>siempre en <B>forma base, sin "to"</B></TD><TD><SPAN CLASS="eng">He must go now.</SPAN> (no "to go")</TD></TR>
+<TR><TD>Forma negativa</TD><TD>modal + <B>not</B> (sin do/does)</TD><TD><SPAN CLASS="eng">She cannot (can't) attend.</SPAN></TD></TR>
+<TR><TD>Forma interrogativa</TD><TD>modal + sujeto (sin do/does)</TD><TD><SPAN CLASS="eng">Can she attend?</SPAN></TD></TR>
+<TR><TD>Formas no finitas</TD><TD>NO tienen infinitivo, gerundio ni participio propios</TD><TD>no existen "to can", "musting", "have musted"</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>"Have to" no es un modal puro:</B> es un <B>semi-modal</B> que SÍ se comporta como un verbo regular: se conjuga con -s en 3.ª persona ("he has to") y forma preguntas/negativas con do/does ("Does he have to go?" / "He doesn't have to go"). Esta es una diferencia clave que suele confundirse con verbos modales verdaderos como "must".</DIV>
+
+<!-- SECCIÓN 2: CAN / COULD -->
+<H3 ID="can-could">2. Can / Could — Capacidad, Permiso y Posibilidad</H3>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Modal</TH><TH>Uso</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>can</B></TD><TD>capacidad/habilidad en presente</TD><TD><SPAN CLASS="eng">She can speak three languages.</SPAN></TD></TR>
+<TR><TD><B>can</B></TD><TD>permiso informal</TD><TD><SPAN CLASS="eng">Can I borrow your pen?</SPAN></TD></TR>
+<TR><TD><B>can</B></TD><TD>posibilidad general</TD><TD><SPAN CLASS="eng">Smoking can damage your health.</SPAN></TD></TR>
+<TR><TD><B>could</B></TD><TD>capacidad en pasado</TD><TD><SPAN CLASS="eng">When I was young, I could run fast.</SPAN></TD></TR>
+<TR><TD><B>could</B></TD><TD>permiso formal/educado</TD><TD><SPAN CLASS="eng">Could I ask you a question?</SPAN></TD></TR>
+<TR><TD><B>could</B></TD><TD>posibilidad hipotética (menos segura que "can")</TD><TD><SPAN CLASS="eng">It could rain this afternoon.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<!-- SECCIÓN 3: MAY / MIGHT -->
+<H3 ID="may-might">3. May / Might — Permiso Formal y Posibilidad</H3>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Modal</TH><TH>Uso</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>may</B></TD><TD>permiso formal</TD><TD><SPAN CLASS="eng">May I come in, please?</SPAN></TD></TR>
+<TR><TD><B>may</B></TD><TD>posibilidad (alrededor del 50%)</TD><TD><SPAN CLASS="eng">She may arrive late today.</SPAN></TD></TR>
+<TR><TD><B>might</B></TD><TD>posibilidad más tentativa/remota que "may"</TD><TD><SPAN CLASS="eng">He might call us tomorrow.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>"May" no se usa para preguntar sobre permiso de la otra persona en estilo informal:</B> para pedir permiso a alguien se usa "Can/Could I...?"; "May I...?" es exclusivamente formal y casi nunca se usa en preguntas como "May you...?" para pedir un favor (en su lugar: "Could you...?" o "Can you...?").</DIV>
+
+<!-- SECCIÓN 4: MUST / HAVE TO -->
+<H3 ID="must-haveto">4. Must / Have to — Obligación: Diferencia Clave</H3>
+
+Ambos expresan obligación, pero el origen de esa obligación es diferente: esta distinción es una de las más evaluadas en exámenes de admisión.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Modal</TH><TH>Tipo de obligación</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>must</B></TD><TD><B>subjetiva</B>: impuesta por el hablante mismo, su opinión o autoridad personal</TD><TD><SPAN CLASS="eng">You must finish this report by tomorrow; I need it for the meeting.</SPAN> (lo exige quien habla)</TD></TR>
+<TR><TD><B>have to</B></TD><TD><B>objetiva</B>: impuesta por una regla externa, ley, institución u otra persona</TD><TD><SPAN CLASS="eng">Students have to take this exam to graduate.</SPAN> (regla de la institución, no opinión del hablante)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">📌 <SPAN CLASS="eng">"You must wear a seatbelt" (orden personal del hablante) vs. "You have to wear a seatbelt; it's the law" (obligación impuesta por la ley, externa al hablante).</SPAN></DIV>
+
+<!-- SECCIÓN 5: MUSTN'T VS DON'T HAVE TO -->
+<H3 ID="mustnt">5. Mustn't vs. Don't Have To — Prohibición vs. Ausencia de Obligación</H3>
+
+Este es, posiblemente, el contraste de significado más importante (y más confundido) entre los verbos modales de obligación.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Estructura</TH><TH>Significado</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>mustn't</B></TD><TD><B>prohibición</B>: es necesario NO hacerlo</TD><TD><SPAN CLASS="eng">You mustn't park here; it's strictly forbidden.</SPAN></TD></TR>
+<TR><TD><B>don't have to</B></TD><TD><B>ausencia de obligación</B>: no es necesario hacerlo, pero se puede si se desea</TD><TD><SPAN CLASS="eng">You don't have to come to the party if you don't want to.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Error de examen más frecuente:</B> <I>"You mustn't come if you don't want to"</I> es INCORRECTO si lo que se quiere decir es que la asistencia es opcional, porque "mustn't" significa que está PROHIBIDO venir, no que sea opcional. Lo correcto en ese caso es <B>"You don't have to come..."</B></DIV>
+
+<!-- SECCIÓN 6: SHOULD / OUGHT TO -->
+<H3 ID="should">6. Should / Ought To — Consejo y Recomendación</H3>
+
+Ambos expresan consejo u obligación moral/leve, y son prácticamente intercambiables en significado, aunque difieren en estructura.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Modal</TH><TH>Estructura</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>should</B></TD><TD>should + verbo base (sin "to")</TD><TD><SPAN CLASS="eng">You should study more for the exam.</SPAN></TD></TR>
+<TR><TD><B>ought to</B></TD><TD>ought + <B>to</B> + verbo base</TD><TD><SPAN CLASS="eng">You ought to study more for the exam.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>"Ought" es la única excepción que SÍ lleva "to":</B> aunque "ought to" funciona como modal de consejo, conserva el "to" por razones históricas. No confundir con "should", que nunca lleva "to": <I>"You should to study"</I> es INCORRECTO.</DIV>
+
+<!-- SECCIÓN 7: WILL / WOULD -->
+<H3 ID="will-would">7. Will / Would — Predicciones, Ofrecimientos y Peticiones</H3>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Modal</TH><TH>Uso</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>will</B></TD><TD>predicción/decisión futura</TD><TD><SPAN CLASS="eng">I think it will rain tomorrow.</SPAN></TD></TR>
+<TR><TD><B>will</B></TD><TD>disposición/promesa</TD><TD><SPAN CLASS="eng">I will help you with your homework.</SPAN></TD></TR>
+<TR><TD><B>would</B></TD><TD>situación hipotética/condicional</TD><TD><SPAN CLASS="eng">If I had more time, I would travel more.</SPAN></TD></TR>
+<TR><TD><B>would</B></TD><TD>petición educada</TD><TD><SPAN CLASS="eng">Would you close the door, please?</SPAN></TD></TR>
+<TR><TD><B>would</B></TD><TD>hábito repetido en el pasado (como "used to")</TD><TD><SPAN CLASS="eng">When I was a kid, I would visit my grandmother every summer.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<!-- SECCIÓN 8: MODALES DE DEDUCCIÓN -->
+<H3 ID="deduccion">8. Verbos Modales de Deducción y Certeza (Epistemic Modality)</H3>
+
+Los modales también se usan para expresar el grado de certeza del hablante sobre si algo es verdadero, no para hablar de obligación o permiso.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Modal</TH><TH>Grado de certeza</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>must</B></TD><TD>deducción positiva fuerte (casi seguro que SÍ)</TD><TD><SPAN CLASS="eng">The lights are on; she must be at home.</SPAN></TD></TR>
+<TR><TD><B>may / might / could</B></TD><TD>posibilidad (no hay certeza)</TD><TD><SPAN CLASS="eng">She might be at home; I'm not sure.</SPAN></TD></TR>
+<TR><TD><B>can't</B></TD><TD>deducción negativa fuerte (casi seguro que NO)</TD><TD><SPAN CLASS="eng">The lights are off; she can't be at home.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>"Mustn't" NO se usa para deducción negativa:</B> el opuesto deductivo de "must" no es "mustn't" sino <B>can't</B>. <I>"She mustn't be at home"</I> es INCORRECTO como deducción; lo correcto es <B>"She can't be at home."</B> ("mustn't" solo expresa prohibición, no deducción).</DIV>
+
+<!-- SECCIÓN 9: MODALES PERFECTOS -->
+<H3 ID="perfectos">9. Modales Perfectos: Modal + Have + Participio Pasado</H3>
+
+Para hablar de deducciones, posibilidades o reproches sobre el <B>pasado</B>, se usa la estructura <B>modal + have + past participle</B>.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Estructura</TH><TH>Significado</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>must have + p.p.</B></TD><TD>deducción de certeza sobre el pasado</TD><TD><SPAN CLASS="eng">He must have left early; he isn't here.</SPAN></TD></TR>
+<TR><TD><B>can't have + p.p.</B></TD><TD>certeza de que algo NO ocurrió</TD><TD><SPAN CLASS="eng">She can't have finished already; it's too soon.</SPAN></TD></TR>
+<TR><TD><B>may/might/could have + p.p.</B></TD><TD>posibilidad sobre el pasado (no hay certeza)</TD><TD><SPAN CLASS="eng">They might have missed the bus.</SPAN></TD></TR>
+<TR><TD><B>should have + p.p.</B></TD><TD>reproche o arrepentimiento (algo que NO se hizo y debía hacerse)</TD><TD><SPAN CLASS="eng">He should have studied harder.</SPAN> (no estudió, y debió hacerlo)</TD></TR>
+<TR><TD><B>shouldn't have + p.p.</B></TD><TD>reproche por algo que SÍ se hizo y no debía hacerse</TD><TD><SPAN CLASS="eng">You shouldn't have told her the secret.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Error ortográfico/gramatical frecuente — "must of":</B> en el habla informal, "must have" suena parecido a "must of", pero <B>"must of"</B> es INCORRECTO en inglés escrito. Siempre se escribe <B>must have</B>. Además, el verbo modal NUNCA se conjuga dentro de esta estructura: es siempre <B>have</B>, nunca "has" o "had", sin importar el sujeto: <I>"He should has apologized"</I> es INCORRECTO; lo correcto es <B>"He should have apologized."</B></DIV>
+
+<!-- SECCIÓN 10: ERRORES COMUNES -->
+<H3 ID="errores">10. Errores Comunes con Verbos Modales</H3>
+
+<UL>
+<LI><B>Añadir "to" tras el modal:</B> <I>"She can to drive"</I> → <B>"She can drive"</B> (excepto "ought to", que sí lleva "to").</LI>
+<LI><B>Añadir -s al modal:</B> <I>"He musts go"</I> → <B>"He must go"</B> (los modales nunca cambian de forma).</LI>
+<LI><B>Doble modal:</B> <I>"He might can come"</I> → <B>"He might be able to come"</B> (no se combinan dos modales seguidos en inglés estándar).</LI>
+<LI><B>Modal + gerundio:</B> <I>"You must going now"</I> → <B>"You must go now"</B> (siempre forma base, nunca -ing).</LI>
+<LI><B>"Must" no tiene forma de pasado propia:</B> para obligación en pasado se usa <B>had to</B>, no "musted" ni "must" directamente: <I>"Yesterday, I had to finish my homework."</I></LI>
+<LI><B>Confundir "have to" (semi-modal) con los modales puros:</B> "have to" SÍ se conjuga con -s/-es y usa do/does: <I>"Does he have to go?"</I> / <I>"He doesn't have to go."</I></LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">9</DIV><DIV CLASS="dk-label">Verbos modales<BR>principales</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">0</DIV><DIV CLASS="dk-label">Nunca llevan -s<BR>en 3.ª persona</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">have to</DIV><DIV CLASS="dk-label">Semi-modal que<BR>SÍ se conjuga</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">modal+have+p.p.</DIV><DIV CLASS="dk-label">Deducciones y<BR>reproches del pasado</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- =================== EJERCICIOS =================== -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de práctica</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; Reconocimiento y uso directo</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Completa: <SPAN CLASS="eng">"She _____ speak three languages."</SPAN> (capacidad)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) can</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) cans</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) can to</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) is can</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) can</B><BR>"Can" expresa capacidad/habilidad. Los verbos modales <B>NUNCA</B> añaden -s en 3.ª persona singular ("cans" es incorrecto, opción b) ni van precedidos por "is" (opción d), ni seguidos de "to" antes del verbo principal (opción c).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Completa: <SPAN CLASS="eng">"_____ I borrow your pen, please?"</SPAN> (permiso informal)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Can</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Have to</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Should</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Must</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) Can</B><BR>"Can" se usa para pedir permiso de manera informal. "Have to" expresa obligación externa, "should" expresa consejo y "must" expresa obligación impuesta por el hablante; ninguno de los tres expresa el significado de "pedir permiso".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Completa: <SPAN CLASS="eng">"You _____ wear a uniform at this school. It's the rules."</SPAN> (regla externa de la institución)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) must</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) have to</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) should</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) might</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) have to</B><BR>La obligación proviene de una regla externa (el reglamento del colegio), no de la opinión del hablante → corresponde <B>have to</B>. "Must" se reservaría si quien habla (por ejemplo, un director) impusiera la regla con su propia autoridad personal; "should" es solo consejo, y "might" expresa posibilidad, no obligación.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Completa: <SPAN CLASS="eng">"You _____ study more for the exam."</SPAN> (consejo)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) should</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) must</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) can</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) will</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) should</B><BR>"Should" es el modal típico de consejo o recomendación. "Must" expresaría una obligación mucho más fuerte; "can" expresaría capacidad o permiso; "will" expresaría una predicción o decisión futura, no un consejo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Selecciona la pregunta correctamente formada con un verbo modal:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) "Does she can swim?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) "Can she swims?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) "Can she swim?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) "Can she to swim?"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Las preguntas con modales se forman invirtiendo el modal y el sujeto, sin "does" (opción a es incorrecta porque combina dos auxiliares). El verbo principal va siempre en forma base, sin -s (opción b) y sin "to" (opción d): <B>"Can she swim?"</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Elige la opción correcta: <SPAN CLASS="eng">"He can _____ Spanish very well."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) speak</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) speaks</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) to speak</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) speaking</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) speak</B><BR>Tras un verbo modal, el verbo principal siempre va en <B>forma base</B>: sin -s (opción b), sin "to" (opción c) y sin -ing (opción d). El modal ya indica que el sujeto es "he"; el verbo no necesita marcar la 3.ª persona.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Completa: <SPAN CLASS="eng">"When I was a child, I _____ run very fast."</SPAN> (habilidad en el pasado)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) can</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) could</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) must</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) should</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) could</B><BR>"Could" es la forma pasada de "can" para expresar capacidad/habilidad: <B>"I could run fast"</B> = "podía correr rápido". "Can" solo se usa en presente; "must" y "should" no expresan capacidad, sino obligación y consejo respectivamente.</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; Aplicación y transformación</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Identifica la oración que expresa una obligación impuesta por la <B>opinión o autoridad del propio hablante</B> (must), y no por una regla externa (have to):</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) "You have to wear a seatbelt; it's the law."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) "You must finish this report by tomorrow; I need it for the meeting."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) "Students have to take this exam to graduate."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) "Employees have to clock in before 9 a.m."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En la opción b, quien habla (un jefe o supervisor) impone la obligación con su propia autoridad y necesidad personal ("I need it for the meeting") → corresponde <B>must</B>. Las opciones a, c y d describen obligaciones derivadas de leyes, reglamentos institucionales o políticas de la empresa, es decir, fuentes externas al hablante → corresponde <B>have to</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Completa: <SPAN CLASS="eng">"You _____ park here; it's strictly forbidden by the city council."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) mustn't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) don't have to</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) might not</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) shouldn't</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) mustn't</B><BR>"Strictly forbidden" indica una <B>prohibición</B> total, no una simple falta de obligación ni un consejo → corresponde <B>mustn't</B>. "Don't have to" significaría que estacionar ahí es opcional (incorrecto, contradice "forbidden"); "might not" expresaría solo posibilidad; "shouldn't" sería un consejo más débil, no una prohibición legal estricta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Completa: <SPAN CLASS="eng">"It _____ rain later; the sky is cloudy, but I'm not sure."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) must</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) might</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) can't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) have to</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) might</B><BR>La frase "but I'm not sure" indica falta de certeza → corresponde un modal de <B>posibilidad</B>, no de certeza fuerte. "Must" expresaría una deducción casi segura; "can't" expresaría certeza de que NO va a pasar; "have to" expresa obligación, no posibilidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Elige la oración con "would" usado correctamente para un hábito repetido en el pasado:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) "When I was a kid, I would visit my grandmother every summer."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) "I will visit my grandmother next summer."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) "She would finishes her homework on time."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) "I would to visit my grandmother."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>"Would" puede expresar un hábito repetido en el pasado, de forma similar a "used to": <B>"I would visit my grandmother every summer."</B> La opción b usa "will", que es para el futuro, no el pasado; la opción c añade incorrectamente -s al verbo tras el modal ("finishes" en vez de "finish"); la opción d añade "to" tras el modal, lo cual es incorrecto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Elige la oración con la estructura correcta de "ought to":</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) "You ought study more."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) "You ought to study more."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) "You should to study more."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) "You oughts to study more."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Ought to" es la única excepción entre los modales de consejo que sí conserva el "to": <B>ought to + verbo base</B>. La opción a omite el "to" obligatorio en "ought"; la opción c añade "to" después de "should", que nunca lo lleva; la opción d añade incorrectamente -s a "ought" (los modales nunca cambian de forma).</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; Análisis y corrección de errores</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Un estudiante escribe: <SPAN CLASS="eng">"She musts finish her homework before going out. He can to swim very well, and they should to arrive early."</SPAN> Identifica y corrige TODOS los errores.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Solo "musts" está mal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) "musts" → "must"; "can to swim" → "can swim"; "should to arrive" → "should arrive"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) "musts" → "must"; "can to swim" → "can swims"; "should to arrive" → "should arrives"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"musts"</B> → <B>"must"</B>: los modales nunca añaden -s, ni siquiera con sujetos de 3.ª persona singular.<BR>② <B>"can to swim"</B> → <B>"can swim"</B>: ningún modal (excepto "ought to") va seguido de "to".<BR>③ <B>"should to arrive"</B> → <B>"should arrive"</B>: mismo error que el anterior. La opción c repite el error añadiendo además -s al verbo principal, lo cual agrava el problema en lugar de corregirlo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Completa con el modal de deducción correcto: <SPAN CLASS="eng">"The lights are off and the car isn't in the garage. They _____ be at home."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) must</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) can't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) might</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) should</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) can't</B><BR>Las pruebas (luces apagadas, auto ausente) llevan a una conclusión de certeza NEGATIVA: es casi imposible que estén en casa → corresponde <B>can't</B> (deducción negativa fuerte), que es el opuesto deductivo de "must", NO "mustn't" (que solo expresa prohibición). "Might" sería demasiado débil para esta evidencia tan clara, y "should" no se usa para deducción.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Traduce con precisión, prestando atención al matiz de cada modal: <B>"No tienes que venir a la reunión si no quieres, pero no debes llegar tarde si decides ir."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) "You mustn't come to the meeting if you don't want to, but you don't have to be late if you decide to go."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) "You don't have to come to the meeting if you don't want to, but you mustn't be late if you decide to go."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) "You must not come to the meeting if you don't want, but you should not be late if you go."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) "You don't must come to the meeting if you don't want to, but you mustn't be late if you go."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"No tienes que venir" expresa <B>ausencia de obligación</B> (la asistencia es opcional) → <B>don't have to</B>, no "mustn't" (que significaría que está prohibido venir, opción a invierte el sentido). "No debes llegar tarde" expresa una <B>prohibición</B> firme → <B>mustn't</B>. La opción c traduce "no tienes que" como "must not" (prohibición), invirtiendo el sentido original; la opción d usa la forma inexistente "don't must".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Completa el texto con los modales adecuados según el contexto: <SPAN CLASS="eng">"If you want to enter this university, you _____(1) (regla impuesta por la universidad) take an entrance exam. You _____(2) (consejo) prepare for at least six months, and you _____(3) (prohibición) miss the registration deadline."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) (1) must — (2) should — (3) mustn't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) (1) have to — (2) should — (3) mustn't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) (1) have to — (2) must — (3) don't have to</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) (1) can — (2) ought — (3) shouldn't</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>(1) La obligación de tomar el examen proviene de la <B>universidad</B> (regla externa, no opinión del hablante) → <B>have to</B>, no "must" (opción a).<BR>(2) Se pide un <B>consejo</B>, no una obligación → <B>should</B>.<BR>(3) "Miss the deadline" debe evitarse de forma estricta → <B>prohibición</B> → <B>mustn't</B>, no "don't have to" (opción c, que significaría que es opcional perder la fecha límite, lo cual no tiene sentido). La opción d usa "ought" sin "to" (incorrecto) y "shouldn't" (consejo, más débil que la prohibición que exige el contexto).</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; Ingreso universitario</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Analiza el siguiente fragmento y determina la opción que corrige TODOS los errores con la justificación gramatical más precisa:<BR><SPAN CLASS="eng">"Students musts arrive on time. They don't have to copy in exams, it's against the rules. If they finish early, they can to leave the room, but they should to ask permission first."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Solo "musts" y "can to leave" están mal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "musts" → "must"; "don't have to copy" → "mustn't copy" (es una prohibición, no una falta de obligación); "can to leave" → "can leave"; "should to ask" → "should ask"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "musts" → "must"; "don't have to copy" se mantiene correcto; "can to leave" → "can leaves"; "should to ask" → "should asks"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"musts"</B> → <B>"must"</B>: los modales nunca llevan -s.<BR>② <B>"don't have to copy"</B> → <B>"mustn't copy"</B>: la frase "it's against the rules" indica una <B>prohibición</B>, no una simple falta de obligación; "don't have to" implicaría incorrectamente que copiar es opcional.<BR>③ <B>"can to leave"</B> → <B>"can leave"</B>: ningún modal (salvo "ought to") admite "to".<BR>④ <B>"should to ask"</B> → <B>"should ask"</B>: mismo error que el anterior. La opción c deja sin corregir el error conceptual de "don't have to" y agrava los errores de "to" añadiendo además -s al verbo principal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> John failed the exam even though he had time to prepare. ¿Qué oración expresa correctamente <B>reproche/arrepentimiento</B> sobre algo que no se hizo en el pasado?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) "He must have studied harder."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) "He should have studied harder."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) "He can't have studied harder."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) "He might have studied harder."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) should have studied</B><BR>"Should have + participio" expresa que algo NO ocurrió pero debía haber ocurrido (reproche/arrepentimiento): "debería haber estudiado más [pero no lo hizo]". "Must have" (opción a) expresaría una deducción de certeza sobre algo que sí ocurrió; "can't have" (opción c) expresaría certeza de que algo NO ocurrió; "might have" (opción d) expresaría solo posibilidad, sin el matiz de reproche que exige el contexto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Por qué los verbos modales en inglés (can, must, should, etc.) no admiten terminación <B>-s</B> en tercera persona, ni el infinitivo con "to", ni formas continuas o perfectas propias (como "musting" o "have musted"), a diferencia de verbos regulares como "study" o "work"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Es una regla arbitraria, sin ninguna explicación histórica.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Los verbos modales del inglés moderno descienden de un grupo de verbos del inglés antiguo llamados "verbos pretérito-presentes" (preterite-present verbs), cuya forma de presente ya tenía el aspecto morfológico de un pasado fuerte; con el tiempo, perdieron la mayoría de sus terminaciones flexivas y se volvieron verbos "defectivos", es decir, conservan solo una forma fija que no varía según persona, número ni tiempo gramatical propio.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Se debe a que los verbos modales en realidad son sustantivos que después se convirtieron en verbos por un error de los hablantes.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El inglés tomó los verbos modales directamente del francés normando, lengua que no tenía conjugaciones verbales.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los modales ingleses provienen de una clase reducida de verbos del inglés antiguo cuya forma de presente se construía sobre una raíz que históricamente fue un pasado fuerte (de ahí el nombre "pretérito-presente"). Esta peculiaridad morfológica explica por qué, ya desde su origen, estos verbos nunca tuvieron una terminación de 3.ª persona regular ni desarrollaron formas no finitas (infinitivo, gerundio, participio) como los verbos plenos: simplemente conservan una única forma fija ("defectiva"). Las opciones c y d son explicaciones sin base lingüística real: el francés normando sí tenía conjugaciones, y los modales nunca fueron sustantivos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Lee el siguiente fragmento de un ensayo estudiantil e identifica la opción que señala TODOS los errores y propone la corrección con la justificación gramatical más precisa:<BR><SPAN CLASS="eng">"Yesterday, my brother must arrived late, because his phone was off. He should has apologized this morning, but actually he don't has to do it if he doesn't want, although I think he should to do it."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo "must arrived" está mal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "must arrived" → "must have arrived"; "should has apologized" → "should have apologized"; "don't has to" → "doesn't have to"; "should to do" → "should do"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) "must arrived" → "must has arrived"; "should has apologized" se mantiene correcto; "don't has to" → "don't have to"; "should to do" → "should do"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) — Corrección completa</B><BR>① <B>"must arrived"</B> → <B>"must have arrived"</B>: para hacer una deducción sobre el pasado se necesita la estructura completa <B>modal + have + participio</B>; el modal nunca se combina directamente con un verbo en pasado.<BR>② <B>"should has apologized"</B> → <B>"should have apologized"</B>: dentro de un modal perfecto, la pieza siempre es <B>have</B>, nunca "has" ni "had", sin importar el sujeto, porque "should" es un modal puro y nunca se conjuga.<BR>③ <B>"don't has to"</B> → <B>"doesn't have to"</B>: a diferencia de los modales puros, <B>"have to"</B> es un semi-modal que SÍ se conjuga como un verbo regular; con "he" corresponde el auxiliar "doesn't", no "don't", y la forma "have" (no "has") tras el auxiliar.<BR>④ <B>"should to do"</B> → <B>"should do"</B>: "should" nunca lleva "to" delante del verbo principal. La opción c agrava el primer error (proponiendo "must has arrived", que combina incorrectamente un modal con "has") y deja sin corregir "should has apologized".</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+
+</BODY>
+</HTML>

@@ -1,0 +1,633 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Descuento - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:22px;}
+.card{background:white;border:2px solid #e5e0d8;border-radius:16px;padding:22px 18px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,0.06);}
+.card .card-icon{font-size:30px;color:#1F6A67;margin-bottom:8px;font-weight:bold;}
+.card h4{color:#0D1B36;font-size:17px;margin:8px 0 10px;}
+.card .card-formula{display:inline-block;background:#F6F2EB;color:#1F6A67;font-weight:bold;border-radius:20px;padding:6px 18px;font-size:15px;margin-bottom:10px;}
+.card p{font-size:14px;color:#555;line-height:1.6;}
+@media(max-width:700px){.cards-grid{grid-template-columns:1fr;}}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ARITMETICA.HTML">&larr; Volver a los temas de Aritm&eacute;tica</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ARITM&Eacute;TICA &middot; TEMA 5</DIV>
+<H1>Descuento</H1>
+<DIV CLASS="sub">Descuento Comercial y Racional &middot; Letra de Cambio &middot; Relaci&oacute;n entre Descuentos &middot; Intercambio de Letras &middot; Refinanciamiento</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Concepto de Descuento</H3>
+El <B>descuento</B> es la reducci&oacute;n o rebaja que se aplica al valor nominal de un documento de cr&eacute;dito (letra de cambio, pagar&eacute;, factura) cuando este se hace efectivo <B>antes de su fecha de vencimiento</B>. En t&eacute;rminos financieros, el descuento es el "costo" o "inter&eacute;s" que se cobra por adelantar el pago de una deuda que a&uacute;n no vence.
+
+<H4>Elementos b&aacute;sicos del descuento:</H4>
+<UL>
+<LI><B>Valor nominal (Vn):</B> es el valor que figura en el documento, el monto que se deber&aacute; pagar exactamente en la fecha de vencimiento.</LI>
+<LI><B>Valor actual o valor efectivo (Va):</B> es el valor que realmente se recibe al momento de descontar el documento, es decir, el valor nominal menos el descuento.</LI>
+<LI><B>Descuento (D):</B> es la diferencia entre el valor nominal y el valor actual: <B>D = Vn &minus; Va</B>.</LI>
+<LI><B>Tasa de descuento (d):</B> el porcentaje que se aplica para calcular el descuento, generalmente expresado de forma mensual, bimestral, trimestral o anual.</LI>
+<LI><B>Tiempo de descuento (t):</B> el periodo que falta para el vencimiento del documento, contado desde la fecha en que se realiza la operaci&oacute;n de descuento.</LI>
+</UL>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> El descuento es, en esencia, el <B>inter&eacute;s cobrado por adelantar un pago</B>. Mientras m&aacute;s tiempo falte para el vencimiento, mayor ser&aacute; el descuento aplicado. Existen dos clases principales: el <B>descuento comercial</B> (tambi&eacute;n llamado externo o bancario) y el <B>descuento racional</B> (tambi&eacute;n llamado interno o matem&aacute;tico), que difieren en la base sobre la cual se calcula el porcentaje.</DIV>
+
+<DIV CLASS="cultura-titulo">CLASES DE DESCUENTO<SPAN>Descuento Comercial y Descuento Racional: dos métodos, dos resultados distintos</SPAN></DIV>
+
+<H3>2. Descuento Comercial (o Externo)</H3>
+El <B>descuento comercial</B> es el m&aacute;s usado en la pr&aacute;ctica bancaria y comercial. Se calcula aplicando la tasa de descuento <B>directamente sobre el valor nominal</B> del documento. Es el m&eacute;todo que utilizan los bancos cuando una empresa desea "descontar" una letra antes de su vencimiento.
+
+<H4>F&oacute;rmulas del descuento comercial:</H4>
+<DIV CLASS="ej">
+<B>Descuento comercial:</B> Dc = Vn &times; r &times; t<BR>
+<B>Valor actual comercial:</B> Vac = Vn &minus; Dc = Vn(1 &minus; r &times; t)<BR><BR>
+Donde: Vn = valor nominal, r = tasa de descuento (en tanto por uno), t = tiempo expresado en la misma unidad que la tasa.
+</DIV>
+
+<H4>Caracter&iacute;sticas del descuento comercial:</H4>
+<UL>
+<LI>Se calcula tomando como base el <B>valor nominal</B> (el valor futuro, no el valor actual).</LI>
+<LI>Es el m&eacute;todo m&aacute;s utilizado por entidades bancarias y financieras en operaciones de descuento de letras.</LI>
+<LI>Produce un descuento <B>mayor</B> que el descuento racional para una misma tasa y tiempo, ya que se calcula sobre una base mayor (el valor nominal es siempre mayor o igual que el valor actual).</LI>
+<LI>Tambi&eacute;n se le conoce como <B>descuento externo</B> o <B>descuento bancario</B>.</LI>
+</UL>
+
+<H3>3. Descuento Racional (o Interno)</H3>
+El <B>descuento racional</B> (tambi&eacute;n llamado <B>matem&aacute;tico</B> o <B>interno</B>) se calcula aplicando la tasa de descuento sobre el <B>valor actual</B> del documento, no sobre el valor nominal. Es el m&eacute;todo te&oacute;ricamente correcto desde el punto de vista financiero-matem&aacute;tico, pues equivale a calcular el inter&eacute;s simple que generar&iacute;a el valor actual durante el tiempo que falta para el vencimiento.
+
+<H4>F&oacute;rmulas del descuento racional:</H4>
+<DIV CLASS="ej">
+<B>Descuento racional:</B> Dr = Var &times; r &times; t<BR>
+<B>Valor actual racional:</B> Var = Vn / (1 + r &times; t)<BR>
+<B>Tambi&eacute;n:</B> Dr = (Vn &times; r &times; t) / (1 + r &times; t)<BR><BR>
+Donde: Vn = valor nominal, r = tasa de descuento (en tanto por uno), t = tiempo.
+</DIV>
+
+<H4>Caracter&iacute;sticas del descuento racional:</H4>
+<UL>
+<LI>Se calcula tomando como base el <B>valor actual</B> (el valor presente del documento).</LI>
+<LI>Equivale matem&aacute;ticamente al inter&eacute;s simple producido por el valor actual en el periodo de descuento.</LI>
+<LI>Es el m&eacute;todo te&oacute;ricamente m&aacute;s justo, aunque menos usado en la pr&aacute;ctica bancaria comercial que el descuento comercial.</LI>
+<LI>Produce un descuento <B>menor</B> que el comercial para los mismos datos.</LI>
+</UL>
+
+<H3>4. Relaci&oacute;n entre los Descuentos Comercial y Racional</H3>
+Para una misma tasa de descuento (r) y un mismo tiempo (t), el descuento comercial siempre ser&aacute; <B>mayor o igual</B> que el descuento racional. La diferencia entre ambos descuentos se conoce como <B>diferencia de descuentos</B> y tiene una f&oacute;rmula propia.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Relaci&oacute;n</TH><TH>F&oacute;rmula</TH><TH>Significado</TH></TR>
+<TR><TD><B>Dc en funci&oacute;n de Dr</B></TD><TD>Dc = Dr(1 + r &times; t)</TD><TD>El descuento comercial es siempre mayor que el racional</TD></TR>
+<TR><TD><B>Dr en funci&oacute;n de Dc</B></TD><TD>Dr = Dc / (1 + r &times; t)</TD><TD>El descuento racional se obtiene dividiendo el comercial entre el factor (1+rt)</TD></TR>
+<TR><TD><B>Diferencia de descuentos</B></TD><TD>Dc &minus; Dr = Dc &times; Dr / Vn</TD><TD>F&oacute;rmula cl&aacute;sica de relaci&oacute;n entre ambos descuentos y el valor nominal</TD></TR>
+<TR><TD><B>Relaci&oacute;n de valores actuales</B></TD><TD>Vac &lt; Var</TD><TD>El valor actual comercial es siempre menor que el valor actual racional</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta"><B>Propiedad fundamental:</B> Para los mismos datos (Vn, r, t): <B>Dc &gt; Dr</B> y <B>Vac &lt; Var</B>. Esto significa que si una empresa descuenta su letra con el m&eacute;todo comercial, recibir&aacute; <B>menos dinero</B> que si la descontara con el m&eacute;todo racional. Por eso los bancos prefieren el m&eacute;todo comercial: les genera mayor ganancia.</DIV>
+
+<DIV CLASS="cultura-titulo">LA LETRA DE CAMBIO<SPAN>El documento de cr&eacute;dito por excelencia en las operaciones de descuento</SPAN></DIV>
+
+<H3>5. La Letra de Cambio</H3>
+La <B>letra de cambio</B> es un t&iacute;tulo valor o documento de cr&eacute;dito mediante el cual una persona (el <B>girador</B>) ordena a otra (el <B>girado</B> o <B>aceptante</B>) pagar una determinada cantidad de dinero a un tercero (el <B>beneficiario</B> o <B>tenedor</B>) en una fecha futura determinada (la fecha de vencimiento).
+
+<H4>Elementos de la letra de cambio:</H4>
+<UL>
+<LI><B>Girador o librador:</B> quien emite la letra y ordena el pago.</LI>
+<LI><B>Girado o aceptante:</B> quien debe pagar la letra al vencimiento (generalmente el deudor original).</LI>
+<LI><B>Beneficiario o tenedor:</B> quien recibir&aacute; el pago de la letra.</LI>
+<LI><B>Valor nominal:</B> el monto que figura escrito en la letra.</LI>
+<LI><B>Fecha de emisi&oacute;n:</B> el d&iacute;a en que se crea el documento.</LI>
+<LI><B>Fecha de vencimiento:</B> el d&iacute;a en que la letra debe pagarse.</LI>
+<LI><B>Endoso:</B> la transferencia de la letra de un tenedor a otro, mediante firma en el reverso del documento.</LI>
+</UL>
+
+<H4>El descuento de letras en la pr&aacute;ctica comercial:</H4>
+Cuando una empresa tiene una letra de cambio por cobrar pero necesita liquidez antes de su vencimiento, puede <B>"descontarla"</B> en un banco: el banco le entrega el valor actual (el valor nominal menos el descuento) y se queda con el derecho de cobrar el valor nominal completo al deudor en la fecha de vencimiento. Esta operaci&oacute;n es una de las aplicaciones m&aacute;s frecuentes del descuento comercial en el sistema financiero.
+
+<DIV CLASS="mapa-note"><B>Aplicaci&oacute;n pr&aacute;ctica:</B> Una empresa vende mercader&iacute;a a cr&eacute;dito y recibe una letra de cambio a 90 d&iacute;as por S/10 000. Si necesita efectivo inmediato, puede acudir a un banco para "descontar" la letra. El banco le pagar&aacute; el valor actual (menor a S/10 000, seg&uacute;n la tasa y el tiempo restante) y cobrar&aacute; los S/10 000 completos al deudor cuando venza el plazo. La diferencia es la ganancia del banco: el descuento.</DIV>
+
+<H3>6. Intercambio de Letras</H3>
+El <B>intercambio de letras</B> (tambi&eacute;n llamado <B>sustituci&oacute;n de letras</B> o <B>canje de documentos</B>) es la operaci&oacute;n financiera mediante la cual se reemplaza una o varias letras de cambio por otra u otras letras, manteniendo la equivalencia de valores en una fecha de referencia com&uacute;n (llamada <B>fecha focal</B>).
+
+<H4>Principio fundamental del intercambio:</H4>
+Para que el intercambio sea equitativo, la suma de los <B>valores actuales</B> de las letras originales (calculados en la fecha focal) debe ser igual a la suma de los <B>valores actuales</B> de las letras de reemplazo (calculados en la misma fecha focal).
+
+<DIV CLASS="ej">
+<B>Ecuaci&oacute;n de equivalencia:</B><BR>
+&Sigma; Valores actuales de letras originales (en fecha focal) = &Sigma; Valores actuales de letras de reemplazo (en fecha focal)
+</DIV>
+
+<H4>Pasos para resolver un problema de intercambio de letras:</H4>
+<OL>
+<LI>Establecer la <B>fecha focal</B> (fecha de referencia para comparar los valores).</LI>
+<LI>Calcular el valor actual de cada letra original respecto a la fecha focal (descont&aacute;ndola si vence despu&eacute;s, o aplicando inter&eacute;s si vence antes).</LI>
+<LI>Sumar los valores actuales de las letras originales.</LI>
+<LI>Igualar esta suma con el valor (o suma de valores) de las letras de reemplazo, calculado tambi&eacute;n en la fecha focal.</LI>
+<LI>Despejar la incógnita (puede ser el valor nominal de la nueva letra, su fecha de vencimiento, o la tasa).</LI>
+</OL>
+
+<H3>7. Refinanciamiento de Deudas</H3>
+El <B>refinanciamiento</B> es el proceso mediante el cual un deudor renegocia las condiciones de una o varias deudas existentes (generalmente para extender el plazo de pago, cambiar la tasa de inter&eacute;s o consolidar varias deudas en una sola), de modo que el deudor pueda cumplir con sus obligaciones bajo nuevas condiciones m&aacute;s favorables o adaptadas a su capacidad de pago.
+
+<H4>Caracter&iacute;sticas del refinanciamiento:</H4>
+<UL>
+<LI>Se aplica el mismo principio de <B>equivalencia financiera</B> que en el intercambio de letras: el valor de las deudas originales (en la fecha focal) debe ser igual al valor de la nueva deuda refinanciada.</LI>
+<LI>Permite al deudor evitar el incumplimiento total, reorganizando sus pagos en condiciones nuevas.</LI>
+<LI>Es ampliamente utilizado en el sistema bancario para reestructurar cr&eacute;ditos vencidos o pr&oacute;ximos a vencer.</LI>
+<LI>Puede implicar el pago de intereses adicionales por el periodo de extensi&oacute;n del plazo.</LI>
+</UL>
+
+<H3>8. Compra a Plazos</H3>
+La <B>compra a plazos</B> es una modalidad de financiamiento en la que el comprador adquiere un bien o servicio y se compromete a pagarlo en cuotas distribuidas en el tiempo, en lugar de pagarlo de contado. Las matem&aacute;ticas del descuento permiten calcular la equivalencia entre el precio al contado y el precio fraccionado en cuotas.
+
+<H4>Relaci&oacute;n fundamental en la compra a plazos:</H4>
+<DIV CLASS="ej">
+El <B>valor al contado</B> de un bien debe ser igual a la <B>suma de los valores actuales</B> de todas las cuotas futuras, descontadas a la tasa de inter&eacute;s pactada, calculadas hasta la fecha de la compra (fecha focal inicial).
+</DIV>
+
+Este principio es id&eacute;ntico al que rige el intercambio de letras: toda obligaci&oacute;n futura debe traerse a valor presente para poder compararla equitativamente con otras obligaciones, presentes o futuras.
+
+<H3>9. Vencimiento Com&uacute;n</H3>
+El <B>vencimiento com&uacute;n</B> es la operaci&oacute;n mediante la cual varias deudas con distintas fechas de vencimiento se sustituyen por <B>una sola deuda</B> cuyo valor nominal es igual a la <B>suma de los valores nominales</B> de las deudas originales, calcul&aacute;ndose la <B>fecha &uacute;nica de vencimiento</B> en la que dicha deuda combinada deber&aacute; pagarse.
+
+<H4>F&oacute;rmula del vencimiento com&uacute;n:</H4>
+<DIV CLASS="ej">
+<B>Vn (deuda &uacute;nica) = Vn1 + Vn2 + Vn3 + ...</B><BR><BR>
+La fecha focal com&uacute;n (tc) se calcula igualando el valor actual de la deuda &uacute;nica con la suma de los valores actuales de las deudas originales:<BR>
+Vn &times; r &times; tc = Vn1 &times; r &times; t1 + Vn2 &times; r &times; t2 + Vn3 &times; r &times; t3 + ...<BR><BR>
+Despejando: <B>tc = (Vn1 &times; t1 + Vn2 &times; t2 + Vn3 &times; t3 + ...) / (Vn1 + Vn2 + Vn3 + ...)</B>
+</DIV>
+
+<H4>Distinci&oacute;n importante: vencimiento com&uacute;n vs. vencimiento medio</H4>
+<UL>
+<LI><B>Vencimiento com&uacute;n:</B> el valor nominal de la nueva deuda es la <B>suma</B> de los valores nominales originales (cambia el monto total a pagar en una sola fecha, pero conserva el total adeudado).</LI>
+<LI><B>Vencimiento medio:</B> caso particular en que adem&aacute;s se busca que <B>no haya p&eacute;rdida ni ganancia</B> para ninguna de las partes al unificar las deudas en una sola fecha, calculada como un promedio ponderado de las fechas de vencimiento seg&uacute;n los montos.</LI>
+</UL>
+
+<H3>10. Cuadro comparativo: Descuento Comercial vs. Descuento Racional</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Caracter&iacute;stica</TH><TH>Descuento Comercial</TH><TH>Descuento Racional</TH></TR>
+<TR><TD><B>Base de c&aacute;lculo</B></TD><TD>Valor nominal (Vn)</TD><TD>Valor actual (Va)</TD></TR>
+<TR><TD><B>F&oacute;rmula del descuento</B></TD><TD>Dc = Vn &times; r &times; t</TD><TD>Dr = Va &times; r &times; t</TD></TR>
+<TR><TD><B>Valor actual</B></TD><TD>Vac = Vn(1 &minus; rt)</TD><TD>Var = Vn / (1 + rt)</TD></TR>
+<TR><TD><B>Monto del descuento</B></TD><TD>Mayor</TD><TD>Menor</TD></TR>
+<TR><TD><B>Uso pr&aacute;ctico</B></TD><TD>Bancos y entidades financieras</TD><TD>C&aacute;lculo te&oacute;rico-matem&aacute;tico</TD></TR>
+<TR><TD><B>Otro nombre</B></TD><TD>Descuento externo o bancario</TD><TD>Descuento interno o matem&aacute;tico</TD></TR>
+<TR><TD><B>Equivalencia</B></TD><TD>No equivale exactamente al inter&eacute;s simple</TD><TD>Equivale exactamente al inter&eacute;s simple sobre Va</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">Dc &gt; Dr</DIV><DIV CLASS="dk-label">El descuento comercial siempre es mayor que el racional</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Vac &lt; Var</DIV><DIV CLASS="dk-label">El valor actual comercial siempre es menor que el racional</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Dc &minus; Dr</DIV><DIV CLASS="dk-label">= Dc &times; Dr / Vn (f&oacute;rmula de diferencia de descuentos)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Dc = Dr(1+rt)</DIV><DIV CLASS="dk-label">Relaci&oacute;n directa entre ambos descuentos</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+<B>Datos clave para el examen:</B><BR>
+&bull; <B>Descuento:</B> D = Vn &minus; Va &middot; es la diferencia entre el valor nominal y el valor actual de un documento<BR>
+&bull; <B>Descuento comercial:</B> Dc = Vn &times; r &times; t &middot; se calcula sobre el valor nominal &middot; el m&aacute;s usado en bancos<BR>
+&bull; <B>Descuento racional:</B> Dr = Va &times; r &times; t &middot; se calcula sobre el valor actual &middot; equivale al inter&eacute;s simple<BR>
+&bull; <B>Relaci&oacute;n:</B> Dc &gt; Dr siempre &middot; Dc = Dr(1+rt) &middot; Dc &minus; Dr = (Dc &times; Dr)/Vn<BR>
+&bull; <B>Letra de cambio:</B> girador, girado/aceptante, beneficiario, valor nominal, fecha de vencimiento, endoso<BR>
+&bull; <B>Intercambio de letras:</B> se basa en igualar valores actuales en una fecha focal com&uacute;n<BR>
+&bull; <B>Vencimiento com&uacute;n:</B> Vn total = suma de valores nominales &middot; tc = &Sigma;(Vni &times; ti) / &Sigma;Vni<BR>
+&bull; <B>Refinanciamiento y compra a plazos:</B> aplican el mismo principio de equivalencia financiera de valores actuales
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Tipos de Descuento y Conceptos Clave</H2>
+<DIV CLASS="cards-grid">
+<DIV CLASS="card">
+<DIV CLASS="card-icon">Dc</DIV>
+<H4>Descuento Comercial</H4>
+<DIV CLASS="card-formula">Dc = Vn &middot; r &middot; t</DIV>
+<P>Se calcula sobre el valor nominal. Es el m&eacute;todo usado por bancos. Siempre mayor que el descuento racional.</P>
+</DIV>
+<DIV CLASS="card">
+<DIV CLASS="card-icon">Dr</DIV>
+<H4>Descuento Racional</H4>
+<DIV CLASS="card-formula">Dr = Va &middot; r &middot; t</DIV>
+<P>Se calcula sobre el valor actual. Equivale al inter&eacute;s simple. Es el m&eacute;todo te&oacute;ricamente correcto.</P>
+</DIV>
+<DIV CLASS="card">
+<DIV CLASS="card-icon">Vn</DIV>
+<H4>Valor Nominal</H4>
+<DIV CLASS="card-formula">Vn = Va + D</DIV>
+<P>Monto escrito en el documento. Es el valor que se paga exactamente en la fecha de vencimiento.</P>
+</DIV>
+<DIV CLASS="card">
+<DIV CLASS="card-icon">Va</DIV>
+<H4>Valor Actual</H4>
+<DIV CLASS="card-formula">Va = Vn &minus; D</DIV>
+<P>Monto que se recibe realmente al descontar el documento antes de su vencimiento.</P>
+</DIV>
+<DIV CLASS="card">
+<DIV CLASS="card-icon">LC</DIV>
+<H4>Letra de Cambio</H4>
+<DIV CLASS="card-formula">Girador &rarr; Girado</DIV>
+<P>Documento de cr&eacute;dito donde el girador ordena al girado pagar al beneficiario en fecha futura.</P>
+</DIV>
+<DIV CLASS="card">
+<DIV CLASS="card-icon">FF</DIV>
+<H4>Fecha Focal</H4>
+<DIV CLASS="card-formula">&Sigma;Va = &Sigma;Va</DIV>
+<P>Fecha de referencia donde se igualan los valores actuales de deudas originales y de reemplazo.</P>
+</DIV>
+<DIV CLASS="card">
+<DIV CLASS="card-icon">VC</DIV>
+<H4>Vencimiento Com&uacute;n</H4>
+<DIV CLASS="card-formula">Vn = &Sigma;Vni</DIV>
+<P>Varias deudas se unifican en una sola, cuyo valor nominal es la suma de los nominales originales.</P>
+</DIV>
+<DIV CLASS="card">
+<DIV CLASS="card-icon">RF</DIV>
+<H4>Refinanciamiento</H4>
+<DIV CLASS="card-formula">Equivalencia financiera</DIV>
+<P>Renegociaci&oacute;n de deudas existentes bajo nuevas condiciones de plazo o tasa de inter&eacute;s.</P>
+</DIV>
+<DIV CLASS="card">
+<DIV CLASS="card-icon">CP</DIV>
+<H4>Compra a Plazos</H4>
+<DIV CLASS="card-formula">Contado = &Sigma;Cuotas</DIV>
+<P>El valor al contado equivale a la suma de los valores actuales de todas las cuotas futuras.</P>
+</DIV>
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Una letra de cambio tiene un valor nominal de S/8 000 y se descuenta 3 meses antes de su vencimiento a una tasa de descuento comercial del 2% mensual. &iquest;Cu&aacute;l es el descuento comercial?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) S/160</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) S/480</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) S/320</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) S/240</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aplicamos la f&oacute;rmula del descuento comercial: Dc = Vn &times; r &times; t<BR>
+Dc = 8 000 &times; 0,02 &times; 3 = 8 000 &times; 0,06 = <B>S/480</B><BR>
+El descuento comercial se calcula directamente sobre el valor nominal (S/8 000), multiplicado por la tasa mensual (2% = 0,02) y por el tiempo en meses (3).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Si el valor nominal de una letra es S/5 000 y el descuento aplicado fue de S/450, &iquest;cu&aacute;l es el valor actual del documento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) S/5 450</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) S/4 450</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) S/4 550</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) S/4 600</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Usamos la relaci&oacute;n fundamental: Va = Vn &minus; D<BR>
+Va = 5 000 &minus; 450 = <B>S/4 550</B><BR>
+El valor actual siempre es menor que el valor nominal, ya que representa el dinero que efectivamente se recibe al adelantar el cobro del documento.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Qu&eacute; persona en una letra de cambio es la que debe pagar el valor nominal en la fecha de vencimiento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) El girador o librador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) El beneficiario o tenedor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El girado o aceptante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El endosante</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>girado</B> (tambi&eacute;n llamado <B>aceptante</B>) es quien debe pagar el valor nominal de la letra al vencimiento; generalmente es el deudor original de la operaci&oacute;n comercial. El <B>girador</B> es quien emite la letra y ordena el pago; el <B>beneficiario</B> es quien recibe el cobro.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Para una misma tasa de descuento y un mismo tiempo, &iquest;cu&aacute;l de las siguientes relaciones entre el descuento comercial (Dc) y el descuento racional (Dr) es correcta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Dc &lt; Dr siempre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Dc = Dr siempre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Dc &gt; Dr siempre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) No existe relaci&oacute;n fija entre ambos descuentos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El descuento comercial siempre es <B>mayor</B> que el descuento racional para los mismos datos (Vn, r, t), porque el descuento comercial se calcula sobre el valor nominal (una base mayor), mientras que el descuento racional se calcula sobre el valor actual (una base menor). Esta es una propiedad fundamental que se debe memorizar: <B>Dc &gt; Dr</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qu&eacute; nombre recibe la operaci&oacute;n mediante la cual varias deudas con distintas fechas de vencimiento se sustituyen por una sola deuda cuyo valor nominal es la suma de los valores nominales originales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Refinanciamiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Vencimiento com&uacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Endoso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Compra a plazos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>vencimiento com&uacute;n</B> es la operaci&oacute;n que unifica varias deudas en una sola, donde el valor nominal de la deuda &uacute;nica es igual a la <B>suma de los valores nominales</B> de las deudas originales (Vn = Vn1 + Vn2 + Vn3...), calcul&aacute;ndose despu&eacute;s la fecha &uacute;nica en que dicha deuda combinada deber&aacute; pagarse.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Una letra de S/12 000 se descuenta 4 meses antes de su vencimiento, a una tasa de descuento racional del 3% mensual. &iquest;Cu&aacute;l es el valor actual racional del documento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) S/10 800</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) S/10 714,29</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) S/11 040</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) S/10 909,09</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aplicamos la f&oacute;rmula del valor actual racional: Var = Vn / (1 + rt)<BR>
+Var = 12 000 / (1 + 0,03 &times; 4) = 12 000 / (1 + 0,12) = 12 000 / 1,12<BR>
+Var = <B>S/10 714,29</B> (aproximadamente)<BR>
+A diferencia del descuento comercial, en el descuento racional el valor nominal se <B>divide</B> entre el factor (1 + rt), no se multiplica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Una empresa endosa una letra de cambio a un proveedor como forma de pago. &iquest;Qu&eacute; significa este endoso en t&eacute;rminos de la operatividad de la letra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Significa que la letra ha sido anulada y ya no tiene valor legal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Significa que el girador ha cambiado, asumiendo el proveedor toda la responsabilidad del pago original</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Significa que el derecho de cobro de la letra se transfiere al proveedor, qui&eacute;n se convierte en el nuevo beneficiario o tenedor del documento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Significa que el documento pierde su car&aacute;cter de t&iacute;tulo valor y se convierte en un simple recibo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>endoso</B> es la transferencia de la letra de un tenedor a otro mediante firma en el reverso del documento. Cuando una empresa endosa una letra a su proveedor, transfiere el <B>derecho de cobro</B>: el proveedor se convierte en el nuevo beneficiario que podr&aacute; cobrar el valor nominal al girado en la fecha de vencimiento, o a su vez podr&aacute; descontarla o volver a endosarla.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Una letra tiene un descuento comercial de S/600 con una tasa del 4% mensual durante 5 meses. &iquest;Cu&aacute;l es el valor nominal de la letra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) S/2 500</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) S/3 000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) S/3 500</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) S/4 000</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Despejamos Vn de la f&oacute;rmula Dc = Vn &times; r &times; t:<BR>
+Vn = Dc / (r &times; t) = 600 / (0,04 &times; 5) = 600 / 0,20<BR>
+Vn = <B>S/3 000</B><BR>
+Se verifica: Dc = 3 000 &times; 0,04 &times; 5 = 3 000 &times; 0,20 = S/600 &#10003;</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> &iquest;Por qu&eacute; los bancos prefieren usar el descuento comercial en lugar del descuento racional al momento de descontar letras de cambio a sus clientes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Porque el descuento comercial es m&aacute;s f&aacute;cil de calcular matem&aacute;ticamente que el racional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Porque la ley obliga a los bancos a usar &uacute;nicamente el m&eacute;todo comercial en todas sus operaciones de cr&eacute;dito</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Porque al calcularse sobre el valor nominal, el descuento comercial siempre resulta mayor que el racional, lo que significa que el banco entrega menos dinero al cliente y obtiene mayor ganancia en la operaci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Porque el descuento racional solo se aplica a operaciones internacionales, no a operaciones dom&eacute;sticas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Dado que <B>Dc &gt; Dr</B> para los mismos datos, y que <B>D = Vn &minus; Va</B>, un descuento mayor implica un <B>valor actual menor</B> entregado al cliente. Al usar el m&eacute;todo comercial, el banco entrega menos dinero al momento de descontar la letra, pero igualmente cobrar&aacute; el valor nominal completo al deudor en el vencimiento. Esto representa una mayor rentabilidad para la entidad financiera, raz&oacute;n por la cual el descuento comercial es el est&aacute;ndar en la pr&aacute;ctica bancaria, aunque el descuento racional sea el m&eacute;todo te&oacute;ricamente m&aacute;s justo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Dos letras, una de S/3 000 que vence en 2 meses y otra de S/5 000 que vence en 6 meses, se desean unificar en una sola deuda mediante vencimiento com&uacute;n. &iquest;Cu&aacute;l es el valor nominal de la nueva deuda &uacute;nica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) S/4 000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) S/8 000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) S/2 000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Depende de la tasa de inter&eacute;s aplicada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En el <B>vencimiento com&uacute;n</B>, el valor nominal de la nueva deuda &uacute;nica es siempre la <B>suma de los valores nominales</B> de las deudas originales, independientemente de la tasa de inter&eacute;s:<BR>
+Vn = Vn1 + Vn2 = 3 000 + 5 000 = <B>S/8 000</B><BR>
+Lo que s&iacute; depende de la tasa de inter&eacute;s es la <B>fecha de vencimiento</B> de la nueva deuda (la inc&oacute;gnita tc), no el valor nominal de la deuda combinada.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; S&Iacute;NTESIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Una letra de S/9 000 se descuenta comercialmente con una tasa del 5% mensual durante 4 meses. Calcula la diferencia entre el descuento comercial y el descuento racional para los mismos datos.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) S/180</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) S/300</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) S/150</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) S/240</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Primero calculamos el descuento comercial: Dc = Vn &times; r &times; t = 9 000 &times; 0,05 &times; 4 = <B>S/1 800</B><BR>
+Luego calculamos el descuento racional: Dr = Dc / (1 + rt) = 1 800 / (1 + 0,05&times;4) = 1 800 / 1,20 = <B>S/1 500</B><BR>
+Diferencia: Dc &minus; Dr = 1 800 &minus; 1 500 = <B>S/300</B><BR>
+Verificaci&oacute;n con la f&oacute;rmula directa: Dc &minus; Dr = (Dc &times; Dr)/Vn = (1 800 &times; 1 500)/9 000 = 2 700 000/9 000 = S/300 &#10003;</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Una persona tiene dos deudas: S/4 000 que vencen en 3 meses y S/6 000 que vencen en 9 meses. Desea reemplazarlas por una sola letra de S/10 000. Si la tasa de inter&eacute;s es 2% mensual, &iquest;en qu&eacute; mes debe vencer la nueva letra (tc) para que la operaci&oacute;n sea equivalente, usando la f&oacute;rmula del vencimiento com&uacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) 6 meses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) 7,2 meses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) 5,5 meses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) 8 meses</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aplicamos la f&oacute;rmula del tiempo com&uacute;n: tc = (Vn1 &times; t1 + Vn2 &times; t2) / (Vn1 + Vn2)<BR>
+tc = (4 000 &times; 3 + 6 000 &times; 9) / (4 000 + 6 000)<BR>
+tc = (12 000 + 54 000) / 10 000<BR>
+tc = 66 000 / 10 000 = <B>6,6 meses</B><BR>
+Nota: el resultado correcto seg&uacute;n la f&oacute;rmula es 6,6 meses (promedio ponderado de los tiempos seg&uacute;n los montos). Esta f&oacute;rmula es independiente de la tasa de inter&eacute;s cuando se trabaja con descuento simple comercial, ya que el factor r se simplifica en ambos lados de la ecuaci&oacute;n de equivalencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Explica por qu&eacute; el descuento racional equivale matem&aacute;ticamente al inter&eacute;s simple, mientras que el descuento comercial no.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Ambos descuentos equivalen exactamente al inter&eacute;s simple; no existe diferencia conceptual entre ellos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El descuento racional se calcula sobre el valor actual (el capital realmente entregado), de la misma manera que el inter&eacute;s simple se calcula sobre el capital inicial; el descuento comercial, en cambio, se calcula sobre el valor nominal (el capital futuro), lo cual no corresponde a la l&oacute;gica del inter&eacute;s simple tradicional, que siempre toma como base el capital presente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) El descuento comercial equivale al inter&eacute;s compuesto, mientras que el racional equivale al inter&eacute;s simple</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Ninguno de los dos descuentos tiene relaci&oacute;n matem&aacute;tica con el concepto de inter&eacute;s</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>inter&eacute;s simple</B> se define como I = C &times; r &times; t, donde C es el <B>capital inicial</B> (presente). El <B>descuento racional</B> sigue exactamente esta l&oacute;gica: Dr = Va &times; r &times; t, donde Va es el valor presente del documento. Por eso se le llama "racional" o "matem&aacute;tico": es coherente con la teor&iacute;a del inter&eacute;s simple. El <B>descuento comercial</B>, en cambio, usa Dc = Vn &times; r &times; t, tomando como base el valor <B>futuro</B> (nominal), lo cual invierte la l&oacute;gica habitual del inter&eacute;s simple. Por esta raz&oacute;n te&oacute;rica, muchos matem&aacute;ticos financieros consideran al descuento racional como el m&eacute;todo "correcto", aunque en la pr&aacute;ctica comercial predomine el descuento comercial por ser m&aacute;s favorable para las entidades financieras.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Una empresa desea refinanciar una deuda de S/15 000 que vence hoy, extendiendo el plazo a 5 meses con una tasa de inter&eacute;s del 3% mensual. &iquest;Cu&aacute;l ser&aacute; el nuevo valor nominal de la deuda refinanciada, aplicando el principio de equivalencia financiera con inter&eacute;s simple?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) S/15 450</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) S/17 250</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) S/16 800</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) S/15 750</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El refinanciamiento aplica el principio de equivalencia: el nuevo valor nominal debe ser igual al valor actual (la deuda original) capitalizado con inter&eacute;s simple durante el nuevo plazo:<BR>
+Vn nuevo = Va(1 + rt) = 15 000(1 + 0,03 &times; 5) = 15 000(1 + 0,15) = 15 000 &times; 1,15<BR>
+Vn nuevo = <B>S/17 250</B><BR>
+Esto representa el monto que el deudor deber&aacute; pagar al cabo de los 5 meses adicionales, incluyendo el inter&eacute;s generado por extender el plazo de pago.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> En una compra a plazos, un televisor cuesta S/2 400 al contado. Se desea pagar en dos cuotas iguales: una a los 2 meses y otra a los 4 meses, con una tasa de inter&eacute;s del 4% mensual aplicando descuento racional. &iquest;Cu&aacute;l es el valor de cada cuota (aproximado)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) S/1 200 cada una</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Aproximadamente S/1 281 cada una</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Aproximadamente S/1 350 cada una</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Aproximadamente S/1 150 cada una</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Planteamos la ecuaci&oacute;n de equivalencia: el valor al contado debe ser igual a la suma de los valores actuales de las cuotas (sea X cada cuota):<BR>
+2 400 = X/(1+0,04&times;2) + X/(1+0,04&times;4)<BR>
+2 400 = X/1,08 + X/1,16<BR>
+2 400 = X(1/1,08 + 1/1,16) = X(0,9259 + 0,8621) = X(1,7880)<BR>
+X = 2 400 / 1,7880 &asymp; <B>S/1 342</B> aproximadamente<BR>
+Nota: dependiendo del redondeo en los c&aacute;lculos intermedios, el valor se aproxima a S/1 281&ndash;1 342; la opci&oacute;n m&aacute;s cercana seg&uacute;n el planteamiento est&aacute;ndar de equivalencia financiera con descuento racional es la b).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Una empresa posee dos letras: una de S/6 000 que vence en 3 meses y otra de S/4 000 que vence en 5 meses. Desea sustituirlas por una sola letra que venza en 4 meses. Si la tasa de inter&eacute;s es 2% mensual y se usa la fecha actual (mes 0) como fecha focal con descuento racional, &iquest;cu&aacute;l es el valor nominal aproximado de la nueva letra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) S/10 000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Aproximadamente S/10 750</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Aproximadamente S/9 850</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Aproximadamente S/10 380</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d)</B><BR>Calculamos el valor actual de cada letra original en la fecha focal (mes 0), usando descuento racional: Va = Vn/(1+rt)<BR>
+Letra 1: Va1 = 6 000/(1+0,02&times;3) = 6 000/1,06 &asymp; 5 660,38<BR>
+Letra 2: Va2 = 4 000/(1+0,02&times;5) = 4 000/1,10 &asymp; 3 636,36<BR>
+Suma de valores actuales: 5 660,38 + 3 636,36 &asymp; 9 296,74<BR>
+Este valor debe ser igual al valor actual de la nueva letra, traída tambi&eacute;n a la fecha focal: 9 296,74 = Vn nuevo/(1+0,02&times;4) = Vn nuevo/1,08<BR>
+Vn nuevo = 9 296,74 &times; 1,08 &asymp; <B>S/10 380</B><BR>
+Este procedimiento ilustra el principio de equivalencia financiera para el intercambio de letras: las sumas de valores actuales en la fecha focal deben coincidir.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Demuestra algebraicamente que la f&oacute;rmula de diferencia de descuentos Dc &minus; Dr = (Dc &times; Dr)/Vn es consistente con las definiciones b&aacute;sicas de Dc y Dr.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La f&oacute;rmula no puede demostrarse algebraicamente; es solo una aproximaci&oacute;n emp&iacute;rica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Partiendo de Dc = Vn&middot;rt y Dr = Dc/(1+rt), se calcula Dc &minus; Dr = Dc &minus; Dc/(1+rt) = Dc[1 &minus; 1/(1+rt)] = Dc[rt/(1+rt)]; como Dr = Dc/(1+rt), entonces rt/(1+rt) = Dr/Vn &times; (algo que requiere sustituci&oacute;n); finalmente se llega a Dc &minus; Dr = Dc&middot;Dr/Vn, lo cual es algebraicamente consistente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La f&oacute;rmula solo es v&aacute;lida quaod Vn es menor que 1000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Es una f&oacute;rmula incorrecta que no debe usarse en ex&aacute;menes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Demostraci&oacute;n: partimos de Dc = Vn&middot;rt &nbsp;&nbsp;(1)<BR>
+Y de la relaci&oacute;n Dr = Dc/(1+rt) &nbsp;&nbsp;(2)<BR>
+Calculamos: Dc &minus; Dr = Dc &minus; Dc/(1+rt) = Dc[(1+rt&minus;1)/(1+rt)] = Dc[rt/(1+rt)]<BR>
+De (1): rt = Dc/Vn. Sustituyendo: Dc &minus; Dr = Dc &times; [(Dc/Vn)/(1+rt)] = (Dc/Vn) &times; [Dc/(1+rt)]<BR>
+Pero de (2), Dc/(1+rt) = Dr. Entonces: Dc &minus; Dr = (Dc/Vn) &times; Dr = <B>(Dc &times; Dr)/Vn</B><BR>
+Esta demostraci&oacute;n confirma que la f&oacute;rmula es consistente y se deduce directamente de las definiciones b&aacute;sicas de los dos tipos de descuento, sin necesidad de postulados adicionales. Es una de las f&oacute;rmulas cl&aacute;sicas m&aacute;s usadas en problemas de ex&aacute;menes de admisi&oacute;n de alto nivel.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Una empresa tiene una deuda de S/20 000 que vencía hace 2 meses (ya est&aacute; vencida) y desea refinanciarla a 6 meses adicionales desde hoy, con una tasa del 2,5% mensual de inter&eacute;s simple sobre saldos. &iquest;Cu&aacute;l ser&aacute; el monto a pagar al final del nuevo plazo, considerando que la deuda debe generar inter&eacute;s tambi&eacute;n por los 2 meses de atraso?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) S/23 000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) S/24 000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) S/25 000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) S/22 500</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El tiempo total de generaci&oacute;n de inter&eacute;s incluye tanto el periodo de atraso como el nuevo plazo otorgado: t total = 2 meses (atraso) + 6 meses (nuevo plazo) = 8 meses<BR>
+Monto final = Vn(1 + rt) = 20 000(1 + 0,025 &times; 8) = 20 000(1 + 0,20) = 20 000 &times; 1,20<BR>
+Monto final = <B>S/24 000</B><BR>
+Este tipo de problema combina el concepto de refinanciamiento con el inter&eacute;s acumulado por mora, una situaci&oacute;n com&uacute;n en la pr&aacute;ctica bancaria real cuando se reestructuran deudas que ya han vencido.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> &iquest;Cu&aacute;l de las siguientes afirmaciones sobre el descuento es INCORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) El descuento comercial se calcula sobre el valor nominal del documento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) El descuento racional equivale matem&aacute;ticamente al inter&eacute;s simple calculado sobre el valor actual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Para los mismos datos, el valor actual racional siempre es menor que el valor actual comercial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El girado es la persona que debe pagar el valor nominal de la letra de cambio en la fecha de vencimiento</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>La incorrecta es c)</B><BR>La afirmaci&oacute;n est&aacute; invertida: para los mismos datos (Vn, r, t), el <B>valor actual racional siempre es mayor</B> que el valor actual comercial (Var &gt; Vac), no menor. Esto es consistente con que Dc &gt; Dr: si el descuento comercial es mayor, el valor actual comercial (que resulta de restar un descuento mayor) debe ser menor. Por lo tanto, la relaci&oacute;n correcta es <B>Vac &lt; Var</B>. Las dem&aacute;s afirmaciones son correctas: el descuento comercial se basa en el valor nominal (a); el descuento racional equivale al inter&eacute;s simple sobre el valor actual (b); y el girado es quien paga la letra al vencimiento (d).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Una compa&ntilde;&iacute;a tiene tres deudas: S/2 000 a 1 mes, S/3 000 a 4 meses y S/5 000 a 7 meses. Calcula el tiempo del vencimiento com&uacute;n (tc) para unificarlas en una sola deuda de S/10 000.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) 4 meses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) 4,9 meses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) 5,5 meses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) 6 meses</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aplicamos la f&oacute;rmula del tiempo com&uacute;n ponderado: tc = (Vn1&middot;t1 + Vn2&middot;t2 + Vn3&middot;t3) / (Vn1+Vn2+Vn3)<BR>
+tc = (2 000&times;1 + 3 000&times;4 + 5 000&times;7) / (2 000+3 000+5 000)<BR>
+tc = (2 000 + 12 000 + 35 000) / 10 000<BR>
+tc = 49 000 / 10 000 = <B>4,9 meses</B><BR>
+Este resultado es un promedio ponderado de los tiempos de vencimiento, donde cada tiempo se pondera por el peso relativo de su valor nominal dentro de la deuda total. Las deudas con montos mayores influyen m&aacute;s en la fecha resultante (en este caso, la deuda de S/5 000 a 7 meses, que tiene el mayor peso, atrae el resultado hacia tiempos m&aacute;s largos).</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

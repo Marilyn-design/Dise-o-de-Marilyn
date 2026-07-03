@@ -1,0 +1,602 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Past Progressive - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:130px;text-align:center;}
+.dk .dk-num{font-size:20px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.eng{font-style:italic;color:#0D1B36;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 15 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Past Progressive Tense</H1>
+<DIV CLASS="sub">El Pasado Continuo &middot; Was / Were + Verbo-ing &middot; Estructura afirmativa, negativa e interrogativa &middot; Usos fundamentales &middot; Signal Words</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1. DEFINICION Y CONCEPTO -->
+<H3>1. ¿Qué es el Past Progressive?</H3>
+El <B>Past Progressive</B> (también llamado <B>Past Continuous</B>) es el tiempo verbal que se usa en inglés para describir una <B>acción que estaba en desarrollo o en progreso en un momento específico del pasado</B>. A diferencia del Past Simple, que expresa acciones terminadas y puntuales, el Past Progressive pone el foco en la <B>duración</B> y el <B>proceso</B> de una acción pasada.
+
+<DIV CLASS="ej">
+<B>Visualiza la diferencia conceptual:</B><BR>
+&bull; <I>"She <B>called</B> me at 8 p.m."</I> → Acción puntual, terminada (Past Simple).<BR>
+&bull; <I>"She <B>was studying</B> when I arrived."</I> → Acción en progreso en ese momento pasado (Past Progressive).
+</DIV>
+
+<!-- 2. FORMACION -->
+<H3>2. Formación del Past Progressive: la fórmula base</H3>
+La estructura del Past Progressive se construye con <B>dos elementos obligatorios</B> que deben aparecer siempre juntos:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH colspan="3" style="text-align:center;font-size:18px;">SUJETO + WAS / WERE + VERBO-ING</TH></TR>
+<TR><TH>Elemento</TH><TH>¿Qué aporta?</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Sujeto</B></TD><TD>Quién realiza la acción</TD><TD>She / They / The students</TD></TR>
+<TR><TD><B>Was / Were</B></TD><TD>Auxiliar que indica pasado y concordancia en número</TD><TD>was (singular), were (plural/you)</TD></TR>
+<TR><TD><B>Verbo + -ing</B></TD><TD>La acción en progreso (forma continua)</TD><TD>studying, running, working</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Reglas para formar el gerundio (-ing form):</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Regla</TH><TH>Verbo base</TH><TH>Forma -ing</TH></TR>
+<TR><TD>Caso general: añadir -ing directamente</TD><TD>read, study, play, sleep</TD><TD>reading, studying, playing, sleeping</TD></TR>
+<TR><TD>Verbos que terminan en -e muda: eliminar la -e y añadir -ing</TD><TD>write, come, dance, make</TD><TD>writing, coming, dancing, making</TD></TR>
+<TR><TD>Verbos cortos CVC (consonante-vocal-consonante): doblar la consonante final + -ing</TD><TD>run, sit, swim, cut, hit</TD><TD>running, sitting, swimming, cutting, hitting</TD></TR>
+<TR><TD>Verbos que terminan en -ie: cambiar -ie por -y + -ing</TD><TD>lie, die, tie</TD><TD>lying, dying, tying</TD></TR>
+<TR><TD>Verbos que terminan en -l (en inglés británico, se dobla la l)</TD><TD>travel, cancel</TD><TD>travelling, cancelling (UK) / traveling, canceling (US)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Trampa frecuente en exámenes:</B> La regla CVC (doblar consonante) solo aplica cuando la última sílaba es <B>tónica (acentuada)</B> y termina en consonante simple precedida de una sola vocal. Por eso:<BR>
+✓ <I>run → runn<B>ing</B></I> (una sílaba, CVC) → se dobla.<BR>
+✓ <I>begin → beginn<B>ing</B></I> (última sílaba tónica: be-<B>GIN</B>, CVC) → se dobla.<BR>
+✗ <I>open → open<B>ing</B></I> (última sílaba NO tónica: <B>O</B>-pen) → NO se dobla.</DIV>
+
+<!-- 3. AFIRMATIVA -->
+<H3>3. Estructura AFIRMATIVA</H3>
+La oración afirmativa del Past Progressive sigue un orden fijo y predecible. Ten en cuenta que <B>was</B> se usa con sujetos singulares (I, he, she, it y cualquier sustantivo singular), mientras que <B>were</B> se usa con sujetos plurales y con you.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>Was / Were</TH><TH>Verbo + -ing</TH><TH>Ejemplo completo</TH><TH>Traducción</TH></TR>
+<TR><TD>I</TD><TD><B>was</B></TD><TD>reading</TD><TD><I>I was reading a novel.</I></TD><TD>Yo estaba leyendo una novela.</TD></TR>
+<TR><TD>You</TD><TD><B>were</B></TD><TD>working</TD><TD><I>You were working all night.</I></TD><TD>Tú estabas trabajando toda la noche.</TD></TR>
+<TR><TD>He / She / It</TD><TD><B>was</B></TD><TD>sleeping</TD><TD><I>She was sleeping at noon.</I></TD><TD>Ella estaba durmiendo al mediodía.</TD></TR>
+<TR><TD>We</TD><TD><B>were</B></TD><TD>playing</TD><TD><I>We were playing soccer.</I></TD><TD>Nosotros estábamos jugando fútbol.</TD></TR>
+<TR><TD>They</TD><TD><B>were</B></TD><TD>studying</TD><TD><I>They were studying for the exam.</I></TD><TD>Ellos estaban estudiando para el examen.</TD></TR>
+<TR><TD>The dog / It</TD><TD><B>was</B></TD><TD>running</TD><TD><I>The dog was running in the park.</I></TD><TD>El perro estaba corriendo en el parque.</TD></TR>
+<TR><TD>The students</TD><TD><B>were</B></TD><TD>writing</TD><TD><I>The students were writing their essays.</I></TD><TD>Los estudiantes estaban escribiendo sus ensayos.</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 4. NEGATIVA -->
+<H3>4. Estructura NEGATIVA</H3>
+Para negar en Past Progressive, simplemente se añade <B>not</B> entre el auxiliar (was/were) y el gerundio. Existen formas completas y contraídas, ambas igualmente válidas y frecuentes en exámenes.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Forma completa</TH><TH>Forma contraída</TH><TH>Ejemplo</TH><TH>Traducción</TH></TR>
+<TR><TD>was not + -ing</TD><TD><B>wasn't</B> + -ing</TD><TD><I>I wasn't listening to you.</I></TD><TD>Yo no te estaba escuchando.</TD></TR>
+<TR><TD>were not + -ing</TD><TD><B>weren't</B> + -ing</TD><TD><I>They weren't sleeping.</I></TD><TD>Ellos no estaban durmiendo.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Más ejemplos:</B><BR>
+&bull; <I>He <B>was not</B> paying attention during the lecture.</I> (formal/escrito)<BR>
+&bull; <I>He <B>wasn't</B> paying attention during the lecture.</I> (más natural)<BR>
+&bull; <I>We <B>were not</B> expecting that result.</I><BR>
+&bull; <I>She <B>wasn't</B> wearing her uniform.</I>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Error muy común:</B> Nunca se usa <B>did not / didn't</B> para negar en Past Progressive. El auxiliar <I>did</I> solo se emplea con el Past Simple de verbos ordinarios, nunca con to be ni con tiempos continuos.<BR>
+✗ <I>"She didn't was studying."</I> &nbsp;&nbsp;&nbsp; ✓ <I>"She wasn't studying."</I><BR>
+✗ <I>"They didn't were working."</I> &nbsp;&nbsp;&nbsp; ✓ <I>"They weren't working."</I></DIV>
+
+<!-- 5. INTERROGATIVA -->
+<H3>5. Estructura INTERROGATIVA</H3>
+En preguntas, el auxiliar (was/were) se invierte y se coloca antes del sujeto, exactamente igual que en el Past Simple del verbo to be. El gerundio permanece después del sujeto.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Was / Were</TH><TH>Sujeto</TH><TH>Verbo + -ing</TH><TH>Ejemplo</TH><TH>Respuesta corta</TH></TR>
+<TR><TD><B>Was</B></TD><TD>I</TD><TD>dreaming?</TD><TD><I>Was I talking in my sleep?</I></TD><TD>Yes, you were. / No, you weren't.</TD></TR>
+<TR><TD><B>Were</B></TD><TD>you</TD><TD>listening?</TD><TD><I>Were you listening to the teacher?</I></TD><TD>Yes, I was. / No, I wasn't.</TD></TR>
+<TR><TD><B>Was</B></TD><TD>she / he / it</TD><TD>crying?</TD><TD><I>Was she crying?</I></TD><TD>Yes, she was. / No, she wasn't.</TD></TR>
+<TR><TD><B>Were</B></TD><TD>we</TD><TD>going?</TD><TD><I>Were we going in the right direction?</I></TD><TD>Yes, you were. / No, you weren't.</TD></TR>
+<TR><TD><B>Were</B></TD><TD>they</TD><TD>working?</TD><TD><I>Were they working overtime?</I></TD><TD>Yes, they were. / No, they weren't.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Orden obligatorio en las preguntas:</B> El gerundio (-ing) <B>nunca</B> se separa del resto de la frase verbal. La estructura correcta es siempre: Was/Were + sujeto + verbo-ing (+ complemento)?<BR>
+✓ <I>"Was she <B>reading</B> a book?"</I><BR>
+✗ <I>"Was <B>reading</B> she a book?"</I> — el gerundio no puede "saltar" el sujeto.</DIV>
+
+<!-- 6. WH QUESTIONS -->
+<H3>6. Preguntas con Question Words (Wh- questions)</H3>
+Cuando se necesita información específica y no solo una respuesta de sí o no, la palabra interrogativa precede a was/were, y se mantiene la inversión sujeto-verbo. La estructura completa es:
+
+<DIV CLASS="ej" style="text-align:center;font-size:17px;"><B>Wh- word + was/were + sujeto + verbo-ing + complemento?</B></DIV>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Question word</TH><TH>Significado</TH><TH>Ejemplo</TH><TH>Posible respuesta</TH></TR>
+<TR><TD><B>What</B></TD><TD>Qué</TD><TD><I>What were you doing at 9 p.m.?</I></TD><TD>I was watching a documentary.</TD></TR>
+<TR><TD><B>Where</B></TD><TD>Dónde</TD><TD><I>Where was she living in 2019?</I></TD><TD>She was living in Arequipa.</TD></TR>
+<TR><TD><B>Why</B></TD><TD>Por qué</TD><TD><I>Why were they arguing?</I></TD><TD>They were arguing about the project.</TD></TR>
+<TR><TD><B>Who</B></TD><TD>Quién</TD><TD><I>Who was driving the car?</I></TD><TD>My uncle was driving it.</TD></TR>
+<TR><TD><B>How</B></TD><TD>Cómo</TD><TD><I>How was the team performing?</I></TD><TD>They were performing very well.</TD></TR>
+<TR><TD><B>When</B></TD><TD>Cuándo</TD><TD><I>When were you feeling sick?</I></TD><TD>I was feeling sick yesterday morning.</TD></TR>
+<TR><TD><B>How long</B></TD><TD>Cuánto tiempo</TD><TD><I>How long were you waiting?</I></TD><TD>I was waiting for two hours.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Caso especial — Who como sujeto:</B> Cuando <B>who</B> es el sujeto de la pregunta (es decir, preguntamos por quién realiza la acción), NO hay inversión sujeto-verbo y el verbo siempre va en singular:<BR>
+✓ <I>"Who was knocking at the door?"</I> (Who = sujeto, 3ª persona singular → was)<BR>
+✓ <I>"Who was singing?"</I><BR>
+Solo hay inversión cuando who es objeto: <I>"Who were you talking to?"</I> (= A quién le hablabas, el sujeto real es "you")</DIV>
+
+<!-- 7. USOS -->
+<H3>7. Los cuatro usos principales del Past Progressive</H3>
+
+<H4>USO 1 — Acción en desarrollo en un momento específico del pasado</H4>
+Se describe lo que estaba ocurriendo en un punto concreto del tiempo pasado, generalmente señalado por una expresión temporal.
+<DIV CLASS="ej">
+&bull; <I>At 7 o'clock yesterday, I <B>was having</B> dinner.</I> (A las 7 en punto, yo estaba cenando.)<BR>
+&bull; <I>This time last year, she <B>was preparing</B> for her university entrance exam.</I><BR>
+&bull; <I>At midnight, the students <B>were still working</B> on their project.</I>
+</DIV>
+
+<H4>USO 2 — Dos o más acciones en progreso simultáneamente</H4>
+Cuando varias acciones ocurrían al mismo tiempo en el pasado, se usa Past Progressive para todas ellas, generalmente unidas por <B>while</B> (mientras).
+<DIV CLASS="ej">
+&bull; <I>While she <B>was cooking</B>, he <B>was setting</B> the table.</I><BR>
+&bull; <I>Some students <B>were reading</B> while others <B>were taking notes</B>.</I><BR>
+&bull; <I>I <B>was watching</B> TV while my sister <B>was doing</B> her homework.</I>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>While vs. When:</B> <B>While</B> introduce típicamente acciones largas o en progreso (Past Progressive). <B>When</B> puede ir con ambos tiempos verbales, pero en el Tema 16 exploraremos a fondo sus combinaciones. Por ahora, recuerda que <I>while + Past Progressive</I> siempre es correcto para acciones simultáneas.</DIV>
+
+<H4>USO 3 — Describir la "atmósfera" o el escenario de una narración</H4>
+En textos narrativos y literarios, el Past Progressive establece el contexto o escenario de fondo sobre el cual ocurren los eventos principales. Es el tiempo del "telón de fondo" de la historia.
+<DIV CLASS="ej">
+&bull; <I>The sun <B>was setting</B>, the birds <B>were singing</B>, and a light breeze <B>was blowing</B> through the trees. Suddenly, a car stopped in front of the house.</I><BR>
+&bull; <I>The children <B>were playing</B> in the yard when the storm began.</I>
+</DIV>
+
+<H4>USO 4 — Acciones habituales en el pasado que causaban irritación o énfasis (con "always", "constantly", "forever")</H4>
+Cuando el Past Progressive se combina con adverbios de frecuencia como <B>always, constantly, forever, continually</B>, expresa una acción pasada que se repetía frecuentemente y que generalmente causaba cierta molestia, irritación o sorpresa en quien lo cuenta. Este uso es especialmente frecuente en textos de nivel avanzado.
+<DIV CLASS="ej">
+&bull; <I>He <B>was always losing</B> his keys.</I> (Siempre estaba perdiendo sus llaves — expresa frustración)<BR>
+&bull; <I>She <B>was constantly interrupting</B> me during the meeting.</I><BR>
+&bull; <I>They <B>were forever complaining</B> about the weather.</I>
+</DIV>
+<DIV CLASS="alerta">⚠️ <B>Distinción importante:</B> <I>"He always lost his keys"</I> (Past Simple) es una descripción neutral de un hábito. <I>"He was always losing his keys"</I> (Past Progressive) transmite además una carga emocional de irritación o exasperación. Esta distinción aparece en preguntas de comprensión y análisis de registro en exámenes universitarios.</DIV>
+
+<!-- 8. SIGNAL WORDS -->
+<H3>8. Signal Words (Palabras clave que acompañan al Past Progressive)</H3>
+Las <B>signal words</B> o palabras señal son expresiones temporales que, por su significado, se asocian fuertemente con el Past Progressive. Reconocerlas en un ejercicio es clave para elegir el tiempo verbal correcto.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Signal Word</TH><TH>Significado</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>at that moment</B></TD><TD>en ese momento</TD><TD><I>At that moment, he <B>was signing</B> the contract.</I></TD></TR>
+<TR><TD><B>at + hora exacta</B></TD><TD>a las (hora) en punto</TD><TD><I>At 3 p.m., they <B>were having</B> a meeting.</I></TD></TR>
+<TR><TD><B>this time yesterday / last week</B></TD><TD>a esta hora ayer / la semana pasada</TD><TD><I>This time yesterday, I <B>was flying</B> to Lima.</I></TD></TR>
+<TR><TD><B>while</B></TD><TD>mientras (acción paralela)</TD><TD><I>While you <B>were sleeping</B>, I made breakfast.</I></TD></TR>
+<TR><TD><B>all day / all night / all morning</B></TD><TD>todo el día / toda la noche / toda la mañana</TD><TD><I>She <B>was studying</B> all night.</I></TD></TR>
+<TR><TD><B>from ... to ...</B></TD><TD>de... a... (período de tiempo)</TD><TD><I>He <B>was working</B> from 6 a.m. to midnight.</I></TD></TR>
+<TR><TD><B>still</B></TD><TD>todavía (en ese momento pasado)</TD><TD><I>At 11 p.m., they <B>were still</B> arguing.</I></TD></TR>
+<TR><TD><B>as</B></TD><TD>mientras / a medida que</TD><TD><I>As I <B>was leaving</B>, the phone rang.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 9. VERBOS NO CONTINUOS -->
+<H3>9. Verbos que NO se usan en forma continua (Stative Verbs)</H3>
+Recuerda que hay <B>ciertos verbos no se pueden usar en ningún tiempo continuo</B>, incluyendo el Past Progressive. Estos verbos se llaman <B>stative verbs</B> (verbos de estado) porque describen estados o condiciones, no acciones dinámicas en progreso.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Categoría</TH><TH>Verbos</TH><TH>Forma correcta (Past Simple)</TH></TR>
+<TR><TD><B>Percepción mental / conocimiento</B></TD><TD>know, believe, understand, remember, forget, realize, think (= creer)</TD><TD><I>She <B>knew</B> the answer.</I> ✗ <I>She was knowing...</I></TD></TR>
+<TR><TD><B>Emociones y estados</B></TD><TD>love, hate, like, prefer, want, need, wish</TD><TD><I>They <B>wanted</B> to leave.</I> ✗ <I>They were wanting...</I></TD></TR>
+<TR><TD><B>Posesión</B></TD><TD>have (= tener/poseer), own, belong, possess</TD><TD><I>He <B>had</B> a new car.</I> ✗ <I>He was having a new car.</I></TD></TR>
+<TR><TD><B>Percepción sensorial involuntaria</B></TD><TD>see (= ver involuntariamente), hear, smell, taste, feel (= sentir)</TD><TD><I>I <B>heard</B> a noise.</I> ✗ <I>I was hearing a noise.</I></TD></TR>
+<TR><TD><B>Existencia / relación</B></TD><TD>be, seem, appear, contain, consist</TD><TD><I>The box <B>contained</B> old letters.</I> ✗ <I>The box was containing...</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Excepción importante — verbos con doble significado:</B> Algunos verbos pueden ser dinámicos o estativos según el contexto, y <B>solo admiten la forma continua cuando son dinámicos</B>:<BR>
+&bull; <B>have:</B> <I>"She <B>was having</B> breakfast."</I> ✓ (tener = comer; acción dinámica) vs. <I>"She had a car."</I> ✓ (poseer; estativo)<BR>
+&bull; <B>think:</B> <I>"He <B>was thinking</B> about the problem."</I> ✓ (proceso activo de pensar) vs. <I>"He thought the answer was wrong."</I> ✓ (creer; estativo)<BR>
+&bull; <B>see:</B> <I>"I <B>was seeing</B> a therapist."</I> ✓ (visitar; acción dinámica) vs. <I>"I saw a star."</I> ✓ (percepción involuntaria; estativo)</DIV>
+
+<!-- 10. ERRORES COMUNES -->
+<H3>10. Errores comunes y trampas en un examen:</H3>
+<UL>
+<LI><B>Omitir el auxiliar was/were:</B><BR>
+<SPAN CLASS="ej">✗ <I>"She studying at that moment."</I> &nbsp;&nbsp; ✓ <I>"She <B>was</B> studying at that moment."</I></SPAN></LI>
+
+<LI><B>Usar el verbo base en lugar del gerundio:</B><BR>
+<SPAN CLASS="ej">✗ <I>"They were study all night."</I> &nbsp;&nbsp; ✓ <I>"They were study<B>ing</B> all night."</I></SPAN></LI>
+
+<LI><B>Olvidar doblar la consonante en el gerundio (regla CVC):</B><BR>
+<SPAN CLASS="ej">✗ <I>"He was runing down the street."</I> &nbsp;&nbsp; ✓ <I>"He was ru<B>nn</B>ing down the street."</I></SPAN></LI>
+
+<LI><B>Usar "didn't" para negar en Past Progressive:</B><BR>
+<SPAN CLASS="ej">✗ <I>"I didn't working yesterday."</I> &nbsp;&nbsp; ✓ <I>"I <B>wasn't</B> working yesterday."</I></SPAN></LI>
+
+<LI><B>Confundir was/were (error de concordancia):</B><BR>
+<SPAN CLASS="ej">✗ <I>"They was sleeping."</I> &nbsp;&nbsp; ✓ <I>"They <B>were</B> sleeping."</I><BR>
+✗ <I>"You was waiting."</I> &nbsp;&nbsp; ✓ <I>"You <B>were</B> waiting."</I></SPAN></LI>
+
+<LI><B>Usar un stative verb en forma continua:</B><BR>
+<SPAN CLASS="ej">✗ <I>"I was knowing the answer."</I> &nbsp;&nbsp; ✓ <I>"I <B>knew</B> the answer."</I></SPAN></LI>
+
+<LI><B>Omitir la inversión en preguntas:</B><BR>
+<SPAN CLASS="ej">✗ <I>"What she was doing?"</I> &nbsp;&nbsp; ✓ <I>"What <B>was she</B> doing?"</I></SPAN></LI>
+
+<LI><B>Confundir while con when en usos muy específicos:</B><BR>
+<SPAN class="ej">Nota: Ambos pueden introducir Past Progressive, pero sus matices y combinaciones con Past Simple se desarrollan en el Tema 16. Por ahora: <B>while + Past Progressive = acción en progreso paralela.</B></SPAN></LI>
+</UL>
+
+<!-- 11. RESUMEN VISUAL -->
+<H3>11. Resumen visual: las tres formas con todos los pronombres</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>Afirmativa</TH><TH>Negativa</TH><TH>Interrogativa</TH></TR>
+<TR><TD>I</TD><TD>I <B>was working</B>.</TD><TD>I <B>wasn't working</B>.</TD><TD><B>Was</B> I working?</TD></TR>
+<TR><TD>You</TD><TD>You <B>were working</B>.</TD><TD>You <B>weren't working</B>.</TD><TD><B>Were</B> you working?</TD></TR>
+<TR><TD>He</TD><TD>He <B>was working</B>.</TD><TD>He <B>wasn't working</B>.</TD><TD><B>Was</B> he working?</TD></TR>
+<TR><TD>She</TD><TD>She <B>was working</B>.</TD><TD>She <B>wasn't working</B>.</TD><TD><B>Was</B> she working?</TD></TR>
+<TR><TD>It</TD><TD>It <B>was working</B>.</TD><TD>It <B>wasn't working</B>.</TD><TD><B>Was</B> it working?</TD></TR>
+<TR><TD>We</TD><TD>We <B>were working</B>.</TD><TD>We <B>weren't working</B>.</TD><TD><B>Were</B> we working?</TD></TR>
+<TR><TD>They</TD><TD>They <B>were working</B>.</TD><TD>They <B>weren't working</B>.</TD><TD><B>Were</B> they working?</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">was + -ing</DIV><DIV class="dk-label">I / He / She / It / singular</DIV></DIV>
+<DIV CLASS="dk"><DIV class="dk-num">were + -ing</DIV><DIV class="dk-label">You / We / They / plural</DIV></DIV>
+<DIV class="dk"><DIV class="dk-num">wasn't</DIV><DIV class="dk-label">Negativa singular</DIV></DIV>
+<DIV class="dk"><DIV class="dk-num">weren't</DIV><DIV class="dk-label">Negativa plural/you</DIV></DIV>
+<DIV class="dk"><DIV class="dk-num">sin "did"</DIV><DIV class="dk-label">Nunca se usa did con Past Progressive</DIV></DIV>
+<DIV class="dk"><DIV class="dk-num">stative verbs</DIV><DIV class="dk-label">know, love, have (poseer)... NO admiten -ing</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- EJERCICIOS -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BASICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Choose the correct form: <SPAN CLASS="eng">"She ___ a book when the lights went out."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) reads</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) was reading</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) were reading</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) is reading</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) was reading</B><BR>El sujeto <B>she</B> es singular → el auxiliar correcto es <B>was</B>. El verbo debe estar en gerundio (<B>reading</B>) para formar el Past Progressive. La opción c) "were reading" es incorrecta porque "were" se usa con sujetos plurales o "you", no con "she". Las opciones a) y d) están en presente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Choose the correct form: <SPAN CLASS="eng">"The children ___ in the garden all afternoon."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) was playing</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) is playing</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) were playing</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) are playing</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) were playing</B><BR><B>The children</B> es un sujeto plural → auxiliar <B>were</B>. La expresión "all afternoon" es una signal word del Past Progressive que indica una acción en desarrollo durante un período de tiempo en el pasado. Las opciones b) y d) están en presente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Cuál es la forma negativa correcta de <SPAN CLASS="eng">"I was listening to music"</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) I wasn't listening to music.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) I weren't listening to music.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) I didn't listening to music.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) I not was listening to music.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) I wasn't listening to music.</B><BR>El sujeto <B>I</B> usa <B>was</B>, y su negación contraída es <B>wasn't</B>. La opción b) usa "weren't", que pertenece a sujetos plurales o "you". La opción c) añade "did" incorrectamente (nunca con Past Progressive). La opción d) tiene un orden gramaticalmente inválido.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál es la forma interrogativa correcta de <SPAN CLASS="eng">"You were studying last night"</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Did you studying last night?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Were you studying last night?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Was you studying last night?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) You were studying last night?</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Were you studying last night?</B><BR>"You" siempre usa <B>were</B>, nunca "was" (elimina c). Para preguntar, el auxiliar se invierte antes del sujeto (elimina d). Nunca se usa "did" con Past Progressive (elimina a). La estructura correcta es: Were + you + verbo-ing.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Cuál es la forma correcta del gerundio del verbo <SPAN CLASS="eng">"run"</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) runing</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) running</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) runeing</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) runs</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) running</B><BR>"Run" es un verbo CVC (consonante-vocal-consonante): r-u-n. Al ser una sola sílaba y terminar en CVC, la consonante final se <B>dobla</B> antes de añadir -ing: run → ru<B>nn</B>ing. La opción a) solo añade -ing sin doblar (error ortográfico muy frecuente). La opción c) también es incorrecta. La d) es el presente simple, no un gerundio.</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Choose the correct option to complete the sentence: <SPAN CLASS="eng">"At 10 o'clock last night, my parents ___ and my sister ___ her homework."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) were sleeping / was doing</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) was sleeping / were doing</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) slept / did</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) were sleeping / were doing</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) were sleeping / was doing</B><BR>La señal temporal <I>"At 10 o'clock last night"</I> indica un punto exacto en el pasado → Past Progressive. <B>"My parents"</B> es plural → <B>were sleeping</B>. <B>"My sister"</B> es singular → <B>was doing</B>. La opción b) invierte la concordancia. La opción c) usa Past Simple (no indica acción en progreso). La opción d) aplica "were" a un sujeto singular incorrectamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Identifica la oración con el gerundio INCORRECTAMENTE formado:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) She was writing a letter to her friend.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) He was begining his presentation nervously.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) They were travelling across South America.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) The baby was sleeping quietly in its crib.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Begin" termina en CVC con la última sílaba tónica (be-<B>GIN</B>), por lo que la consonante final debe doblarse: begin → beginn<B>ing</B>, no "begining". La forma correcta es: <I>"He was <B>beginning</B> his presentation."</I> Las demás opciones son correctas: "write" → writing (se elimina la -e muda); "travel" → travelling (UK standard); "sleep" → sleeping (caso general).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Cuál es la pregunta Wh- correctamente formulada para la respuesta: <SPAN CLASS="eng">"They were rehearsing the school play."</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) What they were doing?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) What were they doing?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) What did they were doing?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) What was they doing?</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) What were they doing?</B><BR>La estructura correcta es: Wh-word + auxiliar + sujeto + verbo-ing. "They" es plural → <B>were</B>. La opción a) omite la inversión del auxiliar. La opción c) añade "did" incorrectamente. La opción d) usa "was" con un sujeto plural, lo cual es un error de concordancia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cuál oración contiene un STATIVE VERB usado incorrectamente en forma continua?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) She was cooking dinner for the whole family.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) The engineers were designing a new bridge.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) He was knowing all the answers to the test.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) We were waiting for the results to be announced.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>"Know" es un <B>stative verb</B> (verbo de estado cognitivo/mental) y <B>nunca puede usarse en tiempos continuos</B>. La forma correcta es: <I>"He <B>knew</B> all the answers to the test."</I> (Past Simple). Las demás oraciones usan verbos dinámicos (cook, design, wait) que sí admiten la forma continua perfectamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Cuál oración expresa correctamente dos acciones simultáneas en el pasado?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) While Maria was singing, Pedro played the guitar.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) While Maria was singing, Pedro was playing the guitar.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) While Maria sang, Pedro was playing the guitar.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Maria and Pedro were singing and played the guitar.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) While Maria was singing, Pedro was playing the guitar.</B><BR>Cuando dos acciones ocurren <B>simultáneamente y en progreso</B> en el pasado, ambas deben estar en Past Progressive. La conjunción <B>while</B> refuerza esta simultaneidad. La opción b) es la única que usa Past Progressive en las dos cláusulas. Las opciones a) y c) mezclan Past Simple con Past Progressive de forma que implicaría que una acción interrumpe a la otra (uso que se estudia en el Tema 16).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Transforma a la forma negativa: <SPAN CLASS="eng">"The team was performing well during the match."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) The team didn't performing well during the match.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) The team weren't performing well during the match.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) The team wasn't performing well during the match.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) The team not was performing well during the match.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) The team wasn't performing well during the match.</B><BR>"The team" es un sustantivo singular colectivo que concuerda con <B>was</B>, por lo que su negación es <B>wasn't</B>. La opción b) usa "weren't", que correspondería a un sujeto plural. La opción a) usa "didn't" incorrectamente. La opción d) tiene un orden inválido (not debe ir inmediatamente después del auxiliar, no antes).</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Lee el texto y elige la opción que completa correctamente <B>todos</B> los espacios:<BR><SPAN CLASS="eng">"At the time of the blackout, the professor ___ (give) a lecture, the students ___ (take) notes, and the technician ___ (repair) a projector in the back of the room."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) was giving / were taking / was repairing</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) gave / took / repaired</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) was giving / was taking / was repairing</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) were giving / were taking / were repairing</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) was giving / were taking / was repairing</B><BR>"At the time of the blackout" señala un momento específico pasado → todas las acciones estaban en progreso (Past Progressive). La concordancia: <B>"the professor"</B> (singular) → was giving; <B>"the students"</B> (plural) → were taking; <B>"the technician"</B> (singular) → was repairing. La opción c) falla en "the students was" (plural → must be were). La opción d) aplica "were" a sujetos singulares. La opción b) usa Past Simple sin indicar progreso.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Identifica TODOS los errores en el siguiente texto:<BR><SPAN CLASS="eng">"Last Friday at 8 p.m., my family was dinning together. My mother were preparing dessert and my father was set the table. My brothers wasn't helping; they was talking on their phones."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Solo "was set" debe cambiar a "was setting".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) "was dinning" → "was dining"; "were preparing" → "was preparing"; "was set" → "was setting"; "wasn't helping" → "weren't helping"; "they was talking" → "they were talking".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) "was dinning" → "was dining"; "were preparing" → "was preparing"; "was set" → "was setting"; "they was talking" → "they were talking". ("wasn't helping" es correcto.)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El texto es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"was dinning"</B>: "dine" pierde la -e muda → "dining", no "dinning" (dinning = haciendo ruido). Error ortográfico de gerundio.<BR>② <B>"my mother were"</B>: "my mother" es singular → <B>was preparing</B>.<BR>③ <B>"was set"</B>: "set" es el verbo base; en Past Progressive necesita el gerundio → <B>was setting</B>.<BR>④ <B>"My brothers wasn't helping"</B>: "My brothers" es plural → <B>weren't helping</B>.<BR>⑤ <B>"they was talking"</B>: "they" siempre usa <B>were</B> → <B>they were talking</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Traduce con máxima precisión gramatical:<BR><B>"¿Qué estabas haciendo a las 6 de la mañana? Yo estaba durmiendo, pero mi hermano y mi padre ya estaban preparando el desayuno."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) What were you doing at 6 a.m.? I was sleeping, but my brother and my father was already preparing breakfast.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) What was you doing at 6 a.m.? I was sleeping, but my brother and my father were already preparing breakfast.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) What were you doing at 6 a.m.? I was sleeping, but my brother and my father were already preparing breakfast.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) What you were doing at 6 a.m.? I was sleeping, but my brother and my father were already preparing breakfast.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>&bull; <B>"you"</B> → <B>were</B> (no "was" como en b). &bull; La inversión en la pregunta es obligatoria (elimina d). &bull; <B>"my brother and my father"</B> = sujeto compuesto (plural) → <B>were</B> (elimina a, que usa "was"). &bull; <B>"I"</B> → <B>was sleeping</B> ✓. La opción c) aplica correctamente todas las reglas de concordancia y estructura.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Cuál de las siguientes oraciones expresa correctamente el uso del Past Progressive con valor emocional (acción repetida que causaba irritación)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) He always interrupted the class.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) He was always interrupting the class.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) He was interrupting the class once.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) He interrupted the class at that moment.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) He was always interrupting the class.</B><BR>El Past Progressive con adverbios de frecuencia como <B>always, constantly, forever</B> expresa una acción pasada que se repetía frecuentemente y genera una connotación emocional de molestia o exasperación. La opción a) (Past Simple + always) describe un hábito pasado de forma neutral, sin carga emocional. Las opciones c) y d) no expresan acción repetida sino acciones puntuales.</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analiza el siguiente párrafo de comprensión lectora e identifica la opción que describe con mayor precisión el valor funcional del Past Progressive subrayado:<BR><SPAN CLASS="eng">"The city <U>was slowly recovering</U> from the effects of the earthquake. Workers <U>were clearing</U> the rubble, engineers <U>were assessing</U> the structural damage, and volunteers <U>were distributing</U> food and water to affected families."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Las formas en Past Progressive expresan acciones habituales que ocurrían en el pasado lejano.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Las formas en Past Progressive describen el escenario de fondo o atmósfera de la situación, pintando múltiples acciones en progreso simultáneo en un momento pasado específico.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Las formas en Past Progressive indican acciones que interrumpieron otras acciones más largas.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Las formas en Past Progressive expresan acciones que ocurrirán en el futuro según el contexto del texto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Este párrafo ejemplifica el <B>uso descriptivo/narrativo</B> del Past Progressive: se establece el "telón de fondo" de una situación pasada mediante múltiples acciones simultáneas en progreso. No hay una acción principal puntual que sea interrumpida (eso sería la combinación con Past Simple del Tema 16). Tampoco son hábitos lejanos ni acciones futuras. El Past Progressive aquí crea una imagen vívida de la escena completa, con todas sus actividades ocurriendo al mismo tiempo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Identifica la opción que corrige TODOS los errores con la mayor precisión en el siguiente texto académico:<BR><SPAN CLASS="eng">"During the investigation, the researchers was collecting data from three different sites. The lead scientist were analyzing the results, and two assistants was setting up new equipment. None of the team members were knowing about the unexpected finding yet."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Solo "the researchers was" debe cambiar a "the researchers were".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "researchers was" → "researchers were"; "scientist were" → "scientist was"; "assistants was" → "assistants were"; "were knowing" → "knew" (stative verb).</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "researchers was" → "researchers were"; "scientist were" → "scientist was"; "assistants was" → "assistants were"; "were knowing" → "were knowing" (sin cambio).</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El texto tiene un solo error: "were knowing" debe cambiar a "knew".</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"researchers was"</B> → <B>"researchers were"</B>: plural.<BR>② <B>"The lead scientist were"</B> → <B>"The lead scientist was"</B>: singular ("the lead scientist" = una persona concreta).<BR>③ <B>"two assistants was"</B> → <B>"two assistants were"</B>: plural.<BR>④ <B>"were knowing"</B> → <B>"knew"</B>: "know" es un stative verb (verbo de estado cognitivo) y NUNCA puede usarse en forma continua, independientemente del tiempo verbal. La forma correcta es el Past Simple: <I>"None of the team members <B>knew</B> about the unexpected finding yet."</I></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Analiza el siguiente diálogo y elige la opción que explica el error en la última línea con mayor precisión lingüística:<BR><SPAN CLASS="eng">A: "Where were you at midnight?"<BR>B: "I was sleeping."<BR>A: "And your roommate?"<BR>B: "She was sleep too, I think."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) No hay error; "was sleep" es una forma correcta e informal del Past Progressive.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) El error está en que B debió usar Past Simple: "She slept too".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El error es que "sleep" en la última oración de B debe estar en gerundio: "She was sleeping too." El Past Progressive requiere obligatoriamente la forma -ing del verbo, nunca el verbo base.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El error es que B debió decir "She were sleeping too" porque el sujeto implícito es plural.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La estructura del Past Progressive es SIEMPRE: was/were + verbo-<B>ing</B>. "Was sleep" usa el verbo base en lugar del gerundio, lo cual hace la oración gramaticalmente incorrecta. La forma correcta es: <I>"She <B>was sleeping</B> too, I think."</I> El error no es de persona ni de tiempo verbal, sino específicamente de la forma no finita requerida (gerundio obligatorio). La opción d) es incorrecta porque "she" es singular y requiere "was", no "were".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Desde la perspectiva de la lingüística funcional, ¿cuál es la diferencia más precisa entre los siguientes dos enunciados?<BR><SPAN CLASS="eng">A: "My neighbor played loud music every night."<BR>B: "My neighbor was always playing loud music every night."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) La oración A está en presente y la oración B está en pasado; no hay otra diferencia.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Ambas oraciones son semánticamente idénticas; solo difieren en la extensión de la oración.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) La oración A describe un hábito pasado de forma neutra y objetiva (Past Simple + frecuencia). La oración B, al usar Past Progressive con "always", añade una carga emocional subjetiva: el hablante expresa irritación, molestia o exasperación ante esa conducta repetida, lo cual convierte la afirmación en evaluativa además de descriptiva.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) La oración B es incorrecta porque no se puede usar "always" con el Past Progressive.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Esta distinción es uno de los puntos de mayor sofisticación del Past Progressive. Ambas oraciones se refieren a un hábito pasado, pero:<BR>• <B>Past Simple + always</B>: descripción factual y neutral. El hablante informa sin juicio emocional explícito.<BR>• <B>Past Progressive + always/constantly/forever</B>: la forma continua con estos adverbios transmite la perspectiva subjetiva del hablante, generalmente de molestia o exasperación. Es un recurso estilístico que aparece en literatura, periodismo y textos argumentativos, y que los examinadores de admisión esperan que el postulante reconozca e interprete correctamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Lee el ensayo y elige la opción que identifica y corrige con máxima precisión <B>todos</B> los errores gramaticales:<BR><SPAN CLASS="eng">"During my childhood years, my family was living in a small town. My grandmother were always telling stories every evening while my grandfather was seat in his armchair. We was listening carefully, and no one were wanting to miss a single word. It was a time full of magic."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo "my grandmother were" y "We was" deben corregirse.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "grandmother were" → "grandmother was"; "grandfather was seat" → "grandfather was seated/sitting"; "We was" → "We were"; "no one were wanting" → "no one wanted" (stative verb + concordancia singular).</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) "grandmother were" → "grandmother was"; "We was" → "We were"; "no one were wanting" → "no one was wanting". ("grandfather was seat" está bien.)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El párrafo es completamente correcto; refleja un estilo narrativo personal aceptable.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"my grandmother were"</B> → <B>"my grandmother was"</B>: singular.<BR>② <B>"grandfather was seat"</B>: "seat" es sustantivo/verbo base. Para Past Progressive necesita gerundio → <B>"was sitting"</B>, o se puede interpretar como descripción de posición con adjetivo participial → <B>"was seated"</B>. En cualquier caso, "was seat" es agramatical.<BR>③ <B>"We was"</B> → <B>"We were"</B>: "we" siempre usa "were".<BR>④ <B>"no one were wanting"</B>: dos errores. "No one" es gramaticalmente singular (similar a "nobody") → auxiliar <B>was</B>, no "were". Además, "want" es un <B>stative verb</B> (deseo/voluntad) y no puede usarse en forma continua → la forma correcta es <B>"no one wanted"</B> (Past Simple).</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

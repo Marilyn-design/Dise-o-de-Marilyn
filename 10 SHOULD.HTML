@@ -1,0 +1,496 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Should - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 10 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Should</H1>
+<DIV CLASS="sub">Consejo y recomendación &middot; Should/ Shouldn't&middot; Subjuntivo mandativo &middot; Inversión condicional &middot; Had better</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- SECCIÓN 1: CONCEPTO Y ESTRUCTURA BÁSICA -->
+<H3 ID="concepto">1. ¿Qué es "Should"? Concepto y Estructura Básica</H3>
+
+<B>Should</B> es un verbo modal que expresa <B>consejo, recomendación u opinión sobre lo correcto/conveniente</B>. Equivale al español <I>deberías / debería</I>. Como todo modal, es invariable: nunca añade -s, nunca lleva "to" y siempre va seguido de un verbo en forma base.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Forma</TH><TH>Estructura</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Afirmativa</TD><TD>sujeto + <B>should</B> + verbo base</TD><TD><SPAN CLASS="eng">You should see a doctor.</SPAN></TD></TR>
+<TR><TD>Negativa</TD><TD>sujeto + <B>shouldn't</B> (should not) + verbo base</TD><TD><SPAN CLASS="eng">You shouldn't skip breakfast.</SPAN></TD></TR>
+<TR><TD>Interrogativa</TD><TD><B>Should</B> + sujeto + verbo base?</TD><TD><SPAN CLASS="eng">Should I call her now?</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Nunca lleva "to" ni cambia de forma:</B> <I>"You should to study"</I> y <I>"He shoulds study"</I> son INCORRECTOS. La forma correcta es siempre <B>should + verbo base</B>, sin importar el sujeto: <B>"He should study."</B></DIV>
+
+<!-- SECCIÓN 2: FORMA NEGATIVA E INTERROGATIVA -->
+<H3 ID="negativa">2. Should en Contexto: Opinión, Consejo y Sugerencia</H3>
+
+"Should" se usa para dar consejos, hacer recomendaciones o expresar lo que el hablante considera correcto, sin la fuerza de una obligación impuesta.
+
+<DIV CLASS="ej">📌 <SPAN CLASS="eng">"You look tired. You should rest." / "I think we should leave now." / "Should we invite her to the party?"</SPAN></DIV>
+
+<H4>Should con verbos de opinión y pensamiento:</H4>
+<UL>
+<LI>"I think you should..." — <SPAN CLASS="eng">I think you should apologize.</SPAN></LI>
+<LI>"Don't you think...?" — <SPAN CLASS="eng">Don't you think she should know the truth?</SPAN></LI>
+<LI>"In my opinion, ... should..." — <SPAN CLASS="eng">In my opinion, schools should teach financial literacy.</SPAN></LI>
+</UL>
+
+<!-- SECCIÓN 3: SHOULD VS OUGHT TO VS HAD BETTER -->
+<H3 ID="comparacion">3. Should vs. Ought To vs. Had Better — Grados de Intensidad</H3>
+
+Aunque los tres expresan recomendación, varían en formalidad y en la fuerza/urgencia del consejo.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Expresión</TH><TH>Matiz</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>should</B></TD><TD>consejo general, neutro, el más usado</TD><TD><SPAN CLASS="eng">You should drink more water.</SPAN></TD></TR>
+<TR><TD><B>ought to</B></TD><TD>sinónimo de "should", algo más formal/escrito (conserva "to")</TD><TD><SPAN CLASS="eng">You ought to drink more water.</SPAN></TD></TR>
+<TR><TD><B>had better (+'d better)</B></TD><TD>consejo urgente para una situación específica, con consecuencia negativa implícita si no se sigue</TD><TD><SPAN CLASS="eng">You'd better hurry, or you'll miss the bus.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>"Had better" no se refiere al pasado:</B> a pesar de usar "had", esta expresión se refiere siempre al <B>presente o futuro inmediato</B>, nunca al pasado. Su forma negativa es <B>had better not</B> (no "hadn't better"): <I>"You'd better not be late."</I> Además, en habla informal casi siempre se contrae a <B>'d better</B>: <I>"You'd better go now."</I></DIV>
+
+<!-- SECCIÓN 4: SHOULD HAVE + PARTICIPIO -->
+<H3 ID="shouldhave">4. Should + Have + Participio: Reproche y Arrepentimiento sobre el Pasado</H3>
+
+Para hablar de algo en el <B>pasado</B> que no ocurrió (pero debía haber ocurrido) o que sí ocurrió (pero no debía haber ocurrido), se usa la estructura <B>should/shouldn't + have + past participle</B>.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Estructura</TH><TH>Significado</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>should have + p.p.</B></TD><TD>algo NO se hizo, pero debía haberse hecho (reproche/arrepentimiento)</TD><TD><SPAN CLASS="eng">I should have studied more. (No estudié, y debí hacerlo.)</SPAN></TD></TR>
+<TR><TD><B>shouldn't have + p.p.</B></TD><TD>algo SÍ se hizo, pero no debía haberse hecho</TD><TD><SPAN CLASS="eng">You shouldn't have told her the secret.</SPAN></TD></TR>
+<TR><TD><B>should have been + -ing</B></TD><TD>una acción continua que debía estar ocurriendo y no ocurrió</TD><TD><SPAN CLASS="eng">She should have been studying, not watching TV.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>El modal nunca se conjuga, y nunca es "must of":</B> dentro de esta estructura siempre es <B>have</B>, jamás "has" o "had": <I>"He should has apologized"</I> es INCORRECTO → <B>"He should have apologized."</B> Tampoco se escribe <I>"should of"</I> (confusión fonética muy común en inglés informal/escrito por hablantes nativos, pero siempre incorrecta).</DIV>
+
+<!-- SECCIÓN 5: SHOULD PARA EXPECTATIVA -->
+<H3 ID="expectativa">5. Should para Expresar Expectativa o Probabilidad Lógica</H3>
+
+"Should" también se usa para expresar lo que el hablante <B>espera que sea verdad o que ocurra</B>, basándose en lo lógico o lo normal, sin llegar a la certeza total de "must".
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Modal</TH><TH>Grado de certeza</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>must</B></TD><TD>deducción casi segura, basada en evidencia fuerte</TD><TD><SPAN CLASS="eng">The lights are on; he must be home.</SPAN></TD></TR>
+<TR><TD><B>should</B></TD><TD>expectativa lógica, basada en lo normal/esperado (pero puede fallar)</TD><TD><SPAN CLASS="eng">The package was sent yesterday, so it should arrive today.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">📌 <SPAN CLASS="eng">"The train should arrive at 6 p.m." (lo normal es que llegue a esa hora, aunque podría retrasarse) frente a "The train must be late" (deducción de certeza ante evidencia, por ejemplo, que ya son las 6:30 y no ha llegado).</SPAN></DIV>
+
+<!-- SECCIÓN 6: SUBJUNTIVO MANDATIVO -->
+<H3 ID="subjuntivo">6. El Subjuntivo Mandativo: Should tras Verbos de Sugerencia y Recomendación</H3>
+
+Tras verbos como <B>suggest, recommend, propose, insist, demand</B> seguidos de <I>that</I>, el inglés británico suele usar <B>should + verbo base</B> para suavizar la sugerencia formalmente. Esta construcción se llama <B>subjuntivo mandativo</B>.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Verbo</TH><TH>Estructura</TH><TH>Ejemplo</TH></TR>
+<TR><TD>suggest</TD><TD>suggest that + sujeto + (should) + verbo base</TD><TD><SPAN CLASS="eng">The doctor suggested that she should rest.</SPAN></TD></TR>
+<TR><TD>recommend</TD><TD>recommend that + sujeto + (should) + verbo base</TD><TD><SPAN CLASS="eng">I recommend that he should see a specialist.</SPAN></TD></TR>
+<TR><TD>insist / demand</TD><TD>insist/demand that + sujeto + (should) + verbo base</TD><TD><SPAN CLASS="eng">The manager insisted that the report should be ready by Friday.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Diferencia entre inglés británico y americano:</B> el inglés británico tiende a usar la forma perifrástica con "should" ("I suggest that she should see a doctor"), mientras que el inglés americano prefiere con más frecuencia el <B>subjuntivo directo</B>, omitiendo "should" y dejando el verbo en forma base sin importar la persona ("I suggest that she see a doctor", no "sees"). Ambas formas son gramaticalmente correctas y aceptadas en exámenes formales.</DIV>
+
+<!-- SECCIÓN 7: INVERSIÓN CONDICIONAL -->
+<H3 ID="inversion">7. Should en Estructuras Condicionales Formales (Inversión)</H3>
+
+En un registro <B>formal o escrito</B> (cartas, contratos, instrucciones oficiales), se puede omitir "if" e invertir el orden colocando <B>should</B> al inicio de la oración condicional, en lugar de "if + should".
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Forma estándar</TH><TH>Forma formal con inversión</TH></TR>
+<TR><TD><SPAN CLASS="eng">If you should have any questions, contact us.</SPAN></TD><TD><SPAN CLASS="eng">Should you have any questions, contact us.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="eng">If the product should arrive damaged, return it.</SPAN></TD><TD><SPAN CLASS="eng">Should the product arrive damaged, return it.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Es un registro exclusivamente formal:</B> esta inversión se usa en textos oficiales, contratos o correos formales, y rara vez en el habla cotidiana. Nótese que "should" se coloca al inicio en lugar de "if", pero el resto de la oración mantiene su orden normal: <B>Should</B> + sujeto + verbo base (no "Should have you...").</DIV>
+
+<!-- SECCIÓN 8: OTROS USOS ESPECIALES -->
+<H3 ID="otros-usos">8. Otros Usos Especiales: "In Case" y "I Should Think/Imagine"</H3>
+
+<UL>
+<LI><B>"In case... should":</B> para expresar precaución ante una posibilidad (registro formal). <BR><SPAN CLASS="eng">Ejemplo: Take an umbrella in case it should rain.</SPAN></LI>
+<LI><B>"I should think / I should imagine / I should say":</B> expresión fija para dar una opinión tentativa, equivalente a "I think" pero más suave y educado. <BR><SPAN CLASS="eng">Ejemplo: I should think it will take about two hours.</SPAN></LI>
+<LI><B>"Why should...?":</B> para expresar sorpresa, molestia o cuestionar la razón de algo. <BR><SPAN CLASS="eng">Ejemplo: Why should I apologize? I didn't do anything wrong.</SPAN></LI>
+</UL>
+
+<!-- SECCIÓN 9: SHOULD VS MUST -->
+<H3 ID="should-must">9. Should vs. Must — Diferencia de Fuerza e Implicación</H3>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Modal</TH><TH>Fuerza</TH><TH>Implicación si no se cumple</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>should</B></TD><TD>consejo/recomendación</TD><TD>ninguna consecuencia obligatoria; es una sugerencia</TD><TD><SPAN CLASS="eng">You should arrive early.</SPAN></TD></TR>
+<TR><TD><B>must</B></TD><TD>obligación fuerte</TD><TD>se espera cumplimiento; puede haber consecuencias</TD><TD><SPAN CLASS="eng">You must arrive on time, or you'll be marked absent.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<!-- SECCIÓN 10: ERRORES COMUNES -->
+<H3 ID="errores">10. Errores Comunes con Should</H3>
+
+<UL>
+<LI><B>Añadir "to" tras should:</B> <I>"You should to study"</I> → <B>"You should study"</B>.</LI>
+<LI><B>Conjugar should o el verbo principal:</B> <I>"He shoulds study"</I> / <I>"He should studies"</I> → <B>"He should study"</B> (forma fija + verbo base, siempre).</LI>
+<LI><B>Confundir "should have" con "should of":</B> <I>"You should of told me"</I> → <B>"You should have told me."</B></LI>
+<LI><B>Omitir el participio en "should have":</B> <I>"She should have call"</I> → <B>"She should have called."</B> (se necesita el participio pasado, no la forma base).</LI>
+<LI><B>"Hadn't better" en vez de "had better not":</B> <I>"You hadn't better be late"</I> → <B>"You'd better not be late."</B></LI>
+<LI><B>Doble negación con "shouldn't have not":</B> <I>"We shouldn't have not warned them"</I> es agramatical y confuso → según el sentido que se quiera expresar, lo correcto es <B>"We should have warned them"</B> (reproche por no haberlo hecho).</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">should</DIV><DIV CLASS="dk-label">Consejo y<BR>recomendación</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">had better</DIV><DIV CLASS="dk-label">Consejo urgente<BR>con consecuencia</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">should have+p.p.</DIV><DIV CLASS="dk-label">Reproche sobre<BR>el pasado</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Should + sujeto</DIV><DIV CLASS="dk-label">Inversión<BR>condicional formal</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- =================== EJERCICIOS =================== -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de práctica</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; Reconocimiento y uso directo</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Completa: <SPAN CLASS="eng">"You _____ see a doctor; you look very pale."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) should</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) shouldn't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) must</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) can</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) should</B><BR>"Should" expresa un consejo apropiado para la situación descrita (verse pálido). "Shouldn't" tendría sentido contrario; "must" sería una obligación demasiado fuerte para un simple consejo, y "can" expresaría capacidad o permiso, no recomendación.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Completa con la forma negativa correcta: <SPAN CLASS="eng">"She _____ stay up so late; she has an exam tomorrow."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) shouldn't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) not should</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) doesn't should</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) should not has</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) shouldn't</B><BR>La forma negativa se construye con <B>should + not</B>, contraído como <B>shouldn't</B>, colocado antes del verbo base. "Doesn't should" es incorrecto porque los modales no usan auxiliares como "does"; las opciones b y d no son estructuras válidas en inglés.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Selecciona la pregunta correctamente formada:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) "Should I call her?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) "Do I should call her?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) "Should I to call her?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) "I should call her?"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Las preguntas con "should" se forman invirtiendo el modal y el sujeto, sin usar "do" (opción b es incorrecta por combinar dos auxiliares) y sin "to" antes del verbo principal (opción c). La opción d no invierte el orden, por lo que no es una pregunta correctamente formada gramaticalmente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Completa: <SPAN CLASS="eng">"He should _____ more careful next time."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) be</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) is</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) to be</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) being</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) be</B><BR>Tras "should", el verbo va siempre en <B>forma base</B>: sin conjugar (opción b), sin "to" (opción c) y sin -ing (opción d). "He should be careful" es la única forma gramaticalmente correcta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Completa según el contexto: <SPAN CLASS="eng">"It's raining outside. You _____ take an umbrella."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) should</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) shouldn't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) must not</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) can't</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) should</B><BR>Llevar un paraguas es lo recomendable cuando está lloviendo → corresponde el consejo afirmativo <B>should</B>. Las demás opciones expresan sentido contrario o no encajan con el contexto de recomendación positiva.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Elige la oración equivalente en significado a <SPAN CLASS="eng">"You should apologize."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) "You ought to apologize."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) "You ought apologize."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) "You ought apologizing."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) "You oughtn't apologize."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>"Ought to" es sinónimo de "should", pero a diferencia de este, SIEMPRE conserva el "to": <B>ought to + verbo base</B>. La opción b omite el "to" obligatorio; la c usa gerundio en vez de forma base; la d ("oughtn't") invierte el significado a forma negativa, lo cual no equivale a la oración original afirmativa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> "I missed the bus this morning." Elige la oración que expresa correctamente arrepentimiento sobre esta situación pasada:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) "I should have left earlier."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) "I should leave earlier."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) "I should has left earlier."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) "I should left earlier."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Para expresar arrepentimiento sobre el pasado se usa <B>should have + participio</B>: <B>"I should have left earlier"</B> (no salí antes, y debí hacerlo). La opción b se refiere al presente/futuro, no al pasado; la opción c conjuga incorrectamente "have" como "has" (el modal nunca se conjuga); la opción d omite "have", dejando la estructura incompleta.</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; Aplicación y transformación</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Completa con la expresión de mayor urgencia y consecuencia implícita: <SPAN CLASS="eng">"Hurry up! We _____ go now, or we'll miss the flight."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) should</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) had better</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) ought</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) might</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) had better</B><BR>La oración indica una consecuencia negativa explícita e inmediata ("or we'll miss the flight"), lo cual corresponde al matiz urgente de <B>had better</B>, más fuerte que el consejo general de "should". "Ought" (opción c) está incompleto, porque necesita "to"; "might" expresa posibilidad, no recomendación urgente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Completa con el modal de expectativa lógica adecuado: <SPAN CLASS="eng">"The package was sent yesterday, so it _____ arrive today."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) must</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) should</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) can't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) might not</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) should</B><BR>"Should" expresa lo que se espera lógicamente que ocurra (no es 100% seguro, pero es lo normal dado que fue enviado ayer). "Must" implicaría una certeza más fuerte basada en evidencia directa; "can't" y "might not" expresarían duda o negación, lo cual contradice el tono de expectativa positiva de la oración.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Completa la oración con subjuntivo mandativo: <SPAN CLASS="eng">"The doctor recommended that she _____ rest for a few days."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) rests</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) should rest</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) resting</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) will rest</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) should rest</B><BR>Tras "recommend that", el inglés británico usa la construcción de subjuntivo mandativo con <B>should + verbo base</B>: <B>"recommended that she should rest"</B>. "Rests" (opción a) conjugaría incorrectamente para esta estructura formal en este contexto; "resting" y "will rest" no encajan con el patrón gramatical exigido tras "recommend that".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> "You told him the secret, and now he's upset." Elige la oración que expresa correctamente el reproche por esta acción:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) "You should have told him the secret."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) "You shouldn't have told him the secret."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) "You should tell him the secret."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) "You must have told him the secret."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) shouldn't have told</B><BR>La acción SÍ ocurrió (contar el secreto) pero no debía haber ocurrido → corresponde <B>shouldn't have + participio</B>. La opción a ("should have told") expresaría lo contrario: que no lo contó y debió hacerlo, lo cual contradice el contexto; la c se refiere al futuro, no al pasado; la d ("must have told") sería una deducción, no un reproche.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Elige la forma negativa correcta de "had better":</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) "You'd better not be late."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) "You hadn't better be late."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) "You don't had better be late."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) "You better not to be late."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La forma negativa de "had better" se construye añadiendo <B>"not"</B> después de "better", no antes de "had": <B>had better not</B> (o, en su forma contraída habitual, <B>'d better not</B>). "Hadn't better" (opción b) invierte incorrectamente el lugar de la negación; las opciones c y d no son estructuras gramaticales válidas para esta expresión.</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; Análisis y corrección de errores</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Un estudiante escribe: <SPAN CLASS="eng">"You should to call your mother. She should have call you yesterday too. You had better calling her now."</SPAN> Identifica y corrige TODOS los errores.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Solo "should to call" está mal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) "should to call" → "should call"; "should have call" → "should have called"; "had better calling" → "had better call"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) "should to call" → "should calls"; "should have call" → "should had called"; "had better calling" → "had better to call"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"should to call"</B> → <B>"should call"</B>: "should" nunca lleva "to".<BR>② <B>"should have call"</B> → <B>"should have called"</B>: dentro de "should have", el verbo principal debe ir en <B>participio pasado</B> (called), no en forma base (call).<BR>③ <B>"had better calling"</B> → <B>"had better call"</B>: "had better" exige verbo en forma base, no gerundio. La opción c agrava los errores al añadir conjugaciones inexistentes ("had called" tras "should") y "to" tras "had better", que tampoco es correcto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Elige la oración equivalente a <SPAN CLASS="eng">"If you should have any questions, please contact us"</SPAN> usando un registro formal con inversión:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) "Should you have any questions, please contact us."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) "Should have you any questions, please contact us."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) "You should have any questions, please contact us."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) "Had you should any questions, please contact us."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>En la inversión condicional formal, se elimina "if" y "should" pasa al inicio de la oración, manteniendo el orden normal de sujeto + verbo después: <B>"Should you have any questions..."</B> La opción b invierte incorrectamente "have" y "you"; la c no realiza ninguna inversión (simplemente omite "if" sin cambiar el orden, lo cual no es gramatical); la d mezcla incorrectamente "had" con "should".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Traduce con precisión: <B>"Deberías haberle dicho la verdad, pero no lo hiciste."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) "You should have told him the truth, but you didn't."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) "You should tell him the truth, but you didn't."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) "You should have say him the truth, but you don't."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) "You must have told him the truth, but you didn't."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>"Deberías haber dicho [pero no lo hiciste]" es un reproche sobre algo que no ocurrió en el pasado → <B>should have + participio</B>: <B>"should have told."</B> La opción b usa "should tell" (presente/futuro), lo cual no corresponde al sentido pasado; la c usa "say" (forma base) en vez del participio "told", y además "you don't" en vez de "you didn't" (tiempo incorrecto); la d usa "must have", que sería una deducción, no un reproche, y contradice el sentido de "pero no lo hiciste".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Completa el texto con los usos adecuados de "should": <SPAN CLASS="eng">"The teacher suggested that all students _____(1) (subjuntivo mandativo) submit their essays by Friday. _____(2) (condicional formal con inversión) you need an extension, contact her directly. You _____(3) (reproche) started earlier; now you're running out of time."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) (1) should — (2) Should — (3) should have</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) (1) should — (2) Will — (3) should</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) (1) must — (2) Should — (3) should have</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) (1) should — (2) Should — (3) must have</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>(1) Tras "suggested that", corresponde el subjuntivo mandativo: <B>should submit</B> (no "must", que sería un nivel de obligación distinto al de una simple sugerencia).<BR>(2) Es una estructura condicional formal con inversión, sin "if": <B>Should you need...</B> (no "Will", que no expresa condición).<BR>(3) "Ahora te estás quedando sin tiempo [porque no empezaste antes]" es un reproche sobre el pasado → <B>should have started</B> (no "must have", que sería una deducción sobre algo que probablemente ocurrió, no un reproche por algo que no se hizo).</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; Ingreso universitario</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Analiza el siguiente fragmento y determina la opción que corrige TODOS los errores con la justificación gramatical más precisa:<BR><SPAN CLASS="eng">"The committee recommended that the new policy should approved immediately. If any member should has objections, they should to raise them in writing. We shouldn't have not ignored the warning signs last year."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Solo "should to raise" está mal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "should approved" → "should be approved"; "should has objections" → "should have objections"; "should to raise" → "should raise"; "shouldn't have not ignored" → "shouldn't have ignored"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "should approved" → "should approve"; "should has objections" → "should haves objections"; "should to raise" → "should raise"; "shouldn't have not ignored" se mantiene correcto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"should approved"</B> → <B>"should be approved"</B>: la política es el receptor de la acción de aprobar (voz pasiva), por lo que se necesita "be" antes del participio: "should + be + approved".<BR>② <B>"should has objections"</B> → <B>"should have objections"</B>: "should" nunca se conjuga; siempre es "have", nunca "has", sin importar el sujeto ("any member").<BR>③ <B>"should to raise"</B> → <B>"should raise"</B>: "should" nunca lleva "to".<BR>④ <B>"shouldn't have not ignored"</B> → <B>"shouldn't have ignored"</B>: la doble negación ("shouldn't" + "not") es agramatical y contradictoria; el sentido correcto de reproche por haber ignorado las señales de advertencia es simplemente "we shouldn't have ignored them". La opción c deja sin corregir la doble negación y empeora otros errores ("haves" no existe).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> En inglés británico es común decir <I>"I suggest that she should see a doctor"</I>, mientras que en inglés americano es más frecuente <I>"I suggest that she see a doctor"</I> (sin should). ¿Cuál es la explicación gramatical más precisa de esta diferencia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Es un error gramatical en inglés americano que los hablantes cometen por descuido.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Ambas estructuras son formas distintas de expresar el llamado "subjuntivo mandativo" (mandative subjunctive), usado tras verbos de sugerencia, recomendación o exigencia. El inglés británico tiende a usar la construcción perifrástica con "should + verbo base" para suavizar la estructura, mientras que el inglés americano conserva con más frecuencia la forma subjuntiva directa (verbo base, sin -s, sin importar el sujeto), un resto histórico del subjuntivo del inglés antiguo.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) En inglés americano, "should" desapareció por completo del idioma durante el siglo XX.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Las dos formas tienen significados completamente diferentes y no son intercambiables.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Ambas construcciones cumplen exactamente la misma función gramatical: expresar el subjuntivo mandativo tras verbos de sugerencia/recomendación/exigencia. La diferencia es dialectal, no de corrección: el inglés británico prefiere la versión perifrástica con "should" (más explícita), mientras que el americano conserva con más frecuencia el subjuntivo base directo, una forma que sobrevive desde el inglés antiguo y que no marca persona ni número ("that she see", no "sees"). Ninguna de las dos formas es un error (descarta a) ni ha desaparecido "should" del inglés americano (descarta c); además, no son significados distintos, sino dos formas equivalentes (descarta d).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> "By the time the manager arrived, the report wasn't ready." ¿Qué oración expresa con mayor precisión que una acción CONTINUA debía estar ocurriendo durante toda la mañana, y no ocurrió?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) "She should have finished the report."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) "She should have been working on the report all morning."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) "She should finish the report."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) "She must have finished the report."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La estructura <B>should have been + -ing</B> expresa específicamente que una acción <B>continua/progresiva</B> debía estar desarrollándose durante un período y no ocurrió: <B>"should have been working... all morning."</B> La opción a ("should have finished") expresa reproche por una acción puntual y completa, no por un proceso continuo; la c se refiere al futuro; la d ("must have finished") sería una deducción de que SÍ terminó, lo cual contradice el contexto ("the report wasn't ready").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Lee el siguiente fragmento de un correo formal e identifica la opción que señala TODOS los errores y propone la corrección con la justificación gramatical más precisa:<BR><SPAN CLASS="eng">"If the manager should has any concerns, she should to email us immediately. We shouldn't have not warned the team about the deadline, and now we better fix this fast before it's too late."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo "should to email" está mal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "should has" → "should have"; "should to email" → "should email"; "shouldn't have not warned" → "should have warned"; "we better fix" → "we'd better fix"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) "should has" → "should haves"; "should to email" → "should emails"; "shouldn't have not warned" se mantiene correcto; "we better fix" se mantiene correcto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) — Corrección completa</B><BR>① <B>"should has"</B> → <B>"should have"</B>: "should" es un modal puro que nunca se conjuga; siempre es "have", nunca "has".<BR>② <B>"should to email"</B> → <B>"should email"</B>: "should" nunca lleva "to".<BR>③ <B>"shouldn't have not warned"</B> → <B>"should have warned"</B>: la doble negación ("shouldn't" + "not") es agramatical; el sentido que se busca (reproche por NO haber advertido al equipo) se expresa correctamente con <B>should have warned</B> (sin "shouldn't" ni doble "not").<BR>④ <B>"we better fix"</B> → <B>"we'd better fix"</B>: la expresión "had better" requiere el auxiliar "had" (o su contracción 'd); "better" no puede usarse solo, sin "had/'d", como modal. La opción c agrava los errores de conjugación inventando formas inexistentes ("haves", "emails" tras un modal) y deja sin corregir los dos últimos errores conceptuales.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+
+</BODY>
+</HTML>

@@ -1,0 +1,511 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Departamento de La Libertad - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA · TEMA 15 · NIVEL PREUNIVERSITARIO</DIV>
+<H1>Departamento de La Libertad</H1>
+<DIV CLASS="sub">Geografía física · Historia precolombina · Economía · Turismo · Cultura · Datos clave para el examen</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="generalidades">1. Generalidades del departamento</H3>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">25 499 km²</DIV><DIV CLASS="dk-label">Superficie (incluye costa, sierra y selva)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~2 100 000</DIV><DIV CLASS="dk-label">Habitantes (2° región más poblada del Perú)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Trujillo</DIV><DIV CLASS="dk-label">Capital departamental (3° ciudad del Perú)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">12</DIV><DIV CLASS="dk-label">Provincias</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1°</DIV><DIV CLASS="dk-label">Productor nacional de caña de azúcar y espárragos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1°</DIV><DIV CLASS="dk-label">Productor nacional de oro (mina Lagunas Norte / La Arena)</DIV></DIV>
+</DIV>
+
+<H4>Ubicación:</H4>
+<UL>
+<LI>Se ubica en la <B>costa norte</B> del Perú, entre los departamentos de Lambayeque (norte), Cajamarca (este), San Martín (este), Huánuco (sureste), Áncash (sur) y el Océano Pacífico (oeste).</LI>
+<LI>Es uno de los pocos departamentos peruanos con presencia en las tres regiones naturales: <B>costa, sierra y selva</B>.</LI>
+<LI>Sus coordenadas aproximadas: 6°55' – 9°00' Latitud Sur; 76°27' – 79°44' Longitud Oeste.</LI>
+</UL>
+
+<H4>Provincias:</H4>
+Las 12 provincias de La Libertad son: <B>Trujillo</B> (capital), Ascope, Bolivar, Chepén, Gran Chimú, Julcán, Otuzco, Pacasmayo, Pataz, Sánchez Carrión (Huamachuco), Santiago de Chuco y Virú.
+
+<H3 ID="geografia-fisica">2. Geografía física</H3>
+
+<H4>Relieve:</H4>
+<UL>
+<LI><B>Costa (región Chala):</B> franja costera con playas, acantilados y valles aluviales. Los valles de los ríos Chicama, Moche, Virú y Santa (en el límite sur) forman los "oasis costeños" con tierras agrícolas muy fértiles.</LI>
+<LI><B>Sierra:</B> la Cordillera Occidental y la Cordillera Central atraviesan el departamento. Aquí se ubican las provincias serranas: Otuzco, Santiago de Chuco, Sánchez Carrión (Huamachuco), Gran Chimú, Julcán, Bolívar y Pataz.</LI>
+<LI><B>Selva alta (ceja de selva):</B> en la provincia de Pataz y Bolívar, en las laderas orientales de la Cordillera Oriental, existen pequeñas extensiones de selva alta.</LI>
+</UL>
+
+<H4>Principales ríos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Río</TH><TH>Longitud aprox.</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Chicama</B></TD><TD>~180 km</TD><TD>Irriga el mayor valle cañero del Perú (azúcar). Nace en la sierra de Otuzco-Santiago de Chuco.</TD></TR>
+<TR><TD><B>Moche</B></TD><TD>~110 km</TD><TD>Irriga el valle de Trujillo; zona de la cultura Moche/Mochica. En su cuenca se ubican las Huacas del Sol y de la Luna.</TD></TR>
+<TR><TD><B>Virú</B></TD><TD>~100 km</TD><TD>Valle de alta productividad agroindustrial; espárragos, alcachofas. Proyecto Chavimochic usa sus aguas.</TD></TR>
+<TR><TD><B>Chao</B></TD><TD>~70 km</TD><TD>Irrigado por el Proyecto Chavimochic; zona de agroexportación.</TD></TR>
+<TR><TD><B>Santa</B></TD><TD>~320 km (nace en Áncash)</TD><TD>El más caudaloso del Pacífico peruano; sirve de límite sur con Áncash.</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Clima:</H4>
+<UL>
+<LI><B>Costa:</B> árido y templado (18–22°C), con garúas en invierno (junio–septiembre). En años de El Niño, lluvias intensas.</LI>
+<LI><B>Sierra baja (Yunga y Quechua):</B> cálido a templado; lluvias estacionales (noviembre–abril).</LI>
+<LI><B>Sierra alta (Suni y Puna):</B> frío con heladas nocturnas frecuentes; precipitaciones estacionales.</LI>
+</UL>
+
+<H3 ID="historia">3. Historia: las grandes culturas de La Libertad</H3>
+
+La Libertad es uno de los departamentos con mayor riqueza arqueológica del Perú. Fue sede de dos de las civilizaciones prehispánicas más importantes:
+
+<H4>A) Cultura Moche (Mochica) — siglos I al VIII d.C.:</H4>
+<UL>
+<LI>Floreció en los valles de la costa norte (Moche, Chicama, Virú, Santa) entre los siglos <B>I y VIII d.C.</B></LI>
+<LI>Capital en el valle del río Moche, con epicentro en las <B>Huacas del Sol y de la Luna</B> (frente a Trujillo).</LI>
+<LI>Conocidos por su <B>cerámica</B> altamente realista (huacos retratos que muestran rostros humanos con extraordinario detalle), metalurgia en oro, plata y cobre, y sus murales polícromo en la Huaca de la Luna.</LI>
+<LI><B>Señor de Sipán</B>: descubierto en 1987 en Sipán (Lambayeque), es el hallazgo arqueológico más importante de América en el siglo XX. Aunque Sipán está en Lambayeque, la cultura Moche se extiende por La Libertad.</LI>
+<LI>Importante sistema de irrigación: construyeron canales que irrigaban los áridos valles costeños, entre ellos el <B>Canal La Cumbre</B> (el más largo del período prehispánico peruano, ~113 km).</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> Las <B>Huacas del Sol y de la Luna</B> son monumentos Moche ubicados en el valle del río Moche, cerca de Trujillo. La Huaca del Sol fue la mayor estructura de adobe del mundo antiguo. La Huaca de la Luna conserva murales polícromos del dios Ai Apaec (el "Degollador").</DIV>
+
+<H4>B) Imperio Chimú (Reino Chimor) — siglos IX al XV d.C.:</H4>
+<UL>
+<LI>El Imperio Chimú (también llamado <B>Chimor</B>) fue el segundo estado más extenso del Perú prehispánico, solo superado por el Imperio Inca que lo conquistó (~1470 d.C.).</LI>
+<LI><B>Capital: Chan Chan</B> (en el valle del río Moche, a 5 km de Trujillo). Chan Chan es la <B>ciudad de adobe más grande del mundo antiguo</B>: ocupa ~20 km² y estuvo habitada por más de 60 000 personas en su apogeo.</LI>
+<LI>El Imperio Chimú se extendía desde Tumbes (norte) hasta Carabayllo (Lima) en la costa, controlando una franja de ~1 000 km.</LI>
+<LI><B>Organización política:</B> monarquía hereditaria con un rey llamado <B>Chimu Cápac</B>. La sociedad era altamente estratificada.</LI>
+<LI><B>Arquitectura:</B> Chan Chan tiene 9 ciudadelas reales (palacios amurallados), cada uno construido por un nuevo rey. Las paredes están decoradas con frisos en bajo relieve representando peces, aves marinas, redes y diseños geométricos.</LI>
+<LI><B>Sistema hidráulico:</B> construyeron el <B>Canal Intervalles</B> para trasvasar agua desde el río Chicama hasta el valle de Moche, una obra de ingeniería hidráulica impresionante para la época.</LI>
+<LI><B>Metalurgia:</B> los chimúes fueron los mejores orfebres de la América prehispánica; trabajaban el oro, la plata y el tumbaga con técnicas de laminado, repujado y soldadura.</LI>
+<LI>Chan Chan fue declarada <B>Patrimonio Mundial de la Humanidad</B> por la UNESCO en <B>1986</B>, y también figura en la <B>Lista de Patrimonio en Peligro</B> por el deterioro causado por las lluvias del Fenómeno El Niño y la humedad.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Chan Chan:</B> La ciudad amurallada de Chan Chan está construida íntegramente en <b>adobe</b> (ladrillo de barro secado al sol). Su deterioro es constante por las lluvias torrenciales de El Niño y la humedad marina. Las 9 ciudadelas reales (Tschudi, Rivero, Bandelier, etc.) representan los palacios de 9 reyes chimúes sucesivos, construidos en un eje norte-sur. Cuando un rey moría, su palacio se sellaba con sus sirvientes y tesoros (conopa), y el nuevo rey construía uno nuevo.</DIV>
+
+<H4>C) Imperio Inca y la provincia de Huamachuco:</H4>
+<UL>
+<LI>Los Incas conquistaron el Imperio Chimú alrededor de <B>1470 d.C.</B> bajo el gobierno de Túpac Inca Yupanqui.</LI>
+<LI><B>Huamachuco</B> (Sánchez Carrión) fue un importante centro inca. Aquí se ubica el <B>Marcahuamachuco</B>, imponente complejo arqueológico preinca (posiblemente Wari-Tiwanaku o de la cultura Huamachuco) a 3 600 m.s.n.m., con galerías y plataformas de piedra.</LI>
+<LI>La <B>Batalla de Huamachuco</B> (10 de julio de 1883) fue el último gran enfrentamiento de la Guerra del Pacífico en suelo peruano; el ejército peruano al mando del coronel Miguel Iglesias fue derrotado por las tropas chilenas. Poco después se firmó el Tratado de Ancón (1883) que puso fin a la guerra.</LI>
+</UL>
+
+<H3 ID="economia">4. Economía del departamento</H3>
+
+La Libertad es una de las regiones económicamente más dinámicas del Perú. Su economía descansa en cuatro pilares principales:
+
+<H4>A) Agroindustria (el motor económico más importante):</H4>
+<UL>
+<LI><B>Caña de azúcar:</B> La Libertad es el <B>principal productor de azúcar del Perú</B>. Los valles de Chicama y Virú albergan los mayores complejos agroindustriales azucareros del país:
+<UL>
+<LI><B>Casa Grande</B> (Ascope): la mayor plantación de caña de azúcar del Perú y una de las mayores de América Latina (~20 000 ha). Pertenece al Grupo Gloria.</LI>
+<LI><B>Cartavio</B> (Ascope): histórico ingenio azucarero; también del Grupo Gloria.</LI>
+<LI><B>Laredo</B> (Trujillo): otro gran ingenio azucarero.</LI>
+<LI><B>Virú</B> y <B>Chao</B>: también tienen producción cañera.</LI>
+</UL>
+</LI>
+<LI><B>Espárragos:</B> La Libertad comparte con Ica el liderazgo en la producción de espárragos para exportación. El <B>Proyecto Especial Chavimochic</B> irriga las pampas de Virú, Chao y el norte de Trujillo con agua del río Santa, convirtiendo el desierto en tierras altamente productivas.</LI>
+<LI><B>Arándanos:</B> en los últimos años, La Libertad se ha convertido en el mayor productor nacional de arándanos (<I>Vaccinium corymbosum</I>); el Perú es el 2° exportador mundial.</LI>
+<LI><B>Palta (aguacate):</B> los valles irrigados de La Libertad producen grandes volúmenes de palta Hass para exportación.</LI>
+<LI><B>Maíz, trigo, papa:</B> en las zonas serranas del departamento.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El <B>Proyecto Especial Chavimochic</B> trasvasa agua del río Santa (que nace en Áncash) hacia los valles costeros de La Libertad (Chao, Virú, Moche, Chicama), irrigando miles de hectáreas de desierto para la agroexportación. Es uno de los proyectos de irrigación más importantes del Perú. <B>La Libertad = 1° productor nacional de azúcar + espárragos + arándanos.</B></DIV>
+
+<H4>B) Minería:</H4>
+<UL>
+<LI>La Libertad es el <B>principal departamento productor de oro</B> del Perú.</LI>
+<LI><B>Mina Lagunas Norte</B> (provincia de Santiago de Chuco): mina de oro a tajo abierto, una de las mayores del Perú. Operada por Barrick Gold (empresa canadiense).</LI>
+<LI><B>Mina La Arena</B> (provincia de Sánchez Carrión / Santiago de Chuco): otra mina de oro importante.</LI>
+<LI><B>Minas de Pataz:</B> la provincia de Pataz (sierra de La Libertad) tiene yacimientos de oro en veta (minería subterránea) que son explotados tanto por empresas formales como por mineros artesanales.</LI>
+</UL>
+
+<H4>C) Industria manufacturera:</H4>
+<UL>
+<LI><B>Industria azucarera:</B> ingenios y refinerías de azúcar son la mayor industria manufacturera del departamento.</LI>
+<LI><B>Industria de calzado (El Porvenir):</B> el distrito de <B>El Porvenir</B> (Trujillo) es el mayor productor de calzado del Perú; concentra miles de pequeñas y microempresas (MYPES) que producen aproximadamente el <B>40% del calzado fabricado en el Perú</B>. El calzado liberteño se vende en todo el país y tiene exportaciones incipientes. Es un ejemplo notable de <b>cluster industrial informal</b>.</LI>
+<LI><B>Industria de alimentos:</B> conservas de espárragos y alcachofas, mermeladas, jugos, productos lácteos.</LI>
+</UL>
+
+<H4>D) Comercio y servicios:</H4>
+<UL>
+<LI><B>Trujillo</B> es el principal centro comercial del norte del Perú, con centros comerciales, bancos y servicios financieros de importancia regional.</LI>
+<LI><B>Puerto de Salaverry:</B> el principal puerto marítimo de La Libertad; exporta azúcar, espárragos, arándanos y mineral. Ha recibido inversiones de modernización para aumentar su capacidad.</LI>
+<LI>El turismo cultural (Chan Chan, Huacas del Sol y la Luna, playas de Huanchaco) genera ingresos importantes.</LI>
+</UL>
+
+<H3 ID="turismo-ll">5. Turismo y patrimonio cultural</H3>
+
+<H4>Principales atractivos turísticos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Atractivo</TH><TH>Ubicación</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Chan Chan</B></TD><TD>5 km al norte de Trujillo</TD><TD>Ciudad de adobe más grande del mundo; capital del Imperio Chimú. Patrimonio Mundial UNESCO (1986) y en Lista de Patrimonio en Peligro.</TD></TR>
+<TR><TD><B>Huacas del Sol y de la Luna</B></TD><TD>5 km al sur de Trujillo, valle del río Moche</TD><TD>Principales monumentos de la cultura Moche; murales polícromos únicos; excavaciones activas del PIAM (Proyecto Arqueológico Huaca de la Luna).</TD></TR>
+<TR><TD><B>Huanchaco</B></TD><TD>12 km al noroeste de Trujillo</TD><TD>Balneario y pueblo pesquero famoso por sus <b>caballitos de totora</b> (embarcaciones de junco usadas desde épocas prehispánicas, patrimonio de la UNESCO en 2022). Surf y turismo de playa.</TD></TR>
+<TR><TD><B>Marcahuamachuco</B></TD><TD>A 3 km de Huamachuco, 3 600 m.s.n.m.</TD><TD>Complejo arqueológico preinca (posiblemente de la cultura local Huamachuco o Wari); galerías, plataformas y torres ceremoniales.</TD></TR>
+<TR><TD><B>El Brujo / Huaca Cao Viejo</B></TD><TD>Valle de Chicama (Ascope)</TD><TD>Complejo Arqueológico El Brujo; sede del hallazgo de la <b>Dama de Cao</b> (2006): la primera gobernante mujer de la América prehispánica identificada arqueológicamente (cultura Moche, ~450 d.C.).</TD></TR>
+<TR><TD><B>Trujillo histórico</TD><TD>Centro de Trujillo</TD><TD>Ciudad colonial con Plaza de Armas, mansiones coloniales (Casa de la Emancipación, Casa Urquiaga), muralla colonial parcialmente conservada.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">🏄 <B>Caballito de totora:</B> La embarcación ancestral de Huanchaco, construida con juncos de totora de una manera prácticamente idéntica a la que usaban los mochicas hace 2 000 años. Los pescadores la usan para salir al mar a pescar y hábilmente la "surfean" de regreso a la orilla. En 2022, la <b>UNESCO declaró el "caballito de totora" de Huanchaco como Patrimonio Cultural Inmaterial de la Humanidad</b>. Es uno de los pocos casos en que una embarcación viva recibe esta distinción.</DIV>
+
+<H4>La Dama de Cao:</H4>
+En 2006, el arqueólogo <B>Régulo Franco Jordán</B> descubrió en la <B>Huaca Cao Viejo</B> (Complejo Arqueológico El Brujo, valle de Chicama) los restos de una mujer de aproximadamente 25–30 años que había sido enterrada con los mismos atributos que los señores moche varones: cetros de guerra, tocados de oro, collares de narigueras, y veinte sacrificados a su alrededor. Este hallazgo demostró que las mujeres podían ejercer el poder político y militar en la sociedad Moche, cambiando la comprensión de la organización social prehispánica.
+
+<H3 ID="poblacion">6. Población y cultura</H3>
+
+<UL>
+<LI><B>Trujillo</B> (~1 millón de habitantes en el área metropolitana) es la <B>tercera ciudad más poblada del Perú</B>, después de Lima y Arequipa.</LI>
+<LI>La población del departamento es predominantemente <B>mestiza</B> en la costa y <B>quechua-mestiza</B> en la sierra.</LI>
+<LI><B>La Marinera Norteña:</B> baile nacional del Perú. Trujillo es la capital de la Marinera; el <B>Concurso Nacional de la Marinera</B> se celebra cada enero en Trujillo y es el mayor evento folklórico del norte del Perú. La Marinera fue declarada <b>Patrimonio Cultural de la Nación</b> en 1986.</LI>
+<LI><B>La Trujillana / Gastronomía:</B> el shambar (sopa de menestras y trigo con pellejo de cerdo), el ceviche norteño, el cabrito con frijoles y el pepián de pavo son platos emblemáticos de la región.</LI>
+<LI><B>Fiesta de la Marinera:</B> enero. <B>Fiesta de la Primavera:</B> septiembre (el festival más concurrido de la ciudad, con carros alegóricos y elección de la Reina de la Primavera).</LI>
+</UL>
+
+<H3 ID="historia-republicana">7. La Libertad en la historia republicana</H3>
+
+<UL>
+<LI><B>Independencia:</B> Trujillo fue la <B>primera ciudad del Perú en proclamar su independencia</B>, el <B>29 de diciembre de 1820</B>, meses antes que Lima (28 de julio de 1821). Por eso su nombre: "La Libertad".</LI>
+<LI><B>Marqués de Torre Tagle</B> (José Bernardo de Tagle): intendente de Trujillo que lideró la proclamación de independencia en 1820. Fue el primer Presidente del Perú (enero–febrero de 1823, en ausencia de San Martín).</LI>
+<LI><B>César Vallejo</B> (1892–1938): el poeta peruano más universal, nacido en <B>Santiago de Chuco</B> (La Libertad). Autor de "Los Heraldos Negros", "Trilce" y "Poemas Humanos". Considerado uno de los mayores poetas de la lengua española del siglo XX.</LI>
+<LI><B>Víctor Raúl Haya de la Torre</B> (1895–1979): fundador del <B>APRA</B> (Alianza Popular Revolucionaria Americana), el partido político más importante del Perú en el siglo XX, nacido en <B>Trujillo</B>. El APRA fue fundado en 1924 en México.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Muy preguntado en exámenes:</B> Trujillo fue la <B>primera ciudad en proclamar la independencia del Perú</B> (29 de diciembre de 1820). <B>César Vallejo</B> nació en Santiago de Chuco (La Libertad). <B>Víctor Raúl Haya de la Torre</B> nació en Trujillo. El baile nacional del Perú es la <B>Marinera Norteña</B>, cuya capital es Trujillo.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál fue la capital del Imperio Chimú y por qué es considerada un patrimonio excepcional de la humanidad?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Huamachuco; fue la capital más grande de los Andes por su extensión y número de habitantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Chan Chan; es la ciudad de adobe más grande del mundo antiguo, declarada Patrimonio Mundial de la UNESCO en 1986</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Trujillo; fue la primera ciudad colonial del norte y contiene las mayores ruinas preincas de América</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Huaca del Sol; fue la ciudad capital de los Moche y también del Imperio Chimú</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Chan Chan</B>, ubicada a 5 km al norte de Trujillo en el valle del río Moche, fue la capital del <b>Imperio Chimú</b>. Es la <b>ciudad de adobe más grande del mundo antiguo</b>, con una extensión de ~20 km² y 9 ciudadelas reales amuralladas. Fue declarada <b>Patrimonio Mundial de la Humanidad</b> por la UNESCO en <b>1986</b>. Al mismo tiempo, figura en la <b>Lista de Patrimonio en Peligro</b> por el deterioro causado por las lluvias del Fenómeno El Niño (el adobe se disuelve con la lluvia) y la expansión urbana desordenada de Trujillo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cuál es el baile nacional del Perú y cuál es la ciudad que es considerada su capital?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) El huayno; su capital es Cusco</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) La Marinera Norteña; su capital es Trujillo (La Libertad)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) La diablada; su capital es Puno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) El tondero; su capital es Piura</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Marinera Norteña</B> es el baile nacional del Perú, declarada <b>Patrimonio Cultural de la Nación</b> en 1986. Trujillo es su capital indiscutida: cada <b>enero</b> se celebra el <b>Concurso Nacional de la Marinera</b>, el mayor evento folklórico del norte peruano, que atrae a parejas de todo el país. La marinera es un baile de cortejo elegante, donde la mujer usa pañuelo y faldas amplias, y el hombre traje de caballero o traje de campo. No confundir: el <b>huayno</b> es el baile andino más difundido (no es el nacional); la <b>diablada</b> es el baile más vistoso de Puno; el <b>tondero</b> es de Piura.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Trujillo fue la primera ciudad del Perú en proclamar su independencia. ¿En qué fecha ocurrió este hecho histórico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) 28 de julio de 1821, el mismo día que Lima</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) 29 de diciembre de 1820, meses antes que Lima</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) 15 de septiembre de 1820, cuando San Martín llegó al norte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) 3 de octubre de 1821, después de la Batalla de Ayacucho</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>29 de diciembre de 1820</B>, el Marqués de Torre Tagle (intendente de Trujillo) proclamó la independencia de Trujillo, siendo la <b>primera ciudad del Perú en hacerlo</b>. Este acto fue decisivo porque sumó el norte peruano a la causa independentista liderada por San Martín, que recién había desembarcado en Paracas en septiembre de 1820. Lima proclamó su independencia el <b>28 de julio de 1821</b>, más de seis meses después que Trujillo. Por eso el departamento se llama "La <b>Libertad</b>".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál es el aporte principal del Proyecto Especial Chavimochic a la economía de La Libertad?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Genera energía eléctrica para toda la costa norte del Perú usando el agua del río Santa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Trasvasa agua del río Santa (que nace en Áncash) a los valles costeros de La Libertad, convirtiendo miles de hectáreas de desierto en tierras agrícolas de alta productividad para agroexportación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Es un proyecto de minería a gran escala que extrae oro del río Santa en el límite con Áncash</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Es un proyecto de construcción de carreteras que une Trujillo con la sierra de La Libertad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Proyecto Especial Chavimochic</B> es un proyecto de irrigación que capta agua del río Santa (el más caudaloso del Pacífico peruano, nacido en Áncash) y la distribuye mediante canales y túneles hacia los valles de <b>Chao, Virú, Moche y Chicama</b> en la costa de La Libertad. Ha incorporado más de <b>100 000 hectáreas</b> de desierto árido a la producción agrícola, principalmente para agroexportación: espárragos, arándanos, palta, caña de azúcar, alcachofas. Es un modelo de cómo la infraestructura hídrica puede transformar una zona desértica en una potencia agroexportadora. Sus etapas I y II están construidas; la III etapa (represa Palo Redondo) amplía la cobertura.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Quién fue César Vallejo y cuál es su relación con el departamento de La Libertad?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Fue el primer presidente del Perú republicano, nacido en Trujillo, que promulgó la primera Constitución peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Fue el poeta peruano más universal, nacido en Santiago de Chuco (La Libertad); autor de "Los Heraldos Negros", "Trilce" y "Poemas Humanos"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Fue el descubridor de la Dama de Cao, arqueólogo trujillano que excavó el Complejo El Brujo en los años 2000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Fue el fundador del partido APRA, nacido en Huamachuco, que luchó por los derechos de los trabajadores azucareros del valle Chicama</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>César Abraham Vallejo Mendoza</B> (1892–1938) nació en <b>Santiago de Chuco</b>, provincia de Santiago de Chuco, departamento de La Libertad. Es el poeta peruano más reconocido internacionalmente y uno de los mayores exponentes de la poesía en lengua española del siglo XX. Sus obras más importantes son: <b>"Los Heraldos Negros"</b> (1918, su primer poemario, influido por el modernismo), <b>"Trilce"</b> (1922, considerado uno de los libros de poesía más originales del siglo XX, precursor del vanguardismo), y <b>"Poemas Humanos"</b> (publicado póstumamente, 1939). Murió en París en 1938.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> La Dama de Cao fue un hallazgo arqueológico revolucionario descubierto en La Libertad. ¿Por qué fue considerado tan importante?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Fue la primera momia peruana encontrada con ADN intacto, lo que permitió reconstruir el genoma de los mochicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Fue la primera gobernante mujer identificada arqueológicamente en la América prehispánica, demostrando que las mujeres podían ejercer el poder político y militar en la cultura Moche</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Fue la momia de mayor antigüedad encontrada en el Perú, datada en más de 5 000 años antes del presente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Fue hallada portando el mayor tesoro de oro en la historia de la arqueología peruana, superando al Señor de Sipán</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Dama de Cao</B>, descubierta en 2006 por el arqueólogo <b>Régulo Franco Jordán</b> en la Huaca Cao Viejo (Complejo El Brujo, valle de Chicama), fue un hallazgo revolucionario porque demostró que en la sociedad <b>Moche</b> (~450 d.C.) las mujeres podían ser gobernantes de pleno derecho. Fue enterrada con: cetros de guerra, tocados de oro y plata (los mismos que los señores varones moche), narigueras, collares, y 20 individuos sacrificados a su alrededor (señal inequívoca de estatus de gobernante). Hasta ese hallazgo, se creía que todas las élites guerreras y gobernantes moche eran hombres. Cambió fundamentalmente la comprensión de la organización política y el rol de la mujer en la América prehispánica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> El distrito de El Porvenir (Trujillo) concentra el 40% de la producción de calzado del Perú. Desde la geografía económica, ¿qué tipo de organización productiva representa este fenómeno y cuáles son sus ventajas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Representa una empresa transnacional con miles de sucursales; su ventaja es el capital internacional que aporta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Representa un cluster industrial de MYPES (Micro y Pequeñas Empresas); sus ventajas son la especialización, la proximidad geográfica que reduce costos de transporte de insumos, el acceso compartido a proveedores de cuero y suelas, y la transmisión de conocimiento artesanal entre empresas vecinas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Representa una cooperativa estatal financiada por el gobierno regional; su ventaja es la subvención pública que reciben los zapateros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Representa una zona económica especial con exoneración total de impuestos; su ventaja es la evasión fiscal que permite precios más competitivos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Porvenir es un ejemplo notable de <B>cluster industrial</B> (concentración geográfica de empresas relacionadas en un mismo sector, concepto de Michael Porter) compuesto principalmente por <b>MYPES informales</b>. Sus ventajas son varias: (1) <b>Economías de aglomeración</b>: cientos de empresas pequeñas en el mismo lugar comparten proveedores de cuero, suelas, hormas, pegamentos e hilo, lo que reduce los costos de insumos. (2) <b>División del trabajo especializada</b>: hay talleres que solo cortan el cuero, otros que solo cosen, otros que pintan. Esta especialización aumenta la productividad. (3) <b>Transmisión de conocimiento</b>: el saber artesanal zapatero pasa de padre a hijo y entre vecinos. (4) <b>Mercado laboral especializado</b>: hay una gran oferta de mano de obra con habilidades específicas en calzado. La debilidad del cluster es la <b>informalidad</b> (bajo acceso a crédito, sin seguridad social, difícil exportar formalmente) y la <b>competencia con el calzado chino importado</b> más barato.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Chan Chan está en la Lista de Patrimonio Mundial en Peligro de la UNESCO. ¿Cuáles son las principales amenazas que enfrenta este sitio y qué medidas de conservación son necesarias?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) La única amenaza es el turismo masivo; la solución es prohibir el ingreso de visitantes completamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Las amenazas son: el Fenómeno El Niño (lluvias torrenciales que disuelven el adobe), la humedad marina y la salinización, el crecimiento urbano desordenado de Trujillo que rodea el sitio, y la extracción ilegal de materiales; las medidas incluyen techos protectores sobre los frisos, consolidación de muros, zonificación urbana y gestión controlada del turismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) La amenaza es el tiempo: Chan Chan tiene más de 5 000 años y es normal que se deteriore; no hay medidas de conservación eficaces para estructuras tan antiguas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La única amenaza es el vandalismo de turistas que raspan los frisos con graffiti; la solución es instalar cámaras de seguridad en todo el sitio</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Chan Chan enfrenta múltiples amenazas que justifican su inclusión en la Lista de <B>Patrimonio en Peligro</B> de la UNESCO (desde 1986): (1) <b>Fenómeno El Niño</b>: las lluvias torrenciales de 1983, 1997-98 y 2017 causaron daños severos al adobe, disolviendo parcialmente muros y frisos decorativos que tomaron siglos en construir. (2) <b>Humedad marina y salinización</b>: la proximidad al Pacífico provoca que la sal marina ascienda por capilaridad en los muros de adobe, desintegrándolos desde adentro. (3) <b>Expansión urbana</b>: el crecimiento de Trujillo ha rodeado el sitio; hay asentamientos informales dentro del área de amortiguamiento. (4) <b>Huaqueo</b> (saqueo arqueológico): hay túneles de huaqueros que buscaron tesoros en las ciudadelas. <b>Medidas de conservación</b>: instalación de <b>techos de protección</b> sobre los principales frisos (ya implementados parcialmente), consolidación de muros con técnicas de restauración con adobe compatible, <b>plan maestro de gestión</b> del sitio, y educación comunitaria.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> La Batalla de Huamachuco (1883) fue el último enfrentamiento terrestre importante de la Guerra del Pacífico en suelo peruano. ¿Qué consecuencia inmediata tuvo esta derrota para el Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) La derrota hizo que Bolivia se rindiera ante Chile y cediera toda la costa boliviana permanentemente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) La derrota definitiva del ejército peruano aceleró las negociaciones de paz; poco después se firmó el Tratado de Ancón (1883) por el cual el Perú cedió Tarapacá a Chile y entregó Tacna y Arica en administración provisional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) La derrota motivó que Nicolás de Piérola lanzara un contraataque exitoso que recuperó Lima de la ocupación chilena</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) La derrota no tuvo consecuencias porque ya existía un armisticio firmado entre Perú y Chile desde 1882</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Batalla de Huamachuco</B> (10 de julio de 1883) fue el último gran enfrentamiento terrestre de la <b>Guerra del Pacífico</b> (1879–1883). El ejército peruano al mando del coronel <b>Andrés Avelino Cáceres</b> (quien había liderado la famosa Campaña de la Breña resistiendo en la sierra) fue derrotado por las tropas chilenas. Este fue el golpe definitivo a la resistencia peruana. Pocos meses después, el <b>Tratado de Ancón</b> (20 de octubre de 1883) puso fin a la guerra: el Perú cedió la provincia de <b>Tarapacá</b> a Chile en forma permanente, y las provincias de <b>Tacna y Arica</b> quedaron bajo administración chilena por 10 años (luego el Tratado de Lima de 1929 devolvió Tacna al Perú y Arica quedó definitivamente en Chile).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Por qué La Libertad puede ser considerado un ejemplo del modelo de "enclave agroexportador" y cuáles son sus limitaciones para el desarrollo regional integral?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) La Libertad no es un enclave; es un modelo perfecto de desarrollo regional integrado donde la riqueza agrícola beneficia equitativamente a toda la población</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Grandes complejos agroindustriales (Casa Grande, Cartavio, Laredo y empresas agroexportadoras de espárragos y arándanos) generan riqueza para exportación concentrada en pocas empresas y en los valles costeros irrigados, mientras las provincias serranas (Bolívar, Pataz, Julcán) permanecen con altos índices de pobreza, escasa infraestructura y acceso limitado a los beneficios del boom agroexportador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) La Libertad es un enclave minero, no agroexportador; su riqueza viene exclusivamente del oro de Lagunas Norte y no tiene ningún sector agrícola relevante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) El modelo de La Libertad es perfecto para el desarrollo sostenible; las empresas azucareras reparten sus utilidades equitativamente entre todos los trabajadores y comunidades del entorno</DIV>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La Libertad ilustra la dualidad del desarrollo económico peruano: (1) <b>Costa próspera</b>: los valles de Chicama, Virú y Chao, irrigados por Chavimochic, albergan empresas agroindustriales de clase mundial (Casa Grande con ~20 000 ha, Camposol con espárragos y arándanos). Trujillo es una ciudad en expansión con centros comerciales e industria de calzado. (2) <b>Sierra empobrecida</b>: las provincias serranas de Bolívar, Pataz, Julcán, Santiago de Chuco y Gran Chimú tienen índices de pobreza de 50–70%, con escaso acceso a agua potable, electricidad, salud de calidad y educación secundaria completa. Esta dualidad es característica del "<b>enclave económico</b>": el sector exportador está técnica y económicamente desconectado de la economía regional; genera divisas pero sus encadenamientos productivos son débiles con el resto del departamento. Las empresas azucareras fueron privatizadas en los años 90 tras ser cooperativas durante el gobierno de Velasco Alvarado (1969–1975), lo que concentró nuevamente la tierra y el capital.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> La cultura Moche (siglos I–VIII d.C.) y la cultura Chimú (siglos IX–XV d.C.) comparten el mismo territorio en el norte peruano. ¿Cuál es la relación histórica entre ambas civilizaciones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Fueron civilizaciones completamente independientes sin ninguna relación; los chimúes llegaron de Ecuador y no tenían nada en común con los mochicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Los chimúes son herederos y continuadores de la tradición moche: usaron el mismo territorio (valle del Moche), mantuvieron técnicas similares de metalurgia y cerámica, y construyeron Chan Chan sobre el área de influencia moche; el colapso de la cultura Moche (posiblemente por El Niño y conflictos) dio paso a los estados regionales que luego se unificaron en el Imperio Chimú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Los mochicas destruyeron el Imperio Chimú cuando lo conquistaron militarmente en el siglo X d.C.; los chimúes desaparecieron completamente antes de la llegada de los incas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Los chimúes y los mochicas son el mismo pueblo en períodos diferentes; la cultura moche continuó sin interrupciones durante 1 500 años cambiando solo de nombre</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación entre Moche y Chimú es de <b>continuidad cultural</b>, no de ruptura total: (1) <b>Territorio compartido</b>: ambas civilizaciones se desarrollaron en los valles del norte costeño (Moche, Chicama, Virú, Santa). Chan Chan se construyó en el mismo valle donde existían las Huacas del Sol y de la Luna. (2) <b>Herencia tecnológica</b>: los chimúes heredaron y perfeccionaron la metalurgia Moche (fueron los mejores orfebres de América prehispánica). La cerámica chimú (negra, con decoración en relieve) deriva de la tradición moche. (3) <b>Ingeniería hidráulica</b>: el Canal Intervalles chimú es más ambicioso que los canales moche, pero sigue la misma tradición de irrigación artificial. (4) <b>Transición</b>: el colapso Moche (siglos VII–VIII d.C.) fue causado posiblemente por mega-Niños que destruyeron la infraestructura agraria. Tras un período de fragmentación, los estados regionales se reunificaron bajo el poder chimú, retomando y expandiendo la tradición moche.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El Fenómeno El Niño ha tenido impactos devastadores y también constructivos en la historia de La Libertad. ¿Cómo explica la geoarqueología el colapso de la cultura Moche y la relación entre clima y civilización en la costa norte peruana?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) El Niño es irrelevante para la arqueología; las culturas costeñas colapsaron por invasiones militares desde los Andes y no por fenómenos climáticos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La geoarqueología y los estudios de sedimentos glaciares muestran que un mega-El Niño entre los siglos VI y VII d.C. causó décadas de lluvias torrenciales que destruyeron los sistemas de irrigación moche; seguidas por una sequía prolongada que agotó las reservas; esto produjo hambre, conflictos internos y el abandono progresivo de los centros ceremoniales, contribuyendo al colapso de la sociedad moche</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) El Fenómeno El Niño solo afecta a las ciudades modernas; las culturas prehispánicas como la Moche eran inmunes a los desastres climáticos porque vivían en armonía con la naturaleza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) El colapso moche fue causado exclusivamente por una epidemia de viruela traída por exploradores vikingos que llegaron a la costa norte peruana en el siglo VIII</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>geoarqueología</B> (análisis de sedimentos, estudios de isótopos en huesos y madera, registro de capas de inundación y sequía en suelos) ha revelado que el colapso de la cultura Moche fue multi-causal pero con el clima como factor determinante: (1) <b>Mega-El Niño (siglos VI–VII d.C.)</b>: análisis de sedimentos en los ríos Moche y Chicama muestran capas de inundación masiva que destruyeron los sistemas de canales, campos irrigados y centros poblados. La cerámica moche de este período muestra a su deidad principal (Ai Apaec) en postura de combate y sacrificio, posiblemente reflejando la crisis social. (2) <b>Sequía prolongada</b>: después de las inundaciones, estudios de glaciares andinos (núcleos de hielo del Quelccaya) muestran un período seco de décadas que reducría el caudal de los ríos costeros, afectando la agricultura irrigada. (3) <b>Conflictos internos</b>: la crisis alimentaria generó guerras entre las élites moche del norte y el sur (Moche Norte y Moche Sur). (4) <b>Moraleja arqueológica</b>: las civilizaciones costeñas peruanas siempre han sido vulnerables al ENSO; esta vulnerabilidad climática es estructural y continúa hoy.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> El poeta César Vallejo escribió en "Trilce" (1922): poemas que rompen con todas las convenciones del lenguaje poético. Desde la perspectiva de la geografía cultural, ¿cómo influyó el contexto de La Libertad (Santiago de Chuco, Trujillo) en la formación intelectual y la obra de Vallejo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La Libertad no influyó en Vallejo; su obra es pura abstracción sin ninguna referencia a lo local o lo peruano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La experiencia de crecer en Santiago de Chuco (comunidad andina mestiza con sincretismo quechua-español), la miseria de los trabajadores de las haciendas azucareras del valle Chicama, y su formación en la Universidad de Trujillo junto al Grupo Norte (intelectuales que debatían indigenismo y modernismo) son fuentes directas de su sensibilidad hacia el sufrimiento humano, la injusticia social y la búsqueda de un lenguaje radicalmente nuevo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Vallejo rechazó toda influencia peruana en su obra; se inspiró exclusivamente en autores franceses y españoles que conoció durante su exilio en París</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La única influencia de La Libertad en Vallejo fue la arquitectura de Chan Chan, que inspiró la estructura en bloque de sus poemas en "Trilce"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La geografía cultural de La Libertad es fundamental para entender a <B>Vallejo</B>: (1) <b>Santiago de Chuco</b>: pueblo andino de mestizaje profundo (español y quechua), donde Vallejo vivió hasta los 18 años. La muerte, el hambre, el dolor físico y el amor filial que recorren "Los Heraldos Negros" vienen de esa experiencia provinciana andina. (2) <b>Valle Chicama y haciendas azucareras</b>: Vallejo fue maestro en Menocucho y trabajó brevemente en la hacienda Roma (Chicama); el contacto directo con la explotación de los trabajadores (yanaconas, peones) alimentó su conciencia social y su marxismo posterior. (3) <b>El Grupo Norte en Trujillo</b>: en la Universidad de Trujillo, Vallejo integró un círculo de intelectuales que debatía el indigenismo, el anarquismo y el modernismo literario latinoamericano. Allí conoció a <b>Antenor Orrego</b> y otros pensadores que lo estimularon. (4) <b>Prisión</b>: Vallejo fue encarcelado en Trujillo (1920–1921) acusado injustamente en un incendio en Santiago de Chuco; esa experiencia de injusticia es el núcleo emocional de "Trilce".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> La organización política del Imperio Chimú ha sido comparada con la de un "estado burocrático" por los etnohistoriadores. ¿Qué características de su organización territorial y económica justifican esta denominación y cómo se diferenciaba del modelo inca posterior?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El Imperio Chimú era una democracia representativa; sus nueve ciudadelas eran asambleas donde los ciudadanos votaban sus leyes, lo que lo convierte en el primer estado democrático de América</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El Chimú desarrolló una burocracia especializada con registros administrativos en quipus, control centralizado de almacenes y redistribución de bienes, especialización artesanal urbana (metalurgia, textilería, cerámica) y un sistema de sucesión real donde el heredero construía un nuevo palacio, concentrando la riqueza del reino; el modelo inca adoptó parte de esta estructura pero la amplió hacia la sierra y la selva con la reciprocidad y la mita como ejes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El Chimú no tenía ninguna organización burocrática; era una sociedad tribal sin jerarquías ni sistema de almacenamiento; la denominación de "estado burocrático" es un error historiográfico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El Chimú y el Imperio Inca tenían exactamente la misma organización política; los incas simplemente copiaron el sistema chimú sin ninguna innovación</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los etnohistoriadores (como John Rowe y John Topic) han caracterizado al <B>Imperio Chimú</B> como un <b>estado centralizado y burocrático</b> con las siguientes características: (1) <b>Administración territorial</b>: el Chimú controlaba ~1 000 km de costa con un sistema de gobernadores locales que rendían tributos a Chan Chan. (2) <b>Especialización artesanal</b>: Chan Chan albergaba barrios de artesanos especializados (orfebres, tejedores, ceramistas) trabajando para el estado; una de las primeras "fábricas" del mundo antiguo. (3) <b>Control de recursos hídricos</b>: el Canal Intervalles requirió planificación centralizada de recursos humanos y logística, imposible sin burocracia. (4) <b>Sistema de sucesión "split inheritance"</b>: cada nuevo rey heredaba el título y el poder pero debía acumular su propia riqueza; el palacio del rey muerto se sellaba como mausoleo con sus bienes y servidores, creando incentivos para la expansión territorial. Diferencias con el <b>Inca</b>: los incas adoptaron esta burocracia pero la ideologizaron con el concepto de reciprocidad y la mita (trabajo colectivo obligatorio); también ampliaron el control hacia la sierra y la amazonia, algo que los chimúes (esencialmente costeños) no hicieron.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> El Proyecto Especial Chavimochic ha transformado el desierto costero de La Libertad en una de las zonas agroexportadoras más productivas del mundo. Sin embargo, enfrenta un desafío hídrico estructural. Describe y analiza este desafío desde la perspectiva de la geografía física y la sostenibilidad.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) No existe ningún desafío hídrico; el río Santa tiene un caudal infinito que garantiza agua para la agricultura costera durante siglos sin ningún riesgo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) El desafío es que Chavimochic depende del río Santa cuyo caudal en época de estiaje es sustentado por los glaciares de la Cordillera Blanca (Áncash); el retroceso glaciar por el cambio climático reducirá el caudal del Santa en los próximos decenios, amenazando la disponibilidad de agua justo cuando la demanda agroindustrial está en máximo crecimiento; además, la expansión de la frontera agrícola presiona para que la 3° etapa (represa Palo Redondo) almacene más agua, pero los conflictos con comunidades del valle alto del Santa ya son evidentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) El único desafío de Chavimochic es la corrupción en las licitaciones; si se eliminara la corrupción, el proyecto sería perfectamente sostenible sin ningún límite hídrico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) El desafío es que el agua del Santa está contaminada con metales pesados de la mina Antamina y no puede usarse para agricultura sin un proceso de purificación que encarece el proyecto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>desafío hídrico de Chavimochic</B> tiene múltiples dimensiones: (1) <b>Dependencia glaciar</b>: el río Santa (fuente de Chavimochic) recibe en época de estiaje (junio–octubre) un aporte significativo del deshielo de los glaciares de la <b>Cordillera Blanca</b> (la mayor concentración de glaciares tropicales del mundo). El retroceso glaciar (~30–40% en los últimos 30 años) ya está reduciendo el caudal de estiaje del Santa. A largo plazo (2050–2080), los modelos climáticos proyectan una reducción del 30–50% del caudal estacional del Santa. (2) <b>Demanda creciente</b>: la expansión de Chavimochic (3° etapa: represa Palo Redondo, 9 000 ha adicionales) incrementa la demanda justo cuando la oferta se reduce. (3) <b>Conflictos sociales</b>: comunidades del alto Santa (Recuay, Huaraz) que usan el río para agricultura de subsistencia y consumo doméstico se oponen a que más agua se desvíe hacia la costa para agroindustrias de exportación. (4) <b>Eficiencia de riego</b>: gran parte del riego en los valles de La Libertad sigue siendo por inundación (baja eficiencia); migrar a riego tecnificado (goteo, aspersión) es urgente pero requiere inversión que no todos los agricultores pueden asumir.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Víctor Raúl Haya de la Torre fundó el APRA en 1924 desde el exilio en México. ¿Cuál fue la propuesta ideológica original del APRA y cómo influyó en la política peruana del siglo XX, vinculándola al contexto socioeconómico de La Libertad?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) El APRA fue un partido conservador que defendía los intereses de los hacendados azucareros del valle Chicama; Haya de la Torre era el representante político del Grupo Gloria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) El APRA fue originalmente un movimiento antiimperialista latinoamericano (no solo peruano) que buscaba la unidad político-económica de América Latina frente al imperialismo estadounidense, la nacionalización de tierras e industrias, y la alianza entre las clases medias, obreros y campesinos; el contexto de los trabajadores explotados en las haciendas azucareras del valle Chicama fue la base social original del APRA en el Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) El APRA fue desde su fundación un partido socialista marxista que buscaba la revolución violenta y la instauración de una república soviética en el Perú al estilo de la URSS</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) El APRA no tuvo ninguna relación con La Libertad; Haya de la Torre se inspiró exclusivamente en la revolución cubana y los movimientos guerrilleros de América Central</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>APRA</B> (Alianza Popular Revolucionaria Americana), fundado por <b>Víctor Raúl Haya de la Torre</b> en México en 1924, tuvo una propuesta ideológica original compleja: (1) <b>Antiimperialismo</b>: oposición al dominio económico y político de EE.UU. en América Latina (la "Indoamérica"). (2) <b>Unidad latinoamericana</b>: visión de una federación de países latinoamericanos para resistir el imperialismo. (3) <b>Nacionalización</b>: del canal de Panamá, las empresas petroleras y las grandes haciendas. (4) <b>Alianza de clases</b>: entre obreros, campesinos y clase media (diferenciándose del marxismo que ponía al proletariado industrial como clase única). El <b>vínculo con La Libertad</b> es fundamental: Haya de la Torre creció en Trujillo viendo la explotación de los trabajadores ("peones", "enganchados") en las haciendas azucareras de la familia Larco Herrera y otras en el valle Chicama. El APRA tuvo su primera base obrera en los <b>sindicatos azucareros de La Libertad</b>. La matanza de apristas en el <b>Cuartel O'Donovan de Trujillo</b> (1932, durante la rebelión aprista) dejó una cicatriz política que definió décadas de antagonismo entre el APRA y el ejército peruano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> La Libertad tiene presencia en las tres regiones naturales (costa, sierra y selva), pero el desarrollo económico está altamente concentrado en la costa. Desde la planificación territorial, ¿qué estrategias podría implementar el gobierno regional para lograr un desarrollo más equilibrado entre sus zonas costeras y serranas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La única estrategia viable es reubicar a toda la población serrana en los valles costeros irrigados; la sierra de La Libertad no tiene potencial económico aprovechable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Las estrategias incluyen: desarrollo del turismo arqueológico y de naturaleza en la sierra (Marcahuamachuco, Huamachuco), minería responsable con encadenamientos locales en Pataz y Santiago de Chuco, agricultura de alto valor en la sierra (quinua, papas nativas, truchas) con certificación de origen, mejora de conectividad vial y telecomunicaciones entre costa y sierra, y fortalecimiento de capacidades institucionales municipales para ejecutar inversión pública de calidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La solución es que el gobierno nacional intervenga y centralice toda la gestión económica de La Libertad desde Lima, eliminando el gobierno regional por su supuesta ineficiencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) No hay desequilibrio real: las estadísticas de pobreza de la sierra de La Libertad están infladas y en realidad la sierra es tan próspera como la costa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El desequilibrio entre costa y sierra en La Libertad es uno de los problemas estructurales más documentados: mientras Trujillo y los valles costeros tienen índices de pobreza del 15–20%, provincias serranas como Julcán, Bolívar y Gran Chimú superan el 60–70%. Estrategias plausibles: (1) <b>Turismo serrano</b>: Marcahuamachuco y la <b>Laguna Sausacocha</b> (Huamachuco) tienen potencial turístico no desarrollado; una ruta arqueológica integrada Trujillo–Chan Chan–Huamachuco podría atraer turistas internacionales. (2) <b>Minería responsable en Pataz</b>: la provincia aurífera de Pataz podría generar más empleo local si se formalizara la minería artesanal y se establecieran proveedores locales. (3) <b>Agroexportación serrana diferenciada</b>: quinua de Sánchez Carrión, papas nativas de altitud, truchas del río Marañón (en la cuenca de Pataz); productos con denominación de origen y acceso a mercados gourmet. (4) <b>Conectividad</b>: la carretera Trujillo–Huamachuco (~180 km) es la arteria principal; mejorar su estado y agregar telecomunicaciones (internet de banda ancha) es clave para integrar la economía serrana. (5) <b>Capacidades institucionales</b>: las municipalidades serranas tienen bajo nivel de ejecución presupuestal; el fortalecimiento técnico es imprescindible.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> En 2022, la UNESCO declaró el conocimiento y la práctica de los "caballitos de totora" de Huanchaco como Patrimonio Cultural Inmaterial de la Humanidad. ¿Qué importancia tiene este reconocimiento desde la perspectiva de la identidad cultural, la economía local y la sostenibilidad de las tradiciones ancestrales frente al turismo masivo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) El reconocimiento no tiene ningún valor real; es solo un certificado simbólico sin consecuencias para Huanchaco o sus pescadores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) El reconocimiento UNESCO fortalece la identidad de los pescadores de Huanchaco y visibiliza internacionalmente una práctica de 2 000 años; puede atraer turismo cultural de alto valor, generar ingresos para los caballiteros y financiar la transmisión del oficio a las nuevas generaciones; el desafío es que el turismo masivo puede convertir la práctica en espectáculo vaciado de contenido, desplazando su función original de pesca artesanal de subsistencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El reconocimiento UNESCO obliga al gobierno peruano a prohibir el surf en Huanchaco para proteger los caballitos de totora de los turistas que los usan como tabla de surf</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La declaratoria UNESCO significa que el Estado peruano tomará el control de los caballitos, los nacionalizará y los pescadores recibirán salario estatal por usar sus embarcaciones ancestrales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La declaratoria de los <B>caballitos de totora de Huanchaco</B> como <b>Patrimonio Cultural Inmaterial de la Humanidad</b> (UNESCO, 2022) tiene múltiples dimensiones: (1) <b>Identidad cultural</b>: los "caballiteros" (pescadores que usan estas embarcaciones) son los últimos depositarios de una tecnología náutica de ~2 000 años, casi idéntica a la que muestran las cerámicas Moche. El reconocimiento reafirma su valor como eslabón vivo con el pasado prehispánico. (2) <b>Economía local</b>: la declaratoria aumenta el atractivo turístico de Huanchaco, pudiendo incrementar los ingresos de los caballiteros que ofrecen paseos y demostraciones, y de los negocios locales. (3) <b>Sostenibilidad cultural</b>: el mayor peligro de los patrimonios inmateriales es la <b>"museificación"</b> o "folklorización": la práctica se convierte en espectáculo para turistas, perdiendo su función original y autenticidad; los jóvenes prefieren trabajos más rentables y la transmisión del oficio se rompe. La UNESCO y el Estado peruano deben apoyar programas de <b>transmisión intergeneracional</b> (enseñanza a niños y jóvenes) y garantizar que los caballiteros sigan usando sus embarcaciones para pescar, no solo para el turismo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Desde la geografía física, La Libertad es uno de los departamentos más expuestos al Fenómeno El Niño en el Perú. ¿Cuáles son los impactos diferenciales de El Niño en las distintas regiones naturales del departamento (costa, sierra) y cómo ha condicionado históricamente el desarrollo económico y la ocupación del territorio?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) El Niño solo afecta a la selva amazónica; en La Libertad no tiene ningún impacto porque la corriente de Humboldt protege toda la costa norte del Perú de los fenómenos climáticos extremos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) En la costa norte (Trujillo, Virú, Chicama): lluvias torrenciales que desbordan ríos, destruyen infraestructura (carreteras, canales de irrigación, adobe de Chan Chan) y arruinan cosechas. En la sierra: en años de El Niño fuerte, paradójicamente pueden ocurrir sequías en el altiplano sur pero exceso de lluvias en la sierra norte. La recurrencia histórica de El Niño explica por qué las culturas prehispánicas costeñas construyeron en adobe (material accesible) pero siempre fueron vulnerables a la lluvia, y por qué los canales de irrigación fueron diseñados también para controlar avenidas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) El Niño solo beneficia a La Libertad porque las lluvias llenan los reservorios de Chavimochic y aumentan los rendimientos agrícolas en todos los valles del departamento sin ningún impacto negativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El Niño afecta a La Libertad solo en el aspecto pesquero; los peces se van a aguas más profundas pero las infraestructuras y los cultivos no sufren ningún daño</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los impactos de <B>El Niño</B> en La Libertad son diferenciados por zona: <b>Costa</b>: El Niño fuerte (1982-83, 1997-98, 2017) trae lluvias torrenciales históricamente inusuales en la costa árida. Los ríos Chicama, Moche y Virú (normalmente secos o de escaso caudal en años normales) se desbordan inundando valles, destruyendo canales de Chavimochic, arruinando plantaciones de caña de azúcar y espárragos, dañando carreteras y colapsando estructuras de adobe (Chan Chan sufre enormemente). En 2017, el "Niño Costero" causó daños por ~3 200 millones de dólares en todo el norte peruano, concentrados en La Libertad, Piura y Lambayeque. <b>Sierra</b>: El Niño en la sierra norte peruana tiene efectos más variables; en algunos casos genera más lluvias que benefician la agricultura de subsistencia, en otros (especialmente en el sur andino) provoca sequía. <b>Condicionamiento histórico</b>: la arqueología muestra que los asentamientos moche y chimú siempre eligieron lugares en las terrazas altas de los valles, por encima de las zonas de inundación, demostrando el conocimiento ancestral del riesgo de El Niño. La crisis hídrica de 1982-83 (El Niño) fue determinante en la quiebra de las cooperativas azucareras que el gobierno de Velasco había creado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> El hallazgo de la Dama de Cao (2006) en el Complejo El Brujo modificó fundamentalmente la comprensión del rol de la mujer en las sociedades prehispánicas peruanas. Desde la perspectiva de la arqueología de género, ¿qué implica este hallazgo para la interpretación de otras tumbas y contextos arqueológicos peruanos que podrían haber sido sesgados por preconcepciones patriarcales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) El hallazgo de la Dama de Cao es un caso excepcional y único; demuestra que en toda la América prehispánica las mujeres eran absolutamente subordinadas excepto en este solo caso de la costa norte peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) La Dama de Cao demostró que las interpretaciones arqueológicas previas estaban sesgadas por el presentismo patriarcal: cuando se encontraban tumbas con atributos de poder (armas, cetros, oro) y restos esqueléticos, automáticamente se asignaba género masculino al ocupante; ahora se aplica análisis de ADN antiguo y análisis osteológico exhaustivo, lo que ha permitido identificar otras mujeres de élite en contextos peruanos y latinoamericanos previamente clasificados como masculinos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) El hallazgo prueba que toda la sociedad Moche era matriarcal y que todos los gobernantes moche identificados como varones eran en realidad mujeres que se disfrazaban de hombres para ejercer el poder</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) La importancia del hallazgo es exclusivamente artística: los ornamentos de oro y plata de la Dama de Cao son los más bellos de toda la América prehispánica y justifican por sí solos la creación del Museo Cao</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>arqueología de género</B> analiza cómo las preconcepciones culturales modernas distorsionan la interpretación del pasado. La <b>Dama de Cao</b> expuso un sesgo fundamental: antes de 2006, la arqueología prehispánica andina asumía que los entierros con atributos de poder (armas, cetros, oro, sacrificios humanos) pertenecían a hombres. Cuando se encontraban restos mal conservados, automáticamente se catalogaban como masculinos si el ajuar era de élite. Tras el hallazgo de la Dama de Cao (confirmada como mujer por análisis de ADN antiguo y osteología), los arqueólogos revisaron otros contextos: (1) El <b>Señor de Cao</b>, enterrado en la misma huaca, probablemente era su sucesor o pariente. (2) En Sipán (Lambayeque), se encontraron mujeres con ornamentos de élite cerca del Señor de Sipán. (3) En culturas andinas posteriores (Wari, Tiwanaku, Inca), el análisis de ADN ha revelado mujeres en contextos de alto estatus previamente interpretados como masculinos. (4) El hallazgo refuerza la importancia de aplicar <b>ciencia forense y bioantropología</b> (no solo intuición de campo) en arqueología, y de cuestionar los sesgos de género en la interpretación de evidencias del pasado.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

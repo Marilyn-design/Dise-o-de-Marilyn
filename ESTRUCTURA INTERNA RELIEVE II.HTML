@@ -1,0 +1,505 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Estructura Interna y Formación del Relieve II - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA &middot; TEMA 5 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Estructura Interna y Formación del Relieve II</H1>
+<DIV CLASS="sub">Tipos de rocas &middot; Ciclo de las rocas &middot; Procesos exógenos &middot; Erosión &middot; Formas del relieve continental y oceánico</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Los tipos de rocas</H3>
+Las <B>rocas</B> son agregados naturales de uno o más minerales que forman la corteza terrestre. Según su origen, se clasifican en tres grandes grupos:
+
+<H4>A) Rocas ígneas o magmáticas:</H4>
+Se forman por el enfriamiento y solidificación del <B>magma</B>. Son las rocas originarias de la Tierra y la fuente de todas las demás. Se dividen en:
+<UL>
+<LI><B>Rocas ígneas intrusivas o plutónicas:</B> el magma se enfría lentamente en el interior de la corteza, lo que permite la formación de cristales grandes y visibles. Ejemplo clásico: <B>granito</B> (compuesto de cuarzo, feldespato y mica). Son la base de la corteza continental.</LI>
+<LI><B>Rocas ígneas extrusivas o volcánicas:</B> el magma (ya llamado lava) se enfría rápidamente en la superficie, formando cristales muy pequeños o ninguno. Ejemplo clásico: <B>basalto</B> (compone la corteza oceánica). También: obsidiana, pumita o piedra pómez.</LI>
+</UL>
+
+<H4>B) Rocas sedimentarias:</H4>
+Se forman por la acumulación, compactación y cementación de sedimentos (fragmentos de otras rocas, restos orgánicos o precipitados químicos). Son las rocas más abundantes en la superficie terrestre (~75% de las rocas expuestas) y las que contienen <B>fósiles</B>. Se clasifican en:
+<UL>
+<LI><B>Detríticas o clásticas:</B> formadas por fragmentos de otras rocas transportados y depositados. Según el tamaño del fragmento: conglomerado (fragmentos gruesos), arenisca (arena) y lutita o arcillita (partículas finas).</LI>
+<LI><B>Químicas:</B> formadas por precipitación de minerales disueltos en agua. Ejemplos: caliza (carbonato de calcio), sal gema (halita), yeso.</LI>
+<LI><B>Orgánicas o biogénicas:</B> formadas por acumulación de restos de organismos. Ejemplos: carbón (restos vegetales), petróleo y gas natural (restos de microorganismos marinos), calizas coralinas.</LI>
+</UL>
+
+<H4>C) Rocas metamórficas:</H4>
+Se forman cuando rocas preexistentes (ígneas, sedimentarias u otras metamórficas) son sometidas a altas <B>presiones y temperaturas</B> en el interior de la corteza, sin llegar a fundirse. El proceso se llama <B>metamorfismo</B>. Ejemplos:
+<UL>
+<LI><B>Mármol:</B> metamorfismo de la caliza (sedimentaria).</LI>
+<LI><B>Pizarra:</B> metamorfismo de la lutita (sedimentaria).</LI>
+<LI><B>Cuarcita:</B> metamorfismo de la arenisca (sedimentaria).</LI>
+<LI><B>Gneis:</B> metamorfismo del granito (ígneo).</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo de roca</TH><TH>Origen</TH><TH>Ejemplo principal</TH><TH>Característica clave</TH></TR>
+<TR><TD><B>Ígnea intrusiva</B></TD><TD>Enfriamiento lento del magma en el interior</TD><TD>Granito</TD><TD>Cristales grandes y visibles</TD></TR>
+<TR><TD><B>Ígnea extrusiva</B></TD><TD>Enfriamiento rápido de la lava en superficie</TD><TD>Basalto, obsidiana</TD><TD>Cristales pequeños o vítreos</TD></TR>
+<TR><TD><B>Sedimentaria detrítica</B></TD><TD>Fragmentos de otras rocas compactados</TD><TD>Arenisca, lutita</TD><TD>Contiene fósiles, estratificada</TD></TR>
+<TR><TD><B>Sedimentaria química</B></TD><TD>Precipitación de minerales disueltos</TD><TD>Caliza, yeso, sal gema</TD><TD>Formada en ambientes acuáticos</TD></TR>
+<TR><TD><B>Metamórfica</B></TD><TD>Transformación por calor y presión</TD><TD>Mármol, pizarra, gneis</TD><TD>Foliación o bandas visibles</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La pregunta más frecuente sobre rocas en admisión universitaria es la transformación: <B>caliza → mármol</B> (metamorfismo), <B>granito → gneis</B> (metamorfismo), <B>arenisca → cuarcita</B> (metamorfismo). También: el <B>petróleo</B> proviene de rocas sedimentarias orgánicas, no de rocas ígneas.</DIV>
+
+<H3>2. El ciclo de las rocas</H3>
+El <B>ciclo de las rocas</B> es el conjunto de procesos geológicos por los cuales los tres tipos de rocas se transforman entre sí a lo largo de millones de años. Es un ciclo continuo impulsado por la energía interna de la Tierra (que genera magma y mueve las placas) y la energía solar (que impulsa la erosión y el transporte).
+
+<H4>Principales transformaciones del ciclo:</H4>
+<OL>
+<LI>El <B>magma</B> al enfriarse forma <B>rocas ígneas</B>.</LI>
+<LI>Las rocas ígneas (y cualquier otra) expuestas en superficie son atacadas por la <B>meteorización y erosión</B>, produciendo sedimentos.</LI>
+<LI>Los sedimentos se acumulan, compactan y cementan formando <B>rocas sedimentarias</B> (proceso de litificación o diagénesis).</LI>
+<LI>Cualquier tipo de roca sometida a alta presión y temperatura (sin fundirse) se transforma en <B>rocas metamórficas</B>.</LI>
+<LI>Si las rocas metamórficas (o cualquier otra) alcanzan temperaturas de fusión, se convierten en <B>magma</B>, reiniciando el ciclo.</LI>
+</OL>
+
+<DIV CLASS="mapa-note"><B>Importancia económica:</B> Comprender el ciclo de las rocas es fundamental para la exploración minera y petrolera. El <B>Perú</B> es uno de los mayores productores mundiales de minerales metálicos (cobre, oro, plata, zinc) asociados principalmente a rocas ígneas y metamórficas formadas durante la orogénesis andina. El <B>petróleo</B> se encuentra en cuencas sedimentarias como la cuenca amazónica peruana.</DIV>
+
+<H3>3. Procesos exógenos: meteorización, erosión, transporte y sedimentación</H3>
+Mientras los procesos <B>endógenos</B> (internos: tectónica, vulcanismo) construyen el relieve, los procesos <B>exógenos</B> (externos) lo destruyen y modelan. Son impulsados por la energía solar, el agua, el viento y la gravedad.
+
+<H4>A) Meteorización:</H4>
+Es la desintegración y descomposición de las rocas <I>in situ</I> (en el mismo lugar donde se encuentran), sin transporte. Existen dos tipos:
+<UL>
+<LI><B>Meteorización física o mecánica:</B> desintegración de la roca sin cambio en su composición química. Causas principales:
+  <UL>
+    <LI><B>Termoclastia:</B> variaciones de temperatura que dilatan y contraen las rocas hasta fracturarlas. Frecuente en desiertos.</LI>
+    <LI><B>Crioclastia o gelifracción:</B> el agua se congela en las grietas, se expande (~9% de su volumen) y rompe la roca. Frecuente en zonas de alta montaña.</LI>
+    <LI><B>Haloclastia:</B> cristalización de sales en los poros de la roca que la rompen desde adentro. Frecuente en zonas costeras y desérticas.</LI>
+  </UL>
+</LI>
+<LI><B>Meteorización química:</B> alteración de la composición mineralógica de la roca. Causas:
+  <UL>
+    <LI><B>Oxidación:</B> reacción de los minerales con el oxígeno del aire. Produce el característico color rojizo (óxido de hierro) de muchos suelos tropicales.</LI>
+    <LI><B>Hidrólisis:</B> reacción de los minerales con el agua. Descompone los silicatos (como el feldespato) en arcillas.</LI>
+    <LI><B>Carbonatación:</B> el CO₂ del aire se disuelve en el agua formando ácido carbónico, que disuelve la caliza. Es el origen del <B>karst</B> (paisaje de cuevas, estalactitas y estalagmitas).</LI>
+  </UL>
+</LI>
+</UL>
+
+<H4>B) Erosión:</H4>
+Es el desgaste y arranque de material de la superficie terrestre por agentes externos con movimiento. Los principales agentes erosivos son:
+<UL>
+<LI><B>Erosión fluvial (agua de ríos):</B> el agente erosivo más importante. Los ríos excavan valles en forma de V en su curso alto, amplían llanuras aluviales en su curso bajo y depositan sedimentos en los deltas.</LI>
+<LI><B>Erosión eólica (viento):</B> fundamental en desiertos. Genera dunas, yardangs (rocas esculpidas por el viento) y deflación (remoción de partículas finas).</LI>
+<LI><B>Erosión glacial:</B> los glaciares excavan valles en forma de U, circos glaciares, fjordos y depositan morrenas. Dominó en las glaciaciones del Pleistoceno.</LI>
+<LI><B>Erosión marina (oleaje):</B> forma acantilados, cuevas marinas, arcos y pilares rocosos en las costas.</LI>
+<LI><B>Erosión kárstica:</B> disolución de rocas calcáreas por aguas ligeramente ácidas, formando cuevas, dolinas, poljés y ríos subterráneos.</LI>
+</UL>
+
+<H4>C) Transporte y sedimentación:</H4>
+El material erosionado es <B>transportado</B> por los agentes (agua, viento, hielo, gravedad) y finalmente <B>depositado</B> cuando la energía del agente disminuye. El lugar de depósito se llama <B>cuenca sedimentaria</B>.
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> Distingue bien: <B>meteorización</B> = desintegración en el sitio, sin movimiento. <B>Erosión</B> = desgaste con arranque y movimiento del material. <B>Transporte</B> = desplazamiento del material. <B>Sedimentación</B> = depósito final. Son cuatro etapas del mismo proceso exógeno.</DIV>
+
+<H3>4. Formas del relieve continental</H3>
+El relieve continental presenta diversas formas producto de la acción combinada de los procesos endógenos y exógenos:
+
+<H4>Formas de relieve positivo (elevaciones):</H4>
+<UL>
+<LI><B>Montaña:</B> elevación de gran altitud con pendientes pronunciadas y cima bien definida. Se forman por orogénesis. Ejemplo: picos de los Andes.</LI>
+<LI><B>Cordillera:</B> cadena de montañas alineadas que comparten el mismo origen tectónico. Ejemplo: Cordillera de los Andes.</LI>
+<LI><B>Macizo:</B> bloque de terreno elevado, antiguo y muy erosionado, sin la forma aguda de las montañas jóvenes. Ejemplo: Macizo Guayanés, Macizo Brasileño.</LI>
+<LI><B>Meseta o altiplano:</B> superficie elevada, extensa y relativamente plana. Puede formarse por levantamiento tectónico o por erosión de antiguos relieves. Ejemplo: <B>Altiplano peruano-boliviano</B> (~3 800 m s.n.m.).</LI>
+<LI><B>Colina:</B> elevación menor de 200 m sobre el entorno circundante, con pendientes suaves.</LI>
+</UL>
+
+<H4>Formas de relieve negativo (depresiones y superficies bajas):</H4>
+<UL>
+<LI><B>Valle:</B> depresión alargada excavada principalmente por ríos (valle en V) o glaciares (valle en U).</LI>
+<LI><B>Llanura:</B> superficie extensa, plana o de suave ondulación, a baja altitud. Pueden ser llanuras de inundación, costeras o interiores. Ejemplo: <B>llanura amazónica peruana</B>.</LI>
+<LI><B>Cuenca:</B> depresión cerrada rodeada de relieves más altos. Puede contener un lago o drenar hacia un punto central.</LI>
+<LI><B>Cañón o garganta:</B> valle profundo y estrecho de paredes verticales, excavado por un río en terreno resistente. Ejemplo: Cañón del Colca (Perú), uno de los más profundos del mundo (~3 270 m).</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">3 270 m</DIV><DIV CLASS="dk-label">Profundidad del Cañón del Colca (Arequipa, Perú)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">3 800 m</DIV><DIV CLASS="dk-label">Altitud promedio del Altiplano peruano-boliviano</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">6 768 m</DIV><DIV CLASS="dk-label">Nevado Huascarán, punto más alto del Perú</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">8 849 m</DIV><DIV CLASS="dk-label">Monte Everest, punto más alto del mundo</DIV></DIV>
+</DIV>
+
+<H3>5. Formas del relieve oceánico</H3>
+El fondo oceánico no es plano: presenta una variedad de formas tan compleja como el relieve continental, muchas de ellas relacionadas directamente con la tectónica de placas.
+
+<H4>Principales formas del relieve oceánico:</H4>
+<UL>
+<LI><B>Plataforma continental:</B> prolongación sumergida del continente hasta una profundidad de ~200 m. Es relativamente plana y de pendiente suave. Tiene gran importancia biológica (zona de pesca) y económica (petróleo submarino). La plataforma continental peruana es estrecha por la proximidad de la Fosa Perú-Chile.</LI>
+<LI><B>Talud continental:</B> zona de pendiente pronunciada que desciende desde el borde de la plataforma continental hasta las llanuras abisales, entre 200 y 3 000 m de profundidad aproximadamente.</LI>
+<LI><B>Llanura abisal:</B> extensas superficies planas del fondo oceánico, entre 3 000 y 6 000 m de profundidad. Son las zonas más planas de la Tierra.</LI>
+<LI><B>Dorsal oceánica:</B> cadena montañosa submarina que recorre el fondo oceánico. Es donde se separan las placas tectónicas y se crea nueva corteza oceánica. La <B>Dorsal Mesoatlántica</B> es la más extensa del mundo (~16 000 km).</LI>
+<LI><B>Fosa oceánica (trinchera):</B> depresión alargada y muy profunda del fondo oceánico, formada en las zonas de subducción. Son los puntos más profundos de la Tierra. Ejemplo: <B>Fosa de las Marianas</B> (~11 000 m, el punto más profundo del planeta). La <B>Fosa Perú-Chile</B> alcanza más de 8 000 m.</LI>
+<LI><B>Guyot:</B> monte submarino de cima plana (volcano extinto y erosionado que quedó sumergido).</LI>
+<LI><B>Monte submarino:</B> elevación del fondo oceánico que no alcanza la superficie. Puede ser de origen volcánico.</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Forma del relieve oceánico</TH><TH>Profundidad aprox.</TH><TH>Origen</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Plataforma continental</B></TD><TD>0 – 200 m</TD><TD>Prolongación del continente</TD><TD>Plataforma del Mar del Norte</TD></TR>
+<TR><TD><B>Talud continental</B></TD><TD>200 – 3 000 m</TD><TD>Transición corteza continental-oceánica</TD><TD>Taludes del Atlántico</TD></TR>
+<TR><TD><B>Llanura abisal</B></TD><TD>3 000 – 6 000 m</TD><TD>Acumulación de sedimentos en el fondo</TD><TD>Llanura abisal del Pacífico</TD></TR>
+<TR><TD><B>Dorsal oceánica</B></TD><TD>Variable (cimas a ~2 500 m)</TD><TD>Límite divergente (creación de corteza)</TD><TD>Dorsal Mesoatlántica</TD></TR>
+<TR><TD><B>Fosa oceánica</B></TD><TD>6 000 – 11 000+ m</TD><TD>Límite convergente (subducción)</TD><TD>Fosa de las Marianas, Fosa Perú-Chile</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>6. Procesos de deformación de las rocas: pliegues y fallas</H3>
+Cuando las fuerzas tectónicas actúan sobre las rocas de la corteza, estas pueden deformarse de dos maneras principales según su comportamiento (plástico o frágil):
+
+<H4>A) Pliegues (comportamiento plástico):</H4>
+Cuando las rocas son comprimidas lentamente y a grandes profundidades (donde la presión y temperatura las hacen más plásticas), se doblan formando <B>pliegues</B>. Las partes curvas hacia arriba se llaman <B>anticlinales</B> y las partes curvas hacia abajo se llaman <B>sinclinales</B>. Los pliegues son características típicas de las zonas de convergencia tectónica y forman cordilleras.
+
+<H4>B) Fallas (comportamiento frágil):</H4>
+Cuando las rocas se rompen bruscamente por no poder deformarse plásticamente (generalmente en capas superficiales y frías), se generan <B>fallas</B>. Una falla es una fractura en la corteza a lo largo de la cual los bloques se desplazan. Tipos principales:
+<UL>
+<LI><B>Falla normal:</B> el bloque superior (bloque colgante) se desliza hacia abajo respecto al bloque inferior. Asociada a esfuerzos de tensión (extensión). Genera horsts (bloques elevados) y grabens (bloques hundidos).</LI>
+<LI><B>Falla inversa:</B> el bloque superior sube sobre el inferior. Asociada a esfuerzos de compresión. Característica de las zonas de subducción y colisión.</LI>
+<LI><B>Falla transcurrente o transformante:</B> los bloques se deslizan horizontalmente uno respecto al otro. No hay componente vertical significativa. Ejemplo: <B>Falla de San Andrés</B> (California).</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> <B>Anticlinal</B> = pliegue convexo hacia arriba (arco). <B>Sinclinal</B> = pliegue cóncavo hacia abajo (cuenco). <B>Falla normal</B> = extensión, el bloque baja. <B>Falla inversa</B> = compresión, el bloque sube. Esta distinción aparece con frecuencia en preguntas de opción múltiple.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Preguntas de práctica</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- NIVEL BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál de los siguientes es un ejemplo de roca ígnea intrusiva?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Basalto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Granito</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Mármol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Arenisca</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>granito</B> es la roca ígnea intrusiva más representativa. Se forma cuando el magma se enfría lentamente en el interior de la corteza, lo que permite el crecimiento de cristales grandes y visibles (cuarzo, feldespato, mica). El <B>basalto</B> es ígneo extrusivo (enfriamiento rápido en superficie), el <B>mármol</B> es metamórfico y la <B>arenisca</B> es sedimentaria detrítica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Qué tipo de roca contiene fósiles y por qué?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Las rocas ígneas, porque se forman a altas temperaturas que conservan los organismos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Las rocas metamórficas, porque la presión comprime y conserva los restos orgánicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Las rocas sedimentarias, porque se forman por acumulación de materiales en capas que pueden atrapar restos de organismos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Todos los tipos de roca pueden contener fósiles por igual</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Los <B>fósiles</B> solo se encuentran en rocas <B>sedimentarias</B>, porque estas se forman a temperaturas bajas por acumulación de sedimentos en capas (estratos), proceso que puede atrapar y preservar restos de organismos. Las rocas ígneas se forman a temperaturas que destruirían cualquier resto orgánico. Las rocas metamórficas, aunque derivadas de sedimentarias, son sometidas a presiones y temperaturas que destruyen o deforman los fósiles.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Qué proceso convierte la caliza en mármol?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Erosión y sedimentación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Fusión y cristalización</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Metamorfismo por calor y presión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Disolución química por agua carbonatada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>mármol</B> es una roca <B>metamórfica</B> formada a partir de la <B>caliza</B> (roca sedimentaria química) cuando esta es sometida a altas presiones y temperaturas en el interior de la corteza durante procesos tectónicos. El carbonato de calcio de la caliza recristaliza formando el mármol. Esta transformación caliza → mármol es una de las más preguntadas en exámenes de admisión universitaria.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál es la diferencia entre meteorización y erosión?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) La meteorización ocurre en el mar y la erosión en tierra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) La meteorización desintegra la roca en su lugar sin transporte; la erosión implica desgaste y arranque del material con desplazamiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" Value="c"> c) La meteorización es causada solo por el viento y la erosión solo por el agua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Son sinónimos que describen el mismo proceso geológico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Meteorización:</B> desintegración o descomposición de la roca <I>in situ</I> (en el mismo lugar), sin que el material sea transportado. <B>Erosión:</B> proceso que implica el desgaste, arranque y <B>transporte</B> del material rocoso por un agente en movimiento (agua, viento, hielo). La meteorización prepara el material y la erosión lo moviliza. Son procesos secuenciales pero distintos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Qué forma del relieve oceánico corresponde al punto más profundo de la Tierra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Dorsal oceánica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Llanura abisal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Fosa oceánica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Plataforma continental</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Las <B>fosas oceánicas</B> son las depresiones más profundas de la Tierra, formadas en las zonas de subducción donde una placa oceánica se hunde bajo otra placa. El punto más profundo conocido es la <B>Fosa de las Marianas</B> (océano Pacífico), con aproximadamente 11 000 m de profundidad en el <B>Abismo Challenger</B>. La Fosa Perú-Chile, frente a la costa del Perú, supera los 8 000 m de profundidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Qué es la plataforma continental y cuál es su importancia económica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Es la parte más profunda del océano; su importancia es la presencia de fósiles marinos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Es la prolongación sumergida del continente hasta ~200 m de profundidad; es importante por la pesca y el petróleo submarino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Es una cadena montañosa submarina que delimita los océanos de los continentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Es la zona del fondo oceánico donde se acumulan los sedimentos de los ríos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>plataforma continental</B> es la extensión submarina del continente hasta una profundidad de ~200 m, con pendiente suave. Tiene gran importancia económica porque: (1) es la zona de mayor <B>productividad pesquera</B> del mundo (aguas poco profundas, bien iluminadas y ricas en nutrientes) y (2) alberga importantes <B>yacimientos de petróleo y gas</B> submarinos. La plataforma continental peruana es relativamente estrecha (30–50 km) por la presencia de la Fosa Perú-Chile muy cerca de la costa.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Cuál de los siguientes procesos de meteorización química es responsable de la formación de cuevas y paisajes kársticos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Oxidación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Hidrólisis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Carbonatación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Crioclastia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>carbonatación</B> es el proceso por el cual el CO₂ atmosférico se disuelve en el agua de lluvia formando ácido carbónico (H₂CO₃), que reacciona con la caliza (CaCO₃) y la disuelve. Este proceso genera el <B>karst</B>: paisaje caracterizado por cuevas, dolinas (depresiones circulares), estalactitas, estalagmitas y ríos subterráneos. La crioclastia es meteorización física (congelamiento). La oxidación afecta principalmente a minerales con hierro. La hidrólisis descompone silicatos como el feldespato.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Qué diferencia existe entre un anticlinal y un sinclinal?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El anticlinal es una falla vertical y el sinclinal es una falla horizontal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El anticlinal es un pliegue convexo hacia arriba (arco); el sinclinal es un pliegue cóncavo hacia abajo (cuenco)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El anticlinal se forma en zonas marinas y el sinclinal solo en zonas continentales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Son términos sinónimos que describen el mismo tipo de deformación tectónica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Un <B>anticlinal</B> es un pliegue en el que los estratos se doblan hacia <B>arriba</B>, formando una especie de arco o bóveda: las rocas más antiguas quedan en el núcleo y las más jóvenes en los flancos. Un <B>sinclinal</B> es un pliegue en el que los estratos se doblan hacia <B>abajo</B>, formando un cuenco: las rocas más jóvenes quedan en el núcleo. Los anticlinales pueden atrapar petróleo y gas natural (trampa anticlinal), lo que los hace importantes en exploración petrolera.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Por qué los valles glaciares tienen forma de U mientras que los valles fluviales tienen forma de V?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Porque los ríos excavan solo verticalmente mientras que los glaciares excavan solo horizontalmente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Porque los glaciares, al ser masas sólidas de gran espesor y peso, erosionan tanto el fondo como las paredes laterales del valle; los ríos concentran su erosión en el fondo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Porque los valles en U se forman en zonas frías y los valles en V en zonas cálidas, independientemente del agente erosivo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Porque los valles glaciares son más antiguos y la erosión lateral los ensancha con el tiempo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>ríos</B> son fluidos que se concentran en el fondo del canal, erosionando principalmente hacia abajo (erosión vertical o incisión), lo que produce valles angostos y profundos en <B>forma de V</B>. Los <B>glaciares</B> son masas sólidas de hielo que ocupan todo el ancho del valle y tienen un enorme peso. Al desplazarse, erosionan tanto el <B>fondo como las paredes laterales</B> con igual intensidad, produciendo valles de paredes casi verticales y fondo plano en <B>forma de U</B> (o parábola). La forma del valle es una clave diagnóstica para identificar el agente erosivo que lo formó.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> En el ciclo de las rocas, ¿qué proceso transforma una roca sedimentaria en una roca metamórfica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Meteorización y erosión en la superficie</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Fusión completa seguida de cristalización lenta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Sometimiento a altas presiones y temperaturas en el interior de la corteza sin llegar a fundirse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Disolución en agua y posterior precipitación química</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>metamorfismo</B> ocurre cuando una roca (de cualquier tipo) es enterrada profundamente y queda sometida a <B>alta presión</B> (por el peso de las rocas suprayacentes) y <B>alta temperatura</B> (por el calor interno de la Tierra), pero sin llegar a fundirse. Si se fundiera, formaría magma y posteriormente roca ígnea, no metamórfica. El metamorfismo cambia la textura y la mineralogía de la roca: por ejemplo, la arenisca (sedimentaria) → cuarcita (metamórfica), o la lutita → pizarra → filita → esquisto → gneis, según aumenta el grado de metamorfismo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> ¿Cuál es la diferencia entre una falla normal y una falla inversa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) La falla normal genera montañas y la falla inversa genera valles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) En la falla normal el bloque superior baja (tensión); en la falla inversa el bloque superior sube sobre el inferior (compresión)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) La falla normal es horizontal y la falla inversa es vertical</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) La falla normal ocurre en zonas de subducción y la falla inversa en zonas de divergencia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En una <B>falla normal</B>, los esfuerzos de <B>tensión</B> (extensión) hacen que el bloque colgante (superior) se deslice hacia <B>abajo</B>. Son características de las zonas de divergencia tectónica y generan estructuras como <B>grabens</B> (bloques hundidos, como el Valle del Rift africano) y <B>horsts</B> (bloques elevados entre fallas normales). En una <B>falla inversa</B>, los esfuerzos de <B>compresión</B> empujan el bloque superior hacia <B>arriba</B> sobre el inferior. Son características de las zonas de convergencia y contribuyen al engrosamiento de la corteza en las cordilleras.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Cuál es la forma del relieve oceánico donde se crea nueva corteza oceánica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Fosa oceánica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Plataforma continental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Dorsal oceánica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Llanura abisal</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>dorsal oceánica</B> es una cadena montañosa submarina que marca un <B>límite divergente</B> entre placas tectónicas. En su eje central, las placas se separan y el magma del manto asciende, solidificándose y creando nueva corteza oceánica basáltica. Este proceso, llamado <B>expansión del fondo oceánico</B>, fue descubierto por Harry Hess en 1962. La Dorsal Mesoatlántica separa las placas Norteamericana y Euroasiática a un ritmo de ~2,5 cm por año, haciendo que el océano Atlántico se amplíe gradualmente.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> ¿Por qué el petróleo y el gas natural se encuentran frecuentemente asociados a estructuras anticlinales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Porque los anticlinales se forman exclusivamente en zonas marinas donde el petróleo es más abundante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Porque la forma arqueada del anticlinal actúa como trampa geológica: el petróleo y el gas, menos densos que el agua, migran hacia arriba y quedan atrapados bajo la roca impermeable del núcleo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Porque el calor generado en el núcleo del anticlinal transforma los sedimentos en petróleo directamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Porque los anticlinales siempre están asociados a fallas normales que permiten la migración del petróleo hacia la superficie</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>trampa anticlinal</B> es la trampa geológica más común para la acumulación de hidrocarburos. El petróleo y el gas natural, al ser menos densos que el agua, migran a través de rocas porosas (reservorio) hacia arriba por flotación. En un anticlinal, la curvatura hacia arriba actúa como una bóveda: cuando los fluidos alcanzan el núcleo sellado por una roca <B>impermeable</B> (roca sello, como arcilla o evaporitas), no pueden seguir migrando y se acumulan. Por eso la exploración petrolera busca estas estructuras en el subsuelo mediante sísmica de reflexión.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El proceso de crioclastia (gelifracción) es especialmente efectivo en las zonas de alta montaña andina del Perú. ¿Cuál es el mecanismo físico exacto por el que el hielo rompe las rocas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El hielo al formarse libera calor que dilata la roca hasta fracturarla</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El agua al congelarse aumenta su volumen aproximadamente un 9%, ejerciendo una presión de hasta 2 000 kg/cm² en las grietas de la roca, superior a la resistencia de casi cualquier roca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El hielo actúa como abrasivo que desgasta la roca por fricción al expandirse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El cambio de temperatura entre el día y la noche contrae el hielo, creando vacíos que debilitan la roca</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>crioclastia</B> funciona porque el agua es una de las pocas sustancias que <B>aumenta su volumen al solidificarse</B> (~9% más que en estado líquido). Cuando el agua penetra en las grietas y poros de una roca y luego se congela, ejerce presiones que pueden superar los <B>2 000 kg/cm²</B>, superior a la resistencia a la tracción de casi cualquier roca. Los ciclos repetidos de congelamiento y deshielo (típicos de la alta montaña andina, donde las temperaturas oscilan entre positivo de día y negativo de noche) van ampliando progresivamente las grietas hasta fragmentar la roca. Este proceso produce los característicos pedregales angulosos de las cumbres andinas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Qué es la diagénesis y en qué se diferencia del metamorfismo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La diagénesis es sinónimo de metamorfismo; ambos términos describen el mismo proceso a diferentes profundidades</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La diagénesis es el conjunto de procesos físicos y químicos (compactación, cementación, recristalización) que transforman sedimentos sueltos en roca sedimentaria a bajas temperaturas y presiones; el metamorfismo ocurre a presiones y temperaturas mucho más altas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La diagénesis transforma rocas ígneas en metamórficas; el metamorfismo transforma sedimentos en rocas sedimentarias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La diagénesis solo ocurre en el fondo oceánico y el metamorfismo solo en las cordilleras continentales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>diagénesis</B> (también llamada litificación) es el proceso que convierte sedimentos sueltos en <B>roca sedimentaria</B> mediante compactación (reducción de porosidad por el peso de sedimentos suprayacentes) y cementación (precipitación de minerales en los espacios entre granos). Ocurre a temperaturas menores de ~200°C y presiones relativamente bajas. El <B>metamorfismo</B> comienza cuando las condiciones superan estos límites (generalmente >200°C y presiones de varios kbar), transformando cualquier roca preexistente sin fundirla. Son procesos consecutivos en la historia de enterramiento de una roca sedimentaria.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> ¿Cómo se explica que en la cima de los Andes se encuentren rocas sedimentarias marinas (con fósiles de organismos oceánicos)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Porque los océanos cubrieron los Andes hasta hace pocas décadas y dejaron sus sedimentos al retirarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Porque los sedimentos marinos se acumularon en cuencas oceánicas o mares poco profundos que existían donde hoy están los Andes, y la posterior orogénesis los elevó miles de metros sobre el nivel del mar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Porque los fósiles marinos fueron transportados por ríos desde el océano hasta las cumbres andinas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Porque los volcanes andinos eyectaron sedimentos marinos desde el fondo oceánico durante sus erupciones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Este es un fenómeno famoso en geología: la observación de fósiles marinos en cumbres andinas fue una de las evidencias que llevó a comprender la magnitud de la orogénesis. Hace millones de años, donde hoy se elevan los Andes existía un <B>mar poco profundo</B> (el Mar de Tetis andino) o cuencas sedimentarias en las que se acumularon sedimentos con restos de organismos marinos. Cuando la subducción de la Placa de Nazca comenzó a elevar la corteza sudamericana, esos sedimentos marinos fueron levantados junto con la corteza hasta alcanzar las altitudes actuales. El propio Darwin observó fósiles marinos en las cumbres andinas durante su viaje en el Beagle (1832-1835).</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> ¿Qué es la denudación y cómo se relaciona con el concepto de penillanura propuesto por W.M. Davis?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La denudación es la acumulación de sedimentos en las cuencas; la penillanura es el inicio de ese proceso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La denudación es el conjunto de procesos exógenos que rebajan el relieve; la penillanura es la superficie casi plana y de baja altitud que resulta de una denudación prolongada de un macizo montañoso antiguo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La denudación es sinónimo de erosión glaciar y la penillanura solo se forma en climas fríos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La penillanura es una forma del relieve oceánico y la denudación es el proceso que la origina en el fondo marino</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>denudación</B> es el término que engloba todos los procesos exógenos (meteorización, erosión, transporte) que tienden a rebajar y aplanar el relieve. El geógrafo estadounidense William Morris Davis (1850–1934) propuso el modelo del <B>ciclo de erosión geográfico</B>: un relieve recién elevado (juventud) es progresivamente disecado por la erosión (madurez) hasta reducirse a una superficie de baja altitud, suave y de escaso relieve residual, a la que llamó <B>penillanura</B> (casi llanura, del latín <I>paene</I> = casi). Ejemplos: el Macizo Brasileño y el Macizo Guayanés son penillanuras antiguas muy erosionadas. Si el área es luego elevada tectónicamente, la penillanura se convierte en una <B>meseta</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> ¿Qué son las turbiditas y en qué tipo de ambiente geológico se forman?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Son rocas ígneas volcánicas formadas en las dorsales oceánicas por enfriamiento rápido de la lava</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Son depósitos sedimentarios formados por corrientes de turbidez: flujos densos de sedimentos que descienden por el talud continental y se depositan en las llanuras abisales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Son rocas metamórficas formadas en las zonas de subducción por la alta presión de la placa que se hunde</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Son depósitos de origen glaciar formados en los fondos de fiordos durante las glaciaciones del Pleistoceno</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las <B>turbiditas</B> son depósitos sedimentarios característicos de los fondos oceánicos profundos, formados por <B>corrientes de turbidez</B>: flujos gravitacionales de agua cargada de sedimentos que descienden rápidamente por el talud continental cuando se desestabilizan (por sismos, acumulación excesiva o deshielo). Al llegar a las llanuras abisales, la corriente pierde energía y deposita los sedimentos en capas gradadas (más gruesas en la base, más finas arriba), estructura característica de las turbiditas. Son importantes porque transportan grandes volúmenes de sedimento continental al fondo oceánico profundo y pueden cortar cables submarinos al descender por el talud.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> El concepto de "tectónica de escape" o "extrusión tectónica" describe situaciones donde bloques corticales se desplazan lateralmente para escapar de una zona de colisión. ¿Cuál es el ejemplo más claro de este proceso a escala global?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) La separación de América del Sur y África por expansión del Atlántico Sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) El desplazamiento lateral del bloque de Indochina hacia el sureste debido a la colisión del subcontinente indio con Asia, facilitado por grandes fallas transcurrentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) La subducción de la Placa de Nazca bajo Sudamérica que empuja los Andes hacia el este</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El movimiento de la Placa Arábiga hacia el norte que escapa de la dorsal del Mar Rojo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>tectónica de escape</B> o extrusión tectónica describe el desplazamiento lateral de bloques corticales que "escapan" lateralmente cuando dos placas colisionan frontalmente. El ejemplo clásico es la colisión del <B>subcontinente indio</B> con <B>Asia</B>: como la corteza continental no puede subducir fácilmente, parte de la energía de compresión se transfiere lateralmente empujando el bloque de <B>Indochina</B> (Sureste Asiático) hacia el sureste a lo largo de grandes fallas transcurrentes como la Falla del Río Rojo y la Falla de Sagaing. Este proceso fue propuesto por Peter Molnar y Paul Tapponnier en la década de 1970 y explica la sismicidad activa de Asia oriental.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> ¿Qué es el metamorfismo de alta presión y baja temperatura (facies de esquistos azules o blueschist) y dónde ocurre preferentemente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Ocurre en las dorsales oceánicas donde la lava caliente calienta las rocas circundantes a alta presión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Ocurre en las zonas de subducción, donde la placa oceánica fría desciende rápidamente a gran profundidad generando alta presión pero manteniendo temperaturas relativamente bajas; produce minerales azules como la glaucofana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Ocurre en los núcleos de las cordilleras donde la compresión genera calor extremo sin aumento significativo de presión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Ocurre en las llanuras abisales donde la columna de agua genera alta presión sobre los sedimentos del fondo oceánico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El metamorfismo de <B>alta presión y baja temperatura</B> (facies de <B>esquistos azules</B> o blueschist) es un tipo especial que ocurre en las <B>zonas de subducción</B>. La placa oceánica fría desciende rápidamente hacia el manto: la velocidad de subducción es mayor que la velocidad a la que las rocas se calientan, por lo que alcanzan grandes profundidades (alta presión) antes de equilibrarse térmicamente con el manto caliente (temperatura relativamente baja). Esta combinación inusual de P-T produce minerales diagnósticos como la <B>glaucofana</B> (anfíbol azul) y la <B>lawsonita</B>. Los esquistos azules son marcadores geológicos de antigua subducción y se encuentran en varias partes de los Andes peruanos, evidencia de la larga historia de subducción de la Placa de Nazca.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

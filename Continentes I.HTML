@@ -1,0 +1,575 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Continentes I: África, Europa y Asia - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:22px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA · TEMA 16 · NIVEL PREUNIVERSITARIO</DIV>
+<H1>Continentes I: África, Europa y Asia</H1>
+<DIV CLASS="sub">Superficie · Población · Relieve · Hidrografía · Clima · Economía · Países y capitales clave</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- ===================== RESUMEN GLOBAL ===================== -->
+<H3 ID="vision-global">1. Visión general: los seis continentes</H3>
+
+Antes de estudiar cada continente, es clave conocer el cuadro comparativo global:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Continente</TH><TH>Superficie (km²)</TH><TH>Población aprox.</TH><TH>Países</TH></TR>
+<TR><TD><B>Asia</B></TD><TD>44 579 000</TD><TD>~4 700 millones</TD><TD>49</TD></TR>
+<TR><TD><B>África</B></TD><TD>30 370 000</TD><TD>~1 450 millones</TD><TD>54</TD></TR>
+<TR><TD><B>América</B></TD><TD>42 550 000</TD><TD>~1 030 millones</TD><TD>35</TD></TR>
+<TR><TD><B>Antártida</B></TD><TD>14 000 000</TD><TD>0 (solo científicos)</TD><TD>0</TD></TR>
+<TR><TD><B>Europa</B></TD><TD>10 530 000</TD><TD>~745 millones</TD><TD>44</TD></TR>
+<TR><TD><B>Oceanía</B></TD><TD>8 526 000</TD><TD>~45 millones</TD><TD>14</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Muy evaluado:</B> <B>Asia</B> es el continente más grande y más poblado. <B>África</B> es el continente con más países (54). <B>Europa</B> es el más pequeño de los continentes habitados. <B>Antártida</B> no tiene población permanente ni países soberanos.</DIV>
+
+<!-- ===================== ÁFRICA ===================== -->
+<H3 ID="africa">2. ÁFRICA</H3>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">30 370 000 km²</DIV><DIV CLASS="dk-label">2° continente más grande</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~1 450 M</DIV><DIV CLASS="dk-label">Habitantes (2° más poblado)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">54</DIV><DIV CLASS="dk-label">Países (el más en el mundo)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Argelia</DIV><DIV CLASS="dk-label">País más extenso de África</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Nigeria</DIV><DIV CLASS="dk-label">País más poblado de África</DIV></DIV>
+</DIV>
+
+<H4>Ubicación y límites:</H4>
+<UL>
+<LI>Se extiende desde los 37° N (Cabo Blanco, Túnez) hasta los 35° S (Cabo de Buena Esperanza, Sudáfrica).</LI>
+<LI>Limita al norte con el <B>mar Mediterráneo</B>, al este con el <B>océano Índico</B> y el mar Rojo, al oeste con el <B>océano Atlántico</B>, y al noreste con Asia (a través del canal de Suez y el istmo de Suez).</LI>
+<LI>El <B>Ecuador</B> atraviesa África casi por la mitad (por Congo, Uganda, Kenia, Gabón).</LI>
+<LI>El <B>Meridiano de Greenwich (0°)</B> también cruza África (por Ghana, Togo, Burkina Faso, Argelia).</LI>
+</UL>
+
+<H4>Relieve:</H4>
+<UL>
+<LI>África es un continente de <B>mesetas y planicies elevadas</B>; no tiene grandes cadenas montañosas continuas como los Andes o el Himalaya.</LI>
+<LI><B>Desierto del Sahara:</B> el mayor desierto cálido del mundo (~9 200 000 km²); ocupa todo el norte de África. Abarca Argelia, Libia, Egipto, Mauritania, Malí, Níger, Chad y Sudán.</LI>
+<LI><B>Monte Kilimanjaro</B> (5 895 m, Tanzania): el punto más alto de África; volcán inactivo con glaciares en la cima (en retroceso por el cambio climático).</LI>
+<LI><B>Valle del Rift (Gran Valle del Rift):</B> fractura tectónica de más de 6 000 km que recorre el este de África de norte a sur. En sus fosas se forman grandes lagos (Tanganyika, Malawi, Alberto). Aquí se hallaron los restos humanos más antiguos conocidos.</LI>
+<LI><B>Macizo etíope</B> (punto más alto: Ras Dejen, 4 550 m).</LI>
+<LI><B>Desierto de Namib</B> (costa sudoccidental): el desierto más antiguo del mundo.</LI>
+<LI><B>Desierto del Kalahari</B> (sur de África): desierto semiárido que se extiende por Botsuana, Namibia y Sudáfrica.</LI>
+</UL>
+
+<H4>Hidrografía:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Río</TH><TH>Longitud</TH><TH>Países / desembocadura</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Nilo</B></TD><TD>~6 650 km</TD><TD>Uganda, Sudán, Egipto → Mediterráneo</TD><TD>El <B>río más largo del mundo</B>; cuna de la civilización egipcia</TD></TR>
+<TR><TD><B>Congo (Zaire)</B></TD><TD>~4 700 km</TD><TD>Rep. Dem. del Congo → Atlántico</TD><TD>El <B>río más caudaloso de África</B> y 2° del mundo; cuenca más extensa de África</TD></TR>
+<TR><TD><B>Níger</B></TD><TD>~4 200 km</TD><TD>Guinea, Malí, Níger, Nigeria → Atlántico</TD><TD>3° río de África; importante para el Sahel</TD></TR>
+<TR><TD><B>Zambeze</B></TD><TD>~2 700 km</TD><TD>Zambia, Mozambique → Índico</TD><TD>Cataratas Victoria (la mayor caída de agua por anchura del mundo)</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Climas y biomas:</H4>
+<UL>
+<LI><B>Desértico cálido (Sahara, Namib, Kalahari):</B> escasísimas precipitaciones, temperatura extrema.</LI>
+<LI><B>Tropical lluvioso (selva ecuatorial):</B> cuenca del Congo, costa de Guinea; lluvias todo el año, máxima biodiversidad.</LI>
+<LI><B>Sabana tropical:</B> la más extensa de África; al norte y sur de la selva ecuatorial. Grandes migraciones de herbívoros (ñus, cebras, jirafas).</LI>
+<LI><B>Mediterráneo:</B> en el extremo norte (Marruecos, Túnez, Argelia costera) y extremo sur (Ciudad del Cabo, Sudáfrica).</LI>
+</UL>
+
+<H4>Regiones geográficas y países clave:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Región</TH><TH>Países destacados</TH><TH>Capital</TH><TH>Dato clave</TH></TR>
+<TR><TD><B>África del Norte</B></TD><TD>Egipto, Argelia, Marruecos, Libia, Túnez</TD><TD>El Cairo, Argel, Rabat, Trípoli, Túnez</TD><TD>El Cairo: ciudad más poblada de África (~22 M). Argelia: mayor país de África.</TD></TR>
+<TR><TD><B>África Occidental</B></TD><TD>Nigeria, Ghana, Senegal, Costa de Marfil</TD><TD>Abuja, Acra, Dakar, Yamoussoukro</TD><TD>Nigeria: país más poblado de África (~220 M) y mayor economía.</TD></TR>
+<TR><TD><B>África Oriental</B></TD><TD>Etiopía, Kenia, Tanzania, Uganda</TD><TD>Adís Abeba, Nairobi, Dodoma, Kampala</TD><TD>Etiopía: 2° país más poblado de África (~120 M).</TD></TR>
+<TR><TD><B>África Central</B></TD><TD>Rep. Dem. del Congo, Camerún, R. Congo</TD><TD>Kinshasa, Yaundé, Brazzaville</TD><TD>Kinshasa: 3° ciudad más grande de África.</TD></TR>
+<TR><TD><B>África Austral</B></TD><TD>Sudáfrica, Zimbabue, Mozambique, Zambia</TD><TD>Pretoria/Ciudad del Cabo/Bloemfontein, Harare, Maputo, Lusaka</TD><TD>Sudáfrica: 3 capitales. Mayor economía industrial del sur.</TD></TR>
+<TR><TD><B>África Insular</B></TD><TD>Madagascar, Cabo Verde, Comoras</TD><TD>Antananarivo, Praia, Moroni</TD><TD>Madagascar: 4° isla más grande del mundo; altísimo endemismo.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El <B>río Nilo</B> es el más largo del mundo (~6 650 km). El <B>Kilimanjaro</B> (5 895 m) es el punto más alto de África. El <B>Sahara</B> es el mayor desierto cálido del mundo. <B>Nigeria</B> es el país más poblado de África. <B>Argelia</B> es el país más extenso de África. <B>Sudáfrica</B> tiene 3 capitales (Pretoria = ejecutivo; Ciudad del Cabo = legislativo; Bloemfontein = judicial).</DIV>
+
+<H4>Economía de África:</H4>
+<UL>
+<LI>África tiene inmensos recursos naturales: petróleo (Nigeria, Angola, Libia), diamantes (Rep. Dem. del Congo, Botswana, Sudáfrica), oro (Ghana, Sudáfrica, Mali), coltán (Rep. Dem. del Congo), cacao (Costa de Marfil, Ghana) y café (Etiopía, Uganda).</LI>
+<LI>Pese a la riqueza natural, la mayoría de los países africanos tienen bajo IDH por: colonialismo histórico, inestabilidad política, conflictos armados, corrupción y enfermedades (malaria, VIH/SIDA).</LI>
+<LI><B>Las tres economías más grandes de África:</B> Nigeria (petróleo y servicios), Sudáfrica (minería e industria), Egipto (turismo, Canal de Suez, gas).</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Canal de Suez:</B> inaugurado en 1869, conecta el mar Mediterráneo con el mar Rojo, permitiendo el paso de buques entre Europa y Asia sin rodear el continente africano. Tiene 193 km de longitud. Es la vía marítima más importante del mundo: aproximadamente el 12% del comercio global pasa por él. Es propiedad de Egipto y genera miles de millones de dólares en peajes anuales.</DIV>
+
+<!-- ===================== EUROPA ===================== -->
+<H3 ID="europa">3. EUROPA</H3>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">10 530 000 km²</DIV><DIV CLASS="dk-label">Continente habitado más pequeño</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~745 M</DIV><DIV CLASS="dk-label">Habitantes</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">44</DIV><DIV CLASS="dk-label">Países reconocidos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Rusia</DIV><DIV CLASS="dk-label">País más extenso de Europa (y del mundo)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Alemania</DIV><DIV CLASS="dk-label">Mayor economía de Europa</DIV></DIV>
+</DIV>
+
+<H4>Ubicación y límites:</H4>
+<UL>
+<LI>Europa es técnicamente una <B>península del continente euroasiático</B> (por eso algunos geógrafos hablan de "Eurasia" como un solo continente).</LI>
+<LI>Limita al norte con el <B>océano Ártico</B>, al oeste con el <B>océano Atlántico</B>, al sur con el <B>mar Mediterráneo</B>, y al este con los <B>Montes Urales, río Ural y mar Caspio</B> (frontera convencional con Asia).</LI>
+<LI>El punto más septentrional de Europa continental es el <B>Cabo Norte</B> (Noruega).</LI>
+</UL>
+
+<H4>Relieve:</H4>
+<UL>
+<LI><B>Alpes:</B> la cadena montañosa más importante de Europa central y occidental. El punto más alto de Europa occidental es el <B>Monte Blanco</B> (Mont Blanc, 4 808 m, en la frontera entre Francia e Italia).</LI>
+<LI><B>Cáucaso:</B> en la frontera entre Europa y Asia. Aquí se ubica el <B>Monte Elbrus</B> (5 642 m), que es el punto más alto de Europa según la definición de frontera en los montes del Cáucaso.</LI>
+<LI><B>Pirineos:</B> separan la Península Ibérica de Francia.</LI>
+<LI><B>Apeninos:</B> columna vertebral de Italia.</LI>
+<LI><B>Cárpatos:</B> en Europa central (Rumanía, Polonia, Eslovaquia).</LI>
+<LI><B>Gran Llanura Europea:</B> extensa planicie que va desde Francia hasta Rusia; muy fértil y densamente poblada.</LI>
+<LI><B>Península Escandinava:</B> al norte; con fiordos en Noruega (bahías alargadas creadas por glaciares).</LI>
+</UL>
+
+<H4>Hidrografía:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Río</TH><TH>Longitud</TH><TH>Países</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Volga</B></TD><TD>3 692 km</TD><TD>Rusia → mar Caspio</TD><TD>El <B>río más largo de Europa</B>; clave para el transporte ruso</TD></TR>
+<TR><TD><B>Danubio</B></TD><TD>2 860 km</TD><TD>10 países → mar Negro</TD><TD>El río que pasa por más países del mundo; une Europa central con el Mediterráneo</TD></TR>
+<TR><TD><B>Rin</B></TD><TD>1 230 km</TD><TD>Suiza, Alemania, Países Bajos</TD><TD>La arteria comercial más importante de Europa occidental</TD></TR>
+<TR><TD><B>Elba, Oder, Vístula</B></TD><TD>—</TD><TD>Alemania, Polonia</TD><TD>Ríos de la llanura europea central; importantes para el comercio</TD></TR>
+<TR><TD><B>Támesis</B></TD><TD>346 km</TD><TD>Inglaterra</TD><TD>Río de Londres; históricamente el corazón del Imperio Británico</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Climas:</H4>
+<UL>
+<LI><B>Oceánico</B> (atlántico): Europa occidental (Francia, Reino Unido, Benelux); suave, con lluvia distribuida todo el año.</LI>
+<LI><B>Mediterráneo:</B> sur de Europa (España, Italia, Grecia); veranos secos y calurosos, inviernos suaves y lluviosos.</LI>
+<LI><B>Continental:</B> Europa central y oriental; veranos calurosos, inviernos fríos y secos.</LI>
+<LI><B>Polar / Subártico:</B> Escandinavia septentrional y Rusia ártica; temperaturas extremas, permafrost.</LI>
+</UL>
+
+<H4>Regiones geográficas y países clave:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Región</TH><TH>Países</TH><TH>Capitales</TH><TH>Dato clave</TH></TR>
+<TR><TD><B>Europa Occidental</B></TD><TD>Francia, España, Portugal, Reino Unido, Países Bajos, Bélgica</TD><TD>París, Madrid, Lisboa, Londres, Ámsterdam, Bruselas</TD><TD>Bruselas: sede de la UE y la OTAN. Londres: 2ª ciudad más grande de Europa.</TD></TR>
+<TR><TD><B>Europa Central</B></TD><TD>Alemania, Austria, Suiza, Polonia, Rep. Checa</TD><TD>Berlín, Viena, Berna, Varsovia, Praga</TD><TD>Alemania: mayor economía de Europa. Viena: considerada la ciudad con mejor calidad de vida.</TD></TR>
+<TR><TD><B>Europa del Norte</B></TD><TD>Noruega, Suecia, Finlandia, Dinamarca, Islandia</TD><TD>Oslo, Estocolmo, Helsinki, Copenhague, Reikiavik</TD><TD>Los países nórdicos tienen el IDH más alto del mundo. Islandia: la isla de origen volcánico más grande de Europa.</TD></TR>
+<TR><TD><B>Europa del Sur</B></TD><TD>Italia, Grecia, España (sur), Turquía europea</TD><TD>Roma, Atenas, —, Estambul</TD><TD>Roma: capital de Italia y sede del Vaticano (Estado más pequeño del mundo).</TD></TR>
+<TR><TD><B>Europa del Este</B></TD><TD>Rusia europea, Ucrania, Rumanía, Hungría</TD><TD>Moscú, Kiev, Bucarest, Budapest</TD><TD>Moscú: ciudad más poblada de Europa (~13 M). Rusia: mayor país del mundo.</TD></TR>
+<TR><TD><B>Estados miniatura</B></TD><TD>Vaticano, San Marino, Mónaco, Andorra, Liechtenstein</TD><TD>Ciudad del Vaticano, etc.</TD><TD>Vaticano: el país más pequeño del mundo (0.44 km²).</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>La Unión Europea (UE):</H4>
+<UL>
+<LI>Organización política y económica supranacional fundada por el <B>Tratado de Maastricht (1992)</B>; actualmente tiene <B>27 países miembros</B> (tras la salida del Reino Unido en 2020, <B>Brexit</B>).</LI>
+<LI>La moneda común es el <B>euro (€)</B>, usada por 20 de los 27 miembros (zona euro).</LI>
+<LI>Instituciones principales: Parlamento Europeo (Estrasburgo), Comisión Europea (Bruselas), Consejo Europeo (Bruselas), Tribunal de Justicia (Luxemburgo).</LI>
+<LI>El <B>Espacio Schengen</B> permite la libre circulación de personas entre 26 países europeos sin controles en fronteras interiores.</LI>
+<LI>La UE es el segundo mayor bloque económico del mundo por PBI (después de EE.UU. y China).</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El <B>Volga</B> es el río más largo de Europa. El <B>Monte Elbrus</B> (5 642 m, Cáucaso, Rusia) es el punto más alto de Europa. El <B>Vaticano</B> es el país más pequeño del mundo. La <B>UE</B> tiene 27 miembros. El <B>Brexit</B> fue la salida del Reino Unido de la UE (2020). El río <B>Danubio</B> atraviesa el mayor número de países del mundo.</DIV>
+
+<!-- ===================== ASIA ===================== -->
+<H3 ID="asia">4. ASIA</H3>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">44 579 000 km²</DIV><DIV CLASS="dk-label">El continente más grande del mundo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~4 700 M</DIV><DIV CLASS="dk-label">El más poblado (60% de la humanidad)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">49</DIV><DIV CLASS="dk-label">Países</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">China</DIV><DIV CLASS="dk-label">País más extenso de Asia</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">India</DIV><DIV CLASS="dk-label">País más poblado del mundo (superó a China en 2023)</DIV></DIV>
+</DIV>
+
+<H4>Ubicación y límites:</H4>
+<UL>
+<LI>Asia es el <B>continente más grande del mundo</B> en superficie y el más poblado. Ocupa aproximadamente el 30% de la superficie terrestre total del planeta.</LI>
+<LI>Limita al norte con el <B>océano Ártico</B>, al este con el <B>océano Pacífico</B>, al sur con el <B>océano Índico</B>, y al oeste con los Montes Urales, mar Caspio, Cáucaso, mar Negro, Bósforo, Dardanelos y mar Mediterráneo (frontera con Europa y África).</LI>
+<LI>El <B>Canal de Suez</B> separa Asia de África.</LI>
+</UL>
+
+<H4>Relieve:</H4>
+<UL>
+<LI><B>Himalaya:</B> la cordillera más alta del mundo. Contiene los 14 picos más altos del planeta ("catorce ochomiles").</LI>
+<LI><B>Monte Everest</B> (8 849 m, Nepal-China): el punto más alto del planeta; en la cordillera del Himalaya.</LI>
+<LI><B>K2</B> (8 611 m, Pakistán-China): el 2° pico más alto del mundo; en el Karakórum.</LI>
+<LI><B>Meseta del Tíbet:</B> la meseta más alta y extensa del mundo (~4 500 m de altitud media); "el techo del mundo". Nacen aquí los ríos más importantes de Asia.</LI>
+<LI><B>Desierto de Gobi:</B> desierto frío en Mongolia y norte de China; el 5° mayor desierto del mundo.</LI>
+<LI><B>Desierto Arábigo:</B> en la Península Arábiga; el mayor desierto árido de Asia.</LI>
+<LI><B>Llanura de Siberia Occidental:</B> la mayor llanura del mundo (sin montañas); en el norte de Rusia asiática.</LI>
+<LI><B>Mar Caspio:</B> el lago más grande del mundo (por superficie); en la frontera entre Asia y Europa (Rusia, Kazajistán, Azerbaiyán, Irán, Turkmenistán).</LI>
+<LI><B>Mar Muerto:</B> el punto más bajo de la superficie terrestre (~−430 m, en Israel/Jordania); el lago más salado del mundo.</LI>
+</UL>
+
+<H4>Hidrografía:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Río</TH><TH>Longitud</TH><TH>Países / desembocadura</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Yangtsé (Chang Jiang)</B></TD><TD>6 380 km</TD><TD>China → Pacífico</TD><TD>El <B>río más largo de Asia</B> y 3° del mundo; clave para la economía china</TD></TR>
+<TR><TD><B>Amarillo (Huang He)</B></TD><TD>5 464 km</TD><TD>China → Pacífico</TD><TD>Cuna de la civilización china; río más contaminado de Asia</TD></TR>
+<TR><TD><B>Ob-Irtish</B></TD><TD>5 410 km</TD><TD>Kazajistán, Rusia → Ártico</TD><TD>El más largo de Rusia asiática</TD></TR>
+<TR><TD><B>Indo (Indus)</B></TD><TD>3 180 km</TD><TD>India, Pakistán → Índico</TD><TD>Cuna de la civilización del Indo; da nombre a India</TD></TR>
+<TR><TD><B>Ganges</B></TD><TD>2 510 km</TD><TD>India, Bangladesh → Índico</TD><TD>Río sagrado del hinduismo; el más poblado en sus orillas</TD></TR>
+<TR><TD><B>Mekong</B></TD><TD>4 500 km</TD><TD>China, Laos, Tailandia, Cambodia, Vietnam</TD><TD>El río del Sudeste Asiático; vital para la pesca y agricultura</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Regiones geográficas y países clave:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Región</TH><TH>Países</TH><TH>Capitales</TH><TH>Dato clave</TH></TR>
+<TR><TD><B>Asia Oriental</B></TD><TD>China, Japón, Corea del Sur, Corea del Norte, Mongolia</TD><TD>Pekín, Tokio, Seúl, Pyongyang, Ulán Bator</TD><TD>Tokio: área metropolitana más grande del mundo (~38 M). China: 2ª economía mundial.</TD></TR>
+<TR><TD><B>Asia del Sur</B></TD><TD>India, Pakistán, Bangladesh, Sri Lanka, Nepal</TD><TD>Nueva Delhi, Islamabad, Daca, Sri Jayawardenepura, Katmandú</TD><TD>India: país más poblado del mundo (2023). Nepal: sede del Everest.</TD></TR>
+<TR><TD><B>Asia Suroriental</B></TD><TD>Indonesia, Vietnam, Tailandia, Filipinas, Malasia</TD><TD>Yakarta, Hanói, Bangkok, Manila, Kuala Lumpur</TD><TD>Indonesia: mayor archipiélago del mundo (~17 000 islas); 4° país más poblado.</TD></TR>
+<TR><TD><B>Asia Central</B></TD><TD>Kazajistán, Uzbekistán, Tayikistán, Kirguistán, Turkmenistán</TD><TD>Astana, Taskent, Dusambé, Biskek, Asjabad</TD><TD>Kazajistán: país sin litoral más grande del mundo. Antigua Ruta de la Seda.</TD></TR>
+<TR><TD><B>Asia Occidental (Oriente Medio)</B></TD><TD>Arabia Saudita, Irán, Iraq, Turquía, Israel, Emiratos Árabes Unidos</TD><TD>Riad, Teherán, Bagdad, Ankara, Jerusalén/Tel Aviv, Abu Dabi</TD><TD>Arabia Saudita: mayor exportador de petróleo del mundo. Israel: estado fundado en 1948.</TD></TR>
+<TR><TD><B>Asia del Norte</B></TD><TD>Rusia asiática (Siberia)</TD><TD>Moscú (capital de la Rusia completa)</TD><TD>Rusia: país más grande del mundo (17 M km²); parte de Europa y de Asia.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El <B>Monte Everest</B> (8 849 m) es el punto más alto del planeta. El <B>Mar Muerto</B> (~−430 m) es el punto más bajo de la superficie terrestre. El <B>lago Caspio</B> es el lago más grande del mundo. El <B>Yangtsé</B> es el río más largo de Asia. <B>India</B> superó a China como el país más poblado del mundo en 2023. <B>Indonesia</B> es el mayor archipiélago del mundo. El <B>Mar Aral</B> (Asia Central) fue el 4° lago más grande del mundo y casi desapareció por la irrigación soviética: uno de los mayores desastres ecológicos del siglo XX.</DIV>
+
+<H4>Economía de Asia:</H4>
+<UL>
+<LI><B>China:</B> 2ª economía mundial (PBI ~$18 billones); el mayor fabricante y exportador mundial. Su moneda es el <b>yuan (renminbi)</b>. Sistema político: partido único (Partido Comunista de China).</LI>
+<LI><B>Japón:</B> 3ª economía mundial por décadas (ahora 4ª tras Alemania en nominal); líder en tecnología, automoción y electrónica. Capital: Tokio.</LI>
+<LI><B>India:</B> 5ª economía mundial y la de más rápido crecimiento entre las grandes economías; potencia tecnológica emergente (Silicon Valley indio en Bangalore).</LI>
+<LI><B>Tigres Asiáticos:</B> Corea del Sur, Singapur, Hong Kong y Taiwán; países que experimentaron un crecimiento industrial acelerado entre los años 60–90.</LI>
+<LI><B>Petróleo del Golfo Pérsico:</B> Arabia Saudita, Emiratos Árabes Unidos, Kuwait, Iraq e Irán concentran más del 50% de las reservas mundiales de petróleo.</LI>
+<LI><B>ASEAN</B> (Asociación de Naciones del Sudeste Asiático): bloque de 10 países del Sudeste Asiático (Indonesia, Tailandia, Vietnam, Filipinas, Malasia, Singapur, Myanmar, Cambodia, Laos, Brunéi).</LI>
+</UL>
+
+</DIV>
+</DIV>
+
+<!-- ========== PREGUNTAS ========== -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál es el río más largo del mundo y en qué continente se encuentra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) El Amazonas, en América del Sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) El Nilo, en África</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) El Yangtsé, en Asia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) El Misisipi, en América del Norte</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>río Nilo</B> (~6 650 km) es el <b>río más largo del mundo</b>, ubicado en África. Nace en el lago Victoria (África oriental) y desemboca en el mar Mediterráneo a través de un delta en Egipto. Es la cuna de la civilización egipcia. Nota: durante décadas hubo debate entre el Nilo y el Amazonas; la medición más aceptada actualmente da la primacía al Nilo, aunque algunos estudios recientes con mediciones de las nacientes más remotas del Amazonas lo ubican como el más largo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cuál es el punto más alto del planeta y en qué país se encuentra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Monte Kilimanjaro (5 895 m), en Tanzania</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Monte Everest (8 849 m), en la frontera Nepal-China</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Monte Elbrus (5 642 m), en Rusia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) K2 (8 611 m), en Pakistán</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Monte Everest</B> (también llamado Sagarmatha en nepalí o Chomolungma en tibetano) es el <b>punto más alto del planeta</b>, con 8 849 m.s.n.m. (medición actualizada por la encuesta conjunta China-Nepal de 2020). Se ubica en la cordillera del Himalaya, en la frontera entre <b>Nepal y China (Tíbet)</b>. El K2 (8 611 m) es el 2° más alto; el Elbrus (5 642 m) es el más alto de <b>Europa</b>; el Kilimanjaro (5 895 m) es el más alto de <b>África</b>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Cuál es el continente con mayor número de países en el mundo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Asia, con 49 países</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) América, con 35 países</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) África, con 54 países</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" Value="d"> d) Europa, con 44 países</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR><B>África</B> es el continente con más países del mundo: <b>54 estados soberanos</b> reconocidos internacionalmente. Esto es resultado del proceso de descolonización, que en África fue especialmente intenso entre 1957 (independencia de Ghana, primer país del África subsahariana) y los años 70. La <b>Unión Africana (UA)</b> es la organización continental que agrupa a estos 54 países. El último país independiente de África fue Sudán del Sur (2011, cuando se separó de Sudán tras una guerra civil).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> El Vaticano es el país más pequeño del mundo. ¿En qué ciudad europea se encuentra enclavado?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Madrid, España</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) París, Francia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Roma, Italia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Atenas, Grecia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Estado de la Ciudad del Vaticano</B> se encuentra completamente enclavado dentro de <b>Roma, Italia</b>. Tiene una superficie de apenas <b>0.44 km²</b> y una población de aproximadamente <b>800 personas</b>. Es la sede de la <b>Iglesia Católica Apostólica Romana</b> y residencia del <b>Papa</b>. Su estatus como Estado independiente fue establecido por los <b>Pactos de Letrán</b> entre la Santa Sede y el gobierno italiano de Mussolini en <b>1929</b>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Cuál es el mayor desierto cálido del mundo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) El desierto de Gobi, en Asia Central</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) El desierto del Sahara, en África del Norte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) El desierto de Arabia, en Oriente Medio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) El desierto de Namib, en África austral</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>desierto del Sahara</B> (~9 200 000 km²) es el mayor <b>desierto cálido</b> del mundo. Ocupa el norte de África atravesando Argelia, Libia, Egipto, Mauritania, Malí, Níger, Chad y Sudán. Nota importante: el mayor desierto del mundo en términos absolutos (incluyendo desiertos fríos) es la <b>Antártida</b> (~14 millones de km²), ya que un desierto se define por la escasez de precipitaciones, no por la temperatura. El Sahara es el mayor <b>desierto cálido</b>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál es el río que atraviesa por más países del mundo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) El Nilo (9 países)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El Mekong (6 países)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El Danubio (10 países)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) El Rin (5 países)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>río Danubio</B> (2 860 km) es el río que pasa por el mayor número de países del mundo: <b>10 países</b> (Alemania, Austria, Eslovaquia, Hungría, Croacia, Serbia, Rumanía, Bulgaria, Moldavia y Ucrania), además de hacer de frontera con otros. Nace en la Selva Negra (Alemania) y desemboca en el mar Negro. El Nilo recorre 9 países (aunque irriga principalmente a Sudán y Egipto) y el Mekong 6 países del Sudeste Asiático.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> El Canal de Suez es considerado la vía marítima más estratégica del mundo. ¿Qué mares conecta y cuál es el impacto económico de esta ruta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Conecta el océano Atlántico con el Pacífico; su importancia es que elimina la necesidad de rodear América del Sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Conecta el mar Mediterráneo con el mar Rojo; permite el paso directo entre Europa y Asia evitando rodear África por el Cabo de Buena Esperanza, reduciendo la distancia del trayecto en miles de kilómetros y días de navegación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Conecta el mar Caspio con el mar Negro; es importante para el transporte de petróleo de Azerbaiyán hacia Europa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Conecta el mar Mediterráneo con el océano Atlántico; fue construido por Francia en el siglo XIX para facilitar el comercio entre Europa occidental y África del Norte</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Canal de Suez</B> (193 km de longitud, inaugurado en 1869, construido bajo la dirección del ingeniero francés Ferdinand de Lesseps) conecta el <b>mar Mediterráneo</b> (norte) con el <b>mar Rojo</b> (sur), a través del istmo de Suez en Egipto. Antes de su apertura, los buques que viajaban de Europa a Asia debían rodear <b>África por el Cabo de Buena Esperanza</b>, añadiendo ~7 000 km al trayecto. El Canal reduce esto drásticamente. Hoy pasa por él ~12% del comercio mundial, incluyendo el 40% del petróleo y el 20% del comercio de contenedores. En 2021, el buque <b>Ever Given</b> quedó encallado bloqueando el canal durante 6 días, causando pérdidas de ~$9 000 millones por día al comercio global.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> El "Brexit" hace referencia a la salida del Reino Unido de la Unión Europea. ¿Qué implicancias geográficas, económicas y políticas tuvo este evento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El Brexit no tuvo ninguna consecuencia real; el Reino Unido siguió siendo miembro de la UE en todos los aspectos económicos aunque cambió de nombre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El Brexit implicó que el Reino Unido recuperó el control de sus fronteras, leyes comerciales y política migratoria; generó nuevas barreras arancelarias y controles entre el RU y la UE, complicó la situación de Irlanda del Norte (frontera con la República de Irlanda, miembro de la UE) y redujo la UE de 28 a 27 miembros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El Brexit fue la expulsión del Reino Unido de la OTAN tras la crisis de Gibraltar, sin ningún efecto en el comercio europeo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) El Brexit significó que el Reino Unido se unió a la zona euro y adoptó el euro como moneda oficial, abandonando la libra esterlina</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Brexit</B> (contracción de "Britain" + "exit") fue el proceso por el cual el <b>Reino Unido abandonó la Unión Europea</b>: el referéndum fue en junio de 2016 (51.9% votó salir) y la salida formal se completó el <b>31 de enero de 2020</b>. Consecuencias principales: (1) <b>Fronteras</b>: ciudadanos de la UE ya no tienen libre circulación en el RU y viceversa. (2) <b>Comercio</b>: se estableció el <b>Acuerdo de Comercio y Cooperación</b> (2020) con nuevas regulaciones aduaneras. (3) <b>Irlanda del Norte</b>: es la complicación más delicada: comparte frontera terrestre con la República de Irlanda (UE); el Protocolo de Irlanda del Norte generó controversias sobre controles en el mar de Irlanda. (4) <b>Economía del RU</b>: se estima que el Brexit redujo el PBI británico entre 4–5% respecto al escenario sin salida. (5) La UE pasó de 28 a <b>27 miembros</b>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> La Meseta del Tíbet es llamada "el techo del mundo" y tiene una altitud media de 4 500 m.s.n.m. ¿Por qué esta meseta tiene un papel hidrográfico fundamental para toda Asia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Porque en la Meseta del Tíbet se encuentra el mar Caspio, que es el mayor lago del mundo y distribuye agua a todos los ríos asiáticos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" Value="b"> b) Porque de los glaciares y las nieves del Tíbet nacen los ríos más importantes de Asia (Yangtsé, Amarillo, Mekong, Indo, Ganges, Brahmaputra, Saluen), que irrigan a más de 3 000 millones de personas; por eso el Tíbet es llamado "la torre de agua de Asia"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Porque la Meseta del Tíbet produce las lluvias monzónicas que irrigan India y China; sin ella no habría agua dulce en ningún país asiático</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) La Meseta del Tíbet no tiene ningún papel hidrográfico relevante; su altitud extrema impide la formación de ríos o glaciares significativos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Meseta del Tíbet</B> (~2 500 000 km², altitud media 4 500 m) es llamada "<b>la torre de agua de Asia</b>" porque de sus glaciares y nieves permanentes nacen los mayores ríos del continente: <b>Yangtsé, Amarillo, Mekong, Saluen, Indo, Brahmaputra, Irrawaddy</b>. Estos ríos irrigan directamente a <b>China, India, Bangladesh, Myanmar, Tailandia, Laos, Vietnam y Camboya</b>, es decir, a más de <b>3 000 millones de personas</b> (~40% de la humanidad). El retroceso de los glaciares tibetanos por el cambio climático es por ello una amenaza existencial para la seguridad hídrica y alimentaria de toda Asia. China controla el Tíbet desde 1950 (invasión tibetana), lo que le da poder estratégico sobre las fuentes de agua de sus vecinos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Nigeria es el país más poblado de África y también su mayor economía. Sin embargo, enfrenta la "paradoja de la abundancia de recursos". ¿Cómo se manifiesta esta paradoja en Nigeria?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Nigeria tiene tantos recursos que no sabe cómo administrarlos, pero todos sus ciudadanos son ricos gracias a la distribución equitativa del petróleo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Nigeria posee las mayores reservas de petróleo de África (delta del Níger), pero la mayoría de su población vive en pobreza; los ingresos del petróleo han generado corrupción masiva, conflictos étnicos y religiosos (norte islámico vs. sur cristiano), contaminación severa en el delta del Níger, y desindustrialización de otros sectores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) La paradoja es que Nigeria tiene petróleo pero no tiene capacidad de refinarlo, por lo que importa gasolina a precios más caros que el petróleo crudo que exporta; sin embargo, su gobierno ha gestionado exitosamente la riqueza para eliminar la pobreza en menos de una generación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Nigeria produce tanto petróleo que ya no necesita agricultura; la paradoja es que pese a tener comida importada, su población sigue siendo la más gorda de África</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Nigeria ilustra la "<B>maldición de los recursos</B>" (o paradoja de la abundancia): tiene las mayores reservas de petróleo de África (<b>delta del Níger</b>, sur del país), pero ~40% de su población vive con menos de $2 al día. Las razones son: (1) <b>Corrupción</b>: se estima que entre 1960 y 2014 se desviaron más de $400 000 millones de la riqueza petrolera. (2) <b>Conflicto étnico y religioso</b>: Nigeria tiene ~250 grupos étnicos; el norte es predominantemente <b>musulmán</b> y el sur <b>cristiano</b>; el grupo terrorista <b>Boko Haram</b> opera en el norte. (3) <b>Contaminación</b>: los derrames de petróleo en el Delta del Níger han destruido ecosistemas y medios de vida de comunidades como los <b>Ogoni</b>. (4) <b>Desindustrialización</b>: el petróleo aprecia la moneda (naira), encareciendo las exportaciones no petroleras (enfermedad holandesa). (5) <b>Infraestructura deficiente</b>: con toda su riqueza, Nigeria importa gasolina refinada por falta de refinerías funcionales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> ¿Qué es el "Gran Valle del Rift" africano y cuál es su importancia geológica, ecológica y paleontológica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Es un canal artificial construido por las civilizaciones egipcias antiguas para irrigar el Valle del Nilo; su importancia es histórica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Es un sistema de fallas tectónicas de más de 6 000 km que recorre el este de África; en sus fosas se forman grandes lagos, volcanes activos y llanuras fértiles; es donde se han hallado los restos de homínidos más antiguos, por lo que se considera la "cuna de la humanidad"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Es la cadena montañosa más alta de África, con volcanes activos que superan los 6 000 m; su importancia es meteorológica porque genera las lluvias del este africano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Es un río subterráneo que alimenta los oasis del Sahara desde el lago Tanganica; su importancia es que permite la vida en el desierto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Gran Valle del Rift</B> (Great Rift Valley) es un sistema de fallas tectónicas (<b>rifts</b>) de más de 6 000 km que recorre el este de África, desde el mar Rojo hasta Mozambique. Es de importancia múltiple: (1) <b>Geológica</b>: es una zona de separación de placas tectónicas (placa somalí y placa africana); en millones de años, África oriental podría separarse del continente. (2) <b>Ecológica</b>: en las fosas del Rift se forman grandes lagos (Tanganyika, Malawi, Alberto, Turkana, Kivu) de gran profundidad y biodiversidad acuática única. También hay volcanes activos (Nyiragongo, Ol Doinyo Lengai). (3) <b>Paleontológica</b>: en el Valle del Rift se han hallado los restos de <b>homínidos más antiguos</b> conocidos: el australopiteco <b>"Lucy"</b> (Etiopía, 3.2 millones de años), el <i>Homo habilis</i> y el <i>Homo erectus</i>. Por eso el este de África es llamado "<b>la cuna de la humanidad</b>".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> La Unión Europea (UE) representa uno de los experimentos más ambiciosos de integración política y económica supranacional en la historia. ¿Cuáles son sus logros más importantes y cuáles son sus principales desafíos estructurales actuales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Los logros son la paz perpetua y la prosperidad total; la UE no tiene ningún desafío porque es el modelo perfecto de organización internacional que todos los países del mundo deberían copiar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Logros: 70+ años de paz entre países que antes se destruían en guerras mundiales, el mayor mercado único del mundo, el euro como moneda de referencia global, libre circulación de personas. Desafíos: divergencias económicas norte-sur (países del sur más endeudados), migraciones masivas, ascenso del populismo y euroescepticismo, falta de política exterior común, envejecimiento demográfico y baja natalidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Los únicos logros de la UE son el euro y el pasaporte europeo; sus desafíos son internos de cada país y no tienen que ver con la estructura supranacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La UE es una organización militar similar a la OTAN; sus logros son la defensa de Europa frente a Rusia y sus desafíos son exclusivamente militares</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Logros de la UE:</B> (1) <b>Paz</b>: tras dos guerras mundiales devastadoras (1914–18, 1939–45), Europa occidental ha vivido 70+ años de paz entre sus miembros; el proceso de integración comenzado en 1950 con la CECA (Comunidad Europea del Carbón y el Acero) hizo la guerra "no solo impensable sino materialmente imposible" (Schuman). (2) <b>Mercado único</b>: libre circulación de bienes, servicios, capitales y personas entre 27 países (~450 millones de consumidores). (3) <b>Euro</b>: moneda usada por ~350 millones de personas. (4) <b>Schengen</b>: libre circulación sin pasaporte entre 26 países. <b>Desafíos:</B> (1) <b>Divergencia norte-sur</b>: la crisis de la deuda soberana (2010–2015) expuso que países como Grecia, España, Portugal e Italia tienen economías estructuralmente más débiles que Alemania, Países Bajos o los nórdicos. (2) <b>Migración</b>: la crisis de refugiados sirios (2015+) generó tensiones entre miembros. (3) <b>Populismo/euroescepticismo</b>: el Brexit fue el caso más extremo; hay movimientos antiUE en Francia, Italia, Hungría, Polonia. (4) <b>Déficit democrático</b>: percepción de que la UE es una burocracia tecnocrática alejada de los ciudadanos. (5) <b>Política exterior fragmentada</b>: cada país tiene su propia política exterior y no siempre hay consenso (caso de la guerra en Ucrania).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> China ha sido el motor del crecimiento económico mundial en las últimas décadas. Desde la geografía económica, ¿qué factores explican el "milagro económico" chino y cuáles son sus principales vulnerabilidades actuales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) El milagro chino se explica exclusivamente por el comunismo: el modelo soviético de planificación central fue la clave del éxito económico de China</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El crecimiento chino se explica por las reformas de Deng Xiaoping desde 1978 (apertura al mercado con control político del Partido Comunista), la enorme mano de obra barata, las exportaciones masivas de manufacturas, la inversión pública en infraestructura y la incorporación de tecnología extranjera; las vulnerabilidades incluyen el envejecimiento demográfico (consecuencia de la política del hijo único), la deuda corporativa masiva, la dependencia tecnológica occidental en semiconductores y el conflicto geopolítico con EE.UU.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) El milagro chino es un mito; China solo aparenta crecer gracias a estadísticas falsificadas por el gobierno comunista; en realidad su economía es más pequeña que la de España</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El crecimiento chino se explica únicamente por sus recursos naturales; China tiene tanto carbón y tierras raras que no necesitó hacer ninguna reforma económica para convertirse en potencia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El "<B>milagro económico chino</B>" tiene múltiples causas: (1) <b>Reformas de Deng Xiaoping (1978)</b>: la apertura de zonas económicas especiales (Shenzhen, Shanghai), la "economía socialista de mercado", la privatización parcial de la agricultura y la atracción de inversión extranjera. (2) <b>Mano de obra</b>: China tenía 1 300 millones de personas dispuestas a trabajar en manufactura a salarios bajos, siendo la "fábrica del mundo" durante décadas. (3) <b>Infraestructura</b>: inversión masiva del Estado en carreteras, puertos, ferrocarriles de alta velocidad (~40 000 km de AVE, más que el resto del mundo junto) y telecomunicaciones. (4) <b>Exportaciones</b>: China se convirtió en el mayor exportador mundial de manufacturas. <B>Vulnerabilidades actuales:</B> (1) <b>Demografía</b>: la política del hijo único (1980–2015) generó una población que envejece rápidamente; la fuerza laboral se contrae. (2) <b>Deuda</b>: la deuda corporativa y de gobiernos locales es enorme (~300% del PBI). (3) <b>Tecnología</b>: EE.UU. y aliados restringen la exportación de semiconductores avanzados a China, limitando su avance tecnológico. (4) <b>Geopolítica</b>: guerra comercial con EE.UU., tensiones por Taiwán, relaciones deterioradas con Europa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El proceso de descolonización africana (1957–1980) fue uno de los fenómenos geopolíticos más importantes del siglo XX. ¿Cuáles son las consecuencias geográficas y políticas del trazado de fronteras coloniales que persisten como problemas estructurales en el África actual?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Las fronteras coloniales fueron perfectamente diseñadas respetando las identidades étnicas y culturales africanas; los problemas actuales de África son causados exclusivamente por la mala gestión de los gobiernos poscoloniales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Las fronteras africanas fueron trazadas en la Conferencia de Berlín (1884-85) por las potencias europeas sin tomar en cuenta la distribución étnica, lingüística y cultural de los pueblos africanos; esto creó países donde grupos étnicos enemigos históricos quedaron juntos y grupos afines quedaron separados, siendo la raíz de conflictos étnicos y guerras civiles (Ruanda, Rep. Dem. del Congo, Sudán, Nigeria) que persisten hasta hoy</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Las fronteras africanas son perfectamente rectilíneas en todos los casos porque las potencias coloniales usaron el paralelo 0° y el meridiano de Greenwich como únicas referencias; ningún conflicto africano actual tiene relación con el colonialismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El problema geográfico de África es que el continente es demasiado grande para que los países puedan gobernarlo; la solución sería fusionar todos los 54 países en 10 grandes estados federales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Conferencia de Berlín (1884–1885)</B> donde las potencias europeas (Reino Unido, Francia, Alemania, Bélgica, Portugal, Italia, España) se repartieron África sin ningún africano presente, estableció fronteras artificiales que ignoraron completamente la distribución de los ~3 000 grupos étnicos del continente. Consecuencias que persisten: (1) <b>Países multiétnicos sin identidad nacional</b>: Nigeria tiene ~250 grupos étnicos que hablan ~500 lenguas y tienen historias de conflicto entre sí; fueron unificados arbitrariamente bajo dominio británico. (2) <b>Genocidio de Ruanda (1994)</b>: la distinción entre hutus y tutsis fue agudizada por el colonialismo belga (que convirtió una diferencia socioeconómica en una distinción étnica con documentos de identidad); resultó en el genocidio de ~800 000 tutsis en 100 días. (3) <b>Sudán del Sur</b>: la frontera norte-sur (árabe islámico vs. negro cristiano/animista) creada por el colonialismo británico generó décadas de guerra civil; Sudán del Sur se independizó en 2011 pero sus propios conflictos internos continúan. (4) <b>Fronteras que dividen pueblos</b>: los tuareg habitan en Mali, Níger, Argelia y Libia; los maasai en Kenia y Tanzania; los somalis en Somalia, Etiopía, Kenia y Yibuti.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> La India superó a China como el país más poblado del mundo en 2023. Desde la demografía y la geografía económica, analiza las oportunidades y desafíos que esto representa para India y para el mundo.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La sobrepoblación de India es únicamente negativa; más personas significa más pobreza automáticamente, y la India no tiene ninguna oportunidad de desarrollo con 1 400 millones de habitantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La India tiene un "dividendo demográfico" potencial: su población es joven y en edad productiva (mediana de edad ~28 años vs. China ~39 años), lo que puede traducirse en mayor fuerza laboral, consumo interno y crecimiento; pero los desafíos son gigantescos: generación de empleo suficiente para millones de jóvenes que ingresan al mercado laboral anualmente, infraestructura educativa y sanitaria, desigualdad de género (brecha de empleo femenino), presión sobre recursos hídricos y el cambio climático</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La India ya resolvió todos sus problemas de pobreza y desigualdad gracias a su industria tecnológica; ser el país más poblado es solo una estadística sin consecuencias reales para su economía o política</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) El mayor peligro de India superar a China en población es que esto causará una guerra demográfica entre ambos países; la superpoblación inevitablemente lleva a conflictos militares por recursos naturales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Que India supere a China (~1 428 M vs. 1 412 M en 2023, según la ONU) tiene implicancias geopolíticas y económicas profundas: <B>Oportunidades:</B> (1) <b>Dividendo demográfico</b>: India tiene una población joven (mediana de edad ~28 años) mientras China envejece rápidamente (~39 años; consecuencia de la política del hijo único). Cada año ~12 millones de jóvenes indios entran al mercado laboral; si encuentran empleo productivo, India puede ser la economía de más rápido crecimiento del mundo por décadas. (2) <b>Mercado interno enorme</b>: 1 400 millones de consumidores potenciales atraen inversión y producción. (3) <b>Potencia tecnológica</b>: Bangalore es el mayor hub de tecnología de la información del mundo después de Silicon Valley; India provee el 50%+ de los ingenieros de software del mundo. <B>Desafíos:</B> (1) <b>Empleo</b>: se necesitan crear ~12 M de empleos formales por año; actualmente India no lo logra. (2) <b>Desigualdad</b>: el sistema de castas persiste; mujeres con baja participación laboral (~20%). (3) <b>Infraestructura</b>: agua, saneamiento, electricidad y educación no alcanzan a toda la población. (4) <b>Cambio climático</b>: olas de calor extremas amenzan la productividad agrícola y laboral en la India más pobre.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> La región del Sahel africano (franja al sur del Sahara que abarca Mauritania, Mali, Burkina Faso, Níger, Chad, Sudán) es una de las zonas con mayor inestabilidad política y crisis humanitaria del mundo. ¿Cuál es la interrelación entre el cambio climático, la desertificación y la inestabilidad política en esta región?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) No existe ninguna relación entre cambio climático e inestabilidad política; los conflictos del Sahel son causados exclusivamente por ideologías religiosas extremistas sin ningún factor ambiental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) El avance del Sahara hacia el sur (desertificación) reduce las tierras cultivables y los pastizales; esto intensifica la competencia entre agricultores y pastores nómadas por recursos escasos, generando violencia comunitaria; la pobreza y la falta de oportunidades crean condiciones propicias para el reclutamiento por grupos yihadistas (Boko Haram, JNIM, ISIS en el Gran Sahara), lo que a su vez debilita a los gobiernos que terminan siendo derrocados por golpes militares</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) El cambio climático en el Sahel genera más lluvias que antes, lo cual es positivo; la inestabilidad política es causada solo por la interferencia de potencias extranjeras como Francia y EE.UU.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La inestabilidad del Sahel es un problema exclusivamente de Nigeria; el resto del Sahel es políticamente estable y no sufre efectos del cambio climático</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Sahel</B> ilustra perfectamente la "<b>trampa de seguridad climática</b>": el nexo entre cambio climático, conflicto y fragilidad estatal. El proceso: (1) <b>Desertificación</b>: el Sahara avanza hacia el sur a un ritmo de ~48 km por año en algunos sectores; las lluvias del Sahel se vuelven más irregulares y las temporadas de cultivo más cortas e impredecibles. (2) <b>Competencia por recursos</b>: los pastores fulani (nómadas que crían ganado) ven reducidos sus pastizales; los agricultores sedentarios ven secarse sus campos; ambos compiten por el mismo territorio y los conflictos locales aumentan. (3) <b>Grupos armados</b>: la pobreza, la falta de Estado y los conflictos locales son terreno fértil para Boko Haram (Nigeria/Níger/Chad), JNIM (Mali/Burkina Faso) e ISIS-Sahara. (4) <b>Golpes de Estado</b>: entre 2020 y 2023, hubo golpes militares en Mali (2020, 2021), Guinea (2021), Burkina Faso (2022) y Níger (2023). La incapacidad de los gobiernos civiles para proveer seguridad facilita los golpes. (5) <b>Crisis humanitaria</b>: más de 2 millones de desplazados internos solo en el lago Chad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El "Oriente Medio" (Asia occidental) es considerado la región geopolíticamente más conflictiva del mundo. ¿Cuáles son los factores geográficos, históricos y económicos que explican la persistencia de los conflictos en esta región?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Los conflictos en Oriente Medio se deben únicamente a diferencias religiosas superficiales; si todos los países se volvieran laicos, la región sería inmediatamente estable y próspera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Los conflictos se explican por la convergencia de: la riqueza petrolera que genera rivalidad de potencias externas (EE.UU., Rusia, China, Europa) por el control de las reservas; el trazado artificial de fronteras coloniales (Acuerdo Sykes-Picot, 1916) que dividió el mundo árabe sin respetar las identidades locales; el conflicto árabe-israelí no resuelto desde 1948; las rivalidades sectarias intraislámicas (sunismo saudita vs. chiísmo iraní); y la falta de diversificación económica más allá del petróleo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Oriente Medio es conflictivo solo porque Israel existe; si Israel desapareciera, toda la región estaría en paz; el petróleo no tiene ningún papel en los conflictos de la región</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Los conflictos en Oriente Medio son exagerados por los medios; en realidad es una región estable con alta calidad de vida gracias al petróleo que comparten todos sus habitantes equitativamente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los conflictos de <B>Oriente Medio</B> tienen raíces múltiples y estructurales: (1) <b>Petróleo</b>: la región tiene más del 50% de las reservas mundiales probadas; esto atrae la intervención de potencias externas (EE.UU. en Iraq 1991 y 2003, Arabia Saudita, Iran) que apoyan a distintos actores locales según sus intereses. (2) <b>Fronteras coloniales</b>: el <b>Acuerdo Sykes-Picot</b> (1916, entre Francia y el Reino Unido) dividió el mundo árabe otomano en esferas de influencia sin considerar la distribución étnica y religiosa; Iraq, por ejemplo, reunió kurdos, árabes sunitas y árabes chiitas bajo una sola frontera. (3) <b>Conflicto árabe-israelí</b>: la creación del Estado de Israel (1948) y el desplazamiento de la población palestina (la <b>Nakba</b>) generó guerras árabe-israelíes (1948, 1967, 1973, 1982, 2006, 2008, 2014, 2023) sin resolución. (4) <b>Rivalidad sunita-chiita</b>: Arabia Saudita (sunita) vs. Irán (chiita) como potencias regionales que apoyan facciones opuestas en Siria, Yemen, Iraq y Líbano. (5) <b>Monarquías rentistas</b>: los países del Golfo con petróleo distribuyen renta sin reformas políticas democráticas, generando tensiones internas reprimidas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Los países nórdicos (Noruega, Suecia, Finlandia, Dinamarca, Islandia) tienen consistentemente los Índices de Desarrollo Humano (IDH) más altos del mundo. ¿Qué modelo de desarrollo los distingue y puede ser replicado en países en vías de desarrollo como el Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) El modelo nórdico se basa exclusivamente en el frío; las bajas temperaturas obligan a las personas a trabajar más duro y eso explica su alto IDH; no puede replicarse en países tropicales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) El modelo nórdico combina alta inversión en educación y salud universales financiadas con alta presión fiscal (~45-50% del PBI), fuerte sindicalismo y diálogo social, Estado de bienestar robusto, baja corrupción, alta confianza institucional y equidad de género; puede servir de inspiración pero su replicación requiere décadas de construcción institucional y condiciones socioculturales específicas que no se transfieren automáticamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El éxito nórdico se debe solo al petróleo de Noruega; los demás países nórdicos sin petróleo tienen IDH bajo; el Perú podría tener el mismo IDH si explotara más petróleo en la Amazonia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El modelo nórdico no puede definirse porque cada país nórdico es completamente diferente; no hay ningún patrón común entre Noruega, Suecia y Finlandia en términos de políticas económicas o sociales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>modelo nórdico</B> (también llamado "modelo escandinavo" o "tercera vía") combina economía de mercado con Estado de bienestar robusto. Sus elementos clave: (1) <b>Educación universal y gratuita</b>: desde primaria hasta universidad, financiada por impuestos; alta calidad docente y autonomía escolar. (2) <b>Salud universal</b>: cobertura total para todos los ciudadanos. (3) <b>Alta presión fiscal</b>: 45–52% del PBI (vs. ~15% en Perú); impuestos progresivos que redistribuyen la riqueza. (4) <b>Flexiguridad</b> (especialmente en Dinamarca): es fácil contratar y despedir trabajadores, pero hay red de seguridad social robusta y reentrenamiento laboral activo. (5) <b>Confianza institucional</b>: los países nórdicos tienen los menores índices de corrupción del mundo (Transparency International); los ciudadanos confían en que los impuestos se usan bien. (6) <b>Equidad de género</b>: alta participación femenina en política (paridad en parlamentos) y economía. <b>¿Replicable en el Perú?</b>: Los principios son universales (educación, salud, institucionalidad, equidad), pero su implementación requiere: recaudación fiscal mucho mayor, eliminación de la informalidad, fortalecimiento institucional anticorrupción, y cultura de confianza mutua ciudadano-Estado que se construye en décadas o siglos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> El Mar Aral en Asia Central fue el 4° lago más grande del mundo. Para 2007 había perdido más del 90% de su volumen. ¿Qué causó esta catástrofe ecológica y qué lecciones ofrece sobre la gestión de los recursos hídricos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) El Mar Aral se secó por causas naturales: el calentamiento global evaporó toda el agua; no hubo ninguna intervención humana en este proceso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) La URSS desvió masivamente los ríos Amu Daria y Sir Daria (que alimentaban el Aral) hacia canales de irrigación para cultivar algodón en el desierto kazajo y uzbeko; el lago perdió su caudal de entrada, se evaporó y concentró sal y pesticidas, destruyendo la pesca, los ecosistemas locales y la salud de millones de personas; es considerado el mayor desastre ecológico causado por el hombre del siglo XX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) El Mar Aral fue vaciado intencionalmente por el gobierno soviético para construir una base militar subterránea; fue un proyecto secreto que solo se reveló tras la caída de la URSS en 1991</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El Mar Aral sigue siendo el 4° lago más grande del mundo; los reportes sobre su desaparición son exagerados y políticamente motivados por Occidente para desprestigiar a Rusia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La desaparición del <B>Mar Aral</B> es el mayor desastre ecológico causado directamente por la actividad humana en el siglo XX. El proceso: (1) <b>Causa</b>: desde los años 60, el gobierno soviético construyó miles de kilómetros de canales de irrigación para cultivar <b>algodón</b> en las áridas estepas de Uzbekistán y Kazajistán; los dos ríos que alimentaban el Aral (<b>Amu Daria y Sir Daria</b>) fueron desviados casi completamente hacia estos canales. (2) <b>Consecuencias ecológicas</b>: sin agua de entrada, el lago comenzó a evaporarse; para 2007 había perdido >90% de su volumen y se dividió en varios lagos pequeños y salados. El lecho seco se convirtió en el "Desierto de Aralkum" donde el viento levanta <b>tormentas de sal, arena y pesticidas</b> que afectan la salud a cientos de kilómetros. (3) <b>Consecuencias humanas</b>: la industria pesquera que empleaba a decenas de miles de personas desapareció; barcos pesqueros quedaron varados en arena a cientos de km del agua; los habitantes de las orillas tienen tasas altísimas de cáncer, anemia y enfermedades respiratorias por los pesticidas. (4) <b>Lecciones</b>: la sobreexplotación de un recurso hídrico puede ser irreversible; la gestión del agua requiere visión de largo plazo y cooperación transfronteriza; el desarrollo económico sin evaluación ecológica puede destruir el recurso en que se basa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> El filósofo Jared Diamond en "Armas, Gérmenes y Acero" argumenta que las diferencias en el desarrollo de los continentes se explican por factores geográficos y no por características intrínsecas de los pueblos. ¿Cómo se aplica este argumento a las diferencias entre África, Europa y Asia, y cuáles son sus limitaciones como teoría explicativa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Diamond argumenta que los europeos son racialmente superiores a los africanos y asiáticos; su libro fue escrito para justificar el colonialismo europeo con argumentos científicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Diamond sostiene que Europa y Asia tuvieron ventajas geográficas sobre África: el eje este-oeste de Eurasia permitió la difusión de cultivos, animales domesticables y tecnologías entre climas similares; África tiene un eje norte-sur con barreras climáticas (Sahara, junglas) que frenaron la difusión. Sus limitaciones incluyen: minimizar la agencia humana, ignorar el papel del colonialismo como causa directa del subdesarrollo africano, y el determinismo geográfico que subestima los factores institucionales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Diamond simplemente describe la geografía de cada continente sin ninguna tesis sobre el desarrollo; su libro no tiene ninguna implicancia política o histórica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Diamond prueba que la geografía no importa en absoluto para el desarrollo; lo único que determina el éxito de las naciones son las instituciones económicas, sin ninguna influencia del clima, el relieve o los recursos naturales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Jared Diamond en "<B>Armas, Gérmenes y Acero</B>" (1997) propone que las diferencias en el desarrollo de los continentes se explican por factores <b>geográficos</b>, no raciales: (1) <b>Eje este-oeste de Eurasia</b>: permite que cultivos, animales domesticados y tecnologías se difundan entre zonas con climas y longitudes de día similares. El trigo domesticado en Mesopotamia pudo llegar a Europa y China por el mismo paralelo climático. (2) <b>Eje norte-sur de África</b>: impide la difusión similar porque al moverse hacia el norte o sur se cambian radicalmente el clima, las enfermedades y los ciclos de luz. El Sahara es una barrera casi infranqueable. (3) <b>Animales domesticables</b>: Eurasia tenía caballos, vacas, cerdos, ovejas, cabras; África sub-sahariana tenía cebras (indomesticables), elefantes y animales salvajes sin utilidad agrícola. (4) <b>Gérmenes</b>: los europeos tenían inmunidad a enfermedades de sus animales domésticos (viruela, sarampión); cuando llegaron a América y partes de África, epidemias devastaron a las poblaciones locales. <B>Limitaciones</B>: (a) <b>Colonialismo</b>: ignora que el subdesarrollo actual de África es en gran parte consecuencia directa del colonialismo europeo de los últimos 500 años, no solo de la geografía de hace 10 000 años. (b) <b>Instituciones</b>: Acemoglu y Robinson ("Por qué fracasan las naciones") muestran que las instituciones económicas y políticas explican mejor el desarrollo moderno. (c) <b>Determinismo</b>: algunos países con mala geografía (Singapur, Japón, Corea del Sur) tienen excelente desarrollo; otros con buena geografía (RD Congo, Venezuela) no.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,518 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Past Simple - Past Time Expressions - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:130px;text-align:center;}
+.dk .dk-num{font-size:20px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.eng{font-style:italic;color:#0D1B36;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 12 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Past Simple Tense</H1>
+<DIV CLASS="sub">Verbos regulares e irregulares &middot; Did / Didn't &middot; Past Time Expressions &middot; Posición en la oración &middot; Errores frecuentes</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1. REPASO-->
+<H3>1. Recuerda:</H3>
+En el <B>Tema 11</B> aprendiste el pasado del verbo <B>to be</B> (was/were), que es completamente irregular y no necesita auxiliares. Ahora completaremos el panorama del <B>Past Simple</B> con los <B>demás verbos del inglés</B> (regulares e irregulares) y, sobre todo, con las <B>expresiones de tiempo pasado</B> que indican cuándo ocurrió la acción: <I>yesterday, last week, two days ago, in 2018</I>, entre muchas otras.
+
+<DIV CLASS="alerta">⚠️ <B>Diferencia clave con to be:</B> Mientras que was/were funcionan solos (sin auxiliar), el resto de verbos en Past Simple SÍ necesita el auxiliar <B>did</B> para las formas negativa e interrogativa. Esta es la base que debes dominar antes de avanzar a las expresiones de tiempo.</DIV>
+
+<!-- 2. VERBOS REGULARES -->
+<H3>2. Verbos regulares: la regla del -ED</H3>
+La mayoría de los verbos en inglés son <B>regulares</B>: forman su pasado añadiendo <B>-ed</B> a la forma base. Sin embargo, existen reglas ortográficas específicas que el examen de admisión evalúa con frecuencia:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Terminación del verbo</TH><TH>Regla</TH><TH>Ejemplos</TH></TR>
+<TR><TD>La mayoría de verbos</TD><TD>Se añade <B>-ed</B></TD><TD>walk → walk<B>ed</B>, play → play<B>ed</B>, watch → watch<B>ed</B>, finish → finish<B>ed</B></TD></TR>
+<TR><TD>Termina en <B>-e</B></TD><TD>Se añade solo <B>-d</B></TD><TD>live → live<B>d</B>, like → like<B>d</B>, dance → dance<B>d</B>, smile → smile<B>d</B></TD></TR>
+<TR><TD>Termina en <B>consonante + -y</B></TD><TD>Se elimina la -y y se añade <B>-ied</B></TD><TD>study → stud<B>ied</B>, cry → cr<B>ied</B>, try → tr<B>ied</B>, carry → carr<B>ied</B></TD></TR>
+<TR><TD>Termina en <B>vocal + -y</B></TD><TD>Se añade solo <B>-ed</B></TD><TD>play → play<B>ed</B>, stay → stay<B>ed</B>, enjoy → enjoy<B>ed</B></TD></TR>
+<TR><TD>Una sílaba, termina en <B>consonante-vocal-consonante</B> (CVC)</TD><TD>Se duplica la última consonante + <B>-ed</B></TD><TD>stop → stop<B>ped</B>, plan → plan<B>ned</B>, chat → chat<B>ted</B></TD></TR>
+<TR><TD>Dos sílabas con acento en la última, terminada en CVC</TD><TD>Se duplica la última consonante + <B>-ed</B></TD><TD>prefer → prefer<B>red</B>, travel (BrE) → travel<B>led</B></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Cuidado:</B> No se duplica la consonante final si el verbo termina en <B>w, x</B> o <B>y</B> (no son verdaderas consonantes finales para esta regla): <I>play → played</I> (no "playyed"), <I>fix → fixed</I> (no "fixxed").</DIV>
+
+<H4>Pronunciación de -ed (frecuente en exámenes de comprensión auditiva):</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sonido final del verbo base</TH><TH>Pronunciación de -ed</TH><TH>Ejemplos</TH></TR>
+<TR><TD>Sonido sordo: /p,k,f,s,sh,ch/</TD><TD>/t/</TD><TD>walked, watched, washed</TD></TR>
+<TR><TD>Sonido sonoro (vocales y la mayoría de consonantes)</TD><TD>/d/</TD><TD>played, lived, cleaned</TD></TR>
+<TR><TD>Termina en /t/ o /d/</TD><TD>/ɪd/ (sílaba extra)</TD><TD>wanted, needed, started</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 3. VERBOS IRREGULARES -->
+<H3>3. Verbos irregulares más frecuentes</H3>
+Un grupo numeroso e importante de verbos NO sigue la regla del -ed; tienen una forma de pasado completamente distinta que debes memorizar, ya que aparecen constantemente en los exámenes:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Infinitivo</TH><TH>Pasado</TH><TH>Español</TH><TH>Infinitivo</TH><TH>Pasado</TH><TH>Español</TH></TR>
+<TR><TD>go</TD><TD><B>went</B></TD><TD>ir</TD><TD>have</TD><TD><B>had</B></TD><TD>tener</TD></TR>
+<TR><TD>do</TD><TD><B>did</B></TD><TD>hacer</TD><TD>see</TD><TD><B>saw</B></TD><TD>ver</TD></TR>
+<TR><TD>eat</TD><TD><B>ate</B></TD><TD>comer</TD><TD>drink</TD><TD><B>drank</B></TD><TD>beber</TD></TR>
+<TR><TD>buy</TD><TD><B>bought</B></TD><TD>comprar</TD><TD>think</TD><TD><B>thought</B></TD><TD>pensar</TD></TR>
+<TR><TD>come</TD><TD><B>came</B></TD><TD>venir</TD><TD>write</TD><TD><B>wrote</B></TD><TD>escribir</TD></TR>
+<TR><TD>take</TD><TD><B>took</B></TD><TD>tomar/llevar</TD><TD>give</TD><TD><B>gave</B></TD><TD>dar</TD></TR>
+<TR><TD>make</TD><TD><B>made</B></TD><TD>hacer/fabricar</TD><TD>find</TD><TD><B>found</B></TD><TD>encontrar</TD></TR>
+<TR><TD>say</TD><TD><B>said</B></TD><TD>decir</TD><TD>tell</TD><TD><B>told</B></TD><TD>contar/decir</TD></TR>
+<TR><TD>know</TD><TD><B>knew</B></TD><TD>saber/conocer</TD><TD>get</TD><TD><B>got</B></TD><TD>obtener/conseguir</TD></TR>
+<TR><TD>leave</TD><TD><B>left</B></TD><TD>salir/dejar</TD><TD>feel</TD><TD><B>felt</B></TD><TD>sentir</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej"><B>Importante:</B> No existe una regla fija para formar el pasado de los verbos irregulares; deben aprenderse de memoria. Sin embargo, una vez aprendida la forma de pasado, esta es <B>igual para todas las personas</B> (no hay -s en 3PS, a diferencia del presente).</DIV>
+
+<!-- 4. ESTRUCTURA GENERAL -->
+<H3>4. Estructura del Past Simple con verbos regulares e irregulares</H3>
+
+<H4>Forma AFIRMATIVA:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>Verbo en pasado</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Todas las personas (I, you, he, she, it, we, they)</TD><TD>Verbo + -ed (regular) o forma irregular</TD><TD><I>She worked yesterday. / They went home.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Clave del Past Simple:</B> A diferencia del Present Simple, en el pasado <B>NO existe diferencia para la 3.ª persona singular</B>. El verbo es exactamente igual para todos los sujetos: <I>I worked, you worked, he worked, she worked, it worked, we worked, they worked.</I></DIV>
+
+<H4>Forma NEGATIVA:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>Auxiliar</TH><TH>Verbo (forma base)</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Todas las personas</TD><TD><B>did not (didn't)</B></TD><TD>Verbo base (sin -ed)</TD><TD><I>She didn't work yesterday. / They didn't go home.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Trampa clásica:</B> Tras "didn't", el verbo principal regresa a su <B>forma base</B>, SIN -ed ni forma irregular:<BR>
+✗ <I>"She didn't worked."</I> &nbsp;&nbsp; ✓ <I>"She didn't work."</I><BR>
+✗ <I>"They didn't went."</I> &nbsp;&nbsp; ✓ <I>"They didn't go."</I><BR>
+El auxiliar "did" ya indica que la oración está en pasado; el verbo principal no necesita marcarlo otra vez.</DIV>
+
+<H4>Forma INTERROGATIVA:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Auxiliar</TH><TH>Sujeto</TH><TH>Verbo (forma base)</TH><TH>Ejemplo</TH><TH>Respuesta corta</TH></TR>
+<TR><TD><B>Did</B></TD><TD>Todas las personas</TD><TD>Verbo base</TD><TD><I>Did you study last night?</I></TD><TD>Yes, I did. / No, I didn't.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Otra trampa frecuente:</B> En preguntas, el verbo también regresa a su forma base:<BR>
+✗ <I>"Did she went to the party?"</I> &nbsp;&nbsp; ✓ <I>"Did she go to the party?"</I></DIV>
+
+<!-- 5. PAST TIME EXPRESSIONS -->
+<H3>5. Past Time Expressions: las expresiones de tiempo pasado</H3>
+Estas expresiones indican <B>cuándo</B> ocurrió la acción y son la "huella" que confirma que debemos usar el Past Simple. Conocerlas a fondo es esencial porque suelen ser la <B>pista principal</B> en preguntas de opción múltiple.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Categoría</TH><TH>Expresiones</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Día anterior</TD><TD><B>yesterday</B>, the day before yesterday</TD><TD><I>I called her yesterday.</I></TD></TR>
+<TR><TD>"Last" + periodo</TD><TD><B>last night, last week, last month, last year, last summer</B></TD><TD><I>We traveled last summer.</I></TD></TR>
+<TR><TD>"Ago" (hace...)</TD><TD><B>two days ago, a week ago, three years ago, a long time ago</B></TD><TD><I>He moved to Lima two years ago.</I></TD></TR>
+<TR><TD>Fechas y años específicos</TD><TD><B>in 1998, in 2010, on Monday, on July 5th</B></TD><TD><I>She was born in 2003.</I></TD></TR>
+<TR><TD>Periodos de la vida</TD><TD><B>when I was a child, when I was young, in my childhood</B></TD><TD><I>When I was a child, I lived in Cusco.</I></TD></TR>
+<TR><TD>Conectores narrativos</TD><TD><B>then, after that, later, at that time, at first</B></TD><TD><I>First we ate, then we went home.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Diferencias importantes entre expresiones similares:</H4>
+<UL>
+<LI><B>Last + periodo</B> vs. <B>the last + periodo:</B><BR>
+<SPAN CLASS="ej"><I>I saw him last week.</I> (la semana pasada, calendario) ≠ <I>I haven't seen him for the last week.</I> (durante la última semana, hasta ahora — esto usa otro tiempo verbal que no es Past Simple)</SPAN></LI>
+
+<LI><B>Ago</B> siempre se cuenta hacia atrás <B>desde el presente</B>, y siempre va <B>después</B> del periodo de tiempo:<BR>
+<SPAN CLASS="ej">✓ <I>"three days ago"</I> &nbsp;&nbsp; ✗ <I>"ago three days"</I></SPAN></LI>
+
+<LI><B>In + año</B> se usa para fechas específicas y lejanas; <B>last + periodo</B> se usa para el periodo inmediatamente anterior al actual:<BR>
+<SPAN CLASS="ej"><I>"In 2015, I started high school."</I> &nbsp;|&nbsp; <I>"Last year, I graduated."</I></SPAN></LI>
+</UL>
+
+<!-- 6. POSICION EN LA ORACION -->
+<H3>6. Posición de las Past Time Expressions en la oración</H3>
+A diferencia de los adverbios de frecuencia (always, never, usually), las expresiones de tiempo pasado son <B>flexibles</B>: normalmente van al <B>final</B> de la oración, pero también pueden ir al <B>principio</B> para dar énfasis o establecer el contexto de toda una narración.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Posición</TH><TH>Uso</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Al final (más común)</TD><TD>Información adicional sobre cuándo ocurrió la acción</TD><TD><I>I visited my grandparents last weekend.</I></TD></TR>
+<TR><TD>Al principio, seguida de coma</TD><TD>Énfasis o inicio de una narración / cambio de tema temporal</TD><TD><I>Last weekend, I visited my grandparents.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Error frecuente:</B> Insertar la expresión de tiempo en medio de la oración, separando el verbo de su complemento, suena poco natural y se penaliza en redacción formal:<BR>
+✗ <I>"I visited yesterday my grandparents."</I> &nbsp;&nbsp; ✓ <I>"I visited my grandparents yesterday."</I></DIV>
+
+<!-- 7. COMBINANDO TODO -->
+<H3>7. Integrando was/were, verbos regulares/irregulares y past time expressions</H3>
+En un examen de admisión, lo más común es encontrar oraciones que combinan <B>todos</B> los elementos vistos hasta ahora: el verbo to be, verbos regulares o irregulares, y una expresión de tiempo que confirma el uso del Past Simple.
+
+<DIV CLASS="ej">
+<B>Ejemplo integrado:</B><BR>
+<I>"Last year, my family and I traveled to Arequipa. We were very excited because we had never been there before. The weather was perfect, and we visited the historic center three days ago... wait — actually it was last year, so we visited it on our first day there."</I><BR>
+(Nota: este ejemplo mezcla deliberadamente el uso correcto de was/were, el verbo regular "traveled", el irregular "had", y la expresión "last year" para mostrar cómo se entrelazan en un texto real.)
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Pista de examen:</B> Cuando una oración o un párrafo contiene una expresión de tiempo pasado clara (yesterday, last month, in 2009, three weeks ago...), es prácticamente una garantía de que el verbo principal debe estar en <B>Past Simple</B>, y no en presente, presente perfecto u otro tiempo verbal.</DIV>
+
+<!-- 8. RESUMEN -->
+<H3>8. Resumen visual</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Elemento</TH><TH>Afirmativa</TH><TH>Negativa</TH><TH>Interrogativa</TH></TR>
+<TR><TD>To be</TD><TD>was / were</TD><TD>wasn't / weren't</TD><TD>Was/Were + sujeto?</TD></TR>
+<TR><TD>Verbo regular</TD><TD>verbo + ed</TD><TD>didn't + verbo base</TD><TD>Did + sujeto + verbo base?</TD></TR>
+<TR><TD>Verbo irregular</TD><TD>forma irregular</TD><TD>didn't + verbo base</TD><TD>Did + sujeto + verbo base?</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note">📌 <B>Conexión con temas anteriores:</B> Recuerda que to be (Tema 11) nunca usa "did"; los demás verbos (Tema 12) sí lo requieren para negar y preguntar. Combinar correctamente ambos sistemas dentro de un mismo texto es una de las competencias más evaluadas en los exámenes de ingreso preuniversitario.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">-ed</DIV><DIV CLASS="dk-label">Verbos regulares en afirmativa</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">did / didn't</DIV><DIV CLASS="dk-label">Auxiliar para todos los verbos (excepto to be)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">ago</DIV><DIV CLASS="dk-label">Va después del periodo de tiempo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">last + periodo</DIV><DIV CLASS="dk-label">Periodo inmediatamente anterior</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">sin -s</DIV><DIV CLASS="dk-label">El pasado no distingue 3PS</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- EJERCICIOS -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BASICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Choose the correct past form: <SPAN CLASS="eng">"She ___ her homework yesterday."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) finish</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) finishes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) finished</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) finishing</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) finished</B><BR>"Yesterday" es una expresión de tiempo pasado que exige Past Simple. "Finish" es un verbo regular: se añade <B>-ed</B>. No hay diferencia entre personas en pasado, por lo que "finished" se usa igual con "she" que con cualquier otro sujeto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Choose the correct irregular past form: <SPAN CLASS="eng">"We ___ to the beach last weekend."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) goed</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) went</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) go</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) gone</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) went</B><BR>"Go" es un verbo irregular; su forma de pasado es <B>went</B> (no sigue la regla de -ed). "Last weekend" confirma que se necesita el pasado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Cuál es la forma negativa correcta de <SPAN CLASS="eng">"He played football"</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) He don't played football.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) He didn't played football.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) He didn't play football.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) He not played football.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) He didn't play football.</B><BR>El auxiliar negativo en Past Simple es <B>didn't</B> (para todas las personas). Tras "didn't", el verbo regresa a su forma base: "play", no "played".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál expresión de tiempo completa correctamente: <SPAN CLASS="eng">"I moved to this city three years ___."</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) last</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) ago</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) before</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) past</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) ago</B><BR>"Ago" siempre va <B>después</B> del periodo de tiempo y significa "hace": "three years ago" = "hace tres años". "Last" se usaría como "last year" (antes del sustantivo), no después.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Choose the correct question form: <SPAN CLASS="eng">"___ you watch the movie last night?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Do</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Does</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Did</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Were</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) Did</B><BR>"Last night" indica pasado, y el verbo principal es "watch" (no to be), por lo que el auxiliar interrogativo correcto es <B>Did</B>. "Were" solo se usa con to be.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál es la forma de pasado correcta del verbo <B>"study"</B>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) studyed</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) studied</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) studied</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) studies</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)/c) studied</B><BR>"Study" termina en <B>consonante + y</B>: se elimina la -y y se añade <B>-ied</B> → stud + ied = <B>studied</B>. "Studyed" no existe; "studies" es la forma de 3PS en presente, no de pasado.</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Identifica la oración con el verbo en pasado escrito INCORRECTAMENTE:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) She stopped the car suddenly.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) They traveled to Cusco last month.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) He cryed when he heard the news.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) We danced all night at the party.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>"Cry" termina en consonante + y → se elimina la -y y se añade -ied: la forma correcta es <B>cried</B>, no "cryed". Las demás siguen las reglas correctamente: a) stop (CVC) → duplica consonante: stopped; b) travel + ed: traveled; d) dance termina en -e → solo +d: danced.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Cuál oración usa correctamente una expresión de tiempo pasado?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) I visited ago three years my hometown.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) I visited my hometown three years ago.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) I visited my hometown ago three years.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) I visited three years ago my hometown.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Ago" siempre va <B>después</B> del periodo de tiempo (three years ago) y la expresión completa generalmente va al <B>final</B> de la oración, después del complemento (my hometown). Las opciones a), c) y d) rompen este orden.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Complete correctamente: <SPAN CLASS="eng">"___ your brother ___ (call) you last night?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Did / called</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Did / call</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Does / call</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Was / call</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Did / call</B><BR>"Last night" exige Past Simple → auxiliar <B>Did</B> (no "Does", que es presente; no "Was", que es solo para to be). Tras el auxiliar, el verbo principal va en <B>forma base</B>: "call", no "called".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Which sentence correctly combines "to be" and a regular verb in the same past sentence?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) She was tired because she worked all day.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) She were tired because she worked all day.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) She was tired because she did worked all day.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) She is tired because she worked all day.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>"She" (singular) requiere <B>was</B>, no "were" (opción b). El verbo regular "work" en afirmativa simplemente añade -ed: "worked", sin necesidad de "did" (opción c, que es un error: did + verbo en pasado nunca se combinan). La opción d) mezcla presente (is) con pasado (worked), lo cual es inconsistente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Transforma a la forma interrogativa: <SPAN CLASS="eng">"They arrived at the airport two hours ago."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Did they arrived at the airport two hours ago?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Did they arrive at the airport two hours ago?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Were they arrive at the airport two hours ago?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Arrived they at the airport two hours ago?</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Did they arrive at the airport two hours ago?</B><BR>El auxiliar interrogativo para verbos que no son to be es <B>Did</B>, y el verbo principal regresa a su forma base ("arrive", no "arrived"). La opción c) confunde to be con un verbo regular, y la opción d) no tiene la estructura interrogativa correcta del inglés.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Cuál oración usa correctamente "last" como expresión de tiempo pasado?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) I saw her in last week.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) I saw her on last week.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) I saw her last week.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) I saw her the last week.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) I saw her last week.</B><BR>"Last + periodo de tiempo" (last week, last month, last year) NUNCA lleva preposición delante (ni "in", ni "on") ni artículo ("the"). Es una de las expresiones de tiempo más frecuentes y más mal usadas por hispanohablantes, ya que en español sí decimos "la semana pasada" con artículo.</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Identifica TODOS los errores en el siguiente fragmento y elige la corrección más precisa:<BR><SPAN CLASS="eng">"Two years ago, my family moved to Trujillo. We didn't knew anyone in the city, so it were difficult at first. My father finded a job quickly, but my mother don't worked for several months."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Solo "it were" debe cambiar a "it was".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) "didn't knew" → "didn't know"; "it were" → "it was"; "finded" → "found"; "don't worked" → "didn't work".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) "didn't knew" → "didn't know"; "it were" → "it were" (sin cambio); "finded" → "found"; "don't worked" → "doesn't work".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"didn't knew"</B> → <B>"didn't know"</B>: tras "didn't" el verbo va en forma base.<BR>② <B>"it were"</B> → <B>"it was"</B>: "it" es singular.<BR>③ <B>"finded"</B> → <B>"found"</B>: "find" es irregular, no sigue la regla de -ed.<BR>④ <B>"don't worked"</B> → <B>"didn't work"</B>: el contexto es pasado ("for several months" referido al periodo posterior a la mudanza); "don't" es presente y, además, tras cualquier auxiliar negativo el verbo va en forma base.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿Cuál es la pregunta con Wh-word correctamente formulada para obtener la respuesta: <SPAN CLASS="eng">"I graduated from university three years ago."</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) When did you graduated from university?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) When you did graduate from university?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) When did you graduate from university?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) When were you graduate from university?</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) When did you graduate from university?</B><BR>La estructura correcta es: Wh-word + did + sujeto + verbo base. La opción a) usa "graduated" después de "did" (incorrecto); la opción b) no invierte sujeto-auxiliar; la opción d) usa "were" con un verbo que no es to be.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Analiza la siguiente situación y elige la traducción MÁS precisa al inglés:<BR><B>"Hace cinco años, mis abuelos vivían en una casa pequeña. Ellos no tenían mucho dinero, pero siempre estaban felices y nunca se quejaban."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Five years ago, my grandparents lived in a small house. They didn't had much money, but they was always happy and never complained.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Five years ago, my grandparents lived in a small house. They didn't have much money, but they were always happy and never complained.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Ago five years, my grandparents lived in a small house. They didn't have much money, but they were always happy and never complained.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Five years ago, my grandparents live in a small house. They didn't have much money, but they were always happy and never complained.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Ago" va después del periodo: "Five years ago" (descarta c). El verbo "have" tras "didn't" va en forma base: "didn't have" (descarta a, que usa "didn't had"). "Grandparents" (plural) → "lived" (regular, correcto) y "were" (plural, correcto). La opción d) usa "live" en presente en vez de "lived" en pasado, lo cual es inconsistente con el resto del párrafo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Lee el texto y determina cuántos errores de Past Simple contiene:<BR><SPAN CLASS="eng">"Last summer, we traveled to the jungle. We seen many animals, and our guide telled us many interesting stories. We didn't saw any snakes, fortunately, but we heared strange noises at night."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) 2 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) 3 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) 4 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 5 errores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) 4 errores</B><BR>① <B>"We seen"</B> → "We saw" ("seen" es el participio, no el pasado simple de "see").<BR>② <B>"telled"</B> → "told" ("tell" es irregular).<BR>③ <B>"didn't saw"</B> → "didn't see" (tras didn't, forma base).<BR>④ <B>"heared"</B> → "heard" ("hear" es irregular: hear-heard-heard).<BR>"Traveled" es correcto (verbo regular).</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Identifica la opción que corrige TODOS los errores con la mayor precisión:<BR><SPAN CLASS="eng">"In 2019, the company launched a new product. The sales team worked very hard, and they didn't expected such a great result. The CEO were surprised, and he said that it was the best year in the last decade ago."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) "didn't expected" → "didn't expect"; "The CEO were" → "The CEO was"; "in the last decade ago" → "in the last decade" (se elimina "ago" porque ya hay "last").</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Solo "The CEO were" debe corregirse a "The CEO was".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "didn't expected" → "didn't expect"; "The CEO were" → "The CEO were" (sin cambio); "in the last decade ago" → "a decade ago".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>① <B>"didn't expected"</B> → <B>"didn't expect"</B>: forma base tras didn't.<BR>② <B>"The CEO were"</B> → <B>"The CEO was"</B>: "the CEO" es singular.<BR>③ <B>"in the last decade ago"</B> → <B>"in the last decade"</B>: "last" y "ago" son dos formas distintas de referirse al tiempo pasado y NO se combinan en la misma expresión; se usa "the last decade" (con "last") O "a decade ago" (con "ago"), pero nunca ambas estructuras mezcladas en una sola frase.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Traduce con máxima precisión gramatical al inglés:<BR><B>"Hace tres semanas, mi mejor amigo y yo fuimos al cine. Vimos una película muy interesante y luego comimos pizza. No tomamos el autobús de vuelta porque no había suficiente dinero."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Three weeks ago, my best friend and I went to the cinema. We saw a very interesting movie and then we ate pizza. We didn't took the bus back because there wasn't enough money.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Three weeks ago, my best friend and I went to the cinema. We saw a very interesting movie and then we ate pizza. We didn't take the bus back because there wasn't enough money.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Three weeks ago, my best friend and I goed to the cinema. We saw a very interesting movie and then we ate pizza. We didn't take the bus back because there weren't enough money.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Ago three weeks, my best friend and I went to the cinema. We saw a very interesting movie and then we ate pizza. We didn't take the bus back because there wasn't enough money.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Three weeks ago" se coloca al inicio (ago después del periodo). "Went" (irregular de go), "saw" (irregular de see), "ate" (irregular de eat) están correctos. "Didn't take" usa forma base tras didn't (descarta a, que usa "didn't took"). "Money" es incontable/singular → "there wasn't enough money" (descarta c, que usa "weren't" y además "goed", forma irregular mal aplicada). La opción d) coloca "ago" antes del periodo, lo cual es incorrecto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Por qué los verbos irregulares en inglés no siguen la regla del -ed? ¿Cuál explicación es lingüísticamente más precisa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Son errores históricos de los hablantes que nunca se corrigieron oficialmente.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Muchos verbos irregulares descienden de los llamados "verbos fuertes" del inglés antiguo (germánico), que formaban su pasado mediante un cambio interno de vocal (apofonía o "ablaut", como en sing-sang-sung), un sistema heredado del protogermánico; en cambio, el sufijo -ed proviene de los "verbos débiles", que añadían una terminación dental. Con el tiempo, el patrón de los verbos débiles (-ed) se volvió el más productivo y se aplicó a casi todos los verbos nuevos, pero un grupo importante de verbos antiguos y de uso muy frecuente conservó el patrón fuerte original.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Provienen exclusivamente del francés normando introducido tras 1066.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Son una invención reciente de los diccionarios del siglo XX para diferenciar los verbos comunes.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El inglés, como lengua germánica, heredó dos grandes sistemas de conjugación: los <B>verbos fuertes</B> (cambian la vocal interna: sing→sang, give→gave, come→came) y los <B>verbos débiles</B> (añaden un sufijo dental, el antecesor de -ed). Con el paso de los siglos, el sistema débil (-ed) se volvió predominante y productivo —es la regla que se aplica a casi todos los verbos nuevos o tomados de otras lenguas—, mientras que los verbos irregulares actuales son, en su mayoría, los sobrevivientes del antiguo sistema fuerte germánico, generalmente verbos de uso muy básico y frecuente (be, go, have, come, see, give, take, etc.), lo cual explica por qué precisamente los verbos más comunes del idioma tienden a ser irregulares.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Lee el siguiente párrafo de un ensayo de admisión e identifica la opción que señala y corrige <B>todos</B> los errores gramaticales con la mayor precisión:<BR><SPAN CLASS="eng">"Last year, I decided to apply to this university. I studyed hard for the entrance exam, and I practiced every day for three months ago. My parents was very supportive during that time, and they didn't doubted my abilities. Finally, I taked the exam and I past it successfully."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo "I taked" debe cambiar a "I took".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "studyed" → "studied"; "for three months ago" → "for three months" (sin "ago", ya que "for" indica duración, no un punto exacto en el pasado); "parents was" → "parents were"; "didn't doubted" → "didn't doubt"; "I taked" → "I took"; "I past it" → "I passed it".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) "studyed" → "studied"; "for three months ago" → "for three months ago" (sin cambio); "parents was" → "parents was" (sin cambio); "didn't doubted" → "didn't doubt"; "I taked" → "I took"; "I past it" → "I passed it".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El párrafo es completamente correcto; refleja el estilo natural de un ensayo personal.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"studyed"</B> → <B>"studied"</B>: consonante + y → ied.<BR>② <B>"for three months ago"</B> → <B>"for three months"</B>: "for + periodo" indica duración ("durante tres meses") y no se combina con "ago", que marca un punto específico hacia atrás desde el presente; mezclar ambos es redundante y gramaticalmente incorrecto.<BR>③ <B>"My parents was"</B> → <B>"My parents were"</B>: "parents" es plural.<BR>④ <B>"didn't doubted"</B> → <B>"didn't doubt"</B>: forma base tras didn't.<BR>⑤ <B>"I taked"</B> → <B>"I took"</B>: "take" es irregular (take-took-taken).<BR>⑥ <B>"I past it"</B> → <B>"I passed it"</B>: "pass" (aprobar) es un verbo regular; "past" es un adjetivo/sustantivo ("pasado"), no el pasado del verbo "pass" — un error léxico muy común por similitud de escritura.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

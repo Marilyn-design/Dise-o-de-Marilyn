@@ -1,0 +1,534 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Atmósfera y Medio Ambiente - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA &middot; TEMA 6 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Atmósfera y Medio Ambiente</H1>
+<DIV CLASS="sub">Composición y capas de la atmósfera &middot; Fenómenos atmosféricos &middot; Presión y temperatura &middot; Contaminación &middot; Cambio climático &middot; Efecto invernadero</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Concepto y composición de la atmósfera</H3>
+La <B>atmósfera</B> es la capa gaseosa que envuelve la Tierra, retenida por la fuerza gravitacional del planeta. Es indispensable para la vida: regula la temperatura, protege de la radiación ultravioleta, permite la existencia del agua líquida y provee los gases necesarios para la respiración y la fotosíntesis.
+
+<H4>Composición del aire seco:</H4>
+<UL>
+<LI><B>Nitrógeno (N₂):</B> 78,09% — gas más abundante, químicamente inerte en condiciones normales, fundamental para el ciclo del nitrógeno.</LI>
+<LI><B>Oxígeno (O₂):</B> 20,95% — esencial para la respiración de los organismos aerobios y para la combustión.</LI>
+<LI><B>Argón (Ar):</B> 0,93% — gas noble, sin función biológica relevante.</LI>
+<LI><B>Dióxido de carbono (CO₂):</B> 0,04% (~420 ppm actualmente) — fundamental para la fotosíntesis y el efecto invernadero natural. Su concentración ha aumentado significativamente desde la Revolución Industrial.</LI>
+<LI><B>Otros gases traza:</B> neón, helio, metano (CH₄), óxido nitroso (N₂O), ozono (O₃), entre otros.</LI>
+<LI><B>Vapor de agua (H₂O):</B> variable entre 0 y 4% según la región y la temperatura. Es el gas de efecto invernadero más abundante de la atmósfera.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El gas más abundante en la atmósfera es el <B>nitrógeno (N₂) con ~78%</B>, no el oxígeno. El oxígeno ocupa el segundo lugar con ~21%. Este es uno de los errores más frecuentes en exámenes de admisión.</DIV>
+
+<H3>2. Capas de la atmósfera</H3>
+La atmósfera se divide en capas concéntricas según el perfil de temperatura con la altitud:
+
+<H4>A) Troposfera:</H4>
+<UL>
+<LI><B>Extensión:</B> desde la superficie hasta ~12 km (varía entre ~8 km en los polos y ~16 km en el Ecuador).</LI>
+<LI><B>Temperatura:</B> disminuye con la altitud a razón de ~6,5°C por cada 1 000 m (gradiente térmico normal). Es la capa más densa y contiene el 75–80% de la masa total de la atmósfera.</LI>
+<LI><B>Importancia:</B> es donde ocurren <B>todos los fenómenos meteorológicos</B> (nubes, lluvias, tormentas, vientos). Es la capa donde vivimos y respiramos.</LI>
+<LI><B>Tropopausa:</B> límite superior de la troposfera, donde la temperatura deja de disminuir.</LI>
+</UL>
+
+<H4>B) Estratosfera:</H4>
+<UL>
+<LI><B>Extensión:</B> desde ~12 km hasta ~50 km de altitud.</LI>
+<LI><B>Temperatura:</B> aumenta con la altitud (inversión térmica) porque la capa de ozono absorbe la radiación ultravioleta solar, calentando esta capa.</LI>
+<LI><B>Importancia:</B> contiene la <B>capa de ozono</B> (ozonosfera), concentrada entre 15 y 35 km, que filtra la mayor parte de la radiación ultravioleta (UV-B y UV-C) dañina para los seres vivos.</LI>
+<LI>Los aviones comerciales vuelan en la parte baja de la estratosfera (~10–12 km) para aprovechar los vientos en chorro (jet streams) y evitar la turbulencia de la troposfera.</LI>
+</UL>
+
+<H4>C) Mesosfera:</H4>
+<UL>
+<LI><B>Extensión:</B> desde ~50 km hasta ~80–85 km.</LI>
+<LI><B>Temperatura:</B> disminuye con la altitud, alcanzando las temperaturas más frías de toda la atmósfera (~-90°C en la mesopausa).</LI>
+<LI><B>Importancia:</B> es donde se desintegran la mayoría de los <B>meteoros</B> (meteoritos que entran a la atmósfera), produciendo las estrellas fugaces.</LI>
+</UL>
+
+<H4>D) Termosfera (ionosfera):</H4>
+<UL>
+<LI><B>Extensión:</B> desde ~85 km hasta ~500–600 km.</LI>
+<LI><B>Temperatura:</B> aumenta enormemente con la altitud (puede superar los 2 000°C), aunque la densidad es tan baja que no se percibiría calor.</LI>
+<LI><B>Importancia:</B> contiene partículas ionizadas (ionosfera) que reflejan las ondas de radio, posibilitando las comunicaciones de larga distancia. También es donde ocurren las <B>auroras boreales y australes</B> (interacción del viento solar con las partículas de esta capa).</LI>
+</UL>
+
+<H4>E) Exosfera:</H4>
+<UL>
+<LI><B>Extensión:</B> desde ~500 km hasta ~10 000 km. Límite difuso con el espacio exterior.</LI>
+<LI>Gas extremadamente enrarecido (principalmente hidrógeno y helio). Las moléculas pueden escapar al espacio. Aquí orbitan muchos satélites artificiales.</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Capa</TH><TH>Altitud aprox.</TH><TH>Comportamiento de temperatura</TH><TH>Fenómeno destacado</TH></TR>
+<TR><TD><B>Troposfera</B></TD><TD>0 – 12 km</TD><TD>Disminuye con la altitud</TD><TD>Clima y meteorología, nubes, lluvia</TD></TR>
+<TR><TD><B>Estratosfera</B></TD><TD>12 – 50 km</TD><TD>Aumenta con la altitud</TD><TD>Capa de ozono, vuelos comerciales</TD></TR>
+<TR><TD><B>Mesosfera</B></TD><TD>50 – 85 km</TD><TD>Disminuye con la altitud</TD><TD>Desintegración de meteoros</TD></TR>
+<TR><TD><B>Termosfera</B></TD><TD>85 – 500 km</TD><TD>Aumenta con la altitud</TD><TD>Auroras, ionosfera, comunicaciones</TD></TR>
+<TR><TD><B>Exosfera</B></TD><TD>500 – 10 000 km</TD><TD>Sin gradiente definido</TD><TD>Satélites artificiales</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El patrón de temperatura es clave: <B>troposfera baja → estratosfera sube → mesosfera baja → termosfera sube</B>. La capa de ozono está en la <B>estratosfera</B>, no en la troposfera. Los fenómenos del tiempo (lluvia, viento, tormentas) ocurren en la <B>troposfera</B>.</DIV>
+
+<H3>3. La presión atmosférica</H3>
+La <B>presión atmosférica</B> es el peso de la columna de aire que actúa sobre una superficie unitaria. Se mide en <B>milibares (mb)</B>, <B>hectopascales (hPa)</B> o <B>milímetros de mercurio (mmHg)</B>. La presión estándar al nivel del mar es de <B>1 013,25 hPa</B> (o 760 mmHg, o 1 atmósfera).
+
+<H4>Variación de la presión:</H4>
+<UL>
+<LI><B>Con la altitud:</B> la presión disminuye con la altura porque hay menos masa de aire encima. A 5 500 m, la presión es aproximadamente la mitad que al nivel del mar. Por eso en la altura andina peruana el oxígeno disponible es menor (mal de altura o soroche).</LI>
+<LI><B>Con la temperatura:</B> el aire caliente es menos denso y pesa menos → genera <B>bajas presiones</B> (ciclones). El aire frío es más denso y pesa más → genera <B>altas presiones</B> (anticiclones).</LI>
+</UL>
+
+<H4>Centros de acción atmosférica:</H4>
+<UL>
+<LI><B>Anticiclón (alta presión):</B> zona donde el aire desciende, se calienta y se seca. Genera tiempo estable, despejado y seco. Los vientos salen del anticiclón en sentido horario (hemisferio norte) o antihorario (hemisferio sur).</LI>
+<LI><B>Ciclón o borrasca (baja presión):</B> zona donde el aire asciende, se enfría y condensa. Genera tiempo inestable, nuboso y lluvioso. Los vientos entran al ciclón en sentido antihorario (hemisferio norte) o horario (hemisferio sur).</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Importante para el Perú:</B> El <B>Anticiclón del Pacífico Sur</B> es un sistema de alta presión semipermanente que domina el Pacífico frente a la costa peruana. Su influencia es determinante para el clima de la costa peruana: los vientos que salen del anticiclón generan la corriente de surgencia costera (Corriente Peruana o de Humboldt) y contribuyen a la estabilidad atmosférica que hace tan árida la costa del Perú.</DIV>
+
+<H3>4. La temperatura atmosférica</H3>
+La <B>temperatura</B> del aire depende de múltiples factores:
+<UL>
+<LI><B>Latitud:</B> a mayor latitud (más lejos del Ecuador), menor temperatura porque los rayos solares llegan con menor ángulo de incidencia y se distribuyen en mayor superficie.</LI>
+<LI><B>Altitud:</B> la temperatura disminuye ~6,5°C por cada 1 000 m de ascenso (gradiente térmico normal o adiabático seco). Por eso las cumbres andinas tienen nieve permanente.</LI>
+<LI><B>Continentalidad:</B> las zonas interiores de los continentes tienen veranos más calurosos e inviernos más fríos que las zonas costeras (mayor amplitud térmica), porque el mar modera la temperatura por su elevada capacidad calorífica.</LI>
+<LI><B>Corrientes oceánicas:</B> las corrientes frías enfrían el aire costero y reducen las precipitaciones (costas desérticas). Las corrientes cálidas calientan el aire y aumentan la humedad y las lluvias.</LI>
+<LI><B>Vientos:</B> los vientos procedentes de zonas cálidas elevan la temperatura; los de zonas frías la reducen.</LI>
+</UL>
+
+<H4>Inversión térmica:</H4>
+En condiciones normales la temperatura disminuye con la altitud. Cuando ocurre lo contrario (una capa de aire frío queda atrapada bajo una capa de aire cálido) se produce una <B>inversión térmica</B>. Este fenómeno impide la dispersión vertical de los contaminantes y genera episodios de <B>smog</B> en ciudades como Lima.
+
+<DIV CLASS="mapa-note"><B>Lima y la inversión térmica:</B> Lima experimenta frecuentes inversiones térmicas causadas por la influencia de la Corriente Peruana (que enfría el aire de la superficie) y el Anticiclón del Pacífico Sur (que genera subsidencia de aire cálido en altitud). Esto explica la famosa <B>garúa limeña</B>: una llovizna persistente y la capa de nubes bajas (stratus) que cubre Lima durante el invierno sin generar lluvias significativas.</DIV>
+
+<H3>5. El efecto invernadero y el cambio climático</H3>
+
+<H4>A) Efecto invernadero natural:</H4>
+El <B>efecto invernadero</B> es un proceso natural e indispensable para la vida. La atmósfera funciona como el vidrio de un invernadero: permite el paso de la radiación solar de onda corta (luz visible) que calienta la superficie terrestre, pero retiene parte de la radiación infrarroja de onda larga que emite la Tierra al espacio. Sin este efecto natural, la temperatura media de la Tierra sería de aproximadamente <B>-18°C</B> en lugar de los actuales +15°C.
+
+<H4>Gases de efecto invernadero (GEI) naturales:</H4>
+<UL>
+<LI><B>Vapor de agua (H₂O):</B> el GEI más abundante e influyente en el efecto invernadero natural.</LI>
+<LI><B>Dióxido de carbono (CO₂):</B> segundo GEI más importante. Ciclo natural entre atmósfera, océanos y biosfera.</LI>
+<LI><B>Metano (CH₄):</B> producido por descomposición anaeróbica, humedales, ganado.</LI>
+<LI><B>Óxido nitroso (N₂O):</B> producido por suelos y océanos.</LI>
+<LI><B>Ozono troposférico (O₃):</B> formado por reacciones fotoquímicas.</LI>
+</UL>
+
+<H4>B) El cambio climático antropogénico:</H4>
+Desde la <B>Revolución Industrial</B> (~1850), la quema masiva de combustibles fósiles (carbón, petróleo, gas natural), la deforestación y otros procesos humanos han aumentado significativamente la concentración de GEI en la atmósfera:
+<UL>
+<LI>El CO₂ ha pasado de ~280 ppm (preindustrial) a más de <B>420 ppm</B> actualmente.</LI>
+<LI>El metano se ha más que duplicado desde la era preindustrial.</LI>
+</UL>
+
+Este aumento del efecto invernadero está causando el <B>calentamiento global</B>: la temperatura media global ha aumentado ~1,1°C desde la era preindustrial. Las consecuencias incluyen:
+<UL>
+<LI>Derretimiento de glaciares y casquetes polares → elevación del nivel del mar.</LI>
+<LI>Mayor frecuencia e intensidad de eventos climáticos extremos (huracanes, sequías, inundaciones).</LI>
+<LI>Desplazamiento de las zonas climáticas y los biomas.</LI>
+<LI>Acidificación de los océanos por absorción de CO₂.</LI>
+<LI>En el Perú: retroceso acelerado de los glaciares tropicales andinos (el Perú tiene el 70% de los glaciares tropicales del mundo).</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">78%</DIV><DIV CLASS="dk-label">Nitrógeno en la atmósfera</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">-18°C</DIV><DIV CLASS="dk-label">Temperatura sin efecto invernadero</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">420 ppm</DIV><DIV CLASS="dk-label">CO₂ atmosférico actual</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">70%</DIV><DIV CLASS="dk-label">Glaciares tropicales del mundo en el Perú</DIV></DIV>
+</DIV>
+
+<H3>6. La capa de ozono y su destrucción</H3>
+El <B>ozono estratosférico</B> (O₃) forma la <B>ozonosfera</B> entre 15 y 35 km de altitud. Absorbe entre el 97 y 99% de la radiación ultravioleta de alta energía (UV-B y UV-C) emitida por el Sol, protegiéndolos organismos vivos de sus efectos dañinos (cáncer de piel, cataratas, daño al ADN, reducción de la productividad de fitoplancton marino).
+
+<H4>Destrucción de la capa de ozono:</H4>
+Desde la década de 1970 se detectó una reducción significativa del ozono estratosférico, especialmente sobre la <B>Antártida</B> (el llamado "agujero de ozono"). La causa principal son los <B>clorofluorocarburos (CFC)</B>, compuestos sintéticos usados como refrigerantes, propelentes de aerosoles y espumas plásticas. En la estratosfera, los CFC liberan átomos de cloro que actúan como catalizadores destruyendo moléculas de ozono de manera encadenada.
+
+El <B>Protocolo de Montreal</B> (1987) estableció la eliminación progresiva de los CFC y otras sustancias destructoras del ozono. Es considerado el tratado ambiental internacional más exitoso de la historia: la capa de ozono está en proceso de recuperación gradual.
+
+<H3>7. Contaminación atmosférica</H3>
+La <B>contaminación atmosférica</B> es la presencia en el aire de sustancias en concentraciones suficientes para causar efectos nocivos sobre los seres vivos, los materiales o el clima.
+
+<H4>Principales contaminantes atmosféricos y sus fuentes:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Contaminante</TH><TH>Fuente principal</TH><TH>Efecto</TH></TR>
+<TR><TD><B>CO₂ (dióxido de carbono)</B></TD><TD>Quema de combustibles fósiles, deforestación</TD><TD>Cambio climático, efecto invernadero intensificado</TD></TR>
+<TR><TD><B>CO (monóxido de carbono)</B></TD><TD>Combustión incompleta (motores, estufas)</TD><TD>Tóxico: bloquea el transporte de oxígeno en la sangre</TD></TR>
+<TR><TD><B>SO₂ (dióxido de azufre)</B></TD><TD>Quema de carbón y petróleo con azufre, fundiciones</TD><TD>Lluvia ácida, enfermedades respiratorias</TD></TR>
+<TR><TD><B>NOₓ (óxidos de nitrógeno)</B></TD><TD>Motores de combustión, industria</TD><TD>Lluvia ácida, smog fotoquímico</TD></TR>
+<TR><TD><B>Partículas en suspensión (PM)</B></TD><TD>Industria, transporte, incendios</TD><TD>Enfermedades respiratorias y cardiovasculares</TD></TR>
+<TR><TD><B>CFC</B></TD><TD>Refrigerantes, aerosoles (en desuso)</TD><TD>Destrucción de la capa de ozono</TD></TR>
+<TR><TD><B>Ozono troposférico (O₃)</B></TD><TD>Reacción fotoquímica de NOₓ y COV</TD><TD>Smog fotoquímico, daño pulmonar</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Lluvia ácida:</H4>
+Cuando el SO₂ y los NOₓ se combinan con el vapor de agua en la atmósfera forman <B>ácido sulfúrico</B> (H₂SO₄) y <B>ácido nítrico</B> (HNO₃), que precipitan como <B>lluvia ácida</B> (pH menor de 5,6). Sus efectos incluyen: acidificación de lagos y ríos (muerte de peces y ecosistemas acuáticos), daño a bosques, corrosión de edificios y monumentos de piedra caliza o mármol.
+
+<H4>Smog:</H4>
+<UL>
+<LI><B>Smog industrial (Londres):</B> mezcla de humo y niebla producida por quema de carbón en condiciones de inversión térmica. Alta concentración de SO₂ y partículas.</LI>
+<LI><B>Smog fotoquímico (Los Ángeles, Lima):</B> formado por reacciones fotoquímicas entre los NOₓ y los compuestos orgánicos volátiles (COV) emitidos por los vehículos, bajo la acción de la radiación solar. Produce ozono troposférico y otras sustancias irritantes.</LI>
+</UL>
+
+<H3>8. Fenómenos atmosféricos relevantes para el Perú</H3>
+
+<H4>A) El Fenómeno El Niño:</H4>
+El <B>Fenómeno El Niño</B> (formalmente ENOS: El Niño-Oscilación del Sur) es un fenómeno climático de escala global que ocurre de manera irregular cada <B>2 a 7 años</B>. Se caracteriza por el calentamiento anormal de las aguas superficiales del océano Pacífico tropical oriental (frente a las costas de Ecuador y Perú).
+
+Efectos en el Perú durante El Niño:
+<UL>
+<LI>Costa norte: lluvias torrenciales, inundaciones y huaicos (especialmente Piura, Tumbes, La Libertad).</LI>
+<LI>Costa sur y sierra: sequías.</LI>
+<LI>Mar peruano: reducción del fitoplancton y la anchoveta (la capa cálida impide la surgencia de aguas frías nutritivas).</LI>
+</UL>
+
+<H4>B) La Oscilación del Sur (La Niña):</H4>
+Fase fría del ENOS. Las aguas del Pacífico oriental se enfrían más de lo normal. En el Perú genera sequías en la costa norte y lluvias intensas en la sierra sur.
+
+<H4>C) La garúa limeña:</H4>
+Llovizna fina y persistente característica de Lima durante el invierno (junio–octubre). Se forma cuando el aire húmedo del Pacífico asciende ligeramente y condensa en contacto con la inversión térmica generada por la Corriente Peruana, formando nubes bajas de tipo <B>stratus</B> que producen la garúa pero rara vez lluvia intensa.
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Preguntas de práctica</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- NIVEL BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál es el gas más abundante en la composición de la atmósfera terrestre?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Oxígeno (O₂)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Dióxido de carbono (CO₂)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Nitrógeno (N₂)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Vapor de agua (H₂O)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>nitrógeno (N₂)</B> constituye aproximadamente el <B>78%</B> de la atmósfera seca, siendo el gas más abundante. El oxígeno ocupa el segundo lugar con ~21%. El CO₂ representa apenas el 0,04% y el vapor de agua varía entre 0 y 4%. Este dato es uno de los más preguntados en exámenes de admisión porque muchos estudiantes confunden el gas más abundante con el más importante para la respiración.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿En qué capa de la atmósfera ocurren todos los fenómenos meteorológicos como lluvias, tormentas y nubes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Estratosfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Mesosfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Termosfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Troposfera</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d)</B><BR>La <B>troposfera</B> es la capa más baja de la atmósfera (0–12 km) y es donde ocurren todos los fenómenos del tiempo meteorológico: nubes, lluvia, tormentas, vientos, niebla, etc. Contiene el 75–80% de la masa total de la atmósfera y casi todo el vapor de agua. Es la capa donde vivimos y donde la temperatura disminuye con la altitud a razón de ~6,5°C por km.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Cuál es la función principal de la capa de ozono estratosférico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Regular la temperatura de la troposfera evitando que se enfríe demasiado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Filtrar la mayor parte de la radiación ultravioleta dañina emitida por el Sol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Producir el oxígeno que respiramos mediante fotosíntesis estratosférica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Reflejar las ondas de radio para permitir las comunicaciones de larga distancia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>capa de ozono</B> (ozonosfera), ubicada en la estratosfera entre 15 y 35 km de altitud, absorbe entre el 97 y 99% de la radiación <B>ultravioleta</B> de alta energía (UV-B y UV-C) emitida por el Sol. Sin esta protección, los organismos vivos estarían expuestos a radiación que causa cáncer de piel, cataratas, mutaciones genéticas y daño al fitoplancton marino. La reflexión de ondas de radio es función de la ionosfera (termosfera).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Qué sería de la temperatura media de la Tierra si no existiera el efecto invernadero natural?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Sería de +40°C porque recibiría más radiación solar directa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Sería aproximadamente -18°C, haciendo imposible la vida tal como la conocemos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Sería igual a la actual (+15°C) porque el Sol es la única fuente de calor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Sería de 0°C porque el agua estaría en el punto de equilibrio entre hielo y líquido</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Sin el <B>efecto invernadero natural</B>, la Tierra irradiaría toda su energía térmica al espacio y la temperatura media sería de aproximadamente <B>-18°C</B>, convirtiendo el planeta en un mundo helado e inhabitable. El efecto invernadero natural (principalmente por vapor de agua y CO₂) eleva la temperatura media hasta los actuales +15°C, haciendo posible el agua líquida y la vida. El problema actual no es el efecto invernadero en sí, sino su intensificación artificial por actividades humanas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Cuál es la principal sustancia química responsable de la destrucción de la capa de ozono estratosférico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Dióxido de carbono (CO₂)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Clorofluorocarburos (CFC)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Monóxido de carbono (CO)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Dióxido de azufre (SO₂)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>clorofluorocarburos (CFC)</B> son los principales responsables de la destrucción de la capa de ozono. En la estratosfera, la radiación UV descompone los CFC liberando átomos de cloro, que actúan como catalizadores destruyendo moléculas de ozono en reacciones en cadena (un átomo de cloro puede destruir hasta 100 000 moléculas de ozono). El Protocolo de Montreal (1987) prohibió progresivamente su uso. El CO₂ es el principal GEI del cambio climático, pero no destruye el ozono estratosférico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿En qué capa de la atmósfera se desintegran los meteoros produciendo las "estrellas fugaces"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Troposfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Estratosfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Mesosfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Termosfera</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>mesosfera</B> (50–85 km) es la capa donde la mayoría de los <B>meteoros</B> (fragmentos de roca que entran a la atmósfera) se desintegran por fricción con las moléculas de gas, produciendo las llamadas <B>"estrellas fugaces"</B> o bólidos luminosos. También es la capa más fría de la atmósfera, con temperaturas que pueden alcanzar los -90°C en la mesopausa (su límite superior).</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Por qué la temperatura aumenta con la altitud en la estratosfera, cuando en la troposfera ocurre lo contrario?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Porque en la estratosfera hay más masa de aire que genera más calor por compresión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Porque la capa de ozono estratosférico absorbe la radiación ultravioleta solar, liberando calor y calentando esa capa desde arriba hacia abajo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Porque los aviones que vuelan en la estratosfera liberan calor que calienta esa capa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Porque en la estratosfera no hay vapor de agua y eso hace que la temperatura aumente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En la troposfera, la superficie terrestre (calentada por el Sol) calienta el aire desde abajo, por lo que la temperatura disminuye con la altitud. En la <B>estratosfera</B>, el mecanismo es diferente: la <B>capa de ozono</B> absorbe energéticamente la radiación ultravioleta solar, convirtiéndola en calor. Como el ozono se concentra en la parte media-alta de la estratosfera, el calentamiento ocurre desde esa zona, por lo que la temperatura <B>aumenta con la altitud</B>. Esta inversión térmica estratosférica impide la convección y hace a la estratosfera una capa muy estable.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Cuál es la diferencia entre el smog industrial y el smog fotoquímico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El industrial se produce en invierno por quema de carbón y SO₂; el fotoquímico se produce en zonas soleadas por reacción de NOₓ y COV bajo radiación solar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El industrial afecta solo a las fábricas y el fotoquímico solo a las ciudades costeras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El smog industrial es más peligroso que el fotoquímico en todos los casos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Son el mismo fenómeno con diferentes nombres según el país donde ocurre</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El <B>smog industrial</B> (tipo Londres) es una mezcla de humo, dióxido de azufre (SO₂) y niebla, típica de ciudades con industria carbonífera en invierno con inversión térmica. El <B>smog fotoquímico</B> (tipo Los Ángeles/Lima) se forma cuando los NOₓ y compuestos orgánicos volátiles (COV) emitidos por vehículos reaccionan bajo la intensa <B>radiación solar</B>, produciendo ozono troposférico (irritante) y otras sustancias oxidantes. Lima sufre smog fotoquímico por su alta densidad vehicular y la frecuente inversión térmica que impide la dispersión de contaminantes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cómo afecta el Fenómeno El Niño a la costa norte del Perú y por qué?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Genera sequías intensas porque las aguas frías impiden la evaporación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Genera lluvias torrenciales e inundaciones porque el calentamiento anormal del océano Pacífico aumenta la evaporación y la energía disponible para las lluvias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) No tiene ningún efecto en la costa norte del Perú porque El Niño solo afecta el Ecuador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Genera nevadas intensas en la costa norte por el enfriamiento del mar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Durante <B>El Niño</B>, las aguas del Pacífico tropical oriental se calientan anormalmente. Frente a la costa norte del Perú (Piura, Tumbes, La Libertad), este calentamiento del mar aumenta enormemente la <B>evaporación</B>, cargando la atmósfera de humedad. Al ascender, este aire húmedo y caliente condensa y genera <B>lluvias torrenciales</B>, inundaciones y huaicos. El Niño de 1997–1998 causó pérdidas estimadas en 3 500 millones de dólares en el Perú. Irónicamente, mientras llueve en exceso en la costa norte, la sierra sur puede sufrir sequías.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Por qué la inversión térmica favorece la contaminación atmosférica en ciudades como Lima?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Porque aumenta la velocidad del viento que concentra los contaminantes en zonas específicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Porque la capa de aire caliente en altura actúa como una tapa que impide el ascenso del aire frío contaminado de la superficie, concentrando los contaminantes cerca del suelo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Porque la inversión térmica aumenta las precipitaciones que disuelven los contaminantes y los depositan en el suelo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Porque en la inversión térmica el aire frío sube y arrastra los contaminantes hacia la estratosfera</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En condiciones normales, el aire caliente de la superficie asciende (convección) y dispersa los contaminantes verticalmente. En la <B>inversión térmica</B>, una capa de aire cálido queda por encima del aire frío de la superficie, impidiendo el ascenso convectivo. Esta capa actúa como una <B>"tapa"</B> que atrapa los contaminantes emitidos por vehículos e industrias cerca del suelo. Lima, con su combinación de Corriente Peruana (enfría el aire superficial) y Anticiclón del Pacífico (genera subsidencia de aire cálido en altitud), sufre inversiones térmicas muy frecuentes, especialmente en invierno.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> ¿Cuál es la diferencia entre el ozono estratosférico "bueno" y el ozono troposférico "malo"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Son moléculas diferentes: el estratosférico tiene 3 átomos de oxígeno y el troposférico tiene 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) El ozono estratosférico protege la vida filtrando la radiación UV; el ozono troposférico es un contaminante secundario que irrita las vías respiratorias y daña la vegetación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) El ozono estratosférico es artificial y el troposférico es natural</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) No hay diferencia real: el ozono es siempre beneficioso independientemente de donde se encuentre</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Ambos son la misma molécula (O₃) pero con efectos opuestos según su ubicación. El <B>ozono estratosférico</B> (15–35 km) es "bueno": absorbe la radiación UV dañina protegiendo la vida en la Tierra. El <B>ozono troposférico</B> (cerca del suelo) es "malo": es un contaminante secundario formado por reacciones fotoquímicas entre NOₓ y COV bajo radiación solar. A nivel del suelo, el ozono es un fuerte oxidante que irrita las vías respiratorias, daña los pulmones, perjudica la vegetación y reduce los rendimientos agrícolas. Es el principal componente del smog fotoquímico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Qué es la lluvia ácida y cuáles son sus principales causas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Es la lluvia con pH mayor de 7, causada por la presencia de bases en la atmósfera industrial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Es la precipitación con pH menor de 5,6, causada principalmente por el SO₂ y los NOₓ que se combinan con el vapor de agua formando ácidos en la atmósfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Es la lluvia que cae en zonas ácidas como volcanes activos, sin relación con la contaminación industrial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Es la lluvia intensa y corrosiva causada exclusivamente por el CO₂ disuelto en el agua de lluvia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>lluvia ácida</B> tiene un pH menor de 5,6 (la lluvia natural es ligeramente ácida con pH ~5,6 por el CO₂ disuelto). Sus causas principales son el <B>SO₂</B> (de la quema de carbón y petróleo con azufre) y los <B>NOₓ</B> (de motores y plantas industriales), que en la atmósfera reaccionan con el vapor de agua formando ácido sulfúrico (H₂SO₄) y ácido nítrico (HNO₃). Sus efectos incluyen la acidificación de lagos y suelos, daño a bosques y corrosión de edificios y monumentos de piedra caliza o mármol.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> ¿Por qué el "agujero de ozono" se concentra principalmente sobre la Antártida y no sobre otras regiones del planeta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Porque la Antártida es el continente más cercano a las fábricas productoras de CFC en el hemisferio sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Porque el invierno antártico genera temperaturas estratosféricas extremadamente bajas que forman nubes estratosféricas polares donde ocurren reacciones heterogéneas que activan el cloro de los CFC de forma especialmente eficiente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Porque la radiación solar es más intensa sobre los polos que sobre el Ecuador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Porque los vientos polares concentran todos los CFC del mundo sobre la Antártida antes de que puedan destruir el ozono en otras regiones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La destrucción del ozono por CFC ocurre globalmente, pero se intensifica dramáticamente sobre la <B>Antártida</B> por una combinación de factores únicos: (1) durante el invierno austral (mayo-agosto), la ausencia de Sol y el aislamiento del <B>vórtice polar</B> generan temperaturas estratosféricas de hasta -85°C; (2) a estas temperaturas se forman <B>nubes estratosféricas polares</B> (PSC) de cristales de ácido nítrico y agua; (3) en la superficie de estas nubes ocurren reacciones químicas heterogéneas que convierten los compuestos de cloro inactivos en cloro reactivo; (4) al llegar la primavera austral (septiembre-octubre) y regresar la luz solar, el cloro activo destruye el ozono masivamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿Cuál es el mecanismo físico por el cual la Corriente Peruana (de Humboldt) contribuye a la aridez de la costa peruana?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La corriente fría reduce la temperatura del agua del mar, disminuyendo la evaporación y por tanto la humedad disponible para generar lluvias; además enfría el aire superficial generando inversión térmica que estabiliza la atmósfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La corriente fría genera vientos muy fuertes que alejan las nubes de la costa antes de que puedan precipitar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La corriente fría absorbe el calor solar que necesitan las lluvias para formarse, impidiendo las precipitaciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La corriente fría produce una barrera física de agua que impide el paso de los frentes de lluvia del océano hacia la costa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La <B>Corriente Peruana</B> actúa sobre el clima costero por dos mecanismos: (1) Al ser fría (~15–18°C frente a Lima en invierno), reduce la <B>evaporación</B> del océano, disminuyendo la humedad disponible para generar lluvias. (2) Enfría el aire de la capa superficial, creando una <B>inversión térmica</B>: el aire frío y húmedo de la superficie queda atrapado bajo el aire más cálido y seco que llega por subsidencia del Anticiclón del Pacífico Sur. Esta inversión térmica estabiliza la atmósfera e impide el ascenso convectivo necesario para generar lluvias. Resultado: la costa peruana es un desierto a pesar de estar bordeada por el océano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Qué diferencia existe entre el forzamiento radiativo positivo y negativo en el contexto del cambio climático?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) El positivo aumenta la temperatura global y el negativo la disminuye; los GEI tienen forzamiento positivo y los aerosoles sulfatados tienen forzamiento negativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) El positivo se refiere a los efectos buenos del cambio climático y el negativo a los perjudiciales para la humanidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) El positivo ocurre en el hemisferio norte y el negativo en el hemisferio sur por diferencias en la distribución de masas continentales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Ambos términos son sinónimos que describen el desequilibrio energético causado por el aumento de CO₂</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El <B>forzamiento radiativo</B> mide el cambio en el flujo de energía en la atmósfera causado por un factor. Un <B>forzamiento positivo</B> añade energía al sistema climático, tendiendo a <B>calentar</B> la Tierra (ejemplo: GEI como CO₂, metano, vapor de agua). Un <B>forzamiento negativo</B> reduce la energía del sistema, tendiendo a <B>enfriar</B> la Tierra (ejemplo: aerosoles sulfatados de erupciones volcánicas o industrias, que reflejan la radiación solar). El balance neto de todos los forzamientos determina la dirección del cambio climático. Actualmente, el forzamiento positivo de los GEI supera ampliamente el negativo de los aerosoles.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> ¿Por qué el metano (CH₄) es considerado un gas de efecto invernadero más potente que el CO₂ a corto plazo, aunque esté presente en menor concentración?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Porque el metano es más pesado que el CO₂ y se acumula más fácilmente en la troposfera baja</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Porque cada molécula de metano tiene una capacidad de absorción de radiación infrarroja unas 80 veces mayor que el CO₂ en un horizonte de 20 años, aunque su vida atmosférica es más corta (~12 años vs. siglos para el CO₂)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Porque el metano reacciona con el ozono destruyéndolo, lo que amplifica el efecto invernadero indirectamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Porque el metano se produce exclusivamente por actividades humanas mientras que el CO₂ también tiene fuentes naturales que compensan su efecto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>potencial de calentamiento global</B> (PCG o GWP) mide cuánto calor atrapa un gas en comparación con el CO₂. En un horizonte de 20 años, el <B>metano</B> tiene un PCG de ~80, lo que significa que cada tonelada de CH₄ tiene un efecto calentador ~80 veces mayor que una tonelada de CO₂ en ese período. Sin embargo, el metano tiene una vida atmosférica de solo ~12 años (se oxida a CO₂ y agua), mientras que el CO₂ persiste siglos en la atmósfera. Por eso, reducir las emisiones de metano tiene un impacto climático rápido, mientras que reducir el CO₂ es crucial para el largo plazo.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> ¿Qué es la retroalimentación positiva del vapor de agua en el sistema climático y por qué amplifica el cambio climático inicial causado por el CO₂?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) El vapor de agua absorbe CO₂ adicional de la atmósfera, amplificando el efecto del dióxido de carbono</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Al calentarse la Tierra por el CO₂, aumenta la evaporación, lo que incrementa el vapor de agua atmosférico; como el vapor de agua es el GEI más abundante, esto amplifica aún más el calentamiento inicial en un ciclo de retroalimentación positiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) El vapor de agua refleja la radiación solar de vuelta al espacio, amplificando el enfriamiento causado por los aerosoles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El vapor de agua reacciona con el CO₂ formando ácido carbónico, que precipita como lluvia ácida amplificando los efectos del cambio climático</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>retroalimentación del vapor de agua</B> es el mecanismo amplificador más importante del cambio climático: (1) el CO₂ adicional calienta la Tierra; (2) el calentamiento aumenta la <B>evaporación</B> de los océanos y superficies; (3) más vapor de agua en la atmósfera intensifica el <B>efecto invernadero</B> (el vapor de agua es el GEI más potente en términos de efecto total); (4) esto genera más calentamiento, más evaporación, y así sucesivamente. Se estima que esta retroalimentación <B>duplica o triplica</B> el calentamiento que produciría el CO₂ por sí solo. Sin este amplificador, el cambio climático actual sería mucho menos severo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> ¿Qué es la Oscilación Decadal del Pacífico (ODP) y cómo se diferencia del ENOS (El Niño-Oscilación del Sur)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La ODP es un fenómeno que ocurre cada 2–7 años en el Pacífico tropical, igual que el ENOS pero con efectos en el Atlántico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La ODP es una variabilidad climática de baja frecuencia (ciclos de 20–30 años) que afecta las temperaturas del Pacífico norte, modulando la frecuencia e intensidad de los eventos ENOS en escalas de décadas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La ODP es el nombre científico oficial del Fenómeno El Niño cuando alcanza categoría extraordinaria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La ODP ocurre exclusivamente en el hemisferio norte y no tiene ninguna relación con el ENOS del Pacífico tropical</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Oscilación Decadal del Pacífico (ODP)</B> es una variabilidad climática natural de baja frecuencia que opera en ciclos de <B>20 a 30 años</B>, alternando entre fases "cálidas" (Pacífico norte más cálido de lo normal) y "frías". Se diferencia del <B>ENOS</B> en que este último tiene ciclos de 2–7 años y afecta principalmente el Pacífico tropical. La ODP actúa como un "modulador de fondo": en su fase cálida, favorece eventos El Niño más frecuentes e intensos; en su fase fría, favorece eventos La Niña. La interacción entre ODP y ENOS es fundamental para entender la variabilidad climática del Pacífico sudamericano en escalas de décadas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Qué es el efecto Foehn y cómo se relaciona con los procesos adiabáticos atmosféricos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Es el enfriamiento del aire al ascender una montaña, causado por la expansión adiabática del aire húmedo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Es el calentamiento y desecación que experimenta el aire al descender por la ladera opuesta de una montaña: el aire sube húmedo enfriándose a razón adiabática saturada, pierde humedad por precipitación en barlovento, y baja seco calentándose a razón adiabática seca (mayor), llegando más caliente y seco que cuando empezó</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Es un viento frío y húmedo que desciende de las montañas alpinas, causando lluvias en los valles del sotavento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Es el proceso por el cual el aire marino húmedo asciende las montañas costeras y genera precipitaciones en barlovento sin afectar el sotavento</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>efecto Foehn</B> es un proceso termodinámico que ocurre cuando el aire cruza una cordillera: (1) en <B>barlovento</B> (lado de donde viene el viento), el aire asciende y se enfría a la <B>tasa adiabática saturada</B> (~6°C/km cuando hay condensación) precipitando humedad; (2) al pasar al <B>sotavento</B> (lado opuesto), el aire desciende seco y se calienta a la <B>tasa adiabática seca</B> (~10°C/km), llegando más caliente y seco que en la base de barlovento. En los <B>Andes peruanos</B>, este fenómeno contribuye a la aridez de ciertos valles interandinos: el aire húmedo amazónico precipita en la vertiente oriental y llega seco y cálido a algunos valles occidentales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> ¿Qué es el "punto de inflexión climático" (tipping point) y cuál es su relevancia para el futuro del cambio climático global?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Es el momento exacto en que la temperatura global supera los 2°C, a partir del cual las emisiones de CO₂ dejan de tener efecto sobre el clima</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Es un umbral crítico en el sistema climático a partir del cual se desencadenan cambios abruptos e irreversibles que se autoperpetúan independientemente de las emisiones futuras de GEI, como el colapso de la capa de hielo de Groenlandia o la liberación masiva de metano del permafrost</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Es el nivel de concentración de CO₂ a partir del cual la atmósfera pierde su capacidad de absorber más gases de efecto invernadero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Es la temperatura máxima que puede alcanzar la Tierra antes de que el sistema climático comience a enfriarse de manera natural y automática</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>puntos de inflexión climáticos</B> son umbrales críticos del sistema climático que, una vez superados, desencadenan cambios masivos, abruptos e <B>irreversibles</B> que se autopropagan. Ejemplos críticos: (1) <B>Colapso de la capa de hielo de Groenlandia</B>: si se derrite suficiente hielo, el albedo (reflexividad) disminuye, absorbiendo más calor y acelerando el derretimiento. (2) <B>Deshielo del permafrost siberiano</B>: libera metano almacenado durante milenios, amplificando el calentamiento. (3) <B>Muerte del Bosque Amazónico</B>: si se deforesta suficiente, el bosque pierde su capacidad de generar su propio ciclo de lluvias y colapsa. Lo crítico es que una vez cruzado el umbral, detener las emisiones no revertiría el proceso. Para el <B>Perú</B>, la pérdida de los glaciares andinos es un punto de inflexión local que amenaza el suministro de agua de millones de personas.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

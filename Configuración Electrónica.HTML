@@ -1,0 +1,520 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Configuración Electrónica - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:22px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.formula{background:#0D1B36;color:#D7B06D;border-radius:10px;padding:10px 20px;display:inline-block;font-size:17px;font-weight:bold;margin:8px 0;letter-spacing:1px;}
+.config{background:#F6F2EB;border-radius:10px;padding:14px 20px;margin:12px 0;font-family:monospace;font-size:17px;color:#0D1B36;letter-spacing:2px;font-weight:bold;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="QUIMICA.HTML">&larr; Volver a los temas de Química</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">QUÍMICA · TEMA 04 · NIVEL PREUNIVERSITARIO</DIV>
+<H1>Configuración Electrónica</H1>
+<DIV CLASS="sub">Principio AUFBAU · Exclusión de Pauli · Regla de Hund · Configuración abreviada · Paramagnetismo · Casos especiales · Iones monoatómicos · Isoelectrónicos</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="intro">1. ¿Qué es la configuración electrónica?</H3>
+
+La <B>configuración electrónica</B> es la distribución de los electrones de un átomo en sus diferentes niveles de energía, subniveles y orbitales. Es la "dirección" de cada electrón dentro del átomo y determina prácticamente todas las propiedades químicas del elemento: su valencia, la forma en que forma enlaces, su reactividad y su posición en la Tabla Periódica.
+
+Para escribir la configuración electrónica se siguen tres reglas fundamentales:
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">AUFBAU</DIV><DIV CLASS="dk-label">Los electrones llenan primero los orbitales de menor energía</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">PAULI</DIV><DIV class="dk-label">Cada orbital admite máximo 2 electrones con espines opuestos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">HUND</DIV><DIV CLASS="dk-label">Los orbitales del mismo subnivel se llenan primero con un electrón antes de emparejar</DIV></DIV>
+</DIV>
+
+<H3 ID="aufbau">2. Principio de Aufbau (Principio de construcción)</H3>
+
+El nombre <B>Aufbau</B> proviene del alemán y significa "construcción" o "edificación". El principio establece que los electrones de un átomo en su <B>estado fundamental</B> (de menor energía posible) se distribuyen en los orbitales comenzando por los de <B>menor energía</B> y avanzando hacia los de mayor energía.
+
+<H4>Orden de llenado de orbitales (regla de la diagonal o de Madelung):</H4>
+El orden de llenado NO sigue la secuencia numérica simple de los niveles. Se usa la regla de la diagonal (o diagrama de Moodie), que da el siguiente orden:
+
+<DIV CLASS="config">1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → 5s → 4d → 5p → 6s → 4f → 5d → 6p → 7s → 5f → 6d → 7p</DIV>
+
+<H4>Regla n + l (criterio de energía):</H4>
+Una forma práctica de recordar el orden: el orbital de <B>menor (n+l)</B> se llena primero. Si dos orbitales tienen el mismo valor de (n+l), se llena primero el de <B>menor n</B>. Por ejemplo: 4s tiene n+l = 4+0 = 4, mientras que 3d tiene n+l = 3+2 = 5. Como 4 < 5, el 4s se llena antes que el 3d.
+
+<H4>Capacidad de cada subnivel:</H4>
+<UL>
+<LI>Subnivel <B>s</B>: máximo 2 electrones (1 orbital × 2)</LI>
+<LI>Subnivel <B>p</B>: máximo 6 electrones (3 orbitales × 2)</LI>
+<LI>Subnivel <B>d</B>: máximo 10 electrones (5 orbitales × 2)</LI>
+<LI>Subnivel <B>f</B>: máximo 14 electrones (7 orbitales × 2)</LI>
+</UL>
+
+<H3 ID="pauli">3. Principio de Exclusión de Pauli</H3>
+
+Enunciado por <B>Wolfgang Pauli</B> en 1925: <B>ningún orbital puede contener más de dos electrones, y si contiene dos, estos deben tener espines opuestos</B> (uno con mₛ = +½ y otro con mₛ = −½).
+
+En consecuencia: dos electrones del mismo átomo <B>nunca pueden tener los cuatro números cuánticos idénticos</B>. Al menos uno de los cuatro (generalmente el de espín) debe ser diferente.
+
+<DIV CLASS="ej">⚛️ <B>Representación en cajas:</B> Un orbital vacío se representa con una caja vacía □. Un orbital con un electrón: [↑]. Un orbital con dos electrones (completo): [↑↓]. Es imposible tener [↑↑] o [↓↓] en el mismo orbital: violaría el Principio de Exclusión de Pauli.</DIV>
+
+<H3 ID="hund">4. Regla de Hund (Regla de la máxima multiplicidad)</H3>
+
+Enunciada por <B>Friedrich Hund</B> en 1927: cuando varios orbitales de un mismo subnivel tienen la <B>misma energía</B> (son degenerados, como los tres orbitales p o los cinco orbitales d), los electrones <B>se distribuyen primero individualmente</B> en cada orbital con el <B>mismo sentido de espín</B> (todos ↑ primero), antes de emparejarse en el mismo orbital.
+
+Esta regla minimiza la repulsión entre electrones: estando en orbitales distintos, los electrones están más separados y la repulsión es menor, lo que resulta en una configuración de menor energía (más estable).
+
+<DIV CLASS="ej">🧪 <B>Ejemplo — Subnivel 2p con 4 electrones (carbono, nitrógeno, oxígeno):</B><BR><BR>
+Carbono (2 electrones en 2p): [↑][↑][ ] — NO: [↑↓][ ][ ] (viola Hund)<BR>
+Nitrógeno (3 electrones en 2p): [↑][↑][↑] — correcto (máxima multiplicidad)<BR>
+Oxígeno (4 electrones en 2p): [↑↓][↑][↑] — correcto (uno debe emparejarse)</DIV>
+
+<H3 ID="escribir">5. Cómo escribir la configuración electrónica</H3>
+
+Se escribe en la forma: <B>nl^x</B> donde n = nivel, l = letra del subnivel (s, p, d, f), x = número de electrones en ese subnivel.
+
+<H4>Ejemplos completos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Elemento</TH><TH>Z</TH><TH>Configuración electrónica completa</TH><TH>Notas</TH></TR>
+<TR><TD><B>Hidrógeno (H)</B></TD><TD>1</TD><TD>1s¹</TD><TD>1 electrón en 1s</TD></TR>
+<TR><TD><B>Helio (He)</B></TD><TD>2</TD><TD>1s²</TD><TD>1s completo. Gas noble.</TD></TR>
+<TR><TD><B>Litio (Li)</B></TD><TD>3</TD><TD>1s² 2s¹</TD><TD>Empieza nivel 2</TD></TR>
+<TR><TD><B>Carbono (C)</B></TD><TD>6</TD><TD>1s² 2s² 2p²</TD><TD>2 electrones en 2p (por Hund: un electrón en cada uno de dos orbitales p)</TD></TR>
+<TR><TD><B>Nitrógeno (N)</B></TD><TD>7</TD><TD>1s² 2s² 2p³</TD><TD>2p seminllenado (máxima multiplicidad: [↑][↑][↑])</TD></TR>
+<TR><TD><B>Neón (Ne)</B></TD><TD>10</TD><TD>1s² 2s² 2p⁶</TD><TD>Nivel 2 completo. Gas noble.</TD></TR>
+<TR><TD><B>Sodio (Na)</B></TD><TD>11</TD><TD>1s² 2s² 2p⁶ 3s¹</TD><TD>Empieza nivel 3</TD></TR>
+<TR><TD><B>Magnesio (Mg)</B></TD><TD>12</TD><TD>1s² 2s² 2p⁶ 3s²</TD><TD></TD></TR>
+<TR><TD><B>Aluminio (Al)</B></TD><TD>13</TD><TD>1s² 2s² 2p⁶ 3s² 3p¹</TD><TD></TD></TR>
+<TR><TD><B>Cloro (Cl)</B></TD><TD>17</TD><TD>1s² 2s² 2p⁶ 3s² 3p⁵</TD><TD>Le falta 1 electrón para completar 3p</TD></TR>
+<TR><TD><B>Argón (Ar)</B></TD><TD>18</TD><TD>1s² 2s² 2p⁶ 3s² 3p⁶</TD><TD>Gas noble. Nivel 3s y 3p completos.</TD></TR>
+<TR><TD><B>Potasio (K)</B></TD><TD>19</TD><TD>1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹</TD><TD>El electrón 19 va a 4s (no a 3d), porque E(4s) < E(3d)</TD></TR>
+<TR><TD><B>Calcio (Ca)</B></TD><TD>20</TD><TD>1s² 2s² 2p⁶ 3s² 3p⁶ 4s²</TD><TD></TD></TR>
+<TR><TD><B>Hierro (Fe)</B></TD><TD>26</TD><TD>1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶</TD><TD>Empieza el llenado de 3d después de 4s</TD></TR>
+</TABLE>
+</DIV>
+
+<H3 ID="abreviada">6. Configuración electrónica abreviada (notación del gas noble)</H3>
+
+Para simplificar la escritura, se usa el símbolo del <B>gas noble inmediatamente anterior</B> al elemento en la Tabla Periódica, encerrado entre corchetes, para representar los electrones de los niveles internos completos. Solo se escribe la configuración a partir del nivel externo.
+
+<DIV CLASS="ej">📝 <B>Ejemplos de configuración abreviada:</B><BR>
+Na (Z=11): configuración completa = 1s² 2s² 2p⁶ 3s¹ → abreviada: <B>[Ne] 3s¹</B><BR>
+Cl (Z=17): 1s² 2s² 2p⁶ 3s² 3p⁵ → <B>[Ne] 3s² 3p⁵</B><BR>
+K (Z=19): 1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹ → <B>[Ar] 4s¹</B><BR>
+Fe (Z=26): 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶ → <B>[Ar] 4s² 3d⁶</B><BR>
+Gases nobles como referencia: He(2), Ne(10), Ar(18), Kr(36), Xe(54), Rn(86)</DIV>
+
+<H3 ID="magnetismo">7. Paramagnetismo y Diamagnetismo</H3>
+
+Las propiedades magnéticas de un átomo dependen de si tiene <B>electrones desapareados</B> (electrones sin pareja en su orbital).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Propiedad</TH><TH>Condición</TH><TH>Comportamiento</TH><TH>Ejemplos</TH></TR>
+<TR><TD><B>Paramagnético</B></TD><TD>Tiene uno o más electrones desapareados</TD><TD>Es <b>atraído</b> hacia un campo magnético externo. El espín desapareado actúa como un pequeño imán.</TD><TD>O (2 desapareados), Fe (4 desapareados), Mn (5 desapareados en 3d)</TD></TR>
+<TR><TD><B>Diamagnético</B></TD><TD>Todos los electrones están apareados</TD><TD>Es <b>débilmente repelido</b> por un campo magnético externo. Los espines opuestos se cancelan.</TD><TD>He, Ne, Zn, Mg, Ca, Cu⁺</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> Para determinar si un átomo es paramagnético o diamagnético, escribe la configuración electrónica, aplica la Regla de Hund en los subniveles parcialmente llenos y cuenta los electrones desapareados. Si hay ≥1 electrón desapareado → <b>paramagnético</b>. Si todos están apareados → <b>diamagnético</b>.<BR><BR>
+El Fe ([Ar] 4s² 3d⁶) tiene en 3d: [↑↓][↑][↑][↑][↑] → <b>4 electrones desapareados → paramagnético</b>.</DIV>
+
+<H3 ID="especiales">8. Casos especiales de configuración electrónica</H3>
+
+Algunos elementos presentan configuraciones que parecen "violar" el principio de Aufbau. Esto ocurre porque ciertas configuraciones son especialmente estables energéticamente:
+
+<H4>A) Subniveles d semillenos (d⁵) y completamente llenos (d¹⁰) son especialmente estables.</H4>
+
+Los casos especiales más importantes (muy preguntados en exámenes):
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Elemento</TH><TH>Z</TH><TH>Configuración esperada (Aufbau)</TH><TH>Configuración REAL</TH><TH>Razón</TH></TR>
+<TR><TD><B>Cromo (Cr)</B></TD><TD>24</TD><TD>[Ar] 4s² 3d⁴</TD><TD><B>[Ar] 4s¹ 3d⁵</B></TD><TD>Un electrón de 4s "salta" al 3d para lograr el subnivel 3d semilleno (d⁵), que es muy estable (máxima multiplicidad).</TD></TR>
+<TR><TD><B>Cobre (Cu)</B></TD><TD>29</TD><TD>[Ar] 4s² 3d⁹</TD><TD><B>[Ar] 4s¹ 3d¹⁰</B></TD><TD>Un electrón de 4s "salta" al 3d para lograr el subnivel 3d completamente lleno (d¹⁰), que es especialmente estable.</TD></TR>
+<TR><TD><B>Molibdeno (Mo)</B></TD><TD>42</TD><TD>[Kr] 5s² 4d⁴</TD><TD><B>[Kr] 5s¹ 4d⁵</B></TD><TD>Análogo al Cr: 4d semilleno.</TD></TR>
+<TR><TD><B>Plata (Ag)</B></TD><TD>47</TD><TD>[Kr] 5s² 4d⁹</TD><TD><B>[Kr] 5s¹ 4d¹⁰</B></TD><TD>Análogo al Cu: 4d completo.</TD></TR>
+<TR><TD><B>Oro (Au)</B></TD><TD>79</TD><TD>[Xe] 6s² 4f¹⁴ 5d⁹</TD><TD><B>[Xe] 6s¹ 4f¹⁴ 5d¹⁰</B></TD><TD>Análogo al Cu/Ag: 5d completo.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Regla mnemotécnica:</B> Los elementos más importantes con configuración especial por "salto de electrón" son el <b>Cromo (Cr, Z=24)</b> y el <b>Cobre (Cu, Z=29)</b>. Memoriza: Cr quiere d⁵ (semilleno), Cu quiere d¹⁰ (completo). En ambos casos, un electrón del 4s "emigra" al 3d para lograr la configuración especialmente estable. Esta es una de las preguntas más frecuentes en exámenes de Química preuniversitaria.</DIV>
+
+<H3 ID="iones">9. Configuración electrónica de iones monoatómicos</H3>
+
+Cuando un átomo pierde o gana electrones para formar un <B>ion</B>, su configuración electrónica cambia, pero el número de protones (Z) permanece igual.
+
+<H4>Iones positivos (cationes): pérdida de electrones</H4>
+Los cationes se forman cuando el átomo <B>pierde</B> electrones. Los electrones se eliminan primero del <B>subnivel de mayor energía</B> y mayor número cuántico principal (n).
+
+<DIV CLASS="alerta">⚠️ <B>IMPORTANTE para metales de transición:</B> Al formar cationes, los metales de transición pierden primero los electrones del <B>orbital 4s</B> (aunque el 4s se llenó antes que el 3d por Aufbau), porque en el ion, el 4s tiene mayor energía que el 3d. Este es un error muy frecuente: muchos estudiantes creen que se pierde primero del 3d, pero es incorrecto.</DIV>
+
+<DIV CLASS="ej">🧪 <B>Ejemplos de cationes:</B><BR><BR>
+<B>Na → Na⁺:</B> Na: [Ne] 3s¹ → pierde 1e⁻ del 3s → Na⁺: [Ne] (= 1s² 2s² 2p⁶)<BR>
+<B>Mg → Mg²⁺:</B> Mg: [Ne] 3s² → pierde 2e⁻ del 3s → Mg²⁺: [Ne]<BR>
+<B>Fe → Fe²⁺:</B> Fe: [Ar] 4s² 3d⁶ → pierde 2e⁻ del <b>4s</b> → Fe²⁺: [Ar] 3d⁶<BR>
+<B>Fe → Fe³⁺:</B> Fe: [Ar] 4s² 3d⁶ → pierde 2e⁻ del 4s y 1e⁻ del 3d → Fe³⁺: [Ar] 3d⁵ (semilleno, muy estable)</DIV>
+
+<H4>Iones negativos (aniones): ganancia de electrones</H4>
+Los aniones se forman cuando el átomo <B>gana</B> electrones. Los electrones se añaden al <B>orbital de menor energía disponible</B> (continuando el orden Aufbau).
+
+<DIV CLASS="ej">🧪 <B>Ejemplos de aniones:</B><BR><BR>
+<B>Cl → Cl⁻:</B> Cl: [Ne] 3s² 3p⁵ → gana 1e⁻ en 3p → Cl⁻: [Ne] 3s² 3p⁶ = [Ar]<BR>
+<B>O → O²⁻:</B> O: [He] 2s² 2p⁴ → gana 2e⁻ en 2p → O²⁻: [He] 2s² 2p⁶ = [Ne]<BR>
+<B>S → S²⁻:</B> S: [Ne] 3s² 3p⁴ → gana 2e⁻ en 3p → S²⁻: [Ne] 3s² 3p⁶ = [Ar]</DIV>
+
+<H3 ID="isoelectronicos">10. Especies isoelectrónicas monoatómicas</H3>
+
+Las <B>especies isoelectrónicas</B> son átomos o iones que tienen el <B>mismo número de electrones</B> y, por lo tanto, la misma configuración electrónica. Aunque tienen la misma configuración, sus propiedades físicas difieren porque tienen distinto número de protones (Z).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Especie</TH><TH>Z</TH><TH>N° electrones</TH><TH>Configuración electrónica</TH></TR>
+<TR><TD>N³⁻ (nitruro)</TD><TD>7</TD><TD>10</TD><TD>1s² 2s² 2p⁶ = [Ne]</TD></TR>
+<TR><TD>O²⁻ (óxido)</TD><TD>8</TD><TD>10</TD><TD>1s² 2s² 2p⁶ = [Ne]</TD></TR>
+<TR><TD>F⁻ (fluoruro)</TD><TD>9</TD><TD>10</TD><TD>1s² 2s² 2p⁶ = [Ne]</TD></TR>
+<TR><TD>Ne (neón)</TD><TD>10</TD><TD>10</TD><TD>1s² 2s² 2p⁶</TD></TR>
+<TR><TD>Na⁺ (sodio)</TD><TD>11</TD><TD>10</TD><TD>1s² 2s² 2p⁶ = [Ne]</TD></TR>
+<TR><TD>Mg²⁺ (magnesio)</TD><TD>12</TD><TD>10</TD><TD>1s² 2s² 2p⁶ = [Ne]</TD></TR>
+<TR><TD>Al³⁺ (aluminio)</TD><TD>13</TD><TD>10</TD><TD>1s² 2s² 2p⁶ = [Ne]</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Nota:</B> Todos los iones del grupo <b>N³⁻, O²⁻, F⁻, Na⁺, Mg²⁺, Al³⁺</b> son isoelectrónicos con el neón (Ne): todos tienen <b>10 electrones</b> y la configuración 1s² 2s² 2p⁶. A pesar de la misma configuración electrónica, el tamaño disminuye de izquierda a derecha en esta serie (mayor Z = más protones atrayendo los mismos 10 electrones = átomo/ion más pequeño). Del mismo modo, la serie <b>S²⁻, Cl⁻, Ar, K⁺, Ca²⁺</b> son isoelectrónicos con el argón (18 electrones).</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> El Principio de Aufbau establece que los electrones:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Se distribuyen aleatoriamente en cualquier orbital disponible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Llenan primero los orbitales de menor energía, avanzando progresivamente hacia los de mayor energía</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Ocupan primero los orbitales de mayor número cuántico principal (n)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Solo pueden estar en subniveles s y p</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Principio de Aufbau</B> ("construcción" en alemán) establece que, en el estado fundamental del átomo, los electrones ocupan primero los orbitales de <b>menor energía disponible</b>, siguiendo el orden: 1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p... Note que el 4s (n+l=4) se llena <b>antes</b> que el 3d (n+l=5), aunque el nivel 3 sea numéricamente anterior al 4.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> La Regla de Hund establece que cuando hay varios orbitales del mismo subnivel, los electrones:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Se emparejan inmediatamente en el primer orbital disponible, siempre de dos en dos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Se distribuyen individualmente en cada orbital con el mismo espín antes de emparejarse, maximizando los electrones desapareados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Llenan siempre el último orbital del subnivel antes que los primeros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Solo ocupan orbitales con electrones desapareados si el átomo está cargado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Regla de Hund</B> (o de la máxima multiplicidad) establece que cuando varios orbitales tienen la misma energía (son degenerados), los electrones se distribuyen <b>uno por uno</b> en cada orbital disponible, todos con el <b>mismo sentido de espín</b> (↑), antes de comenzar a emparejar. Ejemplo: el nitrógeno (N, Z=7) tiene 3 electrones en 2p: [↑][↑][↑], no [↑↓][↑][ ]. Esta distribución minimiza la repulsión electrón-electrón.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Cuál es la configuración electrónica correcta del oxígeno (O, Z=8)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) 1s² 2s² 2p⁴</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) 1s² 2s² 2p⁶</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) 1s² 2p⁶</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) 1s² 2s⁴ 2p²</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El oxígeno tiene Z=8, entonces tiene 8 electrones en estado neutro. Se distribuyen: 1s² (2e⁻) + 2s² (2e⁻) + 2p⁴ (4e⁻) = 8 electrones totales. La configuración es <B>1s² 2s² 2p⁴</B>. La opción b) correspondería al neón (Z=10, con 10e⁻). La opción c) es incorrecta porque el subnivel 2s existe y debe llenarse antes del 2p. La opción d) es imposible: el subnivel 2s solo admite máximo 2 electrones.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> La configuración abreviada del potasio (K, Z=19) es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) [Ne] 3s² 3p⁶ 3d¹</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) [Kr] 4s¹</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) [Ar] 4s¹</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) [Ar] 3d¹</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El potasio (K, Z=19) tiene configuración completa: 1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹. El gas noble inmediatamente anterior es el <b>Argón (Ar, Z=18)</b> con configuración [1s² 2s² 2p⁶ 3s² 3p⁶]. La configuración abreviada es <B>[Ar] 4s¹</B>. El 19° electrón va al orbital <b>4s</b> (no al 3d), porque E(4s) < E(3d): por la regla n+l, 4s tiene n+l=4 y 3d tiene n+l=5, por lo que 4s se llena antes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Un átomo es diamagnético cuando:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Tiene varios electrones desapareados en orbitales d</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Todos sus electrones están apareados (ningún electrón desapareado)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Tiene más protones que electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Pertenece al bloque d de la tabla periódica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Un átomo es <B>diamagnético</B> cuando <b>todos sus electrones están apareados</b> (en pares con espines opuestos ↑↓ en cada orbital). En ese caso, los espines se cancelan mutuamente y el átomo no tiene momento magnético neto, siendo débilmente repelido por un campo magnético externo. Si tiene al menos un electrón desapareado → <b>paramagnético</b> (atraído por el campo). Ejemplos diamagnéticos: He, Ne, Ar (gases nobles con todos sus electrones apareados), Zn, Mg, Ca.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál es la configuración electrónica real del cromo (Cr, Z=24) y por qué difiere de la predicción del Aufbau?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) [Ar] 4s² 3d⁴ — porque el Aufbau predice correctamente esta configuración</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) [Ar] 4s¹ 3d⁵ — porque un electrón migra del 4s al 3d para lograr el subnivel d semilleno (3d⁵), que es especialmente estable por la máxima multiplicidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) [Ar] 4s⁰ 3d⁶ — porque todos los electrones migran al subnivel d</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) [Ar] 3d⁶ — porque el cromo no utiliza el subnivel 4s</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Aufbau predice para Cr (Z=24): [Ar] 4s² 3d⁴. Sin embargo, la configuración <b>real</b> es <B>[Ar] 4s¹ 3d⁵</B>. La diferencia: un electrón "migra" del 4s al 3d, porque la configuración con el subnivel 3d <b>semilleno</b> (d⁵: [↑][↑][↑][↑][↑]) es especialmente estable gracias a la <b>máxima multiplicidad de espín</b> (todos los espines paralelos) y a que los electrones están lo más separados posible (minimizando la repulsión). Esta estabilidad extra compensa con creces la pequeña diferencia de energía entre 4s² 3d⁴ y 4s¹ 3d⁵.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> El hierro (Fe, Z=26) forma dos iones comunes: Fe²⁺ y Fe³⁺. ¿Cuáles son sus configuraciones electrónicas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Fe²⁺: [Ar] 4s² 3d⁴ ; Fe³⁺: [Ar] 4s² 3d³</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Fe²⁺: [Ar] 3d⁶ ; Fe³⁺: [Ar] 3d⁵</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Fe²⁺: [Ar] 4s⁰ 3d⁴ ; Fe³⁺: [Ar] 4s⁰ 3d³</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Fe²⁺: [Kr] 3d⁶ ; Fe³⁺: [Kr] 3d⁵</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Fe neutro tiene: [Ar] 4s² 3d⁶. Al formar iones, los metales de transición pierden primero los electrones del <b>4s</b> (no del 3d):<BR>
+<B>Fe²⁺</B>: pierde 2 electrones del 4s → [Ar] 3d⁶ (con 4 electrones desapareados en 3d: [↑↓][↑][↑][↑][↑])<BR>
+<B>Fe³⁺</B>: pierde los 2 del 4s y 1 del 3d → [Ar] 3d⁵ (con 5 electrones desapareados: [↑][↑][↑][↑][↑], subnivel d semilleno, muy estable)<BR>
+Por eso el Fe³⁺ es relativamente estable a pesar de tener mayor carga: su configuración 3d⁵ es la del subnivel semilleno, la más estable posible para los orbitales d.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Cuántos electrones desapareados tiene el átomo de nitrógeno (N, Z=7) en su estado fundamental?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) 1 electrón desapareado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) 2 electrones desapareados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) 3 electrones desapareados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) 0 electrones desapareados (diamagnético)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El nitrógeno (N, Z=7) tiene la configuración: 1s² 2s² 2p³. Los 3 electrones en el subnivel 2p se distribuyen según la Regla de Hund: [↑][↑][↑] en los 3 orbitales p (pₓ, pᵧ, p_z), uno en cada orbital, con espines paralelos. Esto da <B>3 electrones desapareados</B> → el nitrógeno es <b>paramagnético</b>. Esta configuración 2p³ (semilleno) es especialmente estable, razón por la que el N₂ es una molécula muy estable (triple enlace N≡N).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cuál de los siguientes grupos de especies son ISOELECTRÓNICAS entre sí (tienen el mismo número de electrones)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Na y Na⁺</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Cl⁻, Ar y K⁺</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) O y O²⁻</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" Value="d"> d) Fe y Fe²⁺</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Verificando el número de electrones de cada opción:<BR>
+<B>b) Cl⁻ (17+1=18e⁻), Ar (18e⁻), K⁺ (19-1=18e⁻)</B> → ¡Los tres tienen 18 electrones! Son isoelectrónicos con la configuración del Ar: [1s² 2s² 2p⁶ 3s² 3p⁶].<BR>
+Las otras opciones: Na(11e⁻) ≠ Na⁺(10e⁻); O(8e⁻) ≠ O²⁻(10e⁻); Fe(26e⁻) ≠ Fe²⁺(24e⁻). En ninguno de esos pares el número de electrones es igual.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> La configuración electrónica del ion Cu²⁺ (Z=29) es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) [Ar] 4s² 3d⁷</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) [Ar] 4s¹ 3d⁸</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) [Ar] 3d⁹</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) [Ar] 4s² 3d⁹</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El Cu neutro (Z=29) tiene configuración real: <b>[Ar] 4s¹ 3d¹⁰</b> (caso especial). Al formar Cu²⁺, pierde 2 electrones: primero el 1 del 4s, luego 1 del 3d:<BR>
+Cu: [Ar] 4s¹ 3d¹⁰ → pierde el e⁻ del 4s → Cu⁺: [Ar] 3d¹⁰ → pierde 1 e⁻ del 3d → <B>Cu²⁺: [Ar] 3d⁹</B><BR>
+Los iones de metales de transición no tienen electrones en el 4s una vez ionizados (se pierden todos del 4s primero). La opción d) sería la configuración del Cu neutro por Aufbau estándar (incorrecta incluso para el átomo neutro).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> El manganeso (Mn, Z=25) tiene la configuración [Ar] 4s² 3d⁵. ¿Cuántos electrones desapareados tiene y qué tipo de magnetismo presenta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) 0 electrones desapareados, diamagnético</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) 2 electrones desapareados, paramagnético</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) 5 electrones desapareados, paramagnético (el más alto entre los primeros metales de transición)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) 3 electrones desapareados, paramagnético</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El Mn tiene configuración [Ar] 4s² 3d⁵. El subnivel 3d⁵ es semilleno: los 5 electrones se distribuyen según Hund: [↑][↑][↑][↑][↑] (uno en cada uno de los 5 orbitales d). No hay ningún electrón apareado en 3d. Los 2 electrones del 4s están apareados: [↑↓] (no contribuyen al paramagnetismo).<BR>
+Total de electrones desapareados: <B>5</B> (todos en 3d) → el Mn es fuertemente <b>paramagnético</b>. De hecho, el Mn²⁺ (que pierde los 2 del 4s y queda con [Ar] 3d⁵) también tiene 5 electrones desapareados y es uno de los iones más paramagnéticos que existen, con el mayor número de electrones desapareados posibles en el subnivel 3d.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El zinc (Zn, Z=30) tiene configuración [Ar] 4s² 3d¹⁰. ¿Es paramagnético o diamagnético? ¿Por qué el zinc no se comporta como un metal de transición típico en muchas de sus propiedades?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Paramagnético, porque pertenece al bloque d de la tabla periódica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Diamagnético, porque todos sus electrones están apareados (4s² con 2e⁻ apareados y 3d¹⁰ con 10e⁻ todos apareados); no tiene electrones desapareados, y su subnivel 3d completo y estable hace que sus propiedades sean más similares a las del bloque p que a las de los metales de transición típicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Paramagnético, porque el subnivel 3d tiene exactamente 10 electrones que vibran independientemente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Diamagnético, pero solo a temperaturas bajas; a temperatura ambiente es paramagnético</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Zn tiene [Ar] 4s² 3d¹⁰: en 4s hay [↑↓] (2e⁻ apareados) y en 3d hay [↑↓][↑↓][↑↓][↑↓][↑↓] (10e⁻ todos apareados). <b>No hay ningún electrón desapareado</b> → Zn es <B>diamagnético</B>. Además, su subnivel 3d está completamente lleno y es muy estable, lo que hace que el Zn no pierda electrones d fácilmente y no forme los iones coloreados o con propiedades catalíticas típicas de los metales de transición. Por esta razón, muchos químicos consideran al Zn (y también a Cd y Hg) como "metales post-transición" más que metales de transición propiamente dichos, aunque se ubiquen en el bloque d de la tabla periódica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Escribe la configuración electrónica del ion S²⁻ (Z=16) e indica a qué átomo neutro es isoelectrónico.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) [Ne] 3s² 3p⁴; isoelectrónico con el azufre neutro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) [Ne] 3s² 3p⁶ = [Ar]; isoelectrónico con el argón (Ar, Z=18)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) [Ar] 3d²; isoelectrónico con el titanio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) 1s² 2s² 2p⁶ 3s² 3p⁴; isoelectrónico con el neón</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El S neutro (Z=16) tiene: 1s² 2s² 2p⁶ 3s² 3p⁴ (16 electrones). El ion S²⁻ gana 2 electrones en el subnivel 3p: 1s² 2s² 2p⁶ 3s² 3p⁶ = <B>[Ar]</B> (18 electrones). El S²⁻ es isoelectrónico con el <b>Argón (Ar, Z=18)</b>, que también tiene 18 electrones y la misma configuración electrónica. También son isoelectrónicos con S²⁻ los iones: Cl⁻, K⁺, Ca²⁺ (todos con 18 electrones y configuración [Ar]).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿Por qué la configuración [Ar] 4s¹ 3d¹⁰ del Cu es más estable que [Ar] 4s² 3d⁹ predicha por Aufbau?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Porque tener un solo electrón en 4s libera espacio para que el 3d pueda ser completamente lleno, y el subnivel 3d¹⁰ (completo) tiene mayor estabilidad energética que 3d⁹</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Porque el subnivel 4s es siempre menos estable que el 3d en todos los elementos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Porque la diferencia de configuración no afecta la energía del átomo y ambas son igualmente estables</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Porque el Aufbau solo aplica a los primeros 18 elementos y no al cobre</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El subnivel <B>3d¹⁰</B> (completamente lleno) es especialmente estable por dos razones: (1) La <b>simetría esférica</b> de un subnivel completamente lleno reduce la repulsión entre los electrones y maximiza la atracción con el núcleo. (2) Hay <b>menor energía de repulsión</b> entre electrones. Esta estabilidad extra supera a la energía que "costaría" sacar un electrón del 4s y pasarlo al 3d. La diferencia de energía entre las dos configuraciones (4s² 3d⁹ vs. 4s¹ 3d¹⁰) es pequeña pero suficiente para que la segunda sea la real. Este mismo razonamiento aplica al 3d⁵ (semilleno) del Cr: la simetría y la máxima multiplicidad de espín hacen que sea especialmente estable.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Un elemento X tiene la configuración electrónica [Xe] 6s² 4f¹⁴ 5d¹⁰ 6p³. ¿Cuántos electrones de valencia tiene y en qué bloque de la tabla periódica se ubica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) 3 electrones de valencia; bloque d</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) 5 electrones de valencia; bloque p</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) 2 electrones de valencia; bloque s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) 14 electrones de valencia; bloque f</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <b>electrones de valencia</b> son los del último nivel de energía (el nivel más externo). En la configuración [Xe] 6s² 4f¹⁴ 5d¹⁰ 6p³, el nivel más externo es el nivel 6. Los electrones del nivel 6 son: 6s² (2 electrones) + 6p³ (3 electrones) = <B>5 electrones de valencia</B>. El subnivel con la letra de mayor valor (6p) determina el bloque: p. Por tanto, es un elemento del <B>bloque p</B>. Con n=6 y 5 electrones de valencia (s²p³), este elemento corresponde al <b>Bismuto (Bi, Z=83)</b>, análogo del nitrógeno y fósforo pero en el periodo 6. Tiene el mismo grupo de electrones de valencia (5e⁻: s²p³) que N, P, As, Sb.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El oxígeno (O, Z=8) es paramagnético, lo cual sorprendió a los científicos cuando se descubrió experimentalmente porque la molécula O₂ parece tener todos sus electrones apareados según las estructuras de Lewis. ¿Qué implica el paramagnetismo del O₂ sobre la descripción de sus electrones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Que la estructura de Lewis del O₂ es completamente correcta y el paramagnetismo es un error experimental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Que el O₂ tiene 2 electrones desapareados, lo cual la teoría de enlace de Valencia (estructuras de Lewis) no puede predecir correctamente, pero sí puede explicarse con la Teoría de Orbitales Moleculares (TOM), que predice que dos electrones ocupan orbitales antienlazantes pi degenerados, uno en cada orbital según la Regla de Hund</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Que el oxígeno pierde electrones espontáneamente, convirtiéndose en O²⁺ siempre que existe en forma molecular</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Que el paramagnetismo del O₂ se debe exclusivamente a los núcleos de los átomos, no a sus electrones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El paramagnetismo del O₂ es un fenómeno experimental bien establecido (el O₂ líquido es atraído por imanes) y es uno de los grandes triunfos de la <B>Teoría de Orbitales Moleculares (TOM)</B>. La estructura de Lewis del O₂ (O=O con dos pares solitarios en cada O) predice incorrectamente que todos los electrones estarían apareados → diamagnético. La TOM, en cambio, predice la existencia de dos orbitales moleculares antienlazantes degenerate (π*2p) que, siguiendo la Regla de Hund, se llenan con un electrón cada uno: [↑][ ] y [↑][ ], resultando en <b>2 electrones desapareados</b> → <b>paramagnético</b>. Este fue uno de los primeros grandes éxitos de la mecánica cuántica aplicada a moléculas, mostrando que la descripción por pares de Lewis es insuficiente para algunas moléculas. El O₂ es el ejemplo clásico que demuestra la superioridad de la TOM sobre la teoría de enlace de Valencia en casos de electrones desapareados moleculares.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> La energía de los orbitales en átomos polielectrónicos (con más de un electrón) difiere de la del átomo de hidrógeno (un solo electrón). ¿Por qué el orbital 3d tiene mayor energía que el 4s en átomos como Ca y K, pero en átomos con más de 20 electrones (metales de transición), el 3d tiene MENOR energía que el 4s una vez que comienza a llenarse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Porque los átomos de los metales de transición tienen más neutrones, lo que aumenta la energía del orbital 4s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Al ir añadiendo electrones al 3d, el efecto de apantallamiento aumenta: los electrones 3d apantallan menos la carga nuclear que los 4s, lo que hace que a medida que se llena el 3d la atracción efectiva sobre el 4s disminuya, elevando su energía relativa; esto explica por qué en la ionización de metales de transición se pierden primero los electrones 4s aunque se llenaron antes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Porque el Principio de Aufbau deja de aplicarse a partir del elemento 20 (calcio)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Porque la masa atómica más alta de los metales de transición invierte el orden de energía de los orbitales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una de las sutilezas más importantes de la química cuántica avanzada. En átomos como K (Z=19) y Ca (Z=20), el orbital 4s tiene <b>menor energía</b> que el 3d (por eso se llena primero). Pero cuando comenzamos a llenar el 3d en los metales de transición (Sc, Z=21 en adelante), algo interesante ocurre: los electrones 3d son más internos (más cercanos al núcleo, mejor apantallados por los electrones de capas internas) que los 4s. Conforme más electrones se añaden al 3d, el <B>apantallamiento de los electrones 4s</B> aumenta, reduciendo la carga nuclear efectiva que "sienten" los electrones 4s, lo que <b>eleva su energía</b>. Esto explica la aparente paradoja: aunque el 4s se llenó primero (era más estable al principio de la serie), en el ion ya formado el <b>4s es más energético que el 3d</b> y se pierde primero en la ionización. Este fenómeno se conoce como <b>cruce de energías de orbitales</b> y es un tema activo de discusión en la didáctica de la química universitaria moderna.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Considera la configuración del ion Cr³⁺ (Z=24). El Cr neutro tiene configuración [Ar] 4s¹ 3d⁵. ¿Cuál es la configuración del Cr³⁺ y cuántos electrones desapareados tiene?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) [Ar] 4s¹ 3d², con 3 electrones desapareados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) [Ar] 3d³, con 3 electrones desapareados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) [Ar] 4s² 3d¹, con 1 electrón desapareado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) [Ar] 3d⁵, con 5 electrones desapareados</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Cr neutro: [Ar] 4s¹ 3d⁵ (configuración real, caso especial). Al formar Cr³⁺, pierde 3 electrones. Se pierden primero del orbital de mayor energía en el ion: el 4s (el 1 electrón que tiene el Cr) y luego del 3d:<BR>
+Cr → pierde el 1e⁻ del 4s → Cr⁺: [Ar] 3d⁵<BR>
+Cr⁺ → pierde 1e⁻ del 3d → Cr²⁺: [Ar] 3d⁴<BR>
+Cr²⁺ → pierde 1e⁻ del 3d → <B>Cr³⁺: [Ar] 3d³</B><BR>
+En [Ar] 3d³, los 3 electrones se distribuyen por Hund: [↑][↑][↑][ ][ ] → <B>3 electrones desapareados</B> → paramagnético. El Cr³⁺ es un ion muy importante en los colorantes y pigmentos (rubí: Cr³⁺ en Al₂O₃) y en la química de coordinación.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> El gadolinio (Gd, Z=64) tiene la configuración real [Xe] 6s² 4f⁷ 5d¹ en lugar de [Xe] 6s² 4f⁸ predicha por Aufbau. ¿Qué principio explica esta anomalía?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) El Principio de Exclusión de Pauli, porque 8 electrones no pueden estar en el subnivel f</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) La misma lógica que el Cr y Cu: el subnivel 4f⁷ semilleno (análogo al d⁵) es especialmente estable por la máxima multiplicidad de espín, por lo que un electrón "migra" del 4f al 5d para alcanzar la configuración 4f⁷ (semilleno)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) El Principio de Incertidumbre: los electrones f no pueden estar en el subnivel f si el átomo tiene más de 60 protones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) No existe ningún principio que lo explique; es un error en las tablas periódicas históricas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>gadolinio (Gd)</B> es el análogo de lantánido del cromo en los metales de transición. El subnivel <B>4f⁷</B> (semilleno) tiene 7 orbitales f, cada uno con un solo electrón de espín ↑: [↑][↑][↑][↑][↑][↑][↑]. Esta configuración es la de <b>máxima multiplicidad de espín</b> para el subnivel f, análoga al 3d⁵ del cromo. La estabilidad extra de 4f⁷ es suficiente para que un electrón que según Aufbau debería ir al 4f "prefiera" ir al 5d, logrando la configuración real [Xe] 6s² 4f⁷ 5d¹. Este mismo fenómeno ocurre con el <b>Europio (Eu, Z=63)</b> con subnivel f⁷ y con el <b>Curio (Cm, Z=96)</b> en los actínidos (análogo al gadolinio). Es un excelente ejemplo de cómo el principio de máxima multiplicidad de espín (Hund) puede superar al principio de Aufbau cuando la diferencia de energía entre subniveles es pequeña.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> ¿Por qué los iones de la serie isoelectrónica N³⁻, O²⁻, F⁻, Ne, Na⁺, Mg²⁺, Al³⁺ (todos con 10 electrones) tienen tamaños diferentes, siendo N³⁻ el más grande y Al³⁺ el más pequeño?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Porque tienen diferente número de neutrones, lo que afecta el tamaño del átomo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Porque todos tienen 10 electrones en la misma configuración, pero diferentes números de protones (Z): mayor Z implica mayor atracción nuclear sobre los mismos 10 electrones, contrayendo la nube electrónica; N³⁻ con Z=7 tiene menor atracción y mayor radio; Al³⁺ con Z=13 tiene mayor atracción y menor radio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Porque los iones negativos tienen más masa que los iones positivos y eso los hace más grandes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Porque la carga del ion (negativa o positiva) directamente determina el tamaño sin importar el número de protones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es la clave para entender el tamaño atómico en series isoelectrónicas. Los 7 iones/átomos tienen la <b>misma configuración electrónica</b> (1s² 2s² 2p⁶ = 10 electrones), pero sus números atómicos van de Z=7 (N) a Z=13 (Al). La fuerza de atracción del núcleo sobre los electrones es proporcional a Z: a mayor Z, el núcleo atrae con más fuerza los mismos 10 electrones, "comprimiendo" más la nube electrónica. Por tanto: N³⁻ (Z=7, menor atracción, 10e⁻) → el más <b>grande</b>; Al³⁺ (Z=13, mayor atracción, 10e⁻) → el más <b>pequeño</b>. Esta tendencia también explica una propiedad general importante: los <b>iones negativos (aniones) son siempre más grandes</b> que el átomo neutro del mismo elemento (ganan electrones, que se repelen mutuamente ampliando la nube) y los <b>iones positivos (cationes) son más pequeños</b> que el átomo neutro (pierden electrones, y los restantes son atraídos más fuertemente por el mismo número de protones).</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

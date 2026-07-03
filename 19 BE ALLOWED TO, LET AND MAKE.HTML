@@ -1,0 +1,766 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Be Allowed To, Let and Make - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:130px;text-align:center;}
+.dk .dk-num{font-size:20px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.eng{font-style:italic;color:#0D1B36;}
+.tarjeta-palabra{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:16px;padding:22px 28px;margin:18px 0;box-shadow:0 6px 18px rgba(0,0,0,0.18);}
+.tarjeta-palabra .tw-titulo{font-size:26px;font-weight:bold;color:#D7B06D;letter-spacing:1px;margin-bottom:6px;}
+.tarjeta-palabra .tw-es{font-size:15px;color:#cce8e7;margin-bottom:14px;font-style:italic;}
+.tarjeta-palabra .tw-regla{font-size:16px;line-height:1.9;color:#f0f0f0;}
+.tarjeta-palabra .tw-regla b{color:#D7B06D;}
+.tarjeta-palabra .tw-ej{background:rgba(255,255,255,0.1);border-radius:10px;padding:10px 16px;margin-top:12px;font-size:15px;font-style:italic;line-height:1.8;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 19 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Be Allowed To, Let &amp; Make</H1>
+<DIV CLASS="sub">Permiso y obligación causativa &middot; Estructuras con infinitivo &middot; Voz pasiva de causativos &middot; Diferencias clave</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1. INTRODUCCIÓN -->
+<H3>1. Importancia</H3>
+Las expresiones <B>be allowed to</B>, <B>let</B> y <B>make</B> son fundamentales porque:
+<UL>
+<LI><B>Expresan relaciones de poder y permiso</B> entre dos personas: quién autoriza, quién obliga, quién es objeto de la acción.</LI>
+<LI><B>Cada una exige una estructura gramatical diferente</B> que el examen verifica con precisión: con TO o sin TO, sujeto activo o pasivo, formal o informal.</LI>
+<LI><B>Se confunden con "can", "must" y "have to"</B>, por lo que el examen siempre evalúa la elección más precisa entre estas alternativas.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Clave desde el inicio:</B> Las tres expresiones involucran a <B>dos personas</B>: alguien que tiene autoridad (padre, jefe, profesor, ley) y alguien que recibe el permiso o la obligación. El enfoque en cada caso es distinto: <B>be allowed to</B> centra en quien recibe el permiso, <B>let</B> en quien lo concede, y <B>make</B> en quien impone la obligación.</DIV>
+
+<!-- 2. BE ALLOWED TO -->
+<H3>2. BE ALLOWED TO — "tener permiso para / estar permitido"</H3>
+
+<DIV CLASS="tarjeta-palabra">
+<DIV CLASS="tw-titulo">BE ALLOWED TO</DIV>
+<DIV CLASS="tw-es">Español: "tener permiso para", "estar permitido hacer algo", "poder" (con autorización)</DIV>
+<DIV CLASS="tw-regla">
+<B>Significado:</B> Indica que alguien <B>tiene o no tiene permiso</B> para hacer algo. No importa quién da el permiso; el foco está en la persona que lo recibe.<BR><BR>
+<B>Estructura:</B> <B>Sujeto + be (conjugado) + allowed + to + infinitivo</B><BR>
+El verbo BE se conjuga según el tiempo verbal y el sujeto.<BR><BR>
+<B>Equivalente modal:</B> Es la forma no modal de <B>CAN / COULD</B> cuando hablamos de permiso. Se prefiere en contextos formales, escritos, legales o cuando se habla en todos los tiempos verbales (pasado, futuro, condicional).<BR><BR>
+<B>Negación:</B> <B>Sujeto + be + NOT + allowed + to + infinitivo</B>
+</DIV>
+<DIV CLASS="tw-ej">
+✓ "Students <B>are allowed to</B> use calculators in the exam." (Presente — permiso actual)<BR>
+✓ "She <B>was allowed to</B> leave early yesterday." (Pasado — permiso en el pasado)<BR>
+✓ "You <B>will be allowed to</B> enter after 5 pm." (Futuro — permiso futuro)<BR>
+✓ "He <B>is not allowed to</B> park here." (Negación presente — prohibición)<BR>
+✓ "We <B>were not allowed to</B> take photos inside." (Negación pasada)
+</DIV>
+</DIV>
+
+<H4>Conjugación de BE ALLOWED TO en todos los tiempos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tiempo verbal</TH><TH>Forma afirmativa</TH><TH>Forma negativa</TH></TR>
+<TR><TD><B>Presente Simple</B></TD><TD>I/You/We/They <B>am/are allowed to</B> go<BR>He/She/It <B>is allowed to</B> go</TD><TD><B>am/are/is not allowed to</B> go</TD></TR>
+<TR><TD><B>Pasado Simple</B></TD><TD><B>was/were allowed to</B> go</TD><TD><B>was/were not allowed to</B> go</TD></TR>
+<TR><TD><B>Futuro (will)</B></TD><TD><B>will be allowed to</B> go</TD><TD><B>will not be allowed to</B> go</TD></TR>
+<TR><TD><B>Present Perfect</B></TD><TD><B>have/has been allowed to</B> go</TD><TD><B>have/has not been allowed to</B> go</TD></TR>
+<TR><TD><B>Condicional</B></TD><TD><B>would be allowed to</B> go</TD><TD><B>would not be allowed to</B> go</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>BE ALLOWED TO vs CAN:</B> Ambos expresan permiso, pero con diferencias importantes:<BR><BR>
+→ <B>CAN</B>: solo tiene dos formas (can / could). No puede usarse en futuro, condicional, present perfect, ni con otros modales.<BR>
+✗ <I>"I will can go."</I> &nbsp; ✗ <I>"She has could go."</I><BR><BR>
+→ <B>BE ALLOWED TO</B>: puede usarse en cualquier tiempo verbal. Es la solución cuando CAN no puede usarse:<BR>
+✓ <I>"She <B>will be allowed to</B> drive next year."</I> (cuando cumpla la edad requerida)<BR>
+✓ <I>"We <B>have been allowed to</B> use the library."</I><BR>
+✓ <I>"They <B>would be allowed to</B> attend if they registered."</I>
+</DIV>
+
+<H4>Contextos de uso de BE ALLOWED TO:</H4>
+<UL>
+<LI><B>Reglas institucionales y legales:</B> <I>"Citizens <B>are allowed to</B> vote at age 18."</I></LI>
+<LI><B>Permisos escolares o laborales:</B> <I>"Employees <B>are allowed to</B> take 30-minute breaks."</I></LI>
+<LI><B>Restricciones de acceso:</B> <I>"You <B>are not allowed to</B> bring food into the examination room."</I></LI>
+<LI><B>Permisos en el pasado:</B> <I>"In the 1800s, women <B>were not allowed to</B> vote."</I></LI>
+<LI><B>Permiso futuro o condicional:</B> <I>"If you pass the test, you <B>will be allowed to</B> proceed."</I></LI>
+</UL>
+
+<!-- 3. LET -->
+<H3>3. LET — "dejar / permitir (de forma activa)"</H3>
+
+<DIV CLASS="tarjeta-palabra">
+<DIV CLASS="tw-titulo">LET</DIV>
+<DIV CLASS="tw-es">Español: "dejar hacer algo", "permitir activamente", "dar permiso directo"</DIV>
+<DIV CLASS="tw-regla">
+<B>Significado:</B> Alguien con autoridad (<B>sujeto</B>) <B>da permiso activamente</B> a otra persona (<B>objeto</B>) para que haga algo. El foco está en quien concede el permiso.<BR><BR>
+<B>Estructura CLAVE:</B> <B>Sujeto + LET + objeto + infinitivo SIN TO</B><BR>
+⚠️ NUNCA se usa TO después de LET. Este es el error más frecuente en el examen.<BR><BR>
+<B>Traducción al español:</B> "dejar que...", "permitir que...", "dar permiso a alguien para..."<BR><BR>
+<B>Negación:</B> <B>Sujeto + do/does/did + NOT + let + objeto + infinitivo sin TO</B>
+</DIV>
+<DIV CLASS="tw-ej">
+✓ "My parents <B>let me go</B> to the party." (Mis papás me dejaron ir a la fiesta.)<BR>
+✓ "The teacher <B>lets</B> us <B>use</B> our notes in class." (La profe nos deja usar los apuntes.)<BR>
+✓ "She didn't <B>let</B> him <B>leave</B> early." (Ella no le dejó salir temprano.)<BR>
+✓ "Will you <B>let</B> me <B>explain</B>?" (¿Me dejas explicar?)<BR>
+✗ "My parents <B>let me to go</B>." — NUNCA con TO después de let.<BR>
+✗ "The teacher <B>lets</B> us <B>to use</B> notes." — mismo error, muy frecuente en examen.
+</DIV>
+</DIV>
+
+<H4>Conjugación de LET en diferentes tiempos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tiempo verbal</TH><TH>Forma afirmativa</TH><TH>Forma negativa</TH></TR>
+<TR><TD><B>Presente Simple</B></TD><TD>He <B>lets</B> me go / They <B>let</B> us go</TD><TD>He <B>doesn't let</B> me go / They <B>don't let</B> us go</TD></TR>
+<TR><TD><B>Pasado Simple</B></TD><TD>She <B>let</B> us leave</TD><TD>She <B>didn't let</B> us leave</TD></TR>
+<TR><TD><B>Futuro (will)</B></TD><TD>She <B>will let</B> you go</TD><TD>She <B>won't let</B> you go</TD></TR>
+<TR><TD><B>Present Perfect</B></TD><TD>He <B>has let</B> me stay</TD><TD>He <B>hasn't let</B> me stay</TD></TR>
+<TR><TD><B>Imperativo</B></TD><TD><B>Let</B> him speak! / <B>Let</B> us go! (¡Déjalo hablar!)</TD><TD><B>Don't let</B> him leave!</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Usos especiales y expresiones con LET:</H4>
+<UL>
+<LI><B>Let's + infinitivo sin TO</B> → propuesta o sugerencia: <I>"<B>Let's go</B> to the cinema!"</I> (¡Vamos al cine!)</LI>
+<LI><B>Let + objeto + in/out/through</B> → dejar entrar/salir: <I>"Please <B>let me in</B>."</I></LI>
+<LI><B>Let + sujeto + be</B> → dejar tranquilo: <I>"<B>Let him be</B> — he needs rest."</I></LI>
+<LI><B>Let alone</B> → ni siquiera: <I>"He can't walk, <B>let alone</B> run."</I></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>LET vs BE ALLOWED TO — diferencia de perspectiva:</B><BR><BR>
+Ambas expresan permiso, pero desde ángulos opuestos:<BR>
+→ <B>LET</B>: perspectiva de quien da el permiso (activo, informal, personal):<BR>
+<I>"My dad <B>let me</B> use the car."</I> — el papá tomó la decisión activa.<BR><BR>
+→ <B>BE ALLOWED TO</B>: perspectiva de quien recibe el permiso (más formal, institucional, impersonal):<BR>
+<I>"I <B>was allowed to</B> use the car."</I> — yo recibí el permiso (no importa quién lo dio).<BR><BR>
+Además, <B>LET no puede usarse en voz pasiva</B> directamente:<BR>
+✗ <I>"I was let go to the party."</I> — incorrecto.<BR>
+✓ <I>"I was allowed to go to the party."</I> — correcto.
+</DIV>
+
+<!-- 4. MAKE -->
+<H3>4. MAKE — "obligar / hacer que (alguien haga algo)"</H3>
+
+<DIV CLASS="tarjeta-palabra">
+<DIV CLASS="tw-titulo">MAKE</DIV>
+<DIV CLASS="tw-es">Español: "obligar a", "hacer que (alguien haga algo)", "forzar a"</DIV>
+<DIV CLASS="tw-regla">
+<B>Significado:</B> Alguien con autoridad (<B>sujeto</B>) <B>obliga o fuerza</B> a otra persona (<B>objeto</B>) a realizar una acción. No hay elección para quien recibe la acción. Implica presión, coerción o una consecuencia inevitable.<BR><BR>
+<B>Estructura ACTIVA CLAVE:</B> <B>Sujeto + MAKE + objeto + infinitivo SIN TO</B><BR>
+⚠️ En voz activa, NUNCA se usa TO después de MAKE.<BR><BR>
+<B>Estructura PASIVA:</B> <B>Sujeto + be MADE + TO + infinitivo</B><BR>
+⚠️ En voz pasiva, sí se usa TO. Este contraste activa/pasiva es muy evaluado.<BR><BR>
+<B>Negación activa:</B> <B>Sujeto + do/does/did + NOT + make + objeto + infinitivo sin TO</B>
+</DIV>
+<DIV CLASS="tw-ej">
+<B>Voz activa (SIN TO):</B><BR>
+✓ "The sergeant <B>made</B> the soldiers <B>run</B> for three hours." (El sargento los hizo correr.)<BR>
+✓ "The teacher <B>makes</B> us <B>do</B> homework every day." (La profe nos obliga a hacer tarea.)<BR>
+✓ "Her story <B>made</B> everyone <B>cry</B>." (Su historia hizo llorar a todos.)<BR>
+✗ "The teacher <B>made</B> us <B>to do</B> homework." — NO TO en voz activa.<BR><BR>
+<B>Voz pasiva (CON TO):</B><BR>
+✓ "The soldiers <B>were made to run</B> for three hours." (Los soldados fueron obligados a correr.)<BR>
+✓ "We <B>are made to do</B> homework every day." (Somos obligados a hacer tarea.)<BR>
+✓ "Everyone <B>was made to feel</B> welcome." (Todos fueron hechos sentir bienvenidos.)
+</DIV>
+</DIV>
+
+<H4>Conjugación de MAKE en diferentes tiempos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tiempo verbal</TH><TH>Activa (sin TO)</TH><TH>Pasiva (con TO)</TH></TR>
+<TR><TD><B>Presente Simple</B></TD><TD>She <B>makes</B> him <B>clean</B> his room</TD><TD>He <B>is made to clean</B> his room</TD></TR>
+<TR><TD><B>Pasado Simple</B></TD><TD>They <B>made</B> her <B>apologize</B></TD><TD>She <B>was made to apologize</B></TD></TR>
+<TR><TD><B>Futuro (will)</B></TD><TD>He <B>will make</B> you <B>regret</B> it</TD><TD>You <B>will be made to regret</B> it</TD></TR>
+<TR><TD><B>Present Perfect</B></TD><TD>The law <B>has made</B> companies <B>pay</B></TD><TD>Companies <B>have been made to pay</B></TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Contextos de uso de MAKE (causativo):</H4>
+<UL>
+<LI><B>Autoridad y disciplina:</B> <I>"The general <B>made</B> the troops <B>march</B> all night."</I></LI>
+<LI><B>Normas y reglas:</B> <I>"The law <B>makes</B> all drivers <B>wear</B> seatbelts."</I></LI>
+<LI><B>Emociones y reacciones (involuntarias):</B> <I>"That movie <B>made</B> me <B>laugh</B> and <B>cry</B> at the same time."</I></LI>
+<LI><B>Persuasión o presión:</B> <I>"Her speech <B>made</B> the audience <B>rethink</B> their values."</I></LI>
+<LI><B>Situaciones inevitables:</B> <I>"The circumstances <B>made</B> him <B>change</B> his plans."</I></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>MAKE vs LET — contraste fundamental:</B><BR><BR>
+→ <B>MAKE</B> = obligar, forzar (sin elección para el objeto): <I>"She <B>made</B> him <B>apologize</B>."</I><BR>
+→ <B>LET</B> = permitir, dar permiso (con voluntad del sujeto): <I>"She <B>let</B> him <B>leave</B>."</I><BR><BR>
+Los dos usan <B>infinitivo sin TO</B> en voz activa. La diferencia es el significado: imposición vs. permiso.<BR>
+En el examen, el contexto de la oración determina cuál usar.</DIV>
+
+<!-- 5. TABLA COMPARATIVA -->
+<H3>5. Tabla comparativa: BE ALLOWED TO vs LET vs MAKE</H3>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH></TH><TH>BE ALLOWED TO</TH><TH>LET</TH><TH>MAKE</TH></TR>
+<TR><TD><B>Significado</B></TD><TD>Tener permiso para</TD><TD>Dar permiso a alguien</TD><TD>Obligar a alguien a</TD></TR>
+<TR><TD><B>Tipo</B></TD><TD>Permiso / prohibición</TD><TD>Permiso activo (informal)</TD><TD>Obligación / coerción</TD></TR>
+<TR><TD><B>Foco</B></TD><TD>Quien recibe el permiso</TD><TD>Quien da el permiso</TD><TD>Quien impone la acción</TD></TR>
+<TR><TD><B>Estructura (activa)</B></TD><TD>S + be + allowed + TO + V</TD><TD>S + let + O + V (sin TO)</TD><TD>S + make + O + V (sin TO)</TD></TR>
+<TR><TD><B>Voz pasiva</B></TD><TD>Ya es pasiva en sí misma</TD><TD>✗ No tiene pasiva directa</TD><TD>S + be made + TO + V</TD></TR>
+<TR><TD><B>Tiempos</B></TD><TD>Todos los tiempos verbales</TD><TD>Todos (let no cambia en PS)</TD><TD>Todos los tiempos verbales</TD></TR>
+<TR><TD><B>Registro</B></TD><TD>Formal, institucional</TD><TD>Informal, personal</TD><TD>Formal e informal</TD></TR>
+<TR><TD><B>Equivalente modal</B></TD><TD>can / could (permiso)</TD><TD>can / could (permiso)</TD><TD>must / have to (obligación)</TD></TR>
+<TR><TD><B>Ejemplo</B></TD><TD><I>She is allowed to drive.</I></TD><TD><I>He let her drive.</I></TD><TD><I>He made her drive.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 6. LA REGLA DEL TO -->
+<H3>6. La regla del TO:</H3>
+
+Esta regla es la que más preguntas genera en los exámenes de alto rendimiento. Memorízala con precisión:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Estructura</TH><TH>¿Lleva TO?</TH><TH>Ejemplo correcto</TH></TR>
+<TR><TD><B>LET + objeto + verbo</B></TD><TD>SIN TO</TD><TD><I>"She let him <B>leave</B>."</I></TD></TR>
+<TR><TD><B>MAKE + objeto + verbo (activa)</B></TD><TD>SIN TO</TD><TD><I>"She made him <B>leave</B>."</I></TD></TR>
+<TR><TD><B>BE MADE + verbo (pasiva)</B></TD><TD>CON TO</TD><TD><I>"He was made <B>to leave</B>."</I></TD></TR>
+<TR><TD><B>BE ALLOWED + verbo</B></TD><TD>CON TO</TD><TD><I>"She is allowed <b>to leave</b>."</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Regla de oro para el examen:</B><BR><BR>
+→ Después de <B>LET</B>: SIEMPRE infinitivo sin TO.<BR>
+→ Después de <B>MAKE</B> en voz activa: SIEMPRE infinitivo sin TO.<BR>
+→ Después de <B>BE MADE</B> en voz pasiva: SIEMPRE con TO.<BR>
+→ Después de <B>BE ALLOWED</B>: SIEMPRE con TO.<BR><BR>
+<I>"My teacher <B>lets</B> us <B>work</B> in groups."</I> ✓ (sin TO)<BR>
+<I>"My teacher <B>makes</B> us <B>work</B> in silence."</I> ✓ (sin TO)<BR>
+<I>"We <B>are made to work</B> in silence."</I> ✓ (con TO — pasiva)<BR>
+<I>"We <b>are allowed to work</b> in groups."</I> ✓ (con TO)
+</DIV>
+
+<!-- 7. HAVE / GET COMO CAUSATIVOS -->
+<H3>7. Causativos relacionados: HAVE y GET</H3>
+
+Además de MAKE y LET, existen otros causativos que el examen de admisión también puede evaluar:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Causativo</TH><TH>Estructura</TH><TH>Significado</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>HAVE (causativo)</B></TD><TD>S + have + O + Past Participle</TD><TD>Mandar a hacer algo (servicio)</TD><TD><I>"I <B>had</B> my car <B>repaired</B>."</I> (Mandé a reparar mi carro.)</TD></TR>
+<TR><TD><B>GET (causativo)</B></TD><TD>S + get + O + Past Participle</TD><TD>Lograr / conseguir que algo se haga</TD><TD><I>"She <B>got</B> her nails <B>done</B>."</I> (Se hizo las uñas.)</TD></TR>
+<TR><TD><B>GET (personal)</B></TD><TD>S + get + O + to + infinitivo</TD><TD>Convencer / lograr que alguien haga algo</TD><TD><I>"She <B>got</B> him <b>to apologize</b>."</I> (Logró que él se disculpara.)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>HAVE vs GET + objeto + Past Participle:</B> Ambos expresan que un servicio fue realizado por alguien más, pero:<BR>
+→ <B>HAVE</B> es más formal y neutro: <I>"I <B>had</B> the report <B>written</B> by my assistant."</I><BR>
+→ <B>GET</B> es más coloquial y a veces implica mayor esfuerzo para lograrlo: <I>"I finally <B>got</B> the report <b>written</b>."</I>
+</DIV>
+
+<!-- 8. ERRORES TIPICOS -->
+<H3>8. Errores típicos de examen — ¡evítalos!</H3>
+<UL>
+<LI>✗ <I>"My parents <B>let me to go</B> out."</I> → ✓ <I>"My parents <B>let me go</B> out."</I> (sin TO)</LI>
+<LI>✗ <I>"The coach <B>made</B> us <B>to train</B> harder."</I> → ✓ <I>"The coach <B>made us train</B> harder."</I> (sin TO)</LI>
+<LI>✗ <I>"We <B>were made train</B> harder."</I> → ✓ <I>"We <B>were made to train</B> harder."</I> (pasiva = CON TO)</LI>
+<LI>✗ <I>"She <B>allowed</B> him <B>leave</B> early."</I> → ✓ <I>"She <B>allowed</B> him <B>to leave</B> early."</I> (ALLOW siempre con TO)</LI>
+<LI>✗ <I>"I <B>was let</B> to stay."</I> → ✓ <I>"I <B>was allowed to</B> stay."</I> (LET no tiene pasiva estándar)</LI>
+<LI>✗ <I>"He <B>doesn't let</B> to smoke."</I> → ✓ <I>"He <B>doesn't let</B> us <B>smoke</B>."</I> (LET necesita objeto explícito)</LI>
+<LI>✗ <I>"She <B>is allowed go</B> home."</I> → ✓ <I>"She <B>is allowed to go</B> home."</I> (be allowed = siempre con TO)</LI>
+<LI>✗ <I>"The law <B>makes</B> everyone <B>to wear</B> seatbelts."</I> → ✓ <I>"The law <B>makes</B> everyone <B>wear</B> seatbelts."</I></LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">LET</DIV><DIV CLASS="dk-label">+ objeto + V (sin TO)<BR>Permiso personal</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">MAKE</DIV><DIV CLASS="dk-label">Activa: + O + V sin TO<BR>Pasiva: be made + TO + V</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">BE ALLOWED TO</DIV><DIV CLASS="dk-label">+ TO + V<BR>Permiso formal / todos los tiempos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">LET ≠ pasiva</DIV><DIV CLASS="dk-label">LET no tiene voz pasiva estándar → usar BE ALLOWED TO</DIV></DIV>
+</DIV>
+
+<DIV CLASS="mapa-note">💡 <B>Recuerda:</B> Cuando veas LET o MAKE en voz activa → infinitivo <B>SIN TO</B>. Cuando veas BE MADE en voz pasiva o BE ALLOWED TO → infinitivo <B>CON TO</B>. Si alguien tiene permiso en general (no importa quién lo dio) → <B>BE ALLOWED TO</B>. Si alguien dio el permiso de forma personal → <B>LET</B>.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- EJERCICIOS -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de examen</H2>
+<DIV CLASS="lista-problemas">
+
+
+<!-- BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Choose the correct option: <SPAN CLASS="eng">"My parents don't ___ me stay out after midnight."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) <SPAN CLASS="eng">allow to</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) <SPAN CLASS="eng">let</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) <SPAN CLASS="eng">make</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) <SPAN CLASS="eng">let to</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) let</B><BR>
+La estructura correcta es <B>LET + objeto + infinitivo SIN TO</B>:<BR>
+<I>"My parents don't <B>let</B> me <B>stay</B> out after midnight."</I> ✓<BR><BR>
+→ a) "allow to" está incompleto — ALLOW necesita: allow + objeto + TO + V: <I>"don't allow me to stay"</I> sería correcto, pero esa no es la opción.<BR>
+→ c) "make" implica obligación/coerción, no prohibición. Además cambia el sentido completamente.<BR>
+→ d) "let to" es la forma incorrecta más común en el examen: LET NUNCA lleva TO después.<BR><BR>
+<B>Clave:</B> LET + objeto + V SIN TO. Siempre.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Choose the correct option: <SPAN CLASS="eng">"The sergeant ___ the soldiers march for five hours without stopping."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) <SPAN CLASS="eng">made</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) <SPAN CLASS="eng">made to</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) <SPAN CLASS="eng">let to</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) <SPAN CLASS="eng">was allowed</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) made</B><BR>
+Estructura: <B>MAKE + objeto + infinitivo SIN TO</B> (voz activa):<BR>
+<I>"The sergeant <B>made</B> the soldiers <B>march</B> for five hours."</I> ✓<BR><BR>
+→ b) "made to" — en voz activa NUNCA se usa TO después de MAKE. El TO aparece solo en la pasiva: <I>"The soldiers were made <B>to</B> march."</I><BR>
+→ c) "let to" — LET nunca lleva TO. Además, "let" implicaría permiso, no obligación.<BR>
+→ d) "was allowed" — el sujeto "the sergeant" es quien manda, no quien recibe permiso; y cambia completamente el significado.<BR><BR>
+<B>Clave:</B> MAKE (activa) + objeto + V SIN TO = obligación.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Choose the correct option: <SPAN CLASS="eng">"In this country, people ___ drive on the left side of the road."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) <SPAN CLASS="eng">are let to</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) <SPAN CLASS="eng">are made to</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) <SPAN CLASS="eng">are allowed to</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) <SPAN CLASS="eng">let</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) are allowed to</B><BR>
+El contexto habla de una norma legal/institucional que da permiso: "la gente tiene permitido manejar por la izquierda".<BR>
+→ <B>BE ALLOWED TO</B> = tener permiso (perspectiva de quien lo recibe, regla general) ✓<BR><BR>
+→ a) "are let to" — LET no tiene voz pasiva estándar. "Are let to" no existe como forma correcta en inglés estándar ✗<BR>
+→ b) "are made to" — implicaría obligación ("son obligados a manejar por la izquierda"), lo cual cambia el significado a una imposición, no a un permiso ✗<BR>
+→ d) "let" — LET necesita un sujeto activo que da el permiso. Aquí no hay ese sujeto explícito ✗<BR><BR>
+<B>Clave:</B> Reglas generales e institucionales → BE ALLOWED TO.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Which sentence is CORRECT?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) <SPAN CLASS="eng">The teacher made us to repeat the exercise.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) <SPAN CLASS="eng">The teacher let us to repeat the exercise.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) <SPAN CLASS="eng">The teacher made us repeat the exercise.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) <SPAN CLASS="eng">The teacher was made us repeat the exercise.</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>
+<I>"The teacher <B>made</B> us <B>repeat</B> the exercise."</I> ✓<BR>
+Estructura activa: MAKE + objeto (us) + infinitivo SIN TO (repeat) ✓<BR><BR>
+→ a) "made us to repeat" — TO después de MAKE en voz activa = ERROR más evaluado en el examen ✗<BR>
+→ b) "let us to repeat" — TO después de LET = ERROR igualmente frecuente ✗<BR>
+→ d) "was made us repeat" — estructura gramaticalmente incorrecta; la pasiva correcta sería: <I>"We were made to repeat the exercise."</I> ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Choose the correct option: <SPAN CLASS="eng">"Visitors ___ take photographs inside the museum."</SPAN> (prohibition)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) <SPAN CLASS="eng">are not allowed to</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) <SPAN CLASS="eng">don't make to</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) <SPAN CLASS="eng">are not let</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) <SPAN CLASS="eng">let not to</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) are not allowed to</B><BR>
+El enunciado pide expresar una <B>prohibición institucional/formal</B>.<BR>
+→ <B>are not allowed to</B> = no tienen permiso para (prohibición general y formal) ✓<BR><BR>
+→ b) "don't make to" — estructura incorrecta. MAKE no expresa prohibición así. Además, TO en activa es un error ✗<BR>
+→ c) "are not let" — LET no tiene pasiva estándar en inglés. Esta forma no es correcta ✗<BR>
+→ d) "let not to" — completamente incorrecta en inglés ✗<BR><BR>
+<B>Clave:</B> Para prohibiciones formales/institucionales → are not allowed to.</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Choose the option that correctly completes BOTH blanks: <SPAN CLASS="eng">"The company __(1)__ employees leave early on Fridays, but __(2)__ them work overtime on weekdays."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) <SPAN CLASS="eng">(1) lets / (2) makes</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) <SPAN CLASS="eng">(1) makes / (2) lets</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) <SPAN CLASS="eng">(1) lets to / (2) makes to</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) <SPAN CLASS="eng">(1) allows / (2) makes to</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) (1) lets / (2) makes</B><BR>
+Análisis de cada espacio:<BR>
+(1) "leave early on Fridays" → la compañía <B>da permiso</B> de salir temprano → <B>LETS</B> (permiso activo) ✓<BR>
+(2) "work overtime on weekdays" → la compañía <B>obliga</B> a trabajar horas extra → <B>MAKES</B> (obligación) ✓<BR>
+Ambos usan infinitivo SIN TO: "lets employees <B>leave</B>" y "makes them <B>work</B>" ✓<BR><BR>
+→ b) Invierte los significados: haría que "la compañía obliga a salir temprano y deja trabajar horas extra" — lógicamente al revés ✗<BR>
+→ c) "lets to" y "makes to" — TO en voz activa después de LET o MAKE = error en ambos casos ✗<BR>
+→ d) "allows" necesita: allows + objeto + TO + V → "allows employees to leave" sería correcto, pero "makes to" sigue siendo incorrecto ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Convert to the PASSIVE voice: <SPAN CLASS="eng">"The coach made the players train twice a day."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) <SPAN CLASS="eng">The players were made train twice a day.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) <SPAN CLASS="eng">The players were made to train twice a day.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) <SPAN CLASS="eng">The players were let to train twice a day.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) <SPAN CLASS="eng">The players were allowed train twice a day.</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+La regla de la voz pasiva de MAKE es:<BR>
+<B>Activa:</B> S + MAKE + O + V (sin TO) → "The coach <B>made</B> the players <B>train</B>"<BR>
+<B>Pasiva:</B> O (nuevo sujeto) + <B>BE MADE + TO + V</B> → "The players <B>were made to train</B>" ✓<BR><BR>
+En la pasiva, el TO reaparece. Esta es la distinción más evaluada sobre MAKE en el examen.<BR><BR>
+→ a) "were made train" — falta el TO en la pasiva ✗<BR>
+→ c) "were let to train" — LET no tiene pasiva estándar; además añade TO incorrectamente ✗<BR>
+→ d) "were allowed train" — ALLOWED siempre necesita TO: "were allowed <B>to</B> train" ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Choose the option that completes the sentence most precisely: <SPAN CLASS="eng">"When I was a child, I ___ watch TV after 9 pm."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) <SPAN CLASS="eng">wasn't allowed to</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) <SPAN CLASS="eng">wasn't let to</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) <SPAN CLASS="eng">was made to</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) <SPAN CLASS="eng">wasn't made</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) wasn't allowed to</B><BR>
+El contexto expresa una <B>prohibición en el pasado</B> ("cuando era niño, no tenía permiso de ver TV después de las 9").<BR>
+→ <B>wasn't allowed to</B> = no tenía permiso para (pasado de BE ALLOWED TO) ✓<BR><BR>
+→ b) "wasn't let to" — LET no tiene pasiva estándar; "let to" es siempre incorrecto ✗<BR>
+→ c) "was made to" — implica que alguien lo obligó a ver TV después de las 9, que es el significado contrario ✗<BR>
+→ d) "wasn't made" — necesita TO en la pasiva de MAKE: "wasn't made to watch". Además, el significado tampoco corresponde ✗<BR><BR>
+<B>Recuerda:</B> Para hablar de ausencia de permiso personal en el pasado → <B>wasn't/weren't allowed to</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Which sentence uses ALLOW correctly?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) <SPAN CLASS="eng">The teacher allowed us leave the classroom.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) <SPAN CLASS="eng">The teacher allowed us to leave the classroom.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) <SPAN CLASS="eng">The teacher allowed leave the classroom.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) <SPAN CLASS="eng">The teacher allowed to us leave the classroom.</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+ALLOW (verbo pleno, no causativo) siempre sigue la estructura: <B>ALLOW + objeto + TO + infinitivo</B><BR>
+<I>"The teacher <B>allowed us to leave</B> the classroom."</I> ✓<BR><BR>
+Esta es una distinción importante: ALLOW ≠ LET en la estructura:<BR>
+→ LET + objeto + V SIN TO: <I>"The teacher <b>let</b> us <b>leave</b>."</I> ✓<BR>
+→ ALLOW + objeto + TO + V: <I>"The teacher <b>allowed</b> us <b>to leave</b>."</I> ✓<BR><BR>
+→ a) "allowed us leave" — falta el TO ✗<BR>
+→ c) "allowed leave" — falta el objeto ✗<BR>
+→ d) "allowed to us leave" — el TO va entre el objeto y el verbo, no antes del objeto ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Choose the option that best completes the sentence: <SPAN CLASS="eng">"The smell of the food ___ my mouth water."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) <SPAN CLASS="eng">let</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) <SPAN CLASS="eng">allowed</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) <SPAN CLASS="eng">made</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) <SPAN CLASS="eng">was allowed to</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) made</B><BR>
+<I>"The smell of the food <B>made</B> my mouth <B>water</B>."</I> ✓ (El olor de la comida me hizo salivar.)<BR><BR>
+MAKE se usa para expresar <B>reacciones emocionales o físicas involuntarias</B> causadas por algo:<BR>
+→ "The movie <b>made</b> me cry." / "The news <b>made</b> him happy." / "The cold <b>made</b> her sneeze."<BR><BR>
+En estos casos, no hay una persona que da permiso ni una autoridad que obliga — es una causa-efecto natural. Solo MAKE funciona aquí.<BR>
+→ a) LET implica que el olor "dio permiso" a la boca de salivar — carece de sentido lógico ✗<BR>
+→ b) ALLOWED — igual problema semántico que LET ✗<BR>
+→ d) "was allowed to" — el sujeto "the smell" no puede recibir permiso ✗</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; INGRESO A LA UNI</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Identify the option where BOTH sentences are grammatically correct:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) <SPAN CLASS="eng">A: "She was made to apologize." / B: "She was let to apologize."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) <SPAN CLASS="eng">A: "She was made to apologize." / B: "She was allowed to apologize."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) <SPAN CLASS="eng">A: "She was made apologize." / B: "She was allowed to apologize."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) <SPAN CLASS="eng">A: "She was let apologize." / B: "She was allowed apologize."</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+Análisis de cada oración en b):<BR>
+A: <I>"She <B>was made to apologize</B>."</I> → pasiva de MAKE: BE MADE + TO + V ✓<BR>
+B: <I>"She <B>was allowed to apologize</B>."</I> → BE ALLOWED TO: siempre con TO ✓<BR><BR>
+Errores en las demás:<BR>
+→ a) "was let to apologize" — LET no tiene pasiva estándar; esta forma no es correcta en inglés ✗<BR>
+→ c) "was made apologize" — pasiva de MAKE requiere TO: <i>"was made <B>to</B> apologize"</i> ✗<BR>
+→ d) "was let apologize" y "was allowed apologize" — LET sin pasiva + ALLOWED sin TO ✗<BR><BR>
+<B>Regla de contraste:</B> MAKE pasiva → TO; LET → no tiene pasiva directa → usar BE ALLOWED TO.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Which sentence correctly expresses that students HAD PERMISSION to use computers in the past but NO LONGER do?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) <SPAN CLASS="eng">Students are made to use computers, but they are not allowed to anymore.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) <SPAN CLASS="eng">Students used to be allowed to use computers, but they are no longer allowed to.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) <SPAN CLASS="eng">Students let use computers before, but the school makes them not to now.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) <SPAN CLASS="eng">Students were let to use computers, but they were made not.</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+<I>"Students <B>used to be allowed to</B> use computers, but they <B>are no longer allowed to</B>."</I> ✓<BR><BR>
+Esta oración usa perfectamente:<BR>
+→ <B>used to be allowed to</B> = solían tener permiso para (habitual en el pasado, ya no ocurre) ✓<BR>
+→ <B>are no longer allowed to</B> = ya no tienen permiso para (presente) ✓<BR><BR>
+→ a) "are made to use computers" implica que actualmente son obligados, no que antes tenían permiso ✗<BR>
+→ c) "Students let use computers" — LET necesita un sujeto activo que da el permiso, no el propio estudiante como sujeto que se autoautoriza ✗<BR>
+→ d) "were let to" — forma pasiva no estándar de LET ✗; "made not" — estructura incorrecta ✗<BR><BR>
+<B>Extra:</B> USED TO + BE ALLOWED TO es una estructura avanzada frecuente en admisión universitaria.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Detect the grammatical error and choose the option that correctly identifies and fixes it:<BR><SPAN CLASS="eng">"The new regulation makes companies to disclose their financial records annually, and they are not allowed hide any information from the public."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) <SPAN CLASS="eng">"makes companies to disclose" → "makes companies disclose"; "allowed hide" → "allowed to hide".</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) <SPAN CLASS="eng">"makes companies to disclose" is correct; "allowed hide" → "allowed to hide".</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) <SPAN CLASS="eng">"makes companies to disclose" → "makes companies disclose"; the rest is correct.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) <SPAN CLASS="eng">The sentence is entirely correct.</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+El texto tiene <B>dos errores</B>:<BR><BR>
+① <B>"makes companies to disclose"</B> → <B>"makes companies disclose"</B><BR>
+MAKE en voz activa → infinitivo SIN TO: "makes companies <B>disclose</B>" ✓<BR><BR>
+② <B>"allowed hide"</B> → <B>"allowed to hide"</B><BR>
+BE ALLOWED siempre va con TO: "are not allowed <B>to</B> hide" ✓<BR><BR>
+Oración corregida: <I>"The new regulation <B>makes</B> companies <B>disclose</B> their financial records annually, and they are not <B>allowed to hide</B> any information from the public."</I><BR><BR>
+→ b) "makes companies to disclose is correct" — es falso, TO no va en la voz activa de MAKE ✗<BR>
+→ c) solo identifica un error cuando hay dos ✗<BR>
+→ d) hay dos errores gramaticales evidentes ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Which option correctly translates: <B>"El jefe nos obligó a quedarnos hasta las diez, pero luego nos dejó salir antes de lo habitual."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) <SPAN CLASS="eng">The boss made us to stay until ten, but then let us to leave earlier than usual.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) <SPAN CLASS="eng">The boss let us stay until ten, but then made us leave earlier than usual.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) <SPAN CLASS="eng">The boss made us stay until ten, but then let us leave earlier than usual.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) <SPAN CLASS="eng">The boss was made us stay until ten, but then was let us leave earlier.</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>
+<I>"The boss <B>made us stay</B> until ten, but then <B>let us leave</B> earlier than usual."</I> ✓<BR><BR>
+→ "obligó a quedarnos" = <B>made us stay</B> (MAKE + objeto + V sin TO) ✓<BR>
+→ "nos dejó salir" = <B>let us leave</B> (LET + objeto + V sin TO) ✓<BR><BR>
+→ a) "made us <b>to</b> stay" y "let us <b>to</b> leave" — TO después de MAKE y LET en activa = doble error ✗<BR>
+→ b) Invierte los significados: "el jefe nos dejó quedarnos y nos obligó a salir" — contrario a lo pedido ✗<BR>
+→ d) "was made us" y "was let us" — estructuras pasivas incorrectas con sujeto incorrecto ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Choose the option that CORRECTLY rewrites this sentence in the passive voice:<BR><SPAN CLASS="eng">Active: "The government made all citizens register their properties."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) <SPAN CLASS="eng">All citizens were made register their properties by the government.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) <SPAN CLASS="eng">All citizens were allowed to register their properties by the government.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) <SPAN CLASS="eng">All citizens were made to register their properties by the government.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) <SPAN CLASS="eng">The government was made to register all citizens' properties.</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>
+Regla de la pasiva de MAKE:<BR>
+Activa: S + <B>made</B> + O + V (sin TO) → <I>"The government <b>made</b> all citizens <b>register</b>..."</I><BR>
+Pasiva: O (→ nuevo sujeto) + <B>were made + TO</B> + V → <I>"All citizens <b>were made to register</b>... by the government."</I> ✓<BR><BR>
+→ a) "were made register" — falta el TO en la pasiva ✗<BR>
+→ b) "were allowed to register" — cambia el significado de obligación a permiso; no es la pasiva de MAKE ✗<BR>
+→ d) el sujeto cambia incorrectamente: el gobierno es quien impone, no quien recibe la acción ✗</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; EXAMEN DE ADMISIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analyse each sentence and choose the option where ALL THREE are grammatically correct:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) <SPAN CLASS="eng">① "They made her to confess." ② "She was allowed to speak." ③ "He let her to go."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) <SPAN CLASS="eng">① "They made her confess." ② "She was allowed to speak." ③ "He let her go."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) <SPAN CLASS="eng">① "They made her confess." ② "She was allowed speak." ③ "He let her to go."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) <SPAN CLASS="eng">① "They were made her confess." ② "She allowed to speak." ③ "He let to go."</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+Análisis de las tres oraciones en b):<BR>
+① <I>"They <B>made</B> her <B>confess</B>."</I> → MAKE activa + objeto + V sin TO ✓<BR>
+② <I>"She <B>was allowed to speak</B>."</I> → BE ALLOWED TO + V ✓<BR>
+③ <I>"He <B>let</B> her <B>go</B>."</I> → LET + objeto + V sin TO ✓<BR><BR>
+Errores en las otras opciones:<BR>
+→ a) ① "made her <b>to</b> confess" ✗ y ③ "let her <b>to</b> go" ✗ — TO en activa después de MAKE y LET<BR>
+→ c) ② "allowed <b>speak</b>" (sin TO) ✗ y ③ "let her <b>to</b> go" ✗<BR>
+→ d) ① "were made her confess" — estructura pasiva mal formada ✗; ② "she allowed to speak" — falta objeto ✗; ③ "let <b>to</b> go" — sin objeto y con TO ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Choose the option that correctly translates ALL of the following with maximum grammatical precision:<BR><B>① "Me obligaron a firmar el contrato."<BR>② "No nos dejan entrar sin identificación."<BR>③ "En ese entonces, no se nos permitía votar."<BR>④ "El frío me hizo temblar."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) <SPAN CLASS="eng">① "I was made to sign the contract." ② "They don't let us enter without ID." ③ "At that time, we were not allowed to vote." ④ "The cold made me to shiver."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) <SPAN CLASS="eng">① "I was made to sign the contract." ② "They don't let us enter without ID." ③ "At that time, we were not allowed to vote." ④ "The cold made me shiver."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) <SPAN CLASS="eng">① "I was made sign the contract." ② "They don't let us to enter without ID." ③ "At that time, we were not let to vote." ④ "The cold made me shiver."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) <SPAN CLASS="eng">① "They made me to sign the contract." ② "We are not let enter without ID." ③ "At that time, we couldn't allowed to vote." ④ "The cold let me shiver."</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+Análisis de las cuatro traducciones en b):<BR>
+① <I>"I <B>was made to sign</B> the contract."</I> → pasiva de MAKE: BE MADE + TO + V ✓<BR>
+② <I>"They <B>don't let</B> us <B>enter</B> without ID."</I> → LET + objeto + V sin TO ✓<BR>
+③ <I>"At that time, we <B>were not allowed to vote</B>."</I> → pasado de BE ALLOWED TO para norma social/institucional ✓<BR>
+④ <I>"The cold <B>made me shiver</B>."</I> → MAKE activa + objeto + V sin TO para causa-efecto físico ✓<BR><BR>
+Errores en las otras opciones:<BR>
+→ a) ④ "made me <b>to</b> shiver" — TO en activa de MAKE ✗<BR>
+→ c) ① "was made <b>sign</b>" (sin TO en pasiva) ✗; ② "let us <b>to</b> enter" ✗; ③ "were not let to vote" — LET sin pasiva estándar ✗<BR>
+→ d) ① "made me <b>to</b> sign" ✗; ② "are not let enter" — LET sin pasiva ✗; ③ "couldn't allowed" — construcción modal incorrecta ✗; ④ LET para causa-efecto físico no corresponde ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> The following paragraph contains TWO grammatical errors related to the topic. Choose the option that identifies and corrects BOTH with the most precise linguistic explanation:<BR><SPAN CLASS="eng">"In many countries, citizens are not allowed vote in national elections until they turn eighteen. The constitution also makes all public officials to declare their assets annually. These laws were designed to ensure transparency."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) <SPAN CLASS="eng">"are not allowed vote" → "are not allowed to vote"; "makes all public officials to declare" → "makes all public officials declare". Both errors involve incorrect use of the TO infinitive.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) <SPAN CLASS="eng">"are not allowed vote" → "are not let vote"; "makes all public officials to declare" → "makes all public officials to declare" (correct as is).</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) <SPAN CLASS="eng">Only "are not allowed vote" → "are not allowed to vote" is an error; "makes to declare" is correct.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) <SPAN CLASS="eng">The paragraph is entirely correct.</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+El párrafo contiene exactamente <B>dos errores</B>:<BR><BR>
+① <B>"are not allowed vote"</B> → <B>"are not allowed <u>to</u> vote"</B><BR>
+BE ALLOWED siempre requiere TO antes del infinitivo: <I>"are not allowed <B>to</B> vote"</I> ✓<BR><BR>
+② <B>"makes all public officials to declare"</B> → <B>"makes all public officials declare"</B><BR>
+MAKE en voz activa NUNCA lleva TO: <I>"makes all public officials <B>declare</B>"</I> ✓<BR><BR>
+Esta es la trampa más elegante del examen: los dos errores son opuestos entre sí:<BR>
+→ BE ALLOWED falta el TO → hay que añadirlo.<BR>
+→ MAKE activa tiene TO de más → hay que eliminarlo.<BR><BR>
+→ b) propone "are not let vote" (LET sin pasiva estándar) y deja el error de MAKE como correcto ✗<BR>
+→ c) solo identifica un error de dos ✗<BR>
+→ d) hay dos errores gramaticales claros ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Choose the option that explains CORRECTLY why BOTH alternatives are possible but convey different nuances:<BR><SPAN CLASS="eng">A: "My father let me study abroad."<BR>B: "I was allowed to study abroad."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) <SPAN CLASS="eng">Both sentences are incorrect: A needs "was allowed to" and B needs "let".</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) <SPAN CLASS="eng">Both sentences are grammatically correct. A uses LET with the active perspective of who grants permission (the father); B uses BE ALLOWED TO with the passive perspective of who receives permission (the speaker). A is more informal and personal; B is more formal and impersonal.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) <SPAN CLASS="eng">A is incorrect because LET requires TO. B is the only correct option.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) <SPAN CLASS="eng">Both sentences mean the same thing and are completely interchangeable in all contexts.</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+Esta es una pregunta de análisis lingüístico profundo, característica del nivel de admisión universitaria de alto rendimiento:<BR><BR>
+<B>Oración A:</B> <I>"My father <B>let</B> me study abroad."</I><BR>
+→ Usa LET: perspectiva del <B>padre</B> como agente activo que concede el permiso.<BR>
+→ Foco en quien da el permiso. Informal y personal.<BR>
+→ Estructura correcta: LET + objeto + V sin TO ✓<BR><BR>
+<B>Oración B:</B> <I>"I <B>was allowed to</B> study abroad."</I><BR>
+→ Usa BE ALLOWED TO: perspectiva del <B>hablante</B> como receptor del permiso.<BR>
+→ Foco en quien recibe el permiso. Más formal e impersonal (no especifica quién lo dio).<BR>
+→ Estructura correcta: BE ALLOWED + TO + V ✓<BR><BR>
+Ambas son correctas. La diferencia es semántica y de perspectiva, no gramatical.<BR><BR>
+→ a) Ambas están correctas — no hay nada que corregir ✗<BR>
+→ c) LET no requiere TO en la activa; es uno de los errores que el examen precisamente evalúa ✗<BR>
+→ d) No son completamente intercambiables: tienen diferente foco, registro y disponibilidad de tiempos verbales ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Read the essay excerpt and choose the option that corrects ALL errors with the greatest precision:<BR><SPAN CLASS="eng">"The new school policy lets students to choose their own elective courses and makes teachers to prepare individualised learning plans. Students who have been made complete additional assessments are allowed appeal the decision. The administration was let the board implement these changes last semester, and parents were made to sign a consent form agreeing to the new system."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) <SPAN CLASS="eng">"lets students to choose" → "lets students choose"; "makes teachers to prepare" → "makes teachers prepare"; "made complete" → "made to complete"; "allowed appeal" → "allowed to appeal"; "was let the board" → "allowed the board to".</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) <SPAN CLASS="eng">Only "lets students to choose" and "makes teachers to prepare" are errors; the rest is correct.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) <SPAN CLASS="eng">"lets students to choose" → "lets students choose"; "makes teachers to prepare" → "makes teachers prepare". The passive forms are correct as they are.</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) <SPAN CLASS="eng">The entire text is grammatically correct and represents advanced academic usage.</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+El texto tiene <B>cinco errores</B>. Análisis exhaustivo:<BR><BR>
+① <B>"lets students <u>to</u> choose"</B> → <B>"lets students choose"</B><BR>
+LET + objeto + V SIN TO en voz activa ✓<BR><BR>
+② <B>"makes teachers <u>to</u> prepare"</B> → <B>"makes teachers prepare"</B><BR>
+MAKE + objeto + V SIN TO en voz activa ✓<BR><BR>
+③ <B>"have been made complete"</B> → <B>"have been made <u>to</u> complete"</B><BR>
+Pasiva de MAKE → BE MADE + TO + V. En la pasiva, el TO es obligatorio ✓<BR><BR>
+④ <B>"allowed appeal"</B> → <B>"allowed <u>to</u> appeal"</B><BR>
+BE ALLOWED siempre + TO + V ✓<BR><BR>
+⑤ <B>"The administration was let the board implement"</B> → <B>"The administration <u>allowed</u> the board <u>to</u> implement"</B> (o "let the board implement")<BR>
+"Was let" como pasiva no funciona aquí porque el sujeto "the administration" es el agente activo. La oración necesita: "The administration <b>let</b> the board <b>implement</b>" (LET activa) o "The administration <b>allowed</b> the board <b>to</b> implement" (ALLOW activa) ✓<BR><BR>
+→ b) y c) solo identifican 2 errores de 5 ✗<BR>
+→ d) el texto tiene múltiples errores gramaticales graves ✗<BR><BR>
+<B>Nota de nivel:</B> Esta pregunta evalúa todos los puntos del tema simultáneamente: LET activa (sin TO), MAKE activa (sin TO), MAKE pasiva (con TO), BE ALLOWED TO (con TO), y LET vs. pasiva estándar.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,495 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Comparative Adjectives - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 8 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Comparative Adjectives</H1>
+<DIV CLASS="sub">Comparativos regulares e irregulares &middot; Reglas ortográficas &middot; Estructuras as...as &middot; Comparativos con sustantivos &middot; Doble comparativo</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- SECCIÓN 1: COMPARATIVOS REGULARES - ADJETIVOS CORTOS -->
+<H3 ID="cortos">1. Comparativos Regulares — Adjetivos Cortos (1 sílaba)</H3>
+
+El <B>comparativo de superioridad</B> se usa para comparar dos elementos y señalar que uno posee una cualidad en mayor grado que el otro. Equivale al español <I>más... que</I>. Para los adjetivos <B>cortos (de una sílaba)</B>, la regla general es: <B>adjetivo + -er + than</B>.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Adjetivo</TH><TH>Comparativo</TH><TH>Ejemplo</TH></TR>
+<TR><TD>tall</TD><TD>taller</TD><TD><SPAN CLASS="eng">My brother is taller than me.</SPAN></TD></TR>
+<TR><TD>small</TD><TD>smaller</TD><TD><SPAN CLASS="eng">This phone is smaller than that one.</SPAN></TD></TR>
+<TR><TD>fast</TD><TD>faster</TD><TD><SPAN CLASS="eng">A car is faster than a bicycle.</SPAN></TD></TR>
+<TR><TD>old</TD><TD>older</TD><TD><SPAN CLASS="eng">This building is older than the school.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>"Than" es obligatorio:</B> siempre que se menciona el segundo elemento de la comparación, debe aparecer <B>than</B> (que). <I>"She is taller him"</I> es INCORRECTO; lo correcto es <B>"She is taller than him."</B></DIV>
+
+<!-- SECCIÓN 2: REGLAS ORTOGRÁFICAS -->
+<H3 ID="ortografia">2. Reglas Ortográficas para Formar el Comparativo</H3>
+
+Al añadir <B>-er</B>, algunos adjetivos cortos cambian su ortografía según su terminación.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Terminación del adjetivo</TH><TH>Regla</TH><TH>Ejemplo</TH></TR>
+<TR><TD>terminado en <B>-e</B></TD><TD>añadir solo <B>-r</B></TD><TD>large &rarr; larger; nice &rarr; nicer; safe &rarr; safer</TD></TR>
+<TR><TD>vocal + consonante (CVC), 1 sílaba</TD><TD><B>doblar la consonante final</B> + -er</TD><TD>big &rarr; bigger; hot &rarr; hotter; thin &rarr; thinner</TD></TR>
+<TR><TD>consonante + <B>y</B></TD><TD>cambiar <B>y &rarr; i</B> + -er</TD><TD>happy &rarr; happier; easy &rarr; easier; busy &rarr; busier</TD></TR>
+<TR><TD>resto de adjetivos cortos</TD><TD>añadir solo <B>-er</B></TD><TD>fast &rarr; faster; cold &rarr; colder; cheap &rarr; cheaper</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Excepción a la doble consonante:</B> no se duplica la consonante final cuando el adjetivo termina en <B>-w</B>, <B>-x</B> o <B>-y</B>, aunque cumpla el patrón CVC. <I>new &rarr; newer</I> (no "newwer"); <I>low &rarr; lower</I> (no "lowwer").</DIV>
+
+<!-- SECCIÓN 3: ADJETIVOS LARGOS -->
+<H3 ID="largos">3. Adjetivos Largos (2 o más sílabas) — More + Adjetivo + Than</H3>
+
+Los adjetivos <B>de dos o más sílabas</B> no admiten la terminación -er; en su lugar, se antepone la palabra <B>more</B> antes del adjetivo, sin modificar su forma.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Adjetivo</TH><TH>Comparativo</TH><TH>Ejemplo</TH></TR>
+<TR><TD>difficult</TD><TD>more difficult</TD><TD><SPAN CLASS="eng">Physics is more difficult than History.</SPAN></TD></TR>
+<TR><TD>expensive</TD><TD>more expensive</TD><TD><SPAN CLASS="eng">This restaurant is more expensive than that one.</SPAN></TD></TR>
+<TR><TD>beautiful</TD><TD>more beautiful</TD><TD><SPAN CLASS="eng">Cusco is more beautiful than I expected.</SPAN></TD></TR>
+<TR><TD>important</TD><TD>more important</TD><TD><SPAN CLASS="eng">Health is more important than money.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El caso especial de los adjetivos de dos sílabas</H4>
+<UL>
+<LI>Terminados en <B>-y</B>: siempre cambian a <B>-ier</B> (no admiten "more"). <BR><SPAN CLASS="eng">Ejemplo: happy &rarr; happier; funny &rarr; funnier; lucky &rarr; luckier.</SPAN></LI>
+<LI>Terminados en <B>-er, -ow, -le, -some</B>: admiten AMBAS formas (-er o more), las dos son correctas. <BR><SPAN CLASS="eng">Ejemplo: clever &rarr; cleverer / more clever; narrow &rarr; narrower / more narrow; simple &rarr; simpler / more simple.</SPAN></LI>
+<LI>El resto de adjetivos de dos o más sílabas usa exclusivamente <B>more</B>. <BR><SPAN CLASS="eng">Ejemplo: modern, famous, interesting, careful &rarr; more modern, more famous, etc.</SPAN></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Error de examen más frecuente — doble marcación:</B> nunca se combinan -er y more al mismo tiempo. <I>"more bigger"</I>, <I>"more easier"</I> o <I>"more better"</I> son INCORRECTOS. Se usa <B>una sola</B> marca de comparativo: <B>bigger</B>, <B>easier</B>, <B>better</B>.</DIV>
+
+<!-- SECCIÓN 4: IRREGULARES -->
+<H3 ID="irregulares">4. Comparativos Irregulares</H3>
+
+Un grupo reducido pero muy frecuente de adjetivos no sigue ninguna de las reglas anteriores; sus formas comparativas deben memorizarse.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Adjetivo</TH><TH>Comparativo</TH><TH>Ejemplo</TH></TR>
+<TR><TD>good</TD><TD><B>better</B></TD><TD><SPAN CLASS="eng">This plan is better than the previous one.</SPAN></TD></TR>
+<TR><TD>bad</TD><TD><B>worse</B></TD><TD><SPAN CLASS="eng">The traffic today is worse than yesterday.</SPAN></TD></TR>
+<TR><TD>far</TD><TD><B>farther / further</B></TD><TD><SPAN CLASS="eng">My house is farther from school than yours.</SPAN></TD></TR>
+<TR><TD>little (cantidad)</TD><TD><B>less</B></TD><TD><SPAN CLASS="eng">I have less time than before.</SPAN></TD></TR>
+<TR><TD>much / many</TD><TD><B>more</B></TD><TD><SPAN CLASS="eng">She has more experience than him.</SPAN></TD></TR>
+<TR><TD>old (personas, familia)</TD><TD><B>elder</B> (sin "than", solo atributivo)</TD><TD><SPAN CLASS="eng">My elder sister lives in Lima.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>"Older" vs. "elder":</B> <B>older</B> es la forma comparativa regular y se usa con "than" para comparar personas o cosas: <I>"He is older than me."</I> <B>Elder</B> solo se usa de forma atributiva (antes del sustantivo) para indicar mayor edad dentro de una familia, y NUNCA va seguido de "than": <I>"my elder brother"</I> (correcto), pero NO <I>"my brother is elder than me"</I> (incorrecto).</DIV>
+
+<!-- SECCIÓN 5: IGUALDAD Y DIFERENCIA -->
+<H3 ID="igualdad">5. Estructuras de Igualdad y Diferencia: As...As / Not As...As</H3>
+
+Para expresar que dos elementos comparten el mismo grado de una cualidad (igualdad), se usa <B>as + adjetivo + as</B>. Para negar esa igualdad, se usa <B>not as/so + adjetivo + as</B>.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Estructura</TH><TH>Significado</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>as + adj. + as</B></TD><TD>igualdad (tan... como)</TD><TD><SPAN CLASS="eng">Tom is as tall as his brother.</SPAN></TD></TR>
+<TR><TD><B>not as/so + adj. + as</B></TD><TD>desigualdad (no tan... como)</TD><TD><SPAN CLASS="eng">This city isn't as noisy as Lima.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">📌 <SPAN CLASS="eng">"Is your school as big as mine?" "No, it isn't as big as yours."</SPAN></DIV>
+
+<DIV CLASS="alerta">⚠️ <B>El adjetivo nunca lleva -er ni "more" dentro de la estructura as...as:</B> <I>"as bigger as"</I> o <I>"as more difficult as"</I> son INCORRECTOS. Se usa la forma base del adjetivo: <B>as big as</B>, <B>as difficult as</B>.</DIV>
+
+<!-- SECCIÓN 6: INTENSIFICADORES -->
+<H3 ID="intensificadores">6. Intensificadores del Comparativo</H3>
+
+Para indicar que la diferencia entre dos elementos es grande o pequeña, se colocan palabras intensificadoras <B>antes</B> del comparativo.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Intensificador</TH><TH>Uso</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>much / a lot / far</B></TD><TD>diferencia grande</TD><TD><SPAN CLASS="eng">This exam is much more difficult than the last one.</SPAN></TD></TR>
+<TR><TD><B>a bit / slightly / a little</B></TD><TD>diferencia pequeña</TD><TD><SPAN CLASS="eng">Today is a bit colder than yesterday.</SPAN></TD></TR>
+<TR><TD><B>even</B></TD><TD>énfasis (incluso más)</TD><TD><SPAN CLASS="eng">The second exam was even harder than the first.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<!-- SECCIÓN 7: COMPARATIVOS CON SUSTANTIVOS -->
+<H3 ID="sustantivos">7. Comparativos con Sustantivos: More / Fewer / Less</H3>
+
+Cuando el comparativo acompaña directamente a un sustantivo (no a un adjetivo), la elección de la palabra depende de si el sustantivo es <B>contable</B> o <B>incontable</B>.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Palabra</TH><TH>Tipo de sustantivo</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>more</B></TD><TD>contables e incontables (superioridad)</TD><TD><SPAN CLASS="eng">She has more books / more money than me.</SPAN></TD></TR>
+<TR><TD><B>fewer</B></TD><TD>solo contables plurales</TD><TD><SPAN CLASS="eng">There are fewer students in this class than in mine.</SPAN></TD></TR>
+<TR><TD><B>less</B></TD><TD>solo incontables</TD><TD><SPAN CLASS="eng">We have less time than before.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Error de examen muy frecuente:</B> <I>"less students"</I> es INCORRECTO en inglés formal/académico porque "students" es un sustantivo contable plural; lo correcto es <B>"fewer students"</B>. "Less" se reserva exclusivamente para sustantivos incontables: <I>less water, less money, less time</I>.</DIV>
+
+<!-- SECCIÓN 8: DOBLE COMPARATIVO -->
+<H3 ID="doble">8. El Doble Comparativo (Correlative Comparatives)</H3>
+
+Esta estructura expresa que un cambio progresivo en una cosa provoca un cambio progresivo en otra. Equivale al español <I>cuanto más... (más/menos)...</I>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Estructura</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>The + comparativo..., the + comparativo...</B></TD><TD><SPAN CLASS="eng">The more you study, the better your results will be.</SPAN></TD></TR>
+<TR><TD><B>comparativo + and + comparativo</B> (cambio progresivo)</TD><TD><SPAN CLASS="eng">It's getting colder and colder.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>El artículo "the" es obligatorio en ambas partes:</B> <I>"More you study, better you get"</I> es INCORRECTO; lo correcto es <B>"The more you study, the better you get."</B> Además, en la estructura de repetición (cambio progresivo), los adjetivos irregulares también se repiten: <I>"better and better"</I>, <I>"worse and worse"</I> (no "gooder and gooder").</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">-er</DIV><DIV CLASS="dk-label">Adjetivos cortos<BR>(1 sílaba)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">more</DIV><DIV CLASS="dk-label">Adjetivos largos<BR>(2+ sílabas)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">5</DIV><DIV CLASS="dk-label">Comparativos<BR>irregulares clave</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">than</DIV><DIV CLASS="dk-label">Conector<BR>obligatorio</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- EJERCICIOS -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; Reconocimiento y uso directo</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Elige el comparativo correcto: <SPAN CLASS="eng">"My house is _____ than yours."</SPAN> (big)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) bigger</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) more big</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) biger</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) bigest</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) bigger</B><BR>"Big" es un adjetivo de una sílaba que termina en vocal + consonante (CVC) → se duplica la consonante final y se añade <B>-er</B>: <B>bigger</B> (no "biger", que olvida la doble g; no "more big", porque los adjetivos cortos no usan "more"; "bigest" sería una forma superlativa, no comparativa).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Elige el comparativo correcto: <SPAN CLASS="eng">"This exercise is _____ than the previous one."</SPAN> (difficult)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) difficulter</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) more difficult</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) most difficult</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) difficultest</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) more difficult</B><BR>"Difficult" tiene tres sílabas (dif-fi-cult) → es un adjetivo largo y NO admite -er. Se forma con <B>more + adjetivo</B>: <B>more difficult</B>. "Difficulter" y "difficultest" no existen en inglés; "most difficult" sería la forma superlativa, no comparativa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Selecciona la oración con el comparativo irregular correcto:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) "This movie is gooder than the last one."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) "This movie is more good than the last one."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) "This movie is better than the last one."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) "This movie is bestest than the last one."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>"Good" es un adjetivo irregular cuya forma comparativa es <B>better</B>, sin importar la regla general. "Gooder" y "bestest" no son palabras del inglés estándar; "more good" tampoco existe, porque las formas irregulares no se combinan con "more" ni con "-er".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Completa: <SPAN CLASS="eng">"Lima is _____ than Trujillo."</SPAN> (noisy)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) noisier</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) more noisy</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) noisyer</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) most noisy</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) noisier</B><BR>"Noisy" es un adjetivo de dos sílabas terminado en consonante + <B>y</B> → la "y" cambia a "i" y se añade <B>-er</B>: <B>noisier</B> (no "noisyer", que mantiene la "y" incorrectamente). "Most noisy" sería superlativo, no comparativo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Completa: <SPAN CLASS="eng">"She runs _____ than her brother."</SPAN> (fast)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) faster</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) fastest</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) more fast</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) fasterer</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) faster</B><BR>"Fast" es un adjetivo corto de una sílaba que no termina en -e, ni en CVC, ni en consonante+y → solo se añade <B>-er</B>: <B>faster</B>. "Fastest" es superlativo; "more fast" y "fasterer" no son formas válidas en inglés.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Elige la estructura correcta para indicar igualdad: <SPAN CLASS="eng">"My phone is _____ expensive _____ yours."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) as / as</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) more / than</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) as / than</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) so / so</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) as / as</B><BR>La estructura de igualdad es <B>as + adjetivo + as</B> (tan... como). El adjetivo se usa en su forma base, sin -er ni "more": <B>as expensive as</B>. Mezclar "as" con "than" (opción c) no es una estructura válida en inglés.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Selecciona la oración con "than" usado correctamente:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) "He is taller her."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) "He is taller as her."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) "He is taller than her."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) "He is more taller than her."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Tras un comparativo con -er, el segundo elemento se introduce con <B>than</B> (no se puede omitir, opción a; ni reemplazar por "as", opción b). La opción d combina "more" con "taller" (doble marcación), lo cual es incorrecto: solo se usa una marca de comparativo.</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; Aplicación y transformación</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Transforma a comparativo: <SPAN CLASS="eng">"Bus tickets are cheap. Plane tickets are expensive."</SPAN> → <SPAN CLASS="eng">"Plane tickets are _____ bus tickets."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) more expensive than</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) expensiver than</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) the most expensive than</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) as expensive than</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) more expensive than</B><BR>"Expensive" tiene tres sílabas → adjetivo largo → se usa <B>more + adjetivo + than</B>: <B>more expensive than</B>. "Expensiver" no existe; "the most expensive" es superlativo (se usa para 3 o más elementos, no para comparar solo dos); "as expensive than" mezcla incorrectamente dos estructuras distintas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Completa con el comparativo de sustantivo correcto: <SPAN CLASS="eng">"There are _____ students in my class this year than last year."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) less</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) fewer</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) more few</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) lesser</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) fewer</B><BR>"Students" es un sustantivo <B>contable plural</B> → corresponde <B>fewer</B>, no "less" (que se reserva para incontables como "water" o "time"). "More few" y "lesser" no son formas correctas para esta estructura.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Elige la oración con el doble comparativo correctamente formado:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) "The more you practice, the better you get."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) "More you practice, better you get."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) "The more you practice, the gooder you get."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) "The most you practice, the best you get."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El doble comparativo exige <B>"the"</B> en ambas partes de la oración: "the more..., the better...". La opción b omite "the" en las dos partes; la opción c usa "gooder", que no existe (la forma irregular correcta es "better"); la opción d usa formas superlativas ("the most", "the best") en vez de comparativas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Entre los adjetivos de dos sílabas que admiten ambas formas (-er o more), ¿qué afirmación es correcta sobre "clever"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Solo "He is more clever than his classmates" es correcta.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Solo "He is cleverer than his classmates" es correcta.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Ambas oraciones son gramaticalmente correctas.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Ninguna es correcta; debe decirse "more cleverer".</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>"Clever" pertenece al grupo de adjetivos de dos sílabas terminados en <B>-er, -ow, -le, -some</B>, que aceptan ambas formas del comparativo sin que ninguna sea incorrecta: <B>cleverer</B> y <B>more clever</B> son igualmente válidas. La opción d combina ambas marcas a la vez ("more" + "-er"), lo cual sí es un error de doble comparativo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Transforma usando "not as...as": <SPAN CLASS="eng">"Math is more difficult than History (for me)."</SPAN> → ¿Cuál es la transformación correcta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) "History is not as difficult as Math."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) "History is not so difficulter as Math."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) "History isn't as difficult than Math."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) "History is as difficult as Math."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Si "Math is MORE difficult than History", entonces, en sentido inverso, "History" tiene MENOS dificultad que "Math" → se expresa con <B>not as + adjetivo base + as</B>: <B>"History is not as difficult as Math."</B> La opción b añade incorrectamente "-er" dentro de la estructura as...as; la c mezcla "as" con "than" (estructuras incompatibles); la d expresaría igualdad, no diferencia, lo cual contradice la oración original.</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; Análisis y corrección de errores</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Un estudiante escribe: <SPAN CLASS="eng">"This problem is more harder than the last one. My results are more better, but I have less hours to study."</SPAN> Identifica y corrige TODOS los errores.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Solo "more harder" está mal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) "more harder" → "harder"; "more better" → "better"; "less hours" → "fewer hours"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) "more harder" → "harder"; "more better" → "much better"; "less hours" se mantiene igual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"more harder"</B> → <B>"harder"</B>: "hard" ya recibe -er; combinarlo con "more" es doble marcación del comparativo.<BR>② <B>"more better"</B> → <B>"better"</B>: "better" ya ES la forma comparativa irregular de "good"; no se le puede añadir "more" delante.<BR>③ <B>"less hours"</B> → <B>"fewer hours"</B>: "hours" es un sustantivo contable plural, por lo que corresponde "fewer", no "less" (reservado para incontables). La opción c deja sin corregir el error de "less hours", que sí es un error en inglés académico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Analiza la diferencia entre estas dos oraciones y elige la explicación correcta: <SPAN CLASS="eng">"My sister is two years older than me."</SPAN> / <SPAN CLASS="eng">"My elder sister lives in Lima."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Ambas formas son intercambiables en cualquier contexto.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) "Older" se usa en comparaciones con "than" y puede referirse a personas o cosas; "elder" se usa solo de forma atributiva (antes del sustantivo) para indicar mayor edad dentro de una familia, y nunca se combina con "than".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) "Elder" es la forma comparativa estándar y "older" es incorrecta en inglés formal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) "Elder" solo se usa para edificios u objetos, nunca para personas.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Older</B> es la forma comparativa regular de "old": se combina con "than" y se aplica tanto a personas ("he is older than me") como a objetos ("this car is older than mine"). <B>Elder</B> es una forma irregular más restringida: solo se usa de manera atributiva, antes del sustantivo, y exclusivamente para señalar el orden de nacimiento dentro de una familia ("my elder sister", "his elder brother"); estructuralmente NO puede ir seguida de "than" ("she is elder than me" es incorrecto).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Traduce con precisión: <B>"Mi nuevo trabajo es mucho más interesante que el anterior, pero tengo menos tiempo libre."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) "My new job is much more interesting than the previous one, but I have less free time."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) "My new job is more interesting much than the previous one, but I have fewer free time."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) "My new job is much interesting than the previous one, but I have less free times."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) "My new job is much more interestinger than the previous one, but I have less free time."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>• El intensificador <B>much</B> se coloca antes de "more + adjetivo": <B>much more interesting</B> (la opción b lo coloca después, en orden incorrecto).<BR>• "Interesting" es un adjetivo largo y necesita "more" obligatoriamente; "much interesting" sin "more" (opción c) es incompleto.<BR>• "Free time" es incontable → corresponde <B>less</B>, no "fewer" (opción b) ni el plural "free times" (opción c).<BR>• "Interesting" ya recibe "more"; añadirle además "-er" como en "interestinger" (opción d) es doble marcación, error grave.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Completa correctamente el texto con las formas comparativas adecuadas: <SPAN CLASS="eng">"This year's exam was _____(1) (difficult) than last year's. I had _____(2) (little) time to prepare, and I felt _____(3) (nervous) than my classmates."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) (1) difficulter — (2) less — (3) more nervous</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) (1) more difficult — (2) less — (3) more nervous</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) (1) more difficult — (2) fewer — (3) nervouser</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) (1) most difficult — (2) lesser — (3) more nervous</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>(1) "Difficult" es un adjetivo largo → <B>more difficult</B> (no "difficulter", que no existe; no "most difficult", que es superlativo).<BR>(2) "Little" en el sentido de cantidad incontable ("time") tiene como comparativo irregular <B>less</B> (no "fewer", reservado para contables).<BR>(3) "Nervous" tiene dos sílabas y no termina en -y, -er, -ow ni -le → solo admite <B>more nervous</B> (no "nervouser", que no es una forma válida).</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; Ingreso universitario</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Analiza el siguiente fragmento y determina la opción que corrige TODOS los errores con la justificación gramatical más precisa:<BR><SPAN CLASS="eng">"This university is more far than mine, and the tuition is more expensiver. However, the campus is beautifuler and has less opportunities for exchange programs."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Solo "more expensiver" está mal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "more far" → "farther/further"; "more expensiver" → "more expensive"; "beautifuler" → "more beautiful"; "less opportunities" → "fewer opportunities"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "more far" → "more farther"; "more expensiver" → "expensiver"; "beautifuler" → "beautifuller"; "less opportunities" se mantiene</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"more far"</B> → <B>"farther"</B> (o "further"): "far" tiene un comparativo irregular propio; no se forma con "more".<BR>② <B>"more expensiver"</B> → <B>"more expensive"</B>: "expensive" es un adjetivo largo que solo admite "more"; añadirle también "-er" es doble marcación.<BR>③ <B>"beautifuler"</B> → <B>"more beautiful"</B>: "beautiful" tiene tres sílabas, por lo que nunca admite la terminación -er.<BR>④ <B>"less opportunities"</B> → <B>"fewer opportunities"</B>: "opportunities" es un sustantivo contable plural, por lo que corresponde "fewer", no "less". La opción c repite o agrava los mismos errores ("more farther", "beautifuller").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> ¿Por qué en inglés los adjetivos cortos forman el comparativo añadiendo <B>-er</B> (taller, faster), mientras que los adjetivos largos requieren la palabra separada <B>more</B> (more beautiful, more important), en lugar de seguir una sola regla para todos los adjetivos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Esta diferencia es completamente arbitraria y no tiene ninguna explicación; simplemente hay que memorizarla.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La regla refleja una tendencia fonológica y morfológica del inglés: las terminaciones flexivas como -er se aplican cómodamente a palabras cortas, mientras que añadir una sílaba más a una palabra ya larga produciría una pronunciación pesada; por ello, el inglés desarrolló una estrategia perifrástica ("more" + adjetivo) para evitar acumular demasiadas sílabas en los adjetivos polisilábicos.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Se debe a que todos los adjetivos largos provienen exclusivamente del francés, y por eso nunca admiten terminaciones de origen inglés.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El inglés antiguo no tenía adjetivos largos; la regla de "more" es una invención reciente del siglo XX.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La división entre adjetivos cortos (-er) y largos (more) no es arbitraria: responde a un principio de economía fonológica presente en muchas lenguas germánicas. Añadir una sílaba flexiva (-er) a una palabra ya extensa (como "beautiful" o "important") generaría una carga silábica incómoda de pronunciar; el inglés resolvió esto separando la marca de comparación en una palabra independiente ("more"), lo que permite mantener la fluidez del habla. La opción c exagera la influencia del francés (que sí aportó muchos adjetivos largos al inglés, pero no es la causa estructural de la regla), y la opción d es históricamente incorrecta, ya que el inglés antiguo sí tenía adjetivos de distintas longitudes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Traduce con precisión, prestando atención a los comparativos con sustantivos: <B>"Cuanto más estudias, menos errores cometes. Sin embargo, este examen tiene menos preguntas que el anterior, pero son más difíciles."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) "The more you study, the less mistakes you make. However, this exam has less questions than the previous one, but they are more difficult."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) "The more you study, the fewer mistakes you make. However, this exam has fewer questions than the previous one, but they are more difficult."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) "The most you study, the fewer mistakes you make. However, this exam has fewer questions than the previous, but they are difficulter."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) "More you study, fewer mistakes you make. This exam has less questions than the previous one, and they are more difficult."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① "Mistakes" y "questions" son sustantivos contables plurales → corresponde <B>fewer</B>, no "less" (opciones a y d, que usan "less" incorrectamente).<BR>② El doble comparativo exige <B>"the"</B> en ambas partes: "the more..., the fewer..." (la opción d omite "the" por completo).<BR>③ "Difficult" es un adjetivo largo → <B>more difficult</B>, nunca "difficulter" (error de la opción c).<BR>④ La opción c también usa "the most" (superlativo) en vez de "the more" (comparativo), lo cual altera el sentido de la estructura correlativa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Lee el siguiente fragmento de un ensayo estudiantil e identifica la opción que señala TODOS los errores y propone la corrección con la justificación gramatical más precisa:<BR><SPAN CLASS="eng">"My new school is more bigger than my old one, and it has more better teachers. The classes are more easier, but there are less students in each classroom, which makes the lessons more more interesting."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo "more bigger" y "more better" están mal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "more bigger" → "bigger"; "more better" → "better"; "more easier" → "easier"; "less students" → "fewer students"; "more more interesting" → "more interesting"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Todos los errores son aceptables; "more bigger" y similares son formas enfáticas válidas en inglés informal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Solo "less students" está mal; el resto del fragmento es correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) — Corrección completa</B><BR>① <B>"more bigger"</B> → <B>"bigger"</B>: doble marcación de comparativo (more + -er).<BR>② <B>"more better"</B> → <B>"better"</B>: "better" ya es la forma comparativa irregular de "good"; no se le antepone "more".<BR>③ <B>"more easier"</B> → <B>"easier"</B>: "easy" ya forma su comparativo con -ier (consonante+y → i+er); añadir "more" es redundante.<BR>④ <B>"less students"</B> → <B>"fewer students"</B>: "students" es contable plural → corresponde "fewer", no "less" (este es el único error que NO es doble marcación, sino de concordancia contable/incontable).<BR>⑤ <B>"more more interesting"</B> → <B>"more interesting"</B>: "more" aparece duplicado por error; el adjetivo largo "interesting" solo necesita un "more". La opción c normaliza incorrectamente errores gramaticales reales; ninguna variedad estándar del inglés (formal o informal) acepta la doble marcación del comparativo.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+
+</BODY>
+</HTML>

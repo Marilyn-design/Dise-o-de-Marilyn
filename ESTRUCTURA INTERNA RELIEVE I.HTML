@@ -1,0 +1,483 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Estructura Interna y Formación del Relieve I - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA &middot; TEMA 4 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Estructura Interna y Formación del Relieve I</H1>
+<DIV CLASS="sub">Capas internas de la Tierra &middot; Tectónica de placas &middot; Sismología &middot; Vulcanismo &middot; Orogénesis</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Estructura interna de la Tierra</H3>
+La Tierra no es un cuerpo homogéneo: en su interior existen capas concéntricas diferenciadas por su composición química, temperatura, presión y estado físico. El conocimiento de estas capas proviene principalmente del análisis de las <B>ondas sísmicas</B>, que al viajar por el interior terrestre cambian de velocidad y dirección según el material que atraviesan.
+
+<H4>Capas según su composición química:</H4>
+<UL>
+<LI><B>Corteza:</B> capa más externa y delgada. Existen dos tipos:
+  <UL>
+    <LI><B>Corteza continental:</B> espesor de 30 a 70 km, compuesta principalmente de granito (rocas sálicas: sílice y aluminio). Es más antigua y menos densa.</LI>
+    <LI><B>Corteza oceánica:</B> espesor de 5 a 10 km, compuesta principalmente de basalto (rocas sínicas: sílice y magnesio). Es más joven, más densa y se renueva constantemente en las dorsales oceánicas.</LI>
+  </UL>
+</LI>
+<LI><B>Manto:</B> capa que se extiende desde la base de la corteza hasta ~2 900 km de profundidad. Compuesto de rocas ultramáficas ricas en silicatos de hierro y magnesio (peridotita). Se divide en:
+  <UL>
+    <LI><B>Manto superior:</B> incluye la <B>astenosfera</B>, zona parcialmente fundida y plástica sobre la que "flotan" las placas tectónicas.</LI>
+    <LI><B>Manto inferior:</B> más rígido por la enorme presión, a pesar de las altas temperaturas.</LI>
+  </UL>
+</LI>
+<LI><B>Núcleo:</B> parte más interna de la Tierra, compuesto principalmente de hierro y níquel. Se divide en:
+  <UL>
+    <LI><B>Núcleo externo:</B> líquido, a temperaturas de 4 000–5 000°C. Su movimiento genera el <B>campo magnético terrestre</B>.</LI>
+    <LI><B>Núcleo interno:</B> sólido, a pesar de temperaturas que superan los 5 000°C, por la enorme presión. Tiene un radio de ~1 220 km.</LI>
+  </UL>
+</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">0 – 70 km</DIV><DIV CLASS="dk-label">Corteza (continental y oceánica)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">70 – 2 900 km</DIV><DIV CLASS="dk-label">Manto (superior e inferior)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">2 900 – 5 100 km</DIV><DIV CLASS="dk-label">Núcleo externo (líquido)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">5 100 – 6 371 km</DIV><DIV CLASS="dk-label">Núcleo interno (sólido)</DIV></DIV>
+</DIV>
+
+<H4>Discontinuidades sísmicas importantes:</H4>
+<UL>
+<LI><B>Discontinuidad de Mohorovičić (Moho):</B> límite entre la corteza y el manto. Descubierta en 1909 por el sismólogo croata Andrija Mohorovičić. Las ondas sísmicas aumentan su velocidad bruscamente al cruzarla.</LI>
+<LI><B>Discontinuidad de Gutenberg:</B> límite entre el manto y el núcleo externo, a ~2 900 km. Las ondas S (transversales) no pueden atravesar el núcleo externo líquido y desaparecen aquí.</LI>
+<LI><B>Discontinuidad de Lehmann:</B> límite entre el núcleo externo e interno, a ~5 100 km. Descubierta en 1936 por la sismóloga danesa Inge Lehmann.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> Las <B>ondas S</B> (secundarias o transversales) NO pueden viajar por materiales líquidos. Por eso no atraviesan el núcleo externo. Esta propiedad fue la clave para descubrir que el núcleo externo es líquido. Las <B>ondas P</B> (primarias o longitudinales) sí atraviesan sólidos y líquidos.</DIV>
+
+<H3>2. Tectónica de Placas</H3>
+La <B>teoría de la Tectónica de Placas</B> es el marco teórico central de la Geología moderna. Explica la distribución de los sismos, volcanes, cadenas montañosas y la forma actual de los continentes.
+
+<H4>Antecedentes históricos:</H4>
+<UL>
+<LI><B>Alfred Wegener</B> (1912): propuso la teoría de la <B>Deriva Continental</B>. Observó que los continentes encajaban como piezas de un rompecabezas (especialmente África y América del Sur) y que compartían fósiles y tipos de rocas similares. Propuso que todos los continentes formaron un supercontinente único llamado <B>Pangea</B>, que comenzó a fragmentarse hace ~200 millones de años. En su época fue rechazado porque no pudo explicar el mecanismo que movía los continentes.</LI>
+<LI>En las décadas de 1950 y 1960, la exploración del fondo oceánico confirmó la teoría: se descubrieron las <B>dorsales oceánicas</B> (cordilleras submarinas donde se crea nueva corteza oceánica) y el <B>fenómeno de expansión del fondo oceánico</B> (Harry Hess, 1962), que explicó el mecanismo que Wegener no pudo encontrar.</LI>
+</UL>
+
+<H4>Las placas tectónicas:</H4>
+La litosfera (corteza + parte superior del manto rígido) está dividida en grandes fragmentos llamados <B>placas tectónicas</B>, que "flotan" sobre la astenosfera plástica y se mueven lentamente (~2 a 10 cm por año) impulsadas por las corrientes de convección del manto.
+
+Las placas principales son: <B>Pacífica, Norteamericana, Sudamericana, Euroasiática, Africana, Antártica, Indo-Australiana</B> y varias placas menores como la Placa de Nazca (fundamental para entender la geología del Perú).
+
+<H4>Tipos de límites entre placas:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo de límite</TH><TH>Movimiento</TH><TH>Resultado geológico</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Divergente (constructivo)</B></TD><TD>Las placas se separan</TD><TD>Creación de nueva corteza oceánica, dorsales oceánicas, rifts continentales</TD><TD>Dorsal Mesoatlántica; Gran Valle del Rift (África)</TD></TR>
+<TR><TD><B>Convergente (destructivo)</B></TD><TD>Las placas chocan</TD><TD>Subducción (una placa se hunde bajo la otra), fosas oceánicas, cordilleras, volcanes, sismos</TD><TD>Placa de Nazca bajo Sudamérica → Andes + Fosa de Perú-Chile</TD></TR>
+<TR><TD><B>Transformante (conservador)</B></TD><TD>Las placas se deslizan lateralmente</TD><TD>Fallas transformantes, sismos frecuentes pero sin volcanes ni montañas</TD><TD>Falla de San Andrés (California)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Importante para el Perú:</B> La <B>Placa de Nazca</B> se desplaza hacia el este y subduce bajo la <B>Placa Sudamericana</B> en el límite del Océano Pacífico. Esta subducción es la responsable de la formación de la <B>Cordillera de los Andes</B>, la <B>Fosa Oceánica Perú-Chile</B> (una de las más profundas del mundo, con más de 8 000 m de profundidad) y la elevada sismicidad y actividad volcánica del Perú y toda la costa del Pacífico sudamericano.</DIV>
+
+<H3>3. Sismología: los terremotos</H3>
+Un <B>sismo</B> o <B>terremoto</B> es una vibración brusca de la corteza terrestre producida por la liberación repentina de energía acumulada en las rocas, generalmente en los límites de las placas tectónicas.
+
+<H4>Conceptos clave de sismología:</H4>
+<UL>
+<LI><B>Foco o hipocentro:</B> punto en el interior de la Tierra donde se origina el sismo y se libera la energía. Puede estar a pocos kilómetros o a más de 700 km de profundidad.</LI>
+<LI><B>Epicentro:</B> punto de la superficie terrestre ubicado directamente encima del foco. Es donde el sismo se siente con mayor intensidad.</LI>
+<LI><B>Ondas sísmicas:</B> vibraciones que se propagan desde el foco en todas direcciones:
+  <UL>
+    <LI><B>Ondas P (primarias o longitudinales):</B> las más rápidas (~6–8 km/s en la corteza). Comprimen y dilatan el material en la dirección de propagación. Viajan por sólidos y líquidos.</LI>
+    <LI><B>Ondas S (secundarias o transversales):</B> más lentas (~3–5 km/s). Mueven el material perpendicularmente a la dirección de propagación. Solo viajan por sólidos.</LI>
+    <LI><B>Ondas superficiales (L y R):</B> viajan por la superficie terrestre. Son las más lentas pero las que causan mayor destrucción.</LI>
+  </UL>
+</LI>
+</UL>
+
+<H4>Medición de los sismos:</H4>
+<UL>
+<LI><B>Escala de Richter (magnitud):</B> mide la <B>energía liberada</B> en el foco, usando un sismógrafo. Es una escala logarítmica: un sismo de magnitud 7 libera ~32 veces más energía que uno de magnitud 6. No tiene límite teórico superior.</LI>
+<LI><B>Escala de Mercalli (intensidad):</B> mide los <B>efectos del sismo</B> en la superficie (daños en edificios, percepción humana). Va del grado I (imperceptible) al XII (destrucción total). Varía según la distancia al epicentro y el tipo de suelo.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> <B>Magnitud</B> (Richter) = energía en el foco, valor único para cada sismo. <B>Intensidad</B> (Mercalli) = efectos en la superficie, varía según la distancia al epicentro. Un mismo sismo tiene una sola magnitud pero distintas intensidades en diferentes lugares.</DIV>
+
+<H3>4. Vulcanismo</H3>
+El <B>vulcanismo</B> comprende todos los fenómenos relacionados con la salida de material fundido (magma) desde el interior de la Tierra hacia la superficie.
+
+<H4>Conceptos fundamentales:</H4>
+<UL>
+<LI><B>Magma:</B> roca fundida en el interior de la Tierra, con gases disueltos.</LI>
+<LI><B>Lava:</B> magma que ha llegado a la superficie terrestre y ha perdido sus gases.</LI>
+<LI><B>Cámara magmática:</B> bolsa de magma acumulado en el interior de la corteza o manto superior, desde donde se alimenta el volcán.</LI>
+<LI><B>Cráter:</B> abertura en la cima del volcán por donde salen los materiales.</LI>
+<LI><B>Caldera:</B> depresión amplia formada por el hundimiento del cráter tras una erupción masiva o el vaciado de la cámara magmática.</LI>
+</UL>
+
+<H4>Tipos de volcanes según su forma:</H4>
+<UL>
+<LI><B>Estratovolcanes (volcanes compuestos):</B> los más comunes. Forma cónica, construidos por capas alternadas de lava y piroclastos (cenizas, lapilli, bombas volcánicas). Erupciones explosivas y peligrosas. Ejemplo: <B>El Misti</B> (Arequipa, Perú), Vesubio (Italia), Fuji (Japón).</LI>
+<LI><B>Volcanes en escudo:</B> forma achatada, amplia y de pendientes suaves. Lava fluida basáltica que se extiende grandes distancias. Erupciones poco explosivas. Ejemplo: volcanes de Hawái (Mauna Loa, Kilauea).</LI>
+<LI><B>Conos de ceniza:</B> pequeños, formados por acumulación de piroclastos alrededor del cráter. Generalmente de vida corta.</LI>
+<LI><B>Calderas volcánicas:</B> grandes depresiones circulares formadas tras erupciones colosales o colapsos. Ejemplo: Yellowstone (EE.UU.).</LI>
+</UL>
+
+<H4>Ubicación del vulcanismo:</H4>
+La mayoría de los volcanes activos del mundo se concentran en el <B>Cinturón de Fuego del Pacífico</B> (también llamado Anillo de Fuego), una zona que rodea el océano Pacífico donde se producen el 90% de los sismos y el 75% de los volcanes activos del planeta. El Perú forma parte de este cinturón.
+
+<DIV CLASS="mapa-note"><B>Volcanes del Perú:</B> El Perú tiene varios volcanes activos en la región sur, todos estratovolcanes del <B>Cinturón de Fuego</B>: <B>El Misti</B> (5 822 m, Arequipa), <B>Ubinas</B> (el más activo del Perú), <B>Sabancaya</B>, <B>Ticsani</B> y <B>Tutupaca</B>, entre otros. Se encuentran en el sur del país porque es donde la Placa de Nazca subduce con mayor intensidad.</DIV>
+
+<H3>5. Orogénesis: formación de las montañas</H3>
+La <B>orogénesis</B> (del griego <I>oros</I> = montaña, <I>génesis</I> = origen) es el proceso geológico de formación de cadenas montañosas. Existen dos mecanismos principales:
+
+<H4>A) Orogénesis por subducción (margen activo):</H4>
+Cuando una placa oceánica subduce bajo una placa continental, los sedimentos y la corteza oceánica se comprimen y pliegan, formando cordilleras costeras paralelas a la fosa de subducción. También se produce magma que asciende y genera volcanes. Este es el origen de los <B>Andes</B>.
+
+<H4>B) Orogénesis por colisión continental:</H4>
+Cuando dos placas continentales chocan (ninguna subduce porque ambas son menos densas que el manto), las rocas se pliegan y comprimen enormemente, formando cadenas montañosas de gran altitud sin vulcanismo asociado. Este es el origen del <B>Himalaya</B> (colisión de la placa Indo-Australiana con la Euroasiática).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Cadena montañosa</TH><TH>Tipo de orogénesis</TH><TH>Placas involucradas</TH><TH>¿Hay volcanes?</TH></TR>
+<TR><TD><B>Andes (América del Sur)</B></TD><TD>Subducción</TD><TD>Placa de Nazca + Placa Sudamericana</TD><TD>Sí (estratovolcanes)</TD></TR>
+<TR><TD><B>Himalaya (Asia)</B></TD><TD>Colisión continental</TD><TD>Indo-Australiana + Euroasiática</TD><TD>No</TD></TR>
+<TR><TD><B>Rocallosas (EE.UU.)</B></TD><TD>Subducción</TD><TD>Placa del Pacífico + Norteamericana</TD><TD>Sí</TD></TR>
+<TR><TD><B>Alpes (Europa)</B></TD><TD>Colisión continental</TD><TD>Africana + Euroasiática</TD><TD>No</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> Recuerda que los <B>Andes</B> se formaron por <B>subducción</B> (Placa de Nazca bajo Sudamérica), lo que explica su vulcanismo activo. El <B>Himalaya</B> se formó por <B>colisión continental</B>, por eso no tiene volcanes activos aunque sí tiene sismos frecuentes.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Preguntas de práctica</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- NIVEL BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál es la capa más externa de la Tierra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Manto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Núcleo externo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Corteza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Astenosfera</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>corteza</B> es la capa más externa de la Tierra. Es la más delgada de todas: entre 5 y 10 km en la corteza oceánica y entre 30 y 70 km en la corteza continental. Es donde vivimos y donde ocurren la mayoría de los fenómenos geológicos que percibimos directamente como sismos y erupciones volcánicas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Qué es el hipocentro o foco de un terremoto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) El punto de la superficie donde el sismo se siente con mayor intensidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El punto en el interior de la Tierra donde se origina y libera la energía del sismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) El instrumento usado para medir la magnitud de los terremotos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) La zona de la corteza que se rompe durante un terremoto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>hipocentro</B> o <B>foco</B> es el punto en el interior de la Tierra donde se produce la rotura de las rocas y se libera la energía sísmica. El <B>epicentro</B> es el punto de la superficie ubicado directamente sobre el foco, donde el sismo se siente con mayor intensidad. Confundir estos dos términos es uno de los errores más frecuentes en exámenes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Qué científico propuso en 1912 la teoría de la Deriva Continental?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Harry Hess</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Andrija Mohorovičić</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Alfred Wegener</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Inge Lehmann</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR><B>Alfred Wegener</B> propuso en 1912 que todos los continentes formaron un supercontinente único llamado <B>Pangea</B> que se fragmentó hace ~200 millones de años. Su evidencia principal fue el encaje geométrico de los continentes (especialmente África y Sudamérica), la continuidad de cadenas montañosas entre continentes separados y la presencia de fósiles idénticos en continentes hoy separados por océanos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cómo se llama el material fundido que sale de un volcán una vez que llega a la superficie terrestre?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Magma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Piroclasto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Lava</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Basalto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El material fundido en el interior de la Tierra se llama <B>magma</B>. Cuando ese magma llega a la superficie y pierde sus gases disueltos, pasa a llamarse <B>lava</B>. Los <B>piroclastos</B> son los fragmentos sólidos expulsados en erupciones explosivas (ceniza, lapilli, bombas volcánicas). El <B>basalto</B> es el tipo de roca que se forma cuando la lava oceánica se enfría.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Qué tipo de límite de placas genera la formación de nuevos fondos oceánicos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Límite convergente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Límite transformante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Límite divergente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Zona de subducción</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>En los <B>límites divergentes</B>, las placas se separan y el magma del manto asciende para rellenar el espacio, creando nueva corteza oceánica. Este proceso ocurre en las <B>dorsales oceánicas</B>, como la Dorsal Mesoatlántica. Es el mecanismo de "expansión del fondo oceánico" descubierto por Harry Hess en 1962, que finalmente explicó el mecanismo de movimiento de las placas que Wegener no había podido demostrar.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál es el volcán más activo del Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) El Misti</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Sabancaya</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Ubinas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Tutupaca</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Ubinas</B> es considerado el volcán más activo del Perú, con erupciones frecuentes registradas desde el siglo XVI. Se ubica en la región Moquegua. El <B>Misti</B> (Arequipa) es el más conocido y emblemático, pero actualmente está en estado de menor actividad. El <B>Sabancaya</B> también ha tenido actividad significativa en los últimos años.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Por qué el núcleo externo de la Tierra es líquido si tiene temperaturas superiores a 4 000°C?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Porque está compuesto de agua salada a altísima temperatura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Porque la presión en esa zona no es suficiente para mantener el hierro y el níquel en estado sólido a esas temperaturas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Porque los materiales del núcleo externo tienen un punto de fusión muy bajo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Porque el núcleo externo recibe calor del Sol directamente a través de la corteza</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El estado físico de un material depende tanto de la temperatura como de la presión. En el núcleo externo, aunque las temperaturas son altísimas (4 000–5 000°C), la <B>presión</B> no es suficiente para mantener el hierro y el níquel en estado sólido: estos materiales funden antes de alcanzar la presión de solidificación. En el núcleo interno, la presión es aún mayor (360 GPa) y sí logra mantener los materiales en estado sólido a pesar de temperaturas superiores a 5 000°C. Es el balance entre temperatura y presión lo que determina el estado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Cuál es la diferencia entre la escala de Richter y la escala de Mercalli?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Richter mide la profundidad del foco; Mercalli mide la distancia al epicentro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Richter mide la energía liberada en el foco (magnitud); Mercalli mide los efectos percibidos en la superficie (intensidad)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Richter es para sismos marinos y Mercalli para sismos continentales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Ambas miden lo mismo pero en diferentes unidades: una en grados y otra en décimas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Richter</B> mide la <B>magnitud</B>: energía liberada en el hipocentro, registrada con sismógrafo. Es un valor único para cada sismo (escala logarítmica). <B>Mercalli</B> mide la <B>intensidad</B>: efectos observables en la superficie (daños en edificios, percepción humana). Varía según la distancia al epicentro y el tipo de suelo: el mismo sismo puede tener intensidad VI cerca del epicentro e intensidad II lejos de él.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cuál de los siguientes procesos es responsable de la formación de la Cordillera de los Andes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Colisión entre la Placa Sudamericana y la Placa Africana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Subducción de la Placa de Nazca bajo la Placa Sudamericana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Divergencia entre la Placa del Caribe y la Placa Sudamericana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Deslizamiento transformante entre la Placa de Nazca y la Placa Antártica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>Andes</B> se formaron por la <B>subducción</B> de la <B>Placa de Nazca</B> (oceánica, más densa) bajo la <B>Placa Sudamericana</B> (continental). Al hundirse la Placa de Nazca, genera compresión que pliega y eleva la corteza continental formando la cordillera. Además, el magma generado en la zona de subducción asciende creando los volcanes andinos. Este proceso también generó la <B>Fosa Perú-Chile</B> paralela a la costa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Qué descubrió Inge Lehmann en 1936 que cambió la comprensión del interior terrestre?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Que el manto superior era parcialmente fundido (astenosfera)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Que la corteza oceánica era más joven que la continental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Que dentro del núcleo externo líquido existe un núcleo interno sólido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Que las ondas sísmicas viajaban más rápido en la corteza continental que en la oceánica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La sismóloga danesa <B>Inge Lehmann</B> analizó registros sísmicos de un terremoto en Nueva Zelanda y descubrió que algunas ondas P llegaban a estaciones donde no deberían llegar si el núcleo fuera completamente líquido. Esto la llevó a proponer en 1936 la existencia de un <B>núcleo interno sólido</B> dentro del núcleo externo líquido. La discontinuidad entre ambos lleva su nombre: <B>discontinuidad de Lehmann</B>, a ~5 100 km de profundidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> ¿Por qué las ondas sísmicas S no pueden atravesar el núcleo externo de la Tierra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Porque pierden toda su energía al atravesar el manto inferior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Porque las ondas S son transversales y no pueden propagarse por materiales en estado líquido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Porque la temperatura del núcleo las destruye antes de que puedan continuar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Porque el núcleo externo tiene una composición química que absorbe las ondas S completamente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las <B>ondas S</B> (secundarias o transversales) se propagan moviendo el material perpendicularmente a la dirección de viaje, como las ondas en una cuerda. Este tipo de movimiento requiere que el material tenga <B>rigidez al corte</B>, propiedad que solo poseen los sólidos. Los líquidos no tienen rigidez al corte, por lo que las ondas S no pueden propagarse en ellos. Al llegar al núcleo externo líquido, las ondas S desaparecen, creando una "zona de sombra" sísmica. Fue precisamente esta observación la que demostró que el núcleo externo es líquido.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Cuál es la principal diferencia entre un estratovolcán y un volcán en escudo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) El estratovolcán solo existe en el hemisferio sur y el volcán en escudo solo en el norte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) El estratovolcán tiene erupciones explosivas y forma cónica empinada; el volcán en escudo tiene lava fluida, erupciones tranquilas y forma achatada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) El estratovolcán es submarino y el volcán en escudo siempre es continental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) No hay diferencia real: son nombres distintos para el mismo tipo de volcán</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>estratovolcanes</B> tienen lava viscosa y rica en sílice que atrapa gases, lo que genera erupciones muy explosivas y peligrosas. Su forma es cónica y empinada porque la lava viscosa no fluye lejos. Ejemplos: El Misti, Vesubio, Fuji. Los <B>volcanes en escudo</B> tienen lava basáltica muy fluida y pobre en sílice, que fluye grandes distancias y genera erupciones tranquilas. Su forma es achatada y amplia como un escudo. Ejemplos: volcanes de Hawái.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> ¿Por qué la corteza oceánica es más densa que la corteza continental, y qué consecuencia tectónica tiene esto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Es más densa porque tiene mayor espesor; esto hace que se hunda en las fosas oceánicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Es más densa porque está compuesta de basalto (rocas máficas ricas en Fe y Mg); esto determina que cuando una placa oceánica colisiona con una continental, la oceánica siempre subduce bajo la continental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Es más densa porque está permanentemente saturada de agua marina; por eso flota menos que la corteza continental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Es más densa porque está más cerca del núcleo terrestre y absorbe más calor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La corteza oceánica está compuesta principalmente de <B>basalto</B>, roca máfica rica en hierro (Fe) y magnesio (Mg), con una densidad de ~3,0 g/cm³. La corteza continental está compuesta principalmente de <B>granito</B>, roca sálica rica en silicio y aluminio, con densidad de ~2,7 g/cm³. Como la corteza oceánica es más densa, cuando colisiona con una continental, la <B>placa oceánica subduce</B> (se hunde) bajo la continental. Esta diferencia de densidad es la clave que explica por qué los continentes "flotan" sobre el manto y los fondos oceánicos se renuevan constantemente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿Qué es el principio de isostasia y cómo se relaciona con la formación de montañas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Es la capacidad del magma de ascender a través de la corteza por diferencia de densidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Es el principio que establece que la corteza terrestre "flota" sobre el manto en equilibrio: donde hay montañas altas, la corteza es más gruesa y tiene "raíces" profundas que la soportan, como un iceberg</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Es la resistencia de las rocas de la corteza a doblarse bajo el peso de las cordilleras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Es el proceso por el cual el manto empuja hacia arriba la corteza en las zonas de divergencia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>isostasia</B> es el principio de equilibrio entre la corteza y el manto: la corteza "flota" sobre el manto plástico (astenosfera) de acuerdo con su densidad y espesor, como un iceberg en el agua. Donde hay cadenas montañosas altas, la corteza es más gruesa y tiene <B>"raíces corticales"</B> que penetran profundamente en el manto, compensando el peso. Por ejemplo, bajo los Andes la corteza puede tener 70 km de espesor. Cuando los procesos erosivos desgastan una montaña, la corteza se eleva isostáticamente porque "pesa menos". Es un equilibrio dinámico constante.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Cuál es el mecanismo que impulsa el movimiento de las placas tectónicas según el modelo científico actual?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La gravedad de la Luna actúa sobre las placas como en las mareas oceánicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Las corrientes de convección del manto, combinadas con el jalón de la placa que subduce (slab pull) y el empuje en la dorsal (ridge push)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La rotación de la Tierra genera una fuerza centrífuga que desplaza las placas hacia el Ecuador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) El campo magnético terrestre actúa como una fuerza de atracción entre las placas y el núcleo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El movimiento de las placas tectónicas es impulsado por tres mecanismos combinados: (1) <B>Corrientes de convección del manto</B>: el material caliente del manto asciende, se desplaza horizontalmente arrastrando las placas y vuelve a hundirse al enfriarse. (2) <B>Slab pull</B> (jalón de la losa): la parte fría y densa de la placa que subduce "jala" al resto de la placa hacia la zona de subducción. Este es considerado el mecanismo más importante. (3) <B>Ridge push</B> (empuje de dorsal): el magma que asciende en las dorsales empuja las placas hacia los lados. La combinación de estos tres mecanismos explica las velocidades y direcciones de movimiento de las placas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Un sismo de magnitud 8.0 libera aproximadamente cuántas veces más energía que uno de magnitud 6.0?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) 2 veces más</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) 20 veces más</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) ~1 000 veces más</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 200 veces más</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La escala de Richter es <B>logarítmica</B>: cada unidad entera de diferencia en magnitud corresponde a ~32 veces más energía liberada. Por lo tanto, entre magnitud 6 y magnitud 8 hay 2 unidades de diferencia: 32 × 32 = <B>~1 024 veces más energía</B>. En amplitud de las ondas, cada unidad equivale a 10 veces más amplitud. Esta naturaleza logarítmica es fundamental para entender por qué un sismo de magnitud 9 es catastrófico comparado con uno de magnitud 7, que parecerían cercanos en la escala numérica pero son radicalmente diferentes en energía.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El supercontinente Pangea comenzó a fragmentarse hace aproximadamente 200 millones de años. ¿Cuál fue el orden correcto de fragmentación según la teoría de la Deriva Continental?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Pangea se dividió directamente en los 7 continentes actuales de forma simultánea</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Pangea se dividió primero en Laurasia (norte) y Gondwana (sur), que luego se fragmentaron en los continentes actuales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Pangea primero formó Gondwana completo y luego Laurasia se separó del polo norte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Pangea se fragmentó primero en América y Eurasia, y luego África y Antártida se separaron</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La fragmentación de <B>Pangea</B> siguió este orden: hace ~200 Ma, Pangea comenzó a dividirse en dos masas continentales principales: <B>Laurasia</B> (que incluía América del Norte, Europa y Asia) en el hemisferio norte, y <B>Gondwana</B> (que incluía América del Sur, África, Antártida, Australia e India) en el hemisferio sur, separadas por el mar de Tetis. Luego, durante el Jurásico y Cretácico, estas masas se fueron fragmentando: Gondwana se separó en Sudamérica-África (luego se separaron entre sí), India migró hacia el norte chocando con Asia (formando el Himalaya), y Australia-Antártida se separaron. Este proceso continúa hoy.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Los "puntos calientes" (hot spots) volcánicos, como los que originaron las islas Hawái, representan una excepción a la teoría de la tectónica de placas porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Se forman en los límites entre placas, donde la actividad volcánica es siempre más intensa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Son penachos de magma que ascienden desde el manto profundo de forma fija, independientemente del movimiento de las placas, creando cadenas de islas volcánicas a medida que la placa se desplaza sobre ellos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Demuestran que las placas tectónicas no se mueven realmente, sino que son los volcanes los que migran sobre una placa fija</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Solo se forman en corteza continental y nunca en corteza oceánica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>puntos calientes</B> (hot spots) son columnas de magma (penachos mantélicos) que ascienden desde el manto profundo en posiciones relativamente <B>fijas</B> respecto al movimiento de las placas. A medida que la placa tectónica se desplaza sobre este punto caliente fijo, se va creando una cadena de volcanes de mayor edad conforme se alejan del punto caliente activo. Las islas <B>Hawái</B> son el ejemplo clásico: la isla más grande (Hawái) está sobre el punto caliente activo hoy, mientras que las islas del noroeste son más antiguas y más erosionadas. Esto permitió calcular la velocidad y dirección de movimiento de la Placa del Pacífico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Por qué el Himalaya, siendo la cadena montañosa más alta del mundo, no tiene volcanes activos, mientras que los Andes, de altitud comparable, sí los tienen?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Porque el Himalaya es más antiguo y sus volcanes ya se extinguieron por erosión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Porque el Himalaya se formó por colisión de dos placas continentales sin subducción, por lo que no se genera magma; los Andes se formaron por subducción, proceso que sí genera magma y volcanes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Porque el clima frío del Himalaya apaga los volcanes antes de que puedan erupcionar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Porque los Andes tienen una falla transformante que genera vulcanismo, mientras que el Himalaya no</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La clave está en el <B>tipo de límite tectónico</B>. El <B>Himalaya</B> se formó por <B>colisión continental</B>: la Placa Indo-Australiana chocó con la Euroasiática. Como ambas son corteza continental (baja densidad), ninguna puede hundirse bajo la otra: se comprimen y se pliegan hacia arriba, sin generar zonas de subducción ni magma volcánico. Los <B>Andes</B> se formaron por <B>subducción</B> de la Placa de Nazca (oceánica, densa) bajo la Sudamericana. Al hundirse, la placa oceánica se funde generando magma que asciende y forma volcanes. La presencia o ausencia de vulcanismo es un indicador directo del tipo de proceso orogénico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> ¿Qué es la zona de Wadati-Benioff y cuál es su importancia para entender la sismicidad del Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Es la zona de la dorsal oceánica donde se genera nueva corteza; explica los terremotos superficiales de la costa peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Es la zona inclinada de sismicidad que sigue el plano de subducción de la placa oceánica bajo la continental; en el Perú corresponde a la Placa de Nazca hundiéndose bajo Sudamérica, generando sismos a distintas profundidades</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Es una falla transformante en el fondo del Pacífico que genera tsunamis en la costa peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Es la zona de acumulación de sedimentos entre la Fosa Perú-Chile y la costa, donde ocurren solo sismos superficiales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>zona de Wadati-Benioff</B> (nombrada por los sismólogos Kiyoo Wadati y Hugo Benioff) es el plano inclinado de alta sismicidad que marca la trayectoria de la placa oceánica al subducir bajo la continental. En el <B>Perú</B>, corresponde a la <B>Placa de Nazca</B> hundiéndose bajo la Placa Sudamericana con un ángulo de ~30°. Esta zona genera tres tipos de sismos según la profundidad: <B>superficiales</B> (&lt;70 km, los más destructivos, frecuentes en la costa), <B>intermedios</B> (70–300 km, comunes en el Perú) y <B>profundos</B> (&gt;300 km, como el sismo de Contamana de 2011 a 145 km). El Perú es uno de los países con mayor sismicidad del mundo precisamente por esta zona.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

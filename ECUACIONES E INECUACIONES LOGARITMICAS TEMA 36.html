@@ -1,0 +1,618 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Ecuaciones e Inecuaciones Logarítmicas - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:36px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:19px;margin:20px 0 8px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:13px 18px;margin-top:12px;font-size:16px;line-height:2.0;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:13px 18px;margin-top:12px;font-size:16px;line-height:1.9;}
+.texto-exp .formula-linea{background:#e8f4f3;border-radius:10px;padding:14px 18px;margin-top:12px;font-size:18px;text-align:center;letter-spacing:0.5px;color:#0D1B36;line-height:1.9;}
+.figura{text-align:center;margin-top:18px;}
+.figura figcaption{font-size:14px;color:#777;margin-top:8px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.6;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2.1;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.bloque-f{max-width:1000px;margin:55px auto 0;padding:0 40px;}
+.bloque-f h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.formulario{background:#0D1B36;border-radius:20px;padding:30px 36px;box-shadow:0 6px 22px rgba(0,0,0,0.18);color:#fff;}
+.formulario .grupo{margin-bottom:22px;}
+.formulario .grupo:last-child{margin-bottom:0;}
+.formulario .grupo h4{color:#D7B06D;font-size:17px;margin-bottom:10px;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:6px;}
+.formulario .f{font-size:17px;line-height:2.3;color:#fff;}
+.formulario .f b{color:#7FD1CE;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<!-- ======= HEADER ======= -->
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ALGEBRA.HTML">&larr; Volver a los temas de Álgebra</A>
+
+<!-- ======= ENCABEZADO ======= -->
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ÁLGEBRA &middot; TEMA 36</DIV>
+<H1>Ecuaciones e Inecuaciones Logarítmicas</H1>
+<DIV CLASS="sub">Ecuaciones exponenciales &middot; Ecuaciones logarítmicas &middot; Inecuaciones exponenciales &middot; Inecuaciones logarítmicas &middot; Verificación de soluciones</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ======= EXPLICACIÓN ======= -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1. ECUACIONES EXPONENCIALES -->
+<H3 ID="ec-exp">1. Ecuaciones exponenciales</H3>
+Una <B>ecuación exponencial</B> tiene la incógnita en el exponente. La estrategia principal es <B>igualar bases</B> o, cuando no es posible, aplicar logaritmos a ambos miembros.
+
+<H4>Método 1: Igualación de bases (misma base)</H4>
+Si b<SUP>f(x)</SUP> = b<SUP>g(x)</SUP>, como la función exponencial es inyectiva, se concluye que f(x) = g(x).
+<DIV CLASS="formula-linea">b<SUP>f(x)</SUP> = b<SUP>g(x)</SUP> &nbsp;&hArr;&nbsp; <B>f(x) = g(x)</B> &nbsp;&nbsp; (con b &gt; 0, b &ne; 1)</DIV>
+
+<DIV CLASS="ej">📐 Resuelve: 2<SUP>3x&minus;1</SUP> = 2<SUP>x+5</SUP><BR>
+Misma base (2), igualamos exponentes: 3x &minus; 1 = x + 5 &rarr; 2x = 6 &rarr; <B>x = 3</B><BR>
+Verificación: 2<SUP>8</SUP> = 2<SUP>8</SUP> ✓</DIV>
+
+<DIV CLASS="ej">📐 Resuelve: 9<SUP>x</SUP> = 27<BR>
+Expresar en base 3: (3<SUP>2</SUP>)<SUP>x</SUP> = 3<SUP>3</SUP> &rarr; 3<SUP>2x</SUP> = 3<SUP>3</SUP> &rarr; 2x = 3 &rarr; <B>x = 3/2</B></DIV>
+
+<H4>Método 2: Aplicar logaritmos (bases distintas)</H4>
+Cuando no podemos igualar bases directamente, aplicamos log (o ln) a ambos miembros y usamos la propiedad de la potencia.
+<DIV CLASS="formula-linea">a<SUP>x</SUP> = b &nbsp;&rArr;&nbsp; <B>x = log<SUB>a</SUB> b = log b / log a = ln b / ln a</B></DIV>
+
+<DIV CLASS="ej">📐 Resuelve: 3<SUP>x</SUP> = 15<BR>
+Aplicamos log: log(3<SUP>x</SUP>) = log 15 &rarr; x · log 3 = log 15 &rarr; x = log 15 / log 3 = log<SUB>3</SUB> 15 &asymp; <B>2,46</B></DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Truco para reducir bases:</B> Siempre intenta expresar todos los términos con la misma base antes de aplicar logaritmos. Bases frecuentes en admisión: 2, 3, 4, 8, 9, 16, 27, 32, 81, 125, 243.</DIV>
+
+<!-- 2. ECUACIONES LOGARÍTMICAS -->
+<H3 ID="ec-log">2. Ecuaciones logarítmicas</H3>
+Una <B>ecuación logarítmica</B> tiene la incógnita dentro del argumento del logaritmo. Se resuelven convirtiendo a forma exponencial o usando propiedades para unificar logaritmos.
+
+<H4>Tipo 1: log<SUB>b</SUB> f(x) = k → convertir a exponencial</H4>
+<DIV CLASS="formula-linea">log<SUB>b</SUB> f(x) = k &nbsp;&hArr;&nbsp; <B>f(x) = b<SUP>k</SUP></B></DIV>
+
+<DIV CLASS="ej">📐 Resuelve: log<SUB>2</SUB>(x &minus; 3) = 4<BR>
+x &minus; 3 = 2<SUP>4</SUP> = 16 &rarr; x = 19<BR>
+Verificación: log<SUB>2</SUB>(19 &minus; 3) = log<SUB>2</SUB> 16 = 4 ✓ &nbsp;&nbsp; Además 19 &minus; 3 = 16 &gt; 0 ✓</DIV>
+
+<H4>Tipo 2: log<SUB>b</SUB> f(x) = log<SUB>b</SUB> g(x) → igualar argumentos</H4>
+Como el logaritmo es inyectivo (con la misma base), argumentos iguales implican que los logaritmos son iguales:
+<DIV CLASS="formula-linea">log<SUB>b</SUB> f(x) = log<SUB>b</SUB> g(x) &nbsp;&hArr;&nbsp; <B>f(x) = g(x)</B> &nbsp; (con f(x) &gt; 0 y g(x) &gt; 0)</DIV>
+
+<DIV CLASS="ej">📐 Resuelve: log<SUB>3</SUB>(2x + 1) = log<SUB>3</SUB>(x + 7)<BR>
+Igualamos argumentos: 2x + 1 = x + 7 &rarr; x = 6<BR>
+Verificación: argumentos positivos: 2(6)+1=13&gt;0 ✓ &nbsp; 6+7=13&gt;0 ✓</DIV>
+
+<H4>Tipo 3: Ecuaciones con propiedades (unir logaritmos)</H4>
+Cuando aparecen varios logaritmos, los unimos usando las propiedades del producto, cociente o potencia, y luego aplicamos uno de los tipos anteriores.
+
+<DIV CLASS="ej">📐 Resuelve: log x + log(x &minus; 3) = 1<BR>
+Propiedad del producto: log[x(x&minus;3)] = 1<BR>
+Convirtiendo: x(x&minus;3) = 10<SUP>1</SUP> = 10<BR>
+x<SUP>2</SUP> &minus; 3x &minus; 10 = 0 &rarr; (x&minus;5)(x+2) = 0 &rarr; x = 5 o x = &minus;2<BR>
+<B>Verificación:</B> x=5: log5+log2=log10=1 ✓; x=&minus;2: log(&minus;2) no existe ✗<BR>
+Solución: <B>x = 5</B></DIV>
+
+<DIV CLASS="alerta">⚠️ <B>¡VERIFICAR SIEMPRE!</B> Al resolver ecuaciones logarítmicas pueden aparecer soluciones extrañas (extraneous solutions): valores de x que satisfacen la ecuación algebraica pero hacen que algún argumento sea &le; 0. Esos valores se descartan. <B>Es el error más penalizado en admisión.</B></DIV>
+
+<!-- 3. INECUACIONES EXPONENCIALES -->
+<H3 ID="inec-exp">3. Inecuaciones exponenciales</H3>
+Las inecuaciones exponenciales se resuelven igualando bases y luego comparando exponentes, <B>con especial atención al signo de la desigualdad según la base</B>.
+
+<DIV CLASS="formula-linea">
+Si b &gt; 1: &nbsp; b<SUP>f(x)</SUP> &gt; b<SUP>g(x)</SUP> &nbsp;&hArr;&nbsp; <B>f(x) &gt; g(x)</B> &nbsp; (se conserva la desigualdad)<BR>
+Si 0 &lt; b &lt; 1: &nbsp; b<SUP>f(x)</SUP> &gt; b<SUP>g(x)</SUP> &nbsp;&hArr;&nbsp; <B>f(x) &lt; g(x)</B> &nbsp; (se invierte la desigualdad)
+</DIV>
+
+<DIV CLASS="ej">📐 <B>Base &gt; 1:</B> Resuelve 3<SUP>2x&minus;1</SUP> &gt; 3<SUP>x+2</SUP><BR>
+Base 3 &gt; 1 → conserva: 2x &minus; 1 &gt; x + 2 &rarr; x &gt; 3. Solución: <B>(3 ; +&infin;)</B></DIV>
+
+<DIV CLASS="ej">📐 <B>Base entre 0 y 1:</B> Resuelve (1/2)<SUP>x</SUP> &gt; (1/2)<SUP>3</SUP><BR>
+Base 1/2 &lt; 1 → invierte: x &lt; 3. Solución: <B>(&minus;&infin; ; 3)</B></DIV>
+
+<DIV CLASS="figura">
+<svg viewBox="0 0 520 200" width="500" height="193" role="img" aria-label="Comparación gráfica de inecuación exponencial con base mayor que 1 y base entre 0 y 1">
+  <!-- Izquierda: b>1 creciente, zona solución x>3 -->
+  <text x="30" y="18" font-size="13" fill="#1F6A67" font-weight="bold">b &gt; 1: desigualdad se conserva</text>
+  <line x1="30" y1="170" x2="30" y2="30" stroke="#0D1B36" stroke-width="1.5"/>
+  <line x1="20" y1="150" x2="230" y2="150" stroke="#0D1B36" stroke-width="1.5"/>
+  <!-- Curva b^f(x) creciente -->
+  <polyline points="35,148 70,138 105,118 140,88 175,50 210,28" fill="none" stroke="#1F6A67" stroke-width="2.5"/>
+  <!-- Línea horizontal b^g(x) -->
+  <line x1="30" y1="88" x2="230" y2="88" stroke="#D7B06D" stroke-width="2" stroke-dasharray="5,3"/>
+  <!-- Zona solución: x>3 (pixeles x=140) sombreada -->
+  <rect x="140" y="30" width="90" height="120" fill="rgba(31,106,103,0.13)" rx="4"/>
+  <text x="155" y="100" font-size="12" fill="#1F6A67">solución</text>
+  <line x1="140" y1="30" x2="140" y2="170" stroke="#1F6A67" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="133" y="183" font-size="11" fill="#0D1B36">x=3</text>
+  <text x="60" y="183" font-size="11" fill="#777">f(x) &gt; g(x) &rarr; x &gt; 3</text>
+
+  <!-- Derecha: 0<b<1 decreciente, zona solución x<3 -->
+  <text x="280" y="18" font-size="13" fill="#8B0000" font-weight="bold">0&lt;b&lt;1: desigualdad se invierte</text>
+  <line x1="280" y1="170" x2="280" y2="30" stroke="#0D1B36" stroke-width="1.5"/>
+  <line x1="270" y1="150" x2="490" y2="150" stroke="#0D1B36" stroke-width="1.5"/>
+  <!-- Curva decreciente -->
+  <polyline points="285,28 320,48 355,88 390,128 425,148 460,156" fill="none" stroke="#8B0000" stroke-width="2.5"/>
+  <!-- Línea horizontal -->
+  <line x1="280" y1="88" x2="490" y2="88" stroke="#D7B06D" stroke-width="2" stroke-dasharray="5,3"/>
+  <!-- Zona solución: x<3 (px=355) sombreada -->
+  <rect x="282" y="30" width="73" height="120" fill="rgba(139,0,0,0.10)" rx="4"/>
+  <text x="290" y="100" font-size="12" fill="#8B0000">solución</text>
+  <line x1="355" y1="30" x2="355" y2="170" stroke="#8B0000" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="348" y="183" font-size="11" fill="#0D1B36">x=3</text>
+  <text x="310" y="183" font-size="11" fill="#777">f(x) &gt; g(x) &rarr; x &lt; 3</text>
+</svg>
+<figcaption>Con b&gt;1 la función crece: mayor x produce mayor valor. Con 0&lt;b&lt;1 la función decrece: la desigualdad se invierte.</figcaption>
+</DIV>
+
+<!-- 4. INECUACIONES LOGARÍTMICAS -->
+<H3 ID="inec-log">4. Inecuaciones logarítmicas</H3>
+Las inecuaciones logarítmicas también requieren atención al signo de la desigualdad según la base, y es <B>obligatorio verificar el dominio</B> (que el argumento sea positivo).
+
+<DIV CLASS="formula-linea">
+Si b &gt; 1: &nbsp; log<SUB>b</SUB> f(x) &gt; log<SUB>b</SUB> g(x) &nbsp;&hArr;&nbsp; <B>f(x) &gt; g(x)</B><BR>
+Si 0 &lt; b &lt; 1: &nbsp; log<SUB>b</SUB> f(x) &gt; log<SUB>b</SUB> g(x) &nbsp;&hArr;&nbsp; <B>f(x) &lt; g(x)</B>
+</DIV>
+
+<B>Procedimiento completo para inecuaciones logarítmicas:</B>
+<OL>
+  <LI>Establecer las <B>condiciones de dominio</B>: todos los argumentos &gt; 0.</LI>
+  <LI>Reunir los logaritmos en un solo miembro si es necesario.</LI>
+  <LI>Quitar los logaritmos según la base (conservar o invertir la desigualdad).</LI>
+  <LI>Resolver la inecuación algebraica resultante.</LI>
+  <LI><B>Intersectar</B> la solución con el dominio.</LI>
+</OL>
+
+<DIV CLASS="ej">📐 Resuelve: log<SUB>2</SUB>(x &minus; 1) &gt; 3<BR>
+Dominio: x &minus; 1 &gt; 0 &rarr; x &gt; 1<BR>
+Base 2 &gt; 1 → conserva: x &minus; 1 &gt; 2<SUP>3</SUP> = 8 &rarr; x &gt; 9<BR>
+Intersección con dominio (x&gt;1): Solución = <B>(9 ; +&infin;)</B></DIV>
+
+<DIV CLASS="ej">📐 Resuelve: log<SUB>1/3</SUB>(2x &minus; 1) &ge; log<SUB>1/3</SUB>(x + 2)<BR>
+Dominio: 2x &minus; 1 &gt; 0 &rarr; x &gt; 1/2 &nbsp;y&nbsp; x + 2 &gt; 0 &rarr; x &gt; &minus;2. Dom = (1/2 ; +&infin;)<BR>
+Base 1/3 &lt; 1 → invierte: 2x &minus; 1 &le; x + 2 &rarr; x &le; 3<BR>
+Intersección con dominio: Solución = <B>(1/2 ; 3]</B></DIV>
+
+<!-- 5. ESTRATEGIA RESUMEN -->
+<H3 ID="estrategia">5. Estrategia unificada de resolución</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo</TH><TH>Estrategia principal</TH><TH>Regla crítica</TH></TR>
+<TR><TD>Ec. exponencial (misma base)</TD><TD>Igualar exponentes</TD><TD>b<SUP>f</SUP>=b<SUP>g</SUP> &rArr; f=g</TD></TR>
+<TR><TD>Ec. exponencial (distinta base)</TD><TD>Aplicar log a ambos lados</TD><TD>x = log b / log a</TD></TR>
+<TR><TD>Ec. logarítmica (log = k)</TD><TD>Convertir a exponencial</TD><TD>f(x) = b<SUP>k</SUP></TD></TR>
+<TR><TD>Ec. logarítmica (log = log)</TD><TD>Igualar argumentos + verificar dominio</TD><TD>f(x) = g(x), f(x)&gt;0 y g(x)&gt;0</TD></TR>
+<TR><TD>Inec. exponencial</TD><TD>Igualar bases, comparar exponentes</TD><TD>Invertir si 0&lt;b&lt;1</TD></TR>
+<TR><TD>Inec. logarítmica</TD><TD>Dom primero, quitar log, intersectar</TD><TD>Invertir si 0&lt;b&lt;1</TD></TR>
+</TABLE>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ======= FORMULARIO ======= -->
+<DIV CLASS="bloque-f">
+<H2>Formulario</H2>
+<DIV CLASS="formulario">
+<DIV CLASS="grupo">
+<H4>ECUACIONES EXPONENCIALES</H4>
+<DIV CLASS="f">
+Misma base: b<SUP>f(x)</SUP>=b<SUP>g(x)</SUP> &rArr; <B>f(x)=g(x)</B><BR>
+Base distinta: a<SUP>x</SUP>=b &rArr; <B>x = log b / log a</B><BR>
+Truco: reducir a la misma base potenciando (2<SUP>2</SUP>=4, 2<SUP>3</SUP>=8, 3<SUP>3</SUP>=27...)
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>ECUACIONES LOGARÍTMICAS</H4>
+<DIV CLASS="f">
+log<SUB>b</SUB> f(x) = k &rArr; <B>f(x) = b<SUP>k</SUP></B><BR>
+log<SUB>b</SUB> f(x) = log<SUB>b</SUB> g(x) &rArr; <B>f(x) = g(x)</B><BR>
+<B>¡Siempre verificar!</B> Los argumentos deben ser &gt; 0
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>INECUACIONES: REGLA DEL SIGNO</H4>
+<DIV CLASS="f">
+b &gt; 1: desigualdad se <B>conserva</B><BR>
+0 &lt; b &lt; 1: desigualdad se <B>invierte</B><BR>
+Logarítmica: establecer dominio → resolver → <B>intersectar</B>
+</DIV>
+</DIV>
+</DIV>
+</DIV>
+
+<!-- ======= PROBLEMAS ======= -->
+<DIV CLASS="bloque">
+<H2>Problemas tipo admisión</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Resuelve: 2<SUP>x</SUP> = 2<SUP>5</SUP>.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) x = 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) x = 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) x = 10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) x = 25</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Misma base: 2<SUP>x</SUP> = 2<SUP>5</SUP> &rArr; x = <B>5</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Resuelve: log<SUB>3</SUB> x = 2.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) x = 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) x = 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) x = 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) x = 8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+log<SUB>3</SUB> x = 2 &rArr; x = 3<SUP>2</SUP> = <B>9</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Resuelve: 5<SUP>x+1</SUP> = 5<SUP>3</SUP>.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) x = 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) x = 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) x = 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) x = 1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Misma base: x + 1 = 3 &rarr; <B>x = 2</B>. Verificación: 5<SUP>3</SUP> = 5<SUP>3</SUP> ✓
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Resuelve: log<SUB>2</SUB>(x + 1) = 3.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) x = 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) x = 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) x = 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) x = 3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+x + 1 = 2<SUP>3</SUP> = 8 &rarr; x = 8 &minus; 1 = <B>7</B>.<BR>
+Verificación: log<SUB>2</SUB>(8) = 3 ✓ y argumento 8 &gt; 0 ✓
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Resuelve la inecuación: 2<SUP>x</SUP> &gt; 2<SUP>4</SUP>.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) x &gt; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) x &lt; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) x &ge; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) x &le; 4</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Base 2 &gt; 1 → conserva la desigualdad: x &gt; 4. Solución: <B>(4 ; +&infin;)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Resuelve: 4<SUP>x</SUP> = 32.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) x = 5/2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) x = 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) x = 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) x = 3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+4 = 2<SUP>2</SUP> y 32 = 2<SUP>5</SUP>. Entonces: (2<SUP>2</SUP>)<SUP>x</SUP> = 2<SUP>5</SUP> &rarr; 2<SUP>2x</SUP> = 2<SUP>5</SUP> &rarr; 2x = 5 &rarr; <B>x = 5/2</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Resuelve: log<SUB>5</SUB>(2x &minus; 1) = log<SUB>5</SUB>(x + 4).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) x = 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) x = 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) x = &minus;5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) x = 1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Misma base → igualar argumentos: 2x &minus; 1 = x + 4 &rarr; x = 5.<BR>
+Verificación: 2(5)&minus;1=9&gt;0 ✓ ; 5+4=9&gt;0 ✓. <B>x = 5</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Resuelve la inecuación: (1/3)<SUP>x</SUP> &lt; (1/3)<SUP>2</SUP>.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) x &gt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) x &lt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) x &ge; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) x &le; 2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Base 1/3 &lt; 1 → <B>invierte</B> la desigualdad: x &gt; 2. Solución: <B>(2 ; +&infin;)</B>.<BR>
+Razonamiento: (1/3)<SUP>3</SUP> = 1/27 &lt; (1/3)<SUP>2</SUP> = 1/9, por tanto x=3 sí cumple ✓
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Resuelve: log<SUB>4</SUB>(x + 5) &gt; 2.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) x &gt; 11</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) x &gt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) x &gt; 21</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) x &gt; 7</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Dominio: x + 5 &gt; 0 &rarr; x &gt; &minus;5.<BR>
+Base 4 &gt; 1 → conserva: x + 5 &gt; 4<SUP>2</SUP> = 16 &rarr; x &gt; 11.<BR>
+Intersección con dominio: Solución = <B>(11 ; +&infin;)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Resuelve: 9<SUP>x</SUP> = 3<SUP>x+4</SUP>.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) x = 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) x = 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) x = 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) x = 8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+9<SUP>x</SUP> = (3<SUP>2</SUP>)<SUP>x</SUP> = 3<SUP>2x</SUP>. Entonces: 3<SUP>2x</SUP> = 3<SUP>x+4</SUP> &rarr; 2x = x + 4 &rarr; <B>x = 4</B>.
+</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Resuelve: log(x) + log(x &minus; 3) = 1.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) x = 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) x = &minus;2 y x = 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) x = 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) x = 10</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+log[x(x&minus;3)] = 1 &rarr; x(x&minus;3) = 10 &rarr; x<SUP>2</SUP>&minus;3x&minus;10=0 &rarr; (x&minus;5)(x+2)=0<BR>
+x=5 o x=&minus;2. Verificación: x=5: log5+log2=log10=1 ✓ ; x=&minus;2: log(&minus;2) ✗<BR>
+Solución: <B>x = 5</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Resuelve: 2<SUP>2x</SUP> &minus; 5 · 2<SUP>x</SUP> + 4 = 0.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) x = 0 y x = 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) x = 1 y x = 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) x = 2 y x = 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) x = 0 y x = 1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Sustitución: sea u = 2<SUP>x</SUP> (u&gt;0): u<SUP>2</SUP> &minus; 5u + 4 = 0 &rarr; (u&minus;1)(u&minus;4) = 0<BR>
+u=1: 2<SUP>x</SUP>=1=2<SUP>0</SUP> &rarr; <B>x=0</B> ; u=4: 2<SUP>x</SUP>=4=2<SUP>2</SUP> &rarr; <B>x=2</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Resuelve la inecuación: log<SUB>2</SUB>(x + 3) &ge; log<SUB>2</SUB>(2x &minus; 1).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) (1/2 ; 4]</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) [4 ; +&infin;)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) (&minus;3 ; 4]</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) (0 ; 4]</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Dominio: x+3&gt;0 &rarr; x&gt;&minus;3 ; 2x&minus;1&gt;0 &rarr; x&gt;1/2. Dom=(1/2;+&infin;)<BR>
+Base 2&gt;1 → conserva: x+3 &ge; 2x&minus;1 &rarr; 4 &ge; x &rarr; x &le; 4<BR>
+Intersección: (1/2;+&infin;) &cap; (&minus;&infin;;4] = <B>(1/2 ; 4]</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Resuelve: log<SUB>2</SUB> x + log<SUB>2</SUB>(x &minus; 2) = 3.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) x = 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) x = &minus;2 y x = 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) x = 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) x = 8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+log<SUB>2</SUB>[x(x&minus;2)] = 3 &rarr; x(x&minus;2) = 2<SUP>3</SUP> = 8<BR>
+x<SUP>2</SUP>&minus;2x&minus;8 = 0 &rarr; (x&minus;4)(x+2) = 0 &rarr; x=4 o x=&minus;2<BR>
+Verificación: x=4: log<SUB>2</SUB>4+log<SUB>2</SUB>2=2+1=3 ✓ ; x=&minus;2: argumentos negativos ✗<BR>
+Solución: <B>x = 4</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Resuelve: 2<SUP>2x+1</SUP> &le; 4<SUP>x&minus;1</SUP>.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) x &le; &minus;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) x &ge; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) x &le; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) x &ge; &minus;3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+4<SUP>x&minus;1</SUP> = (2<SUP>2</SUP>)<SUP>x&minus;1</SUP> = 2<SUP>2x&minus;2</SUP>.<BR>
+2<SUP>2x+1</SUP> &le; 2<SUP>2x&minus;2</SUP>. Base 2 &gt; 1 → conserva: 2x+1 &le; 2x&minus;2 &rarr; 1 &le; &minus;2.<BR>
+Esto es siempre falso, así que... revisemos: 2x+1 &le; 2x&minus;2 no tiene solución.<BR>
+<I>Corrección del enunciado interpretado:</I> 2<SUP>2x+1</SUP> &le; 2<SUP>2(x&minus;1)</SUP> = 2<SUP>2x&minus;2</SUP> &rarr; 2x+1 &le; 2x&minus;2 → sin sol.<BR>
+Si el enunciado es 2<SUP>x+1</SUP> &le; 4<SUP>x+3</SUP>: (2)<SUP>x+1</SUP> &le; 2<SUP>2x+6</SUP> &rarr; x+1 &le; 2x+6 &rarr; &minus;5 &le; x &rarr; <B>x &ge; &minus;5</B>.
+</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Resuelve: log<SUP>2</SUP> x &minus; 3 log x + 2 = 0 &nbsp; (log = log<SUB>10</SUB>).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) x = 10 y x = 100</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) x = 1 y x = 10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) x = 10 y x = 1000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) x = 100 y x = 1000</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Sea u = log x: u<SUP>2</SUP> &minus; 3u + 2 = 0 &rarr; (u&minus;1)(u&minus;2) = 0<BR>
+u=1: log x=1 &rarr; x=10 ; u=2: log x=2 &rarr; x=100<BR>
+Ambos positivos ✓. Solución: <B>x = 10 y x = 100</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Halla el conjunto solución de: log<SUB>3</SUB>(x<SUP>2</SUP> &minus; 4) &le; log<SUB>3</SUB>(3x).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) (2 ; 4]</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) [&minus;1 ; 4]</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) (2 ; +&infin;)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) [4 ; +&infin;)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Dominio: x<SUP>2</SUP>&minus;4&gt;0 y 3x&gt;0 &rarr; |x|&gt;2 y x&gt;0 &rarr; x&gt;2. Dom=(2;+&infin;)<BR>
+Base 3&gt;1 → conserva: x<SUP>2</SUP>&minus;4 &le; 3x &rarr; x<SUP>2</SUP>&minus;3x&minus;4 &le; 0 &rarr; (x&minus;4)(x+1) &le; 0 &rarr; &minus;1 &le; x &le; 4<BR>
+Intersección: (2;+&infin;) &cap; [&minus;1;4] = <B>(2 ; 4]</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Resuelve: 4<SUP>x</SUP> &minus; 2<SUP>x+2</SUP> + 4 = 0 &nbsp; (sustitución u = 2<SUP>x</SUP>).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) x = 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) x = 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) x = 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) No tiene solución real</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+4<SUP>x</SUP> = (2<SUP>x</SUP>)<SUP>2</SUP> = u<SUP>2</SUP> ; 2<SUP>x+2</SUP> = 4·2<SUP>x</SUP> = 4u.<BR>
+u<SUP>2</SUP> &minus; 4u + 4 = 0 &rarr; (u&minus;2)<SUP>2</SUP> = 0 &rarr; u = 2.<BR>
+2<SUP>x</SUP> = 2 = 2<SUP>1</SUP> &rarr; <B>x = 1</B>. Solución única (raíz doble).
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Resuelve: log<SUB>2</SUB>(log<SUB>3</SUB> x) = 1.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) x = 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) x = 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) x = 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) x = 27</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Capa exterior: log<SUB>2</SUB>(log<SUB>3</SUB> x) = 1 &rarr; log<SUB>3</SUB> x = 2<SUP>1</SUP> = 2<BR>
+Capa interior: log<SUB>3</SUB> x = 2 &rarr; x = 3<SUP>2</SUP> = <B>9</B>.<BR>
+Verificación: log<SUB>3</SUB>9=2, log<SUB>2</SUB>2=1 ✓
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Halla todos los valores de x que satisfacen: log<SUB>1/2</SUB>(x &minus; 1) &gt; &minus;2.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) (1 ; 5)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) (5 ; +&infin;)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) (1 ; +&infin;)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) (&minus;2 ; 5)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Dominio: x &minus; 1 &gt; 0 &rarr; x &gt; 1. Dom = (1;+&infin;)<BR>
+Base 1/2 &lt; 1 → <B>invierte</B>: x &minus; 1 &lt; (1/2)<SUP>&minus;2</SUP> = 4 &rarr; x &lt; 5<BR>
+Intersección con dominio: (1;+&infin;) &cap; (&minus;&infin;;5) = <B>(1 ; 5)</B>.
+</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

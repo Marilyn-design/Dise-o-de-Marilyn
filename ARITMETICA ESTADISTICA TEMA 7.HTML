@@ -1,0 +1,574 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Estad&iacute;stica - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ARITMETICA.HTML">&larr; Volver a los temas de Estad&iacute;stica</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ESTAD&Iacute;STICA &middot; TEMA 7</DIV>
+<H1>Estad&iacute;stica</H1>
+<DIV CLASS="sub">Definici&oacute;n y ramas &middot; Poblaci&oacute;n y muestra &middot; Variables y su clasificaci&oacute;n &middot; Tablas de frecuencias &middot; Gr&aacute;ficos estad&iacute;sticos &middot; Interpretaci&oacute;n</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. &iquest;Qu&eacute; es la Estad&iacute;stica?</H3>
+La <B>Estad&iacute;stica</B> es la ciencia que se encarga de la recolecci&oacute;n, organizaci&oacute;n, presentaci&oacute;n, an&aacute;lisis e interpretaci&oacute;n de datos, con el fin de describir fen&oacute;menos y tomar decisiones razonables a partir de ellos. Surgi&oacute; hist&oacute;ricamente ligada a las necesidades de los Estados de "contar" a su poblaci&oacute;n y sus recursos (de ah&iacute; su nombre, derivado de "Estado"), pero hoy es una herramienta fundamental en todas las ciencias: salud, econom&iacute;a, psicolog&iacute;a, ingenier&iacute;a, biolog&iacute;a y ciencias sociales.
+
+<H4>Ramas de la Estad&iacute;stica:</H4>
+<UL>
+<LI><B>Estad&iacute;stica Descriptiva:</B> se encarga de organizar, resumir y presentar los datos obtenidos mediante tablas, gr&aacute;ficos y medidas num&eacute;ricas (promedios, porcentajes, medidas de dispersi&oacute;n), sin pretender generalizar conclusiones m&aacute;s all&aacute; de los datos observados. Es el objeto central de este tema.</LI>
+<LI><B>Estad&iacute;stica Inferencial:</B> a partir del an&aacute;lisis de una muestra, permite obtener conclusiones generales (inferencias) y hacer predicciones o estimaciones sobre toda la poblaci&oacute;n, con un determinado nivel de confianza, usando herramientas como la probabilidad, los intervalos de confianza y las pruebas de hip&oacute;tesis.</LI>
+</UL>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> No confundir Estad&iacute;stica Descriptiva con Estad&iacute;stica Inferencial. Si el enunciado dice "se organizaron los datos en una tabla y se calcul&oacute; el promedio del grupo encuestado" &rarr; es <B>descriptiva</B>. Si dice "a partir de la muestra se estim&oacute; (con cierto margen de error) el promedio de toda la poblaci&oacute;n" &rarr; es <B>inferencial</B>.</DIV>
+
+<H3>2. Poblaci&oacute;n y Muestra</H3>
+Estos dos conceptos son la base de cualquier estudio estad&iacute;stico y son sumamente preguntados en los ex&aacute;menes de admisi&oacute;n.
+
+<H4>Poblaci&oacute;n (o universo):</H4>
+La <B>poblaci&oacute;n</B> es el conjunto total de elementos (personas, objetos, animales, eventos) que poseen una caracter&iacute;stica com&uacute;n observable y que son objeto de estudio en una investigaci&oacute;n estad&iacute;stica. La poblaci&oacute;n puede ser:
+<UL>
+<LI><B>Finita:</B> tiene un n&uacute;mero limitado y contable de elementos (por ejemplo, los alumnos matriculados en un colegio).</LI>
+<LI><B>Infinita:</B> tiene un n&uacute;mero ilimitado de elementos, o tan grande que pr&aacute;cticamente no se puede contar (por ejemplo, el conjunto de todos los posibles lanzamientos de una moneda).</LI>
+</UL>
+
+<H4>Muestra:</H4>
+La <B>muestra</B> es un subconjunto representativo de la poblaci&oacute;n, seleccionado mediante un procedimiento adecuado (muestreo), que se estudia con el objetivo de obtener conclusiones aplicables (por inferencia) a toda la poblaci&oacute;n. Se trabaja con muestras cuando estudiar a toda la poblaci&oacute;n resulta imposible, muy costoso o llevar&iacute;a demasiado tiempo.
+
+<H4>Conceptos relacionados:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Concepto</TH><TH>Definici&oacute;n</TH></TR>
+<TR><TD><B>Unidad de an&aacute;lisis (o elemento)</B></TD><TD>Cada uno de los individuos u objetos que conforman la poblaci&oacute;n o la muestra</TD></TR>
+<TR><TD><B>Censo</B></TD><TD>Estudio que abarca a todos y cada uno de los elementos de la poblaci&oacute;n (no usa muestra)</TD></TR>
+<TR><TD><B>Encuesta o muestreo</B></TD><TD>Estudio que se realiza &uacute;nicamente sobre una muestra de la poblaci&oacute;n</TD></TR>
+<TR><TD><B>Par&aacute;metro</B></TD><TD>Valor num&eacute;rico que describe una caracter&iacute;stica de la poblaci&oacute;n (generalmente desconocido)</TD></TR>
+<TR><TD><B>Estad&iacute;stico (o estad&iacute;grafo)</B></TD><TD>Valor num&eacute;rico que describe una caracter&iacute;stica calculada a partir de una muestra</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> El error m&aacute;s frecuente es confundir poblaci&oacute;n con muestra. Recuerda: la <B>poblaci&oacute;n</B> es el conjunto completo que interesa estudiar; la <B>muestra</B> es solo una parte de ese conjunto, elegida para representar al total. Si un estudio menciona "se encuestaron 200 de los 5000 estudiantes matriculados en una universidad", entonces los <B>5000 estudiantes</B> son la poblaci&oacute;n y los <B>200 encuestados</B> son la muestra.</DIV>
+
+<H3>3. Variable estad&iacute;stica</H3>
+Una <B>variable</B> es la caracter&iacute;stica, propiedad o atributo que se observa o mide en cada elemento de la poblaci&oacute;n o muestra, y que puede tomar distintos valores entre los elementos estudiados. Por ejemplo: la edad, el peso, el color de ojos, el grado de instrucci&oacute;n, el n&uacute;mero de hijos.
+
+<H3>4. Clasificaci&oacute;n de las variables estad&iacute;sticas</H3>
+Las variables se clasifican en dos grandes tipos seg&uacute;n la naturaleza de los valores que pueden tomar:
+
+<H4>Variable Cualitativa (o atributo):</H4>
+Es aquella que expresa una <B>cualidad</B>, categor&iacute;a o atributo no num&eacute;rico. No se puede medir num&eacute;ricamente, sino que se clasifica en categor&iacute;as. Se subdivide en:
+<UL>
+<LI><B>Cualitativa nominal:</B> sus categor&iacute;as no admiten ning&uacute;n orden natural entre ellas. Ejemplos: estado civil, sexo, color de cabello, lugar de nacimiento, tipo de sangre.</LI>
+<LI><B>Cualitativa ordinal:</B> sus categor&iacute;as s&iacute; admiten un orden o jerarqu&iacute;a natural. Ejemplos: grado de instrucci&oacute;n (primaria, secundaria, superior), nivel socioecon&oacute;mico (bajo, medio, alto), calificaci&oacute;n de un servicio (malo, regular, bueno, excelente).</LI>
+</UL>
+
+<H4>Variable Cuantitativa (o num&eacute;rica):</H4>
+Es aquella que se expresa mediante n&uacute;meros y que resulta de un conteo o una medici&oacute;n. Se subdivide en:
+<UL>
+<LI><B>Cuantitativa discreta:</B> toma valores num&eacute;ricos aislados, generalmente enteros, producto de un <B>conteo</B>; entre dos valores consecutivos no existen valores intermedios posibles. Ejemplos: n&uacute;mero de hijos, n&uacute;mero de hermanos, cantidad de autom&oacute;viles que pasan por una calle, n&uacute;mero de faltas.</LI>
+<LI><B>Cuantitativa continua:</B> puede tomar <B>cualquier valor</B> dentro de un intervalo de n&uacute;meros reales, producto de una <B>medici&oacute;n</B>; entre dos valores siempre existe (en teor&iacute;a) un valor intermedio. Ejemplos: estatura, peso, tiempo, temperatura, ingreso econ&oacute;mico.</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo de variable</TH><TH>Subtipo</TH><TH>Ejemplos</TH></TR>
+<TR><TD rowspan="2"><B>Cualitativa</B></TD><TD>Nominal (sin orden)</TD><TD>Sexo, estado civil, religi&oacute;n, color de ojos</TD></TR>
+<TR><TD>Ordinal (con orden)</TD><TD>Grado de instrucci&oacute;n, nivel socioecon&oacute;mico, rango militar</TD></TR>
+<TR><TD rowspan="2"><B>Cuantitativa</B></TD><TD>Discreta (conteo)</TD><TD>N&uacute;mero de hijos, cantidad de mascotas, n&uacute;mero de errores</TD></TR>
+<TR><TD>Continua (medici&oacute;n)</TD><TD>Estatura, peso, temperatura, tiempo de reacci&oacute;n</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> Pregunta cl&aacute;sica: "El n&uacute;mero de hijos por familia es una variable&hellip;" &rarr; <B>cuantitativa discreta</B> (se cuenta, no se mide, y no puede haber "2,5 hijos"). "El peso de los reci&eacute;n nacidos es una variable&hellip;" &rarr; <B>cuantitativa continua</B> (se mide y puede tomar valores decimales infinitos dentro de un rango).</DIV>
+
+<H3>5. Organizaci&oacute;n y presentaci&oacute;n de datos: la Tabla de Frecuencias</H3>
+Una vez recolectados los datos, estos deben organizarse en una <B>tabla de distribuci&oacute;n de frecuencias</B>, que resume cu&aacute;ntas veces se repite cada valor (o cada intervalo de valores) dentro del conjunto de datos.
+
+<H4>Elementos de una tabla de frecuencias:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>S&iacute;mbolo</TH><TH>Nombre</TH><TH>Definici&oacute;n</TH></TR>
+<TR><TD><B>X&#7522;</B></TD><TD>Dato o marca de clase</TD><TD>Valor de la variable (o punto medio del intervalo, si los datos est&aacute;n agrupados)</TD></TR>
+<TR><TD><B>f&#7522;</B></TD><TD>Frecuencia absoluta</TD><TD>N&uacute;mero de veces que se repite un dato o cu&aacute;ntos datos caen dentro de un intervalo</TD></TR>
+<TR><TD><B>F&#7522;</B></TD><TD>Frecuencia absoluta acumulada</TD><TD>Suma de las frecuencias absolutas hasta el dato o intervalo considerado, inclusive</TD></TR>
+<TR><TD><B>h&#7522;</B></TD><TD>Frecuencia relativa</TD><TD>Cociente entre la frecuencia absoluta y el total de datos: h&#7522; = f&#7522;/n</TD></TR>
+<TR><TD><B>H&#7522;</B></TD><TD>Frecuencia relativa acumulada</TD><TD>Suma de las frecuencias relativas hasta el dato o intervalo considerado, inclusive</TD></TR>
+<TR><TD><B>n</B></TD><TD>Tama&ntilde;o de la muestra</TD><TD>N&uacute;mero total de datos observados (suma de todas las f&#7522;)</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Propiedades fundamentales de las frecuencias:</H4>
+<UL>
+<LI>La suma de todas las frecuencias absolutas es igual al total de datos: <B>&Sigma;f&#7522; = n</B>.</LI>
+<LI>La suma de todas las frecuencias relativas es igual a 1 (o 100% si se expresan en porcentaje): <B>&Sigma;h&#7522; = 1</B>.</LI>
+<LI>La &uacute;ltima frecuencia absoluta acumulada siempre es igual al total de datos: <B>F&#7522;(&uacute;ltima) = n</B>.</LI>
+<LI>La &uacute;ltima frecuencia relativa acumulada siempre es igual a 1: <B>H&#7522;(&uacute;ltima) = 1</B>.</LI>
+</UL>
+
+<H3>6. Datos no agrupados en intervalos (variable discreta)</H3>
+Cuando la variable es <B>discreta</B> y toma pocos valores distintos, los datos se organizan directamente sin necesidad de agruparlos en intervalos: cada valor distinto de la variable constituye una fila de la tabla.
+
+<DIV CLASS="ej">
+<B>Ejemplo:</B> Se pregunt&oacute; a 20 familias cu&aacute;ntos hijos tienen, obteni&eacute;ndose los siguientes datos: 1, 2, 2, 3, 1, 0, 2, 3, 2, 1, 0, 2, 1, 3, 2, 2, 1, 0, 3, 2.<BR><BR>
+La tabla de frecuencias (datos no agrupados) ser&iacute;a:
+</DIV>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>X&#7522; (n&uacute;mero de hijos)</TH><TH>f&#7522;</TH><TH>F&#7522;</TH><TH>h&#7522;</TH><TH>H&#7522;</TH></TR>
+<TR><TD>0</TD><TD>3</TD><TD>3</TD><TD>0,15</TD><TD>0,15</TD></TR>
+<TR><TD>1</TD><TD>5</TD><TD>8</TD><TD>0,25</TD><TD>0,40</TD></TR>
+<TR><TD>2</TD><TD>8</TD><TD>16</TD><TD>0,40</TD><TD>0,80</TD></TR>
+<TR><TD>3</TD><TD>4</TD><TD>20</TD><TD>0,20</TD><TD>1,00</TD></TR>
+<TR><TD><B>Total</B></TD><TD><B>20</B></TD><TD>&mdash;</TD><TD><B>1,00</B></TD><TD>&mdash;</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>7. Datos agrupados en intervalos de clase (variable continua)</H3>
+Cuando la variable es <B>continua</B> o cuando una variable discreta toma demasiados valores distintos, los datos se agrupan en <B>intervalos de clase</B> para facilitar su organizaci&oacute;n y lectura.
+
+<H4>Pasos para construir una tabla de datos agrupados en intervalos:</H4>
+<OL>
+<LI><B>Hallar el Rango (R):</B> es la diferencia entre el valor m&aacute;ximo y el valor m&iacute;nimo del conjunto de datos: R = X&#7757;&aacute;&#7497; &minus; X&#7757;&iacute;&#7458;.</LI>
+<LI><B>Determinar el n&uacute;mero de intervalos (k):</B> se puede fijar arbitrariamente seg&uacute;n el contexto, o calcular mediante la <B>regla de Sturges</B>: k = 1 + 3,322&middot;log(n), redondeando al entero m&aacute;s cercano.</LI>
+<LI><B>Calcular la amplitud o ancho de clase (A o c):</B> A = R / k.</LI>
+<LI><B>Construir los intervalos:</B> generalmente semiabiertos por la derecha [L&#7522;&minus;1 ; L&#7522;&rang;, sumando sucesivamente la amplitud A al l&iacute;mite inferior.</LI>
+<LI><B>Calcular la marca de clase (X&#7522;):</B> es el punto medio de cada intervalo: X&#7522; = (L&#7522;&minus;1 + L&#7522;) / 2.</LI>
+<LI><B>Contar la frecuencia absoluta (f&#7522;)</B> de cada intervalo y completar la tabla con F&#7522;, h&#7522; y H&#7522;.</LI>
+</OL>
+
+<DIV CLASS="ej">
+<B>Ejemplo:</B> Las edades de 30 personas oscilan entre 18 y 58 a&ntilde;os (R=40). Si se decide formar 5 intervalos (k=5), la amplitud ser&aacute; A = 40/5 = 8. La tabla quedar&iacute;a as&iacute;:
+</DIV>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Intervalo [L&#7522;&minus;1 ; L&#7522;&rang;</TH><TH>X&#7522; (marca de clase)</TH><TH>f&#7522;</TH><TH>F&#7522;</TH><TH>h&#7522;</TH><TH>H&#7522;</TH></TR>
+<TR><TD>[18 ; 26&rang;</TD><TD>22</TD><TD>4</TD><TD>4</TD><TD>0,133</TD><TD>0,133</TD></TR>
+<TR><TD>[26 ; 34&rang;</TD><TD>30</TD><TD>8</TD><TD>12</TD><TD>0,267</TD><TD>0,400</TD></TR>
+<TR><TD>[34 ; 42&rang;</TD><TD>38</TD><TD>9</TD><TD>21</TD><TD>0,300</TD><TD>0,700</TD></TR>
+<TR><TD>[42 ; 50&rang;</TD><TD>46</TD><TD>6</TD><TD>27</TD><TD>0,200</TD><TD>0,900</TD></TR>
+<TR><TD>[50 ; 58&rang;</TD><TD>54</TD><TD>3</TD><TD>30</TD><TD>0,100</TD><TD>1,000</TD></TR>
+<TR><TD><B>Total</B></TD><TD>&mdash;</TD><TD><B>30</B></TD><TD>&mdash;</TD><TD><B>1,000</B></TD><TD>&mdash;</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>8. Gr&aacute;ficos estad&iacute;sticos</H3>
+Los datos organizados en tablas de frecuencias se representan visualmente mediante distintos tipos de gr&aacute;ficos, cada uno apropiado seg&uacute;n el tipo de variable que se est&aacute; estudiando.
+
+<H4>Gr&aacute;fico de barras:</H4>
+Utiliza barras rectangulares (separadas entre s&iacute;, sin tocarse) cuya altura es proporcional a la frecuencia de cada categor&iacute;a. Se emplea para representar <B>variables cualitativas</B> (nominales u ordinales) o <B>variables cuantitativas discretas</B> con pocos valores distintos. La separaci&oacute;n entre barras refleja que las categor&iacute;as son independientes entre s&iacute;.
+
+<H4>Histograma:</H4>
+Es similar al gr&aacute;fico de barras, pero las barras (rect&aacute;ngulos) van <B>unidas o contiguas</B> entre s&iacute;, sin espacios. Se utiliza exclusivamente para representar <B>variables cuantitativas continuas</B> agrupadas en intervalos de clase. El &aacute;rea de cada rect&aacute;ngulo es proporcional a la frecuencia del intervalo correspondiente.
+
+<H4>Pol&iacute;gono de frecuencias:</H4>
+Se construye uniendo mediante segmentos de recta los puntos formados por las <B>marcas de clase (X&#7522;)</B> en el eje horizontal y las <B>frecuencias (f&#7522;)</B> en el eje vertical. Generalmente se traza sobre el histograma, uniendo los puntos medios de la parte superior de cada barra. Para cerrar el pol&iacute;gono, se a&ntilde;aden dos intervalos imaginarios de frecuencia cero en los extremos.
+
+<H4>Ojiva:</H4>
+Es el gr&aacute;fico de las <B>frecuencias acumuladas</B> (F&#7522; o H&#7522;). Se construye uniendo mediante segmentos de recta los puntos formados por los <B>l&iacute;mites superiores</B> de cada intervalo (en el eje horizontal) y las frecuencias acumuladas correspondientes (en el eje vertical). Tiene siempre forma creciente (no decreciente), ya que las frecuencias acumuladas nunca disminuyen. Se usa para hallar gr&aacute;ficamente medidas de posici&oacute;n como la mediana o los cuartiles.
+
+<H4>Diagrama circular (o gr&aacute;fico de sectores, "gr&aacute;fico de torta" o "gr&aacute;fico de pastel"):</H4>
+Representa los datos mediante sectores de un c&iacute;rculo, donde el &aacute;ngulo central de cada sector es proporcional a la frecuencia de la categor&iacute;a que representa. Es ideal para mostrar la <B>composici&oacute;n porcentual</B> de un total, especialmente con <B>variables cualitativas</B>. El &aacute;ngulo de cada sector se calcula con la regla de tres: &aacute;ngulo = h&#7522; &times; 360&deg;.
+
+<H4>Pictogramas:</H4>
+Utilizan <B>im&aacute;genes o s&iacute;mbolos representativos</B> del fen&oacute;meno estudiado (por ejemplo, una figura de persona para representar poblaci&oacute;n, un autom&oacute;vil para representar veh&iacute;culos) en lugar de barras, donde cada s&iacute;mbolo completo (o una fracci&oacute;n de &eacute;l) equivale a una cantidad determinada de unidades, seg&uacute;n se indica en una leyenda o clave del gr&aacute;fico. Se usan principalmente con fines divulgativos por su atractivo visual, m&aacute;s que con fines de an&aacute;lisis estad&iacute;stico riguroso.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Gr&aacute;fico</TH><TH>Tipo de variable apropiada</TH><TH>Caracter&iacute;stica distintiva</TH></TR>
+<TR><TD><B>Gr&aacute;fico de barras</B></TD><TD>Cualitativa o cuantitativa discreta</TD><TD>Barras separadas entre s&iacute;</TD></TR>
+<TR><TD><B>Histograma</B></TD><TD>Cuantitativa continua (agrupada)</TD><TD>Barras (rect&aacute;ngulos) contiguas, sin espacios</TD></TR>
+<TR><TD><B>Pol&iacute;gono de frecuencias</B></TD><TD>Cuantitativa continua (agrupada)</TD><TD>L&iacute;nea que une las marcas de clase</TD></TR>
+<TR><TD><B>Ojiva</B></TD><TD>Cuantitativa continua (agrupada)</TD><TD>L&iacute;nea creciente de frecuencias acumuladas</TD></TR>
+<TR><TD><B>Diagrama circular</B></TD><TD>Cualitativa (composici&oacute;n de un total)</TD><TD>Sectores proporcionales al &aacute;ngulo central</TD></TR>
+<TR><TD><B>Pictograma</B></TD><TD>Cualquiera (fines divulgativos)</TD><TD>S&iacute;mbolos o im&aacute;genes representativas</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> La diferencia m&aacute;s preguntada es <B>barras vs. histograma</B>: las barras del gr&aacute;fico de barras est&aacute;n <B>separadas</B> (variable cualitativa o discreta); las barras del histograma est&aacute;n <B>unidas, sin espacios</B> (variable continua agrupada en intervalos), porque representan la continuidad de la variable medida.</DIV>
+
+<H3>9. Interpretaci&oacute;n y an&aacute;lisis de tablas y gr&aacute;ficos estad&iacute;sticos</H3>
+M&aacute;s all&aacute; de construir tablas y gr&aacute;ficos, el examen preuniversitario exige <B>interpretar</B> correctamente la informaci&oacute;n que contienen. Algunas pautas esenciales:
+
+<UL>
+<LI>La <B>frecuencia absoluta (f&#7522;)</B> responde a la pregunta "&iquest;cu&aacute;ntos?"; la <B>frecuencia relativa (h&#7522;)</B> responde a "&iquest;qu&eacute; proporci&oacute;n o porcentaje del total?".</LI>
+<LI>La <B>frecuencia acumulada (F&#7522; o H&#7522;)</B> responde a preguntas del tipo "&iquest;cu&aacute;ntos datos son menores o iguales que cierto valor (o intervalo)?".</LI>
+<LI>Para leer un diagrama circular, el porcentaje de cada sector se relaciona con su &aacute;ngulo mediante la regla de tres: si 360&deg; equivale al 100%, un sector de 90&deg; equivale al 25% del total.</LI>
+<LI>En un histograma o pol&iacute;gono de frecuencias, el intervalo con mayor altura (mayor f&#7522;) es la <B>clase modal</B>, es decir, el rango de valores que ocurre con mayor frecuencia.</LI>
+<LI>Al comparar dos o m&aacute;s gr&aacute;ficos o tablas, conviene fijarse en la <B>escala</B> usada en los ejes, pues escalas distintas pueden generar interpretaciones enga&ntilde;osas sobre magnitudes que en realidad son similares.</LI>
+</UL>
+
+<H3>10. Cuadro resumen general del tema</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Concepto</TH><TH>Definici&oacute;n breve</TH></TR>
+<TR><TD><B>Estad&iacute;stica</B></TD><TD>Ciencia de recolectar, organizar, presentar, analizar e interpretar datos</TD></TR>
+<TR><TD><B>Poblaci&oacute;n</B></TD><TD>Conjunto total de elementos objeto de estudio</TD></TR>
+<TR><TD><B>Muestra</B></TD><TD>Subconjunto representativo de la poblaci&oacute;n</TD></TR>
+<TR><TD><B>Variable cualitativa</B></TD><TD>Expresa cualidades; se divide en nominal y ordinal</TD></TR>
+<TR><TD><B>Variable cuantitativa</B></TD><TD>Expresa cantidades num&eacute;ricas; se divide en discreta y continua</TD></TR>
+<TR><TD><B>f&#7522; / F&#7522;</B></TD><TD>Frecuencia absoluta / frecuencia absoluta acumulada</TD></TR>
+<TR><TD><B>h&#7522; / H&#7522;</B></TD><TD>Frecuencia relativa / frecuencia relativa acumulada</TD></TR>
+<TR><TD><B>Histograma</B></TD><TD>Barras unidas; variable continua agrupada</TD></TR>
+<TR><TD><B>Ojiva</B></TD><TD>Pol&iacute;gono de frecuencias acumuladas</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">&Sigma;f&#7522; = n</DIV><DIV CLASS="dk-label">La suma de todas las frecuencias absolutas es el total de datos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">&Sigma;h&#7522; = 1</DIV><DIV CLASS="dk-label">La suma de todas las frecuencias relativas es siempre 1 (100%)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">k = 1+3,322log n</DIV><DIV CLASS="dk-label">Regla de Sturges: n&uacute;mero de intervalos sugerido</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">360&deg;</DIV><DIV CLASS="dk-label">&Aacute;ngulo total del diagrama circular (equivale al 100%)</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+<B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Estad&iacute;stica</B> = ciencia de los datos &middot; <B>Descriptiva</B> (organiza/resume) vs. <B>Inferencial</B> (estima/generaliza)<BR>
+&bull; <B>Poblaci&oacute;n</B> = conjunto total &middot; <B>Muestra</B> = subconjunto representativo<BR>
+&bull; <B>Par&aacute;metro</B> = valor de la poblaci&oacute;n &middot; <B>Estad&iacute;stico</B> = valor de la muestra<BR>
+&bull; <B>Cualitativa</B> (nominal sin orden / ordinal con orden) vs. <B>Cuantitativa</B> (discreta = conteo / continua = medici&oacute;n)<BR>
+&bull; <B>f&#7522;</B> = cu&aacute;ntos &middot; <B>h&#7522;</B> = qu&eacute; proporci&oacute;n &middot; <B>F&#7522;, H&#7522;</B> = acumuladas (hasta cierto valor)<BR>
+&bull; Datos NO agrupados (variable discreta, pocos valores) vs. datos agrupados en INTERVALOS (variable continua)<BR>
+&bull; Rango = m&aacute;ximo &minus; m&iacute;nimo &middot; Amplitud = Rango / n&uacute;mero de intervalos &middot; Marca de clase = punto medio del intervalo<BR>
+&bull; <B>Barras</B> = separadas (cualitativa/discreta) &middot; <B>Histograma</B> = unidas (continua agrupada)<BR>
+&bull; <B>Pol&iacute;gono de frecuencias</B> = une marcas de clase &middot; <B>Ojiva</B> = frecuencias acumuladas (creciente)<BR>
+&bull; <B>Diagrama circular</B>: &aacute;ngulo = h&#7522; &times; 360&deg; &middot; <B>Pictograma</B> = s&iacute;mbolos representativos
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;Cu&aacute;l es la diferencia esencial entre la Estad&iacute;stica Descriptiva y la Estad&iacute;stica Inferencial?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) No hay ninguna diferencia; son nombres distintos para la misma disciplina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) La Descriptiva organiza, resume y presenta los datos observados (tablas, gr&aacute;ficos, promedios) sin generalizar; la Inferencial usa los datos de una muestra para estimar o generalizar conclusiones sobre toda la poblaci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) La Descriptiva solo se usa con n&uacute;meros y la Inferencial solo con variables cualitativas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) La Inferencial se usa &uacute;nicamente para estudios de poblaci&oacute;n finita y la Descriptiva &uacute;nicamente para poblaci&oacute;n infinita</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Estad&iacute;stica Descriptiva</B> se limita a organizar, resumir y presentar los datos que efectivamente se observaron (mediante tablas de frecuencias, gr&aacute;ficos, medidas de tendencia central, etc.), sin ir m&aacute;s all&aacute; de lo que los datos muestran directamente. La <B>Estad&iacute;stica Inferencial</B>, en cambio, parte de los datos de una <B>muestra</B> para <B>estimar o generalizar</B> conclusiones aplicables a toda la <B>poblaci&oacute;n</B>, normalmente con un margen de error o nivel de confianza asociado (intervalos de confianza, pruebas de hip&oacute;tesis).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> En un estudio se desea conocer la opini&oacute;n de los 8000 estudiantes matriculados en una universidad sobre el servicio del comedor; para ello se encuesta &uacute;nicamente a 300 estudiantes elegidos al azar. Identifique la poblaci&oacute;n y la muestra.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Poblaci&oacute;n = 300 estudiantes encuestados; Muestra = 8000 estudiantes matriculados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Poblaci&oacute;n = 8000 estudiantes matriculados; Muestra = 300 estudiantes encuestados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Tanto los 8000 como los 300 son la poblaci&oacute;n; no existe muestra en este estudio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) No se puede determinar poblaci&oacute;n ni muestra sin conocer el resultado de la encuesta</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>poblaci&oacute;n</B> es el conjunto total de elementos objeto de estudio: en este caso, los <B>8000 estudiantes matriculados</B> en la universidad, ya que es sobre ellos que se desea conocer la opini&oacute;n general. La <B>muestra</B> es el subconjunto seleccionado para el estudio: los <B>300 estudiantes encuestados</B>. Se trabaja con muestra porque encuestar a los 8000 estudiantes (lo que ser&iacute;a un censo) resultar&iacute;a muy costoso y demorado; al estudiar la muestra de 300, se busca inferir conclusiones aplicables a toda la poblaci&oacute;n de 8000.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Clasifique la variable "n&uacute;mero de hermanos de un estudiante" seg&uacute;n su naturaleza.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Cualitativa nominal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Cualitativa ordinal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Cuantitativa discreta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Cuantitativa continua</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El "n&uacute;mero de hermanos" es una variable <B>cuantitativa discreta</B>: es num&eacute;rica (cuantitativa) porque se expresa con n&uacute;meros, y es <B>discreta</B> porque resulta de un <B>conteo</B> (no de una medici&oacute;n) y solo puede tomar valores enteros aislados (0, 1, 2, 3&hellip;); no tiene sentido decir que alguien tiene "2,5 hermanos". Si fuera el resultado de medir algo (como el peso o la estatura), ser&iacute;a continua.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Cu&aacute;l es la principal diferencia entre un gr&aacute;fico de barras y un histograma?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) No existe diferencia; son dos nombres distintos para el mismo tipo de gr&aacute;fico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) El gr&aacute;fico de barras usa colores y el histograma siempre se dibuja en blanco y negro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) En el gr&aacute;fico de barras, las barras est&aacute;n separadas entre s&iacute; (variable cualitativa o discreta); en el histograma, las barras est&aacute;n unidas o contiguas, sin espacios (variable cuantitativa continua agrupada en intervalos)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) El gr&aacute;fico de barras se usa solo para datos num&eacute;ricos y el histograma solo para datos cualitativos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La diferencia clave es la <B>separaci&oacute;n entre las barras</B> y el tipo de variable que representan. El <B>gr&aacute;fico de barras</B> tiene barras separadas, porque se usa para variables cualitativas (categor&iacute;as independientes entre s&iacute;) o cuantitativas discretas. El <B>histograma</B> tiene barras (rect&aacute;ngulos) unidas y contiguas, sin espacios entre ellas, porque representa una variable cuantitativa <B>continua</B> agrupada en intervalos: la ausencia de espacios refleja que la variable fluye de manera continua de un intervalo al siguiente, sin "saltos".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> En una tabla de frecuencias, &iquest;qu&eacute; representa la frecuencia relativa (h&#7522;) de un dato?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) El n&uacute;mero exacto de veces que se repite el dato dentro del conjunto observado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) La proporci&oacute;n o porcentaje que representa la frecuencia de ese dato respecto al total de datos (h&#7522;=f&#7522;/n)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) La suma de todas las frecuencias absolutas anteriores a ese dato, incluy&eacute;ndolo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) El valor m&aacute;ximo que puede alcanzar la variable en todo el conjunto de datos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>frecuencia relativa (h&#7522;)</B> es el cociente entre la frecuencia absoluta de un dato (f&#7522;) y el total de datos observados (n): h&#7522; = f&#7522;/n. Expresa qu&eacute; <B>proporci&oacute;n</B> (o, multiplicada por 100, qu&eacute; <B>porcentaje</B>) del total representa ese dato espec&iacute;fico. La opci&oacute;n a) describe la <B>frecuencia absoluta</B> (f&#7522;); la opci&oacute;n c) describe la <B>frecuencia absoluta acumulada</B> (F&#7522;).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> &iquest;Qu&eacute; tipo de gr&aacute;fico es el m&aacute;s apropiado para mostrar la composici&oacute;n porcentual de los votos obtenidos por 4 candidatos en una elecci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Histograma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Ojiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Diagrama circular (gr&aacute;fico de sectores)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Pol&iacute;gono de frecuencias</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>diagrama circular</B> (tambi&eacute;n llamado gr&aacute;fico de sectores, de torta o de pastel) es el m&aacute;s apropiado para mostrar c&oacute;mo se reparte un total (100% de los votos) entre distintas categor&iacute;as (los 4 candidatos), pues cada sector representa visualmente el porcentaje que le corresponde a cada uno mediante un &aacute;ngulo proporcional (&aacute;ngulo = h&#7522; &times; 360&deg;).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; APLICACI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> En una encuesta sobre el grado de instrucci&oacute;n de 50 personas (sin instrucci&oacute;n, primaria, secundaria, superior), se obtuvo: sin instrucci&oacute;n = 5, primaria = 15, secundaria = 20, superior = 10. Calcule la frecuencia relativa (h&#7522;) de las personas con secundaria.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) 0,20</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) 0,30</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) 0,40</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) 0,50</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>h&#7522; = f&#7522;/n.<BR>
+f&#7522;(secundaria) = 20; n = 5+15+20+10 = 50<BR>
+h&#7522;(secundaria) = 20/50 = <B>0,40</B> (40% del total).<BR>
+Esta variable es <B>cualitativa ordinal</B>, ya que sus categor&iacute;as tienen un orden jer&aacute;rquico natural.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Las edades de un grupo de personas oscilan entre un m&iacute;nimo de 20 a&ntilde;os y un m&aacute;ximo de 60 a&ntilde;os. Si se desea formar 8 intervalos de clase de igual amplitud, &iquest;cu&aacute;l ser&iacute;a la amplitud de cada intervalo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) 8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>R = 60&minus;20 = 40<BR>
+A = R/k = 40/8 = <B>5</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> En una tabla de frecuencias con 4 intervalos, las frecuencias absolutas son: f&#8321;=6, f&#8322;=10, f&#8323;=9, f&#8324;=5. &iquest;Cu&aacute;l es el valor de la frecuencia absoluta acumulada F&#8323;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) 16</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) 25</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) 30</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>F&#8323; = f&#8321;+f&#8322;+f&#8323; = 6+10+9 = <B>25</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> En un diagrama circular que representa las preferencias deportivas de 360 estudiantes, el sector correspondiente al f&uacute;tbol abarca un &aacute;ngulo de 144&deg;. &iquest;Cu&aacute;ntos estudiantes prefieren el f&uacute;tbol?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) 100 estudiantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) 120 estudiantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) 144 estudiantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) 150 estudiantes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>360&deg; &mdash;&mdash;&mdash; 360 estudiantes<BR>
+144&deg; &mdash;&mdash;&mdash; x<BR>
+x = 144 estudiantes (40% de 360).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> &iquest;Cu&aacute;l es la diferencia esencial entre el pol&iacute;gono de frecuencias y la ojiva?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) No hay diferencia; ambos t&eacute;rminos designan exactamente el mismo gr&aacute;fico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) El pol&iacute;gono de frecuencias une las marcas de clase con las frecuencias absolutas simples (f&#7522;); la ojiva representa las frecuencias acumuladas (F&#7522; o H&#7522;) usando los l&iacute;mites superiores de cada intervalo, y siempre tiene forma creciente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) El pol&iacute;gono de frecuencias se usa solo para variables cualitativas y la ojiva solo para variables cuantitativas discretas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) El pol&iacute;gono de frecuencias se dibuja con barras y la ojiva se dibuja &uacute;nicamente con puntos sin uni&oacute;n</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>pol&iacute;gono de frecuencias</B> grafica las frecuencias simples (f&#7522;) sobre las marcas de clase; puede subir y bajar libremente. La <B>ojiva</B> grafica las frecuencias acumuladas (F&#7522; o H&#7522;) sobre los l&iacute;mites superiores; siempre es creciente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Una tabla de frecuencias incompleta presenta los siguientes datos: n=80; f&#8321;=12, h&#8322;=0,25, f&#8323;=18, h&#8324;=0,15. Determine el valor de f&#8322;.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) 15</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) 18</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) 20</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) 25</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>f&#7522; = h&#7522;&times;n.<BR>
+f&#8322; = 0,25 &times; 80 = <B>20</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> En una tabla de datos agrupados, el intervalo [40;50&rang; es la clase modal. Si la distribuci&oacute;n tiene intervalos de amplitud 10, &iquest;cu&aacute;l es la marca de clase de ese intervalo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) 40</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) 44</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) 45</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) 50</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>X&#7522; = (40+50)/2 = <B>45</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Un investigador desea estudiar la satisfacci&oacute;n laboral en una empresa, clasific&aacute;ndola en: "muy insatisfecho", "insatisfecho", "neutral", "satisfecho", "muy satisfecho". Identifique el tipo de variable y el gr&aacute;fico m&aacute;s apropiado.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Variable cuantitativa continua; histograma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Variable cualitativa nominal; ojiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Variable cualitativa ordinal; gr&aacute;fico de barras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Variable cuantitativa discreta; pol&iacute;gono de frecuencias</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Es <B>cualitativa ordinal</B> (categor&iacute;as con orden jer&aacute;rquico, no num&eacute;ricas); se representa con <B>gr&aacute;fico de barras</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Un instituto desea determinar el n&uacute;mero adecuado de intervalos para 200 calificaciones usando la regla de Sturges (log 200 &asymp; 2,301).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) 6 intervalos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) 7 intervalos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) 8 intervalos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) 9 intervalos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>k = 1+3,322(2,301) = 1+7,644 = 8,644 &asymp; <B>8 intervalos</B> (valor usual en la pr&aacute;ctica).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analice por qu&eacute; la ojiva nunca puede tener una forma decreciente en ning&uacute;n tramo de su recorrido.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Es una convenci&oacute;n est&eacute;tica sin raz&oacute;n matem&aacute;tica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Porque F&#7522;=F&#7522;&minus;&#8321;+f&#7522;, y como f&#7522;&ge;0 siempre, cada acumulada es mayor o igual a la anterior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Porque los programas inform&aacute;ticos lo impiden</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Solo es creciente con H&#7522;, con F&#7522; puede decrecer</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>F&#7522;=F&#7522;&minus;&#8321;+f&#7522;; como f&#7522;&ge;0, la sucesi&oacute;n es mon&oacute;tona no decreciente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Dos gr&aacute;ficos de barras sobre el mismo fen&oacute;meno usan escalas distintas: uno inicia en 0 y otro en 8000. &iquest;Qu&eacute; problema genera esto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Ninguno; ambos se interpretan igual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) El gr&aacute;fico que no inicia en 0 exagera visualmente las diferencias reales entre barras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) El gr&aacute;fico que inicia en 0 es incorrecto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Solo afecta a histogramas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Truncar el eje magnifica visualmente diferencias peque&ntilde;as, induciendo a conclusiones enga&ntilde;osas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> En pesos de 60 reci&eacute;n nacidos, el intervalo [3,5;4,0&rang; tiene F&#7522;=42 y el anterior [3,0;3,5&rang; tiene F&#7522;&minus;&#8321;=30. &iquest;Cu&aacute;ntos pesan entre 3,5 y 4,0 kg?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) 10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) 12</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) 14</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>f&#7522;=F&#7522;&minus;F&#7522;&minus;&#8321;=42&minus;30=<B>12</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Compare par&aacute;metro y estad&iacute;stico, y explique por qu&eacute; se trabaja con estad&iacute;sticos en la pr&aacute;ctica.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Son sin&oacute;nimos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) El par&aacute;metro describe a la poblaci&oacute;n (generalmente desconocido); el estad&iacute;stico se calcula de la muestra y sirve para estimarlo, ahorrando recursos frente a un censo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) El par&aacute;metro es solo para variables cualitativas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El par&aacute;metro siempre es entero</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Calcular el par&aacute;metro exacto requiere un censo, generalmente impr&aacute;ctico; el estad&iacute;stico de la muestra lo estima.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Un pictograma usa 1 s&iacute;mbolo = 2500 autos. La F&aacute;brica C tiene 6 s&iacute;mbolos completos y medio s&iacute;mbolo. &iquest;Producci&oacute;n total?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) 15.000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) 15.625</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) 16.250</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) 17.500</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>6&times;2500=15.000; 0,5&times;2500=1.250; total=<B>16.250</B></DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

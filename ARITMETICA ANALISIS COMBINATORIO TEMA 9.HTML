@@ -1,0 +1,607 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Análisis Combinatorio - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.9;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.formula-box{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:16px;padding:22px 30px;margin:20px 0;text-align:center;font-size:20px;letter-spacing:1px;}
+.formula-box .formula{font-size:24px;font-weight:bold;color:#D7B06D;margin:8px 0;}
+.formula-box .nombre{font-size:14px;color:#ccc;margin-top:6px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:20px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ARITMETICA.HTML">&larr; Volver a los temas de Aritm&eacute;tica</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ARITM&Eacute;TICA &middot; TEMA 9</DIV>
+<H1>An&aacute;lisis Combinatorio</H1>
+<DIV CLASS="sub">Principios del conteo &middot; Factorial &middot; Permutaciones &middot; Variaciones &middot; Permutaci&oacute;n con repetici&oacute;n &middot; Permutaci&oacute;n circular &middot; Combinaciones &middot; N&uacute;meros combinatorios</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Principios b&aacute;sicos del conteo</H3>
+El an&aacute;lisis combinatorio estudia las formas de <B>contar, ordenar y seleccionar</B> elementos de un conjunto. Los dos principios fundamentales son la base de toda la teor&iacute;a.
+
+<H4>Principio Aditivo (de la Suma):</H4>
+Si una tarea puede realizarse de <B>A</B> maneras <I>o bien</I> de <B>B</B> maneras mutuamente excluyentes, el total es <B>A + B</B>.
+
+<DIV CLASS="ej"><B>Ejemplo:</B> En una biblioteca hay 5 libros de matem&aacute;ticas y 8 de f&iacute;sica. Si el estudiante elige un solo libro: 5 + 8 = <B>13 maneras</B>.</DIV>
+
+<H4>Principio Multiplicativo (del Producto):</H4>
+Si una tarea se realiza en <B>k etapas independientes</B> con n<sub>1</sub>, n<sub>2</sub>, ..., n<sub>k</sub> formas respectivamente, el total es <B>n<sub>1</sub> &times; n<sub>2</sub> &times; ... &times; n<sub>k</sub></B>.
+
+<DIV CLASS="ej"><B>Ejemplo:</B> Para ir de A a B hay 3 rutas, y de B a C hay 4 rutas. Total de rutas A&rarr;C: 3 &times; 4 = <B>12 maneras</B>.</DIV>
+
+<DIV CLASS="alerta"><B>Regla de oro:</B> Usa el principio <B>ADITIVO</B> cuando las opciones se expresan con &ldquo;<B>o</B>&rdquo; (mutuamente excluyentes). Usa el principio <B>MULTIPLICATIVO</B> cuando las etapas se expresan con &ldquo;<B>y</B>&rdquo; (independientes y simult&aacute;neas). Esta discriminaci&oacute;n es el primer paso en cualquier problema de conteo.</DIV>
+
+<H3>2. Factorial de un n&uacute;mero</H3>
+El <B>factorial</B> de un n&uacute;mero natural n, escrito <B>n!</B>, es el producto de todos los enteros positivos desde 1 hasta n.
+
+<DIV CLASS="formula-box">
+<DIV CLASS="nombre">Definici&oacute;n de Factorial</DIV>
+<DIV CLASS="formula">n! = n &times; (n&minus;1) &times; (n&minus;2) &times; &hellip; &times; 2 &times; 1</DIV>
+<DIV CLASS="nombre">Casos especiales: &nbsp;&nbsp; 0! = 1 &nbsp;&nbsp;|&nbsp;&nbsp; 1! = 1</DIV>
+</DIV>
+
+<H4>Propiedades esenciales del factorial:</H4>
+<UL>
+<LI><B>n! = n &times; (n&minus;1)!</B> &nbsp;&rarr;&nbsp; propiedad recursiva fundamental</LI>
+<LI><B>(n+1)! = (n+1) &times; n!</B></LI>
+<LI><B>n! / (n&minus;k)! = n &times; (n&minus;1) &times; &hellip; &times; (n&minus;k+1)</B> &nbsp;&rarr;&nbsp; producto de k factores consecutivos desde n</LI>
+</UL>
+
+<DIV CLASS="ej"><B>Valores que debes memorizar para el examen:</B><BR><BR>
+0! = 1 &nbsp;|&nbsp; 1! = 1 &nbsp;|&nbsp; 2! = 2 &nbsp;|&nbsp; 3! = 6 &nbsp;|&nbsp; 4! = 24 &nbsp;|&nbsp; 5! = 120 &nbsp;|&nbsp; 6! = 720 &nbsp;|&nbsp; 7! = 5&thinsp;040 &nbsp;|&nbsp; 8! = 40&thinsp;320 &nbsp;|&nbsp; 9! = 362&thinsp;880 &nbsp;|&nbsp; 10! = 3&thinsp;628&thinsp;800</DIV>
+
+<DIV CLASS="cultura-titulo">PERMUTACIONES<SPAN>Ordenar todos los elementos de un conjunto sin repetici&oacute;n</SPAN></DIV>
+
+<H3>3. Permutaciones de n elementos</H3>
+Una <B>permutaci&oacute;n</B> de n elementos es cada uno de los ordenamientos posibles de <B>todos</B> los n elementos del conjunto. El <B>orden importa</B> y se usan <B>todos</B> los elementos, sin repetici&oacute;n.
+
+<DIV CLASS="formula-box">
+<DIV CLASS="nombre">Permutaci&oacute;n de n elementos</DIV>
+<DIV CLASS="formula">P<sub>n</sub> = n!</DIV>
+<DIV CLASS="nombre">N&uacute;mero de formas de ordenar n elementos distintos en fila</DIV>
+</DIV>
+
+<DIV CLASS="ej"><B>Ejemplo:</B> &iquest;De cu&aacute;ntas formas pueden sentarse 5 personas en 5 sillas distintas?<BR>
+P<sub>5</sub> = 5! = 5 &times; 4 &times; 3 &times; 2 &times; 1 = <B>120 formas</B></DIV>
+
+<H3>4. Permutaci&oacute;n de n elementos tomados de r en r (Variaciones)</H3>
+Tambi&eacute;n llamada <B>variaci&oacute;n</B>, es cada ordenamiento de <B>r elementos elegidos</B> de un conjunto de n. El <B>orden importa</B> y se usan solo <B>r</B> de los n elementos, con r &le; n.
+
+<DIV CLASS="formula-box">
+<DIV CLASS="nombre">Variaciones (Permutaci&oacute;n de n en r)</DIV>
+<DIV CLASS="formula">V<sub>n</sub><sup>r</sup> = P(n,r) = n! / (n&minus;r)! = n &times; (n&minus;1) &times; &hellip; &times; (n&minus;r+1)</DIV>
+<DIV CLASS="nombre">Producto de r factores consecutivos empezando desde n</DIV>
+</DIV>
+
+<DIV CLASS="ej"><B>Ejemplo:</B> &iquest;Cu&aacute;ntas palabras de 3 letras (sin repetir) se forman con las letras A, B, C, D, E?<BR>
+V<sub>5</sub><sup>3</sup> = 5! / (5&minus;3)! = 5! / 2! = 120 / 2 = <B>60 palabras</B><BR>
+Comprobaci&oacute;n r&aacute;pida: 5 &times; 4 &times; 3 = <B>60</B> (5 opciones para la 1.&ordf; letra, 4 para la 2.&ordf;, 3 para la 3.&ordf;)</DIV>
+
+<DIV CLASS="cultura-titulo">PERMUTACI&Oacute;N CON REPETICI&Oacute;N<SPAN>Cuando algunos elementos son id&eacute;nticos entre s&iacute;</SPAN></DIV>
+
+<H3>5. Permutaci&oacute;n con Repetici&oacute;n</H3>
+Cuando se tienen <B>n elementos de los cuales algunos son id&eacute;nticos</B> (a<sub>1</sub> elementos de un tipo, a<sub>2</sub> de otro, ..., a<sub>k</sub> de otro), el n&uacute;mero de permutaciones distintas es:
+
+<DIV CLASS="formula-box">
+<DIV CLASS="nombre">Permutaci&oacute;n con Repetici&oacute;n</DIV>
+<DIV CLASS="formula">PR = n! / (a<sub>1</sub>! &times; a<sub>2</sub>! &times; &hellip; &times; a<sub>k</sub>!)</DIV>
+<DIV CLASS="nombre">donde n = a<sub>1</sub> + a<sub>2</sub> + &hellip; + a<sub>k</sub> es el total de elementos</DIV>
+</DIV>
+
+<DIV CLASS="ej"><B>Ejemplo:</B> &iquest;Cu&aacute;ntos anagramas distintos tiene la palabra BANANA?<BR>
+Letras: B(1), A(3), N(2) &rarr; Total: 6 letras<BR>
+PR = 6! / (1! &times; 3! &times; 2!) = 720 / (1 &times; 6 &times; 2) = 720 / 12 = <B>60 anagramas</B></DIV>
+
+<H3>6. Permutaci&oacute;n Circular</H3>
+La <B>permutaci&oacute;n circular</B> cuenta el n&uacute;mero de formas de ordenar n elementos en <B>c&iacute;rculo</B>, donde las rotaciones del mismo arreglo se consideran id&eacute;nticas. Se fija un elemento como referencia y se permutan los dem&aacute;s.
+
+<DIV CLASS="formula-box">
+<DIV CLASS="nombre">Permutaci&oacute;n Circular</DIV>
+<DIV CLASS="formula">PC<sub>n</sub> = (n &minus; 1)!</DIV>
+<DIV CLASS="nombre">Caso collar o llavero (sin distinguir anverso/reverso): PC = (n&minus;1)! / 2</DIV>
+</DIV>
+
+<DIV CLASS="ej"><B>Ejemplo 1 (mesa):</B> &iquest;De cu&aacute;ntas formas se sientan 6 personas alrededor de una mesa redonda?<BR>
+PC<sub>6</sub> = (6&minus;1)! = 5! = <B>120 formas</B><BR><BR>
+<B>Ejemplo 2 (collar):</B> &iquest;De cu&aacute;ntas formas se arman 6 cuentas en un collar?<BR>
+PC = (6&minus;1)! / 2 = 120 / 2 = <B>60 formas</B></DIV>
+
+<DIV CLASS="mapa-note"><B>&iquest;Por qu&eacute; (n&minus;1)! y no n!?</B> En un arreglo circular, girar todos los elementos una posici&oacute;n produce el mismo arreglo. Hay n rotaciones equivalentes para cada arreglo lineal, por eso dividimos n! entre n, obteniendo (n&minus;1)!. En el collar se divide entre 2 adicional por la simetr&iacute;a de reflexi&oacute;n (voltear el collar produce el mismo arreglo).</DIV>
+
+<DIV CLASS="cultura-titulo">COMBINACIONES<SPAN>Seleccionar sin importar el orden</SPAN></DIV>
+
+<H3>7. Combinaciones</H3>
+Una <B>combinaci&oacute;n</B> de n elementos tomados de r en r es cada subconjunto de r elementos elegidos de los n, donde el <B>orden NO importa</B>. Solo interesa QU&Eacute; elementos se eligen, no en qu&eacute; secuencia.
+
+<DIV CLASS="formula-box">
+<DIV CLASS="nombre">Combinaciones (N&uacute;mero Combinatorio)</DIV>
+<DIV CLASS="formula">C(n,r) = <sub>n</sub>C<sub>r</sub> = C<sub>n</sub><sup>r</sup> = n! / (r! &times; (n&minus;r)!)</DIV>
+<DIV CLASS="nombre">Relaci&oacute;n con variaciones: &nbsp; V<sub>n</sub><sup>r</sup> = C(n,r) &times; r!</DIV>
+</DIV>
+
+<DIV CLASS="ej"><B>Ejemplo 1:</B> De 8 personas, &iquest;cu&aacute;ntos comit&eacute;s de 3 se pueden formar?<BR>
+C(8,3) = 8! / (3! &times; 5!) = (8 &times; 7 &times; 6) / (3 &times; 2 &times; 1) = 336 / 6 = <B>56 comit&eacute;s</B><BR><BR>
+<B>Ejemplo 2 (diagonales):</B> &iquest;Cu&aacute;ntas diagonales tiene un pol&iacute;gono de 7 lados?<BR>
+D = C(7,2) &minus; 7 = 21 &minus; 7 = <B>14 diagonales</B></DIV>
+
+<H3>8. N&uacute;meros Combinatorios: propiedades fundamentales</H3>
+<UL>
+<LI><B>C(n,0) = C(n,n) = 1</B></LI>
+<LI><B>C(n,1) = C(n,n&minus;1) = n</B></LI>
+<LI><B>C(n,r) = C(n, n&minus;r)</B> &nbsp;&rarr;&nbsp; propiedad de simetr&iacute;a</LI>
+<LI><B>Identidad de Pascal:</B> C(n,r) + C(n,r&minus;1) = C(n+1,r)</LI>
+<LI><B>Suma de fila n:</B> C(n,0) + C(n,1) + &hellip; + C(n,n) = 2<sup>n</sup></LI>
+</UL>
+
+<H4>Tri&aacute;ngulo de Pascal:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>n</TH><TH>Fila del Tri&aacute;ngulo de Pascal</TH><TH>Suma</TH></TR>
+<TR><TD>0</TD><TD>1</TD><TD>1 = 2<sup>0</sup></TD></TR>
+<TR><TD>1</TD><TD>1 &nbsp;&nbsp; 1</TD><TD>2 = 2<sup>1</sup></TD></TR>
+<TR><TD>2</TD><TD>1 &nbsp;&nbsp; 2 &nbsp;&nbsp; 1</TD><TD>4 = 2<sup>2</sup></TD></TR>
+<TR><TD>3</TD><TD>1 &nbsp;&nbsp; 3 &nbsp;&nbsp; 3 &nbsp;&nbsp; 1</TD><TD>8 = 2<sup>3</sup></TD></TR>
+<TR><TD>4</TD><TD>1 &nbsp;&nbsp; 4 &nbsp;&nbsp; 6 &nbsp;&nbsp; 4 &nbsp;&nbsp; 1</TD><TD>16 = 2<sup>4</sup></TD></TR>
+<TR><TD>5</TD><TD>1 &nbsp;&nbsp; 5 &nbsp;&nbsp; 10 &nbsp;&nbsp; 10 &nbsp;&nbsp; 5 &nbsp;&nbsp; 1</TD><TD>32 = 2<sup>5</sup></TD></TR>
+</TABLE>
+</DIV>
+
+<H3>9. &iquest;Cu&aacute;ndo usar cada concepto? Tabla de discriminaci&oacute;n</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Situaci&oacute;n</TH><TH>&iquest;El orden importa?</TH><TH>&iquest;Hay repetidos?</TH><TH>F&oacute;rmula</TH></TR>
+<TR><TD>Ordenar todos los n elementos en fila</TD><TD>S&iacute;</TD><TD>No</TD><TD>P<sub>n</sub> = n!</TD></TR>
+<TR><TD>Elegir r de n y ordenarlos</TD><TD>S&iacute;</TD><TD>No</TD><TD>V<sub>n</sub><sup>r</sup> = n!/(n&minus;r)!</TD></TR>
+<TR><TD>n elementos donde hay elementos id&eacute;nticos</TD><TD>S&iacute;</TD><TD>S&iacute; (fijos)</TD><TD>PR = n!/(a!&middot;b!&middot;&hellip;)</TD></TR>
+<TR><TD>Ordenar n elementos en c&iacute;rculo</TD><TD>Relativo</TD><TD>No</TD><TD>PC = (n&minus;1)!</TD></TR>
+<TR><TD>Elegir r de n sin importar el orden</TD><TD>No</TD><TD>No</TD><TD>C(n,r) = n!/[r!&middot;(n&minus;r)!]</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">P<sub>n</sub> = n!</DIV><DIV CLASS="dk-label">Permutaci&oacute;n total (orden todos)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">V<sub>n</sub><sup>r</sup> = n!/(n&minus;r)!</DIV><DIV CLASS="dk-label">Variaci&oacute;n: r de n con orden</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">PC = (n&minus;1)!</DIV><DIV CLASS="dk-label">Permutaci&oacute;n circular</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">C(n,r) = n!/r!(n&minus;r)!</DIV><DIV CLASS="dk-label">Combinaci&oacute;n: sin orden</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+<B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Principio Aditivo:</B> opciones excluyentes (O) &rarr; sumar &nbsp;|&nbsp; <B>Principio Multiplicativo:</B> etapas independientes (Y) &rarr; multiplicar<BR>
+&bull; <B>Factorial:</B> n! = n&times;(n&minus;1)&times;&hellip;&times;1 &nbsp;|&nbsp; 0! = 1 &nbsp;|&nbsp; memorizar hasta 10! = 3&thinsp;628&thinsp;800<BR>
+&bull; <B>Permutaci&oacute;n:</B> P<sub>n</sub> = n! &nbsp;|&nbsp; <B>Variaci&oacute;n:</B> V<sub>n</sub><sup>r</sup> = n!/(n&minus;r)! &nbsp;|&nbsp; <B>Perm. circular:</B> (n&minus;1)! &nbsp;|&nbsp; Collar: (n&minus;1)!/2<BR>
+&bull; <B>Perm. con repetici&oacute;n:</B> n!/(a!&times;b!&times;&hellip;) &nbsp;|&nbsp; <B>Combinaci&oacute;n:</B> C(n,r) = n!/[r!&times;(n&minus;r)!]<BR>
+&bull; <B>Simetr&iacute;a:</B> C(n,r) = C(n,n&minus;r) &nbsp;|&nbsp; <B>Pascal:</B> C(n,r) + C(n,r&minus;1) = C(n+1,r) &nbsp;|&nbsp; <B>Suma:</B> &Sigma;C(n,k) = 2<sup>n</sup><BR>
+&bull; <B>Clave:</B> &iquest;importa el orden? S&iacute; &rarr; permutaci&oacute;n/variaci&oacute;n; No &rarr; combinaci&oacute;n
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Calcula el valor de la expresi&oacute;n: &nbsp; (7! &minus; 5!) / 5!</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) 40</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) 41</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) 42</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) 43</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) 41</B><BR><BR>
+Factorizamos usando 7! = 7 &times; 6 &times; 5!:<BR><BR>
+(7! &minus; 5!) / 5! = (7&times;6&times;5! &minus; 5!) / 5! = 5!(7&times;6 &minus; 1) / 5! = 42 &minus; 1 = <B>41</B><BR><BR>
+<B>Verificaci&oacute;n directa:</B> 7! = 5040, 5! = 120 &rarr; (5040 &minus; 120)/120 = 4920/120 = <B>41</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Halla el valor de n si se verifica que: &nbsp; n! / (n&minus;2)! = 56</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) n = 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) n = 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) n = 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) n = 9</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) n = 8</B><BR><BR>
+n! / (n&minus;2)! = n &times; (n&minus;1) = 56<BR><BR>
+n&sup2; &minus; n &minus; 56 = 0<BR>
+(n &minus; 8)(n + 7) = 0<BR>
+n = 8 &nbsp;(descartamos n = &minus;7 por ser negativo)<BR><BR>
+<B>Verificaci&oacute;n:</B> 8 &times; 7 = 56 ✓</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> En una competencia de atletismo participan 8 corredores. &iquest;De cu&aacute;ntas formas pueden distribuirse los 3 primeros puestos (oro, plata y bronce)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) 56</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) 168</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) 336</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) 512</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) 336</B><BR><BR>
+El orden importa (oro &ne; plata &ne; bronce): usamos <B>Variaciones</B> V<sub>8</sub><sup>3</sup>:<BR><BR>
+V<sub>8</sub><sup>3</sup> = 8! / (8&minus;3)! = 8! / 5! = 8 &times; 7 &times; 6 = <B>336 formas</B><BR><BR>
+<B>Principio multiplicativo:</B> 8 opciones para el oro &times; 7 para la plata &times; 6 para el bronce = 8 &times; 7 &times; 6 = <B>336</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Cu&aacute;ntos subconjuntos de 4 elementos se pueden formar con un conjunto de 9 elementos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) 63</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 126</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) 252</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) 3024</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) 126</B><BR><BR>
+Un subconjunto no tiene orden, usamos <B>Combinaciones</B> C(9,4):<BR><BR>
+C(9,4) = 9! / (4! &times; 5!) = (9 &times; 8 &times; 7 &times; 6) / (4 &times; 3 &times; 2 &times; 1) = 3024 / 24 = <B>126</B><BR><BR>
+<B>Trampa frecuente:</B> 3024 = V<sub>9</sub><sup>4</sup> (con orden). El enunciado pide subconjuntos, donde el orden no importa, por eso se divide entre 4! = 24.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;De cu&aacute;ntas maneras pueden sentarse 7 personas alrededor de una mesa circular?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) 5040</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) 720</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) 360</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) 120</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) 720</B><BR><BR>
+Permutaci&oacute;n circular de 7 personas:<BR><BR>
+PC<sub>7</sub> = (7 &minus; 1)! = 6! = <B>720 maneras</B><BR><BR>
+<B>Diferencia clave:</B> 5040 = 7! corresponder&iacute;a a una fila lineal. En la mesa circular se fija una persona de referencia y se permutan las otras 6: 6! = <B>720</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> &iquest;Cu&aacute;ntos anagramas distintos (ordenaciones de letras) tiene la palabra COMBINATORIO? (C=1, O=3, M=1, B=1, I=2, N=1, A=1, T=1, R=1 &rarr; 12 letras en total)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) 19 958 400</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) 39 916 800</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) 9 979 200</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) 59 875 200</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) 19 958 400</B><BR><BR>
+COMBINATORIO: C,O,M,B,I,N,A,T,O,R,I,O &rarr; 12 letras con: O(3), I(2), y el resto una vez c/u.<BR><BR>
+Verificaci&oacute;n: C(1)+O(3)+M(1)+B(1)+I(2)+N(1)+A(1)+T(1)+R(1) = 12 letras ✓<BR><BR>
+PR = 12! / (3! &times; 2!)<BR>
+= 479&thinsp;001&thinsp;600 / (6 &times; 2)<BR>
+= 479&thinsp;001&thinsp;600 / 12<BR>
+= <B>39&thinsp;916&thinsp;800</B><BR><BR>
+Espera: 12!/12 = 39&thinsp;916&thinsp;800. Pero 3!&times;2! = 6&times;2 = 12. Entonces:<BR>
+479&thinsp;001&thinsp;600 / 12 = <B>39&thinsp;916&thinsp;800</B><BR><BR>
+<B>Respuesta correcta: b) 39 916 800</B><BR>
+Si se consideran s&oacute;lo O(3) e I(2) repetidas: PR = 12!/(3!&times;2!) = 479001600/12 = <b>39&thinsp;916&thinsp;800</b></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Con los d&iacute;gitos 1, 2, 3, 4, 5, 6 (sin repetir), &iquest;cu&aacute;ntos n&uacute;meros de 4 cifras pares se pueden formar?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) 180</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) 240</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) 360</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) 480</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) 180</B><BR><BR>
+Para que el n&uacute;mero sea par, el &uacute;ltimo d&iacute;gito debe ser par. D&iacute;gitos pares disponibles: {2, 4, 6} &rarr; 3 opciones.<BR><BR>
+Fijamos la condici&oacute;n restrictiva primero (cifra de las unidades) y luego las dem&aacute;s posiciones:<BR><BR>
+&bull; Cifra de las unidades (par): 3 opciones<BR>
+&bull; Cifra de los millares: 5 opciones (cualquiera de los 5 restantes)<BR>
+&bull; Cifra de las centenas: 4 opciones<BR>
+&bull; Cifra de las decenas: 3 opciones<BR><BR>
+Total = 3 &times; 5 &times; 4 &times; 3 = <B>180 n&uacute;meros</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> En una reuni&oacute;n de 10 personas, cada una saluda con un apret&oacute;n de manos a todas las dem&aacute;s exactamente una vez. &iquest;Cu&aacute;ntos apretones de manos se producen en total?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) 90</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) 55</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) 45</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) 100</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) 45</B><BR><BR>
+Cada apret&oacute;n involucra exactamente 2 personas. El orden NO importa (A saluda a B es lo mismo que B saluda a A). Usamos Combinaciones:<BR><BR>
+C(10,2) = 10! / (2! &times; 8!) = (10 &times; 9) / 2 = <B>45 apretones</B><BR><BR>
+<B>Error frecuente:</B> responder 90, que es V(10,2) = 10&times;9 = 90. Eso contar&iacute;a &ldquo;A saluda a B&rdquo; y &ldquo;B saluda a A&rdquo; como dos eventos distintos, lo cual es incorrecto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Se dispone de 4 banderas rojas, 3 azules y 2 blancas, todas id&eacute;nticas dentro de cada color. &iquest;Cu&aacute;ntas se&ntilde;ales diferentes de 9 banderas se pueden hacer col&aacute;ndolas en un asta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) 1 260</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) 2 520</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) 3 024</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) 362 880</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) 1 260</B><BR><BR>
+Total de banderas: 4+3+2 = 9. Hay repeticiones por color. Aplicamos Permutaci&oacute;n con Repetici&oacute;n:<BR><BR>
+PR = 9! / (4! &times; 3! &times; 2!) = 362&thinsp;880 / (24 &times; 6 &times; 2) = 362&thinsp;880 / 288 = <B>1 260 se&ntilde;ales</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Halla el valor de n si se sabe que: C(n, 2) = 45</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) n = 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) n = 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) n = 10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) n = 11</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) n = 10</B><BR><BR>
+C(n,2) = n! / (2! &times; (n&minus;2)!) = n(n&minus;1)/2 = 45<BR><BR>
+n(n&minus;1) = 90 &rarr; n&sup2; &minus; n &minus; 90 = 0 &rarr; (n&minus;10)(n+9) = 0<BR><BR>
+n = 10 (descartamos n = &minus;9)<BR><BR>
+<B>Verificaci&oacute;n:</B> C(10,2) = 10&times;9/2 = 45 ✓</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Un equipo de b&aacute;squet debe elegir 5 jugadores titulares de un plantel de 12 y adem&aacute;s asignar a uno de los 5 elegidos como capit&aacute;n. &iquest;De cu&aacute;ntas formas puede realizarse esta selecci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) 792</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) 2 310</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) 3 960</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) 7 920</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) 3 960</B><BR><BR>
+<B>Paso 1:</B> Elegir 5 de 12 (sin orden): C(12,5) = 12!/(5!&times;7!) = (12&times;11&times;10&times;9&times;8)/(5&times;4&times;3&times;2&times;1) = 95040/120 = <B>792</B><BR><BR>
+<B>Paso 2:</B> Elegir el capit&aacute;n entre los 5 elegidos: 5 opciones<BR><BR>
+<B>Total:</B> 792 &times; 5 = <B>3 960 formas</B><BR><BR>
+<B>Alternativa:</B> Elegir capit&aacute;n (12 opciones) y luego los 4 restantes de 11: 12 &times; C(11,4) = 12 &times; 330 = <B>3 960</B> ✓</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> De un grupo de 7 hombres y 5 mujeres se desea formar un comit&eacute; de 5 personas con exactamente 3 hombres y 2 mujeres. &iquest;Cu&aacute;ntos comit&eacute;s diferentes se pueden formar?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) 210</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) 350</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) 420</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) 462</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) 350</B><BR><BR>
+Las dos selecciones son independientes (principio multiplicativo):<BR><BR>
+<B>Hombres:</B> elegir 3 de 7 &rarr; C(7,3) = 7!/(3!&times;4!) = (7&times;6&times;5)/(3&times;2&times;1) = 35<BR>
+<B>Mujeres:</B> elegir 2 de 5 &rarr; C(5,2) = 5!/(2!&times;3!) = (5&times;4)/(2&times;1) = 10<BR><BR>
+<B>Total:</B> C(7,3) &times; C(5,2) = 35 &times; 10 = <B>350 comit&eacute;s</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> &iquest;Cu&aacute;ntas diagonales tiene un pol&iacute;gono convexo de 12 lados?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) 54</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) 60</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) 66</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) 132</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) 54</B><BR><BR>
+Una diagonal une 2 v&eacute;rtices no adyacentes. El total de segmentos entre cualesquiera 2 v&eacute;rtices (incluyendo lados) es C(12,2). Restamos los 12 lados:<BR><BR>
+D = C(12,2) &minus; 12 = (12&times;11)/2 &minus; 12 = 66 &minus; 12 = <B>54 diagonales</B><BR><BR>
+<B>F&oacute;rmula directa:</B> D = n(n&minus;3)/2 = 12(12&minus;3)/2 = 12&times;9/2 = <B>54</B> ✓</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Se tienen 6 libros de matem&aacute;ticas y 4 de f&iacute;sica. &iquest;De cu&aacute;ntas maneras se pueden ordenar en un estante si los libros de la misma materia deben estar juntos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) 17 280</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) 34 560</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) 2 880</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) 8 640</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) 17 280</B><BR><BR>
+Tratamos cada grupo como un bloque:<BR><BR>
+<B>Paso 1:</B> Ordenar los 2 bloques entre s&iacute;: 2! = 2 formas (Mat|Fis o Fis|Mat)<BR>
+<B>Paso 2:</B> Ordenar los 6 libros de matem&aacute;ticas dentro de su bloque: 6! = 720<BR>
+<B>Paso 3:</B> Ordenar los 4 libros de f&iacute;sica dentro de su bloque: 4! = 24<BR><BR>
+<B>Total:</B> 2! &times; 6! &times; 4! = 2 &times; 720 &times; 24 = <B>17 280 maneras</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Halla el valor de n si: &nbsp; P(n,3) = 10 &times; C(n,2)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) n = 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) n = 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) n = 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) n = 8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) n = 7</B><BR><BR>
+Expresamos cada t&eacute;rmino con sus f&oacute;rmulas:<BR>
+P(n,3) = n(n&minus;1)(n&minus;2) &nbsp;&nbsp;|&nbsp;&nbsp; C(n,2) = n(n&minus;1)/2<BR><BR>
+Sustituimos:<BR>
+n(n&minus;1)(n&minus;2) = 10 &times; [n(n&minus;1)/2] = 5n(n&minus;1)<BR><BR>
+Dividimos ambos lados entre n(n&minus;1), con n &ne; 0 y n &ne; 1:<BR>
+n &minus; 2 = 5 &rarr; <B>n = 7</B><BR><BR>
+<B>Verificaci&oacute;n:</B> P(7,3) = 7&times;6&times;5 = 210; 10&times;C(7,2) = 10&times;21 = 210 ✓</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Se forman n&uacute;meros de 5 cifras con los d&iacute;gitos 1, 2, 3, 4, 5 sin repetir. &iquest;Cu&aacute;ntos de esos n&uacute;meros son divisibles por 4?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) 24</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) 30</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) 36</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 48</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) 24</B><BR><BR>
+Un n&uacute;mero es divisible por 4 si sus <B>dos &uacute;ltimas cifras</B> forman un n&uacute;mero divisible por 4.<BR><BR>
+<B>Paso 1:</B> Identificar pares de d&iacute;gitos de {1,2,3,4,5} sin repetir cuyo n&uacute;mero de 2 cifras sea divisible por 4:<BR>
+12 &divide; 4 = 3 ✓ &nbsp;|&nbsp; 24 &divide; 4 = 6 ✓ &nbsp;|&nbsp; 32 &divide; 4 = 8 ✓ &nbsp;|&nbsp; 52 &divide; 4 = 13 ✓<BR>
+(otros pares con d&iacute;gitos de {1,2,3,4,5}: 13, 14, 15, 21, 23, 25, 31, 34, 35, 41, 42, 43, 45, 51, 53, 54 no son divisibles por 4)<BR>
+Pares v&aacute;lidos: {12, 24, 32, 52} &rarr; <B>4 pares</B><BR><BR>
+<B>Paso 2:</B> Las 3 cifras restantes se ordenan libremente: 3! = 6<BR><BR>
+<B>Total:</B> 4 &times; 6 = <B>24 n&uacute;meros</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Se desean sentar 5 parejas (cada pareja: un hombre y una mujer) en una mesa circular de 10 sillas, de modo que cada persona est&eacute; junto a su pareja. &iquest;Cu&aacute;ntas disposiciones son posibles?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) 768</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) 3 840</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) 1 920</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) 7 680</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) 768</B><BR><BR>
+Tratamos cada pareja como un bloque. Hay 5 bloques en mesa circular:<BR><BR>
+<B>Paso 1:</B> Ordenar los 5 bloques en c&iacute;rculo: (5&minus;1)! = 4! = 24<BR>
+<B>Paso 2:</B> Dentro de cada pareja, los 2 integrantes pueden intercambiar posiciones: 2 formas por pareja.<BR>
+Para 5 parejas: 2<sup>5</sup> = 32<BR><BR>
+<B>Total:</B> (5&minus;1)! &times; 2<sup>5</sup> = 24 &times; 32 = <B>768 disposiciones</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Un c&oacute;digo se forma con 3 letras distintas del abecedario (27 letras) seguidas de 2 d&iacute;gitos distintos del 0 al 9, donde el orden importa en ambas partes. &iquest;Cu&aacute;ntos c&oacute;digos diferentes existen?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) 170 100</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) 1 474 200</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) 8 910</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) 15 660</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) 1 474 200</B><BR><BR>
+<B>Etapa 1 &mdash; 3 letras distintas de 27 (el orden importa):</B><BR>
+V(27,3) = 27 &times; 26 &times; 25 = 17 550<BR><BR>
+<B>Etapa 2 &mdash; 2 d&iacute;gitos distintos de 10 (el orden importa):</B><BR>
+V(10,2) = 10 &times; 9 = 90<BR><BR>
+<B>Total</B> (principio multiplicativo): 17 550 &times; 90 = <B>1 474 200 c&oacute;digos</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Halla el coeficiente del t&eacute;rmino que contiene x<sup>4</sup> en el desarrollo del binomio (2x &minus; 3)<sup>7</sup>.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) &minus;15 120</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) 15 120</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) &minus;90 720</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) 90 720</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) &minus;15 120</B><BR><BR>
+El t&eacute;rmino general del desarrollo de (a+b)<sup>n</sup> es:<BR>
+T<sub>k+1</sub> = C(n,k) &times; a<sup>n&minus;k</sup> &times; b<sup>k</sup><BR><BR>
+Con a = 2x, b = &minus;3, n = 7. Para x<sup>4</sup> necesitamos n&minus;k = 4, es decir k = 3:<BR><BR>
+T<sub>4</sub> = C(7,3) &times; (2x)<sup>4</sup> &times; (&minus;3)<sup>3</sup><BR>
+= 35 &times; 16x<sup>4</sup> &times; (&minus;27)<BR>
+= 35 &times; 16 &times; (&minus;27) &times; x<sup>4</sup><BR>
+= <B>&minus;15 120 x<sup>4</sup></B><BR><BR>
+Coeficiente: <B>&minus;15 120</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Un examen tiene 10 preguntas: 6 de aritm&eacute;tica y 4 de &aacute;lgebra. Un estudiante debe responder exactamente 7, eligiendo al menos 2 de &aacute;lgebra y como m&aacute;ximo 5 de aritm&eacute;tica. &iquest;De cu&aacute;ntas formas puede elegir sus preguntas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) 80</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) 96</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) 116</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) 120</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) 116</B><BR><BR>
+Condiciones: total = 7, m&aacute;x. 5 de aritm&eacute;tica (A), m&iacute;n. 2 de &aacute;lgebra (AL). Como A + AL = 7, los casos posibles son:<BR><BR>
+
+<div style="overflow-x:auto;">
+<table style="font-size:15px;border-collapse:collapse;width:100%;">
+<tr style="background:#0D1B36;color:white;"><th style="padding:8px 12px">Aritm. (A)</th><th style="padding:8px 12px">Álgebra (AL)</th><th style="padding:8px 12px">Condici&oacute;n</th><th style="padding:8px 12px">C(6,A)</th><th style="padding:8px 12px">C(4,AL)</th><th style="padding:8px 12px">Subtotal</th></tr>
+<tr style="background:#F6F2EB;"><td style="text-align:center;padding:7px 12px">3</td><td style="text-align:center">4</td><td style="text-align:center">A&le;5, AL&ge;2 ✓</td><td style="text-align:center">C(6,3)=20</td><td style="text-align:center">C(4,4)=1</td><td style="text-align:center"><b>20</b></td></tr>
+<tr><td style="text-align:center;padding:7px 12px">4</td><td style="text-align:center">3</td><td style="text-align:center">✓</td><td style="text-align:center">C(6,4)=15</td><td style="text-align:center">C(4,3)=4</td><td style="text-align:center"><b>60</b></td></tr>
+<tr style="background:#F6F2EB;"><td style="text-align:center;padding:7px 12px">5</td><td style="text-align:center">2</td><td style="text-align:center">✓</td><td style="text-align:center">C(6,5)=6</td><td style="text-align:center">C(4,2)=6</td><td style="text-align:center"><b>36</b></td></tr>
+</table>
+</div><BR>
+<B>Total</B> (principio aditivo, casos excluyentes): 20 + 60 + 36 = <B>116 formas</B></DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

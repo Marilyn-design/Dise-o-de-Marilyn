@@ -1,0 +1,602 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Estudio de la Tierra - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA &middot; TEMA 2 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Estudio de la Tierra</H1>
+<DIV CLASS="sub">Forma y dimensiones &middot; Capas internas &middot; Geosistema &middot; Movimiento de Rotación &middot; Movimiento de Traslación &middot; Coordenadas Geográficas</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1 -->
+<H3 ID="forma">1. Forma y dimensiones de la Tierra</H3>
+
+La Tierra <B>no es una esfera perfecta</B>. Su verdadera forma recibe el nombre de <B>geoide</B>, término introducido por el matemático alemán Johann Benedict Listing en 1872. Un geoide es una superficie equipotencial gravitatoria: la forma que tendría el nivel medio del mar si se extendiera por debajo de los continentes, sin vientos ni corrientes oceánicas.
+
+Para cálculos matemáticos y cartográficos se aproxima a un <B>elipsoide de revolución</B>: una figura geométrica generada al hacer girar una elipse sobre su eje menor. El resultado es un cuerpo <B>achatado en los polos y ensanchado en el Ecuador</B>, consecuencia directa de la fuerza centrífuga generada por el movimiento de rotación.
+
+<H4>¿Cómo se sabe que la Tierra es redonda? Evidencias históricas y actuales:</H4>
+<UL>
+<LI><B>Sombra circular en los eclipses de Luna:</B> la sombra que la Tierra proyecta sobre la Luna siempre es curva, sin importar la orientación. Solo una esfera proyecta siempre una sombra circular.</LI>
+<LI><B>Los barcos desaparecen por el horizonte de abajo hacia arriba:</B> primero se hunde el casco y lo último que se ve es el mástil, lo que solo es posible en una superficie curva.</LI>
+<LI><B>Eratóstenes (~240 a.C.):</B> midió la circunferencia terrestre con sombras y distancias, obteniendo ~40 000 km.</LI>
+<LI><B>Diferentes constelaciones según la latitud:</B> desde Egipto se ven estrellas que no se ven desde Grecia, prueba de curvatura norte-sur.</LI>
+<LI><B>Fotografías desde el espacio:</B> desde los años 1960, las imágenes satelitales confirman la forma esférica achatada.</LI>
+</UL>
+
+<H4>Dimensiones oficiales de la Tierra (datos para memorizar):</H4>
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">6 378 km</DIV><DIV CLASS="dk-label">Radio ecuatorial (mayor)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">6 357 km</DIV><DIV CLASS="dk-label">Radio polar (menor)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">12 756 km</DIV><DIV CLASS="dk-label">Diámetro ecuatorial</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">12 714 km</DIV><DIV CLASS="dk-label">Diámetro polar</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">40 075 km</DIV><DIV CLASS="dk-label">Circunferencia ecuatorial</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">510 M km²</DIV><DIV CLASS="dk-label">Superficie total</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Dato clave para el examen:</B> El radio ecuatorial (6 378 km) es <B>21 km mayor</B> que el radio polar (6 357 km). Esa diferencia parece pequeña, pero representa el achatamiento polar. El porcentaje de achatamiento es de aproximadamente <B>1/298</B>, lo que explica por qué la Tierra parece una esfera perfecta a simple vista desde el espacio.</DIV>
+
+<H4>Distribución de la superficie terrestre:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Elemento</TH><TH>Superficie</TH><TH>Porcentaje</TH></TR>
+<TR><TD><B>Océanos y mares (hidrosfera)</B></TD><TD>361 M km²</TD><TD><B>71%</B></TD></TR>
+<TR><TD><B>Tierra firme (continentes e islas)</B></TD><TD>149 M km²</TD><TD><B>29%</B></TD></TR>
+<TR><TD><B>Hemisferio de las aguas</B></TD><TD>Centrado en el Pacífico sur</TD><TD>mayoría oceánica</TD></TR>
+<TR><TD><B>Hemisferio de los continentes</B></TD><TD>Centrado en Europa occidental</TD><TD>mayoría terrestre</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 2 -->
+<H3 ID="capas">2. Estructura Interna de la Tierra</H3>
+
+El interior de la Tierra se conoce principalmente a través del estudio de las <B>ondas sísmicas</B> (sismología), que se refractan y reflejan al pasar entre materiales de diferente densidad, revelando la existencia de capas con propiedades distintas. Se distinguen <B>tres capas principales</B>, subdividas a su vez en subcapas:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Capa</TH><TH>Profundidad</TH><TH>Composición</TH><TH>Estado</TH><TH>Temperatura aprox.</TH></TR>
+<TR><TD><B>CORTEZA</B><BR><I>Continental</I></TD><TD>0 – 30/70 km</TD><TD>Granito (SIAL: Sílice + Aluminio)</TD><TD>Sólida</TD><TD>0 – 400 °C</TD></TR>
+<TR><TD><B>CORTEZA</B><BR><I>Oceánica</I></TD><TD>0 – 5/10 km</TD><TD>Basalto (SIMA: Sílice + Magnesio)</TD><TD>Sólida</TD><TD>0 – 200 °C</TD></TR>
+<TR><TD><B>MANTO SUPERIOR</B><BR><I>(Astenosfera)</I></TD><TD>70 – 660 km</TD><TD>Peridotita (olivino + piroxeno)</TD><TD>Semiplástico / viscoso</TD><TD>1 300 – 1 800 °C</TD></TR>
+<TR><TD><B>MANTO INFERIOR</B></TD><TD>660 – 2 900 km</TD><TD>Peridotita más densa</TD><TD>Sólido (por presión)</TD><TD>1 800 – 3 700 °C</TD></TR>
+<TR><TD><B>NÚCLEO EXTERNO</B></TD><TD>2 900 – 5 100 km</TD><TD>Hierro y níquel fundidos (NiFe)</TD><TD><B>Líquido</B></TD><TD>3 700 – 5 000 °C</TD></TR>
+<TR><TD><B>NÚCLEO INTERNO</B></TD><TD>5 100 – 6 370 km</TD><TD>Hierro y níquel (NiFe)</TD><TD><B>Sólido</B> (por presión extrema)</TD><TD>~5 000 – 6 000 °C</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Datos importantes sobre las capas:</H4>
+<UL>
+<LI><B>Discontinuidad de Mohorovičić (Moho):</B> límite entre la corteza y el manto, descubierto por el sismólogo croata Andrija Mohorovičić en 1909. Las ondas sísmicas aumentan bruscamente su velocidad al cruzar este límite.</LI>
+<LI><B>Discontinuidad de Gutenberg:</B> límite entre el manto y el núcleo externo (~2 900 km). Las ondas S (de cizalla) no pueden atravesar el núcleo líquido, lo que fue la clave para descubrir que el núcleo externo es fluido.</LI>
+<LI><B>Discontinuidad de Lehmann:</B> límite entre el núcleo externo (líquido) y el núcleo interno (sólido), a ~5 100 km. Descubierta por la sismóloga danesa Inge Lehmann en 1936.</LI>
+<LI><B>Litosfera:</B> nombre que recibe el conjunto de la <I>corteza + manto superior rígido</I> (hasta ~100 km). Es la capa que se divide en placas tectónicas.</LI>
+<LI><B>Astenosfera:</B> la parte blanda y semiplástica del manto superior (entre ~100 y 660 km) sobre la que "flotan" y se deslizan las placas litosféricas.</LI>
+</UL>
+
+<DIV CLASS="ej">🔬 <B>¿Cómo sabemos lo que hay dentro?</B> Nadie ha perforado más de 12 km (Kola Superdeep Borehole, Rusia, el pozo más profundo del mundo). Todo el conocimiento del interior terrestre proviene del análisis de las <B>ondas sísmicas</B>: las ondas P (primarias, compresionales) atraviesan sólidos y líquidos; las ondas S (secundarias, de cizalla) solo atraviesan sólidos. Al observar que las ondas S no llegan al lado opuesto del planeta tras un terremoto, se concluyó que el núcleo externo es líquido.</DIV>
+
+<H4>El campo magnético terrestre:</H4>
+El movimiento de convección del <B>núcleo externo líquido</B> (hierro y níquel fundidos conduciéndose eléctricamente mientras rotan) genera la <B>magnetosfera</B>, el campo magnético de la Tierra. Su función principal es desviar el <B>viento solar</B> (partículas de alta energía emitidas por el Sol), protegiéndonos de la radiación que destruiría la atmósfera y el ADN de los seres vivos (como ocurrió en Marte, que perdió su campo magnético y luego su atmósfera).
+
+<!-- 3 -->
+<H3 ID="geosistema">3. El Geosistema: las cuatro esferas de la Tierra</H3>
+
+El <B>geosistema</B> o <B>sistema Tierra</B> es el conjunto de todos los componentes del planeta vistos como un sistema integrado donde cada parte influye en las demás. Se organiza en cuatro grandes subsistemas o <B>"esferas"</B>:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Esfera</TH><TH>¿Qué comprende?</TH><TH>Ejemplos concretos</TH><TH>Ciencia que la estudia</TH></TR>
+<TR><TD><B>LITOSFERA</B><BR><I>("lithos" = piedra)</I></TD><TD>La parte sólida y rígida externa: corteza terrestre + parte superior del manto. Se divide en placas tectónicas.</TD><TD>Los Andes, el Himalaya, las dorsales oceánicas, las fosas de subducción, el suelo que pisamos</TD><TD>Geología, Geomorfología, Sismología</TD></TR>
+<TR><TD><B>HIDROSFERA</B><BR><I>("hydros" = agua)</I></TD><TD>Toda el agua de la Tierra en sus tres estados: océanos, ríos, lagos, glaciares, agua subterránea y vapor de agua.</TD><TD>Océano Pacífico (el más grande), río Amazonas (el de mayor caudal), glaciar de la Antártida (mayor reserva de agua dulce)</TD><TD>Hidrografía, Oceanografía, Glaciología</TD></TR>
+<TR><TD><B>ATMÓSFERA</B><BR><I>("atmos" = vapor)</I></TD><TD>La envoltura gaseosa que rodea la Tierra. Compuesta por N₂ (78%), O₂ (21%), Ar (0,93%) y CO₂ (0,04%).</TD><TD>Las capas: tropósfera (donde ocurre el clima), estratósfera (capa de ozono), mesosfera, termosfera, exosfera</TD><TD>Meteorología, Climatología</TD></TR>
+<TR><TD><B>BIOSFERA</B><BR><I>("bios" = vida)</I></TD><TD>El conjunto de todos los seres vivos de la Tierra y los ecosistemas que forman, interactuando con las otras tres esferas.</TD><TD>Las selvas amazónicas, los arrecifes de coral, la tundra ártica, los microorganismos del suelo antártico</TD><TD>Biología, Ecología, Biogeografía</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Interacciones entre las esferas (muy importante en exámenes):</H4>
+<UL>
+<LI><B>Litosfera ↔ Hidrosfera:</B> los ríos erosionan las rocas (litosfera), modelando valles y cañones. Los volcanes submarinos (litosfera) calientan el agua del océano (hidrosfera).</LI>
+<LI><B>Hidrosfera ↔ Atmósfera:</B> la evaporación del océano alimenta las lluvias (ciclo del agua). Las precipitaciones recargan ríos y acuíferos.</LI>
+<LI><B>Atmósfera ↔ Biosfera:</B> las plantas absorben CO₂ y liberan O₂ (fotosíntesis), manteniendo la composición de la atmósfera. Los incendios forestales liberan CO₂.</LI>
+<LI><B>Litosfera ↔ Biosfera:</B> los seres vivos descomponen la roca madre y forman el suelo fértil (pedosfera). Las raíces de las plantas desintegran las rocas.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Nota:</B> Algunos autores modernos añaden la <B>Pedosfera</B> (los suelos) y la <B>Criosfera</B> (los hielos y glaciares) como esferas adicionales, y la <B>Noosfera o Antroposfera</B> para referirse a la influencia humana global. Para exámenes preuniversitarios peruanos, las <B>cuatro esferas clásicas</B> son suficientes.</DIV>
+
+<!-- 4 -->
+<H3 ID="rotacion">4. Movimiento de Rotación</H3>
+
+<H4>Definición y características:</H4>
+El movimiento de <B>rotación</B> es el giro de la Tierra sobre su propio <B>eje terrestre</B> (también llamado eje de rotación o eje polar), una línea imaginaria que atraviesa el planeta de polo a polo, inclinada <B>23°27'</B> respecto a la perpendicular del plano orbital (plano de la eclíptica).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Característica</TH><TH>Dato</TH></TR>
+<TR><TD>Duración (día sidéreo)</TD><TD>23 horas, 56 minutos y 4 segundos (respecto a las estrellas lejanas)</TD></TR>
+<TR><TD>Duración (día solar)</TD><TD>24 horas exactas (respecto al Sol; incluye la compensación por el avance orbital)</TD></TR>
+<TR><TD>Sentido</TD><TD>De <B>Oeste a Este</B> (sentido antihorario visto desde el Polo Norte). Por eso el Sol aparece saliendo por el Este.</TD></TR>
+<TR><TD>Velocidad en el Ecuador</TD><TD>~1 670 km/h (la máxima; disminuye hacia los polos)</TD></TR>
+<TR><TD>Velocidad en los polos</TD><TD>0 km/h (los polos no se desplazan)</TD></TR>
+<TR><TD>Inclinación del eje</TD><TD>23°27' respecto a la perpendicular de la eclíptica</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Consecuencias del movimiento de rotación:</H4>
+<UL>
+<LI><B>1. Sucesión del día y la noche:</B> la mitad de la Tierra iluminada por el Sol experimenta el día; la mitad en sombra, la noche. Al rotar, cada punto de la superficie pasa por ambas zonas en ~24 horas. La línea que separa la zona iluminada de la oscura se llama <B>círculo de iluminación</B> o <B>terminador</B>.</LI>
+<LI><B>2. Diferencia horaria entre meridianos (husos horarios):</B> la Tierra gira 360° en 24 horas, es decir, <B>15° por hora</B>. Por eso se divide el planeta en 24 husos horarios de 15° de longitud cada uno. A medida que nos desplazamos hacia el Este, la hora adelanta (el Sol sale antes); hacia el Oeste, la hora atrasa.</LI>
+<LI><B>3. Fuerza de Coriolis:</B> efecto aparente generado por la rotación terrestre que desvía el movimiento de masas de aire, agua y cualquier objeto en movimiento sobre la superficie. En el <B>hemisferio norte</B> la desviación es hacia la <B>derecha</B>; en el <B>hemisferio sur</B>, hacia la <B>izquierda</B>. Explica el sentido de rotación de los ciclones, los vientos alisios y las corrientes oceánicas.</LI>
+<LI><B>4. Achatamiento polar y ensanchamiento ecuatorial:</B> la fuerza centrífuga generada por la rotación empuja la masa terrestre hacia afuera en el Ecuador, resultando en el geoide que conocemos.</LI>
+<LI><B>5. Movimiento aparente de los astros:</B> el Sol, la Luna y las estrellas parecen moverse de Este a Oeste por el cielo, aunque en realidad es la Tierra quien gira de Oeste a Este.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Confusión frecuente:</B> Las <B>estaciones del año</B> NO son consecuencia de la rotación. Son consecuencia de la <B>traslación</B> combinada con la <B>inclinación del eje</B>. La rotación solo produce el día y la noche, los husos horarios y la Fuerza de Coriolis.</DIV>
+
+<H4>Los husos horarios en detalle:</H4>
+<UL>
+<LI>El mundo se divide en <B>24 husos horarios</B>, centrados en meridianos múltiplos de 15° (0°, 15°E, 30°E... 180°, 165°O, 150°O...).</LI>
+<LI>La <B>Línea Internacional de Cambio de Fecha</B> se ubica aproximadamente en el meridiano 180° (en el Pacífico central). Al cruzarla de Oeste a Este se retrocede un día; de Este a Oeste, se adelanta un día.</LI>
+<LI>El <B>Tiempo Universal Coordinado (UTC)</B>, antes llamado GMT (Greenwich Mean Time), es la referencia mundial basada en el Meridiano de Greenwich (0°). El Perú se encuentra en <B>UTC-5</B> (5 horas detrás de Greenwich).</LI>
+</UL>
+
+<DIV CLASS="ej">🌐 <B>Ejemplo de cálculo de horas:</B> Si en Lima (Perú, UTC-5) son las 12:00 del mediodía, en Madrid (España, UTC+2 en verano) son las 19:00 horas del mismo día (diferencia de 7 horas). Si el Sol sale por el Este primero en Madrid que en Lima, es porque Madrid está más al Este (más horas adelantadas).</DIV>
+
+<!-- 5 -->
+<H3 ID="traslacion">5. Movimiento de Traslación</H3>
+
+<H4>Definición y características:</H4>
+El movimiento de <B>traslación</B> es el desplazamiento de la Tierra alrededor del <B>Sol</B> siguiendo una trayectoria <B>elíptica</B> (no circular perfecta), con el Sol ubicado en uno de los dos focos de la elipse. Esta es la <B>1ª Ley de Kepler</B> (Ley de las Órbitas, 1609).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Característica</TH><TH>Dato</TH></TR>
+<TR><TD>Duración (año trópico)</TD><TD>365 días, 5 horas, 48 min y 46 seg</TD></TR>
+<TR><TD>Año bisiesto</TD><TD>Cada 4 años se añade 1 día (29 de febrero) para compensar las ~6 h extras acumuladas</TD></TR>
+<TR><TD>Velocidad media orbital</TD><TD>~107 200 km/h (~29,8 km/s)</TD></TR>
+<TR><TD>Sentido</TD><TD>De Oeste a Este (mismo sentido que la rotación)</TD></TR>
+<TR><TD>Forma de la órbita</TD><TD>Elíptica (excentricidad orbital: 0,0167; casi circular)</TD></TR>
+<TR><TD>Distancia media Tierra-Sol</TD><TD>~149,6 millones de km (1 Unidad Astronómica = 1 UA)</TD></TR>
+<TR><TD>Perihelio (punto más cercano al Sol)</TD><TD>~147,1 M km → ocurre ~el 3 de enero → la Tierra va MÁS RÁPIDO</TD></TR>
+<TR><TD>Afelio (punto más lejano al Sol)</TD><TD>~152,1 M km → ocurre ~el 4 de julio → la Tierra va MÁS LENTO</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Error muy frecuente:</B> Las estaciones NO dependen de la distancia al Sol. En el perihelio (~3 enero) la Tierra está MÁS CERCA del Sol, pero es <B>invierno en el hemisferio norte</B>. Las estaciones dependen de la <B>inclinación del eje (23°27')</B> que determina el ángulo con que los rayos solares llegan a cada hemisferio.</DIV>
+
+<H4>La inclinación del eje terrestre y las estaciones:</H4>
+El eje terrestre está inclinado <B>23°27'</B> respecto a la vertical del plano orbital. Esta inclinación es constante durante toda la traslación y apunta siempre hacia la misma dirección del espacio (hacia la Estrella Polar). Por eso:
+<UL>
+<LI>Cuando el hemisferio norte está <B>inclinado hacia el Sol</B> → recibe los rayos más directos, los días son más largos → <B>VERANO en el hemisferio norte / INVIERNO en el hemisferio sur.</B></LI>
+<LI>Cuando el hemisferio norte está <B>inclinado alejado del Sol</B> → recibe los rayos más oblicuos, los días son más cortos → <B>INVIERNO en el hemisferio norte / VERANO en el hemisferio sur.</B></LI>
+</UL>
+
+<H4>Consecuencias del movimiento de traslación:</H4>
+<UL>
+<LI><B>1. Las estaciones del año</B> (primavera, verano, otoño, invierno) en las zonas templadas y polares. En la zona tropical (entre los dos trópicos) no se perciben claramente porque los rayos solares llegan casi siempre verticales.</LI>
+<LI><B>2. Los solsticios:</B> momentos del año en que uno de los hemisferios está más inclinado hacia el Sol.
+<UL>
+<LI><B>Solsticio de verano del hemisferio norte (~21 de junio):</B> el Sol alcanza su posición más alta en el cielo del norte. Es el día más largo del año en el hemisferio norte y el más corto en el sur. El Sol está en el cénit sobre el <B>Trópico de Cáncer (23°27'N)</B>.</LI>
+<LI><B>Solsticio de invierno del hemisferio norte (~21 de diciembre):</B> el día más corto en el norte y el más largo en el sur. El Sol está en el cénit sobre el <B>Trópico de Capricornio (23°27'S)</B>.</LI>
+</UL>
+</LI>
+<LI><B>3. Los equinoccios:</B> momentos en que el eje terrestre es perpendicular a la dirección Sol-Tierra, por lo que ambos hemisferios reciben la misma cantidad de luz solar. El día y la noche duran exactamente <B>12 horas en todo el planeta</B>.
+<UL>
+<LI><B>Equinoccio de primavera del hemisferio norte (~21 de marzo).</B></LI>
+<LI><B>Equinoccio de otoño del hemisferio norte (~22 o 23 de septiembre).</B></LI>
+</UL>
+</LI>
+<LI><B>4. Variación de la duración del día y la noche</B> a lo largo del año (excepto en el Ecuador, donde siempre son ~12 h cada una). En los polos hay períodos de <B>sol de medianoche</B> (6 meses de día continuo en verano) y <B>noche polar</B> (6 meses de oscuridad en invierno).</LI>
+<LI><B>5. Los años bisiestos:</B> el año trópico dura 365 d 5h 48m 46s. Las ~6 horas sobrantes se acumulan y cada 4 años se añade un día extra (29 de febrero) para corregir el calendario. Excepción: los años centenarios (1700, 1800, 1900) no son bisiestos, salvo que sean divisibles entre 400 (el año 2000 sí fue bisiesto).</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Evento</TH><TH>Fecha aprox.</TH><TH>Hemisferio Norte</TH><TH>Hemisferio Sur</TH><TH>Posición del Sol en cénit</TH></TR>
+<TR><TD><B>Equinoccio de primavera</B></TD><TD>~21 marzo</TD><TD>Inicio de primavera</TD><TD>Inicio de otoño</TD><TD>Ecuador (0°)</TD></TR>
+<TR><TD><B>Solsticio de verano</B></TD><TD>~21 junio</TD><TD>Inicio de verano (día más largo)</TD><TD>Inicio de invierno (día más corto)</TD><TD>Trópico de Cáncer (23°27'N)</TD></TR>
+<TR><TD><B>Equinoccio de otoño</B></TD><TD>~22/23 sept.</TD><TD>Inicio de otoño</TD><TD>Inicio de primavera</TD><TD>Ecuador (0°)</TD></TR>
+<TR><TD><B>Solsticio de invierno</B></TD><TD>~21 diciembre</TD><TD>Inicio de invierno (día más corto)</TD><TD>Inicio de verano (día más largo)</TD><TD>Trópico de Capricornio (23°27'S)</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 6 -->
+<H3 ID="coordenadas">6. Coordenadas Geográficas</H3>
+
+Las <B>coordenadas geográficas</B> son el sistema de dos valores angulares que permiten localizar de forma única e inequívoca cualquier punto de la superficie terrestre. Se miden en <B>grados (°), minutos (') y segundos ('')</B>.
+
+<H4>A) Latitud:</H4>
+<UL>
+<LI><B>Definición:</B> ángulo formado entre el plano del Ecuador y la línea que une el centro de la Tierra con el punto a localizar.</LI>
+<LI><B>Referencia:</B> el <B>Ecuador</B> (latitud 0°).</LI>
+<LI><B>Rango:</B> 0° (Ecuador) → 90° Norte (Polo Norte) y 0° → 90° Sur (Polo Sur).</LI>
+<LI><B>Se mide sobre los meridianos</B> (las líneas que van de polo a polo).</LI>
+<LI><B>Los paralelos</B> son las líneas de igual latitud: círculos horizontales paralelos al Ecuador.</LI>
+<LI><B>Paralelos destacados:</B>
+<UL>
+<LI>Ecuador: 0° — divide la Tierra en hemisferio norte y sur.</LI>
+<LI>Trópico de Cáncer: 23°27'N — límite norte de la zona tropical.</LI>
+<LI>Trópico de Capricornio: 23°27'S — límite sur de la zona tropical.</LI>
+<LI>Círculo Polar Ártico: 66°33'N — al norte de este paralelo hay noche/día polar.</LI>
+<LI>Círculo Polar Antártico: 66°33'S — ídem en el hemisferio sur.</LI>
+<LI>Polos: 90°N y 90°S — los únicos "puntos" donde todos los meridianos se cruzan.</LI>
+</UL>
+</LI>
+</UL>
+
+<H4>B) Longitud:</H4>
+<UL>
+<LI><B>Definición:</B> ángulo formado entre el plano del Meridiano de Greenwich y el plano del meridiano que pasa por el punto a localizar.</LI>
+<LI><B>Referencia:</B> el <B>Meridiano de Greenwich</B> (longitud 0°), adoptado universalmente en la Conferencia de Washington de 1884.</LI>
+<LI><B>Rango:</B> 0° → 180° Este (E) y 0° → 180° Oeste (O/W).</LI>
+<LI><B>Se mide sobre los paralelos</B> (las líneas horizontales).</LI>
+<LI><B>Los meridianos</B> son semicírculos que van de polo a polo. Cada meridiano tiene su antimeridiano (opuesto, a 180° de diferencia).</LI>
+<LI><B>Meridiano de Greenwich (0°):</B> pasa por el Observatorio Real de Greenwich, Londres, Reino Unido. Divide la Tierra en hemisferio Este y hemisferio Oeste.</LI>
+<LI><B>Meridiano 180°:</B> es la base de la Línea Internacional de Cambio de Fecha.</LI>
+</UL>
+
+<H4>Aplicación práctica: localización de ciudades peruanas e iberoamericanas:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Ciudad</TH><TH>Latitud</TH><TH>Longitud</TH><TH>Observación</TH></TR>
+<TR><TD><B>Lima, Perú</B></TD><TD>12°03' S</TD><TD>77°02' O</TD><TD>Hemisferio sur y occidental</TD></TR>
+<TR><TD><B>Cusco, Perú</B></TD><TD>13°31' S</TD><TD>71°58' O</TD><TD>Más al sur y este que Lima</TD></TR>
+<TR><TD><B>Iquitos, Perú</B></TD><TD>3°45' S</TD><TD>73°15' O</TD><TD>Cerca del Ecuador, en la Amazonía</TD></TR>
+<TR><TD><B>Quito, Ecuador</B></TD><TD>0°13' S</TD><TD>78°30' O</TD><TD>Casi exactamente en el Ecuador</TD></TR>
+<TR><TD><B>Buenos Aires, Argentina</B></TD><TD>34°36' S</TD><TD>58°22' O</TD><TD>Zona templada del hemisferio sur</TD></TR>
+<TR><TD><B>Ciudad de México</B></TD><TD>19°26' N</TD><TD>99°08' O</TD><TD>Hemisferio norte, zona tropical</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Regla de oro para el examen:</B><BR>
+— <B>LATITUD</B> → se mide en <B>PARALELOS</B> → referencia: el <B>ECUADOR</B> → Norte o Sur → máximo <B>90°</B><BR>
+— <B>LONGITUD</B> → se mide en <B>MERIDIANOS</B> → referencia: <B>GREENWICH</B> → Este u Oeste → máximo <B>180°</B><BR>
+Confundir paralelos con meridianos, o latitud con longitud, es el error más común y más penalizado en los exámenes.</DIV>
+
+<H4>Zonas térmicas o climáticas de la Tierra según la latitud:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Zona</TH><TH>Límites de latitud</TH><TH>Características</TH></TR>
+<TR><TD><B>Zona Tropical (Tórrida)</B></TD><TD>Entre 23°27'N y 23°27'S</TD><TD>El Sol llega perpendicular 2 veces al año. Altas temperaturas todo el año. Sin estaciones marcadas.</TD></TR>
+<TR><TD><B>Zona Templada Norte</B></TD><TD>Entre 23°27'N y 66°33'N</TD><TD>Rayos solares oblicuos. Cuatro estaciones bien diferenciadas. Clima variable.</TD></TR>
+<TR><TD><B>Zona Templada Sur</B></TD><TD>Entre 23°27'S y 66°33'S</TD><TD>Igual que la norte pero con estaciones opuestas.</TD></TR>
+<TR><TD><B>Zona Polar Ártica</B></TD><TD>Entre 66°33'N y 90°N</TD><TD>Rayos muy oblicuos. Inviernos largos y fríos. Noche y día polar de hasta 6 meses.</TD></TR>
+<TR><TD><B>Zona Polar Antártica</B></TD><TD>Entre 66°33'S y 90°S</TD><TD>Igual que la ártica pero en el hemisferio sur.</TD></TR>
+</TABLE>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- NIVEL BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> La verdadera forma de la Tierra se denomina:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Esfera perfecta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Geoide</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Cilindro achatado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Elipse plana</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La forma real de la Tierra se llama <B>geoide</B>: una figura irregular que corresponde a la superficie equipotencial gravitatoria. Para fines matemáticos se aproxima a un <B>elipsoide de revolución</B>, achatado en los polos (radio polar 6 357 km) y ensanchado en el Ecuador (radio ecuatorial 6 378 km). No es una esfera perfecta porque la rotación genera fuerza centrífuga que engrosa el Ecuador.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> La capa de la Tierra que se encuentra en estado LÍQUIDO y genera el campo magnético terrestre es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La corteza oceánica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) La astenosfera (manto superior)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) El núcleo externo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) El núcleo interno</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>núcleo externo</B> (entre ~2 900 y ~5 100 km de profundidad) está formado por hierro y níquel en estado <B>líquido</B>. Su movimiento de convección genera corrientes eléctricas que producen el <B>campo magnético terrestre</B> (magnetosfera), que nos protege del viento solar. El núcleo <B>interno</B>, aunque más caliente (~5 000–6 000 °C), es <B>sólido</B> por la presión colosal que soporta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> El movimiento de rotación de la Tierra dura aproximadamente:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) 365 días y 6 horas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) 24 horas (día solar)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) 12 horas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) 7 días</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El movimiento de rotación (giro de la Tierra sobre su eje) dura <B>24 horas</B> (día solar), que es el que usamos en la vida cotidiana. El día sidéreo (medido respecto a las estrellas) es 23h 56m 4s. Los 365 días y ~6 h corresponden al movimiento de <b>traslación</b> (el año).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> La LATITUD de un punto se mide respecto a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) El Meridiano de Greenwich</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) El Trópico de Cáncer</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) El Ecuador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) El Polo Norte geográfico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>latitud</B> es el ángulo medido desde el centro de la Tierra entre el <B>plano del Ecuador (0°)</B> y la línea que va al punto en cuestión. Va de 0° (Ecuador) a 90°N (Polo Norte) o 90°S (Polo Sur). La referencia de la <b>longitud</b> sí es el Meridiano de Greenwich.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Cuál de los siguientes es un subsistema del GEOSISTEMA terrestre?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) La Ionosfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) La Litosfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) La Estratosfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) La Termosfera</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las cuatro esferas clásicas del <B>geosistema</B> son: <B>Litosfera</B> (parte sólida), <B>Hidrosfera</B> (agua), <B>Atmósfera</B> (gases) y <B>Biosfera</B> (seres vivos). La ionosfera, estratosfera y termosfera son <b>capas de la atmósfera</b>, no subsistemas del geosistema. Ser parte de la atmósfera no los convierte en esferas del geosistema.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Si en Lima (Perú, UTC-5) son las 3:00 p.m., ¿qué hora es en Tokio (Japón, UTC+9)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Las 7:00 a.m. del mismo día</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Las 10:00 p.m. del mismo día</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Las 5:00 a.m. del día siguiente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Las 11:00 p.m. del día anterior</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La diferencia horaria entre Lima (UTC-5) y Tokio (UTC+9) es: 9 - (-5) = <B>14 horas</B>. Tokio está más al este, por lo que va adelantado. Si en Lima son las 15:00 h, en Tokio son las 15:00 + 14 = 29:00 h, es decir, las <B>5:00 a.m. del día siguiente</B>. El Sol ya salió en Tokio mucho antes que en Lima porque Japón está al este del Perú.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> La discontinuidad de Mohorovičić (Moho) marca el límite entre:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) El núcleo externo y el núcleo interno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) El manto inferior y el núcleo externo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) La corteza terrestre y el manto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) La litosfera y la astenosfera</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>discontinuidad de Mohorovičić</B> (Moho), descubierta por el sismólogo croata Andrija Mohorovičić en 1909, separa la <B>corteza</B> del <B>manto</B>. En este límite, la velocidad de las ondas sísmicas aumenta bruscamente porque el manto es más denso que la corteza. La discontinuidad entre el manto y el núcleo externo se llama <b>Gutenberg</b>; la del núcleo externo con el interno, <b>Lehmann</b>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Por qué los rayos del Sol llegan más inclinados (oblicuos) en invierno que en verano en Lima?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Porque en invierno la Tierra está más lejos del Sol (en el afelio)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Porque la inclinación del eje terrestre (23°27') hace que en invierno el hemisferio sur se aleje del Sol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Porque la Tierra gira más lento en invierno, reduciendo el calor recibido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Porque la atmósfera es más densa en invierno y filtra más la radiación solar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Lima está en el hemisferio sur (12°S). En los meses de junio-agosto (invierno austral), el <B>hemisferio sur está inclinado alejándose del Sol</B> por efecto de la inclinación axial de 23°27'. Esto hace que los rayos solares lleguen más oblicuos, cubran mayor superficie y aporten menos calor por metro cuadrado. No tiene que ver con la distancia al Sol: en julio la Tierra está en el <b>afelio</b> (más lejos del Sol), lo que refuerza el razonamiento pero la causa principal son los ángulos de incidencia solar, no la distancia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> La Fuerza de Coriolis, generada por la rotación terrestre, desvía los vientos en el hemisferio sur hacia:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) La derecha respecto a su dirección de movimiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) La izquierda respecto a su dirección de movimiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Siempre hacia el Ecuador, sin importar el hemisferio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Siempre hacia el Oeste por el movimiento de rotación</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Fuerza de Coriolis</B> desvía las masas de aire (y de agua) hacia la <B>derecha</B> en el hemisferio norte y hacia la <B>izquierda</B> en el hemisferio sur. Por eso los ciclones (huracanes, tifones) giran en sentido antihorario en el hemisferio norte y en sentido horario en el hemisferio sur. Es una consecuencia directa de la rotación terrestre oeste→este.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> La HIDROSFERA comprende:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Solo los océanos y mares del planeta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Solo el agua en estado líquido de la superficie terrestre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Toda el agua de la Tierra en sus tres estados: líquido, sólido y gaseoso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Los océanos, ríos y lagos, excluyendo los glaciares que pertenecen a la litosfera</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>hidrosfera</B> incluye <b>toda</b> el agua de la Tierra en sus tres estados: <b>líquido</b> (océanos, ríos, lagos, aguas subterráneas), <b>sólido</b> (glaciares, casquetes polares, permafrost) y <b>gaseoso</b> (vapor de agua en la atmósfera). Los glaciares NO pertenecen a la litosfera: son agua en estado sólido y forman parte de la hidrosfera (aunque algunos autores modernos los separan en la <i>criosfera</i>).</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> La 2ª Ley de Kepler establece que la Tierra se mueve más rápido cuando está en el perihelio (~3 de enero). ¿Cuál es la consecuencia directa de este hecho sobre las estaciones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) El verano del hemisferio norte es más caluroso porque la Tierra está más cerca del Sol en junio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) El invierno del hemisferio norte es ligeramente más corto que su verano, porque la Tierra recorre esa parte de la órbita más rápido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Las cuatro estaciones duran exactamente 91 días cada una porque la órbita es casi circular</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) El perihelio en enero explica por qué enero es el mes más frío del hemisferio norte</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>2ª Ley de Kepler</B> (Ley de las Áreas) dice que la Tierra va más rápido en el perihelio (enero, más cerca del Sol) y más lenta en el afelio (julio). Como el perihelio (~enero) coincide con el <b>invierno del hemisferio norte</b>, la Tierra recorre la zona de la órbita correspondiente al invierno norte más rápido: por eso el <b>invierno del hemisferio norte dura ~89 días</b> y su verano ~93 días. Las estaciones <b>no</b> duran exactamente lo mismo. El perihelio en enero contradice que sea más frío: la distancia al Sol importa menos que el ángulo de incidencia de los rayos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> La ASTENOSFERA es fundamental para explicar la tectónica de placas porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Es la capa más externa y resistente sobre la que se acumulan los sedimentos oceánicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Su material semiplástico y viscoso permite que las placas litosféricas se desplacen lentamente sobre ella</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Es la fuente de todo el magma volcánico de la Tierra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Es el límite entre el manto y el núcleo, donde la presión genera los terremotos más profundos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>astenosfera</B> es la zona del manto superior (entre ~100 y ~660 km) donde la roca, aunque sólida en términos mineralógicos, se comporta de manera <b>semiplástica y viscosa</b> a lo largo de millones de años gracias a la presión y temperatura. Las corrientes de convección en la astenosfera arrastran a las rígidas <b>placas litosféricas</b> que "flotan" sobre ella, haciéndolas desplazarse varios centímetros por año. Sin la astenosfera como "lubricante", la tectónica de placas no existiría.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Un observador en el Círculo Polar Ártico (66°33'N) durante el solsticio de verano del hemisferio norte (~21 de junio) experimentará:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Un día y una noche de exactamente 12 horas cada uno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El Sol justo en el cénit (directamente sobre su cabeza) al mediodía</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Un día de 24 horas de luz continua: el Sol no se pone (sol de medianoche)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La noche más larga del año, pues está alejado del Ecuador</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Círculo Polar Ártico</B> (66°33'N) es precisamente el paralelo desde el cual, durante el solsticio de verano del hemisferio norte (~21 junio), el Sol no se pone durante las 24 horas: es el famoso <b>"sol de medianoche"</b>. Esto se debe a que la inclinación axial de 23°27' hace que el Polo Norte esté completamente iluminado y el círculo de iluminación incluya todo el territorio por encima del Círculo Polar Ártico. El Sol en el cénit solo ocurre en el Trópico de Cáncer (23°27'N).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Si la inclinación del eje terrestre fuera 0° (eje perpendicular al plano orbital), ¿cuál sería la consecuencia más importante?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La Tierra rotaría en sentido contrario, haciendo que el Sol saliera por el Oeste</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Desaparecerían las estaciones del año y el día y la noche durarían siempre 12 horas en todo el planeta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La Tierra dejaría de trasladarse alrededor del Sol por falta de fuerza centrífuga</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El calentamiento global se aceleraría porque el Sol llegaría perpendicular al Ecuador todo el año</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las estaciones existen porque el eje terrestre está inclinado 23°27'. Si la inclinación fuera <B>0°</B>, el eje sería perpendicular a la eclíptica y ambos hemisferios recibirían siempre la misma cantidad de radiación solar a lo largo del año. Las consecuencias serían: <b>sin estaciones</b> (misma temperatura en cada latitud durante todo el año), el Sol estaría siempre en el cénit del Ecuador, y el <b>día y la noche durarían siempre 12 horas</b> en cada punto del planeta (no habría sol de medianoche ni noche polar). Los polos serían permanentemente fríos y el Ecuador permanentemente caliente, sin variación estacional.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Cuál de las siguientes afirmaciones sobre las ONDAS SÍSMICAS y la estructura interna de la Tierra es CORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Las ondas S (de cizalla) pueden atravesar tanto sólidos como líquidos, lo que permite estudiar el núcleo externo directamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Las ondas P (primarias) solo viajan por la corteza terrestre y no llegan al manto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Las ondas S no atraviesan el núcleo externo porque es líquido, lo que fue la evidencia clave para descubrir su estado fluido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Ambos tipos de ondas viajan a la misma velocidad en todos los materiales terrestres</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Las <B>ondas S</B> (secundarias o de cizalla) son ondas de corte transversal que <b>solo se propagan por materiales sólidos</b>: no pueden atravesar fluidos porque estos no tienen rigidez. Al observarse que las ondas S generadas por un terremoto <b>no llegaban al lado opuesto del planeta</b> (formaban una "zona de sombra"), los sismólogos concluyeron que debía existir una capa <b>líquida</b> en el interior: el <b>núcleo externo</b>. Las ondas P sí atraviesan sólidos y líquidos, por eso llegan al lado opuesto (con refracción). Esta diferencia entre ondas P y S es la herramienta fundamental de la sismología para estudiar el interior terrestre.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El año bisiesto se añade cada 4 años para compensar las ~6 horas sobrantes del año trópico. Sin embargo, la regla tiene una excepción: los años centenarios (1700, 1800, 1900) NO son bisiestos, salvo que sean divisibles entre 400. ¿Cuál es la razón científica de esta excepción?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Por razones religiosas establecidas por el Papa Gregorio XIII en 1582 para alinear el calendario con Semana Santa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) El año trópico real es 365 d 5h 48m 46s, no exactamente 365 d y 6h; añadir un día cada 4 años genera un exceso de ~11 minutos anuales que se corrige eliminando 3 bisiestos cada 400 años</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La Tierra acelera su traslación cada 100 años por la gravedad de Júpiter, acortando el año</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Los años terminados en 00 siempre tienen un día menos porque el Sol completa un ciclo de manchas solares exactamente cada 100 años</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El año trópico real es <B>365 d 5h 48m 46s</B>, es decir, 365,2422 días. Si añadiéramos un día extra cada 4 años exactos, el año calendario medio sería 365,25 días, que es <b>~11 minutos y 14 segundos más largo</b> que el año real. En 400 años ese error acumula ~3 días de más. La reforma gregoriana de 1582 (Papa Gregorio XIII) corrige esto eliminando <b>3 días bisiestos cada 400 años</b>: los años centenarios (divisibles entre 100) no son bisiestos a menos que sean también divisibles entre 400. Así el año calendario gregoriano medio es 365,2425 días, solo 26 segundos más largo que el trópico real.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El concepto de GEOIDE define la forma real de la Tierra como una superficie equipotencial gravitatoria. ¿Cuál es la implicancia más importante de esta definición para la geodesia y la cartografía modernas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Significa que toda la Tierra tiene la misma gravedad en todos sus puntos, lo que simplifica los cálculos de altitud</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) El geoide irregular hace que la altitud "cero" (nivel del mar) no sea igual en todas partes; los sistemas de referencia verticales deben corregir estas irregularidades para que las cotas sean comparables</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La forma de geoide impide usar satélites GPS para medir distancias con precisión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El geoide solo afecta a la cartografía oceánica; en los continentes se puede usar el elipsoide sin correcciones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>geoide</B> no es uniforme: la distribución desigual de masas en el interior de la Tierra (cadenas montañosas, cuencas oceánicas, minerales más densos) crea variaciones del campo gravitatorio. Esto significa que el "nivel cero" (nivel del mar) ondula: puede estar hasta <b>100 m por encima o por debajo del elipsoide</b> de referencia dependiendo del lugar. Para la geodesia y la ingeniería (construir canales, sistemas de altimetría, GPS de alta precisión), se deben aplicar correcciones del geoide (llamadas <b>ondulaciones del geoide o alturas geoidales</b>) para que las altitudes sean coherentes. El GPS mide respecto al elipsoide; para obtener la altitud real sobre el nivel del mar hay que sumar o restar la ondulación del geoide en ese punto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> La Tierra está en el PERIHELIO (~3 de enero, más cerca del Sol) pero en el hemisferio norte es invierno. ¿Cuál de las siguientes afirmaciones resume correctamente POR QUÉ la distancia al Sol importa menos que la inclinación axial para determinar las estaciones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La diferencia de distancia entre perihelio y afelio (solo ~3%) genera una variación de energía solar recibida menor que la generada por el cambio del ángulo de incidencia de los rayos solares causado por la inclinación axial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La atmósfera bloquea el calor extra del perihelio, haciendo irrelevante la mayor cercanía al Sol en enero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La distancia importa más que el ángulo, pero el efecto del perihelio se distribuye entre los dos hemisferios y se cancela</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La rotación de la Tierra distribuye uniformemente el calor adicional del perihelio, eliminando su efecto estacional</DIV>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La diferencia de distancia entre el perihelio (~147,1 M km) y el afelio (~152,1 M km) es de ~5 M km, un <b>~3,4% de variación</b> que implica solo un <b>~7% de diferencia en la energía solar recibida</b> (la energía varía con el cuadrado de la distancia, Ley de Stefan). En cambio, el <b>ángulo de incidencia</b> de los rayos solares varía drásticamente con la inclinación axial: en invierno los rayos llegan muy oblicuos y deben calentar una superficie mucho mayor, resultando en <b>menos W/m²</b>. Además, la duración del día es mucho más corta en invierno. Ambos efectos (ángulo + horas de luz) superan ampliamente el efecto de la distancia. Por eso el verano del hemisferio sur (que coincide con el perihelio) es ligeramente más cálido que el del norte, pero la inclinación sigue dominando.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> En el pasado geológico, el campo magnético terrestre se ha invertido múltiples veces (los polos norte y sur magnéticos intercambian posición). Las evidencias de estas inversiones se encuentran principalmente en:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Los anillos de crecimiento de los árboles fósiles, que registran cambios en el campo magnético</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Las franjas de roca basáltica del fondo oceánico a ambos lados de las dorsales, donde minerales de hierro quedaron orientados según el campo magnético del momento de su solidificación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Los estratos de hielo de los glaciares polares, que contienen burbujas de aire del campo magnético antiguo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Los meteoritos que caen sobre la Tierra, que traen información del campo magnético solar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Cuando el magma basáltico emerge en las <B>dorsales oceánicas</B> y se solidifica, los minerales ricos en hierro (como la magnetita) quedan orientados según el <b>campo magnético vigente en ese momento</b>, actuando como "grabadora" del campo magnético. Al estudiar el fondo oceánico, los geólogos descubrieron franjas simétricas a ambos lados de las dorsales con magnetización alternada (normal e inversa), lo que demostró simultáneamente la <b>expansión del fondo oceánico</b> (Hess, 1960) y la existencia de <b>inversiones magnéticas</b> periódicas. La última inversión magnética (Brunhes-Matuyama) ocurrió hace ~780 000 años. Esta evidencia fue también clave para confirmar la teoría de la tectónica de placas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Una nave espacial que abandona la Tierra en dirección al Sol experimenta que la fuerza gravitatoria terrestre disminuye con el cuadrado de la distancia (Ley de Newton). A nivel del Ecuador, la gravedad terrestre es levemente MENOR que en los polos. ¿Cuál es la causa geográfica de esta diferencia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) En el Ecuador hay más masa continental que en los polos, lo cual reduce la gravedad local</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Dos factores combinados: (1) el Ecuador está más lejos del centro de la Tierra por el achatamiento polar, y (2) la fuerza centrífuga de la rotación resta efectividad a la gravedad en el Ecuador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) La temperatura más alta del Ecuador dilata los materiales y reduce la densidad local, disminuyendo la gravedad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Los océanos del Ecuador atraen menos gravitacionalmente que las rocas continentales de los polos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La gravedad superficial es ligeramente <B>menor en el Ecuador</B> (~9,78 m/s²) que en los polos (~9,83 m/s²) por dos razones combinadas: (1) <b>Mayor distancia al centro:</b> el radio ecuatorial (6 378 km) es 21 km mayor que el polar (6 357 km); como la gravedad disminuye con el cuadrado de la distancia al centro de masa, en el Ecuador la atracción gravitatoria es levemente menor. (2) <b>Fuerza centrífuga:</b> la rotación genera una fuerza centrífuga dirigida hacia afuera que se opone parcialmente a la gravedad. Esta fuerza es máxima en el Ecuador (donde la velocidad de rotación es ~1 670 km/h) y cero en los polos (velocidad 0). Ambos efectos restan a la gravedad ecuatorial. Esta diferencia tiene aplicaciones prácticas: los cohetes se lanzan preferentemente desde sitios cercanos al Ecuador (como la base de Kourou en Guyana Francesa) para aprovechar la mayor velocidad de rotación y ahorrar combustible.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

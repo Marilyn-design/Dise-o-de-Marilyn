@@ -1,0 +1,702 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Just, Already, Yet, For & Since - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:130px;text-align:center;}
+.dk .dk-num{font-size:20px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.eng{font-style:italic;color:#0D1B36;}
+.tarjeta-palabra{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:16px;padding:22px 28px;margin:18px 0;box-shadow:0 6px 18px rgba(0,0,0,0.18);}
+.tarjeta-palabra .tw-titulo{font-size:26px;font-weight:bold;color:#D7B06D;letter-spacing:1px;margin-bottom:6px;}
+.tarjeta-palabra .tw-es{font-size:15px;color:#cce8e7;margin-bottom:14px;font-style:italic;}
+.tarjeta-palabra .tw-regla{font-size:16px;line-height:1.9;color:#f0f0f0;}
+.tarjeta-palabra .tw-regla b{color:#D7B06D;}
+.tarjeta-palabra .tw-ej{background:rgba(255,255,255,0.1);border-radius:10px;padding:10px 16px;margin-top:12px;font-size:15px;font-style:italic;line-height:1.8;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 18 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Just, Already, Yet, For &amp; Since</H1>
+<DIV CLASS="sub">Marcadores temporales del Present Perfect &middot; Posición en la oración &middot; Usos y contrastes &middot; Errores frecuentes en exámenes de admisión</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1. INTRODUCCION -->
+<H3>1. ¿Por qué son tan importantes estos cinco marcadores?</H3>
+Los marcadores temporales <B>just, already, yet, for</B> y <B>since</B> cumplen tres funciones al mismo tiempo:
+
+<UL>
+<LI><B>Indican qué tiempo verbal usar</B> (casi siempre Present Perfect).</LI>
+<LI><B>Revelan el significado exacto</B> de la oración: si algo ya pasó, si todavía no, cuánto tiempo lleva, desde cuándo.</LI>
+<LI><B>Determinan la posición del adverbio</B> dentro de la estructura y esa posición varía según la palabra.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Recuerda:</B> Cuando veas <B>just, already, yet, for</B> o <B>since</B> en una oración, tu primera hipótesis debe ser <B>Present Perfect</B>. Puede haber excepciones (se explican en cada sección), pero la probabilidad es altísima en contexto de examen.</DIV>
+
+<!-- 2. JUST -->
+<H3>2. JUST — "acabar de / recién"</H3>
+
+<DIV CLASS="tarjeta-palabra">
+<DIV CLASS="tw-titulo">JUST</DIV>
+<DIV CLASS="tw-es">Español: "acabar de hacer algo" / "recién"</DIV>
+<DIV CLASS="tw-regla">
+<B>Significado:</B> Una acción que ocurrió hace muy poco tiempo, instantes o minutos atrás. El resultado se siente en el presente inmediato.<BR><BR>
+<B>Tiempo verbal:</B> Present Perfect (inglés británico y estándar). En inglés americano informal, a veces se usa con Past Simple.<BR><BR>
+<B>Posición:</B> Siempre entre el auxiliar <B>have/has</B> y el Participio Pasado.<BR>
+Fórmula: <B>have/has + JUST + Past Participle</B>
+</DIV>
+<DIV CLASS="tw-ej">
+✓ "I <B>have just finished</B> my homework." (Acabo de terminar mi tarea.)<BR>
+✓ "She <B>has just called</B> you." (Ella acaba de llamarte.)<BR>
+✓ "They <B>have just arrived</B> at the airport." (Acaban de llegar al aeropuerto.)<BR>
+✗ "I just have finished." — "just" NO puede ir antes del auxiliar.<BR>
+✗ "I have finished just." — "just" NO va al final (eso es posición de "yet").
+</DIV>
+</DIV>
+
+<H4>Contextos de uso de JUST:</H4>
+<UL>
+<LI><B>Noticia reciente:</B> <I>"The president <B>has just announced</B> a new economic plan."</I></LI>
+<LI><B>Explicar el estado actual:</B> <I>"I can't eat — I <B>have just had</B> lunch."</I></LI>
+<LI><B>Reacción inmediata:</B> <I>"The match <B>has just ended</B>. The score is 2-1."</I></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>JUST con Past Simple en inglés americano:</B> En conversaciones informales (películas, series), verás: <I>"I just saw him!"</I> en lugar de <I>"I have just seen him!"</I>. Para el examen pre-UNI peruano, la forma estándar y correcta es con <B>Present Perfect</B>: <I>"I <B>have just seen</B> him."</I></DIV>
+
+<!-- 3. ALREADY -->
+<H3>3. ALREADY — "ya"</H3>
+
+<DIV CLASS="tarjeta-palabra">
+<DIV CLASS="tw-titulo">ALREADY</DIV>
+<DIV CLASS="tw-es">Español: "ya" (antes de lo esperado o como información nueva)</DIV>
+<DIV CLASS="tw-regla">
+<B>Significado:</B> Una acción se ha completado antes del momento esperado o antes de que se pregunte por ella. Transmite cierta sorpresa o confirmación de que algo ya está hecho.<BR><BR>
+<B>Tiempo verbal:</B> Present Perfect en afirmativas. También en algunas preguntas (expresa sorpresa).<BR><BR>
+<B>Posición:</B> Entre el auxiliar y el participio pasado (como <I>just</I>). En preguntas con sorpresa, puede ir al final.<BR>
+Fórmula afirmativa: <B>have/has + ALREADY + Past Participle</B>
+</DIV>
+<DIV CLASS="tw-ej">
+✓ "I <B>have already eaten</B>." (Ya comí — antes de que me lo preguntes.)<BR>
+✓ "She <B>has already submitted</B> her application." (Ya envió su solicitud.)<BR>
+✓ "Have you finished <B>already</B>? That was fast!" (¿Ya terminaste? — sorpresa, al final.)<BR>
+✗ "I already have eaten." — "already" no va antes del auxiliar.<BR>
+✗ "I haven't eaten already." — en negativas se usa YET, no already.
+</DIV>
+</DIV>
+
+<H4>ALREADY vs YET en contexto:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Oración</TH><TH>Marcador correcto</TH><TH>Por qué</TH></TR>
+<TR><TD><I>"I have ___ done it."</I> (afirmativa)</TD><TD><B>already</B></TD><TD>Confirma que la acción está completa</TD></TR>
+<TR><TD><I>"I haven't done it ___."</I> (negativa)</TD><TD><B>yet</B></TD><TD>La acción esperada aún no ocurrió</TD></TR>
+<TR><TD><I>"Have you done it ___?"</I> (pregunta)</TD><TD><B>yet</B> (neutro) / <B>already</B> (sorpresa)</TD><TD>Yet = pregunta normal; already = sorpresa</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 4. YET -->
+<H3>4. YET — "todavía / aún / ya (en preguntas)"</H3>
+
+<DIV CLASS="tarjeta-palabra">
+<DIV CLASS="tw-titulo">YET</DIV>
+<DIV CLASS="tw-es">Español: "todavía no" (negativas) / "ya" (preguntas)</DIV>
+<DIV CLASS="tw-regla">
+<B>Significado:</B> En negativas, indica que una acción esperada <B>aún no ha ocurrido</B>. En preguntas, pregunta si una acción esperada <B>ya ha ocurrido</B>.<BR><BR>
+<B>Tiempo verbal:</B> Present Perfect. Nunca con Past Simple o Present Simple.<BR><BR>
+<B>Posición:</B> <B>SIEMPRE al final</B> de la oración — esta es la regla más evaluada en exámenes.<BR>
+Fórmula negativa: <B>haven't/hasn't + Past Participle + YET</B><BR>
+Fórmula interrogativa: <B>Have/Has + sujeto + Past Participle + YET?</B>
+</DIV>
+<DIV CLASS="tw-ej">
+✓ "I haven't finished my report <B>yet</B>." (Aún no terminé mi reporte.)<BR>
+✓ "Has the package arrived <B>yet</B>?" (¿Ya llegó el paquete?)<BR>
+✓ "They haven't decided <B>yet</B>." (Todavía no han decidido.)<BR>
+✗ "I haven't yet finished my report." — posición incorrecta en el nivel exigido.<BR>
+✗ "I didn't finish yet." — YET no se usa con Past Simple.
+</DIV>
+</DIV>
+
+<H4>Los tres significados de YET según la oración:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo de oración</TH><TH>Significado de YET</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Negativa (haven't/hasn't)</TD><TD>"todavía no" / "aún no"</TD><TD><I>"She hasn't called <B>yet</B>."</I></TD></TR>
+<TR><TD>Interrogativa (Have/Has...?)</TD><TD>"ya" (esperando respuesta sí/no)</TD><TD><I>"Have you eaten <B>yet</B>?"</I></TD></TR>
+<TR><TD>Afirmativa (raro / formal)</TD><TD>"todavía" (persiste algo)</TD><TD><I>"He has yet to understand."</I> (Todavía no comprende.)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>YET vs STILL — trampa de nivel experto:</B><BR>
+• <B>Yet</B> → Present Perfect negativo o interrogativo, <B>siempre al final</B>: <I>"She hasn't arrived <B>yet</B>."</I><BR>
+• <B>Still</B> → Present Simple/Continuous o Past Simple, <B>antes del auxiliar o verbo</B>, y tiene matiz de continuidad: <I>"She <B>still</B> hasn't arrived."</I> (implica más impaciencia o énfasis).<BR>
+Ambos son correctos pero transmiten matices distintos; el examen evalúa si puedes distinguirlos.</DIV>
+
+<!-- 5. FOR -->
+<H3>5. FOR — "por / durante (un período de tiempo)"</H3>
+
+<DIV CLASS="tarjeta-palabra">
+<DIV CLASS="tw-titulo">FOR</DIV>
+<DIV CLASS="tw-es">Español: "por / durante" (una cantidad de tiempo)</DIV>
+<DIV CLASS="tw-regla">
+<B>Significado:</B> Indica la <B>duración total</B> de una acción o estado. Responde a la pregunta "¿cuánto tiempo?"<BR><BR>
+<B>Tiempo verbal:</B> Present Perfect (cuando la acción continúa hasta el presente) o Past Simple (cuando la acción ya terminó). El contexto determina cuál usar.<BR><BR>
+<B>Posición:</B> Al final de la oración, antes del complemento si lo hay.<BR>
+Fórmula: <B>have/has + Past Participle + FOR + cantidad de tiempo</B>
+</DIV>
+<DIV CLASS="tw-ej">
+✓ "I have lived here <B>for ten years</B>." (Vivo aquí hace / desde hace diez años — y sigo viviendo.)<BR>
+✓ "She studied <B>for three hours</B> last night." (Past Simple — ya terminó.)<BR>
+✓ "We have been friends <B>for decades</B>." (Somos amigos desde hace décadas — continúa.)<BR>
+✗ "I have lived here <B>since ten years</B>." — "ten years" es duración, no punto de inicio → FOR.<BR>
+✗ "I have lived here <B>for 2010</B>." — "2010" es un punto de inicio específico → SINCE.
+</DIV>
+</DIV>
+
+<H4>Expresiones de tiempo que van con FOR:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Con FOR (duración)</TH><TH>Traducción</TH></TR>
+<TR><TD>for <B>two hours</B></TD><TD>por/durante dos horas</TD></TR>
+<TR><TD>for <B>a week / three weeks</B></TD><TD>por una semana / tres semanas</TD></TR>
+<TR><TD>for <B>six months</B></TD><TD>por seis meses</TD></TR>
+<TR><TD>for <B>five years / a long time</B></TD><TD>por cinco años / mucho tiempo</TD></TR>
+<TR><TD>for <B>ages / decades / centuries</B></TD><TD>por siglos / décadas / mucho tiempo</TD></TR>
+<TR><TD>for <B>the last three days</B></TD><TD>durante los últimos tres días</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 6. SINCE -->
+<H3>6. SINCE — "desde (un punto en el tiempo)"</H3>
+
+<DIV CLASS="tarjeta-palabra">
+<DIV CLASS="tw-titulo">SINCE</DIV>
+<DIV CLASS="tw-es">Español: "desde" (un momento específico de inicio)</DIV>
+<DIV CLASS="tw-regla">
+<B>Significado:</B> Indica el <B>punto de inicio</B> de una acción o estado que continúa hasta el presente. Responde a la pregunta "¿desde cuándo?"<BR><BR>
+<B>Tiempo verbal:</B> Casi siempre <B>Present Perfect</B> en la cláusula principal. La cláusula con "since" puede ir en Past Simple si describe el momento de inicio.<BR><BR>
+<B>Posición:</B> Al final de la oración o después del verbo, antes del complemento de tiempo.<BR>
+Fórmula: <B>have/has + Past Participle + SINCE + punto de tiempo</B>
+</DIV>
+<DIV CLASS="tw-ej">
+✓ "She has worked here <B>since 2015</B>." (Trabaja aquí desde 2015 — y sigue trabajando.)<BR>
+✓ "I haven't seen him <B>since last Monday</B>." (No lo veo desde el lunes pasado.)<BR>
+✓ "We have been together <B>since we were teenagers</B>." (cláusula con since + Past Simple)<BR>
+✗ "She has worked here <B>since five years</B>." — "five years" es duración → FOR.<BR>
+✗ "She worked here <B>since 2015</B>." — con SINCE y acción continua, la cláusula principal va en PP, no en PS.
+</DIV>
+</DIV>
+
+<H4>Expresiones de tiempo que van con SINCE:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Con SINCE (punto de inicio)</TH><TH>Traducción</TH></TR>
+<TR><TD>since <B>2010 / last year / Monday</B></TD><TD>desde 2010 / el año pasado / el lunes</TD></TR>
+<TR><TD>since <B>this morning / yesterday</B></TD><TD>desde esta mañana / ayer</TD></TR>
+<TR><TD>since <B>I was a child / she was born</B></TD><TD>desde que era niño / desde que nació</TD></TR>
+<TR><TD>since <B>the beginning / the accident</B></TD><TD>desde el comienzo / desde el accidente</TD></TR>
+<TR><TD>since <B>then</B></TD><TD>desde entonces</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 7. FOR VS SINCE -->
+<H3>7. FOR vs SINCE — el contraste más evaluado del tema</H3>
+
+La distinción entre <B>for</B> y <B>since</B> es uno de los puntos más frecuentes en exámenes de admisión. La regla es simple pero requiere práctica:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH></TH><TH>FOR</TH><TH>SINCE</TH></TR>
+<TR><TD><B>Pregunta que responde</B></TD><TD>¿Cuánto tiempo? (How long?)</TD><TD>¿Desde cuándo? (Since when?)</TD></TR>
+<TR><TD><B>Tipo de referencia</B></TD><TD>Duración (cantidad de tiempo)</TD><TD>Punto de inicio (momento específico)</TD></TR>
+<TR><TD><B>Ejemplos de complemento</B></TD><TD>two hours, a week, years, ages</TD><TD>2018, Monday, last week, I was born</TD></TR>
+<TR><TD><B>Pregunta: How long...?</B></TD><TD><I>I've lived here <B>for</B> 5 years.</I></TD><TD><I>I've lived here <B>since</B> 2019.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Test rápido mental:</B> Si puedes reemplazar la expresión temporal por una cantidad de tiempo (dos años, tres horas...) → usa <B>FOR</B>. Si es un momento específico del calendario o de la vida → usa <B>SINCE</B>.<BR><BR>
+<I>"She has been ill ___ a week."</I> → "a week" = duración → <B>FOR</B><BR>
+<I>"She has been ill ___ last Monday."</I> → "last Monday" = punto de inicio → <B>SINCE</B><BR>
+<I>"She has been ill ___ she caught the flu."</I> → cláusula con evento específico → <B>SINCE</B>
+</DIV>
+
+<!-- 8. TABLA MAESTRA -->
+<H3>8. Tabla maestra de los cinco marcadores</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Marcador</TH><TH>Significado</TH><TH>Tipo de oración</TH><TH>Posición</TH><TH>Tiempo verbal</TH></TR>
+<TR><TD><B>JUST</B></TD><TD>acabar de / recién</TD><TD>Afirmativa</TD><TD>Entre have/has y PP</TD><TD>Present Perfect</TD></TR>
+<TR><TD><B>ALREADY</B></TD><TD>ya (antes de lo esperado)</TD><TD>Afirmativa (y preguntas de sorpresa)</TD><TD>Entre have/has y PP (o al final en preguntas)</TD><TD>Present Perfect</TD></TR>
+<TR><TD><B>YET</B></TD><TD>todavía no / ya (preguntas)</TD><TD>Negativa e interrogativa</TD><TD>Siempre al FINAL</TD><TD>Present Perfect</TD></TR>
+<TR><TD><B>FOR</B></TD><TD>durante / por (duración)</TD><TD>Afirmativa, negativa, interrogativa</TD><TD>Al final, + cantidad de tiempo</TD><TD>PP (acción continua) o PS (acción terminada)</TD></TR>
+<TR><TD><B>SINCE</B></TD><TD>desde (punto de inicio)</TD><TD>Afirmativa, negativa, interrogativa</TD><TD>Al final, + momento específico</TD><TD>Present Perfect (cláusula principal)</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 9. ERRORES TIPICOS -->
+<H3>9. Errores típicos de examen</H3>
+<UL>
+<LI>✗ <I>"I just have finished."</I> → ✓ <I>"I <B>have just</B> finished."</I> (just entre auxiliar y PP)</LI>
+<LI>✗ <I>"I haven't eaten already."</I> → ✓ <I>"I haven't eaten <B>yet</B>."</I> (negativas = yet)</LI>
+<LI>✗ <I>"Have you done it yet already?"</I> → ✓ Uno solo: <I>"Have you done it <B>yet</B>?"</I></LI>
+<LI>✗ <I>"I've lived here <B>since</B> five years."</I> → ✓ <I>"I've lived here <B>for</B> five years."</I></LI>
+<LI>✗ <I>"I've lived here <B>for</B> 2010."</I> → ✓ <I>"I've lived here <B>since</B> 2010."</I></LI>
+<LI>✗ <I>"She <B>worked</B> here since Monday."</I> → ✓ <I>"She <B>has worked</B> here since Monday."</I></LI>
+<LI>✗ <I>"I didn't finish <B>yet</B>."</I> → ✓ <I>"I <B>haven't</B> finished yet."</I> (yet = PP, no PS)</LI>
+<LI>✗ <I>"He has <B>yet</B> called me."</I> → ✓ <I>"He <B>hasn't</B> called me yet."</I></LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">JUST</DIV><DIV CLASS="dk-label">Entre have/has y PP — nunca al final</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">ALREADY</DIV><DIV CLASS="dk-label">Afirmativas — entre aux. y PP</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">YET</DIV><DIV CLASS="dk-label">Siempre al final — neg. e interrog.</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">FOR</DIV><DIV CLASS="dk-label">Duración → cantidad de tiempo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">SINCE</DIV><DIV CLASS="dk-label">Punto de inicio → momento específico</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- EJERCICIOS -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BASICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Choose the correct option: <SPAN CLASS="eng">"I ___ just ___ lunch. I'm not hungry."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) just have — eaten</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) have — just eaten</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) have — eaten just</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) did — just eat</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) have — just eaten</B><BR>
+• Estructura de JUST: <B>have/has + just + Past Participle</B>.<BR>
+• "just" va entre el auxiliar "have" y el participio "eaten".<BR>
+• El contexto ("I'm not hungry") confirma que la acción es reciente y tiene resultado presente → Present Perfect ✓<BR>
+a) "just have eaten" — "just" no puede preceder al auxiliar ✗<BR>
+c) "eaten just" — "just" no va al final (esa posición es de "yet") ✗<BR>
+d) "did just eat" — Past Simple; incompatible con el uso de "just" para acción inmediata reciente en inglés estándar ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Fill in the blank: <SPAN CLASS="eng">"Don't call María — she <B>has ___</B> left the office."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) yet</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) for</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) just</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) since</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) just</B><BR>
+• "Don't call" sugiere que es inútil porque la acción ocurrió hace muy poco: <B>just</B> (acaba de salir).<BR>
+• Posición confirmada: entre "has" y "left" → <B>has just left</B> ✓<BR>
+a) "has yet left" — "yet" no va entre el auxiliar y el PP; además "yet" es para negativas/interrogativas ✗<BR>
+b) "has for left" — "for" requiere una expresión de tiempo después ("for two hours"), no va aquí ✗<BR>
+d) "has since left" — "since" también requiere un punto de tiempo después ("since Monday") ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Choose the correct sentence with <B>YET</B>:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) <SPAN CLASS="eng">"She yet hasn't arrived."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) <SPAN CLASS="eng">"She has yet arrived."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) <SPAN CLASS="eng">"She hasn't arrived yet."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) <SPAN CLASS="eng">"She hasn't yet arrived."</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) "She hasn't arrived yet."</B><BR>
+• La regla de YET es la más clara del tema: en negativas e interrogativas, <B>siempre al final</B>.<BR>
+• <I>"She hasn't arrived <B>yet</B>."</I> = Todavía no ha llegado ✓<BR>
+a) "yet hasn't arrived" — "yet" no puede iniciar la oración con este significado ✗<BR>
+b) "has yet arrived" — "has yet" en afirmativa con este orden es una construcción formal arcaica que no corresponde a este nivel ✗<BR>
+d) "hasn't yet arrived" — aunque a veces aparece en inglés literario, para el examen estándar pre-UNI la posición correcta es al final ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Choose <B>FOR</B> or <B>SINCE</B>: <SPAN CLASS="eng">"They have been married ___ 2008."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) for</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) since</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) during</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) from</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) since</B><BR>
+• "2008" es un <B>año específico</B> = punto de inicio → <B>since</B>.<BR>
+• Test mental: ¿es una cantidad de tiempo? No. ¿Es un momento específico? Sí → SINCE ✓<BR>
+a) "for 2008" — "for" necesita una cantidad de tiempo como "for three years", no un año ✗<BR>
+c) "during" — indica "durante" un evento concreto como "during the war", no para medir duración en PP ✗<BR>
+d) "from 2008" — "from" se usa con "to/until" para rangos ("from 2008 to 2020"), no con PP ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Choose <B>FOR</B> or <B>SINCE</B>: <SPAN CLASS="eng">"I haven't slept ___ more than 30 hours."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) since</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) for</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) yet</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) already</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) for</B><BR>
+• "More than 30 hours" es una <B>cantidad de tiempo / duración</B> → <B>for</B>.<BR>
+• La oración está en negativa (haven't slept) + duración → Present Perfect negativo + <B>for</B> ✓<BR>
+a) "since more than 30 hours" — "since" necesita un punto de inicio ("since Monday"), no una cantidad ✗<BR>
+c) "yet" — "yet" va al final y no precede una expresión de tiempo ✗<BR>
+d) "already" — "already" no se usa en negativas ni con expresiones de duración ✗</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Select the sentence where <B>ALREADY</B> is used correctly:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) <SPAN CLASS="eng">"I haven't already eaten dinner."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) <SPAN CLASS="eng">"Already she has finished the exam."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) <SPAN CLASS="eng">"She has already read the instructions twice."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) <SPAN CLASS="eng">"Have you already not replied?"</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) "She has already read the instructions twice."</B><BR>
+• "Already" entre el auxiliar "has" y el participio "read" en una oración <B>afirmativa</B> → uso correcto ✓<BR>
+• El mensaje: completó la acción antes de lo que se podría esperar.<BR>
+a) "haven't already eaten" — en negativas se usa <B>yet</B>, no "already" ✗<BR>
+b) "Already she has finished" — "already" no puede ir al inicio de la oración con esta función ✗<BR>
+d) "already not" — combinación imposible; "already" es afirmativo y "not" es negativo ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Choose the correct translation of: <B>"¿Ya has enviado el informe?"</B> (pregunta neutral, sin sorpresa)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) <SPAN CLASS="eng">"Have you already sent the report?"</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) <SPAN CLASS="eng">"Have you sent the report yet?"</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) <SPAN CLASS="eng">"Did you send the report yet?"</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) <SPAN CLASS="eng">"Have you sent yet the report?"</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) "Have you sent the report yet?"</B><BR>
+• Una pregunta neutral sobre si la acción ya ocurrió usa <B>yet</B> al final ✓<BR>
+• <B>Already</B> en preguntas expresa <B>sorpresa</B> ("¿ya?"), lo que cambia el matiz.<BR>
+• El enunciado dice "sin sorpresa" → <B>yet</B> es la opción correcta ✓<BR>
+a) Gramaticalmente correcto, pero implica sorpresa; el enunciado indica pregunta neutral ✗<BR>
+c) "Did you send" = Past Simple; "yet" exige Present Perfect ✗<BR>
+d) "yet the report" — "yet" siempre al final, nunca entre el verbo y el objeto ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Identify the sentence where FOR is used with Past Simple (action already completed):</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) <SPAN CLASS="eng">"I have known her for twenty years."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) <SPAN CLASS="eng">"He has worked at that company for a decade."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) <SPAN CLASS="eng">"She lived in France for two years before moving to Peru."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) <SPAN CLASS="eng">"They have been together for ages."</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>
+• <I>"She <B>lived</B> in France for two years before moving to Peru."</I><BR>
+• "Before moving to Peru" indica que la acción de vivir en Francia ya <B>terminó</B> — es un período pasado cerrado → <B>Past Simple + for</B> ✓<BR>
+• Este es un caso importante: <B>for</B> no es exclusivo del Present Perfect. Con Past Simple, indica una duración pasada ya finalizada.<BR>
+a) "I have known her for twenty years" → PP, la relación continúa ✓ pero no es la respuesta pedida<BR>
+b) "has worked... for a decade" → PP, continúa ✓ pero no es la pedida<BR>
+d) "have been together for ages" → PP, continúa ✓ pero no es la pedida</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Choose the correct option to complete the conversation:<BR><SPAN CLASS="eng">A: "Is dinner ready?"<BR>B: "Not quite. I <B>haven't cooked the rice ___</B>."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) already</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) just</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) still</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) yet</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d) yet</B><BR>
+• La oración es negativa (haven't cooked) y el marcador debe ir al final → <B>yet</B> ✓<BR>
+• Significado: "Todavía no he cocinado el arroz" — acción esperada que aún no ocurrió ✓<BR>
+a) "haven't cooked already" — "already" en negativas es incorrecto; siempre "yet" ✗<BR>
+b) "haven't cooked just" — "just" indica que algo recién pasó (afirmativa); no aplica en negativas de esta forma ✗<BR>
+c) "still" — aunque podría ir ("I still haven't cooked"), "still" va <B>antes</B> del auxiliar negativo: <I>"I <B>still</B> haven't cooked the rice"</I>, no al final ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Choose the correct sentence using SINCE with a subordinate clause:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) <SPAN CLASS="eng">"I have felt better since I take the medicine."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) <SPAN CLASS="eng">"I have felt better since I took the medicine."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) <SPAN CLASS="eng">"I felt better since I have taken the medicine."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> b) <SPAN CLASS="eng">"I have felt better since I have taken the medicine."</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+• Cuando <B>since</B> introduce una cláusula subordinada, la estructura estándar es:<BR>
+→ Cláusula principal: <B>Present Perfect</B> (have felt)<BR>
+→ Cláusula con since: <B>Past Simple</B> (I took) — el evento de tomar la medicina es el punto de inicio ✓<BR>
+a) "since I take" — Present Simple en la subordinada es incorrecto; "since" + cláusula exige Past Simple ✗<BR>
+c) "I felt better since..." — la cláusula principal debe ser Present Perfect (la mejora continúa hasta ahora) ✗<BR>
+d) "since I have taken" — ambas cláusulas en PP es incorrecto; la subordinada con "since" usa Past Simple ✗</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Identify the option where ALL sentences are grammatically correct:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) <SPAN CLASS="eng">"She's just arrived. / I've already paid. / Have you eaten yet?"</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) <SPAN CLASS="eng">"She's arrived just. / I've already paid. / Have you eaten yet?"</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) <SPAN CLASS="eng">"She's just arrived. / I've paid already. / Have you yet eaten?"</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) <SPAN CLASS="eng">"She just has arrived. / I've already paid. / Have you eaten yet?"</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+① <I>"She's just arrived."</I> → just entre has ('s) y arrived ✓<BR>
+② <I>"I've already paid."</I> → already entre have ('ve) y paid ✓<BR>
+③ <I>"Have you eaten yet?"</I> → yet al final en interrogativa ✓<BR><BR>
+Errores en las otras opciones:<BR>
+b) "She's arrived just" — "just" al final es posición de "yet" ✗<BR>
+c) "I've paid already" — aunque a veces aceptado coloquialmente, el orden estándar es entre auxiliar y PP; "Have you yet eaten?" — "yet" no puede ir entre auxiliar y PP ✗<BR>
+d) "She just has arrived" — "just" no puede preceder al auxiliar ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Choose FOR or SINCE for each blank and identify the correct option:<BR><SPAN CLASS="eng">"The team has trained ___ six months and ___ the new coach arrived, their performance has improved significantly."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) since — for</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) for — for</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) for — since</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) since — since</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) for — since</B><BR>
+① "trained ___ six months" → "six months" es una <B>cantidad de tiempo / duración</B> → <B>FOR</B> ✓<BR>
+② "___ the new coach arrived" → "the new coach arrived" es un <B>evento específico de inicio</B> → <B>SINCE</B> ✓<BR>
+Estructura final: <I>"The team has trained <B>for</B> six months and <B>since</B> the new coach arrived, their performance has improved."</I><BR>
+Regla recordada: FOR + duración / SINCE + punto de inicio (puede ser un evento expresado como cláusula).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Select the sentence that uses the markers correctly to convey this meaning: <B>"La reunión terminó hace un momento — yo mismo acabo de salir de ella."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) <SPAN CLASS="eng">"The meeting has ended since a moment ago and I just have left it."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) <SPAN CLASS="eng">"The meeting has just ended and I have just left it."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) <SPAN CLASS="eng">"The meeting just ended and I have left it yet."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) <SPAN CLASS="eng">"The meeting has ended already and I just have left."</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+• "Acabar de terminar" → <B>has just ended</B> (just entre has y ended) ✓<BR>
+• "Acabo de salir" → <B>have just left</B> (just entre have y left) ✓<BR>
+• Ambas acciones son inmediatas y recientes → <B>JUST + Present Perfect</B> es la herramienta correcta en ambas ✓<BR>
+a) "since a moment ago" — "since" no se usa con "a moment ago" (que es una duración/referencia relativa, no un punto de inicio de calendario); "just have left" — orden incorrecto ✗<BR>
+c) "meeting just ended" — sin auxiliar have/has; "have left it yet" — "yet" en afirmativa no tiene este significado ✗<BR>
+d) "has ended already" — aunque no es incorrecto, "already" no transmite la inmediatez de "acaba de"; "just have left" — orden incorrecto ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> A student writes the following and asks you to correct it:<BR><SPAN CLASS="eng">"My parents have worked in this hospital since fifteen years. My father has just been promoted already, and my mother hasn't received her raise for."</SPAN><BR>How many errors does it contain?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) 2 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) 3 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) 4 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) 5 errores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) 3 errores</B><BR>
+① <B>"since fifteen years"</B> → <B>"for fifteen years"</B>: "fifteen years" es duración → <B>for</B> ✗<BR>
+② <B>"has just been promoted already"</B> → no se pueden combinar "just" y "already" en la misma cláusula. La oración usa ambos a la vez, lo cual es redundante e incorrecto. La forma correcta es solo uno: <I>"has just been promoted"</I> ✗<BR>
+③ <B>"hasn't received her raise for"</B> → "for" está colgado sin expresión de tiempo después; necesita complemento: <I>"hasn't received her raise <B>yet</B>"</I> (si la idea es que todavía no la recibió) o <I>"hasn't received her raise <B>for months</B>"</I> (con duración) ✗<BR><BR>
+Texto correcto: <I>"My parents have worked in this hospital <B>for</B> fifteen years. My father has <B>just</B> been promoted, and my mother hasn't received her raise <B>yet</B>."</I></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Which option correctly explains the difference between these two sentences?<BR><SPAN CLASS="eng">A: "Have you finished yet?"<BR>B: "Have you finished already?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Both sentences have identical meaning and are interchangeable in all contexts.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Sentence A is incorrect because "yet" cannot be used in questions.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Sentence A is a neutral question asking if the action has been completed. Sentence B expresses surprise that the action may have been completed earlier than expected.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Sentence B is incorrect because "already" can never appear in questions.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>
+• <B>"Have you finished <B>yet</B>?"</B> → pregunta <B>neutral</B>. El hablante simplemente quiere saber si la acción ocurrió. No implica ninguna expectativa de tiempo. Traducción natural: "¿Ya terminaste?" (tono informativo).<BR>
+• <B>"Have you finished <B>already</B>?"</B> → pregunta con <B>sorpresa</B>. El hablante esperaba que la acción tardara más y se sorprende de que haya ocurrido tan pronto. Traducción: "¿Ya terminaste? (¡qué rápido!)".<BR>
+a) No son interchangeables: el matiz de sorpresa es una diferencia comunicativa real ✗<BR>
+b) "Yet" se usa perfectamente en interrogativas — es uno de sus usos principales ✗<BR>
+d) "Already" sí puede aparecer en preguntas, precisamente para expresar sorpresa ✗</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Read the paragraph and identify the option that corrects ALL errors with the most precise justification:<BR><SPAN CLASS="eng">"The research institute has published its findings since three months. The lead scientist has just already presented the data at a conference, but the press hasn't covered the story already. Several journalists have yet expressed interest, however, and the team expects wider coverage since the next few weeks."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) "since three months" → "for three months"; "just already" → solo "just"; "hasn't covered already" → "hasn't covered yet"; "have yet expressed" → "have already expressed"; "since the next few weeks" → "for the next few weeks".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Solo "since three months" → "for three months" y "hasn't covered already" → "hasn't covered yet" son errores.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) "since three months" → "for three months"; "just already" → solo "already"; "hasn't covered already" → "hasn't covered yet"; "have yet expressed" → "have already expressed"; "since the next few weeks" → "within the next few weeks".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) El texto es correcto; los marcadores se usan con libertad en inglés académico.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+Análisis sistemático de los 5 errores:<BR>
+① <B>"since three months"</B> → <B>"for three months"</B>: "three months" = duración → FOR ✓<BR>
+② <B>"has just already presented"</B> → <B>"has just presented"</B>: "just" y "already" no se combinan en la misma cláusula; son redundantes y contradictorios en posición ✓<BR>
+③ <B>"hasn't covered the story already"</B> → <B>"hasn't covered the story yet"</B>: en negativas se usa YET, no "already"; además, "already" en negativas es incorrecto ✓<BR>
+④ <B>"have yet expressed interest"</B> → <B>"have already expressed interest"</B>: "yet" en esta posición (entre auxiliar y PP en afirmativa) solo funciona en la estructura formal "have yet to + infinitivo"; aquí el sentido es de acción completada → "already" ✓<BR>
+⑤ <B>"since the next few weeks"</B> → <B>"for the next few weeks"</B>: "the next few weeks" es una duración futura → FOR; "since" no puede introducir períodos futuros ✓<BR>
+La opción c) propone "just → already" en el error ②, pero "just" transmite inmediatez que "already" pierde; además propone "within" para el error ⑤, que aunque es aceptable cambia más de lo necesario. La opción a) es más precisa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Choose the option that correctly translates ALL of the following with maximum grammatical precision:<BR><B>① "Acabo de darme cuenta."<BR>② "¿Ya han tomado una decisión?"<BR>③ "Todavía no hemos recibido respuesta."<BR>④ "Lleva esperando desde las nueve."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) <SPAN CLASS="eng">① "I just realized." ② "Have they already taken a decision?" ③ "We haven't received an answer yet." ④ "She has been waiting since nine o'clock."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) <SPAN CLASS="eng">① "I have just realized." ② "Have they taken a decision yet?" ③ "We haven't yet received an answer." ④ "She has been waiting since nine o'clock."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) <SPAN CLASS="eng">① "I have just realized." ② "Have they already taken a decision?" ③ "We haven't received an answer yet." ④ "She has been waiting for nine o'clock."</SPAN></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) <SPAN CLASS="eng">① "I have just realized." ② "Have they taken a decision yet?" ③ "We haven't received an answer yet." ④ "She has been waiting since nine o'clock."</SPAN></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d)</B><BR>
+① "Acabo de darme cuenta" → <B>"I have just realized."</B> — have + just + PP ✓<BR>
+② "¿Ya han tomado una decisión?" (neutral, sin sorpresa) → <B>"Have they taken a decision yet?"</B> — pregunta neutral con yet al final ✓<BR>
+③ "Todavía no hemos recibido respuesta" → <B>"We haven't received an answer yet."</B> — negativa + yet al final ✓<BR>
+④ "Lleva esperando desde las nueve" → <B>"She has been waiting since nine o'clock."</B> — "since" + punto de inicio específico ✓<BR><BR>
+Análisis de errores en otras opciones:<BR>
+a) ① "I just realized" — Past Simple americano informal, no estándar pre-UNI ✗<BR>
+b) ③ "We haven't yet received" — "yet" entre auxiliar y PP es posición no estándar ✗<BR>
+c) ④ "waiting for nine o'clock" — "nine o'clock" es un punto de inicio, no una duración → SINCE ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> The following sentence contains a subtle error. Which option identifies and corrects it with the most linguistically precise explanation?<BR><SPAN CLASS="eng">"Scientists have studied this phenomenon since decades, but they haven't yet reached a definitive conclusion."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) "since decades" → "for decades": "decades" expresses a duration (quantity of time), not a specific starting point; therefore FOR is required. The rest of the sentence is correct.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) "haven't yet reached" → "haven't reached yet": "yet" must always appear at the very end of the clause.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) "have studied" → "studied": Past Simple is required because the scientific research happened in the past.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) The sentence is completely correct.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+• El único error es <B>"since decades"</B>. "Decades" no es un punto específico de inicio en el tiempo; es una <B>cantidad de tiempo / duración</B> ("décadas"). Por eso se usa <B>for</B>: <I>"for decades"</I> ✓<BR>
+• Contraste: <I>"since the 1970s"</I> sería correcto con "since" porque es un punto específico.<BR>
+• Sobre b): "haven't yet reached" es una variante estilística aceptada en inglés formal y académico aunque no sea la posición estándar. No constituye un error del mismo nivel ✗<BR>
+• Sobre c): el fenómeno se estudia hasta el presente → Present Perfect es correcto; Past Simple implicaría que el estudio ya terminó ✗<BR>
+Oración corregida: <I>"Scientists have studied this phenomenon <B>for</B> decades, but they haven't yet reached a definitive conclusion."</I></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Identify the option that explains CORRECTLY why BOTH markers are possible but convey different meanings:<BR><SPAN CLASS="eng">A: "I have lived here for the last three years."<BR>B: "I have lived here since three years ago."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Both sentences are incorrect: A needs "since" and B needs "for".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Both sentences are grammatically correct and convey the same meaning. A uses "for" with a duration phrase ("the last three years"), while B uses "since" followed by the phrase "three years ago" which functions as a specific point of reference in the past. Both are acceptable.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Sentence A is correct; Sentence B is incorrect because "since" can never be followed by "ago".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Sentence B is correct; Sentence A is incorrect because "the last three years" requires "since".</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+Esta es una pregunta de nivel experto que evalúa el conocimiento profundo de FOR y SINCE:<BR><BR>
+• <B>Oración A</B>: <I>"for the last three years"</I> → "the last three years" funciona como una <B>duración</B> (los tres años más recientes hasta ahora) → <B>FOR</B> correcto ✓<BR>
+• <B>Oración B</B>: <I>"since three years ago"</I> → "three years ago" funciona como un <B>punto específico de referencia en el pasado</B> (el momento de hace exactamente tres años) → <B>SINCE</B> correcto ✓<BR><BR>
+Ambas oraciones significan esencialmente lo mismo: el hablante lleva tres años viviendo aquí. La diferencia es el enfoque:<BR>
+→ A enfatiza la <B>duración</B> (cuánto tiempo en total)<BR>
+→ B enfatiza el <B>punto de inicio</B> (el momento hace tres años)<BR><BR>
+c) Es incorrecto afirmar que "since" nunca puede preceder "ago" — "since three years ago" es perfectamente válido ✗<BR>
+d) "the last three years" es una frase de duración que requiere "for", no "since" ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Read the essay and choose the option that corrects ALL errors with the greatest precision:<BR><SPAN CLASS="eng">"Our country has made significant progress since the last decade. The government has just already implemented three major reforms, and it hasn't addressed the education crisis already. Civil society groups have been demanding change since more than five years, and they haven't stopped their protests for. Since the situation has remained unchanged, international observers have expressed growing concern."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) "since the last decade" → "over the last decade"; "just already" → solo "just"; "hasn't addressed... already" → "hasn't addressed... yet"; "since more than five years" → "for more than five years"; "for" (al final sin complemento) → "yet"; "Since the situation" → "As the situation" (SINCE aquí es causal, ya no temporal, y es correcto).</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "since the last decade" → "for the last decade"; "just already" → solo "just"; "hasn't addressed... already" → "hasn't addressed... yet"; "since more than five years" → "for more than five years"; "for" (colgado) → eliminarlo y añadir "yet" al final de la cláusula.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Solo "just already" y "since more than five years" son errores.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El texto es correcto; usa los marcadores de forma avanzada.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+Análisis de cada punto del texto:<BR>
+① <B>"since the last decade"</B> → <B>"for the last decade"</B>: "the last decade" es una duración (los últimos 10 años) → FOR ✓<BR>
+② <B>"has just already implemented"</B> → <B>"has just implemented"</B>: "just" y "already" son incompatibles en la misma cláusula ✓<BR>
+③ <B>"hasn't addressed the education crisis already"</B> → <B>"hasn't addressed the education crisis yet"</B>: negativa → YET al final, no "already" ✓<BR>
+④ <B>"since more than five years"</B> → <B>"for more than five years"</B>: "five years" = duración → FOR ✓<BR>
+⑤ <B>"they haven't stopped their protests for"</B>: "for" está colgado sin expresión de tiempo. La idea parece ser "todavía no han parado" → <B>"they haven't stopped their protests yet"</B> ✓<BR>
+⑥ <B>"Since the situation has remained unchanged"</B>: aquí "since" es usado en sentido <B>causal</B> ("dado que / puesto que"), no temporal. En inglés académico formal esto es correcto — no es un error ✓<BR><BR>
+La opción a) propone "over the last decade" (también correcto pero cambia más de lo necesario) y trata el "since" causal final como si necesitara corrección, cuando es correcto. La opción b) es más precisa y conservadora ✓</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

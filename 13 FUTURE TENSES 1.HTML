@@ -1,0 +1,510 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Future Tenses 1 - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:130px;text-align:center;}
+.dk .dk-num{font-size:20px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.eng{font-style:italic;color:#0D1B36;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 13 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Future Tenses 1</H1>
+<DIV CLASS="sub">Will &middot; Be going to &middot; Estructura afirmativa, negativa e interrogativa &middot; Diferencias de uso</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1. PANORAMA GENERAL -->
+<H3>1. El futuro en inglés: un panorama general</H3>
+A diferencia del español, donde el futuro suele expresarse con una sola conjugación verbal ("comeré", "iré"), el inglés <B>no tiene una forma gramatical pura de futuro</B>. En su lugar, usa varias estructuras distintas para hablar de acciones que aún no han ocurrido, y la elección de cuál usar depende del <B>tipo de intención o información</B> que se quiere comunicar.
+
+<H4>Las principales formas de hablar del futuro en inglés son:</H4>
+<UL>
+<LI><B>Will</B> + verbo base → predicciones, decisiones espontáneas, promesas.</LI>
+<LI><B>Be going to</B> + verbo base → planes, intenciones y predicciones con evidencia.</LI>
+<LI><B>Present Continuous</B> (am/is/are + -ing) → planes y arreglos confirmados con fecha y hora.</LI>
+<LI><B>Present Simple</B> → horarios oficiales y programados (trenes, vuelos, clases).</LI>
+<LI><B>Future Continuous y Future Perfect</B> → acciones en progreso o completadas en un punto futuro.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Organización del tema:</B> En esta primera parte (<B>Future Tenses 1</B>) nos concentraremos a fondo en las dos formas más usadas y más evaluadas en los exámenes de admisión: <B>will</B> y <B>be going to</B>. En la segunda parte (<B>Tema 14: Future Tenses 2</B>) profundizaremos en el Present Continuous con valor de futuro, el Future Continuous, el Future Perfect y las expresiones de tiempo futuro.</DIV>
+
+<!-- 2. WILL: USOS -->
+<H3>2. WILL: estructura y usos</H3>
+<B>Will</B> es un verbo modal (al igual que can, must, should) y, como todos los modales, tiene una característica fundamental: <B>nunca cambia de forma</B>, sin importar la persona gramatical, y siempre va seguido del verbo principal en su <B>forma base</B>, sin "to" y sin -s.
+
+<H4>Usos principales de WILL:</H4>
+<UL>
+<LI><B>Predicciones sin evidencia clara, basadas en opiniones o creencias:</B><BR>
+<SPAN CLASS="ej"><I>I think it will rain tomorrow.</I> (Creo que lloverá mañana.)<BR>
+<I>She will probably pass the exam.</I> (Ella probablemente pasará el examen.)</SPAN></LI>
+
+<LI><B>Decisiones espontáneas, tomadas en el momento de hablar:</B><BR>
+<SPAN CLASS="ej"><I>It's cold. I will close the window.</I> (Hace frío. Cerraré la ventana — decisión instantánea.)</SPAN></LI>
+
+<LI><B>Promesas:</B><BR>
+<SPAN CLASS="ej"><I>I will always love you.</I> (Siempre te amaré.)<BR>
+<I>I promise I will call you tonight.</I></SPAN></LI>
+
+<LI><B>Ofrecimientos y peticiones:</B><BR>
+<SPAN CLASS="ej"><I>I will help you with your homework.</I> (ofrecimiento)<BR>
+<I>Will you open the door, please?</I> (petición)</SPAN></LI>
+
+<LI><B>Hechos o verdades futuras generales:</B><BR>
+<SPAN CLASS="ej"><I>The sun will rise at 6 a.m. tomorrow.</I></SPAN></LI>
+
+<LI><B>Amenazas o advertencias:</B><BR>
+<SPAN CLASS="ej"><I>If you don't study, you will fail the exam.</I></SPAN></LI>
+</UL>
+
+<!-- 3. WILL ESTRUCTURA -->
+<H3>3. Estructura completa de WILL</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo</TH><TH>Estructura</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Afirmativa</TD><TD>Sujeto + <B>will</B> + verbo base</TD><TD><I>She will travel next year.</I></TD></TR>
+<TR><TD>Negativa</TD><TD>Sujeto + <B>will not (won't)</B> + verbo base</TD><TD><I>He won't come to the party.</I></TD></TR>
+<TR><TD>Interrogativa</TD><TD><B>Will</B> + sujeto + verbo base?</TD><TD><I>Will you help me?</I></TD></TR>
+<TR><TD>Respuesta corta</TD><TD>Yes, sujeto + will. / No, sujeto + won't.</TD><TD><I>Yes, I will. / No, I won't.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Datos clave sobre will:</B><BR>
+• Will es <B>igual para todas las personas</B>: I will, you will, he will, she will, it will, we will, they will. Nunca se le añade -s en 3PS.<BR>
+• La contracción afirmativa es <B>'ll</B> (I'll, you'll, she'll, we'll...) y la negativa es <B>won't</B> (will + not, con cambio ortográfico irregular: NO es "willn't").<BR>
+• Tras will, el verbo SIEMPRE va en forma base, sin "to": <I>"She will to go"</I> ✗ &nbsp;&nbsp; <I>"She will go"</I> ✓</DIV>
+
+<!-- 4. GOING TO: USOS -->
+<H3>4. BE GOING TO: estructura y usos</H3>
+<B>Be going to</B> se forma con el verbo to be conjugado (am/is/are) + going to + verbo base. Se usa principalmente para hablar de <B>planes ya decididos</B> y de <B>predicciones que se basan en evidencia visible o conocida en el presente</B>.
+
+<H4>Usos principales de GOING TO:</H4>
+<UL>
+<LI><B>Planes e intenciones decididas ANTES del momento de hablar:</B><BR>
+<SPAN CLASS="ej"><I>I am going to study Medicine at university.</I> (Ya lo decidí, es mi plan.)<BR>
+<I>We are going to visit our grandparents this weekend.</I></SPAN></LI>
+
+<LI><B>Predicciones basadas en evidencia presente, algo que ya se puede observar:</B><BR>
+<SPAN CLASS="ej"><I>Look at those dark clouds! It is going to rain.</I> (Hay evidencia visible: las nubes oscuras.)<BR>
+<I>She is going to have a baby.</I> (Evidencia: está embarazada.)</SPAN></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Diferencia clave que el examen evalúa constantemente:</B> "Will" se usa para predicciones basadas en opinión/creencia general; "going to" se usa cuando hay <B>evidencia observable en el presente</B> que sustenta la predicción.<BR>
+✓ <I>"I think the team will win."</I> (opinión, sin evidencia directa)<BR>
+✓ <I>"Look! The team is winning 3-0. They are going to win!"</I> (evidencia presente y clara)</DIV>
+
+<!-- 5. GOING TO ESTRUCTURA -->
+<H3>5. Estructura completa de BE GOING TO</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>To be</TH><TH>going to + verbo</TH><TH>Ejemplo</TH></TR>
+<TR><TD>I</TD><TD>am</TD><TD>going to study</TD><TD><I>I am going to study tonight.</I></TD></TR>
+<TR><TD>You / We / They</TD><TD>are</TD><TD>going to travel</TD><TD><I>They are going to travel next month.</I></TD></TR>
+<TR><TD>He / She / It</TD><TD>is</TD><TD>going to rain</TD><TD><I>It is going to rain soon.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo</TH><TH>Estructura</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Negativa</TD><TD>Sujeto + am/is/are + <B>not</B> + going to + verbo base</TD><TD><I>She isn't going to come tonight.</I></TD></TR>
+<TR><TD>Interrogativa</TD><TD><B>Am/Is/Are</B> + sujeto + going to + verbo base?</TD><TD><I>Are you going to call her?</I></TD></TR>
+<TR><TD>Respuesta corta</TD><TD>Yes, sujeto + am/is/are. / No, sujeto + am not/isn't/aren't.</TD><TD><I>Yes, I am. / No, she isn't.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Cuidado con la doble forma del verbo "go":</B> Cuando el verbo principal de la oración ya es "go", se puede (y suele) omitir la repetición, aunque ambas formas son gramaticalmente válidas:<BR>
+✓ <I>"I am going to go to the party."</I> (forma completa, un poco redundante)<BR>
+✓ <I>"I am going to the party."</I> (forma habitual y más natural, usando "going to" con valor de movimiento)</DIV>
+
+<!-- 6. WILL VS GOING TO -->
+<H3>6. WILL vs. GOING TO: tabla comparativa</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Criterio</TH><TH>WILL</TH><TH>GOING TO</TH></TR>
+<TR><TD>Decisión</TD><TD>Tomada <B>en el momento</B> de hablar (espontánea)</TD><TD>Tomada <B>antes</B> del momento de hablar (planificada)</TD></TR>
+<TR><TD>Predicción</TD><TD>Basada en opinión, creencia o intuición</TD><TD>Basada en evidencia presente, observable</TD></TR>
+<TR><TD>Promesas/ofrecimientos</TD><TD>✓ Uso natural y frecuente</TD><TD>✗ No se usa para este propósito</TD></TR>
+<TR><TD>Planes firmes y arreglos</TD><TD>✗ Suena menos natural</TD><TD>✓ Uso natural y frecuente</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Ejemplo contrastante clásico de examen:</B><BR>
+<I>"A: Have you decided on a major yet?"</I><BR>
+<I>"B: Yes, I have. I'm going to study Engineering."</I> (plan ya decidido → going to)<BR>
+<I>"A: Wait, the phone is ringing!"</I><BR>
+<I>"B: I'll answer it!"</I> (decisión espontánea, en el momento → will)
+</DIV>
+
+<!-- 7. ERRORES COMUNES -->
+<H3>7. Errores comunes y trampas de examen</H3>
+<UL>
+<LI><B>Usar "will" para planes ya decididos con evidencia clara:</B><BR>
+<SPAN CLASS="ej">✗ <I>"Look at the sky, it will rain."</I> (hay evidencia visible: nubes oscuras) &nbsp;&nbsp; ✓ <I>"Look at the sky, it's going to rain."</I></SPAN></LI>
+
+<LI><B>Olvidar el verbo to be antes de "going to":</B><BR>
+<SPAN CLASS="ej">✗ <I>"I going to travel."</I> &nbsp;&nbsp; ✓ <I>"I am going to travel."</I></SPAN></LI>
+
+<LI><B>Añadir "to" después de will:</B><BR>
+<SPAN CLASS="ej">✗ <I>"She will to help you."</I> &nbsp;&nbsp; ✓ <I>"She will help you."</I></SPAN></LI>
+
+<LI><B>Confundir "won't" con "wasn't" o "don't":</B> son formas completamente distintas; "won't" es exclusivamente la negación de "will".</LI>
+
+<LI><B>Conjugar will según la persona:</B><BR>
+<SPAN CLASS="ej">✗ <I>"She wills go."</I> &nbsp;&nbsp; ✓ <I>"She will go."</I> (will nunca lleva -s)</SPAN></LI>
+</UL>
+
+<!-- 8. RESUMEN -->
+<H3>8. Resumen visual</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Forma</TH><TH>Afirmativa</TH><TH>Negativa</TH><TH>Interrogativa</TH></TR>
+<TR><TD>Will</TD><TD>I will work.</TD><TD>I won't work.</TD><TD>Will I work?</TD></TR>
+<TR><TD>Going to</TD><TD>I am going to work.</TD><TD>I'm not going to work.</TD><TD>Am I going to work?</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note">📌 <B>Importante: En el <B>Tema 14</B> veremos cómo el <B>Present Continuous</B> también puede expresar futuro cuando se trata de arreglos ya confirmados con fecha y hora específica (<I>"I'm meeting her at 5 p.m."</I>), además del <B>Future Continuous</B> (will be + -ing), el <B>Future Perfect</B> (will have + participio) y las principales <B>expresiones de tiempo futuro</B> (tomorrow, next week, soon, in two days, etc.).</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">will</DIV><DIV CLASS="dk-label">Predicción/decisión espontánea</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">going to</DIV><DIV CLASS="dk-label">Plan/evidencia presente</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">won't</DIV><DIV CLASS="dk-label">Negativa de will (irregular)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">am/is/are</DIV><DIV CLASS="dk-label">Siempre antes de "going to"</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">sin -s / sin to</DIV><DIV CLASS="dk-label">Will nunca cambia y nunca lleva "to"</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- EJERCICIOS -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BASICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Choose the correct form: <SPAN CLASS="eng">"I think it ___ rain tomorrow."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) will</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) is going to</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) wills</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) will to</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) will</B><BR>"I think" indica una predicción basada en opinión, sin evidencia presente clara → se usa <B>will</B>. "Will" nunca lleva -s (descarta c) ni va seguido de "to" (descarta d).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cuál es la forma negativa correcta de <SPAN CLASS="eng">"She will come"</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) She willn't come.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) She won't come.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) She wasn't come.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) She don't will come.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) She won't come.</B><BR>La negación de "will" es <B>won't</B> (will + not, con cambio ortográfico irregular). "Willn't" no existe en inglés estándar.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Choose the correct form: <SPAN CLASS="eng">"We ___ going to visit Cusco next month."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) am</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) is</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) are</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) be</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) are</B><BR>"We" requiere <B>are</B> en la estructura "be going to". La estructura completa es: We + are + going to + verbo base.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál es la forma interrogativa correcta de <SPAN CLASS="eng">"You will help me"</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Do you will help me?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Will you help me?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) You will help me?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Will you to help me?</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Will you help me?</B><BR>Como modal, "will" se invierte con el sujeto sin necesidad de otro auxiliar (descarta a). No lleva "to" antes del verbo principal (descarta d).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Choose the correct form: <SPAN CLASS="eng">"Look at those clouds! It ___ rain."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) will</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) is going to</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) is</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) was going to</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) is going to</B><BR>"Look at those clouds" es evidencia presente y visible, lo cual exige <B>going to</B>, no "will" (que se usa para predicciones sin evidencia directa).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál es la respuesta corta correcta para <SPAN CLASS="eng">"Will they come to the party?"</SPAN> (respuesta negativa)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) No, they won't.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) No, they aren't.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) No, they don't.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) No, they wasn't.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) No, they won't.</B><BR>Las respuestas cortas repiten el mismo auxiliar de la pregunta: como la pregunta usa "Will", la respuesta corta usa <B>won't</B> (will + not).</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Identifica la oración con el uso INCORRECTO de will o going to:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) I promise I will call you tomorrow.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) She will to study medicine next year.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) We are going to visit them this weekend.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) It's cold. I will close the window.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Will to study" es incorrecto: tras "will" jamás se usa "to". La forma correcta es: <I>"She will study medicine next year."</I> Las demás oraciones son correctas: a) promesa con will; c) plan con going to; d) decisión espontánea con will.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Choose the best option according to the context: <SPAN CLASS="eng">"A: Have you decided what to study? B: Yes, I ___ study Law."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) will</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) am going to</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) am</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) was going to</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) am going to</B><BR>"Have you decided" implica que la decisión ya fue tomada antes del momento de hablar, lo cual corresponde exactamente al uso de <B>going to</B> para planes ya decididos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cuál oración usa correctamente "going to" en forma negativa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) She not is going to come.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) She isn't going to come.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) She doesn't going to come.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) She won't going to come.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) She isn't going to come.</B><BR>La negación se forma con am/is/are + not, antes de "going to": <B>isn't going to</B>. Las demás opciones mezclan auxiliares de forma incorrecta (doesn't, won't no se combinan con "going to").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Which sentence best expresses a spontaneous decision made at the moment of speaking?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) I am going to become a doctor when I grow up.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) A: I'm hungry. B: I will make you a sandwich.</LABEL>
+<LABEL><INPUt TYPE="radio" NAME="p10" VALUE="c"> c) We are going to get married next June.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) They are going to paint the house this weekend.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La respuesta "I will make you a sandwich" surge como reacción inmediata ante lo que se acaba de escuchar ("I'm hungry"), sin planificación previa: es el uso característico de <B>will</B> para decisiones espontáneas. Las demás oraciones describen planes previamente decididos (going to).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Transforma a la forma interrogativa: <SPAN CLASS="eng">"They are going to move to another country."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Do they going to move to another country?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Are they going to move to another country?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Will they going to move to another country?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) They are going to move to another country?</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Are they going to move to another country?</B><BR>Para preguntar con "going to", se invierte el verbo to be (am/is/are) con el sujeto: <B>Are they going to...?</B> No se usa "do" (opción a) ni "will" (opción c) junto con "going to".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Cuál oración es la más apropiada para hacer una <B>promesa</B>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) I am going to call you every day.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) I will call you every day, I promise.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) I call you every day.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) I was calling you every day.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las promesas son uno de los usos característicos y casi exclusivos de <B>will</B>, no de "going to" (que se asocia más a planes prácticos) ni de los otros tiempos verbales mencionados.</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Identifica TODOS los errores en el siguiente fragmento y elige la corrección más precisa:<BR><SPAN CLASS="eng">"I'm sure she will to pass the exam. She study hard for three months, so I think she going to get an excellent grade. We will to celebrate together!"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Solo "will to pass" debe cambiar a "will pass".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) "will to pass" → "will pass"; "she going to get" → "she is going to get"; "will to celebrate" → "will celebrate".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) "will to pass" → "will pass"; "she going to get" → "she going to get" (sin cambio); "will to celebrate" → "will celebrate".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"will to pass"</B> → <B>"will pass"</B>: will nunca lleva "to".<BR>② <B>"she going to get"</B> → <B>"she is going to get"</B>: falta el verbo to be antes de "going to".<BR>③ <B>"will to celebrate"</B> → <B>"will celebrate"</B>: mismo error que ①.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿Cuál opción completa MEJOR el diálogo según el contexto?<BR><SPAN CLASS="eng">"A: Why do you have your suitcase ready? B: ___ to Lima this afternoon; I bought the ticket last week."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) I will travel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) I am going to travel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) I travel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) I will to travel</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) I am going to travel</B><BR>El contexto ("I bought the ticket last week") confirma que la decisión ya fue tomada con anticipación, y la maleta lista es evidencia presente del plan: ambos elementos apuntan claramente a <B>going to</B>, no a "will" (que se usaría sin esa planificación previa).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Analiza la siguiente situación y elige la traducción MÁS precisa al inglés:<BR><B>"Mira esa expresión en su cara, va a llorar. Pero no te preocupes, yo la ayudaré con lo que necesite."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Look at that expression on her face, she will cry. But don't worry, I am going to help her with whatever she needs.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Look at that expression on her face, she is going to cry. But don't worry, I will help her with whatever she needs.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Look at that expression on her face, she is going to cry. But don't worry, I am going to help her with whatever she needs.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Look at that expression on her face, she will to cry. But don't worry, I will help her with whatever she needs.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Mira esa expresión" = evidencia presente y visible → <B>is going to cry</B> (descarta a, que usa "will"). "Yo la ayudaré" es un ofrecimiento espontáneo, decidido en el momento de hablar → <B>will help</B> (descarta c, que usa "going to" y suena a un plan ya organizado, no a una reacción inmediata; descarta d, que añade "to" tras will incorrectamente).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Lee el texto y determina cuántos errores de will/going to contiene:<BR><SPAN CLASS="eng">"I promise I going to call you every weekend. We will to stay in touch, no matter what. I'm sure everything will to be fine, and we are going see each other again soon."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) 2 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) 3 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) 4 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 5 errores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) 4 errores</B><BR>① <B>"I going to call"</B> → "I am going to call" (falta to be).<BR>② <B>"will to stay"</B> → "will stay" (will no lleva to).<BR>③ <B>"will to be"</B> → "will be" (mismo error).<BR>④ <B>"we are going see"</B> → "we are going to see" (falta "to" antes del verbo, no debe confundirse con el error anterior: aquí falta "to", no sobra).<BR>Nota: además, dado que es una promesa, "I promise I will call you" sería más natural que "going to", pero esto es una sugerencia de estilo, no un error gramatical contado en este ejercicio.</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Identifica la opción que corrige TODOS los errores con la mayor precisión y mejor justificación de uso (will vs. going to):<BR><SPAN CLASS="eng">"Based on the latest poll results, this candidate will win the election — look, he already has 65% of the votes counted. I think he going to be a great president, and I promise I going to support his policies."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) "will win" → "is going to win" (hay evidencia presente: el 65% ya contado); "he going to be" → "he is going to be"; "I going to support" → "I will support" (es una promesa).</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "will win" → "will win" (sin cambio); "he going to be" → "he is going to be"; "I going to support" → "I am going to support".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Todo el fragmento es correcto tal como está.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) "will win" → "is going to win"; "he going to be" → "he will be"; "I going to support" → "I am going to support".</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>① <B>"will win"</B> → <B>"is going to win"</B>: la frase "look, he already has 65% of the votes counted" es evidencia presente concreta, no una simple opinión; esto exige going to, no will.<BR>② <B>"he going to be"</B> → <B>"he is going to be"</B>: falta el verbo to be obligatorio antes de "going to".<BR>③ <B>"I going to support"</B> → <B>"I will support"</B>: la palabra "promise" (prometo) es la marca textual más clara del uso de will para promesas; además, falta el to be para "going to" de cualquier forma, pero la corrección más precisa, dado el contexto de promesa, es usar will.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Traduce con máxima precisión gramatical y de uso (will / going to) al inglés:<BR><B>"Ya decidimos el destino de nuestras vacaciones: vamos a ir a Máncora. Pero mira el cielo, parece que va a llover hoy. No te preocupes, yo revisaré el pronóstico del tiempo ahora mismo."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) We already decided on our vacation destination: we will go to Máncora. But look at the sky, it seems it will rain today. Don't worry, I am going to check the weather forecast right now.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) We already decided on our vacation destination: we are going to go to Máncora. But look at the sky, it seems it is going to rain today. Don't worry, I will check the weather forecast right now.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) We already decided on our vacation destination: we are going to go to Máncora. But look at the sky, it seems it will rain today. Don't worry, I will check the weather forecast right now.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) We already decided on our vacation destination: we will to go to Máncora. But look at the sky, it seems it is going to rain today. Don't worry, I am going to check the weather forecast right now.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>• <B>"Ya decidimos"</B> = plan ya decidido → <B>are going to go</B> (descarta a y d, que usan "will").<BR>• <B>"Mira el cielo... va a llover"</B> = evidencia presente y visible → <B>is going to rain</B> (descarta c, que usa "will").<BR>• <B>"Revisaré ahora mismo"</B> = decisión espontánea, tomada en el instante de hablar → <B>will check</B> (descarta a y d, que usan "going to").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Desde una perspectiva gramatical más profunda, ¿por qué "will" se clasifica como verbo modal y no como un verbo común, y qué consecuencia estructural tiene esto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) "Will" es modal simplemente porque expresa el futuro; todos los verbos que hablan del futuro son modales por definición.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) "Will" pertenece al grupo de verbos modales (can, may, must, should, would, etc.), los cuales comparten propiedades sintácticas fijas: no se conjugan según la persona (no llevan -s en 3PS), no necesitan auxiliares do/does/did para negar o preguntar (se niegan añadiendo "not" directamente y se invierten con el sujeto para preguntar), y siempre van seguidos del verbo principal en infinitivo sin "to" (infinitivo "bare"). Esta es la razón estructural de por qué "will" no admite "to" después y por qué nunca cambia de forma.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) "Will" es modal porque en inglés antiguo significaba literalmente "deseo" y todos los verbos derivados de sustantivos son modales.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) No existe una clasificación de verbos modales en inglés; es una categoría inventada por los libros de gramática modernos.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los verbos modales forman un grupo cerrado y especial en inglés (can, could, may, might, must, shall, should, will, would), con un comportamiento sintáctico distinto al de los verbos regulares: carecen de formas de 3PS, de infinitivo con "to", de gerundio y de participio; además, se niegan y preguntan sin necesidad de do/does/did. "Will" hereda todas estas propiedades, lo cual explica directamente por qué nunca se escribe "wills", "will to" o "does will".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Lee el siguiente párrafo de un ensayo de admisión e identifica la opción que señala y corrige <B>todos</B> los errores gramaticales y de uso (will/going to) con la mayor precisión:<BR><SPAN CLASS="eng">"I already decided my career path: I will study Civil Engineering, because I has always loved mathematics. Looking at my grades this semester, I going to graduate with honors. I promise I am going to work hard every single day to achieve my dreams."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo "I has" debe cambiar a "I have".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "I will study" → "I am going to study" (decisión ya tomada: "already decided"); "I has" → "I have"; "I going to graduate" → "I am going to graduate" (falta to be, y hay evidencia presente: "looking at my grades"); "I am going to work hard" → "I will work hard" (es una promesa).</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) "I will study" → "I will study" (sin cambio); "I has" → "I have"; "I going to graduate" → "I am going to graduate"; "I am going to work hard" → "I am going to work hard" (sin cambio).</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El párrafo es completamente correcto; refleja el estilo natural de un ensayo de admisión.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"I will study"</B> → <B>"I am going to study"</B>: el propio texto dice "I already decided", lo cual es la marca textual exacta del uso de going to (plan ya decidido), no de will.<BR>② <B>"I has"</B> → <B>"I have"</B>: error de concordancia básico de presente (no relacionado con el futuro, pero presente en el párrafo).<BR>③ <B>"I going to graduate"</B> → <B>"I am going to graduate"</B>: falta el verbo to be; además, "looking at my grades" es evidencia presente que confirma el uso de going to.<BR>④ <B>"I am going to work hard"</B> → <B>"I will work hard"</B>: la palabra "promise" exige will, el modal característico de las promesas, no going to.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

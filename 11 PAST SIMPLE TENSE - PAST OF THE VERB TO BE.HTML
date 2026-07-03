@@ -1,0 +1,538 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Past Simple - To Be - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:130px;text-align:center;}
+.dk .dk-num{font-size:20px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.eng{font-style:italic;color:#0D1B36;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 11 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Past Simple Tense</H1>
+<DIV CLASS="sub">El pasado del verbo To Be &middot; Was / Were &middot; Estructura afirmativa, negativa e interrogativa &middot; Preguntas Wh- &middot; Respuestas cortas</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1. DEFINICION Y CONTEXTO -->
+<H3>1. El Past Simple y el papel especial del verbo To Be</H3>
+El <B>Past Simple</B> (Pasado Simple) es el tiempo verbal que usamos en inglés para hablar de acciones, hechos o estados que <B>ocurrieron y terminaron en el pasado</B>. A diferencia del Present Simple, en el Past Simple la mayoría de los verbos siguen una regla sencilla: se añade <B>-ed</B> al verbo (verbos regulares) o se usa una forma especial (verbos irregulares).
+
+<DIV CLASS="alerta">⚠️ <B>Importante:</B> En este tema 11 nos concentramos exclusivamente en el <B>pasado del verbo To Be</B> (was / were), que es completamente irregular y tiene su propia estructura, distinta a la de los demás verbos. El uso detallado de las <B>expresiones de tiempo pasado</B> (yesterday, last week, ago, in 2010, etc.) se desarrollará con profundidad en el <B>Tema 12</B>; aquí solo se mencionan algunas de forma puntual para ilustrar los ejemplos.</DIV>
+
+El verbo <B>to be</B> (ser / estar) es, junto con <I>to have</I>, uno de los verbos más usados en todo el idioma inglés. En presente ya conoces sus formas <I>am / is / are</I>. En pasado, todas esas formas se reducen a solo <B>dos</B>: <B>was</B> y <B>were</B>.
+
+<H4>¿Para qué usamos was / were?</H4>
+<UL>
+<LI><B>Describir estados o condiciones pasadas:</B><BR>
+<SPAN CLASS="ej"><I>I was tired.</I> (Yo estaba cansado.)<BR>
+<I>She was happy.</I> (Ella estaba feliz.)</SPAN></LI>
+
+<LI><B>Indicar ubicación en el pasado:</B><BR>
+<SPAN CLASS="ej"><I>They were at the library.</I> (Ellos estaban en la biblioteca.)<BR>
+<I>The keys were on the table.</I> (Las llaves estaban sobre la mesa.)</SPAN></LI>
+
+<LI><B>Describir profesiones, identidades o roles pasados:</B><BR>
+<SPAN CLASS="ej"><I>He was a soldier.</I> (Él era un soldado.)<BR>
+<I>We were students at that university.</I> (Nosotros éramos estudiantes en esa universidad.)</SPAN></LI>
+
+<LI><B>Hablar del clima o de fenómenos generales en el pasado:</B><BR>
+<SPAN CLASS="ej"><I>It was cold yesterday.</I> (Hacía frío ayer.)</SPAN></LI>
+
+<LI><B>Indicar edad en el pasado:</B><BR>
+<SPAN CLASS="ej"><I>She was twenty years old.</I> (Ella tenía veinte años.)</SPAN></LI>
+</UL>
+
+<!-- 2. WAS / WERE -->
+<H3>2. Was y Were: ¿cuándo se usa cada uno?</H3>
+La regla es mucho más sencilla que en presente, porque solo hay <B>dos formas</B> y dependen únicamente del <B>número</B> del sujeto (singular o plural), nunca de la persona gramatical en sí.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>Forma del verbo To Be</TH><TH>Ejemplo</TH></TR>
+<TR><TD>I</TD><TD><B>was</B></TD><TD><I>I was at home.</I></TD></TR>
+<TR><TD>He / She / It</TD><TD><B>was</B></TD><TD><I>He was sick. / It was late.</I></TD></TR>
+<TR><TD>Sustantivo singular</TD><TD><B>was</B></TD><TD><I>The movie was boring.</I></TD></TR>
+<TR><TD>You (singular o plural)</TD><TD><B>were</B></TD><TD><I>You were right.</I></TD></TR>
+<TR><TD>We</TD><TD><B>were</B></TD><TD><I>We were happy.</I></TD></TR>
+<TR><TD>They</TD><TD><B>were</B></TD><TD><I>They were at the park.</I></TD></TR>
+<TR><TD>Sustantivo plural</TD><TD><B>were</B></TD><TD><I>The students were nervous.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Trampa clásica de examen — el caso de "You":</B> A diferencia de los demás pronombres, <B>you</B> SIEMPRE usa <B>were</B>, sin importar si se refiere a una sola persona o a varias:<BR>
+✓ <I>"You were late this morning."</I> (hablándole a una sola persona)<BR>
+✓ <I>"You were late this morning."</I> (hablándole a un grupo)<BR>
+✗ <I>"You was late."</I> — esta forma NO existe en inglés estándar (es un error muy común entre hispanohablantes y también un "falso coloquialismo" del inglés informal que el examen siempre marca como incorrecto).</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Regla de concordancia con sustantivos:</B> El verbo to be concuerda con el <B>número del sustantivo</B>, no con su significado aparente:<BR>
+✓ <I>"The news was surprising."</I> (news es gramaticalmente singular en inglés, aunque termine en -s)<BR>
+✓ <I>"My parents were proud of me."</I> (parents es plural → were)</DIV>
+
+<!-- 3. ESTRUCTURA AFIRMATIVA -->
+<H3>3. Estructura AFIRMATIVA</H3>
+La estructura afirmativa con to be es la más simple de todo el inglés: no necesita ningún auxiliar adicional, porque <B>was/were funciona como el único verbo de la oración</B>.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>Was / Were</TH><TH>Complemento</TH><TH>Ejemplo completo</TH></TR>
+<TR><TD>I</TD><TD>was</TD><TD>tired</TD><TD><I>I was tired.</I></TD></TR>
+<TR><TD>You</TD><TD>were</TD><TD>at the party</TD><TD><I>You were at the party.</I></TD></TR>
+<TR><TD>He / She / It</TD><TD>was</TD><TD>a good friend</TD><TD><I>She was a good friend.</I></TD></TR>
+<TR><TD>We</TD><TD>were</TD><TD>busy</TD><TD><I>We were busy.</I></TD></TR>
+<TR><TD>They</TD><TD>were</TD><TD>in Lima</TD><TD><I>They were in Lima.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 4. ESTRUCTURA NEGATIVA -->
+<H3>4. Estructura NEGATIVA</H3>
+Para negar, simplemente se añade <B>not</B> justo después de was o were. Existen formas completas y formas contraídas (más usadas en el habla y en exámenes de comprensión):
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Forma completa</TH><TH>Forma contraída</TH><TH>Ejemplo</TH></TR>
+<TR><TD>was not</TD><TD><B>wasn't</B></TD><TD><I>I wasn't ready. / He wasn't at school.</I></TD></TR>
+<TR><TD>were not</TD><TD><B>weren't</B></TD><TD><I>They weren't happy. / We weren't late.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Comparación rápida:</B><BR>
+✓ <I>"She was not nervous."</I> (formal/escrito) &nbsp;|&nbsp; <I>"She wasn't nervous."</I> (forma contraída, más natural)<BR>
+✓ <I>"You were not invited."</I> &nbsp;|&nbsp; <I>"You weren't invited."</I>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Error frecuente:</B> Como to be no necesita auxiliar do/does en presente, en pasado tampoco se usa <I>did</I> para negar oraciones con to be:<BR>
+✗ <I>"She didn't was sick."</I> &nbsp;&nbsp;&nbsp; ✓ <I>"She wasn't sick."</I><BR>
+El auxiliar <I>did</I> solo se usa para negar e interrogar con los <B>demás verbos</B> del Past Simple (eso se profundiza en el siguiente tema sobre verbos regulares e irregulares).</DIV>
+
+<!-- 5. ESTRUCTURA INTERROGATIVA -->
+<H3>5. Estructura INTERROGATIVA</H3>
+Para preguntar, simplemente se invierte el orden: <B>was/were</B> se coloca al principio, antes del sujeto. No se necesita ningún otro auxiliar.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Was / Were</TH><TH>Sujeto</TH><TH>Complemento</TH><TH>Ejemplo</TH><TH>Respuesta corta</TH></TR>
+<TR><TD><B>Was</B></TD><TD>I</TD><TD>late?</TD><TD><I>Was I late?</I></TD><TD>Yes, you were. / No, you weren't.</TD></TR>
+<TR><TD><B>Were</B></TD><TD>you</TD><TD>at home?</TD><TD><I>Were you at home?</I></TD><TD>Yes, I was. / No, I wasn't.</TD></TR>
+<TR><TD><B>Was</B></TD><TD>he/she/it</TD><TD>ready?</TD><TD><I>Was she ready?</I></TD><TD>Yes, she was. / No, she wasn't.</TD></TR>
+<TR><TD><B>Were</B></TD><TD>we</TD><TD>right?</TD><TD><I>Were we right?</I></TD><TD>Yes, you were. / No, you weren't.</TD></TR>
+<TR><TD><B>Were</B></TD><TD>they</TD><TD>at school?</TD><TD><I>Were they at school?</I></TD><TD>Yes, they were. / No, they weren't.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Cuidado con el orden:</B> A diferencia del español, en inglés el verbo SIEMPRE va antes del sujeto en preguntas con to be. No se puede preguntar "You were where?" como pregunta estándar; lo correcto siempre invierte la posición:<BR>
+✓ <I>"Were you at the cinema?"</I> &nbsp;&nbsp;&nbsp; ✗ <I>"You were at the cinema?"</I> (esto suena a pregunta de confirmación informal, no a la estructura interrogativa estándar)</DIV>
+
+<!-- 6. WH QUESTIONS -->
+<H3>6. Preguntas con Question Words (Wh- questions)</H3>
+Cuando se necesita información específica (no solo un sí/no), la palabra interrogativa se coloca antes de was/were, manteniendo la inversión sujeto-verbo:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Question word</TH><TH>Significado</TH><TH>Estructura</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Where</B></TD><TD>Dónde</TD><TD>Where + was/were + sujeto?</TD><TD><I>Where was she yesterday?</I></TD></TR>
+<TR><TD><B>Why</B></TD><TD>Por qué</TD><TD>Why + was/were + sujeto?</TD><TD><I>Why were you so quiet?</I></TD></TR>
+<TR><TD><B>How</B></TD><TD>Cómo</TD><TD>How + was/were + sujeto?</TD><TD><I>How was your trip?</I></TD></TR>
+<TR><TD><B>What</B></TD><TD>Qué</TD><TD>What + was/were + sujeto?</TD><TD><I>What was the problem?</I></TD></TR>
+<TR><TD><B>Who</B></TD><TD>Quién</TD><TD>Who + was/were...?</TD><TD><I>Who was at the door?</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Nota sobre "How":</B> <I>"How was the exam?"</I> es una de las preguntas más comunes en inglés conversacional y aparece con frecuencia en exámenes de comprensión auditiva y lectora. Equivale a "¿Cómo estuvo/te fue el examen?".
+</DIV>
+
+<!-- 7. THERE WAS / THERE WERE -->
+<H3>7. La estructura There was / There were</H3>
+Esta estructura se usa para indicar la <B>existencia</B> de algo en el pasado (equivalente a "había" en español). Sigue exactamente la misma regla de concordancia con el número del sustantivo:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Estructura</TH><TH>Uso</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>There was</B> + sustantivo singular/incontable</TD><TD>Había (uno / algo)</TD><TD><I>There was a man at the door.</I></TD></TR>
+<TR><TD><B>There were</B> + sustantivo plural</TD><TD>Había (varios)</TD><TD><I>There were many people at the concert.</I></TD></TR>
+<TR><TD><B>There wasn't</B> + sustantivo singular</TD><TD>No había (uno)</TD><TD><I>There wasn't any milk in the fridge.</I></TD></TR>
+<TR><TD><B>There weren't</B> + sustantivo plural</TD><TD>No había (varios)</TD><TD><I>There weren't enough chairs.</I></TD></TR>
+<TR><TD><B>Was there</B> / <B>Were there</B>...?</TD><TD>¿Había...?</TD><TD><I>Was there a problem? / Were there any tickets left?</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Trampa frecuente:</B> El verbo concuerda con el sustantivo que sigue, NO con la idea de "there":<BR>
+✗ <I>"There was three books on the desk."</I> &nbsp;&nbsp; ✓ <I>"There were three books on the desk."</I> ("books" es plural → were)</DIV>
+
+<!-- 8. ERRORES COMUNES -->
+<H3>8. Errores comunes y trampas de examen</H3>
+<UL>
+<LI><B>Confundir "was" con "were" en sujetos compuestos:</B> cuando el sujeto incluye dos o más elementos unidos por "and", el verbo va en plural (were), aunque cada elemento sea singular.<BR>
+<SPAN CLASS="ej">✓ <I>"My mother and my father were at the meeting."</I> (sujeto compuesto = plural)</SPAN></LI>
+
+<LI><B>Usar "was" con "you":</B> ya visto anteriormente, es uno de los errores más penalizados en exámenes de admisión.</LI>
+
+<LI><B>Agregar "did" innecesariamente con to be:</B><BR>
+<SPAN CLASS="ej">✗ <I>"Did you was at home?"</I> &nbsp;&nbsp; ✓ <I>"Were you at home?"</I></SPAN></LI>
+
+<LI><B>Olvidar la inversión en preguntas:</B><BR>
+<SPAN CLASS="ej">✗ <I>"Why she was late?"</I> &nbsp;&nbsp; ✓ <I>"Why was she late?"</I></SPAN></LI>
+
+<LI><B>Confundir "were" con "where":</B> son homófonos parciales que generan errores de escritura, especialmente en exámenes de redacción.</LI>
+</UL>
+
+<!-- 9. RESUMEN VISUAL -->
+<H3>9. Resumen visual: las tres formas completas</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>Afirmativa</TH><TH>Negativa</TH><TH>Interrogativa</TH></TR>
+<TR><TD>I</TD><TD>I <B>was</B> here.</TD><TD>I <B>wasn't</B> here.</TD><TD><B>Was</B> I here?</TD></TR>
+<TR><TD>You</TD><TD>You <B>were</B> here.</TD><TD>You <B>weren't</B> here.</TD><TD><B>Were</B> you here?</TD></TR>
+<TR><TD>He</TD><TD>He <B>was</B> here.</TD><TD>He <B>wasn't</B> here.</TD><TD><B>Was</B> he here?</TD></TR>
+<TR><TD>She</TD><TD>She <B>was</B> here.</TD><TD>She <B>wasn't</B> here.</TD><TD><B>Was</B> she here?</TD></TR>
+<TR><TD>It</TD><TD>It <B>was</B> here.</TD><TD>It <B>wasn't</B> here.</TD><TD><B>Was</B> it here?</TD></TR>
+<TR><TD>We</TD><TD>We <B>were</B> here.</TD><TD>We <B>weren't</B> here.</TD><TD><B>Were</B> we here?</TD></TR>
+<TR><TD>They</TD><TD>They <B>were</B> here.</TD><TD>They <B>weren't</B> here.</TD><TD><B>Were</B> they here?</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note">📌 <B>Conexión con el Tema 12:</B> En la segunda parte de esta unidad aprenderás a combinar was/were y los verbos regulares e irregulares del Past Simple con las <B>expresiones de tiempo pasado</B> (yesterday, last night, two days ago, in 2015, when I was a child, etc.), que son clave para ubicar las acciones con precisión en una línea de tiempo.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">was</DIV><DIV CLASS="dk-label">I / He / She / It / sing.</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">were</DIV><DIV CLASS="dk-label">You / We / They / plural</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">wasn't</DIV><DIV CLASS="dk-label">Negativa singular</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">weren't</DIV><DIV CLASS="dk-label">Negativa plural</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">sin "did"</DIV><DIV CLASS="dk-label">To be nunca usa do/does/did</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- EJERCICIOS -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BASICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Choose the correct form: <SPAN CLASS="eng">"I ___ tired after the trip."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) am</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) were</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) was</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) be</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) was</B><BR>El sujeto <B>I</B> en pasado siempre usa <B>was</B>, nunca "were". "Am" es la forma de presente, no de pasado, por lo que queda descartada de inmediato.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Choose the correct form: <SPAN CLASS="eng">"They ___ at the beach last weekend."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) was</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) were</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) is</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) are</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) were</B><BR><B>They</B> es plural, por lo que el verbo to be en pasado debe ser <B>were</B>. Las opciones c) y d) están en presente, no corresponden al pasado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Cuál es la forma negativa correcta de <SPAN CLASS="eng">"She was happy"</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) She not was happy.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) She wasn't happy.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) She weren't happy.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) She didn't was happy.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) She wasn't happy.</B><BR>Para negar con to be, simplemente se añade "not" después de was/were: was + not = <B>wasn't</B>. "She" es singular, por lo que "weren't" (opción c) es incorrecto, y to be nunca usa "did" (opción d).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál es la forma interrogativa correcta de <SPAN CLASS="eng">"You were at home"</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) You were at home?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Was you at home?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Were you at home?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Did you were at home?</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) Were you at home?</B><BR>En preguntas con to be, el verbo se invierte y se coloca antes del sujeto. "You" siempre usa <B>were</B> (nunca "was"), por lo que la opción b) es incorrecta. La opción d) agrega "did" innecesariamente, lo cual nunca ocurre con to be.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Choose the correct form: <SPAN CLASS="eng">"We ___ students at that school in 2015."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) was</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) is</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) were</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) are</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) were</B><BR><B>We</B> siempre requiere <B>were</B> en pasado. Las opciones b) y d) corresponden al presente, no al pasado que pide la oración.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál es la respuesta corta correcta para <SPAN CLASS="eng">"Was he sick yesterday?"</SPAN> (respuesta afirmativa)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Yes, he is.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Yes, he was.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Yes, he were.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Yes, he did.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Yes, he was.</B><BR>Las respuestas cortas repiten el mismo auxiliar/verbo usado en la pregunta. Como la pregunta usa "Was", la respuesta corta también debe usar <B>was</B>, no "is" (presente), "were" (no concuerda con "he") ni "did" (no aplica a to be).</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Identifica la oración con el uso INCORRECTO de was/were:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) The children were excited about the trip.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) My grandmother was a teacher.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) You was right about the answer.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) It was a difficult exam.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>"You was" es incorrecto porque <B>you</B> SIEMPRE usa <B>were</B>, sin importar si se refiere a una o varias personas. La forma correcta es: <I>"You were right about the answer."</I> Las demás oraciones concuerdan correctamente: a) children (plural) → were; b) grandmother (singular) → was; d) it (singular) → was.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Complete correctamente: <SPAN CLASS="eng">"___ it cold in the mountains yesterday?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Were</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Was</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Did</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Is</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Was</B><BR>"It" es singular → en pasado interrogativo corresponde <B>Was</B>. "Did" no se usa con to be (opción c), e "Is" corresponde al presente, no al pasado señalado por "yesterday" (opción d).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cuál es la versión negativa correcta de <SPAN CLASS="eng">"There were many people at the concert"</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) There wasn't many people at the concert.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) There weren't many people at the concert.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) There not were many people at the concert.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) There didn't were many people at the concert.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) There weren't many people at the concert.</B><BR>"People" es plural (concuerda con "many"), por lo que requiere <B>weren't</B>, no "wasn't" (opción a, que concordaría con un sustantivo singular). Las opciones c) y d) tienen un orden gramatical incorrecto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Which Wh- question is grammatically correct to ask about: <SPAN CLASS="eng">"The exam was difficult."</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) How the exam was?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) How was the exam?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) How did the exam was?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) How were the exam?</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) How was the exam?</B><BR>"Exam" es singular → was. La pregunta requiere inversión: Wh-word + was/were + sujeto (la opción a omite la inversión). La opción c) añade "did" innecesariamente, y la opción d) usa "were" con un sujeto singular.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Transforma a la forma negativa manteniendo el mismo tiempo verbal: <SPAN CLASS="eng">"My parents were at the wedding."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) My parents wasn't at the wedding.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) My parents didn't were at the wedding.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) My parents weren't at the wedding.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) My parents not were at the wedding.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) My parents weren't at the wedding.</B><BR>"My parents" es un sujeto plural, por lo que la negación correcta usa <B>weren't</B> (were + not). La opción a) confunde el número; las opciones b) y d) tienen estructuras gramaticalmente inválidas con to be.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Cuál oración usa correctamente was/were con un sujeto compuesto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) My brother and my sister was at the airport.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) My brother and my sister were at the airport.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) My brother and my sister is at the airport.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) My brother and my sister be at the airport.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Cuando dos sujetos singulares se unen con "and", forman un sujeto compuesto que se trata como <B>plural</B>, por lo tanto requiere <B>were</B>, aunque cada elemento por separado sea singular ("my brother" + "my sister" = ellos, plural).</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Identifica TODOS los errores en el siguiente fragmento y elige la corrección más precisa:<BR><SPAN CLASS="eng">"Last year my cousins was in Cusco. The weather were terrible, so they wasn't able to visit Machu Picchu. You was there too, right?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Solo "was" en la primera oración debe cambiar a "were".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) "cousins was" → "cousins were"; "weather were" → "weather was"; "they wasn't" → "they weren't"; "You was" → "You were".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) "cousins was" → "cousins were"; "weather were" → "weather were" (sin cambio); "they wasn't" → "they wasn't" (sin cambio); "You was" → "You were".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"cousins was"</B> → <B>"cousins were"</B>: "cousins" es plural.<BR>② <B>"weather were"</B> → <B>"weather was"</B>: "weather" es un sustantivo incontable/singular en inglés.<BR>③ <B>"they wasn't"</B> → <B>"they weren't"</B>: "they" siempre concuerda con were/weren't.<BR>④ <B>"You was"</B> → <B>"You were"</B>: "you" SIEMPRE usa were, nunca was.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿Cuál es la pregunta con Wh-word correctamente formulada para obtener la respuesta: <SPAN CLASS="eng">"They were nervous because of the final exam."</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Why they were nervous?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Why was they nervous?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Why were they nervous?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Why did they were nervous?</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) Why were they nervous?</B><BR>"They" requiere <B>were</B>. La estructura correcta exige inversión sujeto-verbo después de la Wh-word: Why + were + they (la opción a omite la inversión). La opción b) usa "was" con un sujeto plural, y la opción d) añade "did" de forma innecesaria e incorrecta con to be.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Analiza la siguiente situación y elige la traducción MÁS precisa al inglés:<BR><B>"Cuando yo era niño, mis abuelos estaban siempre en casa, pero mi padre no estaba; él estaba trabajando en otra ciudad."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) When I was a child, my grandparents was always at home, but my father wasn't; he was working in another city.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) When I were a child, my grandparents were always at home, but my father weren't; he were working in another city.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) When I was a child, my grandparents were always at home, but my father wasn't; he was working in another city.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) When I was a child, my grandparents were always at home, but my father weren't; he was working in another city.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>"I" → <B>was</B>; "grandparents" (plural) → <B>were</B>; "my father" (singular) → <B>wasn't</B>; "he" (singular) → <B>was working</B>. La opción a) falla en "grandparents was"; la opción b) usa "were" incorrectamente con "I"; la opción d) usa "weren't" con el sujeto singular "my father".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Lee el texto y determina cuántos errores de was/were contiene:<BR><SPAN CLASS="eng">"My uncle were a pilot for twenty years. He was always proud of his job, and his colleagues was very respectful with him. There was many challenges during his career, but he weren't afraid of them."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) 2 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) 3 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) 4 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 5 errores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) 4 errores</B><BR>① <B>"My uncle were"</B> → "My uncle was" (singular).<BR>② <B>"colleagues was"</B> → "colleagues were" (plural).<BR>③ <B>"There was many challenges"</B> → "There were many challenges" (challenges es plural).<BR>④ <B>"he weren't"</B> → "he wasn't" (singular).<BR>La oración "He was always proud..." es correcta y no cuenta como error.</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Identifica la opción que corrige TODOS los errores con la mayor precisión:<BR><SPAN CLASS="eng">"The information we received were incomplete. There was several mistakes in the report, and the data was n't enough to confirm the results. Where was the rest of the documents?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) "were" → "was" (information es incontable/singular); "was several" → "were several" (mistakes es plural); "data wasn't" → "data wasn't" (sin cambio); "Where was" → "Where was" (sin cambio).</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "were" → "was" (information es singular); "was several" → "were several" (mistakes es plural); "data wasn't" → "data weren't" (data se trata como plural en uso formal); "Where was" → "Where were" (documents es plural).</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) No hay errores; el texto es correcto en su totalidad.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Solo "Where was" debe cambiar a "Where were".</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"information...were"</B> → <B>"was"</B>: "information" es un sustantivo incontable y gramaticalmente singular en inglés.<BR>② <B>"There was several mistakes"</B> → <B>"There were several mistakes"</B>: "mistakes" es plural.<BR>③ <B>"the data wasn't"</B> → <B>"the data weren't"</B>: en inglés formal/académico, "data" se trata tradicionalmente como plural (plural de "datum"), por lo que concuerda con were.<BR>④ <B>"Where was the rest of the documents"</B> → <B>"Where were the rest of the documents"</B>: el sujeto real de la oración es "the documents" (plural), no "the rest" en singular aislado; en estas estructuras "the rest of + sustantivo plural" concuerda con el sustantivo que sigue.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Traduce con máxima precisión gramatical al inglés:<BR><B>"¿Dónde estaban tus amigos cuando ocurrió el accidente? Mi hermano y yo estábamos en casa, pero ellos no estaban allí; según el reporte, no había suficientes testigos."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Where was your friends when the accident happened? My brother and I were at home, but they wasn't there; according to the report, there was not enough witnesses.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Where were your friends when the accident happened? My brother and I were at home, but they weren't there; according to the report, there weren't enough witnesses.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Where were your friends when the accident happened? My brother and I was at home, but they weren't there; according to the report, there wasn't enough witnesses.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Where was your friends when the accident happened? My brother and I were at home, but they weren't there; according to the report, there weren't enough witnesses.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>• <B>"friends"</B> (plural) → <B>were</B> en la pregunta.<BR>• <B>"My brother and I"</B> = sujeto compuesto (plural) → <B>were</B>.<BR>• <B>"they"</B> → <B>weren't</B>.<BR>• <B>"witnesses"</B> (plural) → <B>there weren't</B>.<BR>La opción a) y d) fallan en "friends"/sujeto compuesto; la opción c) falla con "My brother and I was" y "there wasn't enough witnesses" (witnesses es plural).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Por qué el verbo to be en pasado solo tiene dos formas (was/were) cuando en presente tiene tres (am/is/are)? ¿Cuál explicación es lingüísticamente más precisa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Es una simplificación arbitraria sin ninguna base histórica, creada por gramáticos del siglo XIX.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) En inglés antiguo, el verbo to be (béon/wesan) tenía formas de pasado distintas para singular y plural (was para singular, wǣron para plural); con el paso del tiempo, esa distinción singular/plural se conservó, mientras que la distinción adicional entre primera, segunda y tercera persona —que sí existe en presente (am/is/are)— se perdió en pasado, dejando solo dos formas basadas en el número.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) "Was" y "were" provienen del latín y se incorporaron al inglés durante el Renacimiento.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) No hay relación histórica; simplemente el inglés moderno decidió reducir las formas para facilitar su aprendizaje.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El verbo to be es uno de los verbos más irregulares de las lenguas germánicas porque proviene de la fusión de <B>tres raíces verbales</B> distintas del inglés antiguo. En el sistema verbal anglosajón, el pasado de este verbo distinguía número (singular "wæs" / plural "wǣron") pero, a diferencia del presente, no conservó una distinción de persona tan marcada. Por eso, en el inglés moderno, el presente (am/is/are) refleja diferencias de persona y número, mientras que el pasado (was/were) refleja únicamente diferencias de número. Esta es la razón histórica de que "was" se use con singulares (I, he, she, it) y "were" con plurales (we, you, they), sin importar la persona gramatical.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Lee el siguiente párrafo de un ensayo de admisión e identifica la opción que señala y corrige <B>todos</B> los errores gramaticales con la mayor precisión:<BR><SPAN CLASS="eng">"My childhood were full of good memories. My parents was very supportive, and my siblings were always by my side. There was many difficult moments too, but we wasn't alone. You was right when you said that family is everything."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo "My childhood were" debe cambiar a "My childhood was".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "childhood were" → "childhood was"; "parents was" → "parents were"; "There was many" → "There were many"; "we wasn't" → "we weren't"; "You was" → "You were".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) "childhood were" → "childhood was"; "parents was" → "parents was" (sin cambio); "There was many" → "There were many"; "we wasn't" → "we wasn't" (sin cambio); "You was" → "You were".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El párrafo es completamente correcto; refleja el estilo informal típico de un ensayo personal.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"My childhood were"</B> → <B>"My childhood was"</B>: "childhood" es singular.<BR>② <B>"My parents was"</B> → <B>"My parents were"</B>: "parents" es plural.<BR>③ <B>"There was many difficult moments"</B> → <B>"There were many difficult moments"</B>: "moments" es plural.<BR>④ <B>"we wasn't"</B> → <B>"we weren't"</B>: "we" siempre concuerda con were/weren't.<BR>⑤ <B>"You was"</B> → <B>"You were"</B>: "you" siempre usa were. Un ensayo de admisión exige el registro formal correcto; estos errores serían penalizados en cualquier evaluación escrita.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

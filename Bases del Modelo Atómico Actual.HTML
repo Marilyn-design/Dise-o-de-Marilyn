@@ -1,0 +1,531 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Bases del Modelo Atómico Actual - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:22px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.formula{background:#0D1B36;color:#D7B06D;border-radius:10px;padding:10px 20px;display:inline-block;font-size:17px;font-weight:bold;margin:8px 0;letter-spacing:1px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="QUIMICA.HTML">&larr; Volver a los temas de Química</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">QUÍMICA &middot; TEMA 03 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Bases del Modelo Atómico Actual</H1>
+<DIV CLASS="sub">De Broglie &middot; Heisenberg &middot; Schrödinger &middot; Números Cuánticos &middot; Orbitales &middot; Forma de los orbitales s, p, d</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1 -->
+<H3 ID="introduccion">1. De la mecánica clásica a la mecánica cuántica</H3>
+
+El <B>modelo atómico actual</B> (modelo mecánico-cuántico o modelo de Schrödinger) describe al átomo de una manera radicalmente distinta a los modelos anteriores (Thomson, Rutherford, Bohr). Mientras que el modelo de Bohr (1913) representaba a los electrones como partículas que giran en órbitas circulares definidas alrededor del núcleo (como planetas alrededor del Sol), el modelo actual reconoce que el comportamiento del electrón es <B>imposible de describir con la física clásica</B> y requiere la <B>mecánica cuántica</B>.
+
+Tres descubrimientos fundamentales de principios del siglo XX sentaron las bases de este nuevo modelo: la <B>dualidad onda-partícula</B> de De Broglie, el <B>Principio de Incertidumbre</B> de Heisenberg, y la <B>ecuación de onda</B> de Schrödinger.
+
+<!-- 2 -->
+<H3 ID="debroglie">2. Louis De Broglie y la dualidad onda-partícula</H3>
+
+En 1924, el físico francés <B>Louis De Broglie</B> propuso una idea revolucionaria en su tesis doctoral: así como la luz (tradicionalmente considerada una onda) puede comportarse como partícula (fotones, demostrado por Einstein en el efecto fotoeléctrico), las partículas materiales como el <B>electrón</B> también pueden comportarse como <B>ondas</B>.
+
+<H4>El postulado de De Broglie:</H4>
+Toda partícula en movimiento tiene asociada una <B>onda de materia</B>, cuya longitud de onda (λ) está relacionada con su masa (m) y velocidad (v) mediante la ecuación:
+
+<DIV CLASS="formula">λ = h / (m·v)</DIV>
+
+Donde <B>h</B> es la constante de Planck (6,626 × 10⁻³⁴ J·s).
+
+<H4>Implicancias del postulado:</H4>
+<UL>
+<LI>El electrón, al ser una partícula extremadamente liviana y moverse a gran velocidad, tiene una longitud de onda significativa, comparable al tamaño del átomo. Por eso sus propiedades ondulatorias son relevantes.</LI>
+<LI>En cambio, objetos macroscópicos (una pelota, un auto) tienen masas tan grandes que su longitud de onda asociada es absolutamente insignificante e indetectable, por lo que en la vida cotidiana solo percibimos su comportamiento como partícula.</LI>
+<LI>Esta idea fue confirmada experimentalmente en 1927 por Davisson y Germer, quienes observaron <B>patrones de difracción de electrones</B> (un fenómeno exclusivamente ondulatorio) al hacerlos pasar por un cristal, igual que ocurre con la luz.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Concepto clave: Dualidad onda-partícula.</B> Tanto la luz como las partículas subatómicas (electrones, protones) tienen una doble naturaleza: en ciertos experimentos se comportan como ondas (difracción, interferencia) y en otros como partículas (colisiones, efecto fotoeléctrico). No es que "a veces sean una cosa y a veces otra": es una propiedad fundamental e inseparable de la materia y la energía a escala cuántica.</DIV>
+
+<!-- 3 -->
+<H3 ID="heisenberg">3. Werner Heisenberg y el Principio de Incertidumbre</H3>
+
+En 1927, el físico alemán <B>Werner Heisenberg</B> formuló el <B>Principio de Incertidumbre</B>, uno de los pilares fundamentales de la mecánica cuántica, que establece un límite teórico fundamental (no debido a errores instrumentales) sobre lo que podemos conocer simultáneamente acerca de una partícula.
+
+<H4>Enunciado del Principio de Incertidumbre:</H4>
+<B>Es imposible determinar simultáneamente, con exactitud absoluta, la posición exacta y la velocidad (momento lineal) exacta de un electrón.</B> Cuanto con mayor precisión se conoce una de estas magnitudes, con menor precisión se puede conocer la otra.
+
+<DIV CLASS="formula">Δx · Δp ≥ h / (4π)</DIV>
+
+Donde Δx es la incertidumbre en la posición y Δp es la incertidumbre en el momento (cantidad de movimiento).
+
+<H4>Implicancias del principio:</H4>
+<UL>
+<LI>No es un problema de la precisión de nuestros instrumentos de medición; es una <B>limitación fundamental e inherente de la naturaleza</B> a escala cuántica.</LI>
+<LI>El intento de medir la posición de un electrón con precisión extrema requiere usar fotones de muy alta energía (luz de longitud de onda muy corta), pero esos fotones de alta energía perturban significativamente la velocidad del electrón al chocar con él, haciendo imposible conocer simultáneamente ambas magnitudes con precisión.</LI>
+<LI>Como consecuencia directa, <B>el modelo de Bohr (órbitas definidas) queda descartado</B>: no se puede hablar de una trayectoria precisa del electrón alrededor del núcleo, porque eso implicaría conocer simultáneamente su posición exacta en cada instante y su velocidad exacta, lo cual el principio de incertidumbre prohíbe.</LI>
+<LI>Esto obliga a abandonar el concepto de "órbita" (trayectoria fija y determinista) y reemplazarlo por el concepto probabilístico de <B>orbital</B> (región de probabilidad).</LI>
+</UL>
+
+<DIV CLASS="ej">🔬 <B>Analogía simplificada:</B> Imagina intentar fotografiar a un mosquito muy rápido en una habitación oscura usando un flash. Para "verlo" (determinar su posición) necesitas el flash, pero el destello de luz al chocar con el mosquito altera su trayectoria de vuelo (cambia su velocidad). Cuanto más intenso el flash (mayor precisión en la posición), más se altera su vuelo (mayor incertidumbre en la velocidad). A escala cuántica, este efecto no se puede eliminar ni con la tecnología más avanzada: es una propiedad intrínseca de la naturaleza.</DIV>
+
+<!-- 4 -->
+<H3 ID="schrodinger">4. Erwin Schrödinger y el modelo mecánico-cuántico</H3>
+
+En 1926, el físico austriaco <B>Erwin Schrödinger</B>, basándose en la dualidad onda-partícula de De Broglie, desarrolló una <B>ecuación matemática</B> (la "ecuación de onda" o ecuación de Schrödinger) que describe el comportamiento ondulatorio del electrón en el átomo, dando origen al <B>modelo mecánico-cuántico</B> (también llamado modelo ondulatorio o modelo actual del átomo).
+
+<H4>Características del modelo de Schrödinger:</H4>
+<UL>
+<LI>En lugar de calcular la posición exacta del electrón (imposible según Heisenberg), la ecuación de Schrödinger calcula la <B>probabilidad de encontrar al electrón</B> en una determinada región del espacio alrededor del núcleo.</LI>
+<LI>La solución de la ecuación de Schrödinger para cada electrón se denomina <B>función de onda (ψ)</B>. El cuadrado de esta función (ψ²) representa la <B>densidad de probabilidad</B> de encontrar al electrón en un punto determinado.</LI>
+<LI>El resultado son regiones del espacio llamadas <B>orbitales atómicos</B>: zonas donde existe alta probabilidad (convencionalmente, 90-95%) de encontrar al electrón.</LI>
+<LI>Cada solución matemática de la ecuación de Schrödinger está caracterizada por un conjunto de <B>números cuánticos</B>, que describen las propiedades del electrón en ese estado.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Diferencia clave entre "órbita" y "orbital":</B> La <B>órbita</B> (modelo de Bohr) es una trayectoria circular fija y bien definida, como la de un planeta. El <B>orbital</B> (modelo actual) es una <b>región tridimensional de probabilidad</b>: una "nube" difusa donde es más probable encontrar al electrón, sin trayectoria definida. El orbital no tiene bordes nítidos; se suele representar como la región que contiene el 90% de la probabilidad de hallar al electrón.</DIV>
+
+<!-- 5 -->
+<H3 ID="numeros-cuanticos">5. Los Números Cuánticos</H3>
+
+Los <B>números cuánticos</B> son un conjunto de cuatro valores que describen de manera completa el "estado" de un electrón dentro de un átomo: su nivel de energía, la forma de su orbital, la orientación espacial de ese orbital y el sentido de giro del electrón. Surgen como soluciones matemáticas de la ecuación de Schrödinger (excepto el cuarto, que se añadió posteriormente).
+
+<H4>A) Número cuántico principal (n):</H4>
+<UL>
+<LI>Indica el <B>nivel de energía principal</B> (capa o nivel) en que se encuentra el electrón.</LI>
+<LI>Toma valores enteros positivos: <B>n = 1, 2, 3, 4, 5, 6, 7...</B></LI>
+<LI>A mayor valor de n, mayor es el tamaño del orbital y mayor la energía del electrón (en general).</LI>
+<LI>Cada nivel también se identifica con una letra mayúscula: n=1 (K), n=2 (L), n=3 (M), n=4 (N), n=5 (O), n=6 (P), n=7 (Q).</LI>
+</UL>
+
+<H4>B) Número cuántico secundario o azimutal (l o ℓ):</H4>
+<UL>
+<LI>Indica el <B>subnivel de energía</B> y determina la <B>forma geométrica</B> del orbital.</LI>
+<LI>Toma valores enteros desde 0 hasta (n−1). Para n=3, por ejemplo, l puede ser 0, 1 o 2.</LI>
+<LI>Cada valor de l corresponde a un tipo de subnivel u orbital, identificado con una letra:</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Valor de l</TH><TH>Letra del subnivel</TH><TH>Nombre histórico (origen)</TH><TH>Número máximo de electrones</TH></TR>
+<TR><TD>0</TD><TD><B>s</B></TD><TD><I>sharp</I> (nítido)</TD><TD>2</TD></TR>
+<TR><TD>1</TD><TD><B>p</B></TD><TD><I>principal</I></TD><TD>6</TD></TR>
+<TR><TD>2</TD><TD><B>d</B></TD><TD><I>diffuse</I> (difuso)</TD><TD>10</TD></TR>
+<TR><TD>3</TD><TD><B>f</B></TD><TD><I>fundamental</I></TD><TD>14</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>C) Número cuántico magnético (m o mₗ):</H4>
+<UL>
+<LI>Indica la <B>orientación espacial</B> del orbital en presencia de un campo magnético externo.</LI>
+<LI>Toma valores enteros desde −l hasta +l, incluyendo el cero. Para l=1 (subnivel p), m puede ser −1, 0, +1 (3 orbitales p posibles, orientados en los ejes x, y, z).</LI>
+<LI>El número de valores posibles de m (es decir, el número de orbitales en un subnivel) es siempre <B>2l + 1</B>.</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Subnivel</TH><TH>Valor de l</TH><TH>Valores de m posibles</TH><TH>N° de orbitales (2l+1)</TH></TR>
+<TR><TD><B>s</B></TD><TD>0</TD><TD>0</TD><TD>1 orbital</TD></TR>
+<TR><TD><B>p</B></TD><TD>1</TD><TD>−1, 0, +1</TD><TD>3 orbitales</TD></TR>
+<TR><TD><B>d</B></TD><TD>2</TD><TD>−2, −1, 0, +1, +2</TD><TD>5 orbitales</TD></TR>
+<TR><TD><B>f</B></TD><TD>3</TD><TD>−3, −2, −1, 0, +1, +2, +3</TD><TD>7 orbitales</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>D) Número cuántico de espín (s o mₛ):</H4>
+<UL>
+<LI>Indica el <B>sentido de rotación o giro</B> del electrón sobre su propio eje (una propiedad cuántica intrínseca, sin un equivalente exacto en la física clásica).</LI>
+<LI>Solo puede tomar dos valores: <B>+1/2</B> (convencionalmente representado con una flecha hacia arriba ↑) o <B>−1/2</B> (flecha hacia abajo ↓).</LI>
+<LI>Cada orbital puede contener como máximo <B>2 electrones</B>, y estos deben tener espines opuestos (uno +1/2 y otro −1/2), según el Principio de Exclusión de Pauli.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Resumen para memorizar (muy preguntado en examen):</B><BR>
+— <B>n</B> (principal) = NIVEL de energía (1, 2, 3...)<BR>
+— <B>l</B> (secundario/azimutal) = SUBNIVEL y FORMA del orbital (s, p, d, f)<BR>
+— <B>m</B> (magnético) = ORIENTACIÓN espacial del orbital<BR>
+— <B>s</B> (espín) = GIRO del electrón (+1/2 o −1/2)</DIV>
+
+<DIV CLASS="ej">🧮 <B>Ejemplo resuelto: números cuánticos del electrón diferencial.</B> Para un electrón ubicado en el orbital 3p: n=3 (nivel 3), l=1 (subnivel p, ya que p corresponde a l=1), m puede ser −1, 0 o +1 (cualquiera de los 3 orbitales p), y s puede ser +1/2 o −1/2 dependiendo de cuál electrón específico del orbital se esté describiendo.</DIV>
+
+<!-- 6 -->
+<H3 ID="orbitales">6. Orbitales atómicos: forma y representación</H3>
+
+Un <B>orbital atómico</B> es la región del espacio alrededor del núcleo donde existe la mayor probabilidad (convencionalmente 90-95%) de encontrar al electrón. Cada tipo de subnivel (s, p, d, f) tiene una forma geométrica característica determinada por el número cuántico secundario (l).
+
+<H4>Orbital s (l=0):</H4>
+<UL>
+<LI>Tiene forma <B>esférica</B>, con el núcleo en el centro.</LI>
+<LI>Hay <B>un solo orbital s</B> por cada nivel de energía (m=0 únicamente).</LI>
+<LI>A medida que aumenta n (1s, 2s, 3s...), el orbital s mantiene su forma esférica pero aumenta de tamaño, y aparecen "nodos" (regiones de probabilidad cero) dentro de la esfera.</LI>
+<LI>Puede contener un máximo de <B>2 electrones</B>.</LI>
+</UL>
+
+<H4>Orbital p (l=1):</H4>
+<UL>
+<LI>Tiene forma de <B>"doble lóbulo" o "pesa de gimnasio" (dumbbell)</B>, con el núcleo en el punto medio entre los dos lóbulos.</LI>
+<LI>Existen <B>tres orbitales p</B> por nivel (a partir de n=2), orientados perpendicularmente entre sí a lo largo de los tres ejes cartesianos: <B>pₓ, pᵧ, p_z</B>.</LI>
+<LI>Los tres orbitales p tienen la misma forma y energía (en ausencia de campos externos), diferenciándose solo en su orientación espacial.</LI>
+<LI>Puede contener un máximo de <B>6 electrones</B> en total (2 por cada uno de los 3 orbitales p).</LI>
+</UL>
+
+<H4>Orbital d (l=2):</H4>
+<UL>
+<LI>Tiene formas más complejas: la mayoría presenta <B>cuatro lóbulos</B> (forma de "trébol de cuatro hojas"), excepto uno de ellos (d_z²) que tiene una forma distinta (un doble lóbulo con un anillo o "dona" alrededor del centro).</LI>
+<LI>Existen <B>cinco orbitales d</B> por nivel (a partir de n=3): d_xy, d_xz, d_yz, d_x²-y², d_z².</LI>
+<LI>Puede contener un máximo de <B>10 electrones</B> en total (2 por cada uno de los 5 orbitales d).</LI>
+<LI>Los orbitales d son fundamentales para explicar las propiedades de los <B>metales de transición</B> (hierro, cobre, plata, oro, etc.).</LI>
+</UL>
+
+<H4>Orbital f (l=3):</H4>
+<UL>
+<LI>Tiene formas aún más complejas y difíciles de visualizar, con múltiples lóbulos.</LI>
+<LI>Existen <B>siete orbitales f</B> por nivel (a partir de n=4).</LI>
+<LI>Puede contener un máximo de <B>14 electrones</B> en total.</LI>
+<LI>Son responsables de las propiedades de los <B>lantánidos y actínidos</B> (elementos de tierras raras).</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Subnivel</TH><TH>Forma geométrica</TH><TH>N° de orbitales</TH><TH>Electrones máx.</TH><TH>Primer nivel donde aparece</TH></TR>
+<TR><TD><B>s</B></TD><TD>Esférica</TD><TD>1</TD><TD>2</TD><TD>n=1 (orbital 1s)</TD></TR>
+<TR><TD><B>p</B></TD><TD>Doble lóbulo (pesa de gimnasio)</TD><TD>3</TD><TD>6</TD><TD>n=2 (orbital 2p)</TD></TR>
+<TR><TD><B>d</B></TD><TD>Tetralobular (trébol), uno con anillo</TD><TD>5</TD><TD>10</TD><TD>n=3 (orbital 3d)</TD></TR>
+<TR><TD><B>f</B></TD><TD>Compleja, multilobular</TD><TD>7</TD><TD>14</TD><TD>n=4 (orbital 4f)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Importante sobre la representación de orbitales:</B> Los dibujos de orbitales que se ven en los libros (esferas, pesas de gimnasio, tréboles) son <B>representaciones simplificadas</B> de superficies de probabilidad constante, generalmente delimitando la región donde hay ~90% de probabilidad de hallar al electrón. El electrón NO se mueve sobre la superficie del orbital ni tiene una trayectoria fija dentro de él: el orbital es una "nube de probabilidad" tridimensional, más densa en unas zonas que en otras.</DIV>
+
+<H4>Relación entre niveles, subniveles y orbitales:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Nivel (n)</TH><TH>Subniveles posibles (l)</TH><TH>Total de orbitales en el nivel (n²)</TH><TH>Total de electrones máx. en el nivel (2n²)</TH></TR>
+<TR><TD>n=1</TD><TD>1s</TD><TD>1</TD><TD>2</TD></TR>
+<TR><TD>n=2</TD><TD>2s, 2p</TD><TD>4</TD><TD>8</TD></TR>
+<TR><TD>n=3</TD><TD>3s, 3p, 3d</TD><TD>9</TD><TD>18</TD></TR>
+<TR><TD>n=4</TD><TD>4s, 4p, 4d, 4f</TD><TD>16</TD><TD>32</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">🧮 <B>Fórmulas clave para recordar:</B> Número de subniveles en un nivel n = <b>n</b> (valores de l desde 0 hasta n−1). Número total de orbitales en un nivel = <b>n²</b>. Número máximo de electrones en un nivel = <b>2n²</b> (esta es la famosa fórmula de Bohr, que sigue siendo válida en el modelo actual para calcular la capacidad máxima de cada nivel).</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Qué científico propuso que las partículas materiales, como el electrón, también pueden comportarse como ondas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Werner Heisenberg</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Louis De Broglie</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Erwin Schrödinger</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Niels Bohr</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Louis De Broglie</B> propuso en 1924 la <b>dualidad onda-partícula</b> de la materia: toda partícula en movimiento tiene asociada una onda de materia. Esta idea fue confirmada experimentalmente en 1927 mediante la difracción de electrones. Heisenberg formuló el Principio de Incertidumbre; Schrödinger desarrolló la ecuación de onda; Bohr propuso el modelo de órbitas circulares (anterior al modelo actual).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> El Principio de Incertidumbre de Heisenberg establece que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Es imposible determinar simultáneamente, con exactitud absoluta, la posición y la velocidad de un electrón</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Los electrones giran en órbitas circulares fijas alrededor del núcleo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) La energía del electrón siempre es incierta y no puede calcularse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Los electrones tienen masa incierta dependiendo de su velocidad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El <B>Principio de Incertidumbre de Heisenberg</B> (1927) establece que es imposible conocer simultáneamente, con precisión absoluta, la <B>posición</B> y la <B>velocidad (momento)</B> de una partícula como el electrón. Cuanta más precisión se tiene en una magnitud, menos precisión se tiene en la otra. Esto NO es un problema de instrumentos: es una limitación fundamental de la naturaleza a escala cuántica. La opción b) describe el modelo de Bohr, que fue superado precisamente por este principio.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> El número cuántico principal (n) indica:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) La forma del orbital</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) El nivel de energía principal en que se encuentra el electrón</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El sentido de giro del electrón</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) La orientación espacial del orbital</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>número cuántico principal (n)</B> indica el <b>nivel de energía</b> (o capa) en que se ubica el electrón, tomando valores enteros positivos (1, 2, 3, 4...). La forma del orbital la indica el número cuántico secundario (l); el giro del electrón lo indica el número cuántico de espín (s); la orientación espacial la indica el número cuántico magnético (m).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Qué forma geométrica tiene el orbital s?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Doble lóbulo (pesa de gimnasio)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Esférica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Tetralobular (trébol de cuatro hojas)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Cúbica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El orbital <B>s</B> (l=0) tiene forma <B>esférica</B>, con el núcleo en el centro de la esfera. Es la forma más simple de todos los orbitales. El orbital <b>p</b> tiene forma de doble lóbulo (pesa de gimnasio). El orbital <b>d</b> tiene mayormente forma tetralobular (trébol).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Cuántos electrones como máximo puede contener un orbital atómico (un solo orbital, no un subnivel completo)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) 1 electrón</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) 2 electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) 6 electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) 10 electrones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Cada <B>orbital atómico individual</B> puede contener un máximo de <B>2 electrones</B>, y estos deben tener espines opuestos (+1/2 y −1/2). Esto aplica a cualquier orbital, sea s, p, d o f. Lo que varía entre subniveles es el <b>número de orbitales</b> que contienen (s=1 orbital, p=3 orbitales, d=5 orbitales, f=7 orbitales), por lo que la capacidad total del <b>subnivel completo</b> sí varía: s=2, p=6, d=10, f=14 electrones en total.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Por qué el modelo de Schrödinger reemplaza el concepto de "órbita" (trayectoria fija) por el de "orbital" (región de probabilidad)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Porque los electrones dejaron de existir según las nuevas teorías de la física moderna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Porque, según el Principio de Incertidumbre de Heisenberg, es imposible conocer simultáneamente la posición y velocidad exactas del electrón, lo que hace imposible definir una trayectoria precisa como una órbita clásica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Porque las órbitas de Bohr eran demasiado pequeñas para representarse en diagramas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Porque los electrones se mueven demasiado lento para tener una trayectoria definida</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El abandono del concepto de "órbita" es una consecuencia directa del <B>Principio de Incertidumbre</B>: una órbita (como la de un planeta) implica conocer la posición exacta del electrón en cada instante de tiempo Y su velocidad exacta simultáneamente, para poder trazar la trayectoria. Como Heisenberg demostró que esto es imposible a nivel cuántico, el concepto de trayectoria definida pierde sentido físico. En su lugar, la ecuación de Schrödinger permite calcular la <b>probabilidad</b> de encontrar al electrón en diferentes regiones del espacio, dando lugar al concepto de <b>orbital</b>: una región donde hay alta probabilidad de hallar al electrón, sin especificar una trayectoria exacta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Para el subnivel d (l=2), ¿cuántos orbitales y cuántos electrones como máximo puede contener este subnivel?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) 3 orbitales, 6 electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) 5 orbitales, 10 electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) 7 orbitales, 14 electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) 1 orbital, 2 electrones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Para el subnivel <B>d</B> (l=2), el número de orbitales se calcula con la fórmula <b>2l+1</b> = 2(2)+1 = <B>5 orbitales</B> (con valores de m: −2, −1, 0, +1, +2). Como cada orbital admite máximo 2 electrones: 5 orbitales × 2 electrones = <B>10 electrones</B> como máximo en el subnivel d completo. Estos 5 orbitales d corresponden a las formas: d_xy, d_xz, d_yz, d_x²-y² y d_z².</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Cuántos subniveles de energía existen en el nivel principal n=3?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) 1 subnivel: solo 3s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) 2 subniveles: 3s y 3p</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) 3 subniveles: 3s, 3p y 3d</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) 4 subniveles: 3s, 3p, 3d y 3f</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El número de subniveles en un nivel n es igual a <B>n</B> (los valores de l van desde 0 hasta n−1). Para n=3: l puede tomar los valores 0, 1, 2, lo que corresponde a los subniveles <B>3s (l=0), 3p (l=1) y 3d (l=2)</B>: en total <B>3 subniveles</B>. El subnivel 3f NO existe porque para n=3, el valor máximo de l es n−1=2 (que corresponde a "d"); el subnivel f (l=3) solo aparece a partir de n=4.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Un electrón tiene los números cuánticos n=2, l=1, m=0. ¿En qué subnivel y orbital específico se encuentra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) En el subnivel 2s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) En el subnivel 2p, específicamente en uno de los tres orbitales p posibles (m=0)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) En el subnivel 2d</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Esta combinación de números cuánticos no es válida</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Con n=2 y l=1, el subnivel corresponde a <B>2p</B> (recordando que l=0 es s, l=1 es p). El valor m=0 indica que se trata de uno de los tres orbitales p posibles (los otros serían m=−1 y m=+1), específicamente correspondería convencionalmente al orbital <B>p_z</B>. Esta combinación es válida porque l puede ir de 0 a n−1 (para n=2: l=0 o l=1, ambos válidos) y m puede ir de −l a +l (para l=1: m=−1, 0, +1, todos válidos).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> El número máximo de electrones que puede contener el nivel de energía n=4 es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) 8 electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) 18 electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) 32 electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) 16 electrones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Usando la fórmula <B>2n²</B> para el número máximo de electrones en un nivel: para n=4: 2(4)² = 2(16) = <B>32 electrones</B>. Esto se puede verificar sumando la capacidad de cada subnivel en n=4: 4s(2) + 4p(6) + 4d(10) + 4f(14) = 2+6+10+14 = 32 electrones ✓.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> El experimento de difracción de electrones de Davisson y Germer (1927) fue crucial para confirmar la teoría de De Broglie. ¿Por qué la observación de un "patrón de difracción" al hacer pasar electrones por un cristal demuestra su naturaleza ondulatoria?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Porque la difracción demuestra que los electrones tienen carga eléctrica negativa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La difracción es un fenómeno exclusivamente ondulatorio (las ondas se desvían e interfieren al pasar por rendijas u obstáculos del tamaño de su longitud de onda); si los electrones (partículas) mostraban este patrón, debían tener una naturaleza ondulatoria asociada, confirmando la hipótesis de De Broglie</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Porque al chocar contra el cristal, los electrones se fragmentan en partículas más pequeñas que se dispersan aleatoriamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Porque el cristal actúa como un imán que desvía los electrones según su masa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>difracción</B> es un fenómeno característico y exclusivo de las <B>ondas</B>: ocurre cuando una onda encuentra un obstáculo o rendija de tamaño comparable a su longitud de onda, generando patrones de interferencia (zonas de refuerzo y zonas de cancelación). Las partículas clásicas (como balas o pelotas) NO producen patrones de difracción al chocar con obstáculos: simplemente rebotan o son bloqueadas. Cuando Davisson y Germer hicieron pasar un haz de electrones a través de la estructura cristalina regular del níquel (que actúa como una "rejilla de difracción" debido al espaciado regular de sus átomos), observaron un patrón de interferencia característico de ondas, exactamente como predecía la fórmula de De Broglie (λ=h/mv). Esto confirmó experimentalmente que los electrones, aunque tienen masa y carga (propiedades de partícula), también exhiben comportamiento ondulatorio.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Explica por qué objetos macroscópicos como una pelota de fútbol no muestran efectos ondulatorios observables, a pesar de que, según De Broglie, toda materia en movimiento tiene una longitud de onda asociada.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Porque las pelotas de fútbol no están hechas de átomos, sino de materiales sintéticos sin propiedades cuánticas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Según λ=h/mv, al ser la masa (m) de un objeto macroscópico extremadamente grande comparada con la masa de un electrón, su longitud de onda asociada (λ) resulta absurdamente pequeña (menor que 10⁻³⁴ m), miles de billones de veces menor que el tamaño del propio objeto, haciendo sus efectos ondulatorios completamente indetectables</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Porque la constante de Planck (h) solo aplica a partículas subatómicas, no a objetos macroscópicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Porque las pelotas de fútbol se mueven demasiado lento para generar ondas de materia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La fórmula de De Broglie λ=h/(mv) muestra que la longitud de onda es <B>inversamente proporcional a la masa</B>. La constante de Planck (h ≈ 6,626×10⁻³⁴ J·s) es un número extremadamente pequeño. Para un electrón (masa ≈ 9,1×10⁻³¹ kg) moviéndose a velocidades típicas en un átomo, la longitud de onda resultante es del orden de 10⁻¹⁰ m, comparable al tamaño de un átomo: por eso sus efectos ondulatorios son relevantes y observables. Para una pelota de fútbol (masa ≈ 0,45 kg) moviéndose a, digamos, 20 m/s, la longitud de onda calculada sería del orden de <B>10⁻³⁵ m</B>: un número astronómicamente más pequeño que el tamaño de un átomo, un protón, o incluso las dimensiones más pequeñas que la física ha logrado medir. Esta longitud de onda es tan ínfima que ningún efecto de difracción o interferencia podría detectarse jamás, por lo que la pelota se comporta, a todos los efectos prácticos, como una partícula clásica pura.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Considerando el Principio de Exclusión de Pauli (que establece que dos electrones de un mismo átomo no pueden tener los cuatro números cuánticos idénticos), explica por qué un orbital puede contener máximo 2 electrones y no más.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Porque los electrones se repelen eléctricamente y un tercer electrón sería expulsado del átomo por la fuerza de repulsión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Un orbital específico ya tiene definidos sus números cuánticos n, l y m (son iguales para todos los electrones de ese orbital); la única forma de que dos electrones del mismo orbital tengan diferentes números cuánticos es que difieran en el número cuántico de espín (s), que solo puede tomar 2 valores (+1/2 y −1/2); por eso un tercer electrón necesariamente repetiría una combinación ya usada, violando el principio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Porque el núcleo del átomo solo puede atraer 2 electrones por cada protón que contiene</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Porque los orbitales tienen un tamaño físico limitado que solo permite el paso de 2 electrones a la vez</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Principio de Exclusión de Pauli</B> (Wolfgang Pauli, 1925) establece que no puede haber dos electrones en un mismo átomo con el conjunto idéntico de los <B>cuatro</B> números cuánticos (n, l, m, s). Un orbital específico (por ejemplo, el orbital 2pₓ) ya tiene <b>fijos</b> sus valores de n, l y m (son la "dirección" matemática que define a ese orbital particular). La única variable que puede diferir entre los electrones que ocupan ese mismo orbital es el número cuántico de <B>espín (s)</B>, que solo admite <b>dos valores posibles</b>: +1/2 y −1/2. Por lo tanto, un orbital puede "alojar" como máximo a 2 electrones (uno con cada valor de espín), porque si intentara colocarse un tercer electrón en ese mismo orbital, necesariamente tendría que repetir uno de los dos espines ya ocupados, generando una combinación idéntica de los 4 números cuánticos a uno de los electrones ya presentes, lo cual viola el principio de exclusión.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Si pudiéramos determinar con altísima precisión la posición de un electrón en un instante dado, ¿qué consecuencia tendría esto sobre nuestro conocimiento de su velocidad, según el Principio de Incertidumbre?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La velocidad del electrón se conocería automáticamente con la misma precisión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La incertidumbre en la velocidad (o el momento) del electrón aumentaría considerablemente, volviéndose mucho más difícil de determinar con precisión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El electrón dejaría de existir como partícula al ser medido con tanta precisión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La velocidad del electrón se volvería exactamente cero</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Principio de Incertidumbre establece una relación inversa entre la precisión de la posición (Δx) y la precisión del momento/velocidad (Δp): Δx · Δp ≥ h/(4π). Esta es una desigualdad: el <B>producto</B> de ambas incertidumbres siempre debe ser mayor o igual a un valor mínimo fijo. Si se logra reducir drásticamente Δx (mayor precisión en la posición), entonces Δp (incertidumbre en el momento/velocidad) <B>debe aumentar</B> proporcionalmente para que el producto se mantenga por encima del límite mínimo. Esto significa que cuanto mejor "localizamos" al electrón en el espacio, <B>menos sabemos</B> sobre qué tan rápido se mueve o hacia dónde. Es un compromiso fundamental e inevitable de la naturaleza cuántica, no una limitación de la tecnología de medición.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Cuál es la diferencia conceptual fundamental entre el modelo atómico de Bohr (1913) y el modelo mecánico-cuántico actual (Schrödinger, 1926) en cuanto a la descripción del movimiento del electrón?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Bohr decía que el electrón no existe; Schrödinger demostró que sí existe</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Bohr describía al electrón moviéndose en órbitas circulares fijas y bien definidas con radio y velocidad exactos (modelo determinista); Schrödinger describe al electrón mediante una función de probabilidad que indica las regiones (orbitales) donde es más probable encontrarlo, sin trayectoria definida (modelo probabilístico)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Bohr decía que el electrón está siempre en el núcleo; Schrödinger dijo que está siempre fuera del átomo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) No hay ninguna diferencia real entre ambos modelos; solo cambia la terminología utilizada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es la diferencia conceptual central entre ambos modelos. El modelo de <B>Bohr</B> (1913) es <B>determinista</B>: propone que los electrones giran en <b>órbitas circulares</b> específicas, con radios y velocidades calculables exactamente (como un planeta orbitando el Sol), y la energía está cuantizada (solo ciertos niveles de energía son permitidos). El modelo de <B>Schrödinger</B> (1926) es <B>probabilístico</b>: en lugar de calcular trayectorias exactas (imposibles según Heisenberg), calcula la <b>función de onda</b> del electrón, cuyo cuadrado (ψ²) da la <b>densidad de probabilidad</b> de hallar al electrón en cada punto del espacio. Esto da origen al concepto de <b>orbital</b>: una región tridimensional de alta probabilidad, sin trayectoria definida ni "órbita" en el sentido clásico. El modelo de Bohr funcionó razonablemente bien solo para el átomo de hidrógeno, pero falló al aplicarse a átomos con más electrones; el modelo de Schrödinger es mucho más general y preciso, siendo la base de la química cuántica moderna.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> La función de onda (ψ) que resulta de resolver la ecuación de Schrödinger no tiene un significado físico directo por sí misma, pero su cuadrado (ψ²) sí lo tiene. ¿Cuál es la interpretación física de ψ² según la interpretación de Born (1926)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) ψ² representa la energía total del electrón en ese punto del espacio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) ψ² representa la densidad de probabilidad de encontrar al electrón en una región específica del espacio en un instante dado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) ψ² representa la velocidad instantánea del electrón en cada punto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) ψ² representa la carga eléctrica del electrón distribuida en el espacio</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El físico alemán <B>Max Born</B> propuso en 1926 la interpretación probabilística que se acepta hasta hoy: aunque la función de onda ψ en sí misma no tiene un significado físico directo (puede incluso tomar valores complejos matemáticamente), su <B>módulo al cuadrado (|ψ|² o ψ²)</B> representa la <B>densidad de probabilidad</B> de encontrar al electrón en una región infinitesimal del espacio en un instante determinado. Integrando ψ² sobre todo el espacio se debe obtener 1 (certeza de que el electrón está en algún lugar). Esta interpretación es la base conceptual de los <b>orbitales atómicos</b>: cuando dibujamos la "nube electrónica" de un orbital, en realidad estamos representando las regiones donde ψ² (la probabilidad) es mayor, convencionalmente delimitando la zona que contiene el 90% de la probabilidad total. Esta interpretación probabilística fue controvertida inicialmente (Einstein la cuestionó con su famosa frase "Dios no juega a los dados"), pero ha sido confirmada experimentalmente innumerables veces y es pilar de la mecánica cuántica moderna.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Considera el orbital 3d_z². A diferencia de los otros cuatro orbitales d (que tienen forma de "trébol" tetralobular), este orbital tiene una forma distinta: dos lóbulos a lo largo del eje z con un "anillo" o "dona" (toroide) alrededor del plano xy. ¿Qué implica esta diferencia de forma respecto a la simetría de los orbitales d en general?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Significa que el orbital d_z² no es un orbital d verdadero, sino una mezcla entre s y d</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) A pesar de la diferencia visual en su forma, el orbital d_z² es matemáticamente equivalente en energía y en número cuántico l=2 a los otros cuatro orbitales d (en ausencia de campos externos); su forma "atípica" surge porque es una combinación lineal de funciones matemáticas necesaria para representar el conjunto completo de 5 orbitales d con la simetría correcta en el espacio tridimensional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Significa que el orbital d_z² puede contener hasta 4 electrones, el doble que los demás orbitales d</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Indica que este orbital solo existe en átomos con número atómico mayor a 50</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una sutileza matemática avanzada de la mecánica cuántica. Los cinco orbitales d (correspondientes a l=2) son <b>matemáticamente degenerados</b> en energía (en ausencia de campos externos o ligandos), es decir, tienen exactamente la misma energía y el mismo valor de l=2, aunque se grafiquen con formas visualmente diferentes. La razón de que el orbital d_z² tenga una forma distinta (dos lóbulos + anillo, en vez de cuatro lóbulos como los otros) es que las soluciones de la ecuación de Schrödinger para l=2 forman un conjunto de funciones matemáticas (armónicos esféricos) que pueden combinarse linealmente de diferentes maneras manteniendo la misma física. La combinación estándar que se usa en química (por razones de conveniencia para describir enlaces en compuestos de coordinación y geometría molecular) da como resultado 4 orbitales "tipo trébol" (d_xy, d_xz, d_yz, d_x²-y²) y uno con forma distinta (d_z²), pero todos representan, en conjunto, la misma distribución total de probabilidad electrónica del subnivel d completo. Esta distinción es clave para entender la teoría de campo cristalino en química de coordinación (tema avanzado de química inorgánica universitaria).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> El Principio de Incertidumbre de Heisenberg también se aplica a otros pares de variables "conjugadas", como la energía (E) y el tiempo (t): ΔE·Δt ≥ h/(4π). ¿Qué implicancia tiene esta versión del principio para fenómenos como la creación espontánea de "partículas virtuales" en el vacío cuántico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Implica que el vacío cuántico está completamente vacío y nunca puede contener energía ni partículas, ni siquiera temporalmente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Implica que, durante intervalos de tiempo extremadamente cortos (Δt pequeño), la incertidumbre en la energía (ΔE) puede ser muy grande, permitiendo que pares de partículas virtuales "tomen prestada" energía del vacío y existan brevemente antes de aniquilarse, sin violar la conservación de la energía en promedio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Implica que la energía y el tiempo son completamente independientes y no tienen ninguna relación cuántica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Implica que solo los electrones pueden crearse espontáneamente en el vacío, pero no otras partículas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación de incertidumbre energía-tiempo (ΔE·Δt ≥ h/4π) es una extensión profunda del principio original que tiene consecuencias fascinantes en la física cuántica de campos. Establece que cuanto <b>más corto</b> sea el intervalo de tiempo (Δt) que se considera, <b>mayor</b> puede ser la incertidumbre en la energía (ΔE) durante ese intervalo. Esto permite, según la teoría cuántica de campos, que en el <B>vacío cuántico</B> aparezcan espontáneamente pares de <B>partículas virtuales</B> (por ejemplo, un electrón y un positrón) que "toman prestada" energía del vacío durante un tiempo extremadamente breve, y luego se aniquilan mutuamente devolviendo esa energía, sin violar la ley de conservación de la energía en promedio o a largo plazo. Este fenómeno, aunque parece contraintuitivo, ha sido confirmado experimentalmente mediante el <b>efecto Casimir</b> (fuerza medible entre placas metálicas muy cercanas en el vacío, causada por estas fluctuaciones cuánticas) y es fundamental para entender procesos como la <b>radiación de Hawking</b> en los agujeros negros, propuesta por Stephen Hawking. Este concepto excede el temario estándar de química preuniversitaria pero ilustra la profundidad y las implicancias más amplias del principio de incertidumbre que se estudia en este tema.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> En 1932, antes del pleno desarrollo de la teoría cuántica de campos, físicos como Schrödinger expresaron su incomodidad con la interpretación probabilística de Born mediante el famoso experimento mental "El gato de Schrödinger". ¿Cuál era el objetivo de esta paradoja?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Demostrar de forma definitiva que los gatos no pueden someterse a experimentos cuánticos por razones éticas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Ilustrar lo absurdo que resulta, según la interpretación probabilística estándar, extrapolar la superposición cuántica (un sistema que existe simultáneamente en múltiples estados posibles hasta ser medido) a objetos macroscópicos, donde un gato estaría "vivo y muerto a la vez" hasta que se abra la caja y se observe</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Probar experimentalmente que los electrones tienen masa mayor que los protones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Calcular la longitud de onda de De Broglie de un gato en movimiento</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El experimento mental del <B>"gato de Schrödinger"</B> (1935) fue diseñado precisamente por Schrödinger para criticar (no para defender) la interpretación estándar de Copenhague de la mecánica cuántica. El experimento imagina un gato dentro de una caja cerrada junto a un mecanismo que tiene 50% de probabilidad de liberar un veneno, activado por la desintegración (aleatoria, cuántica) de un átomo radiactivo. Según la interpretación probabilística (extrapolada ingenuamente a nivel macroscópico), antes de abrir la caja y observar, el sistema completo (átomo + veneno + gato) existiría en una <B>superposición de estados</B>: el átomo simultáneamente desintegrado y no desintegrado, y por extensión, el gato simultáneamente vivo y muerto, hasta que la "observación" colapsara el sistema a un solo estado definido. Schrödinger usó esta paradoja para señalar lo <B>absurdo</B> de aplicar literalmente la superposición cuántica (que es real y observable a nivel de partículas individuales, como electrones en experimentos de doble rendija) a objetos macroscópicos como un gato, generando un intenso debate filosófico sobre los límites entre el mundo cuántico y el mundo clásico, debate que sigue activo en la física teórica actual (decoherencia cuántica, interpretaciones de muchos mundos, etc.).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Considerando todos los conceptos estudiados (De Broglie, Heisenberg, Schrödinger y números cuánticos), explica por qué se afirma que el modelo atómico actual es fundamentalmente "probabilístico" en lugar de "determinista", y cuál es la implicancia filosófica más profunda de esta diferencia para la ciencia.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Es probabilístico simplemente porque los científicos aún no han desarrollado instrumentos lo suficientemente precisos; en el futuro será determinista cuando mejore la tecnología</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Es fundamentalmente probabilístico porque, según el Principio de Incertidumbre, existe un límite intrínseco e infranqueable en el conocimiento simultáneo de ciertas magnitudes físicas; esto implica que el universo cuántico no tiene "trayectorias ocultas" que simplemente desconocemos, sino que la indeterminación es una propiedad fundamental e irreductible de la naturaleza, lo que desafió profundamente la visión determinista clásica de la física newtoniana y generó debates filosóficos sobre el libre albedrío, la causalidad y la naturaleza última de la realidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Es probabilístico solo para los electrones, pero los protones y neutrones se comportan de forma completamente determinista y predecible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) No es realmente probabilístico; es solo una forma simplificada de enseñar el modelo a estudiantes preuniversitarios, pero los científicos profesionales usan ecuaciones deterministas exactas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de síntesis integra todo el tema. La física clásica (newtoniana) es <B>determinista</B>: si se conocen con precisión la posición y velocidad iniciales de un objeto y todas las fuerzas que actúan sobre él, se puede calcular exactamente su trayectoria futura (como en la mecánica celeste, prediciendo eclipses con siglos de anticipación). El <B>Principio de Incertidumbre de Heisenberg</B> demostró que a escala cuántica esto es <B>imposible en principio</B>, no por limitaciones tecnológicas: existe un límite fundamental, inherente a la naturaleza misma del universo, que impide conocer simultáneamente ciertos pares de magnitudes (posición-momento, energía-tiempo) con precisión absoluta. Esto llevó al desarrollo del modelo de <B>Schrödinger</B>, que abandona la pretensión de predecir trayectorias exactas y en su lugar calcula <B>probabilidades</B> mediante la función de onda. Esta transformación generó un profundo debate filosófico en la física del siglo XX: ¿el universo es fundamentalmente indeterminista (como sostiene la interpretación de Copenhague, mayoritariamente aceptada) o existen "variables ocultas" deterministas que simplemente desconocemos (posición que defendía Einstein con su célebre frase "Dios no juega a los dados")? Los experimentos posteriores sobre las desigualdades de Bell (Alain Aspect, años 80) confirmaron experimentalmente que no existen variables ocultas locales, reforzando la naturaleza fundamentalmente probabilística e indeterminista del mundo cuántico, una de las conclusiones más profundas y contraintuitivas de toda la física moderna.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

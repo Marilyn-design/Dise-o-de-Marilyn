@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<TITLE>Álgebra - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{
+    font-family:Arial, sans-serif;
+    background:
+    radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),
+    linear-gradient(to right,#F6F2EB,#F6F2EB);
+    min-height:100vh;
+}
+.header{
+    background:#0D1B36;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.25);
+}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.titulo-pagina{text-align:center;margin-top:20px;}
+.titulo-pagina h1{color:#1F6A67;font-size:48px;font-family:"Cooper Black";}
+.titulo-pagina p{color:#555;font-size:18px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.lista-temas{max-width:820px;margin:45px auto 70px;padding:0 40px;}
+.tema-link{
+    display:flex;align-items:center;justify-content:space-between;
+    background:white;border-radius:15px;padding:16px 24px;margin-bottom:12px;
+    text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    transition:0.25s;border-left:6px solid #D7B06D;
+}
+.tema-link:hover{transform:translateX(6px);box-shadow:0 8px 22px rgba(0,0,0,0.15);}
+.tema-link .info{display:flex;align-items:center;gap:16px;}
+.tema-link .num{
+    background:#1F6A67;color:white;font-weight:bold;
+    width:38px;height:38px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;
+}
+.tema-link .nombre-tema{color:#0D1B36;font-size:17px;font-weight:bold;}
+.tema-link .flecha{color:#D7B06D;font-size:24px;font-weight:bold;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="MATEMATICA.HTML">&larr; Volver a Matemática</A>
+
+<DIV CLASS="titulo-pagina">
+<H1>Álgebra</H1>
+<DIV CLASS="linea-c"></DIV>
+<P>Temario preuniversitario &middot; Preparación para examen de admisión</P>
+</DIV>
+
+<DIV CLASS="lista-temas">
+
+<A CLASS="tema-link" HREF="ALGEBRA_TEMA1.HTML"><DIV CLASS="info"><SPAN CLASS="num">1</SPAN><SPAN CLASS="nombre-tema">Leyes de Exponentes I: Potenciación</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="ALGEBRA_TEMA2.HTML"><DIV CLASS="info"><SPAN CLASS="num">2</SPAN><SPAN CLASS="nombre-tema">Leyes de Exponentes II: Radicación- Ecuaciones Exponenciales - Trascendentes</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="ALGEBRA_TEMA3.HTML"><DIV CLASS="info"><SPAN CLASS="num">3</SPAN><SPAN CLASS="nombre-tema">Expresiones Algebraicas I: Clasificación y grados</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="ALGEBRA_TEMA4.HTML"><DIV CLASS="info"><SPAN CLASS="num">4</SPAN><SPAN CLASS="nombre-tema">Expresiones Algebraicas II: Polinomios especiales</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A> 
+<A CLASS="tema-link" HREF="ALGEBRA_TEMA5.HTML"><DIV CLASS="info"><SPAN CLASS="num">5</SPAN><SPAN CLASS="nombre-tema">Expresiones Algebraicas III: Notación funcional y polinómica</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="PRODUCTOS NOTABLES TEMA 6.HTML"><DIV CLASS="info"><SPAN CLASS="num">6</SPAN><SPAN CLASS="nombre-tema">Productos Notables</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="DIVISION ALGEBRAICA TEMA 7.HTML"><DIV CLASS="info"><SPAN CLASS="num">7</SPAN><SPAN CLASS="nombre-tema">División Algebraica</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="COCIENTES NOTABLES TEMA 8.HTML"><DIV CLASS="info"><SPAN CLASS="num">8</SPAN><SPAN CLASS="nombre-tema">Cocientes Notables</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="FACTORIZACIÓN TEMA 9.HTML"><DIV CLASS="info"><SPAN CLASS="num">9</SPAN><SPAN CLASS="nombre-tema">Factorización</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="ALGEBRA TEMA10.HTML"><DIV CLASS="info"><SPAN CLASS="num">10</SPAN><SPAN CLASS="nombre-tema">MCD, MCM y Fracciones Algebraicas</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="ECUACIONES DE PRIMER GRADO TEMA 11.HTML"><DIV CLASS="info"><SPAN CLASS="num">11</SPAN><SPAN CLASS="nombre-tema">Ecuaciones de Primer Grado</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="ECUACIONES DE SEGUNDO GRADO TEMA 12.HTML"><DIV CLASS="info"><SPAN CLASS="num">12</SPAN><SPAN CLASS="nombre-tema">Ecuaciones de Segundo Grado</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="FACTORIAL DE UN NÚMERO, COEFICIENTE BINOMIAL Y NÚMERO COMBINATORIO TEMA 13.HTML"><DIV CLASS="info"><SPAN CLASS="num">13</SPAN><SPAN CLASS="nombre-tema">Factorial, Coeficiente Binomial y Número Combinatorio</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="BINOMIO DE NEWTON TEMA 14.HTML"><DIV CLASS="info"><SPAN CLASS="num">14</SPAN><SPAN CLASS="nombre-tema">Binomio de Newton</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="RADICACIÓN Y RACIONALIZACIÓN EN R TEMA 15.HTML"><DIV CLASS="info"><SPAN CLASS="num">15</SPAN><SPAN CLASS="nombre-tema">Radicación y Racionalización en R</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="ECUACIONES DE GRADO SUPERIOR TEMA 16.HTML"><DIV CLASS="info"><SPAN CLASS="num">16</SPAN><SPAN CLASS="nombre-tema">Ecuaciones de Grado Superior</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="SISTEMAS DE ECUACIONES TEMA 17.HTML"><DIV CLASS="info"><SPAN CLASS="num">17</SPAN><SPAN CLASS="nombre-tema">Sistemas de Ecuaciones</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="DESIGUALDADES E INECUACIONES DE PRIMER GRADO TEMA 18.HTML"><DIV CLASS="info"><SPAN CLASS="num">18</SPAN><SPAN CLASS="nombre-tema">Desigualdades e Inecuaciones de Primer Grado</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="INECUACIONES DE SEGUNDO GRADO TEMA 19.HTML"><DIV CLASS="info"><SPAN CLASS="num">19</SPAN><SPAN CLASS="nombre-tema">Inecuaciones de Segundo Grado</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="INECUACIONES DE GRADO SUPERIOR TEMA 20.HTML"><DIV CLASS="info"><SPAN CLASS="num">20</SPAN><SPAN CLASS="nombre-tema">Inecuaciones de Grado Superior</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="INECUACIONES FRACCIONARIAS TEMA 21.HTML"><DIV CLASS="info"><SPAN CLASS="num">21</SPAN><SPAN CLASS="nombre-tema">Inecuaciones Fraccionarias</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="INECUACIONES IRRACIONALES TEMA 22.HTML"><DIV CLASS="info"><SPAN CLASS="num">22</SPAN><SPAN CLASS="nombre-tema">Inecuaciones Irracionales</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="INECUACIONES EXPONENCIALES TEMA 23.HTML"><DIV CLASS="info"><SPAN CLASS="num">23</SPAN><SPAN CLASS="nombre-tema">Inecuaciones Exponenciales</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="SISTEMAS DE INECUACIONES TEMA 26.HTML"><DIV CLASS="info"><SPAN CLASS="num">24</SPAN><SPAN CLASS="nombre-tema">Sistemas de Inecuaciones</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="PROGRAMACION LINEAL TEMA 27.HTML"><DIV CLASS="info"><SPAN CLASS="num">25</SPAN><SPAN CLASS="nombre-tema">Introducción a la Programación Lineal</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="RELACIONES BINARIAS TEMA 28.HTML"><DIV CLASS="info"><SPAN CLASS="num">26</SPAN><SPAN CLASS="nombre-tema">Relaciones Binarias I: Definición y Tipo de Relaciones</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="RELACIONES BINARIAS II GRÁFICAS DE RELACIONES BINARIAS TEMA 29.HTML"><DIV CLASS="info"><SPAN CLASS="num">27</SPAN><SPAN CLASS="nombre-tema">Relaciones Binarias II: Gráficas</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="FUNCIONES I DOMINIO Y RANGO TEMA 30.HTML"><DIV CLASS="info"><SPAN CLASS="num">28</SPAN><SPAN CLASS="nombre-tema">Funciones I: Dominio y Rango</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="FUNCIONES II FUNCIONE ESPECIALES TEMA 31.HTML"><DIV CLASS="info"><SPAN CLASS="num">29</SPAN><SPAN CLASS="nombre-tema">Funciones II: Funciones Especiales</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="FUNCIONESIV TEMA 33"><DIV CLASS="info"><SPAN CLASS="num">30</SPAN><SPAN CLASS="nombre-tema">Funciones IV: Función Inversa y Modelos Funcionales</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="LOGARITMOS DEFINICION Y PROPIEDADES TEMA 34.HTML"><DIV CLASS="info"><SPAN CLASS="num">31</SPAN><SPAN CLASS="nombre-tema">Logaritmos: Definición y Aplicación de las Propiedades</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="FUNCIONES LOGARITMICAS Y EXPONENCIALES TEMA 35.HTML"><DIV CLASS="info"><SPAN CLASS="num">32</SPAN><SPAN CLASS="nombre-tema">Funciones Logarítmicas y Exponenciales</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+<A CLASS="tema-link" HREF="ECUACIONES E INECUACIONES LOGARITMICAS TEMA 36.HTML"><DIV CLASS="info"><SPAN CLASS="num">33</SPAN><SPAN CLASS="nombre-tema">Ecuaciones e Inecuaciones Logarítmicas</SPAN></DIV><SPAN CLASS="flecha">&rsaquo;</SPAN></A>
+
+</DIV>
+
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

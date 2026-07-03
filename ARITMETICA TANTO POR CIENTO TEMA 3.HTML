@@ -1,0 +1,488 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Tanto por Ciento - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:22px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ARITMETICA.HTML">&larr; Volver a los temas de Aritmética</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ARITMÉTICA &middot; TEMA 3</DIV>
+<H1> Tanto por Ciento</H1>
+<DIV CLASS="sub">Tanto por Uno, Mil y Millón &middot; Incrementos y Descuentos &middot; Aplicaciones Comerciales &middot; IGV &middot; Reparto Proporcional &middot; Regla de Compañía</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Tanto por uno, tanto por ciento, tanto por mil y tanto por millón</H3>
+El <B>tanto por cuanto</B> es una forma de expresar una razón (una comparación entre dos cantidades) tomando como referencia una unidad de comparación fija: 1, 100, 1000 o 1 000 000. Las cuatro formas más usadas en los exámenes de admisión son:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Forma</TH><TH>Significado</TH><TH>Equivalencia</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Tanto por uno</B></TD><TD><I>a</I> unidades por cada 1</TD><TD><I>a</I></TD><TD>0.35 (equivale a 35 de cada 100)</TD></TR>
+<TR><TD><B>Tanto por ciento (%)</B> </TD><TD><I>a</I> unidades por cada 100</TD><TD><I>a</I>/100</TD><TD>35% = 0.35</TD></TR>
+<TR><TD><B>Tanto por mil (‰)</B></TD><TD><I>a</I> unidades por cada 1000</TD><TD><I>a</I>/1000</TD><TD>35‰ = 0.035 = 3.5%</TD></TR>
+<TR><TD><B>Tanto por millón (ppm)</B></TD><TD><I>a</I> unidades por cada 1 000 000</TD><TD><I>a</I>/1 000 000</TD><TD>35 ppm = 0.000035 = 0.0035%</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej"><B>Ejemplo de conversión:</B> Convertir 8‰ a tanto por ciento: 8‰ = 8/1000 = 0.008 → 0.008 × 100 = <B>0.8%</B>. Convertir 500 ppm a tanto por ciento: 500/1 000 000 = 0.0005 → 0.0005 × 100 = <B>0.05%</B>.</DIV>
+
+<DIV CLASS="alerta"><B>Para el examen :</B> La trampa más común es olvidar el factor de conversión correcto al pasar de una forma a otra. Memoriza el "ancla" de cada una: tanto por ciento divide entre 100, tanto por mil divide entre 1000, tanto por millón divide entre 1 000 000; siempre respecto al <B>tanto por uno</B>, que es la forma decimal "pura" y el punto de referencia común entre todas.</DIV>
+
+<H3>2. Operaciones básicas con porcentajes </H3>
+<H4>Hallar el a% de una cantidad N:</H4>
+<DIV CLASS="ej"><I>a</I>% de <I>N</I> = (<I>a</I>/100) × <I>N</I></DIV>
+Ejemplo: el 20% de 450 = (20/100)×450 = 0.20×450 = <B>90</B>.
+
+<H4>Hallar una cantidad total a partir de un porcentaje conocido:</H4>
+Si <I>N</I> representa el <I>a</I>% de una cantidad <I>X</I>, entonces:
+<DIV CLASS="ej"><I>X</I> = <I>N</I> × 100 / <I>a</I></DIV>
+Ejemplo: si 60 es el 15% de un número, ese número es 60×100/15 = <B>400</B>.
+
+<H4>Porcentaje de porcentaje:</H4>
+Calcular el <I>a</I>% del <I>b</I>% de <I>N</I> equivale a multiplicar ambas razones decimales:
+<DIV CLASS="ej"><I>a</I>% de (<I>b</I>% de <I>N</I>) = (<I>a</I>/100)×(<I>b</I>/100)×<I>N</I></DIV>
+
+<DIV CLASS="cultura-titulo">INCREMENTOS Y DESCUENTOS SUCESIVOS <SPAN>Cómo combinar dos o más cambios porcentuales en un solo porcentaje equivalente</SPAN></DIV>
+
+<H3>3. Incrementos y descuentos sucesivos</H3>
+<H4>Aumentar o descontar una sola vez:</H4>
+<UL>
+<LI>Aumentar <I>N</I> en <I>a</I>%: <I>N</I> × (1 + <I>a</I>/100)</LI>
+<LI>Descontar <I>N</I> en <I>a</I>%: <I>N</I> × (1 &minus; <I>a</I>/100)</LI>
+</UL>
+
+<H4>Dos aumentos sucesivos de a% y b%:</H4>
+El aumento único equivalente <B>no</B> es simplemente (a+b)%, porque el segundo aumento se aplica sobre una cantidad ya incrementada:
+<DIV CLASS="ej">Aumento único = <I>a</I> + <I>b</I> + (<I>a</I>×<I>b</I>)/100 (%)</DIV>
+Ejemplo: aumentos sucesivos de 20% y 10% → 20+10+(20×10)/100 = 30+2 = <B>32%</B> de aumento único.
+
+<H4>Dos descuentos sucesivos de a% y b%:</H4>
+<DIV CLASS="ej">Descuento único = <I>a</I> + <I>b</I> &minus; (<I>a</I>×<I>b</I>)/100 (%)</DIV>
+Ejemplo: descuentos sucesivos de 10% y 20% → 10+20&minus;(10×20)/100 = 30&minus;2 = <B>28%</B> de descuento único.
+
+<H4>Un aumento de a% seguido de un descuento de b%:</H4>
+<DIV CLASS="ej">Cambio neto = <I>a</I> &minus; <I>b</I> &minus; (<I>a</I>×<I>b</I>)/100 (%)</DIV>
+Si el resultado es positivo, hay un aumento neto; si es negativo, hay una disminución neta sobre el valor original.
+
+<DIV CLASS="mapa-note"><B>Cuidado con la trampa clásica :</B> Aumentar 20% y luego descontar 20% <B>no</B> devuelve el valor original. El factor combinado es 1.20 × 0.80 = 0.96, es decir, una disminución neta del <B>4%</B>. La idea de que "subir y bajar lo mismo se cancela" es uno de los errores más explotados en los exámenes de admisión.</DIV>
+
+<DIV CLASS="cultura-titulo">APLICACIONES COMERCIALES <SPAN>Precio de costo, precio de venta, ganancia, descuento y precio de lista</SPAN></DIV>
+
+<H3>4. Aplicaciones comerciales y técnicas</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Término</TH><TH>Símbolo</TH><TH>Definición / Fórmula</TH></TR>
+<TR><TD><B>Precio de Costo</B></TD><TD>Pc</TD><TD>Lo que cuesta adquirir o producir el artículo</TD></TR>
+<TR><TD><B>Precio Fijado o Precio de Lista</B></TD><TD>Pl</TD><TD>Precio marcado o anunciado, antes de aplicar descuentos</TD></TR>
+<TR><TD><B>Precio de Venta</B></TD><TD>Pv</TD><TD>Precio al que efectivamente se vende el artículo (Pv = Pl &minus; Descuento)</TD></TR>
+<TR><TD><B>Descuento</B></TD><TD>D</TD><TD>D = Pl &minus; Pv</TD></TR>
+<TR><TD><B>Ganancia (bruta)</B></TD><TD>G</TD><TD>G = Pv &minus; Pc (cuando Pv &gt; Pc)</TD></TR>
+<TR><TD><B>Pérdida</B></TD><TD>Pd</TD><TD>Pd = Pc &minus; Pv (cuando Pc &gt; Pv)</TD></TR>
+<TR><TD><B>Gastos</B></TD><TD>Gx</TD><TD>Costos adicionales: transporte, almacenaje, publicidad, etc.</TD></TR>
+<TR><TD><B>Ganancia Neta</B></TD><TD>GN</TD><TD>GN = Ganancia Bruta &minus; Gastos</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej"><B>Ejemplo:</B> Un comerciante compra un artículo a Pc = S/80 y lo vende a Pv = S/100. Su ganancia bruta es G = 100&minus;80 = <B>S/20</B>, lo que representa un <B>25%</B> de ganancia sobre el costo (20/80×100 = 25%). Si además tuvo gastos de transporte por S/5, su ganancia neta sería 20&minus;5 = <B>S/15</B>.</DIV>
+
+<DIV CLASS="alerta"><B>Para el examen :</B> El porcentaje de ganancia casi siempre se calcula <B>sobre el costo (Pc)</B>, salvo que el problema indique explícitamente "sobre el precio de venta". Verifica siempre cuál es la base de referencia antes de calcular el porcentaje, porque usar la base equivocada es el error más frecuente en este tipo de preguntas.</DIV>
+
+<DIV CLASS="cultura-titulo">EL IGV: IMPUESTO GENERAL A LAS VENTAS <SPAN>Cómo se calcula el precio final que paga el consumidor</SPAN></DIV>
+
+<H3>5. El IGV (Impuesto General a las Ventas)</H3>
+El <B>IGV</B> es un impuesto que se aplica sobre el valor de venta de bienes y servicios; en el Perú, la tasa vigente es del <B>18%</B>. El precio final que paga el consumidor (precio "con IGV") se calcula así:
+<DIV CLASS="ej">Precio con IGV = Precio sin IGV × (1 + IGV%) = Precio sin IGV × 1.18</DIV>
+Para hallar el precio base (sin IGV) a partir del precio final:
+<DIV CLASS="ej">Precio sin IGV = Precio con IGV / 1.18</DIV>
+Ejemplo: un producto cuesta S/150 sin IGV. Su precio final será 150×1.18 = <B>S/177</B>. Si, en cambio, un producto se vende a S/236 con IGV incluido, su precio sin IGV es 236/1.18 = <B>S/200</B>, y el monto del IGV pagado es 236&minus;200 = <B>S/36</B>.
+
+<DIV CLASS="cultura-titulo">REPARTO PROPORCIONAL <SPAN>Simple directo, simple inverso y compuesto</SPAN></DIV>
+
+<H3>6. Reparto proporcional</H3>
+Repartir una cantidad en <B>reparto proporcional</B> significa dividirla en partes que guardan una relación fija con ciertos números llamados <B>índices</B>.
+
+<H4>Reparto simple directo:</H4>
+Cada parte es <B>directamente proporcional</B> a su índice: a mayor índice, mayor parte.
+<DIV CLASS="ej">Parte<SUB>i</SUB> = (índice<SUB>i</SUB> / Σ índices) × Cantidad total</DIV>
+Ejemplo: repartir S/1800 en partes proporcionales a 2, 3 y 4. La suma de índices es 9, así que cada "unidad" vale 1800/9 = 200. Las partes son 2×200=<B>S/400</B>, 3×200=<B>S/600</B> y 4×200=<B>S/800</B>.
+
+<H4>Reparto simple inverso:</H4>
+Cada parte es <B>inversamente proporcional</B> a su índice: a mayor índice, menor parte. Se reparte de forma directa, pero usando los <B>recíprocos</B> de los índices originales.
+<DIV CLASS="ej">Parte<SUB>i</SUB> ∝ 1/índice<SUB>i</SUB></DIV>
+Ejemplo: repartir S/2400 en partes inversamente proporcionales a 2, 3 y 6. Los recíprocos son 1/2, 1/3 y 1/6; llevándolos a común denominador 6, quedan en la proporción 3:2:1 (suma 6). Cada "unidad" vale 2400/6=400. Las partes son 3×400=<B>S/1200</B>, 2×400=<B>S/800</B> y 1×400=<B>S/400</B> — observa que al número 2 (el índice más pequeño) le corresponde la parte más grande.
+
+<H4>Reparto compuesto:</H4>
+Combina <B>dos o más criterios</B> a la vez (algunos directos, otros inversos). El índice combinado de cada parte se obtiene multiplicando los índices directos y dividiendo entre los índices inversos correspondientes.
+
+<H4>Propiedades del reparto proporcional:</H4>
+<UL>
+<LI>La suma de todas las partes repartidas siempre es igual a la cantidad total.</LI>
+<LI>En el reparto directo, duplicar un índice duplica su parte; en el reparto inverso, duplicar un índice reduce su parte a la mitad.</LI>
+<LI>El reparto proporcional simple es un caso particular del compuesto, cuando solo existe un único criterio de reparto.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">REPARTO DE UTILIDADES Y PÉRDIDAS <SPAN>La regla de compañía: capital, tiempo y la repartición justa entre socios</SPAN></DIV>
+
+<H3>7. Reparto de utilidades y pérdidas (regla de compañía)</H3>
+Cuando dos o más personas forman una sociedad aportando <B>capitales</B> y manteniéndolos invertidos durante distintos <B>tiempos</B>, la utilidad o la pérdida se reparte de forma <B>proporcional al producto (capital × tiempo)</B> de cada socio, ya que ese producto refleja con justicia tanto cuánto dinero aportó cada uno como cuánto tiempo lo mantuvo arriesgado en el negocio.
+<DIV CLASS="ej">Índice de reparto del socio <I>i</I> = Capital<SUB>i</SUB> × Tiempo<SUB>i</SUB></DIV>
+
+<DIV CLASS="ej"><B>Ejemplo:</B> Dos socios forman una empresa: A aporta S/5000 durante 8 meses y B aporta S/3000 durante 4 meses. Si la utilidad total es S/3900, los índices son A: 5000×8=40000 y B: 3000×4=12000, en proporción 10:3 (suma 13). Cada "unidad" vale 3900/13=300. A recibe 10×300=<B>S/3000</B> y B recibe 3×300=<B>S/900</B>.</DIV>
+
+<H4>Propiedades de la regla de compañía:</H4>
+<UL>
+<LI>Si todos los socios mantienen su capital invertido el <B>mismo tiempo</B>, el reparto es proporcional únicamente al capital aportado.</LI>
+<LI>Si todos los socios aportan el <B>mismo capital</B>, el reparto es proporcional únicamente al tiempo de permanencia de la inversión.</LI>
+<LI>Las pérdidas se reparten exactamente con el mismo criterio (capital × tiempo) que las utilidades.</LI>
+<LI>Cuando un socio retira o aumenta su capital a mitad de periodo, su aporte debe fraccionarse en tramos de tiempo distintos antes de calcular el índice total.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">APLICACIONES DIVERSAS <SPAN>El tanto por ciento más allá del comercio: ciencia, salud y medio ambiente</SPAN></DIV>
+
+<H3>8. Aplicaciones diversas</H3>
+El tanto por ciento, el tanto por mil y, especialmente, el <B>tanto por millón (ppm)</B>, aparecen en contextos muy variados además del comercio:
+<UL>
+<LI><B>Química y medio ambiente :</B> la concentración de un contaminante en agua o aire suele expresarse en ppm. En soluciones acuosas diluidas se usa la equivalencia práctica 1 ppm ≈ 1 mg de soluto por cada litro de solución.</LI>
+<LI><B>Estadística y demografía :</B> tasas de natalidad, mortalidad o crecimiento poblacional suelen expresarse en tanto por mil (‰).</LI>
+<LI><B>Finanzas :</B> tasas de interés, rendimientos y variaciones bursátiles se expresan casi siempre en tanto por ciento.</LI>
+</UL>
+<DIV CLASS="ej"><B>Ejemplo:</B> una muestra de agua presenta una concentración de 250 ppm de cierta sustancia. Usando la equivalencia 1 ppm ≈ 1 mg/L, en 4 litros de esa agua habrá 250×4 = 1000 mg, es decir, <B>1 gramo</B> de la sustancia.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">+a+b+ab/100</DIV><DIV CLASS="dk-label"> Fórmula de aumentos sucesivos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">a+b&minus;ab/100</DIV><DIV CLASS="dk-label"> Fórmula de descuentos sucesivos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">×1.18</DIV><DIV CLASS="dk-label"> Factor de IGV en el Perú</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Cap.×Tiempo</DIV><DIV CLASS="dk-label"> Índice de la regla de compañía</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BASICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Expresa 0.45 (tanto por uno) en tanto por ciento.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) 4.5%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) 45%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) 450%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) 0.45%</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Para pasar de tanto por uno a tanto por ciento, se multiplica por 100: 0.45 × 100 = <B>45%</B>. Es el procedimiento inverso al que se usa para pasar de porcentaje a tanto por uno (donde se divide entre 100).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿A cuánto equivale 12‰ (tanto por mil) expresado en tanto por ciento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) 12%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) 0.12%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) 1.2%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) 120%</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>12‰ = 12/1000 = 0.012 (tanto por uno). Para pasar a tanto por ciento, se multiplica por 100: 0.012 × 100 = <B>1.2%</B>. El error más común es confundir directamente "12 por mil" con "12 por ciento", ignorando el cambio de unidad de referencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Calcula el 20% de 450.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) 45</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) 90</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) 900</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) 22.5</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>20% de 450 = (20/100) × 450 = 0.20 × 450 = <B>90</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Si 60 representa el 15% de un número N, halla N.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) 300</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 350</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) 400</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) 450</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Si 60 es el 15% de N, entonces N = 60 × 100 / 15 = 6000/15 = <B>400</B>. Comprobación: 15% de 400 = 0.15×400 = 60. </DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Convierte 300 ppm a tanto por ciento.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) 3%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) 0.3%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) 0.03%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) 30%</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>300 ppm = 300/1 000 000 = 0.0003 (tanto por uno). En tanto por ciento: 0.0003 × 100 = <B>0.03%</B>. Esta es la razón por la cual el ppm se usa para medir cantidades extremadamente pequeñas (como contaminantes), donde el tanto por ciento resultaría un número incómodo de manejar.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Un artículo aumenta su precio en 20% y, posteriormente, en 10% más. ¿Cuál es el aumento único equivalente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) 30%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) 32%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) 28%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) 22%</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aumento único = a+b+(a×b)/100 = 20+10+(20×10)/100 = 30+2 = <B>32%</B>. Comprobación con factores: 1.20×1.10=1.32, es decir, 32% de aumento. La opción a) (30%) es el error típico de simplemente sumar los porcentajes sin el término de corrección ab/100.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Un producto recibe dos descuentos sucesivos de 10% y 20%. ¿Cuál es el descuento único equivalente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) 30%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) 32%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) 28%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) 25%</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Descuento único = a+b&minus;(a×b)/100 = 10+20&minus;(10×20)/100 = 30&minus;2 = <B>28%</B>. Comprobación: 0.90×0.80=0.72, es decir, un descuento total del 28% sobre el precio original.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Un comerciante compra un artículo a Pc = S/80 y lo vende a Pv = S/100. ¿Qué porcentaje de ganancia obtiene sobre el costo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) 20%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) 25%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) 80%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) 30%</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Ganancia: G = Pv&minus;Pc = 100&minus;80 = S/20. Porcentaje sobre el <B>costo</B>: (20/80)×100 = <B>25%</B>. Si por error se calculara sobre el precio de venta (20/100×100=20%), se obtendría la opción a), que es la trampa clásica de esta pregunta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Un artículo tiene un precio de lista Pl = S/200. Si se aplica un descuento del 15%, ¿cuál es el precio de venta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) S/30</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) S/185</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) S/170</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) S/230</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Pv = Pl×(1&minus;0.15) = 200×0.85 = <B>S/170</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Un producto cuesta S/150 sin IGV. Calcula su precio final incluyendo el IGV del 18%.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) S/168</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) S/177</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) S/123</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) S/27</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Precio con IGV = 150×1.18 = <B>S/177</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Un precio aumenta en 25% y luego se le aplica un descuento de 20%. ¿Cuál es el cambio porcentual neto respecto al precio original?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Aumenta 5%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Disminuye 5%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) No hay ningún cambio (0%)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Aumenta 45%</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Cambio neto = a&minus;b&minus;(a×b)/100 = 25&minus;20&minus;(25×20)/100 = 5&minus;5 = <B>0%</B>. Comprobación con factores: 1.25×0.80 = 1.00 exactamente. Este es un caso especial en el que el aumento y el descuento, aunque de porcentajes distintos, se cancelan exactamente entre sí — una pregunta clásica para detectar si el estudiante aplica la fórmula correctamente en vez de asumir cancelaciones "a simple vista".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Reparte S/1800 en partes directamente proporcionales a 2, 3 y 4. Indica la parte mayor.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) S/600</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) S/700</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) S/800</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) S/900</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Suma de índices = 2+3+4 = 9. Valor de cada unidad = 1800/9 = 200. Las partes son 2×200=S/400, 3×200=S/600 y 4×200=<B>S/800</B> (la mayor). Comprobación: 400+600+800=1800. </DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Reparte S/2400 en partes inversamente proporcionales a 2, 3 y 6. Indica la parte que le corresponde al índice 2.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) S/400</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) S/800</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) S/1200</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) S/1600</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Se toman los recíprocos: 1/2, 1/3, 1/6. Llevándolos a común denominador 6: 3/6, 2/6, 1/6 → proporción 3:2:1 (suma 6). Cada unidad vale 2400/6=400. Al índice 2 (cuyo recíproco dio el numerador 3) le corresponde 3×400=<B>S/1200</B>, la parte más grande, justamente porque en el reparto inverso el índice más pequeño recibe la parte más grande.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Un comerciante tiene Pc=S/500, Pv=S/650 y gastos adicionales de S/50. Calcula su ganancia neta.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) S/150</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) S/100</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) S/200</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) S/50</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Ganancia bruta = Pv&minus;Pc = 650&minus;500 = S/150. Ganancia neta = Ganancia bruta &minus; Gastos = 150&minus;50 = <B>S/100</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Dos socios forman una empresa: A aporta S/5000 durante 8 meses y B aporta S/3000 durante 4 meses. Si la utilidad total es S/3900, ¿cuánto le corresponde a B?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) S/900</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) S/1500</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) S/1950</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) S/300</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Índices (capital×tiempo): A=5000×8=40000; B=3000×4=12000. Proporción 40000:12000 = 10:3 (suma 13). Cada unidad vale 3900/13=300. A B le corresponde 3×300=<B>S/900</B>. Nota cómo, a pesar de aportar menos capital, el tiempo de permanencia de B influye directamente en su parte de la utilidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Un comerciante fija un precio de lista que es 60% mayor que su costo. Luego ofrece un descuento del 25% sobre dicho precio de lista. ¿Qué porcentaje de ganancia obtiene sobre el costo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) 35%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) 15%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) 20%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 25%</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Conviene asumir Pc=100 para trabajar directamente en porcentajes. Pl = 100×1.60 = 160. Pv = 160×(1&minus;0.25) = 160×0.75 = 120. Ganancia = Pv&minus;Pc = 120&minus;100 = 20, es decir, <B>20%</B> de ganancia sobre el costo. El error típico es calcular 60%&minus;25%=35% (opción a), sumando y restando porcentajes directamente sin considerar que cada uno se aplica sobre una base distinta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Tres socios A, B y C reparten una utilidad de S/9000 en partes directamente proporcionales a sus capitales (S/6000, S/4000 y S/3000 respectivamente) e inversamente proporcionales al tiempo que cada uno mantuvo invertido su capital (1, 2 y 3 meses, respectivamente). ¿Cuánto le corresponde a C?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) S/6000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) S/2000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) S/1000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) S/3000</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Este es un <B>reparto compuesto</B>: el índice de cada socio es Capital/Tiempo (directo en capital, inverso en tiempo). A: 6000/1=6000; B: 4000/2=2000; C: 3000/3=1000. Proporción 6000:2000:1000 = 6:2:1 (suma 9). Cada unidad vale 9000/9=1000. A C le corresponde 1×1000=<B>S/1000</B>, la parte menor, porque combina el menor capital con el mayor tiempo de permanencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Un producto se vende a S/236 incluyendo el IGV del 18%. ¿Cuánto del precio corresponde al monto del IGV?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) S/42.48</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) S/36</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) S/18</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) S/200</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Precio sin IGV = 236/1.18 = <B>S/200</B>. Monto del IGV = 236&minus;200 = <B>S/36</B>. El error frecuente (opción a) es calcular el 18% directamente sobre el precio final (236×0.18=42.48), olvidando que el IGV se calcula sobre el precio <B>sin</B> impuesto, no sobre el precio final que ya lo incluye.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Una muestra de agua contiene 250 ppm de una sustancia disuelta. Usando la equivalencia 1 ppm ≈ 1 mg/L, ¿cuántos miligramos de esa sustancia hay en 4 litros de esa agua?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) 100 mg</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) 250 mg</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) 1000 mg</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) 62.5 mg</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>250 ppm equivale a 250 mg de sustancia por cada litro de solución. En 4 litros: 250×4 = <B>1000 mg</B>, equivalentes a 1 gramo. Este tipo de problema es frecuente en preguntas que combinan tanto por millón con contextos de química o ciencias ambientales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Un comerciante fija un precio de lista 50% mayor que su costo. Ofrece a sus clientes dos descuentos sucesivos de 10% y 20% sobre dicho precio de lista. ¿Qué porcentaje de ganancia o pérdida obtiene finalmente sobre el costo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Gana 8%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Pierde 8%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Gana 20%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) No gana ni pierde (0%)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Tomamos Pc=100. Precio de lista: Pl=100×1.50=150. Aplicamos los dos descuentos sucesivos directamente como factores: 150×0.90×0.80 = 150×0.72 = 108. Ganancia = 108&minus;100 = 8, es decir, <B>gana 8%</B> sobre el costo. Esta pregunta sintetiza tres bloques del tema: el precio de lista como markup sobre el costo, los descuentos sucesivos, y el cálculo final del porcentaje de ganancia sobre la base correcta (el costo).</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

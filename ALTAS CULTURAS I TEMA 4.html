@@ -1,0 +1,656 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Altas Culturas I - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA &middot; TEMA 4</DIV>
+<H1>Altas Culturas I</H1>
+<DIV CLASS="sub">Chavín &middot; Moche &middot; Tiahuanaco &middot; Nazca</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Introducción: ¿Qué son las Altas Culturas del Perú?</H3>
+Las <B>Altas Culturas</B> (también llamadas culturas regionales o de desarrollo regional) son civilizaciones prehispánicas que surgieron en el territorio andino con un alto grado de organización política, social, económica y artística. Se les llama "altas" porque superaron la etapa tribal y desarrollaron estructuras estatales, religiosas y tecnológicas complejas.
+
+<H4>Clasificación general de las culturas peruanas preincas:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Etapa</TH><TH>Culturas principales</TH><TH>Cronología aproximada</TH></TR>
+<TR><TD><B>Horizonte Temprano</B></TD><TD>Chavín (cultura panandina)</TD><TD>900 – 200 a.C.</TD></TR>
+<TR><TD><B>Intermedio Temprano</B></TD><TD>Moche (norte), Nazca (sur), Paracas (sur), Lima</TD><TD>200 a.C. – 600 d.C.</TD></TR>
+<TR><TD><B>Horizonte Medio</B></TD><TD>Tiahuanaco (sur), Wari (centro)</TD><TD>600 – 1 000 d.C.</TD></TR>
+<TR><TD><B>Intermedio Tardío</B></TD><TD>Chimú, Chancay, Ica, Chanka, Lupaca</TD><TD>1 000 – 1 470 d.C.</TD></TR>
+<TR><TD><B>Horizonte Tardío</B></TD><TD>Imperio Inca (Tawantinsuyu)</TD><TD>1 470 – 1 532 d.C.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El concepto de <B>"Horizonte"</B> designa períodos de unificación cultural o dominio panandino (Chavín, Tiahuanaco-Wari, Inca). El concepto de <B>"Intermedio"</B> designa períodos de desarrollo regional sin hegemonía única. Esta clasificación fue propuesta por el arqueólogo estadounidense <B>John Rowe</B> y es la más usada en los exámenes preuniversitarios peruanos.</DIV>
+
+<H3>2. Ubicación geográfica general</H3>
+Las cuatro culturas de este tema se desarrollaron en zonas ecológicas muy distintas del territorio andino, lo que explica sus diferencias en economía, arquitectura y arte:
+<UL>
+<LI><B>Chavín:</B> sierra norte del Perú, en el Callejón de Conchucos, provincia de Huari (Áncash). Altitud: ~3 185 m s.n.m.</LI>
+<LI><B>Moche:</B> costa norte, valles de Moche y Chicama (La Libertad) y valles vecinos hasta Lambayeque y Piura.</LI>
+<LI><B>Tiahuanaco:</B> altiplano del Collao, a orillas del lago Titicaca, actualmente en Bolivia (aunque su influencia abarcó el sur del Perú, norte de Chile y Argentina).</LI>
+<LI><B>Nazca:</B> costa sur, valles de Ica, Nazca, Río Grande y Palpa (región Ica).</LI>
+</UL>
+
+<!-- ===================== CHAVÍN ===================== -->
+<DIV CLASS="cultura-titulo">🏔️ CULTURA CHAVÍN
+<SPAN>Horizonte Temprano &nbsp;|&nbsp; 900 – 200 a.C. &nbsp;|&nbsp; Sierra Norte – Áncash</SPAN>
+</DIV>
+
+<H3>3. Cultura Chavín: la primera gran civilización andina</H3>
+Chavín de Huántar es considerada la <B>primera gran cultura panandina</B> del Perú, pues su influencia religiosa, artística y arquitectónica se extendió por toda la costa, sierra y parte de la selva. Por ello el Horizonte Temprano también se llama <B>Horizonte Chavín</B>.
+
+<H4>Descubrimiento y estudio:</H4>
+<UL>
+<LI><B>Julio C. Tello</B> (1919) fue el primer arqueólogo peruano en estudiar científicamente Chavín de Huántar. Tello es considerado el <B>"Padre de la Arqueología Peruana"</B>. Propuso que Chavín fue la <B>"cultura madre"</B> o <B>"cultura matriz"</B> de la civilización andina, hipótesis hoy debatida pero que le dio enorme importancia al sitio.</LI>
+</UL>
+
+<H4>Ubicación y entorno:</H4>
+<UL>
+<LI>Chavín de Huántar se ubica en la confluencia de los ríos <B>Mosna y Wacheksa</B>, en el Callejón de Conchucos, a 3 185 m de altitud. Es un punto estratégico entre la costa y la Amazonía, lo que facilitó el intercambio cultural.</LI>
+</UL>
+
+<H4>Organización política y social:</H4>
+<UL>
+<LI>Chavín fue un <B>Estado teocrático</B>: el poder político y religioso estaban en manos de los sacerdotes. No hubo un rey secular separado del clero.</LI>
+<LI>La sociedad estaba dividida en <B>sacerdotes</B> (clase dominante, administradores del culto y del conocimiento), <B>artesanos especializados</B> y <B>campesinos</B>.</LI>
+<LI>Su influencia panandina se explica por el <B>prestigio religioso</B> del santuario de Chavín, que actuó como centro de peregrinación y redistribución de bienes.</LI>
+</UL>
+
+<H4>Economía:</H4>
+<UL>
+<LI>Base agrícola con uso de <B>canales de irrigación</B> y terrazas (andenes tempranos).</LI>
+<LI>El santuario funcionaba también como <B>centro de intercambio</B> (mercado ceremonial): llegaban productos de la costa (conchas Spondylus y Strombus, indispensables en el ritual andino), la selva (plumas, alucinógenos como el cactus San Pedro) y la sierra.</LI>
+<LI>La <B>concha Spondylus</B> (mullu) proveniente de las costas de Ecuador fue el bien de intercambio ritual más importante de los Andes durante milenios.</LI>
+</UL>
+
+<H4>Arquitectura: el Templo de Chavín de Huántar:</H4>
+<UL>
+<LI><B>Templo Viejo (Templo del Lanzón):</B> la estructura más antigua. Planta en forma de U orientada hacia el este. Contiene la famosa galería subterránea donde se encuentra el <B>Lanzón Monolítico</B>.</LI>
+<LI><B>Templo Nuevo (Templo Mayor):</B> pirámide ampliada, con la <B>Plaza Circular Hundida</B> y la <B>Plaza Cuadrangular</B>. Tenía cornisas decoradas con <B>cabezas clavas</B>.</LI>
+<LI><B>Sistema de galerías subterráneas:</B> un laberinto de corredores y cámaras construidos con maestría de ingeniería hidráulica. Los sacerdotes manipulaban el agua y el sonido (caracolas Strombus) para crear efectos sobrenaturales que aterrorizaban a los peregrinos.</LI>
+<LI><B>Cabezas clavas:</B> esculturas de piedra con cabezas en forma de ser sobrenatural (mezcla de jaguar y hombre) que adornaban el exterior del templo. Muchas han caído por los siglos; solo una permanece in situ.</LI>
+</UL>
+
+<H4>El arte Chavín: el estilo "chavínoide":</H4>
+<UL>
+<LI>El arte de Chavín es <B>religioso, simbólico y altamente estilizado</B>. Las figuras representan divinidades híbridas que mezclan rasgos de jaguar, serpiente, cóndor y ser humano.</LI>
+<LI><B>El Lanzón Monolítico:</B> monolito de granito de 4,53 m de altura, enterrado en forma de cuchillo en la galería central del Templo Viejo. Representa a la divinidad principal de Chavín: un ser con colmillos de jaguar, garras y serpientes en el cabello. Es el objeto sagrado más importante de Chavín.</LI>
+<LI><B>La Estela Raimondi:</B> losa de granito de 1,98 m hallada en Chavín. Representa al <B>dios de los Báculos</B> (o Dios del Báculo), una deidad con dos báculos en las manos que se convertiría en la divinidad panandina más importante, presente en Tiahuanaco y Wari siglos después. Lleva el nombre del naturalista italiano <B>Antonio Raimondi</B> que la estudió.</LI>
+<LI><B>El Obelisco Tello:</B> monolito de 2,52 m que representa dos caimanes míticos superpuestos. Lleva el nombre de Julio C. Tello.</LI>
+<LI><B>Cerámica:</B> monocroma (generalmente negra o marrón), con decoración incisa de seres sobrenaturales. Forma más característica: el <B>porrón</B> (botella de asa estribo).</LI>
+<LI><B>Tejidos y metalurgia:</B> primeros trabajos en <B>oro</B> del Perú prehispánico. Se desarrollaron técnicas de martillado y repujado del metal.</LI>
+</UL>
+
+<H4>Religión Chavín:</H4>
+<UL>
+<LI>Politeísta, centrada en la <B>divinidad felínica</B> (el jaguar como dios supremo) y el <B>Dios de los Báculos</B>.</LI>
+<LI>Los sacerdotes usaban el cactus <B>San Pedro</B> (mescalina) y otras sustancias alucinógenas para inducir visiones y comunicarse con los dioses. Los efectos del alucinógeno se representaban en el arte: los seres se transforman en jaguares (chamanismo de transformación).</LI>
+<LI>Las caracolas <B>Strombus</B> (pututos) se usaban en las ceremonias para crear sonidos que resonaban en las galerías, amplificando el efecto sobrenatural del ritual.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">🏛️ <B>Patrimonio:</B> El sitio arqueológico de Chavín de Huántar fue declarado <B>Patrimonio de la Humanidad por la UNESCO en 1985</B>. Es uno de los sitios arqueológicos más importantes de América del Sur.</DIV>
+
+<!-- ===================== MOCHE ===================== -->
+<DIV CLASS="cultura-titulo">🏺 CULTURA MOCHE (MOCHICA)
+<SPAN>Intermedio Temprano &nbsp;|&nbsp; 100 – 700 d.C. &nbsp;|&nbsp; Costa Norte – La Libertad / Lambayeque</SPAN>
+</DIV>
+
+<H3>4. Cultura Moche: la civilización más avanzada de la costa norte</H3>
+La cultura <B>Moche</B> (también llamada <B>Mochica</B>) es considerada la civilización más brillante y mejor documentada arqueológicamente de la costa norte del Perú preinca. Se destacó por su cerámica extraordinariamente realista, su arquitectura monumental de adobe y su compleja organización estatal y militar.
+
+<H4>Descubrimiento y estudio:</H4>
+<UL>
+<LI>El arqueólogo alemán <B>Max Uhle</B> realizó las primeras excavaciones científicas en el sitio de Moche en 1899–1900. Uhle es considerado el <B>"Padre de la Arqueología Peruana Científica"</B> (en contraposición a Tello, quien fue el primer arqueólogo peruano).</LI>
+<LI>El descubrimiento más importante del siglo XX en los Andes fue el hallazgo de la <B>Tumba del Señor de Sipán</B> (1987) por el arqueólogo peruano <B>Walter Alva</B> en Lambayeque: la tumba intacta de un gobernante moche con un ajuar funerario de oro, plata, cobre y cerámica de valor incalculable.</LI>
+</UL>
+
+<H4>Organización política:</H4>
+<UL>
+<LI>Los moche tuvieron un estado <B>teocrático-militar</B>: el poder lo ejercía el <B>Cie-Quich</B> (gran señor o rey), apoyado por una clase sacerdotal y guerrera.</LI>
+<LI>Su organización fue posiblemente una <B>confederación de señoríos</B> regionales con centros de poder en diferentes valles (Moche al sur, Sipán-Lambayeque al norte), cada uno gobernado por un señor local.</LI>
+<LI>La guerra tenía una función ritual: los prisioneros capturados en combate eran sacrificados en ceremonias. La <B>"Escena del Sacrificio"</B> aparece en decenas de ceramios moches y ha sido confirmada arqueológicamente.</LI>
+</UL>
+
+<H4>Economía:</H4>
+<UL>
+<LI>Agricultura intensiva mediante una red avanzada de <B>canales de irrigación</B> que transformaron el desierto costero en tierras productivas. El canal de La Cumbre (110 km) es uno de los más largos del Perú prehispánico.</LI>
+<LI>Pesca y mariscos del Pacífico: usaban <B>caballitos de totora</B> (balsas de totora) que se siguen usando en Huanchaco (La Libertad) hoy.</LI>
+<LI>Artesanía especializada: cerámica, metalurgia del oro, plata y cobre (tumbaga: aleación oro-cobre).</LI>
+<LI>Comercio con otras culturas: intercambiaban metales, textiles y productos del mar con la sierra y la selva.</LI>
+</UL>
+
+<H4>Arquitectura: las Huacas del Sol y de la Luna:</H4>
+<UL>
+<LI><B>Huaca del Sol:</B> la mayor estructura de adobe de toda América del Sur. Construida con aproximadamente <B>140 millones de adobes</B>. Era el centro administrativo y residencia del poder político-religioso. Los españoles desviaron el río Moche para erosionarla y buscar oro.</LI>
+<LI><B>Huaca de la Luna:</B> ubicada frente a la Huaca del Sol, separadas por una ciudad de artesanos. Era el centro ceremonial y religioso. Sus muros interiores están cubiertos de <B>murales policromos</B> extraordinariamente conservados que representan a <B>Ai Apaec</B> (el degollador) y escenas mitológicas.</LI>
+<LI><B>Complejo de Sipán</B> (Lambayeque): donde se encontró la Tumba del Señor de Sipán.</LI>
+<LI><B>San José de Moro</B> y <B>Dos Cabezas:</B> otros importantes centros moche con tumbas de sacerdotisas.</LI>
+</UL>
+
+<H4>Arte cerámico: el más realista de América prehispánica:</H4>
+<UL>
+<LI>La cerámica moche es única en el mundo por su <B>realismo extraordinario</B>: retrató rostros humanos individualizados (huacos retratos), escenas de vida cotidiana, enfermedades (representaciones únicas de leishmaniasis, sífilis, labio leporino), animales, plantas, combates, ceremonias y relaciones sexuales.</LI>
+<LI>Forma característica: <B>botella de asa estribo</B> (igual que Chavín pero con decoración pictórica muy elaborada) y <B>huacos escultóricos</B> (vasijas en forma de personajes, animales o cabezas).</LI>
+<LI>Técnica de decoración: línea fina (escenas pintadas con líneas delgadas de color crema sobre fondo rojo) y modelado escultórico tridimensional.</LI>
+<LI>Los ceramios moches son una fuente histórica de primer orden: documentan la sociedad, la religión, la medicina y la vida cotidiana con un detalle sin igual en el mundo precolombino.</LI>
+</UL>
+
+<H4>Metalurgia Moche: la más avanzada de América en su época:</H4>
+<UL>
+<LI>Dominaban el <B>oro, la plata, el cobre y sus aleaciones</B> (tumbaga, bronce arsenical). Usaban técnicas de fundición, laminado, soldadura, repujado, incrustación de turquesas y otras piedras.</LI>
+<LI>El ajuar del <B>Señor de Sipán</B> incluye piezas de una sofisticación técnica y artística que asombró al mundo: orejeras de oro con incrustaciones, collares de maní en oro y plata, sonajeras, narigueras y un pectoral de conchas.</LI>
+</UL>
+
+<H4>Religión y dioses:</H4>
+<UL>
+<LI><B>Ai Apaec</B> (el Degollador): divinidad principal, representado con colmillos de jaguar/serpiente y un cuchillo tumi. Presidía los sacrificios rituales de prisioneros de guerra.</LI>
+<LI>Los sacerdotes (identificados por sus tocados y vestimentas en los ceramios) realizaban rituales de sacrificio en los que se bebía la sangre de los prisioneros en copas.</LI>
+</UL>
+
+<DIV CLASS="ej">🏺 <B>El Señor de Sipán:</B> Descubierto en 1987 por Walter Alva en Huaca Rajada (Lambayeque), es la tumba de un gobernante moche del siglo III d.C. Fue enterrado con tres mujeres, dos hombres, un niño, un perro y un guardián sin pie (para que no pudiera huir). Su ajuar incluye más de 400 objetos de oro, plata y cobre. Es considerado el descubrimiento arqueológico más importante de América en el siglo XX. El Museo Tumbas Reales de Sipán, en Lambayeque, alberga los restos.</DIV>
+
+<!-- ===================== TIAHUANACO ===================== -->
+<DIV CLASS="cultura-titulo">🌄 CULTURA TIAHUANACO (TIWANAKU)
+<SPAN>Horizonte Medio &nbsp;|&nbsp; 200 a.C. – 1 200 d.C. &nbsp;|&nbsp; Altiplano del Collao – Lago Titicaca</SPAN>
+</DIV>
+
+<H3>5. Cultura Tiahuanaco: el Imperio del Altiplano</H3>
+Tiahuanaco (o <B>Tiwanaku</B> en aymara) fue la gran civilización del altiplano andino, desarrollada a orillas del <B>lago Titicaca</B> a más de 3 800 m s.n.m. Es la cultura de mayor altitud del mundo antiguo y una de las más influyentes en los Andes, pues su influencia cultural y religiosa se extendió por miles de kilómetros.
+
+<H4>Descubrimiento y estudio:</H4>
+<UL>
+<LI>Los primeros europeos en documentar las ruinas de Tiahuanaco fueron los cronistas coloniales, especialmente <B>Pedro Cieza de León</B> (siglo XVI). Las ruinas impresionaron tanto que algunos españoles creyeron que eran obra de gigantes o de civilizaciones antediluvianas.</LI>
+<LI>El arqueólogo alemán <B>Arthur Posnansky</B> (siglo XX) realizó estudios extensos, aunque con conclusiones exageradas sobre su antigüedad. Los estudios modernos más rigurosos fueron realizados por <B>Alan Kolata</B> y equipos bolivianos-estadounidenses.</LI>
+</UL>
+
+<H4>Organización política:</H4>
+<UL>
+<LI>Tiahuanaco fue un <B>Estado teocrático expansivo</B>. Su capital (ciudad de Tiahuanaco, hoy en Bolivia) era una metrópolis que llegó a tener entre <B>30 000 y 60 000 habitantes</B>, enorme para la época.</LI>
+<LI>Su expansión no fue principalmente militar sino <B>ideológico-religiosa y económica</B>: difundieron su religión, arte y sistema agrícola por la costa, sierra y selva mediante colonias y caravanas de llamas.</LI>
+<LI>En el Perú, su influencia fue especialmente fuerte en <B>Moquegua, Arequipa, Cusco y Puno</B>.</LI>
+</UL>
+
+<H4>Economía: el milagro agrícola del altiplano:</H4>
+<UL>
+<LI>El mayor logro económico de Tiahuanaco fue el desarrollo de los <B>camellones</B> (o <I>sukakollos</I>): campos elevados rodeados de canales de agua. Esta tecnología agrícola permitía cultivar en el altiplano helado porque el agua de los canales absorbe calor solar durante el día y lo libera por la noche, protegiendo los cultivos de las heladas.</LI>
+<LI>Crianza masiva de <B>camélidos</B> (llamas y alpacas): para lana, carne, transporte y sacrificio ritual. Las caravanas de llamas conectaban el altiplano con la costa y la selva.</LI>
+<LI>Control de varios <B>pisos ecológicos</B> (concepto de verticalidad andina): el altiplano producía papa y quinua; las colonias costeras producían maíz y ají; las colonias de valles interandinos producían coca.</LI>
+</UL>
+
+<H4>Arquitectura: las ruinas de Tiahuanaco:</H4>
+<UL>
+<LI><B>Akapana:</B> pirámide escalonada de 7 pisos y 17 m de altura, construida sobre un cerro artificial. Era el centro ceremonial principal. Tiene forma de cruz andina. Sus muros estaban revestidos de piedra andesita.</LI>
+<LI><B>Kalasasaya:</B> plataforma ceremonial rectangular (~130 x 120 m) con muros de piedra monolítica. Contiene la famosa <B>Puerta del Sol</B> y el <B>Monolito Ponce</B>.</LI>
+<LI><B>Puerta del Sol:</B> el monumento más famoso de Tiahuanaco y uno de los más reconocidos de América. Tallada en un solo bloque de andesita de ~10 toneladas. En el dintel aparece grabado el <B>Dios de los Báculos</B> (deidad solar con rayos de cabeza de cóndor) rodeado de 48 figuras de "corredores alados". Esta puerta es la representación más elaborada del dios panandino heredado de Chavín.</LI>
+<LI><B>Pumapunku:</B> plataforma ceremonial con bloques de piedra de hasta <B>131 toneladas</B> tallados con precisión milimétrica (ranuras en H, encastres perfectos). Es uno de los grandes misterios de la ingeniería prehispánica: cómo fueron talladas y transportadas piedras tan pesadas desde canteras a 10 km de distancia, sin rueda ni animales de tiro para ese peso.</LI>
+<LI><B>Kantatayita y Putuni:</B> otras estructuras del complejo.</LI>
+<LI><B>Monolitos:</B> el <B>Monolito Ponce</B>, el <B>Monolito Bennett</B> (el mayor, de 7,3 m) y el <B>Monolito Fraile</B>. Son figuras humanas de piedra que representan a gobernantes o dioses, con tocados elaborados y decoración de serpientes y peces.</LI>
+</UL>
+
+<H4>Arte y cerámica Tiahuanaco:</H4>
+<UL>
+<LI>Cerámica <B>polícroma</B> (varios colores) con motivos geométricos y figuras estilizadas del cóndor, el puma y la serpiente.</LI>
+<LI>Forma característica: el <B>kero</B> (vaso ceremonial acampanado de madera o cerámica) y el <B>sahumador</B> (incensario en forma de puma).</LI>
+<LI>Textiles con técnicas de tapiz y decoración geométrica que influyeron en toda el área andina.</LI>
+<LI>Metalurgia del <B>bronce estañífero</B>: Tiahuanaco fue la primera cultura en usar el bronce con estaño (más duro que el bronce arsenical de Moche) en los Andes.</LI>
+</UL>
+
+<H4>Religión Tiahuanaco:</H4>
+<UL>
+<LI>Adoración del <B>Dios Sol</B> (Inti en versión posterior inca) y del <B>Dios de los Báculos</B> (representado en la Puerta del Sol).</LI>
+<LI>El <B>puma</B> y el <B>cóndor</B> eran animales sagrados, símbolos de poder terrenal y celestial respectivamente.</LI>
+<LI>Rituales con <B>tabletas de rapé</B> (inhalación de alucinógenos): se han encontrado miles de tabletas decoradas en el área de influencia tiahuanacota.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">🌟 <B>Tiahuanaco e Inca:</B> Los incas consideraban a Tiahuanaco un lugar sagrado de origen de la humanidad. Según el mito oficial inca, <B>Manco Cápac y Mama Ocllo</B> emergieron del lago Titicaca (cerca de Tiahuanaco) enviados por el Sol. Los incas incorporaron la iconografía y la religión tiahuanacota en su propio panteón.</DIV>
+
+<!-- ===================== NAZCA ===================== -->
+<DIV CLASS="cultura-titulo">🌀 CULTURA NAZCA
+<SPAN>Intermedio Temprano &nbsp;|&nbsp; 100 a.C. – 800 d.C. &nbsp;|&nbsp; Costa Sur – Ica / Nazca</SPAN>
+</DIV>
+
+<H3>6. Cultura Nazca: el misterio de las líneas en el desierto</H3>
+La cultura <B>Nazca</B> se desarrolló en la costa sur del Perú, en los valles de los ríos Nazca, Ica, Grande y Palpa. Es mundialmente famosa por las <B>Líneas de Nazca</B>, trazados geométricos y figuras zoomorfas de escala colosal grabadas en el desierto, declaradas <B>Patrimonio de la Humanidad por la UNESCO en 1994</B>.
+
+<H4>Descubrimiento y estudio:</H4>
+<UL>
+<LI>La cultura Nazca fue identificada científicamente por el arqueólogo alemán <B>Max Uhle</B> a inicios del siglo XX.</LI>
+<LI>Las <B>Líneas de Nazca</B> fueron estudiadas en profundidad por la matemática alemana <B>Maria Reiche</B>, quien dedicó su vida a medirlas, limpiarlas y difundirlas desde los años 1940 hasta su muerte en 1998. Reiche propuso que las líneas eran un <B>calendario astronómico</B>.</LI>
+<LI>El explorador peruano <B>Toribio Mejía Xesspe</B> fue el primero en describir sistemáticamente las líneas en 1927.</LI>
+</UL>
+
+<H4>Organización política:</H4>
+<UL>
+<LI>Nazca fue una sociedad organizada en <B>señoríos o curacazgos</B> regionales, sin un Estado centralizado tan fuerte como Moche. Los diferentes valles tenían sus propios centros ceremoniales.</LI>
+<LI>La <B>guerra</B> era frecuente entre los diferentes grupos nazcas: esto se refleja en los numerosos cráneos trofeo hallados en sus tumbas (cráneos perforados en la frente para ser colgados como trofeos).</LI>
+</UL>
+
+<H4>Economía: el reto del desierto más árido del mundo:</H4>
+<UL>
+<LI>Los valles nazcas son extremadamente áridos. El gran logro económico de Nazca fue el desarrollo de los <B>puquios</B> (o acueductos subterráneos): galerías filtrantes que captaban el agua de la napa freática y la conducían a la superficie mediante espirales (ojos) para irrigar los campos. Hay más de <B>36 puquios</B> en la zona de Nazca, algunos aún en funcionamiento.</LI>
+<LI>Agricultura de <B>maíz, frijol, pallar, ají, yuca</B> y algodón. La camanchaca (neblina costera) también aportaba humedad.</LI>
+<LI>Pesca y mariscos del Pacífico cercano.</LI>
+<LI>Artesanía de cerámica y textiles de altísima calidad.</LI>
+</UL>
+
+<H4>Las Líneas de Nazca: el gran misterio:</H4>
+<UL>
+<LI>Las líneas se encuentran en la <B>Pampa de Jumana</B>, meseta desértica de 500 km² entre Nazca e Ica. El clima hiperáriado (menos de 1 mm de lluvia al año) y la ausencia de vientos fuertes han preservado los trazados durante siglos.</LI>
+<LI><B>¿Cómo se hicieron?</B> Retirando las piedras oscuras superficiales para dejar al descubierto el suelo más claro de abajo. No se necesitó tecnología especial, sino organización colectiva y un sistema de cuerdas y estacas para proyectar diseños a gran escala. Se han encontrado estacas y cuerdas en el sitio.</LI>
+<LI><B>Tipos de figuras:</B>
+  <UL>
+    <LI><B>Geométricas:</B> líneas rectas (algunas de más de 10 km de longitud), triángulos, trapecios, espirales y zigzags.</LI>
+    <LI><B>Zoomorfas (biomorphs):</B> animales de gran tamaño: el <B>colibrí</B> (96 m), el <B>mono</B> (con 9 dedos, 55 m), la <B>araña</B> (46 m), el <B>cóndor</B> (130 m), la <B>ballena</B>, el <B>pelícano</B>, el <B>alcatraz</B>, el <B>perro</B> y el <B>lagarto</B>.</LI>
+    <LI><B>Fitomorfas:</B> flores y árboles.</LI>
+    <LI><B>Antropomorfas:</B> figuras humanas, la más famosa es el llamado <B>"Astronauta"</B> de 30 m (representación de un ser humano con extrañas manos).</LI>
+  </UL>
+</LI>
+<LI><B>¿Para qué sirvieron?</B> Es el debate más activo en arqueología andina. Las hipótesis más aceptadas:
+  <UL>
+    <LI><B>Calendario astronómico</B> (Maria Reiche): muchas líneas apuntan hacia la salida/puesta del sol, luna y estrellas en fechas clave del año agrícola.</LI>
+    <LI><B>Caminos rituales</B>: las líneas eran rutas de procesión hacia lugares de culto al agua. El arqueólogo Johan Reinhard propuso que los nazcas caminaban sobre las líneas en rituales para pedir lluvia a los dioses de las montañas (<I>apus</I>).</LI>
+    <LI><B>Centros de culto al agua</B>: estudios recientes relacionan muchas líneas con los puquios y fuentes de agua subterránea.</LI>
+  </UL>
+</LI>
+</UL>
+
+<H4>Cahuachi: la capital ceremonial de Nazca:</H4>
+<UL>
+<LI><B>Cahuachi</B> es el mayor centro ceremonial de Nazca, ubicado a 28 km de la ciudad de Nazca, a orillas del río del mismo nombre. Tiene <B>más de 40 montículos piramidales de adobe</B>, el mayor de 20 m de altura.</LI>
+<LI>Era un centro de <B>peregrinación y ritual</B>, no una ciudad habitada permanentemente. Los nazcas acudían para realizar ceremonias, depositar ofrendas y, probablemente, organizar los trabajos en las líneas.</LI>
+<LI>El arqueólogo italiano <B>Giuseppe Orefici</B> lleva décadas excavando Cahuachi.</LI>
+</UL>
+
+<H4>Arte Nazca: la cerámica más colorida del Perú preinca:</H4>
+<UL>
+<LI>La cerámica nazca es la <B>más polícroma</B> del Perú prehispánico: usaban hasta <B>11 colores</B> diferentes (obtenidos de minerales y plantas) aplicados antes de la cocción.</LI>
+<LI>Las formas más características: <B>puco</B> (cuenco), <B>cántaro doble pico y puente</B> (a diferencia del asa estribo moche) y <B>botellas</B>.</LI>
+<LI>Las decoraciones representan seres míticos (el "ser oculado", el "ser manchado"), animales marinos, plantas y escenas de sacrificio.</LI>
+<LI><B>Textiles:</B> los tejidos nazcas son de una riqueza cromática y técnica extraordinaria. Los mantos de Paracas-Nazca (la cultura Paracas-Necrópolis que le precedió inmediatamente) son los textiles más finos del mundo antiguo.</LI>
+</UL>
+
+<H4>Religión Nazca:</H4>
+<UL>
+<LI>Adoración de los <B>dioses del agua y la fertilidad</B>: en el desierto costero, el agua era el bien más precioso. Sus divinidades principales eran seres míticos relacionados con el agua, la agricultura y la muerte.</LI>
+<LI>Los <B>cráneos trofeo</B>: cabezas de enemigos capturados en guerra, perforadas en la frente para ser colgadas. Se usaban en rituales y como ofrendas.</LI>
+<LI>Los rituales en Cahuachi implicaban consumo de <B>chicha</B> (cerveza de maíz), ofrendas de cerámica y textiles, y posiblemente sacrificios humanos.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">✈️ <B>Las Líneas de Nazca</B> fueron declaradas <B>Patrimonio de la Humanidad por la UNESCO en 1994</B>. Son visibles en su totalidad solo desde el aire. La mejor forma de estudiarlas es desde pequeñas avionetas que despegan del aeropuerto de Nazca. Maria Reiche dedicó 50 años de su vida a protegerlas y estudiarlas, y está enterrada junto a las líneas.</DIV>
+
+<H3>7. Cuadro comparativo de las cuatro culturas</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Aspecto</TH><TH>Chavín</TH><TH>Moche</TH><TH>Tiahuanaco</TH><TH>Nazca</TH></TR>
+<TR><TD><B>Período</B></TD><TD>Horizonte Temprano</TD><TD>Intermedio Temprano</TD><TD>Horizonte Medio</TD><TD>Intermedio Temprano</TD></TR>
+<TR><TD><B>Cronología</B></TD><TD>900–200 a.C.</TD><TD>100–700 d.C.</TD><TD>200 a.C.–1 200 d.C.</TD><TD>100 a.C.–800 d.C.</TD></TR>
+<TR><TD><B>Ubicación</B></TD><TD>Sierra norte (Áncash)</TD><TD>Costa norte (La Libertad)</TD><TD>Altiplano (lago Titicaca)</TD><TD>Costa sur (Ica/Nazca)</TD></TR>
+<TR><TD><B>Política</B></TD><TD>Teocracia sacerdotal</TD><TD>Teocracia militar</TD><TD>Estado teocrático expansivo</TD><TD>Señoríos regionales</TD></TR>
+<TR><TD><B>Economía</B></TD><TD>Agricultura, intercambio ritual</TD><TD>Irrigación, pesca, metalurgia</TD><TD>Camellones, camélidos, verticalidad</TD><TD>Puquios, agricultura, pesca</TD></TR>
+<TR><TD><B>Arquitectura</B></TD><TD>Templo con galerías subterráneas, cabezas clavas</TD><TD>Huacas del Sol y de la Luna (adobe)</TD><TD>Akapana, Kalasasaya, Pumapunku (piedra)</TD><TD>Cahuachi (pirámides de adobe)</TD></TR>
+<TR><TD><B>Arte principal</B></TD><TD>Escultura en piedra (Lanzón, Estela Raimondi)</TD><TD>Cerámica realista, metalurgia</TD><TD>Puerta del Sol, monolitos, keros</TD><TD>Líneas de Nazca, cerámica polícroma</TD></TR>
+<TR><TD><B>Cerámica</B></TD><TD>Monocroma, asa estribo</TD><TD>Realista, huacos retrato y escultórico</TD><TD>Polícroma geométrica, keros</TD><TD>Hasta 11 colores, doble pico y puente</TD></TR>
+<TR><TD><B>Dios principal</B></TD><TD>Felino jaguar, Dios de los Báculos</TD><TD>Ai Apaec (el Degollador)</TD><TD>Dios de los Báculos (Puerta del Sol)</TD><TD>Dioses del agua y fertilidad</TD></TR>
+<TR><TD><B>Aporte destacado</B></TD><TD>"Cultura madre" andina, primeros trabajos en oro</TD><TD>Señor de Sipán, cerámica más realista de América</TD><TD>Puerta del Sol, bronce estañífero, camellones</TD><TD>Líneas de Nazca, puquios, cerámica polícroma</TD></TR>
+<TR><TD><B>Arqueólogo clave</B></TD><TD>Julio C. Tello</TD><TD>Max Uhle, Walter Alva</TD><TD>Arthur Posnansky, Alan Kolata</TD><TD>Max Uhle, Maria Reiche</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">900 a.C.</DIV><DIV CLASS="dk-label">Inicio de Chavín, primera cultura panandina</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1987</DIV><DIV CLASS="dk-label">Descubrimiento del Señor de Sipán (Moche)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">3 800 m</DIV><DIV CLASS="dk-label">Altitud de Tiahuanaco, la mayor ciudad antigua del mundo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">500 km²</DIV><DIV CLASS="dk-label">Extensión de las Líneas de Nazca en la Pampa de Jumana</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1985</DIV><DIV CLASS="dk-label">Chavín de Huántar: Patrimonio UNESCO</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1994</DIV><DIV CLASS="dk-label">Líneas de Nazca: Patrimonio UNESCO</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">4,53 m</DIV><DIV CLASS="dk-label">Altura del Lanzón Monolítico de Chavín</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">11</DIV><DIV CLASS="dk-label">Colores en la cerámica nazca, la más polícroma del Perú</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+⭐ <B>Datos clave para el examen:</B><BR>
+• <B>Chavín:</B> "cultura madre" andina · Julio C. Tello · Lanzón Monolítico · Estela Raimondi · cabezas clavas · Horizonte Temprano<BR>
+• <B>Moche:</B> Señor de Sipán (Walter Alva, 1987) · Huaca del Sol y de la Luna · Ai Apaec · cerámica realista (huacos retrato) · asa estribo · Intermedio Temprano<BR>
+• <B>Tiahuanaco:</B> Puerta del Sol · Dios de los Báculos · Akapana · Pumapunku · camellones (sukakollos) · bronce estañífero · Horizonte Medio<BR>
+• <B>Nazca:</B> Líneas de Nazca (Maria Reiche) · Cahuachi · puquios · cerámica polícroma (11 colores) · doble pico y puente · UNESCO 1994<BR>
+• <B>Arqueólogos:</B> Julio C. Tello = padre arqueología peruana · Max Uhle = arqueología científica · Walter Alva = Sipán · Maria Reiche = Nazca<BR>
+• <B>Horizontes</B> = unificación panandina (Chavín, Tiahuanaco-Wari, Inca) &nbsp;·&nbsp; <B>Intermedios</B> = desarrollo regional
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Qué arqueólogo peruano es considerado el "Padre de la Arqueología Peruana" y a qué cultura está principalmente asociado su trabajo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Max Uhle, asociado a la cultura Nazca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Julio C. Tello, asociado a la cultura Chavín</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Walter Alva, asociado a la cultura Moche</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Arthur Posnansky, asociado a la cultura Tiahuanaco</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Julio C. Tello</B> (1880–1947) es el padre de la arqueología peruana: fue el primer arqueólogo peruano en estudiar científicamente el territorio, y su trabajo más destacado fue en <B>Chavín de Huántar</B> (1919), donde propuso que Chavín era la "cultura madre" de la civilización andina. También estudió Paracas. Max Uhle fue alemán y trabajó en Moche y Nazca. Walter Alva descubrió el Señor de Sipán en 1987.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿En qué período cultural se ubica la cultura Chavín y cuál es la razón de que ese período lleve su nombre?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Intermedio Temprano, porque Chavín dominó militarmente todos los valles costeños del Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Horizonte Temprano, porque su influencia religiosa y artística se extendió por toda el área andina, unificándola culturalmente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Horizonte Medio, porque su religión fue adoptada por Tiahuanaco y Wari simultáneamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Intermedio Tardío, porque fue una cultura regional sin influencia fuera de Áncash</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Chavín pertenece al <B>Horizonte Temprano</B> (900–200 a.C.) y da nombre a ese período porque su influencia religiosa, artística y simbólica se extendió por toda la costa, sierra y selva del área andina, constituyendo el primer fenómeno de <B>unificación cultural panandina</B>. Los "Horizontes" siempre implican unificación cultural de amplio alcance.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Cuál es el monumento más famoso de la cultura Tiahuanaco y qué representa la figura central en su friso?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) El Lanzón Monolítico, que representa a Ai Apaec el Degollador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) La Puerta del Sol, que representa al Dios de los Báculos rodeado de 48 figuras de corredores alados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) La Estela Raimondi, que representa a dos caimanes superpuestos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El Obelisco Tello, que representa la divinidad solar con rayos de cóndor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Puerta del Sol</B> de Tiahuanaco, tallada en un solo bloque de andesita de ~10 toneladas, tiene en su dintel grabado al <B>Dios de los Báculos</B> (deidad solar con rayos de cabeza de cóndor) flanqueado por 48 figuras de "corredores alados". Es el monumento más representativo de Tiahuanaco y uno de los más importantes de América. El Lanzón pertenece a Chavín; la Estela Raimondi también es de Chavín.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Qué son los "puquios" y a qué cultura pertenecen?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Campos elevados rodeados de canales para cultivar en el altiplano helado; pertenecen a Tiahuanaco</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Galerías filtrantes subterráneas que captan agua de la napa freática para irrigar el desierto; pertenecen a la cultura Nazca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Canales de irrigación de 110 km de longitud que transformaron el desierto costero norte; pertenecen a Moche</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Galerías subterráneas del templo usadas en rituales religiosos; pertenecen a Chavín</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>puquios</B> son acueductos subterráneos (galerías filtrantes) desarrollados por la cultura <B>Nazca</B> para captar el agua de la napa freática y conducirla a la superficie mediante espirales llamadas "ojos". Fue la solución ingeniosa de los nazcas al problema del desierto hiperáriado de la costa sur. Hay más de 36 puquios en la zona, varios aún en funcionamiento. Los camellones (sukakollos) corresponden a Tiahuanaco.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Quién descubrió la Tumba del Señor de Sipán, en qué año y a qué cultura pertenece?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Julio C. Tello, en 1919, cultura Chavín</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Maria Reiche, en 1946, cultura Nazca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Walter Alva, en 1987, cultura Moche</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Max Uhle, en 1899, cultura Moche</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El arqueólogo peruano <B>Walter Alva</B> descubrió en <B>1987</B> la tumba intacta del <B>Señor de Sipán</B> en Huaca Rajada (Lambayeque), perteneciente a la cultura <B>Moche</B>. Es considerado el hallazgo arqueológico más importante de América en el siglo XX. La tumba contenía más de 400 objetos de oro, plata y cobre. El Museo Tumbas Reales de Sipán en Lambayeque alberga los restos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Por qué se dice que la cultura Chavín fue la "primera cultura panandina" y cuál fue el mecanismo de su difusión?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Porque conquistó militarmente todos los territorios andinos e impuso su lengua y sus leyes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Porque su influencia religiosa, artística y simbólica se difundió por toda el área andina a través del prestigio del santuario como centro de peregrinación e intercambio, sin necesidad de conquista militar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Porque fue la única cultura que usó la escritura para comunicarse con todos los pueblos andinos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Porque sus sacerdotes viajaron a todas las regiones andinas para imponer el culto al jaguar por la fuerza</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Chavín se extendió por toda el área andina no por conquista militar sino por el <B>prestigio religioso</B> de su santuario. Chavín de Huántar era un centro de <B>peregrinación</B>: grupos de toda la costa, sierra y selva acudían para participar en los rituales, y regresaban llevando consigo los símbolos, el arte y las creencias chavínas. Además, el santuario funcionaba como <B>centro de redistribución</B> de bienes (concha Spondylus, metales, alucinógenos). Esto explica por qué el estilo chavínoide aparece en lugares tan distantes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Cuál fue el mayor aporte tecnológico agrícola de Tiahuanaco y cómo funcionaba?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Los puquios: galerías subterráneas que captaban agua freática para irrigar el altiplano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Los camellones (sukakollos): campos elevados rodeados de canales que acumulaban calor solar para proteger los cultivos de las heladas nocturnas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Los andenes (terrazas): plataformas escalonadas en las laderas de los cerros para ampliar la frontera agrícola</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Los canales de La Cumbre: sistema de irrigación de 110 km que transformó el desierto en tierra productiva</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>camellones</B> (o <I>sukakollos</I> en aymara) fueron la gran innovación agrícola de Tiahuanaco en el altiplano. Son campos elevados sobre el nivel del lago y la pampa, rodeados de canales de agua. El agua de los canales absorbe el calor solar durante el día y lo libera lentamente durante la noche, creando un microclima que protege los cultivos de las heladas que regularmente destruyen cosechas en el altiplano. Los estudios modernos han confirmado que esta tecnología permite hasta 3 cosechas anuales donde normalmente solo hay una.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿En qué se diferencia la cerámica Moche de la cerámica Nazca y cuál es la característica formal que las distingue?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) La cerámica moche es polícroma (hasta 11 colores) con doble pico y puente; la nazca es monocroma con asa estribo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) La cerámica moche es realista (huacos retrato y escultórica) con asa estribo; la nazca es la más polícroma (hasta 11 colores) con doble pico y puente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Ambas usaban asa estribo, pero la moche representaba animales y la nazca representaba solo seres humanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La cerámica nazca es la más realista de América; la moche es geométrica y abstracta</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Moche:</B> cerámica extraordinariamente <B>realista</B> (huacos retrato, escultórica), con la forma característica de <B>asa estribo</B> y decoración de "línea fina" en rojo y crema. <B>Nazca:</B> la cerámica más <B>polícroma</B> del Perú prehispánico (hasta 11 colores), con la forma característica de <B>doble pico y puente</B>. Estas formas son fundamentales para identificar cada cultura en un examen de selección múltiple: asa estribo = Moche (o Chavín); doble pico y puente = Nazca.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> La hipótesis más aceptada actualmente sobre la función de las Líneas de Nazca las relaciona con:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Pistas de aterrizaje para naves extraterrestres, según la teoría de Erich von Däniken</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Caminos rituales de procesión relacionados con el culto al agua y los dioses de la lluvia (apus), posiblemente con función astronómica calendárica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Un sistema de comunicación visual entre diferentes aldeas nazcas en el desierto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Monumentos funerarios que marcaban el territorio de cada familia noble nazca</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La hipótesis científica más aceptada (Johan Reinhard, Anthony Aveni) vincula las líneas con el <B>culto al agua</B>: los nazcas habrían caminado ritualmente sobre las líneas como procesiones para invocar la lluvia a los <I>apus</I> (dioses montaña). También se acepta una función de <B>calendario astronómico</B> (Maria Reiche) para algunas líneas. La teoría extraterrestre de von Däniken no tiene ningún sustento arqueológico y es rechazada por la comunidad científica. Las líneas se pudieron hacer perfectamente con cuerdas, estacas y trabajo organizado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Qué diferencia fundamental existía entre la organización política de Moche y la de Nazca?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Moche era una democracia participativa; Nazca era una teocracia absoluta con un sacerdote-rey</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Moche desarrolló un Estado teocrático-militar más centralizado con un gobernante (Cie-Quich); Nazca se organizó en señoríos regionales más descentralizados sin un poder central único</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Ambas culturas tenían la misma organización: señoríos independientes sin poder centralizado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Nazca tuvo un Estado imperial que dominó toda la costa sur; Moche fue solo un señorío local</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Moche</B> desarrolló un Estado <B>teocrático-militar</B> con un gobernante identificado (el <I>Cie-Quich</I>), una clase sacerdotal-guerrera definida, centros administrativos como las Huacas del Sol y la Luna, y evidencia de control centralizado de recursos. <B>Nazca</B> fue más descentralizada: una serie de <B>señoríos o curacazgos</B> regionales en distintos valles, con el centro ceremonial de Cahuachi como punto de convergencia ritual pero sin un poder político central fuerte. La presencia de numerosos cráneos trofeo en Nazca sugiere conflictos frecuentes entre grupos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> El concepto de "Horizonte" en la arqueología andina (propuesto por John Rowe) hace referencia a un período de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Decadencia cultural y fragmentación política en el área andina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Unificación o integración cultural panandina de amplio alcance geográfico, generalmente de la mano de una religión o sistema político dominante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Desarrollo regional independiente de varias culturas sin contacto entre ellas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Transición entre dos períodos de conquista extranjera del territorio andino</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El concepto de <B>"Horizonte"</B> (propuesto por el arqueólogo John Rowe) designa períodos en que una influencia cultural, religiosa o política se extendió por todo o gran parte del área andina, produciendo relativa uniformidad cultural: <B>Horizonte Temprano</B> = influencia Chavín; <B>Horizonte Medio</B> = influencia Tiahuanaco-Wari; <B>Horizonte Tardío</B> = Imperio Inca. Los <B>"Intermedios"</B> son períodos de desarrollo regional diversificado sin hegemonía única. Esta distinción es fundamental en los exámenes de admisión.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Por qué la cerámica moche es considerada una fuente histórica de primer orden para conocer la sociedad moche?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Porque contiene escritura jeroglífica que describe la historia de los gobernantes moches</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Porque su extraordinario realismo documental representa con precisión escenas de la vida cotidiana, enfermedades, rituales de sacrificio, jerarquía social y creencias religiosas, siendo la única fuente disponible ante la ausencia de escritura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Porque fue fabricada por los sacerdotes exclusivamente para narrar los mitos de origen de la cultura moche</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Porque los arqueólogos encontraron junto a las vasijas documentos escritos en quechua que las explicaban</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La cerámica moche no tiene escritura, pero su <B>realismo excepcional</B> la convierte en una fuente histórica única. Los ceramios moches representan: rostros individualizados (huacos retrato que podrían ser retratos reales), escenas de combate y sacrificio (que la arqueología ha confirmado en tumbas), enfermedades (leishmaniasis, tuberculosis, sífilis), la jerarquía social (sacerdotes con sus vestimentas), rituales (la escena del sacrificio), la fauna marina, etc. Ante la ausencia total de escritura, los ceramios son el "libro de historia" de los moches.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Analiza la importancia de la concha Spondylus (mullu) en la economía y religión de Chavín y el mundo andino en general:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Era solo un artículo de lujo para el adorno personal de los sacerdotes sin mayor significado religioso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Era el bien de intercambio ritual más importante de los Andes: provenía de las costas de Ecuador, era considerada sagrada (asociada al agua y la fertilidad) y su presencia en una tumba o sitio indica redes de intercambio a larga distancia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Fue usada exclusivamente por Chavín; las culturas posteriores no la valoraron</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Su importancia era económica pero no religiosa: se usaba como moneda en el mercado de Chavín</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La concha <B>Spondylus</B> (mullu) es uno de los elementos más importantes del mundo andino. Solo se encuentra viva en aguas tropicales ecuatorianas y fue transportada miles de kilómetros hasta los Andes centrales. Era considerada <B>sagrada</B> y asociada con el agua, la lluvia y la fertilidad. Su presencia en un sitio arqueológico indica redes de intercambio a larga distancia. Fue usada en rituales desde Chavín hasta los Incas (quienes la usaban en las ofrendas a los dioses). Las redes de intercambio centradas en el Spondylus conectaron todo el área andina durante más de 3 000 años.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> La influencia de Tiahuanaco sobre las culturas andinas posteriores (incluidos los Incas) se evidencia en:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La adopción inca del sistema de camellones (sukakollos) como principal técnica agrícola imperial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El mito de origen inca que sitúa el nacimiento de Manco Cápac y Mama Ocllo en el lago Titicaca (área de Tiahuanaco), la incorporación del Dios Sol al panteón inca y el uso del kero como vaso ceremonial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La adopción inca de la lengua aymara como lengua oficial del Tawantinsuyu en reemplazo del quechua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La construcción inca de una réplica de la Puerta del Sol en Cusco como símbolo del poder imperial</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La influencia de Tiahuanaco sobre los Incas fue profunda y múltiple: (1) el <B>mito de origen inca</B> sitúa el nacimiento de Manco Cápac y Mama Ocllo en las aguas del lago Titicaca, zona sagrada de Tiahuanaco; (2) los Incas adoptaron el <B>Dios Sol</B> (Inti), heredero del Dios de los Báculos tiahuanacota; (3) el <B>kero</B> (vaso ceremonial) continuó siendo usado en el Tawantinsuyu; (4) los Incas consideraban Tiahuanaco un lugar sagrado y realizaban peregrinaciones al sitio. La tecnología de camellones fue usada en el altiplano, pero no fue el aporte más significativo a la cultura inca.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Cuál es la diferencia entre la función del Templo de Chavín de Huántar y la de Cahuachi (Nazca) como centros religiosos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Chavín era un centro residencial permanente de sacerdotes; Cahuachi era un mercado donde se intercambiaban bienes religiosos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Ambos fueron centros de peregrinación, pero Chavín funcionaba también como centro de redistribución de bienes de larga distancia, mientras que Cahuachi parece haber sido un centro ceremonial de uso periódico (no habitado permanentemente) donde se realizaban rituales y ofrendas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Chavín fue un centro exclusivamente funerario; Cahuachi fue una ciudad habitada permanentemente por más de 10 000 personas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) No hay diferencia: ambos eran capitales políticas y religiosas de sus respectivas culturas, habitadas permanentemente por la élite gobernante</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Chavín de Huántar</B> fue un santuario de <B>peregrinación panandina</B> que también funcionaba como centro de redistribución de bienes de larga distancia (Spondylus, metales, alucinógenos), con una población permanente de sacerdotes y artesanos. <B>Cahuachi</B> (Nazca) parece haber sido un centro ceremonial de <B>uso periódico</B>: los arqueólogos (especialmente Orefici) han concluido que no era una ciudad habitada permanentemente, sino un lugar de peregrinación donde los nazcas de diferentes valles se reunían en fechas rituales para realizar ceremonias, depositar ofrendas y posiblemente organizar los trabajos de las líneas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> ¿Por qué el arqueólogo Julio C. Tello propuso que Chavín era la "cultura madre" de la civilización andina y cuál es la crítica principal que los arqueólogos modernos hacen a esta hipótesis?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Tello propuso esto porque encontró escritura en Chavín similar a la de otras culturas; la crítica es que esa escritura resultó ser posterior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Tello propuso el origen amazónico de la civilización andina con Chavín como punto de síntesis; la crítica moderna es que culturas como Caral (costa) y Kotosh (sierra) son anteriores a Chavín, lo que debilita la idea de una "cultura madre" única</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Tello propuso que Chavín fue fundada por migrantes mayas; los estudios genéticos modernos demostraron que los fundadores eran andinos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Tello no propuso esa hipótesis; fue Max Uhle quien llamó a Chavín "cultura madre"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Tello propuso que la civilización andina tenía origen <B>amazónico</B>, y que Chavín (en la frontera sierra-selva) fue el punto de síntesis donde se fusionaron las tradiciones amazónicas (jaguar, serpiente) con las andinas. Lo llamó "cultura madre". La crítica principal hoy es que el descubrimiento de <B>Caral</B> (costa de Lima, ~3 000 a.C., dos mil años antes que Chavín) y otras culturas como Kotosh y Las Haldas demuestra que hubo civilizaciones complejas en los Andes mucho antes de Chavín. Chavín fue una gran síntesis e influencia panandina, pero no el origen absoluto de la civilización andina.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> ¿Cuál es la relación entre el Dios de los Báculos de Chavín y el de la Puerta del Sol de Tiahuanaco, y qué revela esta continuidad sobre la religión andina?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Son divinidades completamente distintas que solo se parecen superficialmente; no hay relación histórica entre ellas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) El Dios de los Báculos es una deidad panandina que aparece desde el Horizonte Temprano (Chavín) hasta el Horizonte Medio (Tiahuanaco-Wari), revelando una continuidad religiosa de más de 1 000 años en los Andes y una red de interacción cultural sostenida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Tiahuanaco copió directamente los diseños de Chavín porque sus sacerdotes viajaron al santuario y tomaron fotografías de la Estela Raimondi</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El Dios de los Báculos de Tiahuanaco es una evolución del dios nazca Ai Apaec; no tiene relación con Chavín</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La iconografía del <B>Dios de los Báculos</B> (ser de frente, con dos báculos o cetros en las manos, rodeado de seres alados) aparece en la <B>Estela Raimondi de Chavín</B> (~900 a.C.) y reaparece siglos después en la <B>Puerta del Sol de Tiahuanaco</B> (~600–900 d.C.). Esta continuidad de más de 1 000 años revela: (1) la existencia de redes de interacción cultural e ideológica muy persistentes en los Andes; (2) que ciertas ideas religiosas (la deidad con báculos como símbolo de poder cósmico) eran compartidas por culturas muy distintas; (3) que estas ideas se transmitieron probablemente a través de redes de intercambio y peregrinación, no de conquista.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Compara la solución tecnológica de Tiahuanaco (camellones) con la de Nazca (puquios) frente a sus respectivos desafíos ambientales. ¿Qué revela esta comparación sobre la relación entre geografía y creatividad tecnológica en los Andes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Que ambas culturas usaron la misma tecnología básica adaptada a diferentes geografías, lo que prueba que hubo contacto directo entre ellas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Que las culturas andinas desarrollaron soluciones tecnológicas originales y complejas adaptadas a entornos extremos (altiplano helado vs. desierto costero), demostrando que la adversidad geográfica impulsó la innovación agrícola prehispánica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Que Tiahuanaco fue superior tecnológicamente a Nazca porque los camellones eran más eficientes que los puquios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Que ambas culturas copiaron sus tecnologías agrícolas de las culturas mesoamericanas (aztecas y mayas) con las que comerciaban</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El contraste es revelador: <B>Tiahuanaco</B> enfrentó el altiplano a 3 800 m s.n.m., con heladas frecuentes y suelo anegado → inventó los <B>camellones</B> (campos elevados que acumulan calor solar). <B>Nazca</B> enfrentó el desierto costero con menos de 1 mm de lluvia al año → inventó los <B>puquios</B> (acueductos subterráneos que captan agua freática). Ambas soluciones son originales, sofisticadas y sin paralelos exactos en otras partes del mundo. Esto refleja un principio fundamental de la civilización andina: la <B>creatividad tecnológica como respuesta a la adversidad geográfica</B>, sin importar si el reto era el frío o la sequía.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Cuál de las siguientes afirmaciones sobre la cultura Moche es INCORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) La Huaca del Sol fue construida con aproximadamente 140 millones de adobes y es la mayor estructura de adobe de América del Sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) La cerámica moche es la más polícroma del Perú prehispánico, usando hasta 11 colores distintos aplicados antes de la cocción</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Los moche practicaban sacrificios rituales de prisioneros de guerra, lo que ha sido confirmado arqueológicamente en las Huacas de Moche</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El Señor de Sipán fue enterrado con más de 400 objetos de oro, plata y cobre, siendo el hallazgo arqueológico más importante de América en el siglo XX</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>La incorrecta es b)</B><BR>La cerámica <B>más polícroma</B> del Perú prehispánico (hasta 11 colores) es la <B>nazca</B>, no la moche. La cerámica <B>moche</B> es la más <B>realista</B> y escultórica: usa generalmente dos colores (crema y rojo) en su decoración de "línea fina", aunque el modelado escultórico tridimensional es su rasgo más destacado. Las otras afirmaciones son correctas: la Huaca del Sol tiene ~140 millones de adobes, los sacrificios rituales moches han sido confirmados arqueológicamente, y el Señor de Sipán es el mayor hallazgo arqueológico americano del siglo XX.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> ¿Cuál de las siguientes afirmaciones sobre las Líneas de Nazca es CORRECTA desde el punto de vista arqueológico y científico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Las líneas solo pueden explicarse como pistas de aterrizaje extraterrestres, pues ninguna tecnología humana prehispánica pudo haberlas creado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Fueron construidas por la cultura Tiahuanaco durante el Horizonte Medio, como parte de su expansión hacia la costa sur del Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Se realizaron retirando piedras oscuras superficiales para exponer el suelo más claro; su preservación se debe al clima hiperáriado de la Pampa de Jumana; fueron declaradas Patrimonio UNESCO en 1994 y la científica que más las estudió fue Maria Reiche</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Son posteriores a la llegada de los españoles, quienes las construyeron para organizar las mitas de trabajo forzado en la región de Ica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Todos los datos de la opción c son correctos: (1) técnica de construcción: <B>remoción de piedras oscuras</B> superficiales dejando el suelo más claro de abajo; (2) preservación: el clima <B>hiperáriado</B> de la Pampa de Jumana (menos de 1 mm de lluvia al año) y la ausencia de vientos fuertes las han conservado siglos; (3) declaradas <B>Patrimonio de la Humanidad UNESCO en 1994</B>; (4) <B>Maria Reiche</B>, matemática alemana, dedicó 50 años de su vida a medirlas, limpiarlas y estudiarlas. La hipótesis extraterrestre no tiene sustento científico; Tiahuanaco no las construyó; y son claramente precolombinas.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

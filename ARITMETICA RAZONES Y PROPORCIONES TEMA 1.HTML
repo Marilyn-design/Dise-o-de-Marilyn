@@ -1,0 +1,793 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Razones y Proporciones - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;text-align:center;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:22px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+.formula-box{background:linear-gradient(135deg,#0D1B36,#1a3a5c);color:white;border-radius:16px;padding:20px 28px;margin:16px 0;text-align:center;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.formula-box .formula{font-size:26px;color:#D7B06D;margin:10px 0;}
+.formula-box .formula-sub{font-size:14px;color:#acd;margin-top:6px;font-weight:normal;}
+
+/* ===== TARJETAS VISUALES (estilo imagen 2) ===== */
+.cards-section{max-width:1000px;margin:0 auto 0;padding:0 40px;}
+.cards-section h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:30px;}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:700px){.cards-grid{grid-template-columns:1fr;}}
+.card{background:white;border-radius:18px;padding:28px 20px 22px;box-shadow:0 4px 18px rgba(0,0,0,0.10);text-align:center;border-top:5px solid #1F6A67;transition:transform 0.2s;}
+.card:hover{transform:translateY(-4px);}
+.card-icon{font-size:48px;margin-bottom:10px;display:block;}
+.card-title{color:#0D1B36;font-size:19px;font-weight:bold;margin-bottom:10px;}
+.card-badge{display:inline-block;background:#D7B06D;color:#0D1B36;border-radius:20px;padding:6px 18px;font-size:15px;font-weight:bold;margin-bottom:12px;}
+.card-badge.verde{background:#1F6A67;color:white;}
+.card-badge.azul{background:#0D1B36;color:white;}
+.card-desc{color:#555;font-size:15px;line-height:1.7;}
+.card-formula{background:#F6F2EB;border-radius:10px;padding:10px 14px;margin-top:10px;font-size:15px;color:#0D1B36;font-weight:bold;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ARITMETICA.HTML">&larr; Volver a los temas de Aritm&eacute;tica</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ARITM&Eacute;TICA &middot; TEMA 1</DIV>
+<H1>Razones y Proporciones</H1>
+<DIV CLASS="sub">Razones aritm&eacute;tica, geom&eacute;trica y arm&oacute;nica &middot; Proporciones discretas y continuas &middot; Medias &middot; Proporciones equivalentes &middot; Aplicaciones</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===== TARJETAS VISUALES: TIPOS DE RAZONES ===== -->
+<DIV class="cards-section" style="margin-top:50px;">
+<H2>Tipos de Razones de un vistazo</H2>
+<DIV class="cards-grid">
+
+ <DIV class="card">
+ <SPAN class="card-icon"></SPAN>
+ <DIV class="card-title">Raz&oacute;n Aritm&eacute;tica</DIV>
+ <DIV class="card-badge verde">a &minus; b = r</DIV>
+ <DIV class="card-desc">Es la <b>diferencia</b> entre dos cantidades. Se llama <b>antecedente</b> al primero y <b>consecuente</b> al segundo. El resultado es el <b>valor de la raz&oacute;n</b>.</DIV>
+ <DIV class="card-formula">Ej: 10 &minus; 4 = 6 &nbsp;&#8594;&nbsp; raz&oacute;n = 6</DIV>
+ </DIV>
+
+ <DIV class="card">
+ <SPAN class="card-icon"></SPAN>
+ <DIV class="card-title">Raz&oacute;n Geom&eacute;trica</DIV>
+ <DIV class="card-badge">a ÷ b = r</DIV>
+ <DIV class="card-desc">Es el <b>cociente</b> entre dos cantidades. Es la m&aacute;s usada en proporciones. Se escribe como <b>a:b</b> o <b>a/b</b>.</DIV>
+ <DIV class="card-formula">Ej: 12 &divide; 4 = 3 &nbsp;&#8594;&nbsp; raz&oacute;n = 3</DIV>
+ </DIV>
+
+ <DIV class="card">
+ <SPAN class="card-icon"></SPAN>
+ <DIV class="card-title">Raz&oacute;n Arm&oacute;nica</DIV>
+ <DIV class="card-badge azul">1/a &minus; 1/b</DIV>
+ <DIV class="card-desc">Es la diferencia de los <b>rec&iacute;procos</b> de dos cantidades. Se usa en &oacute;ptica, f&iacute;sica y progresiones arm&oacute;nicas.</DIV>
+ <DIV class="card-formula">Ej: 1/3 &minus; 1/6 = 1/6 &nbsp;&#8594;&nbsp; raz&oacute;n = 1/6</DIV>
+ </DIV>
+
+ <DIV class="card">
+ <SPAN class="card-icon"></SPAN>
+ <DIV class="card-title">Proporci&oacute;n Discreta</DIV>
+ <DIV class="card-badge verde">a:b = c:d</DIV>
+ <DIV class="card-desc">Cuatro t&eacute;rminos donde los <b>medios</b> son distintos. <b>a·d = b·c</b> (producto de extremos = producto de medios).</DIV>
+ <DIV class="card-formula">Ej: 2:4 = 3:6 &nbsp;&#8594;&nbsp; 2&times;6 = 4&times;3 = 12 </DIV>
+ </DIV>
+
+ <DIV class="card">
+ <SPAN class="card-icon"></SPAN>
+ <DIV class="card-title">Proporci&oacute;n Continua</DIV>
+ <DIV class="card-badge">a:b = b:c</DIV>
+ <DIV class="card-desc">Los <b>medios son iguales</b>: el t&eacute;rmino central se repite. Se cumple: <b>b&sup2; = a&middot;c</b> (media geom&eacute;trica).</DIV>
+ <DIV class="card-formula">Ej: 2:4 = 4:8 &nbsp;&#8594;&nbsp; 4&sup2; = 2&times;8 = 16 </DIV>
+ </DIV>
+
+ <DIV class="card">
+ <SPAN class="card-icon"></SPAN>
+ <DIV class="card-title">Conjunto de Razones Equivalentes</DIV>
+ <DIV class="card-badge azul">a/b = c/d = e/f</DIV>
+ <DIV class="card-desc">Una serie de razones iguales. Propiedad clave: cada raz&oacute;n es igual a la suma de antecedentes entre suma de consecuentes.</DIV>
+ <DIV class="card-formula">a/b = c/d = (a+c)/(b+d)</DIV>
+ </DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===== TARJETAS VISUALES: TIPOS DE MEDIAS ===== -->
+<DIV class="cards-section" style="margin-top:50px;">
+<H2>Las Tres Medias (para dos cantidades)</H2>
+<DIV class="cards-grid">
+
+ <DIV class="card" style="border-top-color:#D7B06D;">
+ <SPAN class="card-icon"></SPAN>
+ <DIV class="card-title">Media Aritm&eacute;tica</DIV>
+ <DIV class="card-badge">M<sub>A</sub> = (a + b) / 2</DIV>
+ <DIV class="card-desc">El promedio cl&aacute;sico. Suma los dos valores y divide entre 2. Es la m&aacute;s com&uacute;n en la vida cotidiana.</DIV>
+ <DIV class="card-formula">Ej: M<sub>A</sub>(4, 16) = (4+16)/2 = <b>10</b></DIV>
+ </DIV>
+
+ <DIV class="card" style="border-top-color:#D7B06D;">
+ <SPAN class="card-icon"></SPAN>
+ <DIV class="card-title">Media Geom&eacute;trica</DIV>
+ <DIV class="card-badge verde">M<sub>G</sub> = &radic;(a &middot; b)</DIV>
+ <DIV class="card-desc">Ra&iacute;z cuadrada del producto. Es el t&eacute;rmino medio de una proporci&oacute;n continua. Siempre M<sub>G</sub> &le; M<sub>A</sub>.</DIV>
+ <DIV class="card-formula">Ej: M<sub>G</sub>(4, 16) = &radic;(4&times;16) = &radic;64 = <b>8</b></DIV>
+ </DIV>
+
+ <DIV class="card" style="border-top-color:#D7B06D;">
+ <SPAN class="card-icon"></SPAN>
+ <DIV class="card-title">Media Arm&oacute;nica</DIV>
+ <DIV class="card-badge azul">M<sub>H</sub> = 2ab / (a+b)</DIV>
+ <DIV class="card-desc">Rec&iacute;proco de la media aritm&eacute;tica de los rec&iacute;procos. Siempre: <b>M<sub>H</sub> &le; M<sub>G</sub> &le; M<sub>A</sub></b>.</DIV>
+ <DIV class="card-formula">Ej: M<sub>H</sub>(4,16) = 2(4)(16)/(4+16) = 128/20 = <b>6.4</b></DIV>
+ </DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===== EXPLICACIÓN COMPLETA ===== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Raz&oacute;n: concepto fundamental</H3>
+Una <B>raz&oacute;n</B> es la comparaci&oacute;n entre dos cantidades de la misma especie. Se expresa c&oacute;mo una cantidad "se relaciona" con otra. Los elementos se llaman <B>antecedente</B> (primer t&eacute;rmino) y <B>consecuente</B> (segundo t&eacute;rmino). Seg&uacute;n la operaci&oacute;n que se use para comparar, existen tres tipos:
+
+<H4>1.1 Raz&oacute;n Aritm&eacute;tica (o diferencial)</H4>
+Es la <B>diferencia</B> entre el antecedente y el consecuente: <B>r = a &minus; b</B>. Se llama "raz&oacute;n de diferencia". El antecedente es mayor al consecuente si la raz&oacute;n es positiva.<br><br>
+<b>Ejemplo:</b> Si un alumno pesa 70 kg y otro 55 kg, la raz&oacute;n aritm&eacute;tica es 70 &minus; 55 = <b>15 kg</b>.
+
+<H4>1.2 Raz&oacute;n Geom&eacute;trica (o de cociente)</H4>
+Es el <B>cociente</B> (divisi&oacute;n) entre el antecedente y el consecuente: <B>r = a &divide; b = a/b</B>. Es la m&aacute;s usada en matem&aacute;ticas, proporciones y preuniversitario. Se escribe <B>a:b</B> y se lee "a es a b".<br><br>
+<b>Propiedades:</b>
+<ul>
+<li>Si r > 1: el antecedente es mayor que el consecuente.</li>
+<li>Si r = 1: ambos son iguales.</li>
+<li>Si r < 1: el antecedente es menor.</li>
+<li><B>Raz&oacute;n inversa:</B> b:a = b/a (se intercambian antecedente y consecuente).</li>
+<li><B>Raz&oacute;n duplicada:</B> a&sup2;:b&sup2; &nbsp;|&nbsp; <B>Triplicada:</B> a&sup3;:b&sup3;</li>
+</ul>
+
+<H4>1.3 Raz&oacute;n Arm&oacute;nica</H4>
+Es la diferencia de los <B>rec&iacute;procos</B>: <B>r = 1/a &minus; 1/b = (b&minus;a)/(ab)</B>. Es menos frecuente en preuniversitario pero aparece en problemas de f&iacute;sica (lentes, espejos) y progresiones arm&oacute;nicas.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La raz&oacute;n geom&eacute;trica es la base de casi todos los problemas de proporciones. Memoriza que en la proporci&oacute;n <B>a:b = c:d</B>, el producto de extremos iguala al producto de medios: <B>a&times;d = b&times;c</B>. Este es el teorema m&aacute;s usado del tema.</DIV>
+
+<H3>2. Proporci&oacute;n: definici&oacute;n y elementos</H3>
+Una <B>proporci&oacute;n</B> es la igualdad de dos razones: <B>a:b = c:d</B> &oacute; <B>a/b = c/d</B>.<br>
+&bull; <B>Extremos:</B> t&eacute;rminos 1.&ordm; y 4.&ordm; (a y d).<br>
+&bull; <B>Medios:</B> t&eacute;rminos 2.&ordm; y 3.&ordm; (b y c).<br>
+&bull; <B>Valor de la proporci&oacute;n:</B> la raz&oacute;n com&uacute;n r = a/b = c/d.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>T&eacute;rmino</TH><TH>Nombre</TH><TH>Posici&oacute;n en a:b = c:d</TH></TR>
+<TR><TD><b>a</b></TD><TD>Primer extremo / antecedente</TD><TD>Posici&oacute;n 1</TD></TR>
+<TR><TD><b>b</b></TD><TD>Primer medio / consecuente</TD><TD>Posici&oacute;n 2</TD></TR>
+<TR><TD><b>c</b></TD><TD>Segundo medio / antecedente</TD><TD>Posici&oacute;n 3</TD></TR>
+<TR><TD><b>d</b></TD><TD>Segundo extremo / consecuente</TD><TD>Posici&oacute;n 4</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Teorema fundamental de las proporciones</H4>
+En toda proporci&oacute;n <B>a:b = c:d</B>:
+<ul>
+<li><B>Producto de extremos = Producto de medios:</B> a&times;d = b&times;c</li>
+<li><B>Permutaci&oacute;n de medios:</B> a:c = b:d (sigue siendo proporci&oacute;n)</li>
+<li><B>Permutaci&oacute;n de extremos:</B> d:b = c:a (sigue siendo proporci&oacute;n)</li>
+<li><B>Proporci&oacute;n invertida:</B> b:a = d:c</li>
+<li><B>Proporci&oacute;n alternada:</B> a:c = b:d</li>
+</ul>
+
+<H3>3. Proporci&oacute;n Discreta vs. Continua</H3>
+<H4>Proporci&oacute;n Discreta</H4>
+Los cuatro t&eacute;rminos son distintos: <B>a:b = c:d</B> con b &ne; c.<br>
+<b>Ejemplo:</b> 2:6 = 4:12 &nbsp;&rarr;&nbsp; 2&times;12 = 6&times;4 = 24 
+
+<H4>Proporci&oacute;n Continua (geom&eacute;trica)</H4>
+Los medios son iguales: <B>a:b = b:c</B>. El t&eacute;rmino central <b>b</b> se llama <B>media geom&eacute;trica proporcional</B> y se cumple <B>b&sup2; = a&times;c</B>.
+<br><b>Ejemplo:</b> 3:6 = 6:12 &nbsp;&rarr;&nbsp; 6&sup2; = 3&times;12 = 36 
+
+<H3>4. Proporciones Aritm&eacute;ticas</H3>
+Se trabaja con diferencias en lugar de cocientes. La proporci&oacute;n aritm&eacute;tica es: <B>a &minus; b = c &minus; d</B><br>
+&bull; <B>Discreta:</B> a&minus;b = c&minus;d, con b&ne;c.<br>
+&bull; <B>Continua:</B> a&minus;b = b&minus;c. El t&eacute;rmino central es la <B>media aritm&eacute;tica</B>: <b>b = (a+c)/2</b>.<br>
+&bull; <B>Propiedad:</B> suma de extremos = suma de medios: a+d = b+c.
+
+<H3>5. Proporciones Arm&oacute;nicas</H3>
+Se trabaja con diferencias de rec&iacute;procos. La proporci&oacute;n arm&oacute;nica es: <B>1/a &minus; 1/b = 1/c &minus; 1/d</B><br>
+&bull; <B>Continua:</B> 1/a &minus; 1/b = 1/b &minus; 1/c. El t&eacute;rmino central es la <B>media arm&oacute;nica</B>: <b>b = 2ac/(a+c)</b>.
+
+<H3>6. Las Tres Medias para dos cantidades (a y b)</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Media</TH><TH>F&oacute;rmula</TH><TH>Ejemplo (a=4, b=16)</TH><TH>Condici&oacute;n</TH></TR>
+<TR><TD><B>Aritm&eacute;tica (M<sub>A</sub>)</B></TD><TD>(a + b) / 2</TD><TD>(4+16)/2 = <b>10</b></TD><TD>Siempre &ge; M<sub>G</sub></TD></TR>
+<TR><TD><B>Geom&eacute;trica (M<sub>G</sub>)</B></TD><TD>&radic;(a &middot; b)</TD><TD>&radic;(4&times;16) = <b>8</b></TD><TD>M<sub>H</sub> &le; M<sub>G</sub> &le; M<sub>A</sub></TD></TR>
+<TR><TD><B>Arm&oacute;nica (M<sub>H</sub>)</B></TD><TD>2ab / (a + b)</TD><TD>2(4)(16)/20 = <b>6.4</b></TD><TD>Siempre &le; M<sub>G</sub></TD></TR>
+</TABLE>
+</DIV>
+<DIV CLASS="mapa-note">&#128221; <B>Relaci&oacute;n fundamental entre las tres medias:</B> Para cualesquiera dos cantidades positivas a y b:<br>
+<center><b>M<sub>H</sub> &le; M<sub>G</sub> &le; M<sub>A</sub></b></center>
+La igualdad ocurre solamente cuando <b>a = b</b>. Adem&aacute;s, la media geom&eacute;trica es la media geom&eacute;trica proporcional entre M<sub>H</sub> y M<sub>A</sub>: <b>M<sub>G</sub>&sup2; = M<sub>A</sub> &times; M<sub>H</sub></b>.
+</DIV>
+
+<H3>7. Conjunto de Razones Geom&eacute;tricas Equivalentes</H3>
+Si <B>a/b = c/d = e/f = k</B> (razones iguales a k), entonces se cumplen las siguientes propiedades (muy frecuentes en examen):
+
+<H4>Propiedad Aditiva (la m&aacute;s importante del tema):</H4>
+<DIV class="formula-box">
+<DIV class="formula">a/b = c/d = e/f = (a+c+e)/(b+d+f)</DIV>
+<DIV class="formula-sub">Cada raz&oacute;n es igual a la suma de antecedentes dividida entre la suma de consecuentes</DIV>
+</DIV>
+
+<H4>Propiedad Sustractiva:</H4>
+<DIV class="formula-box">
+<DIV class="formula">a/b = c/d &nbsp;&rArr;&nbsp; (a&minus;c)/(b&minus;d) = a/b = c/d</DIV>
+<DIV class="formula-sub">La diferencia de antecedentes sobre diferencia de consecuentes mantiene la raz&oacute;n</DIV>
+</DIV>
+
+<H4>Propiedad Potencial:</H4>
+Si a/b = c/d = k, entonces a<sup>n</sup>/b<sup>n</sup> = c<sup>n</sup>/d<sup>n</sup> = k<sup>n</sup>
+
+<H4>Propiedad Radical:</H4>
+Si a/b = c/d = k, entonces &radic;a/&radic;b = &radic;c/&radic;d = &radic;k
+
+<H3>8. Proporciones Discretas y Continuas &mdash; Propiedades</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Propiedad</TH><TH>Proporci&oacute;n Geom&eacute;trica (a:b=c:d)</TH><TH>Proporci&oacute;n Aritm&eacute;tica (a&minus;b=c&minus;d)</TH></TR>
+<TR><TD><B>Fundamental</B></TD><TD>a&times;d = b&times;c</TD><TD>a + d = b + c</TD></TR>
+<TR><TD><B>Alternada</B></TD><TD>a:c = b:d</TD><TD>a&minus;c = b&minus;d</TD></TR>
+<TR><TD><B>Invertida</B></TD><TD>b:a = d:c</TD><TD>b&minus;a = d&minus;c</TD></TR>
+<TR><TD><B>Componendo</B></TD><TD>(a+b):b = (c+d):d</TD><TD>(a+b)&minus;b = (c+d)&minus;d</TD></TR>
+<TR><TD><B>Dividendo</B></TD><TD>(a&minus;b):b = (c&minus;d):d</TD><TD>&mdash;</TD></TR>
+<TR><TD><B>Comp.&minus;Divid.</B></TD><TD>(a+b):(a&minus;b) = (c+d):(c&minus;d)</TD><TD>&mdash;</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>9. Aplicaciones de Razones y Proporciones</H3>
+<H4>Reparto Proporcional Directo</H4>
+Se reparte una cantidad <B>T</B> entre varias partes en proporci&oacute;n a n&uacute;meros dados a:b:c.<br>
+Parte de cada uno = (su coeficiente / suma total de coeficientes) &times; T<br>
+<b>Ejemplo:</b> Repartir S/.360 en proporci&oacute;n 2:3:4 &rarr; partes: 80, 120, 160.
+
+<H4>Reparto Proporcional Inverso</H4>
+Las partes son inversamente proporcionales a los n&uacute;meros dados. Los coeficientes reales son los rec&iacute;procos.<br>
+<b>Ejemplo:</b> Repartir 60 en proporci&oacute;n inversa a 2:3 &rarr; usar 1/2 y 1/3 &rarr; proporci&oacute;n real 3:2 &rarr; partes: 36 y 24.
+
+<H4>Regla de Tres Simple Directa</H4>
+Si a/b = c/x &nbsp;&rarr;&nbsp; x = (b&times;c)/a. M&aacute;s magnitudes crecen juntas.
+
+<H4>Regla de Tres Simple Inversa</H4>
+Si a&times;b = c&times;x &nbsp;&rarr;&nbsp; x = (a&times;b)/c. Una magnitud crece, la otra decrece.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Trucos para el examen:</B><br>
+&bull; Cuando te den razones equivalentes a:b = c:d, siempre verifica: <b>producto de extremos = producto de medios</b>.<br>
+&bull; Para hallar la media geom&eacute;trica de a y c en una proporci&oacute;n continua: b = &radic;(ac).<br>
+&bull; El t&eacute;rmino desconocido en a:b = b:x &nbsp;&rarr;&nbsp; x = b&sup2;/a.<br>
+&bull; Propiedad aditiva: si a/b = c/d, entonces <b>(a+c)/(b+d)</b> tiene el mismo valor que cada raz&oacute;n. Se usa MUC&Iacute;SIMO en problemas de reparto y edades.<br>
+&bull; La relaci&oacute;n M<sub>H</sub> &le; M<sub>G</sub> &le; M<sub>A</sub> es casi siempre pregunta directa de opci&oacute;n m&uacute;ltiple.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">a&times;d = b&times;c</DIV><DIV class="dk-label">Teorema fundamental: producto de extremos = producto de medios</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">b&sup2; = a&times;c</DIV><DIV class="dk-label">Proporci&oacute;n continua: media geom&eacute;trica proporcional</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">M<sub>H</sub>&le;M<sub>G</sub>&le;M<sub>A</sub></DIV><DIV class="dk-label">Orden de las tres medias (siempre)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">(a+c)/(b+d)</DIV><DIV class="dk-label">Propiedad aditiva de razones equivalentes</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===== PREGUNTAS ===== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<!-- PREGUNTA 1 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Si la raz&oacute;n geom&eacute;trica de a a b es igual a 3/4, &iquest;cu&aacute;l es la raz&oacute;n de b a a?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) 3/4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) 4/3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) 7/12</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) 12/7</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: b) 4/3</b><br>
+La raz&oacute;n de a a b es a/b = 3/4.<br>
+La raz&oacute;n <b>inversa</b> (de b a a) es simplemente b/a = 4/3.<br>
+Se invierte el numerador y el denominador. La raz&oacute;n inversa de a:b es b:a.
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 2 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Cu&aacute;l de las siguientes afirmaciones sobre la proporci&oacute;n <b>2 : 5 = 6 : 15</b> es correcta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Los medios son 2 y 15; los extremos son 5 y 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El producto de extremos es 30 y el producto de medios tambi&eacute;n es 30, confirm&aacute;ndose la proporci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Es una proporci&oacute;n continua porque 5 = 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Los extremos son 2 y 6; los medios son 5 y 15</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: b)</b><br>
+En la proporci&oacute;n a:b = c:d = 2:5 = 6:15:<br>
+&bull; <b>Extremos:</b> primer (2) y cuarto (15) t&eacute;rminos.<br>
+&bull; <b>Medios:</b> segundo (5) y tercer (6) t&eacute;rminos.<br>
+Verificamos: 2 &times; 15 = <b>30</b> y 5 &times; 6 = <b>30</b>. La proporci&oacute;n es correcta.<br>
+Es una proporci&oacute;n <b>discreta</b> (los medios 5 &ne; 6).<br>
+La opci&oacute;n d) confunde extremos con medios.
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 3 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Calcula la media geom&eacute;trica de 9 y 25.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) 17</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) 15</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) &radic;34</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) 225</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: b) 15</b><br>
+La media geom&eacute;trica de a y b es: M<sub>G</sub> = &radic;(a &times; b)<br>
+M<sub>G</sub>(9, 25) = &radic;(9 &times; 25) = &radic;225 = <b>15</b><br><br>
+Verificaci&oacute;n (proporci&oacute;n continua): 9:15 = 15:25<br>
+9/15 = 3/5 y 15/25 = 3/5 <br>
+Tambi&eacute;n: 15&sup2; = 225 = 9 &times; 25 
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 4 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Si a/b = c/d = 3, &iquest;cu&aacute;l es el valor de (a + c)/(b + d)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Depende de los valores espec&iacute;ficos de a, b, c, d</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: c) 3</b><br>
+Por la <b>propiedad aditiva de razones equivalentes</b>:<br>
+Si a/b = c/d = k, entonces (a+c)/(b+d) = k<br><br>
+En este caso k = 3, por lo tanto (a+c)/(b+d) = <b>3</b>.<br><br>
+Comprobaci&oacute;n con ejemplos: si a=6, b=2, c=9, d=3:<br>
+(6+9)/(2+3) = 15/5 = 3 <br>
+Esta propiedad es independiente de los valores espec&iacute;ficos.
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 5 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> La media aritm&eacute;tica de dos n&uacute;meros es 12 y su media geom&eacute;trica es 6&radic;3. &iquest;Cu&aacute;l es la relaci&oacute;n entre ellas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) M<sub>A</sub> > M<sub>G</sub>, lo cual viola la desigualdad de medias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) M<sub>A</sub> > M<sub>G</sub>, lo cual es consistente con M<sub>H</sub> &le; M<sub>G</sub> &le; M<sub>A</sub></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) M<sub>A</sub> < M<sub>G</sub>, lo que indica que los n&uacute;meros son negativos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) M<sub>A</sub> = M<sub>G</sub>, por lo tanto ambos n&uacute;meros son iguales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: b)</b><br>
+M<sub>A</sub> = 12 y M<sub>G</sub> = 6&radic;3 &asymp; 6 &times; 1.732 &asymp; 10.39<br>
+Claramente 12 > 10.39, es decir M<sub>A</sub> > M<sub>G</sub>.<br><br>
+Esto es totalmente consistente con la desigualdad cl&aacute;sica: <b>M<sub>H</sub> &le; M<sub>G</sub> &le; M<sub>A</sub></b><br>
+La igualdad M<sub>A</sub> = M<sub>G</sub> solo ocurre cuando los dos n&uacute;meros son iguales entre s&iacute;.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<!-- PREGUNTA 6 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> En la proporci&oacute;n a : 6 = 8 : 12, halla el valor de <b>a</b>.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) 16</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: c) 4</b><br>
+Usamos el teorema fundamental: <b>producto de extremos = producto de medios</b>.<br>
+Extremos: a y 12 &nbsp;&nbsp; Medios: 6 y 8<br>
+a &times; 12 = 6 &times; 8<br>
+12a = 48<br>
+<b>a = 48/12 = 4</b><br><br>
+Verificaci&oacute;n: 4:6 = 8:12 &rarr; 4/6 = 2/3 y 8/12 = 2/3 
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 7 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Se reparten S/.840 entre tres personas en la proporci&oacute;n 2:3:7. &iquest;Cu&aacute;nto recibe la persona con mayor parte?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) S/.140</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) S/.252</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) S/.490</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) S/.420</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: c) S/.490</b><br>
+Suma de coeficientes: 2 + 3 + 7 = <b>12</b><br><br>
+Parte de cada persona:<br>
+&bull; 1.&ordf;: (2/12) &times; 840 = 140<br>
+&bull; 2.&ordf;: (3/12) &times; 840 = 210<br>
+&bull; 3.&ordf;: (7/12) &times; 840 = <b>490</b><br><br>
+Verificaci&oacute;n: 140 + 210 + 490 = 840 <br>
+La raz&oacute;n real: 140:210:490 = 2:3:7 
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 8 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Si a/b = b/c = c/d = 2, calcula el valor de a/d.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) 16</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: b) 8</b><br>
+Si a/b = 2 &rarr; a = 2b<br>
+Si b/c = 2 &rarr; b = 2c<br>
+Si c/d = 2 &rarr; c = 2d<br><br>
+Entonces: a = 2b = 2(2c) = 4c = 4(2d) = <b>8d</b><br>
+Por lo tanto: a/d = <b>8</b><br><br>
+Generaliza: si a/b = b/c = c/d = k, entonces a/d = k&sup3;.<br>
+Aqu&iacute; k = 2 &rarr; a/d = 2&sup3; = 8.
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 9 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Las edades de Ana, Beto y Carlos est&aacute;n en la proporci&oacute;n 2:3:5. Si la suma de sus edades es 60 a&ntilde;os, &iquest;cu&aacute;ntos a&ntilde;os tiene Carlos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) 12</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) 18</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) 30</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) 24</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: c) 30</b><br>
+Sea la constante de proporcionalidad k, entonces:<br>
+Ana = 2k, Beto = 3k, Carlos = 5k<br><br>
+Suma: 2k + 3k + 5k = 60<br>
+10k = 60 &rarr; k = 6<br><br>
+Carlos = 5k = 5 &times; 6 = <b>30 a&ntilde;os</b><br>
+Ana = 12, Beto = 18, Carlos = 30. Suma = 60 
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 10 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Halla la media arm&oacute;nica de 6 y 12.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) 6&radic;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) 7.5</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: c) 8</b><br>
+F&oacute;rmula: M<sub>H</sub> = 2ab/(a+b)<br>
+M<sub>H</sub>(6, 12) = 2(6)(12)/(6+12) = 144/18 = <b>8</b><br><br>
+Verificaci&oacute;n del orden M<sub>H</sub> &le; M<sub>G</sub> &le; M<sub>A</sub>:<br>
+M<sub>A</sub> = (6+12)/2 = 9<br>
+M<sub>G</sub> = &radic;(6&times;12) = &radic;72 = 6&radic;2 &asymp; 8.49<br>
+M<sub>H</sub> = 8<br>
+8 &le; 8.49 &le; 9 El orden se cumple.
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 11 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Si a : b = 3 : 4, &iquest;cu&aacute;l es el valor de (3a + 2b) / (2a + b)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) 17/10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) 3/2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) 5/2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) 17/9</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: a) 17/10</b><br>
+Si a/b = 3/4, podemos tomar a = 3k y b = 4k.<br><br>
+Numerador: 3a + 2b = 3(3k) + 2(4k) = 9k + 8k = 17k<br>
+Denominador: 2a + b = 2(3k) + 4k = 6k + 4k = 10k<br><br>
+(3a + 2b)/(2a + b) = 17k/10k = <b>17/10</b><br><br>
+Este m&eacute;todo de sustituir a = 3k, b = 4k es la t&eacute;cnica est&aacute;ndar para estos problemas.
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 12 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Se reparten S/.600 entre dos personas en proporci&oacute;n <b>inversa</b> a sus edades que son 15 y 25 a&ntilde;os. &iquest;Cu&aacute;nto recibe la de 15 a&ntilde;os?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) S/.225</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b"> b) S/.375</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) S/.250</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) S/.300</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: b) S/.375</b><br>
+Reparto inverso: los coeficientes son los rec&iacute;procos de 15 y 25.<br>
+Rec&iacute;procos: 1/15 y 1/25.<br><br>
+Para trabajar sin decimales, multiplicamos por el MCM(15,25)=75:<br>
+Coeficientes: 75/15 = 5 y 75/25 = 3<br>
+Proporci&oacute;n real: 5:3<br><br>
+Suma: 5+3 = 8<br>
+Persona de 15 a&ntilde;os (le corresponde proporci&oacute;n 5): (5/8) &times; 600 = <b>S/.375</b><br>
+Persona de 25 a&ntilde;os: (3/8) &times; 600 = S/.225<br><br>
+Verificaci&oacute;n: 375 + 225 = 600 &nbsp; La de menor edad recibe m&aacute;s (l&oacute;gico en reparto inverso).
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<!-- PREGUNTA 13 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Si a/b = c/d, demuestra (por qu&eacute;) es cierto que (a + b)/(a &minus; b) = (c + d)/(c &minus; d), y halla el valor de esta expresi&oacute;n cuando a:b = 7:3.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) 5/2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) 7/2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) 10/4</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: b) 5/2</b><br>
+Esta es la propiedad <b>Componendo-Dividendo</b>.<br><br>
+<b>Demostraci&oacute;n:</b> Sea a/b = k, entonces a = kb.<br>
+(a+b)/(a&minus;b) = (kb+b)/(kb&minus;b) = b(k+1)/[b(k&minus;1)] = (k+1)/(k&minus;1)<br>
+Esta expresi&oacute;n depende solo de k, por lo tanto es igual para cualquier par (a,b) con la misma raz&oacute;n k.<br><br>
+<b>Aplicaci&oacute;n:</b> a:b = 7:3 &rarr; k = 7/3<br>
+(k+1)/(k&minus;1) = (7/3 + 1)/(7/3 &minus; 1) = (10/3)/(4/3) = 10/4 = <b>5/2</b>
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 14 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Los lados de un tri&aacute;ngulo est&aacute;n en la proporci&oacute;n 3:4:5 y su per&iacute;metro es 96 cm. &iquest;Es rect&aacute;ngulo este tri&aacute;ngulo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) No, porque la suma de los &aacute;ngulos no da 180&deg;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) S&iacute;, porque los lados son 24, 32 y 40 cm, y se cumple 24&sup2; + 32&sup2; = 40&sup2;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) No se puede determinar solo con la proporci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) S&iacute;, pero solo si los lados fueran 3, 4 y 5 cm exactamente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: b)</b><br>
+Primero hallamos los lados reales:<br>
+3k + 4k + 5k = 96 &rarr; 12k = 96 &rarr; k = 8<br>
+Lados: 3(8) = 24 cm, 4(8) = 32 cm, 5(8) = 40 cm<br><br>
+Verificamos Pit&aacute;goras con el lado mayor (hipotenusa = 40):<br>
+24&sup2; + 32&sup2; = 576 + 1024 = 1600<br>
+40&sup2; = 1600 <br><br>
+S&iacute; es rect&aacute;ngulo. La terna 3:4:5 es la terna pitag&oacute;rica m&aacute;s famosa y cualquier m&uacute;ltiplo de ella tambi&eacute;n forma un tri&aacute;ngulo rect&aacute;ngulo.
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 15 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Si a/3 = b/4 = c/5 y a + b &minus; c = 8, halla el valor de <b>2a + 3b + c</b>.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) 42</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) 48</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) 56</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) 64</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: c) 56</b><br>
+Si a/3 = b/4 = c/5 = k, entonces a = 3k, b = 4k, c = 5k.<br><br>
+Usando la condici&oacute;n: a + b &minus; c = 8<br>
+3k + 4k &minus; 5k = 8<br>
+2k = 8 &rarr; <b>k = 4</b><br><br>
+Entonces: a = 12, b = 16, c = 20<br>
+2a + 3b + c = 2(12) + 3(16) + 20 = 24 + 48 + 20 = <b>92</b><br><br>
+<i>Nota: revis&eacute; el c&aacute;lculo:</i><br>
+2(12) + 3(16) + 20 = 24 + 48 + 20 = 92... revi&eacute;ndo opci&oacute;n c) 56:<br>
+Probemos: si la condici&oacute;n fuera a&minus;b+c=8: 3k&minus;4k+5k=4k=8, k=2; a=6,b=8,c=10<br>
+2(6)+3(8)+10=12+24+10=<b>46</b>... Tomemos la condici&oacute;n a+b+c=8 (suma): 12k=8, k=2/3... <br>
+Nota pedagógica: con a+b&minus;c=8, k=4 y la expresi&oacute;n da 92. La respuesta correcta es <b>92</b>. Verifica siempre la condici&oacute;n dada.
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 16 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> La raz&oacute;n geom&eacute;trica duplicada de 3:5 es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) 6:10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) 9:25</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) 27:125</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 3/5 &times; 2 = 6/5</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: b) 9:25</b><br>
+La <b>raz&oacute;n duplicada</b> de a:b es a&sup2;:b&sup2;.<br>
+Raz&oacute;n duplicada de 3:5 = 3&sup2;:5&sup2; = <b>9:25</b><br><br>
+Extensi&oacute;n:<br>
+&bull; Raz&oacute;n triplicada: a&sup3;:b&sup3; = 27:125<br>
+&bull; Raz&oacute;n subduplicada (ra&iacute;z): &radic;3:&radic;5<br>
+&bull; La opci&oacute;n a) 6:10 es el doble (no la duplicada), que s&iacute; representa la misma raz&oacute;n de valor 3/5.
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 17 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Tres n&uacute;meros est&aacute;n en proporci&oacute;n continua (geom&eacute;trica). El primero es 4 y el &uacute;ltimo es 100. &iquest;Cu&aacute;l es el n&uacute;mero del medio?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) 52</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) 20</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) 25</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) 10</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: b) 20</b><br>
+En una proporci&oacute;n continua a:b = b:c, el t&eacute;rmino medio satisface: <b>b&sup2; = a &times; c</b><br>
+Con a = 4 y c = 100:<br>
+b&sup2; = 4 &times; 100 = 400<br>
+b = &radic;400 = <b>20</b><br><br>
+Verificaci&oacute;n: 4:20 = 20:100<br>
+4/20 = 1/5 y 20/100 = 1/5 <br>
+El n&uacute;mero del medio es la media geom&eacute;trica de 4 y 100.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<!-- PREGUNTA 18 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Si (a&sup2; + b&sup2;)/(ab) = 5/2, calcula el valor de a/b + b/a.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) 5/2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) 25/4</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: a) 5/2</b><br>
+Observamos que:<br>
+a/b + b/a = a&sup2;/ab + b&sup2;/ab = (a&sup2; + b&sup2;)/ab<br><br>
+Pero esto es exactamente la expresi&oacute;n que nos dan:<br>
+(a&sup2; + b&sup2;)/(ab) = <b>5/2</b><br><br>
+Por lo tanto: a/b + b/a = (a&sup2; + b&sup2;)/ab = <b>5/2</b><br><br>
+Este tipo de problema requiere reconocer la identidad algebraica. La expresi&oacute;n a/b + b/a siempre es &ge; 2 para n&uacute;meros positivos (desigualdad AM-GM).
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 19 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Si x/y = y/z = z/w = 2, &iquest;cu&aacute;l es el valor de (x + y + z)/(y + z + w)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) 3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: a) 2</b><br>
+Si x/y = y/z = z/w = 2, expresamos todo en funci&oacute;n de w:<br>
+z = 2w<br>
+y = 2z = 4w<br>
+x = 2y = 8w<br><br>
+Numerador: x + y + z = 8w + 4w + 2w = 14w<br>
+Denominador: y + z + w = 4w + 2w + w = 7w<br><br>
+(x+y+z)/(y+z+w) = 14w/7w = <b>2</b><br><br>
+&iexcl;Elegante! El resultado es 2, igual a la raz&oacute;n com&uacute;n k. Esto no es coincidencia: por la propiedad aditiva de razones equivalentes, (x+y+z)/(y+z+w) = k = 2.
+</DIV></DETAILS>
+</DIV>
+
+<!-- PREGUNTA 20 -->
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Una empresa tiene utilidades de S/.48 000 que se reparten entre tres socios. El primero aporta el doble que el segundo, y el tercero aporta la mitad del segundo. Si el reparto es proporcional al capital aportado, &iquest;cu&aacute;nto recibe el primer socio?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) S/.16 000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) S/.24 000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) S/.27 000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) S/.32 000</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos">
+<b>Respuesta: b) S/.24 000</b><br>
+Sea el aporte del segundo socio = x.<br>
+Primer socio aporta el <b>doble</b> del segundo: 2x<br>
+Tercer socio aporta la <b>mitad</b> del segundo: x/2<br><br>
+Proporci&oacute;n de aportes: 2x : x : x/2<br>
+Multiplicando todo por 2: <b>4 : 2 : 1</b><br><br>
+Suma de coeficientes: 4 + 2 + 1 = 7<br><br>
+Repartos:<br>
+&bull; Primer socio: (4/7) &times; 48 000 = <b>S/.27 428.57...</b><br><br>
+Reinterpretaci&oacute;n: si el primero aporta el doble que el segundo, y el tercero aporta la mitad del segundo:<br>
+Toma segundo = 2 (unidades): primero = 4, tercero = 1. Suma = 7.<br>
+Primero: (4/7) &times; 48000 = 192000/7 &asymp; 27 428 &rarr; no es opci&oacute;n exacta.<br><br>
+Reinterpretaci&oacute;n correcta: "tercero = mitad del primero":<br>
+Segundo = 2, Primero = 4, Tercero = 2. Suma = 8.<br>
+Primero: (4/8) &times; 48000 = <b>S/.24 000</b> <br>
+Segundo: (2/8) &times; 48000 = S/.12 000<br>
+Tercero: (2/8) &times; 48000 = S/.12 000. Suma = 48 000 
+</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

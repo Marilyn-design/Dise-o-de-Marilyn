@@ -1,0 +1,546 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Future Tenses 2 - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:130px;text-align:center;}
+.dk .dk-num{font-size:20px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.eng{font-style:italic;color:#0D1B36;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 14 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Future Tenses 2</H1>
+<DIV CLASS="sub">Present Continuous (futuro) &middot; Future Continuous &middot; Future Perfect &middot; Expresiones de tiempo futuro</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1. REPASO-->
+<H3>1. Recuerda:</H3>
+En el <B>Tema 13</B> aprendimos <B>will</B> y <B>be going to</B>, las dos formas de futuro más frecuentes. Mientras que en este nuevo tema veremos las formas que expresan <B>arreglos confirmados</B>, <B>acciones en progreso en el futuro</B> y <B>acciones que habrán terminado</B> antes de un momento futuro.
+
+<DIV CLASS="alerta">⚠️ <B>Importante:</B> Recuerda que <B>will</B> se usa para decisiones espontáneas, predicciones de opinión y promesas; y <B>be going to</B> para planes ya decididos y predicciones con evidencia presente.</DIV>
+
+<!-- 2. PRESENT CONTINUOUS FUTURO -->
+<H3>2. Present Continuous como futuro: arreglos ya confirmados</H3>
+El <B>Present Continuous</B> (am/is/are + verbo-ing) que usamos para el presente (<I>"She is studying now"</I>) también expresa futuro, pero solo cuando se trata de un <B>arreglo o cita ya confirmada</B> entre dos o más personas, con <B>fecha, hora o lugar específico</B> ya acordado.
+
+<H4>Usos del Present Continuous como futuro:</H4>
+<UL>
+<LI><B>Citas, reuniones y compromisos con hora y día específico ya coordinados:</B><BR>
+<SPAN CLASS="ej"><I>I am meeting her at 5 p.m. tomorrow.</I> (Tengo una cita con ella a las 5 p.m. — ya lo confirmamos.)<BR>
+<I>We are having dinner with the Johnsons on Friday.</I> (Ya está arreglado con ellos.)<BR>
+<I>He is flying to Lima next Monday.</I> (Ya tiene el boleto comprado.)</SPAN></LI>
+
+<LI><B>Preguntar por los planes de alguien para el futuro próximo:</B><BR>
+<SPAN CLASS="ej"><I>Are you doing anything tonight?</I> (¿Tienes planes para esta noche?)<BR>
+<I>What are you doing next weekend?</I> (¿Qué tienes planeado para el fin de semana?)</SPAN></LI>
+</UL>
+
+<H4>¿Cómo se diferencia del "going to"?</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Criterio</TH><TH>BE GOING TO</TH><TH>PRESENT CONTINUOUS (futuro)</TH></TR>
+<TR><TD>Tipo de plan</TD><TD>Intención o plan ya decidido (personal)</TD><TD>Arreglo concreto ya coordinado con otra persona</TD></TR>
+<TR><TD>Detalles de hora/lugar</TD><TD>No necesariamente</TD><TD>Sí: hay hora, día o lugar acordado</TD></TR>
+<TR><TD>Ejemplo</TD><TD><I>"I'm going to visit my aunt."</I> (intención)</TD><TD><I>"I'm visiting my aunt at 3 p.m. on Saturday."</I> (cita ya fijada con ella)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Clave de examen:</B> La presencia de <B>una hora específica</B> (<I>at 5 p.m., at noon</I>) o <B>un día concreto</B> (<I>on Friday, next Tuesday</I>) junto con la idea de que ya fue coordinado con alguien más, es la señal para usar Present Continuous como futuro. Los verbos más frecuentes en este uso son: <I>meet, have (dinner), leave, arrive, fly, see, visit.</I><BR><BR>
+⚠️ <B>Verbos que NO pueden usarse en -ing (verbos de estado):</B> <I>know, believe, want, love, need, understand, own, seem.</I><BR>
+✗ <I>"I am knowing the results tomorrow."</I> &nbsp;&nbsp; ✓ <I>"I will know the results tomorrow."</I></DIV>
+
+<!-- 3. FUTURE CONTINUOUS -->
+<H3>3. Future Continuous (Futuro Continuo)</H3>
+<B>Estructura: Sujeto + WILL BE + verbo-ING</B>
+
+<H4>Estructura completa:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo</TH><TH>Estructura</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Afirmativa</TD><TD>Sujeto + will be + verbo-ing</TD><TD><I>She will be studying at midnight.</I></TD></TR>
+<TR><TD>Negativa</TD><TD>Sujeto + won't be + verbo-ing</TD><TD><I>They won't be working on Sunday.</I></TD></TR>
+<TR><TD>Interrogativa</TD><TD>Will + sujeto + be + verbo-ing?</TD><TD><I>Will you be using the car tomorrow?</I></TD></TR>
+<TR><TD>Respuesta corta</TD><TD>Yes, sujeto + will. / No, sujeto + won't.</TD><TD><I>Yes, I will. / No, she won't.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Usos principales del Future Continuous:</H4>
+<UL>
+<LI><B>Acción que estará EN PROGRESO en un momento específico del futuro:</B><BR>
+<SPAN CLASS="ej"><I>"At 9 p.m. tomorrow, I will be watching the game."</I><BR>(Mañana a las 9 p.m. estaré viendo el partido — la acción ya habrá comenzado y seguirá en curso.)</SPAN></LI>
+
+<LI><B>Acción futura en progreso mientras ocurre otra acción futura:</B><BR>
+<SPAN CLASS="ej"><I>"When you arrive, we will be having dinner."</I><BR>(Cuando llegues, nosotros estaremos cenando — la cena ya empezó antes de que llegues.)</SPAN></LI>
+
+<LI><B>Acción que ocurrirá como parte de una rutina o curso normal de eventos:</B><BR>
+<SPAN CLASS="ej"><I>"Don't call me at noon — I will be sleeping."</I><BR>(No me llames al mediodía — estaré durmiendo, como es mi costumbre.)</SPAN></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Future Simple vs. Future Continuous:</B><BR>
+✓ <I>"I will study at 8 p.m."</I> → Future Simple: empezaré a estudiar a las 8.<BR>
+✓ <I>"I will be studying at 8 p.m."</I> → Future Continuous: a las 8 ya estaré estudiando, en pleno proceso.<BR><BR>
+La diferencia clave: el Future Continuous enfatiza que la acción <B>ya estará ocurriendo</B> en ese momento, no que empieza en ese momento.</DIV>
+
+<H4>Expresiones de tiempo más comunes con Future Continuous:</H4>
+<UL>
+<LI><I>at this time tomorrow</I> (a esta hora mañana)</LI>
+<LI><I>this time next week / next year</I> (a esta hora la próxima semana / el próximo año)</LI>
+<LI><I>at [hora] tomorrow</I> (a las [hora] de mañana)</LI>
+<LI><I>when + oración</I> / <I>while + oración</I></LI>
+</UL>
+
+<!-- 4. FUTURE PERFECT -->
+<H3>4. Future Perfect (Futuro Perfecto)</H3>
+<B>Estructura: Sujeto + WILL HAVE + Participio pasado</B>
+
+<H4>Estructura completa:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo</TH><TH>Estructura</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Afirmativa</TD><TD>Sujeto + will have + participio</TD><TD><I>She will have finished by noon.</I></TD></TR>
+<TR><TD>Negativa</TD><TD>Sujeto + won't have + participio</TD><TD><I>They won't have arrived yet.</I></TD></TR>
+<TR><TD>Interrogativa</TD><TD>Will + sujeto + have + participio?</TD><TD><I>Will you have studied by then?</I></TD></TR>
+<TR><TD>Respuesta corta</TD><TD>Yes, sujeto + will. / No, sujeto + won't.</TD><TD><I>Yes, I will. / No, she won't.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Usos principales del Future Perfect:</H4>
+<UL>
+<LI><B>Acción que habrá TERMINADO antes de un punto específico en el futuro:</B><BR>
+<SPAN CLASS="ej"><I>"By 10 a.m. tomorrow, I will have submitted my application."</I><BR>(Antes de las 10 a.m. de mañana, ya habré enviado mi solicitud.)</SPAN></LI>
+
+<LI><B>Acción completada antes de que ocurra otra acción futura:</B><BR>
+<SPAN CLASS="ej"><I>"When you wake up, she will have already left."</I><BR>(Cuando despiertes, ella ya se habrá ido.)</SPAN></LI>
+
+<LI><B>Logro o acumulación en un punto futuro:</B><BR>
+<SPAN CLASS="ej"><I>"By December, I will have studied English for three years."</I><BR>(En diciembre habré estudiado inglés durante tres años.)</SPAN></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>La palabra clave más evaluada del Future Perfect: "BY"</B><BR>
+<B>"By"</B> en contexto de tiempo significa <I>"para"</I> o <I>"antes de"</I> en español.<BR>
+✓ <I>"By next year, she will have graduated."</I> → Para el próximo año, ella ya se habrá graduado.<BR>
+✓ <I>"By the time you read this, I will have left."</I> → Para cuando leas esto, yo ya me habré ido.<BR><BR>
+⚠️ <B>Participios irregulares esenciales para el Future Perfect:</B><BR>
+write → written &nbsp;|&nbsp; go → gone &nbsp;|&nbsp; eat → eaten &nbsp;|&nbsp; do → done &nbsp;|&nbsp; see → seen &nbsp;|&nbsp; take → taken &nbsp;|&nbsp; make → made &nbsp;|&nbsp; finish → finished</DIV>
+
+<!-- 5. EXPRESIONES DE TIEMPO -->
+<H3>5. Expresiones de tiempo futuro: guía de examen</H3>
+Reconocer estas expresiones en el examen es fundamental: muchas veces son la clave para saber qué tiempo verbal elegir.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Expresión</TH><TH>Traducción</TH><TH>Tiempo verbal más asociado</TH></TR>
+<TR><TD><B>tomorrow / tonight</B></TD><TD>mañana / esta noche</TD><TD>Will / Going to / Pres. Continuous</TD></TR>
+<TR><TD><B>next week / next year</B></TD><TD>la próxima semana / el próximo año</TD><TD>Will / Going to / Pres. Continuous</TD></TR>
+<TR><TD><B>soon / in two days</B></TD><TD>pronto / en dos días</TD><TD>Will / Going to</TD></TR>
+<TR><TD><B>at [hora] + on [día]</B></TD><TD>a las [hora] + el [día]</TD><TD><B>Present Continuous (futuro)</B></TD></TR>
+<TR><TD><B>at this time tomorrow</B></TD><TD>a esta hora mañana</TD><TD><B>Future Continuous</B></TD></TR>
+<TR><TD><B>this time next week/year</B></TD><TD>a esta hora la próxima semana/año</TD><TD><B>Future Continuous</B></TD></TR>
+<TR><TD><B>by + tiempo</B></TD><TD>para / antes de [tiempo]</TD><TD><B>Future Perfect</B></TD></TR>
+<TR><TD><B>by the time + oración</B></TD><TD>para cuando...</TD><TD><B>Future Perfect</B></TD></TR>
+<TR><TD><B>before / already / yet</B></TD><TD>antes / ya / todavía</TD><TD>Future Perfect</TD></TR>
+<TR><TD><B>when / as soon as / if / until</B></TD><TD>cuando / en cuanto / si / hasta que</TD><TD>Present Simple (en la cláusula subordinada)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Regla crítica: cláusulas temporales y condicionales</B><BR>
+Con los conectores <B>when, if, as soon as, before, after, until, by the time</B>, el verbo de la cláusula subordinada va en <B>Present Simple</B>, aunque la idea sea futura. <B>Nunca se usa will en la cláusula subordinada.</B><BR><BR>
+✗ <I>"When she will arrive, we will start."</I><BR>
+✓ <I>"When she <B>arrives</B>, we will start."</I><BR><BR>
+✗ <I>"If you will study hard, you will pass."</I><BR>
+✓ <I>"If you <B>study</B> hard, you will pass."</I></DIV>
+
+<!-- 6. RESUMEN GENERAL -->
+<H3>6. Resumen general de todas las formas del futuro en inglés</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tiempo verbal</TH><TH>Estructura</TH><TH>Uso principal</TH><TH>Pista clave</TH></TR>
+<TR><TD><B>Will</B></TD><TD>will + verbo base</TD><TD>Predicción (opinión), promesa, decisión espontánea</TD><TD>I think, probably, I promise</TD></TR>
+<TR><TD><B>Be going to</B></TD><TD>am/is/are + going to + verbo</TD><TD>Plan ya decidido, predicción con evidencia</TD><TD>Look!, already decided</TD></TR>
+<TR><TD><B>Present Continuous</B></TD><TD>am/is/are + verbo-ing</TD><TD>Arreglo confirmado con hora/día ya fijado</TD><TD>at [hora], on [día específico]</TD></TR>
+<TR><TD><B>Future Continuous</B></TD><TD>will be + verbo-ing</TD><TD>Acción en progreso en un punto futuro</TD><TD>at this time tomorrow, this time next year</TD></TR>
+<TR><TD><B>Future Perfect</B></TD><TD>will have + participio</TD><TD>Acción completada antes de un punto futuro</TD><TD>by, by the time, before, already</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note">📌 <B>Tips para identificar las formas del futuro en el examen:</B><BR>
+¿Hay <B>"by"</B> o <B>"by the time"</B>? → <B>Future Perfect</B><BR>
+¿Hay <B>"at this time tomorrow"</B> o <B>"this time next year"</B>? → <B>Future Continuous</B><BR>
+¿Hay hora y día específico y es un arreglo con otra persona? → <B>Present Continuous</B><BR>
+¿Es una decisión tomada ahora mismo, o una promesa? → <B>Will</B><BR>
+¿Es un plan ya decidido sin detalles concretos de hora? → <B>Going to</B></DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">will be + ing</DIV><DIV CLASS="dk-label">Future Continuous: acción en progreso en punto futuro</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">will have + pp</DIV><DIV CLASS="dk-label">Future Perfect: acción ya terminada en punto futuro</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">by</DIV><DIV CLASS="dk-label">Palabra clave del Future Perfect</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">am/is/are + ing</DIV><DIV CLASS="dk-label">Present Cont. como futuro: arreglo confirmado</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Present Simple</DIV><DIV CLASS="dk-label">En cláusulas con when/if/as soon as</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- EJERCICIOS -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BASICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Choose the correct form: <SPAN CLASS="eng">"At this time tomorrow, we ___ our final exams."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) will take</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) will be taking</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) are going to take</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) take</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) will be taking</B><BR>La expresión <B>"at this time tomorrow"</B> (a esta hora mañana) indica una acción que <B>estará en progreso</B> en ese punto futuro exacto. Esa es la función del <B>Future Continuous</B> (will be + -ing). El Future Simple (a) solo indicaría que el examen empezará, sin énfasis en que la acción estará ocurriendo en ese preciso instante. "Going to" (c) expresa planes, no acciones en progreso.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cuál oración usa correctamente el Present Continuous para expresar futuro?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) I am studying English now because I love it.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) She is meeting the director at 3 p.m. next Wednesday.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) They are always making the same mistake.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) It is raining very hard right now.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La opción b usa el Present Continuous como futuro correctamente: hay un <B>arreglo ya confirmado</B> (reunión con el director) con <B>hora específica</B> (at 3 p.m.) y <B>día específico</B> (next Wednesday). Las opciones a y d describen acciones en curso en el presente (now / right now). La opción c expresa un hábito con "always".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Choose the correct form: <SPAN CLASS="eng">"By noon tomorrow, she ___ the report."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) will finish</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) is going to finish</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) will have finished</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) will be finishing</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) will have finished</B><BR>La palabra clave es <B>"by"</B> (para / antes de), que indica que la acción estará <B>completada antes</B> de un punto futuro (noon tomorrow). Este es el uso exacto del <B>Future Perfect</B> (will have + participio). "Will finish" (a) solo dice que terminará, sin especificar que será antes de ese momento. "Will be finishing" (d) indicaría que a esa hora la acción estará en progreso, no terminada.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál es la estructura correcta del Future Continuous?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) will + verbo base</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) will have + participio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) will be + verbo-ing</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) am/is/are + going to + verbo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) will be + verbo-ing</B><BR>El <B>Future Continuous</B> se forma con <B>will be + verbo-ing</B>. La opción a es el Future Simple (will). La opción b es el Future Perfect (will have + participio). La opción d es "be going to". Ejemplo correcto: <I>"I will be studying at 8 p.m."</I></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Qué expresión de tiempo es la pista más característica del Future Perfect en el examen?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) right now / at the moment</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) at this time tomorrow</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) by / by the time</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) yesterday / last week</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) by / by the time</B><BR><B>"By"</B> (para, antes de) y <B>"by the time"</B> (para cuando) son los marcadores temporales más evaluados del Future Perfect. Cuando aparece "by + momento futuro", la oración casi siempre requiere el Future Perfect. "At this time tomorrow" (b) corresponde al Future Continuous. "Right now" (a) es del presente. "Yesterday / last week" (d) pertenecen al pasado.</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Identifica la oración INCORRECTA:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) We are flying to Cusco next Saturday at 7 a.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) I am knowing the results tomorrow morning.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) She is presenting her project to the board on Monday.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) They are having a team dinner on Friday at 8 p.m.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La oración b es incorrecta porque <B>"know"</B> es un <B>verbo de estado (stative verb)</B>: expresa un estado mental y NO puede usarse en forma -ing en ningún contexto. La forma correcta es "I will know the results tomorrow." Las opciones a, c y d son correctas: usan Present Continuous con hora y día específico para arreglos ya confirmados.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Choose the best option: <SPAN CLASS="eng">"By the time she ___ home, I ___ dinner for two hours."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) will get / will cook</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) gets / will have been cooking</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c> will get / will have cooked</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) gets / will be cooking</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) gets / will have been cooking</B><BR>① <B>"by the time"</B> introduce cláusula temporal subordinada → verbo en <B>Present Simple</B>: "gets" (no "will get" → descarta a y c).<BR>② En la cláusula principal: "by the time" + "for two hours" indica una acción que habrá estado en curso durante ese periodo → <B>Future Perfect Continuous</B>: "will have been cooking". La opción d ("will be cooking") solo indica acción en progreso, pero no incluye la idea de duración acumulada que aporta "for two hours".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Elige la traducción más correcta de: <B>"A esta hora del año que viene, ya habré terminado mis estudios preuniversitarios."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) At this time next year, I am finishing my pre-university studies.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) At this time next year, I will be finishing my pre-university studies.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) At this time next year, I will have finished my pre-university studies.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) At this time next year, I am going to finish my pre-university studies.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) will have finished</B><BR>La frase española dice <I>"ya habré terminado"</I>: la acción estará <B>completada</B> para ese momento futuro → <B>Future Perfect</B> (will have + participio). La opción b (Future Continuous) significaría "estaré terminando", es decir, la acción seguirá en progreso, lo cual contradice el "ya habré terminado". "Going to" (d) y Present Continuous (a) expresan planes o arreglos, no una acción ya concluida en el futuro.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cuál es la diferencia correcta entre estas dos oraciones?<BR><SPAN CLASS="eng">A) "I'm going to meet the director tomorrow."<BR>B) "I'm meeting the director tomorrow at 10 a.m."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Ambas oraciones tienen exactamente el mismo significado.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) A expresa una intención general ya decidida; B expresa un arreglo concreto ya coordinado con el director, con hora específica.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) A expresa un arreglo concreto; B es una predicción basada en evidencia.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Ambas son incorrectas; en ambos casos se debe usar "will meet".</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"I'm going to meet the director" (A) expresa una <B>intención o plan ya decidido</B>, pero no necesariamente coordinado con otra persona ni con hora fijada. "I'm meeting the director at 10 a.m." (B) usa el Present Continuous porque hay un <B>arreglo concreto ya coordinado</B> con el director, con hora específica (at 10 a.m.). Esta distinción es frecuente en exámenes de admisión.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Choose the correct option: <SPAN CLASS="eng">"As soon as the teacher ___ the papers, the students ___ celebrate."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) will return / will</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) returns / will</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) returns / are going to</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) will return / are going to</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) returns / will</B><BR><B>"As soon as"</B> es un conector temporal. La regla: en la cláusula subordinada temporal el futuro se expresa con <B>Present Simple</B>, NO con will. Por eso "returns" es correcto y "will return" no (descarta a y d). En la cláusula principal, "will" es el auxiliar de futuro correcto para la conclusión de la frase.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> ¿Cuál oración usa correctamente el Future Continuous?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) I will studying when you call me.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) She will been working at 9 p.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) At this time tomorrow, he will be sleeping.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) They will be study for the exam next week.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La opción c es la única correcta: <B>will be sleeping</B> (will be + verbo-ing) con la expresión "at this time tomorrow" que activa el Future Continuous.<BR>① Opción a → falta "be": "I will <B>be</B> studying..."<BR>② Opción b → estructura incorrecta: "will been" no existe; correcto: "will <B>be</B> working".<BR>③ Opción d → el verbo principal no va en base después de "will be": "will be <B>studying</B>", no "study".</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Identifica la ÚNICA oración correcta entre las cuatro opciones:<BR>
+a) <SPAN CLASS="eng">At 9 p.m. tonight, I will studying for my admission exam.</SPAN><BR>
+b) <SPAN CLASS="eng">By next December, she will has finished her pre-university training.</SPAN><BR>
+c) <SPAN CLASS="eng">This time next year, we will have been living here for five years.</SPAN><BR>
+d) <SPAN CLASS="eng">When he will arrive tomorrow, we are going to start the meeting.</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Oración a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Oración b</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Oración c</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Oración d</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) Oración c</B><BR>
+① <B>Oración a</B> → Error: falta "be". Correcto: "I will <B>be</B> studying" (Future Continuous).<BR>
+② <B>Oración b</B> → Error: "will has" es incorrecto. El Future Perfect requiere "will <B>have</B>" (forma base), nunca "has". Correcto: "she will <B>have</B> finished".<BR>
+③ <B>Oración c</B> → ✓ Correcta. "This time next year" + "for five years" + Future Perfect Continuous (will have been living). Estructura perfecta.<BR>
+④ <B>Oración d</B> → Error clásico: "when" introduce cláusula temporal → Present Simple, no will. Correcto: "When he <B>arrives</B> tomorrow..."</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Determina cuántos errores contiene este párrafo:<BR><SPAN CLASS="eng">"By the time you will read this letter, I will left the country. This time next year, I will working in a hospital in Europe. I promise I will to write every month."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) 2 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) 3 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) 4 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) 5 errores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) 4 errores</B><BR>
+① <B>"you will read"</B> → "by the time" introduce cláusula temporal: Present Simple → "you <B>read</B>".<BR>
+② <B>"will left"</B> → Future Perfect incompleto: "I <B>will have left</B>" (falta "have" + participio "left").<BR>
+③ <B>"will working"</B> → Future Continuous incompleto: "I <B>will be working</B>" (falta "be").<BR>
+④ <B>"will to write"</B> → will nunca lleva "to": "I <B>will write</B>".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Elige la traducción más precisa de: <B>"Para cuando llegues al aeropuerto, mi avión ya habrá despegado. A esta hora mañana, estaré sobrevolando el Atlántico."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) By the time you will arrive at the airport, my plane will have taken off. At this time tomorrow, I will fly over the Atlantic.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) By the time you arrive at the airport, my plane will have taken off. At this time tomorrow, I will be flying over the Atlantic.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) By the time you arrive at the airport, my plane is going to take off. At this time tomorrow, I will be flying over the Atlantic.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) By the time you arrive at the airport, my plane will take off. This time tomorrow, I will fly over the Atlantic.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+• <B>Primera oración:</B> "Para cuando llegues" → "by the time" + cláusula temporal → Present Simple ("arrive", no "will arrive" → descarta a). "Ya habrá despegado" → acción completada antes del punto futuro → <B>Future Perfect</B>: "will have taken off" (descarta c y d).<BR>
+• <B>Segunda oración:</B> "A esta hora mañana, estaré sobrevolando" → "at this time tomorrow" + acción en progreso → <B>Future Continuous</B>: "will be flying" (descarta a y d, que usan "will fly" sin "be").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Analiza el siguiente diálogo e identifica la opción que completa los tres espacios con el tiempo verbal más apropiado:<BR><SPAN CLASS="eng">"Paula: What are your plans for tonight?<BR>Marcos: I ___ (1) the gym at 6 — I already booked a session. Then at 8 I ___ (2) dinner with my family. And by midnight, I ___ (3) everything I had planned today."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) 1) will go to / 2) am having / 3) will have completed</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) 1) am going to the gym / 2) am having / 3) will have completed</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) 1) am going to the gym / 2) will have / 3) will complete</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) 1) will go to / 2) will be having / 3) am going to complete</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+① <B>Espacio 1</B>: "already booked a session" → arreglo ya confirmado con hora específica → <B>Present Continuous</B> ("am going to the gym"). "Will go" (a y d) es menos preciso porque hay una reserva previa ya confirmada.<BR>
+② <B>Espacio 2</B>: "at 8" + cena familiar → arreglo con hora específica → <B>Present Continuous</B> ("am having"). La cena ya está arreglada.<BR>
+③ <B>Espacio 3</B>: "by midnight" → acción completada antes de ese punto → <B>Future Perfect</B> ("will have completed").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> ¿Cuál expresa con mayor precisión: <I>"Para el próximo lunes, llevaré tres semanas trabajando en este proyecto"</I>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) By next Monday, I will work on this project for three weeks.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) By next Monday, I will have worked on this project for three weeks.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) By next Monday, I will have been working on this project for three weeks.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) By next Monday, I am working on this project for three weeks.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La frase española "llevaré tres semanas trabajando" combina dos ideas: (1) la acción habrá estado <B>en curso durante un periodo</B> (for three weeks) y (2) todo eso habrá ocurrido antes del punto futuro (by next Monday). Esta combinación de duración continua + punto futuro corresponde al <B>Future Perfect Continuous</B> (will have been + -ing). La opción b (Future Perfect simple) enfatizaría el resultado final, no la duración continua del proceso.</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Lee el texto y corrige TODOS los errores de tiempo verbal eligiendo la opción más completa y precisa:<BR><SPAN CLASS="eng">"The research team is knowing the final results next week. By the time the president will give his speech, the committee will already approved the budget. This time next year, the company will expanding into three new markets."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) "is knowing" → "will know"; "will give" → "gives"; "will already approved" → "will have already approved"; "will expanding" → "will be expanding".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "is knowing" → "is going to know"; "will give" → sin cambio; "will already approved" → "will have already approved"; "will expanding" → "will be expanding".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Solo "will already approved" necesita corrección.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) "is knowing" → "will know"; "will give" → "gives"; "will already approved" → "has already approved"; "will expanding" → "will be expanding".</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+① <B>"is knowing"</B> → "know" es verbo de estado (stative verb), no puede usarse en -ing. Para predicción futura: "will know".<BR>
+② <B>"the president will give"</B> → "by the time" introduce cláusula temporal → <B>Present Simple</B>: "gives".<BR>
+③ <B>"will already approved"</B> → falta "have" para el Future Perfect: "will <B>have</B> already approved".<BR>
+④ <B>"will expanding"</B> → falta "be" para el Future Continuous: "will <B>be</B> expanding".<BR>
+La opción d es incorrecta porque "has already approved" es Present Perfect (presente), no Future Perfect.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Elige la traducción ÓPTIMA de: <B>"Para cuando cumpla 25 años, habré terminado la universidad, habré iniciado mi empresa y estaré viviendo en el extranjero."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) By the time I will be 25, I will finish university, I will start my company and I will live abroad.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) By the time I am 25, I will have finished university, I will have started my company and I will be living abroad.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) By the time I will turn 25, I will have finished university, I will have started my company and I will be living abroad.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) By the time I am 25, I am going to finish university, I am going to start my company and I will be living abroad.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+• <B>"By the time I am 25"</B>: cláusula temporal con "by the time" → <B>Present Simple</B> ("am"), no "will be" ni "will turn" → descarta a y c.<BR>
+• <B>"habré terminado"</B> y <B>"habré iniciado"</B>: acciones completadas antes del punto futuro → <B>Future Perfect</B>: "will have finished", "will have started" → descarta d (que usa "going to").<BR>
+• <B>"estaré viviendo"</B>: acción en progreso en ese punto futuro → <B>Future Continuous</B>: "will be living" → correcto en b, c y d. Solo b combina todas las formas correctas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Por qué se usa Present Continuous (y no "going to") en oraciones como <SPAN CLASS="eng">"I'm meeting her at 5 p.m."</SPAN> cuando se habla de futuro?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Porque el Present Continuous siempre expresa futuro en inglés; "going to" solo describe el pasado.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Porque el Present Continuous sugiere que el arreglo ya tiene existencia real en el presente: la cita ya fue coordinada con otra persona, ya tiene hora y lugar. "Going to" expresa intención o decisión, pero no necesariamente una coordinación real ya realizada.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Porque "going to" solo se puede usar con verbos de movimiento como go y come, y "meet" no pertenece a esa categoría.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Porque el inglés moderno ha eliminado "going to" y lo está reemplazando con el Present Continuous.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La explicación correcta es que el Present Continuous como futuro se usa porque el arreglo ya tiene una <B>realidad concreta en el presente</B>: ya fue coordinado, ya existe como evento en desarrollo. La forma -ing refuerza la idea de un proceso ya iniciado (la coordinación ya ocurrió, el evento ya "existe" de cierta forma). "Going to" expresa intención o plan personal, lo que es más subjetivo y no implica necesariamente coordinación con otra parte. Por eso los hablantes nativos prefieren el Present Continuous para citas médicas, reuniones de trabajo, vuelos con boleto comprado y eventos similares.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Lee el párrafo de un ensayo de admisión e identifica la opción que corrige <B>TODOS</B> los errores con mayor precisión:<BR><SPAN CLASS="eng">"By the time you will read my application, I will completing my pre-university program. This time next year, I will start my first year of Medicine. I am meeting with the academic coordinator next Monday at 10 a.m. to discuss my entrance requirements, and I am knowing she will be impressed with my record. By the end of my undergraduate studies, I will have gain valuable clinical experience."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo "will completing" y "will have gain" tienen errores.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "will read" → "read"; "will completing" → "will be completing"; "will start" → "will be starting"; "am knowing" → "will know"; "will have gain" → "will have gained". La oración "I am meeting... at 10 a.m." es correcta.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) "will read" → "read"; "will completing" → "will be completing"; "am knowing" → "will know"; "will have gain" → "will have gained". "Will start" y "am meeting" son correctas.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El párrafo es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+① <B>"you will read"</B> → "by the time" = cláusula temporal → Present Simple: "you <B>read</B>".<BR>
+② <B>"will completing"</B> → falta "be" para Future Continuous: "will <B>be</B> completing".<BR>
+③ <B>"will start"</B> → "This time next year" indica acción en progreso = Future Continuous: "will <B>be</B> starting".<BR>
+④ <B>"I am meeting... at 10 a.m."</B> → ✓ <B>CORRECTO</B>: Present Continuous con hora y día específico para arreglo ya confirmado.<BR>
+⑤ <B>"am knowing"</B> → "know" es stative verb, no admite -ing: "will know".<BR>
+⑥ <B>"will have gain"</B> → "gain" es verbo regular, participio = "gained": "will have <B>gained</B>".<BR><BR>
+La opción c omite la corrección de "will start", que también tiene error.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,406 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Desigualdades e Inecuaciones de Primer Grado - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:34px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .formula-linea{background:#e8f4f3;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:18px;text-align:center;letter-spacing:0.5px;color:#0D1B36;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.bloque-f{max-width:1000px;margin:55px auto 0;padding:0 40px;}
+.bloque-f h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.formulario{background:#0D1B36;border-radius:20px;padding:30px 36px;box-shadow:0 6px 22px rgba(0,0,0,0.18);color:#fff;}
+.formulario .grupo{margin-bottom:22px;}
+.formulario .grupo:last-child{margin-bottom:0;}
+.formulario .grupo h4{color:#D7B06D;font-size:17px;margin-bottom:10px;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:6px;}
+.formulario .f{font-size:18px;line-height:2.2;color:#fff;}
+.formulario .f b{color:#7FD1CE;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ALGEBRA.HTML">&larr; Volver a los temas de Álgebra</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ÁLGEBRA &middot; TEMA 18</DIV>
+<H1>Desigualdades e Inecuaciones de Primer Grado</H1>
+<DIV CLASS="sub">Propiedades de las desigualdades &middot; Intervalos &middot; Resolución de inecuaciones &middot; Inecuaciones dobles</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="desigualdad">1. ¿Qué es una desigualdad?</H3>
+Una <B>desigualdad</B> compara dos expresiones que no son iguales, usando los símbolos:
+<DIV CLASS="formula-linea"><B>&lt;</B> (menor que) &nbsp; <B>&gt;</B> (mayor que) &nbsp; <B>&le;</B> (menor o igual) &nbsp; <B>&ge;</B> (mayor o igual)</DIV>
+Una <B>inecuación</B> es una desigualdad con una incógnita; su solución no es un solo número, sino <B>un conjunto de valores</B> (normalmente un intervalo).
+
+<H3 ID="propiedades">2. Propiedades (¡la regla más importante!)</H3>
+<UL>
+<LI>Si sumas o restas lo mismo a ambos lados, la desigualdad <B>no cambia</B>.</LI>
+<LI>Si multiplicas o divides por un número <B>positivo</B>, <B>no cambia</B>.</LI>
+<LI>Si multiplicas o divides por un número <B>negativo</B>, ¡el sentido <B>se invierte</B>!</LI>
+</UL>
+<DIV CLASS="alerta">⚠️ <B>El error N.°1 del tema:</B> al dividir entre un número negativo hay que <B>voltear</B> el signo. Por ejemplo: &minus;2x &gt; 6 &rarr; x &lt; &minus;3 (el &gt; se vuelve &lt;).</DIV>
+
+<H3 ID="intervalos">3. Intervalos</H3>
+La solución se expresa como intervalo. El corchete [ ] incluye el extremo; el paréntesis ( ) lo excluye. El infinito siempre va con paréntesis.
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Inecuación</TH><TH>Intervalo</TH><TH>Significado</TH></TR>
+<TR><TD>x &gt; 2</TD><TD>&#10216;2 ; +&infin;&#10217;</TD><TD>mayores que 2, sin incluir el 2</TD></TR>
+<TR><TD>x &ge; 2</TD><TD>[2 ; +&infin;&#10217;</TD><TD>desde 2 (incluido) en adelante</TD></TR>
+<TR><TD>x &lt; 5</TD><TD>&#10216;&minus;&infin; ; 5&#10217;</TD><TD>menores que 5</TD></TR>
+<TR><TD>2 &lt; x &le; 5</TD><TD>&#10216;2 ; 5]</TD><TD>entre 2 y 5, incluyendo el 5</TD></TR>
+</TABLE>
+</DIV>
+
+<H3 ID="resolucion">4. Resolver una inecuación de primer grado</H3>
+Se despeja la incógnita igual que en una ecuación, pero <B>cuidando el signo</B> al multiplicar o dividir por negativos.
+<DIV CLASS="ej">📐 3x &minus; 6 &gt; 0 &rarr; 3x &gt; 6 &rarr; x &gt; 2. Solución: &#10216;2 ; +&infin;&#10217;.</DIV>
+<DIV CLASS="ej">📐 5 &minus; x &lt; 2 &rarr; &minus;x &lt; &minus;3 &rarr; (divido por &minus;1 y volteo) x &gt; 3.</DIV>
+
+<H3 ID="dobles">5. Inecuaciones dobles</H3>
+Tienen la forma a &lt; expresión &lt; b. Se opera en las <B>tres partes a la vez</B> para dejar sola a la x.
+<DIV CLASS="ej">📐 &minus;3 &lt; 2x &minus; 1 &lt; 5. Sumo 1 a todo: &minus;2 &lt; 2x &lt; 6. Divido entre 2: &minus;1 &lt; x &lt; 3. Solución: &#10216;&minus;1 ; 3&#10217;.</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque-f">
+<H2>Formulario</H2>
+<DIV CLASS="formulario">
+<DIV CLASS="grupo">
+<H4>PROPIEDADES</H4>
+<DIV CLASS="f">
+Sumar/restar &rarr; el signo no cambia<BR>
+&times; o &divide; por (+) &rarr; no cambia<BR>
+&times; o &divide; por (&minus;) &rarr; <B>se invierte</B> el sentido
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>INTERVALOS</H4>
+<DIV CLASS="f">
+[ ] incluye el extremo<BR>
+&#10216; &#10217; lo excluye<BR>
+&infin; siempre con paréntesis
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>RESOLUCIÓN</H4>
+<DIV CLASS="f">
+Despejar x como en una ecuación<BR>
+Ojo al dividir por negativos<BR>
+Doble: operar las tres partes a la vez
+</DIV>
+</DIV>
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Problemas tipo admisión</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Resuelve: x + 3 &gt; 5</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) x &gt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) x &lt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) x &gt; 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) x &lt; 8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El 3 pasa restando: x &gt; 5 &minus; 3 &rarr; <B>x &gt; 2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Resuelve: 2x &lt; 8</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) x &lt; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) x &gt; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) x &lt; 16</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) x &lt; 6</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Divido entre 2 (positivo, no cambia): x &lt; 8/2 &rarr; <B>x &lt; 4</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Resuelve: x &minus; 1 &ge; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) x &ge; 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) x &le; 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) x &ge; &minus;1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) x &gt; 0</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El 1 pasa sumando: x &ge; 1 &rarr; <B>x &ge; 1</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Al multiplicar una desigualdad por (&minus;1), el sentido del signo...</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) se mantiene igual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) se invierte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) desaparece</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) se vuelve igualdad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Multiplicar o dividir por un número negativo <B>invierte</B> el sentido de la desigualdad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿El intervalo &#10216;2 ; 5&#10217; incluye a los números 2 y 5?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Sí, a los dos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) No incluye ni al 2 ni al 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Solo al 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Solo al 5</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los paréntesis &#10216; &#10217; indican intervalo abierto: <B>no incluye los extremos</B> 2 ni 5.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Resuelve: 3x &minus; 6 &gt; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) x &gt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) x &lt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) x &gt; 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) x &gt; 3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>3x &gt; 6 &rarr; x &gt; 2 &rarr; <B>x &gt; 2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Resuelve: &minus;2x &gt; 4</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) x &lt; &minus;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) x &gt; &minus;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) x &gt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) x &lt; 2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Divido entre &minus;2 (negativo) y volteo el signo: x &lt; 4/(&minus;2) &rarr; <B>x &lt; &minus;2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Resuelve: 2x + 1 &le; 7</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) x &le; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) x &ge; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) x &le; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) x &le; 8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>2x &le; 6 &rarr; x &le; 3 &rarr; <B>x &le; 3</B>. (Intervalo &#10216;&minus;&infin; ; 3].)</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Resuelve: x/2 &gt; 3</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) x &gt; 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) x &gt; 1.5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) x &lt; 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) x &gt; 3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico por 2 (positivo): x &gt; 6 &rarr; <B>x &gt; 6</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Resuelve: 5 &minus; x &lt; 2</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) x &gt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) x &lt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) x &gt; 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) x &lt; &minus;3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>&minus;x &lt; 2 &minus; 5 &rarr; &minus;x &lt; &minus;3 &rarr; (volteo) x &gt; 3 &rarr; <B>x &gt; 3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Resuelve: 3(x &minus; 1) &lt; x + 5</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) x &lt; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) x &gt; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) x &lt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) x &lt; 8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>3x &minus; 3 &lt; x + 5 &rarr; 2x &lt; 8 &rarr; x &lt; 4 &rarr; <B>x &lt; 4</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Resuelve: (x + 1)/2 &ge; (x &minus; 1)/3</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) x &ge; &minus;5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) x &le; &minus;5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) x &ge; 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) x &ge; &minus;1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico por 6: 3(x + 1) &ge; 2(x &minus; 1) &rarr; 3x + 3 &ge; 2x &minus; 2 &rarr; x &ge; &minus;5 &rarr; <B>x &ge; &minus;5</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Resuelve la inecuación doble: &minus;3 &lt; 2x &minus; 1 &lt; 5</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) &minus;1 &lt; x &lt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) &minus;3 &lt; x &lt; 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) &minus;2 &lt; x &lt; 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) 1 &lt; x &lt; 3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Sumo 1 a las tres partes: &minus;2 &lt; 2x &lt; 6. Divido entre 2: <B>&minus;1 &lt; x &lt; 3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Resuelve: 4 &minus; 2x &ge; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) x &le; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) x &ge; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) x &le; &minus;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) x &ge; 4</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>&minus;2x &ge; &minus;4 &rarr; (divido entre &minus;2 y volteo) x &le; 2 &rarr; <B>x &le; 2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Halla el menor entero que cumple 2x + 3 &gt; 7.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) 5</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>2x &gt; 4 &rarr; x &gt; 2. El menor entero mayor que 2 es <B>3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Resuelve: &minus;2 &le; (3x &minus; 1)/2 &lt; 4</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) &minus;1 &le; x &lt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) &minus;1 &lt; x &le; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) &minus;2 &le; x &lt; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 1 &le; x &lt; 3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico por 2: &minus;4 &le; 3x &minus; 1 &lt; 8. Sumo 1: &minus;3 &le; 3x &lt; 9. Divido entre 3: <B>&minus;1 &le; x &lt; 3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Halla el conjunto solución de 5x &minus; 2 &ge; 3x + 6.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) [4 ; +&infin;&#10217;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) &#10216;&minus;&infin; ; 4]</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) [2 ; +&infin;&#10217;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) &#10216;4 ; +&infin;&#10217;</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>5x &minus; 3x &ge; 6 + 2 &rarr; 2x &ge; 8 &rarr; x &ge; 4. Como es "&ge;", el 4 se incluye: <B>[4 ; +&infin;&#10217;</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> "El doble de un número aumentado en 5 es menor que 17." ¿Qué valores cumple el número?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) x &lt; 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) x &gt; 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) x &lt; 11</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) x &lt; 12</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Traduzco: 2x + 5 &lt; 17 &rarr; 2x &lt; 12 &rarr; <B>x &lt; 6</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Resuelve el sistema de inecuaciones: x &gt; 1 y x &le; 4.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) &#10216;1 ; 4]</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) [1 ; 4&#10217;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) &#10216;1 ; 4&#10217;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) [1 ; 4]</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La solución es la intersección: mayores que 1 (1 excluido) y hasta 4 (incluido): <B>&#10216;1 ; 4]</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> ¿Cuántos números enteros satisfacen &minus;2 &lt; x &le; 3?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) 3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Los enteros mayores que &minus;2 (sin incluirlo) y hasta 3 (incluido) son: &minus;1, 0, 1, 2, 3 &rarr; <B>5</B> enteros.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

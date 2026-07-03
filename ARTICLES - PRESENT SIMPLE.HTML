@@ -1,0 +1,478 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Articles and Present Simple - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 4 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Articles and Present Simple</H1>
+<DIV CLASS="sub">Artículos a / an / the &middot; Artículo cero &middot; Presente simple: afirmativo, negativo e interrogativo &middot; Adverbios de frecuencia</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- SECCIÓN 1: ARTÍCULOS INDEFINIDOS -->
+<H3 ID="indefinidos">1. Articles — Artículos Indefinidos: A / An</H3>
+
+Los <B>artículos indefinidos</B> <I>a</I> y <I>an</I> se usan antes de un sustantivo <B>contable singular</B> cuando se menciona algo por primera vez, de forma general o no específica. Equivalen al español <I>un / una</I>.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Artículo</TH><TH>Regla</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>a</B></TD><TD>antes de palabras que empiezan con <B>sonido consonante</B></TD><TD><SPAN CLASS="eng">a book, a university, a European country</SPAN></TD></TR>
+<TR><TD><B>an</B></TD><TD>antes de palabras que empiezan con <B>sonido vocálico</B></TD><TD><SPAN CLASS="eng">an apple, an hour, an umbrella</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Regla de examen — es el SONIDO, no la letra:</B> <I>"a university"</I> usa <B>a</B> aunque "university" empiece con la vocal "u", porque se pronuncia con sonido consonante /j/ (como "yu-niversity"). <I>"an hour"</I> usa <B>an</B> aunque "hour" empiece con consonante "h", porque la "h" es muda: se pronuncia /aʊər/. Este es uno de los errores más frecuentes en exámenes de admisión.</DIV>
+
+<H4>¿Cuándo se usa a/an?</H4>
+<UL>
+<LI>Para mencionar algo por primera vez o de forma no específica. <BR><SPAN CLASS="eng">Ejemplo: I have a dog.</SPAN></LI>
+<LI>Para hablar de profesiones u ocupaciones. <BR><SPAN CLASS="eng">Ejemplo: She is an engineer.</SPAN></LI>
+<LI>En expresiones de cantidad como "una vez", "un cierto tipo de". <BR><SPAN CLASS="eng">Ejemplo: once a week, a kind of fruit</SPAN></LI>
+</UL>
+
+<!-- SECCIÓN 2: ARTÍCULO DEFINIDO Y CERO -->
+<H3 ID="definido">2. The (Artículo Definido) y el Artículo Cero</H3>
+
+El artículo definido <B>the</B> se usa cuando el sustantivo es <B>específico</B>, ya conocido o único para el hablante y el oyente (singular o plural, contable o incontable).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Uso de "the"</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Algo ya mencionado antes</TD><TD><SPAN CLASS="eng">I have a dog. The dog is very friendly.</SPAN></TD></TR>
+<TR><TD>Algo único en el mundo o contexto</TD><TD><SPAN CLASS="eng">The sun, the moon, the president of Peru</SPAN></TD></TR>
+<TR><TD>Cuando hay solo una opción posible en el contexto</TD><TD><SPAN CLASS="eng">Close the door, please.</SPAN></TD></TR>
+<TR><TD>Superlativos</TD><TD><SPAN CLASS="eng">She is the best student in the class.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El artículo cero (zero article) — cuando NO se usa ningún artículo:</H4>
+<UL>
+<LI>Sustantivos plurales o incontables usados de forma general. <BR><SPAN CLASS="eng">Ejemplo: Dogs are loyal animals. / Water is essential for life.</SPAN></LI>
+<LI>Nombres propios de personas, países, ciudades (la mayoría). <BR><SPAN CLASS="eng">Ejemplo: Peru, Lima, Camila</SPAN></LI>
+<LI>Idiomas, materias académicas y deportes. <BR><SPAN CLASS="eng">Ejemplo: I study English and Mathematics. / They play football.</SPAN></LI>
+<LI>Comidas y bebidas en general, y medios de transporte tras "by". <BR><SPAN CLASS="eng">Ejemplo: We have breakfast at 7. / I go to school by bus.</SPAN></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Contraste clave — general vs. específico:</B> <SPAN CLASS="eng">"Cats are independent animals"</SPAN> (artículo cero = afirmación general sobre todos los gatos) frente a <SPAN CLASS="eng">"The cats in my garden are very noisy"</SPAN> (the = un grupo específico y conocido de gatos). La presencia o ausencia de "the" cambia el alcance del significado.</DIV>
+
+<!-- SECCIÓN 3: PRESENT SIMPLE - USOS Y AFIRMATIVA -->
+<H3 ID="afirmativa">3. Present Simple — Usos y Forma Afirmativa</H3>
+
+El <B>presente simple</B> se usa para hablar de hábitos, rutinas, hechos generales/permanentes, horarios fijos y verdades científicas.
+
+<UL>
+<LI><B>Hábitos y rutinas:</B> <SPAN CLASS="eng">I study every night.</SPAN></LI>
+<LI><B>Hechos generales o permanentes:</B> <SPAN CLASS="eng">The Earth orbits the sun.</SPAN></LI>
+<LI><B>Horarios fijos:</B> <SPAN CLASS="eng">The class starts at 8 a.m.</SPAN></LI>
+<LI><B>Gustos, opiniones y estados:</B> <SPAN CLASS="eng">She likes Math. / They live in Trujillo.</SPAN></LI>
+</UL>
+
+La estructura afirmativa es: <B>Sujeto + verbo (+ -s/-es en 3.ª persona singular) + complemento.</B>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>Verbo</TH><TH>Ejemplo</TH></TR>
+<TR><TD>I / you / we / they</TD><TD>forma base (sin cambios)</TD><TD><SPAN CLASS="eng">I study English every day.</SPAN></TD></TR>
+<TR><TD>he / she / it</TD><TD>verbo + <B>-s / -es</B></TD><TD><SPAN CLASS="eng">She studies English every day.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Reglas de ortografía para la 3.ª persona singular (he/she/it):</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Terminación del verbo</TH><TH>Regla</TH><TH>Ejemplo</TH></TR>
+<TR><TD>-s, -ss, -sh, -ch, -x, -o</TD><TD>añadir <B>-es</B></TD><TD>watch &rarr; watches; go &rarr; goes; do &rarr; does</TD></TR>
+<TR><TD>consonante + <B>y</B></TD><TD>cambiar <B>y &rarr; i</B> y añadir <B>-es</B></TD><TD>study &rarr; studies; fly &rarr; flies</TD></TR>
+<TR><TD>vocal + <B>y</B></TD><TD>añadir solo <B>-s</B></TD><TD>play &rarr; plays; say &rarr; says</TD></TR>
+<TR><TD>resto de verbos</TD><TD>añadir solo <B>-s</B></TD><TD>work &rarr; works; live &rarr; lives</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Verbos irregulares de uso muy frecuente:</B> <I>have &rarr; has</I> (no "haves"). <SPAN CLASS="eng">"He has a new car."</SPAN> Este cambio irregular es uno de los más evaluados en exámenes de admisión.</DIV>
+
+<!-- SECCIÓN 4: NEGATIVA E INTERROGATIVA -->
+<H3 ID="negativa">4. Present Simple — Forma Negativa e Interrogativa</H3>
+
+El presente simple necesita el <B>auxiliar do/does</B> para formar la negación y la pregunta (excepto con el verbo <I>to be</I>, que no lo necesita).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>Negativa</TH><TH>Interrogativa</TH></TR>
+<TR><TD>I / you / we / they</TD><TD><B>don't</B> + verbo base &rarr; <SPAN CLASS="eng">I don't watch TV.</SPAN></TD><TD><B>Do</B> + sujeto + verbo base? &rarr; <SPAN CLASS="eng">Do you watch TV?</SPAN></TD></TR>
+<TR><TD>he / she / it</TD><TD><B>doesn't</B> + verbo base &rarr; <SPAN CLASS="eng">He doesn't watch TV.</SPAN></TD><TD><B>Does</B> + sujeto + verbo base? &rarr; <SPAN CLASS="eng">Does he watch TV?</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Error de examen más frecuente:</B> Cuando aparece <I>does/doesn't</I>, el verbo principal <B>NUNCA</B> lleva -s/-es: el auxiliar ya marca la 3.ª persona. <I>"She doesn't likes coffee"</I> es INCORRECTO; lo correcto es <B>"She doesn't like coffee."</B> Lo mismo aplica en preguntas: <I>"Does he plays football?"</I> es incorrecto → <B>"Does he play football?"</B></DIV>
+
+<H4>Respuestas cortas con do/does:</H4>
+<DIV CLASS="ej">📌 <SPAN CLASS="eng">"Do you live in Lima?" "Yes, I do." / "No, I don't."</SPAN><BR>
+<SPAN CLASS="eng">"Does she speak English?" "Yes, she does." / "No, she doesn't."</SPAN></DIV>
+
+<!-- SECCIÓN 5: ADVERBIOS DE FRECUENCIA -->
+<H3 ID="frecuencia">5. Adverbios de Frecuencia y su Posición</H3>
+
+Los <B>adverbios de frecuencia</B> (always, usually, often, sometimes, rarely, never, etc.) acompañan frecuentemente al presente simple para indicar con qué regularidad ocurre una acción.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Adverbio</TH><TH>Frecuencia aproximada</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>always</B></TD><TD>100% — siempre</TD><TD><SPAN CLASS="eng">I always do my homework.</SPAN></TD></TR>
+<TR><TD><B>usually</B></TD><TD>~80% — usualmente</TD><TD><SPAN CLASS="eng">She usually wakes up early.</SPAN></TD></TR>
+<TR><TD><B>often</B></TD><TD>~60% — frecuentemente</TD><TD><SPAN CLASS="eng">We often study together.</SPAN></TD></TR>
+<TR><TD><B>sometimes</B></TD><TD>~40% — a veces</TD><TD><SPAN CLASS="eng">They sometimes arrive late.</SPAN></TD></TR>
+<TR><TD><B>rarely / seldom</B></TD><TD>~10% — raramente</TD><TD><SPAN CLASS="eng">He rarely watches TV.</SPAN></TD></TR>
+<TR><TD><B>never</B></TD><TD>0% — nunca</TD><TD><SPAN CLASS="eng">I never eat meat.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Regla de posición — clave en exámenes:</B> El adverbio de frecuencia va <B>después</B> del verbo <I>to be</I>, pero <B>antes</B> del verbo principal en presente simple.<BR>
+Con <I>to be</I>: <SPAN CLASS="eng">"She is always late."</SPAN> (NO "She always is late.")<BR>
+Con otros verbos: <SPAN CLASS="eng">"She always arrives late."</SPAN> (NO "She arrives always late.")</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">2</DIV><DIV CLASS="dk-label">Artículos<BR>indefinidos: a / an</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1</DIV><DIV CLASS="dk-label">Artículo<BR>definido: the</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">-s/-es</DIV><DIV CLASS="dk-label">3.ª persona<BR>singular</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">do/does</DIV><DIV CLASS="dk-label">Auxiliares para<BR>negar y preguntar</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- =================== EJERCICIOS =================== -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de práctica</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; Reconocimiento y uso directo</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Elige el artículo correcto: <SPAN CLASS="eng">"I have _____ orange for breakfast."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) an</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) the</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) (sin artículo)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) an</B><BR>"Orange" empieza con sonido vocálico /ɒ/ → se usa <B>an</B>. Es la primera mención del sustantivo, de forma no específica, por eso no corresponde "the".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Completa con la forma correcta del verbo: <SPAN CLASS="eng">"My sister _____ (study) English every afternoon."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) study</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) studys</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) studies</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) studyes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) studies</B><BR>"My sister" es 3.ª persona singular → el verbo necesita -s/-es. "Study" termina en consonante + y → se cambia la <B>y por i</B> y se añade <B>-es</B>: <B>studies</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Elige la opción correcta para la forma negativa: <SPAN CLASS="eng">"They _____ live in Trujillo."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) doesn't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) don't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) isn't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) not</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) don't</B><BR>"They" no es 3.ª persona singular → corresponde el auxiliar <B>don't</B> (do not), no "doesn't". "Isn't" sería incorrecto porque no hay verbo to be en la oración.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Completa: <SPAN CLASS="eng">"_____ sun rises in the east."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) A</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) An</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) The</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) (sin artículo)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) The</B><BR>"Sun" es un elemento único en nuestro contexto (solo hay un sol) → siempre se usa <B>the</B>: "the sun", "the moon", "the Earth".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Elige la pregunta correctamente formada en presente simple:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) "Does she plays the piano?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) "Does she play the piano?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) "Do she play the piano?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) "Is she play the piano?"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) "Does she play the piano?"</B><BR>"She" es 3.ª persona singular → auxiliar <B>does</B>. El verbo principal después de "does" siempre va en forma base, sin -s: "play", no "plays". "Do" (opción c) es incorrecto con "she".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Qué oración usa correctamente el artículo cero (ausencia de artículo)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) "The dogs are loyal animals." (afirmación general)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) "Dogs are loyal animals."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) "A dogs are loyal animals."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) "An dogs are loyal animals."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) "Dogs are loyal animals."</B><BR>Para hacer una afirmación general sobre TODOS los perros (no un grupo específico), se usa el sustantivo plural sin ningún artículo (artículo cero). "A/an" nunca se usan con sustantivos plurales (opciones c y d son agramaticales).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Selecciona la posición correcta del adverbio de frecuencia: <SPAN CLASS="eng">"She _____ arrives on time."</SPAN> (always)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) She arrives always on time.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Always she arrives on time.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) She always arrives on time.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) She arrives on time always.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) She always arrives on time.</B><BR>El adverbio de frecuencia se coloca <B>antes</B> del verbo principal (no del to be) en presente simple: sujeto + adverbio + verbo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Elige el artículo correcto: <SPAN CLASS="eng">"He is _____ honest man."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) an</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) the</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) (sin artículo)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) an</B><BR>"Honest" se escribe con "h", pero esa "h" es <B>muda</B> → se pronuncia /ˈɒnɪst/, con sonido vocálico inicial → corresponde <B>an</B>, no "a". Es el mismo principio que "an hour".</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; Aplicación y transformación</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Identifica la oración con la regla ortográfica correcta para la 3.ª persona singular del verbo "go":</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) "He gos to school by bus."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) "He goes to school by bus."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) "He go's to school by bus."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) "He goies to school by bus."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) "He goes to school by bus."</B><BR>Los verbos terminados en <B>-o</B> añaden <B>-es</B> en 3.ª persona singular: go &rarr; goes. Además, nótese el artículo cero correcto en "by bus" (medio de transporte tras "by").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Completa el diálogo con la respuesta corta correcta: <SPAN CLASS="eng">"Does your brother play basketball?" "_____."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Yes, he does.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Yes, he plays.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Yes, he do.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Yes, he is.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) Yes, he does.</B><BR>Las respuestas cortas en presente simple repiten el auxiliar de la pregunta, no el verbo principal. Como la pregunta usa "does", la respuesta corta correcta es <B>"Yes, he does."</B>, nunca "he plays" ni "he is" (que correspondería a to be).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Elige la oración con el uso correcto de "the" o el artículo cero: información sobre las materias que estudia un estudiante en general.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) "I study the Mathematics and the English at university."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) "I study a Mathematics and an English at university."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) "I study Mathematics and English at university."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) "I study the Mathematics and English at the university."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) "I study Mathematics and English at university."</B><BR>Los nombres de materias académicas e idiomas no llevan artículo cuando se mencionan de forma general → artículo cero. "At university" (en el sentido de "estudiar a nivel universitario") tampoco requiere "the" en este uso general.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Transforma a la forma negativa: <SPAN CLASS="eng">"My parents work on Saturdays."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) "My parents doesn't work on Saturdays."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) "My parents don't works on Saturdays."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) "My parents don't work on Saturdays."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) "My parents not work on Saturdays."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) "My parents don't work on Saturdays."</B><BR>"My parents" es plural → corresponde <B>don't</B> (no "doesn't"). Además, tras "don't/doesn't" el verbo principal SIEMPRE va en forma base, sin -s: "work", no "works" (opción b es incorrecta por esta razón).</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; Análisis y corrección de errores</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Un estudiante escribe: <SPAN CLASS="eng">"My cousin doesn't likes coffee. She prefer tea. She always drink it in the morning."</SPAN> — Identifica y corrige TODOS los errores.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Solo "doesn't likes" está mal → "doesn't like".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) "doesn't likes" → "doesn't like"; "prefer" → "prefers"; "drink" → "drinks"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) "doesn't likes" → "doesn't like"; "prefer" → "prefers"; "drink" → "always drinks"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"doesn't likes"</B> → <B>"doesn't like"</B>: tras "doesn't" el verbo va en forma base, sin -s.<BR>② <B>"She prefer tea"</B> → <B>"She prefers tea"</B>: "she" es 3.ª persona singular en oración afirmativa (sin auxiliar) → el verbo necesita -s.<BR>③ <B>"She always drink it"</B> → <B>"She always drinks it"</B>: mismo motivo que el anterior; el adverbio "always" ya está bien colocado antes del verbo, lo único que falta corregir es la conjugación. La opción c) reordena innecesariamente "always", que ya estaba en la posición correcta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Analiza la diferencia de significado entre estas dos oraciones y elige la afirmación correcta: <SPAN CLASS="eng">"The students in my class are very hardworking." / "Students are usually hardworking at this university."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Ambas oraciones tienen exactamente el mismo alcance: se refieren a todos los estudiantes del mundo.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La primera oración ("the students") habla de un grupo específico y conocido (los de "mi clase"); la segunda ("students", sin artículo) hace una afirmación general sobre los estudiantes de esa universidad como categoría.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) "The students" y "students" son intercambiables sin ningún cambio de significado.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El uso de "the" indica que se habla de un solo estudiante.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>The students</B> + "in my class" especifica un grupo concreto y delimitado. <B>Students</b> sin artículo, en la segunda oración, generaliza sobre la categoría completa de estudiantes en ese contexto. Esta diferencia entre lo específico (the) y lo general (artículo cero) es un punto fino que distingue el nivel avanzado del básico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Traduce con precisión, prestando atención al artículo y a la conjugación verbal: <B>"Mi tía es una arquitecta. Ella siempre llega a la oficina a las ocho."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) "My aunt is architect. She always arrive at the office at eight."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) "My aunt is an architect. She always arrives at the office at eight."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) "My aunt is a architect. She arrives always at the office at eight."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) "My aunt is an architect. She always arrive at the office at eight."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>• "Architect" empieza con sonido vocálico → <B>an architect</B> (no "a architect", opción c).<BR>• Las profesiones requieren artículo en inglés (no se puede omitir, como en la opción a: "is architect" es incorrecto).<BR>• "She" es 3.ª persona singular en afirmativa → el verbo necesita -s: <B>arrives</B>, no "arrive" (opción d incorrecta).<BR>• El adverbio "always" va antes del verbo principal: "she always arrives", no "she arrives always" (opción c incorrecta en el orden).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Completa correctamente el texto con los artículos y la forma verbal adecuados: <SPAN CLASS="eng">"_____(1) university is very far. My brother usually _____(2) (take) _____(3) bus to get there."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) (1) A — (2) take — (3) a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) (1) The — (2) takes — (3) the</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) (1) The — (2) take — (3) an</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) (1) An — (2) takes — (3) a</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>(1) Se refiere a una universidad ya conocida/específica para el hablante → <B>The university</B> (no "a/an", que sería una mención general).<BR>(2) "My brother" es 3.ª persona singular en afirmativa → <B>takes</B> (con -s).<BR>(3) "Bus" como medio de transporte específico que él usa habitualmente lleva <B>the</B> en este contexto ("the bus" = el autobús que normalmente toma), no "a/an bus".</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; Ingreso universitario</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Analiza el siguiente fragmento y determina cuál opción corrige TODOS los errores con la justificación gramatical más precisa:<BR><SPAN CLASS="eng">"She is a honest student. She don't speaks during the exams, and she always finish her work on time."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Solo "don't speaks" está mal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "a honest" → "an honest" (h muda); "don't speaks" → "doesn't speak" (3.ª persona + verbo base); "always finish" → "always finishes" (3.ª persona singular en afirmativa)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "a honest" → "an honest"; "don't speaks" → "doesn't speaks"; "always finish" → "finish always"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El fragmento es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"a honest"</B> → <B>"an honest"</B>: la "h" de "honest" es muda, el sonido inicial es vocálico.<BR>② <B>"She don't speaks"</B> → <B>"She doesn't speak"</B>: "she" requiere el auxiliar <B>doesn't</B> (no "don't"), y tras el auxiliar el verbo va en forma base, sin -s.<BR>③ <B>"she always finish"</B> → <B>"she always finishes"</B>: en afirmativa sin auxiliar, "she" (3.ª persona) exige -s/-es en el verbo principal; "finish" termina en -sh → se añade <B>-es</B>. La opción c) repite el error de "doesn't speaks" y además coloca mal el adverbio "always" al final.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Traduce con precisión al inglés: <B>"Los leones son animales salvajes. El león de ese zoológico nunca come carne cruda."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) "The lions are wild animals. The lion of that zoo never eat raw meat."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) "Lions are wild animals. The lion at that zoo never eats raw meat."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) "A lions are wild animals. A lion of that zoo never eats raw meat."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) "The lions are wild animals. A lion at that zoo never eats a raw meat."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>• "Los leones [en general] son animales salvajes" → afirmación general sobre la categoría → sustantivo plural sin artículo: <B>Lions are wild animals</B> (no "the lions", que limitaría a un grupo específico).<BR>• "El león de ese zoológico [un león específico y conocido]" → <B>The lion</B> (sí lleva "the" porque ahora es específico).<BR>• 3.ª persona singular ("the lion") en afirmativa → el verbo necesita -s: <B>eats</B>, no "eat" (opción a incorrecta).<BR>• "Carne cruda" (incontable, en general) no lleva artículo: <B>raw meat</B>, no "a raw meat" (opción d incorrecta).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Por qué el inglés moderno conserva solo <B>tres formas</B> del verbo en presente simple (forma base y forma base + -s/-es), mientras que el español tiene seis terminaciones distintas para cada persona gramatical (hablo, hablas, habla, hablamos, habláis, hablan)? ¿Qué explicación es más precisa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) El inglés nunca tuvo un sistema de conjugaciones más complejo en toda su historia.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) El inglés antiguo (Old English) sí tenía un sistema de conjugación verbal más rico, con terminaciones distintas para cada persona; a lo largo de la Edad Media, por contacto lingüístico y simplificación gramatical progresiva, la mayoría de esas terminaciones se perdieron, conservándose principalmente la marca de 3.ª persona singular (-s/-es) en el presente.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) La simplificación se debe únicamente a la influencia del latín clásico en el siglo XX.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El español es una lengua "más antigua" que el inglés, por eso conserva más terminaciones.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El inglés antiguo tenía un sistema de conjugación verbal considerablemente más complejo que el inglés moderno, con terminaciones distintas según la persona y el número. Durante la Edad Media (especialmente tras el contacto con el nórdico antiguo y el francés normando), el inglés sufrió una intensa simplificación morfológica, perdiendo casi todas esas terminaciones excepto la del presente en 3.ª persona singular (-s/-es), que es la única que sobrevive hoy. Esto no tiene relación con la "antigüedad" de una lengua (opción d, una idea sin base lingüística, ya que todas las lenguas vivas evolucionan constantemente) ni con el latín del siglo XX (opción c).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Lee el siguiente fragmento de un ensayo estudiantil e identifica la opción que señala <B>todos</B> los errores y propone la corrección con la justificación gramatical más precisa:<BR><SPAN CLASS="eng">"A university where I want to study have a excellent reputation. The students don't has to pay for a uniform, and they usually wears casual clothes."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo "have" debería ser "has".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "A university... have" → "The university... has"; "a excellent" → "an excellent"; "don't has" → "don't have"; "a uniform" se mantiene; "usually wears" → "usually wear"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) "A university... have" → "A university... has"; "a excellent" → "an excellent"; "don't has" → "doesn't have"; "usually wears" → "usually wear"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El fragmento completo es gramaticalmente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) — Corrección completa que conserva el sentido específico del original</B><BR>① <B>"A university where I want to study"</B> describe una universidad <B>específica</B> que el hablante ya tiene en mente (relativa "where I want to study") → debe llevar <B>the</B>, no "a": <B>"The university where I want to study"</B>. Además, el sujeto ("the university") es singular → corresponde <B>has</B>, no "have".<BR>② <B>"a excellent"</B> → <B>"an excellent"</B>: "excellent" empieza con sonido vocálico.<BR>③ <B>"The students don't has"</B> → <B>"The students don't have"</B>: "students" es plural → corresponde <B>don't</b> (no "doesn't"), y el verbo principal tras "don't" va en forma base: <B>have</B>, no "has".<BR>④ <B>"they usually wears"</B> → <B>"they usually wear"</B>: "they" no es 3.ª persona singular → el verbo no lleva -s.<BR>La opción c) mantiene erróneamente "a university" en vez de "the university" y cambia "don't has" a "doesn't have" (lo cual sería gramatical solo si el sujeto fuera singular, pero el sujeto real es "the students", plural); por eso la corrección más precisa y coherente con el contexto es la b).</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+
+</BODY>
+</HTML>

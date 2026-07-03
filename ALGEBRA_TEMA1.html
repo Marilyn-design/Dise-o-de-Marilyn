@@ -1,0 +1,388 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Leyes de Exponentes I - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .formula-linea{background:#e8f4f3;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:18px;text-align:center;letter-spacing:0.5px;color:#0D1B36;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.bloque-f{max-width:1000px;margin:55px auto 0;padding:0 40px;}
+.bloque-f h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.formulario{background:#0D1B36;border-radius:20px;padding:30px 36px;box-shadow:0 6px 22px rgba(0,0,0,0.18);color:#fff;}
+.formulario .grupo{margin-bottom:22px;}
+.formulario .grupo:last-child{margin-bottom:0;}
+.formulario .grupo h4{color:#D7B06D;font-size:17px;margin-bottom:10px;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:6px;}
+.formulario .f{font-size:18px;line-height:2.2;color:#fff;}
+.formulario .f b{color:#7FD1CE;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ALGEBRA.HTML">&larr; Volver a los temas de Álgebra</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ÁLGEBRA &middot; TEMA 1</DIV>
+<H1>Leyes de Exponentes I: Potenciación</H1>
+<DIV CLASS="sub">Producto y cociente de bases iguales &middot; Potencia de potencia &middot; Producto y cociente &middot; Exponente cero y negativo</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="def">1. ¿Qué es la potenciación?</H3>
+La <B>potenciación</B> es una multiplicación abreviada de factores iguales. En la expresión a<SUP>n</SUP>, la <B>base</B> (a) es el factor que se repite y el <B>exponente</B> (n) indica cuántas veces se multiplica:
+
+<DIV CLASS="formula-linea"><B>a<SUP>n</SUP> = a &middot; a &middot; a &middot; ... &middot; a</B> &nbsp; (n veces)</DIV>
+
+<DIV CLASS="ej">📐 <B>Ejemplo:</B> 2<SUP>4</SUP> = 2 &middot; 2 &middot; 2 &middot; 2 = 16. La base es 2 y el exponente es 4.</DIV>
+
+<H3 ID="producto">2. Producto de potencias de igual base</H3>
+Cuando multiplicas potencias de la <B>misma base</B>, se conserva la base y se <B>suman</B> los exponentes.
+<DIV CLASS="formula-linea"><B>a<SUP>m</SUP> &middot; a<SUP>n</SUP> = a<SUP>m+n</SUP></B></DIV>
+<DIV CLASS="ej">📐 x<SUP>3</SUP> &middot; x<SUP>2</SUP> = x<SUP>3+2</SUP> = x<SUP>5</SUP>.</DIV>
+
+<H3 ID="cociente">3. Cociente de potencias de igual base</H3>
+Al dividir potencias de igual base, se conserva la base y se <B>restan</B> los exponentes.
+<DIV CLASS="formula-linea"><B>a<SUP>m</SUP> &divide; a<SUP>n</SUP> = a<SUP>m&minus;n</SUP></B> &nbsp; (a &ne; 0)</DIV>
+<DIV CLASS="ej">📐 x<SUP>5</SUP> &divide; x<SUP>2</SUP> = x<SUP>5&minus;2</SUP> = x<SUP>3</SUP>.</DIV>
+
+<H3 ID="pot-pot">4. Potencia de una potencia</H3>
+Cuando una potencia está elevada a otro exponente, los exponentes se <B>multiplican</B>.
+<DIV CLASS="formula-linea"><B>(a<SUP>m</SUP>)<SUP>n</SUP> = a<SUP>m&middot;n</SUP></B></DIV>
+<DIV CLASS="alerta">⚠️ <B>No confundir:</B> (a<SUP>m</SUP>)<SUP>n</SUP> = a<SUP>m&middot;n</SUP> (se multiplican), pero a<SUP>m</SUP> &middot; a<SUP>n</SUP> = a<SUP>m+n</SUP> (se suman). Es el error más común del tema.</DIV>
+
+<H3 ID="prod-coc">5. Potencia de un producto y de un cociente</H3>
+El exponente se reparte a cada factor:
+<DIV CLASS="formula-linea"><B>(a &middot; b)<SUP>n</SUP> = a<SUP>n</SUP> &middot; b<SUP>n</SUP></B> &nbsp;&nbsp; <B>(a / b)<SUP>n</SUP> = a<SUP>n</SUP> / b<SUP>n</SUP></B></DIV>
+<DIV CLASS="ej">📐 (2x)<SUP>3</SUP> = 2<SUP>3</SUP> &middot; x<SUP>3</SUP> = 8x<SUP>3</SUP>.</DIV>
+
+<H3 ID="cero-neg">6. Exponente cero y exponente negativo</H3>
+Dos reglas clave que siempre caen en el examen:
+<DIV CLASS="formula-linea"><B>a<SUP>0</SUP> = 1</B> &nbsp; (a &ne; 0) &nbsp;&nbsp;&nbsp; <B>a<SUP>&minus;n</SUP> = 1 / a<SUP>n</SUP></B></DIV>
+<DIV CLASS="ej">📐 5<SUP>0</SUP> = 1 ; &nbsp; 3<SUP>&minus;2</SUP> = 1/3<SUP>2</SUP> = 1/9.</DIV>
+<DIV CLASS="alerta">⚠️ <B>El exponente negativo no hace negativa la potencia:</B> 2<SUP>&minus;3</SUP> no es &minus;8, sino 1/8. El signo negativo "invierte" (manda al denominador), no cambia el signo del resultado.</DIV>
+
+<H3 ID="resumen">7. Tabla resumen</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Ley</TH><TH>Fórmula</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Producto, igual base</TD><TD>a<SUP>m</SUP>&middot;a<SUP>n</SUP> = a<SUP>m+n</SUP></TD><TD>x<SUP>2</SUP>&middot;x<SUP>3</SUP> = x<SUP>5</SUP></TD></TR>
+<TR><TD>Cociente, igual base</TD><TD>a<SUP>m</SUP>&divide;a<SUP>n</SUP> = a<SUP>m&minus;n</SUP></TD><TD>x<SUP>5</SUP>&divide;x<SUP>2</SUP> = x<SUP>3</SUP></TD></TR>
+<TR><TD>Potencia de potencia</TD><TD>(a<SUP>m</SUP>)<SUP>n</SUP> = a<SUP>mn</SUP></TD><TD>(x<SUP>2</SUP>)<SUP>3</SUP> = x<SUP>6</SUP></TD></TR>
+<TR><TD>Potencia de producto</TD><TD>(ab)<SUP>n</SUP> = a<SUP>n</SUP>b<SUP>n</SUP></TD><TD>(2x)<SUP>3</SUP> = 8x<SUP>3</SUP></TD></TR>
+<TR><TD>Exponente cero</TD><TD>a<SUP>0</SUP> = 1</TD><TD>7<SUP>0</SUP> = 1</TD></TR>
+<TR><TD>Exponente negativo</TD><TD>a<SUP>&minus;n</SUP> = 1/a<SUP>n</SUP></TD><TD>2<SUP>&minus;3</SUP> = 1/8</TD></TR>
+</TABLE>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque-f">
+<H2>Formulario</H2>
+<DIV CLASS="formulario">
+<DIV CLASS="grupo">
+<H4>OPERACIONES CON IGUAL BASE</H4>
+<DIV CLASS="f">
+a<SUP>m</SUP> &middot; a<SUP>n</SUP> <B>=</B> a<SUP>m+n</SUP><BR>
+a<SUP>m</SUP> &divide; a<SUP>n</SUP> <B>=</B> a<SUP>m&minus;n</SUP><BR>
+(a<SUP>m</SUP>)<SUP>n</SUP> <B>=</B> a<SUP>m&middot;n</SUP>
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>PRODUCTO, COCIENTE Y CASOS ESPECIALES</H4>
+<DIV CLASS="f">
+(ab)<SUP>n</SUP> <B>=</B> a<SUP>n</SUP>b<SUP>n</SUP> &nbsp;;&nbsp; (a/b)<SUP>n</SUP> <B>=</B> a<SUP>n</SUP>/b<SUP>n</SUP><BR>
+a<SUP>0</SUP> <B>=</B> 1 &nbsp; (a &ne; 0)<BR>
+a<SUP>&minus;n</SUP> <B>=</B> 1/a<SUP>n</SUP>
+</DIV>
+</DIV>
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Problemas tipo admisión</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Efectúa: 2<SUP>3</SUP> &middot; 2<SUP>2</SUP></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) 2<SUP>6</SUP> = 64</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) 2<SUP>5</SUP> = 32</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) 4<SUP>5</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) 2<SUP>1</SUP> = 2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Misma base, los exponentes se suman: 2<SUP>3+2</SUP> = 2<SUP>5</SUP> = <B>32</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Simplifica: x<SUP>5</SUP> &divide; x<SUP>2</SUP></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) x<SUP>3</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) x<SUP>7</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) x<SUP>10</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) x<SUP>2</SUP></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Cociente de igual base: se restan los exponentes: x<SUP>5&minus;2</SUP> = <B>x<SUP>3</SUP></B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Simplifica: (x<SUP>2</SUP>)<SUP>3</SUP></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) x<SUP>5</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) x<SUP>6</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) x<SUP>8</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) x<SUP>23</SUP></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Potencia de potencia: se multiplican: x<SUP>2&middot;3</SUP> = <B>x<SUP>6</SUP></B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuánto vale 5<SUP>0</SUP>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) 50</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Todo número distinto de cero elevado a la 0 vale <B>1</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Desarrolla: (2x)<SUP>3</SUP></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) 2x<SUP>3</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) 6x<SUP>3</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) 8x<SUP>3</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) 8x</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El exponente afecta a cada factor: (2x)<SUP>3</SUP> = 2<SUP>3</SUP>x<SUP>3</SUP> = <B>8x<SUP>3</SUP></B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Simplifica: (x<SUP>3</SUP> &middot; x<SUP>4</SUP>) &divide; x<SUP>2</SUP></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) x<SUP>5</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) x<SUP>9</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) x<SUP>24</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) x<SUP>6</SUP></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Arriba: x<SUP>3+4</SUP> = x<SUP>7</SUP>. Luego x<SUP>7</SUP> &divide; x<SUP>2</SUP> = x<SUP>7&minus;2</SUP> = <B>x<SUP>5</SUP></B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Desarrolla: (2x<SUP>2</SUP>)<SUP>3</SUP></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) 6x<SUP>6</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) 8x<SUP>5</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) 8x<SUP>6</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) 2x<SUP>6</SUP></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>(2x<SUP>2</SUP>)<SUP>3</SUP> = 2<SUP>3</SUP>(x<SUP>2</SUP>)<SUP>3</SUP> = 8 &middot; x<SUP>6</SUP> = <B>8x<SUP>6</SUP></B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Cuánto vale 3<SUP>&minus;2</SUP>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) &minus;9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) &minus;6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) 1/9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) 1/6</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El exponente negativo invierte: 3<SUP>&minus;2</SUP> = 1/3<SUP>2</SUP> = <B>1/9</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Desarrolla: (x<SUP>2</SUP>y<SUP>3</SUP>)<SUP>2</SUP></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) x<SUP>4</SUP>y<SUP>6</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) x<SUP>4</SUP>y<SUP>5</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) x<SUP>2</SUP>y<SUP>6</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) x<SUP>4</SUP>y<SUP>9</SUP></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>(x<SUP>2</SUP>y<SUP>3</SUP>)<SUP>2</SUP> = (x<SUP>2</SUP>)<SUP>2</SUP>(y<SUP>3</SUP>)<SUP>2</SUP> = <B>x<SUP>4</SUP>y<SUP>6</SUP></B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Simplifica: (a<SUP>5</SUP> &divide; a<SUP>2</SUP>) &middot; a</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) a<SUP>4</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) a<SUP>3</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) a<SUP>8</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) a<SUP>10</SUP></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>a<SUP>5&minus;2</SUP> = a<SUP>3</SUP>; luego a<SUP>3</SUP> &middot; a = a<SUP>3+1</SUP> = <B>a<SUP>4</SUP></B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Simplifica: (x<SUP>4</SUP> &middot; x<SUP>6</SUP>) &divide; (x<SUP>2</SUP>)<SUP>3</SUP></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) x<SUP>4</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) x<SUP>2</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) x<SUP>16</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) x<SUP>6</SUP></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Arriba: x<SUP>4+6</SUP> = x<SUP>10</SUP>. Abajo: (x<SUP>2</SUP>)<SUP>3</SUP> = x<SUP>6</SUP>. Cociente: x<SUP>10&minus;6</SUP> = <B>x<SUP>4</SUP></B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Calcula: (2<SUP>3</SUP> &middot; 2<SUP>4</SUP>) &divide; 2<SUP>5</SUP></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) 16</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Arriba: 2<SUP>3+4</SUP> = 2<SUP>7</SUP>. Cociente: 2<SUP>7&minus;5</SUP> = 2<SUP>2</SUP> = <B>4</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> ¿Cuánto vale (1/2)<SUP>&minus;3</SUP>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) 1/8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) &minus;8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) 6</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Un exponente negativo invierte la fracción: (1/2)<SUP>&minus;3</SUP> = 2<SUP>3</SUP> = <B>8</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Simplifica: (a<SUP>&minus;2</SUP> &middot; b<SUP>3</SUP>) &divide; (a<SUP>&minus;4</SUP> &middot; b)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) a<SUP>2</SUP>b<SUP>2</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) a<SUP>&minus;6</SUP>b<SUP>2</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) a<SUP>2</SUP>b<SUP>4</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) b<SUP>2</SUP>/a<SUP>2</SUP></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Resto exponentes de igual base: a<SUP>&minus;2&minus;(&minus;4)</SUP> = a<SUP>2</SUP> ; b<SUP>3&minus;1</SUP> = b<SUP>2</SUP>. Resultado: <B>a<SUP>2</SUP>b<SUP>2</SUP></B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Simplifica: [(x<SUP>2</SUP>)<SUP>3</SUP> &middot; x] &divide; x<SUP>5</SUP></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) x<SUP>2</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) x<SUP>3</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) x</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) x<SUP>4</SUP></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>(x<SUP>2</SUP>)<SUP>3</SUP> = x<SUP>6</SUP>; x<SUP>6</SUP> &middot; x = x<SUP>7</SUP>; x<SUP>7</SUP> &divide; x<SUP>5</SUP> = x<SUP>7&minus;5</SUP> = <B>x<SUP>2</SUP></B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Simplifica: (x<SUP>n+2</SUP> &middot; x<SUP>n&minus;1</SUP>) &divide; x<SUP>2n</SUP></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) x</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) x<SUP>n</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) x<SUP>2</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Arriba: x<SUP>(n+2)+(n&minus;1)</SUP> = x<SUP>2n+1</SUP>. Cociente: x<SUP>(2n+1)&minus;2n</SUP> = <B>x</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Calcula: (4 &middot; 10<SUP>6</SUP>) &divide; (2 &middot; 10<SUP>2</SUP>)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) 2 &middot; 10<SUP>4</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) 2 &middot; 10<SUP>3</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) 8 &middot; 10<SUP>8</SUP></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) 6 &middot; 10<SUP>4</SUP></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Separo: (4/2) &middot; (10<SUP>6</SUP>/10<SUP>2</SUP>) = 2 &middot; 10<SUP>6&minus;2</SUP> = <B>2 &middot; 10<SUP>4</SUP></B> (es decir 20 000).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Si a<SUP>x</SUP> = 5, halla el valor de a<SUP>3x</SUP>.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) 15</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) 125</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) 25</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) 8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>a<SUP>3x</SUP> = (a<SUP>x</SUP>)<SUP>3</SUP> = 5<SUP>3</SUP> = <B>125</B>.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

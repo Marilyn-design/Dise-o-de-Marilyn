@@ -1,0 +1,617 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Enlace Químico - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .formula{background:#0D1B36;color:#D7B06D;border-radius:10px;padding:10px 20px;margin:12px 0;font-size:17px;font-family:monospace;display:inline-block;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="QUIMICA.HTML">&larr; Volver a los temas de Química</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">QUÍMICA · TEMA 06 · NIVEL PREUNIVERSITARIO</DIV>
+<H1>Enlace Químico</H1>
+<DIV CLASS="sub">Definición · Clasificación · Regla del octeto · Enlace iónico · Enlace covalente · Enlace metálico · Estructuras de Lewis · Resonancia</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="definicion">1. ¿Qué es el enlace químico?</H3>
+
+Un <B>enlace químico</B> es la fuerza de atracción eléctrica que mantiene unidos a dos o más átomos para formar una molécula o un compuesto. Los átomos se enlazan porque al hacerlo adquieren una configuración electrónica más estable (de menor energía).
+
+La <B>energía de enlace</B> es la energía necesaria para romper un mol de enlaces en estado gaseoso. Cuanto mayor es la energía de enlace, más estable y más difícil de romper es el enlace.
+
+<H4>¿Por qué se forman los enlaces?</H4>
+<UL>
+<LI>Los átomos buscan alcanzar la configuración electrónica de un <B>gas noble</B> (8 electrones en la última capa, o 2 en el caso del hidrógeno y el helio).</LI>
+<LI>Los gases nobles son químicamente inertes porque ya tienen su última capa completa; por eso casi no forman compuestos.</LI>
+<LI>La tendencia de los átomos a tener 8 electrones en su nivel de valencia se llama <B>regla del octeto</B>.</LI>
+</UL>
+
+<H3 ID="regla-octeto">2. Regla del octeto</H3>
+
+La <B>regla del octeto</B> (formulada por Gilbert Lewis en 1916) establece que los átomos de los elementos representativos tienden a ganar, perder o compartir electrones hasta tener <B>8 electrones en su nivel de valencia</B>, adquiriendo así la configuración de un gas noble.
+
+<H4>Excepciones a la regla del octeto:</H4>
+<UL>
+<LI><B>Octeto incompleto:</B> algunos átomos de elementos del 2° período como el <B>berilio (Be)</B> y el <B>boro (B)</B> pueden quedar estables con solo 4 o 6 electrones en su última capa. Ejemplo: BeCl₂ (4e⁻ en el Be), BF₃ (6e⁻ en el B).</LI>
+<LI><B>Octeto expandido:</B> elementos del 3° período en adelante (como P, S, Cl) pueden tener más de 8 electrones en su capa de valencia porque disponen de orbitales d vacíos. Ejemplo: PCl₅ (10e⁻ en el P), SF₆ (12e⁻ en el S).</LI>
+<LI><B>Número impar de electrones (radicales libres):</B> moléculas con número impar de electrones de valencia no pueden completar el octeto de todos sus átomos. Ejemplo: NO (molécula con 11e⁻ de valencia), NO₂ (17e⁻).</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La regla del octeto aplica principalmente a los elementos del segundo período (C, N, O, F). El H y el He solo necesitan 2 electrones (dúplete). Siempre hay que justificar las excepciones cuando aparecen en los problemas.</DIV>
+
+<H3 ID="electronegatvidad">3. Influencia de la electronegatividad en el tipo de enlace</H3>
+
+La <B>electronegatividad (EN)</B> es la capacidad de un átomo para atraer hacia sí los electrones compartidos en un enlace. La escala más usada es la de <B>Pauling</B> (de 0 a 4). El flúor (F) es el elemento más electronegativo (EN = 4.0).
+
+La <B>diferencia de electronegatividad (ΔEN)</B> entre dos átomos determina el tipo de enlace que forman:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>ΔEN</TH><TH>Tipo de enlace</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>0</B></TD><TD>Covalente puro (apolar)</TD><TD>H₂, O₂, Cl₂, N₂</TD></TR>
+<TR><TD><B>0 &lt; ΔEN ≤ 0.4</B></TD><TD>Covalente apolar (prácticamente apolar)</TD><TD>CH₄ (ΔEN ≈ 0.4)</TD></TR>
+<TR><TD><B>0.4 &lt; ΔEN &lt; 1.7</B></TD><TD>Covalente polar</TD><TD>HCl (ΔEN = 0.9), H₂O (ΔEN = 1.4)</TD></TR>
+<TR><TD><B>ΔEN ≥ 1.7</B></TD><TD>Iónico</TD><TD>NaCl (ΔEN = 2.1), MgO (ΔEN = 2.3)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Nota importante:</B> El límite ΔEN ≥ 1.7 para el enlace iónico es una convención aproximada. En la práctica, los enlaces iónicos "puros" tienen carácter covalente parcial y viceversa. Lo que varía es el grado de ionicidad o covalencia del enlace.</DIV>
+
+<H3 ID="enlace-ionico">4. Enlace iónico</H3>
+
+El <B>enlace iónico</B> se forma por la <B>transferencia total (o casi total) de electrones</B> de un átomo a otro. Se produce generalmente entre un <B>metal</B> (que cede electrones y se convierte en catión, carga positiva) y un <B>no metal</B> (que los acepta y se convierte en anión, carga negativa). La atracción electrostática entre el catión y el anión es el enlace iónico.
+
+<H4>Condiciones para formar el enlace iónico:</H4>
+<UL>
+<LI>Gran diferencia de electronegatividad entre los átomos (ΔEN ≥ 1.7 aprox.).</LI>
+<LI>Un átomo con baja energía de ionización (metal, cede electrones fácilmente).</LI>
+<LI>Un átomo con alta afinidad electrónica (no metal, acepta electrones fácilmente).</LI>
+</UL>
+
+<H4>Ejemplo: formación del NaCl</H4>
+<UL>
+<LI>El Na (metal, grupo IA) tiene 1 electrón de valencia y lo cede: Na → Na⁺ + e⁻</LI>
+<LI>El Cl (no metal, grupo VIIA) tiene 7 electrones de valencia y acepta 1: Cl + e⁻ → Cl⁻</LI>
+<LI>El Na⁺ y el Cl⁻ se atraen electrostáticamente formando el cristal de NaCl.</LI>
+</UL>
+
+<H4>Notación de Lewis para compuestos iónicos:</H4>
+En los compuestos iónicos se representan los iones con sus cargas. Los iones con carga negativa se encierran en corchetes con la carga indicada.
+
+<DIV CLASS="ej">🔬 <B>Ejemplo NaCl:</B> [Na]⁺ [: Cl :]⁻ — el Na⁺ no tiene electrones de valencia representados (cedió el suyo); el Cl⁻ tiene 8 puntos (4 pares de electrones).</DIV>
+
+<H4>Propiedades generales de los compuestos iónicos:</H4>
+<UL>
+<LI><B>Sólidos cristalinos</B> a temperatura ambiente, organizados en redes cristalinas.</LI>
+<LI><B>Alto punto de fusión y ebullición</B> (se necesita mucha energía para romper la red iónica).</LI>
+<LI><B>Buenos conductores de electricidad</B> cuando están fundidos o disueltos en agua (los iones se mueven libremente). En estado sólido NO conducen (iones fijos en la red).</LI>
+<LI><B>Solubles en agua</B> (solvente polar) y en solventes polares.</LI>
+<LI><B>Frágiles:</B> al aplicar una fuerza mecánica, los planos de la red se deslizan y los iones de igual carga quedan frente a frente, repeliendo y rompiendo el cristal.</LI>
+</UL>
+
+<H3 ID="enlace-covalente">5. Enlace covalente</H3>
+
+El <B>enlace covalente</B> se forma cuando dos átomos <B>comparten uno o más pares de electrones</B>. Ocurre principalmente entre átomos de <B>no metales</B> o entre un no metal y un metaloi de con electronegatividades similares.
+
+<H4>Condiciones para formar el enlace covalente:</H4>
+<UL>
+<LI>Diferencia de electronegatividad pequeña (ΔEN &lt; 1.7 aprox.).</LI>
+<LI>Ambos átomos son no metales (o metaloide + no metal).</LI>
+</UL>
+
+<H4>Clasificación del enlace covalente:</H4>
+
+<B>A) Por el número de pares compartidos:</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo</TH><TH>Pares compartidos</TH><TH>Ejemplo</TH><TH>Representación</TH></TR>
+<TR><TD><B>Enlace simple (σ)</B></TD><TD>1 par (2e⁻)</TD><TD>H–H, H–Cl, H–F</TD><TD>Una línea: A–B</TD></TR>
+<TR><TD><B>Enlace doble</B></TD><TD>2 pares (4e⁻)</TD><TD>O=O, C=O, C=C</TD><TD>Dos líneas: A=B</TD></TR>
+<TR><TD><B>Enlace triple</B></TD><TD>3 pares (6e⁻)</TD><TD>N≡N, C≡O, C≡C</TD><TD>Tres líneas: A≡B</TD></TR>
+</TABLE>
+</DIV>
+
+<B>B) Por el origen de los electrones compartidos:</B>
+<UL>
+<LI><B>Enlace covalente normal (o clásico):</B> cada átomo aporta un electrón al par compartido. Ejemplo: H–H (cada H aporta 1e⁻).</LI>
+<LI><B>Enlace covalente coordinado (dativo o de coordinación):</B> un solo átomo (el <B>donor</B>) aporta los dos electrones del par compartido, y el otro átomo (el <B>aceptor</B>) los recibe. Se representa con una flecha (→) que va del donor al aceptor. Ejemplo: NH₃ + H⁺ → NH₄⁺ (el N aporta el par libre al H⁺ que no tiene electrones).</LI>
+</UL>
+
+<DIV CLASS="ej">💡 <B>Dato clave:</B> Una vez formado, un enlace covalente coordinado es <b>idéntico</b> en todo a un enlace covalente normal. La distinción "normal vs. coordinado" solo describe el origen de los electrones, no la naturaleza del enlace resultante.</DIV>
+
+<B>C) Por la diferencia de electronegatividad (polaridad):</B>
+<UL>
+<LI><B>Covalente apolar (puro):</B> ΔEN = 0 o muy pequeña. Los electrones se comparten de manera simétrica. No hay separación de cargas. Ejemplo: H₂, Cl₂, O₂, N₂, C–H (aprox.).</LI>
+<LI><B>Covalente polar:</B> 0 &lt; ΔEN &lt; 1.7. El par de electrones se desplaza hacia el átomo más electronegativo, creando un <B>dipolo eléctrico</B>: un extremo con carga parcial negativa (δ⁻) y otro con carga parcial positiva (δ⁺). Ejemplo: H–Cl (δ⁺H–Clδ⁻), H–O en el agua.</LI>
+</UL>
+
+<H4>Momento dipolar de enlace (μ):</H4>
+El <B>momento dipolar</B> mide la magnitud de la polaridad de un enlace. Se define como:
+
+<DIV CLASS="formula">μ = q × d</DIV>
+
+Donde <b>q</b> es la magnitud de las cargas parciales y <b>d</b> es la distancia entre ellas (longitud del enlace). Se expresa en Debye (D). Un enlace con mayor ΔEN y mayor longitud tendrá mayor momento dipolar.
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El momento dipolar es una magnitud vectorial. En moléculas poliastrías como el H₂O el momento dipolar total NO es cero porque las geometrías no se cancelan. En moléculas como BF₃ (trigonal plana) o CCl₄ (tetraédrica) los dipolos se cancelan y el momento dipolar total es cero, aunque los enlaces individuales sean polares.</DIV>
+
+<H4>Enlace simple (sigma, σ) y enlace múltiple (sigma + pi):</H4>
+<UL>
+<LI>Todo enlace covalente simple es un <B>enlace sigma (σ):</B> el solapamiento de orbitales ocurre frontalmente (a lo largo del eje internuclear). Es el enlace más fuerte por unidad.</LI>
+<LI>Un enlace doble = 1 σ + 1 <B>enlace pi (π):</B> el enlace π resulta del solapamiento lateral de orbitales p paralelos. Es más débil que el σ.</LI>
+<LI>Un enlace triple = 1 σ + 2 π.</LI>
+<LI>Los enlaces π restringen la rotación alrededor del eje internuclear (importante para los isómeros geométricos, que se verán en temas posteriores).</LI>
+</UL>
+
+<H3 ID="lewis">6. Estructuras de Lewis</H3>
+
+Las <B>estructuras de Lewis</B> (o fórmulas de puntos de Lewis) son representaciones en las que se muestran todos los electrones de valencia de los átomos de una molécula: los <B>pares enlazantes</B> (electrones compartidos) y los <B>pares no enlazantes</B> (también llamados pares libres o solitarios).
+
+<H4>Pasos para dibujar una estructura de Lewis:</H4>
+<OL>
+<LI><B>Contar el total de electrones de valencia</B> de todos los átomos de la molécula. Para los aniones, sumar electrones extra; para los cationes, restar.</LI>
+<LI><B>Determinar el átomo central</B> (generalmente el de menor electronegatividad o el que aparece con menor número en la fórmula; el H y el F nunca son centrales).</LI>
+<LI><B>Conectar los átomos</B> con enlaces simples (un par compartido cada uno).</LI>
+<LI><B>Completar el octeto de los átomos terminales</B> (empezando por los más electronegativos) con pares libres.</LI>
+<LI><B>Completar el octeto del átomo central</B> con los electrones restantes. Si no alcanza, convertir pares libres de átomos terminales en enlaces dobles o triples.</LI>
+<LI><B>Verificar:</B> la suma de todos los electrones representados debe igual ar el total del paso 1. Calcular las cargas formales para elegir la estructura más estable.</LI>
+</OL>
+
+<H4>Carga formal:</H4>
+La <B>carga formal (CF)</B> es una carga hipotética asignada a cada átomo en una estructura de Lewis, útil para elegir entre estructuras alternativas:
+
+<DIV CLASS="formula">CF = e⁻ de valencia – e⁻ no enlazantes – ½ (e⁻ enlazantes)</DIV>
+
+La mejor estructura de Lewis es aquella donde:
+<UL>
+<LI>Las cargas formales sean las más cercanas a cero.</LI>
+<LI>Si hay cargas formales, las negativas estén en los átomos más electronegativos.</LI>
+</UL>
+
+<DIV CLASS="ej">🔬 <B>Ejemplo: CO₂</B><BR>
+Total e⁻ de valencia: C(4) + 2×O(6) = 16 e⁻<BR>
+Estructura: O=C=O (2 enlaces dobles)<BR>
+CF del C: 4 – 0 – ½(8) = 0 ✓<BR>
+CF de cada O: 6 – 4 – ½(4) = 0 ✓<BR>
+Cargas formales todas cero → estructura ideal.</DIV>
+
+<H4>Moléculas sin octeto completo en el átomo central:</H4>
+<UL>
+<LI><B>BeCl₂:</B> Be tiene solo 4e⁻ (octeto incompleto). Cl–Be–Cl con 2 pares libres en cada Cl.</LI>
+<LI><B>BF₃:</B> B tiene solo 6e⁻ (octeto incompleto). Tres enlaces B–F con 3 pares libres en cada F.</LI>
+<LI><B>PCl₅, SF₆:</B> octeto expandido. El P tiene 10e⁻ y el S tiene 12e⁻ en sus últimas capas.</LI>
+</UL>
+
+<H3 ID="resonancia">7. Resonancia</H3>
+
+La <B>resonancia</B> ocurre cuando una sola estructura de Lewis no es suficiente para describir correctamente la distribución electrónica de una molécula o ion. En ese caso, se dibujan varias estructuras (llamadas <B>estructuras resonantes o canónicas</B>) que difieren solo en la posición de los electrones (no de los átomos), y la molécula real es un <B>híbrido de resonancia</B> de todas ellas.
+
+<H4>Características del híbrido de resonancia:</H4>
+<UL>
+<LI>La molécula real tiene una distribución electrónica intermedia entre todas las estructuras resonantes.</LI>
+<LI>Los enlaces del híbrido tienen un orden de enlace fraccional (entre simple y doble, por ejemplo).</LI>
+<LI>El híbrido es <B>más estable</B> que cualquiera de las estructuras resonantes individuales (energía de resonancia o deslocalización).</LI>
+</UL>
+
+<H4>Ejemplos clásicos de resonancia:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Molécula/Ion</TH><TH>N° de estructuras resonantes</TH><TH>Orden de enlace real</TH></TR>
+<TR><TD><B>O₃ (ozono)</B></TD><TD>2</TD><TD>1.5 (entre simple y doble)</TD></TR>
+<TR><TD><B>CO₃²⁻ (carbonato)</B></TD><TD>3</TD><TD>1.33 (4/3)</TD></TR>
+<TR><TD><B>NO₃⁻ (nitrato)</B></TD><TD>3</TD><TD>1.33 (4/3)</TD></TR>
+<TR><TD><B>SO₄²⁻ (sulfato)</B></TD><TD>6</TD><TD>1.5</TD></TR>
+<TR><TD><B>Benceno C₆H₆</B></TD><TD>2 (Kekulé)</TD><TD>1.5</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Importante:</B> Las estructuras resonantes NO existen como estructuras separadas que se interconvierten. La molécula real es SIEMPRE el híbrido: una sola especie con enlaces de orden intermedio. El símbolo que separa las estructuras resonantes es una flecha de doble punta (↔), distinta de la flecha de equilibrio químico (⇌).</DIV>
+
+<H3 ID="metalico">8. Enlace metálico</H3>
+
+El <B>enlace metálico</B> se da entre átomos de <B>metales</B>. Los átomos metálicos tienen pocos electrones de valencia (1, 2 o 3) que están débilmente retenidos por el núcleo. En el sólido metálico, estos electrones se "desprenden" y forman un <B>"mar" o "nube" de electrones deslocalizados</B> que rodean a los cationes metálicos positivos fijos en la red cristalina.
+
+<H4>Modelo del mar de electrones:</H4>
+<UL>
+<LI>Los cationes metálicos (M⁺ⁿ) ocupan posiciones fijas en la red.</LI>
+<LI>Los electrones de valencia se mueven libremente por toda la red (<B>electrones libres o deslocalizados</B>).</LI>
+<LI>La atracción electrostática entre los cationes y el mar de electrones es el enlace metálico.</LI>
+</UL>
+
+<H4>Propiedades generales de los metales explicadas por el enlace metálico:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Propiedad</TH><TH>Explicación por el enlace metálico</TH></TR>
+<TR><TD><B>Alta conductividad eléctrica</B></TD><TD>Los electrones libres se mueven bajo un campo eléctrico; son los portadores de carga. Los metales conducen en sólido y en líquido.</TD></TR>
+<TR><TD><B>Alta conductividad térmica</B></TD><TD>Los electrones libres también transfieren energía cinética (calor) rápidamente.</TD></TR>
+<TR><TD><B>Maleabilidad y ductilidad</B></TD><TD>Al deformarse, los planos de cationes se deslizan sin romper el enlace porque el mar de electrones se redistribuye. No son frágiles como los iónicos.</TD></TR>
+<TR><TD><B>Brillo metálico (lustre)</B></TD><TD>Los electrones libres absorben y reemiten luz de casi todas las frecuencias visibles.</TD></TR>
+<TR><TD><B>Alto punto de fusión (en general)</B></TD><TD>Se necesita mucha energía para liberar los cationes del mar de electrones. El W (tungsteno) tiene el mayor p.f. de todos los metales: 3 422°C.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Excepción notable:</B> El mercurio (Hg) es el único metal líquido a temperatura ambiente (p.f. = −39°C) porque sus electrones de valencia están tan fuertemente retenidos por efectos relativistas que el enlace metálico es muy débil.</DIV>
+
+<H3 ID="resumen-comparativo">9. Cuadro comparativo de los tres tipos de enlace</H3>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Característica</TH><TH>Iónico</TH><TH>Covalente</TH><TH>Metálico</TH></TR>
+<TR><TD><B>Átomos que intervienen</B></TD><TD>Metal + no metal</TD><TD>No metal + no metal</TD><TD>Metal + metal</TD></TR>
+<TR><TD><B>Mecanismo</B></TD><TD>Transferencia de e⁻</TD><TD>Compartición de e⁻</TD><TD>Mar de e⁻ deslocalizados</TD></TR>
+<TR><TD><B>ΔEN</B></TD><TD>≥ 1.7</TD><TD>&lt; 1.7</TD><TD>≈ 0 (mismos o parecidos)</TD></TR>
+<TR><TD><B>Estado físico usual</B></TD><TD>Sólido cristalino</TD><TD>Gas, líquido o sólido molecular</TD><TD>Sólido (excepto Hg)</TD></TR>
+<TR><TD><B>Conductividad eléctrica</B></TD><TD>Fundido o en solución</TD><TD>No conductores (salvo excepciones)</TD><TD>Alta en cualquier estado sólido/líquido</TD></TR>
+<TR><TD><B>Punto de fusión</B></TD><TD>Alto</TD><TD>Bajo (molecular) a muy alto (red covalente)</TD><TD>Generalmente alto</TD></TR>
+<TR><TD><B>Ejemplos</B></TD><TD>NaCl, MgO, CaF₂</TD><TD>H₂O, CO₂, CH₄, NH₃</TD><TD>Fe, Cu, Na, Al</TD></TR>
+</TABLE>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===== PREGUNTAS ===== -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál es el fundamento principal por el que los átomos forman enlaces químicos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Para aumentar su masa atómica y volverse más pesados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Para alcanzar una configuración electrónica más estable, similar a la de un gas noble (regla del octeto)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Para aumentar su número atómico y cambiar de elemento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Para liberar protones y convertirse en iones positivos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los átomos forman enlaces porque al hacerlo adquieren una configuración electrónica de <B>menor energía</B>, análoga a la de los gases nobles (8 electrones en la capa de valencia, o 2 en el caso del H y He). Este principio se resume en la <B>regla del octeto</B> de Lewis. Los gases nobles (He, Ne, Ar, Kr, Xe, Rn) ya tienen su octeto completo y por eso son prácticamente inertes y no forman enlaces en condiciones normales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> La diferencia de electronegatividad entre el Na (EN = 0.9) y el Cl (EN = 3.0) es de 2.1. ¿Qué tipo de enlace forman?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Covalente apolar, porque ambos son del mismo período</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Covalente polar, porque el Cl es más electronegativo que el Na</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Iónico, porque ΔEN = 2.1 ≥ 1.7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Metálico, porque el Na es un metal</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>ΔEN = 3.0 − 0.9 = <B>2.1</B>, que supera el umbral de 1.7, por lo que se forma un <B>enlace iónico</B>. El Na cede su electrón de valencia para convertirse en Na⁺ (configuración del Ne), y el Cl lo acepta para convertirse en Cl⁻ (configuración del Ar). La atracción electrostática entre Na⁺ y Cl⁻ constituye el enlace iónico del NaCl (sal de mesa).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> En la molécula de agua (H₂O), el oxígeno tiene EN = 3.5 y el hidrógeno EN = 2.1. ¿Cómo son los enlaces O–H?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Iónicos, porque el oxígeno es mucho más electronegativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Covalentes apolares, porque ambos son no metales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Covalentes polares, con el O cargado parcialmente negativo (δ⁻) y el H positivo (δ⁺)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Metálicos, porque se comparten electrones libres</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>ΔEN = 3.5 − 2.1 = <B>1.4</B>, que está entre 0.4 y 1.7, por lo que el enlace O–H es <B>covalente polar</B>. El par de electrones compartido se desplaza hacia el O (más electronegativo), creando un dipolo: el O queda con carga parcial negativa (δ⁻) y el H con carga parcial positiva (δ⁺). Esta polaridad del enlace O–H es la responsable de muchas propiedades únicas del agua.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuántos electrones de valencia tiene el nitrógeno (Z = 7) y cuántos enlaces covalentes normales puede formar para completar su octeto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) 5 electrones de valencia; puede formar 5 enlaces</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 5 electrones de valencia; puede formar 3 enlaces (le quedarán 2 pares libres... perdón, 1 par libre)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) 7 electrones de valencia; puede formar 1 enlace</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) 5 electrones de valencia; necesita ganar 5 electrones para completar el octeto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El N (Z = 7) tiene configuración 1s² 2s² 2p³, por lo que tiene <B>5 electrones de valencia</B> (en el nivel 2). Para completar el octeto necesita 3 electrones más, que obtiene formando <B>3 enlaces covalentes</B> (uno por electrón desapareado). Al enlazarse 3 veces le queda 1 par de electrones libre (no enlazante). Esto explica la fórmula del amoniaco NH₃: el N forma 3 enlaces N–H y conserva 1 par libre.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Cuál es la diferencia entre un enlace covalente normal y un enlace covalente coordinado?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) El enlace coordinado es más fuerte que el normal porque involucra más electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) En el enlace normal cada átomo aporta un electrón; en el coordinado, un solo átomo (donor) aporta ambos electrones del par compartido al átomo aceptor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) El enlace coordinado solo se forma entre metales; el normal, solo entre no metales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) El enlace coordinado implica transferencia total de electrones, igual que el iónico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La distinción es solo de <B>origen</B>: en el enlace normal cada átomo aporta 1e⁻ al par compartido; en el <B>coordinado (dativo)</B>, el átomo <B>donor</B> aporta los 2 electrones de un par libre suyo al átomo <B>aceptor</B> (que tiene un orbital vacío). Una vez formado, el enlace es idéntico a un enlace covalente normal. Ejemplo clásico: NH₃ + H⁺ → NH₄⁺. El N del NH₃ tiene un par libre que dona al H⁺ (que no tiene electrones), formando el ion amonio donde los 4 enlaces N–H son equivalentes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> El enlace metálico explica por qué los metales son maleables y dúctiles. ¿Cuál es la razón correcta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Porque los cationes metálicos se rompen fácilmente al aplicar una fuerza, liberando electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Porque al deformarse la red, los planos de cationes se deslizan y el mar de electrones se redistribuye sin romper el enlace, manteniendo la cohesión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Porque los metales tienen pocos protones y sus núcleos son muy blandos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Porque los electrones libres forman capas protectoras que absorben el impacto mecánico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En el enlace metálico, los cationes están inmersos en un <B>mar de electrones deslocalizados</B>. Al aplicar una fuerza, los planos de cationes se deslizan unos sobre otros, pero el mar de electrones se redistribuye instantáneamente para mantener la atracción. No hay repulsión entre iones de igual carga enfrentados (como en los cristales iónicos que se rompen). Esto hace a los metales <B>maleables</B> (se pueden martillar en láminas) y <B>dúctiles</B> (se pueden estirar en alambres).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Dibuja mentalmente la estructura de Lewis del CO₂. ¿Cuántos pares de electrones no enlazantes tiene la molécula en total?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) 0 pares libres; todos los electrones están en los enlaces</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) 2 pares libres, uno en cada oxígeno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) 4 pares libres, dos en cada oxígeno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) 6 pares libres en total</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Procedimiento:<BR>
+• Total e⁻ de valencia: C(4) + 2×O(6) = <B>16 e⁻</B><BR>
+• Estructura: O=C=O (2 enlaces dobles, 8 e⁻ en enlaces)<BR>
+• Electrones restantes: 16 − 8 = 8 e⁻ = <B>4 pares libres</B><BR>
+• Se distribuyen: 2 pares en cada O para completar su octeto.<BR>
+• Verificación: cada O tiene 4e⁻ libres + 4e⁻ en enlace = 8e⁻ ✓; el C tiene 8e⁻ en sus 2 enlaces dobles ✓.<BR>
+La respuesta es <B>4 pares libres en total</B> (2 en cada oxígeno).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> El ion amonio NH₄⁺ tiene 4 enlaces N–H equivalentes. ¿Cómo se explica esto desde la teoría del enlace covalente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El NH₄⁺ se forma cuando el N pierde un electrón; los 4 enlaces son todos enlaces iónicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El NH₃ dona su par libre al H⁺ mediante un enlace coordinado; una vez formado el NH₄⁺, los 4 enlaces N–H son idénticos (indistinguibles) porque los electrones se deslocalizan entre todos los enlaces</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El NH₄⁺ tiene 3 enlaces covalentes normales y 1 enlace iónico; el enlace iónico es el que vino del H⁺</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) No es posible que 4 enlaces sean equivalentes si uno de ellos es coordinado; siempre hay diferencias medibles</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El NH₃ tiene 1 par libre en el N. Al reaccionar con H⁺ (que tiene un orbital vacío), el N <B>dona</B> ese par libre formando un enlace coordinado N→H. Ahora el N tiene 4 enlaces N–H. Una vez formado el ion NH₄⁺, todos los electrones se deslocalizan y los 4 enlaces son <B>completamente idénticos</B> en longitud, energía y ángulo (tetraédrico, 109.5°). La distinción "normal/coordinado" solo describe el proceso de formación, no el enlace resultante. Esto lo confirman datos de difracción de rayos X del NH₄⁺.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> El ozono (O₃) presenta resonancia. Si la molécula real fuera solo una de las estructuras resonantes (con 1 enlace simple y 1 doble), ¿cuál de las siguientes afirmaciones sería verdadera? Y ¿qué dice la evidencia experimental?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Las dos distancias O–O serían iguales; la evidencia confirma que son iguales (híbrido)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Las dos distancias O–O serían diferentes (un enlace simple más largo y uno doble más corto); pero la evidencia experimental muestra que ambas distancias son iguales e intermedias (~128 pm), confirmando el híbrido de resonancia con orden de enlace 1.5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) La molécula tendría dos tipos de O–O: uno con 1.5 de orden y otro con 2.0 de orden; la evidencia lo confirma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) La resonancia del O₃ hace que la molécula sea lineal; la evidencia experimental confirma la geometría lineal</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Si el O₃ tuviera solo una estructura resonante con O–O simple (148 pm) y O=O doble (121 pm), los dos enlaces serían <B>diferentes</B>. Sin embargo, las mediciones espectroscópicas muestran que <B>ambos enlaces O–O miden ~128 pm</B>, un valor intermedio entre el enlace simple y el doble. Esto confirma que la molécula real es el <B>híbrido de resonancia</B> con un orden de enlace de <B>1.5</B>. La geometría del O₃ es angular (no lineal), con un ángulo de ~117°, lo que también es consistente con el modelo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Calcula la carga formal del nitrógeno en el ion nitrato (NO₃⁻). El N está unido a 3 oxígenos con una estructura que tiene 1 enlace N=O y 2 enlaces N–O (con cargas formales en los O). El N tiene 0 pares libres y 8 electrones enlazantes.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) CF(N) = +1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) CF(N) = 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) CF(N) = −1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) CF(N) = +2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Usando la fórmula: CF = e⁻ de valencia − e⁻ no enlazantes − ½(e⁻ enlazantes)<BR>
+• e⁻ de valencia del N = <B>5</B><BR>
+• e⁻ no enlazantes en N = <B>0</B> (no tiene pares libres en esta estructura)<BR>
+• e⁻ enlazantes = <B>8</B> (1 enlace doble = 4e⁻ + 2 enlaces simples = 4e⁻)<BR>
+• CF(N) = 5 − 0 − ½(8) = 5 − 4 = <B>+1</B><BR>
+Esta carga formal +1 en el N es consistente con la carga total del ion (−1), que se distribuye en los dos O con enlace simple, cada uno con CF = −1.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> ¿Por qué los compuestos iónicos NO conducen electricidad en estado sólido pero SÍ lo hacen cuando están fundidos o en solución acuosa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) En estado sólido los electrones están libres para moverse; al fundirse se bloquean en la red</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) En estado sólido los iones están fijos en la red cristalina y no pueden moverse para transportar carga; al fundirse o disolverse, los iones se liberan y pueden desplazarse bajo un campo eléctrico, conduciendo la corriente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) En estado sólido los electrones están atrapados en los enlaces iónicos; al fundirse, los enlaces se vuelven covalentes y liberan electrones conductores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Los compuestos iónicos nunca conducen electricidad, ni fundidos ni en solución</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La conducción eléctrica requiere portadores de carga móviles. En el sólido iónico, los iones (Na⁺, Cl⁻, etc.) están en posiciones <B>fijas</B> de la red cristalina y no pueden desplazarse. Al <B>fundir</B> el sólido o al <B>disolver</B> en agua, la red se destruye y los iones quedan libres para moverse: los cationes migran hacia el electrodo negativo (cátodo) y los aniones hacia el positivo (ánodo). Este movimiento de iones es la <B>corriente eléctrica</B> en electrólitos. A diferencia de los metales, aquí los portadores son iones, no electrones.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El PCl₅ viola la regla del octeto porque el P tiene 10 electrones en su capa de valencia. ¿Por qué el P puede expandir su octeto pero el N no, aun siendo ambos del grupo VA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Porque el P tiene más protones que el N y puede atraer más electrones hacia su núcleo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Porque el P es del 3° período y tiene orbitales 3d vacíos y de energía accesible que pueden albergar electrones adicionales; el N es del 2° período y solo tiene orbitales 2s y 2p disponibles (sin orbitales d en ese nivel), por lo que no puede expandir su octeto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Porque el P es un metal y los metales siempre pueden tener más de 8 electrones en la capa de valencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Porque el N tiene mayor electronegatividad que el P y rechaza los electrones adicionales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La clave está en la <B>disponibilidad de orbitales d</B>: el P (Z=15, 3° período) tiene la configuración [Ne] 3s² 3p³ 3d⁰; sus orbitales 3d están vacíos y son energéticamente accesibles para albergar electrones adicionales. Esto le permite tener 10 (PCl₅) o 12 electrones (PF₆⁻) en la capa de valencia → <B>octeto expandido</B>. El N (Z=7, 2° período) tiene configuración [He] 2s² 2p³; en el nivel 2 no existe el orbital 2d, por lo que el N <B>no puede</B> expandir su octeto. Por eso existe PCl₅ pero no NCl₅, o existe SF₆ pero no OF₆.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Para el ion carbonato CO₃²⁻, dibuja las tres estructuras resonantes y determina el orden de enlace real C–O. Si la energía de un enlace C–O simple es 360 kJ/mol y la de un C=O doble es 720 kJ/mol, ¿cuál es la energía de enlace aproximada del enlace C–O en el CO₃²⁻?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Orden de enlace = 1.0; energía = 360 kJ/mol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Orden de enlace = 1.33; energía ≈ 480 kJ/mol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Orden de enlace = 1.5; energía ≈ 540 kJ/mol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Orden de enlace = 2.0; energía = 720 kJ/mol</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El CO₃²⁻ tiene 3 estructuras resonantes equivalentes, cada una con 1 enlace C=O y 2 enlaces C–O⁻. El orden de enlace real es el promedio:<BR>
+• En las 3 estructuras, el total de enlaces dobles es 3 (uno por estructura), distribuidos en 3 posiciones entre 3 estructuras.<BR>
+• Orden de enlace = (1 + 1 + 1) / 3 = <B>4/3 ≈ 1.33</B><BR>
+La energía de enlace se calcula interpolando:<BR>
+• Energía ≈ 360 + (1.33 − 1) × (720 − 360) = 360 + 0.33 × 360 = 360 + 119 ≈ <B>480 kJ/mol</B><BR>
+Esto se confirma experimentalmente: el enlace C–O del carbonato (~1.29 Å) es más corto que un C–O simple (~1.43 Å) pero más largo que un C=O doble (~1.20 Å).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Considera las moléculas N₂ y O₂. Ambas son diatómicas y apolares. Sin embargo, el N₂ es mucho menos reactivo que el O₂. ¿Qué explica esta diferencia desde la perspectiva del enlace químico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El N₂ tiene mayor masa molar, por eso es más estable e inerte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El N₂ tiene un enlace triple (N≡N, 945 kJ/mol de energía de enlace), uno de los más fuertes que existen; romperlo requiere altísima energía. El O₂ tiene un enlace doble (O=O, 498 kJ/mol), mucho más débil y fácil de romper, por eso el O₂ es mucho más reactivo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El N₂ tiene más electrones que el O₂, por eso sus nubes electrónicas se repelen más y es más estable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El N₂ es inerte porque el nitrógeno tiene números atómicos impares; todos los elementos con Z impar forman moléculas inertes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La reactividad química de una molécula diatómica está directamente relacionada con la <B>energía de enlace</B>: mayor energía = más difícil de romper = menos reactivo. El N₂ tiene un <B>enlace triple</B> (1σ + 2π) con una energía de disociación de <B>945 kJ/mol</B>, uno de los enlaces más fuertes de la química. Por eso el N₂ es extraordinariamente inerte: se usa como gas inerte en envases de alimentos, en tanques de buceo en mezcla con O₂ (nitrox), y la síntesis industrial de NH₃ (proceso Haber-Bosch) requiere altas temperaturas, presiones y catalizador para romper el N≡N. El O₂ tiene un <B>enlace doble</B> con energía de <B>498 kJ/mol</B>, menos de la mitad, lo que lo hace mucho más fácil de romper y por tanto mucho más reactivo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> El BF₃ (trifluoruro de boro) tiene solo 6 electrones alrededor del B (octeto incompleto). Sin embargo, en presencia de NH₃ reacciona rápidamente para formar el aducto F₃B←NH₃. ¿Qué tipo de enlace se forma y por qué el BF₃ es tan reactivo con el NH₃?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Se forma un enlace iónico porque el B transfiere un electrón al N</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) El BF₃ actúa como ácido de Lewis (aceptor de par electrónico) porque el B tiene un orbital vacío; el NH₃ actúa como base de Lewis (donor de par electrónico) con el par libre del N; se forma un enlace coordinado N→B completando el octeto del B</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Se forma un enlace covalente normal porque el B aporta 1e⁻ y el N aporta 1e⁻ del par libre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) El BF₃ no reacciona con NH₃; son ambos compuestos estables que no interaccionan</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El BF₃ es un <B>ácido de Lewis</B> clásico: el B tiene solo 6e⁻ (orbital 2p vacío y de baja energía), lo que lo convierte en un potente <B>aceptor de par electrónico</B>. El NH₃ es una <B>base de Lewis</B>: el N tiene 1 par libre disponible para donar. Al reaccionar: el par libre del N se comparte con el orbital vacío del B mediante un <B>enlace coordinado</B> (N→B). En el aducto F₃B–NH₃ resultante, el B ahora tiene 8 electrones (el octeto se completa). Esta reactividad del BF₃ es la base de su amplio uso como catalizador ácido de Lewis en síntesis orgánica (reacciones de Friedel-Crafts, etc.).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Considera la siguiente secuencia de moléculas diatómicas homonucleares del período 2: Li₂, B₂, C₂, N₂, O₂, F₂. ¿Cómo varía la energía de enlace a lo largo de la serie y cuál es la tendencia en la longitud del enlace? Justifica con el orden de enlace.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La energía de enlace aumenta siempre de Li₂ a F₂; la longitud siempre disminuye</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La energía y el orden de enlace aumentan de Li₂ (orden 1) hasta N₂ (orden 3, máximo); luego disminuyen en O₂ (orden 2) y F₂ (orden 1). La longitud de enlace sigue la tendencia opuesta: disminuye hasta N₂ y luego aumenta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La energía de enlace es constante en toda la serie porque todos son homonucleares y apolares</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) El F₂ tiene la mayor energía de enlace porque el F es el más electronegativo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+Orden de enlace = ½ (e⁻ enlazantes − e⁻ antienlazantes):<BR>
+• Li₂: orden 1 (110 kJ/mol, 267 pm)<BR>
+• B₂: orden 1 (290 kJ/mol, 159 pm) [con 2e⁻ en orb. π antienlazantes]<BR>
+• C₂: orden 2 (602 kJ/mol, 124 pm)<BR>
+• <B>N₂: orden 3 (945 kJ/mol, 110 pm) → máximo</B><BR>
+• O₂: orden 2 (498 kJ/mol, 121 pm) [2e⁻ desapareados en π*]<BR>
+• F₂: orden 1 (155 kJ/mol, 142 pm)<BR>
+La tendencia no es monótona: sube hasta N₂ y luego baja porque los electrones adicionales entran en <B>orbitales antienlazantes (π*)</B> que debilitan el enlace. Por eso el F₂ tiene una energía de enlace sorprendentemente baja para ser el no metal más electronegativo. Además, el O₂ tiene <B>2 electrones desapareados</B> (paramagnético), algo que la regla del octeto simple no predice.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El ion triyoduro (I₃⁻) tiene geometría lineal y el I central tiene 10 electrones de valencia. ¿Cuántos pares libres tiene el I central, cuántos pares enlazantes, y por qué puede tener 10 electrones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) El I central tiene 2 pares enlazantes y 2 pares libres; puede tener 10e⁻ porque tiene orbitales d disponibles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) El I central tiene 2 pares enlazantes y 3 pares libres (10e⁻ en total); puede expandir el octeto porque el I es del 5° período y tiene orbitales 5d vacíos accesibles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) El I central tiene 3 pares enlazantes y 2 pares libres; su geometría es trigonal bipiramidal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El I central viola la regla del octeto por ser un radical libre con número impar de electrones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Estructura de Lewis del I₃⁻:<BR>
+• Total e⁻ de valencia: 3×I(7) + 1(carga) = 22 e⁻<BR>
+• Estructura: [I–I–I]⁻ con 2 enlaces I–I<BR>
+• e⁻ en enlaces: 2 × 2 = 4 e⁻<BR>
+• e⁻ restantes: 22 − 4 = 18 e⁻ = 9 pares libres<BR>
+• Los I terminales tienen 3 pares libres cada uno: 6 pares<BR>
+• Al I central le quedan: 9 − 6 = <B>3 pares libres</B><BR>
+• El I central tiene: 4e⁻ (en 2 enlaces) + 6e⁻ (3 pares libres) = <B>10 electrones</B> → octeto expandido.<BR>
+Puede hacerlo porque el I (5° período) tiene orbitales 5d vacíos de baja energía. La geometría molecular es <B>lineal</B> porque los 3 pares libres ocupan posiciones ecuatoriales (geometría electrónica: bipiramidal trigonal).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Compara el carácter iónico de los compuestos NaF, NaCl, NaBr y NaI. Ordénalos de mayor a menor carácter iónico y justifica con los valores de electronegatividad (F=4.0, Cl=3.0, Br=2.8, I=2.5, Na=0.9).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) NaI > NaBr > NaCl > NaF, porque el I es el halógeno más grande</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) NaF > NaCl > NaBr > NaI, porque ΔEN decrece en ese orden: ΔEN(NaF)=3.1, ΔEN(NaCl)=2.1, ΔEN(NaBr)=1.9, ΔEN(NaI)=1.6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Todos tienen el mismo carácter iónico porque todos son haluros de sodio con la misma fórmula NaX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) NaCl > NaF > NaBr > NaI porque el NaCl es el más común y por eso el más iónico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El carácter iónico aumenta con la ΔEN:<BR>
+• NaF: ΔEN = 4.0 − 0.9 = <B>3.1</B> → mayor carácter iónico<BR>
+• NaCl: ΔEN = 3.0 − 0.9 = <B>2.1</B><BR>
+• NaBr: ΔEN = 2.8 − 0.9 = <B>1.9</B><BR>
+• NaI: ΔEN = 2.5 − 0.9 = <B>1.6</B> → menor carácter iónico (casi en el límite iónico/covalente)<BR>
+Orden: <B>NaF > NaCl > NaBr > NaI</B><BR>
+Nota: el NaI con ΔEN = 1.6 tiene un carácter covalente apreciable. En la práctica, todos los haluros de Na son iónicos, pero el grado de ionicidad varía. Esto también se refleja en los puntos de fusión: NaF (993°C) > NaCl (801°C) > NaBr (747°C) > NaI (661°C).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> El SO₃ puede escribirse con dos tipos de estructuras de Lewis: una con solo enlaces simples S–O (con cargas formales +2 en S y −1 en cada O) y otra con dos enlaces dobles S=O y un simple (con cargas formales menores). ¿Cuál es la estructura preferida y por qué? Además, ¿cuántas estructuras resonantes tiene el SO₃?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) La estructura con solo enlaces simples es preferida porque minimiza el número de enlaces; hay 1 estructura resonante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) La estructura con al menos un enlace doble (y sus resonantes) es preferida porque minimiza las cargas formales; hay 3 estructuras resonantes equivalentes, cada una con 1 S=O doble y 2 S–O simples; el SO₃ puede también representarse con octeto expandido (3 dobles) con CF = 0 en todos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Ambas estructuras son igualmente válidas; la resonancia las promedia y no hay diferencia energética</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El SO₃ no tiene resonancia porque el S es un elemento del 3° período</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Análisis de cargas formales para el SO₃ (total: 24 e⁻):<BR>
+<B>Estructura A</B> (3 enlaces simples, octeto en S): CF(S) = 6−0−½(6) = +3; CF(O con par doble libre) = 6−6−½(2) = −1. Cargas formales altas → menos estable.<BR>
+<B>Estructura B</B> (1 doble + 2 simples): CF(S) = 6−0−½(8) = +2... aún alta.<BR>
+<B>Estructura C</B> (3 dobles, octeto expandido del S con 12e⁻): CF(S) = 6−0−½(12) = 0; CF(cada O) = 6−4−½(4) = 0. <B>Cargas formales = 0 → más estable.</B><BR>
+La realidad experimental muestra 3 enlaces S–O iguales de orden ~1.5 → hay <B>3 estructuras resonantes</B> (con al menos 1 enlace doble). La versión con octeto expandido del S (3 dobles, usando orbitales 3d) da cargas formales cero y es la más favorecida energéticamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Un compuesto X tiene las siguientes propiedades: es sólido a temperatura ambiente, tiene un punto de fusión de 1 413°C, no conduce electricidad en estado sólido NI cuando está fundido, es muy duro y tiene estructura tridimensional gigante. ¿Cuál es el tipo de enlace que lo describe mejor y qué compuesto podría ser X?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Enlace iónico; X podría ser el NaCl porque tiene alto punto de fusión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Enlace metálico; X podría ser el tungsteno (W) porque tiene el mayor punto de fusión de los metales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Enlace covalente en red (red covalente gigante); X podría ser el dióxido de silicio (SiO₂, cuarzo) o el diamante (C), donde cada átomo está unido covalentemente a sus vecinos en una red tridimensional extensa, sin iones ni electrones libres</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Fuerzas intermoleculares fuertes; X podría ser el hielo (H₂O sólido) con muchos puentes de hidrógeno</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Análisis de las propiedades:<BR>
+• Alto p.f. (1 413°C) → enlace muy fuerte ✓<BR>
+• No conduce en sólido ni fundido → <B>descarta iónico</B> (los iónicos conducen fundidos) y <B>descarta metálico</B> (los metales siempre conducen)<BR>
+• Muy duro + red tridimensional → <B>red covalente gigante</B><BR>
+El SiO₂ (cuarzo, p.f. = 1 713°C) es el ejemplo clásico: cada Si está unido covalentemente a 4 O, y cada O a 2 Si, formando una red tridimensional continua. No hay moléculas discretas, no hay iones, no hay electrones libres → no conduce. El diamante (C) es el caso más extremo: p.f. ~3 550°C, el sólido más duro de la naturaleza, con cada C unido a 4 C vecinos por enlaces covalentes tetraédricos. El SiC (carburo de silicio) y el BN (nitruro de boro) son otros ejemplos de redes covalentes gigantes.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

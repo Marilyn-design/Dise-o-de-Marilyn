@@ -1,0 +1,189 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<TITLE>Comunicación - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+BODY{
+    font-family:Arial, sans-serif;
+    background:
+    radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),
+    linear-gradient(to right,#F6F2EB,#F6F2EB);
+    min-height:100vh;
+}
+.header{
+    background:#0D1B36;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.25);
+}
+.logo{
+    font-size:38px;
+    font-weight:bold;
+    letter-spacing:3px;
+    color:white;
+    font-family:"Lobster",cursive;
+}
+.logo span{
+    color:#1F6A67;
+}
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:flex-end;
+}
+.menu button{
+    border:none;
+    border-radius:25px;
+    padding:10px 15px;
+    background:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+.menu button:hover{
+    background:#F6F2EB;
+    transform:translateY(-3px);
+}
+.menu a{
+    text-decoration:none;
+    color:#0D1B36;
+    font-weight:bold;
+}
+.menu .registrate{
+    background:#D7B06D;
+}
+.menu .registrate:hover{
+    background:#D7B06D;
+}
+.volver{
+    display:inline-block;
+    margin:25px 0 0 40px;
+    color:#0D1B36;
+    text-decoration:none;
+    font-weight:bold;
+}
+.volver:hover{
+    text-decoration:underline;
+}
+.titulo-pagina{
+    text-align:center;
+    margin-top:20px;
+}
+.titulo-pagina h1{
+    color:#1F6A67;
+    font-size:48px;
+    font-family:"Cooper Black";
+}
+.titulo-pagina p{
+    color:#555;
+    font-size:18px;
+    margin-top:10px;
+}
+.linea-c{
+    width:150px;
+    height:5px;
+    background:#D7B06D;
+    border-radius:10px;
+    margin:18px auto 0;
+}
+.materias-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    padding:50px 40px 60px;
+}
+.card-materia{
+    display:block;
+    width:270px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12);
+    text-decoration:none;
+    transition:0.3s;
+}
+.card-materia:hover{
+    transform:translateY(-8px);
+    box-shadow:0 14px 30px rgba(0,0,0,0.18);
+}
+.card-materia img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    display:block;
+    background:#e8ecf5;
+}
+.card-materia .nombre{
+    padding:20px;
+    text-align:center;
+}
+.card-materia h3{
+    color:#0D1B36;
+    font-size:23px;
+}
+.card-materia .nombre p{
+    color:#777;
+    font-size:14px;
+    margin-top:6px;
+}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">
+Inka<span>edu</span>
+</DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="MATERIAS.HTML">&larr; Volver a Materias</A>
+
+<DIV CLASS="titulo-pagina">
+<H1>Comunicación</H1>
+<DIV CLASS="linea-c"></DIV>
+<P>Elige una rama para empezar a estudiar</P>
+</DIV>
+
+<DIV CLASS="materias-grid">
+
+<A CLASS="card-materia" HREF="LITERATURA.HTML">
+<IMG SRC="LITERATURA.PNG" ALT="Literatura">
+<DIV CLASS="nombre">
+<H3>Literatura</H3>
+<P>Obras, autores y géneros.</P>
+</DIV>
+</A>
+
+<A CLASS="card-materia" HREF="RAZONAMIENTO VERBAL.HTML">
+<IMG SRC="RAZ VERBAL.PNG" ALT="Razonamiento Verbal">
+<DIV CLASS="nombre">
+<H3>Razonamiento Verbal</H3>
+<P>Comprensión, analogías y vocabulario.</P>
+</DIV>
+</A>
+
+</DIV>
+
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+
+</BODY>
+</HTML>

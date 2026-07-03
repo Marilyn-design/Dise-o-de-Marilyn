@@ -1,0 +1,559 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Continentes II: América, Oceanía y Antártida - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:22px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA · TEMA 17 · NIVEL PREUNIVERSITARIO</DIV>
+<H1>Continentes II: América, Oceanía y Antártida</H1>
+<DIV CLASS="sub">Relieve · Hidrografía · Clima · Economía · Países clave · Tratado Antártico</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- ===================== AMÉRICA ===================== -->
+<H3 ID="america">1. AMÉRICA</H3>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">42 550 000 km²</DIV><DIV CLASS="dk-label">2° continente más grande (entre Asia y África)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~1 030 M</DIV><DIV CLASS="dk-label">Habitantes</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">35</DIV><DIV CLASS="dk-label">Países soberanos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Canadá</DIV><DIV CLASS="dk-label">País más extenso de América</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">EE.UU.</DIV><DIV CLASS="dk-label">Mayor economía del mundo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Brasil</DIV><DIV CLASS="dk-label">País más grande de América del Sur</DIV></DIV>
+</DIV>
+
+<H4>Ubicación y límites:</H4>
+<UL>
+<LI>América se extiende desde el <B>Cabo Morris Jesup</B> (Groenlandia, 83°N) hasta el <B>Cabo de Hornos</B> (Chile, 55°S), una longitud de casi 15 000 km de norte a sur.</LI>
+<LI>Limita al norte con el <B>océano Ártico</B>, al este con el <B>océano Atlántico</B>, al oeste con el <B>océano Pacífico</B>, y al sur con el <B>paso de Drake</B> (entre el Cabo de Hornos y la Antártida).</LI>
+<LI>Se divide en tres subregiones: <B>América del Norte, América Central</B> y <B>América del Sur</B>; también se usa la división anglosajona entre <B>América anglosajona</B> (EE.UU. y Canadá) y <B>América Latina</B> (México, Centroamérica, Caribe y América del Sur).</LI>
+<LI>El <B>istmo de Panamá</B> une América del Norte con América del Sur; el <B>Canal de Panamá</B> lo atraviesa artificialmente.</LI>
+</UL>
+
+<H4>Relieve:</H4>
+<UL>
+<LI><B>Cordillera de los Andes:</B> la cadena montañosa continental más larga del mundo (~7 000 km, del sur de Chile hasta Venezuela). El punto más alto de América y del hemisferio occidental es el <B>Aconcagua</B> (6 961 m, Argentina).</LI>
+<LI><B>Montañas Rocosas (Rockies):</B> cordillera de América del Norte; se extiende por EE.UU. y Canadá. Punto más alto: Monte Denali/McKinley (6 194 m, Alaska), el más alto de América del Norte.</LI>
+<LI><B>Escudo de Guayana:</B> antigua meseta precámbrica al norte de América del Sur (Venezuela, Guayana, Brasil). Aquí se ubican los tepuyes (montañas de cima plana) y el <B>Salto Ángel</B> (979 m, Venezuela): la cascada más alta del mundo.</LI>
+<LI><B>Meseta del Brasil:</B> extensa meseta en el centro-este de Brasil.</LI>
+<LI><B>Llanura Amazónica:</B> la planicie más extensa de América del Sur; recorrida por el río Amazonas.</LI>
+<LI><B>Llanuras del Mississippi:</B> en el centro de EE.UU.; las tierras agrícolas más productivas del mundo.</LI>
+<LI><B>Patagonia:</B> meseta fría al sur de Argentina y Chile.</LI>
+<LI><B>Punto más bajo de América:</B> Valle de la Muerte (Death Valley, California, EE.UU., −86 m).</LI>
+</UL>
+
+<H4>Hidrografía:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Río</TH><TH>Longitud</TH><TH>Países</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Amazonas</B></TD><TD>~6 400 km</TD><TD>Perú, Colombia, Brasil → Atlántico</TD><TD>El río más <B>caudaloso del mundo</B> (20% del agua dulce que llega al océano); disputa con el Nilo la 1ª posición en longitud</TD></TR>
+<TR><TD><B>Misisipi-Misuri</B></TD><TD>~6 275 km</TD><TD>EE.UU. → Golfo de México</TD><TD>El sistema fluvial más largo de América del Norte; vital para el comercio y la agricultura de EE.UU.</TD></TR>
+<TR><TD><B>Paraná-Plata</B></TD><TD>~4 880 km</TD><TD>Brasil, Paraguay, Argentina, Uruguay</TD><TD>2° sistema fluvial de América del Sur; central hidroeléctrica de Itaipú (en el Paraná, entre Brasil y Paraguay)</TD></TR>
+<TR><TD><B>Orinoco</B></TD><TD>~2 140 km</TD><TD>Venezuela, Colombia → Atlántico</TD><TD>Eje fluvial de Venezuela; importantes reservas de petróleo en su delta</TD></TR>
+<TR><TD><B>Yukón</B></TD><TD>~3 185 km</TD><TD>Canadá, EE.UU. (Alaska) → Pacífico</TD><TD>Río del Klondike; fiebre del oro del siglo XIX</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Lagos más importantes de América:</H4>
+<UL>
+<LI><B>Lago Superior</B> (EE.UU.-Canadá): el lago de agua dulce más grande del mundo por superficie.</LI>
+<LI><B>Grandes Lagos:</B> Superior, Michigan, Hurón, Erie, Ontario; el mayor sistema de agua dulce del planeta. En la frontera EE.UU.-Canadá.</LI>
+<LI><B>Lago Titicaca</B> (Perú-Bolivia): el lago navegable más alto del mundo (3 812 m.s.n.m.) y el mayor lago de América del Sur.</LI>
+<LI><B>Lago Nicaragua:</B> el mayor lago de América Central.</LI>
+</UL>
+
+<H4>América del Norte — países clave:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>País</TH><TH>Capital</TH><TH>Superficie</TH><TH>Economía</TH><TH>Dato clave</TH></TR>
+<TR><TD><B>Canadá</B></TD><TD>Ottawa</TD><TD>9 984 670 km² (2° más grande del mundo)</TD><TD>Recursos naturales, tecnología, servicios</TD><TD>Habla inglés y francés; Quebec es la provincia francófona</TD></TR>
+<TR><TD><B>EE.UU.</B></TD><TD>Washington D.C.</TD><TD>9 833 517 km² (3° o 4° más grande)</TD><TD>1ª economía del mundo (~$27 billones de PBI)</TD><TD>50 estados. Nueva York: mayor ciudad; Los Ángeles: 2ª</TD></TR>
+<TR><TD><B>México</B></TD><TD>Ciudad de México</TD><TD>1 964 375 km²</TD><TD>15ª economía del mundo; gran exportador a EE.UU.</TD><TD>La mayor ciudad hispanohablante del mundo (~22 M)</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>América Central y el Caribe — datos clave:</H4>
+<UL>
+<LI>América Central comprende 7 países: <B>Guatemala, Belice, Honduras, El Salvador, Nicaragua, Costa Rica y Panamá</B>.</LI>
+<LI>El <B>Canal de Panamá</B> (inaugurado en 1914; ampliado en 2016): conecta el océano Atlántico con el Pacífico. Tiene ~80 km. Pertenece a Panamá desde 1999. Aproximadamente el 5% del comercio mundial pasa por él.</LI>
+<LI>El Caribe tiene más de 7 000 islas e islotes; los más importantes son Cuba (la mayor isla del Caribe), La Española (Haití y República Dominicana), Puerto Rico y Jamaica.</LI>
+<LI><B>Cuba:</B> el único estado socialista de América; La Habana es su capital. Desde 1959 bajo el gobierno de los hermanos Castro (Fidel, luego Raúl) hasta 2021.</LI>
+</UL>
+
+<H4>América del Sur — países clave:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>País</TH><TH>Capital</TH><TH>Dato clave</TH></TR>
+<TR><TD><B>Brasil</B></TD><TD>Brasilia (capital administrativa); São Paulo (mayor ciudad)</TD><TD>El mayor país de América del Sur (8,5 M km²); 7ª economía mundial; la mayor selva tropical del mundo; lengua oficial: portugués</TD></TR>
+<TR><TD><B>Argentina</B></TD><TD>Buenos Aires</TD><TD>2° país más extenso de América del Sur; el Aconcagua (6 961 m) es su punto más alto y el más alto de América; Patagonia al sur</TD></TR>
+<TR><TD><B>Colombia</B></TD><TD>Bogotá</TD><TD>Único país de América del Sur con costas en el Pacífico Y el Atlántico; mayor productor de flores de América Latina</TD></TR>
+<TR><TD><B>Venezuela</B></TD><TD>Caracas</TD><TD>Las mayores reservas de petróleo del mundo (certificadas). Salto Ángel: la cascada más alta del mundo (979 m)</TD></TR>
+<TR><TD><B>Chile</B></TD><TD>Santiago</TD><TD>El país más largo del mundo de norte a sur (~4 300 km). Mayor productor de cobre del mundo. Desierto de Atacama: el más árido del planeta</TD></TR>
+<TR><TD><B>Bolivia</B></TD><TD>Sucre (constitucional); La Paz (ejecutivo y legislativo)</TD><TD>País sin litoral; dos capitales. Salar de Uyuni: mayor desierto de sal del mundo (~10 582 km²); el 70% de las reservas de litio del mundo</TD></TR>
+<TR><TD><B>Perú</B></TD><TD>Lima</TD><TD>3° país de América del Sur por extensión; megadiverso; 1° productor mundial de plata</TD></TR>
+<TR><TD><B>Ecuador</B></TD><TD>Quito</TD><TD>El Ecuador (línea ecuatorial) pasa por su territorio. Islas Galápagos: laboratorio de la evolución (Darwin). 1° exportador de bananos del mundo</TD></TR>
+<TR><TD><B>Paraguay</B></TD><TD>Asunción</TD><TD>País sin litoral; la represa de Itaipú (con Brasil) es la mayor generadora de energía hidroeléctrica del mundo por producción anual</TD></TR>
+<TR><TD><B>Uruguay</B></TD><TD>Montevideo</TD><TD>El país más pequeño de América del Sur continental; el más igualitario y con menor corrupción de la región; primer país en legalizar la marihuana (2013)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El <B>Amazonas</B> es el río más caudaloso del mundo. El <B>Aconcagua</B> (6 961 m, Argentina) es el punto más alto de América. El <B>Salto Ángel</B> (979 m, Venezuela) es la cascada más alta del mundo. El <B>lago Titicaca</B> (Perú-Bolivia) es el lago navegable más alto del mundo. <B>Chile</B> es el mayor productor de cobre del mundo. <B>Brasil</B> es el único país hispanohablante de América del Sur no — su idioma oficial es el <b>portugués</b>. <B>Bolivia</B> tiene las mayores reservas de litio del mundo (Salar de Uyuni). <B>Venezuela</B> tiene las mayores reservas de petróleo del mundo.</DIV>
+
+<H4>Climas y biomas de América:</H4>
+<UL>
+<LI><B>Polar y subártico:</B> Alaska, norte de Canadá y Groenlandia; permafrost, tundra.</LI>
+<LI><B>Continental:</B> centro de Canadá y EE.UU.; inviernos fríos, veranos cálidos; las praderas (Great Plains) son el "granero del mundo".</LI>
+<LI><B>Mediterráneo:</B> California (EE.UU.) y Chile central.</LI>
+<LI><B>Desértico:</B> Atacama (Chile, el más árido del planeta), Sonora (México-EE.UU.), desiertos de la costa peruana.</LI>
+<LI><B>Tropical lluvioso:</B> Amazonia (Brasil, Perú, Colombia); la mayor selva tropical del planeta.</LI>
+<LI><B>Tropical de sabana:</B> América Central, norte de América del Sur.</LI>
+<LI><B>Templado oceánico:</B> sur de Chile; similar al norte de Europa.</LI>
+</UL>
+
+<H4>Economía de América:</H4>
+<UL>
+<LI><B>EE.UU.:</B> 1ª economía del mundo (~$27 billones de PBI, 2023); líder en tecnología (Silicon Valley), finanzas (Wall Street), defensa y cultura. El dólar es la moneda de reserva mundial.</LI>
+<LI><B>Canadá:</B> 9ª economía mundial; gran productor de recursos naturales (petróleo de Alberta, madera, minerales). Miembro del G7.</LI>
+<LI><B>Brasil:</B> 9ª-12ª economía mundial (varía por año); mayor economía de América del Sur; gran productor agropecuario (soya, café, carne bovina, azúcar), minería (hierro de Vale, Carajás) y petróleo (Petrobras, pre-sal).</LI>
+<LI><B>TLCAN/T-MEC:</B> Tratado entre México, EE.UU. y Canadá. La mayor zona de libre comercio del mundo hasta la UE. México exporta principalmente manufactura (autos, electrónica) a EE.UU.</LI>
+<LI><B>ALBA, MERCOSUR, CAN, CELAC, OEA:</B> principales organismos de integración latinoamericana.</LI>
+</UL>
+
+<!-- ===================== OCEANÍA ===================== -->
+<H3 ID="oceania">2. OCEANÍA</H3>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">8 526 000 km²</DIV><DIV CLASS="dk-label">El continente más pequeño del mundo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~45 M</DIV><DIV CLASS="dk-label">Habitantes (el menos poblado)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">14</DIV><DIV CLASS="dk-label">Países reconocidos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Australia</DIV><DIV CLASS="dk-label">País más grande de Oceanía (y del mundo en su categoría)</DIV></DIV>
+</DIV>
+
+<H4>Ubicación y límites:</H4>
+<UL>
+<LI>Oceanía comprende el continente de <B>Australia</B> y miles de islas del <B>océano Pacífico</B> e <B>Índico</B>.</LI>
+<LI>Se divide en cuatro subregiones: <B>Australia</B> (el continente), <B>Melanesia</B> (archipiélagos al norte y noreste de Australia: Nueva Guinea, Islas Salomón, Vanuatu, Fiji, Nueva Caledonia), <B>Micronesia</B> (archipiélagos al norte del Ecuador en el Pacífico: Guam, Palau, Micronesia, Nauru), y <B>Polinesia</B> (archipiélagos del Pacífico central y oriental: Hawái, Tahití, Nueva Zelanda, Tonga, Samoa, Tuvalu).</LI>
+</UL>
+
+<H4>Australia — el continente-país:</H4>
+<UL>
+<LI>Australia es a la vez <B>un país y un continente</B>. Capital: <B>Canberra</B> (no Sídney ni Melbourne, error frecuente). Mayor ciudad: <B>Sídney</B>.</LI>
+<LI>El <B>punto más alto</B> de Australia es el <B>Monte Kosciuszko</B> (2 228 m), en la Cordillera Australiana.</LI>
+<LI>El interior es conocido como el <B>"Outback"</B>: vasto desierto y semidesierto, casi despoblado. El <B>desierto de Simpson</B> y el <B>Gran Desierto de Victoria</B> son los mayores de Oceanía.</LI>
+<LI><B>Gran Barrera de Coral</B> (Queensland, Australia): el sistema de arrecifes de coral más grande del mundo (~2 300 km de longitud); Patrimonio Natural de la Humanidad (UNESCO, 1981). Está amenazado por el calentamiento y acidificación de los océanos.</LI>
+<LI><B>Fauna única por aislamiento:</B> canguros, koalas, ornitorrincos (único mamífero que pone huevos y tiene pico de pato), equidnas, ualabís, diablo de Tasmania, dingos. El 80% de la fauna australiana es endémica.</LI>
+<LI>Australia tiene una economía desarrollada, basada en: minerales (hierro, carbón, oro, litio), lana y carne, turismo y servicios. Es el mayor exportador de mineral de hierro del mundo y tiene grandes reservas de litio.</LI>
+</UL>
+
+<H4>Nueva Zelanda:</H4>
+<UL>
+<LI>País formado por dos islas principales (Isla Norte e Isla Sur) al sureste de Australia.</LI>
+<LI>Capital: <B>Wellington</B> (no Auckland, error frecuente). Mayor ciudad: Auckland.</LI>
+<LI>Los <B>maoríes</B> son el pueblo originario de Nueva Zelanda; el maorí es lengua oficial junto al inglés.</LI>
+<LI>Nueva Zelanda es famosa por sus volcanes, géiseres, fiordos (Milford Sound) y por ser el primer país del mundo en dar el voto a la mujer (1893).</LI>
+</UL>
+
+<H4>Países insulares del Pacífico — datos clave:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>País / Territorio</TH><TH>Subregión</TH><TH>Capital</TH><TH>Dato clave</TH></TR>
+<TR><TD><B>Papúa Nueva Guinea</B></TD><TD>Melanesia</TD><TD>Port Moresby</TD><TD>El 2° país más grande de Oceanía; enorme biodiversidad y diversidad étnica (800+ lenguas)</TD></TR>
+<TR><TD><B>Fiji</B></TD><TD>Melanesia</TD><TD>Suva</TD><TD>Archipiélago turístico; importante centro financiero del Pacífico Sur</TD></TR>
+<TR><TD><B>Nauru</B></TD><TD>Micronesia</TD><TD>Yaren (sin capital oficial)</TD><TD>El 3° país más pequeño del mundo (21 km²); se enriqueció por fosfatos y los agotó; crisis económica</TD></TR>
+<TR><TD><B>Tuvalu</B></TD><TD>Polinesia</TD><TD>Funafuti</TD><TD>El país más amenazado por el cambio climático: sus islas están a solo 2–3 m sobre el nivel del mar; podría desaparecer en el siglo XXI</TD></TR>
+<TR><TD><B>Hawái</B></TD><TD>Polinesia</TD><TD>Honolulu (estado de EE.UU.)</TD><TD>El único estado de EE.UU. completamente en el océano Pacífico; el volcán Mauna Kea (4 205 m) es el punto más alto</TD></TR>
+<TR><TD><B>Tahití (Fr. Polinesia)</B></TD><TD>Polinesia</TD><TD>Papeete</TD><TD>Territorio de Francia; sede de las pruebas de surf en los JJ.OO. de París 2024</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La <B>Gran Barrera de Coral</B> es el sistema de arrecifes más grande del mundo. La capital de Australia es <B>Canberra</B> (no Sídney). La capital de Nueva Zelanda es <B>Wellington</B> (no Auckland). El <B>ornitorrinco</B> es el mamífero más primitivo, con pico de pato y que pone huevos. <B>Tuvalu</B> es el país más amenazado por el aumento del nivel del mar. Nueva Zelanda fue el primer país del mundo en dar el voto a la mujer (<B>1893</B>).</DIV>
+
+<!-- ===================== ANTÁRTIDA ===================== -->
+<H3 ID="antartida">3. ANTÁRTIDA</H3>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">~14 000 000 km²</DIV><DIV CLASS="dk-label">5° en superficie total; el 3° más grande sin hielo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">0</DIV><DIV CLASS="dk-label">Habitantes permanentes</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~5 000</DIV><DIV CLASS="dk-label">Científicos en verano austral; ~1 000 en invierno</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">−89.2°C</DIV><DIV CLASS="dk-label">Temperatura mínima registrada (est. Vostok, 1983)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">70%</DIV><DIV CLASS="dk-label">Del agua dulce del planeta está en sus glaciares</DIV></DIV>
+</DIV>
+
+<H4>Características físicas:</H4>
+<UL>
+<LI>La Antártida es el continente que rodea el <B>Polo Sur geográfico</B>. Está cubierta por una capa de hielo (casquete polar) de hasta <B>4 800 m de espesor</B>.</LI>
+<LI>El punto más alto de la Antártida es el <B>Monte Vinson</B> (4 892 m), en la Cordillera Transantártica.</LI>
+<LI>La <B>temperatura mínima registrada en la Tierra</B> fue −89.2°C en la estación soviética <B>Vostok</B> (21 de julio de 1983).</LI>
+<LI>El <B>mayor desierto del mundo</B> (incluyendo los fríos) es la Antártida: recibe menos de 200 mm de precipitación al año en la mayor parte de su superficie (en el interior, menos de 50 mm), por lo que es técnicamente un <b>desierto frío</b>.</LI>
+<LI>Tiene el <B>70% del agua dulce</B> del planeta almacenada en sus glaciares. Si todo el hielo se derritiera, el nivel del mar subiría ~58–60 metros.</LI>
+<LI>Debajo del hielo, la Antártida tiene montañas, valles y hasta <B>lagos subglaciales</B>. El <B>lago Vostok</B> (debajo de la estación del mismo nombre) es el mayor lago subglacial del mundo, con ~250 km de longitud; lleva ~20 millones de años aislado bajo el hielo y podría albergar formas de vida extremófilas únicas.</LI>
+</UL>
+
+<H4>Fauna antártica:</H4>
+<UL>
+<LI><B>Pingüino emperador</B> (<I>Aptenodytes forsteri</I>): el más grande de los pingüinos; el único que se reproduce en el invierno antártico a −50°C. Macho y hembra se turnan para incubar el huevo y alimentar al polluelo.</LI>
+<LI><B>Pingüino de Adelia, papúa, barbijo:</B> otras especies que habitan la Antártida.</LI>
+<LI><B>Foca leopardo:</B> uno de los principales depredadores del ecosistema antártico.</LI>
+<LI><B>Ballenas:</B> la Antártida es la mayor zona de alimentación de ballenas azules, jorobadas y minke.</LI>
+<LI><B>Krill antártico</B> (<I>Euphausia superba</I>): el organismo más abundante de la Antártida en biomasa; base de toda la cadena alimentaria.</LI>
+</UL>
+
+<H4>El Tratado Antártico (1959):</H4>
+
+El <B>Tratado Antártico</B> fue firmado el <B>1° de diciembre de 1959</B> en Washington D.C. por 12 países originales (Argentina, Australia, Bélgica, Chile, Estados Unidos, Francia, Japón, Noruega, Nueva Zelanda, Sudáfrica, Reino Unido y la Unión Soviética) y entró en vigor el <B>23 de junio de 1961</B>.
+
+<H4>Principios fundamentales del Tratado Antártico:</H4>
+<OL>
+<LI><B>Uso exclusivamente pacífico:</B> queda prohibida toda actividad militar (maniobras, instalación de bases militares, ensayos de armas, incluidas las nucleares).</LI>
+<LI><B>Libertad de investigación científica:</B> todos los países firmantes tienen derecho a realizar investigación científica en cualquier parte de la Antártida.</LI>
+<LI><B>Cooperación científica internacional:</B> los países deben compartir los resultados de sus investigaciones.</LI>
+<LI><B>Congelamiento de reclamaciones territoriales:</B> los países que tienen reclamaciones territoriales sobre la Antártida (Argentina, Chile, Reino Unido, Australia, Noruega, Francia y Nueva Zelanda) las "congelan" mientras el Tratado esté vigente; no se reconocen nuevas reclamaciones.</LI>
+<LI><B>Prohibición de explosiones nucleares:</B> no puede realizarse ninguna prueba nuclear en el continente.</LI>
+<LI><B>Inspecciones mutuas:</B> cualquier país puede inspeccionar las bases de otro para verificar el cumplimiento del Tratado.</LI>
+</OL>
+
+<H4>Ampliaciones del sistema del Tratado Antártico:</H4>
+<UL>
+<LI><B>Protocolo de Madrid (1991):</B> el Protocolo al Tratado Antártico sobre Protección del Medio Ambiente, firmado en Madrid; prohíbe la explotación de minerales y petróleo en la Antártida durante al menos 50 años (hasta 2048); designa a la Antártida como "reserva natural, consagrada a la paz y la ciencia".</LI>
+<LI>Actualmente hay <B>54 países consultivos</B> y observadores del Tratado.</LI>
+</UL>
+
+<H4>El Perú en la Antártida:</H4>
+<UL>
+<LI>El Perú firmó el Tratado Antártico en <B>1981</B> y tiene status de <b>País Consultivo</b> desde 1989.</LI>
+<LI>Opera la <B>Estación Científica Antártica Machu Picchu (ECAMP)</B>, ubicada en la isla Rey Jorge (Shetland del Sur), en funcionamiento desde 1988.</LI>
+<LI>El programa antártico peruano (<B>ANTAR</B>) realiza expediciones científicas anuales en verano austral (enero–febrero).</LI>
+<LI>El interés peruano en la Antártida incluye investigaciones en oceanografía, glaciología, biología marina y clima.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Datos de examen sobre la Antártida:</B> La temperatura más baja registrada en la Tierra fue −89.2°C en la <b>estación Vostok</b> (Rusia, 1983). El <b>monte Vinson</b> (4 892 m) es el punto más alto. La Antártida contiene el <b>70% del agua dulce</b> del planeta. El <b>Tratado Antártico</b> fue firmado en <b>1959</b>. El <b>Protocolo de Madrid (1991)</b> prohíbe la explotación de recursos naturales. El Perú tiene la estación <b>Machu Picchu (ECAMP)</b> en la isla Rey Jorge desde <b>1988</b>.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ========== PREGUNTAS ========== -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál es la cascada más alta del mundo y en qué país se encuentra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Las cataratas del Iguazú (82 m), en la frontera entre Argentina y Brasil</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Las cataratas Victoria (108 m), en la frontera entre Zambia y Zimbabue</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) El Salto Ángel (979 m), en Venezuela</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Las cataratas del Niágara (57 m), entre EE.UU. y Canadá</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Salto Ángel</B> (<i>Kerepakupai Merú</i> en la lengua indígena pemón) con <b>979 m de caída libre</b> (la mayor del mundo), es la cascada más alta del planeta. Se ubica en el <b>Parque Nacional Canaima</b>, en el estado Bolívar, <b>Venezuela</b>, sobre el tepuy Auyantepui en el Escudo de Guayana. Fue "descubierto" para el mundo occidental por el aviador estadounidense Jimmy Angel en 1933. Las cataratas Victoria, pese a tener solo 108 m de altura, son las más anchas del mundo y las de mayor caudal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cuál es la capital de Australia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Sídney, por ser la ciudad más grande del país</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Melbourne, por ser la ciudad más desarrollada económicamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Canberra, ciudad planificada construida específicamente para ser capital</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Brisbane, la ciudad más moderna y de mayor crecimiento en el país</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La capital de Australia es <B>Canberra</B>, una ciudad planificada que fue construida expresamente para servir como capital federal. Su origen se debe a la rivalidad entre Sídney (Nueva Gales del Sur) y Melbourne (Victoria) por ser la capital: como ninguna cederá, en 1908 se decidió construir una nueva capital en un territorio neutral entre ambas (el Territorio de la Capital Australiana). Canberra fue inaugurada como capital en 1927. Sídney sigue siendo la ciudad más grande (~5,5 millones), pero no es la capital.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> El Tratado Antártico fue firmado en 1959. ¿Cuál es su disposición más importante?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Declaró a la Antártida territorio de los países que hicieron reclamaciones históricas, dividiendo el continente en sectores soberanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Estableció que la Antártida será usada exclusivamente para fines pacíficos; prohibió cualquier actividad militar, las pruebas nucleares y congeló las reclamaciones territoriales de los países</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Autorizó la explotación minera y petrolera de la Antártida bajo supervisión internacional de la ONU</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Declaró a la Antártida territorio libre bajo administración de los Estados Unidos y Rusia en partes iguales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Tratado Antártico</B> (firmado el 1° de diciembre de 1959 en Washington D.C., en vigor desde 1961) establece que la Antártida será usada <b>exclusivamente para fines pacíficos</b>. Sus disposiciones clave: (1) Prohibición de <b>actividades militares</b> (bases, maniobras, armamento). (2) Libertad de investigación científica para todos los firmantes. (3) <b>Congelamiento de reclamaciones territoriales</b>: los 7 países con reclamaciones (Argentina, Chile, RU, Australia, Noruega, Francia y Nueva Zelanda) no las abandonan, pero las "congelan"; no se reconocen nuevas. (4) Prohibición de <b>explosiones nucleares</b>. Más tarde, el <b>Protocolo de Madrid (1991)</b> extendió la protección prohibiendo la explotación de recursos naturales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál es el río más caudaloso del mundo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) El Nilo, porque es el más largo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) El Misisipi, porque drena el mayor territorio de América del Norte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) El Amazonas, que descarga el 20% del agua dulce que llega a los océanos en el mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) El Congo, porque es el más profundo del mundo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>río Amazonas</B> es el más caudaloso del mundo: su caudal medio es de ~209 000 m³/segundo, lo que representa aproximadamente el <b>20% de toda el agua dulce que llega a los océanos del planeta</b>. En época de crecida (febrero-mayo) puede superar los 340 000 m³/s. El Nilo es el más largo pero mucho menos caudaloso (en el delta apenas llega al Mediterráneo). El Congo es el <b>más profundo</b> del mundo (hasta 220 m de profundidad) y el 2° más caudaloso. El Amazonas nace en los Andes peruanos (nevado Mismi, Arequipa) y desemboca en el Atlántico en Brasil.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿En qué país se ubica el Salar de Uyuni y por qué es estratégicamente importante en la actualidad?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) En Chile; es importante porque es el mayor desierto de sal del mundo y se usa para la producción de sal de mesa de exportación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) En Bolivia; es importante porque contiene aproximadamente el 70% de las reservas de litio del mundo, mineral clave para las baterías de vehículos eléctricos y el almacenamiento de energía renovable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) En Argentina; es un atractivo turístico pero no tiene ninguna importancia económica o estratégica significativa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) En Perú; se ubica en el lago Titicaca y es importante porque es el mayor lago de agua salada de América del Sur</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Salar de Uyuni</B> (~10 582 km²) es el mayor desierto de sal del mundo y se ubica en el departamento de Potosí, <b>Bolivia</b>. Su importancia estratégica actual es enorme: bajo sus capas de sal hay una <b>salmuera rica en litio</b>; se estima que Bolivia tiene las mayores reservas de litio del mundo (~21 millones de toneladas métricas, ~70% del total global). El litio es el mineral clave para las <b>baterías de iones de litio</b> usadas en vehículos eléctricos (Tesla, BYD), teléfonos celulares y el almacenamiento de energía solar y eólica. La "carrera por el litio" hace que Bolivia, Chile y Argentina (el "triángulo del litio") sean geoestratégicamente fundamentales en la transición energética global.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál es el único mamífero que pone huevos y tiene pico de pato, endémico de Australia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) El canguro, porque salta y cuida a sus crías en una bolsa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El equidna, porque es un insectívoro con patas largas que también pone huevos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El ornitorrinco, mamífero monotrema con pico de pato, cola de castor, patas palmeadas y que pone huevos; los machos tienen espolones venenosos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) El koala, porque es un marsupial con hocico aplastado similar al pico de algunas aves</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>ornitorrinco</B> (<I>Ornithorhynchus anatinus</I>) es uno de los animales más extraordinarios del mundo: es un <b>monotrema</b> (mamífero que pone huevos, grupo más primitivo de los mamíferos), con <b>pico de pato</b>, <b>cola de castor</b>, <b>patas palmeadas</b> y cuerpo cubierto de pelo. Los machos tienen <b>espolones venenosos</b> en las patas traseras (el único mamífero venenoso de gran tamaño). Vive en ríos y lagos del este de Australia. Es tan peculiar que cuando sus especímenes llegaron por primera vez a Europa (siglo XVIII), los científicos creyeron que era un fraude: alguien había cosido un pico de pato a un castor. El equidna también pone huevos (también es monotrema) pero no tiene pico de pato.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> El Canal de Panamá conecta el océano Atlántico con el Pacífico. ¿Cuál es su importancia para el comercio mundial y cómo afecta geopolíticamente la región centroamericana?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) El Canal de Panamá es menos importante que el de Suez; solo el 1% del comercio mundial pasa por él y su impacto geopolítico es mínimo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) El Canal de Panamá (~80 km) conecta el Atlántico con el Pacífico evitando el rodeo de América del Sur por el Cabo de Hornos; el ~5% del comercio mundial lo usa; históricamente fue controlado por EE.UU. (1914–1999) hasta que Panamá lo recuperó; su ampliación (2016) con nuevas esclusas permite buques "neopanamax" más grandes; China tiene creciente influencia en su entorno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) El Canal de Panamá fue construido por España durante la conquista del siglo XVI para conectar sus colonias en el Pacífico con España; actualmente es administrado por la ONU</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) El Canal de Panamá no tiene importancia geopolítica porque los buques modernos pueden rodear fácilmente América del Sur en pocos días adicionales; fue una inversión innecesaria que solo benefició a EE.UU.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Canal de Panamá</B> fue inaugurado el 15 de agosto de 1914; es una de las mayores obras de ingeniería de la historia. Datos clave: (1) <b>Longitud</b>: ~80 km entre los océanos. Sin el canal, los barcos tendrían que rodear América del Sur añadiendo ~14 000 km al viaje. (2) <b>Comercio</b>: el ~5% del comercio mundial (más de 14 000 buques/año) lo usa. (3) <b>Historia geopolítica</b>: EE.UU. financió la separación de Panamá de Colombia (1903) a cambio del control del Canal; lo administró desde 1914 hasta que el Tratado Torrijos-Carter (1977) estableció la transferencia gradual a Panamá, completada el <b>31 de diciembre de 1999</b>. (4) <b>Ampliación</b>: inaugurada en 2016 con terceras esclusas que permiten buques "post-panamax" o "neopanamax" con hasta 14 000 contenedores. (5) <b>China</b>: empresas chinas tienen concesiones portuarias en ambos extremos del Canal; EE.UU. ve esto con preocupación estratégica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> El desierto de Atacama (Chile) es considerado el lugar más árido del planeta. ¿Qué factores geográficos explican su extrema aridez y qué recursos económicos contiene?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El Atacama es árido porque está en el hemisferio sur; todos los desiertos del hemisferio sur son más áridos que los del norte por la rotación de la Tierra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) La aridez extrema del Atacama se debe a tres factores convergentes: la corriente de Humboldt (agua fría que reduce la evaporación y las lluvias costeras), el efecto de sombra orográfica de los Andes (que bloquea los vientos húmedos amazónicos), y la zona de alta presión subtropical persistente; contiene enormes reservas de cobre (mayor productor mundial) y litio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El Atacama es árido por causas artificiales: la explotación minera de cobre ha contaminado y secado el territorio desde el siglo XIX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) El Atacama no es realmente un desierto; es una zona con lluvias moderadas que tiene mala prensa internacional; Chile produce abundante agricultura en sus tierras</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>desierto de Atacama</B> (~105 000 km², norte de Chile y sur de Perú) es el desierto no polar más árido del planeta: algunas zonas registran <b>cero milímetros de lluvia al año</b> durante décadas. Su aridez extrema se debe a la <b>triple convergencia</b>: (1) <b>Corriente de Humboldt</b>: el agua muy fría del Pacífico enfría el aire costero, impidiendo la formación de nubes de lluvia (el aire frío no asciende); solo produce garúas superficiales. (2) <b>Sombra de lluvia de los Andes</b>: los vientos amazónicos húmedos del este pierden toda su humedad al ascender los Andes (lluvia orográfica); al descender por el lado occidental, el aire ya está seco. (3) <b>Alta presión subtropical</b>: la zona climática de alta presión (~25°S) impide el ascenso de aire y la formación de lluvias. <b>Recursos económicos</b>: el Atacama tiene las mayores reservas de <b>cobre</b> del mundo (Chile produce ~26% del total mundial); también tiene <b>litio</b> en el Salar de Atacama, <b>nitrato de sodio</b> (salitre, explotado en el siglo XIX), y <b>astrofísica</b> (el cielo limpio y seco del Atacama es el mejor del mundo para los observatorios astronómicos: ALMA, VLT, E-ELT).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Tuvalu es un pequeño Estado insular en el océano Pacífico. ¿Por qué es considerado uno de los países más vulnerables del mundo al cambio climático?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Porque Tuvalu está en una zona de frecuentes ciclones que destruyen sus cultivos cada año; el cambio climático haría que los ciclones fueran más frecuentes e intensos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Porque Tuvalu es un atolón coralino cuyas islas tienen una elevación máxima de solo 2–3 metros sobre el nivel del mar; el aumento proyectado del nivel del mar por el cambio climático podría inundar permanentemente su territorio en pocas décadas, obligando a toda su población a emigrar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Porque Tuvalu está en el ecuador y el calentamiento global lo hace inhabitablemente caluroso, obligando a su población a migrar hacia climas más fríos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Tuvalu no es vulnerable al cambio climático; es un país montañoso con picos de más de 3 000 m que lo protegen de cualquier aumento del nivel del mar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Tuvalu</B> (9 islas coralinas en el Pacífico sur; ~11 000 habitantes; capital: Funafuti) es el país más amenazado del mundo por el <b>cambio climático</b>: (1) <b>Elevación mínima</b>: sus islas tienen una altitud máxima de <b>2–3 metros</b> sobre el nivel del mar en los puntos más altos. (2) <b>Nivel del mar</b>: el IPCC proyecta un aumento del nivel del mar de 0.5–1 metro (o más en escenarios de alta emisión) para 2100; esto sumado a la erosión y la intrusión salina ya está reduciendo la superficie habitable y contaminando los acuíferos de agua dulce. (3) <b>Consecuencias actuales</b>: las tormentas ya inundan partes de la capital con mayor frecuencia; la salinización de los suelos destruye la agricultura. (4) <b>Acuerdos de migración</b>: Tuvalu firmó un acuerdo con Australia (2023) para que sus ciudadanos puedan emigrar si el país se vuelve inhabitable; es el primer caso de un país que negocia la "migración climática" de toda su población. En 2023, Tuvalu anunció que se convertirá en el primer "estado nación digital": mantener su existencia legal y soberanía online aunque su territorio físico desaparezca.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> La selva amazónica de Brasil es llamada "el pulmón del mundo". ¿Es correcta esta afirmación desde el punto de vista científico, y cuáles son los servicios ecosistémicos reales que presta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Sí es completamente correcta; la selva amazónica produce todo el oxígeno que respira la humanidad y sin ella la vida en la Tierra sería imposible en cuestión de días</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Es una simplificación: la selva amazónica consume casi tanto oxígeno del que produce (por respiración de plantas y descomposición); su verdadero papel es como regulador del clima (captura CO₂, regula las lluvias del "río volador" y la temperatura regional), reservorio de biodiversidad y almacén de carbono; su deforestación libera CO₂ y altera el ciclo hidrológico de toda América del Sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) La afirmación es incorrecta; los océanos producen el 100% del oxígeno atmosférico; los bosques tropicales no contribuyen al oxígeno atmosférico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) La selva amazónica es importante solo para Brasil; no tiene ningún impacto en el clima ni en el oxígeno de otros países o continentes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La expresión "<B>pulmón del mundo</B>" es una <b>simplificación imprecisa</b> desde el punto de vista científico: (1) <b>Oxígeno neto</b>: la Amazonia produce mucho oxígeno (fotosíntesis), pero también consume casi la misma cantidad (respiración de plantas, animales, hongos y bacterias; descomposición de materia orgánica); en equilibrio, el oxígeno neto exportado a la atmósfera es mínimo. Los océanos producen ~50–80% del oxígeno atmosférico vía fitoplancton. (2) <b>Servicios reales</b>: (a) <b>Regulación del clima</b>: la Amazonia genera el "río volador" (<i>ríos aéreos</i> de vapor de agua transportados por los vientos hacia el sur y sureste de América del Sur, generando las lluvias de la Pampa argentina y el sur de Brasil). Sin la Amazonia, esas regiones se secarían. (b) <b>Almacén de carbono</b>: los ~86 000 millones de toneladas de carbono almacenadas en la biomasa amazónica, si se liberaran, aumentarían el CO₂ atmosférico en ~8%, acelerando el calentamiento global. (c) <b>Biodiversidad</b>: la Amazonia tiene ~10% de todas las especies del planeta. (d) <b>Ciclo hídrico regional</b>: regula las precipitaciones de Argentina, Paraguay, Brasil y Uruguay.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> La estación científica del Perú en la Antártida se llama Machu Picchu (ECAMP). ¿Por qué es estratégico para el Perú tener presencia en la Antártida?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) No es estratégico; el Perú desperdicia dinero manteniendo una base en la Antártida porque está muy lejos y no tiene ninguna relación con el océano Pacífico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La presencia antártica es estratégica porque permite al Perú participar como país consultivo en las decisiones sobre el futuro del continente (incluida la explotación de recursos cuando el Protocolo de Madrid expire en 2048), investigar el clima y los océanos del Pacífico sur que afectan directamente al Perú (corriente de Humboldt, Fenómeno El Niño), y desarrollar capacidades científicas en oceanografía y glaciología</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) La ECAMP es solo una base turística para que funcionarios peruanos visiten la Antártida; no realiza ninguna investigación científica real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) La presencia en la Antártida sirve para que el Perú reclame soberanía territorial sobre una porción del continente; actualmente el Perú tiene soberanía sobre el 10% de la Antártida</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La presencia del Perú en la Antártida a través de la <B>ECAMP</B> (Estación Científica Antártica Machu Picchu, inaugurada en 1988 en la isla Rey Jorge) tiene importancia estratégica real: (1) <b>Participación en el Sistema del Tratado Antártico</b>: el Perú es <b>País Consultivo</b> desde 1989, lo que le da voz y voto en las decisiones sobre el futuro del continente, incluyendo las negociaciones sobre el Protocolo de Madrid cuando venza su período de prohibición de explotación de recursos (2048). Quien no tiene presencia no tiene voz. (2) <b>Investigación climática relevante para el Perú</b>: el océano Austral, la corriente circumpolar antártica y los glaciares antárticos afectan directamente la corriente de Humboldt, el Fenómeno El Niño y el régimen de lluvias de los Andes peruanos. Estudiarlos en su fuente es fundamental. (3) <b>Capacidades científicas</b>: el programa ANTAR ha formado científicos peruanos en oceanografía, biología marina, meteorología y glaciología. (4) El Perú <b>no tiene reclamación territorial</b> sobre la Antártida (solo 7 países la tienen).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El desierto de la Antártida es técnicamente el mayor desierto del mundo (más grande que el Sahara). ¿Cómo se justifica esta clasificación y qué implica sobre la definición geográfica de "desierto"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La Antártida no puede ser un desierto porque está cubierta de hielo; un desierto es por definición un lugar caliente y con arena, como el Sahara</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Un desierto se define por la escasez de precipitaciones (generalmente menos de 250 mm/año), no por la temperatura. La Antártida recibe menos de 200 mm/año en promedio y menos de 50 mm en el interior, clasificándola como el mayor desierto del mundo (~14 M km²); esta definición amplia incluye desiertos fríos (Antártida, Gobi, Patagonia) y cálidos (Sahara, Atacama, Arábigo)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) La Antártida es llamada "desierto" solo metafóricamente, porque está vacía de gente; en sentido estrictamente geográfico no es un desierto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La definición de "desierto" como zona de pocas precipitaciones es incorrecta; la definición real es exclusivamente por temperatura: todo lugar con temperatura media menor a −10°C es un desierto, independientemente de las precipitaciones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La definición geográfica de <B>desierto</B> es una zona que recibe <b>menos de 250 mm de precipitación por año</b>; no tiene que ver con la temperatura. Con esta definición: (1) <b>Mayor desierto del mundo</b>: la <b>Antártida</b> (~14 millones de km²), con menos de 200 mm/año en promedio y menos de 50 mm en el interior. (2) <b>2° mayor</b>: el <b>Ártico</b> (~13 millones de km²). (3) <b>3° mayor</b>: el <b>Sahara</b> (~9.2 millones de km²), el mayor desierto <b>cálido</b>. Los desiertos se clasifican en: <b>cálidos</b> (Sahara, Atacama, Sonora, Arábigo: temperaturas altas, poca lluvia), <b>fríos de altura</b> (Gobi, Patagonia: temperaturas extremas, poca lluvia por barrera montañosa) y <b>polares</b> (Antártida, Ártico: temperaturas glaciales, precipitaciones muy bajas en forma de nieve). El interior antártico es tan seco que la nieve apenas cae; la acumulación de hielo se debe a millones de años de muy lenta acumulación.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> América Latina tiene la mayor desigualdad del ingreso del mundo (según el Banco Mundial). ¿Cuáles son los factores históricos, geográficos e institucionales que explican esta realidad estructural, y qué países de la región han logrado reducirla más exitosamente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La desigualdad en América Latina se debe exclusivamente a la pereza cultural de sus pueblos; los países europeos son más iguales porque sus ciudadanos trabajan más</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La desigualdad en América Latina tiene raíces en el colonialismo (concentración de tierra y riqueza en élites blancas criollas), el extractivismo (economías basadas en materias primas sin redistribución), la debilidad histórica del Estado para cobrar impuestos progresivos y proveer servicios públicos de calidad, y el racismo estructural que excluye a poblaciones indígenas y afrodescendientes; Brasil, Colombia y Uruguay han logrado reducirla más con programas de transferencia condicionada y mayor progresividad fiscal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La desigualdad latinoamericana es un mito estadístico; en realidad la región tiene la distribución del ingreso más igualitaria del mundo después de los países nórdicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La única causa de la desigualdad latinoamericana es la corrupción política del siglo XX; si se eliminara la corrupción, la región automáticamente tendría la distribución más equitativa del ingreso del mundo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>América Latina tiene el mayor coeficiente de Gini de cualquier región del mundo (promedio ~0.46). Sus causas son estructurales: (1) <b>Colonialismo y encomienda</b>: el sistema colonial español y portugués concentró la tierra en pocas manos (haciendas, latifundios) y esclavizó a indígenas y africanos; esta estructura básica persistió tras la independencia. (2) <b>Extractivismo</b>: las economías latinoamericanas se especializaron en exportar materias primas (plata, azúcar, café, cobre, petróleo) generando riqueza para pocos propietarios sin redistribución amplia. (3) <b>Débil capacidad fiscal</b>: históricamente los ricos han evadido impuestos; la presión fiscal promedio en América Latina (~22% del PBI) es menor que en Europa (~38%). (4) <b>Exclusión racial</b>: las poblaciones indígenas y afrodescendientes tienen sistemáticamente menores ingresos, educación y acceso a servicios. <b>Casos de éxito</b>: <b>Brasil</b> redujo la pobreza extrema en ~15 millones de personas con el <b>Bolsa Familia</b> (transferencias condicionadas: se recibe dinero si los hijos van a la escuela y se vacunan). <b>Uruguay</b>: reforma fiscal progresiva, educación pública de calidad. <b>Ecuador</b> y <b>Bolivia</b> (gobiernos de Correa y Morales): redistribución de rentas del petróleo y gas a programas sociales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El Protocolo de Madrid (1991) prohíbe la explotación de recursos naturales en la Antártida hasta 2048. ¿Qué debate geopolítico global se anticipa para cuando esta prohibición pueda ser revisada, y qué intereses tienen los distintos actores?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) No habrá ningún debate en 2048 porque para esa fecha toda la humanidad habrá alcanzado el desarrollo sostenible y no necesitará los recursos antárticos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El debate anticipado es entre quienes quieren extender la protección ambiental (países sin reclamaciones, ONGs, científicos) y quienes quieren explotar los recursos antárticos (petróleo, minerales, gas, krill): los 7 países con reclamaciones territoriales tienen posiciones encontradas; China y Rusia, sin reclamaciones pero con mayor presencia científica, desean acceso a recursos; mientras que el agotamiento de recursos en otras regiones del mundo y la demanda de minerales para la transición energética hace la explotación cada vez más tentadora</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) En 2048 el protocolo de Madrid expirará automáticamente y cualquier empresa podrá comenzar a explotar los recursos antárticos sin ninguna regulación; no hay ningún debate geopolítico porque el tratado no puede renovarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El único debate es entre Argentina y Chile, que reclaman los mismos sectores antárticos y llevan décadas en conflicto abierto por el control del continente blanco</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Protocolo de Madrid (1991)</B> puede ser revisado a partir de <b>2048</b> si lo solicita cualquier parte consultiva. Esto no significa que expire automáticamente; la prohibición de explotación de recursos solo puede levantarse si: (a) han pasado 50 años (desde 1998, fecha de entrada en vigor), y (b) hay acuerdo vinculante mayoritario entre los países consultivos, y (c) se adopta un régimen de explotación que proteja el ambiente. El debate geopolítico anticipado: (1) <b>A favor de la protección</b>: comunidad científica, ONGs (Greenpeace, WWF), pequeños estados insulares vulnerables, países sin interés extractivo directo. (2) <b>A favor de la explotación</b>: a medida que los minerales críticos (litio, cobalto, manganeso, tierras raras) sean más escasos globalmente para la transición energética, los recursos antárticos (se estima petróleo, gas, minerales poli metálicos) serán más tentadores. <b>China</b>: ha multiplicado por 5 sus bases científicas en la Antártida en los últimos 20 años; aunque no tiene reclamación territorial, su presencia le daría peso político en 2048. <b>Rusia</b>: similar a China; tiene la mayor base permanente (Vostok). <b>Los 7 países con reclamaciones</b>: tendrían prioridad si se abre la explotación, pero sus reclamaciones se superponen (Argentina, Chile y UK reclaman el mismo sector).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> La Gran Barrera de Coral de Australia está en peligro por el blanqueamiento masivo de corales causado por el cambio climático. Desde la geografía física y la economía, analiza la interrelación entre este fenómeno y los intereses económicos de Australia.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) No existe ninguna tensión entre la economía australiana y la preservación de la Gran Barrera de Coral; Australia es un líder mundial en la lucha contra el cambio climático y ha eliminado completamente sus emisiones de carbono</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La tensión es profunda: Australia es el mayor exportador de carbón del mundo y uno de los mayores de gas natural licuado; esta industria genera ingresos enormes pero sus emisiones y las de sus compradores (China, Japón, India) calientan el mar y causan el blanqueamiento de la Gran Barrera, que ya perdió más del 50% de sus corales; el gobierno australiano enfrenta la contradicción entre proteger un Patrimonio Mundial y mantener una economía exportadora de combustibles fósiles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) El blanqueamiento de la Gran Barrera de Coral no tiene nada que ver con el cambio climático; es causado por la contaminación de los ríos australianos con pesticidas agrícolas que es fácil de solucionar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La Gran Barrera de Coral no está en peligro; las noticias sobre su deterioro son exageradas por organizaciones ambientalistas que quieren perjudicar el turismo australiano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Gran Barrera de Coral</B> (~2 300 km, 3° sistema vivo más grande del planeta) ha sufrido <b>5 eventos masivos de blanqueamiento</b> desde 1998 (el más grave en 2016, 2017, 2020, 2022 y 2024); estudios del Instituto Australiano de Ciencias Marinas muestran que ha perdido más de <b>50% de sus corales</b>. La tensión con la economía australiana: (1) <b>Australia = mayor exportador de carbón del mundo</b>: exporta ~380 millones de toneladas de carbón/año (principalmente a China, India, Japón) y es el 3° exportador de GNL. Estos combustibles generan miles de millones en ingresos y emplean a cientos de miles. (2) <b>Calentamiento del mar</b>: cuando el Pacífico tropical se calienta >1°C por encima de la media histórica, los corales expulsan las algas simbióticas (<i>zooxanthellae</i>) que les dan color y nutrientes; sin ellas, se blanquean y mueren. (3) <b>Gran Barrera como economía</b>: el turismo asociado a la Gran Barrera aporta ~$6 500 millones/año y genera 64 000 empleos. (4) <b>La paradoja</b>: Australia es uno de los países con mayores emisiones per cápita del mundo (<b>GEI per cápita similar a EE.UU.</b>) y uno de los que más sufren sus consecuencias en la Gran Barrera. La UNESCO ha amenazado con declararla "Patrimonio en Peligro", lo que presionó al gobierno australiano a tomar medidas de mitigación.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El concepto de "América Latina" es un constructo geopolítico que agrupa a países muy diferentes. ¿Cuáles son las principales divisiones internas de la región y qué factores dificultan una integración latinoamericana efectiva?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) América Latina es completamente homogénea; todos sus países tienen el mismo idioma, la misma cultura, el mismo nivel de desarrollo y los mismos intereses geopolíticos; la integración sería fácil si no fuera por la interferencia de EE.UU.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Las principales divisiones incluyen: el idioma (español vs. portugués en Brasil, inglés en el Caribe anglosajón), la orientación ideológica (gobiernos de izquierda como México, Venezuela, Cuba vs. gobiernos de centro-derecha), las asimetrías económicas (Brasil y México son economías de escala continental mientras países como Paraguay o Belice son minúsculos), los conflictos históricos de fronteras (Bolivia sin litoral, disputas Chile-Perú-Bolivia), y la dependencia de distintas potencias externas (EE.UU., China, Europa)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La única división que importa en América Latina es entre países productores de petróleo y países sin petróleo; todas las demás diferencias son superficiales y pueden superarse con diplomacia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) América Latina ya está perfectamente integrada gracias al MERCOSUR; el bloque funciona como la Unión Europea y tiene libre circulación de personas, moneda común y parlamento supranacional</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>América Latina es una región con gran <b>heterogeneidad interna</b> que dificulta la integración: (1) <b>Lingüística</b>: el español domina en 18 países; el portugués en Brasil (la economía más grande y el país más extenso); el inglés en Belice, Guyana, Trinidad y el Caribe anglófono; el francés en Haití. (2) <b>Ideológica</b>: la región oscila entre gobiernos de izquierda (Venezuela, Cuba, Nicaragua, actualmente México con Morena, Bolivia, etc.) y de centro-derecha (Argentina, Ecuador, Perú en distintos períodos), lo que hace que bloques como UNASUR o CELAC se paralicen por vetos ideológicos cruzados. (3) <b>Asimetría de poder</b>: Brasil (~215 M hab., $2 T de PBI) y México (~130 M, $1.3 T) dominan; países pequeños se sienten subordinados. (4) <b>Conflictos bilaterales</b>: la demanda de Bolivia de una salida al mar (por territorio que perdió ante Chile en la Guerra del Pacífico), disputas pesqueras Perú-Ecuador, Essequibo (Venezuela-Guyana). (5) <b>Dependencia externa diferenciada</b>: algunos países tienen mayor dependencia de EE.UU. (México, Centroamérica, Caribe), otros de China (Venezuela, Bolivia, Ecuador), Europa en el sur. (6) <b>Mercados fragmentados</b>: cada país tiene sus propias normas, tarifas, regulaciones; no hay un mercado único funcional.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El Amazonas transporta el 20% del agua dulce que llega a los océanos del mundo. Desde la hidrogeografía comparada, ¿por qué el Amazonas supera enormemente al Nilo en caudal pese a que ambos están en zonas tropicales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) El Nilo es más largo pero menos caudaloso porque corre a través del desierto del Sahara, perdiendo agua por evaporación y consumo agrícola; el Amazonas recorre una selva tropical con lluvias de 2 000–4 000 mm/año, tiene una cuenca enorme y recibe aporte de los Andes; el contraste es entre un río que atraviesa el desierto y uno que atraviesa la mayor selva lluviosa del mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) El Amazonas es más caudaloso porque es más largo y los ríos más largos siempre son más caudalosos; el Nilo es corto por eso tiene poco caudal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) El Nilo tiene menos caudal porque está en África y los ríos africanos son históricamente menos caudalosos que los americanos por razones geológicas continentales; no hay ninguna relación con el clima o la vegetación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La diferencia de caudal entre el Amazonas y el Nilo se debe exclusivamente a que el Nilo fue desviado masivamente para irrigación agrícola desde la antigüedad; sin la intervención humana, ambos tendrían el mismo caudal</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La diferencia de caudal entre ambos ríos ilustra perfectamente el papel determinante del <b>clima y la cuenca</b>: (1) <b>El Nilo</b> (~6 650 km, cuenca de ~3 400 000 km²): nace en los lagos de África oriental (clima ecuatorial, lluvioso) pero recorre más de 3 000 km a través del <b>desierto del Sahara</b> (casi sin afluentes, alta evaporación, sin lluvia); además el <b>uso agrícola masivo</b> en Sudán y Egipto, amplificado por la presa de Asuán (1970), consume gran parte de su caudal. Al llegar al Mediterráneo, su caudal es ~2 830 m³/s. (2) <b>El Amazonas</b> (~6 400 km, cuenca de ~7 000 000 km²): la mayor cuenca hidrográfica del mundo; recorre la <b>selva tropical amazónica</b> que recibe 2 000–4 000 mm de lluvia al año; tiene más de 1 000 afluentes (el Río Negro, Madeira, Tapajós); recibe el aporte de los <b>Andes peruanos</b> (alta precipitación orográfica). Su caudal es ~209 000 m³/s en promedio, unas <b>74 veces más que el Nilo</b>. La ecuación es simple: más cuenca + más lluvias + más afluentes = más caudal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> La "teoría de la deriva continental" de Alfred Wegener (1912) y la posterior teoría de la tectónica de placas explican la distribución actual de los continentes. ¿Cómo aplica esta teoría para explicar la forma de América del Sur y África, y qué evidencias la sustentan?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La deriva continental es una teoría obsoleta que fue refutada en los años 60; actualmente se sabe que los continentes nunca se han movido y siempre han estado en su posición actual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Las costas orientales de América del Sur y occidentales de África encajan casi perfectamente como piezas de un rompecabezas; hace ~200 millones de años formaban parte del supercontinente Gondwana; evidencias: similitud de rocas a ambos lados del Atlántico, fósiles idénticos de <i>Mesosaurus</i> en Brasil y Sudáfrica (reptil que no podía cruzar el océano), y la Dorsal Medio-Atlántica donde el magma sube y empuja los continentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Las costas de América y África son similares porque fueron talladas por el mismo océano; la similitud es puramente cosmética y no implica ninguna conexión geológica pasada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Wegener propuso que América y África se separarán en el futuro; actualmente están juntas y la separación comenzará en unos 5 000 años cuando los volcanes del Atlántico entren en erupción masiva</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Alfred <B>Wegener</B> propuso en 1912 la <b>teoría de la deriva continental</b>: los continentes actuales formaban un solo supercontinente (<b>Pangea</b>) que se fragmentó hace ~200 millones de años. América del Sur y África, que antes formaban parte de <b>Gondwana</b> (el supercontinente del hemisferio sur), son el ejemplo más evidente: (1) <b>Encaje geométrico</b>: las costas de Brasil y África occidental encajan casi perfectamente; el geógrafo Francis Bacon ya lo notó en el siglo XVII. (2) <b>Continuidad geológica</b>: las mismas formaciones de rocas precámbricas (de >540 millones de años) se encuentran a ambos lados del Atlántico; las rocas del noreste de Brasil son idénticas a las del oeste de Ghana. (3) <b>Fósiles</b>: el <I>Mesosaurus</I> (reptil acuático del Pérmico, hace ~280 M años) se encuentra solo en Brasil y Sudáfrica; no pudo cruzar el Atlántico a nado, lo que demuestra que los continentes estaban unidos. (4) <b>Dorsal Medio-Atlántica</b>: el mecanismo de separación es el <b>rifting</b>: magma que sube por la dorsal volcánica del Atlántico y crea nuevo fondo oceánico, empujando América hacia el oeste a ~2 cm/año. (5) <b>Clima pasado</b>: evidencias de glaciación en el Sahara (hace 300 M años, cuando África estaba cerca del polo sur) y de selva tropical en la Antártida.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> La cuenca del río Amazonas es compartida por 9 países. Desde el derecho internacional y la geopolítica del agua, ¿qué tensiones existen sobre el uso y la gestión de las aguas del Amazonas, y cómo se compara con otros casos de ríos internacionales disputados?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) No existe ninguna tensión sobre el Amazonas porque el agua es tan abundante que ningún país tiene interés en controlarla; solo Brasil decide sobre el río y los demás países lo aceptan</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Las tensiones incluyen: Brasil como potencia fluvial dominante (el Amazonas entra al Atlántico por Brasil) construye represas que afectan a sus vecinos; la deforestación en Brasil reduce el "río volador" que genera lluvias en Bolivia, Argentina y Paraguay; la minería ilegal contamina ríos compartidos (Perú-Brasil, Colombia-Brasil); el TCA (Tratado de Cooperación Amazónica, 1978) trata de coordinar pero tiene limitados mecanismos vinculantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) El Amazonas está completamente privatizado por empresas brasileñas; los demás países de la cuenca pagan a Brasil por el derecho de usar sus aguas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) No hay ninguna tensión porque el Amazonas fue dividido equitativamente entre los 9 países ribereños mediante un tratado de 1960 que otorgó a cada país exactamente el mismo volumen de agua</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La cuenca del Amazonas (9 países: Brasil, Perú, Colombia, Venezuela, Ecuador, Bolivia, Guyana, Surinam y Guayana Francesa) es la mayor cuenca hidrográfica del mundo. Las tensiones son varias: (1) <b>Represas brasileñas</b>: Brasil ha construido megapresas en el Amazonas y sus tributarios (Belo Monte en el Xingú; Tucuruí en el Tocantins); aunque en la propia cuenca amazónica, alteran el régimen hidrológico y las migraciones de peces que son alimento de millones en todos los países. (2) <b>Deforestación y el "río volador"</b>: la selva amazónica genera un sistema de transporte de vapor de agua ("ríos aéreos") que produce las lluvias en Brasil central, Bolivia, Paraguay y Argentina (la Pampa). La deforestación en Brasil reduce estos "ríos aéreos", causando sequías en países sin voz en la política forestal brasileña. (3) <b>Minería ilegal</b>: los ríos compartidos Perú-Brasil-Colombia están contaminados con mercurio de la minería ilegal de oro. (4) <b>TCA y OTCA</b>: el <b>Tratado de Cooperación Amazónica (1978)</b> y su organización (OTCA) tienen mecanismos de coordinación pero limitado poder vinculante. Comparación: el <b>Nilo</b> (10 países) tiene tensiones mucho más agudas: Egipto vs. Etiopía por la presa del Gran Renacimiento Etíope (GERD). El <b>Mekong</b> (6 países): las represas chinas en el alto Mekong amenazan la pesca y la agricultura de Vietnam, Cambodia, Laos y Tailandia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> El ascenso de China como potencia global ha generado una mayor presencia en América Latina y Oceanía. ¿Cuáles son las estrategias geopolíticas que China está implementando en estas regiones y qué dilemas genera para los países locales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) China no tiene ninguna presencia en América Latina ni en Oceanía; su influencia geopolítica se limita exclusivamente a Asia y África</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) China implementa la "diplomacia de la deuda" y la Iniciativa de la Franja y la Ruta (Belt and Road Initiative, BRI) construyendo infraestructura (puertos como Chancay en Perú, Puerto Darwin en Australia, inversiones en islas del Pacífico), comprando recursos naturales masivamente y ofreciendo préstamos sin condicionamientos políticos; esto genera dilemas entre la dependencia económica de China vs. la presión de EE.UU. para que los países elijan bando en la competencia geopolítica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) China solo invierte en América Latina y Oceanía para comprar terrenos agrícolas y colonizar los países con población china; su objetivo es crear nuevas provincias chinas en el exterior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) La presencia china en América Latina es exclusivamente cultural: la difusión de la lengua mandarina y la gastronomía china; no tiene ninguna dimensión económica o geopolítica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La expansión geopolítica de <B>China</B> en América Latina y Oceanía sigue un patrón sistemático: (1) <b>Iniciativa de la Franja y la Ruta (BRI)</b>: China ofrece préstamos a tasas favorables para construir infraestructura (puertos, carreteras, ferrocarriles, plantas de energía). En América Latina: <b>Puerto de Chancay</b> (Perú), la refinería de Esmeraldas (Ecuador, renovada con crédito chino), el ferrocarril bioceánico (Bolivia-Brasil-Chile, planeado con financiamiento chino). (2) <b>Compra de recursos</b>: China es el mayor comprador de cobre peruano y chileno, soya brasileña, hierro brasileño, petróleo venezolano y ecuatoriano. (3) <b>Oceanía</b>: en 2022 China firmó un acuerdo de seguridad con <b>Islas Salomón</b> (Melanesia) que podría incluir bases navales; esto alarmó a Australia, EE.UU. y Nueva Zelanda. (4) <b>Diplomacia de reconocimiento taiwanés</b>: varios países del Caribe y Centroamérica han cambiado su reconocimiento de Taiwán a China Popular a cambio de inversiones. <b>Dilemas para los países locales</b>: (a) Los préstamos chinos pueden generar dependencia ("trampa de deuda"); (b) EE.UU. presiona para que elijan bando en la competición sino-americana (ej: AUKUS, alianza de seguridad Australia-UK-EE.UU. frente a China); (c) Pero rechazar a China significa perder un mercado enorme y financiamiento alternativo al FMI con condicionalidades.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

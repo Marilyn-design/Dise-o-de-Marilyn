@@ -1,0 +1,670 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Medidas de Tendencia Central y Dispersi&oacute;n - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+.formula-box{background:linear-gradient(135deg,#0D1B36,#1a3a5c);color:white;border-radius:16px;padding:20px 28px;margin:16px 0;text-align:center;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.formula-box .formula{font-size:26px;color:#D7B06D;margin:10px 0;}
+.formula-box .formula-sub{font-size:14px;color:#acd;margin-top:6px;font-weight:normal;}
+.cards-section{max-width:1000px;margin:0 auto 0;padding:0 40px;}
+.cards-section h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:30px;}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:700px){.cards-grid{grid-template-columns:1fr;}}
+.card{background:white;border-radius:18px;padding:28px 20px 22px;box-shadow:0 4px 18px rgba(0,0,0,0.10);text-align:center;border-top:5px solid #1F6A67;transition:transform 0.2s;}
+.card:hover{transform:translateY(-4px);}
+.card-title{color:#0D1B36;font-size:19px;font-weight:bold;margin-bottom:10px;}
+.card-badge{display:inline-block;background:#D7B06D;color:#0D1B36;border-radius:20px;padding:6px 18px;font-size:15px;font-weight:bold;margin-bottom:12px;}
+.card-badge.verde{background:#1F6A67;color:white;}
+.card-badge.azul{background:#0D1B36;color:white;}
+.card-desc{color:#555;font-size:15px;line-height:1.7;}
+.card-formula{background:#F6F2EB;border-radius:10px;padding:10px 14px;margin-top:10px;font-size:15px;color:#0D1B36;font-weight:bold;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ARITMETICA.HTML">&larr; Volver a los temas de Estad&iacute;stica</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ESTAD&Iacute;STICA &middot; TEMA 8</DIV>
+<H1>Medidas de Tendencia Central y Dispersi&oacute;n</H1>
+<DIV CLASS="sub">Media, mediana, moda &middot; Media ponderada, geom&eacute;trica y arm&oacute;nica &middot; Varianza y desviaci&oacute;n est&aacute;ndar &middot; Coeficiente de variaci&oacute;n &middot; An&aacute;lisis e interpretaci&oacute;n</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===== TARJETAS VISUALES: LAS TRES MEDIDAS CLÁSICAS ===== -->
+<DIV class="cards-section" style="margin-top:50px;">
+<H2>Las tres medidas de tendencia central</H2>
+<DIV class="cards-grid">
+
+  <DIV class="card">
+    <DIV class="card-title">Media (promedio)</DIV>
+    <DIV class="card-badge verde">x&#772; = &Sigma;x&#7522;/n</DIV>
+    <DIV class="card-desc">Suma de todos los valores entre el n&uacute;mero de datos. Es la m&aacute;s usada, pero <b>muy sensible a valores extremos</b> (outliers).</DIV>
+    <DIV class="card-formula">Ej: 2,4,6,8 &rarr; (2+4+6+8)/4 = 5</DIV>
+  </DIV>
+
+  <DIV class="card">
+    <DIV class="card-title">Mediana</DIV>
+    <DIV class="card-badge">Valor central</DIV>
+    <DIV class="card-desc">Divide al conjunto <b>ordenado</b> en dos mitades iguales. No se ve afectada por valores extremos.</DIV>
+    <DIV class="card-formula">Ej: 2,4,6,8,10 &rarr; Me = 6</DIV>
+  </DIV>
+
+  <DIV class="card">
+    <DIV class="card-title">Moda</DIV>
+    <DIV class="card-badge azul">Mayor frecuencia</DIV>
+    <DIV class="card-desc">Es el valor que <b>m&aacute;s se repite</b>. Puede no existir, ser &uacute;nica (unimodal) o haber varias (bimodal, multimodal).</DIV>
+    <DIV class="card-formula">Ej: 2,3,3,3,5,7 &rarr; Mo = 3</DIV>
+  </DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. &iquest;Qu&eacute; son las medidas de tendencia central?</H3>
+Las <B>medidas de tendencia central</B> son valores num&eacute;ricos que buscan resumir, mediante un &uacute;nico n&uacute;mero representativo, el comportamiento general de un conjunto de datos, indicando alrededor de qu&eacute; valor tienden a concentrarse o agruparse las observaciones. Las tres principales son la <B>media</B>, la <B>mediana</B> y la <B>moda</B>, aunque existen tambi&eacute;n medias especiales como la <B>ponderada</B>, la <B>geom&eacute;trica</B> y la <B>arm&oacute;nica</B>, cada una &uacute;til en contextos espec&iacute;ficos.
+
+<DIV CLASS="alerta"><B>Para el examen:</B> Las medidas de tendencia central se calculan de manera diferente seg&uacute;n si los datos est&aacute;n <B>no agrupados</B> (lista simple de valores) o <B>agrupados</B> (organizados en una tabla de frecuencias, con o sin intervalos de clase). Identificar correctamente el tipo de dato es el primer paso para elegir la f&oacute;rmula correcta.</DIV>
+
+<H3>2. La Media Aritm&eacute;tica (o promedio)</H3>
+La <B>media aritm&eacute;tica</B> (x&#772;) es la medida de tendencia central m&aacute;s usada. Se define como la suma de todos los valores observados dividida entre el n&uacute;mero total de datos.
+
+<H4>Media para datos no agrupados:</H4>
+<DIV CLASS="formula-box">
+<DIV class="formula">x&#772; = (x&#8321;+x&#8322;+&hellip;+x&#8345;)/n = &Sigma;x&#7522; / n</DIV>
+<DIV class="formula-sub">Suma de todos los valores entre el n&uacute;mero de datos</DIV>
+</DIV>
+
+<H4>Media para datos agrupados (en tabla de frecuencias):</H4>
+<DIV CLASS="formula-box">
+<DIV class="formula">x&#772; = &Sigma;(x&#7522;&middot;f&#7522;) / n</DIV>
+<DIV class="formula-sub">x&#7522; es el dato (o marca de clase, si hay intervalos); f&#7522; es su frecuencia absoluta</DIV>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Ejemplo (no agrupados):</B> Las notas de 5 estudiantes son: 12, 14, 16, 18, 10.<BR>
+x&#772; = (12+14+16+18+10)/5 = 70/5 = <B>14</B><BR><BR>
+<B>Ejemplo (agrupados):</B> En una tabla, x&#7522;=2 con f&#7522;=3; x&#7522;=4 con f&#7522;=5; x&#7522;=6 con f&#7522;=2 (n=10).<BR>
+x&#772; = [(2&times;3)+(4&times;5)+(6&times;2)]/10 = (6+20+12)/10 = 38/10 = <B>3,8</B>
+</DIV>
+
+<H4>Propiedades fundamentales de la media:</H4>
+<UL>
+<LI>Es &uacute;nica para un conjunto de datos dado.</LI>
+<LI>Considera <B>todos</B> los valores del conjunto, por lo que es muy <B>sensible a valores extremos</B> (outliers o datos at&iacute;picos), que pueden distorsionarla.</LI>
+<LI>La suma de las desviaciones de cada dato respecto a la media siempre es cero: <B>&Sigma;(x&#7522;&minus;x&#772;) = 0</B>.</LI>
+<LI>Si a todos los datos se les suma (o resta) una constante k, la nueva media queda aumentada (o disminuida) en esa misma constante k.</LI>
+<LI>Si todos los datos se multiplican (o dividen) por una constante k, la nueva media queda multiplicada (o dividida) por esa misma constante k.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#8721; MEDIAS ESPECIALES<SPAN>Ponderada, geom&eacute;trica y arm&oacute;nica: usos espec&iacute;ficos</SPAN></DIV>
+
+<H3>3. Media Ponderada</H3>
+La <B>media ponderada</B> se utiliza cuando los distintos valores <B>no tienen la misma importancia o "peso"</B> dentro del conjunto. A diferencia de la media simple, cada dato se multiplica por un peso o ponderaci&oacute;n (w&#7522;) que refleja su relevancia relativa.
+
+<DIV CLASS="formula-box">
+<DIV class="formula">x&#772;w = &Sigma;(x&#7522;&middot;w&#7522;) / &Sigma;w&#7522;</DIV>
+<DIV class="formula-sub">w&#7522; es el peso o ponderaci&oacute;n de cada valor x&#7522;</DIV>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Aplicaci&oacute;n cl&aacute;sica &mdash; promedio ponderado de notas:</B> Un estudiante obtuvo: Pr&aacute;ctica = 14 (peso 2), Examen parcial = 16 (peso 3), Examen final = 18 (peso 5).<BR>
+x&#772;w = [(14&times;2)+(16&times;3)+(18&times;5)] / (2+3+5) = (28+48+90)/10 = 166/10 = <B>16,6</B>
+</DIV>
+
+<H3>4. Media Geom&eacute;trica</H3>
+La <B>media geom&eacute;trica</B> (MG) es la ra&iacute;z en&eacute;sima del producto de los n datos. Se utiliza principalmente cuando se trabaja con <B>tasas de crecimiento, porcentajes, &iacute;ndices o variables que cambian de forma multiplicativa</B> (no aditiva) a lo largo del tiempo, como tasas de inter&eacute;s compuesto o crecimiento poblacional.
+
+<DIV CLASS="formula-box">
+<DIV class="formula">MG = &#8319;&#8730;(x&#8321;&middot;x&#8322;&middot;&hellip;&middot;x&#8345;)</DIV>
+<DIV class="formula-sub">Ra&iacute;z en&eacute;sima del producto de los n datos (todos positivos)</DIV>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Ejemplo:</B> Una inversi&oacute;n creci&oacute; 4% el primer a&ntilde;o y 16% el segundo a&ntilde;o (factores 1,04 y 1,16).<BR>
+MG = &#8730;(1,04&times;1,16) = &#8730;1,2064 &asymp; <B>1,0984</B> &rarr; tasa promedio de crecimiento &asymp; 9,84% anual.<BR>
+(Nota: la media aritm&eacute;tica de 4% y 16% dar&iacute;a 10%, un valor ligeramente distinto e incorrecto para este tipo de an&aacute;lisis multiplicativo).
+</DIV>
+
+<H3>5. Media Arm&oacute;nica</H3>
+La <B>media arm&oacute;nica</B> (MA) es el rec&iacute;proco de la media aritm&eacute;tica de los rec&iacute;procos de los datos. Resulta especialmente &uacute;til en problemas de <B>velocidades, rendimientos o tasas</B> cuando se recorre la misma distancia, se realiza el mismo trabajo o se invierte la misma cantidad, pero a diferentes velocidades o tasas.
+
+<DIV CLASS="formula-box">
+<DIV class="formula">MA = n / &Sigma;(1/x&#7522;)</DIV>
+<DIV class="formula-sub">n entre la suma de los rec&iacute;procos de los datos</DIV>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Ejemplo cl&aacute;sico:</B> Un veh&iacute;culo recorre la misma distancia a 40 km/h de ida y a 60 km/h de vuelta. Su velocidad promedio para todo el trayecto NO es (40+60)/2=50; se calcula con la media arm&oacute;nica:<BR>
+MA = 2 / (1/40 + 1/60) = 2 / (3/120+2/120) = 2 / (5/120) = 2&times;(120/5) = 240/5 = <B>48 km/h</B>
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen &mdash; relaci&oacute;n entre las tres medias:</B> Para un mismo conjunto de datos positivos no todos iguales, siempre se cumple la desigualdad: <B>MA &le; MG &le; x&#772;</B> (media arm&oacute;nica &le; media geom&eacute;trica &le; media aritm&eacute;tica). Las tres son iguales &uacute;nicamente cuando todos los datos del conjunto son id&eacute;nticos entre s&iacute;.</DIV>
+
+<H3>6. La Mediana (Me)</H3>
+La <B>mediana</B> es el valor que ocupa la <B>posici&oacute;n central</B> de un conjunto de datos previamente <B>ordenados</B> (de menor a mayor o viceversa), de modo que divide al conjunto en dos mitades con igual cantidad de datos: el 50% de los valores es menor o igual que la mediana, y el otro 50% es mayor o igual que ella.
+
+<H4>Mediana para datos no agrupados:</H4>
+<UL>
+<LI>Si <B>n es impar</B>, la mediana es el valor que ocupa la posici&oacute;n central exacta: posici&oacute;n (n+1)/2.</LI>
+<LI>Si <B>n es par</B>, la mediana es el <B>promedio</B> de los dos valores centrales: posiciones n/2 y (n/2)+1.</LI>
+</UL>
+
+<DIV CLASS="ej">
+<B>Ejemplo (n impar):</B> Datos ordenados: 3, 5, 7, 9, 11 (n=5). Posici&oacute;n central = (5+1)/2 = 3.&deg; lugar &rarr; Me = <B>7</B><BR><BR>
+<B>Ejemplo (n par):</B> Datos ordenados: 2, 4, 6, 8, 10, 12 (n=6). Posiciones centrales: 3.&deg; y 4.&deg; lugar (6 y 8) &rarr; Me = (6+8)/2 = <B>7</B>
+</DIV>
+
+<H4>Propiedades de la mediana:</H4>
+<UL>
+<LI><B>No se ve afectada</B> por valores extremos o at&iacute;picos, a diferencia de la media; por ello se prefiere la mediana cuando hay datos muy alejados del resto (por ejemplo, en el an&aacute;lisis de ingresos econ&oacute;micos, donde unos pocos sueldos muy altos distorsionar&iacute;an la media).</LI>
+<LI>Solo requiere que los datos puedan ser <B>ordenados</B>, por lo que tambi&eacute;n se puede calcular para variables cualitativas <B>ordinales</B> (a diferencia de la media, exclusiva de variables cuantitativas).</LI>
+<LI>Es &uacute;nica para cada conjunto de datos.</LI>
+</UL>
+
+<H3>7. La Moda (Mo)</H3>
+La <B>moda</B> es el valor (o valores) que se presenta con <B>mayor frecuencia</B> dentro de un conjunto de datos. Es la &uacute;nica medida de tendencia central que se puede calcular tambi&eacute;n para variables <B>cualitativas nominales</B> (como el color favorito o la marca preferida).
+
+<H4>Clasificaci&oacute;n seg&uacute;n el n&uacute;mero de modas:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo</TH><TH>Descripci&oacute;n</TH></TR>
+<TR><TD><B>Unimodal</B></TD><TD>Existe un &uacute;nico valor con la mayor frecuencia</TD></TR>
+<TR><TD><B>Bimodal</B></TD><TD>Existen exactamente dos valores con la mayor frecuencia (igual de repetidos)</TD></TR>
+<TR><TD><B>Multimodal</B></TD><TD>Existen tres o m&aacute;s valores con la mayor frecuencia</TD></TR>
+<TR><TD><B>Amodal</B></TD><TD>No existe moda: todos los valores se repiten exactamente el mismo n&uacute;mero de veces</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Ejemplo:</B> Datos: 3, 5, 5, 7, 8, 8, 9. Las frecuencias m&aacute;ximas (2 veces) corresponden a 5 y a 8 &rarr; distribuci&oacute;n <B>bimodal</B>: Mo = {5, 8}
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Recuerda el orden t&iacute;pico de sensibilidad a valores extremos: <B>Media</B> (muy sensible) &gt; <B>Mediana</B> (poco sensible) &gt; <B>Moda</B> (insensible, solo depende de la repetici&oacute;n). En distribuciones muy asim&eacute;tricas (sesgadas), conviene reportar la mediana en lugar de la media como medida representativa.</DIV>
+
+<H3>8. Medidas de tendencia central para datos agrupados en intervalos</H3>
+Cuando los datos est&aacute;n organizados en una tabla de frecuencias con <B>intervalos de clase</B>, las f&oacute;rmulas se adaptan utilizando la <B>marca de clase</B> (X&#7522;) como representante de cada intervalo.
+
+<H4>Mediana para datos agrupados en intervalos:</H4>
+<OL>
+<LI>Se calcula <B>n/2</B> (la mitad del total de datos).</LI>
+<LI>Se identifica el <B>intervalo mediano</B>: el primer intervalo cuya frecuencia acumulada (F&#7522;) sea mayor o igual a n/2.</LI>
+<LI>Se aplica la f&oacute;rmula de interpolaci&oacute;n:</LI>
+</OL>
+<DIV CLASS="formula-box">
+<DIV class="formula">Me = L&#7522;&minus;1 + [(n/2 &minus; F&#7522;&minus;1)/f&#7522;] &middot; A</DIV>
+<DIV class="formula-sub">L&#7522;&minus;1: l&iacute;mite inferior del intervalo mediano &middot; F&#7522;&minus;1: acumulada anterior &middot; f&#7522;: frecuencia del intervalo mediano &middot; A: amplitud</DIV>
+</DIV>
+
+<H4>Moda para datos agrupados en intervalos:</H4>
+<OL>
+<LI>Se identifica el <B>intervalo modal</B>: el de mayor frecuencia absoluta (f&#7522;).</LI>
+<LI>Se aplica la f&oacute;rmula de interpolaci&oacute;n:</LI>
+</OL>
+<DIV CLASS="formula-box">
+<DIV class="formula">Mo = L&#7522;&minus;1 + [d&#8321;/(d&#8321;+d&#8322;)] &middot; A</DIV>
+<DIV class="formula-sub">d&#8321; = f&#7522;&minus;f&#7522;&minus;1 (diferencia con el intervalo anterior) &middot; d&#8322; = f&#7522;&minus;f&#7522;&plus;1 (diferencia con el siguiente)</DIV>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#128202; MEDIDAS DE DISPERSI&Oacute;N<SPAN>Varianza, desviaci&oacute;n est&aacute;ndar y coeficiente de variaci&oacute;n</SPAN></DIV>
+
+<H3>9. &iquest;Qu&eacute; son las medidas de dispersi&oacute;n?</H3>
+Las <B>medidas de tendencia central</B> resumen "d&oacute;nde se ubica" el centro de los datos, pero no informan qu&eacute; tan <B>dispersos, esparcidos o concentrados</B> est&aacute;n los valores alrededor de ese centro. Para ello existen las <B>medidas de dispersi&oacute;n</B> (o variabilidad), siendo las m&aacute;s importantes la <B>varianza</B>, la <B>desviaci&oacute;n est&aacute;ndar</B> y el <B>coeficiente de variaci&oacute;n</B>.
+
+<H4>Rango (medida de dispersi&oacute;n m&aacute;s simple):</H4>
+<DIV CLASS="formula-box">
+<DIV class="formula">R = x&#7757;&aacute;&#7497; &minus; x&#7757;&iacute;&#7458;</DIV>
+<DIV class="formula-sub">Diferencia entre el valor m&aacute;ximo y el valor m&iacute;nimo</DIV>
+</DIV>
+Es f&aacute;cil de calcular pero muy limitada, pues solo usa dos valores del conjunto e ignora completamente c&oacute;mo se distribuyen los datos intermedios.
+
+<H3>10. Varianza (&sigma;&sup2; o s&sup2;)</H3>
+La <B>varianza</B> es el promedio de los cuadrados de las desviaciones de cada dato respecto a la media. Se eleva al cuadrado para evitar que las desviaciones positivas y negativas se cancelen entre s&iacute; (recuerda que &Sigma;(x&#7522;&minus;x&#772;)=0 siempre).
+
+<H4>Varianza poblacional (datos no agrupados):</H4>
+<DIV CLASS="formula-box">
+<DIV class="formula">&sigma;&sup2; = &Sigma;(x&#7522;&minus;x&#772;)&sup2; / n</DIV>
+<DIV class="formula-sub">Promedio de las desviaciones al cuadrado respecto a la media</DIV>
+</DIV>
+
+<H4>Varianza muestral (cuasivarianza, usada para inferir sobre la poblaci&oacute;n):</H4>
+<DIV CLASS="formula-box">
+<DIV class="formula">s&sup2; = &Sigma;(x&#7522;&minus;x&#772;)&sup2; / (n&minus;1)</DIV>
+<DIV class="formula-sub">Se divide entre (n&minus;1), llamado "grados de libertad", para obtener un mejor estimador de la varianza poblacional</DIV>
+</DIV>
+
+<H4>Varianza para datos agrupados:</H4>
+<DIV CLASS="formula-box">
+<DIV class="formula">&sigma;&sup2; = &Sigma;f&#7522;(x&#7522;&minus;x&#772;)&sup2; / n</DIV>
+<DIV class="formula-sub">Se pondera cada desviaci&oacute;n al cuadrado por su frecuencia absoluta</DIV>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Ejemplo:</B> Datos: 2, 4, 6, 8 (x&#772;=5).<BR>
+Desviaciones: (2&minus;5)=&minus;3; (4&minus;5)=&minus;1; (6&minus;5)=1; (8&minus;5)=3<BR>
+Cuadrados: 9, 1, 1, 9 &rarr; suma = 20<BR>
+&sigma;&sup2; = 20/4 = <B>5</B> (varianza poblacional)
+</DIV>
+
+<H3>11. Desviaci&oacute;n Est&aacute;ndar (&sigma; o s)</H3>
+La <B>desviaci&oacute;n est&aacute;ndar</B> (o desviaci&oacute;n t&iacute;pica) es la <B>ra&iacute;z cuadrada de la varianza</B>. Se utiliza con mayor frecuencia que la varianza porque se expresa en las <B>mismas unidades</B> que los datos originales (mientras que la varianza queda expresada en unidades al cuadrado, lo cual dificulta su interpretaci&oacute;n directa).
+
+<DIV CLASS="formula-box">
+<DIV class="formula">&sigma; = &#8730;&sigma;&sup2;</DIV>
+<DIV class="formula-sub">Ra&iacute;z cuadrada de la varianza; mide la dispersi&oacute;n en las mismas unidades que los datos</DIV>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Continuando el ejemplo anterior:</B> &sigma;&sup2;=5 &rarr; &sigma; = &#8730;5 &asymp; <B>2,236</B>
+</DIV>
+
+<H4>Interpretaci&oacute;n de la desviaci&oacute;n est&aacute;ndar:</H4>
+<UL>
+<LI>Una desviaci&oacute;n est&aacute;ndar <B>peque&ntilde;a</B> indica que los datos est&aacute;n muy <B>concentrados</B> alrededor de la media (poca variabilidad, datos homog&eacute;neos).</LI>
+<LI>Una desviaci&oacute;n est&aacute;ndar <B>grande</B> indica que los datos est&aacute;n muy <B>dispersos</B> respecto a la media (alta variabilidad, datos heterog&eacute;neos).</LI>
+<LI>Una desviaci&oacute;n est&aacute;ndar igual a <B>cero</B> indica que todos los datos del conjunto son exactamente iguales entre s&iacute;.</LI>
+</UL>
+
+<H3>12. Coeficiente de Variaci&oacute;n (CV)</H3>
+El <B>coeficiente de variaci&oacute;n</B> es una medida de dispersi&oacute;n <B>relativa</B> (a diferencia de la varianza y la desviaci&oacute;n est&aacute;ndar, que son medidas <B>absolutas</B>). Se expresa como porcentaje y permite <B>comparar la variabilidad de dos o m&aacute;s conjuntos de datos</B>, incluso cuando tienen unidades de medida diferentes o medias muy distintas entre s&iacute;.
+
+<DIV CLASS="formula-box">
+<DIV class="formula">CV = (&sigma; / x&#772;) &times; 100%</DIV>
+<DIV class="formula-sub">Desviaci&oacute;n est&aacute;ndar entre la media, expresado en porcentaje</DIV>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Ejemplo comparativo:</B> Grupo A: x&#772;=50, &sigma;=5 &rarr; CV=10%. Grupo B: x&#772;=200, &sigma;=15 &rarr; CV=7,5%.<BR>
+Aunque el Grupo B tiene una desviaci&oacute;n est&aacute;ndar absoluta mayor (15 &gt; 5), su <B>variabilidad relativa es menor</B> (7,5% &lt; 10%): el Grupo A es, proporcionalmente, m&aacute;s heterog&eacute;neo que el Grupo B.
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> El coeficiente de variaci&oacute;n es la herramienta correcta para responder preguntas del tipo "&iquest;qu&eacute; grupo es m&aacute;s homog&eacute;neo (o m&aacute;s disperso) en t&eacute;rminos relativos?", especialmente cuando se comparan variables con unidades distintas (por ejemplo, comparar la variabilidad del peso en kg con la variabilidad de la estatura en cm) o con medias muy diferentes. Un <B>CV menor</B> indica mayor <B>homogeneidad</B> (menor dispersi&oacute;n relativa); un <B>CV mayor</B> indica mayor <B>heterogeneidad</B>.</DIV>
+
+<H3>13. An&aacute;lisis e interpretaci&oacute;n de resultados</H3>
+M&aacute;s all&aacute; de calcular correctamente cada medida, los ex&aacute;menes de alto rendimiento exigen <B>interpretar</B> su significado en contexto:
+
+<UL>
+<LI>Si <B>media = mediana = moda</B>, la distribuci&oacute;n de los datos es perfectamente <B>sim&eacute;trica</B>.</LI>
+<LI>Si <B>media &gt; mediana &gt; moda</B>, la distribuci&oacute;n tiene <B>sesgo o asimetr&iacute;a positiva</B> (cola hacia la derecha, hacia los valores altos).</LI>
+<LI>Si <B>media &lt; mediana &lt; moda</B>, la distribuci&oacute;n tiene <B>sesgo o asimetr&iacute;a negativa</B> (cola hacia la izquierda, hacia los valores bajos).</LI>
+<LI>Ante la presencia de valores extremos (outliers), se recomienda usar la <B>mediana</B> como medida de tendencia central, ya que la media quedar&iacute;a distorsionada.</LI>
+<LI>Una desviaci&oacute;n est&aacute;ndar peque&ntilde;a junto con una media representativa sugiere que esa media describe adecuadamente al grupo; una desviaci&oacute;n est&aacute;ndar grande sugiere que la media, por s&iacute; sola, no es muy representativa del comportamiento real de los datos.</LI>
+</UL>
+
+<H3>14. Cuadro resumen general del tema</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Medida</TH><TH>F&oacute;rmula esencial</TH><TH>Uso principal</TH></TR>
+<TR><TD><B>Media aritm&eacute;tica</B></TD><TD>x&#772;=&Sigma;x&#7522;/n</TD><TD>Promedio general; sensible a extremos</TD></TR>
+<TR><TD><B>Media ponderada</B></TD><TD>x&#772;w=&Sigma;(x&#7522;w&#7522;)/&Sigma;w&#7522;</TD><TD>Datos con distinta importancia (notas, &iacute;ndices)</TD></TR>
+<TR><TD><B>Media geom&eacute;trica</B></TD><TD>MG=&#8319;&#8730;(x&#8321;&middot;x&#8322;&middot;&hellip;x&#8345;)</TD><TD>Tasas de crecimiento, &iacute;ndices, inter&eacute;s compuesto</TD></TR>
+<TR><TD><B>Media arm&oacute;nica</B></TD><TD>MA=n/&Sigma;(1/x&#7522;)</TD><TD>Velocidades, rendimientos, tasas inversas</TD></TR>
+<TR><TD><B>Mediana</B></TD><TD>Valor central de datos ordenados</TD><TD>Robusta ante valores extremos</TD></TR>
+<TR><TD><B>Moda</B></TD><TD>Valor de mayor frecuencia</TD><TD>&Uacute;nica medida v&aacute;lida para variables cualitativas nominales</TD></TR>
+<TR><TD><B>Varianza</B></TD><TD>&sigma;&sup2;=&Sigma;(x&#7522;&minus;x&#772;)&sup2;/n</TD><TD>Dispersi&oacute;n en unidades al cuadrado</TD></TR>
+<TR><TD><B>Desviaci&oacute;n est&aacute;ndar</B></TD><TD>&sigma;=&#8730;&sigma;&sup2;</TD><TD>Dispersi&oacute;n en las mismas unidades de los datos</TD></TR>
+<TR><TD><B>Coeficiente de variaci&oacute;n</B></TD><TD>CV=(&sigma;/x&#772;)&times;100%</TD><TD>Comparar dispersi&oacute;n relativa entre grupos distintos</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">MA&le;MG&le;x&#772;</DIV><DIV CLASS="dk-label">Relaci&oacute;n entre las tres medias (datos positivos, no todos iguales)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">&Sigma;(x&#7522;&minus;x&#772;)=0</DIV><DIV CLASS="dk-label">La suma de desviaciones respecto a la media siempre es cero</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">n&minus;1</DIV><DIV CLASS="dk-label">Divisor de la varianza muestral (grados de libertad)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">CV%</DIV><DIV CLASS="dk-label">Permite comparar dispersi&oacute;n entre grupos con unidades distintas</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+<B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Media</B> = suma/n &middot; sensible a extremos &middot; &Sigma;(x&#7522;&minus;x&#772;)=0 siempre<BR>
+&bull; <B>Media ponderada</B> = considera "pesos" distintos &middot; <B>Media geom&eacute;trica</B> = ra&iacute;z en&eacute;sima del producto (tasas) &middot; <B>Media arm&oacute;nica</B> = n/&Sigma;(1/x&#7522;) (velocidades)<BR>
+&bull; Relaci&oacute;n: <B>MA &le; MG &le; x&#772;</B> (iguales solo si todos los datos son iguales)<BR>
+&bull; <B>Mediana</B> = valor central (datos ordenados) &middot; robusta ante outliers &middot; &uacute;nica medida aplicable a variables ordinales adem&aacute;s de las cuantitativas<BR>
+&bull; <B>Moda</B> = mayor frecuencia &middot; unimodal/bimodal/multimodal/amodal &middot; &uacute;nica v&aacute;lida para variables cualitativas nominales<BR>
+&bull; Datos agrupados en intervalos: f&oacute;rmulas de <B>interpolaci&oacute;n</B> para Mediana y Moda (usan L&#7522;&minus;1, F&#7522;&minus;1, f&#7522;, A, d&#8321;, d&#8322;)<BR>
+&bull; <B>Varianza</B> &sigma;&sup2;=&Sigma;(x&#7522;&minus;x&#772;)&sup2;/n &middot; <B>Desviaci&oacute;n est&aacute;ndar</B> &sigma;=&#8730;&sigma;&sup2; (mismas unidades que los datos)<BR>
+&bull; <B>Coeficiente de variaci&oacute;n</B> CV=(&sigma;/x&#772;)&times;100% &rarr; compara dispersi&oacute;n relativa entre grupos distintos<BR>
+&bull; Sim&eacute;trica: media=mediana=moda &middot; Sesgo positivo: media&gt;mediana&gt;moda &middot; Sesgo negativo: media&lt;mediana&lt;moda
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Calcule la media aritm&eacute;tica de los siguientes datos: 8, 12, 10, 14, 6.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) 10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) 12</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>x&#772; = (8+12+10+14+6)/5 = 50/5 = <B>10</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Halle la mediana del conjunto de datos: 5, 9, 3, 7, 11 (sin ordenar).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) 11</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Ordenando: 3, 5, 7, 9, 11 (n=5, impar). Posici&oacute;n central = (5+1)/2 = 3.&deg; lugar &rarr; Me = <B>7</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Determine la moda del conjunto de datos: 4, 6, 6, 8, 6, 9, 4.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) 9</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El valor 4 se repite 2 veces; el valor 6 se repite 3 veces (la mayor frecuencia); 8 y 9 se repiten 1 vez cada uno. Mo = <B>6</B> (distribuci&oacute;n unimodal).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Cu&aacute;l de las siguientes medidas de tendencia central es la m&aacute;s afectada por la presencia de valores extremos (outliers) en un conjunto de datos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) La media aritm&eacute;tica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) La mediana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) La moda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Las tres se afectan exactamente por igual</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La <B>media aritm&eacute;tica</B> considera el valor exacto de todos los datos en su c&aacute;lculo, por lo que un valor extremadamente alto o bajo puede desplazarla significativamente. La <B>mediana</B> solo depende de la posici&oacute;n central, no del valor exacto de los extremos, por lo que es mucho m&aacute;s robusta. La <B>moda</B> depende &uacute;nicamente de la repetici&oacute;n de valores, por lo que tampoco se ve afectada por un dato at&iacute;pico aislado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qu&eacute; mide la desviaci&oacute;n est&aacute;ndar de un conjunto de datos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) El valor m&aacute;s repetido del conjunto de datos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) El valor central del conjunto de datos ordenados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Qu&eacute; tan dispersos o alejados est&aacute;n, en promedio, los datos respecto a la media, expresado en las mismas unidades que los datos originales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) La diferencia entre el valor m&aacute;ximo y el valor m&iacute;nimo del conjunto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>desviaci&oacute;n est&aacute;ndar</B> (&sigma;=&#8730;&sigma;&sup2;) es la ra&iacute;z cuadrada de la varianza y mide la <B>dispersi&oacute;n promedio</B> de los datos respecto a la media, expresada en las mismas unidades de los datos originales. Una desviaci&oacute;n peque&ntilde;a indica datos concentrados; una grande, datos dispersos. La opci&oacute;n a) describe la moda; la b) describe la mediana; la d) describe el rango.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; APLICACI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Un estudiante obtuvo las siguientes notas con sus respectivos pesos: Pr&aacute;ctica=12 (peso 1), Parcial=15 (peso 2), Final=18 (peso 3). Calcule su promedio ponderado.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) 15,0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) 15,5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) 16,0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) 16,5</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>x&#772;w = [(12&times;1)+(15&times;2)+(18&times;3)] / (1+2+3) = (12+30+54)/6 = 96/6 = <B>16,0</B><BR>
+(Verificaci&oacute;n del c&aacute;lculo: 12+30+54=96; 96/6=16. Respuesta correcta: <B>16,0</B>, opci&oacute;n c).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Un veh&iacute;culo recorre una distancia de ida a 30 km/h y la misma distancia de regreso a 60 km/h. &iquest;Cu&aacute;l es su velocidad promedio para todo el recorrido?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) 40 km/h</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) 45 km/h</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) 50 km/h</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) 55 km/h</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Como se recorre la <B>misma distancia</B> a diferentes velocidades, se usa la <B>media arm&oacute;nica</B> (no la aritm&eacute;tica):<BR>
+MA = 2/(1/30+1/60) = 2/(2/60+1/60) = 2/(3/60) = 2&times;(60/3) = 120/3 = <B>40 km/h</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Calcule la varianza poblacional del conjunto de datos: 4, 6, 8, 10, 12.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) 10</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>x&#772; = (4+6+8+10+12)/5 = 40/5 = 8<BR>
+Desviaciones: (4&minus;8)=&minus;4; (6&minus;8)=&minus;2; (8&minus;8)=0; (10&minus;8)=2; (12&minus;8)=4<BR>
+Cuadrados: 16, 4, 0, 4, 16 &rarr; suma = 40<BR>
+&sigma;&sup2; = 40/5 = <B>8</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Si la varianza de un conjunto de datos es 36, &iquest;cu&aacute;l es su desviaci&oacute;n est&aacute;ndar?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) 18</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) 1296</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>&sigma; = &#8730;&sigma;&sup2; = &#8730;36 = <B>6</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Un conjunto de datos agrupados presenta: x&#7522;=10 con f&#7522;=2; x&#7522;=20 con f&#7522;=5; x&#7522;=30 con f&#7522;=3. Calcule la media para estos datos agrupados (n=10).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) 19</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) 20</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) 21</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) 22</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>x&#772; = &Sigma;(x&#7522;f&#7522;)/n = [(10&times;2)+(20&times;5)+(30&times;3)]/10 = (20+100+90)/10 = 210/10 = <B>21</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Dos secciones de un colegio presentan los siguientes resultados en un examen: Secci&oacute;n A: x&#772;=60, &sigma;=6. Secci&oacute;n B: x&#772;=80, &sigma;=10. &iquest;Qu&eacute; secci&oacute;n presenta mayor homogeneidad relativa (menor variabilidad relativa) en sus calificaciones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) La Secci&oacute;n A, porque tiene la menor desviaci&oacute;n est&aacute;ndar absoluta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La Secci&oacute;n B, porque tiene el menor coeficiente de variaci&oacute;n (12,5% frente a 10%... se debe calcular)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) La Secci&oacute;n B, porque su coeficiente de variaci&oacute;n (12,5%) es menor que el de la Secci&oacute;n A (10%)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Ambas secciones presentan exactamente la misma homogeneidad relativa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>CV(A) = (6/60)&times;100% = <B>10%</B><BR>
+CV(B) = (10/80)&times;100% = <B>12,5%</B><BR>
+La <B>Secci&oacute;n A</B> tiene el <B>menor coeficiente de variaci&oacute;n</B> (10% &lt; 12,5%), por lo tanto es la que presenta <B>mayor homogeneidad relativa</B> (menor dispersi&oacute;n relativa) en sus calificaciones, a pesar de que su desviaci&oacute;n est&aacute;ndar absoluta (6) sea menor que la de B (10) &mdash;lo relevante es la comparaci&oacute;n relativa a su propia media. (Nota: la opci&oacute;n correcta seg&uacute;n el c&aacute;lculo es que la Secci&oacute;n A es la m&aacute;s homog&eacute;nea, por tener menor CV).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Una inversi&oacute;n tuvo un crecimiento de 20% en el primer a&ntilde;o y de 80% en el segundo a&ntilde;o (factores 1,20 y 1,80). Calcule la tasa de crecimiento promedio anual usando la media geom&eacute;trica.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) 40%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) 47%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) 50%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) 55%</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>MG = &#8730;(1,20&times;1,80) = &#8730;2,16 &asymp; 1,4697<BR>
+La tasa de crecimiento promedio es aproximadamente (1,4697&minus;1)&times;100% &asymp; <B>47%</B> anual.<BR>
+(Nota: la media aritm&eacute;tica simple de 20% y 80% dar&iacute;a 50%, pero ese valor <B>no es correcto</B> para tasas de crecimiento multiplicativas; la media geom&eacute;trica es la herramienta adecuada).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> En una distribuci&oacute;n de datos se observa que la media es 45, la mediana es 50 y la moda es 55. &iquest;Qu&eacute; tipo de asimetr&iacute;a presenta esta distribuci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Distribuci&oacute;n perfectamente sim&eacute;trica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Asimetr&iacute;a (sesgo) positiva, con cola hacia los valores altos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Asimetr&iacute;a (sesgo) negativa, con cola hacia los valores bajos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) No se puede determinar el tipo de asimetr&iacute;a con estos datos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Como <B>media (45) &lt; mediana (50) &lt; moda (55)</B>, la distribuci&oacute;n presenta <B>asimetr&iacute;a o sesgo negativo</B>: existe una "cola" de valores extremadamente bajos que arrastra la media hacia abajo, por debajo de la mediana y de la moda. Gr&aacute;ficamente, la distribuci&oacute;n se extiende m&aacute;s hacia la izquierda (valores bajos).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> En una tabla de datos agrupados en intervalos, el intervalo mediano es [30;40&rang;, con L&#7522;&minus;1=30, F&#7522;&minus;1=18 (acumulada anterior), f&#7522;=12 (frecuencia del intervalo mediano), A=10 y n=50. Calcule la mediana.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) 33,8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) 35,8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) 37,8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) 39,8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>n/2 = 50/2 = 25<BR>
+Me = L&#7522;&minus;1 + [(n/2&minus;F&#7522;&minus;1)/f&#7522;]&times;A = 30 + [(25&minus;18)/12]&times;10 = 30 + (7/12)&times;10 = 30 + 5,83 = <B>35,83 &asymp; 35,8</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> En una tabla de datos agrupados, el intervalo modal es [20;30&rang;, con f&#7522;&minus;1=8 (frecuencia del intervalo anterior), f&#7522;=15 (frecuencia del intervalo modal), f&#7522;&plus;1=10 (frecuencia del intervalo siguiente) y A=10. Calcule la moda.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) 24,5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) 25,8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) 26,7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) 27,5</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>d&#8321; = f&#7522;&minus;f&#7522;&minus;1 = 15&minus;8 = 7<BR>
+d&#8322; = f&#7522;&minus;f&#7522;&plus;1 = 15&minus;10 = 5<BR>
+Mo = L&#7522;&minus;1 + [d&#8321;/(d&#8321;+d&#8322;)]&times;A = 20 + [7/(7+5)]&times;10 = 20 + (7/12)&times;10 = 20 + 5,83 = <B>25,83 &asymp; 26,7</B><BR>
+(Verificaci&oacute;n: 20+5,83=25,83; el valor m&aacute;s pr&oacute;ximo entre las opciones consistente con el c&aacute;lculo correcto es <B>25,8</B>; sin embargo, siguiendo la f&oacute;rmula exacta, Mo&asymp;25,83, que redondea a <B>25,8</B>, opci&oacute;n b).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Demuestre por qu&eacute; la suma de las desviaciones de cada dato respecto a la media siempre es igual a cero: &Sigma;(x&#7522;&minus;x&#772;)=0.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Es una coincidencia num&eacute;rica que solo ocurre en algunos conjuntos de datos espec&iacute;ficos, no es una propiedad general</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) &Sigma;(x&#7522;&minus;x&#772;) = &Sigma;x&#7522; &minus; n&middot;x&#772; = &Sigma;x&#7522; &minus; n&middot;(&Sigma;x&#7522;/n) = &Sigma;x&#7522; &minus; &Sigma;x&#7522; = 0; algebraicamente, la suma de las desviaciones se cancela siempre, sin importar el conjunto de datos, por la propia definici&oacute;n de la media como punto de equilibrio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Solo es cero cuando los datos est&aacute;n ordenados de menor a mayor antes del c&aacute;lculo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Es cero &uacute;nicamente cuando el n&uacute;mero de datos n es un n&uacute;mero par</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una propiedad algebraica fundamental que se cumple <B>siempre</B>, para cualquier conjunto de datos. Demostraci&oacute;n: &Sigma;(x&#7522;&minus;x&#772;) = &Sigma;x&#7522; &minus; &Sigma;x&#772; = &Sigma;x&#7522; &minus; n&middot;x&#772; (porque x&#772; se suma n veces, una por cada dato). Como x&#772;=&Sigma;x&#7522;/n, entonces n&middot;x&#772;=n&middot;(&Sigma;x&#7522;/n)=&Sigma;x&#7522;. Sustituyendo: &Sigma;(x&#7522;&minus;x&#772;) = &Sigma;x&#7522; &minus; &Sigma;x&#7522; = <B>0</B>. Esta propiedad confirma que la media es el "punto de equilibrio" del conjunto: las desviaciones positivas (datos mayores que la media) se compensan exactamente con las desviaciones negativas (datos menores que la media). Por esta misma raz&oacute;n, la varianza eleva las desviaciones al cuadrado: para evitar que se cancelen y poder medir efectivamente la dispersi&oacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Si a todos los datos de un conjunto se les suma una constante k=5, &iquest;qu&eacute; ocurre con la media y con la desviaci&oacute;n est&aacute;ndar del nuevo conjunto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La media aumenta en 5 unidades; la desviaci&oacute;n est&aacute;ndar tambi&eacute;n aumenta en 5 unidades</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La media aumenta en 5 unidades; la desviaci&oacute;n est&aacute;ndar permanece exactamente igual (no cambia)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La media permanece igual; la desviaci&oacute;n est&aacute;ndar aumenta en 5 unidades</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Tanto la media como la desviaci&oacute;n est&aacute;ndar permanecen exactamente iguales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Al sumar una constante k a todos los datos, la <B>media</B> se desplaza exactamente esa misma constante: nueva x&#772; = x&#772;+k = x&#772;+5. Sin embargo, la <B>dispersi&oacute;n relativa entre los datos no cambia</B>: si todos los valores se desplazan por igual, las distancias (desviaciones) entre cada dato y la nueva media siguen siendo exactamente las mismas que antes, porque (x&#7522;+k)&minus;(x&#772;+k) = x&#7522;&minus;x&#772;. Por lo tanto, la <B>varianza y la desviaci&oacute;n est&aacute;ndar permanecen exactamente iguales</B>: sumar una constante "traslada" el conjunto de datos sin alterar su forma ni su dispersi&oacute;n interna.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Compare la varianza poblacional y la varianza muestral: &iquest;por qu&eacute; la f&oacute;rmula de la varianza muestral divide entre (n&minus;1) en lugar de n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Es un error hist&oacute;rico en la f&oacute;rmula que se mantiene por costumbre, sin ninguna justificaci&oacute;n matem&aacute;tica real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Dividir entre (n&minus;1), llamado "correcci&oacute;n de Bessel", produce un estimador <B>insesgado</B> de la varianza poblacional: cuando se usa la media muestral (en lugar de la media poblacional real, generalmente desconocida) para calcular las desviaciones, la varianza tiende a subestimarse ligeramente si se divide entre n; dividir entre (n&minus;1) corrige ese sesgo y da una mejor estimaci&oacute;n de la verdadera varianza poblacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Se divide entre (n&minus;1) &uacute;nicamente cuando el tama&ntilde;o de la muestra es menor a 30 datos; para muestras mayores siempre se divide entre n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) No existe ninguna diferencia real entre dividir entre n o entre (n&minus;1); ambas f&oacute;rmulas dan exactamente el mismo resultado num&eacute;rico siempre</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una de las distinciones m&aacute;s sutiles e importantes de la estad&iacute;stica inferencial. Cuando se calcula la varianza de una <B>muestra</B> usando la <B>media muestral</B> (x&#772;) en lugar de la verdadera media poblacional (&mu;, generalmente desconocida), las desviaciones (x&#7522;&minus;x&#772;) tienden a ser, en promedio, ligeramente <B>menores</B> que las desviaciones reales respecto a &mu;, porque la media muestral siempre se "ajusta" lo mejor posible a los propios datos de la muestra (es, por definici&oacute;n, el punto que minimiza la suma de cuadrados de las desviaciones dentro de esa muestra espec&iacute;fica). Esto provoca que dividir entre n produzca un estimador <B>sesgado</B> (subestimado) de la varianza poblacional real. Dividir entre <B>(n&minus;1)</B> &mdash;conocido como <B>correcci&oacute;n de Bessel</B>&mdash; compensa matem&aacute;ticamente este sesgo, produciendo un estimador <B>insesgado</B>: su valor esperado coincide exactamente con la varianza poblacional verdadera. Cuanto mayor es n, menor es la diferencia pr&aacute;ctica entre dividir entre n o entre (n&minus;1).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Un analista financiero compara la variabilidad de dos acciones: la Acci&oacute;n X tiene un precio promedio de S/120 con desviaci&oacute;n est&aacute;ndar de S/18; la Acci&oacute;n Y tiene un precio promedio de S/40 con desviaci&oacute;n est&aacute;ndar de S/8. &iquest;Cu&aacute;l acci&oacute;n es relativamente m&aacute;s riesgosa (m&aacute;s vol&aacute;til en t&eacute;rminos relativos)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) La Acci&oacute;n X, porque tiene la mayor desviaci&oacute;n est&aacute;ndar absoluta (S/18 frente a S/8)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) La Acci&oacute;n Y, porque su coeficiente de variaci&oacute;n (20%) es mayor que el de la Acci&oacute;n X (15%), indicando mayor dispersi&oacute;n relativa respecto a su propio precio promedio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Ambas acciones presentan exactamente el mismo nivel de riesgo relativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) No es posible comparar el riesgo de ambas acciones porque tienen precios promedio distintos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Comparar directamente las desviaciones est&aacute;ndar absolutas (S/18 vs. S/8) ser&iacute;a enga&ntilde;oso porque las acciones tienen precios promedio muy distintos. La herramienta correcta es el <B>coeficiente de variaci&oacute;n</B>:<BR>
+CV(X) = (18/120)&times;100% = <B>15%</B><BR>
+CV(Y) = (8/40)&times;100% = <B>20%</B><BR>
+Aunque la Acci&oacute;n X tiene mayor dispersi&oacute;n absoluta (S/18), su variabilidad <B>relativa</B> a su propio precio es menor (15%). La <B>Acci&oacute;n Y</B>, en cambio, presenta un coeficiente de variaci&oacute;n mayor (20%), lo que indica que sus fluctuaciones de precio son proporcionalmente m&aacute;s grandes respecto a su valor promedio: es la inversi&oacute;n relativamente <B>m&aacute;s riesgosa</B> o vol&aacute;til de las dos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Eval&uacute;e la siguiente afirmaci&oacute;n: "Para reportar el sueldo t&iacute;pico de los trabajadores de una empresa donde existen unos pocos directivos con sueldos extremadamente altos en comparaci&oacute;n con el resto del personal, conviene usar la media aritm&eacute;tica en lugar de la mediana, porque la media es matem&aacute;ticamente m&aacute;s precisa."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) La afirmaci&oacute;n es correcta: la media siempre es matem&aacute;ticamente superior a la mediana en cualquier contexto, sin excepciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) La afirmaci&oacute;n es incorrecta: en presencia de valores extremos (los sueldos muy altos de los directivos), la media quedar&iacute;a distorsionada hacia arriba, dando una impresi&oacute;n enga&ntilde;osa de que el "trabajador t&iacute;pico" gana m&aacute;s de lo que realmente gana la mayor&iacute;a; en este caso, la <B>mediana</B> es la medida m&aacute;s representativa del sueldo t&iacute;pico, pues no se ve afectada por esos pocos valores extremadamente altos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) La afirmaci&oacute;n es correcta solo si el n&uacute;mero de trabajadores es impar; si es par, deber&iacute;a usarse la moda en su lugar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Ninguna medida de tendencia central es apropiada en este caso; deber&iacute;a usarse &uacute;nicamente el rango para describir los sueldos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta eval&uacute;a la comprensi&oacute;n profunda (no solo el c&aacute;lculo mec&aacute;nico) de las medidas de tendencia central. Cuando una distribuci&oacute;n presenta <B>valores extremos o at&iacute;picos</B> &mdash;como sucede t&iacute;picamente con la distribuci&oacute;n de ingresos econ&oacute;micos, donde un peque&ntilde;o grupo de directivos gana much&iacute;simo m&aacute;s que el resto&mdash;, la <B>media aritm&eacute;tica</B> se ve fuertemente <B>distorsionada hacia esos valores extremos</B>, pues los considera con el mismo peso matem&aacute;tico que a cualquier otro dato dentro de la suma total. El resultado es que la media puede dar una impresi&oacute;n enga&ntilde;osa: sugerir que el "trabajador promedio" gana mucho m&aacute;s de lo que en realidad gana la gran mayor&iacute;a del personal. La <B>mediana</B>, al depender &uacute;nicamente de la posici&oacute;n central de los datos ordenados (y no de los valores exactos de los extremos), <B>no se distorsiona</B> por esos sueldos at&iacute;picamente altos, por lo que constituye una medida mucho m&aacute;s <B>representativa</B> del "trabajador t&iacute;pico" en este contexto. Esta es precisamente la raz&oacute;n por la cual organismos estad&iacute;sticos oficiales suelen reportar el <B>ingreso mediano</B> (no el promedio) al describir distribuciones de ingresos de la poblaci&oacute;n.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

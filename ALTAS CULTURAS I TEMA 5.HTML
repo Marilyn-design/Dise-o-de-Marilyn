@@ -1,0 +1,493 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Altas Culturas II - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA &middot; TEMA 5</DIV>
+<H1>Altas Culturas II</H1>
+<DIV CLASS="sub">Huari &middot; Sic&aacute;n &middot; Chim&uacute;</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+
+
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Introducci&oacute;n: Las culturas del Intermedio Tard&iacute;o y el Horizonte Medio</H3>
+Las tres culturas de este tema representan dos grandes momentos de la historia prehisp&aacute;nica peruana: el <B>Horizonte Medio</B> (expansi&oacute;n pan-andina de Huari) y el <B>Intermedio Tard&iacute;o</B> (desarrollo regional de Sic&aacute;n y Chim&uacute;). Juntas forman el puente entre las culturas regionales tempranas (Moche, Nazca, Tiahuanaco) y el Imperio Inca.
+
+<H4>Ubicaci&oacute;n en el esquema de periodos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Periodo</TH><TH>Cultura</TH><TH>Cronolog&iacute;a aproximada</TH><TH>Zona principal</TH></TR>
+<TR><TD><B>Horizonte Medio</B></TD><TD>Huari (Wari)</TD><TD>600 – 1 000 d.C.</TD><TD>Sierra centro-sur (Ayacucho)</TD></TR>
+<TR><TD><B>Intermedio Tard&iacute;o</B></TD><TD>Sic&aacute;n (Lambayeque)</TD><TD>750 – 1 375 d.C.</TD><TD>Costa norte (Lambayeque)</TD></TR>
+<TR><TD><B>Intermedio Tard&iacute;o</B></TD><TD>Chim&uacute;</TD><TD>900 – 1 470 d.C.</TD><TD>Costa norte (La Libertad)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Huari comparte el <B>Horizonte Medio</B> con Tiahuanaco; ambas se expanden simult&aacute;neamente y se influencian mutuamente. Sic&aacute;n y Chim&uacute; pertenecen al <B>Intermedio Tard&iacute;o</B>: son culturas regionales poderosas de la costa norte. Chim&uacute; fue el &uacute;nico estado que rivializ&oacute; en tama&ntilde;o con el Imperio Inca antes de ser conquistado por este (~1470 d.C.).</DIV>
+
+<H3>2. Ubicaci&oacute;n geogr&aacute;fica</H3>
+<UL>
+<LI><B>Huari:</B> sierra centro-sur del Per&uacute;, con centro en Quinua (Ayacucho), a ~2 800 m s.n.m. Su influencia se extendi&oacute; desde Cajamarca (norte) hasta Moquegua y el norte de Chile (sur), y hacia la costa.</LI>
+<LI><B>Sic&aacute;n:</B> costa norte, valles de La Leche y Lambayeque (regi&oacute;n Lambayeque). Capital principal: Batan Grande (Sic&aacute;n Medio) y luego T&uacute;cume (Sic&aacute;n Tard&iacute;o).</LI>
+<LI><B>Chim&uacute;:</B> costa norte, con capital en Chan Chan (La Libertad), en el valle de Moche. Su territorio se extendi&oacute; desde Tumbes (norte) hasta Carabayllo en Lima (sur), abarcando m&aacute;s de 1 000 km de costa.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128205; <B>Nota geogr&aacute;fica clave:</B> Las tres culturas de este tema compartieron la zona norte del Per&uacute; en distintos momentos. Sic&aacute;n surgi&oacute; en la zona Moche/Lambayeque y fue absorbida luego por Chim&uacute;. Huari, desde la sierra, ejerci&oacute; influencia sobre la costa norte durante el Horizonte Medio, lo que conect&oacute; a estas culturas indirectamente.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127981; HUARI (WARI) &mdash; Horizonte Medio (600 &ndash; 1 000 d.C.)<SPAN>Primera cultura imperialista del Per&uacute; prehisp&aacute;nico</SPAN></DIV>
+
+<H3>3. La Cultura Huari (Wari)</H3>
+
+<H4>Origen y contexto:</H4>
+La cultura Huari surgi&oacute; en el valle de Quinua (Ayacucho) a partir de la fusi&oacute;n de elementos culturales locales con la influencia de <B>Tiahuanaco</B> (especialmente la iconograf&iacute;a del Dios de los B&aacute;culos) y de <B>Nazca</B> (cer&aacute;mica). Este sincretismo produjo una civilizaci&oacute;n original que se convirti&oacute; en el primer estado expansionista y militarista del Per&uacute; prehisp&aacute;nico.
+
+<H4>Caracter&iacute;sticas principales:</H4>
+<UL>
+<LI><B>Organizaci&oacute;n pol&iacute;tica:</B> estado centralizado con car&aacute;cter imperialista. Establecieron centros administrativos provinciales (como Pikillacta en Cusco, Wiracochapampa en La Libertad, Cerro Baul en Moquegua) para controlar los territorios conquistados.</LI>
+<LI><B>Econom&iacute;a:</B> basada en la agricultura intensiva con andenes (<I>terrazas</I>) en las laderas de los cerros para ampliar las &aacute;reas cultivables. Tambi&eacute;n desarrollaron depósitos estatales (<I>qollqas</I>) para redistribuir alimentos, un sistema que los incas luego perfeccionaron.</LI>
+<LI><B>Red vial:</B> construyeron una extensa red de caminos que preced&iacute;a al <I>Qhapaq &Ntilde;an</I> inca. Estos caminos conectaban la capital con los centros administrativos provinciales y facilitaban el movimiento de ej&eacute;rcitos y bienes.</LI>
+<LI><B>Arquitectura:</B> su capital, <B>Huari</B> (Quinua, Ayacucho), lleg&oacute; a tener entre 30 000 y 70 000 habitantes, siendo una de las mayores ciudades de su &eacute;poca en Am&eacute;rica. Se caracteriza por recintos rectangulares de piedra, calles ortogonales y estructuras subterr&aacute;neas funerarias. <B>Pikillacta</B> (Cusco) es el centro provincial mejor conservado.</LI>
+<LI><B>Cer&aacute;mica:</B> pol&iacute;croma, influenciada por Tiahuanaco (figuras del Dios de los B&aacute;culos) y Nazca (colores vivos). Destaca por su gran calidad y la representaci&oacute;n de figuras humanas y divinas estilizadas.</LI>
+<LI><B>Textiler&iacute;a:</B> una de las m&aacute;s sofisticadas del mundo andino. Los tapices Huari (<I>tapestry</I>) usan t&eacute;cnicas de tejido invertido con hasta 120 hilos por cent&iacute;metro, y representan figuras geom&eacute;tricas y divinas en colores vivos.</LI>
+</UL>
+
+<H4>Expansi&oacute;n e influencia:</H4>
+Huari es considerado el <B>primer estado pan-andino de car&aacute;cter imperialista</B>. A diferencia de Chavín (que se expandi&oacute; por influencia religiosa), Huari lo hizo por conquista militar y control administrativo directo. Su colapso (~1 000 d.C.) es a&uacute;n debatido: probablemente fue una combinaci&oacute;n de sequ&iacute;as, conflictos internos y la presi&oacute;n de pueblos locales.
+
+<DIV CLASS="ej">&#127981; <B>Dato clave:</B> Los incas heredaron de Huari dos innovaciones fundamentales: los <B>andenes agr&iacute;colas</B> y el sistema de <B>centros administrativos provinciales</B> (tambos). Muchos investigadores ven en Huari el "ensayo general" del Tawantinsuyu.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128081; SIC&Aacute;N (LAMBAYEQUE) &mdash; Intermedio Tard&iacute;o (750 &ndash; 1 375 d.C.)<SPAN>La cultura del Oro: Tumi, Namlap y la metalurgia m&aacute;s avanzada del Per&uacute; preinca</SPAN></DIV>
+
+<H3>4. La Cultura Sic&aacute;n (Lambayeque)</H3>
+
+<H4>Origen y el mito de Namlap:</H4>
+La tradici&oacute;n oral recogida por el cronista Cabello de Balboa narra que un personaje llamado <B>Namlap</B> lleg&oacute; por el mar en balsas con su corte y fund&oacute; la dinast&iacute;a Lambayeque. Sea mito o realidad hist&oacute;rica, Namlap es el &iacute;cono fundacional de esta cultura y su imagen aparece en los t&uacute;mulos, cer&aacute;mica y objetos de metal: rostro de frente con ojos alados ("ojos de aleta"), una de las iconograf&iacute;as m&aacute;s reconocibles del Per&uacute; prehisp&aacute;nico.
+
+<H4>Periodizaci&oacute;n:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fase</TH><TH>Cronolog&iacute;a</TH><TH>Caracter&iacute;stica</TH></TR>
+<TR><TD><B>Sic&aacute;n Temprano</B></TD><TD>750 – 900 d.C.</TD><TD>Formaci&oacute;n. Influencia Huari visible en la cer&aacute;mica.</TD></TR>
+<TR><TD><B>Sic&aacute;n Medio</B></TD><TD>900 – 1 100 d.C.</TD><TD>Apogeo. Capital en Batan Grande. Metalurgia de oro en su punto m&aacute;ximo. Tumbas reales.</TD></TR>
+<TR><TD><B>Sic&aacute;n Tard&iacute;o</B></TD><TD>1 100 – 1 375 d.C.</TD><TD>Declive. Traslado a T&uacute;cume. Absorci&oacute;n por Chim&uacute; (~1 375 d.C.).</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Aportes y caracter&iacute;sticas:</H4>
+<UL>
+<LI><B>Metalurgia:</B> es la cultura metalúrgica m&aacute;s avanzada del Per&uacute; preinca. Dominaron el oro, la plata, el cobre y el bronce arsenical. Inventaron la t&eacute;cnica del <I>dorado por oxidaci&oacute;n</I> (para dar aspecto dorado a objetos de cobre). El <B>Tumi</B> (cuchillo ceremonial semicircular) es su s&iacute;mbolo m&aacute;s famoso y hoy es el s&iacute;mbolo del turismo peruano.</LI>
+<LI><B>T&uacute;mulos funerarios:</B> las tumbas de &eacute;lite en Batan Grande (Poma&ccedil;, Loro, La Merced) son de gran profundidad (~10 m) y contienen enormes cantidades de objetos de metal. La <B>Tumba Este de Huaca Loro</B> conten&iacute;a m&aacute;s de una tonelada de objetos de metal (tumi, mascaras, naipes de cobre).</LI>
+<LI><B>Cer&aacute;mica:</B> monocroma negra y bruñida, con la cara de Namlap (ojos de aleta) como motivo recurrente. Se us&oacute; el molde para producci&oacute;n en serie.</LI>
+<LI><B>Arquitectura:</B> Batan Grande contiene m&aacute;s de 35 pir&aacute;mides de adobe. T&uacute;cume (Valle de las Pir&aacute;mides) tiene 26 pir&aacute;mides truncas, siendo uno de los complejos piramidales m&aacute;s grandes del mundo.</LI>
+<LI><B>Arqueólogos clave:</B> <B>Izumi Shimada</B> (investigador principal de Sic&aacute;n) y <B>Thor Heyerdahl</B> (quien excav&oacute; T&uacute;cume).</LI>
+</UL>
+
+<DIV CLASS="ej">&#128081; <B>El Tumi:</B> El cuchillo ceremonial semicircular con la figura de Namlap en el mango es el objeto m&aacute;s emblem&aacute;tico de Sic&aacute;n. Fabricado en oro de alta pureza, se us&oacute; en rituales, probablemente sacrificiales. Hoy el Tumi es el s&iacute;mbolo oficial del turismo en el Per&uacute;, apareciendo en el logo de <I>PromPer&uacute;</I>.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127963; CHIM&Uacute; &mdash; Intermedio Tard&iacute;o (900 &ndash; 1 470 d.C.)<SPAN>El mayor estado preinca: Chan Chan, la ciudad de adobe m&aacute;s grande del mundo</SPAN></DIV>
+
+<H3>5. La Cultura Chim&uacute;</H3>
+
+<H4>Origen y organizaci&oacute;n pol&iacute;tica:</H4>
+Chim&uacute; hered&oacute; el territorio y la tradici&oacute;n cultural <B>Moche</B> de la costa norte. Su tradici&oacute;n oral, recogida por el cronista Calancha, menciona al fundador <B>Tacaynamo</B>, quien lleg&oacute; por el mar. El estado Chim&uacute; fue una monarqu&iacute;a divina hereditaria gobernada por el <B>Gran Chim&uacute;</B> (C&iacute;e-quich). Fue el segundo estado m&aacute;s poderoso de los Andes despu&eacute;s del Tawantinsuyu y su &uacute;nico rival real antes de ser conquistado por el Inca Pachac&uacute;tec (~1 470 d.C.).
+
+<H4>Chan Chan &mdash; la capital:</H4>
+<B>Chan Chan</B> (voz muchik que significa "Sol resplandeciente") es la ciudad de adobe m&aacute;s grande del mundo y fue declarada <B>Patrimonio de la Humanidad por la UNESCO en 1986</B>. Ubicada en el valle de Moche (La Libertad), ocupa ~20 km² y cont&eacute;n 9 <B>ciudadelas reales</B> (llamadas <I>palacios</I> o <I>tschudis</I>), cada una construida por un Gran Chim&uacute; distinto y usada como mausoleo al morir.
+
+<H4>Caracter&iacute;sticas de Chan Chan:</H4>
+<UL>
+<LI>Cada ciudadela ten&iacute;a: audiencias (salas con nichos para almac&eacute;n y administraci&oacute;n), depósitos (<I>U-shapes</I>), pozo de agua, plataforma funeraria real y jardines.</LI>
+<LI>Las paredes est&aacute;n decoradas con frisos en altorrelieve: figuras de peces, aves, redes y dise&ntilde;os geom&eacute;tricos que reflejan la importancia del mar en la econom&iacute;a chim&uacute;.</LI>
+<LI>Se estima que vivi&oacute; entre 30 000 y 60 000 personas en su apogeo.</LI>
+</UL>
+
+<H4>Econom&iacute;a y tecnolog&iacute;a:</H4>
+<UL>
+<LI><B>Irrigaci&oacute;n:</B> construyeron el canal de irrigaci&oacute;n m&aacute;s largo del Per&uacute; prehisp&aacute;nico: el <B>Canal La Cumbre</B> (~80 km), que transport&oacute; agua desde el r&iacute;o Chicama hasta el valle de Moche, cruzando una divisoria de aguas.</LI>
+<LI><B>Pesca:</B> intensiva con balsas de totora (<I>caballitos de totora</I>), redes y anzuelos. El mar era fundamental.</LI>
+<LI><B>Comercio:</B> gran red de intercambio a larga distancia con la costa ecuatoriana (Spondylus o mullu) y otras regiones.</LI>
+<LI><B>Metalurgia:</B> heredaron la tradici&oacute;n Sic&aacute;n y Moche. Produjeron objetos de oro, plata y cobre en grandes cantidades mediante talleres especializados (artesanos de &eacute;lite, los <I>orfebres</I>).</LI>
+</UL>
+
+<H4>Arte y cer&aacute;mica:</H4>
+<UL>
+<LI><B>Cer&aacute;mica:</B> monocroma negra o gris oscuro, con brillo met&aacute;lico. Fabricada en moldes (producci&oacute;n en serie). Formas: asa estribo (herencia moche), cuerpos globulares, representaciones de personajes y animales.</LI>
+<LI><B>Textiler&iacute;a:</B> de alta calidad, con plumas de aves tropicales incorporadas al tejido (<I>plumer&iacute;a</I>).</LI>
+<LI><B>Metalurgia:</B> suprema en t&eacute;cnica y cantidad. Produjeron vasijas, m&aacute;scaras, tocados, brazaletes y el famoso <B>Cuchillo de oro de Chan Chan</B>.</LI>
+</UL>
+
+<H4>Conquista Inca (~1 470 d.C.):</H4>
+El Inca <B>T&uacute;pac Yupanqui</B> (hijo de Pachac&uacute;tec) conquist&oacute; el reino Chim&uacute; despu&eacute;s de cortar el suministro de agua a Chan Chan (dominando los canales de irrigaci&oacute;n). El Gran Chim&uacute; <B>Minchancaman</B> fue llevado como prisionero al Cusco. Los orfebres chim&uacute;s fueron trasladados al Cusco para trabajar para el Imperio Inca, transfiriendo as&iacute; su tecnolog&iacute;a metal&uacute;rgica.
+
+<DIV CLASS="ej">&#127963; <B>Chan Chan hoy:</B> Declarada Patrimonio UNESCO en 1986, Chan Chan enfrenta grave deterioro por las lluvias del Fen&oacute;meno El Ni&ntilde;o (las lluvias disuelven el adobe) y est&aacute; en la lista de Patrimonios en Peligro. Es el mayor complejo de arquitectura de adobe del mundo.</DIV>
+
+<H3>6. Cuadro comparativo: Huari, Sic&aacute;n y Chim&uacute;</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Aspecto</TH><TH>Huari (Wari)</TH><TH>Sic&aacute;n (Lambayeque)</TH><TH>Chim&uacute;</TH></TR>
+<TR><TD><B>Periodo</B></TD><TD>Horizonte Medio</TD><TD>Intermedio Tard&iacute;o</TD><TD>Intermedio Tard&iacute;o</TD></TR>
+<TR><TD><B>Cronolog&iacute;a</B></TD><TD>600 – 1 000 d.C.</TD><TD>750 – 1 375 d.C.</TD><TD>900 – 1 470 d.C.</TD></TR>
+<TR><TD><B>Zona</B></TD><TD>Sierra centro (Ayacucho)</TD><TD>Costa norte (Lambayeque)</TD><TD>Costa norte (La Libertad)</TD></TR>
+<TR><TD><B>Capital</B></TD><TD>Huari (Quinua)</TD><TD>Batan Grande / T&uacute;cume</TD><TD>Chan Chan</TD></TR>
+<TR><TD><B>Econom&iacute;a</B></TD><TD>Agricultura en andenes, redistribuci&oacute;n estatal</TD><TD>Metalurgia, agricultura, comercio</TD><TD>Irrigaci&oacute;n, pesca, metalurgia, comercio</TD></TR>
+<TR><TD><B>Arquitectura</B></TD><TD>Recintos de piedra, Pikillacta</TD><TD>Pir&aacute;mides de adobe (Batan Grande, T&uacute;cume)</TD><TD>Chan Chan: 9 ciudadelas de adobe</TD></TR>
+<TR><TD><B>Arte principal</B></TD><TD>Textiler&iacute;a (tapices), cer&aacute;mica pol&iacute;croma</TD><TD>Metalurgia en oro (Tumi), cer&aacute;mica negra</TD><TD>Metalurgia, cer&aacute;mica negra, frisos en adobe</TD></TR>
+<TR><TD><B>Cerámica</B></TD><TD>Pol&iacute;croma, influencia Tiahuanaco-Nazca</TD><TD>Monocroma negra, molde, cara de Namlap</TD><TD>Monocroma negra o gris, molde, asa estribo</TD></TR>
+<TR><TD><B>Dios/S&iacute;mbolo</B></TD><TD>Dios de los B&aacute;culos (herencia Tiahuanaco)</TD><TD>Namlap (ojos de aleta)</TD><TD>Mar y Luna (Si)</TD></TR>
+<TR><TD><B>Aporte destacado</B></TD><TD>Andenes, red vial, centros administrativos (precursor Inca)</TD><TD>Tumi, metalurgia de oro m&aacute;s avanzada, T&uacute;cume</TD><TD>Chan Chan (mayor ciudad adobe del mundo), Canal La Cumbre</TD></TR>
+<TR><TD><B>Arque&oacute;logo clave</B></TD><TD>Luis Guillermo Lumbreras</TD><TD>Izumi Shimada, Thor Heyerdahl</TD><TD>Alfonso Caso, Rafael Larco Hoyle</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">600 d.C.</DIV><DIV CLASS="dk-label">Inicio de Huari, primer estado imperialista andino</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">20 km²</DIV><DIV CLASS="dk-label">Extensi&oacute;n de Chan Chan, mayor ciudad de adobe del mundo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">9</DIV><DIV CLASS="dk-label">Ciudadelas reales de Chan Chan</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1986</DIV><DIV CLASS="dk-label">Chan Chan: Patrimonio UNESCO (y en Peligro)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1 ton.</DIV><DIV CLASS="dk-label">Objetos de metal en la Tumba Este de Huaca Loro (Sic&aacute;n)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">26</DIV><DIV CLASS="dk-label">Pir&aacute;mides de T&uacute;cume (Sic&aacute;n Tard&iacute;o)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">80 km</DIV><DIV CLASS="dk-label">Longitud del Canal La Cumbre (Chim&uacute;), el m&aacute;s largo del Per&uacute; preinca</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1 470</DIV><DIV CLASS="dk-label">Conquista de Chim&uacute; por T&uacute;pac Yupanqui (Inca)</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>Datos clave para el examen:</B><BR>
+&bull; <B>Huari:</B> Horizonte Medio &middot; primer imperialismo andino &middot; andenes y centros administrativos (precursor Inca) &middot; Pikillacta (Cusco) &middot; Lumbreras<BR>
+&bull; <B>Sic&aacute;n:</B> Namlap (fundador mít&iacute;co) &middot; Tumi (cuchillo ceremonial = s&iacute;mbolo turismo Peru) &middot; Batan Grande &middot; T&uacute;cume (26 pir&aacute;mides) &middot; metalurgia de oro &middot; Izumi Shimada<BR>
+&bull; <B>Chim&uacute;:</B> Chan Chan (UNESCO 1986, 9 ciudadelas, mayor ciudad adobe del mundo) &middot; Canal La Cumbre (80 km) &middot; Minchancaman (conquistado por T&uacute;pac Yupanqui ~1 470 d.C.) &middot; cer&aacute;mica negra<BR>
+&bull; <B>Conquista:</B> Sic&aacute;n es conquistada por Chim&uacute; (~1 375 d.C.); Chim&uacute; es conquistada por los Incas (~1 470 d.C.)<BR>
+&bull; <B>Herencia Inca:</B> los andenes de Huari, la metalurgia de Sic&aacute;n y los sistemas de irrigaci&oacute;n de Chim&uacute; fueron adoptados y ampliados por el Tawantinsuyu
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿A qu&eacute; periodo cultural pertenece la cultura Huari y por qu&eacute; se le considera el primer estado imperialista andino?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Intermedio Temprano; porque conquist&oacute; a los moches mediante alianzas matrimoniales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Horizonte Medio; porque se expandi&oacute; militarmente por la sierra y costa, estableciendo centros administrativos provinciales para controlar los territorios conquistados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Intermedio Tard&iacute;o; porque domin&oacute; la costa norte antes que los chim&uacute;s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Horizonte Tard&iacute;o; porque su poder fue comparable al del Imperio Inca</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Huari pertenece al <B>Horizonte Medio</B> (600–1 000 d.C.) y es considerado el primer estado imperialista andino porque, a diferencia de Chav&iacute;n (que se expandi&oacute; por influencia religiosa), Huari lo hizo mediante <B>conquista militar y control administrativo directo</B>: estableci&oacute; centros provinciales como <B>Pikillacta</B> (Cusco), Wiracochapampa (La Libertad) y Cerro Ba&uacute;l (Moquegua) para gobernar los territorios sometidos, un modelo que los incas luego perfeccionaron.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cu&aacute;l es el objeto m&aacute;s emblem&aacute;tico de la cultura Sic&aacute;n y qu&eacute; importancia tiene hoy en d&iacute;a?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La Puerta del Sol; es Patrimonio UNESCO y est&aacute; expuesta en el Museo Larco de Lima</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El Lanz&oacute;n Monol&iacute;tico; sigue en su lugar original en Chav&iacute;n de Hu&aacute;ntar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) El Tumi; cuchillo ceremonial de oro semicircular con la figura de Namlap que hoy es el s&iacute;mbolo oficial del turismo peruano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) El Huaco retrato; m&aacute;xima expresi&oacute;n del realismo en la cer&aacute;mica andina, perteneciente a los moches</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Tumi</B> es el cuchillo ceremonial semicircular elaborado en oro por la cultura Sic&aacute;n, con el mango en forma de la figura de <B>Namlap</B> (el h&eacute;roe fundador con ojos de aleta). Era usado en rituales ceremoniales. Hoy el Tumi es el <B>s&iacute;mbolo oficial del turismo peruano</B>, apareciendo en el logo de PromPer&uacute; y siendo uno de los iconos culturales m&aacute;s reconocidos del Per&uacute; en el exterior.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Qu&eacute; es Chan Chan, d&oacute;nde est&aacute; ubicada y cu&aacute;l es su importancia internacional?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Es una fortaleza inca de piedra ubicada en Cusco, declarada Patrimonio UNESCO en 1983</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Es la capital de la cultura Chim&uacute; ubicada en el valle de Moche (La Libertad); es la ciudad de adobe m&aacute;s grande del mundo y fue declarada Patrimonio UNESCO en 1986</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Es el centro ceremonial de la cultura Sic&aacute;n ubicado en Lambayeque, famoso por sus pir&aacute;mides y el Tumi</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Es la capital de la cultura Huari ubicada en Ayacucho, con recintos de piedra y calles ortogonales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Chan Chan</B> (voz muchik: "Sol resplandeciente") es la capital del estado Chim&uacute;, ubicada en el <B>valle de Moche, La Libertad</B>. Ocupa ~20 km² y contiene <B>9 ciudadelas reales</B> de adobe, cada una construida por un Gran Chim&uacute; diferente. Es la <B>ciudad de adobe m&aacute;s grande del mundo</B> y fue declarada <B>Patrimonio de la Humanidad por la UNESCO en 1986</B>. Est&aacute; incluida en la lista de Patrimonios en Peligro por el deterioro causado por el Fen&oacute;meno El Ni&ntilde;o.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Qui&eacute;n es Namlap y a qu&eacute; cultura pertenece su mito fundacional?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Namlap es el dios del rayo de la cultura Huari, representado en los tapices con rayos dorados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Namlap es el h&eacute;roe fundador m&iacute;tico de la cultura Sic&aacute;n (Lambayeque): seg&uacute;n la tradici&oacute;n, lleg&oacute; por el mar en balsas y estableci&oacute; la dinast&iacute;a; su imagen con ojos de aleta es el &iacute;cono de esta cultura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Namlap es el nombre del dios lunar de la cultura Chim&uacute;, equivalente a la Luna (Si) en el pante&oacute;n andino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Namlap es el fundador m&iacute;tico de la cultura Moche, cuya figura aparece en los huacos retrato</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Namlap</B> es el h&eacute;roe fundador m&iacute;tico de la cultura <B>Sic&aacute;n (Lambayeque)</B>. Seg&uacute;n la tradici&oacute;n oral recogida por el cronista Cabello de Balboa, lleg&oacute; por el mar en balsas con su corte y fund&oacute; la dinast&iacute;a Lambayeque. Su imagen &mdash;de frente, con los c&eacute;lebres <B>ojos de aleta</B> (ojos angulados hacia arriba) &mdash; aparece en tumis, m&aacute;scaras, cer&aacute;mica y frisos, y es el s&iacute;mbolo visual m&aacute;s reconocible de esta cultura.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Qu&eacute; aporte tecnol&oacute;gico de la cultura Huari fue adoptado y perfeccionado por los Incas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Los puquios (galerías filtrantes subterr&aacute;neas para regar el desierto)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Los andenes agr&iacute;colas (terrazas en laderas de cerros) y el sistema de centros administrativos provinciales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) El tejido de tapices con plumas de aves tropicales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) La t&eacute;cnica del dorado por oxidaci&oacute;n para dar aspecto dorado al cobre</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Huari contribuy&oacute; al mundo andino con dos innovaciones que los Incas adoptaron directamente: (1) los <B>andenes agr&iacute;colas</B> (terrazas escalonadas en la ladera de cerros para ampliar el &aacute;rea cultivable) y (2) los <B>centros administrativos provinciales</B> (como Pikillacta), con depósitos estatales para redistribuir recursos. Ambos sistemas son la base del aparato estatal inca. Los puquios son nazca; el dorado por oxidaci&oacute;n es sic&aacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿En qu&eacute; se diferencia la expansi&oacute;n de Huari de la de Chav&iacute;n, y qu&eacute; implica esa diferencia en la clasificaci&oacute;n de periodos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) No hay diferencia real: ambas se expandieron mediante conquista militar y control de rutas comerciales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Chav&iacute;n se expandi&oacute; por influencia religiosa y art&iacute;stica sin control pol&iacute;tico directo (unificaci&oacute;n cultural); Huari lo hizo mediante conquista militar y control administrativo directo (imperialismo). Ambas son "Horizontes" porque lograron unificaci&oacute;n pan-andina, pero por mecanismos distintos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Huari se expandi&oacute; solo hacia el sur (hacia Tiahuanaco), mientras que Chav&iacute;n lo hizo solo hacia el norte (hacia Colombia)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) La expansi&oacute;n de Chav&iacute;n fue militar; la de Huari fue estrictamente religiosa mediante la difusi&oacute;n del culto al Dios de los B&aacute;culos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La diferencia es fundamental: <B>Chav&iacute;n</B> se expandi&oacute; como "Horizonte" por influencia cultural (religiosa, art&iacute;stica, iconogr&aacute;fica) sin conquista pol&iacute;tica directa &mdash;los pueblos adopt&oacute; voluntariamente su iconograf&iacute;a. <B>Huari</B> se expandi&oacute; como "Horizonte" por conquista militar y control administrativo, estableciendo centros provinciales reales. Ambas pertenecen a "Horizontes" porque unificaron el mundo andino, pero Huari representa un salto cualitativo: es el primer <B>imperialismo</B> andino propiamente dicho, que el Tawantinsuyu perfeccion&oacute; despu&eacute;s.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿C&oacute;mo se relacionan las culturas Sic&aacute;n y Chim&uacute; a lo largo del tiempo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Fueron contempor&aacute;neas y aliadas pol&iacute;ticas permanentes; nunca hubo conflicto entre ellas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Sic&aacute;n surgi&oacute; antes que Chim&uacute; en la costa norte; Chim&uacute; la conquist&oacute; alrededor de 1 375 d.C., absorbiendo su tradici&oacute;n metalúrgica y parte de su territorio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Chim&uacute; surgi&oacute; antes que Sic&aacute;n; Sic&aacute;n fue una ramificaci&oacute;n tard&iacute;a del estado Chim&uacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) No hay relaci&oacute;n; Sic&aacute;n es de la sierra y Chim&uacute; de la costa, por lo que nunca se encontraron</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Sic&aacute;n</B> (750 d.C.) es anterior a <B>Chim&uacute;</B> (900 d.C.) y ambas se desarrollaron en la costa norte del Per&uacute;. En su apogeo (Sic&aacute;n Medio, 900–1 100 d.C.) Sic&aacute;n era la cultura m&aacute;s poderosa de la costa norte. Sin embargo, durante el Sic&aacute;n Tard&iacute;o entr&oacute; en declive y fue <B>conquistada por Chim&uacute; alrededor de 1 375 d.C.</B>, pasando T&uacute;cume bajo control chim&uacute;. Los orfebres y t&eacute;cnicas metal&uacute;rgicas de Sic&aacute;n fueron absorbidas por Chim&uacute;, lo que explica la supremac&iacute;a metal&uacute;rgica chim&uacute;.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Por qu&eacute; cada una de las 9 ciudadelas de Chan Chan estaba asociada a un gobernante diferente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Porque cada ciudadela correspond&iacute;a a un barrio &eacute;tnico distinto dentro de la ciudad cosmopolita de Chan Chan</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Porque en la tradici&oacute;n Chim&uacute; cada Gran Chim&uacute; constru&iacute;a su propia ciudadela real durante su reinado y al morir era enterrado en ella, usada como mausoleo. El sucesor constru&iacute;a una nueva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Porque la ciudad fue construida en 9 etapas por distintos arquitectos sin relaci&oacute;n pol&iacute;tica entre s&iacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Porque cada ciudadela albergaba a un dios diferente del pante&oacute;n Chim&uacute;, dedicadas respectivamente al Sol, la Luna, el Mar y seis deidades menores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En el sistema pol&iacute;tico-religioso Chim&uacute;, el Gran Chim&uacute; era una figura divina. Cada gobernante constru&iacute;a su propia ciudadela real durante su vida y, al morir, era <B>enterrado en ella</B> junto con sus bienes y acompa&ntilde;antes sacrificados. La ciudadela se convert&iacute;a entonces en mausoleo sagrado. El sucesor deb&iacute;a construir una <B>nueva ciudadela</B> desde cero. Este sistema explica tanto el n&uacute;mero (9 gobernantes, 9 ciudadelas) como la grandiosidad de Chan Chan: cada generaci&oacute;n compet&iacute;a en monumentalidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Qu&eacute; aport&oacute; la textiler&iacute;a Huari al arte andino y en qu&eacute; se diferencia de la textiler&iacute;a de otras culturas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Huari invent&oacute; el tejido con plumas de aves, t&eacute;cnica que luego fue adoptada por Paracas y Nasca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Los tapices Huari destacan por su t&eacute;cnica de tejido invertido (hasta 120 hilos/cm), sus colores vivos y sus representaciones de figuras divinas y geom&eacute;tricas de enorme precisi&oacute;n; son considerados entre los mejores textiles del mundo prehisp&aacute;nico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) La textiler&iacute;a Huari se caracterizaba por usar algod&oacute;n blanco sin teñir para destacar la pureza ritual de los tejidos funerarios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Los textiles Huari son famosos por representar &uacute;nicamente figuras de auqu&eacute;nidos (llamas y alpacas), principales recursos econ&oacute;micos de la sierra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La textiler&iacute;a Huari es considerada una de las m&aacute;s t&eacute;cnicamente avanzadas del mundo andino. Sus <B>tapices</B> (tejido en telar con trama que cubre completamente la urdimbre) usan la t&eacute;cnica del <B>tejido invertido</B>, con hasta 120 hilos por cent&iacute;metro. Combinan colores vivos (azul, rojo, amarillo, verde) con figuras geom&eacute;tricas y representaciones del Dios de los B&aacute;culos en composiciones de gran precisi&oacute;n. Son objetos de prestigio que se intercambiaban como bienes de alto valor pol&iacute;tico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Qu&eacute; estrat&eacute;gia militar utiliz&oacute; el Inca T&uacute;pac Yupanqui para conquistar el reino Chim&uacute;, y qu&eacute; consecuencias tuvo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Lanz&oacute; un asalto frontal sobre Chan Chan con un ej&eacute;rcito de 200 000 hombres, destruyendo las ciudadelas en combate directo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Control&oacute; los canales de irrigaci&oacute;n que abastec&iacute;an de agua a Chan Chan, forzando la rendici&oacute;n del Gran Chim&uacute; Minchancaman; los orfebres chim&uacute;s fueron trasladados al Cusco</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Utiliz&oacute; una alianza con Sic&aacute;n para atacar Chim&uacute; por dos frentes simult&aacute;neos desde el norte y el sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Neg&oacute; con el Gran Chim&uacute; una anexi&oacute;n pac&iacute;fica a cambio de reconocer a la familia real chim&uacute; como nobleza inca</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La conquista inca de Chim&uacute; fue un modelo de inteligencia militar: en vez de atacar Chan Chan directamente, <B>T&uacute;pac Yupanqui</B> tom&oacute; el control de los <B>canales de irrigaci&oacute;n</B> que llevaban agua al desierto coste&ntilde;o donde se ubicaba la capital. Sin agua, la poblaci&oacute;n no pod&iacute;a sobrevivir, por lo que el Gran Chim&uacute; <B>Minchancaman</B> fue obligado a rendirse. Fue llevado como prisionero al Cusco. Los <B>orfebres chim&uacute;s</B> &mdash;los mejores del mundo andino&mdash; fueron trasladados al Cusco, transfiriendo as&iacute; la tecnolog&iacute;a metal&uacute;rgica chim&uacute; al Tawantinsuyu.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; S&Iacute;NTESIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza la relaci&oacute;n entre Huari y Tiahuanaco durante el Horizonte Medio. ¿Fueron aliados, rivales o una sola cultura?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Eran la misma cultura con dos capitales: Huari administraba el norte y Tiahuanaco el sur del mismo imperio unificado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Eran dos estados distintos y prob&aacute;blemente rivales que compart&iacute;an iconograf&iacute;a religiosa (Dios de los B&aacute;culos) y se influenciaron mutuamente; Huari dominaba la sierra-costa centro-norte y Tiahuanaco el altiplano y el sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Tiahuanaco conquist&oacute; a Huari en el siglo VII d.C. e impuso su religi&oacute;n, convirtiendo a Huari en una colonia del estado altiplano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Huari y Tiahuanaco nunca tuvieron contacto cultural porque estaban separados por la cordillera Occidental, que era infranqueable en esa &eacute;poca</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relaci&oacute;n Huari-Tiahuanaco es uno de los debates m&aacute;s importantes de la arqueolog&iacute;a andina. Hoy la mayor&iacute;a de investigadores coincide en que eran <B>dos estados distintos</B>, probablemente rivales o en tensi&oacute;n, que sin embargo compart&iacute;an elementos iconogr&aacute;ficos como el <B>Dios de los B&aacute;culos</B> y se influenciaron mutuamente. Tiahuanaco dominaba el <B>altiplano y el sur</B> (Bolivia, norte de Chile y Argentina, sur del Per&uacute;) mientras Huari dominaba la <B>sierra y costa centro-norte</B> del Per&uacute;. Ambas coexistieron entre ~600 y ~1 000 d.C. Sin ser "una sola cultura", s&iacute; constituyeron juntas el Horizonte Medio.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿C&oacute;mo explica la arqueolog&iacute;a el colapso de Batan Grande (capital Sic&aacute;n Medio) y el traslado a T&uacute;cume?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) El traslado fue voluntario: los sacerdotes eligieron T&uacute;cume por ser m&aacute;s f&eacute;rtil y estar m&aacute;s cerca del mar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La evidencia arqueol&oacute;gica sugiere que un <B>mega-El Ni&ntilde;o</B> (~1 100 d.C.) caus&oacute; inundaciones catastr&oacute;ficas, seguidas de una sequía severa; los incendios intencionales en los templos de Batan Grande evidencian una probable rebeli&oacute;n popular contra la &eacute;lite sacerdotal. La capital fue trasladada a T&uacute;cume</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) El traslado fue consecuencia de la conquista por parte de Huari, que destruy&oacute; Batan Grande y oblig&oacute; a la poblaci&oacute;n a reubicarse en T&uacute;cume</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Batan Grande fue abandonada por agotamiento de los recursos auríferos; sin oro que extraer, la ciudad perdi&oacute; su raz&oacute;n de ser</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El arque&oacute;logo <B>Izumi Shimada</B>, investigador principal de Sic&aacute;n, encontr&oacute; evidencia de una secuencia catastrófica: (1) un <B>mega-Fen&oacute;meno El Ni&ntilde;o</B> (~1 100 d.C.) que caus&oacute; lluvias torrenciales e inundaciones; (2) una <B>sequ&iacute;a severa</B> posterior; (3) <B>incendios intencionales</B> en los templos de Batan Grande, que sugieren una <B>rebeli&oacute;n popular</B> contra la &eacute;lite sacerdotal, a quien se culp&oacute; de no poder controlar el clima (responsabilidad ritual del gobernante-sacerdote). Tras el colapso, la capital fue trasladada a <B>T&uacute;cume</B>, inaugurando el Sic&aacute;n Tard&iacute;o.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> ¿En qu&eacute; aspectos la cultura Chim&uacute; anticipa el modelo administrativo y econ&oacute;mico del Tawantinsuyu?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) En ninguno: el Imperio Inca fue una creaci&oacute;n completamente original sin precedentes en el mundo andino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Chim&uacute; anticip&oacute; al Tawantinsuyu en: el control estatal de la irrigaci&oacute;n, la producci&oacute;n artesanal organizada por el estado (talleres de orfebres &eacute;lite), el sistema de ciudadelas como centros de poder y almac&eacute;n, y la expansi&oacute;n territorial por conquista sistemática de reinos vecinos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Chim&uacute; invent&oacute; el sistema de mita (trabajo obligatorio) que los incas copiaron directamente sin modificaci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La &uacute;nica similitud es la religi&oacute;n: ambas culturas adoraban al Sol como deidad principal</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Chim&uacute; fue el estado m&aacute;s complejo del Per&uacute; preinca y en varios aspectos prefigura el Tawantinsuyu: (1) <B>control estatal de la irrigaci&oacute;n</B> como instrumento de poder (quien controla el agua controla el estado, como demostr&oacute; T&uacute;pac Yupanqui al conquistarlos); (2) <B>talleres estatales especializados</B> (orfebres, tejedores de &eacute;lite trabajando para el estado); (3) <B>ciudadelas con audiencias y depósitos</B> similares a los tampus incas; (4) <B>expansi&oacute;n territorial sistem&aacute;tica</B> por conquista (controlaron m&aacute;s de 1 000 km de costa). La diferencia es que los incas a&ntilde;adieron la red vial (Qhapaq &Ntilde;an) y el sistema de quipus a escala pan-andina.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿Qu&eacute; importancia tiene la metalurgia Sic&aacute;n en el contexto de la historia del Per&uacute; prehisp&aacute;nico y mundial?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Su importancia es relativa; la metalurgia sic&aacute;n era similar a la de los aztecas y mayas de Mesoam&eacute;rica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Sic&aacute;n represent&oacute; el apogeo de la metalurgia andina: invent&oacute; el dorado por oxidaci&oacute;n, produjo objetos de oro de alta pureza en grandes cantidades (m&aacute;s de una tonelada en una sola tumba), y su t&eacute;cnica fue heredada por Chim&uacute; y luego por los Incas; sin Sic&aacute;n, la orfebrer&iacute;a precolombina no ser&iacute;a la misma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Sic&aacute;n fue la primera cultura del mundo en fundir hierro, precursora de la metalurgia industrial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La metalurgia sic&aacute;n fue superada por la mochica en calidad y cantidad; los moches produjeron m&aacute;s oro que cualquier otra cultura andina</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Sic&aacute;n (Lambayeque) representa el punto m&aacute;s alto de la metalurgia andina: (1) invent&oacute; el <B>dorado por oxidaci&oacute;n</B> (calentar objetos de cobre con &oacute;xido de oro para darles apariencia dorada, una t&eacute;cnica sofisticad&iacute;sima); (2) la <B>Tumba Este de Huaca Loro</B> (Batan Grande) conten&iacute;a m&aacute;s de <B>una tonelada</B> de objetos de metal, incluyendo cientos de tumis, m&aacute;scaras de oro y naipes de cobre; (3) su tradici&oacute;n metalúrgica fue absorbida por Chim&uacute; (~1 375 d.C.) y luego por los Incas (~1 470 d.C.), convirti&eacute;ndose en el sustrato de toda la orfebrer&iacute;a del Per&uacute; precolombino. Los aztecas y mayas no trabajaron el oro con la misma sofisticaci&oacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Compara la respuesta de Huari al desaf&iacute;o geogr&aacute;fico de la sierra con la respuesta de Chim&uacute; al desaf&iacute;o del desierto coste&ntilde;o.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Ambas culturas resolvieron sus desaf&iacute;os geogr&aacute;ficos exactamente igual: construyendo pir&aacute;mides para controlar el agua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Huari respondi&oacute; a la sierra escarpada con andenes (terrazas agr&iacute;colas en laderas) y dep&oacute;sitos de redistribuci&oacute;n; Chim&uacute; respondi&oacute; al desierto coste&ntilde;o con una red de canales (Canal La Cumbre, 80 km) que llevaba agua de un valle a otro; ambas soluciones son originales y de gran ingenier&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Huari import&oacute; tecnolog&iacute;a agr&iacute;cola de Mesoam&eacute;rica; Chim&uacute; utiliz&oacute; solo la tecnolog&iacute;a heredada de los Moches sin innovar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Ninguna de las dos tuvo problemas geogr&aacute;ficos serios: Huari estaba en un valle f&eacute;rtil y Chim&uacute; en una costa h&uacute;meda</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El contraste es ilustrativo de la creatividad andina: <B>Huari</B> enfrent&oacute; la sierra escarpada de Ayacucho con suelos en pendiente → invent&oacute; y masific&oacute; los <B>andenes</B> (terrazas agr&iacute;colas escalonadas que retienen suelo y humedad) y los <B>depósitos estatales</B> para redistribuir excedentes. <B>Chim&uacute;</B> enfrent&oacute; el desierto coste&ntilde;o con ríos estacionales → construy&oacute; el <B>Canal La Cumbre</B> (~80 km), que cruzaba la divisoria de aguas entre el valle de Chicama y el de Moche, una obra de ingenier&iacute;a hidráulica sin paralelo en su &eacute;poca. Ambas soluciones reflejan el principio andino de adaptar la tecnolog&iacute;a al entorno espec&iacute;fico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El historiador John Rowe propuso la clasificaci&oacute;n de "Horizontes" e "Intermedios" para la historia andina. ¿Qu&eacute; cr&iacute;ticas puede recibir esta clasificaci&oacute;n al aplicarla a Huari, Sic&aacute;n y Chim&uacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La clasificaci&oacute;n es perfecta y no recibe cr&iacute;ticas; Rowe fue el &uacute;ltimo arque&oacute;logo en estudiar las tres culturas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La clasificaci&oacute;n ha sido criticada por ser eurocéntrica (basada en la historia romana) y por asumir que los "Intermedios" son periodos de decadencia; en realidad, Sic&aacute;n y Chim&uacute; (ambos del Intermedio Tard&iacute;o) fueron estados de enorme complejidad, no periodos de retroceso; adem&aacute;s, la clasificaci&oacute;n se basa en la costa sur y no refleja bien la diversidad cronol&oacute;gica del norte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La clasificaci&oacute;n es correcta pero Rowe no incluy&oacute; a Huari en su esquema original; fue Luis Lumbreras quien la integr&oacute; al sistema</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La &uacute;nica cr&iacute;tica v&aacute;lida es que Rowe coloc&oacute; a Chim&uacute; en el Horizonte Medio en vez del Intermedio Tard&iacute;o</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La clasificaci&oacute;n de Rowe (Horizontes = integraci&oacute;n; Intermedios = fragmentaci&oacute;n) ha recibido varias cr&iacute;ticas: (1) implica un juicio de valor negativo sobre los "Intermedios" como periodos de "ca&iacute;da" o "fragmentaci&oacute;n", cuando en realidad <B>Sic&aacute;n y Chim&uacute;</B> fueron estados sofisticad&iacute;simos, posiblemente m&aacute;s complejos administrativamente que Chavín; (2) fue dise&ntilde;ada principalmente para la secuencia de la <B>costa sur</B> (Ica-Nazca) y no refleja bien las cronolog&iacute;as del norte (donde Sic&aacute;n empieza antes de lo que la clasificaci&oacute;n sugiere); (3) autores como <B>Luis Lumbreras</B> han propuesto esquemas alternativos. Sin embargo, sigue siendo el sistema m&aacute;s usado en la ense&ntilde;anza preuniversitaria peruana.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> ¿C&oacute;mo se manifiesta el concepto andino de "verticalidad ecol&oacute;gica" (John Murra) en la econom&iacute;a de Huari y Chim&uacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Huari y Chim&uacute; practicaron la verticalidad de manera id&eacute;ntica: enviando colonias a los pisos ecol&oacute;gicos m&aacute;s altos para obtener papas y carne de llama</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Huari aplica la verticalidad desde la sierra: controla pisos desde la yunga hasta la puna para acceder a recursos diversos (coca, ma&iacute;z, papa, charki) mediante su red de centros provinciales. Chim&uacute; practica una "horizontalidad coste&ntilde;a": controla 1 000 km de costa para acceder a distintos recursos marinos y agr&iacute;colas, m&aacute;s que pisos altitudinales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) El concepto de verticalidad de Murra no aplica a ninguna de las dos culturas, ya que fue dise&ntilde;ado exclusivamente para el Imperio Inca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Chim&uacute; aplica la verticalidad m&aacute;s fielmente que Huari porque control&oacute; valles desde el nivel del mar hasta los 4 000 m s.n.m. mediante alianzas con la sierra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>John Murra propuso que las civilizaciones andinas buscaban controlar m&uacute;ltiples "pisos ecol&oacute;gicos" verticales para obtener la m&aacute;xima diversidad de recursos. <B>Huari</B> aplica esta l&oacute;gica cl&aacute;sicamente: desde Ayacucho extiende su control hacia valles yungas (coca, aj&iacute;) y hacia la puna (llamas, papa), usando sus centros provinciales como nodos de redistribuci&oacute;n. <B>Chim&uacute;</B> opera de manera diferente: en la costa no hay grandes variaciones altitudinales, pero controla m&aacute;s de <B>1 000 km de litoral</B>, accediendo a diferentes recursos marinos seg&uacute;n la latitud, y usa el Canal La Cumbre para conectar valles contiguos. Es una "verticalidad horizontal" o diversificaci&oacute;n lateral, no altitudinal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> ¿Por qu&eacute; se afirma que los incas fueron en parte deudores culturales de Huari, Sic&aacute;n y Chim&uacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Porque los incas descendieron biol&oacute;gicamente de gobernantes chim&uacute;s y reconocieron esa herencia en sus mitos de origen</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Porque los incas heredaron: de Huari los andenes, la red vial y el sistema de centros administrativos; de Sic&aacute;n la metalurgia de oro (orfebres trasladados al Cusco); de Chim&uacute; la hidráulica de canales de gran escala y el sistema de ciudadelas-depósito. El Tawantinsuyu integr&oacute; y escal&oacute; estas innovaciones a nivel pan-andino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Los incas no deben nada a estas culturas: toda la tecnolog&iacute;a inca fue inventada en el Cusco durante el reinado de Pachac&uacute;tec</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Los incas heredaron de Chim&uacute; el idioma quechua y la religi&oacute;n solar, que luego expandieron por todo el Tawantinsuyu</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Tawantinsuyu no surgi&oacute; de la nada: fue una s&iacute;ntesis brillante de innovaciones acumuladas durante siglos por culturas predecesoras. De <B>Huari</B>: los <B>andenes agr&iacute;colas</B> (escalados a todo el mundo andino), la <B>red de caminos</B> (base del Qhapaq &Ntilde;an) y los <B>centros administrativos provinciales</B> (precursores de los tampus). De <B>Sic&aacute;n</B>: los <B>orfebres</B> trasladados al Cusco tras la conquista de Chim&uacute; (~1 470), quienes produjeron el oro ceremonial inca. De <B>Chim&uacute;</B>: la ingenier&iacute;a <B>hidráulica de gran escala</B> y el sistema de <B>ciudadelas-depósito</B> con audiencias. El genio inca fue integrar todo esto a escala continental.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Cu&aacute;l de las siguientes afirmaciones sobre Chan Chan es INCORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Chan Chan fue declarada Patrimonio de la Humanidad por la UNESCO en 1986 y est&aacute; incluida en la lista de Patrimonios en Peligro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Las 9 ciudadelas de Chan Chan fueron construidas por distintos gobernantes y usadas como mausol&eacute;os reales; cada Gran Chim&uacute; constru&iacute;a la suya y era enterrado en ella</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Chan Chan fue construida &iacute;ntegramente en piedra tallada, lo que explica su durabilidad y la posibilidad de decorarla con frisos de gran detalle</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Los frisos de Chan Chan representan principalmente figuras de peces, aves marinas y redes, reflejando la importancia del mar en la econom&iacute;a Chim&uacute;</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>La incorrecta es c)</B><BR>Chan Chan fue construida en <B>adobe</B> (ladrillos de barro secados al sol), no en piedra. Es precisamente por eso que es la "<B>ciudad de adobe m&aacute;s grande del mundo</B>" y, al mismo tiempo, por eso que es tan vulnerable al Fen&oacute;meno El Ni&ntilde;o: las lluvias intensas disuelven el adobe. Los frisos decorativos tambi&eacute;n son de adobe modelado en altorrelieve, no de piedra tallada. Las otras afirmaciones son correctas: declarada Patrimonio UNESCO en 1986 y en Peligro; 9 ciudadelas de distintos gobernantes; frisos con motivos marinos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> ¿Cu&aacute;l de las siguientes afirmaciones sobre las tres culturas del Tema 5 es CORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Huari domin&oacute; la costa norte y es anterior a Moche; Sic&aacute;n es posterior a Chim&uacute; y fue conquistada por los incas directamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) El investigador principal de Sic&aacute;n es Izumi Shimada; T&uacute;cume tiene 26 pir&aacute;mides de adobe; el Canal La Cumbre (Chim&uacute;) mide ~80 km; Pikillacta es el centro provincial Huari mejor conservado en Cusco</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Chim&uacute; adoraba principalmente al Sol (Inti), mientras que Sic&aacute;n adoraba a la Luna (Si); ambas comparten la misma capital: Chan Chan</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Huari fue conquistada por los incas en 1 000 d.C.; Sic&aacute;n fue conquistada por Huari en 1 100 d.C.; Chim&uacute; fue conquistada por los espa&ntilde;oles en 1 532 d.C.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Todos los datos de la opci&oacute;n b son correctos: (1) <B>Izumi Shimada</B> es el arque&oacute;logo japon&eacute;s-estadounidense que ha investigado Sic&aacute;n desde los a&ntilde;os 1970 y descubri&oacute; las tumbas de Batan Grande; (2) <B>T&uacute;cume</B> (Valle de las Pir&aacute;mides) tiene <B>26 pir&aacute;mides truncas</B> de adobe, siendo uno de los complejos piramidales m&aacute;s grandes del mundo (lo excav&oacute; Thor Heyerdahl en los 90); (3) el <B>Canal La Cumbre</B> mide ~80 km y cruzaba la divisoria entre Chicama y Moche; (4) <B>Pikillacta</B> (en Quispicanchis, Cusco) es el centro provincial Huari mejor conservado. Las otras opciones contienen errores factuales graves.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,432 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Ecuaciones de Primer Grado - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .formula-linea{background:#e8f4f3;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:18px;text-align:center;letter-spacing:0.5px;color:#0D1B36;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.bloque-f{max-width:1000px;margin:55px auto 0;padding:0 40px;}
+.bloque-f h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.formulario{background:#0D1B36;border-radius:20px;padding:30px 36px;box-shadow:0 6px 22px rgba(0,0,0,0.18);color:#fff;}
+.formulario .grupo{margin-bottom:22px;}
+.formulario .grupo:last-child{margin-bottom:0;}
+.formulario .grupo h4{color:#D7B06D;font-size:17px;margin-bottom:10px;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:6px;}
+.formulario .f{font-size:18px;line-height:2.2;color:#fff;}
+.formulario .f b{color:#7FD1CE;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ALGEBRA.HTML">&larr; Volver a los temas de Álgebra</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ÁLGEBRA &middot; TEMA 11</DIV>
+<H1>Ecuaciones de Primer Grado</H1>
+<DIV CLASS="sub">Concepto &middot; Despeje &middot; Tipos de solución &middot; Ecuaciones fraccionarias &middot; Planteo de problemas</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1 -->
+<H3 ID="def">1. ¿Qué es una ecuación de primer grado?</H3>
+Una <B>ecuación</B> es una igualdad que solo es cierta para ciertos valores de la incógnita. Resolverla significa <B>hallar ese valor</B> (la solución o raíz). Es de <B>primer grado</B> (o lineal) cuando la incógnita aparece elevada solo a la potencia 1. Su forma general es:
+
+<DIV CLASS="formula-linea"><B>ax + b = 0</B> &nbsp; (con a &ne; 0)</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Ecuación vs. identidad:</B> una ecuación se cumple solo para algunos valores (x + 2 = 5 solo con x = 3). Una identidad se cumple para todos (como los productos notables del Tema 6). ¡No las confundas!</DIV>
+
+<!-- 2 -->
+<H3 ID="despeje">2. El despeje: la regla de oro</H3>
+La idea base es mantener el <B>equilibrio</B>: lo que hago a un lado de la igualdad, lo hago al otro. En la práctica, "lo que está sumando pasa restando, lo que está multiplicando pasa dividiendo".
+
+<H4>Pasos para resolver:</H4>
+<OL>
+<LI>Si hay denominadores, multiplica todo por el MCM para eliminarlos.</LI>
+<LI>Quita paréntesis (propiedad distributiva).</LI>
+<LI>Agrupa las x a un lado y los números al otro.</LI>
+<LI>Reduce términos semejantes.</LI>
+<LI>Despeja x dividiendo entre su coeficiente.</LI>
+</OL>
+
+<DIV CLASS="ej">📐 <B>Ejemplo:</B> 3x &minus; 5 = x + 7<BR>
+&bull; Agrupo: 3x &minus; x = 7 + 5<BR>
+&bull; Reduzco: 2x = 12<BR>
+&bull; Despejo: x = 12/2 = <B>6</B></DIV>
+
+<!-- 3 -->
+<H3 ID="solucion-general">3. Solución de ax + b = 0</H3>
+Despejando la forma general se obtiene la fórmula directa:
+
+<DIV CLASS="formula-linea"><B>x = &minus;b / a</B></DIV>
+
+<DIV CLASS="ej">📐 <B>Ejemplo:</B> en 5x &minus; 20 = 0, tenemos a = 5, b = &minus;20 &rarr; x = &minus;(&minus;20)/5 = 20/5 = <B>4</B>.</DIV>
+
+<!-- 4 -->
+<H3 ID="tipos">4. Tipos de solución (¡muy preguntado!)</H3>
+No toda ecuación lineal tiene una única solución. Al reducir, pueden pasar tres cosas:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Al reducir queda...</TH><TH>Tipo de ecuación</TH><TH>Solución</TH></TR>
+<TR><TD>ax = b &nbsp; (con a &ne; 0)</TD><TD><B>Compatible determinada</B></TD><TD>Una sola: x = b/a</TD></TR>
+<TR><TD>0 = 0 &nbsp; (algo siempre cierto)</TD><TD><B>Compatible indeterminada</B></TD><TD>Infinitas soluciones</TD></TR>
+<TR><TD>0 = k &nbsp; (con k &ne; 0)</TD><TD><B>Incompatible</B> (absurda)</TD><TD>No tiene solución</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Truco de examen:</B> en una ecuación tipo (m)x + ... = ..., si te piden que tenga <B>infinitas soluciones</B>, busca que ambos lados queden idénticos; si te piden que <B>no tenga solución</B>, busca que el coeficiente de x se anule pero los números no coincidan.</DIV>
+
+<!-- 5 -->
+<H3 ID="fraccionarias">5. Ecuaciones fraccionarias</H3>
+Cuando la incógnita aparece en algún denominador. Se resuelven multiplicando por el MCM de los denominadores, pero <B>cuidado</B>: hay que verificar que la solución no anule ningún denominador original.
+
+<DIV CLASS="ej">📐 <B>Ejemplo:</B> x/2 + x/3 = 5. MCM(2,3) = 6. Multiplico todo por 6: 3x + 2x = 30 &rarr; 5x = 30 &rarr; x = <B>6</B>.</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Soluciones extrañas:</B> si al resolver una ecuación fraccionaria obtienes un valor que hace cero un denominador, ese valor <B>se descarta</B> (no es solución válida).</DIV>
+
+<!-- 6 -->
+<H3 ID="planteo">6. Planteo de problemas (de palabras a ecuación)</H3>
+La parte más temida del examen, pero con método es sencilla: <B>traduce</B> el enunciado al lenguaje algebraico.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Frase</TH><TH>Lenguaje algebraico</TH></TR>
+<TR><TD>Un número</TD><TD>x</TD></TR>
+<TR><TD>El doble / triple de un número</TD><TD>2x / 3x</TD></TR>
+<TR><TD>La mitad de un número</TD><TD>x/2</TD></TR>
+<TR><TD>Un número aumentado en 5</TD><TD>x + 5</TD></TR>
+<TR><TD>El consecutivo de un número</TD><TD>x + 1</TD></TR>
+<TR><TD>"Es", "resulta", "equivale a"</TD><TD>= (igual)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">📐 <B>Ejemplo:</B> "El triple de un número, aumentado en 4, es 19". Traduzco: 3x + 4 = 19 &rarr; 3x = 15 &rarr; x = <B>5</B>.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- FORMULARIO -->
+<DIV CLASS="bloque-f">
+<H2>Formulario</H2>
+<DIV CLASS="formulario">
+
+<DIV CLASS="grupo">
+<H4>FORMA GENERAL Y SOLUCIÓN</H4>
+<DIV CLASS="f">
+ax + b = 0 &nbsp; (a &ne; 0)<BR>
+x <B>=</B> &minus;b / a
+</DIV>
+</DIV>
+
+<DIV CLASS="grupo">
+<H4>TIPOS DE SOLUCIÓN</H4>
+<DIV CLASS="f">
+ax = b (a &ne; 0) &rarr; <B>una</B> solución (determinada)<BR>
+0 = 0 &rarr; <B>infinitas</B> soluciones (indeterminada)<BR>
+0 = k (k &ne; 0) &rarr; <B>sin</B> solución (incompatible)
+</DIV>
+</DIV>
+
+<DIV CLASS="grupo">
+<H4>ESTRATEGIA DE RESOLUCIÓN</H4>
+<DIV CLASS="f">
+1) Quitar denominadores (&times; MCM)<BR>
+2) Quitar paréntesis (distributiva)<BR>
+3) Agrupar x a un lado, números al otro<BR>
+4) Reducir y despejar
+</DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PROBLEMAS -->
+<DIV CLASS="bloque">
+<H2>Problemas tipo admisión</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Resuelve: x + 7 = 12</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) 19</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) &minus;5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) 7</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El 7 está sumando, pasa restando: x = 12 &minus; 7 = <B>5</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Resuelve: 3x = 21</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) 18</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) 24</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) 63</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El 3 está multiplicando, pasa dividiendo: x = 21/3 = <B>7</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Resuelve: 2x &minus; 8 = 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) &minus;4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) 16</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) 8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>2x = 8 &rarr; x = 8/2 = <B>4</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Resuelve: 5x + 3 = 2x + 18</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) 15</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Agrupo: 5x &minus; 2x = 18 &minus; 3 &rarr; 3x = 15 &rarr; x = <B>5</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> En la ecuación ax + b = 0, ¿cuál es el valor de x?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) b/a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) &minus;b/a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) a/b</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) &minus;a/b</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>ax + b = 0 &rarr; ax = &minus;b &rarr; x = <B>&minus;b/a</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Resuelve: 2(x &minus; 3) = x + 4</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) 10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) &minus;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) 7</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Quito paréntesis: 2x &minus; 6 = x + 4. Agrupo: 2x &minus; x = 4 + 6 &rarr; x = <B>10</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Resuelve: x/2 + x/3 = 5</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) 10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) 30</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Multiplico todo por MCM(2,3)=6: 3x + 2x = 30 &rarr; 5x = 30 &rarr; x = <B>6</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> "El doble de un número, disminuido en 3, es igual a 15." Halla el número.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) 12</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) 18</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Traduzco: 2x &minus; 3 = 15 &rarr; 2x = 18 &rarr; x = <B>9</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Resuelve: 4x &minus; 7 = 6x + 5</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) &minus;6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) &minus;1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Agrupo: 4x &minus; 6x = 5 + 7 &rarr; &minus;2x = 12 &rarr; x = 12/(&minus;2) = <B>&minus;6</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> "La suma de tres números consecutivos es 48." Halla el menor.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) 14</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) 15</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) 16</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) 17</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Sean x, x+1, x+2. Suma: 3x + 3 = 48 &rarr; 3x = 45 &rarr; x = <B>15</B> (el menor). Los números son 15, 16 y 17.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Resuelve: (x + 1)/3 &minus; (x &minus; 2)/4 = 1</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) &minus;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) 6</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico todo por MCM(3,4)=12: 4(x + 1) &minus; 3(x &minus; 2) = 12.<BR>4x + 4 &minus; 3x + 6 = 12 &rarr; x + 10 = 12 &rarr; x = <B>2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Qué valor debe tener "m" para que la ecuación (m &minus; 3)x = 7 NO tenga solución?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) &minus;3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>No tiene solución cuando el coeficiente de x se anula pero el otro lado no es 0. (m &minus; 3) = 0 &rarr; m = 3. Quedaría 0 = 7 (absurdo). Por tanto <B>m = 3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> "La edad de Ana es el triple de la de Beto. Si dentro de 10 años Ana tendrá el doble que Beto, ¿qué edad tiene Beto hoy?"</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) 10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) 15</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) 20</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Beto hoy: x ; Ana hoy: 3x. Dentro de 10 años: 3x + 10 = 2(x + 10).<BR>3x + 10 = 2x + 20 &rarr; x = <B>10</B>. (Beto 10, Ana 30; en 10 años: 40 y 20 ✓.)</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿Para qué valor de "k" la ecuación 2x + k = 2x + 5 tiene infinitas soluciones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) &minus;5</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Para infinitas soluciones, ambos lados deben ser idénticos. Como 2x = 2x, basta que k = 5. Quedaría 0 = 0, cierto para todo x. Por tanto <B>k = 5</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Resuelve: 6/(x &minus; 1) = 2 &nbsp; (x &ne; 1)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) 7</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Multiplico por (x &minus; 1): 6 = 2(x &minus; 1) &rarr; 6 = 2x &minus; 2 &rarr; 2x = 8 &rarr; x = <B>4</B> (válido, no anula el denominador).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Resuelve: x/(x &minus; 2) = 3/(x &minus; 2) + 1 &nbsp; (x &ne; 2)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) No tiene solución</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 5</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico por (x &minus; 2): x = 3 + (x &minus; 2) &rarr; x = x + 1 &rarr; 0 = 1 (absurdo).<BR>Aunque despejaras, la única candidata sería x = 2, que anula el denominador y se descarta. Por eso <B>no tiene solución</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> "Un padre tiene 40 años y su hijo 10. ¿Dentro de cuántos años la edad del padre será el triple de la del hijo?"</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) 10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) 15</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) 20</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Dentro de x años: 40 + x = 3(10 + x) &rarr; 40 + x = 30 + 3x &rarr; 10 = 2x &rarr; x = <B>5</B>. (En 5 años: padre 45, hijo 15; 45 = 3&middot;15 ✓.)</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Si x = 2 es solución de la ecuación 3x &minus; a = x + 6, halla el valor de "a".</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) &minus;4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) 6</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Si x = 2 es solución, debe cumplirse la igualdad. Reemplazo: 3(2) &minus; a = 2 + 6 &rarr; 6 &minus; a = 8 &rarr; &minus;a = 2 &rarr; a = <B>&minus;4</B>.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>
