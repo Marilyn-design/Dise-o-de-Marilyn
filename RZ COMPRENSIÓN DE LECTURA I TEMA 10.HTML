@@ -1,0 +1,423 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Comprensión de Lectura - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.parrafo{margin-top:12px;background:#F6F2EB;border-radius:10px;padding:14px 18px;font-size:16px;line-height:1.95;color:#333;font-weight:normal;}
+.parrafo b{color:#1F6A67;}
+.parrafo .hueco{color:#D7B06D;font-weight:bold;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="RAZONAMIENTO VERBAL.HTML">← Volver a los temas de Razonamiento Verbal</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">RAZONAMIENTO VERBAL · TEMA 10</DIV>
+<H1>Comprensión de Lectura I</H1>
+<DIV CLASS="sub">Cualidades y normas de textualidad · Niveles de comprensión lectora: literal, inferencial y crítico-valorativo</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. ¿Qué hace que un texto sea, verdaderamente, un texto?</H3>
+No cualquier conjunto de oraciones constituye un texto en sentido pleno. Un texto es una unidad comunicativa que cumple ciertas condiciones mínimas para ser reconocida como tal por quien lo lee: debe tener sentido, debe estar conectado en su forma, debe responder a una intención, debe resultar aceptable para el lector, debe aportar información relevante, debe encajar en una situación comunicativa concreta y, casi siempre, se relaciona con otros textos previos. A este conjunto de condiciones se le llama <B>normas o cualidades de textualidad</B>, y comprenderlas ayuda a entender por qué, al leer, distinguimos casi automáticamente un texto bien construido de uno que no lo es.
+
+<H3>2. Las cualidades y normas de textualidad</H3>
+Estas siete propiedades no son reglas externas impuestas al texto, sino condiciones internas que cualquier texto necesita cumplir, en mayor o menor grado, para funcionar como una comunicación efectiva.
+
+<H4>a) Coherencia</H4>
+Es la propiedad que da <B>sentido lógico global</B> al texto: sus ideas se relacionan de manera ordenada y no se contradicen entre sí. Sin coherencia, un conjunto de oraciones sería solo una lista inconexa, aunque cada oración individual fuera correcta.
+
+<H4>b) Cohesión</H4>
+Es la propiedad que asegura que las oraciones estén <B>conectadas en su forma</B> mediante recursos visibles como pronombres, conectores, sinónimos o elipsis, de modo que la relación entre las ideas quede marcada explícitamente en la superficie del texto.
+
+<H4>c) Intencionalidad</H4>
+Todo texto responde al <B>propósito de quien lo produce</B>: informar, convencer, narrar, instruir, expresar un sentimiento. La intencionalidad es la actitud del emisor de construir un texto coherente y cohesionado para lograr ese propósito comunicativo específico.
+
+<H4>d) Aceptabilidad</H4>
+Es la disposición del <B>receptor</B> para reconocer ese conjunto de oraciones como un texto válido y relevante, aun cuando presente pequeñas imperfecciones formales. El lector colabora activamente completando sentidos y tolerando ciertas irregularidades siempre que el conjunto resulte comprensible y útil.
+
+<H4>e) Informatividad</H4>
+Es el <B>grado de novedad</B> que aporta un texto. Un texto completamente previsible, que no dice nada que el lector no supiera ya, tiene informatividad muy baja; uno que combina lo conocido con datos, matices o perspectivas nuevas mantiene el interés y cumple mejor su función comunicativa.
+
+<H4>f) Situacionalidad</H4>
+Es la <B>adecuación del texto al contexto</B> en el que se produce y se recibe: el mismo contenido se organiza de manera distinta según se trate de un informe académico, un anuncio publicitario o una conversación cotidiana, porque cada situación comunicativa exige un registro y una estructura apropiados.
+
+<H4>g) Intertextualidad</H4>
+Es la relación que un texto mantiene con <B>otros textos</B> previos, ya sea porque los cita, los presupone, pertenece al mismo género que ellos o retoma convenciones ya establecidas (una noticia se reconoce como noticia, en parte, porque sigue patrones de otras noticias leídas antes).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Cualidad</TH><TH>Qué garantiza</TH><TH>Pregunta que responde</TH></TR>
+<TR><TD>Coherencia</TD><TD>Sentido lógico global</TD><TD>¿Las ideas se relacionan sin contradecirse?</TD></TR>
+<TR><TD>Cohesión</TD><TD>Conexión formal visible</TD><TD>¿Las oraciones están enlazadas mediante recursos concretos?</TD></TR>
+<TR><TD>Intencionalidad</TD><TD>Propósito del emisor</TD><TD>¿Para qué se produjo este texto?</TD></TR>
+<TR><TD>Aceptabilidad</TD><TD>Disposición del receptor</TD><TD>¿El lector lo reconoce como un texto válido?</TD></TR>
+<TR><TD>Informatividad</TD><TD>Grado de novedad</TD><TD>¿Qué tan previsible o novedoso es el contenido?</TD></TR>
+<TR><TD>Situacionalidad</TD><TD>Adecuación al contexto</TD><TD>¿Encaja con la situación comunicativa en que aparece?</TD></TR>
+<TR><TD>Intertextualidad</TD><TD>Relación con otros textos</TD><TD>¿A qué otros textos o géneros remite o presupone?</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej"><B>Ejemplo integrado:</B> una receta de cocina es coherente (sus pasos siguen un orden lógico), cohesionada (usa conectores como "luego", "a continuación"), tiene una intencionalidad clara (instruir), es aceptable aunque omita explicaciones obvias para quien cocina, tiene informatividad si aporta una técnica o combinación no conocida, respeta la situacionalidad propia del género receta (imperativos, listas de ingredientes) y es intertextual porque el lector la reconoce como receta gracias a haber leído otras antes.</DIV>
+
+<H3>3. La comprensión de lectura como proceso</H3>
+Leer no es simplemente decodificar letras y palabras: es <B>reconstruir el sentido</B> que el texto propone, a partir de la información explícita, de lo que el texto sugiere sin decirlo directamente y de la evaluación que el propio lector hace de lo leído. Ese proceso ocurre en distintos niveles de profundidad, que se explican a continuación.
+
+<H3>4. Los niveles de comprensión lectora</H3>
+
+<H4>a) Nivel literal</H4>
+Es el nivel más básico: consiste en identificar <B>lo que el texto dice explícitamente</B>, sin necesidad de interpretar ni deducir nada más allá de las palabras mismas. Reconocer datos, hechos, nombres, fechas o el orden de los sucesos tal como aparecen escritos pertenece a este nivel.
+<DIV CLASS="ej"><B>Ejemplo:</B> si un texto dice "la ceremonia comenzó a las nueve de la mañana", responder correctamente a "¿a qué hora comenzó la ceremonia?" es una comprensión literal: la respuesta está escrita tal cual en el texto.</DIV>
+
+<H4>b) Nivel inferencial</H4>
+Consiste en obtener información que el texto <B>no dice de manera explícita</B>, pero que puede deducirse a partir de lo que sí afirma, combinando esos datos con el contexto y con el conocimiento general del lector. Aquí se identifican relaciones de causa-efecto no explicitadas, se completan vacíos de información, se anticipan consecuencias o se reconocen intenciones implícitas del autor.
+<DIV CLASS="ej"><B>Ejemplo:</B> si un texto describe que "el río bajó su caudal drásticamente durante tres meses consecutivos" y que "los agricultores de la zona reportaron pérdidas significativas en sus cultivos", el lector puede inferir, aunque el texto no lo diga con esas palabras, que la disminución del caudal fue una causa relevante de esas pérdidas agrícolas.</DIV>
+
+<H4>c) Nivel crítico-valorativo</H4>
+Es el nivel más profundo: implica <B>evaluar</B> el contenido del texto, formando un juicio propio sobre la validez de sus argumentos, la objetividad de su enfoque, la suficiencia de sus pruebas o la coherencia de su postura, contrastándolo incluso con otros puntos de vista o con el propio conocimiento del lector. En este nivel, el lector deja de limitarse a reconstruir el sentido del texto y empieza a posicionarse frente a él.
+<DIV CLASS="ej"><B>Ejemplo:</B> ante un artículo que afirma una conclusión contundente basándose en un único estudio con una muestra reducida, un lector en nivel crítico-valorativo puede identificar que la evidencia presentada es insuficiente para sostener una afirmación tan general, más allá de haber entendido correctamente qué dice el artículo (nivel literal) y qué implica (nivel inferencial).</DIV>
+
+<DIV CLASS="cultura-titulo">CÓMO SE RELACIONAN LOS TRES NIVELES ENTRE SÍ<SPAN>No son etapas aisladas, sino capas que se apoyan una sobre otra</SPAN></DIV>
+
+Los tres niveles no son compartimentos separados, sino capas que se construyen una sobre otra, ya que no es posible inferir con solidez sin haber comprendido primero, en el nivel literal, la información explícita de la que parte esa inferencia; y no es posible evaluar críticamente un texto sin haber comprendido antes tanto lo que dice explícitamente como lo que se puede deducir de él. Un error frecuente al leer es saltar directamente a formar una opinión sobre un texto (nivel crítico) sin haber comprendido con precisión, primero, lo que el texto realmente afirma (nivel literal) y lo que puede inferirse razonablemente de ello (nivel inferencial), lo cual conduce a juicios apresurados basados en una lectura incompleta.
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">7</DIV><DIV CLASS="dk-label">Cualidades de textualidad: coherencia, cohesión, intencionalidad, aceptabilidad, informatividad, situacionalidad, intertextualidad</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">3</DIV><DIV CLASS="dk-label">Niveles de comprensión lectora: literal, inferencial, crítico-valorativo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1</DIV><DIV CLASS="dk-label">Proceso de reconstrucción de sentido que ocurre al leer un texto</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">0</DIV><DIV CLASS="dk-label">Niveles que pueden alcanzarse saltándose el nivel literal previo</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Qué garantiza la cualidad de textualidad llamada "coherencia"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Que las oraciones estén conectadas mediante pronombres y conectores visibles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Que las ideas del texto se relacionen de manera lógica y ordenada, sin contradecirse entre sí, formando un sentido global comprensible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Que el texto cite obligatoriamente a otros textos anteriores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Que el texto contenga la mayor cantidad posible de información nueva</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La coherencia es la cualidad de fondo que asegura que las ideas de un texto se relacionen lógicamente entre sí, sin contradicciones, formando una unidad de sentido reconocible por el lector. La opción a) describe, en cambio, a la cohesión, que es una cualidad relacionada pero distinta, centrada en los recursos formales visibles; c) describe la intertextualidad; d) describe la informatividad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿A qué cualidad de textualidad corresponde el propósito comunicativo con el que el emisor produce un texto (informar, convencer, narrar, instruir)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Situacionalidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Intencionalidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Aceptabilidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Cohesión</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La intencionalidad es, precisamente, la actitud del emisor de producir un texto coherente y cohesionado con el fin de lograr un propósito comunicativo determinado. La situacionalidad (a) se refiere a la adecuación del texto al contexto en que aparece, no al propósito de quien lo escribe; la aceptabilidad (c) corresponde a la disposición del receptor, no del emisor; la cohesión (d) es un recurso formal, no un propósito comunicativo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Qué se entiende por comprensión lectora en el "nivel literal"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Formar una opinión personal sobre la validez de los argumentos del texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Identificar la información que el texto expresa explícitamente, tal como aparece escrita, sin necesidad de deducir nada adicional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Deducir información que el texto no menciona directamente, combinando pistas del contexto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Comparar el texto leído con otros textos del mismo autor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El nivel literal es el más básico de la comprensión lectora: consiste en reconocer con precisión la información que el texto dice de manera explícita, sin necesidad de interpretación adicional. La opción a) describe el nivel crítico-valorativo; c) describe el nivel inferencial; d) describe una tarea distinta, relacionada más bien con la intertextualidad, no con un nivel específico de comprensión de un texto individual.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Qué caracteriza al nivel inferencial de comprensión lectora?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Consiste en copiar literalmente frases del texto sin ningún tipo de procesamiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Consiste en obtener información que el texto no expresa de manera explícita, deduciéndola a partir de lo que sí afirma y del contexto disponible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Consiste exclusivamente en memorizar fechas y nombres mencionados en el texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Consiste en rechazar automáticamente cualquier afirmación del texto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El nivel inferencial exige ir más allá de lo explícito: deducir relaciones, causas, consecuencias o intenciones que el texto sugiere sin declararlas directamente, apoyándose en los datos que sí aparecen y en el conocimiento general del lector. La opción a) describe una tarea mecánica ajena a cualquier nivel real de comprensión; c) reduce la inferencia a la mera memorización, que corresponde más bien al nivel literal; d) confunde inferir con rechazar, cuando inferir es construir una deducción razonable, no negar lo leído.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Qué evalúa específicamente el nivel crítico-valorativo de la comprensión lectora?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Únicamente si el lector recuerda con exactitud las fechas mencionadas en el texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) La validez de los argumentos, la objetividad del enfoque y la suficiencia de las pruebas que el texto presenta, formando un juicio propio y fundamentado sobre lo leído</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Solamente la ortografía y la puntuación del texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Exclusivamente la cantidad de palabras que tiene el texto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El nivel crítico-valorativo es el más profundo de los tres: implica que el lector no solo comprenda el contenido, sino que lo evalúe, contrastando la solidez de sus argumentos y la suficiencia de sus pruebas, y formando una postura propia frente a lo leído. Las opciones a), c) y d) reducen la evaluación crítica a aspectos superficiales (memoria de datos, forma gramatical, extensión) que no corresponden a la naturaleza real de este nivel.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Lee el siguiente texto y responde la pregunta que se plantea a continuación:
+<DIV CLASS="parrafo">"El puente colgante de Q'eswachaka, ubicado sobre el río Apurímac, es renovado cada año mediante una ceremonia comunitaria que reúne a cuatro comunidades quechuahablantes. Utilizando fibra vegetal trenzada según técnicas transmitidas de generación en generación, los participantes reconstruyen íntegramente la estructura en apenas tres días."</DIV>
+¿Cada cuánto tiempo se renueva el puente de Q'eswachaka, según el texto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Cada mes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Cada año</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Cada tres días</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Cada década</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una pregunta de nivel literal: el texto afirma explícitamente que el puente "es renovado cada año", por lo que basta con localizar ese dato tal como aparece escrito. "Cada tres días" (c) corresponde, en el texto, a la duración de la reconstrucción, no a la frecuencia de la renovación; "cada mes" (a) y "cada década" (d) no aparecen mencionados en ningún momento.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Lee el siguiente texto y responde la pregunta que se plantea a continuación:
+<DIV CLASS="parrafo">"Durante los últimos veinte años, la ciudad ha triplicado su parque automotor, mientras que la extensión de sus vías principales apenas ha aumentado un quince por ciento. En las horas punta, los tiempos de traslado entre distritos vecinos se han duplicado respecto a la década anterior."</DIV>
+¿Qué se puede inferir razonablemente a partir de esta información, aunque el texto no lo afirme de manera explícita?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Que la infraestructura vial de la ciudad no ha crecido al mismo ritmo que la cantidad de vehículos, lo cual explicaría en buena medida el aumento de la congestión y los tiempos de traslado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Que la ciudad cuenta actualmente con un sistema de transporte público completamente eficiente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Que el número de habitantes de la ciudad ha disminuido en los últimos veinte años</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Que todos los distritos de la ciudad tienen exactamente el mismo nivel de congestión vehicular</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El texto no afirma directamente una relación de causa-efecto entre el crecimiento del parque automotor y el aumento de los tiempos de traslado, pero esa relación puede deducirse razonablemente al combinar ambos datos: si los vehículos se triplicaron y las vías apenas crecieron un quince por ciento, es lógico inferir que esa desproporción contribuye a la mayor congestión. La opción b) contradice, en realidad, lo que el texto sugiere (un sistema de transporte ineficiente ante la demanda); c) y d) son inferencias infundadas, ya que el texto no ofrece ningún dato sobre población ni sobre uniformidad de la congestión entre distritos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Un texto publicitario afirma, sin citar ninguna fuente ni estudio, que "el 90% de los especialistas recomienda este producto". Desde el nivel crítico-valorativo de la comprensión lectora, ¿qué debería notar un lector atento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Nada en particular: cualquier cifra mencionada en un texto debe aceptarse sin cuestionamiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Que la afirmación carece de respaldo verificable (no se menciona qué estudio, qué especialistas ni qué metodología sustenta esa cifra), lo cual debilita la validez de la afirmación aunque esté redactada con aparente autoridad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c> Que el texto tiene errores de ortografía</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Que el texto es demasiado breve para ser publicitario</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El nivel crítico-valorativo exige evaluar la suficiencia de las pruebas que un texto presenta antes de aceptar sus afirmaciones. Una cifra como "el 90% de los especialistas" sin ninguna fuente verificable, estudio citado o metodología explicada es un dato que un lector crítico debe recibir con cautela, precisamente porque su aparente autoridad no está respaldada por evidencia comprobable. La opción a) describe exactamente la actitud opuesta a la lectura crítica; c) y d) desplazan la atención hacia aspectos formales (ortografía, extensión) que no son el problema real señalado en el enunciado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Un mismo contenido informativo se redacta de dos formas distintas: una como noticia periodística formal y otra como mensaje de texto entre amigos. ¿Qué cualidad de textualidad explica principalmente esta diferencia de forma?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Informatividad, porque el contenido informativo cambia por completo entre ambos formatos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Situacionalidad, porque cada texto se adecúa al contexto comunicativo en que se produce y se recibe, lo cual exige un registro y una estructura distintos aunque el contenido de fondo sea el mismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Intertextualidad, porque ambos textos citan explícitamente a otros textos anteriores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Cohesión, porque uno de los dos textos no utiliza ningún conector</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La situacionalidad explica precisamente por qué un mismo contenido se organiza de manera distinta según el contexto comunicativo: una noticia formal exige un registro objetivo y una estructura convencional del género periodístico, mientras que un mensaje entre amigos admite informalidad, abreviaciones y un tono cercano. La opción a) es incorrecta, ya que el contenido informativo de fondo puede mantenerse esencialmente igual; c) no corresponde, porque el ejemplo no involucra citas a otros textos; d) reduce la diferencia a un solo recurso formal (los conectores), cuando la diferencia real es de adecuación contextual global.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Por qué se afirma que no es posible alcanzar una comprensión inferencial sólida sin haber comprendido antes el nivel literal del mismo texto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Porque ambos niveles son, en realidad, exactamente lo mismo y no existe ninguna diferencia entre ellos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Porque toda inferencia se construye a partir de los datos explícitos del texto; si esos datos no se comprendieron con precisión en el nivel literal, cualquier deducción posterior partirá de una base incorrecta o incompleta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Porque el nivel literal solo es necesario en textos narrativos, no en textos expositivos o argumentativos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Porque el nivel inferencial no tiene ninguna relación con el contenido explícito del texto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los niveles de comprensión lectora funcionan como capas que se apoyan una sobre otra: el nivel inferencial parte, precisamente, de los datos que el texto ofrece de manera explícita, combinándolos con el contexto para deducir información no declarada directamente. Si esos datos base no se comprendieron correctamente, cualquier inferencia construida sobre ellos corre el riesgo de ser errónea, por más lógico que parezca el razonamiento aplicado. La opción a) ignora la diferencia real entre ambos niveles; c) restringe arbitrariamente la necesidad del nivel literal a un solo tipo de texto, cuando en realidad aplica a cualquier género; d) es falsa, ya que la inferencia depende directamente de la información explícita del texto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · RAZONAMIENTO CRÍTICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Lee el siguiente texto y responde la pregunta que se plantea a continuación:
+<DIV CLASS="parrafo">"Entre 1532 y 1572, el Tahuantinsuyo experimentó una resistencia sostenida frente a la conquista española, cuyo último bastión fue el Estado neoinca de Vilcabamba. Tras la ejecución de Túpac Amaru I en 1572, la resistencia armada organizada llegó formalmente a su fin, aunque las tensiones y los levantamientos indígenas continuarían manifestándose de manera intermitente durante los siglos siguientes."</DIV>
+A partir de este texto, ¿qué puede inferirse razonablemente sobre la naturaleza del proceso de conquista y resistencia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Que la conquista española del Tahuantinsuyo fue un proceso instantáneo, concluido por completo en 1532</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Que, aunque la resistencia armada organizada terminó formalmente en 1572, el proceso de conquista y resistencia fue prolongado y no se limitó a un enfrentamiento único, sino que se extendió por cuatro décadas y dejó tensiones posteriores que continuaron manifestándose después de esa fecha</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Que no existió ninguna forma de resistencia indígena después de 1572</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Que Vilcabamba fue la capital original del Tahuantinsuyo antes de la conquista</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El texto proporciona un rango temporal explícito (1532-1572) y menciona además que las tensiones continuaron "de manera intermitente durante los siglos siguientes", lo cual permite inferir con solidez que el proceso fue prolongado y complejo, no un hecho puntual. La opción a) contradice directamente el rango de cuarenta años mencionado en el texto; c) contradice la afirmación explícita sobre levantamientos posteriores a 1572; d) es una inferencia infundada, ya que el texto no afirma en ningún momento que Vilcabamba fuera la capital original del imperio, sino el último bastión de resistencia tras la conquista.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Compara estos dos fragmentos de un mismo tema y determina cuál posee mayor informatividad, entendida como cualidad de textualidad: (I) "El agua es un recurso natural muy importante para la vida y debe cuidarse porque sin ella no podríamos sobrevivir." (II) "Aunque el 71% de la superficie terrestre está cubierta de agua, menos del 1% es agua dulce accesible para el consumo humano directo, lo que explica por qué la gestión eficiente de este recurso resulta crítica incluso en regiones aparentemente ricas en fuentes hídricas."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) El fragmento (I) tiene mayor informatividad porque es más breve y directo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) El fragmento (II) tiene mayor informatividad, porque aporta datos específicos y relativamente poco previsibles (los porcentajes de agua dulce disponible) que amplían el conocimiento del lector más allá de una afirmación general ya ampliamente conocida, como la del fragmento (I)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Ambos fragmentos tienen exactamente la misma informatividad, ya que tratan el mismo tema general</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Ninguno de los dos fragmentos tiene informatividad, porque ambos hablan sobre el agua</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La informatividad se mide por el grado de novedad que un texto aporta al lector. El fragmento (I) expresa una idea general ya ampliamente conocida y previsible ("el agua es importante para la vida"), mientras que el fragmento (II) aporta datos concretos y específicos que la mayoría de lectores no tendría memorizados, ampliando genuinamente su conocimiento sobre el tema. La opción a) confunde brevedad con informatividad, cuando en realidad son cualidades independientes; c) y d) ignoran la diferencia real de contenido novedoso entre ambos fragmentos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Un estudiante lee un texto argumentativo, identifica correctamente todos los datos explícitos que contiene y logra deducir con precisión sus implicaciones no declaradas, pero acepta sin ningún cuestionamiento todas las conclusiones del autor, sin evaluar la solidez de sus argumentos. ¿Qué nivel de comprensión lectora no ha alcanzado plenamente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) El nivel literal, porque no identificó correctamente los datos explícitos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El nivel crítico-valorativo, porque comprendió el contenido explícito e implícito del texto, pero no evaluó la validez de sus argumentos ni formó un juicio propio y fundamentado sobre lo leído</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) El nivel inferencial, porque no logró deducir ninguna implicación no declarada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Ningún nivel, porque la comprensión lectora es una habilidad única e indivisible</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El enunciado deja explícito que el estudiante domina tanto el nivel literal (identificó correctamente los datos) como el inferencial (dedujo con precisión las implicaciones no declaradas). Lo que falta es, precisamente, la evaluación crítica: cuestionar la solidez de los argumentos del autor y no aceptar sus conclusiones de manera automática, que es la función específica del nivel crítico-valorativo. Las opciones a) y c) contradicen directamente lo que el enunciado ya afirma sobre el desempeño del estudiante en esos niveles; d) niega, sin fundamento, la existencia de niveles diferenciados de comprensión lectora, que es precisamente el marco conceptual que este tema desarrolla.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Explica por qué un texto puede ser perfectamente coherente y cohesionado y, sin embargo, resultar poco "aceptable" para un lector específico.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Esto es imposible: si un texto es coherente y cohesionado, siempre resulta igualmente aceptable para cualquier lector</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Porque la aceptabilidad depende de la disposición del receptor a reconocer el texto como válido y relevante, lo cual puede verse afectado por factores propios del lector —su nivel de conocimiento previo, su interés en el tema o su familiaridad con el registro usado— independientemente de que el texto en sí mismo sea coherente y esté bien cohesionado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Porque la aceptabilidad depende exclusivamente de la cantidad de párrafos que tiene el texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Porque un texto coherente y cohesionado nunca puede considerarse un texto real</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La aceptabilidad es una cualidad centrada específicamente en el receptor, no en las propiedades internas del texto: un texto técnico perfectamente coherente y cohesionado puede resultar poco aceptable para un lector sin el conocimiento previo necesario para seguirlo, mientras que ese mismo texto sería plenamente aceptable para un especialista en la materia. Esto demuestra que la aceptabilidad, a diferencia de la coherencia y la cohesión (propiedades del texto), depende también de factores del lector. La opción a) asume una relación automática que no existe entre las distintas cualidades de textualidad; c) y d) inventan criterios sin ninguna relación con la definición real de aceptabilidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Un lector reconoce, al empezar a leer un texto, que se trata de una fábula, gracias a que identifica animales que hablan, una estructura narrativa breve y una moraleja final, patrones que ya conocía de otras fábulas leídas antes. ¿Qué cualidad de textualidad está operando principalmente en ese reconocimiento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Informatividad, porque el lector obtiene información completamente nueva sobre el género</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Intertextualidad, porque el reconocimiento del género se basa en la relación de este texto con otros textos del mismo tipo leídos previamente, cuyas convenciones (animales que hablan, moraleja final) el lector ya conoce</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Cohesión, porque el texto usa pronombres para conectar sus oraciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Situacionalidad, porque el texto se adecúa al contexto de una biblioteca</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El reconocimiento de un texto como perteneciente a un género determinado (la fábula, en este caso) depende directamente de la intertextualidad: el lector identifica convenciones (animales que hablan, moraleja) porque las ha encontrado antes en otros textos del mismo tipo, y esa relación con textos previos es lo que le permite anticipar y reconocer el género actual. La opción a) es incorrecta porque, precisamente, lo que el lector reconoce no es información nueva, sino patrones ya conocidos; c) reduce el fenómeno a un recurso formal específico no mencionado en el enunciado; d) confunde la intertextualidad con la situacionalidad, que se refiere al contexto de producción y recepción, no a la relación entre textos de un mismo género.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Lee el siguiente texto y responde la pregunta que se plantea a continuación:
+<DIV CLASS="parrafo">"Un estudio reciente comparó los resultados académicos de dos grupos de estudiantes de un mismo colegio: uno que utilizó un nuevo método de enseñanza basado en proyectos, y otro que continuó con el método tradicional. Tras un semestre, el grupo experimental obtuvo, en promedio, calificaciones superiores en un 12% respecto al grupo de control. Sin embargo, el estudio no controló variables como el nivel socioeconómico de los estudiantes ni la experiencia previa de los docentes a cargo de cada grupo."</DIV>
+Desde el nivel crítico-valorativo, ¿qué conclusión sería la más adecuada frente a este texto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) El nuevo método de enseñanza basado en proyectos es definitivamente superior al método tradicional en cualquier contexto educativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Aunque el resultado numérico favorece al método basado en proyectos, la ausencia de control sobre variables relevantes (nivel socioeconómico, experiencia docente) impide atribuir con certeza la diferencia de resultados exclusivamente al método de enseñanza, por lo que la conclusión debe tomarse con cautela</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) El estudio no tiene ningún valor y debe ser completamente descartado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) El método tradicional es claramente mejor, porque el texto no lo menciona con suficiente detalle</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La lectura crítico-valorativa no consiste en aceptar automáticamente una conclusión favorable (opción a) ni en rechazar por completo un estudio con limitaciones (opción c), sino en sopesar la evidencia presentada reconociendo tanto sus hallazgos como sus limitaciones metodológicas explícitas. El propio texto señala que no se controlaron variables relevantes, lo cual introduce la posibilidad de que factores distintos al método de enseñanza expliquen, total o parcialmente, la diferencia observada; por eso la postura más rigurosa es la cautelosa, ni de aceptación total ni de rechazo total. La opción d) es un salto lógico infundado, ya que la falta de detalle sobre el método tradicional no implica en absoluto su superioridad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Analiza el siguiente caso: un texto académico afirma "las políticas de conservación implementadas desde 2015 explican la recuperación de la población de vicuñas en la región". Un lector identifica, además, en el mismo texto, que en ese mismo período se prohibió también la caza furtiva y mejoraron las condiciones climáticas para el pastizal altoandino. ¿Qué habilidad de comprensión lectora está aplicando este lector?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Comprensión literal simple, porque solo repite datos explícitos sin ningún análisis adicional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Evaluación crítica de la causalidad propuesta por el texto: el lector identifica que existen otros factores mencionados en el propio texto (prohibición de caza furtiva, mejora climática) que podrían haber contribuido también a la recuperación de la población, cuestionando así si la causa atribuida por el autor es la única o la principal explicación posible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Un simple error de lectura, ya que el texto solo puede tener una causa verdadera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Reconocimiento de la cohesión textual, porque identifica los conectores usados en el párrafo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Este es un caso claro de comprensión crítico-valorativa aplicada a la evaluación de una relación causal: el lector no se limita a aceptar la explicación causal única que el texto propone (las políticas de conservación), sino que identifica, dentro del propio texto, otros factores concurrentes (caza furtiva prohibida, mejores condiciones climáticas) que podrían compartir responsabilidad en el resultado observado, cuestionando así si la causa señalada por el autor es realmente la explicación completa o solo una entre varias. Esto va mucho más allá de la comprensión literal (a), no es un error (c), ya que identificar múltiples causas posibles es una habilidad de lectura rigurosa, no un fallo; y no corresponde al reconocimiento de cohesión (d), que es un fenómeno formal ajeno al análisis causal que describe el enunciado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Explica por qué dos lectores distintos pueden alcanzar niveles de comprensión inferencial diferentes al leer exactamente el mismo texto, aunque ambos hayan comprendido con precisión su nivel literal.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Esto nunca puede ocurrir: si dos lectores comprenden igual el nivel literal, sus inferencias serán automáticamente idénticas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Porque la inferencia no depende únicamente de los datos explícitos del texto, sino también del conocimiento previo y del contexto cultural o experiencial que cada lector aporta al combinar esos datos; lectores con distinto bagaje pueden construir inferencias razonables pero distintas a partir de la misma información explícita</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Porque la comprensión inferencial es un concepto inventado sin ninguna base real en la lectura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Porque solo puede existir una única inferencia correcta posible para cada texto, sin importar el lector</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La inferencia se construye combinando la información explícita del texto con el conocimiento previo y la experiencia del lector; por eso, aunque dos personas comprendan de manera idéntica el contenido literal, sus inferencias pueden variar según el bagaje que cada una aporta a esa combinación —una persona con conocimientos previos sobre un tema puede inferir matices que otra, sin ese bagaje, no alcanzaría a deducir con la misma facilidad—, siempre que ambas inferencias sean razonables y estén sustentadas en el texto. La opción a) ignora esta variabilidad legítima; c) niega sin fundamento la existencia de un nivel de comprensión ampliamente documentado; d) es una simplificación excesiva, ya que en muchos casos un mismo texto admite más de una inferencia razonable, siempre que se apoyen en la evidencia textual disponible.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Por qué se afirma que la situacionalidad y la intertextualidad, aunque son cualidades distintas, suelen actuar de manera conjunta al momento de que un lector reconozca el género de un texto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Porque son, en realidad, exactamente el mismo concepto con dos nombres distintos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Porque la situacionalidad determina qué registro y estructura resultan apropiados para un contexto comunicativo específico, mientras que la intertextualidad permite al lector reconocer esas convenciones porque ya las ha encontrado en textos similares anteriores; ambas se combinan porque el contexto (situacionalidad) suele estar asociado a un conjunto de convenciones de género aprendidas a través de la experiencia con otros textos (intertextualidad)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Porque ninguna de las dos tiene relación con el reconocimiento de géneros textuales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Porque ambas dependen exclusivamente de la longitud del texto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aunque son cualidades conceptualmente distintas —la situacionalidad se refiere a la adecuación del texto a su contexto de producción y recepción, y la intertextualidad a su relación con otros textos previos—, ambas suelen operar juntas en la práctica: reconocer que un texto encaja en una situación comunicativa determinada (por ejemplo, un contrato legal) generalmente implica también reconocer las convenciones de ese género textual, aprendidas gracias a la exposición previa a textos similares. La opción a) confunde dos conceptos que, aunque relacionados, tienen definiciones y funciones distintas; c) niega una relación real y bien documentada entre ambas cualidades; d) reduce el fenómeno a un factor (la longitud) que no tiene relación directa con ninguna de las dos cualidades descritas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Si tuvieras que resumir en una sola afirmación cómo se relacionan las cualidades de textualidad con los niveles de comprensión lectora, ¿cuál de las siguientes lo expresa con mayor exactitud?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) No existe ninguna relación entre ambos conjuntos de conceptos; son temas completamente independientes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Las cualidades de textualidad (coherencia, cohesión, intencionalidad, aceptabilidad, informatividad, situacionalidad, intertextualidad) son las condiciones que hacen que un conjunto de oraciones funcione como texto, y son también la base sobre la cual el lector construye cada nivel de comprensión: la coherencia y la cohesión sostienen el nivel literal, la intencionalidad y la situacionalidad ayudan a construir inferencias razonables, y la informatividad y la intertextualidad permiten fundamentar un juicio crítico sobre lo leído</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Las cualidades de textualidad solo aplican a textos escritos por expertos, mientras que los niveles de comprensión solo aplican a lectores principiantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Ambos conjuntos de conceptos se refieren exclusivamente a la ortografía y la gramática del texto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de cierre integra los dos grandes bloques del tema: las cualidades de textualidad, que explican qué hace que un conjunto de oraciones funcione como texto, y los niveles de comprensión lectora, que explican cómo el lector reconstruye el sentido de ese texto en profundidad creciente. Ambos conjuntos no son independientes: las propiedades del texto son, precisamente, la base sobre la cual se construye cada nivel de lectura, desde el reconocimiento de lo explícito hasta la evaluación crítica de lo leído. La opción a) niega esta relación estructural; c) y d) restringen arbitrariamente el alcance de ambos conceptos a condiciones que no corresponden a su definición real.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE — Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

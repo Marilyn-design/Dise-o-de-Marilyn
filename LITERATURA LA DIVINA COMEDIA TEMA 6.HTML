@@ -1,0 +1,585 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>La Divina Comedia - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 6</DIV>
+<H1>La Divina Comedia (Dante Alighieri)</H1>
+<DIV CLASS="sub">Dante Alighieri &middot; Literatura Medieval Italiana &middot; Infierno &middot; Purgatorio &middot; Para&iacute;so</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Contexto hist&oacute;rico y literario</H3>
+<I>La Divina Comedia</I> surge en plena <B>Edad Media europea</B> (siglos V&ndash;XV d.C.), periodo marcado por el predominio de la Iglesia cat&oacute;lica, la cosmovisión teoc&eacute;ntrica (Dios como centro del universo y la existencia humana), el feudalismo y el latín como lengua culta. Sin embargo, la obra de Dante representa el umbral entre la <B>literatura medieval</B> y el <B>Prerrenacimiento</B>: aunque su tema y cosmovisión son profundamente religiosos y medievales, su uso del italiano vulgar (en lugar del latín), su humanización de los personajes y su ambición enciclopédica anticipan el pensamiento renacentista.
+
+<H4>El contexto político de Dante:</H4>
+<UL>
+<LI><B>Florencia, Italia, siglos XIII&ndash;XIV:</B> Dante vivió en una ciudad dividida entre dos facciones políticas irreconciliables: los <B>güelfos</B> (partidarios del Papa) y los <B>gibelinos</B> (partidarios del Emperador). Dante pertenecía a los güelfos blancos (facción moderada) y fue desterrado de Florencia en 1302 por los güelfos negros, aliados del Papa Bonifacio VIII.</LI>
+<LI><B>El exilio:</B> Dante no regresó jamás a Florencia. Murió en Rávena en 1321. La amargura del exilio y la corrupción política y eclesiástica de su tiempo impregnan toda la <I>Divina Comedia</I>: muchos de sus enemigos personales aparecen en el Infierno.</LI>
+</UL>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> La <I>Divina Comedia</I> es considerada la obra cumbre de la literatura medieval y uno de los textos más importantes de la literatura universal. Pertenece a la <B>literatura italiana medieval</B>, género <B>épico-alegórico</B>. Su título original era simplemente <I>Comedia</I>; el adjetivo "Divina" fue añadido por el humanista <B>Giovanni Boccaccio</B> póstumamente, en reconocimiento a su grandeza.</DIV>
+
+<DIV CLASS="cultura-titulo">DANTE ALIGHIERI &mdash; El poeta del más allá<SPAN>El escritor más importante de la literatura italiana y uno de los padres de la lengua italiana moderna</SPAN></DIV>
+
+<H3>2. Dante Alighieri: vida y obra</H3>
+
+<H4>Datos biográficos esenciales:</H4>
+<UL>
+<LI><B>Nombre completo:</B> Durante di Alighiero degli Alighieri.</LI>
+<LI><B>Nacimiento:</B> Florencia, Italia, entre el 21 de mayo y el 21 de junio de <B>1265</B>.</LI>
+<LI><B>Muerte:</B> Rávena, Italia, <B>14 de septiembre de 1321</B>.</LI>
+<LI><B>Formación:</B> estudió filosofía, teología, astronomía, retórica y latín. Fue discípulo intelectual de <B>Brunetto Latini</B> y admirador profundo de <B>Virgilio</B> (a quien convierte en su guía literaria en la <I>Divina Comedia</I>) y de la filosofía de <B>Santo Tomás de Aquino</B> y <B>Aristóteles</B>.</LI>
+<LI><B>Vida política:</B> fue prior de Florencia en 1300. En 1302 fue acusado de corrupción y desterrado. La condena incluía la hoguera si regresaba.</LI>
+<LI><B>Beatriz Portinari:</B> el gran amor platónico de Dante. La conoció a los 9 años (él tenía 9, ella 8, según <I>La Vita Nuova</I>) y la volvió a ver a los 18. Beatriz murió en 1290, a los 24 años. Se convirtió en el símbolo del amor puro y la guía espiritual en la <I>Divina Comedia</I>, donde conduce a Dante por el Paraíso.</LI>
+</UL>
+
+<H4>Otras obras importantes de Dante:</H4>
+<UL>
+<LI><B>La Vita Nuova</B> (La Vida Nueva, 1293): colección de poemas y prosa en italiano vulgar dedicada a Beatriz Portinari. Es el primer texto importante de la literatura italiana en lengua vernácula.</LI>
+<LI><B>De Vulgari Eloquentia</B> (en latín, ~1303): tratado sobre el uso del italiano vulgar como lengua literaria legítima, frente al latín.</LI>
+<LI><B>Il Convivio</B> (El Banquete, ~1304): ensayo filosófico en italiano vulgar.</LI>
+<LI><B>De Monarchia</B> (en latín, ~1312): tratado político sobre la separación del poder temporal (Emperador) y el espiritual (Papa).</LI>
+</UL>
+
+<DIV CLASS="ej"><B>Importancia lingüística:</B> Dante escribió la <I>Divina Comedia</I> en <B>toscano florentino</B> (italiano vulgar), no en latín. Esto fue revolucionario: legitimó una lengua popular como vehículo de la más alta expresión literaria y filosófica. Por eso Dante es considerado uno de los <B>"padres del italiano moderno"</B>, junto con Petrarca y Boccaccio.</DIV>
+
+<DIV CLASS="cultura-titulo">LA DIVINA COMEDIA &mdash; Estructura general<SPAN>Un viaje alegórico por el más allá: del Infierno al Paraíso</SPAN></DIV>
+
+<H3>3. Estructura y forma de la obra</H3>
+
+<H4>Datos formales:</H4>
+<UL>
+<LI><B>G&eacute;nero:</B> poema épico-alegórico.</LI>
+<LI><B>Idioma:</B> toscano florentino (italiano vulgar medieval).</LI>
+<LI><B>Extensión:</B> <B>14 233 versos</B> distribuidos en <B>100 cantos</B>.</LI>
+<LI><B>Forma m&eacute;trica:</B> <B>tercetos encadenados</B> (<I>terza rima</I>): estrofas de tres versos endecasílabos con rima ABA BCB CDC..., inventada por el propio Dante. La cadena de rimas entrelazadas simboliza la Trinidad (Padre, Hijo, Espíritu Santo).</LI>
+<LI><B>Composición:</B> escrita entre <B>1304 y 1321</B>. Se publicó póstumamente (el Paraíso estaba incompleto a su muerte).</LI>
+</UL>
+
+<H4>La arquitectura tripartita:</H4>
+La obra se divide en tres <B>cánticas</B> (partes), cada una con <B>33 cantos</B> (más un canto introductorio en el Infierno, que lo lleva a 34):
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>C&aacute;ntica</TH><TH>Cantos</TH><TH>Gu&iacute;a de Dante</TH><TH>Simbolismo</TH></TR>
+<TR><TD><B>Infierno (Inferno)</B></TD><TD>34 cantos</TD><TD>Virgilio (la Raz&oacute;n humana)</TD><TD>El pecado y sus consecuencias eternas; el alejamiento de Dios</TD></TR>
+<TR><TD><B>Purgatorio (Purgatorio)</B></TD><TD>33 cantos</TD><TD>Virgilio (hasta la cumbre)</TD><TD>La purificaci&oacute;n del alma; la esperanza y la penitencia</TD></TR>
+<TR><TD><B>Para&iacute;so (Paradiso)</B></TD><TD>33 cantos</TD><TD>Beatriz (el Amor divino) y San Bernardo</TD><TD>La gracia divina y la visi&oacute;n de Dios</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El simbolismo del n&uacute;mero 3:</H4>
+La estructura entera está impregnada del número <B>3</B> (la Trinidad cristiana): 3 cánticas, 33 cantos por cántica, la <I>terza rima</I>, los 3 guías (Virgilio, Beatriz, San Bernardo). El número <B>10</B> (3+1, la perfección) también es central: 10 cielos en el Paraíso, 9 círculos en el Infierno (+1 vestíbulo). El número <B>100</B> (10×10, la perfección suprema) es el total de cantos.
+
+<DIV CLASS="mapa-note"><B>Marco narrativo:</B> El viaje ocurre en la <B>Semana Santa de 1300</B> (del Jueves Santo 7 de abril al miércoles 13 de abril). Dante tenía 35 años, exactamente la mitad de los 70 que la Biblia asigna a la vida humana. El verso inicial es célebre: <I>"Nel mezzo del cammin di nostra vita"</I> ("En la mitad del camino de nuestra vida"), que alude directamente a este momento simbólico.</DIV>
+
+<DIV CLASS="cultura-titulo">EL INFIERNO (INFERNO) &mdash; Primera c&aacute;ntica<SPAN>34 cantos &middot; Guía: Virgilio &middot; Los 9 círculos del pecado</SPAN></DIV>
+
+<H3>4. El Infierno: estructura y personajes</H3>
+
+<H4>Concepto teológico:</H4>
+El Infierno dantesco es un <B>embudo cónico</B> que se hunde hacia el centro de la Tierra. Fue creado cuando Lucifer (el ángel caído) chocó contra la Tierra al ser expulsado del Cielo: el impacto formó el cráter infernal y empujó hacia arriba la tierra que formó el <B>Monte Purgatorio</B> en el hemisferio opuesto. En el centro exacto de la Tierra está <B>Lucifer</B> (Satanás), aprisionado en hielo.
+
+<H4>El principio de la Contrapena (<I>contrappasso</I>):</H4>
+El principio más importante del Infierno dantesco: cada pecador sufre una pena que guarda una <B>relación irónica o simétrica con su pecado</B>. El castigo refleja, invierte o prolonga eternamente la naturaleza del pecado cometido. Por ejemplo: los adivinos que quisieron ver el futuro caminan con la cabeza vuelta hacia atrás, sin poder ver hacia adelante.
+
+<H4>Los 9 c&iacute;rculos del Infierno:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>C&iacute;rculo</TH><TH>Pecadores</TH><TH>Pena (<I>contrappasso</I>)</TH></TR>
+<TR><TD><B>Vestíbulo</B></TD><TD>Los indiferentes (ni buenos ni malos)</TD><TD>Perseguidos por avispas; corren sin descanso detrás de una bandera que gira sin rumbo</TD></TR>
+<TR><TD><B>1. Limbo</B></TD><TD>Virtuosos paganos y no bautizados (Virgilio, Homero, Aristóteles, Platón, Julio César)</TD><TD>No sufren dolor físico, solo el deseo eterno de Dios que nunca podrán alcanzar</TD></TR>
+<TR><TD><B>2. Lujuria</B></TD><TD>Paolo y Francesca, Cleopatra, Helen de Troya, Aquiles</TD><TD>Arrastrados eternamente por un viento tempestuoso, como fueron arrastrados por sus pasiones</TD></TR>
+<TR><TD><B>3. Gula</B></TD><TD>Ciacco (florentino)</TD><TD>Yacen bajo lluvia helada y granizo; el perro Cerbero los devora</TD></TR>
+<TR><TD><B>4. Avaricia y prodigalidad</B></TD><TD>Avaros y pródigos</TD><TD>Empujan grandes pesos en círculos opuestos, chocando eternamente entre sí</TD></TR>
+<TR><TD><B>5. Ira y pereza</B></TD><TD>Iracundos y perezosos</TD><TD>Los iracundos se destrozan en el río Estigia; los perezosos yacen sumergidos bajo el lodo</TD></TR>
+<TR><TD><B>6. Herejía</B></TD><TD>Epicúreos y herejes (Farinata degli Uberti)</TD><TD>Encerrados en sepulcros ardientes</TD></TR>
+<TR><TD><B>7. Violencia</B></TD><TD>Homicidas, suicidas, blasfemos, sodomitas, usureros</TD><TD>Sumergidos en ríos de sangre hirviente; transformados en árboles; lluvia de fuego</TD></TR>
+<TR><TD><B>8. Fraude</B></TD><TD>Alcahuetes, aduladores, simoniacos, adivinos, corruptos, hipócritas, ladrones, consejeros fraudulentos (Ulises), falsificadores</TD><TD>Variadas según el tipo: sumergidos en heces, cabezas invertidas, envueltos en llamas</TD></TR>
+<TR><TD><B>9. Traición</B></TD><TD>Traidores a familiares, a la patria, a los huéspedes, a los benefactores (Judas, Bruto, Casio)</TD><TD>Sumergidos en el lago helado de Cocito; Lucifer mastica eternamente a Judas, Bruto y Casio</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Personajes memorables del Infierno:</H4>
+<UL>
+<LI><B>Paolo y Francesca (Canto V):</B> los amantes más célebres. Francesca da Rimini y su cuñado Paolo Malatesta se enamoraron leyendo el romance de Lancelot y Ginebra; su marido los sorprendió y mató. Dante los ubica en el 2.° círculo (Lujuria) pero llora de compasión al escuchar su historia, lo que le hace perder el conocimiento.</LI>
+<LI><B>Farinata degli Uberti (Canto X):</B> líder gibelino florentino, enemigo político de Dante, en el círculo de los herejes. A pesar de estar en el Infierno, mantiene su orgullo señorial. Dante lo describe con grandeza trágica.</LI>
+<LI><B>Ulises (Odiseo) (Canto XXVI):</B> en el círculo de los consejeros fraudulentos, envuelto en llamas. Dante no sigue la versión homérica (regreso a Ítaca) sino que inventa un último viaje de Ulises más allá de las Columnas de Hércules (el límite del mundo conocido), en busca del conocimiento prohibido. Su barco se hunde al acercarse al Monte Purgatorio. Es uno de los personajes más modernos y complejos de la obra.</LI>
+<LI><B>Ugolino della Gherardesca (Canto XXXIII):</B> noble pisano traicionado, encarcelado y muerto de hambre junto con sus hijos en la Torre de los Hambrientos. En el Infierno devora eternamente el cráneo de su traidor (el Arzobispo Ruggieri). Escena de extrema intensidad dramática.</LI>
+<LI><B>Lucifer (Canto XXXIV):</B> descrito con tres caras (parodia de la Trinidad), aprisionado en el hielo del lago Cocito. Mastica eternamente a los tres mayores traidores: <B>Judas</B> (traidor a Cristo), <B>Bruto</B> y <B>Casio</B> (traidores a Julio César, símbolo del Imperio). Es monstruoso, no majestuoso: su caída lo ha degradado completamente.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">EL PURGATORIO &mdash; Segunda c&aacute;ntica<SPAN>33 cantos &middot; Guía: Virgilio &middot; La montaña de la purificación</SPAN></DIV>
+
+<H3>5. El Purgatorio: estructura y significado</H3>
+
+<H4>Concepto teológico:</H4>
+El Purgatorio es, para Dante, una <B>montaña ubicada en el hemisferio sur</B> (el polo opuesto a Jerusalén, que está en el hemisferio norte). Las almas del Purgatorio son almas que <B>murieron en gracia de Dios</B> (es decir, se arrepintieron antes de morir) pero deben purificarse de sus pecados antes de ascender al Paraíso. A diferencia del Infierno (donde el sufrimiento es eterno y sin esperanza), el sufrimiento del Purgatorio tiene <B>fin</B> y va acompañado de esperanza y alegría.
+
+<H4>Estructura del Purgatorio:</H4>
+<UL>
+<LI><B>Antepurgatorio:</B> almas que tardaron en arrepentirse (excomulgados, negligentes, gobernantes).</LI>
+<LI><B>Valle de los Príncipes:</B> reyes y gobernantes negligentes con sus deberes espirituales.</LI>
+<LI><B>7 cornisas o terrazas:</B> una por cada uno de los siete pecados capitales, en orden ascendente de gravedad. En cada cornisa, las almas purgan su pecado específico.</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Cornisa</TH><TH>Pecado capital que se purga</TH><TH>Forma de purificaci&oacute;n</TH></TR>
+<TR><TD>1.&ordf;</TD><TD>Soberbia</TD><TD>Cargan pesadas piedras sobre su espalda (humillación física)</TD></TR>
+<TR><TD>2.&ordf;</TD><TD>Envidia</TD><TD>Tienen los ojos cosidos con alambre (no pueden ver)</TD></TR>
+<TR><TD>3.&ordf;</TD><TD>Ira</TD><TD>Caminan en humo negro sofocante (la ira nubla la razón)</TD></TR>
+<TR><TD>4.&ordf;</TD><TD>Pereza</TD><TD>Corren sin parar (compensan la inactividad con movimiento)</TD></TR>
+<TR><TD>5.&ordf;</TD><TD>Avaricia y prodigalidad</TD><TD>Yacen boca abajo sobre el suelo (supeditaron lo espiritual a lo terrenal)</TD></TR>
+<TR><TD>6.&ordf;</TD><TD>Gula</TD><TD>Pasan entre árboles cargados de fruta y fuentes de agua que no pueden alcanzar</TD></TR>
+<TR><TD>7.&ordf;</TD><TD>Lujuria</TD><TD>Caminan a través de llamas purificadoras</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El Paraíso Terrenal:</H4>
+En la cima del Monte Purgatorio, Dante encuentra el <B>Paraíso Terrenal</B> (el Edén original). Aquí Virgilio se despide: la Razón ha llevado a Dante tan lejos como puede, pero no puede ascender al Cielo (Virgilio es un pagano virtuoso). <B>Beatriz</B> (el Amor divino, la Gracia, la Teología) aparece en este punto para conducir a Dante al Paraíso.
+
+<DIV CLASS="ej"><B>Escena clave:</B> El encuentro entre Dante y Beatriz en la cima del Purgatorio (Canto XXX) es uno de los momentos más emotivos de la obra. Beatriz llega en una procesión triunfal. Dante busca a Virgilio para comunicarle su emoción, pero Virgilio ya no está. Beatriz entonces reprende a Dante por sus errores y extravíos morales tras la muerte de ella: es un momento de confesión y arrepentimiento que completa la conversión espiritual del poeta.</DIV>
+
+<DIV CLASS="cultura-titulo">EL PARA&Iacute;SO &mdash; Tercera c&aacute;ntica<SPAN>33 cantos &middot; Guía: Beatriz y San Bernardo &middot; Los 10 cielos</SPAN></DIV>
+
+<H3>6. El Para&iacute;so: estructura y visi&oacute;n de Dios</H3>
+
+<H4>Concepto:</H4>
+El Paraíso dantesco está basado en la <B>cosmología ptolemaica</B> (sistema geocéntrico): la Tierra está en el centro del universo y alrededor giran nueve esferas celestes concéntricas. Dante y Beatriz ascienden a través de estas esferas hasta el <B>Empíreo</B>, la morada de Dios, más allá del espacio y el tiempo.
+
+<H4>Los 10 cielos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Cielo</TH><TH>Astro asociado</TH><TH>Almas que habitan</TH></TR>
+<TR><TD>1.°</TD><TD>Luna</TD><TD>Almas que no cumplieron sus votos por causas ajenas</TD></TR>
+<TR><TD>2.°</TD><TD>Mercurio</TD><TD>Espíritus activos que buscaron gloria terrenal (Justiniano)</TD></TR>
+<TR><TD>3.°</TD><TD>Venus</TD><TD>Amantes que amaron bien (Cunizza, Folco de Marsella)</TD></TR>
+<TR><TD>4.°</TD><TD>Sol</TD><TD>Doctores y teólogos (Santo Tomás de Aquino, San Buenaventura)</TD></TR>
+<TR><TD>5.°</TD><TD>Marte</TD><TD>Guerreros de la fe (Carlomagno, Godofredo de Bouillón)</TD></TR>
+<TR><TD>6.°</TD><TD>Júpiter</TD><TD>Gobernantes justos (David, Trajano)</TD></TR>
+<TR><TD>7.°</TD><TD>Saturno</TD><TD>Contemplativos y monjes (San Benito, San Pedro Damián)</TD></TR>
+<TR><TD>8.°</TD><TD>Estrellas fijas</TD><TD>Los triunfantes: apóstoles, Adán, Cristo y la Virgen</TD></TR>
+<TR><TD>9.°</TD><TD>Primer Motor (<I>Primo Mobile</I>)</TD><TD>Los nueve coros de ángeles</TD></TR>
+<TR><TD>10.°</TD><TD>Emp&iacute;reo (más allá del espacio)</TD><TD>La Rosa Celeste: Dios, la Virgen, todos los santos y bienaventurados</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>San Bernardo y la visi&oacute;n final:</H4>
+En el Empíreo, Beatriz cede su lugar a <B>San Bernardo de Claraval</B>, el gran místico medieval, quien guía a Dante hacia la contemplación directa de Dios. El canto final (Canto XXXIII) es considerado la cima poética de toda la obra: Dante contempla la <B>luz divina</B> (la Trinidad), pero sus palabras no pueden expresar lo que ha visto. La obra termina con el verso célebre: <I>"L'amor che move il sole e l'altre stelle"</I> ("El amor que mueve el sol y las demás estrellas").
+
+<DIV CLASS="mapa-note"><B>El significado del viaje:</B> A nivel alegórico, el viaje de Dante es el camino del alma humana desde el pecado (Infierno) a través de la conversión (Purgatorio) hasta la unión con Dios (Paraíso). Virgilio representa la <B>Razón natural</B> (que puede guiar al hombre hasta cierto punto); Beatriz representa la <B>Teología y la Gracia divina</B> (que lleva al hombre a Dios); San Bernardo representa la <B>contemplación mística</B> (la unión directa con Dios).</DIV>
+
+<H3>7. Temas y significados de la obra</H3>
+
+<H4>El viaje como alegor&iacute;a:</H4>
+<UL>
+<LI><B>Nivel literal:</B> un viaje real de un poeta por el más allá durante la Semana Santa de 1300.</LI>
+<LI><B>Nivel alegórico:</B> el camino del alma humana desde el pecado hasta la salvación.</LI>
+<LI><B>Nivel moral:</B> la educación moral del lector: ver las consecuencias eternas del pecado y las recompensas de la virtud.</LI>
+<LI><B>Nivel anagógico (místico):</B> la aspiración suprema del alma a la unión con Dios.</LI>
+</UL>
+
+<H4>El amor como fuerza motriz:</H4>
+El amor es el motor de toda la obra. El verso final del Paraíso ("el amor que mueve el sol y las demás estrellas") revela que el amor divino es la fuerza que mantiene el universo en movimiento. El amor humano de Dante por Beatriz se transforma progresivamente en amor divino: es la vía de ascenso espiritual.
+
+<H4>La pol&iacute;tica en la obra:</H4>
+Dante es explícitamente político. Muchos de sus enemigos florentinos y de los papas corruptos (especialmente <B>Bonifacio VIII</B> y <B>Clemente V</B>) aparecen en el Infierno, a veces incluso antes de haber muerto (Dante los "pronostica" allí). Dante denuncia la corrupción de la Iglesia, la simonía (venta de cargos eclesiásticos), el nepotismo y la interferencia del Papa en los asuntos temporales.
+
+<H4>La raz&oacute;n y la fe:</H4>
+Siguiendo a <B>Santo Tomás de Aquino</B>, Dante cree que la Razón (simbolizada por Virgilio) y la Fe (simbolizada por Beatriz) no se contradicen: la Razón puede guiar al hombre hasta el límite de lo natural; la Fe y la Gracia llevan más allá. Esta síntesis es el fundamento de la escolástica medieval.
+
+<H3>8. Estilo y recursos literarios</H3>
+<UL>
+<LI><B>Terza rima:</B> la forma métrica inventada por Dante, de enorme influencia en la literatura posterior. Las rimas encadenadas (ABA BCB CDC...) crean una sensación de movimiento continuo hacia adelante, adecuada para un viaje.</LI>
+<LI><B>Alegoría:</B> cada personaje, lugar y evento tiene un significado literal y uno o más significados simbólicos simultáneos.</LI>
+<LI><B>El contrapaso (<I>contrappasso</I>):</B> el principio por el que el castigo infernal refleja irónicamente el pecado cometido. Es el principio de justicia poética más influyente de la literatura occidental.</LI>
+<LI><B>Realismo psicológico:</B> a pesar de ser una obra alegórica, los personajes tienen profundidad psicológica. Francesca, Farinata, Ugolino y Ulises son figuras que escapan al esquema alegórico puro y se imponen como seres humanos complejos.</LI>
+<LI><B>Enciclopedismo medieval:</B> la obra integra teología, filosofía, astronomía, historia, mitología clásica y política contemporánea. Es la suma del saber medieval.</LI>
+</UL>
+
+<H3>9. Influencia e importancia universal</H3>
+<UL>
+<LI><B>Padres del italiano:</B> junto con Petrarca y Boccaccio, Dante forma el trío que legitim&oacute; el toscano florentino como lengua literaria, base del italiano moderno.</LI>
+<LI><B>Literatura universal:</B> influy&oacute; directamente en Milton (<I>El Paraíso perdido</I>), T.S. Eliot, Jorge Luis Borges, Gustave Doré (ilustraciones), y decenas de escritores, pintores y músicos.</LI>
+<LI><B>Arte:</B> las ilustraciones de <B>Gustave Doré</B> (1861) y las pinturas de <B>William Blake</B> son las representaciones visuales más célebres de la obra.</LI>
+<LI><B>Teología y filosofía:</B> es el mayor monumento literario de la <B>escolástica medieval</B> y la síntesis más completa de la cosmovisión cristiana medieval.</LI>
+</UL>
+
+<H3>10. Cuadro resumen de la obra</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Elemento</TH><TH>Dato clave</TH></TR>
+<TR><TD><B>Autor</B></TD><TD>Dante Alighieri (Florencia, 1265 &ndash; Rávena, 1321)</TD></TR>
+<TR><TD><B>T&iacute;tulo original</B></TD><TD><I>Comedia</I>; "Divina" añadido por Boccaccio</TD></TR>
+<TR><TD><B>Idioma</B></TD><TD>Toscano florentino (italiano vulgar medieval)</TD></TR>
+<TR><TD><B>G&eacute;nero</B></TD><TD>Poema épico-alegórico</TD></TR>
+<TR><TD><B>Forma m&eacute;trica</B></TD><TD>Tercetos encadenados (<I>terza rima</I>), endecasílabos</TD></TR>
+<TR><TD><B>Extensi&oacute;n</B></TD><TD>100 cantos, 14 233 versos</TD></TR>
+<TR><TD><B>Composici&oacute;n</B></TD><TD>1304&ndash;1321</TD></TR>
+<TR><TD><B>Marco temporal del viaje</B></TD><TD>Semana Santa de 1300</TD></TR>
+<TR><TD><B>Gu&iacute;as</B></TD><TD>Virgilio (Infierno y Purgatorio) · Beatriz (Paraíso) · San Bernardo (final)</TD></TR>
+<TR><TD><B>Principio del Infierno</B></TD><TD>Contrappasso: el castigo refleja irónicamente el pecado</TD></TR>
+<TR><TD><B>Beatriz</B></TD><TD>Beatriz Portinari; símbolo del amor divino y la teología</TD></TR>
+<TR><TD><B>Verso inicial</B></TD><TD><I>"Nel mezzo del cammin di nostra vita"</I></TD></TR>
+<TR><TD><B>Verso final</B></TD><TD><I>"L'amor che move il sole e l'altre stelle"</I></TD></TR>
+<TR><TD><B>Corriente literaria</B></TD><TD>Literatura medieval italiana (umbral del Prerrenacimiento)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1265</DIV><DIV CLASS="dk-label">Año de nacimiento de Dante en Florencia</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">100</DIV><DIV CLASS="dk-label">Cantos totales de la Divina Comedia</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">14 233</DIV><DIV CLASS="dk-label">Versos totales de la obra</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1302</DIV><DIV CLASS="dk-label">Año del destierro de Dante de Florencia</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">9</DIV><DIV CLASS="dk-label">Círculos del Infierno (más el vestíbulo)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">7</DIV><DIV CLASS="dk-label">Cornisas del Purgatorio (pecados capitales)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">10</DIV><DIV CLASS="dk-label">Cielos del Paraíso (incluido el Empíreo)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1321</DIV><DIV CLASS="dk-label">Año de muerte de Dante en Rávena</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+<B>Datos clave para el examen:</B><BR>
+&bull; <B>Autor:</B> Dante Alighieri &middot; Florencia 1265 &middot; muere Rávena 1321 &middot; desterrado 1302<BR>
+&bull; <B>Título:</B> originalmente "Comedia"; "Divina" añadido por Boccaccio &middot; idioma: toscano florentino<BR>
+&bull; <B>Género y forma:</B> poema épico-alegórico &middot; terza rima (tercetos encadenados) &middot; 100 cantos &middot; 14 233 versos<BR>
+&bull; <B>Estructura:</B> Infierno (34 cantos) + Purgatorio (33) + Paraíso (33)<BR>
+&bull; <B>Guías:</B> Virgilio (Razón) &middot; Beatriz Portinari (Teología/Amor divino) &middot; San Bernardo (contemplación mística)<BR>
+&bull; <B>Infierno:</B> 9 círculos + vestíbulo &middot; contrappasso &middot; Lucifer mastica a Judas, Bruto y Casio<BR>
+&bull; <B>Personajes clave:</B> Paolo y Francesca (Canto V) &middot; Ulises (Canto XXVI) &middot; Ugolino (Canto XXXIII)<BR>
+&bull; <B>Purgatorio:</B> 7 cornisas = 7 pecados capitales &middot; cumbre: Paraíso Terrenal &middot; Virgilio se despide<BR>
+&bull; <B>Paraíso:</B> 9 cielos + Empíreo &middot; San Bernardo guía al final &middot; verso final: "el amor que mueve el sol y las demás estrellas"<BR>
+&bull; <B>Verso inicial:</B> "Nel mezzo del cammin di nostra vita" &middot; contexto: Semana Santa de 1300
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;C&oacute;mo se llama el principio mediante el cual los pecadores del Infierno sufren un castigo que refleja irónicamente su pecado y en qu&eacute; cántica se aplica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Principio de proporcionalidad; se aplica en las tres cánticas por igual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Contrappasso (contrapena); se aplica exclusivamente en el Infierno, donde cada pecador sufre un castigo que guarda una relación simbólica, irónica o simétrica con el pecado que cometió en vida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Anagnórisis; se aplica en el Purgatorio para que las almas reconozcan sus pecados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Catarsis; es el principio por el que el lector se purifica emocionalmente al leer sobre los pecadores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>contrappasso</B> (del latín: "contra" + "passus", sufrir en sentido contrario) es el principio más importante del Infierno dantesco: cada castigo refleja, invierte o prolonga el pecado de manera irónica. Ejemplos: los adivinos (que quisieron ver el futuro) caminan con la cabeza vuelta hacia atrás; los lujuriosos (arrastrados por la pasión) son arrastrados por un viento eterno; los avaros (que doblaron la espalda sobre el oro) yacen boca abajo en el suelo. Este principio convierte el Infierno de Dante en un sistema de justicia poética coherente y no en una colección arbitraria de torturas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Por qu&eacute; Virgilio es el guía de Dante en el Infierno y el Purgatorio, pero no puede acompañarlo al Paraíso?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Porque Virgilio cometió pecados graves y fue condenado al Infierno permanentemente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Porque Virgilio es un poeta pagano virtuoso que vive en el Limbo; la Razón humana puede guiar al hombre hasta donde alcanza la naturaleza, pero no puede ascender al Paraíso, donde solo la Gracia y la Teología (Beatriz) pueden conducir</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Porque Virgilio era demasiado anciano para ascender y pidió ser reemplazado por Beatriz</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Porque en el Paraíso solo pueden entrar almas que hayan leído la Biblia, y Virgilio era pagano que no la conocía</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Virgilio</B> habita en el Limbo (1.er círculo del Infierno): no sufre dolor físico, pero tampoco puede alcanzar a Dios por no haber sido bautizado. Alegóricamente, Virgilio representa la <B>Razón natural</B> o la Filosofía: puede iluminar al hombre en el conocimiento del pecado (Infierno) y de la purificación moral (Purgatorio), pero la Razón sola no puede conducir al alma a la visión de Dios. Para eso se necesita la <B>Fe y la Gracia</B>, simbolizadas por Beatriz. Esta distinción sigue la filosofía de <B>Santo Tomás de Aquino</B>: Razón y Fe no se contradicen, sino que la segunda supera a la primera en su alcance.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Qu&eacute; es la terza rima y quién la inventó?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Es una forma de novela en prosa inventada por Boccaccio en el Decamerón</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Es la forma métrica inventada por Dante Alighieri: estrofas de tres versos endecasílabos con rima encadenada (ABA BCB CDC...), usada en toda la Divina Comedia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Es una variante del soneto inventada por Petrarca para sus poemas de amor a Laura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Es el sistema de rima usado en la poesía griega clásica que Dante adaptó al italiano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>terza rima</B> (terceto encadenado) fue una invención original de <B>Dante Alighieri</B>. Su esquema de rima es <B>ABA BCB CDC DED...</B>: la rima central de cada terceto se convierte en la rima exterior del siguiente, creando una cadena ininterrumpida. Está compuesta en <B>endecasílabos</B> (versos de 11 sílabas). Su estructura tripartita alude a la <B>Trinidad cristiana</B>. La sensación de movimiento continuo hacia adelante que crea es perfecta para un viaje. La <I>terza rima</I> influyó en Boccaccio, Petrarca y, siglos después, en poetas como Byron y Shelley.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qu&eacute; pecado se purga en la primera cornisa del Purgatorio y c&oacute;mo se purga?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) La lujuria; las almas caminan a través de llamas purificadoras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) La soberbia; las almas cargan pesadas piedras sobre su espalda para experimentar la humillación que la soberbia les impidió sentir en vida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) La envidia; las almas tienen los ojos cosidos con alambre para no poder ver lo que poseen los demás</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) La avaricia; las almas yacen boca abajo sobre el suelo contemplando la tierra que amaron más que a Dios</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En la <B>primera cornisa del Purgatorio</B> se purga la <B>soberbia</B>, el primero y más grave de los pecados capitales según la tradición medieval (porque fue el pecado de Lucifer). Las almas cargan sobre sus espaldas <B>pesadas piedras o losas</B> que las obligan a inclinarse hacia el suelo, experimentando físicamente la humillación que su soberbia les impidió aceptar en vida. Cada vez que completan la purificación de un pecado, un ángel borra una "P" (<I>peccatum</I>, pecado) de la frente de Dante (al entrar al Purgatorio, un ángel le había trazado siete "P", una por cada pecado capital).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qui&eacute;n es Beatriz Portinari y qu&eacute; papel cumple en la Divina Comedia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Es la esposa de Dante, quien le dicta la obra mientras él la escribe desde el exilio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Es el gran amor platónico de Dante, muerta en 1290; en la Divina Comedia es el símbolo del amor divino, la teología y la gracia, y guía a Dante a través del Paraíso desde la cima del Purgatorio hasta el Empíreo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Es una figura puramente alegórica inventada por Dante sin referente histórico real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Es una santa canonizada por la Iglesia que Dante eligió como patrona de su obra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Beatriz Portinari</B> (1266&ndash;1290) fue una mujer real, florentina, a quien Dante conoció siendo niños. Murió a los 24 años y Dante le dedicó <I>La Vita Nuova</I>. En la <I>Divina Comedia</I>, Beatriz funciona en dos niveles simultáneos: (1) <B>nivel literal</B>: la mujer amada que desde el Cielo se preocupa por la salvación de Dante y pide a Virgilio que lo guíe; (2) <B>nivel alegórico</B>: representa la <B>Teología revelada</B>, el <B>Amor divino</B> y la <B>Gracia</B> que conduce al alma hacia Dios. La elección de una mujer amada como símbolo de la teología fue una innovación audaz de Dante, que elevó el amor cortés a dimensión espiritual.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> &iquest;Por qu&eacute; Dante ubica a Ulises en el Infierno (círculo de los consejeros fraudulentos) y qué versión del personaje inventa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Porque Ulises engañó a su esposa Penélope durante los veinte años de ausencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Porque para Dante Ulises representa el uso de la inteligencia para engañar (el caballo de Troya); en el Infierno le inventa un último viaje más allá de las Columnas de Hércules en busca del conocimiento prohibido, donde muere al acercarse al Monte Purgatorio: es la soberbia del intelecto que traspasa los límites que Dios impuso al hombre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Porque Ulises traicionó a su rey Agamenón durante la Guerra de Troya</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Dante ubica a Ulises en el Purgatorio, no en el Infierno, como ejemplo de hombre que buscó el conocimiento con buenas intenciones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Ulises de Dante (Canto XXVI del Infierno) es uno de los personajes más modernos y complejos de toda la obra. Dante no sigue a Homero (que Dante no leyó en griego) sino que <B>inventa</B> un último viaje de Ulises: tras regresar a Ítaca, Ulises no puede quedarse quieto y convence a sus viejos marineros de cruzar las <B>Columnas de Hércules</B> (el estrecho de Gibraltar, límite del mundo conocido y prohibición divina) para "seguir al sol y conocer el mundo sin gente". Su barco es hundido por una tempestad cuando ya divisa el Monte Purgatorio. Para Dante, Ulises encarna la <B>soberbia del intelecto</B>: la búsqueda del conocimiento que traspasa los límites que Dios ha fijado. Es un héroe trágico y grandioso a la vez.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> &iquest;Por qu&eacute; el título original de la obra era simplemente "Comedia" y qu&eacute; significa ese término en el contexto medieval?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Porque la obra tiene partes cómicas y humorísticas destinadas a hacer reír al lector medieval</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Porque en la poética medieval "comedia" designa una obra que comienza mal (el extravío de Dante en el bosque) y termina bien (la visión de Dios), a diferencia de la "tragedia" que comienza bien y termina mal; además, fue escrita en lengua vulgar (no en latín elevado), lo que también la situaba en el género "bajo"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Porque Dante quería contrastar su obra con la Eneida de Virgilio, que era una tragedia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Porque el Papa le pidió a Dante que titulara la obra "Comedia" para que no pareciera una obra teológica oficial de la Iglesia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En la poética medieval (basada en Aristóteles, Horacio y Aelio Donato), "comedia" y "tragedia" se distinguían por el <B>arco narrativo</B> (no por el tono humorístico). La <B>comedia</B> comienza en una situación adversa y termina en felicidad; la <B>tragedia</B> comienza bien y termina en desgracia. El viaje de Dante comienza en el extravío moral del "bosque oscuro" (el pecado) y termina con la visión de Dios (la felicidad suprema): es, pues, una comedia en sentido clásico. Además, la <I>Comedia</I> fue escrita en <B>italiano vulgar</B> (no en latín elevado), lo que la ubicaba en el género "medio-bajo" según las convenciones medievales. El adjetivo "Divina" fue agregado por <B>Giovanni Boccaccio</B> en el siglo XIV como reconocimiento de su grandeza excepcional.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;Qu&eacute; diferencia fundamental existe entre el sufrimiento del Infierno y el sufrimiento del Purgatorio?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) En el Infierno se sufre más físicamente; en el Purgatorio el sufrimiento es solo espiritual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El sufrimiento del Infierno es eterno, sin esperanza y sin sentido redentor (es pena, no purificación); el del Purgatorio es temporal, acompañado de esperanza y alegría, y tiene un fin redentor: preparar el alma para ascender al Paraíso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) No existe diferencia real; ambas son formas de castigo eterno según la teología de Dante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) En el Infierno solo sufren los pecadores mortales; en el Purgatorio sufren los que cometieron pecados veniales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una de las distinciones teológicas más importantes de la obra. El <B>Infierno</B> representa el estado de las almas que murieron sin arrepentirse de sus pecados mortales: su condenación es <B>eterna e irrevocable</B>. No hay esperanza, no hay alivio, no hay posibilidad de cambio. El sufrimiento no "sirve" para nada más que expresar la justicia divina. El <B>Purgatorio</B>, en cambio, alberga almas que murieron en gracia de Dios (arrepentidas) pero aún imperfectas: su sufrimiento es <B>purificador, temporal y lleno de esperanza</B>. Las almas del Purgatorio cantan, oran y esperan con alegría el momento de ascender. Incluso el sufrimiento más intenso del Purgatorio es vivido con gratitud, porque conduce a la salvación. Esta distinción es el corazón de la teología católica sobre los estados del alma después de la muerte.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> &iquest;Por qu&eacute; Dante ubica a Judas, Bruto y Casio en el noveno círculo (el peor del Infierno) y qu&eacute; revelan estas tres elecciones sobre su visión política y religiosa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Porque los tres eran enemigos personales de Dante que lo habían traicionado en Florencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Porque para Dante los peores pecados son la traición a los dos pilares del orden universal: Judas traicionó a Cristo (autoridad espiritual) y Bruto y Casio traicionaron a Julio César (autoridad temporal del Imperio); ambas instituciones son, para Dante, de origen divino y su destrucción equivale a atacar el orden que Dios estableció</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Porque los tres cometieron suicidio, que para Dante es el peor pecado posible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Porque los tres eran figuras literarias de Virgilio que Dante incorporó en su obra como homenaje</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La elección de los tres grandes traidores del Infierno dantesco es profundamente significativa y revela la cosmovisión política y religiosa de Dante: (1) <B>Judas Iscariote</B>: traicionó a <B>Jesucristo</B>, representante de la autoridad espiritual suprema. (2) <B>Marco Junio Bruto</B> y (3) <B>Cayo Casio Longino</B>: traicionaron y asesinaron a <B>Julio César</B>, fundador del Imperio Romano, que para Dante era la autoridad temporal legítima establecida por Dios para gobernar el mundo. En su tratado <I>De Monarchia</I>, Dante sostiene que tanto el Imperio (temporal) como la Iglesia (espiritual) son instituciones de origen divino y que ninguna debe interferir en la otra. Traicionar a estas dos autoridades es, para Dante, el mayor crimen posible contra el orden divino.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Por qu&eacute; es revolucionario que Dante escribiera la Divina Comedia en italiano vulgar y no en latín?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) No fue revolucionario: todos los poetas italianos de su época escribían en italiano, no en latín</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Porque el latín era la única lengua legítima para la literatura culta, la filosofía y la teología en la Edad Media; al escribir la obra más ambiciosa de su tiempo en toscano florentino, Dante demostró que el italiano vulgar era capaz de la más elevada expresión literaria, filosófica y teológica, legitimando así las lenguas vernáculas frente al latín y sentando las bases del italiano literario moderno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Porque Dante no sabía latín y no tuvo otra opción que escribir en italiano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Porque el Papa le exigió que escribiera en italiano para que el pueblo llano pudiera leer la obra como instrucción religiosa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En la Edad Media, el <B>latín</B> era la lengua de la cultura escrita, la filosofía, la teología, la ciencia y la literatura elevada. Las lenguas vulgares (italiano, francés, castellano, portugués) se consideraban inferiores, adecuadas para la poesía popular pero no para el discurso intelectual serio. Dante sabía latín perfectamente (escribió algunos tratados en latín) y precisamente por eso su decisión de escribir la <I>Comedia</I> en <B>toscano florentino</B> fue una declaración de principios. En su tratado <I>De Vulgari Eloquentia</I> (paradójicamente escrito en latín) argumentó teóricamente la legitimidad del italiano vulgar como lengua literaria. Al coronar esta defensa con la obra más ambiciosa del medievo, Dante convirtió el toscano en el <B>estándar del italiano literario</B>. Por eso es llamado, junto con Petrarca y Boccaccio, "padre del italiano moderno".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; S&Iacute;NTESIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza el episodio de Paolo y Francesca (Canto V del Infierno). &iquest;Por qu&eacute; es uno de los más complejos moralmente de la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Porque Dante los absuelve del pecado al final del episodio, revelando que la lujuria no es un pecado grave</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Porque Dante muestra compasión por los amantes (incluso se desmaya de pena) a pesar de que están condenados; la belleza del amor de Francesca y la simpatía que genera en Dante crean una tensión entre la justicia divina (que los condena) y la emoción humana (que los comprende); el episodio interroga los límites del perdón sin negarlos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Porque Dante los ubica en el Purgatorio, no en el Infierno, sugiriendo que el amor los redime</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Porque el episodio es puramente decorativo, sin significado alegórico o moral</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El episodio de <B>Paolo y Francesca</B> (Canto V) es considerado uno de los más logrados de la <I>Divina Comedia</I> precisamente por su ambigüedad moral. Francesca da Rimini cuenta su historia con una belleza y una ternura que conmueven profundamente: ella y su cuñado Paolo Malatesta se enamoraron leyendo el romance de Lancelot y Ginebra ("Galeotto fue el libro y quien lo escribió"). Dante escucha y <B>llora</B>, luego <B>se desmaya de compasión</B>. Esto crea una tensión notable: el poeta condena a los amantes (la justicia divina es justa e inapelable), pero el <B>hombre</B> Dante siente empatía y dolor. Esta dualidad entre el juicio moral y la comprensión humana es lo que convierte el episodio en literatura de primer orden. Además, Francesca utiliza el amor cortés como justificación ("el amor que no perdona al amado amar"), lo cual Dante deja sin refutar directamente, insinuando la complejidad del tema.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> &iquest;De qu&eacute; manera la estructura cosmológica de la Divina Comedia refleja la cosmovisión medieval cristiana?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La estructura es puramente literaria y no tiene relación con ningún sistema cosmológico real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La obra integra la cosmología ptolemaica (geocéntrica) con la teología cristiana: la Tierra está en el centro del universo, el Infierno se hunde hacia su núcleo, el Purgatorio está en el polo opuesto, y el Paraíso se organiza en esferas celestes concéntricas hasta el Empíreo donde habita Dios, reflejando la creencia medieval de que el universo entero fue diseñado por y para Dios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Dante usa una cosmología heliocéntrica avant la lettre que anticipa los descubrimientos de Copérnico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La estructura cosmológica de la obra es griega: Dante sigue a Platón en la descripción del más allá</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <I>Divina Comedia</I> es la representación literaria más completa de la <B>cosmovisión medieval cristiana</B>. Sus elementos cosmológicos proceden de dos fuentes: (1) la <B>cosmología ptolemaica</B> (sistema geocéntrico de Claudio Ptolomeo, siglo II d.C.): la Tierra inmóvil en el centro, rodeada de nueve esferas celestes (Luna, Mercurio, Venus, Sol, Marte, Júpiter, Saturno, Estrellas fijas, Primer Motor); (2) la <B>teología cristiana escolástica</B> (especialmente Santo Tomás de Aquino): sobre las nueve esferas está el Empíreo, morada atemporal de Dios. Dante integra perfectamente ambas: el movimiento de las esferas celestes es producido por el <B>amor de Dios</B> (el verso final: "el amor que mueve el sol y las demás estrellas"). El Infierno, en el centro de la Tierra, está lo más alejado posible de Dios; el Empíreo, más allá del cosmos, es la presencia directa de Dios.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> &iquest;C&oacute;mo utiliza Dante la obra para hacer cr&iacute;tica pol&iacute;tica y eclesi&aacute;stica de su tiempo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Dante evitó cuidadosamente la crítica política para no comprometer su posibilidad de regresar al exilio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Dante ubica a sus enemigos políticos y a los papas corruptos directamente en el Infierno; denuncia la simonía, el nepotismo y la interferencia del Papa en asuntos temporales; condena a Bonifacio VIII y Clemente V, incluso antes de que hayan muerto, "profetizando" su condena eterna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La crítica política de Dante se limita al Purgatorio; en el Infierno y el Paraíso no aparecen figuras históricas contemporáneas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Dante alaba al Papa Bonifacio VIII en el Paraíso como el mayor defensor de la cristiandad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <I>Divina Comedia</I> es también un documento político de enorme virulencia. Dante, desterrado por los güelfos negros aliados del Papa, convierte la obra en un ajuste de cuentas histórico: (1) <B>Bonifacio VIII</B> (el papa que ordenó su destierro) aparece condenado al Infierno en el círculo de los simoniacos (Canto XIX), incluso antes de que en el año ficticio del poema (1300) Bonifacio hubiera muerto (murió en 1303): Dante lo "profetiza" allí. (2) <B>Clemente V</B> también es pronosticado en el Infierno. (3) En el círculo de los simoniacos aparece el Papa <B>Nicolás III</B>, con las piernas al aire y los pies en llamas, dentro de un hoyo. (4) Muchos enemigos florentinos de Dante (Filippo Argenti, los Pazzi, los Uberti) pueblan el Infierno. La obra es, entre muchas otras cosas, la venganza más duradera y brillante de la historia literaria.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> &iquest;Qu&eacute; representa el "bosque oscuro" del verso inicial de la obra y c&oacute;mo se relaciona con el viaje posterior?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Es un bosque real en las afueras de Florencia donde Dante se perdió antes de tener la visión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Es una alegoría del extravío moral y espiritual de Dante a los 35 años (mitad de la vida humana); el bosque representa el pecado, la confusión moral y el alejamiento de Dios; el viaje por el más allá es la vía de conversión y recuperación espiritual que Dios le concede</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Representa Italia bajo el dominio del Papa, y el viaje es la búsqueda de Dante de un refugio político seguro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Es una referencia a la Selva Negra alemana, símbolo del Imperio que Dante admiraba</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El verso inicial —<I>"Nel mezzo del cammin di nostra vita, mi ritrovai per una selva oscura"</I> ("En la mitad del camino de nuestra vida, me encontré en una selva oscura")— es uno de los más célebres de la literatura universal. Su significado es alegórico en múltiples niveles: (1) <B>La edad:</B> Dante tenía 35 años en 1300, la mitad de los 70 que la Biblia (Salmo 90) asigna a la vida humana; es el punto de inflexión vital. (2) <B>El bosque oscuro:</B> es la alegoría del <B>pecado y el extravío moral</B>, el estado del alma que ha perdido el camino recto. Dante no especifica cuáles son sus pecados particulares, lo que universaliza la experiencia. (3) <B>El viaje:</B> es la respuesta de Dios al extravío: en vez de perder al alma para siempre, Dios le concede la gracia extraordinaria de ver el Infierno, el Purgatorio y el Paraíso para convertirla y salvarla. El viaje es, pues, un acto de gracia divina.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> &iquest;C&oacute;mo se explica que Virgilio, un pagano virtuoso, sea el guía elegido por Beatriz para conducir a Dante? &iquest;Qu&eacute; dice esto de la relación entre Antigüedad clásica y cristianismo en el pensamiento de Dante?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Dante elige a Virgilio por razones puramente literarias, sin ningún significado teológico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Para Dante, Virgilio representa lo mejor que la Razón y la sabiduría humana pueden alcanzar sin la revelación cristiana; su elección refleja la idea medieval de que la cultura clásica es un "prefacio" de la cristiana: Virgilio incluso profetizó la venida de Cristo en su IV Écloga, lo que lo hacía un "cristiano inconsciente" para la tradición medieval</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Virgilio es elegido porque fue el único poeta pagano que la Iglesia canonizó como santo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Beatriz eligió a Virgilio porque era el único habitante del Limbo dispuesto a acompañar a Dante</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La elección de <B>Publio Virgilio Marón</B> (70&ndash;19 a.C.) como guía es una de las decisiones más significativas de Dante. Para él, Virgilio era el mayor poeta de la Antigüedad y el autor de la <I>Eneida</I> (que Dante conocía de memoria). Pero además, Virgilio tenía un estatuto especial en el pensamiento cristiano medieval: su <B>IV Écloga</B> (40 a.C.) profetizaba el nacimiento de un niño que traería una era de paz y justicia, lo que la tradición cristiana interpretó como una profecía del nacimiento de Cristo. Por eso Virgilio era visto como un "profeta pagano" o un "cristiano antes del cristianismo". Para Dante, esto lo convierte en el símbolo más alto de la <B>Razón natural</B>: la filosofía y la sabiduría humana que, sin revelación, llegaron lo más cerca posible de la verdad. La síntesis Razón-Fe (Virgilio-Beatriz) es la síntesis escolástica de Dante.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> La Divina Comedia es considerada simultáneamente la obra culminante del Medievo y el umbral del Renacimiento. &iquest;Qu&eacute; elementos la hacen medieval y cu&aacute;les la sitúan en el Prerrenacimiento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Es completamente renacentista; el Medievo no produjo obras de esa calidad literaria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Son medievales: la cosmovisión teocéntrica, la estructura alegórica, la escolástica tomista, la cosmología ptolemaica y el tema del viaje al más allá. Son prerrenacen-tistas: el uso del italiano vulgar, la profundidad psicológica de los personajes, la valoración del individuo, la recuperación admirativa de la Antigüedad clásica (Virgilio, Homero, Aristóteles) y la ambición enciclopédica del autor como sujeto intelectual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La obra es completamente medieval; ningún elemento anticipa el Renacimiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Es una obra de transición entre la literatura griega y la latina, sin relación con el Renacimiento italiano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <I>Divina Comedia</I> ocupa una posición única en la historia de la literatura: es a la vez la obra maestra del Medievo y el umbral del Renacimiento. <B>Elementos medievales:</B> (1) cosmovisión <B>teocéntrica</B> (Dios como centro de todo); (2) estructura <B>alegórico-moral</B>; (3) filosofía <B>escolástica</B> (Tomás de Aquino); (4) cosmología <B>ptolemaica</B> geocéntrica; (5) tema del viaje al <B>más allá</B> (tradición de las <I>visiones</I> medievales). <B>Elementos prerrenacen-tistas:</B> (1) uso del <B>italiano vulgar</B> como lengua literaria elevada; (2) profunda <B>individualidad psicológica</B> de los personajes (Francesca, Farinata, Ugolino son caracteres, no tipos); (3) valoración del <B>individuo histórico</B> concreto; (4) recuperación <B>admirativa</B> de la Antigüedad clásica como valor en sí mismo; (5) el <B>autor como sujeto</B> del viaje (el yo lírico-narrativo). Esta dualidad explica por qué Dante es ineludible para entender tanto el final del Medievo como el comienzo del Renacimiento.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Explica los cuatro niveles de interpretación (sentidos) que el propio Dante propone para leer su obra en la carta a Can Grande della Scala.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Dante solo propone dos niveles: el literal y el alegórico; los otros dos son invención de los críticos posteriores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Dante propone cuatro sentidos: (1) literal (la historia del viaje); (2) alegórico (el camino del alma hacia Dios); (3) moral o tropológico (enseñanza ética para el lector); (4) anagógico o místico (la aspiración del alma a la unión con lo divino y la vida eterna); esta cuádruple lectura procede de la exégesis bíblica medieval</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Los cuatro sentidos son: histórico, geográfico, político y religioso; Dante los explica en el Purgatorio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Dante no escribió ninguna carta explicativa sobre su obra; los niveles de interpretación fueron propuestos por Boccaccio en el siglo XIV</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En su célebre <B>Epístola XIII a Can Grande della Scala</B> (señor de Verona, su mecenas), Dante explica que su obra debe leerse en cuatro sentidos, siguiendo la tradición de la <b>exégesis bíblica medieval</b> (herencia de San Agustín y San Juan Casiano): (1) <B>Sentido literal:</B> el estado de las almas después de la muerte; el viaje real de Dante por el más allá. (2) <B>Sentido alegórico:</B> el hombre en su camino desde el pecado (libre albedrío) hasta la salvación (gracia divina). (3) <B>Sentido moral o tropológico:</B> la obra enseña al lector a evitar el vicio y seguir la virtud; es un espejo moral. (4) <B>Sentido anagógico o místico:</B> el alma justa en su aspiración a la bienaventuranza eterna, a la unión directa con Dios. Esta polisemia programática convierte la <I>Divina Comedia</I> en una obra inagotable: cada episodio puede leerse simultáneamente en los cuatro niveles.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> &iquest;C&oacute;mo se relaciona la figura de Beatriz con la tradición del "amor cort&eacute;s" y en qu&eacute; sentido Dante la transforma?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Dante sigue fielmente la tradición trovadoresca del amor cortés sin transformarla</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) El amor cortés celebraba a la dama como objeto de deseo idealizado pero terrenal; Dante parte de esa tradición pero la trasciende radicalmente: convierte el amor a Beatriz en vía de ascenso espiritual hacia Dios; la dama deja de ser fin en sí misma y se convierte en mediadora entre el hombre y lo divino, transformando el Eros en Ágape</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Dante rechaza el amor cortés completamente y critica a los trovadores en el Infierno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Beatriz representa exactamente lo mismo que Laura para Petrarca: el amor humano imposible y doloroso</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La tradición del <B>amor cortés</B> (o <I>fin'amors</I>), cultivada por los trovadores provenzales y los poetas del <I>Dolce Stil Novo</I> italiano (al que perteneció el propio Dante), celebraba a la dama como objeto de amor idealizado que ennoblecía al amante. Dante parte de esta tradición con <I>La Vita Nuova</I>, donde ya insinúa la dimensión espiritual de su amor por Beatriz. En la <I>Divina Comedia</I>, sin embargo, da un paso decisivo: Beatriz no es ya la dama que ennoblece al amante, sino la <B>mediadora entre el hombre y Dios</B>. El amor de Dante por Beatriz se convierte en el motor de su salvación: es ella quien desde el Cielo pide a Virgilio que salve a Dante del extravío. El amor humano (<I>Eros</I>) se transforma en amor divino (<I>Ágape</I>). Esta transformación es la síntesis entre la tradición amorosa cortesana y la teología cristiana, y constituye una de las innovaciones más originales de Dante en la historia literaria.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> &iquest;Cu&aacute;l de las siguientes afirmaciones sobre la Divina Comedia es INCORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Virgilio es el guía de Dante durante el Infierno y la mayor parte del Purgatorio, y representa alegóricamente la Razón humana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) El adjetivo "Divina" formaba parte del título original que el propio Dante le dio a la obra al terminarla en 1321</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) La obra fue escrita en toscano florentino (italiano vulgar), no en latín, lo que fue una decisión revolucionaria para la época</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El contrappasso es el principio por el que cada pecador del Infierno sufre un castigo que refleja irónicamente su pecado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>La incorrecta es b)</B><BR>El título original de la obra era simplemente <B><I>Comedia</I></B>. El adjetivo "Divina" <B>no fue añadido por Dante</B>, sino por el escritor italiano <B>Giovanni Boccaccio</B> (autor del <I>Decamerón</I>) en el siglo XIV, como reconocimiento de la excelencia excepcional de la obra. La primera edición impresa con el título completo <I>La Divina Comedia</I> data de <B>1555</B> (publicada por el editor veneciano Ludovico Dolce). Las otras afirmaciones son correctas: Virgilio es el guía y representa la Razón; la obra fue escrita en toscano florentino; el contrappasso es el principio de justicia del Infierno.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> &iquest;Cu&aacute;l de las siguientes secuencias describe correctamente los guías de Dante a lo largo de su viaje y lo que representan alegóricamente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Beatriz (Infierno) → Virgilio (Purgatorio) → San Bernardo (Paraíso) &middot; Amor divino → Razón → Contemplación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Virgilio (Infierno y Purgatorio, hasta el Paraíso Terrenal) → Beatriz (Paraíso, hasta el Empíreo) → San Bernardo (contemplación final de Dios) &middot; Razón humana → Teología y Amor divino → Contemplación mística</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Virgilio (solo el Infierno) → Beatriz (Purgatorio) → San Bernardo (Paraíso completo) &middot; Filosofía → Fe → Amor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) San Bernardo (Infierno) → Virgilio (Purgatorio) → Beatriz (Paraíso) &middot; Mística → Razón → Amor divino</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La secuencia correcta de los guías es: (1) <B>Virgilio</B>: acompaña a Dante desde el inicio del Infierno (Canto I) hasta el <B>Paraíso Terrenal</B> en la cima del Purgatorio (Canto XXX del Purgatorio). Representa la <B>Razón natural</B> o la Filosofía: puede guiar al hombre en el conocimiento del pecado y la virtud natural, pero no puede entrar al Paraíso celestial. (2) <B>Beatriz</B>: toma el relevo en el Paraíso Terrenal y conduce a Dante a través de los nueve cielos hasta el umbral del <B>Empíreo</B>. Representa la <B>Teología revelada</B>, la Fe y el Amor divino. (3) <B>San Bernardo de Claraval</B>: en el Empíreo, guía a Dante hacia la contemplación directa de Dios mediante la intercesión de la Virgen María. Representa la <B>contemplación mística</B>: el último paso que ni la Razón ni la Teología pueden dar solos, sino solo el amor místico.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

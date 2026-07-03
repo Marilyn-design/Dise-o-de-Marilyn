@@ -1,0 +1,646 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Relaciones Binarias I: Definición y Tipo de Relaciones - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:36px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:19px;margin:20px 0 8px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:13px 18px;margin-top:12px;font-size:16px;line-height:2.0;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:13px 18px;margin-top:12px;font-size:16px;line-height:1.9;}
+.texto-exp .formula-linea{background:#e8f4f3;border-radius:10px;padding:14px 18px;margin-top:12px;font-size:18px;text-align:center;letter-spacing:0.5px;color:#0D1B36;line-height:2.1;}
+.figura{text-align:center;margin-top:18px;}
+.figura figcaption{font-size:14px;color:#777;margin-top:8px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.6;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2.1;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.bloque-f{max-width:1000px;margin:55px auto 0;padding:0 40px;}
+.bloque-f h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.formulario{background:#0D1B36;border-radius:20px;padding:30px 36px;box-shadow:0 6px 22px rgba(0,0,0,0.18);color:#fff;}
+.formulario .grupo{margin-bottom:22px;}
+.formulario .grupo:last-child{margin-bottom:0;}
+.formulario .grupo h4{color:#D7B06D;font-size:17px;margin-bottom:10px;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:6px;}
+.formulario .f{font-size:17px;line-height:2.3;color:#fff;}
+.formulario .f b{color:#7FD1CE;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<!-- ======= HEADER ======= -->
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ALGEBRA.HTML">&larr; Volver a los temas de Álgebra</A>
+
+<!-- ======= ENCABEZADO ======= -->
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ÁLGEBRA &middot; TEMA 28</DIV>
+<H1>Relaciones Binarias I: Definición y Tipo de Relaciones</H1>
+<DIV CLASS="sub">Par ordenado &middot; Producto cartesiano &middot; Definición de relación binaria &middot; Dominio y rango &middot; Propiedades: reflexiva, simétrica, antisimétrica, transitiva &middot; Relación de equivalencia</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ======= EXPLICACIÓN ======= -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1. PAR ORDENADO Y PRODUCTO CARTESIANO -->
+<H3 ID="par-ordenado">1. Par ordenado y producto cartesiano</H3>
+Un <B>par ordenado</B> (a, b) es una pareja de elementos en la que el orden importa: (a, b) &ne; (b, a) en general. Dos pares ordenados son iguales si y solo si sus primeras componentes son iguales y sus segundas componentes son iguales:
+<DIV CLASS="formula-linea">(a, b) = (c, d) &nbsp;&hArr;&nbsp; <B>a = c &nbsp; y &nbsp; b = d</B></DIV>
+
+El <B>producto cartesiano</B> de dos conjuntos A y B, denotado A &times; B, es el conjunto de todos los pares ordenados posibles con el primer elemento en A y el segundo en B:
+<DIV CLASS="formula-linea">A &times; B = { (a, b) / a &isin; A &nbsp; y &nbsp; b &isin; B }</DIV>
+
+<DIV CLASS="ej">📐 Si A = {1, 2} y B = {a, b, c}:<BR>
+A &times; B = {(1,a), (1,b), (1,c), (2,a), (2,b), (2,c)}<BR>
+|A &times; B| = |A| &middot; |B| = 2 &middot; 3 = <B>6 pares ordenados</B><BR>
+B &times; A = {(a,1), (a,2), (b,1), (b,2), (c,1), (c,2)} — ¡distinto de A &times; B!</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Cardinalidad del producto cartesiano:</B><BR>
+|A &times; B| = |A| &middot; |B|<BR>
+En general A &times; B &ne; B &times; A (a menos que A = B)</DIV>
+
+<!-- 2. RELACIÓN BINARIA -->
+<H3 ID="relacion">2. Definición de relación binaria</H3>
+Una <B>relación binaria</B> R de A en B (o sobre A si A = B) es cualquier <B>subconjunto del producto cartesiano</B> A &times; B:
+<DIV CLASS="formula-linea">R &sube; A &times; B</DIV>
+
+Si (a, b) &isin; R se dice que "<B>a está relacionado con b</B>" y se escribe <B>a R b</B>. El número de relaciones posibles de A en B es 2<SUP>|A&times;B|</SUP> = 2<SUP>|A|&middot;|B|</SUP>.
+
+<DIV CLASS="ej">📐 A = {1, 2, 3}, B = {2, 4, 6}. Define R = {(a, b) / b = 2a}:<BR>
+(1,2): 2=2(1) ✓ &nbsp; (2,4): 4=2(2) ✓ &nbsp; (3,6): 6=2(3) ✓ &nbsp; (1,4): 4≠2 ✗ ...<BR>
+R = {(1,2), (2,4), (3,6)}</DIV>
+
+<!-- 3. DOMINIO, RANGO Y CAMPO -->
+<H3 ID="domrango">3. Dominio, rango y campo de una relación</H3>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Concepto</TH><TH>Definición</TH><TH>Notación</TH></TR>
+<TR><TD><B>Dominio</B></TD><TD>Conjunto de todas las primeras componentes de R</TD><TD>Dom(R) o D(R)</TD></TR>
+<TR><TD><B>Rango</B></TD><TD>Conjunto de todas las segundas componentes de R</TD><TD>Ran(R) o R(R)</TD></TR>
+<TR><TD><B>Campo</B></TD><TD>Unión del dominio y el rango</TD><TD>C(R) = Dom(R) &cup; Ran(R)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">📐 R = {(1,3), (2,3), (4,5), (6,7)}<BR>
+Dom(R) = {1, 2, 4, 6} &nbsp;&nbsp; Ran(R) = {3, 5, 7} &nbsp;&nbsp; C(R) = {1, 2, 3, 4, 5, 6, 7}</DIV>
+
+<!-- 4. RELACIÓN INVERSA -->
+<H3 ID="inversa">4. Relación inversa</H3>
+La <B>relación inversa</B> R<SUP>&minus;1</SUP> se obtiene intercambiando los elementos de cada par:
+<DIV CLASS="formula-linea">R<SUP>&minus;1</SUP> = { (b, a) / (a, b) &isin; R }</DIV>
+<DIV CLASS="ej">📐 Si R = {(1,4), (2,5), (3,6)}, entonces R<SUP>&minus;1</SUP> = {(4,1), (5,2), (6,3)}<BR>
+Dom(R<SUP>&minus;1</SUP>) = Ran(R) = {4,5,6} &nbsp;&nbsp; Ran(R<SUP>&minus;1</SUP>) = Dom(R) = {1,2,3}</DIV>
+
+<!-- 5. PROPIEDADES DE LAS RELACIONES EN UN CONJUNTO -->
+<H3 ID="propiedades">5. Propiedades de las relaciones en un conjunto A</H3>
+Cuando la relación es de A en sí mismo (R &sube; A &times; A), pueden analizarse cuatro propiedades fundamentales:
+
+<H4>5.1 Propiedad Reflexiva</H4>
+<DIV CLASS="formula-linea">R es reflexiva &hArr; <B>a R a</B> para todo a &isin; A &nbsp;&nbsp; (todo elemento se relaciona consigo mismo)</DIV>
+<DIV CLASS="ej">📐 A = {1,2,3}. R reflexiva debe contener (1,1), (2,2) y (3,3).<BR>
+Ejemplo reflexivo: R = {(1,1), (2,2), (3,3), (1,2)}<BR>
+NO reflexivo: R = {(1,1), (2,2)} — falta (3,3)</DIV>
+
+<H4>5.2 Propiedad Simétrica</H4>
+<DIV CLASS="formula-linea">R es simétrica &hArr; si a R b entonces <B>b R a</B> &nbsp;&nbsp; (las relaciones van "en ambas direcciones")</DIV>
+<DIV CLASS="ej">📐 R = {(1,2), (2,1), (3,3)} es simétrica: (1,2) implica (2,1) ✓<BR>
+R = {(1,2), (3,3)} NO es simétrica: (1,2) existe pero (2,1) no</DIV>
+
+<H4>5.3 Propiedad Antisimétrica</H4>
+<DIV CLASS="formula-linea">R es antisimétrica &hArr; si a R b y b R a entonces <B>a = b</B> &nbsp;&nbsp; (solo se permiten pares simétricos si son iguales)</DIV>
+<DIV CLASS="ej">📐 R = {(1,1), (1,2), (2,3)} es antisimétrica: no hay (b,a) con a≠b que sea par de otro (a,b)<BR>
+R = {(1,2), (2,1)} NO es antisimétrica: 1R2 y 2R1 pero 1≠2</DIV>
+
+<H4>5.4 Propiedad Transitiva</H4>
+<DIV CLASS="formula-linea">R es transitiva &hArr; si a R b y b R c entonces <B>a R c</B> &nbsp;&nbsp; (se puede "encadenar")</DIV>
+<DIV CLASS="ej">📐 R = {(1,2), (2,3), (1,3)} es transitiva: (1,2) y (2,3) → debe estar (1,3) ✓<BR>
+R = {(1,2), (2,3)} NO es transitiva: (1,2) y (2,3) existen pero falta (1,3)</DIV>
+
+<DIV CLASS="figura">
+<svg viewBox="0 0 620 200" width="600" height="193" role="img" aria-label="Diagramas ilustrando las cuatro propiedades de las relaciones binarias">
+  <!-- REFLEXIVA -->
+  <text x="30" y="18" font-size="13" fill="#1F6A67" font-weight="bold">Reflexiva</text>
+  <circle cx="60" cy="80" r="20" fill="#e8f4f3" stroke="#1F6A67" stroke-width="2"/>
+  <text x="53" y="85" font-size="13" fill="#0D1B36">a</text>
+  <!-- Flecha auto -->
+  <path d="M 72,65 Q 95,45 78,65" fill="none" stroke="#1F6A67" stroke-width="2"/>
+  <polygon points="78,65 70,60 76,72" fill="#1F6A67"/>
+  <text x="30" y="130" font-size="11" fill="#555">a R a ✓</text>
+
+  <!-- SIMÉTRICA -->
+  <text x="160" y="18" font-size="13" fill="#D7B06D" font-weight="bold">Simétrica</text>
+  <circle cx="175" cy="70" r="18" fill="#fff3cd" stroke="#D7B06D" stroke-width="2"/>
+  <text x="169" y="75" font-size="12" fill="#0D1B36">a</text>
+  <circle cx="230" cy="70" r="18" fill="#fff3cd" stroke="#D7B06D" stroke-width="2"/>
+  <text x="224" y="75" font-size="12" fill="#0D1B36">b</text>
+  <line x1="193" y1="65" x2="212" y2="65" stroke="#D7B06D" stroke-width="2"/>
+  <polygon points="212,65 204,61 204,69" fill="#D7B06D"/>
+  <line x1="212" y1="75" x2="193" y2="75" stroke="#D7B06D" stroke-width="2"/>
+  <polygon points="193,75 201,71 201,79" fill="#D7B06D"/>
+  <text x="160" y="130" font-size="11" fill="#555">aRb → bRa ✓</text>
+
+  <!-- ANTISIMÉTRICA -->
+  <text x="290" y="18" font-size="13" fill="#8B0000" font-weight="bold">Antisimétrica</text>
+  <circle cx="315" cy="70" r="18" fill="#fde2e2" stroke="#8B0000" stroke-width="2"/>
+  <text x="309" y="75" font-size="12" fill="#0D1B36">a</text>
+  <circle cx="370" cy="70" r="18" fill="#fde2e2" stroke="#8B0000" stroke-width="2"/>
+  <text x="364" y="75" font-size="12" fill="#0D1B36">b</text>
+  <line x1="333" y1="65" x2="352" y2="65" stroke="#8B0000" stroke-width="2"/>
+  <polygon points="352,65 344,61 344,69" fill="#8B0000"/>
+  <text x="347" y="78" font-size="18" fill="#8B0000">&#x2717;</text>
+  <text x="290" y="130" font-size="11" fill="#555">aRb y bRa → a=b</text>
+
+  <!-- TRANSITIVA -->
+  <text x="440" y="18" font-size="13" fill="#0D1B36" font-weight="bold">Transitiva</text>
+  <circle cx="460" cy="55" r="16" fill="#F6F2EB" stroke="#0D1B36" stroke-width="2"/>
+  <text x="454" y="60" font-size="12" fill="#0D1B36">a</text>
+  <circle cx="510" cy="55" r="16" fill="#F6F2EB" stroke="#0D1B36" stroke-width="2"/>
+  <text x="504" y="60" font-size="12" fill="#0D1B36">b</text>
+  <circle cx="485" cy="100" r="16" fill="#F6F2EB" stroke="#0D1B36" stroke-width="2"/>
+  <text x="479" y="105" font-size="12" fill="#0D1B36">c</text>
+  <line x1="476" y1="55" x2="494" y2="55" stroke="#0D1B36" stroke-width="1.5"/>
+  <polygon points="494,55 486,51 486,59" fill="#0D1B36"/>
+  <line x1="506" y1="68" x2="493" y2="87" stroke="#0D1B36" stroke-width="1.5"/>
+  <polygon points="493,87 495,77 501,84" fill="#0D1B36"/>
+  <line x1="468" y1="68" x2="480" y2="87" stroke="#1F6A67" stroke-width="2" stroke-dasharray="4,3"/>
+  <polygon points="480,87 474,79 482,78" fill="#1F6A67"/>
+  <text x="440" y="150" font-size="11" fill="#555">aRb y bRc → aRc ✓</text>
+</svg>
+<figcaption>Representación gráfica de las 4 propiedades. La línea punteada verde en transitiva indica la relación "heredada".</figcaption>
+</DIV>
+
+<!-- 6. RELACIÓN DE EQUIVALENCIA Y DE ORDEN -->
+<H3 ID="tipos-especiales">6. Relaciones especiales: equivalencia y orden</H3>
+
+<H4>Relación de equivalencia</H4>
+Una relación es de <B>equivalencia</B> si cumple las tres propiedades: reflexiva, simétrica y transitiva (RST). Las clases de equivalencia particionan el conjunto A en grupos de elementos "equivalentes".
+
+<DIV CLASS="formula-linea">R es de equivalencia &hArr; R es <B>Reflexiva + Simétrica + Transitiva</B></DIV>
+
+<DIV CLASS="ej">📐 A = Z (enteros). R definida por: a R b ↔ a &minus; b es par.<BR>
+Reflexiva: a&minus;a=0 par ✓ &nbsp; Simétrica: si a&minus;b par entonces b&minus;a par ✓ &nbsp; Transitiva: si a&minus;b y b&minus;c pares, a&minus;c = (a&minus;b)+(b&minus;c) par ✓<BR>
+Es de equivalencia. Clases: pares {... ,&minus;2, 0, 2, 4,...} e impares {...,&minus;1, 1, 3, 5,...}</DIV>
+
+<H4>Relación de orden (parcial)</H4>
+Una relación es de <B>orden</B> si es reflexiva, antisimétrica y transitiva (RAT).
+
+<DIV CLASS="formula-linea">R es de orden &hArr; R es <B>Reflexiva + Antisimétrica + Transitiva</B></DIV>
+
+<DIV CLASS="ej">📐 La relación &le; sobre R: 2&le;2 ✓ (reflexiva); si a&le;b y b&le;a entonces a=b ✓ (antisimétrica); si a&le;b y b&le;c entonces a&le;c ✓ (transitiva) → es de orden.</DIV>
+
+<!-- 7. TABLA RESUMEN -->
+<H3 ID="resumen">7. Tabla resumen de propiedades y relaciones especiales</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo de relación</TH><TH>Reflexiva</TH><TH>Simétrica</TH><TH>Antisimétrica</TH><TH>Transitiva</TH></TR>
+<TR><TD>Equivalencia</TD><TD>✓</TD><TD>✓</TD><TD>&mdash;</TD><TD>✓</TD></TR>
+<TR><TD>Orden (parcial)</TD><TD>✓</TD><TD>&mdash;</TD><TD>✓</TD><TD>✓</TD></TR>
+<TR><TD>Orden estricto</TD><TD>✗</TD><TD>&mdash;</TD><TD>✓</TD><TD>✓</TD></TR>
+<TR><TD>Sin propiedades especiales</TD><TD>variado</TD><TD>variado</TD><TD>variado</TD><TD>variado</TD></TR>
+</TABLE>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ======= FORMULARIO ======= -->
+<DIV CLASS="bloque-f">
+<H2>Formulario</H2>
+<DIV CLASS="formulario">
+<DIV CLASS="grupo">
+<H4>PRODUCTO CARTESIANO Y CARDINALIDAD</H4>
+<DIV CLASS="f">
+A &times; B = {(a,b) / a&isin;A, b&isin;B}<BR>
+|A &times; B| = <B>|A| &middot; |B|</B><BR>
+N° de relaciones posibles = <B>2<SUP>|A|&middot;|B|</SUP></B>
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>DOMINIO, RANGO E INVERSA</H4>
+<DIV CLASS="f">
+Dom(R) = primeras componentes<BR>
+Ran(R) = segundas componentes<BR>
+R<SUP>&minus;1</SUP> = {(b,a) / (a,b)&isin;R} &nbsp;→ Dom(R<SUP>&minus;1</SUP>) = Ran(R)
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>PROPIEDADES — DEFINICIONES RÁPIDAS</H4>
+<DIV CLASS="f">
+Reflexiva: <B>a R a</B> ∀a∈A<BR>
+Simétrica: aRb → <B>bRa</B><BR>
+Antisimétrica: aRb y bRa → <B>a=b</B><BR>
+Transitiva: aRb y bRc → <B>aRc</B><BR>
+Equivalencia = <B>R + S + T</B> &nbsp;|&nbsp; Orden = <B>R + AS + T</B>
+</DIV>
+</DIV>
+</DIV>
+</DIV>
+
+<!-- ======= PROBLEMAS ======= -->
+<DIV CLASS="bloque">
+<H2>Problemas tipo admisión</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Si A = {1, 2} y B = {3, 4, 5}, ¿cuántos pares ordenados tiene A &times; B?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) 4</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+|A &times; B| = |A| &middot; |B| = 2 &middot; 3 = <B>6</B>.<BR>
+A &times; B = {(1,3),(1,4),(1,5),(2,3),(2,4),(2,5)}.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cuál es el dominio de R = {(2,5), (3,7), (4,5), (6,9)}?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) {2, 3, 4, 6}</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) {5, 7, 9}</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) {2, 3, 4, 5, 6, 7, 9}</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) {5, 5, 7, 9}</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+El dominio es el conjunto de las <B>primeras componentes</B> de cada par. Dom(R) = <B>{2, 3, 4, 6}</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Cuál es la relación inversa de R = {(1,4), (2,5), (3,6)}?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) {(4,1), (5,2), (6,3)}</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) {(1,4), (2,5), (3,6)}</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) {(4,5,6), (1,2,3)}</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) {(6,3), (5,2)}</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+R<SUP>&minus;1</SUP> se obtiene intercambiando cada par: (1,4)→(4,1); (2,5)→(5,2); (3,6)→(6,3).<BR>
+R<SUP>&minus;1</SUP> = <B>{(4,1), (5,2), (6,3)}</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> La relación R = {(1,1), (2,2), (3,3)} sobre A = {1,2,3}, ¿es reflexiva?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Sí, porque contiene (a,a) para todo a∈A</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) No, porque no tiene pares diferentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) No, porque es muy pequeña</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Sí, pero solo si A tiene más elementos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Contiene (1,1), (2,2) y (3,3): todos los pares (a,a) con a∈A. Es <B>reflexiva</B>. (Esta es la relación de igualdad, la mínima relación reflexiva.)
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> R = {(1,2), (2,1), (3,3)} sobre A = {1,2,3}. ¿Es simétrica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Sí</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) No, falta (1,3)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) No, falta (2,3)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) No, porque (3,3) no puede estar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Verificamos: (1,2)∈R → ¿(2,1)∈R? Sí ✓. (2,1)∈R → ¿(1,2)∈R? Sí ✓. (3,3)∈R → ¿(3,3)∈R? Sí ✓.<BR>
+La relación es <B>simétrica</B>.
+</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Si A = {a, b, c} y B = {1, 2}, ¿cuántas relaciones binarias distintas existen de A en B?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) 64</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) 36</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) 12</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+|A &times; B| = 3 &times; 2 = 6. Cada relación es un subconjunto de A&times;B, y hay 2<SUP>6</SUP> = <B>64</B> subconjuntos posibles.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Sea R sobre A = {1,2,3,4} definida por: a R b ↔ a divide a b. ¿Es R transitiva?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Sí, porque si a|b y b|c entonces a|c</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) No, porque 2|4 pero 4 no divide a nada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) No, porque 1|2 y 2|4 pero 1 no divide a 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Depende del conjunto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Si a|b existe k tal que b=ak; si b|c existe m tal que c=bm. Entonces c=bm=(ak)m=a(km), luego a|c.<BR>
+La divisibilidad <B>sí es transitiva</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> R = {(1,2), (2,3), (1,3), (1,1), (2,2), (3,3)} sobre A={1,2,3}. ¿Qué propiedades cumple?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Reflexiva, antisimétrica y transitiva (relación de orden)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Reflexiva, simétrica y transitiva (equivalencia)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Solo transitiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Solo reflexiva</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Reflexiva: (1,1),(2,2),(3,3) ✓<BR>
+Simétrica: (1,2)∈R pero (2,1)∉R → NO simétrica<BR>
+Antisimétrica: no hay par (a,b) y (b,a) con a≠b ✓<BR>
+Transitiva: (1,2),(2,3)→(1,3) ✓<BR>
+Cumple R, AS, T → es <B>relación de orden</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Sea R sobre Z: a R b ↔ a ≡ b (mod 3) (misma resta es múltiplo de 3). ¿Qué tipo de relación es?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Relación de equivalencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Relación de orden</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Solo reflexiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Solo simétrica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Reflexiva: a&minus;a=0=3·0 ✓<BR>
+Simétrica: si 3|(a&minus;b) entonces 3|(b&minus;a) ✓<BR>
+Transitiva: si 3|(a&minus;b) y 3|(b&minus;c), entonces 3|((a&minus;b)+(b&minus;c))=a&minus;c ✓<BR>
+Cumple R, S, T → <B>relación de equivalencia</B>. Las clases son los residuos mod 3: {0,3,6,...}, {1,4,7,...}, {2,5,8,...}.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Si R es una relación sobre A = {1,2,3} y R = {(1,2), (2,3)}, ¿qué par debe agregarse para que R sea transitiva?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) (1, 3)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) (2, 1)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) (3, 1)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) (1, 1)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+(1,2)∈R y (2,3)∈R → por transitividad debe estar <B>(1,3)</B> en R.<BR>
+Sin ese par, la propiedad transitiva no se cumple.
+</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> R sobre A = {1,2,3,4}. R = {(a,b) / a + b es par}. Halla R y determina su tipo.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) R es de equivalencia: pares e impares</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) R es de orden</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) R es solo simétrica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) R no cumple ninguna propiedad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+R = {(1,1),(1,3),(2,2),(2,4),(3,1),(3,3),(4,2),(4,4)} (pares donde a+b es par)<BR>
+Reflexiva: 1+1=2✓, 2+2=4✓, 3+3=6✓, 4+4=8✓ → Reflexiva ✓<BR>
+Simétrica: si a+b par → b+a par ✓<BR>
+Transitiva: si a+b par y b+c par → a y b misma paridad; b y c misma paridad → a y c misma paridad → a+c par ✓<BR>
+Es <B>relación de equivalencia</B>. Clases: {1,3} (impares) y {2,4} (pares).
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Sea A = {1,2,3}. ¿Cuántos pares hay en la relación de igualdad (la más pequeña relación reflexiva)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) 1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+La relación de igualdad es Δ = {(a,a) / a∈A} = {(1,1),(2,2),(3,3)}. Tiene <B>|A| = 3 pares</B>.<BR>
+Es la mínima relación reflexiva (solo los pares de la diagonal).
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> ¿Puede una relación ser a la vez simétrica y antisimétrica? Si sí, ¿cuándo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Sí, cuando solo contiene pares (a,a)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) No, son propiedades contradictorias siempre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Sí, cuando es la relación universal A×A</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Solo en conjuntos con un elemento</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Sí es posible. Si R solo contiene pares (a,a) con a∈A:<BR>
+Simétrica: (a,a)∈R → (a,a)∈R ✓ (el simétrico de (a,a) es él mismo)<BR>
+Antisimétrica: si (a,b) y (b,a) ∈ R, como solo hay (a,a), esto implica a=b ✓<BR>
+La <B>relación de identidad</B> cumple ambas propiedades a la vez.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Sea R sobre N (naturales): a R b ↔ a &le; b. Determina las propiedades que cumple.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Reflexiva, antisimétrica y transitiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Reflexiva, simétrica y transitiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Solo transitiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Solo reflexiva y antisimétrica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Reflexiva: a≤a ✓<BR>
+Simétrica: 2≤5 pero 5≤2 ✗ → NO simétrica<BR>
+Antisimétrica: si a≤b y b≤a entonces a=b ✓<BR>
+Transitiva: si a≤b y b≤c entonces a≤c ✓<BR>
+Cumple R, AS, T → es una <B>relación de orden (parcial/total)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> R sobre A={1,2,3,4,5,6}: a R b ↔ a y b tienen el mismo resto al dividir entre 3. ¿Cuántas clases de equivalencia tiene?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) 1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Los restos posibles al dividir entre 3 son 0, 1 y 2:<BR>
+Resto 0: {3, 6} &nbsp; Resto 1: {1, 4} &nbsp; Resto 2: {2, 5}<BR>
+Hay <B>3 clases de equivalencia</B>. (Partición de {1,2,3,4,5,6} en 3 grupos.)
+</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> A = {1,2,3,4}. ¿Cuántas relaciones de equivalencia distintas existen sobre A?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) 15</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) 16</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 64</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Las relaciones de equivalencia corresponden a las <B>particiones del conjunto</B>. El número de particiones de un conjunto de n elementos es el <B>número de Bell B(n)</B>.<BR>
+B(4) = <B>15</B>. (Las particiones de {1,2,3,4} son: {1|2|3|4}, {12|3|4}, ..., {1234}.)
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> R sobre R×R: (a,b) R (c,d) ↔ a²+b² = c²+d². ¿Qué tipo de relación es y qué describen sus clases?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Equivalencia; cada clase es una circunferencia centrada en el origen</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Orden; las clases son rectas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Solo simétrica; las clases son puntos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) No es relación válida</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Reflexiva: a²+b²=a²+b² ✓ &nbsp; Simétrica: si a²+b²=c²+d² entonces c²+d²=a²+b² ✓<BR>
+Transitiva: si a²+b²=c²+d² y c²+d²=e²+f², entonces a²+b²=e²+f² ✓<BR>
+Es de <B>equivalencia</B>. Cada clase agrupa todos los puntos del plano a la misma distancia del origen: son <B>circunferencias concéntricas centradas en (0,0)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Si R y S son relaciones de equivalencia sobre A, ¿R &cap; S también lo es?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Sí, siempre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) No, nunca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Solo si R = S</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Solo si A tiene más de 3 elementos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Si R y S son de equivalencia, R∩S también lo es:<BR>
+Reflexiva: (a,a)∈R y (a,a)∈S → (a,a)∈R∩S ✓<BR>
+Simétrica: si (a,b)∈R∩S → (b,a)∈R y (b,a)∈S → (b,a)∈R∩S ✓<BR>
+Transitiva: si (a,b),(b,c)∈R∩S → (a,c)∈R y (a,c)∈S → (a,c)∈R∩S ✓<BR>
+<B>Sí, R∩S es siempre de equivalencia</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> R sobre A={1,2,3,4}: R = {(1,2),(2,1),(1,3),(3,1),(2,3),(3,2),(1,1),(2,2),(3,3),(4,4)}. ¿Qué tipo de relación es?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Equivalencia con clases {1,2,3} y {4}</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Orden total</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Solo reflexiva y simétrica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Solo reflexiva</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Reflexiva: (1,1),(2,2),(3,3),(4,4) ✓<BR>
+Simétrica: (1,2)↔(2,1)✓; (1,3)↔(3,1)✓; (2,3)↔(3,2)✓; (4,4)↔(4,4)✓<BR>
+Transitiva: verificar casos como (1,2),(2,3)→(1,3)✓ — todos se cumplen ✓<BR>
+Es de <B>equivalencia</B>. Clases: {1,2,3} (todos relacionados entre sí) y {4} (solo con él mismo).
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Sea R la relación sobre P(A) (partes de A) definida por: X R Y ↔ |X| = |Y| (misma cardinalidad). Si A = {a,b,c}, ¿cuántas clases de equivalencia tiene R?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) 6</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+P(A) tiene 2³=8 subconjuntos. Las cardinalidades posibles son 0, 1, 2 y 3:<BR>
+|X|=0: {∅} — 1 elemento<BR>
+|X|=1: {a},{b},{c} — 3 elementos<BR>
+|X|=2: {a,b},{a,c},{b,c} — 3 elementos<BR>
+|X|=3: {a,b,c} — 1 elemento<BR>
+Hay <B>4 clases de equivalencia</B> (una por cada posible cardinalidad: 0, 1, 2 y 3).
+</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

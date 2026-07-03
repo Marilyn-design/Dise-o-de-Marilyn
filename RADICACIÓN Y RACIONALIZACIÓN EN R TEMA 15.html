@@ -1,0 +1,402 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Radicación y Racionalización en R - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:36px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .formula-linea{background:#e8f4f3;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:18px;text-align:center;letter-spacing:0.5px;color:#0D1B36;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.bloque-f{max-width:1000px;margin:55px auto 0;padding:0 40px;}
+.bloque-f h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.formulario{background:#0D1B36;border-radius:20px;padding:30px 36px;box-shadow:0 6px 22px rgba(0,0,0,0.18);color:#fff;}
+.formulario .grupo{margin-bottom:22px;}
+.formulario .grupo:last-child{margin-bottom:0;}
+.formulario .grupo h4{color:#D7B06D;font-size:17px;margin-bottom:10px;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:6px;}
+.formulario .f{font-size:18px;line-height:2.2;color:#fff;}
+.formulario .f b{color:#7FD1CE;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ALGEBRA.HTML">&larr; Volver a los temas de Álgebra</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ÁLGEBRA &middot; TEMA 15</DIV>
+<H1>Radicación y Racionalización en R</H1>
+<DIV CLASS="sub">Leyes de radicales &middot; Simplificación &middot; Operaciones &middot; Racionalización de denominadores &middot; Factor racionalizante</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="def">1. Radicación en los reales</H3>
+La raíz n-ésima de un número a es el número que, elevado al índice n, devuelve a. Lo más importante es recordar su forma como exponente fraccionario (Tema 2):
+<DIV CLASS="formula-linea"><B><sup>n</sup>&radic;(a<SUP>m</SUP>) = a<SUP>m/n</SUP></B></DIV>
+<DIV CLASS="alerta">⚠️ <B>En R hay una restricción:</B> una raíz de índice <B>par</B> de un número negativo no existe en los reales (por ejemplo &radic;(&minus;4) no es real). Las de índice impar sí (³&radic;(&minus;8) = &minus;2).</DIV>
+
+<H3 ID="leyes">2. Leyes de los radicales</H3>
+<DIV CLASS="formula-linea"><B><sup>n</sup>&radic;(ab) = <sup>n</sup>&radic;a &middot; <sup>n</sup>&radic;b</B> &nbsp;;&nbsp; <B><sup>n</sup>&radic;(a/b) = <sup>n</sup>&radic;a / <sup>n</sup>&radic;b</B></DIV>
+<DIV CLASS="formula-linea"><B><sup>m</sup>&radic;(<sup>n</sup>&radic;a) = <sup>m&middot;n</sup>&radic;a</B></DIV>
+
+<H3 ID="simplificar">3. Simplificar radicales (extraer factores)</H3>
+Para simplificar una raíz, se descompone el radicando y se sacan los factores que tengan exponente igual al índice.
+<DIV CLASS="ej">📐 &radic;8 = &radic;(4 &middot; 2) = &radic;4 &middot; &radic;2 = 2&radic;2. &nbsp; &radic;12 = &radic;(4 &middot; 3) = 2&radic;3.</DIV>
+
+<H3 ID="operaciones">4. Suma, resta y producto de radicales</H3>
+Solo se pueden <B>sumar o restar radicales semejantes</B> (mismo índice y mismo radicando). Para multiplicar o dividir, se opera dentro de la raíz.
+<DIV CLASS="ej">📐 2&radic;3 + 5&radic;3 = 7&radic;3. &nbsp; &radic;18 + &radic;8 = 3&radic;2 + 2&radic;2 = 5&radic;2. &nbsp; &radic;2 &middot; &radic;8 = &radic;16 = 4.</DIV>
+
+<H3 ID="racionalizar">5. Racionalización</H3>
+<B>Racionalizar</B> es eliminar las raíces del denominador de una fracción, multiplicando arriba y abajo por un <B>factor racionalizante (FR)</B> conveniente. Hay tres casos clásicos:
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Caso</TH><TH>Se multiplica por</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Denominador &radic;a</TD><TD>&radic;a</TD><TD>1/&radic;2 = &radic;2/2</TD></TR>
+<TR><TD>Denominador <sup>n</sup>&radic;(a<SUP>m</SUP>)</TD><TD><sup>n</sup>&radic;(a<SUP>n&minus;m</SUP>)</TD><TD>1/³&radic;2 = ³&radic;4 / 2</TD></TR>
+<TR><TD>Denominador a + &radic;b (o &radic;a ± &radic;b)</TD><TD>la conjugada (a &minus; &radic;b)</TD><TD>usa (a+&radic;b)(a&minus;&radic;b)=a<SUP>2</SUP>&minus;b</TD></TR>
+</TABLE>
+</DIV>
+<DIV CLASS="alerta">⚠️ <B>La conjugada es la estrella del tema:</B> para un denominador con dos términos, multiplicas por el mismo binomio con el signo del medio cambiado. Así aparece una diferencia de cuadrados y desaparecen las raíces.</DIV>
+<DIV CLASS="ej">📐 1/(&radic;3 &minus; 1) = (&radic;3 + 1) / [(&radic;3 &minus; 1)(&radic;3 + 1)] = (&radic;3 + 1)/(3 &minus; 1) = (&radic;3 + 1)/2.</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque-f">
+<H2>Formulario</H2>
+<DIV CLASS="formulario">
+<DIV CLASS="grupo">
+<H4>LEYES DE RADICALES</H4>
+<DIV CLASS="f">
+<sup>n</sup>&radic;(a<SUP>m</SUP>) <B>=</B> a<SUP>m/n</SUP><BR>
+<sup>n</sup>&radic;(ab) <B>=</B> <sup>n</sup>&radic;a &middot; <sup>n</sup>&radic;b<BR>
+<sup>m</sup>&radic;(<sup>n</sup>&radic;a) <B>=</B> <sup>mn</sup>&radic;a
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>OPERACIONES</H4>
+<DIV CLASS="f">
+Solo radicales semejantes se suman/restan<BR>
+c&middot;<sup>n</sup>&radic;a ± d&middot;<sup>n</sup>&radic;a <B>=</B> (c ± d)<sup>n</sup>&radic;a<BR>
+<sup>n</sup>&radic;a &middot; <sup>n</sup>&radic;b <B>=</B> <sup>n</sup>&radic;(ab)
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>RACIONALIZACIÓN</H4>
+<DIV CLASS="f">
+1/&radic;a &rarr; &times; &radic;a &rarr; &radic;a / a<BR>
+1/<sup>n</sup>&radic;(a<SUP>m</SUP>) &rarr; &times; <sup>n</sup>&radic;(a<SUP>n&minus;m</SUP>)<BR>
+Binomio &rarr; &times; conjugada: (a+&radic;b)(a&minus;&radic;b) = a<SUP>2</SUP>&minus;b
+</DIV>
+</DIV>
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Problemas tipo admisión</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Simplifica: &radic;8</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) 2&radic;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) 4&radic;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) 2&radic;4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) 8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>&radic;8 = &radic;(4&middot;2) = &radic;4 &middot; &radic;2 = <B>2&radic;2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Simplifica: &radic;12</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) 3&radic;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) 2&radic;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) 4&radic;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) 6</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>&radic;12 = &radic;(4&middot;3) = 2&radic;3 = <B>2&radic;3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Reduce: 2&radic;3 + 5&radic;3</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) 7&radic;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) 7&radic;6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) 10&radic;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) 7&radic;9</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Son radicales semejantes; sumo coeficientes: (2 + 5)&radic;3 = <B>7&radic;3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Racionaliza: 1/&radic;2</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) &radic;2 / 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 2&radic;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) &radic;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) 1/2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico arriba y abajo por &radic;2: (1&middot;&radic;2)/(&radic;2&middot;&radic;2) = <B>&radic;2/2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Calcula: &radic;2 &middot; &radic;8</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) &radic;10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) 16</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) 2&radic;2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>&radic;2 &middot; &radic;8 = &radic;16 = <B>4</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Simplifica: &radic;50</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) 5&radic;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) 2&radic;5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) 10&radic;5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) 25&radic;2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>&radic;50 = &radic;(25&middot;2) = 5&radic;2 = <B>5&radic;2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Calcula: 3&radic;2 &middot; 2&radic;3</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) 6&radic;6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) 5&radic;6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) 6&radic;5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) 6</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico coeficientes y radicandos por separado: (3&middot;2)&middot;&radic;(2&middot;3) = <B>6&radic;6</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Racionaliza: 3/&radic;3</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) &radic;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) 3&radic;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) &radic;3/3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) 1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>3/&radic;3 = (3&middot;&radic;3)/(&radic;3&middot;&radic;3) = 3&radic;3/3 = <B>&radic;3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Reduce: &radic;18 + &radic;8</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) 5&radic;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) &radic;26</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) 6&radic;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) 13&radic;2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>&radic;18 = 3&radic;2 y &radic;8 = 2&radic;2. Suma: 3&radic;2 + 2&radic;2 = <B>5&radic;2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Calcula: (&radic;5)<SUP>2</SUP> + &radic;9</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) 14</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) &radic;14</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) 5&radic;3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>(&radic;5)<SUP>2</SUP> = 5 y &radic;9 = 3. Suma: 5 + 3 = <B>8</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Racionaliza: 1/(&radic;3 &minus; 1)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) (&radic;3 + 1)/2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) (&radic;3 &minus; 1)/2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) &radic;3 + 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) (&radic;3 + 1)/4</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico por la conjugada (&radic;3 + 1): (&radic;3 + 1)/[(&radic;3)<SUP>2</SUP> &minus; 1<SUP>2</SUP>] = (&radic;3 + 1)/(3 &minus; 1) = <B>(&radic;3 + 1)/2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Racionaliza: 2/(&radic;5 + &radic;3)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) &radic;5 &minus; &radic;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) &radic;5 + &radic;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) (&radic;5 &minus; &radic;3)/2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) 2(&radic;5 &minus; &radic;3)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico por (&radic;5 &minus; &radic;3): 2(&radic;5 &minus; &radic;3)/(5 &minus; 3) = 2(&radic;5 &minus; &radic;3)/2 = <B>&radic;5 &minus; &radic;3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Reduce: &radic;75 &minus; &radic;27</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) 2&radic;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) &radic;48</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) 8&radic;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) 5&radic;3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>&radic;75 = 5&radic;3 y &radic;27 = 3&radic;3. Resta: 5&radic;3 &minus; 3&radic;3 = <B>2&radic;3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Calcula: (2 + &radic;3)(2 &minus; &radic;3)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) 4 &minus; &radic;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) &radic;3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Diferencia de cuadrados: 2<SUP>2</SUP> &minus; (&radic;3)<SUP>2</SUP> = 4 &minus; 3 = <B>1</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Racionaliza: 1/³&radic;2</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) ³&radic;4 / 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) ³&radic;2 / 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) 2³&radic;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) ³&radic;2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico por ³&radic;(2<SUP>2</SUP>) = ³&radic;4 para completar el cubo: (³&radic;4)/(³&radic;2 &middot; ³&radic;4) = ³&radic;4/³&radic;8 = <B>³&radic;4/2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Racionaliza: 1/(&radic;x + &radic;y)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) (&radic;x &minus; &radic;y)/(x &minus; y)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) (&radic;x + &radic;y)/(x + y)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) &radic;x &minus; &radic;y</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) (&radic;x &minus; &radic;y)/(x + y)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico por la conjugada (&radic;x &minus; &radic;y): (&radic;x &minus; &radic;y)/[(&radic;x)<SUP>2</SUP> &minus; (&radic;y)<SUP>2</SUP>] = <B>(&radic;x &minus; &radic;y)/(x &minus; y)</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Racionaliza: 6/(&radic;7 &minus; 1)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) &radic;7 + 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) &radic;7 &minus; 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) (&radic;7 + 1)/6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) 6(&radic;7 + 1)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico por (&radic;7 + 1): 6(&radic;7 + 1)/[(&radic;7)<SUP>2</SUP> &minus; 1] = 6(&radic;7 + 1)/(7 &minus; 1) = 6(&radic;7 + 1)/6 = <B>&radic;7 + 1</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> ¿Cuál es el factor racionalizante (FR) de ³&radic;a?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) ³&radic;(a<SUP>2</SUP>)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) ³&radic;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) &radic;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) a</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Se necesita completar el cubo: ³&radic;a &middot; ³&radic;(a<SUP>2</SUP>) = ³&radic;(a<SUP>3</SUP>) = a. Por eso el FR es <B>³&radic;(a<SUP>2</SUP>)</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Reduce: &radic;8 + &radic;18 &minus; &radic;2</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) 4&radic;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) 6&radic;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) &radic;24</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) 5&radic;2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>&radic;8 = 2&radic;2, &radic;18 = 3&radic;2, &radic;2 = 1&radic;2. Entonces 2&radic;2 + 3&radic;2 &minus; &radic;2 = (2 + 3 &minus; 1)&radic;2 = <B>4&radic;2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Racionaliza: 1/(&radic;5 + 2)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) &radic;5 &minus; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) &radic;5 + 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) (&radic;5 &minus; 2)/9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) (&radic;5 + 2)/9</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico por la conjugada (&radic;5 &minus; 2): (&radic;5 &minus; 2)/[(&radic;5)<SUP>2</SUP> &minus; 2<SUP>2</SUP>] = (&radic;5 &minus; 2)/(5 &minus; 4) = (&radic;5 &minus; 2)/1 = <B>&radic;5 &minus; 2</B>.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

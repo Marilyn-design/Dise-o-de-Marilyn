@@ -1,0 +1,560 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Geografía Económica del Perú II - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA · TEMA 14 · NIVEL PREUNIVERSITARIO</DIV>
+<H1>Geografía Económica del Perú II</H1>
+<DIV CLASS="sub">Industria · Comercio · Transporte y vías de comunicación · Turismo · Comercio exterior · PBI y sectores económicos</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="industria">1. La industria en el Perú</H3>
+
+La <B>industria</B> es el conjunto de actividades económicas que transforman materias primas en productos elaborados o semielaborados. En el Perú, la industria representa aproximadamente el <B>13–15% del PBI</B> y emplea a cerca del 15% de la PEA (Población Económicamente Activa).
+
+<H4>Características de la industria peruana:</H4>
+<UL>
+<LI><B>Centralización en Lima:</B> la región Lima-Callao concentra más del <B>50% de la actividad industrial</B> del país. Esto genera una marcada desigualdad regional.</LI>
+<LI><B>Predominio de industrias ligeras:</B> la mayoría son industrias de consumo (alimentos, bebidas, textiles, calzado) antes que industrias de bienes de capital (maquinaria, metalurgia pesada).</LI>
+<LI><B>Escasa integración vertical:</B> el Perú exporta principalmente materias primas (cobre en concentrado, harina de pescado, caña de azúcar) y reimporta productos manufacturados con mayor valor agregado.</LI>
+<LI><B>Dependencia tecnológica:</B> la industria peruana depende en gran medida de tecnología e insumos importados.</LI>
+</UL>
+
+<H4>Principales industrias por sector:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sector industrial</TH><TH>Productos principales</TH><TH>Zonas de concentración</TH></TR>
+<TR><TD><B>Agroindustria</B></TD><TD>Conservas de pescado, harina de pescado, azúcar, aceites, espárragos en conserva, alcachofas, pisco, cerveza</TD><TD>Lima, Ica, La Libertad, Lambayeque, Áncash</TD></TR>
+<TR><TD><B>Textil y confecciones</B></TD><TD>Tejidos de algodón pima, fibra de alpaca y vicuña, prendas de vestir para exportación</TD><TD>Lima (Gamarra), Arequipa, Puno</TD></TR>
+<TR><TD><B>Minero-metalúrgica</B></TD><TD>Fundición y refinación de cobre (La Oroya), concentrados de zinc y plomo, oro en barras</TD><TD>Junín (La Oroya), Ica (Marcona), Pasco</TD></TR>
+<TR><TD><B>Petroquímica / refinación</TD><TD>Gasolinas, diésel, GLP, lubricantes, fertilizantes</TD><TD>Talara (Piura), Conchán (Lima), Iquitos</TD></TR>
+<TR><TD><B>Construcción</B></TD><TD>Cemento, ladrillos, barras de acero, cal</TD><TD>Lima, Arequipa, Ica, La Libertad</TD></TR>
+<TR><TD><B>Farmacéutica</B></TD><TD>Medicamentos genéricos, cosméticos naturales</TD><TD>Lima</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El <B>emporio de Gamarra</B> (La Victoria, Lima) es el centro textil y de confecciones más grande del Perú y uno de los mayores de Latinoamérica. La <B>fundición de La Oroya</B> (Junín) fue una de las más importantes de América Latina para el procesamiento de polimetálicos, aunque también es reconocida por su histórica contaminación ambiental.</DIV>
+
+<H4>Parques industriales y zonas industriales:</H4>
+<UL>
+<LI><B>ZOFRATACNA:</B> Zona Franca de Tacna; beneficios tributarios para la importación y comercio en la zona sur del país.</LI>
+<LI><B>Zona Industrial de Villa El Salvador</B> (Lima): parque industrial con miles de pequeñas y medianas empresas (PYMES).</LI>
+<LI><B>Parque Industrial de Arequipa:</B> concentra industrias manufactureras y agroindustriales del sur del país.</LI>
+</UL>
+
+<H3 ID="comercio">2. El comercio en el Perú</H3>
+
+El comercio es la actividad económica dedicada al intercambio de bienes y servicios. En el Perú se distinguen:
+
+<H4>Comercio interno (doméstico):</H4>
+<UL>
+<LI><B>Comercio formal:</B> supermercados, tiendas por departamentos (Plaza Vea, Wong, Saga Falabella, Ripley), centros comerciales (malls), empresas con RUC.</LI>
+<LI><B>Comercio informal:</B> representa el <B>60–70% del comercio minorista</B> peruano. Mercados tradicionales, vendedores ambulantes, puestos de mercado. La informalidad es uno de los principales retos de la economía peruana.</LI>
+<LI><B>Ferias y mercados regionales:</B> ferias dominicales, mercados de abastos (Mercado Central de Lima, Mercado de Surquillo, mercados en ciudades del interior). Los mercados andinos (como el de Pisaq en Cusco) tienen importancia cultural y económica.</LI>
+</UL>
+
+<H4>Comercio exterior (internacional):</H4>
+<UL>
+<LI><B>Exportaciones:</B> lo que el Perú vende al mundo.</LI>
+<LI><B>Importaciones:</B> lo que el Perú compra al mundo.</LI>
+<LI>La <B>balanza comercial</B> es la diferencia entre exportaciones e importaciones. Si las exportaciones superan a las importaciones, hay <B>superávit comercial</B>; en caso contrario, hay <B>déficit comercial</B>.</LI>
+</UL>
+
+<H3 ID="exportaciones">3. Las exportaciones peruanas</H3>
+
+Las exportaciones peruanas se dividen en dos grandes grupos:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo</TH><TH>Definición</TH><TH>Productos principales</TH><TH>% aprox. del total</TH></TR>
+<TR><TD><B>Exportaciones tradicionales</B></TD><TD>Productos primarios (materias primas) sin mayor transformación industrial</TD><TD>Cobre, oro, plata, zinc, harina de pescado, petróleo, gas natural, café en grano</TD><TD>~70–75%</TD></TR>
+<TR><TD><B>Exportaciones no tradicionales</B></TD><TD>Productos con mayor valor agregado (procesados, manufacturados)</TD><TD>Espárragos, uvas, paltas, arándanos, mango, textiles (algodón, alpaca), prendas de vestir, químicos, madera procesada, joyas</TD><TD>~25–30%</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Tendencia importante:</B> Las exportaciones no tradicionales peruanas han crecido significativamente en los últimos 20 años. El Perú es el <B>1° exportador mundial de espárragos</B>, el <B>2° de arándanos</B> y uno de los principales proveedores mundiales de palta (aguacate), uva de mesa y mango. Esta agroexportación se concentra principalmente en la costa norte (La Libertad, Piura, Ica, Lambayeque).</DIV>
+
+<H4>Principales destinos de las exportaciones peruanas:</H4>
+<UL>
+<LI><B>China:</B> principal socio comercial del Perú (compra principalmente cobre, harina de pescado y hierro).</LI>
+<LI><B>Estados Unidos:</B> segundo destino (textiles, espárragos, oro, zinc).</LI>
+<LI><B>Unión Europea:</B> tercer destino (espárragos, café, pisco, textiles de alpaca).</LI>
+<LI><B>Japón, Corea del Sur, India:</B> mercados importantes para minerales y harina de pescado.</LI>
+</UL>
+
+<H4>Tratados de Libre Comercio (TLC) del Perú:</H4>
+El Perú tiene acuerdos comerciales vigentes con más de 20 países y bloques económicos:
+<UL>
+<LI>TLC con <B>Estados Unidos</B> (vigente desde 2009).</LI>
+<LI>TLC con la <B>Unión Europea</B> (vigente desde 2013).</LI>
+<LI>TLC con <B>China</B> (vigente desde 2010): el más importante por volumen de comercio.</LI>
+<LI>TLC con <B>Canadá, Japón, Corea del Sur, Singapur, Tailandia, México</B>, entre otros.</LI>
+<LI><B>Alianza del Pacífico:</B> bloque regional conformado por Perú, Chile, Colombia y México; busca la integración económica y comercial del Pacífico latinoamericano.</LI>
+<LI><B>Comunidad Andina (CAN):</B> bloque regional con Bolivia, Colombia y Ecuador; libre comercio intracomunitario.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La <B>Alianza del Pacífico</B> la integran Perú, Chile, Colombia y México. La <B>Comunidad Andina (CAN)</B> la integran Perú, Bolivia, Colombia y Ecuador. El principal socio comercial del Perú es <B>China</B>. El Perú es el <B>1° exportador mundial de espárragos</B>.</DIV>
+
+<H3 ID="transporte">4. Transporte y vías de comunicación</H3>
+
+El sistema de transporte peruano es uno de los más complejos del mundo por la accidentada geografía andina. Se organiza en cuatro modalidades:
+
+<H4>A) Transporte terrestre (carreteras):</H4>
+<UL>
+<LI>El Perú cuenta con más de <B>165 000 km</B> de carreteras, de los cuales solo una fracción está asfaltada.</LI>
+<LI><B>Carretera Panamericana:</B> recorre toda la costa peruana de norte a sur (~2 600 km en el Perú); conecta Tumbes con Tacna y es la principal vía de transporte de la costa.</LI>
+<LI><B>Carretera Central:</B> conecta Lima con la sierra central (Huancayo, Cerro de Pasco, Huánuco) y llega hasta la selva. Es la vía terrestre más importante del centro del país.</LI>
+<LI><B>IIRSA Norte:</B> Iniciativa de Integración de la Infraestructura Regional Suramericana. Conecta Paita (Piura) con Brasil, atravesando la selva norte. Clave para la integración de Loreto y San Martín.</LI>
+<LI><B>IIRSA Sur (Interoceánica Sur):</B> conecta los puertos de Ilo y Matarani (Moquegua/Arequipa) con Brasil a través de Cusco, Puno y Madre de Dios. Inaugurada en 2011. Abrió Madre de Dios al comercio pero también aceleró la deforestación y la minería ilegal.</LI>
+<LI><B>Carretera Belaúnde Terry (Marginal de la Selva):</B> recorre longitudinalmente la selva alta (ceja de selva) desde San Martín hasta Puno. Fue concebida para colonizar la selva.</LI>
+</UL>
+
+<H4>B) Transporte ferroviario:</H4>
+<UL>
+<LI>El sistema ferroviario peruano es limitado y no interconectado.</LI>
+<LI><B>Ferrocarril Central Andino:</B> Lima–Huancayo–Huancavelica. Uno de los ferrocarriles más altos del mundo (cruza el Abra de Ticlio a 4 818 m.s.n.m.). Usado principalmente para transporte de minerales.</LI>
+<LI><B>Ferrocarril del Sur:</B> Matarani–Arequipa–Puno–Cusco. Conecta el sur del país; históricamente importante para el turismo hacia Machu Picchu.</LI>
+<LI><B>Tren Machu Picchu:</B> Cusco (Ollantaytambo)–Aguas Calientes. Principal tren turístico del Perú.</LI>
+<LI><B>Metro de Lima (Línea 1):</B> primer metro del Perú, inaugurado en 2011; conecta Villa El Salvador con San Juan de Lurigancho.</LI>
+</UL>
+
+<H4>C) Transporte fluvial:</H4>
+<UL>
+<LI>Es la principal vía de comunicación en la <B>selva peruana</B>, donde la ausencia de carreteras hace que los ríos sean las "autopistas" amazónicas.</LI>
+<LI>Los ríos más navegables son: <B>Amazonas, Ucayali, Marañón, Huallaga, Napo, Putumayo</B>.</LI>
+<LI><B>Iquitos</B> (Loreto) es la ciudad más grande del mundo sin acceso por carretera; solo se llega por vía aérea o fluvial (el río Amazonas).</LI>
+<LI>Puerto <B>Pucallpa</B> (Ucayali) y Puerto <B>Yurimaguas</B> (Loreto) son los principales puertos fluviales del Perú.</LI>
+</UL>
+
+<H4>D) Transporte aéreo:</H4>
+<UL>
+<LI>El Perú tiene más de <B>70 aeropuertos y aeródromos</B>, de los cuales unos 15 tienen vuelos regulares de pasajeros.</LI>
+<LI><B>Aeropuerto Internacional Jorge Chávez</B> (Callao, Lima): el principal del país; maneja más del 80% del tráfico aéreo internacional.</LI>
+<LI><B>Aeropuerto Alejandro Velasco Astete</B> (Cusco): el segundo más importante; puerto de entrada para el turismo del sur.</LI>
+<LI>El transporte aéreo es fundamental para la selva: ciudades como Iquitos, Puerto Maldonado y Tarapoto dependen fuertemente de él.</LI>
+</UL>
+
+<H4>E) Transporte marítimo y portuario:</H4>
+<UL>
+<LI><B>Puerto del Callao:</B> el más importante del Perú y uno de los más grandes de la costa del Pacífico sudamericano. Maneja más del <B>70% del comercio exterior</B> peruano.</LI>
+<LI>Otros puertos importantes: <B>Paita</B> (Piura), <B>Salaverry</B> (La Libertad), <B>Matarani</B> (Arequipa), <B>Ilo</B> (Moquegua), <B>Chimbote</B> (Áncash).</LI>
+<LI><B>Puerto de Chancay</B> (Lima): mega-puerto en construcción/inauguración reciente (2024), financiado por China (empresa COSCO Shipping). Será el mayor puerto de América del Sur y un hub del Pacífico.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Puerto de Chancay:</B> Ubicado a 80 km al norte de Lima, el Puerto de Chancay es la mayor inversión de infraestructura portuaria en la historia del Perú. Su primera fase tiene capacidad para 1 millón de contenedores por año. Posicionará al Perú como hub logístico del Pacífico sudamericano, reduciendo tiempos y costos de envío a Asia.</DIV>
+
+<H3 ID="turismo">5. El turismo en el Perú</H3>
+
+El turismo es uno de los sectores económicos de mayor crecimiento potencial en el Perú. Representa aproximadamente el <B>3–4% del PBI</B> y genera empleo directo e indirecto para millones de peruanos.
+
+<H4>Tipos de turismo en el Perú:</H4>
+<UL>
+<LI><B>Turismo cultural e histórico:</B> el más importante. Machu Picchu, Cusco, Chan Chan, Caral, Líneas de Nazca, Cajamarca, Lima histórica.</LI>
+<LI><B>Ecoturismo:</B> Parque Nacional del Manu, Reserva de Paracas, Lago Titicaca, Cañón del Colca, Amazonía.</LI>
+<LI><B>Turismo de aventura:</B> trekking (Camino Inca), rafting (río Urubamba, Colca), surf (Máncora, Punta Hermosa), parapente, andinismo (Huascarán).</LI>
+<LI><B>Turismo gastronómico:</B> Lima es considerada el <B>destino gastronómico más importante de América Latina</B>. La gastronomía peruana (ceviche, lomo saltado, causa limeña) genera un turismo específico.</LI>
+<LI><B>Turismo vivencial:</B> comunidades del lago Titicaca (Taquile, Uros), comunidades amazónicas.</LI>
+</UL>
+
+<H4>Principales destinos turísticos del Perú:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Destino</TH><TH>Región</TH><TH>Atractivo principal</TH><TH>Reconocimiento UNESCO</TH></TR>
+<TR><TD><B>Machu Picchu</B></TD><TD>Cusco</TD><TD>Ciudadela inca del siglo XV (2 430 m.s.n.m.)</TD><TD>Patrimonio Mundial Cultural y Natural (1983); Maravilla del Mundo Moderno (2007)</TD></TR>
+<TR><TD><B>Ciudad de Cusco</B></TD><TD>Cusco</TD><TD>Capital del Imperio Inca; arquitectura colonial sobre base inca</TD><TD>Patrimonio Mundial Cultural (1983)</TD></TR>
+<TR><TD><B>Líneas de Nazca</B></TD><TD>Ica</TD><TD>Geoglifos en el desierto (200 a.C. – 700 d.C.)</TD><TD>Patrimonio Mundial Cultural (1994)</TD></TR>
+<TR><TD><B>Chan Chan</B></TD><TD>La Libertad</TD><TD>Mayor ciudad de adobe del mundo; capital chimú</TD><TD>Patrimonio Mundial Cultural (1986); en lista de Patrimonio en Peligro</TD></TR>
+<TR><TD><B>Caral</B></TD><TD>Lima</TD><TD>Ciudad más antigua de América (~3 000 a.C.)</TD><TD>Patrimonio Mundial Cultural (2009)</TD></TR>
+<TR><TD><B>Lago Titicaca</B></TD><TD>Puno</TD><TD>Lago navegable más alto del mundo; islas Uros, Taquile, Amantaní</TD><TD>No tiene declaratoria UNESCO global, pero hay solicitudes</TD></TR>
+<TR><TD><B>Cañón del Colca</B></TD><TD>Arequipa</TD><TD>Uno de los cañones más profundos del mundo (~3 400 m); avistamiento del cóndor</TD><TD>–</TD></TR>
+<TR><TD><B>Reserva Nacional de Paracas</B></TD><TD>Ica</TD><TD>Fauna marina, paisaje desértico-costero</TD><TD>–</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">🏛️ <B>Machu Picchu:</B> Declarada <b>Maravilla del Mundo Moderno</b> en 2007 (por votación popular), <b>Patrimonio Mundial Cultural y Natural</b> de la UNESCO en 1983 (única en el Perú con la doble categoría junto al Santuario Histórico de Machu Picchu), y "Maravilla Natural de América" en 2011. Recibe alrededor de <b>1,5 millones de visitantes al año</b>, siendo el sitio turístico más visitado del Perú y uno de los 25 más visitados del mundo.</DIV>
+
+<H3 ID="pbi">6. El PBI y los sectores económicos del Perú</H3>
+
+El <B>Producto Bruto Interno (PBI)</B> es el valor total de todos los bienes y servicios producidos en un país en un periodo determinado (generalmente un año). El PBI del Perú es aproximadamente <B>250–280 mil millones de dólares</B> (varía según el año).
+
+<H4>Estructura del PBI por sectores:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sector</TH><TH>% del PBI aprox.</TH><TH>Actividades incluidas</TH></TR>
+<TR><TD><B>Sector primario (extractivo)</B></TD><TD>~20–22%</TD><TD>Minería, pesca, agricultura, silvicultura, petróleo y gas</TD></TR>
+<TR><TD><B>Sector secundario (industria)</B></TD><TD>~13–15%</TD><TD>Manufactura, construcción, electricidad y agua</TD></TR>
+<TR><TD><B>Sector terciario (servicios)</B></TD><TD>~60–65%</TD><TD>Comercio, transporte, turismo, telecomunicaciones, finanzas, educación, salud, gobierno</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El <B>sector terciario (servicios)</B> es el mayor contribuyente al PBI peruano (~60%). Sin embargo, el sector <B>minero</B> domina las <b>exportaciones</b> (más del 60% del total exportado). Esta aparente contradicción se explica porque muchos servicios (comercio, transporte, finanzas) están vinculados al sector minero y agroexportador.</DIV>
+
+<H4>PEA (Población Económicamente Activa) por sectores:</H4>
+<UL>
+<LI>El <B>sector primario</B> emplea a más del <B>25–30%</B> de la PEA (principalmente la agricultura de subsistencia en la sierra).</LI>
+<LI>El <B>sector terciario</B> emplea al <B>60–65%</B> de la PEA (comercio informal, servicios).</LI>
+<LI>La <B>informalidad laboral</B> afecta al 70–75% de los trabajadores peruanos, uno de los índices más altos de América Latina.</LI>
+</UL>
+
+<H3 ID="pobreza">7. Indicadores de desarrollo económico y desigualdad</H3>
+
+<H4>Indicadores clave:</H4>
+<UL>
+<LI><B>PBI per cápita:</B> el PBI dividido entre el número de habitantes. El Perú tiene un PBI per cápita de aproximadamente <B>7 000–8 000 dólares</B> anuales (país de ingreso medio-alto según el Banco Mundial).</LI>
+<LI><B>Índice de Desarrollo Humano (IDH):</B> mide salud (esperanza de vida), educación (años de escolaridad) e ingresos (PBI per cápita). El Perú tiene un IDH de desarrollo <b>medio-alto</b> (~0.76) pero con grandes disparidades entre Lima y las regiones rurales.</LI>
+<LI><B>Coeficiente de Gini:</B> mide la desigualdad en la distribución del ingreso (0 = igualdad perfecta; 1 = máxima desigualdad). El Perú tiene un Gini de ~0.43, indicando una desigualdad considerable.</LI>
+<LI><B>Pobreza:</B> aproximadamente el 25–30% de la población peruana vive en condiciones de pobreza; en zonas rurales andinas y amazónicas puede superar el 50%.</LI>
+</UL>
+
+<H4>Desigualdad regional:</H4>
+<UL>
+<LI>Lima concentra el <B>~50% del PBI nacional</B> y el ~35% de la población.</LI>
+<LI>Regiones como Huancavelica, Apurímac, Loreto y Cajamarca tienen los menores PBI per cápita y los mayores índices de pobreza y desnutrición crónica infantil.</LI>
+<LI>La desigualdad entre Lima y el resto del Perú es uno de los problemas estructurales más graves del país.</LI>
+</UL>
+
+<H3 ID="integracion">8. Integración económica regional e internacional</H3>
+
+<H4>Bloques económicos en los que participa el Perú:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Bloque / Organismo</TH><TH>Miembros</TH><TH>Función principal</TH></TR>
+<TR><TD><B>Alianza del Pacífico</B></TD><TD>Perú, Chile, Colombia, México</TD><TD>Libre comercio, movilidad de personas y capitales; foco en Asia-Pacífico</TD></TR>
+<TR><TD><B>Comunidad Andina (CAN)</B></TD><TD>Perú, Bolivia, Colombia, Ecuador</TD><TD>Unión aduanera, libre comercio intracomunitario, integración política</TD></TR>
+<TR><TD><B>MERCOSUR</B></TD><TD>Argentina, Brasil, Uruguay, Paraguay (Perú es Estado Asociado)</TD><TD>Unión aduanera del Cono Sur; el Perú no es miembro pleno</TD></TR>
+<TR><TD><B>APEC</B></TD><TD>21 economías del Pacífico (incluye Perú, EE.UU., China, Japón, Australia)</TD><TD>Cooperación económica Asia-Pacífico; el Perú fue sede en 2008 y 2016</TD></TR>
+<TR><TD><B>OMC</B></TD><TD>Casi todos los países del mundo</TD><TD>Regulación del comercio mundial; el Perú es miembro fundador (1995)</TD></TR>
+</TABLE>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál es el puerto más importante del Perú y qué porcentaje del comercio exterior concentra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) El puerto de Paita (Piura), que concentra el 50% del comercio exterior por ser el más cercano a los mercados asiáticos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) El puerto del Callao (Lima), que concentra más del 70% del comercio exterior peruano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) El puerto de Matarani (Arequipa), que concentra el 60% por ser el más moderno del país</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) El puerto de Ilo (Moquegua), que concentra el 80% por su cercanía a los yacimientos mineros del sur</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Puerto del Callao</B>, ubicado en la provincia constitucional del Callao (adyacente a Lima), es el más importante del Perú y uno de los más grandes de la costa del Pacífico sudamericano. Maneja más del <B>70% del comercio exterior</B> peruano en términos de valor. Es el puerto de entrada y salida de la mayoría de contenedores, incluyendo minerales, agroexportaciones y manufacturas. El nuevo <b>Puerto de Chancay</b> (Lima) se proyecta como un competidor y complemento estratégico al Callao.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> La carretera Interoceánica Sur (IIRSA Sur) conecta el Perú con Brasil atravesando:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La costa norte (Piura) hasta la frontera con Ecuador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Los puertos de Ilo y Matarani con Brasil, pasando por Cusco, Puno y Madre de Dios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Lima con Iquitos a través de la sierra central y la selva norte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Arequipa con Bolivia a través del altiplano puneño</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Carretera Interoceánica Sur</B> (IIRSA Sur), inaugurada en 2011, conecta los puertos del <b>Pacífico</b> (<b>Ilo</b> en Moquegua y <b>Matarani</b> en Arequipa) con el <b>Atlántico</b> (Brasil), atravesando <b>Cusco → Puno → Madre de Dios</b> y cruzando la frontera hacia el estado de Acre (Brasil). Es una de las obras de infraestructura más importantes de América del Sur porque permite el comercio entre el Pacífico asiático y el interior de Brasil. Sin embargo, también ha acelerado la deforestación y la minería ilegal en Madre de Dios.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Cuál de los siguientes productos NO es una exportación tradicional del Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Concentrado de cobre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Harina de pescado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Espárragos en conserva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Petróleo crudo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Las <B>exportaciones tradicionales</B> son materias primas o productos primarios con mínima transformación: minerales (cobre, oro, plata, zinc), harina de pescado, petróleo crudo, gas natural, café en grano. Los <B>espárragos en conserva</B> son una <b>exportación no tradicional</b>: el espárrago fresco o en conserva es un producto con valor agregado (procesamiento industrial), que además es perecedero y requiere tecnología de frío. El Perú es el primer exportador mundial de espárragos, tanto frescos como en conserva, principalmente hacia EE.UU. y la Unión Europea.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> La Alianza del Pacífico está integrada por:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Perú, Chile, Bolivia y Ecuador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Perú, Chile, Colombia y México</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Perú, Argentina, Colombia y México</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Perú, Chile, Colombia y Brasil</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Alianza del Pacífico</B> fue fundada en 2011 y está integrada por <b>Perú, Chile, Colombia y México</b>. Sus objetivos son construir una zona de libre comercio, facilitar la movilidad de personas (visa única), integrar los mercados de capitales (MILA: Mercado Integrado Latinoamericano) y proyectarse hacia la región Asia-Pacífico. Bolivia, Ecuador y Argentina son observadores pero no miembros plenos. No confundir con la <b>Comunidad Andina (CAN)</b>, que incluye Perú, Bolivia, Colombia y Ecuador.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Cuál es la principal vía de comunicación en la selva baja peruana, donde las carreteras son escasas o inexistentes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) El ferrocarril central andino, que se extiende hasta Iquitos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Los ríos amazónicos (transporte fluvial), que actúan como las principales "carreteras" de la selva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) La carretera Panamericana, que recorre también la selva norte del Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Los canales de irrigación construidos durante el gobierno del General Velasco</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En la <B>selva baja peruana</B>, los <b>ríos amazónicos</b> son la principal —y en muchos casos única— vía de comunicación y transporte. La ciudad de <b>Iquitos</b> (Loreto), la mayor ciudad del Perú sin acceso por carretera, solo puede alcanzarse por <b>vía aérea o fluvial</b>. Los ríos Amazonas, Ucayali, Marañón, Napo y Huallaga son navegados por embarcaciones de todo tamaño que transportan personas, alimentos, combustible y mercancías entre las comunidades amazónicas. El transporte fluvial es también fundamental para la economía forestal y pesquera de la selva.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> El Perú es el primer exportador mundial de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Palta (aguacate)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Arándanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Espárragos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Mango</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El Perú es el <B>primer exportador mundial de espárragos</B>, tanto frescos como en conserva. Los espárragos se cultivan principalmente en <b>Ica, La Libertad y Lambayeque</b>, aprovechando el desierto costero irrigado con agua de proyectos especiales como Chavimochic. Los principales destinos son <b>EE.UU. y la Unión Europea</b>. En cuanto a las otras opciones: el Perú es el 2° exportador de <b>arándanos</b> (ha crecido explosivamente), uno de los 5 mayores de <b>palta</b>, y exportador importante de <b>mango</b>, pero la primera posición absoluta en espárragos es la más reconocida.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Una empresa peruana exporta prendas de vestir de alpaca confeccionadas en Arequipa hacia Italia y Francia. ¿Cómo se clasifica esta exportación y qué ventaja competitiva le permite al Perú destacar en este mercado?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Es una exportación tradicional porque la fibra de alpaca es un recurso natural peruano; la ventaja competitiva es el bajo costo de la mano de obra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Es una exportación no tradicional porque tiene valor agregado (diseño, confección); la ventaja competitiva es la combinación única de materia prima exclusiva (fibra de alpaca, la más fina del mundo después de la vicuña) con artesanía andina de alta calidad reconocida mundialmente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Es una exportación no tradicional sin ventaja competitiva real; China y Bangladesh producen ropa más barata y ya dominan el mercado europeo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Es una exportación tradicional porque la alpaca existe desde tiempos prehispánicos y su fibra se exporta sin procesar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las prendas confeccionadas son <B>exportaciones no tradicionales</B>: tienen valor agregado en diseño, tejido y confección. La <b>ventaja competitiva</b> del Perú en textiles de alpaca y vicuña es real y difícil de replicar: (1) <b>Materia prima única</b>: la fibra de alpaca (<I>baby alpaca</I>) y vicuña son exclusivas de los Andes peruanos; ningún otro país puede producirlas en las mismas cantidades y calidad. (2) <b>Reconocimiento mundial</b>: las marcas "Made in Peru" y "Alpaca del Perú" tienen posicionamiento en el segmento <b>lujo</b> europeo y norteamericano. (3) <b>Tradición artesanal</b>: técnicas de tejido andinas de siglos de antigüedad. Marcas como <b>Kuna, Incalpaca y Sol Alpaca</b> (Arequipa) venden en las principales capitales de moda del mundo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> El Ferrocarril Central Andino que une Lima con Huancayo cruza el Abra de Ticlio a 4 818 m.s.n.m. ¿Por qué este dato es relevante en geografía económica y cuál es la función principal de este ferrocarril hoy?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Es relevante porque es el tren más rápido del mundo; su función es el transporte de pasajeros entre Lima y Huancayo en menos de 2 horas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Es relevante como record geográfico (uno de los ferrocarriles más altos del mundo) y como nexo de transporte de minerales de la sierra central (concentrados de zinc, cobre y plomo) hacia el puerto del Callao; tiene uso turístico limitado y esporádico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Es irrelevante económicamente; el ferrocarril está abandonado y ya no opera desde los años 90</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Su función principal es el transporte de gas natural licuado desde Camisea hasta Lima, evitando las carreteras de montaña</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Ferrocarril Central Andino</B> (Lima–La Oroya–Huancayo) es uno de los <b>ferrocarriles más altos del mundo</b>: su punto máximo, el túnel Galera en el Abra de Ticlio (Junín), está a <b>4 818 m.s.n.m.</b>, siendo durante décadas el punto más alto de cualquier ferrocarril estándar en el mundo. En términos económicos, su función principal actual es el <b>transporte de concentrados mineros</b> desde la sierra central (Cerro de Pasco, La Oroya) hacia el puerto del Callao para su exportación. El servicio de pasajeros es ocasional y turístico. Su construcción (1870–1908, bajo Henry Meiggs) fue una de las obras de ingeniería más ambiciosas del siglo XIX.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> El sector terciario (servicios) representa el 60–65% del PBI peruano, pero el sector minero domina las exportaciones. ¿Cómo se explica esta aparente contradicción?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Las cifras del PBI están equivocadas; en realidad la minería representa el 60% del PBI porque las exportaciones son el indicador más confiable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El PBI mide el valor total generado internamente (incluyendo servicios no exportables como comercio minorista, restaurantes, educación, salud, gobierno); la minería genera mucho valor en exportaciones pero emplea a poca gente; los servicios generan menos valor por unidad pero emplean a millones y su suma supera al sector minero en el PBI total</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Los servicios peruanos son los más caros de América Latina, por eso pesan tanto en el PBI aunque nadie los use en realidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) La minería no aparece en el PBI porque sus ingresos van directamente a empresas transnacionales y no se contabilizan como producción peruana</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>No hay contradicción: el <B>PBI</B> mide el <b>valor total de bienes y servicios producidos dentro del país</b>, incluyendo actividades que no se exportan. El sector <b>servicios</b> incluye: comercio minorista (mercados, tiendas), restaurantes y hoteles, transporte interno, educación, salud, telecomunicaciones, finanzas, gobierno. Estos servicios emplean a <b>millones de peruanos</b> y su suma acumulada supera el valor generado por la minería, que aunque produce mucho valor por tonelada de metal, emplea directamente a apenas el <b>2–3% de la PEA</b>. Las <b>exportaciones</b>, en cambio, miden solo lo que sale del país; la minería domina porque los minerales son los principales productos vendidos al exterior, aunque internamente generen menos empleo y PBI que los servicios.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Machu Picchu fue declarada "Maravilla del Mundo Moderno" en 2007. ¿Qué implicancias prácticas tuvo este reconocimiento para la economía peruana y qué problema de gestión genera actualmente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Ninguna: la declaratoria fue solo simbólica y no cambió el número de visitantes ni los ingresos por turismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Disparó el turismo internacional hacia el Perú, posicionando a Machu Picchu como destino ícono global; el problema es la saturación (aforo limitado a ~4 000 visitantes/día vs. demanda mucho mayor) que amenaza la conservación del sitio y genera conflictos entre el negocio turístico y la preservación patrimonial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Causó que la UNESCO le quitara la categoría de Patrimonio Mundial por exceso de turistas, lo que perjudicó las exportaciones de artesanías cusqueñas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Generó que el gobierno peruano privatizara completamente el sitio entregándolo a una empresa hotelera internacional, lo que aumentó los ingresos pero redujo el acceso para peruanos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La declaratoria de <B>Maravilla del Mundo Moderno</B> (2007) multiplicó la visibilidad y el atractivo de Machu Picchu a nivel global. Las consecuencias económicas fueron muy positivas: el turismo hacia Cusco y el Perú creció sostenidamente, generando empleo e ingresos. Sin embargo, el éxito trajo el <b>problema de la masificación</b>: Machu Picchu tiene una capacidad de carga limitada por su fragilidad arqueológica y ecológica. El aforo máximo es controversial: el Estado peruano, UNESCO y el Ministerio de Cultura han debatido cuántos visitantes/día son sostenibles (entre 3 000 y 5 600 según distintas estimaciones). Actualmente se implementa un sistema de <b>circuitos de visita con horarios</b> para distribuir el flujo. El pueblo de <b>Aguas Calientes</b> (Machu Picchu Pueblo) creció de manera desordenada, generando problemas de infraestructura, saneamiento y encarecimiento de vida para los residentes locales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> ¿Cuál es la diferencia entre el PBI y el PBI per cápita, y por qué el PBI per cápita es más útil para comparar el nivel de vida entre países?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) No hay diferencia; PBI y PBI per cápita son lo mismo expresado en distintas monedas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) El PBI es el valor total producido en el país; el PBI per cápita es el PBI dividido entre el número de habitantes; es más útil para comparar niveles de vida porque normaliza por el tamaño de la población, permitiendo comparar países de distintos tamaños</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) El PBI mide solo la producción de bienes físicos; el PBI per cápita incluye también los servicios digitales y la economía informal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) El PBI per cápita se calcula dividiendo el PBI entre el número de empresas formales, no entre habitantes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>PBI</B> es el valor total de bienes y servicios producidos en un país en un año. El <B>PBI per cápita</B> es el PBI dividido entre el número de habitantes: indica cuánta riqueza produce en promedio cada persona. Es más útil para <b>comparar niveles de vida</b> porque normaliza por la población: Estados Unidos tiene un PBI mucho mayor que Luxemburgo, pero Luxemburgo tiene un PBI per cápita mayor porque su población es pequeñísima. El PBI per cápita del Perú (~$7 000–8 000) es mayor que el de Bolivia (~$3 700) pero menor que el de Chile (~$16 000), lo que refleja diferencias reales en el nivel de vida promedio. Limitación del PBI per cápita: no mide la <b>distribución</b> del ingreso; puede ocultar desigualdades extremas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El auge de las agroexportaciones peruanas (espárragos, arándanos, palta, uva) en las últimas dos décadas ha transformado la economía costera. Sin embargo, existen críticas sobre su sostenibilidad. ¿Cuál es la principal tensión ambiental y social que genera este modelo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Los cultivos de exportación usan demasiados pesticidas que contaminan los alimentos que consumen los peruanos, pero no generan ningún problema de agua ni social</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La agroexportación costeña depende del agua de ríos andinos en una zona desértica; el crecimiento de la frontera agrícola (Chavimochic, Olmos, Majes-Siguas) incrementa la presión sobre cuencas ya sobreexplotadas, mientras que la concentración de tierras en grandes empresas desplaza a pequeños agricultores y genera trabajo precario estacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) La principal tensión es que las empresas agroexportadoras no pagan impuestos gracias al régimen agrario especial, lo que reduce el PBI fiscal sin ningún beneficio ambiental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) El modelo no tiene tensiones reales; es el ejemplo más exitoso de desarrollo sostenible en la historia económica peruana</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las tensiones del modelo agroexportador peruano son múltiples y documentadas: (1) <B>Crisis hídrica</B>: la costa peruana es un desierto; la expansión agroindustrial en Ica, La Libertad, Piura depende de agua subterránea (acuíferos) y de ríos andinos (trasvases). Los acuíferos del valle de Ica están críticamente sobreexplotados por el cultivo de espárragos; el río Ica casi no llega al mar. (2) <B>Concentración de tierras</B>: grandes empresas (Gloria, Camposol, Complejo Agroindustrial Beta) controlan decenas de miles de hectáreas en las pampas irrigadas, generadas por proyectos como Chavimochic, que beneficiaron principalmente al gran capital. (3) <B>Precariedad laboral</B>: el trabajo agroindustrial es estacional, con contratos temporales y bajos salarios, concentrado en mujeres y migrantes de la sierra. (4) <B>Régimen agrario especial</B>: hasta 2021, el sector agroindustrial tenía beneficios tributarios y laborales que generaron protestas masivas de trabajadores.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> El Puerto de Chancay, financiado por la empresa china COSCO Shipping, ha generado expectativas como hub del Pacífico sudamericano pero también preocupaciones geopolíticas. ¿Cuál es el análisis más completo de su impacto potencial?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Chancay es simplemente un puerto más sin impacto geopolítico; China solo invierte en infraestructura por razones puramente comerciales sin ninguna implicancia estratégica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Chancay puede reducir costos y tiempos de envío de exportaciones peruanas a Asia, fortalecer el rol del Perú como hub logístico regional y atraer inversión; pero genera preocupaciones sobre dependencia de infraestructura crítica en manos chinas, posibles cláusulas de soberanía en el contrato, y el impacto en comunidades pesqueras de Chancay</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Chancay es negativo para el Perú porque toda la riqueza generada irá a China; el Estado peruano no recibirá ningún beneficio fiscal ni empleará a trabajadores peruanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El impacto es exclusivamente positivo; cualquier inversión en infraestructura portuaria es buena para la economía sin excepciones posibles</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Puerto de Chancay</B> es la mayor inversión extranjera directa en infraestructura en la historia del Perú (~$3 600 millones en la primera fase). Sus <b>potenciales beneficios</b> son reales: reducir el tiempo de tránsito entre el Perú y China de ~35 a ~23 días, posicionarse como hub para Bolivia, Brasil occidental y Paraguay, y atraer inversión logística adicional. Las <b>preocupaciones</b> también son legítimas: (1) <b>Dependencia estratégica</b>: el Perú entrega el control de infraestructura crítica a una empresa estatal china (COSCO); en caso de tensión geopolítica, esto es una vulnerabilidad. (2) <b>Cláusulas del contrato</b>: se ha cuestionado si el contrato da acceso exclusivo a COSCO a la infraestructura portuaria por décadas. (3) <b>Impacto local</b>: la construcción afectó a la comunidad pesquera artesanal de Chancay. (4) Varios analistas comparan Chancay con el <b>Puerto de Hambantota</b> (Sri Lanka), entregado a China en concesión de 99 años cuando el país no pudo pagar la deuda.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El coeficiente de Gini del Perú es aproximadamente 0.43, lo que indica una desigualdad considerable. Si el PBI del Perú ha crecido a tasas de 5–6% anual durante la primera década del siglo XXI, ¿por qué la desigualdad persiste pese al crecimiento económico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La desigualdad persiste porque el crecimiento del PBI es una mentira estadística; el Perú realmente no creció en ese período</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El crecimiento económico peruano fue "extractivista sin redistribución": concentrado en minería e hidrocarburos de capital intensivo (poco empleo), con escasa inversión pública en salud y educación de calidad en regiones pobres, y una estructura tributaria que no captura suficientemente las ganancias del sector extractivo para redistribuirlas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La desigualdad persiste solo porque los peruanos pobres no quieren trabajar; el Estado ofrece empleo y no lo aprovechan</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La desigualdad es inevitable en cualquier economía en crecimiento; el Gini de 0.43 es bajo comparado con el promedio mundial y no representa un problema real</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Perú experimentó el "<B>milagro económico</B>" de 2002–2013 con crecimiento del PBI ~6% anual, reducción de la pobreza del 54% al 22%, y aumento del PBI per cápita. Sin embargo, la desigualdad se redujo lentamente por varias razones estructurales: (1) <b>Naturaleza del crecimiento</b>: la minería y el gas (sectores líderes) son <b>capital-intensivos</b>; crean pocas plazas de empleo directo y muchas ganancias van a accionistas (frecuentemente extranjeros). (2) <b>Distribución geográfica del crecimiento</b>: el crecimiento se concentró en Lima, la costa y algunos enclaves mineros, mientras regiones como Huancavelica, Cajamarca y Loreto se quedaron atrás. (3) <b>Débil capacidad redistributiva del Estado</b>: la presión tributaria peruana (~15–16% del PBI) es de las más bajas de la región; el Estado recauda poco y por tanto redistribuye poco. (4) <b>Educación y salud desiguales</b>: la calidad de los servicios públicos en zonas rurales es muy inferior a la de Lima, perpetuando las desventajas de las generaciones siguientes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> El economista Albert Hirschman describió los "encadenamientos hacia atrás y hacia adelante" para analizar cómo un sector productivo puede dinamizar el resto de la economía. Aplicando este concepto al sector minero peruano, ¿por qué este sector, pese a su enorme importancia exportadora, genera encadenamientos limitados en la economía nacional?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La minería peruana genera encadenamientos perfectos: toda la maquinaria es fabricada en el Perú y todos los trabajadores son peruanos de las comunidades locales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Los encadenamientos hacia atrás (insumos) son débiles porque la maquinaria minera se importa de EE.UU., Japón y Europa; los encadenamientos hacia adelante son casi inexistentes porque el Perú exporta concentrados sin refinar, no cobre manufacturado; esto limita la generación de empleo calificado, innovación tecnológica y valor agregado dentro del país</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La minería tiene encadenamientos hacia atrás perfectos porque el Perú produce toda la energía que necesita; el problema es solo la falta de encadenamientos hacia adelante en la manufactura de joyas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Los encadenamientos son irrelevantes para la economía peruana porque el modelo de libre mercado garantiza que los beneficios de la minería lleguen automáticamente a toda la población</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>encadenamientos productivos</B> (Hirschman) son los vínculos de demanda que un sector genera con otros: <b>hacia atrás</b> (demanda de insumos: maquinaria, explosivos, energía, servicios) y <b>hacia adelante</b> (uso de su producción como insumo de otros sectores: refinería, manufactura). La minería peruana tiene <b>encadenamientos débiles</b> por: (1) <b>Hacia atrás</b>: la maquinaria minera (camiones Caterpillar, palas WirtGen, equipos de perforación Sandvik) se importa de EE.UU., Suecia, Finlandia; el Perú no tiene industria de maquinaria pesada. Los explosivos y reactivos químicos también se importan en gran parte. (2) <b>Hacia adelante</b>: el Perú exporta <b>concentrado de cobre</b> (30–35% de cobre puro en polvo húmedo); la refinación y fundición se realiza en China, Japón y Europa. El valor agregado de refinar, producir alambre de cobre, cable eléctrico o circuitos impresos queda fuera del Perú. Si se refinara localmente, el valor por tonelada podría multiplicarse por 4. La excepción es <b>La Oroya</b> (refinería polimetálica) y <b>Ilo</b> (refinería de cobre de Southern), pero son casos parciales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El Perú tiene TLC con más de 20 países. Un crítico de los TLC argumenta que estos acuerdos benefician principalmente a los exportadores agroindustriales y mineros pero perjudican a la industria manufacturera nacional y a los pequeños agricultores. ¿Cuál es el fundamento más sólido de esta crítica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La crítica no tiene fundamento; todos los TLC benefician igualmente a todos los sectores y grupos de la sociedad peruana sin excepción</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La crítica tiene fundamento parcial: la apertura comercial sin políticas complementarias (reconversión industrial, protección transitoria, capacitación laboral) puede generar "desindustrialización" porque las manufacturas nacionales no pueden competir con la producción masiva de países con salarios más bajos; los pequeños agricultores de maíz o trigo no pueden competir con las importaciones subsidiadas de EE.UU.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La crítica es totalmen correcta en todos los aspectos; los TLC solo benefician a los países ricos y nunca a los países en desarrollo como el Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) El Perú no tiene TLC con ningún país; solo pertenece a la CAN y la Alianza del Pacífico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>TLC</B> generan <b>ganadores y perdedores</b> dentro de cada país. En el caso peruano: <b>Ganadores</b>: agroexportadores (espárragos, arándanos, paltas) que acceden a mercados de EE.UU. y UE con aranceles cero; mineras que exportan libremente; empresas de servicios que se internacionalizan. <b>Potenciales perdedores</b>: (1) <b>Pequeños agricultores</b> de productos como el maíz amarillo, el trigo o el algodón, que compiten con importaciones de EE.UU. donde los agricultores reciben subsidios del gobierno federal. La apertura con el TLC USA-Perú (2009) hizo que el maíz importado de EE.UU. desplazara al maíz peruano en el mercado avícola. (2) <b>Manufacturas locales</b>: la apertura de aranceles permite entrar productos chinos más baratos (calzado, ropa, plásticos) que compiten con la industria peruana. La clave es si el Estado peruano usa los beneficios del TLC para financiar <b>políticas de compensación y reconversión</b> para los sectores afectados, lo que en la práctica ha sido limitado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Lima concentra más del 50% de la producción industrial, el 50% del PBI y el 35% de la población peruana. Desde la teoría de polos de desarrollo (François Perroux), ¿cómo se explica esta concentración y qué políticas podría aplicar el Estado para generar polos alternativos de desarrollo en otras regiones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La concentración en Lima es natural e irreversible; no existe ninguna política que pueda generar desarrollo fuera de Lima en una economía de mercado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Lima es el "polo de desarrollo" dominante: genera efectos de aglomeración (concentración de mercados, talento humano, infraestructura, capital) que atraen más inversión en un ciclo acumulativo (Myrdal). Políticas para crear polos alternativos incluyen: inversión pública diferenciada en ciudades intermedias (Arequipa, Trujillo, Cusco, Piura), incentivos tributarios para empresas que se instalen en regiones, descentralización efectiva del gasto público, y desarrollo de infraestructura de conectividad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La solución es mover la capital del Perú a Cusco, lo que automáticamente transferirá toda la actividad económica de Lima al sur del país</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La concentración en Lima se debe exclusivamente a la corrupción de los gobiernos regionales, que ahuyentan la inversión del interior del país</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La teoría de los <B>polos de desarrollo</B> (François Perroux, 1955) postula que el crecimiento económico no ocurre uniformemente en el espacio sino que se concentra en "polos" (industrias o ciudades líderes) que irradian efectos al entorno. En el Perú, <b>Lima</b> es el polo dominante por razones históricas y geográficas (puerto del Callao, capital colonial, concentración de capital humano). El economista sueco Gunnar <b>Myrdal</b> explicó este fenómeno como "causación circular acumulativa": la concentración genera más concentración porque las empresas prefieren instalarse donde ya hay proveedores, trabajadores capacitados, mercados y servicios. Políticas para crear <b>polos alternativos</b>: (1) Inversión en ciudades intermedias con potencial: Arequipa (servicios, minería), Trujillo (agroexportación, turismo), Piura (petróleo, agroexportación, turismo costero). (2) <b>Zonas Económicas Especiales</b> con beneficios tributarios. (3) Descentralización real del gasto en salud y educación. (4) Infraestructura de conectividad (carreteras, aeropuertos, internet de banda ancha) en ciudades intermedias. (5) Universidades e institutos técnicos de calidad en regiones.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> La gastronomía peruana ha sido reconocida internacionalmente y Lima fue elegida "Mejor destino culinario del mundo" por varios años consecutivos. Desde la geografía económica, ¿cómo puede la gastronomía actuar como un "cluster" que dinamiza múltiples sectores económicos más allá del turismo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La gastronomía no puede ser un cluster económico porque no produce bienes físicos exportables; solo genera empleo en Lima para meseros y cocineros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La gastronomía peruana actúa como cluster al articular: agricultura (demanda de ingredientes nativos como quinua, ají amarillo, pisco, cacao), pesca (ceviche genera demanda de pescado fresco de calidad), manufactura (vajilla, menaje, envases), educación (institutos culinarios), turismo, y exportación de ingredientes y salsas; además fortalece la identidad nacional como ventaja competitiva en el mercado internacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El cluster gastronómico solo beneficia a chefs famosos como Gastón Acurio; los pequeños restaurantes y los agricultores que proveen los ingredientes no reciben ningún beneficio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La gastronomía peruana es una moda pasajera que desaparecerá cuando los turistas descubran la comida de otro país; no puede ser base de una estrategia económica seria</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Un <B>cluster</B> (Michael Porter) es una concentración geográfica de empresas, proveedores, instituciones e infraestructuras interconectadas en un sector particular. La <b>gastronomía peruana</b> funciona como un cluster multi-sectorial: (1) <b>Encadenamientos hacia atrás</b>: restaurantes de alta gama demandan ingredientes frescos de calidad (ají amarillo, huacatay, kion, pisco, quinua, cacao de origen), lo que incentiva la <b>agricultura de especialidad</b> en regiones como Arequipa, Cusco, Piura. (2) <b>Manufactura</b>: vajilla, menaje, procesamiento de aji (Tari, Sibarita), pisco, empaques. (3) <b>Educación</b>: Lima tiene más de 80 institutos culinarios; Le Cordon Bleu Perú, Gastón Acurio's Pachacútec en zonas de bajos ingresos. (4) <b>Exportación de ingredientes</b>: la oca, la quinua y el ají amarillo en pasta ya se exportan al mundo gracias al interés generado por la cocina peruana. (5) <b>Diplomacia gastronómica</b>: los restaurantes peruanos en el mundo (LIMA en Londres, Tanta en varias ciudades, Maido en Tokio) actúan como embajadas informales que atraen turistas y posicionan al Perú como destino.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> El Perú es miembro de APEC (Asia-Pacific Economic Cooperation) desde 1998 y ha sido sede de sus cumbres en 2008 y 2016. ¿Qué importancia estratégica tiene para el Perú pertenecer a APEC dado el contexto geográfico y económico del país?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) APEC no tiene importancia para el Perú porque el país está en América del Sur y no en el Pacífico asiático</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) APEC es estratégico para el Perú porque posiciona al país en el foro económico más dinámico del mundo (Asia-Pacífico genera más del 60% del PBI mundial), facilita el acceso a mercados asiáticos (China, Japón, Corea, Australia) que son los principales compradores de los minerales peruanos, y proyecta al Perú como hub del Pacífico sudamericano hacia el interior de Sudamérica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) La única importancia de APEC para el Perú es que permite a los peruanos viajar sin visa a todos los países miembros de la organización</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) APEC es importante solo porque permite al Perú recibir ayuda financiera del FMI y el Banco Mundial mediante los votos de los países asiáticos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>APEC</B> (21 economías, ~60% del PBI mundial y ~47% del comercio global) es el foro más importante de la región Asia-Pacífico. La importancia para el Perú es múltiple: (1) <b>Acceso a mercados</b>: China, Japón, Corea del Sur, Australia, Singapur y EE.UU. (todos en APEC) son los principales compradores de los minerales y productos agropecuarios peruanos. (2) <b>Facilitación del comercio</b>: APEC promueve la reducción de aranceles y barreras no arancelarias; el TLC Perú-China (también en APEC) es el más importante en volumen. (3) <b>Posicionamiento estratégico</b>: el Perú, con su frente al Pacífico (costa de ~2 400 km) y acceso al interior amazónico (IIRSA), puede proyectarse como <b>puerta de entrada de Asia a América del Sur</b>; Chancay refuerza exactamente esta visión. (4) <b>Diplomacia económica</b>: ser anfitrión de las cumbres APEC (Lima 2008, Lima 2016) elevó el perfil internacional del Perú y atrajo inversión extranjera.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Un analista económico afirma: "El principal desafío de la economía peruana en las próximas décadas no es crecer más, sino transformar la estructura productiva para reducir la dependencia de los commodities y construir una economía del conocimiento." ¿Cuáles son los obstáculos estructurales más importantes que enfrenta el Perú para realizar esta transformación?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) El único obstáculo es que el Perú tiene demasiadas montañas, lo que impide instalar fábricas y universidades fuera de la costa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Los principales obstáculos son: baja inversión en educación de calidad e I+D (Investigación y Desarrollo), escasa articulación entre universidad y empresa, informalidad económica masiva que impide acumulación de capital productivo, inestabilidad política crónica que ahuyenta la inversión de largo plazo, y la "maldición de los commodities" (mientras los minerales generan rentas fáciles, hay pocos incentivos para la diversificación)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) No hay obstáculos reales; el Perú ya tiene una economía del conocimiento porque Lima cuenta con muchas universidades privadas y centros comerciales modernos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El único obstáculo es la corrupción; si se elimina la corrupción, el Perú automáticamente se convierte en una economía del conocimiento en menos de 5 años</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La transición hacia una <B>economía del conocimiento</B> (basada en tecnología, innovación, servicios de alto valor agregado) requiere condiciones estructurales que el Perú tiene subdesarrolladas: (1) <b>Educación</b>: las pruebas PISA ubican a los estudiantes peruanos en los últimos lugares de América Latina en matemáticas, ciencias y lectura. La calidad de la educación pública es muy desigual entre Lima y el resto del país. (2) <b>I+D</b>: el Perú invierte menos del <b>0.2% del PBI</b> en investigación y desarrollo, cuando países innovadores invierten 2–4%. Concytec tiene un presupuesto mínimo. (3) <b>Informalidad</b>: el 70–75% de informalidad laboral implica que la mayoría de los trabajadores no acumula capital humano formal, no paga impuestos y opera fuera del sistema financiero. (4) <b>Inestabilidad política</b>: el Perú tuvo 6 presidentes en 5 años (2018–2023); la incertidumbre política reduce la inversión privada de largo plazo necesaria para I+D e industrialización. (5) <b>Dutch disease suave</b>: mientras los minerales generan ingresos sin necesidad de industrialización, las élites económicas no tienen incentivos para diversificar la economía. (6) <b>Débil articulación universidad-empresa</b>: la investigación universitaria rara vez se convierte en innovación comercial.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

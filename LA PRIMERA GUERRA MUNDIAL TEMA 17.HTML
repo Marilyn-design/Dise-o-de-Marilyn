@@ -1,0 +1,537 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>La Primera Guerra Mundial - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA UNIVERSAL &middot; TEMA 17</DIV>
+<H1>La Primera Guerra Mundial (1914&ndash;1918)</H1>
+<DIV CLASS="sub">Causas &middot; El sistema de alianzas &middot; El detonante &middot; Fases de la guerra &middot; Frentes &middot; Armas nuevas &middot; Tratado de Versalles &middot; Consecuencias</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. &iquest;Qu&eacute; fue la Primera Guerra Mundial?</H3>
+La <B>Primera Guerra Mundial</B> (tambi&eacute;n llamada la <B>Gran Guerra</B>) fue el conflicto armado de escala global que se desarroll&oacute; entre <B>1914 y 1918</B>, principalmente en Europa, pero con frentes secundarios en &Aacute;frica, el Medio Oriente y los oc&eacute;anos. Enfrento a dos grandes bloques: la <B>Triple Entente</B> (Francia, Gran Breta&ntilde;a y Rusia, m&aacute;s sus aliados) contra las <B>Potencias Centrales</B> (Alemania, el Imperio Austro-H&uacute;ngaro, el Imperio Otomano y Bulgaria). Fue la guerra m&aacute;s devastadora hasta entonces conocida: murieron entre <B>9 y 20 millones de personas</B> (entre militares y civiles), y sus consecuencias redibujaron el mapa pol&iacute;tico del mundo.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La Primera Guerra Mundial dura oficialmente del <B>28 de julio de 1914</B> (declaraci&oacute;n de guerra de Austria-Hungr&iacute;a a Serbia) al <B>11 de noviembre de 1918</B> (armisticio en el fr&eacute;nt occidental). No confundir: el asesinato del archiduque Francisco Fernando fue el <B>28 de junio de 1914</B> (el detonante), no el inicio oficial. El Tratado de Versalles se firm&oacute; el <B>28 de junio de 1919</B>.</DIV>
+
+<H3>2. El mundo antes de la guerra: el sistema de alianzas y las tensiones acumuladas</H3>
+La Primera Guerra Mundial no fue un conflicto repentino sino el resultado de tensiones acumuladas durante d&eacute;cadas. Para entenderla es necesario conocer el sistema internacional europeo de finales del siglo XIX y principios del XX.
+
+<H4>Las causas estructurales (el modelo MAIN):</H4>
+<UL>
+<LI><B>M &mdash; Militarismo:</B> las grandes potencias europeas hab&iacute;an desarrollado enormes ej&eacute;rcitos profesionales y marinas de guerra, y compet&iacute;an en una carrera armamentista sin precedentes. Alemania, en particular, hab&iacute;a construido una poderosa flota naval que amenazaba el dominio brit&aacute;nico del mar (Ley Naval alemana de 1898, almirante Tirpitz). Los estados mayores ten&iacute;an planes de guerra detallados listos para activarse (el Plan Schlieffen alem&aacute;n, el Plan XVII franc&eacute;s).</LI>
+<LI><B>A &mdash; Alianzas:</B> Europa estaba dividida en dos bloques militares r&iacute;gidos, creados por una red de tratados de defensa mutua. Una guerra entre dos naciones pod&iacute;a arrastrar autom&aacute;ticamente a todas las dem&aacute;s. (Ver secci&oacute;n 3.)</LI>
+<LI><B>I &mdash; Imperialismo:</B> las potencias europeas compet&iacute;an por colonias y zonas de influencia en &Aacute;frica y Asia. Las <B>crisis de Marruecos</B> (1905 y 1911) entre Francia y Alemania, y las <B>Guerras de los Balcanes</B> (1912&ndash;1913), generaron fricci&oacute;n diplomática creciente.</LI>
+<LI><B>N &mdash; Nacionalismo:</B> el nacionalismo exacerbado fue una fuerza desestabilizadora en dos sentidos: (a) el <B>pangermanismo</B> y el <B>paneslavismo</B> alentaban la expansi&oacute;n de Alemania y Rusia, respectivamente; (b) los <B>movimientos nacionales</B> dentro del Imperio Austro-H&uacute;ngaro (eslavos del sur, checos, polacos, rumanos) amenazaban con disolver el Imperio; el movimiento <B>paneslavo</B> serbio era la amenaza m&aacute;s directa.</LI>
+</UL>
+
+<H3>3. El sistema de alianzas: la "trampa de la guerra"</H3>
+
+<H4>La Triple Alianza (Pot&eacute;ncias Centrales):</H4>
+<UL>
+<LI><B>Alemania</B> (el Imperio alem&aacute;n del Kaiser Guillermo II): la mayor potencia militar continental; quer&iacute;a su "lugar bajo el sol" colonial y la hegemon&iacute;a europea.</LI>
+<LI><B>Austria-Hungr&iacute;a</B> (el Imperio dual de Francisco Jos&eacute; I): potencia multiétnica en declive; tem&iacute;a el nacionalismo eslavo que amenazaba su cohesi&oacute;n interna.</LI>
+<LI><B>Italia</B>: miembro original de la Triple Alianza pero que al inicio de la guerra declar&oacute; su <B>neutralidad</B> (argumentando que el tratado era defensivo y Austria hab&iacute;a atacado) y luego en <B>1915</B> entr&oacute; del lado de la Entente tras el secreto <B>Tratado de Londres</B>.</LI>
+<LI><B>Imperio Otomano</B> (Turqu&iacute;a): se uni&oacute; a las Potencias Centrales en noviembre de 1914.</LI>
+<LI><B>Bulgaria</B>: se uni&oacute; a las Potencias Centrales en 1915.</LI>
+</UL>
+
+<H4>La Triple Entente (Aliados):</H4>
+<UL>
+<LI><B>Francia</B>: revanchista desde la derrota de 1871 (Guerra Franco-Prusiana); quer&iacute;a recuperar <B>Alsacia y Lorena</B>.</LI>
+<LI><B>Gran Breta&ntilde;a</B>: potencia naval y colonial; preocupada por el ascenso naval alem&aacute;n y la hegemon&iacute;a continental germana.</LI>
+<LI><B>Rusia</B>: potencia eslava que se consideraba protectora de los eslavos de los Balcanes; enfrentada a Austria-Hungr&iacute;a por la influencia en la regi&oacute;n.</LI>
+<LI><B>Serbia</B>: pa&iacute;s peque&ntilde;o con grandes ambiciones panesl&aacute;vicas; respaldada por Rusia.</LI>
+<LI><B>Jap&oacute;n</B>: entr&oacute; del lado de la Entente en agosto de 1914 para apoderarse de las colonias alemanas en Asia.</LI>
+<LI><B>Italia</B>: entr&oacute; del lado de la Entente en mayo de 1915.</LI>
+<LI><B>EE.UU.</B>: entr&oacute; del lado de la Entente en <B>abril de 1917</B> (declaraci&oacute;n de guerra al Imperio alem&aacute;n).</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>El "juego de billas":</B> El sistema de alianzas convirti&oacute; a Europa en una trampa: cualquier conflicto bilateral pod&iacute;a escalar autom&aacute;ticamente a guerra continental. Como bolas de billar, el choque entre Austria-Hungr&iacute;a y Serbia arrastr&oacute; a Rusia (aliada de Serbia), que arrastr&oacute; a Alemania (aliada de Austria), que arrastr&oacute; a Francia (aliada de Rusia), que arrastr&oacute; a Gran Breta&ntilde;a (la entrada alemana en B&eacute;lgica neutral violaba tratados brit&aacute;nicos). En menos de seis semanas, un asesinato en Sarajevo hab&iacute;a convertido Europa en un campo de batalla.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128163; EL DETONANTE: EL ASESINATO DE SARAJEVO<SPAN>28 de junio de 1914 &middot; El archiduque Francisco Fernando y la crisis de julio</SPAN></DIV>
+
+<H3>4. El detonante: el asesinato de Sarajevo (28 de junio de 1914)</H3>
+El <B>28 de junio de 1914</B>, el <B>archiduque Francisco Fernando</B> de Austria-Hungr&iacute;a (heredero al trono imperial) y su esposa Sof&iacute;a fueron <B>asesinados</B> en <B>Sarajevo</B> (capital de Bosnia, entonces provincia austro-h&uacute;ngara) por el joven estudiante bosnio-serbio <B>Gavrilo Princip</B>, miembro de la organizaci&oacute;n nacionalista <B>Mano Negra</B> (vinculada a grupos ultranacionalistas serbios).
+
+<H4>La crisis de julio de 1914 (la escalada):</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fecha</TH><TH>Acci&oacute;n</TH><TH>Pa&iacute;s</TH></TR>
+<TR><TD><B>28 jun. 1914</B></TD><TD>Asesinato del archiduque Francisco Fernando en Sarajevo</TD><TD>Gavrilo Princip (Bosnia-Serbia)</TD></TR>
+<TR><TD><B>23 jul. 1914</B></TD><TD>Austria-Hungr&iacute;a entrega un <B>ultimátum</B> de 10 puntos a Serbia (exig&iacute;a control austr&iacute;aco de la investigaci&oacute;n dentro de Serbia)</TD><TD>Austria-Hungr&iacute;a</TD></TR>
+<TR><TD><B>25 jul. 1914</B></TD><TD>Serbia acepta casi todo el ultimátum salvo un punto; Austria-Hungr&iacute;a lo rechaza como insuficiente</TD><TD>Serbia</TD></TR>
+<TR><TD><B>28 jul. 1914</B></TD><TD><B>Austria-Hungr&iacute;a declara la guerra a Serbia</B>: inicio oficial de la Primera Guerra Mundial</TD><TD>Austria-Hungr&iacute;a</TD></TR>
+<TR><TD><B>30 jul. 1914</B></TD><TD>Rusia ordena la movilizaci&oacute;n general en apoyo de Serbia</TD><TD>Rusia</TD></TR>
+<TR><TD><B>1 ago. 1914</B></TD><TD>Alemania declara la guerra a Rusia</TD><TD>Alemania</TD></TR>
+<TR><TD><B>3 ago. 1914</B></TD><TD>Alemania declara la guerra a Francia; invade B&eacute;lgica neutral (Plan Schlieffen)</TD><TD>Alemania</TD></TR>
+<TR><TD><B>4 ago. 1914</B></TD><TD>Gran Breta&ntilde;a declara la guerra a Alemania (por la violaci&oacute;n de B&eacute;lgica)</TD><TD>Gran Breta&ntilde;a</TD></TR>
+<TR><TD><B>Nov. 1914</B></TD><TD>El Imperio Otomano entra del lado de las Potencias Centrales</TD><TD>Imperio Otomano</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#9876; LAS FASES DE LA GUERRA<SPAN>Del movimiento a las trincheras: c&oacute;mo se pele&oacute; la Gran Guerra</SPAN></DIV>
+
+<H3>5. Las fases de la Primera Guerra Mundial</H3>
+
+<H4>Fase 1: La guerra de movimiento (agosto &ndash; septiembre 1914)</H4>
+Alemania puso en marcha el <B>Plan Schlieffen</B>: atacar primero a Francia r&aacute;pidamente por B&eacute;lgica (para evitar una guerra en dos frentes), y luego girar contra Rusia. El plan casi funcion&oacute;: las tropas alemanas llegaron a 50 km de Par&iacute;s. Pero fueron detenidas en la <B>Primera Batalla del Marne</B> (5&ndash;12 de septiembre de 1914). El fr&aacute;caso del Plan Schlieffen cambi&oacute; radicalmente la naturaleza de la guerra: al no poder derrotar a Francia en 6 semanas, Alemania qued&oacute; atrapada en la guerra de dos frentes que precisamente quer&iacute;a evitar.
+
+<H4>Fase 2: La guerra de trincheras &mdash; el Fr&eacute;nte Occidental (1914&ndash;1917)</H4>
+Tras el Marne, ambos bandos "cavaron" y el <B>Frente Occidental</B> se estabiliz&oacute; en una l&iacute;nea de <B>trincheras</B> que se extend&iacute;a casi 700 km desde el Canal de la Mancha hasta la frontera suiza. Caracter&iacute;sticas de la guerra de trincheras:
+<UL>
+<LI>Las trincheras eran zanjas profundas (2&ndash;3 metros) reforzadas con sacos de arena y alambradas.</LI>
+<LI>Entre las trincheras opuestas hab&iacute;a la <B>"tierra de nadie"</B> (no man's land): terreno batido por art&iacute;ller&iacute;a, lleno de barro, cadáveres y alambres.</LI>
+<LI>Los ataques de infantería sobre las trincheras enemigas costaban miles de bajas para avanzar apenas unos metros.</LI>
+<LI>Las condiciones de vida eran infernales: fr&iacute;o, barro, ratas, enfermedades, gas venenoso.</LI>
+</UL>
+
+<H4>Las grandes batallas del Frente Occidental:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Batalla</TH><TH>Fecha</TH><TH>Datos</TH><TH>Resultado</TH></TR>
+<TR><TD><B>Batalla de Verd&uacute;n</B></TD><TD>Feb. &ndash; dic. 1916</TD><TD>Alemania vs. Francia; la batalla m&aacute;s larga de la guerra; &gt; 700.000 bajas en total</TD><TD>Empate; ninguno toma Verd&uacute;n; s&iacute;mbolo del sacrificio franc&eacute;s</TD></TR>
+<TR><TD><B>Batalla del Somme</B></TD><TD>Jul. &ndash; nov. 1916</TD><TD>Gran Breta&ntilde;a y Francia vs. Alemania; primer uso masivo del tanque (brit&aacute;nico); &gt; 1 mill&oacute;n de bajas; el 1 de julio de 1916, 57.000 soldados brit&aacute;nicos ca&iacute;dos en un solo d&iacute;a</TD><TD>Empate; avance de apenas 10 km; la batalla m&aacute;s sangrienta de la guerra</TD></TR>
+<TR><TD><B>Segunda Batalla del Marne</B></TD><TD>Jul. &ndash; ago. 1918</TD><TD>Entente vs. Alemania; &uacute;ltima ofensiva alemana; frenada con apoyo estadounidense</TD><TD>Victoria de la Entente; Alemania retrocede; fin de la guerra a la vista</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Fase 3: El Frente Oriental (1914&ndash;1917)</H4>
+El <B>Frente Oriental</B> (Alemania y Austria-Hungr&iacute;a vs. Rusia) fue m&aacute;s fluido y din&aacute;mico que el Occidental: los ej&eacute;rcitos se mov&iacute;an cientos de kil&oacute;metros. Rusia sufri&oacute; cat&aacute;strofes militares enormes (Batalla de Tannenberg, agosto 1914: Alemania destruye dos ej&eacute;rcitos rusos). La incapacidad del r&eacute;gimen zarista para conducir la guerra contribuy&oacute; directamente a la <B>Revoluci&oacute;n Rusa de 1917</B>.
+
+<H4>Fase 4: La entrada de EE.UU. y el fin de la guerra (1917&ndash;1918)</H4>
+Dos eventos cambiaron el curso de la guerra en 1917:
+<UL>
+<LI><B>La salida de Rusia:</B> la <B>Revoluci&oacute;n Bolchevique</B> (octubre/noviembre 1917) llev&oacute; a Lenin al poder, quien firm&oacute; el <B>Tratado de Brest-Litovsk</B> (marzo 1918) con Alemania: Rusia sali&oacute; de la guerra cediendo enormes territorios. Alemania pudo concentrar fuerzas en el Frente Occidental.</LI>
+<LI><B>La entrada de EE.UU.:</B> el <B>6 de abril de 1917</B>, el presidente <B>Woodrow Wilson</B> declar&oacute; la guerra a Alemania, motivado por: (a) la <B>guerra submarina irrestricta</B> alemana (hundimiento del <I>Lusitania</I> en 1915: 1.198 muertos, incluidos 128 estadounidenses); (b) el <B>telegrama Zimmermann</B> (enero 1917: Alemania propuso a M&eacute;xico atacar a EE.UU. a cambio de recuperar Texas, Nuevo M&eacute;xico y Arizona). La llegada de millones de soldados y recursos estadounidenses decidi&oacute; la guerra a favor de la Entente.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>El telegrama Zimmermann:</B> En enero de 1917, el canciller alem&aacute;n Arthur Zimmermann envi&oacute; un telegrama cifrado al gobierno mexicano proponi&eacute;ndole una alianza: si M&eacute;xico atacaba a EE.UU., Alemania le ayudar&iacute;a a recuperar Texas, Nuevo M&eacute;xico y Arizona. Los brit&aacute;nicos interceptaron y descifraron el telegrama, y lo entregaron a Washington. La publicaci&oacute;n del telegrama desencaden&oacute; la indignaci&oacute;n pública estadounidense y fue uno de los factores decisivos de la entrada de EE.UU. en la guerra. M&eacute;xico, en plena Revoluci&oacute;n, declin&oacute; la oferta.</DIV>
+
+<DIV CLASS="cultura-titulo">&#9883; INNOVACIONES B&Eacute;LICAS<SPAN>La guerra industrial: armas que cambiaron la guerra para siempre</SPAN></DIV>
+
+<H3>6. Las nuevas armas: la guerra industrial</H3>
+La Primera Guerra Mundial fue la primera guerra verdaderamente <B>industrial</B>: la maquinaria de la Segunda Revoluci&oacute;n Industrial se puso al servicio de la destrucci&oacute;n. Se usaron por primera vez o a gran escala armas que transformaron la guerra moderna:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Arma / Tecnolog&iacute;a</TH><TH>Pa&iacute;s que la introdujo</TH><TH>Uso y efecto</TH></TR>
+<TR><TD><B>Gas venenoso</B> (cloro, fosg&eacute;no, gas mostaza)</TD><TD>Alemania (primera vez: Ypres, abr. 1915)</TD><TD>Caus&oacute; bajas masivas y terror; ambos bandos lo usaron; el gas mostaza fue el m&aacute;s letal; llev&oacute; al desarrollo de las m&aacute;scaras antigás</TD></TR>
+<TR><TD><B>Tanque de guerra</B></TD><TD>Gran Breta&ntilde;a (primera vez: Somme, sep. 1916)</TD><TD>Dise&ntilde;ado para cruzar trincheras y alamb radas; cambi&oacute; la guerra de movimiento; las versiones de 1918 fueron decisivas</TD></TR>
+<TR><TD><B>Avi&oacute;n de combate</B></TD><TD>Ambos bandos desde 1914&ndash;15</TD><TD>Primero de reconocimiento, luego de combate (ases de la aviaci&oacute;n como el Bar&oacute;n Rojo, Manfred von Richthofen); primeros bombardeos estrat&eacute;gicos</TD></TR>
+<TR><TD><B>Submarino (U-Boot)</B></TD><TD>Alemania</TD><TD>Guerra submarina irrestricta: hundimiento de buques mercantes y civiles aliados; llev&oacute; a EE.UU. a la guerra; cerco econ&oacute;mico a Gran Breta&ntilde;a</TD></TR>
+<TR><TD><B>Ametralladora</B></TD><TD>Ambos bandos (mejorada en la guerra)</TD><TD>Hizo casi imposible el ataque de infantería sobre trincheras; explica las bajas masivas en ataques frontales</TD></TR>
+<TR><TD><B>Artiller&iacute;a pesada</B></TD><TD>Alemania (ca&ntilde;&oacute;n "Gran Berta"); ambos</TD><TD>Bombardeos de d&iacute;as o semanas antes de los ataques; desnivelaban el terreno; alertaban al enemigo</TD></TR>
+<TR><TD><B>Dirigibles (Zeppelines)</B></TD><TD>Alemania</TD><TD>Bombardeos sobre ciudades brit&aacute;nicas (Londres); primer bombardeo estrat&eacute;gico de la historia</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> El gas venenoso fue usado por primera vez a gran escala por Alemania en la <B>Segunda Batalla de Ypres</B> (22 de abril de 1915). El tanque fue usado por primera vez por Gran Breta&ntilde;a en la <B>Batalla del Somme</B> (septiembre de 1916). El submarino alem&aacute;n (U-Boot) fue el arma que motiv&oacute; la entrada de EE.UU. en la guerra (hundimiento del <I>Lusitania</I>, 7 de mayo de 1915).</DIV>
+
+<DIV CLASS="cultura-titulo">&#9876; OTROS FRENTES<SPAN>El mundo en guerra: Gallipoli, el Medio Oriente y el mar</SPAN></DIV>
+
+<H3>7. Los frentes secundarios y la guerra naval</H3>
+
+<H4>La Campa&ntilde;a de Gallipoli (1915&ndash;1916):</H4>
+La <B>Entente</B> intent&oacute; abrir un nuevo frente atacando el <B>Estrecho de los Dardanelos</B> (Imperio Otomano) para: abrir una ruta de abastecimiento a Rusia, sacar al Imperio Otomano de la guerra, y atacar a las Potencias Centrales por el sur. El desembarco en la pen&iacute;nsula de <B>Gallipoli</B> (abril 1915) fue uno de los mayores fracasos militares de la Entente: las tropas ANZAC (australianas y neozelandesas) y brit&aacute;nicas sufrieron 250.000 bajas sin lograr sus objetivos; evacuaron en enero de 1916. El episodio de Gallipoli tiene enorme importancia para <B>Australia y Nueva Zelanda</B> (el 25 de abril, D&iacute;a de los ANZAC, es su principal fecha patriótica).
+
+<H4>El Frente del Medio Oriente:</H4>
+La <B>Revuelta &Aacute;rabe</B> (1916): el <B>Jer&iacute;fe Husein de La Meca</B> se rebel&oacute; contra el Imperio Otomano apoyado por los brit&aacute;nicos (el famoso agente brit&aacute;nico <B>T.E. Lawrence</B>, "Lawrence de Arabia"). Los brit&aacute;nicos prometieron a los &aacute;rabes un Estado independiente; sin embargo, paralelamente firmaban el <B>Acuerdo Sykes-Picot</B> (1916) para repartirse el Medio Oriente entre Gran Breta&ntilde;a y Francia &mdash;una de las m&aacute;s grandes traiciones diplom&aacute;ticas del siglo XX.
+
+<H4>La guerra naval &mdash; Batalla de Jutlandia (31 de mayo &ndash; 1 de junio de 1916):</H4>
+La &uacute;nica gran batalla naval de la guerra: la Armada brit&aacute;nica vs. la Marina Imperial Alemana en el Mar del Norte. Resultado t&eacute;ctico ambiguo (Alemania hundi&oacute; m&aacute;s barcos brit&aacute;nicos) pero estratégico decisivo: la Armada alemana regres&oacute; a puerto y nunca m&aacute;s desaf&iacute;o el dominio brit&aacute;nico del mar; Alemania opt&oacute; por la guerra submarina irrestricta como alternativa.
+
+<DIV CLASS="cultura-titulo">&#128203; EL FIN DE LA GUERRA Y EL TRATADO DE VERSALLES<SPAN>El armisticio de 1918 y la paz punitiva que prepar&oacute; la siguiente guerra</SPAN></DIV>
+
+<H3>8. El fin de la guerra y el armisticio (1918)</H3>
+En 1918, la situaci&oacute;n de las Potencias Centrales era desesperada:
+<UL>
+<LI>El <B>bloqueo naval brit&aacute;nico</B> hab&iacute;a estrangulado la econom&iacute;a alemana: escasez de alimentos, materias primas y medicamentos.</LI>
+<LI>Las <B>Ofensivas de Primavera alemanas</B> (marzo&ndash;julio 1918, Operaci&oacute;n Michael) fueron el &uacute;ltimo intento alem&aacute;n de romper el Frente Occidental aprovechando las tropas liberadas tras Brest-Litovsk; avanzaron pero no rompieron la l&iacute;nea.</LI>
+<LI>La <B>Ofensiva de los Cien D&iacute;as</B> (agosto&ndash;noviembre 1918): la Entente, reforzada con tropas y material estadounidenses, lanz&oacute; una ofensiva imparable que empuj&oacute; a Alemania hacia atr&aacute;s de forma continua.</LI>
+<LI><B>Bulgaria</B> (septiembre), el <B>Imperio Otomano</B> (octubre) y <B>Austria-Hungr&iacute;a</B> (noviembre 1918) firmaron armisticios.</LI>
+<LI>La <B>Revoluci&oacute;n alemana de noviembre de 1918</B>: marineros y obreros se sublevaron; el Kaiser <B>Guillermo II abdic&oacute;</B> y huy&oacute; a los Pa&iacute;ses Bajos; se proclam&oacute; la <B>Rep&uacute;blica de Weimar</B>.</LI>
+<LI>El <B>11 de noviembre de 1918</B>, a las 11:00 h, entr&oacute; en vigor el <B>armisticio</B> en el Bosque de Compi&egrave;gne: silencio en el Frente Occidental.</LI>
+</UL>
+
+<H3>9. El Tratado de Versalles (28 de junio de 1919)</H3>
+La <B>Conferencia de Paz de Par&iacute;s</B> (enero&ndash;junio 1919) fue dominada por los <B>"Cuatro Grandes"</B>: el presidente estadounidense <B>Woodrow Wilson</B>, el primer ministro brit&aacute;nico <B>David Lloyd George</B>, el premier franc&eacute;s <B>Georges Clemenceau</B> y el premier italiano <B>Vittorio Orlando</B>. Los vencidos (Alemania, Austria, Hungr&iacute;a, Turqu&iacute;a, Bulgaria) no fueron invitados a negociar.
+
+<H4>Los 14 Puntos de Wilson vs. la "paz punitiva" francesa:</H4>
+El presidente <B>Wilson</B> propuso una paz basada en sus <B>14 Puntos</B>: autodeterminaci&oacute;n de los pueblos, libertad de navegaci&oacute;n, reducci&oacute;n de armamentos, creaci&oacute;n de una <B>Sociedad de Naciones</B>. Clemenceau (Francia), que hab&iacute;a sufrido dos invasiones alemanas en 50 a&ntilde;os, exig&iacute;a una paz punitiva que garantizara que Alemania nunca m&aacute;s pudiera atacar. El resultado fue una paz m&aacute;s punitiva que wilsoniana.
+
+<H4>Principales cl&aacute;usulas del Tratado de Versalles:</H4>
+<UL>
+<LI><B>Art&iacute;culo 231 ("Cl&aacute;usula de culpabilidad de guerra"):</B> Alemania admit&iacute;a ser la &uacute;nica responsable de la guerra y todas sus consecuencias. Fue la cl&aacute;usula m&aacute;s humillante y resentida.</LI>
+<LI><B>Reparaciones de guerra:</B> Alemania deb&iacute;a pagar la enorme suma de <B>132.000 millones de marcos oro</B> (fijado en 1921). Las reparaciones arruinaron la econom&iacute;a alemana y generaron la hiperinflaci&oacute;n de 1923.</LI>
+<LI><B>P&eacute;rdidas territoriales:</B> Alemania perdi&oacute; <B>Alsacia y Lorena</B> (devueltas a Francia), el <B>Corredor de Danzig</B> (a Polonia, separando Prusia Oriental del resto de Alemania), las <B>colonias africanas</B> (repartidas entre Gran Breta&ntilde;a y Francia), el <B>Sarre</B> (administrado por la Sociedad de Naciones 15 a&ntilde;os) y otros territorios.</LI>
+<LI><B>Limitaciones militares:</B> Alemania no pod&iacute;a tener m&aacute;s de <B>100.000 soldados</B>, ni tanques, ni artiller&iacute;a pesada, ni submarinos, ni aviaci&oacute;n militar; la zona del <B>Rin</B> qued&oacute; desmilitarizada.</LI>
+<LI><B>Creaci&oacute;n de la Sociedad de Naciones</B> (propuesta por Wilson, pero EE.UU. nunca la ratific&oacute; porque el Senado estadounidense rechaz&oacute; el tratado).</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> El Tratado de Versalles se firm&oacute; el <B>28 de junio de 1919</B> (exactamente 5 a&ntilde;os despu&eacute;s del asesinato de Sarajevo) en el <B>Sal&oacute;n de los Espejos</B> del Palacio de Versalles. El <B>Art&iacute;culo 231</B> es la "cl&aacute;usula de culpabilidad de guerra". Las reparaciones alemanas no terminaron de pagarse hasta el a&ntilde;o <B>2010</B>. EE.UU. <B>nunca ratific&oacute;</B> el Tratado de Versalles ni ingres&oacute; a la Sociedad de Naciones.</DIV>
+
+<H3>10. Las consecuencias de la Primera Guerra Mundial</H3>
+
+<H4>Consecuencias humanas y materiales:</H4>
+<UL>
+<LI>Entre <B>9 y 20 millones de muertos</B> (militares y civiles, seg&uacute;n la fuente).</LI>
+<LI>Aproximadamente <B>21 millones de heridos</B>.</LI>
+<LI>La <B>pandemia de gripe espa&ntilde;ola</B> (1918&ndash;1919), favorecida por las condiciones de la guerra, mat&oacute; entre 50 y 100 millones de personas en todo el mundo &mdash;m&aacute;s que la propia guerra.</LI>
+<LI>Destrucci&oacute;n total del norte de Francia y de Bélgica; ciudades, campos y sistemas econ&oacute;micos arrasados.</LI>
+</UL>
+
+<H4>Consecuencias pol&iacute;ticas: la ca&iacute;da de cuatro imperios:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Imperio</TH><TH>Lo que surgi&oacute; en su lugar</TH></TR>
+<TR><TD><B>Imperio Alem&aacute;n</B> (Kaiser Guillermo II)</TD><TD>Rep&uacute;blica de Weimar (1919&ndash;1933)</TD></TR>
+<TR><TD><B>Imperio Austro-H&uacute;ngaro</B> (Francisco Jos&eacute; I)</TD><TD>Austria, Hungr&iacute;a, Checoslovaquia, Yugoslavia, parte de Polonia y Rumania</TD></TR>
+<TR><TD><B>Imperio Ruso</B> (Zar Nicol&aacute;s II)</TD><TD>Uni&oacute;n Sovi&eacute;tica (URSS) tras la Revoluci&oacute;n Bolchevique de 1917</TD></TR>
+<TR><TD><B>Imperio Otomano</B> (Sult&aacute;n Mehmed VI)</TD><TD>Rep&uacute;blica de Turqu&iacute;a (Mustaf&aacute; Kemal Atat&uuml;rk); mandatos brit&aacute;nicos y franceses en el Medio Oriente</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Consecuencias ideol&oacute;gicas y a largo plazo:</H4>
+<UL>
+<LI><B>La Revoluci&oacute;n Rusa (1917):</B> el primer Estado comunista del mundo naci&oacute; directamente de la guerra.</LI>
+<LI><B>El ascenso del fascismo:</B> la humillaci&oacute;n de Alemania y la frustraci&oacute;n de Italia (que no recibi&oacute; los territorios prometidos) sembraron el terreno del fascismo italiano (Mussolini, 1922) y del nazismo alemán (Hitler, 1933).</LI>
+<LI><B>La "paz inestable":</B> el historiador brit&aacute;nico A.J.P. Taylor defini&oacute; el per&iacute;odo 1919&ndash;1939 como un "armisticio de 20 a&ntilde;os": Versalles era demasiado punitivo para que Alemania lo aceptara, pero no suficientemente aplastante para impedirle recuperarse.</LI>
+<LI><B>La Sociedad de Naciones:</B> primer intento de organizaci&oacute;n internacional para mantener la paz; fracas&oacute; por la ausencia de EE.UU. y la falta de mecanismos coercitivos.</LI>
+<LI><B>El fin de la hegemon&iacute;a europea:</B> Europa sali&oacute; de la guerra debilitada y endeudada con EE.UU.; el "siglo europeo" terminaba y empezaba el "siglo americano".</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">28 jun. 1914</DIV><DIV CLASS="dk-label">Asesinato del archiduque Francisco Fernando en Sarajevo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">28 jul. 1914</DIV><DIV CLASS="dk-label">Austria-Hungr&iacute;a declara guerra a Serbia: inicio oficial</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">7 may. 1915</DIV><DIV CLASS="dk-label">Hundimiento del <I>Lusitania</I>: 1.198 muertos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">6 abr. 1917</DIV><DIV CLASS="dk-label">EE.UU. declara guerra a Alemania</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">11 nov. 1918</DIV><DIV CLASS="dk-label">Armisticio: fin de la guerra (11:00 h)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">28 jun. 1919</DIV><DIV CLASS="dk-label">Tratado de Versalles firmado</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Causas (MAIN):</B> Militarismo &middot; Alianzas &middot; Imperialismo &middot; Nacionalismo<BR>
+&bull; <B>Bloques:</B> Triple Entente (Francia, GB, Rusia + aliados) vs. Potencias Centrales (Alemania, Austria-Hungr&iacute;a, Otomanos, Bulgaria)<BR>
+&bull; <B>Detonante:</B> Asesinato de Francisco Fernando (28 jun. 1914) por Gavrilo Princip en Sarajevo<BR>
+&bull; <B>Inicio oficial:</B> 28 jul. 1914 (Austria-Hungr&iacute;a declara guerra a Serbia)<BR>
+&bull; <B>Fases:</B> Guerra de movimiento (ago&ndash;sep. 1914) &rarr; Trincheras / Frente Occidental (1914&ndash;1918) &rarr; Frente Oriental (1914&ndash;1917) &rarr; Entrada EE.UU. + salida Rusia (1917) &rarr; Armisticio (11 nov. 1918)<BR>
+&bull; <B>Batallas clave:</B> Marne (1914) &middot; Verd&uacute;n (1916) &middot; Somme (1916) &middot; Jutlandia (naval, 1916)<BR>
+&bull; <B>Nuevas armas:</B> gas venenoso (Alemania, Ypres 1915) &middot; tanque (GB, Somme 1916) &middot; submarino &middot; avi&oacute;n &middot; ametralladora<BR>
+&bull; <B>EE.UU. entra por:</B> guerra submarina irrestricta + hundimiento del <I>Lusitania</I> + telegrama Zimmermann<BR>
+&bull; <B>Fin:</B> armisticio 11 nov. 1918; Tratado de Versalles 28 jun. 1919<BR>
+&bull; <B>Consecuencias:</B> 4 imperios ca&iacute;dos (Alem&aacute;n, Austro-H&uacute;ngaro, Ruso, Otomano) &middot; Revoluci&oacute;n Rusa &middot; Art. 231 culpabilidad alemana &middot; Reparaciones &rarr; hiperinflaci&oacute;n &rarr; nazismo &middot; Sociedad de Naciones &middot; Gripe espa&ntilde;ola
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;Cu&aacute;les fueron las fechas de inicio y fin oficiales de la Primera Guerra Mundial y qui&eacute;nes fueron los contendientes en cada bloque?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Inici&oacute; el 28 de junio de 1914 (asesinato en Sarajevo) y termin&oacute; el 28 de junio de 1919 (Tratado de Versalles); los bloques fueron la Triple Entente (Alemania, Austria-Hungr&iacute;a, Otomanos) contra los Aliados (Francia, GB, Rusia)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Inici&oacute; oficialmente el 28 de julio de 1914 (declaraci&oacute;n austro-h&uacute;ngara de guerra a Serbia) y termin&oacute; el 11 de noviembre de 1918 (armisticio); los Aliados o Triple Entente (Francia, Gran Breta&ntilde;a, Rusia y posteriormente EE.UU., Italia, Jap&oacute;n) se enfrentaron a las Potencias Centrales (Alemania, Austria-Hungr&iacute;a, Imperio Otomano, Bulgaria)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Inici&oacute; el 4 de agosto de 1914 (declaraci&oacute;n brit&aacute;nica de guerra) y termin&oacute; el 11 de noviembre de 1918; los bloques fueron idénticos a los de la Segunda Guerra Mundial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Inici&oacute; el 1 de agosto de 1914 (declaraci&oacute;n alemana de guerra a Rusia) y termin&oacute; el 28 de junio de 1919 (Tratado de Versalles); Italia estuvo siempre del lado de las Potencias Centrales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La cronolog&iacute;a exacta es esencial. El inicio <I>de facto</I> fue el <B>28 de junio de 1914</B> (asesinato de Sarajevo), pero el inicio <I>oficial</I> fue el <B>28 de julio de 1914</B>, cuando Austria-Hungr&iacute;a declar&oacute; la guerra a Serbia desencadenando la cadena de alianzas. El fin fue el <B>11 de noviembre de 1918</B> a las 11:00 h (armisticio en Compi&egrave;gne). El Tratado de Versalles (28 jun. 1919) fue la paz formal, no el fin de los combates. Los bloques: <B>Aliados / Triple Entente:</B> Francia, Gran Breta&ntilde;a, Rusia, Serbia, Bélgica, Jap&oacute;n, Italia (desde 1915), EE.UU. (desde 1917). <B>Potencias Centrales:</B> Alemania, Austria-Hungr&iacute;a, Imperio Otomano (desde nov. 1914), Bulgaria (desde 1915). Italia era originalmente de la Triple Alianza pero perman&eció neutral y luego cambió de bando.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Qui&eacute;n mat&oacute; al archiduque Francisco Fernando, d&oacute;nde, cu&aacute;ndo y por qu&eacute; fue el detonante de la guerra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) El archiduque fue asesinado por un agente secreto alem&aacute;n en Viena el 28 de julio de 1914, lo que le dio a Austria-Hungr&iacute;a el pretexto para atacar Serbia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El archiduque Francisco Fernando fue asesinado el 28 de junio de 1914 en Sarajevo (Bosnia) por <B>Gavrilo Princip</B>, joven bosnio-serbio miembro de la organizaci&oacute;n Mano Negra; fue el detonante porque Austria-Hungr&iacute;a responsabiliz&oacute; a Serbia del atentado, le dio un ultimátum humillante, y al rechazarlo parcialmente le declar&oacute; la guerra, activando el sistema de alianzas que arrastr&oacute; a toda Europa al conflicto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) El archiduque fue asesinado por el gobierno ruso el 28 de junio de 1914 en Sarajevo; Rusia quer&iacute;a provocar una guerra entre Austria-Hungr&iacute;a y Serbia para expandir su influencia en los Balcanes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) El archiduque Francisco Fernando fue asesinado el 4 de agosto de 1914 en Belgrado por un oficial serbio; fue el detonante porque Gran Breta&ntilde;a declar&oacute; inmediatamente la guerra a Serbia en defensa de Austria-Hungr&iacute;a</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Gavrilo Princip</B> (1894&ndash;1918) era un joven bosnio de 19 a&ntilde;os, miembro de la organizaci&oacute;n <B>Mano Negra</B> (vinculada al nacionalismo pangeslavo serbio). El <B>28 de junio de 1914</B>, el archiduque <B>Francisco Fernando</B> (heredero al trono austro-h&uacute;ngaro) visitaba <B>Sarajevo</B> (capital de Bosnia, entonces parte del Imperio Austro-H&uacute;ngaro). Tras un primer atentado fallido, el auto del archiduque tom&oacute; una ruta err&oacute;nea y qued&oacute; frente a Princip, quien le dispar&oacute; a él y a su esposa Sof&iacute;a a quemarropa. Ambos murieron. La secuencia posterior: Austria-Hungr&iacute;a culp&oacute; a Serbia &rarr; ultimátum de 10 puntos &rarr; Serbia acepta 9 puntos &rarr; Austria rechaza &rarr; declaraci&oacute;n de guerra (28 jul.) &rarr; Rusia moviliza &rarr; Alemania declara guerra a Rusia y Francia &rarr; GB entra por la invasi&oacute;n de Bélgica. El detonante no fue la causa de la guerra (las causas estructurales ya estaban dadas); fue la chispa que la encendi&oacute;.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Qu&eacute; fue el Plan Schlieffen y por qu&eacute; su fracaso fue decisivo en el desarrollo de la guerra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" Value="a"> a) El Plan Schlieffen fue la estrategia naval alemana para bloquear los puertos brit&aacute;nicos con submarinos y rendir a Gran Breta&ntilde;a por hambre en seis meses; su fracaso llev&oacute; a Alemania a adoptar la guerra de trincheras como alternativa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) El Plan Schlieffen fue el plan militar alemán para evitar la guerra en dos frentes: atacar a Francia r&aacute;pidamente a trav&eacute;s de B&eacute;lgica y derrotarla en 6 semanas antes de girar contra Rusia; su fracaso en la <B>Primera Batalla del Marne</B> (sept. 1914) oblig&oacute; a Alemania a la guerra de trincheras en dos frentes simult&aacute;neos, la situaci&oacute;n que precisamente quer&iacute;a evitar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El Plan Schlieffen fue la estrategia austriaca para invadir Serbia r&aacute;pidamente y presentar a Rusia un <I>fait accompli</I>; su fracaso cuando Rusia moviliz&oacute; m&aacute;s r&aacute;pido de lo esperado llev&oacute; a la entrada de Alemania en la guerra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El Plan Schlieffen fue el plan de los Aliados para rodear Alemania simult&aacute;neamente desde Francia (oeste) y Rusia (este); su fracaso se debi&oacute; a que Italia no cumpli&oacute; su parte del plan al declarar la neutralidad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Plan Schlieffen</B> fue elaborado por el jefe del Estado Mayor alemán, el conde <B>Alfred von Schlieffen</B> (1833&ndash;1913), y revisado por su sucesor Moltke el Joven. La premisa era la pesadilla alemana: una guerra en dos frentes simult&aacute;neos contra Francia (oeste) y Rusia (este). La soluci&oacute;n: derrotar a <B>Francia en 6 semanas</B> mediante un ataque de arco masivo a trav&eacute;s de <B>B&eacute;lgica neutral</B> (ignorando la neutralidad garantizada por Gran Breta&ntilde;a), rodeando Par&iacute;s por el oeste, y luego trasladar las tropas en ferrocarril al este para enfrentar a Rusia (que tardaba m&aacute;s en movilizarse). El plan casi funcion&oacute;: las tropas alemanas llegaron a 50 km de Par&iacute;s. Pero en la <B>Primera Batalla del Marne</B> (5&ndash;12 sep. 1914), los franceses y brit&aacute;nicos detuvieron el avance. El plan fracas&oacute; por: agotamiento de las tropas, resistencia inesperada de Bélgica, y retirada táctica alemana al Aisne. Consecuencia decisiva: Alemania qued&oacute; atrapada exactamente en la guerra de dos frentes que quer&iacute;a evitar.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qu&eacute; razones llevaron a Estados Unidos a entrar en la Primera Guerra Mundial en 1917?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) EE.UU. entr&oacute; en la guerra porque Francia e Inglaterra le deb&iacute;an enormes sumas de dinero y quer&iacute;a asegurarse de que los deudores ganaran la guerra y pudieran pagarle</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) EE.UU. entr&oacute; en la guerra el <B>6 de abril de 1917</B> principalmente por la <B>guerra submarina irrestricta alemana</B> (que hundia barcos neutrales y costó la vida a ciudadanos estadounidenses, incluidos los 1.198 muertos del <I>Lusitania</I> en 1915) y por el <B>telegrama Zimmermann</B> (en que Alemania propuso a M&eacute;xico una alianza contra EE.UU. a cambio de territorios texanos)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) EE.UU. entr&oacute; en la guerra para apoyar a Alemania contra Rusia, ya que consideraba que el comunismo bolchevique era la mayor amenaza para el orden internacional; cambi&oacute; de bando cuando Alemania invadi&oacute; B&eacute;lgica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) EE.UU. entr&oacute; en la guerra en 1915, inmediatamente despu&eacute;s del hundimiento del <I>Lusitania</I>; la demora en la declaraci&oacute;n formal fue solo bureaucr&aacute;tica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>EE.UU. mantuvo la <B>neutralidad</B> durante los primeros a&ntilde;os de la guerra bajo la doctrina "demasiado orgulloso para pelear" del presidente Wilson. Los factores que empujaron a la entrada: (1) <B>Guerra submarina irrestricta:</B> Alemania declar&oacute; en febrero de 1917 que hundir&iacute;a cualquier barco que navegara hacia Gran Breta&ntilde;a, incluidos los neutrales. El <B>hundimiento del <I>Lusitania</I></B> (7 may. 1915: 1.198 muertos, 128 estadounidenses) ya hab&iacute;a generado indignaci&oacute;n en 1915; Alemania hab&iacute;a prometido moderar la guerra submarina pero en 1917 la reanud&oacute; sin restricciones. (2) <B>Telegrama Zimmermann</B> (enero 1917): el canciller Zimmermann propuso a M&eacute;xico una alianza ofensiva contra EE.UU., a cambio de la cual recuperar&iacute;a Texas, Nuevo M&eacute;xico y Arizona. Los brit&aacute;nicos interceptaron el telegrama y lo entregaron a Washington; su publicaci&oacute;n encendi&oacute; la opini&oacute;n p&uacute;blica. El presidente Wilson declar&oacute; la guerra el <B>6 de abril de 1917</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qu&eacute; estableci&oacute; el Tratado de Versalles respecto a Alemania y por qu&eacute; fue tan controvertido?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) El Tratado de Versalles fue un tratado equilibrado que dividi&oacute; las responsabilidades de la guerra entre todos los pa&iacute;ses beligerantes; Alemania s&oacute;lo pag&oacute; una peque&ntilde;a indemnizaci&oacute;n simb&oacute;lica y conserv&oacute; todo su territorio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) El Tratado de Versalles (28 jun. 1919) impuso a Alemania: la <B>cl&aacute;usula de culpabilidad de guerra</B> (Art. 231), el pago de enormes <B>reparaciones</B> (132.000 millones de marcos oro), la <B>p&eacute;rdida de territorios</B> (Alsacia-Lorena, Corredor de Danzig, colonias) y severas <B>limitaciones militares</B> (100.000 soldados m&aacute;ximo); fue tan humillante que sembr&oacute; el resentimiento que alimentar&iacute;a el ascenso de Hitler</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) El Tratado de Versalles fue redactado por Alemania y Austria-Hungr&iacute;a para garantizar una paz justa; los Aliados lo aceptaron reluctantemente tras la mediacin de EE.UU.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) El Tratado de Versalles fue propuesto &iacute;ntegramente por Woodrow Wilson como parte de sus 14 Puntos; incluy&oacute; la autodeterminaci&oacute;n de todos los pueblos y el perd&oacute;n de deudas de guerra entre los pa&iacute;ses</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Tratado de Versalles</B> (28 jun. 1919) fue firmado en el Sal&oacute;n de los Espejos del Palacio de Versalles &mdash;deliberadamente el mismo lugar donde en 1871 Bismarck hab&iacute;a proclamado el Imperio Alem&aacute;n, tras humillar a Francia en la Guerra Franco-Prusiana. Sus cl&aacute;usulas principales para Alemania: (1) <B>Art&iacute;culo 231</B> ("Kriegsschuldklausel" o cl&aacute;usula de culpa de guerra): Alemania aceptaba ser la &uacute;nica responsable de la guerra. (2) <B>Reparaciones</B>: 132.000 millones de marcos oro (fijado en 1921); contribuy&oacute; a la hiperinflaci&oacute;n alemana de 1923. (3) <B>P&eacute;rdidas territoriales</B>: Alsacia-Lorena (a Francia); Corredor de Danzig y Posnania (a Polonia); Saarland (15 a&ntilde;os bajo la Sociedad de Naciones); colonias africanas y del Pac&iacute;fico (a GB, Francia, Jap&oacute;n); en total Alemania perdi&oacute; el 13% de su territorio y el 10% de su poblaci&oacute;n. (4) <B>Limitaciones militares</B>: máximo 100.000 soldados, sin tanques, sin aviaci&oacute;n militar, sin submarinos. Su impacto: el tratado fue tan humillante que los alemanes nunca lo aceptaron como leg&iacute;timo; fue el caldo de cultivo del nazismo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Explica c&oacute;mo el sistema de alianzas convirti&oacute; un conflicto regional (Austria-Hungr&iacute;a vs. Serbia) en una guerra mundial en menos de seis semanas.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) El sistema de alianzas fue irrelevante: cada pa&iacute;s decidi&oacute; entrar en la guerra por sus propias razones nacionales espec&iacute;ficas, sin ninguna obligaci&oacute;n formal de hacerlo; las alianzas no eran v&iacute;nculos jur&iacute;dicos sino meras declaraciones de intenciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El sistema de alianzas cre&oacute; una reacci&oacute;n en cadena autom&aacute;tica: la declaraci&oacute;n austro-h&uacute;ngara contra Serbia oblig&oacute; a Rusia (protectora de los eslavos) a movilizarse, lo que oblig&oacute; a Alemania (aliada de Austria) a declarar guerra a Rusia, lo que oblig&oacute; a Francia (aliada de Rusia) a movilizarse, lo que llev&oacute; a Alemania a invadir B&eacute;lgica neutral (Plan Schlieffen), lo que oblig&oacute; a Gran Breta&ntilde;a (garante de la neutralidad belga) a declarar la guerra; en seis semanas, un asesinato hab&iacute;a encendido toda Europa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El sistema de alianzas fue lento en activarse: pasaron varios meses de negociaciones diplom&aacute;ticas antes de que los pa&iacute;ses declararan la guerra; el estallido r&aacute;pido se debi&oacute; a decisiones personales de los monarcas, no a los tratados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Las alianzas dificultaron la escalada: Gran Breta&ntilde;a y Francia intentaron mediar y solo declararon la guerra cuando no tuvieron m&aacute;s opci&oacute;n; si no hubiera habido alianzas, la guerra habr&iacute;a sido igualmente inevitable pero habr&iacute;a tardado m&aacute;s en estallar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La reacci&oacute;n en cadena del verano de 1914 es uno de los procesos hist&oacute;ricos m&aacute;s estudiados. El mecanismo fue el siguiente: (1) <B>28 jul.:</B> Austria-Hungr&iacute;a declara guerra a Serbia. (2) <B>30 jul.:</B> Rusia ordena movilizaci&oacute;n general (no pod&iacute;a dejar caer a Serbia, su aliada eslava, sin perder toda influencia en los Balcanes). (3) <B>1 ago.:</B> Alemania declara guerra a Rusia (por el tratado con Austria y porque la movilizaci&oacute;n rusa activaba el Plan Schlieffen). (4) <B>3 ago.:</B> Alemania declara guerra a Francia (aliada de Rusia) e invade B&eacute;lgica neutral. (5) <B>4 ago.:</B> Gran Breta&ntilde;a declara guerra a Alemania (Gran Breta&ntilde;a hab&iacute;a garantizado la neutralidad belga en 1839; la invasi&oacute;n alemana de B&eacute;lgica era una violaci&oacute;n de ese compromiso; adem&aacute;s, una Alemania hegemónica en el continente era intolerable para los intereses brit&aacute;nicos). El historiador <B>Christopher Clark</B> (<I>Los son&aacute;mbulos</I>, 2012) arguye que todos los l&iacute;deres fueron "son&aacute;mbulos" que no buscaban la guerra total pero que el sistema de alianzas y planes militares los arrastr&oacute; hacia ella.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> &iquest;Por qu&eacute; la guerra de trincheras fue tan devastadora en t&eacute;rminos de bajas y tan ineficaz militarmente para avanzar?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) La guerra de trincheras fue devastadora porque los generales no ten&iacute;an ning&uacute;n plan de ataque; simplemente enviaban tropas al frente sin ning&uacute;n objetivo estrat&eacute;gico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) La guerra de trincheras fue devastadora porque exist&iacute;a un <B>desequilibrio tecnol&oacute;gico entre el ataque y la defensa</B>: la ametralladora, la artiller&iacute;a y el alambre de p&uacute;as hac&iacute;an casi imposible que la infantería cruzara la "tierra de nadie"; atacar costaba decenas de miles de bajas para avanzar metros; defender era m&aacute;s f&aacute;cil que atacar, creando un punto muerto durante a&ntilde;os</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) La guerra de trincheras fue una elecci&oacute;n estrat&eacute;gica deliberada de ambos bandos: prefer&iacute;an perder pocos hombres en las trincheras antes que arriesgar una batalla campal; fue una estrategia eficiente que minimiz&oacute; las bajas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) La guerra de trincheras fue solo un fen&oacute;meno del Frente Oriental; en el Frente Occidental la guerra sigui&oacute; siendo m&oacute;vil gracias al uso temprano de tanques y aviaci&oacute;n</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La guerra de trincheras en el <B>Frente Occidental</B> es el s&iacute;mbolo m&aacute;s duradero de la Primera Guerra Mundial. Su devastaci&oacute;n se explica por un <B>desequilibrio entre las capacidades defensivas y ofensivas</B> de la tecnolog&iacute;a disponible: la <B>ametralladora</B> pod&iacute;a disparar 400&ndash;600 balas por minuto; la <B>artiller&iacute;a pesada</B> pod&iacute;a bombardear durante d&iacute;as; el <B>alambre de p&uacute;as</B> (barbed wire) ralentizaba el avance de la infantería. Resultado: un regimiento que atacaba cruzando la "tierra de nadie" pod&iacute;a ser aniquilado en minutos. Ejemplos extremos: el <B>1 de julio de 1916</B> (primer d&iacute;a de la Batalla del Somme), el ej&eacute;rcito brit&aacute;nico sufri&oacute; <B>57.470 bajas en un solo d&iacute;a</B>, el mayor desastre militar brit&aacute;nico de la historia. En <B>Verd&uacute;n</B> (1916), m&aacute;s de 700.000 bajas para que ningún bando avanzara sustancialmente. Las soluciones llegaron tarde: el tanque (1916) y las t&aacute;cticas de infiltraci&oacute;n (Sturmtruppen alemanes, 1918) comenzaron a romper el punto muerto cuando la guerra ya casi terminaba.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;C&oacute;mo contribuy&oacute; la Primera Guerra Mundial al estallido de la Revoluci&oacute;n Rusa de 1917?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) La Primera Guerra Mundial no tuvo ninguna relaci&oacute;n con la Revoluci&oacute;n Rusa; esta se debi&oacute; exclusivamente a factores internos: la opresi&oacute;n zarista y el hambre desde el siglo XIX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) La guerra aceler&oacute; el colapso del r&eacute;gimen zarista: las cat&aacute;strofes militares (Tannenberg, 1914: 2 ej&eacute;rcitos rusos destruidos), los millones de bajas, el hambre en las ciudades, la incapacidad del Zar para conducir la guerra y el deterioro de las condiciones de vida destruyeron la legitimidad del r&eacute;gimen; en febrero de 1917 cay&oacute; el Zar Nicol&aacute;s II y en octubre los bolcheviques de Lenin tomaron el poder</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) La guerra ayud&oacute; inicialmente al r&eacute;gimen zarista, que gan&oacute; varias batallas importantes en 1914 y 1915; la Revoluci&oacute;n de 1917 fue provocada por el fin de la guerra y la desmovizaci&oacute;n de soldados desempleados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La Revoluci&oacute;n Rusa fue planeada y financiada por Alemania, que pag&oacute; a Lenin para que desestabilizara Rusia; sin intervenci&oacute;n alemana no habr&iacute;a habido revoluci&oacute;n</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relaci&oacute;n entre la Primera Guerra Mundial y la Revoluci&oacute;n Rusa es una de las conexiones causales m&aacute;s importantes de la historia del siglo XX. <B>C&oacute;mo la guerra destruy&oacute; al zarismo:</B> (1) <B>Cat&aacute;strofes militares:</B> <I>Tannenberg</I> (agosto 1914): dos ej&eacute;rcitos rusos destruidos; m&aacute;s de 300.000 muertos o prisioneros. En 1914&ndash;1916, Rusia sufri&oacute; entre 5 y 8 millones de bajas (muertos, heridos, prisioneros). (2) <B>Colapso econ&oacute;mico:</B> la guerra trastorn&oacute; el suministro de alimentos; las ciudades padec&iacute;an hambre. (3) <B>Crisis de legitimidad:</B> el Zar <B>Nicol&aacute;s II</B> asumi&oacute; personalmente el mando del ej&eacute;rcito en 1915, vinculando su figura a las derrotas; la Zarina (alemana de origen) y el monje Rásputin controlaban la corte. (4) <B>Revoluci&oacute;n de Febrero 1917:</B> huelgas y motines militares derrocaron al Zar. (5) <B>Octubre 1917:</B> Lenin (transportado en un "vagón sellado" por los alemanes, sí, pero con agenda propia) tom&oacute; el poder con los bolcheviques y firm&oacute; la paz con Alemania (Brest-Litovsk, marzo 1918).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Analiza el papel del gas venenoso como arma en la Primera Guerra Mundial: &iquest;qu&eacute; ventajas militares ofreci&oacute; y por qu&eacute; no fue decisivo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El gas venenoso fue el arma decisiva de la guerra: fue Alemania quien la us&oacute; y por eso gan&oacute; la guerra; los Aliados nunca pudieron desarrollar contramedidas efectivas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El gas venenoso (cloro, fosg&eacute;no, gas mostaza) sembr&oacute; terror y caus&oacute; bajas masivas, pero no fue decisivo: el viento pod&iacute;a volverlo contra quien lo disparaba; ambos bandos lo adoptaron r&aacute;pidamente; el desarrollo de la <B>m&aacute;scara antigás</B> redujo su efectividad; su uso fue considerado una violaci&oacute;n de las leyes de guerra y dej&oacute; una herencia de prohibici&oacute;n internacional (Protocolo de Ginebra, 1925)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El gas venenoso solo fue usado por Alemania en un ataque y fue prohibido internacionalmente a los tres d&iacute;as por las protestas de los pa&iacute;ses neutrales; no tuvo ninguna influencia real en el desarrollo de la guerra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) El gas venenoso fue usado solo en la Batalla de Verd&uacute;n y nunca en el Frente Oriental; fue el factor que permiti&oacute; a Francia resistir en Verd&uacute;n al ser usado en su favor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>gas venenoso</B> fue una de las innovaciones m&aacute;s aterradoras de la Primera Guerra Mundial. <B>Primer uso a gran escala:</B> Alemania en la <B>Segunda Batalla de Ypres</B> (<B>22 de abril de 1915</B>): liberaron 168 toneladas de cloro que mataron a miles de soldados aliados. Tipos de gases usados: <B>cloro</B> (1915); <B>fosg&eacute;no</B> (m&aacute;s letal, 1915); <B>gas mostaza</B> (<I>Yperite</I>: el m&aacute;s temible, 1917; no mataba inmediatamente sino que causaba ampollas, ceguera y sufrimiento prolongado). <B>Por qu&eacute; no fue decisivo:</B> (1) <B>Dependencia del viento:</B> si el viento cambiaba, el gas retornaba sobre quien lo disparaba. (2) <B>Adaptaci&oacute;n r&aacute;pida:</B> los Aliados desarrollaron máscaras antigás en semanas; luego ambos bandos las usaron. (3) <B>Ambos bandos lo usaron:</B> perdi&oacute; la ventaja del factor sorpresa. (4) No permit&iacute;a avanzar y consolidar terreno. <B>Legado:</B> el horror del gas venenoso llev&oacute; al <B>Protocolo de Ginebra (1925)</B>, que prohibi&oacute; su uso en la guerra; uno de los primeros acuerdos de control de armamentos de la historia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Por qu&eacute; el Acuerdo Sykes-Picot (1916) entre Gran Breta&ntilde;a y Francia es considerado una de las grandes traiciones diplom&aacute;ticas de la guerra y cu&aacute;les son sus consecuencias hasta hoy?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) El Acuerdo Sykes-Picot fue una traici&oacute;n porque GB y Francia prometieron a los turcos un Estado propio en An atolio y luego no lo cumplieron; Turqu&iacute;a sigui&oacute; reclamando ese Estado hasta el siglo XXI</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) El Acuerdo Sykes-Picot (mayo 1916) fue un acuerdo secreto entre GB y Francia para repartirse el Medio Oriente tras la guerra, mientras simult&aacute;neamente prom&iacute;an a los &aacute;rabes (Jer&iacute;fe Husein, Revuelta &Aacute;rabe) un gran Estado &aacute;rabe independiente; la traici&oacute;n de esas promesas y la divisi&oacute;n artificial del Medio Oriente en fronteras coloniales sin respetar identidades étnicas, religiosas o tribales sembraron los conflictos de Iraq, Siria, Palestina y L&iacute;bano que perduran hasta el siglo XXI</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) El Acuerdo Sykes-Picot fue un tratado p&uacute;blico y transparente que se negoci&oacute; con la participaci&oacute;n de los l&iacute;deres &aacute;rabes; la acusaci&oacute;n de "traici&oacute;n" es una exageraci&oacute;n de historiadores &aacute;rabes del siglo XX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) El Acuerdo Sykes-Picot prometi&oacute; a los jud&iacute;os el Estado de Israel; fue la base legal de la Declaraci&oacute;n Balfour y del mandato brit&aacute;nico en Palestina; su traici&oacute;n consisti&oacute; en que GB luego tambi&eacute;n limit&oacute; la inmigraci&oacute;n jud&iacute;a</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Acuerdo Sykes-Picot</B> (mayo 1916, firmado por el diplom&aacute;tico brit&aacute;nico Mark Sykes y el franc&eacute;s Fran&ccedil;ois Georges-Picot) es uno de los acuerdos diplom&aacute;ticos m&aacute;s cargados de consecuencias de la historia moderna. <B>El contexto de la traici&oacute;n:</B> Simultáneamente, los brit&aacute;nicos estaban prometiendo al <B>Jer&iacute;fe Husein de La Meca</B> (a trav&eacute;s de la correspondencia Hussein-McMahon, 1915) que si los &aacute;rabes se rebelaban contra el Imperio Otomano, Gran Breta&ntilde;a apoyar&iacute;a la creaci&oacute;n de un gran Estado &aacute;rabe unificado en el Medio Oriente. <B>El Acuerdo Sykes-Picot</B> divi dió secretamente esa misma regi&oacute;n en zonas de influencia: Gran Breta&ntilde;a controlar&iacute;a lo que hoy es Iraq, Jordania y Palestina; Francia controlar&iacute;a lo que hoy es Siria y L&iacute;bano. <B>Consecuencias hasta el siglo XXI:</B> las fronteras artificiales trazadas con regla en el mapa (sin respetar divisiones étnicas, tribales ni religiosas) crearon Estados multiétnicos inestables: Iraq (chiítas, sunnitas, kurdos), Siria (mismo problema), Líbano (17 grupos confesionales), el conflicto palestino-israelí. El ISIS (Estado Islámico) declar&oacute; en 2014 que su objetivo era "destruir el legado de Sykes-Picot".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Eval&uacute;a la afirmaci&oacute;n del historiador brit&aacute;nico A.J.P. Taylor de que el Tratado de Versalles fue "demasiado punitivo para ser aceptado, pero demasiado blando para impedir la recuperaci&oacute;n alemana": &iquest;por qu&eacute; esta "paz inestable" prepar&oacute; el terreno para la Segunda Guerra Mundial?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) La afirmaci&oacute;n de Taylor es incorrecta: Versalles fue una paz perfectamente equilibrada; la Segunda Guerra Mundial se habr&iacute;a producido de todas formas por el militarismo inherente al pueblo alem&aacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Taylor capta una paradoja real: las cl&aacute;usulas humillantes de Versalles (Art. 231, reparaciones, p&eacute;rdidas territoriales) generaron resentimiento y ultranacionalismo alem&aacute;n que Hitler aprovech&oacute;; pero las cl&aacute;usulas militares no destruyeron la <B>capacidad industrial</B> alemana, lo que permiti&oacute; el rearme nazi en los a&ntilde;os 1930; la paz punitiva cre&oacute; el motivo pero no elimin&oacute; los medios: la combinaci&oacute;n fue explosiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Taylor tiene raz&oacute;n en que Versalles fue punitivo, pero la Segunda Guerra Mundial se habr&iacute;a evitado si EE.UU. hubiera ingresado a la Sociedad de Naciones y garantizado el cumplimiento del tratado; la falla fue norteamericana, no del tratado en s&iacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) El Tratado de Versalles fue demasiado blando: no destruy&oacute; el Estado alem&aacute;n ni ocup&oacute; Alemania permanentemente; la raz&oacute;n por la que preparó la Segunda Guerra Mundial fue precisamente que dej&oacute; a Alemania intacta geogr&aacute;ficamente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La paradoja de Versalles que Taylor identifica es uno de los debates m&aacute;s ricos de la historiograf&iacute;a del siglo XX. <B>Por qu&eacute; fue "demasiado punitivo":</B> (1) El <B>Art&iacute;culo 231</B> (culpabilidad de guerra) fue vivido por los alemanes como una mentira hist&oacute;rica: todos los pa&iacute;ses participaron en la escalada de 1914. (2) Las reparaciones (132.000 millones de marcos oro) eran impagables: contribuyeron a la <B>hiperinflaci&oacute;n de 1923</B> (un d&oacute;lar lleg&oacute; a valer 4,2 billones de marcos). (3) Las p&eacute;rdidas territoriales (especialmente el <B>Corredor de Danzig</B>) dividieron el territorio alemán y dejaron alemanes bajo soberanía polaca. (4) Todo esto cre&oacute; el <B>resentimiento nacionalista</B> que Hitler convirtió en combustible político. <B>Por qu&eacute; fue "demasiado blando":</B> (1) No destruy&oacute; la industria alemana: las f&aacute;bricas, el carbón del Ruhr y la infraestructura industrial permanecieron. (2) No ocup&oacute; permanentemente Alemania. (3) Desde 1933, Hitler revirtió cl&aacute;usula por cl&aacute;usula: rearme (1935), Renania (1936), Austria (1938), Checoslovaquia (1938&ndash;39), sin que las potencias lo detuvieran. <B>La c) también captura una verdad parcial:</B> la ausencia de EE.UU. de la Sociedad de Naciones fue un factor de debilidad decisivo del orden de Versalles.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> &iquest;C&oacute;mo transform&oacute; la Primera Guerra Mundial el rol de la mujer en las sociedades occidentales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La guerra no tuvo ning&uacute;n impacto en el rol de la mujer: los gobiernos se aseguraron de que las mujeres permanecieran en sus roles tradicionales para mantener la moral del frente interno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La masiva incorporaci&oacute;n de las mujeres al trabajo industrial, agrícola y administrativo (para reemplazar a los hombres en el frente) demostr&oacute; su capacidad en roles que les estaban vedados; aceler&oacute; el sufragio femenino: GB (1918), Alemania (1918), EE.UU. (1920), Francia (1944); las "flappers" de los a&ntilde;os 20 simbolizaron la nueva libertad femenina posguerra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) La guerra empeoró la situaci&oacute;n de la mujer: fueron obligadas a trabajar en f&aacute;bricas en condiciones de esclavitud y sin salario; al terminar la guerra, fueron expulsadas del mercado laboral sin ning&uacute;n reconocimiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La guerra transform&oacute; a la mujer solo en Alemania: las mujeres alemanas recibieron el voto en 1917 como recompensa por su trabajo en las f&aacute;bricas de armamentos; en los dem&aacute;s pa&iacute;ses no hubo cambio hasta los a&ntilde;os 1930</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La Primera Guerra Mundial fue un <B>acelerador del cambio social</B> en el rol de las mujeres, aunque sus efectos fueron complejos y no lineales. <B>Durante la guerra:</B> con millones de hombres en el frente, las mujeres ocuparon masivamente: (1) <B>F&aacute;bricas de armamentos</B> ("munitionettes" en GB: mujeres que fabricaban obuses); (2) <B>Trabajo agrícola</B>; (3) <B>Enfermería y servicios sanitarios</B>; (4) <B>Administraci&oacute;n p&uacute;blica</B>, tranv&iacute;as, correos; (5) <B>Espionaje y tareas auxiliares militares</B>. Esta participaci&oacute;n masiva hizo pol&iacute;ticamente insostenible negarles el voto. <B>Sufragio femenino tras la guerra:</B> Rusia 1917 (la primera); <B>Alemania y Austria 1918</B>; <B>Gran Breta&ntilde;a 1918</B> (mayores de 30; en 1928 igual que los hombres); <B>EE.UU. 1920</B> (19.a Enmienda); Francia tuvo que esperar hasta 1944 (resistencia de los legisladores conservadores). <B>Cambios culturales:</B> los a&ntilde;os 20 ("Locos A&ntilde;os 20") vieron el surgimiento de la mujer independiente (las "flappers": fumaban, bailaban jazz, se cortaban el pelo, vest&iacute;an de otra forma). La guerra no "cre&oacute;" la emancipaci&oacute;n femenina, pero la aceler&oacute; decisivamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Compara la Primera Guerra Mundial con la guerra napoleónica de cien a&ntilde;os antes: &iquest;en qu&eacute; sentido la Primera Guerra Mundial fue la primera "guerra total" de la historia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La Primera Guerra Mundial no fue m&aacute;s "total" que las guerras napoleónicas; Napole&oacute;n ya hab&iacute;a movilizado masas nacionales, destruido capitales y rediseñado el mapa europeo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La Primera Guerra Mundial fue la primera "guerra total" porque involucr&oacute; <B>a toda la sociedad de los pa&iacute;ses beligerantes</B>: no solo los ej&eacute;rcitos sino las econom&iacute;as enteras (producci&oacute;n industrial de armamentos), las poblaciones civiles (racionamiento, propaganda, bombardeos de ciudades), los imperios coloniales (tropas de &Aacute;frica y Asia) y la ciencia (armas qu&iacute;micas, aviaci&oacute;n); el Estado control&oacute; la econom&iacute;a y la vida cotidiana de una manera sin precedentes en la historia occidental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La Primera Guerra Mundial fue "total" solo en el sentido geogr&aacute;fico (frentes en Europa, &Aacute;frica, Asia, los oc&eacute;anos); en t&eacute;rminos de movilizaci&oacute;n social fue menos total que las guerras napoleónicas, en las que toda Europa estaba en guerra durante veinte a&ntilde;os</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El concepto de "guerra total" fue inventado por el general alem&aacute;n Erich Ludendorff en 1935 para describir la Segunda Guerra Mundial; no se aplica correctamente a la Primera</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El concepto de <B>"guerra total"</B> (<I>totaler Krieg</I>) fue teorizado por el general alem&aacute;n <B>Erich Ludendorff</B> en 1935, pero describe perfectamente la Primera Guerra Mundial. <B>Dimensiones de la "totalidad":</B> (1) <B>Movilizaci&oacute;n industrial:</B> las f&aacute;bricas enteras se reconvirtieron para producir armamento; el acero, el carb&oacute;n y los alimentos fueron racionados y dirigidos por el Estado. (2) <B>Movilizaci&oacute;n poblacional:</B> millones de hombres fueron reclutados; mujeres y ni&ntilde;os integraron la "reserva laboral". (3) <B>Econom&iacute;as de guerra:</B> los gobiernos intervinieron la econom&iacute;a de una forma antes reservada a los socialistas (precios, produccin, distribuci&oacute;n). (4) <B>Civiles como objetivo:</B> el bloqueo naval brit&aacute;nico mat&oacute; a civiles alemanes por hambre (estimados 763.000 muertos civiles por el bloqueo); los zeppelines alemanes bombardearon Londres. (5) <B>Propaganda:</B> la manipulaci&oacute;n de la opini&oacute;n p&uacute;blica se convirti&oacute; en componente esencial de la guerra. (6) <B>Imperios coloniales:</B> tropas de India, Australia, Nueva Zelanda, &Aacute;frica Occidental, Marruecos y Indochina lucharon en frentes europeos. En comparaci&oacute;n, las guerras napoleónicas movilizaron masas, pero no transformaron las econom&iacute;as de la misma manera ni involucraron armas industriales masivas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Analiza el debate historiogrráfico sobre las responsabilidades del estallido de la Primera Guerra Mundial: las tesis de Fritz Fischer vs. Christopher Clark.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Fritz Fischer y Christopher Clark llegan a las mismas conclusiones: ambos argumentan que Alemania fue la &uacute;nica responsable de la guerra y que la planific&oacute; deliberadamente desde 1912</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Fritz Fischer (1961) argument&oacute; que Alemania busc&oacute; deliberadamente la guerra para lograr la hegemon&iacute;a europea (tesis de la "guerra de objetivos"); Christopher Clark (2012) propuso que todos los pa&iacute;ses fueron "son&aacute;mbulos" que cayeron en la guerra sin quererla realmente; el debate refleja distintas formas de distribuir la responsabilidad: culpa alemana deliberada vs. irresponsabilidad colectiva europea</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Fritz Fischer argument&oacute; que Francia fue la responsable (por el revanchismo de 1871) y Clark que fue Rusia (por la movilizaci&oacute;n general que Alemania no pudo ignorar); el debate es exclusivamente sobre qui&eacute;n moviliz&oacute; primero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Fischer y Clark son historiadores del mismo pa&iacute;s y del mismo per&iacute;odo; sus tesis son complementarias y no existe ning&uacute;n debate real entre ellas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El debate sobre las responsabilidades de la Primera Guerra Mundial es uno de los m&aacute;s vivos de la historiograf&iacute;a contempor&aacute;nea. <B>Fritz Fischer</B> (<I>Los objetivos de guerra de la Alemania imperial</I>, 1961): el historiador alem&aacute;n argumentó que Alemania no "cayó" en la guerra sino que la <B>busc&oacute; deliberadamente</B> para lograr la hegemon&iacute;a europea y colonial; sus evidencias: el "Memorandum de septiembre" (el programa de guerra territorial alem&aacute;n de 1914) y el Consejo de Guerra de diciembre de 1912 (donde el Kaiser y sus generales discutieron la conveniencia de la guerra). Fischer fue polémico en la Alemania de posguerra porque cuestionaba la narrativa de que Alemania hab&iacute;a "ca&iacute;do" en la guerra. <B>Christopher Clark</B> (<I>Los sonámbulos</I>, 2012): argue que los lderes de todos los pa&iacute;ses fueron "<B>son&aacute;mbulos</B>": ninguno buscaba la guerra mundial que obtuvo; todos tomaron decisiones que parecían razonables individualmente pero que colectivamente produjeron una cat&aacute;strofe; Serbia, Rusia y Austria tienen tanta responsabilidad como Alemania. <B>El debate en contexto:</B> el Art&iacute;culo 231 de Versalles puso toda la culpa en Alemania por razones pol&iacute;ticas (justificar las reparaciones); la historiograf&iacute;a posguerra fue gradualmente distribuyendo m&aacute;s responsabilidades entre todos los pa&iacute;ses; hoy predomina la visi&oacute;n multicausal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> &iquest;De qu&eacute; manera la Primera Guerra Mundial transform&oacute; el sistema internacional y puso fin a la "era europea" de la historia mundial?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La Primera Guerra Mundial no puso fin a la hegemon&iacute;a europea: Europa sigui&oacute; dominando el mundo hasta 1945; la guerra fue un conflicto europ&eacute;o que no afect&oacute; el equilibrio de poder global</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La guerra destruy&oacute; la hegemon&iacute;a europea de cuatro maneras: (1) <B>Econ&oacute;mica</B>: Europa sali&oacute; endeudada con EE.UU.; el d&oacute;lar reemplaz&oacute; a la libra esterlina como moneda de reserva; (2) <B>Demogr&aacute;fica</B>: perdi&oacute; entre 9 y 20 millones de j&oacute;venes; (3) <B>Pol&iacute;tica</B>: cay&oacute; el sistema de monarqu&iacute;as europeas que gobernaba el mundo; emergi&oacute; EE.UU. como potencia decisiva; (4) <B>Moral</B>: la guerra destruy&oacute; el mito del "progreso" y la superioridad civilizatoria europea que legitimaba el colonialismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La guerra solo transform&oacute; Europa Oriental: los imperios del este colapsaron pero los del oeste (Gran Breta&ntilde;a, Francia) salieron fortalecidos y m&aacute;s grandes que antes gracias a la adquisici&oacute;n de nuevas colonias alemanas y otomanas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) EE.UU. no emergi&oacute; como nueva potencia tras la Primera Guerra Mundial; su ingreso tard&iacute;o (1917) y su retirada inmediata del escenario internacional (rechazo de Versalles) confirmaron que seguía siendo una potencia regional sin ambiciones globales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El fin de la "era europea" es uno de los legados m&aacute;s profundos de la Primera Guerra Mundial. <B>Dimensi&oacute;n econ&oacute;mica:</B> antes de 1914, Londres era el centro financiero del mundo y la libra esterlina la moneda de reserva. Para pagar la guerra, GB y Francia se endeudaron masivamente con EE.UU. De deudores a acreedores, los estadounidenses emergieron como la mayor potencia econ&oacute;mica mundial; el d&oacute;lar empez&oacute; su camino hacia la hegemon&iacute;a monetaria. <B>Dimensi&oacute;n demogr&aacute;fica:</B> Europa perdi&oacute; una generaci&oacute;n de j&oacute;venes; Francia, con 1,4 millones de muertos militares m&aacute;s 300.000 civiles, qued&oacute; con una pirámide de poblaci&oacute;n desequilibrada que limit&oacute; su capacidad de respuesta en los a&ntilde;os 30. <B>Dimensi&oacute;n política:</B> los cuatro grandes imperios multiétnicos (alemán, austro-húngaro, ruso, otomano) desaparecieron; el mapa de Europa fue completamente redibujado con el principio de autodeterminaci&oacute;n. <B>Dimensi&oacute;n moral y colonial:</B> el "salvajismo" europeo en las trincheras destruy&oacute; el argumento de la "misión civilizadora" que justificaba el colonialismo; los movimientos independentistas coloniales (India, Egipto, Indochina) adquirieron nueva legitimidad; la opci&oacute;n c) tiene raz&oacute;n en que GB y Francia se hicieron con nuevas colonias, pero su poder global estaba en declive irreversible.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analiza los 14 Puntos de Wilson como proyecto de nuevo orden internacional: &iquest;por qu&eacute; fracas&oacute; y qu&eacute; elementos sobrevivieron?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Los 14 Puntos de Wilson fracasaron completamente y ninguno de sus principios tuvo impacto en el siglo XX; la Carta de la ONU (1945) fue redactada sin ninguna referencia a los principios wilsonianos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Los 14 Puntos (enero 1918) propusieron principios innovadores: autodeterminaci&oacute;n de los pueblos, libertad de navegaci&oacute;n, Sociedad de Naciones; fracasaron porque Clemenceau y Lloyd George priorizaron el castigo alem&aacute;n, el Senado estadounidense rechaz&oacute; Versalles y la Sociedad de Naciones careci&oacute; de EE.UU.; sin embargo, la <B>autodeterminaci&oacute;n</B> y la idea de <B>organizaci&oacute;n internacional</B> sobrevivieron y fundaron la ONU (1945) y el orden liberal internacional de la posguerra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Los 14 Puntos de Wilson fueron aceptados plenamente por todos los Aliados y constituyen la base total del Tratado de Versalles; el fracaso vino de que Alemania los rechaz&oacute; como base de la paz</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Los 14 Puntos de Wilson fueron rechazados por el Congreso estadounidense antes de que Wilson los presentara en Par&iacute;s; por eso Wilson fue a la Conferencia de Paz sin ningún mandato democr&aacute;tico para negociar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>14 Puntos</B> (discurso del presidente Wilson ante el Congreso, 8 de enero de 1918) fueron el programa de paz m&aacute;s ambicioso y sistem&aacute;tico de la historia hasta entonces. Principales puntos: (1) diplomacia p&uacute;blica (no m&aacute;s tratados secretos); (2) libertad de navegaci&oacute;n; (3) libre comercio; (4) reducci&oacute;n de armamentos; (5) ajuste colonial con consideraci&oacute;n de los intereses de las poblaciones; (6&ndash;13) principio de <B>autodeterminaci&oacute;n nacional</B> para pueblos de Europa; (14) creaci&oacute;n de una <B>Sociedad de Naciones</B>. <B>Por qu&eacute; fracasaron en Versalles:</B> Clemenceau ("Wilson con sus 14 Puntos: ¡Dios solo ten&iacute;a 10 mandamientos!") y Lloyd George priorizaron las reparaciones y la seguridad de sus pa&iacute;ses. El Senado estadounidense (liderado por el republicano Henry Cabot Lodge) rechaz&oacute; Versalles y la Sociedad de Naciones: EE.UU. volvió al aislacionismo. La Sociedad de Naciones existi&oacute; sin su creador y sin poder coercitivo. <B>Lo que sobrevivi&oacute;:</B> el principio de <B>autodeterminaci&oacute;n</B> remodel&oacute; el mapa de Europa y fue invocado por los movimientos coloniales del siglo XX; la <B>idea de organizaci&oacute;n internacional</B> resurgi&oacute; en la <B>ONU (1945)</B>, que incorpor&oacute; las lecciones del fracaso de la Sociedad. El wilsonismo, aunque fracasado en 1919, fue el fundamento del orden liberal internacional del siglo XX.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> &iquest;C&oacute;mo afect&oacute; la Primera Guerra Mundial a los pa&iacute;ses latinoamericanos, y en particular al Per&uacute;, y qu&eacute; posici&oacute;n adoptaron ante el conflicto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Am&eacute;rica Latina particip&oacute; activamente en la Primera Guerra Mundial: Brasil, Argentina, Per&uacute; y M&eacute;xico enviaron tropas a Europa; la experiencia militar transform&oacute; sus ej&eacute;rcitos y sus pol&iacute;ticas exteriores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La mayor&iacute;a de pa&iacute;ses latinoamericanos, incluido el Per&uacute;, mantuvieron la <B>neutralidad</B> durante la guerra (aunque Brasil declar&oacute; la guerra a Alemania en 1917 tras el hundimiento de sus barcos); sin embargo la guerra impact&oacute; sus econom&iacute;as: alter&oacute; el comercio de exportaci&oacute;n, el Per&uacute; vio fluctuar los precios del az&uacute;car y algod&oacute;n, y la relaci&oacute;n con el capital brit&aacute;nico fue afectada por la guerra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) El Per&uacute; declar&oacute; la guerra a Alemania en 1917 junto con EE.UU., como parte de su dependencia pol&iacute;tica de Washington; fue el primer pa&iacute;s latinoamericano en sumarse a los Aliados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Am&eacute;rica Latina fue completamente aislada de cualquier efecto de la Primera Guerra Mundial; ni sus econom&iacute;as ni sus pol&iacute;ticas internas fueron afectadas por el conflicto europeo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La posici&oacute;n de Am&eacute;rica Latina ante la Primera Guerra Mundial fue mayoritariamente de <B>neutralidad</B>, aunque con variaciones: <B>Brasil</B> fue el &uacute;nico pa&iacute;s latinoamericano que declar&oacute; la guerra a Alemania (<B>octubre 1917</B>), tras el hundimiento de varios barcos mercantes brasileños por submarinos alemanes; su participaci&oacute;n fue m&oacute;dica (una misi&oacute;n naval, no tropas de combate). <B>Cuba y Panam&aacute;</B> declararon la guerra a Alemania siguiendo a EE.UU. Los dem&aacute;s pa&iacute;ses, incluido el <B>Per&uacute;</B>, permanecieron neutrales. <B>Efectos econ&oacute;micos en Per&uacute;:</B> (1) El bloqueo naval y la guerra desordenaron el comercio internacional; los precios del az&uacute;car y el algod&oacute;n (principales exportaciones peruanas) fluctuaron violentamente. (2) La demanda de caucho cay&oacute; (el caucho sint&eacute;tico empezaba a competir; adem&aacute;s el caucho malayo ya hab&iacute;a desplazado al amaz&oacute;nico desde 1912). (3) El capital brit&aacute;nico (Peruvian Corporation) fue afectado por las necesidades de la guerra en Gran Breta&ntilde;a. (4) El capital estadounidense aprovech&oacute; para aumentar su presencia: la Cerro de Pasco Corporation expandi&oacute; operaciones. La guerra aceler&oacute; la transici&oacute;n de la influencia brit&aacute;nica a la estadounidense en el Per&uacute;.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Desde la perspectiva de las relaciones internacionales, &iquest;la Primera Guerra Mundial represent&oacute; el fracaso del sistema de equilibrio de poder europeo del siglo XIX o fue su consecuencia l&oacute;gica inevitable?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) El equilibrio de poder europeo del siglo XIX fue tan estable que nunca podr&iacute;a haber conducido a una guerra; la Primera Guerra Mundial fue un accidente completamente imprevisible que ningún an&aacute;lisis de las tendencias del per&iacute;odo podr&iacute;a haber anticipado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La Primera Guerra Mundial fue tanto un fracaso como una consecuencia l&oacute;gica: el sistema de equilibrio bismarckiano (flexible, multipolar, evitaba aislar a ning&uacute;n gran pa&iacute;s) funcion&oacute; mientras Bismarck lo manej&oacute;; pero la rigidizaci&oacute;n de las alianzas despu&eacute;s de 1890 (dos bloques r&iacute;gidos en lugar de alianzas flexibles) convirti&oacute; cualquier chispa en incendio; el sistema de la posguerra de Bismarck carg&oacute; con la contradicci&oacute;n entre el equilibrio formal y la carrera armamentista real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La Primera Guerra Mundial fue inevitable desde 1871 (fin de la Guerra Franco-Prusiana): la humillaci&oacute;n de Francia en Sedan y la p&eacute;rdida de Alsacia-Lorena garantizaban que habr&iacute;a otra guerra en algún momento; no importaba lo que hicieran los dem&aacute;s actores internacionales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El sistema de equilibrio de poder europeo del siglo XIX no existió: siempre fue un sistema hegem&oacute;nico dominado por Gran Breta&ntilde;a que colaps&oacute; cuando Alemania desaf&iacute;o su dominio naval; la guerra fue solo un choque de hegemon&iacute;as, no un fracaso del sistema</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta requiere analizar el sistema internacional europeo de 1815&ndash;1914 desde la perspectiva de la teor&iacute;a de las relaciones internacionales. <B>El sistema bismarckiano (1871&ndash;1890):</B> Bismarck entend&iacute;a que una Alemania unificada y poderosa generar&iacute;a miedo entre sus vecinos; su sistema de alianzas m&uacute;ltiples y superpuestas (<B>Reinsurance Treaty</B> con Rusia, Triple Alianza con Austria e Italia, buenas relaciones con GB) estaba diseñado para aislar a Francia sin aislar a Alemania. Era flexible, multipolar y gestionado por una sola mente brillante. <B>La rigidizaci&oacute;n post-bismarckiana (1890&ndash;1914):</B> cuando el Kaiser Guillermo II destituy&oacute; a Bismarck (1890) y no renov&oacute; el tratado con Rusia, el sistema se simplific&oacute;: Rusia se alió con Francia (1894); la Triple Entente se formalizó (1907). Europa qued&oacute; dividida en dos bloques r&iacute;gidos, no en el sistema flexible bismarckiano. Cada crisis (Marruecos 1905, Bosnia 1908, Agadir 1911) fue resuelta pero dej&oacute; m&aacute;s tensi&oacute;n. La carrera armamentista entre Gran Breta&ntilde;a y Alemania (naval) y entre Francia/Rusia y Alemania/Austria (terrestre) cre&oacute; ej&eacute;rcitos que buscaban ser usados. <B>Conclusion:</B> la guerra no era inevitable en un sentido fatalista, pero el sistema post-bismarckiano la hac&iacute;a altamente probable ante cualquier crisis grave.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

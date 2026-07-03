@@ -1,0 +1,788 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Nomenclatura Química Inorgánica - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:15px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:10px 14px;text-align:left;}
+.tabla-wrap td{padding:10px 14px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="QUIMICA.HTML">&larr; Volver a los temas de Química</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">QUÍMICA · TEMA 07 · NIVEL PREUNIVERSITARIO</DIV>
+<H1>Nomenclatura Química Inorgánica</H1>
+<DIV CLASS="sub">Sistemas de nomenclatura · Estados de oxidación · Funciones químicas · Óxidos · Hidruros · Hidróxidos · Ácidos · Sales</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="intro">1. Introducción: ¿qué es la nomenclatura química?</H3>
+
+La <B>nomenclatura química</B> es el conjunto de reglas y sistemas que permiten dar un nombre sistemático a los compuestos químicos a partir de su fórmula, y viceversa. En química inorgánica se trabajan principalmente tres sistemas:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sistema</TH><TH>Características</TH><TH>Ejemplo con Fe₂O₃</TH></TR>
+<TR><TD><B>IUPAC (sistemático)</B></TD><TD>Usa prefijos numéricos griegos (mono, di, tri...) para indicar el número de átomos de cada elemento. No menciona el estado de oxidación.</TD><TD>Trióxido de dihierro</TD></TR>
+<TR><TD><B>Stock</B></TD><TD>Indica el estado de oxidación del elemento central con un número romano entre paréntesis. Es el sistema más usado en preuniversitario.</TD><TD>Óxido de hierro (III)</TD></TR>
+<TR><TD><B>Tradicional (clásico)</B></TD><TD>Usa sufijos (-oso, -ico) y prefijos (hipo-, per-) para distinguir los estados de oxidación. Más antiguo, aún muy usado en el laboratorio.</TD><TD>Óxido férrico</TD></TR>
+</TABLE>
+</DIV>
+
+<H3 ID="estados-oxidacion">2. Estados de oxidación (número de oxidación)</H3>
+
+El <B>estado de oxidación (e.o.)</B> o número de oxidación es la carga hipotética que tendría un átomo en un compuesto si todos los electrones de los enlaces se asignaran al átomo más electronegativo. Se usa para nombrar compuestos y para balancear reacciones.
+
+<H4>Reglas para asignar estados de oxidación:</H4>
+<OL>
+<LI>Los elementos en estado puro tienen e.o. = <B>0</B> (Na, Fe, O₂, Cl₂, etc.).</LI>
+<LI>Los <B>iones monoatómicos</B> tienen e.o. igual a su carga: Na⁺ = +1; Cl⁻ = −1; Fe³⁺ = +3.</LI>
+<LI>El <B>hidrógeno (H)</B> tiene e.o. = <B>+1</B> en la mayoría de compuestos (con no metales). Excepción: e.o. = <B>−1</B> en los hidruros metálicos (NaH, CaH₂).</LI>
+<LI>El <B>oxígeno (O)</B> tiene e.o. = <B>−2</B> en la mayoría de compuestos. Excepciones: e.o. = <B>−1</B> en los peróxidos (H₂O₂, Na₂O₂); e.o. = <B>+2</B> en el OF₂ (porque el F es más electronegativo).</LI>
+<LI>El <B>flúor (F)</B> siempre tiene e.o. = <B>−1</B> (es el más electronegativo de todos).</LI>
+<LI>La suma de los estados de oxidación en un compuesto neutro es <B>0</B>.</LI>
+<LI>La suma de los estados de oxidación en un ion poliatómico es igual a la <B>carga del ion</B>.</LI>
+</OL>
+
+<DIV CLASS="ej">🔬 <B>Ejemplo:</B> Calcular el e.o. del Cr en el ion Cr₂O₇²⁻ (dicromato).<BR>
+Sea x = e.o. del Cr: 2x + 7(−2) = −2 → 2x − 14 = −2 → 2x = 12 → x = <B>+6</B></DIV>
+
+<H4>Estados de oxidación máximos y mínimos de elementos representativos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Grupo</TH><TH>e.o. máximo</TH><TH>e.o. mínimo</TH><TH>Ejemplo</TH></TR>
+<TR><TD>IA (H, Li, Na, K...)</TD><TD>+1</TD><TD>−1 (solo H)</TD><TD>NaH (H = −1), NaCl (Na = +1)</TD></TR>
+<TR><TD>IIA (Be, Mg, Ca...)</TD><TD>+2</TD><TD>No aplica</TD><TD>CaO (Ca = +2)</TD></TR>
+<TR><TD>IIIA (B, Al, Ga...)</TD><TD>+3</TD><TD>No aplica</TD><TD>Al₂O₃ (Al = +3)</TD></TR>
+<TR><TD>IVA (C, Si, Ge...)</TD><TD>+4</TD><TD>−4</TD><TD>CO₂ (C = +4), CH₄ (C = −4)</TD></TR>
+<TR><TD>VA (N, P, As...)</TD><TD>+5</TD><TD>−3</TD><TD>N₂O₅ (N = +5), NH₃ (N = −3)</TD></TR>
+<TR><TD>VIA (O, S, Se...)</TD><TD>+6 (S,Se); −2 (O)</TD><TD>−2</TD><TD>SO₃ (S = +6), H₂S (S = −2)</TD></TR>
+<TR><TD>VIIA (F, Cl, Br, I...)</TD><TD>+7 (Cl, Br, I); −1 (F)</TD><TD>−1</TD><TD>Cl₂O₇ (Cl = +7), HCl (Cl = −1)</TD></TR>
+</TABLE>
+</DIV>
+
+<H3 ID="iones">3. Nomenclatura de iones</H3>
+
+<H4>Iones monoatómicos (cationes):</H4>
+<UL>
+<LI>Metales con un solo e.o.: nombre del metal + "ion". Ej: Na⁺ = ion sodio; Ca²⁺ = ion calcio.</LI>
+<LI>Metales con varios e.o. — Sistema Stock: nombre + (e.o. romano). Ej: Fe²⁺ = ion hierro (II); Fe³⁺ = ion hierro (III).</LI>
+<LI>Sistema tradicional: sufijo <B>-oso</B> para el menor e.o. y <B>-ico</B> para el mayor. Ej: Fe²⁺ = ion ferroso; Fe³⁺ = ion férrico.</LI>
+</UL>
+
+<H4>Iones poliatómicos — los más importantes:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>Nombre IUPAC/Stock</TH><TH>Nombre tradicional</TH></TR>
+<TR><TD>OH⁻</TD><TD>Ion hidróxido</TD><TD>Ion hidroxilo</TD></TR>
+<TR><TD>NH₄⁺</TD><TD>Ion amonio</TD><TD>Ion amonio</TD></TR>
+<TR><TD>NO₂⁻</TD><TD>Ion nitrito</TD><TD>Ion nitroso</TD></TR>
+<TR><TD>NO₃⁻</TD><TD>Ion nitrato</TD><TD>Ion nítrico</TD></TR>
+<TR><TD>SO₃²⁻</TD><TD>Ion sulfito</TD><TD>Ion sulfuroso</TD></TR>
+<TR><TD>SO₄²⁻</TD><TD>Ion sulfato</TD><TD>Ion sulfúrico</TD></TR>
+<TR><TD>PO₄³⁻</TD><TD>Ion fosfato</TD><TD>Ion fosfórico</TD></TR>
+<TR><TD>CO₃²⁻</TD><TD>Ion carbonato</TD><TD>Ion carbónico</TD></TR>
+<TR><TD>ClO⁻</TD><TD>Ion hipoclorito</TD><TD>Ion hipocloroso</TD></TR>
+<TR><TD>ClO₂⁻</TD><TD>Ion clorito</TD><TD>Ion cloroso</TD></TR>
+<TR><TD>ClO₃⁻</TD><TD>Ion clorato</TD><TD>Ion clórico</TD></TR>
+<TR><TD>ClO₄⁻</TD><TD>Ion perclorato</TD><TD>Ion perclórico</TD></TR>
+<TR><TD>Cr₂O₇²⁻</TD><TD>Ion dicromato</TD><TD>Ion bicromatado</TD></TR>
+<TR><TD>MnO₄⁻</TD><TD>Ion permanganato</TD><TD>Ion permangánico</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Memoriza los iones poliatómicos:</B> Son esenciales para nombrar y formular ácidos oxácidos y sales oxisales. Los del cloro (ClO⁻, ClO₂⁻, ClO₃⁻, ClO₄⁻) son los más evaluados en examen por su serie completa.</DIV>
+
+<H3 ID="oxidos">4. Óxidos</H3>
+
+Los <B>óxidos</B> son compuestos binarios formados por la combinación de un elemento con el <B>oxígeno</B>. Se dividen en dos grandes grupos:
+
+<H4>A) Óxidos básicos (óxidos metálicos):</H4>
+Son los formados por un <B>metal + oxígeno</B>. Al reaccionar con agua forman <B>hidróxidos (bases)</B>; al reaccionar con ácidos forman <B>sales</B>.
+
+<B>Formulación:</B> Metal(e.o.) + O₂ → Mₓ Oᵧ (se cruzan los estados de oxidación como subíndices y se simplifican).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>IUPAC</TH><TH>Stock</TH><TH>Tradicional</TH></TR>
+<TR><TD>Na₂O</TD><TD>Óxido de sodio / monóxido de disodio</TD><TD>Óxido de sodio</TD><TD>Óxido sódico</TD></TR>
+<TR><TD>CaO</TD><TD>Óxido de calcio / monóxido de calcio</TD><TD>Óxido de calcio</TD><TD>Óxido cálcico</TD></TR>
+<TR><TD>FeO</TD><TD>Monóxido de hierro</TD><TD>Óxido de hierro (II)</TD><TD>Óxido ferroso</TD></TR>
+<TR><TD>Fe₂O₃</TD><TD>Trióxido de dihierro</TD><TD>Óxido de hierro (III)</TD><TD>Óxido férrico</TD></TR>
+<TR><TD>Cu₂O</TD><TD>Óxido de dicobre</TD><TD>Óxido de cobre (I)</TD><TD>Óxido cuproso</TD></TR>
+<TR><TD>CuO</TD><TD>Óxido de cobre</TD><TD>Óxido de cobre (II)</TD><TD>Óxido cúprico</TD></TR>
+<TR><TD>MnO₂</TD><TD>Dióxido de manganeso</TD><TD>Óxido de manganeso (IV)</TD><TD>Bióxido de manganeso</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>B) Óxidos ácidos (anhídridos o anhidritas):</H4>
+Son formados por un <B>no metal + oxígeno</B>. Al reaccionar con agua forman <B>ácidos oxácidos</B>; al reaccionar con bases forman <B>sales</B>. También se llaman <B>anhídridos</B> porque se pueden obtener de un ácido oxácido quitándole agua.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>IUPAC</TH><TH>Stock</TH><TH>Tradicional</TH><TH>Ácido que origina</TH></TR>
+<TR><TD>CO₂</TD><TD>Dióxido de carbono</TD><TD>Óxido de carbono (IV)</TD><TD>Anhídrido carbónico</TD><TD>H₂CO₃</TD></TR>
+<TR><TD>SO₂</TD><TD>Dióxido de azufre</TD><TD>Óxido de azufre (IV)</TD><TD>Anhídrido sulfuroso</TD><TD>H₂SO₃</TD></TR>
+<TR><TD>SO₃</TD><TD>Trióxido de azufre</TD><TD>Óxido de azufre (VI)</TD><TD>Anhídrido sulfúrico</TD><TD>H₂SO₄</TD></TR>
+<TR><TD>N₂O₃</TD><TD>Trióxido de dinitrógeno</TD><TD>Óxido de nitrógeno (III)</TD><TD>Anhídrido nitroso</TD><TD>HNO₂</TD></TR>
+<TR><TD>N₂O₅</TD><TD>Pentóxido de dinitrógeno</TD><TD>Óxido de nitrógeno (V)</TD><TD>Anhídrido nítrico</TD><TD>HNO₃</TD></TR>
+<TR><TD>P₂O₅</TD><TD>Pentóxido de difósforo</TD><TD>Óxido de fósforo (V)</TD><TD>Anhídrido fosfórico</TD><TD>H₃PO₄</TD></TR>
+<TR><TD>Cl₂O₇</TD><TD>Heptóxido de dicloro</TD><TD>Óxido de cloro (VII)</TD><TD>Anhídrido perclórico</TD><TD>HClO₄</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>C) Óxidos anfóteros:</H4>
+Algunos óxidos pueden reaccionar tanto con ácidos como con bases (comportamiento anfótero). Ejemplos: Al₂O₃, ZnO, Cr₂O₃, SnO₂, PbO.
+
+<H3 ID="hidruros">5. Hidruros</H3>
+
+Los <B>hidruros</B> son compuestos binarios formados por un elemento y el <B>hidrógeno</B>. Hay dos tipos principales:
+
+<H4>A) Hidruros metálicos (hidruros salinos o iónicos):</H4>
+Metal + H₂ → Mₓ Hᵧ. El hidrógeno tiene e.o. = <B>−1</B>.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>IUPAC</TH><TH>Stock</TH><TH>Tradicional</TH></TR>
+<TR><TD>NaH</TD><TD>Hidruro de sodio</TD><TD>Hidruro de sodio</TD><TD>Hidruro sódico</TD></TR>
+<TR><TD>CaH₂</TD><TD>Dihidruro de calcio</TD><TD>Hidruro de calcio</TD><TD>Hidruro cálcico</TD></TR>
+<TR><TD>FeH₂</TD><TD>Dihidruro de hierro</TD><TD>Hidruro de hierro (II)</TD><TD>Hidruro ferroso</TD></TR>
+<TR><TD>FeH₃</TD><TD>Trihidruro de hierro</TD><TD>Hidruro de hierro (III)</TD><TD>Hidruro férrico</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>B) Hidruros no metálicos (hidruros volátiles o gaseosos):</H4>
+No metal + H₂ → compuesto donde el H tiene e.o. = <B>+1</B> (excepto cuando el no metal es menos electronegativo que el H, caso muy raro).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>Nombre sistemático</TH><TH>Nombre común</TH><TH>En solución acuosa</TH></TR>
+<TR><TD>HF</TD><TD>Fluoruro de hidrógeno</TD><TD>Ácido fluorhídrico</TD><TD>HF (ac) = ácido fluorhídrico</TD></TR>
+<TR><TD>HCl</TD><TD>Cloruro de hidrógeno</TD><TD>Ácido clorhídrico</TD><TD>HCl (ac) = ácido clorhídrico</TD></TR>
+<TR><TD>HBr</TD><TD>Bromuro de hidrógeno</TD><TD>Ácido bromhídrico</TD><TD>HBr (ac) = ácido bromhídrico</TD></TR>
+<TR><TD>HI</TD><TD>Yoduro de hidrógeno</TD><TD>Ácido yodhídrico</TD><TD>HI (ac) = ácido yodhídrico</TD></TR>
+<TR><TD>H₂S</TD><TD>Sulfuro de hidrógeno</TD><TD>Ácido sulfhídrico</TD><TD>H₂S (ac) = ácido sulfhídrico</TD></TR>
+<TR><TD>NH₃</TD><TD>Trihidruro de nitrógeno</TD><TD>Amoniaco</TD><TD>NH₄OH = hidróxido de amonio</TD></TR>
+<TR><TD>PH₃</TD><TD>Trihidruro de fósforo</TD><TD>Fosfina</TD><TD>—</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Importante:</B> El HF, HCl, HBr, HI, H₂S son hidruros no metálicos en estado puro. Solo cuando se disuelven en agua (ac) se convierten en <B>ácidos hidrácidos</B>. El nombre cambia: HCl(g) = cloruro de hidrógeno; HCl(ac) = ácido clorhídrico.</DIV>
+
+<H3 ID="hidroxidos">6. Hidróxidos (bases)</H3>
+
+Los <B>hidróxidos</B> se forman al combinar un <B>óxido básico (metálico) con agua</B>, o directamente un metal alcalino con agua. Contienen el ion <B>OH⁻</B> (ion hidróxido).
+
+<B>Reacción general:</B> Óxido básico + H₂O → Hidróxido
+Ejemplo: Na₂O + H₂O → 2 NaOH (hidróxido de sodio, sosa cáustica)
+
+<H4>Formulación:</H4> M(OH)ₙ, donde n = estado de oxidación del metal = número de grupos OH⁻.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>IUPAC / Stock</TH><TH>Tradicional</TH><TH>Nombre común</TH></TR>
+<TR><TD>NaOH</TD><TD>Hidróxido de sodio</TD><TD>Hidróxido sódico</TD><TD>Sosa cáustica</TD></TR>
+<TR><TD>KOH</TD><TD>Hidróxido de potasio</TD><TD>Hidróxido potásico</TD><TD>Potasa cáustica</TD></TR>
+<TR><TD>Ca(OH)₂</TD><TD>Hidróxido de calcio</TD><TD>Hidróxido cálcico</TD><TD>Cal apagada o lechada de cal</TD></TR>
+<TR><TD>Mg(OH)₂</TD><TD>Hidróxido de magnesio</TD><TD>Hidróxido magnésico</TD><TD>Leche de magnesia</TD></TR>
+<TR><TD>Al(OH)₃</TD><TD>Hidróxido de aluminio</TD><TD>Hidróxido alumínico</TD><TD>—</TD></TR>
+<TR><TD>Fe(OH)₂</TD><TD>Hidróxido de hierro (II)</TD><TD>Hidróxido ferroso</TD><TD>—</TD></TR>
+<TR><TD>Fe(OH)₃</TD><TD>Hidróxido de hierro (III)</TD><TD>Hidróxido férrico</TD><TD>—</TD></TR>
+<TR><TD>NH₄OH</TD><TD>Hidróxido de amonio</TD><TD>—</TD><TD>Amoníaco en agua</TD></TR>
+</TABLE>
+</DIV>
+
+<H3 ID="acidos">7. Ácidos</H3>
+
+Los <B>ácidos</B> en nomenclatura inorgánica se dividen en dos grupos:
+
+<H4>A) Ácidos hidrácidos:</H4>
+Son los hidruros no metálicos disueltos en agua. Fórmula general: HₙX (X = halógeno u otro no metal como S).
+
+Nombre: <B>"ácido" + raíz del no metal + sufijo "-hídrico"</B>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>Nombre</TH></TR>
+<TR><TD>HF (ac)</TD><TD>Ácido fluorhídrico</TD></TR>
+<TR><TD>HCl (ac)</TD><TD>Ácido clorhídrico</TD></TR>
+<TR><TD>HBr (ac)</TD><TD>Ácido bromhídrico</TD></TR>
+<TR><TD>HI (ac)</TD><TD>Ácido yodhídrico</TD></TR>
+<TR><TD>H₂S (ac)</TD><TD>Ácido sulfhídrico</TD></TR>
+<TR><TD>HCN (ac)</TD><TD>Ácido cianhídrico</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>B) Ácidos oxácidos (oxoácidos):</H4>
+Son ácidos que contienen oxígeno. Se forman al combinar un <B>óxido ácido (anhídrido) con agua</B>.
+Fórmula general: HₘXOₙ
+
+<B>Nomenclatura sistemática (IUPAC):</B> "ácido" + prefijo numérico + "oxo" + raíz del no metal + terminación.
+
+<B>Nomenclatura tradicional (más usada en preuniversitario):</B>
+<UL>
+<LI>Si el elemento tiene 1 estado de oxidación: ácido + raíz + <B>"-ico"</B></LI>
+<LI>Si tiene 2 estados de oxidación: el menor usa <B>"-oso"</B> y el mayor <B>"-ico"</B></LI>
+<LI>Si tiene 3 estados: agrega el prefijo <B>"hipo-"</B> para el más bajo</LI>
+<LI>Si tiene 4 estados: agrega el prefijo <B>"per-"</B> para el más alto</LI>
+</UL>
+
+<H4>Serie del cloro (la más importante para el examen):</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>e.o. del Cl</TH><TH>Nombre tradicional</TH><TH>IUPAC (Stock)</TH></TR>
+<TR><TD>HClO</TD><TD>+1</TD><TD>Ácido hipocloroso</TD><TD>Ácido oxoclórico (I)</TD></TR>
+<TR><TD>HClO₂</TD><TD>+3</TD><TD>Ácido cloroso</TD><TD>Ácido dioxoclórico (III)</TD></TR>
+<TR><TD>HClO₃</TD><TD>+5</TD><TD>Ácido clórico</TD><TD>Ácido trioxoclórico (V)</TD></TR>
+<TR><TD>HClO₄</TD><TD>+7</TD><TD>Ácido perclórico</TD><TD>Ácido tetraoxoclórico (VII)</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Otros ácidos oxácidos importantes:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>e.o. del no metal</TH><TH>Nombre tradicional</TH></TR>
+<TR><TD>H₂SO₃</TD><TD>S: +4</TD><TD>Ácido sulfuroso</TD></TR>
+<TR><TD>H₂SO₄</TD><TD>S: +6</TD><TD>Ácido sulfúrico</TD></TR>
+<TR><TD>HNO₂</TD><TD>N: +3</TD><TD>Ácido nitroso</TD></TR>
+<TR><TD>HNO₃</TD><TD>N: +5</TD><TD>Ácido nítrico</TD></TR>
+<TR><TD>H₃PO₄</TD><TD>P: +5</TD><TD>Ácido fosfórico</TD></TR>
+<TR><TD>H₂CO₃</TD><TD>C: +4</TD><TD>Ácido carbónico</TD></TR>
+<TR><TD>H₂SiO₃</TD><TD>Si: +4</TD><TD>Ácido silícico</TD></TR>
+<TR><TD>H₂CrO₄</TD><TD>Cr: +6</TD><TD>Ácido crómico</TD></TR>
+<TR><TD>HMnO₄</TD><TD>Mn: +7</TD><TD>Ácido permangánico</TD></TR>
+</TABLE>
+</DIV>
+
+<H3 ID="sales">8. Sales</H3>
+
+Las <B>sales</B> son compuestos iónicos formados por un <B>catión</B> (generalmente metálico o NH₄⁺) y un <B>anión</B> (derivado de un ácido). Se obtienen al neutralizar un ácido con una base, o por reacción directa de un metal con un no metal.
+
+<H4>A) Sales haloideas (sales del ácido hidrácido):</H4>
+Anión = haluro o anión no oxigenado: F⁻, Cl⁻, Br⁻, I⁻, S²⁻, CN⁻, etc.
+
+Nombre: <B>nombre del anión (sufijo "-uro") + "de" + nombre del catión (con e.o. si es necesario)</B>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>Nombre</TH></TR>
+<TR><TD>NaCl</TD><TD>Cloruro de sodio</TD></TR>
+<TR><TD>KBr</TD><TD>Bromuro de potasio</TD></TR>
+<TR><TD>FeCl₂</TD><TD>Cloruro de hierro (II) / Cloruro ferroso</TD></TR>
+<TR><TD>FeCl₃</TD><TD>Cloruro de hierro (III) / Cloruro férrico</TD></TR>
+<TR><TD>CaF₂</TD><TD>Fluoruro de calcio</TD></TR>
+<TR><TD>Na₂S</TD><TD>Sulfuro de sodio</TD></TR>
+<TR><TD>FeS</TD><TD>Sulfuro de hierro (II)</TD></TR>
+<TR><TD>Fe₂S₃</TD><TD>Sulfuro de hierro (III)</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>B) Sales oxisales neutras (sales del ácido oxácido):</H4>
+Anión = oxoanión: SO₄²⁻, NO₃⁻, CO₃²⁻, PO₄³⁻, etc.
+
+Nombre: <B>nombre del anión + "de" + nombre del catión</B>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>Nombre tradicional</TH></TR>
+<TR><TD>Na₂SO₄</TD><TD>Sulfato de sodio</TD></TR>
+<TR><TD>CaSO₄</TD><TD>Sulfato de calcio (yeso)</TD></TR>
+<TR><TD>Fe₂(SO₄)₃</TD><TD>Sulfato de hierro (III) / Sulfato férrico</TD></TR>
+<TR><TD>NaNO₃</TD><TD>Nitrato de sodio (salitre de Chile)</TD></TR>
+<TR><TD>Ca(NO₃)₂</TD><TD>Nitrato de calcio</TD></TR>
+<TR><TD>Na₂CO₃</TD><TD>Carbonato de sodio (soda ash)</TD></TR>
+<TR><TD>CaCO₃</TD><TD>Carbonato de calcio (calcita, mármol)</TD></TR>
+<TR><TD>Ca₃(PO₄)₂</TD><TD>Fosfato de calcio</TD></TR>
+<TR><TD>NaClO</TD><TD>Hipoclorito de sodio (lejía/cloro)</TD></TR>
+<TR><TD>KMnO₄</TD><TD>Permanganato de potasio</TD></TR>
+<TR><TD>K₂Cr₂O₇</TD><TD>Dicromato de potasio</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>C) Sales ácidas (sales con H reemplazable):</H4>
+Contienen hidrógeno ionizable (provienen de ácidos polipróticos parcialmente neutralizados).
+Nombre: <B>"hidrogeno-" (o "bi-") + nombre del anión + "de" + catión</B>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>Nombre</TH></TR>
+<TR><TD>NaHCO₃</TD><TD>Hidrogenocarbonato de sodio / Bicarbonato de sodio</TD></TR>
+<TR><TD>NaHSO₄</TD><TD>Hidrogenosulfato de sodio / Bisulfato de sodio</TD></TR>
+<TR><TD>NaH₂PO₄</TD><TD>Dihidrogenofosfato de sodio</TD></TR>
+<TR><TD>Na₂HPO₄</TD><TD>Hidrogenofosfato de sodio</TD></TR>
+<TR><TD>Ca(HCO₃)₂</TD><TD>Hidrogenocarbonato de calcio / Bicarbonato de calcio</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>D) Peróxidos:</H4>
+Contienen el ion O₂²⁻ (peróxido, donde el O tiene e.o. = −1). Se nombran igual que los óxidos pero añadiendo el prefijo <B>"per-"</B> o usando el nombre "peróxido de".
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fórmula</TH><TH>Nombre</TH></TR>
+<TR><TD>H₂O₂</TD><TD>Peróxido de hidrógeno (agua oxigenada)</TD></TR>
+<TR><TD>Na₂O₂</TD><TD>Peróxido de sodio</TD></TR>
+<TR><TD>BaO₂</TD><TD>Peróxido de bario</TD></TR>
+</TABLE>
+</DIV>
+
+<H3 ID="mapa-conceptual">9. Mapa de las funciones químicas inorgánicas</H3>
+
+<DIV CLASS="mapa-note">
+<B>Esquema de relaciones:</B><BR><BR>
+<B>Metal + O₂</B> → <B>Óxido básico</B> + H₂O → <B>Hidróxido</B> (base)<BR>
+<B>Óxido básico</B> + Ácido → <B>Sal + H₂O</B><BR><BR>
+<B>No metal + O₂</B> → <B>Óxido ácido (anhídrido)</B> + H₂O → <B>Ácido oxácido</B><BR>
+<B>Óxido ácido</B> + Base → <B>Sal + H₂O</B><BR><BR>
+<B>No metal + H₂</B> → <B>Hidruro no metálico</B> → en H₂O → <B>Ácido hidrácido</B><BR>
+<B>Ácido hidrácido</B> + Base → <B>Sal haloidea + H₂O</B><BR><BR>
+<B>Ácido oxácido + Base → Sal oxisal + H₂O</B>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===== PREGUNTAS ===== -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál es el estado de oxidación del azufre en el H₂SO₄?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) +4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) +6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) −2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) +2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En H₂SO₄:<BR>
+• H tiene e.o. = +1 (hay 2 H → aporte: +2)<BR>
+• O tiene e.o. = −2 (hay 4 O → aporte: −8)<BR>
+• Sea x = e.o. del S:<BR>
+2(+1) + x + 4(−2) = 0<BR>
+2 + x − 8 = 0<BR>
+x = <B>+6</B><BR>
+El azufre en el H₂SO₄ (ácido sulfúrico) tiene e.o. = +6, que es su estado de oxidación máximo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cómo se llama el compuesto Fe₂O₃ según el sistema Stock?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Óxido de hierro (II)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Óxido ferroso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Óxido de hierro (III)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Trióxido de hierro</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>En Fe₂O₃:<BR>
+• O tiene e.o. = −2 (hay 3 O → aporte: −6)<BR>
+• Sea x = e.o. del Fe: 2x + 3(−2) = 0 → 2x = 6 → x = <B>+3</B><BR>
+Sistema Stock: <B>Óxido de hierro (III)</B><BR>
+Sistema tradicional: Óxido férrico (-ico para el mayor e.o.)<BR>
+Sistema IUPAC: Trióxido de dihierro</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> El NaHCO₃ (bicarbonato de sodio) es una sal ácida. ¿Por qué se clasifica como sal ácida y no como sal neutra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Porque tiene propiedades ácidas en solución y baja el pH del agua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Porque proviene de un ácido poliprótico (H₂CO₃) que no fue completamente neutralizado; conserva un H ionizable en el anión HCO₃⁻</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Porque el Na es un metal alcalino y todos sus compuestos son sales ácidas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Porque el anión CO₃²⁻ tiene carga negativa, lo que lo hace ácido</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Una sal ácida se forma cuando un ácido <B>poliprótico</B> (con más de un H ionizable) es neutralizado <B>parcialmente</B>. El H₂CO₃ tiene 2 H ionizables:<BR>
+• Neutralización total: H₂CO₃ + 2NaOH → Na₂CO₃ + 2H₂O (sal neutra, carbonato de sodio)<BR>
+• Neutralización parcial: H₂CO₃ + NaOH → <B>NaHCO₃</B> + H₂O (sal ácida)<BR>
+El ion HCO₃⁻ (bicarbonato) aún conserva 1 H que puede ionizarse, por eso es una sal ácida. En solución, el NaHCO₃ es ligeramente <B>básico</B> (no ácido), porque el HCO₃⁻ actúa principalmente como base al capturar H⁺ del agua.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál de los siguientes compuestos es un ácido hidrácido?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) H₂SO₄ (ac)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) HNO₃ (ac)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) HCl (ac)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) H₃PO₄ (ac)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Los <B>ácidos hidrácidos</B> son aquellos que NO contienen oxígeno en su fórmula; se forman al disolver en agua un hidruro no metálico. Solo tienen H y un no metal.<BR>
+• HCl(ac): ácido clorhídrico ✓ (solo H y Cl, sin O)<BR>
+• H₂SO₄: contiene O → es ácido oxácido (sulfúrico)<BR>
+• HNO₃: contiene O → es ácido oxácido (nítrico)<BR>
+• H₃PO₄: contiene O → es ácido oxácido (fosfórico)<BR>
+Otros hidrácidos: HF, HBr, HI, H₂S, HCN.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Nombra el compuesto Ca(OH)₂ e indica su función química y nombre común.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Óxido de calcio; función: óxido básico; nombre común: cal viva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Hidróxido de calcio; función: hidróxido (base); nombre común: cal apagada o hidróxido cálcico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Cloruro de calcio; función: sal haloidea; nombre común: sal de calcio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Carbonato de calcio; función: sal oxisal; nombre común: mármol o calcita</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Ca(OH)₂ contiene el catión Ca²⁺ y 2 aniones OH⁻ (hidróxido):<BR>
+• Función química: <B>hidróxido</B> (base)<BR>
+• Nombre Stock/IUPAC: <B>Hidróxido de calcio</B><BR>
+• Nombre tradicional: Hidróxido cálcico<BR>
+• Nombre común: <B>Cal apagada</B> o cal hidratada (se obtiene agregando agua a la cal viva CaO: CaO + H₂O → Ca(OH)₂)<BR>
+• Usos: construcción (argamasa, cemento), tratamiento del agua, papel, desinfección.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál es la fórmula del sulfato de aluminio?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) AlSO₄</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Al₂SO₄</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Al₂(SO₄)₃</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Al(SO₄)₃</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Para formular una sal oxisal se cruzan las cargas del catión y el anión:<BR>
+• Al tiene e.o. = +3 → Al³⁺<BR>
+• SO₄²⁻ tiene carga = −2<BR>
+• Se cruzan los valores: Al <sub>2</sub>(SO₄)<sub>3</sub><BR>
+Verificación: 2(+3) + 3(−2) = 6 − 6 = 0 ✓<BR>
+La fórmula es <B>Al₂(SO₄)₃</B>, sulfato de aluminio. Se usa como floculante en el tratamiento de agua potable y en tintorería.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> El HClO₄ es el ácido oxácido del cloro con mayor estado de oxidación. ¿Cuál es el e.o. del Cl en este ácido, cómo se llama, y qué anión origina?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) e.o. Cl = +5; nombre: ácido clórico; anión: ClO₃⁻ (clorato)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) e.o. Cl = +7; nombre: ácido perclórico; anión: ClO₄⁻ (perclorato)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) e.o. Cl = +3; nombre: ácido cloroso; anión: ClO₂⁻ (clorito)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) e.o. Cl = +1; nombre: ácido hipocloroso; anión: ClO⁻ (hipoclorito)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En HClO₄:<BR>
+• H: +1; O: −2 (hay 4 O → −8)<BR>
+• (+1) + x + 4(−2) = 0 → x = <B>+7</B><BR>
+El Cl tiene e.o. +7, su máximo posible (grupo VIIA, e.o. máximo = número de grupo − 0 = +7).<BR>
+• Nombre: <B>ácido perclórico</B> (prefijo "per-" para el e.o. más alto de la serie)<BR>
+• Anión al perder el H: <B>ClO₄⁻ = ion perclorato</B><BR>
+La serie completa del cloro: HClO (+1) hipocloroso → HClO₂ (+3) cloroso → HClO₃ (+5) clórico → HClO₄ (+7) perclórico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Indica la función química y el nombre del compuesto N₂O₅.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Ácido oxácido; nombre: ácido nítrico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Óxido ácido (anhídrido); nombre: pentóxido de dinitrógeno o anhídrido nítrico; al disolverse en agua forma HNO₃</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Óxido básico; nombre: óxido de nitrógeno (V)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Sal oxisal; nombre: nitrato de nitrógeno</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>N₂O₅ está formado por N (no metal) + O → es un <B>óxido ácido</B>.<BR>
+• e.o. del N: 2x + 5(−2) = 0 → x = +5<BR>
+• Nombres:<BR>
+  – IUPAC: <B>pentóxido de dinitrógeno</B><BR>
+  – Stock: <B>óxido de nitrógeno (V)</B><BR>
+  – Tradicional: <B>anhídrido nítrico</B> (porque al hidratar produce HNO₃, el ácido nítrico)<BR>
+Reacción: N₂O₅ + H₂O → 2 HNO₃<BR>
+Verificación: el anhídrido nítrico es el "anhi-drido" (sin agua) del ácido nítrico HNO₃.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cuál es la diferencia entre el NaClO (hipoclorito de sodio) y el NaClO₃ (clorato de sodio) en cuanto al estado de oxidación del cloro y su aplicación?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Ambos tienen el mismo e.o. del Cl (+3); solo difieren en el número de átomos de oxígeno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) NaClO: e.o. Cl = +1 (desinfectante doméstico, lejía); NaClO₃: e.o. Cl = +5 (herbicida total y blanqueador industrial); difieren en el e.o. del Cl y en sus propiedades oxidantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) NaClO es más peligroso que el NaClO₃ porque el Cl tiene e.o. más alto en el hipoclorito</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) No hay diferencia química real; son el mismo compuesto con distintos nombres</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+NaClO (hipoclorito de sodio):<BR>
+• e.o. Cl: x + (−2) = −1 → x = <B>+1</B><BR>
+• Es la <B>lejía doméstica</B> (blanqueador, desinfectante). Concentración típica: 3–8% en agua.<BR><BR>
+NaClO₃ (clorato de sodio):<BR>
+• e.o. Cl: x + 3(−2) = −1 → x = <B>+5</B><BR>
+• Es un potente <B>oxidante</B> y <B>herbicida total</B> (mata todas las plantas). También se usó para blanquear papel y como reactivo industrial.<BR><BR>
+Mayor e.o. del Cl → mayor poder oxidante potencial. Ambos derivan de la misma serie del cloro. En examen se pide frecuentemente calcular el e.o. del Cl en cada uno y saber nombrarlos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Completa la reacción de formación del ácido sulfúrico a partir de su anhídrido: SO₃ + H₂O → ___. Luego, formula y nombra la sal que resulta al neutralizar completamente este ácido con NaOH.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) SO₃ + H₂O → H₂SO₃; sal: Na₂SO₃ (sulfito de sodio)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) SO₃ + H₂O → H₂SO₄; sal: Na₂SO₄ (sulfato de sodio)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) SO₃ + H₂O → H₂SO₄; sal: NaHSO₄ (sulfato ácido de sodio)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) SO₃ + H₂O → H₂S + O₃; sal: Na₂S (sulfuro de sodio)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+El SO₃ es el <B>anhídrido sulfúrico</B> (óxido de S con e.o. +6). Al disolverse en agua:<BR>
+SO₃ + H₂O → <B>H₂SO₄</B> (ácido sulfúrico)<BR><BR>
+Neutralización completa con NaOH:<BR>
+H₂SO₄ + 2NaOH → <B>Na₂SO₄</B> + 2H₂O<BR>
+(2 mol de NaOH porque el H₂SO₄ es dibásico, tiene 2 H ionizables)<BR><BR>
+Na₂SO₄ = <B>sulfato de sodio</B> (sal neutra, anión SO₄²⁻)<BR>
+Nota: Si solo se usa 1 mol de NaOH se obtiene NaHSO₄ (sulfato ácido o bisulfato de sodio), que es una sal ácida.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> El FeH₂ es un hidruro metálico. ¿Cuál es el e.o. del H en este compuesto, cómo se llama y en qué difiere del ácido clorhídrico HCl?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) e.o. H = +1 en FeH₂; se llama hidruro de hierro (II); es idéntico al HCl porque ambos tienen hidrógeno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) e.o. H = −1 en FeH₂ (hidruro metálico); se llama hidruro de hierro (II); difiere del HCl en que aquí el H actúa como anión H⁻ (hidruro), mientras que en el HCl el H tiene e.o. +1 y actúa como catión ácido H⁺ al ionizarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) e.o. H = 0 en FeH₂ porque el hierro no afecta el e.o. del hidrógeno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) FeH₂ no existe porque el Fe no puede unirse al hidrógeno</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En los <B>hidruros metálicos</B> (Metal + H₂), el H es el elemento más electronegativo del par, por lo que el H actúa como <B>anión H⁻</B> (ion hidruro):<BR>
+• En FeH₂: Fe tiene e.o. = +2 (Fe²⁺); H tiene e.o. = <B>−1</B> (H⁻)<BR>
+• Nombre: <B>Hidruro de hierro (II)</B> o hidruro ferroso<BR><BR>
+Diferencia con HCl:<BR>
+• En HCl: Cl es más electronegativo que H → Cl tiene e.o. = −1 y H tiene e.o. = <B>+1</B><BR>
+• Al ionizarse en agua: HCl → H⁺ + Cl⁻ (el H actúa como ácido)<BR><BR>
+En FeH₂ el H es el anión; en HCl el Cl es el anión. Son roles opuestos del H.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Calcula el e.o. del cromo en K₂Cr₂O₇ (dicromato de potasio) y en CrO₃ (trióxido de cromo). ¿En cuál de los dos el Cr es mejor agente oxidante? Justifica.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) En K₂Cr₂O₇: Cr = +6; en CrO₃: Cr = +6; son iguales y tienen el mismo poder oxidante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) En K₂Cr₂O₇: Cr = +6; en CrO₃: Cr = +6; tienen el mismo e.o. del Cr, pero el CrO₃ es más oxidante en solución ácida concentrada porque es el anhídrido del H₂CrO₄ sin la estabilización iónica del K⁺</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) En K₂Cr₂O₇: Cr = +7; en CrO₃: Cr = +6; el K₂Cr₂O₇ es más oxidante por tener mayor e.o. del Cr</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) En K₂Cr₂O₇: Cr = +3; en CrO₃: Cr = +4; ninguno es oxidante porque el Cr tiene e.o. bajos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) y b) son parcialmente correctas; la respuesta más completa es b)</B><BR>
+<B>K₂Cr₂O₇:</B> 2(+1) + 2x + 7(−2) = 0 → 2 + 2x − 14 = 0 → x = <B>+6</B><BR>
+<B>CrO₃:</B> x + 3(−2) = 0 → x = <B>+6</B><BR>
+Ambos tienen Cr con e.o. = +6. El e.o. máximo del Cr es +6 (grupo VIB).<BR>
+Como oxidantes: el Cr(+6) se reduce a Cr(+3) al oxidar otras sustancias. Tanto el K₂Cr₂O₇ como el CrO₃ son agentes oxidantes potentes. En la práctica, el <B>K₂Cr₂O₇</B> se usa más en laboratorio (más estable, sólido cristalino naranja fácil de pesar) mientras que el CrO₃ (ácido crómico anhidro) es un oxidante más agresivo e higroscópico. Ambos son tóxicos y cancerígenos (compuestos de Cr(VI)).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> El H₂O₂ (agua oxigenada) es un peróxido. ¿Cuál es el e.o. del O en este compuesto y en qué se diferencia del agua (H₂O)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) En H₂O₂: e.o. O = −2 (igual que en el agua); no hay diferencia en el e.o. del O</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) En H₂O₂: e.o. O = −1 (peróxido); en H₂O: e.o. O = −2. El O en el H₂O₂ puede tanto oxidar (reduciendo a O²⁻, e.o. = −2) como reducir (oxidando a O₂, e.o. = 0), lo que explica su doble función como oxidante y reductor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) En H₂O₂: e.o. O = 0; actúa como gas oxígeno disuelto en agua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) En H₂O₂: e.o. O = +2; es un compuesto poco común donde el O tiene carga positiva</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En H₂O₂:<BR>
+2(+1) + 2x = 0 → x = <B>−1</B> (e.o. del O en peróxido)<BR>
+En H₂O: 2(+1) + x = 0 → x = <B>−2</B> (e.o. del O normal)<BR><BR>
+El e.o. −1 del O en H₂O₂ es intermedio entre −2 (en H₂O) y 0 (en O₂). Esto significa que el O del H₂O₂ puede:<BR>
+• <B>Reducirse</B> de −1 a −2 (ganando e⁻) → actúa como <B>oxidante</B> (uso más común): blanquea cabello, desinfecta heridas<BR>
+• <B>Oxidarse</B> de −1 a 0 (perdiendo e⁻) → actúa como <B>reductor</B> (frente a oxidantes más fuertes como el KMnO₄)<BR>
+Esta doble función del H₂O₂ es característica de las sustancias en estado de oxidación intermedio.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Dada la fórmula Na₂HPO₄, identifica su función química, nómbrala con los tres sistemas y determina cuántos H ionizables quedan en el anión.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Sal neutra: fosfato de sodio; anión PO₄³⁻; no quedan H ionizables</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Sal ácida: hidrogenofosfato de sodio (IUPAC) / fosfato monoácido de sodio (trad.) / fosfato de sodio (II) (Stock); el anión HPO₄²⁻ tiene 1 H ionizable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Sal ácida: dihidrogenofosfato de sodio; el anión H₂PO₄⁻ tiene 2 H ionizables</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Hidróxido: es un hidróxido de sodio modificado con fósforo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El ácido fosfórico H₃PO₄ es triprótico (3 H ionizables). Puede neutralizarse en 3 etapas:<BR>
+• 1 mol NaOH: H₃PO₄ → NaH₂PO₄ (dihidrogenofosfato, anión H₂PO₄⁻, 2 H ionizables)<BR>
+• 2 mol NaOH: H₃PO₄ → <B>Na₂HPO₄</B> (hidrogenofosfato, anión <B>HPO₄²⁻</B>, <B>1 H ionizable</B>)<BR>
+• 3 mol NaOH: H₃PO₄ → Na₃PO₄ (fosfato, anión PO₄³⁻, 0 H ionizables)<BR>
+Nombre de Na₂HPO₄:<BR>
+• IUPAC: <B>Hidrogenofosfato de sodio</B><BR>
+• Tradicional: fosfato monoácido de sodio o fosfato bisódico<BR>
+El anión HPO₄²⁻ tiene 1 H ionizable. Es un tampón biológico importante (regula el pH de la orina).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Determina el e.o. del Mn en KMnO₄ y en MnO₂. Luego, en el proceso de reducción del KMnO₄ en medio ácido (Mn +7 → Mn +2), ¿cuántos electrones gana cada ion MnO₄⁻?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) KMnO₄: Mn = +6; MnO₂: Mn = +3; gana 3 e⁻</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) KMnO₄: Mn = +7; MnO₂: Mn = +4; en medio ácido el Mn⁷⁺ se reduce a Mn²⁺ ganando 5 electrones por ion MnO₄⁻</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) KMnO₄: Mn = +7; MnO₂: Mn = +4; en medio ácido gana 3 e⁻</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) KMnO₄: Mn = +5; MnO₂: Mn = +2; gana 3 e⁻</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+<B>KMnO₄:</B> (+1) + x + 4(−2) = 0 → x = <B>+7</B> (permanganato, oxidante muy potente, color violeta)<BR>
+<B>MnO₂:</B> x + 2(−2) = 0 → x = <B>+4</B> (dióxido de manganeso, color negro, usado en pilas secas)<BR><BR>
+Reducción del KMnO₄ según el medio:<BR>
+• <B>Medio ácido:</B> MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O (Mn: +7 → +2, gana <B>5 e⁻</B>, producto incoloro)<BR>
+• <B>Medio neutro:</B> MnO₄⁻ + 2H₂O + 3e⁻ → MnO₂ + 4OH⁻ (Mn: +7 → +4, gana 3 e⁻, precipitado marrón)<BR>
+• <B>Medio básico:</B> MnO₄⁻ + e⁻ → MnO₄²⁻ (Mn: +7 → +6, gana 1 e⁻, color verde)<BR>
+En el examen, el medio ácido (5 e⁻ por MnO₄⁻) es el más evaluado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Un compuesto X tiene la fórmula empírica M₂O₃ (donde M es un metal desconocido). La masa molar del compuesto es 102 g/mol. Identifica el metal M, determina su e.o. en este óxido, y nómbralo con los tres sistemas.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) M = Fe (56 g/mol); e.o. = +3; óxido de hierro (III) / trióxido de dihierro / óxido férrico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) M = Al (27 g/mol); e.o. = +3; óxido de aluminio / trióxido de dialuminio / alúmina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) M = Cr (52 g/mol); e.o. = +3; óxido de cromo (III) / trióxido de dicromo / óxido crómico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) M = Ti (48 g/mol); e.o. = +3; óxido de titanio (III)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Masa molar de M₂O₃ = 102 g/mol:<BR>
+2·M + 3·(16) = 102<BR>
+2M + 48 = 102<BR>
+2M = 54<BR>
+M = <B>27 g/mol → Aluminio (Al)</B><BR><BR>
+e.o. del Al: 2x + 3(−2) = 0 → x = <B>+3</B><BR><BR>
+Nombres del Al₂O₃:<BR>
+• IUPAC: <B>Trióxido de dialuminio</B><BR>
+• Stock: <B>Óxido de aluminio</B> (el Al solo tiene un e.o. = +3, no necesita número romano)<BR>
+• Nombre común: <B>Alúmina</B> (mineral: corindón; variedad preciosa: rubí y zafiro)<BR>
+El Al₂O₃ es un óxido anfótero: reacciona con ácidos y con bases. Punto de fusión: 2 072°C.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Dada la siguiente lista de compuestos: HNO₂, HNO₃, N₂O₃, N₂O₅, NaNO₂, NaNO₃. Clasifica cada uno en su función química y ordénalos según el estado de oxidación del N (de menor a mayor).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Todos son ácidos oxácidos; e.o. del N varía entre +1 y +7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) N₂O₃ (óxido ácido, N=+3) → HNO₂ (ác. nitroso, N=+3) → NaNO₂ (sal oxisal, N=+3) → N₂O₅ (óxido ácido, N=+5) → HNO₃ (ác. nítrico, N=+5) → NaNO₃ (sal oxisal, N=+5); dos grupos: N=+3 y N=+5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) HNO₂ (N=+1), HNO₃ (N=+3), N₂O₃ (N=+5), N₂O₅ (N=+7), NaNO₂ (N=+1), NaNO₃ (N=+3)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Todos tienen N con e.o. = +5 porque el N siempre tiene su máximo en compuestos con O</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Cálculo del e.o. del N:<BR>
+• <B>N₂O₃:</B> 2x + 3(−2) = 0 → x = <B>+3</B> → óxido ácido (anhídrido nitroso)<BR>
+• <B>HNO₂:</B> (+1) + x + 2(−2) = 0 → x = <B>+3</B> → ácido nitroso<BR>
+• <B>NaNO₂:</B> (+1) + x + 2(−2) = 0 → x = <B>+3</B> → nitrito de sodio (sal oxisal)<BR>
+• <B>N₂O₅:</B> 2x + 5(−2) = 0 → x = <B>+5</B> → óxido ácido (anhídrido nítrico)<BR>
+• <B>HNO₃:</B> (+1) + x + 3(−2) = 0 → x = <B>+5</B> → ácido nítrico<BR>
+• <B>NaNO₃:</B> (+1) + x + 3(−2) = 0 → x = <B>+5</B> → nitrato de sodio (sal oxisal)<BR><BR>
+Se forman 2 grupos según el e.o. del N: +3 y +5. Dentro de cada grupo, las relaciones son: anhídrido + H₂O → ácido; ácido + base → sal + H₂O.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> ¿Por qué el HF (ácido fluorhídrico) es un ácido débil a pesar de que el F es el no metal más electronegativo y el enlace H–F es muy polar? Contrasta con el HCl, HBr e HI.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) El HF es fuerte; es el ácido más fuerte de todos los hidrácidos por la alta electronegatividad del F</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) El HF es débil porque aunque el enlace H–F es muy polar, la energía de disociación del enlace H–F es la más alta de los halógenos (569 kJ/mol), dificultando la ionización. Además el F⁻ forma fuertes puentes de hidrógeno con el HF no disociado (formando HF₂⁻). En la serie HF < HCl < HBr < HI, la fuerza ácida aumenta porque la energía de enlace H–X disminuye, facilitando la ionización</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El HF es débil porque el F tiene muchos electrones y no quiere ionizarse; el HI es el más débil porque el I es el más grande</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Todos los hidrácidos son igualmente fuertes; la "fortaleza" ácida solo se aplica a los ácidos oxácidos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La fuerza ácida de los hidrácidos HX (X = halógeno) depende de qué tan fácil es romper el enlace H–X para liberar H⁺:<BR>
+<B>Energías de enlace H–X:</B><BR>
+• H–F: 569 kJ/mol (más fuerte → más difícil ionizar → ácido más débil)<BR>
+• H–Cl: 432 kJ/mol<BR>
+• H–Br: 366 kJ/mol<BR>
+• H–I: 298 kJ/mol (más débil → más fácil ionizar → ácido más fuerte)<BR><BR>
+Aunque el enlace H–F sea el más polar (mayor ΔEN), es tan fuerte que no se rompe fácilmente → <B>HF es ácido débil</B> (Ka ≈ 6.8×10⁻⁴).<BR>
+Además, el F⁻ forma el ion bifluoruro HF₂⁻ en solución (F⁻ + HF → HF₂⁻), reduciendo la concentración efectiva de F⁻ y desplazando el equilibrio hacia la izquierda (hacia HF sin disociar).<BR>
+Tendencia en la serie de los hidrácidos: <B>HF &lt; HCl &lt; HBr &lt; HI</B> (fuerza ácida creciente).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Para el compuesto Mn₃O₄, determina el e.o. promedio del Mn. ¿Qué significa que sea un valor fraccionario, y cómo se interpreta estructuralmente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) e.o. promedio Mn = +4/3 ≈ +1.3; significa que el Mn tiene un e.o. no entero, lo que es imposible físicamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) e.o. promedio Mn = +8/3 ≈ +2.67; el valor fraccionario indica que en la estructura hay Mn con distintos e.o. reales (Mn²⁺ y Mn³⁺ en relación 1:2), es decir, Mn₃O₄ es una especie de sal doble FeO·Fe₂O₃ (espinela), donde coexisten dos estados de oxidación enteros del Mn</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) e.o. promedio Mn = +3; el Mn siempre tiene e.o. +3 en todos sus óxidos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) e.o. promedio Mn = +2; el Mn₃O₄ es un óxido básico similar al FeO</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+3x + 4(−2) = 0 → 3x = 8 → x = <B>+8/3 ≈ +2.67</B><BR><BR>
+El e.o. promedio +8/3 es <B>fraccionario</B>, lo que indica que NO todos los átomos de Mn tienen el mismo e.o. en la estructura real. El Mn₃O₄ es estructuralmente una <B>espinela inversa</B>:<BR>
+• 1 Mn con e.o. = <B>+2</B> (equivalente al MnO)<BR>
+• 2 Mn con e.o. = <B>+3</B> (equivalente al Mn₂O₃)<BR>
+• Mn₃O₄ = MnO · Mn₂O₃ (sal doble u óxido mixto)<BR>
+Verificación: 1(+2) + 2(+3) = +2 + 6 = +8; y 4(−2) = −8 → suma = 0 ✓<BR>
+Esto es análogo al Fe₃O₄ (magnetita) = FeO · Fe₂O₃, que contiene Fe²⁺ y Fe³⁺ simultáneamente. Ambos son ejemplos de <B>óxidos de valencia mixta</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Un técnico de laboratorio necesita preparar 500 mL de una solución de Na₂SO₄ a partir de H₂SO₄ (ác. sulfúrico) y NaOH (hidróxido de sodio). Escribe la reacción de neutralización completa, determina la función química de cada reactivo y la función del producto Na₂SO₄.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) H₂SO₄ + NaOH → NaHSO₄ + H₂O; el Na₂SO₄ no se puede preparar con NaOH</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O; H₂SO₄ es un ácido oxácido (función ácido); NaOH es un hidróxido (función base); Na₂SO₄ es una sal oxisal neutra (sulfato de sodio)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) H₂SO₄ + NaOH → Na₂SO₄ + H₂O (relación 1:1); H₂SO₄ es un hidrácido; NaOH es un óxido básico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) H₂SO₄ + 2NaOH → Na₂SO₃ + 2H₂O; el producto es sulfito, no sulfato</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>
+<B>Reacción de neutralización completa:</B><BR>
+H₂SO₄ + 2 NaOH → Na₂SO₄ + 2 H₂O<BR><BR>
+<B>Funciones químicas:</B><BR>
+• <B>H₂SO₄</B>: ácido oxácido (ácido sulfúrico). e.o. S = +6. Dibásico (2 H ionizables).<BR>
+• <B>NaOH</B>: hidróxido (base fuerte, sosa cáustica). Se necesitan 2 mol por cada mol de H₂SO₄ para neutralización completa.<BR>
+• <B>Na₂SO₄</B>: sal oxisal neutra (sulfato de sodio). Se forma cuando los 2 H del ácido son reemplazados por Na⁺.<BR>
+• <B>H₂O</B>: agua, producto de toda neutralización ácido-base.<BR><BR>
+Si se usa solo 1 mol de NaOH → NaHSO₄ (sal ácida, bisulfato de sodio).<BR>
+Fórmula de la sal: 2 Na⁺ (+2 total) + SO₄²⁻ (−2) = Na₂SO₄ ✓</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

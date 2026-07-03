@@ -1,0 +1,510 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Possessive Adjectives - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:14px 20px;margin-top:14px;font-size:16px;line-height:2.1;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:13px 18px;margin-top:14px;font-size:16px;line-height:1.95;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.6;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2.1;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:140px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.eng{color:#0D1B36;font-style:italic;}
+.vs-box{display:flex;gap:20px;margin-top:18px;flex-wrap:wrap;}
+.vs-card{flex:1;min-width:220px;border-radius:14px;padding:18px 22px;font-size:16px;line-height:2;}
+.vs-card.verde{background:#e8f4f3;border-left:5px solid #1F6A67;}
+.vs-card.rojo{background:#fdecea;border-left:5px solid #c0392b;}
+.vs-card h5{font-size:15px;font-weight:bold;margin-bottom:8px;}
+.vs-card.verde h5{color:#1F6A67;}
+.vs-card.rojo h5{color:#c0392b;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 2 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Possessive Adjectives</H1>
+<DIV CLASS="sub">Adjetivos Posesivos &middot; Concordancia con el poseedor &middot; Diferencia con Pronombres Posesivos &middot; Usos avanzados &middot; Errores frecuentes</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- SECCIÓN 1 -->
+<H3 ID="definicion">1. ¿Qué son los Possessive Adjectives?</H3>
+
+Los <B>adjetivos posesivos</B> (possessive adjectives) son palabras que indican a quién pertenece algo o con quién tiene relación algo. En español los equivalentes son: <I>mi, tu, su, nuestro, vuestro, su</I>. En inglés, funcionan de manera diferente al español en dos aspectos fundamentales que generan la mayoría de los errores en exámenes:
+
+<UL>
+<LI><B>Concuerdan con el poseedor, NO con lo poseído.</B> En español, el adjetivo posesivo concuerda en género y número con el objeto poseído: "su libro" / "sus libros" / "su casa" / "sus casas". En inglés, solo importa quién posee: si el poseedor es masculino singular, se dice <I>his</I>, sin importar si el objeto es singular o plural, masculino o femenino.</LI>
+<LI><B>Nunca varían según el sustantivo que acompañan.</B> La misma forma <I>my</I> vale para "mi libro", "mis libros", "mi casa" y "mis casas".</LI>
+</UL>
+
+<DIV CLASS="ej">📌 <B>Ejemplo clave para entender la diferencia:</B><BR>
+En español: <I>"Ella tiene su libro"</I> / <I>"Ella tiene sus libros"</I> → el posesivo cambia según el número.<BR>
+En inglés: <SPAN CLASS="eng">"She has her book"</SPAN> / <SPAN CLASS="eng">"She has her books"</SPAN> → el posesivo (<I>her</I>) NO cambia. Solo importa que el poseedor es femenino (<I>she</I>).</DIV>
+
+<!-- SECCIÓN 2 -->
+<H3 ID="tabla">2. Tabla completa de Adjetivos Posesivos</H3>
+
+Los adjetivos posesivos en inglés se derivan directamente de los pronombres personales sujeto. Aprenderlos en paralelo facilita su memorización.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Pronombre sujeto</TH><TH>Adjetivo posesivo</TH><TH>Equivalente en español</TH><TH>Ejemplo en inglés</TH></TR>
+<TR><TD><B>I</B></TD><TD><B>my</B></TD><TD>mi / mis</TD><TD><SPAN CLASS="eng">This is <B>my</B> book.</SPAN> — Este es mi libro.</TD></TR>
+<TR><TD><B>you</B></TD><TD><B>your</B></TD><TD>tu / tus / su / sus (usted)</TD><TD><SPAN CLASS="eng">Is this <B>your</B> pen?</SPAN> — ¿Es esta tu pluma?</TD></TR>
+<TR><TD><B>he</B></TD><TD><B>his</B></TD><TD>su / sus (de él)</TD><TD><SPAN CLASS="eng">That is <B>his</B> car.</SPAN> — Ese es su auto (de él).</TD></TR>
+<TR><TD><B>she</B></TD><TD><B>her</B></TD><TD>su / sus (de ella)</TD><TD><SPAN CLASS="eng">I like <B>her</B> dress.</SPAN> — Me gusta su vestido (de ella).</TD></TR>
+<TR><TD><B>it</B></TD><TD><B>its</B></TD><TD>su / sus (de ello/animal/cosa)</TD><TD><SPAN CLASS="eng">The dog wags <B>its</B> tail.</SPAN> — El perro mueve su cola.</TD></TR>
+<TR><TD><B>we</B></TD><TD><B>our</B></TD><TD>nuestro/a/os/as</TD><TD><SPAN CLASS="eng"><B>Our</B> school is very big.</SPAN> — Nuestra escuela es muy grande.</TD></TR>
+<TR><TD><B>you</B> (pl.)</TD><TD><B>your</B></TD><TD>vuestro/a / su (ustedes)</TD><TD><SPAN CLASS="eng">Where are <B>your</B> notebooks?</SPAN> — ¿Dónde están sus cuadernos?</TD></TR>
+<TR><TD><B>they</B></TD><TD><B>their</B></TD><TD>su / sus (de ellos/ellas)</TD><TD><SPAN CLASS="eng"><B>Their</B> house is near the park.</SPAN> — Su casa está cerca del parque.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">8</DIV><DIV CLASS="dk-label">Adjetivos posesivos<BR>en inglés</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">his/her</DIV><DIV CLASS="dk-label">Distinguen género<BR>en 3.ª persona sing.</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">your</DIV><DIV CLASS="dk-label">Igual para singular<BR>y plural (2.ª persona)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">their</DIV><DIV CLASS="dk-label">Plural de 3.ª persona<BR>(he/she/it → they)</DIV></DIV>
+</DIV>
+
+<!-- SECCIÓN 3 -->
+<H3 ID="posicion">3. Posición y uso sintáctico del adjetivo posesivo</H3>
+
+En inglés, los adjetivos posesivos <B>siempre van delante del sustantivo</B> al que modifican — nunca después. Esta posición es fija e invariable. Además, cuando hay un adjetivo calificativo, el posesivo precede a todo el grupo nominal.
+
+<H4>Estructura posicional:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Estructura</TH><TH>Ejemplo</TH><TH>Traducción</TH></TR>
+<TR><TD>Posesivo + Sustantivo</TD><TD><SPAN CLASS="eng">This is <B>my</B> book.</SPAN></TD><TD>Este es mi libro.</TD></TR>
+<TR><TD>Posesivo + Adjetivo calificativo + Sustantivo</TD><TD><SPAN CLASS="eng">She is <B>my</B> best friend.</SPAN></TD><TD>Ella es mi mejor amiga.</TD></TR>
+<TR><TD>Posesivo + Sustantivo (plural)</TD><TD><SPAN CLASS="eng">These are <B>their</B> notebooks.</SPAN></TD><TD>Estos son sus cuadernos (de ellos).</TD></TR>
+<TR><TD>Verbo + Posesivo + Sustantivo</TD><TD><SPAN CLASS="eng">I love <B>her</B> voice.</SPAN></TD><TD>Me encanta su voz (de ella).</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Error frecuente:</B> En inglés no se usan artículos (the/a) junto con adjetivos posesivos. En español es posible decir "el mi libro" (en algunos dialectos) pero en inglés NUNCA se dice "the my book" ni "a his car". El posesivo ya determina al sustantivo y reemplaza al artículo: <SPAN CLASS="eng">"my book"</SPAN>, nunca <SPAN CLASS="eng">"the my book"</SPAN>.</DIV>
+
+<!-- SECCIÓN 4 -->
+<H3 ID="concordancia">4. La regla de oro: concordancia con el POSEEDOR</H3>
+
+Esta es la regla más importante y la que más errores genera en exámenes preuniversitarios. El adjetivo posesivo en inglés <B>concuerda con la persona o cosa que posee</B>, NO con el sustantivo poseído.
+
+<H4>Comparación directa español vs. inglés:</H4>
+<DIV CLASS="vs-box">
+<DIV CLASS="vs-card verde">
+<H5>✅ Inglés — concuerda con el POSEEDOR</H5>
+<SPAN CLASS="eng">He has <B>his</B> book.</SPAN> (poseedor: he → his)<BR>
+<SPAN CLASS="eng">He has <B>his</B> books.</SPAN> (poseedor: he → his — igual)<BR>
+<SPAN CLASS="eng">She has <B>her</B> book.</SPAN> (poseedor: she → her)<BR>
+<SPAN CLASS="eng">She has <B>her</B> books.</SPAN> (poseedor: she → her — igual)<BR>
+</DIV>
+<DIV CLASS="vs-card rojo">
+<H5>❌ Error por traducción literal del español</H5>
+<I>"He has his book"</I> → correcto<BR>
+<I>"He has his books"</I> → el alumno escribe <I>"hes books"</I> ❌<BR>
+<I>"She has her car"</I> → el alumno escribe <I>"his car"</I> ❌ (confunde género)<BR>
+<I>"The dog wags its tail"</I> → el alumno escribe <I>"it's tail"</I> ❌ (confunde posesivo con contracción)<BR>
+</DIV>
+</DIV>
+
+<H4>Ejemplos con cada poseedor para fijar la regla:</H4>
+<UL>
+<LI>El padre (he) tiene su trabajo → <SPAN CLASS="eng">He loves <B>his</B> job.</SPAN></LI>
+<LI>La madre (she) tiene su auto → <SPAN CLASS="eng">She washes <B>her</B> car.</SPAN></LI>
+<LI>El perro (it) tiene su hueso → <SPAN CLASS="eng">The dog buries <B>its</B> bone.</SPAN></LI>
+<LI>Nosotros (we) tenemos nuestras notas → <SPAN CLASS="eng">We study <B>our</B> notes.</SPAN></LI>
+<LI>Ellos (they) tienen su escuela → <SPAN CLASS="eng">They love <B>their</B> school.</SPAN></LI>
+</UL>
+
+<!-- SECCIÓN 5 -->
+<H3 ID="posesivo-vs-pronombre">5. Adjetivo posesivo vs. Pronombre posesivo — Diferencia crítica</H3>
+
+En inglés existe una distinción fundamental que el español no marca con tanta claridad: los <B>adjetivos posesivos</B> acompañan a un sustantivo, mientras que los <B>pronombres posesivos</B> lo reemplazan completamente.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Pronombre sujeto</TH><TH>Adjetivo posesivo<BR>(acompaña al sustantivo)</TH><TH>Pronombre posesivo<BR>(reemplaza al sustantivo)</TH></TR>
+<TR><TD><B>I</B></TD><TD>my <SPAN CLASS="eng">(my book)</SPAN></TD><TD>mine <SPAN CLASS="eng">(This book is mine.)</SPAN></TD></TR>
+<TR><TD><B>you</B></TD><TD>your <SPAN CLASS="eng">(your pen)</SPAN></TD><TD>yours <SPAN CLASS="eng">(This pen is yours.)</SPAN></TD></TR>
+<TR><TD><B>he</B></TD><TD>his <SPAN CLASS="eng">(his car)</SPAN></TD><TD>his <SPAN CLASS="eng">(This car is his.)</SPAN></TD></TR>
+<TR><TD><B>she</B></TD><TD>her <SPAN CLASS="eng">(her dress)</SPAN></TD><TD>hers <SPAN CLASS="eng">(This dress is hers.)</SPAN></TD></TR>
+<TR><TD><B>it</B></TD><TD>its <SPAN CLASS="eng">(its tail)</SPAN></TD><TD>— (no se usa normalmente)</TD></TR>
+<TR><TD><B>we</B></TD><TD>our <SPAN CLASS="eng">(our house)</SPAN></TD><TD>ours <SPAN CLASS="eng">(This house is ours.)</SPAN></TD></TR>
+<TR><TD><B>they</B></TD><TD>their <SPAN CLASS="eng">(their team)</SPAN></TD><TD>theirs <SPAN CLASS="eng">(This team is theirs.)</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">📌 <B>Ejemplo en contexto para fijar la diferencia:</B><BR>
+<SPAN CLASS="eng">"This is <B>my</B> bag."</SPAN> → Adjetivo posesivo: <I>my</I> acompaña a <I>bag</I>.<BR>
+<SPAN CLASS="eng">"This bag is <B>mine</B>."</SPAN> → Pronombre posesivo: <I>mine</I> reemplaza a <I>my bag</I>.<BR><BR>
+<SPAN CLASS="eng">"Where is <B>her</B> notebook?"</SPAN> → Adjetivo: acompaña a <I>notebook</I>.<BR>
+<SPAN CLASS="eng">"The notebook on the desk is <B>hers</B>."</SPAN> → Pronombre: reemplaza a <I>her notebook</I>.</DIV>
+
+<!-- SECCIÓN 6 -->
+<H3 ID="errores">6. Los 5 errores más frecuentes en exámenes preuniversitarios</H3>
+
+<H4>Error 1 — Confundir <I>its</I> con <I>it's</I>:</H4>
+<UL>
+<LI><B>its</B> (sin apóstrofe) = adjetivo posesivo → <SPAN CLASS="eng">"The cat licked <B>its</B> paw."</SPAN></LI>
+<LI><B>it's</B> (con apóstrofe) = contracción de <I>it is</I> → <SPAN CLASS="eng">"<B>It's</B> raining today."</SPAN></LI>
+</UL>
+
+<H4>Error 2 — Confundir <I>their</I>, <I>they're</I> y <I>there</I>:</H4>
+<UL>
+<LI><B>their</B> = adjetivo posesivo → <SPAN CLASS="eng">"<B>Their</B> house is big."</SPAN> (la casa de ellos)</LI>
+<LI><B>they're</B> = they are → <SPAN CLASS="eng">"<B>They're</B> very happy."</SPAN></LI>
+<LI><B>there</B> = lugar / existencia → <SPAN CLASS="eng">"<B>There</B> is a park nearby."</SPAN></LI>
+</UL>
+
+<H4>Error 3 — Confundir <I>your</I> con <I>you're</I>:</H4>
+<UL>
+<LI><B>your</B> = adjetivo posesivo → <SPAN CLASS="eng">"<B>Your</B> book is on the table."</SPAN></LI>
+<LI><B>you're</B> = you are → <SPAN CLASS="eng">"<B>You're</B> a great student."</SPAN></LI>
+</UL>
+
+<H4>Error 4 — Aplicar la concordancia del español al inglés:</H4>
+<UL>
+<LI>INCORRECTO: traducir "su libro" (de ella) como <SPAN CLASS="eng">"his book"</SPAN> porque "libro" es masculino en español.</LI>
+<LI>CORRECTO: identificar al poseedor (ella = she) → usar <SPAN CLASS="eng">"<B>her</B> book"</SPAN>.</LI>
+</UL>
+
+<H4>Error 5 — Combinar artículo + adjetivo posesivo:</H4>
+<UL>
+<LI>INCORRECTO: <SPAN CLASS="eng">"I love the my country."</SPAN> ❌</LI>
+<LI>CORRECTO: <SPAN CLASS="eng">"I love <B>my</B> country."</SPAN> ✅ — El posesivo reemplaza al artículo.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Truco mnemotécnico para exámenes:</B> Antes de escribir el adjetivo posesivo, hazte siempre esta pregunta: <B>¿QUIÉN es el poseedor?</B> Identifica la persona (I, you, he, she, it, we, they) y luego elige el posesivo correspondiente. El objeto poseído (libro, casa, perro…) NO influye en la elección.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- =================== EJERCICIOS =================== -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de práctica</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; Reconocimiento y uso directo</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Elige el adjetivo posesivo correcto: "I have a dog. _____ dog is very friendly."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) His</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Her</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) My</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Its</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) My</B><BR>El poseedor es <I>I</I> (yo, el hablante). El adjetivo posesivo correspondiente a <I>I</I> es <B>my</B>. El sustantivo "dog" no influye en la elección — lo único que importa es quién posee. Esquema: I → my / you → your / he → his / she → her / it → its / we → our / they → their.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Completa con el posesivo correcto: "She is a teacher. _____ students love her."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) His</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Her</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Their</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Our</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Her</B><BR>El poseedor es <I>she</I> (ella, la profesora). El adjetivo posesivo de <I>she</I> es <B>her</B>. No importa que "students" sea plural — el posesivo no cambia por el número del sustantivo poseído. <I>His</I> sería incorrecto porque corresponde a <I>he</I> (masculino).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Selecciona la opción correcta: "We have a new house. _____ house has a big garden."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Their</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) My</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Our</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Your</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) Our</B><BR>El poseedor es <I>we</I> (nosotros). El adjetivo posesivo de <I>we</I> es <B>our</B>. "Their" correspondería a <I>they</I> (ellos). "My" es solo para el hablante individual. "Your" es para la 2.ª persona.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál es el adjetivo posesivo que corresponde al pronombre <I>they</I>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) its</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) our</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) their</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) his</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) their</B><BR>La tabla de correspondencias: I→my / you→your / he→his / she→her / it→its / we→our / <B>they→their</B>. "Their" es el adjetivo posesivo de la 3.ª persona del plural, equivalente a "su/sus" (de ellos/ellas) en español.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Completa: "He is my brother. _____ name is Carlos."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Her</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Their</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Its</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) His</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d) His</B><BR>El poseedor es <I>he</I> (el hermano, género masculino). El adjetivo posesivo de <I>he</I> es <B>his</B>. "Her" es incorrecto porque corresponde a <I>she</I> (femenino). Aunque en español "nombre" es masculino, en inglés el posesivo no depende del sustantivo sino del poseedor.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Elige la oración gramaticalmente correcta:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) The cat lost it's collar.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) The cat lost its collar.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) The cat lost their collar.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) The cat lost her collar.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) The cat lost its collar.</B><BR>"The cat" es un sujeto singular neutro (cosa/animal de género no especificado) → poseedor = <I>it</I> → posesivo = <B>its</B> (sin apóstrofe). "It's" con apóstrofe es siempre la contracción de <I>it is</I>, nunca el posesivo. Este es uno de los errores más frecuentes y evaluados en exámenes.</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; Aplicación y transformación</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Identifica el error en la siguiente oración y selecciona la corrección: <SPAN CLASS="eng">"Maria loves the her country and the her traditions."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) No hay error; la oración es correcta.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) El error es usar "the" junto a "her" — debe ser: "Maria loves her country and her traditions."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) El error es "her" — debe ser "his" porque "country" es masculino en español.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) El error es que falta el artículo "a" antes de "country".</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En inglés, el artículo definido <I>the</I> y los adjetivos posesivos son <B>determinantes mutuamente excluyentes</B>: no pueden coexistir delante del mismo sustantivo. Nunca se dice "the her country" ni "the my book". La oración correcta es: <SPAN CLASS="eng">"Maria loves <B>her</B> country and <B>her</B> traditions."</SPAN> El posesivo ya cumple la función de determinar el sustantivo, haciendo innecesario el artículo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Cuál de estas oraciones usa correctamente el adjetivo posesivo <I>their</I>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Their are many students in the classroom.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) The students forgot their homework at home.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Their very happy about the results.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) I think their wrong about the answer.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) The students forgot their homework at home. ✅</B><BR>• Opción a): "Their are" ❌ → debe ser "There are" (existencial/locativo).<BR>• Opción b): <B>their</B> modifica correctamente a "homework" (poseedor: the students = they → their) ✅.<BR>• Opción c): "Their very happy" ❌ → debe ser "They're very happy" (contracción de they are).<BR>• Opción d): "their wrong" ❌ → debe ser "they're wrong" (they are wrong).<BR>Las opciones a), c) y d) confunden <I>their</I> (posesivo) con <I>there</I> (lugar) y <I>they're</I> (they are).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Selecciona el posesivo correcto para cada espacio: <SPAN class="eng">"Ana lost _____(1) keys, and I lost _____(2) wallet."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) (1) his — (2) your</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) (1) her — (2) my</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) (1) their — (2) our</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) (1) its — (2) my</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) her — my</B><BR>(1) "Ana" es femenino singular → poseedor = she → posesivo = <B>her</B>.<BR>(2) "I" es el hablante → poseedor = I → posesivo = <B>my</B>.<BR>La regla de identificar primero al poseedor antes de elegir el posesivo es fundamental. En (1) el error típico es usar "his" porque se traduce literalmente "sus llaves" sin identificar que el poseedor (Ana) es femenino.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Reescribe usando el adjetivo posesivo correcto: "The name of the school is 'San Marcos'." → _____ name is 'San Marcos'."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Their</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) His</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Her</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Its</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d) Its</B><BR>"The school" es una institución (cosa) → poseedor = <I>it</I> → posesivo = <B>its</B>. Este ejercicio evalúa el uso de <I>its</I> para cosas, organizaciones e instituciones — un uso que frecuentemente se olvida y que distingue a los estudiantes de nivel intermedio-avanzado. Recuerda: sin apóstrofe (<I>its</I>) = posesivo; con apóstrofe (<I>it's</I>) = it is.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Completa el párrafo eligiendo la secuencia correcta de posesivos para los espacios (1), (2) y (3):<BR><SPAN CLASS="eng">"Pedro and Sofia are architects. _____(1) office is in Miraflores. Pedro loves _____(2) job and Sofia loves _____(3) job too."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) (1) Their — (2) his — (3) her</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) (1) Our — (2) his — (3) her</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) (1) Their — (2) her — (3) his</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) (1) His — (2) his — (3) her</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) Their — his — her</B><BR>(1) "Pedro and Sofia" = dos personas = <I>they</I> → <B>their</B> office (la oficina de ambos).<BR>(2) "Pedro" = masculino = <I>he</I> → <B>his</B> job (el trabajo de él).<BR>(3) "Sofia" = femenino = <I>she</I> → <B>her</B> job (el trabajo de ella).<BR>La opción b) usa "Our" que implicaría que el hablante también es parte del grupo (incorrecto). La opción c) invierte his/her confundiendo los géneros.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Distingue el adjetivo posesivo del pronombre posesivo. ¿Cuál oración usa un <B>adjetivo posesivo</B> (no un pronombre posesivo)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) "This bag is mine."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) "The red pen is yours."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) "That is our car."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) "The decision is theirs."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) "That is our car."</B><BR>El <B>adjetivo posesivo</B> siempre va <B>delante de un sustantivo</B> al que modifica: <SPAN class="eng">"our <B>car</B>"</SPAN> → <I>our</I> acompaña a <I>car</I> ✅.<BR>Los pronombres posesivos van solos, sin sustantivo después:<BR>• "This bag is <I>mine</I>." → <I>mine</I> reemplaza a "my bag" (pronombre posesivo).<BR>• "The red pen is <I>yours</I>." → pronombre posesivo.<BR>• "The decision is <I>theirs</I>." → pronombre posesivo.<BR>Solo en c) el posesivo (<I>our</I>) modifica directamente a un sustantivo (<I>car</I>) → adjetivo posesivo.</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; Análisis y corrección de errores</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Lee el siguiente párrafo y cuenta cuántos errores de adjetivo posesivo contiene:<BR><SPAN CLASS="eng">"My sister and her husband live in Cusco. His house is near the Plaza de Armas. Her husband loves it's city and his sister loves their traditions. Their very happy there."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Un error: "it's city" → "its city"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Dos errores: "it's city" → "its city"; "Their very happy" → "They're very happy"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Tres errores: "His house" → "Their house"; "it's city" → "its city"; "Their very happy" → "They're very happy"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El párrafo está completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) — Tres errores</B><BR>① <B>"His house"</B> → debe ser <B>"Their house"</B>: "My sister and her husband" son dos personas (she + he = they) → la casa es de ambos → <B>their</B>.<BR>② <B>"it's city"</B> → debe ser <B>"its city"</B>: posesivo de <I>it</I> (la ciudad) sin apóstrofe. "It's" = it is (contracción), no posesivo.<BR>③ <B>"Their very happy"</B> → debe ser <B>"They're very happy"</B>: aquí no hay sustantivo después → no es posesivo; es la contracción <I>they are</I>.<BR>La frase "his sister loves their traditions" es correcta: "his sister" (la hermana del esposo, de él = his) y "their traditions" (las tradiciones de la ciudad/del lugar = their).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Elige la traducción al inglés más precisa y correcta de: <B>"Nuestra profesora olvidó sus libros en su oficina."</B> (poseedor de "su oficina" = la profesora)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Our teacher forgot his books in her office.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Our teacher forgot their books in its office.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Our teacher forgot her books in her office.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Our teacher forgot her books in his office.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) Our teacher forgot her books in her office.</B><BR>Análisis posesivo por posesivo:<BR>• "Nuestra profesora" → poseedor del grupo hablante = we → <B>Our</B> teacher ✅<BR>• "sus libros" → poseedor = la profesora (she) → <B>her</B> books ✅<BR>• "su oficina" → poseedor = la profesora (she) → <B>her</B> office ✅<BR>La opción a) usa "his books" (error de género: la profesora es she, no he). La opción b) usa "their books" e "its office" (ambos incorrectos para una persona femenina singular). La opción d) mezcla "her books" correctamente pero "his office" (incorrecto: la oficina también es de ella).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Analiza por qué la siguiente oración es ambigua en inglés y determina cuál es la interpretación que el contexto hace más probable:<BR><SPAN CLASS="eng">"The doctor examined the patient and read <B>her</B> notes carefully."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) "Her notes" = las notas de una tercera persona (una mujer) no mencionada en la oración.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) "Her" es ambiguo: puede referirse a las notas de la doctora (si es mujer) O a las notas de la paciente (si la paciente es mujer). El contexto o una oración anterior aclararía a cuál de las dos se refiere.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) "Her notes" solo puede referirse a las notas de la paciente, porque el adjetivo posesivo siempre acompaña al objeto más cercano.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La oración es incorrecta; debe usarse "its notes".</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta evalúa la <B>ambigüedad referencial</B> de los posesivos de 3.ª persona. Como tanto "the doctor" como "the patient" pueden ser femeninas, "her" podría referirse a cualquiera de las dos. En inglés escrito formal, para evitar esta ambigüedad se repetiría el sustantivo: <SPAN class="eng">"the doctor's notes"</SPAN> o <SPAN class="eng">"the patient's notes"</SPAN>. Este es un concepto lingüístico evaluado a nivel preuniversitario avanzado y en exámenes de comprensión lectora de universidades de alto rendimiento.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Completa el texto con la secuencia de posesivos correcta para los espacios (1) al (4):<BR><SPAN CLASS="eng">"I have a younger sister. _____(1) name is Valeria. She studies at _____(2) university with _____(3) best friend, Camila. Camila and Valeria love _____(4) major: they both study medicine."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) (1) Her — (2) her — (3) her — (4) their</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) (1) His — (2) our — (3) her — (4) their</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) (1) Her — (2) my — (3) her — (4) their</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) (1) Her — (2) her — (3) my — (4) its</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) Her — my — her — their</B><BR>(1) "_____ name is Valeria" → la hermana es <I>she</I> → <B>her</B> name.<BR>(2) "She studies at _____ university" → la universidad donde el hablante (<I>I</I>) también podría estudiar. Pero el contexto dice "at _____ university with her best friend" → la universidad pertenece al entorno del hablante = <B>my</B> university (la misma universidad del hablante). Si fuera "her university" implicaría que Valeria tiene su propia universidad separada.<BR>(3) "with _____ best friend, Camila" → la mejor amiga de Valeria (she) → <B>her</B> best friend.<BR>(4) "Camila and Valeria love _____ major" → las dos juntas = <I>they</I> → <B>their</B> major.<BR>La opción a) usa "her university" en (2), lo que pierde la implicación de que es la misma del hablante.</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; Ingreso universitario</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Lee y analiza: <SPAN CLASS="eng">"Every student must bring their own notebook to the exam."</SPAN> — ¿Por qué se usa <I>their</I> cuando el sujeto (<I>every student</I>) es gramaticalmente singular?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Es un error gramatical; debe decir "his or her own notebook".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Es correcto. "Their" se usa como <I>singular genérico</I> en inglés moderno cuando el género del sujeto es desconocido o se quiere evitar la distinción his/her. Esta construcción es llamada "singular they" y está aceptada por las principales guías de estilo como APA, Chicago y Oxford.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Es correcto solo en inglés americano informal, pero incorrecto en inglés académico.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Es un error; debe decir "its own notebook" porque "every student" es neutro.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>"singular they"</B> es un fenómeno lingüístico documentado en inglés desde el siglo XIV (Shakespeare, Austen y otros lo usaron). Cuando el referente es genérico, desconocido o se quiere evitar especificar género, el inglés moderno usa <I>they/their</I> para un sujeto singular: <SPAN class="eng">"Every student must bring <B>their</B> notebook."</SPAN><BR>La alternativa tradicional "his or her" (aceptada en estilos formales) es más larga. "Its" (opción d) nunca se usa para personas. Este uso avanzado de <I>their</I> es evaluado en exámenes de alto rendimiento y en pruebas de comprensión lingüística universitaria.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Identifica TODOS los errores en el siguiente párrafo y selecciona la opción que los corrige con la justificación más completa:<BR><SPAN CLASS="eng">"My brother forgot you're advice and lost it's job. Now him and me are worried about our future. Their are many problems in his life."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Dos errores: "you're" → "your"; "it's job" → "its job".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Tres errores: "you're" → "your"; "it's job" → "its job"; "Their are" → "There are".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Cuatro errores: "you're" → "your"; "it's job" → "its job"; "him and me are" → "he and I are"; "Their are" → "There are".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Cinco errores: todos los de c) más "our future" → "their future".</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) — Cuatro errores</B><BR>① <B>"you're advice"</B> → <B>"your advice"</B>: posesivo (tu consejo), no contracción (you are).<BR>② <B>"it's job"</B> → <B>"its job"</B>: posesivo de <I>it</I> (su trabajo = del hermano → aunque "his job" sería más preciso aún; "its job" es tolerable si se refiere al cargo). El error real es el apóstrofe: <I>it's</I> = it is.<BR>③ <B>"him and me are"</B> → <B>"he and I are"</B>: en posición de sujeto se usan pronombres sujeto (<I>he, I</I>), no pronombres objeto (<I>him, me</I>).<BR>④ <B>"Their are"</B> → <B>"There are"</B>: construcción existencial, no posesivo.<BR>"our future" ✅ es correcto: el hablante y su hermano = we → our future (su futuro de ambos). La opción d) es incorrecta al cambiar "our" por "their".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Un estudiante debe elegir entre adjetivo posesivo y pronombre posesivo. Selecciona la opción donde AMBAS oraciones son correctas y usan la forma adecuada (adjetivo O pronombre) según el contexto:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) "This is my book. The red one is mine."/ "That bag is hers. She loves her very much."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) "I found yours keys on the desk."/ "The keys on the desk are your."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) "This is my book. The red one is mine."/ "Those are their notebooks. The blue ones are theirs."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) "Our team won the match. The trophy is ours."/ "Its a great victory for our school."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>• <SPAN class="eng">"This is <B>my</B> book."</SPAN> → <I>my</I> es adjetivo posesivo (acompaña a "book") ✅<BR>• <SPAN class="eng">"The red one is <B>mine</B>."</SPAN> → <I>mine</I> es pronombre posesivo (reemplaza a "my book") ✅<BR>• <SPAN class="eng">"Those are <B>their</B> notebooks."</SPAN> → <I>their</I> es adjetivo posesivo (acompaña a "notebooks") ✅<BR>• <SPAN class="eng">"The blue ones are <B>theirs</B>."</SPAN> → <I>theirs</I> es pronombre posesivo (reemplaza a "their notebooks") ✅<BR>Las demás opciones contienen errores: a) "She loves <I>her</I> very much" es incorrecto (no se puede usar adjetivo posesivo sin sustantivo). b) "yours keys" es incorrecto (el pronombre posesivo no acompaña sustantivos). d) "Its a great victory" requiere apóstrofe: "It's".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Analiza el siguiente texto de nivel universitario e identifica la opción que explica correctamente el uso de TODOS los adjetivos posesivos resaltados:<BR><SPAN CLASS="eng">"The University of Lima celebrated <B>its</B> 50th anniversary. During <B>its</B> ceremony, the rector presented <B>his</B> vision for the future, while the students expressed <B>their</B> gratitude for <B>their</B> education."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Todos los posesivos son correctos: "its" (universidad = it), "its" (ceremonia = it), "his" (rector = he), "their" (estudiantes = they), "their" (educación de ellos = they).</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "its 50th anniversary" es incorrecto; debe ser "their anniversary" porque una universidad tiene muchas personas.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) "his vision" es incorrecto; debe ser "its vision" porque el rector representa a la institución.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El segundo "their education" es incorrecto; debe ser "its education" porque la educación es de la institución.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) — Todos los posesivos son correctos</B><BR>Análisis detallado:<BR>• <B>"its 50th anniversary"</B> ✅ → "The University of Lima" es una institución (cosa) = <I>it</I> → <B>its</B>.<BR>• <B>"its ceremony"</B> ✅ → la ceremonia pertenece a la universidad (it) → <B>its</B>.<BR>• <B>"his vision"</B> ✅ → "the rector" es una persona masculina (he) → <B>his</B> vision (su visión personal como individuo).<BR>• <B>"their gratitude"</B> ✅ → "the students" = they → <B>their</B> gratitude.<BR>• <B>"their education"</B> ✅ → la educación es de los estudiantes (they) → <B>their</B>.<BR>Opción b) es incorrecta: las instituciones usan <I>its</I>, no <I>their</I>, en inglés estándar. Opción c) es incorrecta: el rector habla en nombre propio (he → his), no como institución. Opción d) es incorrecta: la educación pertenece a los estudiantes (their), no a la institución.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+
+</BODY>
+</HTML>
+HTMLEOF
+echo "Done"

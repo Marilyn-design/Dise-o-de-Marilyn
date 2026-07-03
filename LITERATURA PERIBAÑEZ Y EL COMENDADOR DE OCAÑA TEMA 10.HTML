@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<HTML lang="es">
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Peribáñez y el Comendador de Ocaña - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA UNIVERSAL &middot; TEMA 10</DIV>
+<H1>Peri&aacute;&ntilde;ez y el Comendador de Oca&ntilde;a</H1>
+<DIV CLASS="sub">Lope de Vega &middot; Teatro del Siglo de Oro &middot; Honor &middot; Poder &middot; Comedia Nueva</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Lope de Vega: vida y contexto hist&oacute;rico</H3>
+<B>Lope F&eacute;lix de Vega Carpio</B> (Madrid, 1562 &ndash; Madrid, 1635) es la figura m&aacute;s colosal del teatro espa&ntilde;ol del <B>Siglo de Oro</B> y uno de los escritores m&aacute;s prol&iacute;ficos de la historia universal. Contempor&aacute;neo de Shakespeare y Cervantes, Lope transform&oacute; radicalmente el teatro espa&ntilde;ol con su revolucionaria concepci&oacute;n dram&aacute;tica.
+
+<H4>Datos biogr&aacute;ficos esenciales:</H4>
+<UL>
+<LI><B>Nacimiento:</B> 25 de noviembre de 1562, Madrid. Hijo de un bordador de origen humilde.</LI>
+<LI><B>Formaci&oacute;n:</B> Estudi&oacute; en el Colegio Imperial de los jesuitas y estuvo en la Universidad de Alcal&aacute;. Fue secretario de varios nobles, entre ellos el Duque de Alba y el Marqués de Sarria.</LI>
+<LI><B>Vida amorosa turbulenta:</B> sus amores fueron escand alosos y numerosos: Elena Osorio (la "Filis" de sus versos), Isabel de Urbina (con quien se cas&oacute; en 1588), la actriz Micaela de Luj&aacute;n (con quien tuvo varios hijos), Marta de Nevares (el gran amor de su madurez, que enloqueci&oacute; y muri&oacute; ciega). Sus escand alosos libelos contra los Velázquez le valieron el destierro de Madrid en 1588.</LI>
+<LI><B>La Armada Invencible (1588):</B> Lope particip&oacute; en la expedici&oacute;n de la Armada Invencible de Felipe II contra Inglaterra. El fracaso no le afect&oacute; vitalmente.</LI>
+<LI><B>Ordenaci&oacute;n sacerdotal (1614):</B> despu&eacute;s de m&uacute;ltiples desgracias personales (muerte de su esposa Juana de Guardo, muerte de su hijo Carlos F&eacute;lix), Lope se orden&oacute; sacerdote. Pero a&uacute;n as&iacute; continu&oacute; con sus amores, especialmente con Marta de Nevares.</LI>
+<LI><B>Muerte:</B> 27 de agosto de 1635. Su entierro fue un acontecimiento p&uacute;blico: Madrid entera le llor&oacute;.</LI>
+</UL>
+
+<H4>Producci&oacute;n literaria:</H4>
+<UL>
+<LI>Lope escribi&oacute; entre <B>1.500 y 1.800 comedias</B> (aunque solo se conservan alrededor de 400 completas) y m&aacute;s de 3.000 sonetos. Cervantes lo llam&oacute; "<B>monstruo de la naturaleza</B>" por su prodigiosa fertilidad creativa. Lope mismo se jactaba de escribir una comedia en un d&iacute;a.</LI>
+<LI>Obras mayores del teatro: <B>Fuente Ovejuna</B>, <B>El caballero de Olmedo</B>, <B>Peri&aacute;&ntilde;ez y el Comendador de Oca&ntilde;a</B>, <B>El perro del hortelano</B>, <B>La dama boba</B>.</LI>
+<LI>Poes&iacute;a l&iacute;rica: los romances moriscos y pastoriles, los <I>Rimas</I>, las <I>Rimas sacras</I>, el poema &eacute;pico <I>La Dragontea</I>.</LI>
+<LI>Prosa: la novela pastoril <I>La Arcadia</I> y la novela <I>El peregrino en su patria</I>.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Los datos m&aacute;s preguntados sobre Lope de Vega son: apodo de "F&eacute;nix de los Ingenios" y "Monstruo de la Naturaleza" (este &uacute;ltimo lo us&oacute; Cervantes); su <I>Arte nuevo de hacer comedias</I> (1609) como manifiesto te&oacute;rico de la comedia nueva; el n&uacute;mero aproximado de obras (entre 1.500 y 1.800 comedias); su pertenencia al Siglo de Oro espa&ntilde;ol (siglos XVI&ndash;XVII); y la distinci&oacute;n entre sus obras de tema de honor villano (<I>Peri&aacute;&ntilde;ez</I>, <I>Fuente Ovejuna</I>) y otras tem&aacute;ticas.</DIV>
+
+<H3>2. El Arte Nuevo de Hacer Comedias (1609): el manifiesto te&oacute;rico de Lope</H3>
+En 1609, Lope present&oacute; ante la Academia de Madrid un poema te&oacute;rico en verso &mdash;el <B><I>Arte nuevo de hacer comedias en este tiempo</I></B>&mdash; en el que expuso y justific&oacute; su revolucionaria ruptura con las normas cl&aacute;sicas del teatro grecolatino (Arist&oacute;teles, Horacio). Sus principios fundamentales fueron:
+
+<UL>
+<LI><B>Mezcla de lo tr&aacute;gico y lo c&oacute;mico:</B> Lope rechaza la separaci&oacute;n aristotélica de tragedia y comedia. La vida mezcla lo grave y lo risue&ntilde;o, y el teatro debe reflejarlo. Esta mezcla es la esencia de la "comedia nueva".</LI>
+<LI><B>Ruptura de las tres unidades cl&aacute;sicas:</B> Arist&oacute;teles exig&iacute;a unidad de acci&oacute;n, de tiempo (24 horas) y de lugar. Lope solo conserva la unidad de acci&oacute;n (aunque puede haber una trama secundaria); rechaza la unidad de tiempo (una obra puede abarcar a&ntilde;os) y la de lugar (puede haber m&uacute;ltiples escenarios).</LI>
+<LI><B>Tres actos en lugar de cinco:</B> Lope reduce la estructura dram&aacute;tica cl&aacute;sica de cinco actos a tres: <I>planteamiento</I> (acto I), <I>nudo</I> (acto II) y <I>desenlace</I> (acto III).</LI>
+<LI><B>Pol&iacute;metr&iacute;a:</B> variedad de metros seg&uacute;n la situaci&oacute;n dram&aacute;tica: el romance para las narraciones, el soneto para los mon&oacute;logos reflexivos, la d&eacute;cima para el lamento, la redondilla para los di&aacute;logos amorosos.</LI>
+<LI><B>El decoro po&eacute;tico:</B> cada personaje debe hablar conforme a su condici&oacute;n social y moral. Un rey habla como rey; un villano, como villano (aunque sea un villano honrado).</LI>
+<LI><B>El personaje del gracioso (<I>figura del donaire</I>):</B> personaje c&oacute;mico que act&uacute;a como contrapunto del protagonista hero&iacute;co. Es el criado fiel, realista, cobarde y hambriento, que alivia la tensi&oacute;n dram&aacute;tica con sus chistes y reflexiones prosaicas.</LI>
+<LI><B>El gusto del p&uacute;blico como ley suprema:</B> Lope es expl&iacute;cito: escribe para el vulgo que le paga, no para los eruditos. El &eacute;xito popular es la &uacute;nica medida.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>El "F&eacute;nix de los Ingenios":</B> Lope fue llamado as&iacute; por sus contempor&aacute;neos (como el p&aacute;jaro mitol&oacute;gico que renace de sus cenizas) en referencia a su capacidad casi sobrehumana de crear. La frase de Cervantes &mdash;"monstruo de la naturaleza"&mdash; tiene un sentido de asombro ante la monstruosa fertilidad creativa, no de cr&iacute;tica. El propio Lope adopt&oacute; estos apelativos con orgullo. Sus obras se representaron en los <B>corrales de comedias</B> (teatros al aire libre con patio, galer&iacute;as y cazuela para mujeres), los espacios populares del entretenimiento del Siglo de Oro.</DIV>
+
+<DIV CLASS="cultura-titulo">PERIBAÑEZ Y EL COMENDADOR DE OCAÑA: LA OBRA
+<SPAN>Drama de honor &middot; Villano honrado &middot; Feudalismo y dignidad &middot; Circa 1605&ndash;1614</SPAN>
+</DIV>
+
+<H3>3. Peri&aacute;&ntilde;ez y el Comendador de Oca&ntilde;a: datos generales</H3>
+<B><I>Peri&aacute;&ntilde;ez y el Comendador de Oca&ntilde;a</I></B> es una de las obras maestras absolutas del teatro espa&ntilde;ol del Siglo de Oro y de toda la dramaturgia occidental. Escrita por Lope de Vega en torno a <B>1605&ndash;1614</B> (la fecha exacta es debatida por los especialistas; la primera edici&oacute;n impresa data de 1614), la obra pertenece al subg&eacute;nero de los <B>dramas de honor villano</B>, que junto con <I>Fuente Ovejuna</I> representa la cima del g&eacute;nero.
+
+<H4>Datos t&eacute;cnicos:</H4>
+<UL>
+<LI><B>G&eacute;nero:</B> drama de honor; comedia nueva (en el sentido lopesco del t&eacute;rmino, que incluye obras de tono grave y trag&oacute;mico).</LI>
+<LI><B>Estructura:</B> tres actos con pol&iacute;metr&iacute;a caracter&iacute;stica.</LI>
+<LI><B>Ambientaci&oacute;n:</B> Toledo y sus alrededores (Oca&ntilde;a), en &eacute;poca del reinado de <B>Enrique III de Castilla</B> (finales del siglo XIV &ndash; principios del XV), contexto de los conflictos castellano-granadinos.</LI>
+<LI><B>Fuentes:</B> el romance del mismo nombre que circulaba en la tradici&oacute;n popular y oral. Lope eleva el material popular a alta literatura dram&aacute;tica.</LI>
+<LI><B>Primera edici&oacute;n:</B> <I>Dozena parte de las comedias de Lope de Vega Carpio</I> (1619), aunque hay evidencias de representaciones anteriores.</LI>
+</UL>
+
+<H3>4. Argumento: resumen y desarrollo de la acci&oacute;n</H3>
+
+<H4>Acto I &mdash; Planteamiento:</H4>
+La obra comienza el d&iacute;a de la boda de <B>Peri&aacute;&ntilde;ez</B>, labrador acomodado y honrado de Oca&ntilde;a, con <B>Casilda</B>, la joven m&aacute;s bella y virtuosa del pueblo. La celebraci&oacute;n es interrumpida por un accidente: el <B>Comendador don Fadrique</B>, noble caballero de la Orden de Santiago, cae del caballo encabritado por los ruidos de la boda y queda herido. Peri&aacute;&ntilde;ez lo recoge y lo lleva a su casa, donde el Comendador convalece. Durante la convalecencia, don Fadrique ve a Casilda y queda instant&aacute;neamente prendado de ella. Cuando el Comendador parte hacia Toledo, lleva en el coraz&oacute;n la imagen de Casilda y la determinaci&oacute;n de poseerla.
+
+<H4>Acto II &mdash; Nudo:</H4>
+El Comendador regresa a Oca&ntilde;a obsesionado con Casilda. Intenta seducirla con regalos (una cadena de oro, telas lujosas) que ella rechaza con firme virtud. Para alejar a Peri&aacute;&ntilde;ez y tener acceso libre a Casilda, el Comendador lo nombra <B>capit&aacute;n de una compa&ntilde;&iacute;a</B> que deber&aacute; partir hacia la guerra con Granada. Peri&aacute;&ntilde;ez sospecha las intenciones del Comendador pero acepta el cargo por deber. Antes de partir, regala a Casilda un retrato suyo para que lo recuerde. El Comendador, con Peri&aacute;&ntilde;ez fuera del camino, manda a su criado <B>Luj&aacute;n</B> a infiltrarse como segador en las tierras de Peri&aacute;&ntilde;ez para facilitar su acceso a Casilda. Peri&aacute;&ntilde;ez descubre el engaño: regresa a Oca&ntilde;a disfrazado de segador y escucha c&oacute;mo el Comendador declara su pasi&oacute;n a Casilda a trav&eacute;s de la ventana, y c&oacute;mo ella lo rechaza con indignaci&oacute;n y fidelidad.
+
+<H4>Acto III &mdash; Desenlace:</H4>
+Peri&aacute;&ntilde;ez, habiendo comprendido todo, va a Toledo a pedir licencia al Rey para vengar su honor. El rey le concede el permiso (impl&iacute;citamente, al escuchar su petici&oacute;n). Peri&aacute;&ntilde;ez regresa a Oca&ntilde;a, donde el Comendador ha irrumpido por la noche en su casa dispuesto a forzar a Casilda. Peri&aacute;&ntilde;ez enfrenta y <B>mata al Comendador</B>. Luego escapa y huye con Casilda. Cuando el Rey <B>Enrique III</B> &mdash;el "Doliente"&mdash; llega a Oca&ntilde;a con su corte, es informado de los hechos. Manda llamar a Peri&aacute;&ntilde;ez, quien se presenta voluntariamente y narra lo ocurrido. El Rey, lejos de castigarlo, lo premia: le otorga el t&iacute;tulo de capit&aacute;n y convalida su acto de justicia. La obra termina con el orden moral y social restaurado.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> El argumento de <I>Peri&aacute;&ntilde;ez</I> debe dominarse con precisi&oacute;n: (1) La obra comienza el d&iacute;a de la boda; (2) el Comendador cae del caballo y convalesce en casa de Peri&aacute;&ntilde;ez; (3) el Comendador nombra a Peri&aacute;&ntilde;ez capit&aacute;n para alejarlo; (4) Peri&aacute;&ntilde;ez regresa disfrazado de segador; (5) mata al Comendador; (6) el Rey convalida la venganza y premia a Peri&aacute;&ntilde;ez. El rey es <B>Enrique III "el Doliente"</B>. El criado del Comendador se llama <B>Luj&aacute;n</B>.</DIV>
+
+<H3>5. Personajes: an&aacute;lisis en profundidad</H3>
+
+<H4>Peri&aacute;&ntilde;ez (Pedro Ib&aacute;&ntilde;ez):</H4>
+<UL>
+<LI>Protagonista y h&eacute;roe de la obra. <B>Labrador rico</B> (no es siervo ni mendigo: es un campesino propietario, acomodado y respetado en su comunidad). Esta condici&oacute;n social intermedia es fundamental: tiene dignidad, tiene honra y tiene la capacidad econ&oacute;mica de defenderla.</LI>
+<LI>Representa el <B>honor basado en la virtud propia</B>, no en el linaje nobiliario: su honor no le viene del nacimiento sino de su conducta intachable, su trabajo, su piedad religiosa y su amor fiel a Casilda.</LI>
+<LI>Es prudente, reflexivo y leal. Su monólogo al descubrir la traición del Comendador es uno de los grandes textos de la literatura española: debate interno entre la duda y la certeza, entre el amor y el deber de honor.</LI>
+<LI>No actúa impulsivamente: va a Toledo, busca la autorización del Rey antes de actuar. Esto lo distingue del vengador desordenado y lo convierte en un ejecutor de justicia legítima.</LI>
+<LI>Su acto final (matar al Comendador) es, en el código de honor del Siglo de Oro, no un crimen sino la única respuesta posible ante la deshonra. El Rey lo refrenda.</LI>
+</UL>
+
+<H4>Casilda:</H4>
+<UL>
+<LI>Personaje femenino de extraordinaria solidez moral. No es una víctima pasiva: rechaza activa y verbalmente los regalos y las insinuaciones del Comendador con una firmeza que la eleva a figura heroica.</LI>
+<LI>Representa la <B>virtud femenina campesina</B> frente a la corrupción nobiliaria: su honestidad no es refinamiento cortesano sino integridad esencial.</LI>
+<LI>Su amor a Peribáñez es genuino y su fidelidad es inquebrantable. La escena en que rechaza los regalos del Comendador ("no quiero joyas del que me quiere mal") es uno de los momentos dramáticos más potentes de la obra.</LI>
+<LI>En el desenlace, huye con Peribáñez, compartiendo su suerte: no lo juzga por el homicidio sino que lo acompaña en su voluntaria presentación ante el Rey.</LI>
+</UL>
+
+<H4>El Comendador don Fadrique:</H4>
+<UL>
+<LI>Antagonista de la obra. Comendador de la <B>Orden de Santiago</B>, noble de alta jerarquía. Su poder social y militar es indiscutible en el contexto feudal.</LI>
+<LI>No es un villano unidimensional: al principio se muestra como un hombre cortés y agradecido (con Peribáñez que lo socorrió). Es su pasión por Casilda la que lo corrompe progresivamente.</LI>
+<LI>Su pecado es el <B>abuso del poder feudal</B>: usa su posición para intentar satisfacer un deseo que atropella los derechos de un hombre de condición inferior. En el código ético de la obra, este abuso es más grave que el crimen de un igual, porque viola la confianza que el poderoso debe a los que de él dependen.</LI>
+<LI>La figura del Comendador en <I>Peribáñez</I> anticipa la figura idéntica en <I>Fuente Ovejuna</I>: el noble libidinoso que abusa de su poder sobre el campesinado.</LI>
+</UL>
+
+<H4>Personajes secundarios:</H4>
+<UL>
+<LI><B>El Rey Enrique III "el Doliente":</B> figura de la justicia soberana. No aparece en escena hasta el desenlace, pero su presencia organiza el mundo moral de la obra. Al convalidar el acto de Peribáñez, el Rey cumple la función que la Justicia divina y humana deben cumplir: reconocer la legitimidad de la defensa del honor.</LI>
+<LI><B>Luján:</B> criado del Comendador. Personaje cómplice que facilita los planes de su amo. Su infiltración como segador en las tierras de Peribáñez es el elemento de intriga que precipita la crisis.</LI>
+<LI><B>Inés y Costanza:</B> amigas de Casilda que participan en las escenas de ambiente rural y festivo del primer acto, estableciendo el tono idílico que luego será amenazado.</LI>
+</UL>
+
+<H3>6. Temas fundamentales de la obra</H3>
+
+<H4>El honor y la honra:</H4>
+<UL>
+<LI>El tema central de la obra es el <B>honor</B>, el valor más alto en la escala axiológica del Siglo de Oro. En la dramaturgia lopesca, el honor tiene dos dimensiones: la <B>honra interna</B> (la virtud moral propia, que nadie puede arrebatar) y la <B>honra externa</B> (la reputación pública, que puede ser manchada por las acciones de otros, incluso sin culpa propia).</LI>
+<LI>Lo revolucionario de Lope en esta obra es afirmar que el <B>villano</B> (el campesino) también tiene honor, y que ese honor es tan digno de defensa como el del noble. Esta era una posición radical en su contexto: la ideología dominante reservaba el honor pleno a los caballeros de sangre noble.</LI>
+<LI>El honor de Peribáñez no viene de su linaje sino de su <B>limpieza de sangre</B> (es cristiano viejo, sin mezcla judía ni mora) y de su <B>conducta virtuosa</B>. Esta es la base sobre la que Lope construye su legitimidad para actuar.</LI>
+</UL>
+
+<H4>El poder y sus límites:</H4>
+<UL>
+<LI>La obra explora los <B>límites del poder feudal</B>. El Comendador tiene poder sobre Peribáñez en sentido social y jurídico: puede nombrarlo capitán, movilizarlo, usar su autoridad para controlarlo. Pero ese poder tiene un límite ético: no puede invadir el espacio íntimo del matrimonio.</LI>
+<LI>Lope sostiene que el poder que transgrede sus límites morales <B>pierde su legitimidad</B> y puede (debe) ser resistido. Esta es la enseñanza política de la obra: el abuso del poder noble contra el pueblo no es inmune a la justicia.</LI>
+<LI>El Rey funciona como árbitro supremo: su aprobación del acto de Peribáñez no es indulgencia sino <B>reconocimiento de justicia</B>. La monarquía, en la visión lopesca, es el garante último del orden moral frente a los abusos de la nobleza intermedia.</LI>
+</UL>
+
+<H4>El amor conyugal y la fidelidad:</H4>
+<UL>
+<LI>El amor entre Peribáñez y Casilda es presentado como un <B>amor genuino, igualitario y mutuamente comprometido</B>. Lope construye en el primer acto una escena nupcial de notable ternura lírica que establece la base afectiva cuya amenaza constituirá el conflicto dramático.</LI>
+<LI>Casilda no es solo el objeto del deseo del Comendador: es un sujeto moral activo que hace sus propias elecciones. Su fidelidad a Peribáñez es una elección ética, no solo una obligación social.</LI>
+</UL>
+
+<H4>La naturaleza y el mundo rural como espacio moral:</H4>
+<UL>
+<LI>Lope construye el mundo rural de Ocaña como un <B>espacio de autenticidad y virtud</B> (en la tradición del menosprecio de corte y alabanza de aldea): el campo es el lugar donde los valores genuinos (trabajo, lealtad, amor, piedad) prosperan, frente a la corrupción que amenaza desde el poder nobiliario.</LI>
+<LI>Las escenas de siega, de boda, de vida comunal tienen una función no solo costumbrista sino ideológica: establecen la dignidad moral del mundo campesino que el Comendador ultraja.</LI>
+</UL>
+
+<H3>7. Estructura dram&aacute;tica y recursos formales</H3>
+
+<H4>Estructura en tres actos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Acto</TH><TH>Contenido dram&aacute;tico</TH><TH>Tono</TH></TR>
+<TR><TD><B>Acto I (Planteamiento)</B></TD><TD>Boda de Peribáñez y Casilda. Accidente del Comendador. Convalecencia. Enamoramiento del Comendador. Partida hacia Toledo.</TD><TD>L&iacute;rico, festivo, idi&iacute;lico. Introduccion de la amenaza.</TD></TR>
+<TR><TD><B>Acto II (Nudo)</B></TD><TD>Intentos de seducción del Comendador. Nombramiento de Peribáñez como capitán. Vuelta disfrazada de Peribáñez. Escucha la declaración del Comendador a Casilda.</TD><TD>Tenso, suspense, conflicto moral interior de Perib&aacute;&ntilde;ez.</TD></TR>
+<TR><TD><B>Acto III (Desenlace)</B></TD><TD>Peribáñez va ante el Rey. Mata al Comendador. Presentación ante el Rey. Premio y reconocimiento.</TD><TD>Dr&aacute;matico, catártico, restauraci&oacute;n del orden.</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Polimetría:</H4>
+<UL>
+<LI><B>Romances:</B> para las narraciones y los parlamentos de carácter épico-narrativo.</LI>
+<LI><B>Redondillas:</B> para los diálogos amorosos y las escenas costumbristas.</LI>
+<LI><B>Décimas:</B> para los lamentos y los momentos de máxima intensidad emocional.</LI>
+<LI><B>Sonetos:</B> para los monólogos reflexivos de mayor elaboración retórica.</LI>
+<LI><B>Seguidillas y coplas:</B> para las canciones populares intercaladas (función lírica y ambiental).</LI>
+</UL>
+
+<H4>Las canciones intercaladas:</H4>
+<UL>
+<LI>Una de las características formales más celebradas de <I>Peribáñez</I> es la incorporación de canciones líricas populares que tienen función dramática y temática. La más famosa es la canción de las segadoras que el Comendador escucha y que funciona como una especie de hechizo erótico que intensifica su obsesión por Casilda.</LI>
+<LI>La canción <I>"Tri, tri, tri / canta la rana..."</I> y otras canciones populares crean la atmósfera rural a la vez que articulan temáticamente la tensión erótica de la obra.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">CONTEXTO: EL DRAMA DE HONOR VILLANO Y EL SIGLO DE ORO
+<SPAN>Ideolog&iacute;a del honor &middot; Comedia Nueva &middot; Relaci&oacute;n con Fuente Ovejuna</SPAN>
+</DIV>
+
+<H3>8. El drama de honor villano: g&eacute;nero y contexto ideol&oacute;gico</H3>
+
+<H4>El concepto de honor en el Siglo de Oro:</H4>
+<UL>
+<LI>En la sociedad española de los siglos XVI y XVII, el <B>honor</B> era el valor supremo de la identidad social. Se concebía como algo que no solo pertenecía al individuo sino también a su familia y a su grupo social. La deshonra de la mujer deshonraba al marido, al padre y a los hermanos.</LI>
+<LI>El honor estaba tradicionalmente vinculado al <B>linaje noble</B>: solo los caballeros de sangre limpia podían reclamar honra plena. Los villanos (campesinos) eran considerados inferiores en la escala social y, según la ideología dominante, carecían de la capacidad de tener honra en el mismo sentido que los nobles.</LI>
+<LI>Lope subvierte esta ideología: sus villanos honrados (<I>Peribáñez</I>, <I>Fuente Ovejuna</I>) tienen una honra que no solo es legítima sino moralmente superior a la de los nobles que la violan.</LI>
+</UL>
+
+<H4>Comparaci&oacute;n con Fuente Ovejuna:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Aspecto</TH><TH>Peri&aacute;&ntilde;ez y el Comendador de Oca&ntilde;a</TH><TH>Fuente Ovejuna</TH></TR>
+<TR><TD><B>Tipo de protagonista</B></TD><TD>Individuo (Peribáñez) que actúa solo</TD><TD>Colectivo (todo el pueblo de Fuente Ovejuna)</TD></TR>
+<TR><TD><B>Agresor</B></TD><TD>Comendador don Fadrique</TD><TD>Comendador Fernán Gómez de Guzmán</TD></TR>
+<TR><TD><B>Venganza</B></TD><TD>Individual: Peribáñez mata al Comendador</TD><TD>Colectiva: todo el pueblo mata al Comendador</TD></TR>
+<TR><TD><B>Clase del protagonista</B></TD><TD>Labrador rico (villano acomodado)</TD><TD>Todo el pueblo (comunidad rural)</TD></TR>
+<TR><TD><B>Dimensi&oacute;n pol&iacute;tica</B></TD><TD>Más íntima y privada</TD><TD>Más política y colectiva</TD></TR>
+<TR><TD><B>Aval del rey</B></TD><TD>Enrique III avala el acto de Peribáñez</TD><TD>Los Reyes Católicos perdonan al pueblo</TD></TR>
+<TR><TD><B>Pregunta clave</B></TD><TD>"¿Qui&eacute;n mat&oacute; al Comendador?" Perib&aacute;&ntilde;ez.</TD><TD>"¿Qui&eacute;n mat&oacute; al Comendador?" Fuente Ovejuna.</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El contexto hist&oacute;rico real:</H4>
+<UL>
+<LI>Lope sitúa la acción en el reinado de <B>Enrique III de Castilla</B> (1379&ndash;1406), conocido como "el Doliente" por su mala salud. Este rey histórico era conocido por su decisión de limitar el poder de los nobles y afirmar la autoridad real, lo que encaja perfectamente con el mensaje ideológico de la obra: la monarquía como garante del orden frente a los abusos nobiliarios.</LI>
+<LI>La Orden de Santiago, a la que pertenece el Comendador, era una de las órdenes militares más poderosas de Castilla. Que un Comendador de esta orden sea el agresor y sea justo que muera refuerza el mensaje: el poder institucional no protege a quien lo usa inmoralmente.</LI>
+</UL>
+
+<H3>9. Valoraci&oacute;n cr&iacute;tica y significaci&oacute;n literaria</H3>
+<UL>
+<LI><B>Calidad lírica:</B> <I>Peribáñez</I> contiene algunos de los mejores versos líricos del teatro del Siglo de Oro. La obra aúna la fuerza dramática con una musicalidad y una riqueza de imágenes que la distinguen incluso entre las obras de Lope.</LI>
+<LI><B>Complejidad psicológica:</B> los tres personajes principales (Peribáñez, Casilda, el Comendador) tienen una profundidad psicológica que va más allá del esquematismo de muchas obras contemporáneas. El Comendador no es un villano plano; Peribáñez no es un héroe sin sombras (su reconocimiento del peligro, su decisión de disfrazarse, su ira contenida son rasgos de un personaje real).</LI>
+<LI><B>Significación ideológica:</B> la obra afirma la dignidad del estamento labrador en una sociedad estamental que lo consideraba inferior. Sin ser subversiva en sentido revolucionario (el orden monárquico es reafirmado al final), la obra plantea una redistribución del valor moral que favorece al pueblo llano.</LI>
+<LI><B>Influencia:</B> junto con <I>Fuente Ovejuna</I>, <I>Peribáñez</I> ha sido la obra lopesca más representada en la modernidad, incluidas versiones durante la Segunda República española y la época de la Guerra Civil, que la interpretaron en clave de lucha popular contra la opresión.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1562</DIV><DIV CLASS="dk-label">Nacimiento de Lope de Vega en Madrid</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1609</DIV><DIV CLASS="dk-label">Arte nuevo de hacer comedias: manifiesto de la comedia nueva</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1614</DIV><DIV CLASS="dk-label">Primera edici&oacute;n impresa de Peri&aacute;&ntilde;ez</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">3</DIV><DIV CLASS="dk-label">Actos en que se estructura la obra (planteamiento, nudo, desenlace)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1635</DIV><DIV CLASS="dk-label">Muerte de Lope de Vega en Madrid</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1.800</DIV><DIV CLASS="dk-label">Comedias atribuidas a Lope (solo ~400 conservadas completas)</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Autor:</B> Lope de Vega (1562&ndash;1635) &middot; "F&eacute;nix de los Ingenios" &middot; "Monstruo de la Naturaleza" (Cervantes)<BR>
+&bull; <B>Obra:</B> <I>Peri&aacute;&ntilde;ez y el Comendador de Oca&ntilde;a</I> &middot; escrita c. 1605&ndash;1614 &middot; primera edici&oacute;n 1619<BR>
+&bull; <B>G&eacute;nero:</B> drama de honor villano &middot; comedia nueva &middot; tres actos &middot; polim&eacute;trica<BR>
+&bull; <B>Personajes:</B> Peri&aacute;&ntilde;ez (labrador honrado), Casilda (esposa fiel), Comendador don Fadrique (antagonista), Rey Enrique III "el Doliente", Luj&aacute;n (criado del Comendador)<BR>
+&bull; <B>Argumento:</B> boda &rarr; accidente del Comendador &rarr; enamoramiento de Casilda &rarr; nombramiento de Peri&aacute;&ntilde;ez como capit&aacute;n &rarr; regreso disfrazado &rarr; descubrimiento &rarr; muerte del Comendador &rarr; juicio del Rey &rarr; premio<BR>
+&bull; <B>Temas:</B> honor villano &middot; abuso del poder feudal &middot; amor conyugal &middot; justicia del rey<BR>
+&bull; <B>Arte nuevo (1609):</B> mezcla trag&oacute;mica &middot; tres actos &middot; ruptura de las tres unidades &middot; polimetría &middot; gracioso &middot; gusto del p&uacute;blico<BR>
+&bull; <B>Relaci&oacute;n con Fuente Ovejuna:</B> ambas son dramas de honor villano; en <I>Peri&aacute;&ntilde;ez</I> la venganza es individual; en <I>Fuente Ovejuna</I>, colectiva
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;Cu&aacute;les son los apelativos con los que se conoce a Lope de Vega y qui&eacute;n us&oacute; el de "monstruo de la naturaleza"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) "F&eacute;nix de los Ingenios" y "Pr&iacute;ncipe de los Ingenios"; este &uacute;ltimo fue usado por Francisco de Quevedo en un c&eacute;lebre soneto en su honor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) "F&eacute;nix de los Ingenios" y "Monstruo de la Naturaleza"; el segundo apelativo fue empleado por Miguel de Cervantes para aludir a la prodigiosa fertilidad creativa de Lope</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) "Sol de las Letras Castellanas" y "Monstruo de la Naturaleza"; ambos apelativos fueron acuñados por el propio Lope en el pr&oacute;logo del <I>Arte nuevo de hacer comedias</I></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) "F&eacute;nix de los Ingenios" &uacute;nicamente; el apelativo de "Monstruo de la Naturaleza" pertenece a Calderón de la Barca y fue aplicado por Lope a &eacute;l</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Lope de Vega fue conocido con dos grandes apelativos. El de <B>"F&eacute;nix de los Ingenios"</B> fue acuñado por sus contemporáneos aludiendo al pájaro mitológico que renace de sus cenizas, en referencia a la capacidad casi sobrehumana de creación literaria de Lope. El de <B>"Monstruo de la Naturaleza"</B> fue empleado por <B>Miguel de Cervantes</B> en el prólogo de sus <I>Ocho comedias y ocho entremeses</I> (1615), con sentido de asombro ante la monstruosa fertilidad creativa de Lope: era un elogio hiperbólico, no una crítica. Se estima que Lope escribió entre 1.500 y 1.800 comedias, de las cuales solo se conservan íntegras alrededor de 400. El apelativo "Príncipe de los Ingenios" corresponde a Cervantes, no a Lope.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Cu&aacute;l es la situaci&oacute;n que da inicio a la acci&oacute;n dram&aacute;tica de <I>Peri&aacute;&ntilde;ez y el Comendador de Oca&ntilde;a</I> y c&oacute;mo conoce el Comendador a Casilda?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La obra comienza cuando el Comendador llega a Oca&ntilde;a con su ej&eacute;rcito para reclutar soldados; Casilda lo recibe en la puerta de su casa y el Comendador queda enamorado al verla</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) La obra comienza el d&iacute;a de la boda de Peri&aacute;&ntilde;ez y Casilda; el Comendador cae del caballo encabritado por el ruido de la fiesta y convalece en casa de Peri&aacute;&ntilde;ez, donde ve a Casilda y queda enamorado de ella</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) La obra comienza cuando Peri&aacute;&ntilde;ez regresa de la guerra de Granada y encuentra al Comendador cortejando a Casilda en el mercado de Oca&ntilde;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) La obra comienza en la corte de Enrique III, donde el Comendador ve a Casilda que ha ido a pedir justicia para su marido encarcelado, y queda prendado de su belleza y su elocuencia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La obra se abre el <B>día de la boda de Peribáñez y Casilda</B>. El ruido y el alboroto de la celebración nupcial encabritan el caballo del <B>Comendador don Fadrique</B>, que pasa por allí; el Comendador cae y queda herido. Peribáñez, generoso y hospitalario, lo recoge y lo lleva a su propia casa para que convalezca. Es durante esa convalecencia cuando el Comendador ve a <B>Casilda</B> por primera vez y queda instantáneamente enamorado de ella. Este comienzo tiene una ironía dramática profunda: la misma generosidad de Peribáñez (socorrer al Comendador) es la que introduce en su hogar al hombre que amenazará su honor. La situación inicial establece también la deuda de gratitud que el Comendador tiene con Peribáñez, deuda que viola al perseguir a Casilda.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Qu&eacute; estrategia emplea el Comendador para alejar a Peri&aacute;&ntilde;ez de Oca&ntilde;a y tener acceso a Casilda?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) El Comendador hace arrestar a Peri&aacute;&ntilde;ez bajo una acusaci&oacute;n falsa de robo y lo env&iacute;a a la c&aacute;rcel de Toledo, dejando a Casilda sola y desprotegida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) El Comendador nombra a Peri&aacute;&ntilde;ez capit&aacute;n de una compa&ntilde;&iacute;a que debe partir a la guerra contra Granada, alegando m&eacute;ritos militares que Peri&aacute;&ntilde;ez no tiene; as&iacute; lo aleja honorablemente de Oca&ntilde;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El Comendador convence al alcalde de Oca&ntilde;a de que envíe a Peri&aacute;&ntilde;ez como mensajero ante el Rey, un viaje que dura varias semanas y durante el cual planea seducir a Casilda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El Comendador ofrece a Peri&aacute;&ntilde;ez una cantidad de dinero para que abandone temporalmente Oca&ntilde;a y se establezca en Sevilla; Peri&aacute;&ntilde;ez acepta por necesidad econ&oacute;mica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Comendador, frustrado por los sucesivos rechazos de Casilda y por la presencia de Peribáñez en Ocaña, diseña una estrategia que combina el abuso de poder con una apariencia de honor: <B>nombra a Peribáñez capitán</B> de una compañía de soldados destinada a combatir en la guerra contra Granada. El nombramiento es un honor inesperado para un labrador, y Peribáñez lo acepta por deber, aunque sospecha de las verdaderas intenciones del Comendador. La estrategia es doblemente perversa: aparta a Peribáñez usando los instrumentos del honor (el servicio militar) y coloca a Casilda en situación de vulnerabilidad. Además, el Comendador envía a su criado <B>Luján</B> infiltrado como segador en las tierras de Peribáñez para facilitar su acceso a la casa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;C&oacute;mo descubre Peri&aacute;&ntilde;ez los planes del Comendador y c&oacute;mo act&uacute;a antes de matar a don Fadrique?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Peri&aacute;&ntilde;ez recibe una carta an&oacute;nima de un vecino que le revela los planes del Comendador; inmediatamente regresa y mata a don Fadrique sin consultar a nadie</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Peri&aacute;&ntilde;ez regresa disfrazado de segador, escucha c&oacute;mo el Comendador declara su pasi&oacute;n a Casilda y c&oacute;mo ella lo rechaza; luego va a Toledo a solicitar permiso al Rey antes de ejecutar su venganza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" Value="c"> c) Casilda misma le escribe a Peri&aacute;&ntilde;ez una carta detal lando los intentos del Comendador; Peri&aacute;&ntilde;ez va directamente ante el rey y es el propio monarca quien ordena la ejecuci&oacute;n del Comendador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Peri&aacute;&ntilde;ez descubre los planes porque su criado Luj&aacute;n le confiesa la traici&oacute;n; Peri&aacute;&ntilde;ez mata primero a Luj&aacute;n y luego tiende una trampa al Comendador con ayuda del alcalde</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El descubrimiento de los planes del Comendador por parte de Peribáñez se produce mediante un recurso dramático de gran efectividad: <B>Peribáñez regresa a Ocaña disfrazado de segador</B> y, desde esa posición, escucha cómo el Comendador declara su pasión a Casilda a través de la ventana, y cómo ella lo rechaza con firmeza y fidelidad. Peribáñez tiene así la certeza que necesitaba sobre la culpa del Comendador y la inocencia de Casilda. Pero lo que distingue a Peribáñez del simple vengador impulsivo es lo que hace a continuación: <B>va a Toledo para presentarse ante el Rey Enrique III</B> y exponer su situación. Sin obtener explícitamente un permiso formal (el Rey escucha pero no pronuncia sentencia), Peribáñez interpreta que su causa es justa y regresa a ejecutar la venganza. Esta visita al Rey tiene una función dramática e ideológica crucial: legitima el acto de Peribáñez dentro del orden monárquico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;C&oacute;mo termina la obra y qu&eacute; papel cumple el Rey Enrique III en el desenlace?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) La obra termina tr&aacute;gicamente: el Rey condena a muerte a Peri&aacute;&ntilde;ez por haber matado a un noble de la Orden de Santiago; Casilda queda viuda y entra en un convento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) La obra termina con Peri&aacute;&ntilde;ez present&aacute;ndose voluntariamente ante el Rey, quien lejos de castigarlo reconoce la justicia de su acto y le otorga el t&iacute;tulo de capit&aacute;n; el orden moral y social queda restaurado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) La obra termina cuando el Rey indulta a Peri&aacute;&ntilde;ez solo por intercess&oacute;n de Casilda, quien se arrodilla ante el monarca y le suplica perd&oacute;n; el Rey acepta a condici&oacute;n de que Peri&aacute;&ntilde;ez pase diez a&ntilde;os en el destierro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) La obra termina con Peri&aacute;&ntilde;ez huyendo de Espa&ntilde;a con Casilda para evitar la justicia del Rey; la &uacute;ltima escena los muestra embarcando hacia las Indias como labradores an&oacute;nimos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El desenlace de <I>Peribáñez</I> es de una significación ideológica profunda. Tras matar al Comendador, Peribáñez no huye sino que <B>se presenta voluntariamente ante el Rey Enrique III</B> cuando este llega a Ocaña con su corte. Peribáñez narra lo ocurrido con una franqueza que revela su conciencia de haber actuado justamente. El Rey, lejos de condenarle, <B>reconoce la legitimidad del acto de Peribáñez</B> y le otorga el título de capitán, formalizando el honor que el Comendador le había concedido falsamente. Este desenlace tiene varias funciones: (1) restaura el orden moral (el inocente es premiado, el culpable murió castigado); (2) reafirma la autoridad real como garante de la justicia contra los abusos nobiliarios; (3) eleva al villano honrado al reconocimiento público que merecía. El rey es <B>Enrique III "el Doliente"</B>, monarca histórico conocido por su política de control de la nobleza.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> &iquest;En qu&eacute; consiste la "comedia nueva" de Lope de Vega seg&uacute;n el <I>Arte nuevo de hacer comedias</I> (1609) y cu&aacute;les son sus rasgos esenciales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) La "comedia nueva" de Lope recupera las normas del teatro cl&aacute;sico grecolatino: mantiene las tres unidades (acci&oacute;n, tiempo y lugar), separa estrictamente tragedia y comedia, y usa un &uacute;nico metro po&eacute;tico en toda la obra para mayor rigor formal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) La "comedia nueva" de Lope rompe con la preceptiva cl&aacute;sica: mezcla lo tr&aacute;gico y lo c&oacute;mico, reduce los actos de cinco a tres, abandona las unidades de tiempo y lugar, usa la polimetría (diversos metros seg&uacute;n la situaci&oacute;n), introduce el personaje del gracioso e impone el gusto del p&uacute;blico como criterio supremo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) La "comedia nueva" de Lope se caracteriza por el uso exclusivo de la prosa (frente al verso de la comedia cl&aacute;sica), la unidad estricta de lugar (siempre en una misma ciudad) y la prohibici&oacute;n de personajes nobles en papeles c&oacute;micos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) La "comedia nueva" de Lope divide la obra en siete actos (uno por cada pecado capital), usa exclusivamente el romance oc tos&iacute;labo y exige que el desenlace sea siempre c&oacute;mico y festivo, nunca tr&aacute;gico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B><I>Arte nuevo de hacer comedias en este tiempo</I></B> (1609) es el manifiesto teórico de Lope, escrito en verso y presentado ante la Academia de Madrid. Sus principios fundamentales son: (1) <B>Mezcla de lo trágico y lo cómico:</B> "Lo trágico y lo cómico mezclado / y Terencio con Séneca, aunque sea / como otro Minotauro de Pasife, / harán grave una parte, otra ridícula." (2) <B>Tres actos</B> en lugar de cinco: planteamiento, nudo y desenlace. (3) <B>Ruptura de las unidades clásicas de tiempo y lugar</B> (solo mantiene la unidad de acción). (4) <B>Polimetría:</B> cada situación dramática tiene su metro apropiado: romance para narraciones, redondilla para diálogos amorosos, décima para lamentos, soneto para monólogos reflexivos. (5) <B>El gracioso</B> (figura del donaire): personaje cómico, criado, contrapunto del héroe. (6) <B>El gusto del vulgo</B> como ley: "escribo por el arte que inventaron / los que el vulgar aplauso pretendieron, / porque, como las paga el vulgo, es justo / hablarle en necio para darle gusto."</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Analiza el concepto de "honor villano" en <I>Peri&aacute;&ntilde;ez</I>: &iquest;en qu&eacute; se fundamenta el honor de Peri&aacute;&ntilde;ez y por qu&eacute; resulta subversivo en el contexto social del Siglo de Oro?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) El honor de Peri&aacute;&ntilde;ez se fundamenta en su linaje: es descend iente de un antiguo caballero castellano, por lo que su honor es equivalente al de cualquier noble; no hay nada subversivo en la obra porque Lope simplemente represent&oacute; la realidad nobiliaria del protagonista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) El honor de Peri&aacute;&ntilde;ez se fundamenta en su virtud personal, su limpieza de sangre (cristiano viejo) y su conducta intachable, no en el linaje nobiliario; esto es subversivo porque la ideolog&iacute;a dominante reservaba el honor pleno a los caballeros de sangre noble, y Lope afirma que un villano puede tener honra tan digna como la de un Comendador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) El honor de Peri&aacute;&ntilde;ez se fundamenta exclusivamente en su riqueza econ&oacute;mica: al ser el labrador m&aacute;s rico de Oca&ntilde;a, su honor es equivalente al de la nobleza rural; Lope simplemente iguala riqueza y honor, una ecuaci&oacute;n habitual en la sociedad del Siglo de Oro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) El honor de Peri&aacute;&ntilde;ez no tiene ning&uacute;n fundamento s&oacute;lido en la obra; el protagonista recibe el reconocimiento del Rey por pura misericordia real, no porque Lope consider&aacute;ra que los villanos ten&iacute;an honor leg&iacute;timo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La cuestión del "honor villano" es el núcleo ideológico más importante de la obra. En la sociedad estamental del Siglo de Oro, el honor estaba vinculado al <B>linaje nobiliario</B>: los hidalgos y caballeros podían reclamar honra en sentido pleno; los villanos (campesinos), según la ideología dominante, carecían de esa capacidad. Lope subvierte radicalmente esta jerarquía: el honor de Peribáñez descansa sobre tres pilares: (1) <B>Limpieza de sangre</B> (cristiano viejo sin mezcla judía ni mora, condición que la sociedad de la época valoraba enormemente); (2) <B>Virtud moral</B>: su trabajo honrado, su amor fiel a Casilda, su piedad religiosa, su lealtad; (3) <B>Conducta intachable ante la comunidad</B>. Lo subversivo no es que Lope declare abiertamente la igualdad entre villanos y nobles (lo que habría sido políticamente imposible), sino que construye dramáticamente una situación en que el villano honrado resulta moralmente superior al Comendador corrupto, y en que el Rey ratifica esa superioridad moral premiando al villano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Compara la funci&oacute;n dram&aacute;tica del personaje de Casilda con la de una simple v&iacute;ctima pasiva: &iquest;en qu&eacute; medida Casilda es un agente moral activo en la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Casilda es exclusivamente una v&iacute;ctima pasiva sin capacidad de decisi&oacute;n propia; toda la acci&oacute;n moral de la obra recae sobre Peri&aacute;&ntilde;ez y el Comendador; Casilda es solo el objeto disputado entre los dos hombres</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Casilda es un agente moral activo: rechaza verbal y activamente los regalos y las declaraciones del Comendador, mantiene su fidelidad a Peri&aacute;&ntilde;ez de forma deliberada y consciente, y comparte la suerte de su marido en el desenlace; su virtud es una elecci&oacute;n &eacute;tica, no solo una obligaci&oacute;n social</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Casilda es un agente moral activo solo en el primer acto; en el segundo y el tercero pierde toda capacidad de decisi&oacute;n y se convierte en v&iacute;ctima pasiva que espera la acci&oacute;n de Peri&aacute;&ntilde;ez</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Casilda es moralmente ambigua: en varias escenas de la obra insin&uacute;a que los regalos del Comendador le agradan, aunque luego finge rechazarlos por temor a su marido; esta ambig&uuml;edad es lo que hace que Peri&aacute;&ntilde;ez dude de su culpabilidad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Casilda es uno de los grandes personajes femeninos del teatro del Siglo de Oro, y reducirla a "víctima pasiva" es un error de lectura. Su agencia moral se manifiesta en varios momentos cruciales: (1) <B>Rechazo activo de los regalos</B>: cuando el Comendador le envía regalos (cadena de oro, telas lujosas), Casilda los rechaza explícitamente, con palabras que revelan su conciencia moral: no acepta bienes de quien le quiere mal. (2) <B>Rechazo verbal de la declaración</B>: la escena en que Peribáñez (disfrazado de segador) escucha cómo Casilda rechaza la declaración del Comendador es doblemente importante: a) demuestra la inocencia de Casilda, b) demuestra que su virtud es genuine y no actuada para la galería. (3) <B>Solidaridad en el desenlace</B>: Casilda no abandona a Peribáñez ni lo juzga por haber matado al Comendador; lo acompaña en su presentación voluntaria ante el Rey. Esta conducta la hace partícipe activa de la resolución moral del conflicto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> &iquest;Cu&aacute;l es la funci&oacute;n del rey Enrique III en la estructura ideol&oacute;gica de la obra y c&oacute;mo se relaciona con la visi&oacute;n pol&iacute;tica de Lope?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El rey es una figura decorativa sin funci&oacute;n ideol&oacute;gica real; su aparici&oacute;n al final simplemente sirve para dar un final feliz a la obra sin ning&uacute;n prop&oacute;sito pol&iacute;tico m&aacute;s profundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El rey funciona como garante &uacute;ltimo de la justicia y el orden moral: al convalidar el acto de Peri&aacute;&ntilde;ez, el rey afirma que la monarqu&iacute;a protege al pueblo honrado frente a los abusos de la nobleza intermedia; esto refleja la visi&oacute;n pol&iacute;tica lopesca de la alianza entre la Corona y el pueblo llano contra los excesos feudales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El rey representa la crtica al poder monárquico: su incapacidad para proteger a Casilda antes del crimen del Comendador muestra que la Corona no puede proteger al pueblo; Lope cripta en la figura del rey una s&aacute;tira del poder real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) El rey funci ona como antagonista secundario: inicialmente quiere castigar a Peri&aacute;&ntilde;ez por el homicidio del Comendador, pero Casilda lo convence con su elocuencia; la monarqu&iacute;a es presentada como arbitraria y caprichosa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La figura del rey en <I>Peribáñez</I> (como en <I>Fuente Ovejuna</I> y en otras obras lopescas) tiene una función ideológica central que refleja la <B>visión política de Lope de Vega</B>. En el pensamiento político del Siglo de Oro español, predominaba la idea de que la monarquía era el árbitro natural del conflicto entre los estamentos: la Corona debía proteger al pueblo llano de los abusos de la nobleza intermedia. Esta idea tiene una larga tradición en el pensamiento político castellano (la figura del rey justiciero ya aparece en las Crónicas medievales). En la obra, el rey <B>Enrique III "el Doliente"</B> es un monarca histórico conocido precisamente por su política de limitación del poder nobiliario, lo que encaja perfectamente con el mensaje de la obra. Al convalidar el acto de Peribáñez, el Rey cumple su función esencial: <B>hacer justicia</B> donde la justicia ordinaria (que hubiera protegido al Comendador por su rango) no podía actuar. Este desenlace no es subversivo del orden social sino reafirmador del orden monárquico justo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Qu&eacute; diferencias fundamentales existen entre <I>Peri&aacute;&ntilde;ez y el Comendador de Oca&ntilde;a</I> y <I>Fuente Ovejuna</I> en cuanto al tipo de venganza y la dimensi&oacute;n del conflicto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Ambas obras son id&eacute;nticas en estructura y mensaje: en las dos el pueblo entero mata al Comendador; la &uacute;nica diferencia es que en <I>Peri&aacute;&ntilde;ez</I> la acci&oacute;n ocurre en Oca&ntilde;a y en <I>Fuente Ovejuna</I> en C&oacute;rdoba</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) En <I>Peri&aacute;&ntilde;ez</I> la venganza es <B>individual</B> (solo Peri&aacute;&ntilde;ez mata al Comendador) y el conflicto tiene una dimensi&oacute;n m&aacute;s &iacute;ntima y privada; en <I>Fuente Ovejuna</I> la venganza es <B>colectiva</B> (todo el pueblo mata al Comendador) y la dimensi&oacute;n es m&aacute;s pol&iacute;tica y comunitaria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) En <I>Fuente Ovejuna</I> la venganza es individual (la protagonista Laurencia mata al Comendador) y el rey la condena; en <I>Peri&aacute;&ntilde;ez</I> la venganza es colectiva y el rey la aprueba; las dos obras presentan exactamente la situaci&oacute;n opuesta a lo que generalmente se cree</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) La diferencia principal no es el tipo de venganza sino la &eacute;poca: <I>Peri&aacute;&ntilde;ez</I> est&aacute; ambientada en el siglo XVIII y <I>Fuente Ovejuna</I> en la Antig&uuml;edad cl&aacute;sica; Lope usa estos contextos hist&oacute;ricos para distanciar las ideas pol&iacute;ticas m&aacute;s radicales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La distinción entre <I>Peribáñez</I> y <I>Fuente Ovejuna</I> es fundamental para cualquier examen sobre el drama de honor villano lopesco. <B><I>Peribáñez</I>:</B> la venganza es estrictamente <B>individual</B>; es Peribáñez solo quien mata al Comendador don Fadrique; el conflicto tiene una dimensión más íntima y privada (la amenaza al matrimonio, al honor doméstico); la pregunta dramática es "¿qué hace un hombre honrado cuando un poderoso amenaza su honor?". <B><I>Fuente Ovejuna</I>:</B> la venganza es <B>colectiva</B>; todo el pueblo del aldea mata al Comendador Fernán Gómez de Guzmán; cuando el juez del Rey pregunta "¿quién mató al Comendador?", todos responden "Fuente Ovejuna, señor"; la dimensión es política y comunitaria; la pregunta dramática es "¿cuándo tiene derecho un pueblo a rebelarse contra su señor?". Ambas obras comparten la estructura básica (villano honrado vs. Comendador libidinoso; aval del rey al final) pero difieren en la escala y la naturaleza del conflicto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza la ironi&iacute;a dram&aacute;tica presente en el inicio de la obra: &iquest;c&oacute;mo la generosidad de Peri&aacute;&ntilde;ez al socorrer al Comendador se convierte en el origen de su propia desgracia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) No existe iron&iacute;a dram&aacute;tica en el inicio porque Peri&aacute;&ntilde;ez sospecha desde el primer momento que el Comendador puede ser peligroso; su acci&oacute;n de socorrerlo es calculada para mantener al enemigo cerca y vigilado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La iron&iacute;a dram&aacute;tica reside en que el acto de generosidad m&aacute;s noble de Peri&aacute;&ntilde;ez &mdash;socorrer al ca&iacute;do, llevarlo a su hogar&mdash; es el que introduce en ese hogar al hombre que amenazar&aacute; su honor; la virtud del protagonista genera inadvertidamente el peligro; esta estructura es t&iacute;pica de la trag&eacute;dia: la desgracia nace de la propia excelencia moral del h&eacute;roe</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) La iron&iacute;a dram&aacute;tica es que el Comendador fingi&oacute; la ca&iacute;da del caballo deliberadamente para entrar en casa de Peri&aacute;&ntilde;ez; Lope lo revela en un apart&eacute; del primer acto; la generosidad de Peri&aacute;&ntilde;ez es una virtud explotada deliberadamente desde el principio por el Comendador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) No existe iron&iacute;a dram&aacute;tica relevante en el inicio; el accidente del Comendador es un elemento puramente mecánico para hacer coincidir a los personajes sin ning&uacute;n significado simb&oacute;lico adicional</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La ironía dramática del inicio de <I>Peribáñez</I> es una de las construcciones más sofisticadas de la obra y ha sido señalada repetidamente por la crítica. La estructura es la siguiente: Peribáñez, en el máximo momento de su felicidad (el día de su boda), realiza un acto de generosidad pura: socorre a un desconocido herido (el Comendador) y lo lleva a su propia casa. Este acto es moralmente impecable: es caridad cristiana, hospitalidad generosa, conducta ejemplar. Sin embargo, es precisamente este acto el que introduce en el espacio íntimo del hogar al hombre que amenazará ese hogar. Lope construye así una situación de <B>ironía trágica</B> donde la virtud del protagonista produce su propia desgracia: no por una falta moral, sino por la excelencia de su carácter. Esta estructura recuerda la hamartía aristotélica: no es un defecto moral lo que precipita la desgracia del héroe sino su misma grandeza (la generosidad). La obra también establece una <B>deuda de gratitud</B> del Comendador hacia Peribáñez que el Comendador violará, añadiendo una dimensión moral adicional a su culpa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> &iquest;Qu&eacute; funci&oacute;n cumplen las canciones y elementos l&iacute;ricos intercalados en <I>Peri&aacute;&ntilde;ez</I> y c&oacute;mo se relacionan con la estructura dram&aacute;tica de la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Las canciones intercaladas son puramente decorativas y no tienen ninguna relaci&oacute;n con la estructura dram&aacute;tica; Lope las incluy&oacute; solo para complacer a los m&uacute;sicos del corral de comedias que necesitaban actuaciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Las canciones cumplen m&uacute;ltiples funciones: establecen el ambiente rural id&iacute;lico del primer acto (cuya ruptura constituye el conflicto), funcionan como catalizadores del deseo del Comendador (la canci&oacute;n de las segadoras intensifica su obses i&oacute;n), y articulan temas centrales de la obra (la fertilidad, el amor, la belleza rural) en forma l&iacute;rica que complementa la acci&oacute;n dram&aacute;tica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Las canciones cumplen exclusivamente una funci&oacute;n c&oacute;mica: alivian la tensi&oacute;n dram&aacute;tica de las escenas m&aacute;s graves mediante el humor y la parodia; es la funci&oacute;n equivalente al personaje del gracioso pero en formato musical</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Las canciones tienen una funci&oacute;n exclusivamente religiosa: todas ellas son paráfrasis de salmos b&iacute;blicos que Lope usa para enmarca r moralmente la acci&oacute;n; sin conocer los salmos, es imposible entender el significado de la obra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las canciones intercaladas en <I>Peribáñez</I> son un elemento formal de gran sofisticación dramática, y su estudio ha ocupado a importantes especialistas de la obra. Sus funciones son múltiples: (1) <B>Función ambiental e ideológica</B>: las canciones del primer acto (bodas, rondas, canciones de siega) construyen el mundo rural de Ocaña como un espacio idílico de virtud y belleza natural. Este idilio es lo que el Comendador amenaza y destruye con su deseo. (2) <B>Función como catalizador del deseo</B>: la canción de las segadoras que el Comendador escucha desde la ventana (la escena en que ve a Casilda entre las segadoras o escucha cantarla) funciona como un hechizo que intensifica su obsesión erótica. La belleza lírica de la canción se convierte en arma dramática. (3) <B>Función temática</B>: las imágenes de las canciones (la siega, la cosecha, la fertilidad de la tierra) articulan metafóricamente temas centrales de la obra: la amenaza a la "cosecha" de Peribáñez (Casilda), la violación de un territorio que pertenece a otro. (4) <B>Función como elemento popular</B>: Lope usa canciones de la tradición oral que el público reconocía, creando un efecto de complicidad y autenticidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Analiza la ambig&uuml;edad moral del Comendador don Fadrique: &iquest;es un antagonista unidimensional o posee rasgos que lo humanizan y complejizan como personaje?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) El Comendador es un antagonista completamente unidimensional: desde su primera aparici&oacute;n en la obra es presentado como un malvado sin redenci&oacute;n posible que planea deliberadamente su acto de seducci&oacute;n; no hay en &eacute;l ning&uacute;n rasgo que lo humanice</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El Comendador tiene rasgos que lo complejizan: al inicio de la obra se muestra cortés y agradecido con Peri&aacute;&ntilde;ez; es su pasi&oacute;n por Casilda la que lo corrompe progresivamente; su tragedia es la de quien tiene poder suficiente para intentar satisfacer un deseo ileg&iacute;timo y carece de la virtud para renunciar a &eacute;l</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) El Comendador es el verdadero protagonista moral de la obra: Lope lo presenta como una v&iacute;ctima del amor no correspondido, y el p&uacute;blico del Siglo de Oro simpatizaba con &eacute;l m&aacute;s que con el villano Peri&aacute;&ntilde;ez</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El Comendador es moralmente ambiguo porque en varias escenas de la obra intenta retractarse de su conducta y pedir perd&oacute;n a Peri&aacute;&ntilde;ez; es la resistencia de Casilda la que lo obliga a continuar con sus planes contra su voluntad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Comendador don Fadrique es uno de los personajes más interesantes de la obra precisamente porque Lope evita construirlo como un simple villano. En la apertura de la obra, el Comendador muestra gratitud hacia Peribáñez (que lo ha socorrido) y cortesía ante la comunidad de Ocaña. Es un hombre de su clase: acostumbrado al poder, al privilegio y a la satisfacción de sus deseos. Su <B>progresiva corrupción moral</B> comienza cuando ve a Casilda y decide que la quiere para sí. Lo que lo hace un antagonista moralmente complejo es que Lope no presenta su deseo como perverso en sí mismo (el amor o la atracción no son culpables per se) sino como <B>perverso en sus medios</B>: usa el poder institucional que tiene sobre Peribáñez (nombrarlo capitán) para satisfacer ese deseo, violando la confianza de un hombre que le debe gratitud y que depende de él. Su pecado no es amar sino <B>abusar del poder para satisfacer ese amor</B>. Esta complejidad hace que su muerte sea dramáticamente inevitable sin ser emocionalmente simple: el Comendador es culpable pero no es un monstruo unidimensional.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Desde la perspectiva de la cr&iacute;tica literaria contempor&aacute;nea, &iquest;puede considerarse <I>Peri&aacute;&ntilde;ez</I> una obra genuinamente subversiva del orden social estamental, o por el contrario reafirma ese orden al necesitar el aval del Rey para legitimar la acci&oacute;n del villano?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La obra es plenamente subversiva: Lope era un pensador revolucionario que buscaba conscientemente la destrucci&oacute;n del sistema estamental; el aval del Rey es una trampa que Lope incluye para burlar la censura, pero el mensaje real es que los villanos tienen derecho a rebelarse sin necesidad de la aprobaci&oacute;n real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La obra presenta una tensi&oacute;n irresuelta: por un lado afirma la dignidad moral del villano honrado (subversivo respecto a la ideolog&iacute;a dominante); por otro, necesita del aval del rey para que esa dignidad sea reconocida (reafirmador del orden mon&aacute;rquico); esta tensi&oacute;n es constitutiva de la dramaturgia lopesca y refleja los l&iacute;mites ideol&oacute;gicos dentro de los cuales opera el Siglo de Oro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La obra no tiene ninguna dimensi&oacute;n subversiva: Lope era un escritor de corte completamente integrado en el sistema establecido; la inclusi&oacute;n de un villano como protagonista obedece a razones de entretenimiento popular y no tiene ning&uacute;n mensaje ideol&oacute;gico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La obra es subversiva pero solo en sentido religioso: Lope, como sacerdote ordenado, critica en clave teol&oacute;gica el sistema de honor estamental; el aval del Rey es en realidad una met&aacute;fora del perdón divino, y Peri&aacute;&ntilde;ez representa al alma que busca la gracia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una de las preguntas más debatidas en la crítica lopesca del siglo XX y XXI. La interpretación más sofisticada y aceptada por la crítica contemporánea es la de la <B>tensión irresuelta</B>. <B>Argumento a favor de la subversión:</B> Lope afirma explícitamente la dignidad moral del villano y la ilegitimidad del abuso nobiliario; esto contradice la ideología dominante que naturalizaba la superioridad del estamento nobiliario. El crítico <B>Américo Castro</B> y otros señalaron el carácter democratizador del teatro lopesco. <B>Argumento en contra de la subversión:</B> el desenlace requiere la aprobación del Rey; Peribáñez no actúa como agente soberano sino que necesita que el monarca valide su acto; el orden monárquico no es cuestionado sino reafirmado. Esta es la línea del crítico <B>José María Díez Borque</B>. <B>La posición más matizada</B> (críticos como Antonio Carreño, Noël Salomon): la obra opera dentro de los límites ideológicos del Siglo de Oro; no puede ser plenamente subversiva porque eso habría sido imposible en ese contexto histórico y teatral; pero dentro de esos límites, afirma valores que tensionan la ideología dominante sin destruirla.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Analiza la relaci&oacute;n entre la polimetr&iacute;a de <I>Peri&aacute;&ntilde;ez</I> y la construcci&oacute;n dram&aacute;tica: &iquest;c&oacute;mo usa Lope la variedad m&eacute;trica para articular las diferentes situaciones emocionales y sociales de la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La polimetría de <I>Peribáñez</I> es arbitraria: Lope cambia de metro sin criterio dram&aacute;tico coherente, lo que hace de la obra un ejemplo del exceso formal barroco que la crítica neoclásica conden&oacute; con raz&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La polimetría sigue un criterio dram&aacute;tico preciso expuesto en el <I>Arte nuevo</I>: el romance para narraciones &eacute;picas, la redondilla para di&aacute;logos amorosos, la d&eacute;cima para lamentos, el soneto para mon&oacute;logos reflexivos; la variedad m&eacute;trica crea una <I>partitura emocional</I> que el espectador del Siglo de Oro reconoc&iacute;a inmediatamente como señal del registro emocional de cada escena</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Lope usa la polimetría para distinguir a los personajes seg&uacute;n su clase social: los nobles siempre hablan en endecas&iacute;labos y los villanos siempre en oct os&iacute;labos; esta regla es absoluta y no tiene excepciones en toda la obra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La polimetría en <I>Peri&aacute;&ntilde;ez</I> no tiene ninguna funci&oacute;n dram&aacute;tica espec&iacute;fica: todos los metros usados son equivalentes en valor emocional y su distribuci&oacute;n obedece solo a razones de conveniencia r&iacute;tmica de los actores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La polimetría de <I>Peribáñez</I> no es arbitraria sino que sigue el principio que Lope enuncia en el <I>Arte nuevo</I>: "Acomode los versos con prudencia / a los sujetos de que va tratando: / las décimas son buenas para quejas; / el soneto está bien en los que aguardan; / las relaciones piden los romances, / aunque en octavas lucen por extremo; / son los tercetos para cosas graves, / y para las de amor, las redondillas." En <I>Peribáñez</I> esto se traduce en: (1) <B>Romances</B>: para las narraciones de los mensajeros y los parlamentos épico-narrativos (relaciones de hechos ocurridos fuera de escena). (2) <B>Redondillas</B>: para los diálogos amorosos entre Peribáñez y Casilda y para las escenas costumbristas de ambiente festivo. (3) <B>Décimas</B>: para los momentos de máxima angustia emocional (el lamento de Peribáñez al descubrir el peligro). (4) <B>Sonetos</B>: para los monólogos reflexivos de mayor elaboración retórica. (5) <B>Canciones y seguidillas</B>: para las intervenciones líricas populares. Esta variedad crea lo que podría llamarse una <B>partitura emocional</B>: el espectador del Siglo de Oro reconocía inmediatamente el cambio de metro como señal del cambio de registro dramático.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Eval&uacute;a la posici&oacute;n de Lope de Vega en la historia del teatro occidental: &iquest;en qu&eacute; sentido sus innovaciones dram&aacute;ticas son comparables o superiores a las de Shakespeare, su contempor&aacute;neo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Lope es claramente inferior a Shakespeare en todos los aspectos: profundidad psicol&oacute;gica, complejidad dram&aacute;tica e influencia sobre la literatura posterior; la comparaci&oacute;n es irrelevante porque Shakespeare es el mayor dramaturgo de la historia y Lope es solo una figura regional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Lope y Shakespeare son los dos grandes renovadores del teatro occidental del Siglo de Oro: ambos rompen con la preceptiva cl&aacute;sica, mezclan lo c&oacute;mico y lo tr&aacute;gico, trabajan para un p&uacute;blico popular y crean una dramaturgia nacional; Lope supera a Shakespeare en volumen de producci&oacute;n y en la sistematizaci&oacute;n te&oacute;rica de su renovaci&oacute;n (el <I>Arte nuevo</I>); Shakespeare supera a Lope en la profundidad de caracterizaci&oacute;n de sus grandes protagonistas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Lope es claramente superior a Shakespeare en todos los aspectos porque escribi&oacute; muchas m&aacute;s obras y porque el teatro espa&ntilde;ol del Siglo de Oro es reconocido universalmente como el m&aacute;s importante de la historia occidental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La comparaci&oacute;n entre Lope y Shakespeare es imposible porque operaron en contextos culturales completamente aislados el uno del otro y las condiciones de producci&oacute;n teatral eran tan diferentes que cualquier comparaci&oacute;n resulta metodol&oacute;gicamente inválida</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparación entre Lope de Vega y Shakespeare es uno de los ejercicios más frecuentes en la crítica literaria comparada y merece una respuesta matizada. <B>Puntos de comparación:</B> (1) <B>Contemporaneidad:</B> Lope (1562&ndash;1635) y Shakespeare (1564&ndash;1616) son exactos contemporáneos, y ambos operan en el contexto del teatro popular comercial de sus respectivos países. (2) <B>Ruptura con la preceptiva clásica:</B> ambos mezclan lo trágico y lo cómico, trabajan con estructuras flexibles y crean para un público popular heterogéneo. (3) <B>Creación de una dramaturgia nacional:</B> Lope creó la "comedia española" como forma canónica; Shakespeare creó el drama isabelino. <B>Diferencias:</B> (1) <B>Volumen:</B> Lope escribió entre 1.500 y 1.800 comedias; Shakespeare produjo 37 obras atribuidas. (2) <B>Sistematización teórica:</B> el <I>Arte nuevo</I> de Lope es un manifiesto teórico explícito; Shakespeare no dejó ningún texto teórico equivalente. (3) <B>Profundidad psicológica:</B> los grandes personajes shakespearianos (Hamlet, Otelo, Lear, Macbeth) tienen una complejidad interior que los críticos consideran generalmente superior a la de los protagonistas lopescos, que tienden a ser más esquemáticos en su psicología. (4) <B>Influencia posterior:</B> Shakespeare es hoy más representado globalmente; Lope es el fundamento del teatro español e hispanoamericano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Desde la perspectiva de los estudios de g&eacute;nero, &iquest;c&oacute;mo puede leerse la figura de Casilda en <I>Peri&aacute;&ntilde;ez</I>: como modelo de virtud femenina aut&oacute;noma o como objeto de disputa entre hombres dentro de un sistema patri arcal?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Los estudios de g&eacute;nero son irrelevantes para el an&aacute;lisis de una obra del Siglo de Oro; aplicar categor&iacute;as cr&iacute;ticas contempor&aacute;neas a textos del siglo XVII es un anacronismo metodol&oacute;gico que distorsiona la obra y debe evitarse en el contexto acad&eacute;mico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Casilda admite ambas lecturas simult&aacute;neamente: desde la perspectiva de la obra, es un modelo de virtud con agencia moral propia (rechaza activamente al Comendador, elige a Peri&aacute;&ntilde;ez); desde una lectura de g&eacute;nero contempor&aacute;nea, su virtud est&aacute; definida por la fidelidad al marido y su honor depende de la conducta de los hombres que la rodean, lo que la sit&uacute;a dentro de un sistema patri arcal donde la mujer es el depositario del honor masculino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Casilda es exclusivamente un objeto de disputa sin ning&uacute;n tipo de agencia; Lope nunca otorga a ning&uacute;n personaje femenino del Siglo de Oro la capacidad de tomar decisiones morales aut&oacute;nomas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Desde los estudios de g&eacute;nero, Casilda debe ser interpretada como la figura subversiva central de la obra: su rechazo al Comendador es una cr&iacute;tica expl&iacute;cita al sistema feudal que Lope introduce conscientemente para dar voz a la resistencia femenina al patriarcado</DIV>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La lectura de Casilda desde la perspectiva de los estudios de género es uno de los ejercicios críticos más productivos sobre la obra y produce resultados complejos y en tensión. <B>Casilda como agente moral:</B> dentro de los parámetros de la obra, Casilda es un personaje con notable capacidad de decisión moral: rechaza explícitamente y con elocuencia las insinuaciones del Comendador; su fidelidad a Peribáñez es presentada como una elección deliberada. La crítica como <B>Melveena McKendrick</B> ha señalado que las mujeres del teatro del Siglo de Oro tienen con frecuencia una agencia moral más visible que sus contemporáneas literarias de otros contextos. <B>Casilda como objeto dentro del sistema patriarcal:</B> sin embargo, el sistema de honor en que opera la obra está construido sobre una premisa patriarcal: el honor de Peribáñez depende de la conducta sexual de Casilda; ella es el "depositario" de un honor que pertenece al marido; el conflicto central (el intento del Comendador de "deshonrar" a Peribáñez a través de Casilda) la convierte en objeto de disputa entre dos hombres aunque ella misma rechace ser objeto. <B>La tensión irresuelta:</B> la obra no puede escapar de la estructura patriarcal del concepto de honor que constituye su núcleo temático, pero dentro de esa estructura otorga a Casilda una voz y una presencia que la distinguen de la simple víctima pasiva.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> &iquest;En qu&eacute; medida <I>Peri&aacute;&ntilde;ez y el Comendador de Oca&ntilde;a</I> puede ser le&iacute;da como una reflexi&oacute;n sobre los l&iacute;mites leg&iacute;timos del poder y la obediencia, y c&oacute;mo se articula esta reflexi&oacute;n con el pensamiento pol&iacute;tico del Siglo de Oro espa&ntilde;ol?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La obra no contiene ninguna reflexi&oacute;n sobre los l&iacute;mites del poder: Lope era un escritor de la corte que apoyaba incondicionalmente el absolutismo monárquico y el sistema estamental; cualquier lectura "pol&iacute;tica" de la obra es una proyecci&oacute;n anacronística de la cr&iacute;tica del siglo XX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La obra articula una reflexi&oacute;n sobre los l&iacute;mites del poder: el Comendador tiene poder leg&iacute;timo sobre Peri&aacute;&ntilde;ez pero lo usa il eg&iacute;timamente; la obra sostiene que el poder que transgrede sus l&iacute;mites morales pierde su legitimidad y puede ser resistido; esto se conecta con el pensamiento pol&iacute;tico neoescolástico espa&ntilde;ol (Suárez, Vitoria) que admit&iacute;a la resistencia al tirano bajo condiciones estrictas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La obra reflexiona sobre el poder exclusivamente en t&eacute;rminos econ&oacute;micos: el verdadero conflicto es entre el capital comercial (representado por Peri&aacute;&ntilde;ez como labrador rico) y el poder feudal (representado por el Comendador); Lope es un precursor de las teor&iacute;as burguesas que desafiar&iacute;an al feudalismo en el siglo XVIII</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La reflexi&oacute;n pol&iacute;tica de la obra es exclusivamente religiosa: el Comendador representa al poder hereje y Peri&aacute;&ntilde;ez al pueblo cat&oacute;lico fiel; la obra es una alegor&iacute;a de la Reforma Protestante y la respuesta de la Contrarreforma espa&ntilde;ola</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La dimensión política de <I>Peribáñez</I> se articula dentro del pensamiento político del Siglo de Oro español, que estaba lejos de ser monolíticamente absolutista. La tradición neoescolástica española, representada por pensadores como <B>Francisco de Vitoria</B>, <B>Francisco Suárez</B> y <B>Juan de Mariana</B>, admitía la existencia de límites al poder político: el gobernante que transgrede su función protectora y se convierte en tirano pierde la legitimidad de su autoridad. En la obra, el Comendador tiene poder legítimo sobre Peribáñez en sentido institucional (es su señor, puede nombrarlo capitán, movilizarlo). Pero ese poder tiene un límite moral: no puede invadir el espacio matrimonial ni usar su autoridad para satisfacer deseos ilegítimos. Cuando el Comendador transgrede ese límite, su poder pierde legitimidad. La resistencia de Peribáñez no es desobediencia al orden sino <B>defensa de un orden más profundo</B> (el matrimonial, el moral) frente al abuso de poder. Esta lectura se refuerza por el hecho de que Peribáñez no actúa como rebelde sino que busca el aval del Rey (la fuente suprema de legitimidad) antes de actuar: opera dentro del sistema para corregir uno de sus abusos, no para destruirlo. La conexión con el tiranismo neoescolástico (Suárez: el pueblo puede resistir al tirano en defensa del bien común) es el marco intelectual que da profundidad política a la obra.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

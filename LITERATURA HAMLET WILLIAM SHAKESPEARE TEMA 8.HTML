@@ -1,0 +1,564 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Hamlet - William Shakespeare - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 8</DIV>
+<H1>Hamlet &mdash; William Shakespeare</H1>
+<DIV CLASS="sub">G&eacute;nero &middot; Estructura &middot; Personajes &middot; Temas &middot; Monólogos &middot; Contexto isabelino &middot; An&aacute;lisis literario</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. William Shakespeare: datos esenciales del autor</H3>
+<B>William Shakespeare</B> (Stratford-upon-Avon, <B>23 de abril de 1564</B> &ndash; Stratford-upon-Avon, <B>23 de abril de 1616</B>) es el escritor m&aacute;s importante de la literatura inglesa y uno de los m&aacute;s influyentes de la historia universal. Poeta, dramaturgo y actor, vivi&oacute; y trabaj&oacute; durante el llamado <B>per&iacute;odo isabelino</B> (reinado de la reina Isabel I, 1558&ndash;1603) y el <B>jacobino</B> (reinado de Jacobo I, 1603&ndash;1625).
+
+<H4>Datos biogr&aacute;ficos clave:</H4>
+<UL>
+<LI>Naci&oacute; en <B>Stratford-upon-Avon</B>, condado de Warwickshire, Inglaterra.</LI>
+<LI>Se cas&oacute; a los 18 a&ntilde;os con <B>Anne Hathaway</B> (1582) y tuvo tres hijos: Susanna, Hamnet y Judith (Hamnet, su &uacute;nico hijo var&oacute;n, muri&oacute; a los 11 a&ntilde;os en 1596; algunos estudiosos ven una conexi&oacute;n biogr&aacute;fica entre la muerte de Hamnet y la creaci&oacute;n del personaje de Hamlet).</LI>
+<LI>En Londres form&oacute; parte de la compa&ntilde;&iacute;a de teatro <B>Lord Chamberlain's Men</B> (luego llamada <B>King's Men</B> bajo Jacobo I), y fue copropietario del famoso teatro <B>The Globe</B> (construido en 1599).</LI>
+<LI>Escribi&oacute; <B>37 obras de teatro</B> (comedia, tragedia e historia) y <B>154 sonetos</B>, adem&aacute;s de poemas narrativos.</LI>
+<LI>Se retir&oacute; a Stratford hacia 1613 y muri&oacute; en 1616 a los <B>52 a&ntilde;os</B>.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Los datos m&aacute;s frecuentes sobre Shakespeare son: fecha de nacimiento y muerte (<B>1564&ndash;1616</B>), lugar de nacimiento (<B>Stratford-upon-Avon</B>), teatro donde trabaj&oacute; (<B>The Globe</B>), n&uacute;mero de obras (<B>37 obras teatrales + 154 sonetos</B>), y el per&iacute;odo hist&oacute;rico (<B>Renacimiento ingl&eacute;s / per&iacute;odo isabelino</B>). Hamlet se ubica dentro de sus <B>grandes tragedias</B> junto a Otelo, El Rey Lear y Macbeth.</DIV>
+
+<H4>Clasificaci&oacute;n de sus obras:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>G&eacute;nero</TH><TH>Ejemplos destacados</TH></TR>
+<TR><TD><B>Tragedias</B></TD><TD>Hamlet, Macbeth, Otelo, El Rey Lear, Romeo y Julieta, Julio C&eacute;sar</TD></TR>
+<TR><TD><B>Comedias</B></TD><TD>El sue&ntilde;o de una noche de verano, La fierecilla domada, El mercader de Venecia, Mucho ruido y pocas nueces</TD></TR>
+<TR><TD><B>Historias (cr&oacute;nicas)</B></TD><TD>Ricardo II, Ricardo III, Enrique IV, Enrique V</TD></TR>
+<TR><TD><B>Tragicomedias o romances</B></TD><TD>La tempestad, El cuento de invierno, Pericles, Cimbelino</TD></TR>
+<TR><TD><B>Poes&iacute;a</B></TD><TD>154 Sonetos, Venus y Adonis, La violaci&oacute;n de Lucrecia</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#127981; HAMLET: CONTEXTO Y ORIGEN<SPAN>La obra magna del teatro universal (c. 1600&ndash;1601)</SPAN></DIV>
+
+<H3>2. Contexto hist&oacute;rico, literario y fuentes de Hamlet</H3>
+<B>Hamlet, Prince of Denmark</B> (Hamlet, Pr&iacute;ncipe de Dinamarca) fue escrita aproximadamente entre <B>1600 y 1601</B> y publicada en quarto en <B>1603</B>. Es la obra m&aacute;s larga de Shakespeare (<B>m&aacute;s de 4.000 versos</B>) y la m&aacute;s representada del teatro universal.
+
+<H4>Fuentes de Hamlet:</H4>
+<UL>
+<LI><B>Ur-Hamlet:</B> se cree que existia una versi&oacute;n anterior de la obra ("Proto-Hamlet") atribuida posiblemente a <B>Thomas Kyd</B>, hoy perdida, que Shakespeare reelabor&oacute;.</LI>
+<LI><B>Historia Danica</B> (c. 1200) del historiador dan&eacute;s <B>Saxo Gram&aacute;ticus</B>: narra la historia de <B>Amleth</B>, un pr&iacute;ncipe que finge locura para vengar a su padre.</LI>
+<LI><B>Histoires Tragiques</B> (1576) del franc&eacute;s <B>Fran&ccedil;ois de Belleforest</B>: adapt&oacute; la historia de Saxo Gram&aacute;ticus a&ntilde;adiendo elementos de culpa y filosof&iacute;a moral.</LI>
+</UL>
+
+<H4>Contexto isabelino y renacentista:</H4>
+<UL>
+<LI>Inglaterra viv&iacute;a el apogeo del <B>Renacimiento ingl&eacute;s</B>: el humanismo, la nueva filosof&iacute;a (Montaigne, Maquiavelo), las dudas religiosas tras la Reforma protestante de Enrique VIII, y la consolidaci&oacute;n del teatro como arte popular y cortesano.</LI>
+<LI>El teatro isabelino se caracterizaba por: escenarios en espacios exteriores con luz natural, actores masculinos que interpretaban todos los roles (incluso los femeninos), mezcla de tragedia y comedia, y public muy diverso (desde el pueblo hasta la corte).</LI>
+<LI>Hamlet refleja la <B>crisis del humanismo renacentista</B>: la fe en la raz&oacute;n y en el ser humano choca con la corrupci&oacute;n moral, la muerte y la incertidumbre metaf&iacute;sica.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>Shakespeare y Montaigne:</B> Varios estudiosos (Harold Bloom, Jan Kott) han se&ntilde;alado la influencia del ensayista franc&eacute;s <B>Michel de Montaigne</B> en Hamlet. El escepticismo de Montaigne ("Que sais-je?" &mdash;"&iquest;Qu&eacute; s&eacute; yo?"&mdash;), su reflexi&oacute;n sobre la muerte y la identidad del yo se reflejan en los monólogos del pr&iacute;ncipe. El humanismo renacentista entra en crisis precisamente en Hamlet: el hombre ya no es la medida de todas las cosas, sino un ser d&eacute;bil, indeciso, mortal.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128203; ARGUMENTO Y ESTRUCTURA<SPAN>Resumen de la trama y organizaci&oacute;n en cinco actos</SPAN></DIV>
+
+<H3>3. Argumento completo de Hamlet</H3>
+La acci&oacute;n se desarrolla en el castillo de <B>Elsinore</B> (Helsingør), en <B>Dinamarca</B>. El pr&iacute;ncipe <B>Hamlet</B> regresa de sus estudios en la Universidad de <B>Wittenberg</B> (Alemania) al enterarse de la muerte de su padre, el rey de Dinamarca. Para su sorpresa y dolor, encuentra que su t&iacute;o <B>Claudio</B> se ha casado apresuradamente con su madre, la reina <B>Gertrudis</B>, y se ha proclamado rey.
+
+<H4>Los cinco actos:</H4>
+<OL>
+<LI><B>Acto I &mdash; La aparici&oacute;n del fantasma:</B> El fantasma del rey muerto se aparece a Hamlet y le revela la verdad: Claudio lo asesino vertiendole veneno en el o&iacute;do mientras dorm&iacute;a en el jard&iacute;n. Le encomienda a Hamlet que lo vengue. Hamlet jura hacerlo y decide fingir locura para investigar sin levantar sospechas.</LI>
+<LI><B>Acto II &mdash; La fuga hacia la locura fingida:</B> Hamlet se comporta de manera extra&ntilde;a con todos, incluyendo con <B>Ofelia</B> (su amada), con su madre y con sus amigos <B>Rosencrantz y Guildenstern</B> (enviados por Claudio a espiarlo). Llega una compa&ntilde;&iacute;a de actores ambulantes y Hamlet tiene la idea de montar una obra que reproduzca el crimen del rey.</LI>
+<LI><B>Acto III &mdash; La trampa teatral y el monólogo "Ser o no ser":</B> Hamlet organiza <B>"La Ratonera"</B> (<I>The Mousetrap</I>): la obra teatral que reproduce el asesinato del rey frente a Claudio. La reacci&oacute;n de Claudio confirma su culpabilidad. Hamlet pronuncia el c&eacute;lebre mon&oacute;logo <B>"Ser o no ser"</B>. En el cuarto de su madre, Hamlet mata accidentalmente a <B>Polonio</B> (consejero del rey, padre de Ofelia y Laertes), confundi&eacute;ndolo con Claudio escondido tras la cortina.</LI>
+<LI><B>Acto IV &mdash; El exilio y la locura real de Ofelia:</B> Claudio env&iacute;a a Hamlet a Inglaterra con &oacute;rdenes secretas de que sea ejecutado. <B>Ofelia</B>, enloquecida por la muerte de su padre a manos de Hamlet y el rechazo de este, muere ahogada en un arroyo (posible suicidio). Su hermano <B>Laertes</B> regresa de Francia furioso y se alía con Claudio para vengarse de Hamlet. Hamlet logra escapar y regresa a Dinamarca.</LI>
+<LI><B>Acto V &mdash; El duelo final y la muerte de todos:</B> Hamlet y el sepulturero dialogan ante la tumba de Ofelia (escena famosa con el cr&aacute;neo de <B>Yorick</B>). Laertes, instigado por Claudio, desaf&iacute;a a Hamlet a un duelo. La espada de Laertes est&aacute; envenenada; adem&aacute;s, Claudio prepara una copa envenenada para Hamlet. En el duelo: Hamlet es herido por la espada envenenada; Gertrudis bebe por error la copa envenenada y muere; Laertes es herido con su propia espada envenenada y muere confesando el complot; Hamlet mata a Claudio. <B>Todos los protagonistas mueren</B>. El noruego <B>Fortinbr&aacute;s</B> llega y asume el poder en Dinamarca. El amigo fiel <B>Horacio</B> sobrevive para contar la historia.</LI>
+</OL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen &mdash; muertes en el Acto V:</B> Recuerda el orden de las muertes en el desenlace: <B>Gertrudis</B> (copa envenenada), <B>Laertes</B> (herido por su propia espada envenenada), <B>Claudio</B> (envenenado por Hamlet), <B>Hamlet</B> (herido por la espada de Laertes). El &uacute;nico que sobrevive entre los protagonistas es <B>Horacio</B>. <B>Fortinbr&aacute;s</B> llega al final como nuevo rey de Dinamarca.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128101; LOS PERSONAJES<SPAN>An&aacute;lisis de los protagonistas y su funci&oacute;n dram&aacute;tica</SPAN></DIV>
+
+<H3>4. Personajes principales y su an&aacute;lisis</H3>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Personaje</TH><TH>Descripci&oacute;n</TH><TH>Funci&oacute;n dram&aacute;tica</TH></TR>
+<TR><TD><B>Hamlet</B></TD><TD>Pr&iacute;ncipe de Dinamarca; intelectual, sensible, indeciso, mel&aacute;ncolico. Tiene entre 20 y 30 a&ntilde;os.</TD><TD>Protagonista; encarna la tragedia del pensamiento que paraliza la acci&oacute;n</TD></TR>
+<TR><TD><B>Claudio</B></TD><TD>T&iacute;o de Hamlet; asesino del rey; nuevo rey y esposo de Gertrudis. Manipulador y calculador.</TD><TD>Antagonista; representa la corrupci&oacute;n del poder y la traici&oacute;n</TD></TR>
+<TR><TD><B>Gertrudis</B></TD><TD>Reina de Dinamarca; madre de Hamlet. Debate si sab&iacute;a del asesinato. Vulnerable y seducida por Claudio.</TD><TD>Figura ambigua; su complicidad (o ignorancia) es debatida por los cr&iacute;ticos</TD></TR>
+<TR><TD><B>Ofelia</B></TD><TD>Hija de Polonio; amada de Hamlet. Obediente, delicada, incapaz de resistir las presiones. Enloquece y muere.</TD><TD>S&iacute;mbolo de la inocencia destruida; su locura es "real" frente a la "fingida" de Hamlet</TD></TR>
+<TR><TD><B>Polonio</B></TD><TD>Consejero real; padre de Ofelia y Laertes. Verbose, entrometido, espía por amor al poder.</TD><TD>Representa la adulaci&oacute;n cortesana y la mediocridad disfrazada de sabidur&iacute;a</TD></TR>
+<TR><TD><B>Laertes</B></TD><TD>Hermano de Ofelia; impulsivo, apasionado, hombre de acci&oacute;n. Contraste con Hamlet.</TD><TD>Doble de Hamlet: mismo problema (padre muerto) pero respuesta opuesta (acci&oacute;n inmediata)</TD></TR>
+<TR><TD><B>Horacio</B></TD><TD>Mejor amigo de Hamlet; fiel, racional, estoico. El &uacute;nico que sobrevive.</TD><TD>Confidente de Hamlet; testigo racional de los eventos; voz de la raz&oacute;n</TD></TR>
+<TR><TD><B>El Fantasma</B></TD><TD>Espec&iacute;e del padre muerto de Hamlet. Su naturaleza es ambigua: &iquest;es realmente su padre o un demonio?</TD><TD>Motor de la acci&oacute;n; fuente del mandato de venganza; encarna la duda metaf&iacute;sica</TD></TR>
+<TR><TD><B>Fortinbr&aacute;s</B></TD><TD>Pr&iacute;ncipe de Noruega; hombre de acci&oacute;n que quiere recuperar tierras perdidas por su padre.</TD><TD>Contraste con Hamlet; representa la acci&oacute;n sin reflexi&oacute;n; hereda el reino al final</TD></TR>
+<TR><TD><B>Rosencrantz y Guildenstern</B></TD><TD>Antiguos amigos de Hamlet convertidos en espías de Claudio.</TD><TD>Representan la traici&oacute;n amistosa y la corrupci&oacute;n del poder; mueren en Inglaterra</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El problema de Hamlet: la parálisis por la reflexi&oacute;n:</H4>
+El rasgo m&aacute;s estudiado del personaje es su <B>incapacidad para actuar</B> a pesar de saber qu&eacute; debe hacer. Desde el romanticismo, los cr&iacute;ticos han intentado explicar esta parálisis:
+<UL>
+<LI><B>Goethe</B> (1796): Hamlet es demasiado d&eacute;bil para soportar la carga de la venganza ("una flor delicada en un vaso demasiado grande").</LI>
+<LI><B>Coleridge</B> (1812): exceso de pensamiento que paraliza la voluntad; "aversión pat&oacute;logica de la acción".</LI>
+<LI><B>Freud y Jones</B> (1900&ndash;1949): Hamlet no puede matar a Claudio porque este ha realizado (matar al padre y casarse con la madre) lo que Hamlet mismo desea inconscientemente (complejo de Edipo).</LI>
+<LI><B>Lectura existencialista</B> (Sartre, Camus): Hamlet es un hombre enfrentado a un mundo absurdo donde ninguna acci&oacute;n tiene sentido moral claro.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#127775; LOS GRANDES MON&Oacute;LOGOS<SPAN>Las cimas po&eacute;ticas y filos&oacute;ficas de la obra</SPAN></DIV>
+
+<H3>5. Los monólogos de Hamlet: an&aacute;lisis literario</H3>
+Hamlet contiene siete monólogos de Hamlet, los m&aacute;s importantes de la literatura inglesa. Son ventanas a la psicolog&iacute;a del personaje y resumen los grandes temas de la obra.
+
+<H4>El monólogo m&aacute;s famoso: "Ser o no ser" (Acto III, Escena 1):</H4>
+<DIV CLASS="ej">&#128218; <B>Texto original (inicio):</B><BR>
+<I>"To be, or not to be, that is the question: / Whether 'tis nobler in the mind to suffer / The slings and arrows of outrageous fortune, / Or to take arms against a sea of troubles / And by opposing end them."</I><BR><BR>
+<B>Traducci&oacute;n aproximada:</B><BR>
+<I>"Ser o no ser, esa es la cuesti&oacute;n: / si es m&aacute;s noble para el esp&iacute;ritu sufrirlas / pedradas y flechas de la fortuna ultrajante, / o tomar las armas contra un mar de calamidades / y, haci&eacute;ndoles frente, acabar con ellas."</I>
+</DIV>
+
+<H4>Temas del monólogo "Ser o no ser":</H4>
+<UL>
+<LI><B>Vida vs. muerte:</B> La reflexi&oacute;n comienza como una meditaci&oacute;n sobre si vale la pena vivir (soportar el sufrimiento) o morir (acabar con &eacute;l). No es solo una cuesti&oacute;n de suicidio personal sino una interrogante filos&oacute;fica sobre la condici&oacute;n humana.</LI>
+<LI><B>El miedo a lo desconocido:</B> Lo que nos hace preferir el sufrimiento conocido es el miedo a "lo que hay despu&eacute;s de la muerte" ("the undiscovered country from whose bourn no traveller returns" &mdash; el pa&iacute;s no descubierto del que ning&uacute;n viajero regresa).</LI>
+<LI><B>La conciencia como freno:</B> "As&iacute; la conciencia nos hace a todos cobardes" &mdash; la reflexi&oacute;n moral paraliza la acci&oacute;n.</LI>
+</UL>
+
+<H4>Otros mon&oacute;logos importantes:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Mon&oacute;logo</TH><TH>Acto / Escena</TH><TH>Tema central</TH></TR>
+<TR><TD><B>"O, that this too, too solid flesh would melt"</B></TD><TD>Acto I, Escena 2</TD><TD>El dolor por la muerte del padre y el matrimonio precipitado de su madre; el mundo como "jard&iacute;n lleno de maleza"</TD></TR>
+<TR><TD><B>"O, what a rogue and peasant slave am I!"</B></TD><TD>Acto II, Escena 2</TD><TD>Hamlet se critica a s&iacute; mismo por no actuar; idea de montar "La Ratonera"</TD></TR>
+<TR><TD><B>"To be, or not to be"</B></TD><TD>Acto III, Escena 1</TD><TD>Reflexi&oacute;n sobre la vida, la muerte y la parálisis de la conciencia</TD></TR>
+<TR><TD><B>"Now I could drink hot blood"</B></TD><TD>Acto III, Escena 2</TD><TD>Tras confirmar la culpa de Claudio, Hamlet siente impulso de actuar</TD></TR>
+<TR><TD><B>"How all occasions do inform against me"</B></TD><TD>Acto IV, Escena 4</TD><TD>Reflexi&oacute;n al ver a Fortinbr&aacute;s marchar a la guerra; contraste entre acci&oacute;n e inacci&oacute;n</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#127775; TEMAS Y MOTIVOS LITERARIOS<SPAN>Los grandes ejes tem&aacute;ticos de la tragedia</SPAN></DIV>
+
+<H3>6. Temas principales de Hamlet</H3>
+
+<H4>1. La venganza y la justicia:</H4>
+Hamlet recibe un mandato de venganza, pero duda constantemente: &iquest;es la venganza justa o simplemente un asesinato m&aacute;s? &iquest;Puede un hijo fiar en el testimonio de un fantasma? La obra explora la diferencia entre <B>justicia privada</B> (venganza) y <B>justicia divina</B>. Hamlet, formado en el humanismo renacentista y el protestantismo, no puede matar a sangre fr&iacute;a sin cuestionarse las consecuencias morales y metaf&iacute;sicas.
+
+<H4>2. La apariencia vs. la realidad ("Parece, pero no es"):</H4>
+Todo en Elsinore es enga&ntilde;o: Claudio parece un buen rey pero es un asesino; Hamlet finge estar loco; los cortesanos fingen lealtad pero esp&iacute;an; el teatro imita la realidad para revelar la verdad. La frase de Hamlet a su madre &mdash;<B>"I know not 'seems'"</B> ("No s&eacute; lo que es el 'parece'"&mdash; resume este tema: &eacute;l rechaza las apariencias y busca la verdad esencial.
+
+<H4>3. La muerte y la corrupci&oacute;n:</H4>
+La muerte est&aacute; presente desde el inicio (el padre muerto, el fantasma) hasta el final (la matanza del Acto V). La escena del cementerio (los sepultureros, el cr&aacute;neo de Yorick) es la meditaci&oacute;n m&aacute;s directa sobre la mortalidad: todos los seres humanos, reyes o bufones, terminan como tierra. La <B>pudredumbre</B> f&iacute;sica y moral (Dinamarca como "algo podrido" &mdash;"Something is rotten in the state of Denmark"&mdash;) impregna la obra.
+
+<H4>4. La locura: fingida vs. real:</H4>
+Hamlet finge la locura como estrategia. Ofelia enloquece realmente. Esta oposici&oacute;n plantea preguntas: &iquest;d&oacute;nde est&aacute; el l&iacute;mite entre la cordura y la locura? &iquest;Hamlet siempre finge o hay momentos en que realmente pierde el control? La locura de Ofelia, desencadenada por la muerte de su padre y el abandono de Hamlet, es un espejo deformado de la conducta del pr&iacute;ncipe.
+
+<H4>5. La corrupci&oacute;n del poder:</H4>
+Dinamarca es un reino contaminado desde su ra&iacute;z: el rey ha sido asesinado por su propio hermano. La obra plantea c&oacute;mo el poder corrompe y c&oacute;mo toda la corte participa involuntariamente en la corrupci&oacute;n (Polonio espía, Gertrudis se casa apresuradamente, Rosencrantz y Guildenstern traicionan). La famosa frase del guardia Marcelo en el Acto I &mdash;<B>"Something is rotten in the state of Denmark"</B>&mdash; resume este tema.
+
+<H4>6. La relaci&oacute;n madre-hijo y el d&eacute;seo:</H4>
+El asco de Hamlet ante el matrimonio de su madre con Claudio tiene una intensidad que va m&aacute;s all&aacute; de la simple indignación moral. Su lenguaje al reprocharle a Gertrudis su conducta es violento y casi sexual. Freud y Ernest Jones leyeron aqu&iacute; la huella del <B>complejo de Edipo</B>: Hamlet no puede matar a Claudio porque &eacute;ste representa la realizaci&oacute;n del deseo prohibido del propio Hamlet.
+
+<H4>7. La amistad y la traici&oacute;n:</H4>
+Horacio es el &uacute;nico en quien Hamlet conf&iacute;a plenamente. Todos los dem&aacute;s lo traicionan: Rosencrantz y Guildenstern espían para Claudio; Ofelia (sin quererlo) lo usa como ce&ntilde;uelo para que Polonio y Claudio lo observen; su propia madre no le revela nada. La amistad pura de Horacio contrasta con la corrupci&oacute;n general de la corte.
+
+<DIV CLASS="cultura-titulo">&#127916; G&Eacute;NERO, ESTRUCTURA Y RECURSOS LIT&Eacute;RARIOS<SPAN>An&aacute;lisis formal de la obra</SPAN></DIV>
+
+<H3>7. G&eacute;nero literario y caracter&iacute;sticas formales</H3>
+
+<H4>G&eacute;nero:</H4>
+<UL>
+<LI><B>G&eacute;nero mayor:</B> Literatura dram&aacute;tica (teatro).</LI>
+<LI><B>Subg&eacute;nero:</B> <B>Tragedia</B> (espec&iacute;ficamente, <B>tragedia de venganza</B> o <I>revenge tragedy</I>).</LI>
+<LI><B>Corriente literaria:</B> <B>Renacimiento ingl&eacute;s</B> (per&iacute;odo isabelino). Algunos la ubican tambi&eacute;n en el inicio del <B>Barroco</B> por su complejidad psicol&oacute;gica y su visi&oacute;n desencantada del mundo.</LI>
+</UL>
+
+<H4>Estructura:</H4>
+<UL>
+<LI>Dividida en <B>5 actos</B> (estructura cl&aacute;sica del teatro isabelino).</LI>
+<LI>Es la obra m&aacute;s larga de Shakespeare: <B>m&aacute;s de 4.000 l&iacute;neas</B> (aproximadamente 30.557 palabras en el texto completo).</LI>
+<LI>Alterna escenas de alta tensi&oacute;n dram&aacute;tica con escenas c&oacute;micas de alivio (los sepultureros en el Acto V, el di&aacute;logo de Polonio con sus sirvientes).</LI>
+</UL>
+
+<H4>Recursos literarios y estil&iacute;sticos:</H4>
+<UL>
+<LI><B>Verso blanco</B> (<I>blank verse</I>): la mayor parte est&aacute; escrita en <B>pentámetro y&aacute;mbico</B> sin rima (diez s&iacute;labas por verso con acentos alternos), el verso nobles del teatro isabelino. Los personajes de baja condici&oacute;n (los sepultureros) hablan en prosa.</LI>
+<LI><B>Metáforas:</B> abundan las met&aacute;foras de <B>podreci&oacute;n y enfermedad</B> (Dinamarca como cuerpo enfermo), de <B>teatro y representaci&oacute;n</B> (la vida como obra), y de <B>la muerte como sue&ntilde;o</B>.</LI>
+<LI><B>La obra dentro de la obra</B> (<I>play within a play</I>): "La Ratonera" (Acto III) es el recurso met&aacute;frico m&aacute;s brillante: el teatro dentro del teatro sirve para revelar la verdad que la realidad oculta.</LI>
+<LI><B>Personajes-espejo</B> (<I>foils</I>): Laertes y Fortinbr&aacute;s son "espejos deformados" de Hamlet &mdash;hombres con la misma situaci&oacute;n (padres muertos) pero con reacciones opuestas (acci&oacute;n inmediata).</LI>
+<LI><B>Ironia dram&aacute;tica:</B> el espectador sabe que Claudio es culpable desde el Acto I; toda la obra se desarrolla en esa tensi&oacute;n entre lo que el p&uacute;blico sabe y lo que los personajes ignoran.</LI>
+<LI><B>El soliloquio</B> como recurso de introspecci&oacute;n: Hamlet usa el soliloquio para exponer su mundo interior directamente al p&uacute;blico; es el primer gran ejemplo del <B>monólogo interior</B> en la historia de la literatura occidental.</LI>
+</UL>
+
+<H3>8. Escenas icónicas para el examen</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Escena</TH><TH>Acto</TH><TH>Significado</TH></TR>
+<TR><TD><B>Aparici&oacute;n del fantasma</B></TD><TD>Acto I</TD><TD>Desencadena la acci&oacute;n; plantea la duda metaf&iacute;sica (&iquest;demonio o alma del purgatorio?)</TD></TR>
+<TR><TD><B>"Ser o no ser"</B></TD><TD>Acto III, Esc. 1</TD><TD>Mon&oacute;logo sobre la vida, muerte y la parálisis existencial; el m&aacute;s famoso de la literatura</TD></TR>
+<TR><TD><B>"La Ratonera" (obra dentro de la obra)</B></TD><TD>Acto III, Esc. 2</TD><TD>Confirmaci&oacute;n de la culpabilidad de Claudio; met&aacute;fora sobre el teatro como revelador de verdad</TD></TR>
+<TR><TD><B>Hamlet no mata a Claudio rezando</B></TD><TD>Acto III, Esc. 3</TD><TD>Hamlet teme enviar al asesino al cielo si lo mata en oraci&oacute;n; muestra la complejidad teol&oacute;gica del personaje</TD></TR>
+<TR><TD><B>El cr&aacute;neo de Yorick</B></TD><TD>Acto V, Esc. 1</TD><TD>"Alas, poor Yorick! I knew him, Horatio": meditaci&oacute;n sobre la muerte igualadora; bufones y reyes son polvo</TD></TR>
+<TR><TD><B>El duelo final</B></TD><TD>Acto V, Esc. 2</TD><TD>Muerte de todos los protagonistas; cat&aacute;rsis tr&aacute;gica; Fortinbr&aacute;s asume el poder</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>9. Hamlet en la historia de la cr&iacute;tica literaria</H3>
+Hamlet ha generado m&aacute;s an&aacute;lisis cr&iacute;ticos que ninguna otra obra de la literatura occidental. Cada &eacute;poca la ha le&iacute;do de forma diferente:
+<UL>
+<LI><B>Romanticismo (s. XIX):</B> Hamlet como genio sensible destruido por un mundo grosero; h&eacute;roe mel&aacute;ncolico (Goethe, Coleridge, Schlegel).</LI>
+<LI><B>Psicoan&aacute;lisis (s. XX):</B> Hamlet como caso cl&iacute;nico; el Complejo de Edipo como explicaci&oacute;n de su parálisis (Freud, Ernest Jones).</LI>
+<LI><B>Existencialismo:</B> Hamlet como primer h&eacute;roe moderno enfrentado a un mundo sin sentido; su pregunta ("ser o no ser") como la pregunta fundamental de la filosof&iacute;a existencialista.</LI>
+<LI><B>Feminismo:</B> an&aacute;lisis del papel de Ofelia y Gertrudis como mujeres atrapadas en estructuras patriarcales que las silencian y destruyen (Elaine Showalter).</LI>
+<LI><B>New Historicism:</B> Hamlet como reflejo de las ansiedades pol&iacute;ticas del per&iacute;odo isabelino: sucesi&oacute;n al trono, el poder del Estado, la Reforma protestante.</LI>
+<LI><B>Harold Bloom:</B> en <I>El canon occidental</I> (1994), considera a Hamlet el personaje literario m&aacute;s complejo y la obra m&aacute;s importante de la literatura occidental.</LI>
+</UL>
+
+<H3>10. Cuadro resumen: datos esenciales de Hamlet</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Aspecto</TH><TH>Dato esencial</TH></TR>
+<TR><TD><B>Autor</B></TD><TD>William Shakespeare (1564&ndash;1616)</TD></TR>
+<TR><TD><B>T&iacute;tulo completo</B></TD><TD>The Tragedy of Hamlet, Prince of Denmark</TD></TR>
+<TR><TD><B>A&ntilde;o de escritura</B></TD><TD>c. 1600&ndash;1601</TD></TR>
+<TR><TD><B>Primera publicaci&oacute;n</B></TD><TD>1603 (Primer Quarto); 1604 (Segundo Quarto, m&aacute;s completo)</TD></TR>
+<TR><TD><B>G&eacute;nero</B></TD><TD>Tragedia de venganza (teatro dram&aacute;tico)</TD></TR>
+<TR><TD><B>Corriente literaria</B></TD><TD>Renacimiento ingl&eacute;s / per&iacute;odo isabelino</TD></TR>
+<TR><TD><B>Estructura</B></TD><TD>5 actos; m&aacute;s de 4.000 l&iacute;neas (la obra m&aacute;s larga de Shakespeare)</TD></TR>
+<TR><TD><B>Escenario</B></TD><TD>Castillo de Elsinore (Helsingør), Dinamarca</TD></TR>
+<TR><TD><B>Protagonista</B></TD><TD>Hamlet, Pr&iacute;ncipe de Dinamarca</TD></TR>
+<TR><TD><B>Mon&oacute;logo m&aacute;s famoso</B></TD><TD>"Ser o no ser" (To be, or not to be), Acto III, Escena 1</TD></TR>
+<TR><TD><B>Personaje que sobrevive</B></TD><TD>Horacio (y Fortinbr&aacute;s, que llega al final)</TD></TR>
+<TR><TD><B>Fuente principal</B></TD><TD><I>Historia Danica</I> de Saxo Gram&aacute;ticus (c. 1200)</TD></TR>
+<TR><TD><B>Tema central</B></TD><TD>La venganza, la indecisi&oacute;n, la corrupci&oacute;n del poder, la apariencia vs. la realidad</TD></TR>
+<TR><TD><B>Frase m&aacute;s c&eacute;lebre adem&aacute;s del mon&oacute;logo</B></TD><TD>"Something is rotten in the state of Denmark" (Algo est&aacute; podrido en el estado de Dinamarca)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1564&ndash;1616</DIV><DIV CLASS="dk-label">Fechas de nacimiento y muerte de Shakespeare</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">c. 1601</DIV><DIV CLASS="dk-label">A&ntilde;o de escritura de Hamlet; publicada en 1603</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">5 actos</DIV><DIV CLASS="dk-label">Estructura de la obra; m&aacute;s de 4.000 l&iacute;neas</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">37 obras</DIV><DIV CLASS="dk-label">Total de obras teatrales de Shakespeare + 154 sonetos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">The Globe</DIV><DIV CLASS="dk-label">Teatro de Shakespeare en Londres (construido en 1599)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Horacio</DIV><DIV CLASS="dk-label">&Uacute;nico protagonista que sobrevive al final de la tragedia</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Autor:</B> William Shakespeare &middot; Stratford-upon-Avon, 1564&ndash;1616 &middot; 37 obras + 154 sonetos &middot; teatro The Globe<BR>
+&bull; <B>Obra:</B> Hamlet (c. 1600&ndash;1601) &middot; Tragedia de venganza &middot; Renacimiento ingl&eacute;s / per&iacute;odo isabelino<BR>
+&bull; <B>Escenario:</B> Castillo de Elsinore, Dinamarca &middot; 5 actos &middot; obra m&aacute;s larga de Shakespeare<BR>
+&bull; <B>Personajes clave:</B> Hamlet (indeciso) &middot; Claudio (asesino del rey) &middot; Gertrudis (madre ambigua) &middot; Ofelia (inocencia destruida) &middot; Laertes (doble activo de Hamlet) &middot; Horacio (el que sobrevive) &middot; Fortinbr&aacute;s (nuevo rey)<BR>
+&bull; <B>Mon&oacute;logo "Ser o no ser":</B> Acto III, Escena 1 &middot; vida vs. muerte &middot; miedo a lo desconocido &middot; conciencia que paraliza<BR>
+&bull; <B>Temas:</B> venganza &middot; apariencia vs. realidad &middot; muerte y corrupci&oacute;n &middot; locura fingida vs. real &middot; parálisis del pensamiento<BR>
+&bull; <B>Frase célebre:</B> "Something is rotten in the state of Denmark" (Acto I) &middot; "To be or not to be" (Acto III)<BR>
+&bull; <B>Fuente:</B> Saxo Gram&aacute;ticus (<I>Historia Danica</I>, c. 1200) &middot; Belleforest (1576)<BR>
+&bull; <B>Final:</B> mueren Gertrudis, Laertes, Claudio y Hamlet &middot; sobrevive Horacio &middot; Fortinbr&aacute;s asume el trono
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;En qu&eacute; g&eacute;nero literario se clasifica Hamlet y cu&aacute;les son sus caracter&iacute;sticas formales principales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Comedia rom&aacute;ntica en verso, dividida en tres actos, propia del g&eacute;nero bucolico renacentista ingl&eacute;s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Tragedia (espec&iacute;ficamente tragedia de venganza), escrita en verso blanco (pent&aacute;metro y&aacute;mbico), dividida en cinco actos, perteneciente al teatro renacentista isabelino; es la obra m&aacute;s larga de Shakespeare con m&aacute;s de 4.000 l&iacute;neas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Novela psicol&oacute;gica en prosa dividida en cap&iacute;tulos, perteneciente al g&eacute;nero epopéyico del Renacimiento franc&eacute;s del siglo XVI</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Tragicomedia en tres actos escrita en sonetos de catorce versos, perteneciente al per&iacute;odo jacobino del teatro ingl&eacute;s del siglo XVII</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Hamlet es una <B>tragedia</B> y m&aacute;s espec&iacute;ficamente una <B>tragedia de venganza</B> (<I>revenge tragedy</I>), subg&eacute;nero muy popular en el teatro isabelino. Sus caracter&iacute;sticas formales: (1) <B>Verso blanco</B> (<I>blank verse</I>): pent&aacute;metro y&aacute;mbico sin rima para los personajes nobles; prosa para los de baja condici&oacute;n (sepultureros, Ofelia en su locura). (2) <B>5 actos</B>: estructura cl&aacute;sica heredada del teatro latino (Terencio, S&eacute;neca). (3) <B>M&aacute;s de 4.000 l&iacute;neas:</B> es la obra m&aacute;s larga de Shakespeare; en representaci&oacute;n completa dura m&aacute;s de 4 horas. (4) <B>Per&iacute;odo:</B> Renacimiento ingl&eacute;s / per&iacute;odo isabelino (c. 1600&ndash;1601). La <B>corriente literaria</B> es el Renacimiento ingl&eacute;s, aunque algunos la ubican tambi&eacute;n como precursora del Barroco por su complejidad psicol&oacute;gica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Cu&aacute;l es el argumento central de Hamlet y cu&aacute;l es el motor dram&aacute;tico de la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Hamlet, pr&iacute;ncipe de Dinamarca, descubre que su madre Gertrudis ha envenenado a su padre el rey y debe decidir c&oacute;mo vengarla; el motor dram&aacute;tico es el dilema entre el amor filial y la justicia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El fantasma del padre de Hamlet le revela que su t&iacute;o Claudio lo asesin&oacute; para quedarse con el trono y con la reina Gertrudis; el motor dram&aacute;tico es la incapacidad de Hamlet para llevar a cabo la venganza a pesar de conocer la verdad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Hamlet regresa de la guerra contra Noruega para descubrir que su padre ha muerto de enfermedad; su motor dram&aacute;tico es la lucha por recuperar el trono que Claudio le ha usurpado leg&iacute;timamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Hamlet, rey de Dinamarca, descubre que su hijo Laertes planea asesinarlo con la ayuda del rey de Noruega Fortinbr&aacute;s; el motor dram&aacute;tico es la guerra entre Dinamarca y Noruega por el control del Báltico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El argumento central de Hamlet parte del mandato de venganza: el <B>fantasma</B> del padre de Hamlet le revela que su hermano <B>Claudio</B> lo asesin&oacute; vertiéndole veneno en el o&iacute;do mientras dorm&iacute;a en el jard&iacute;n, y le pide que lo vengue. Claudio se ha casado con la reina <B>Gertrudis</B> y se ha proclamado rey. El <B>motor dram&aacute;tico</B> de toda la obra es la incapacidad de Hamlet para actuar: sabe qui&eacute;n es el asesino (desde el Acto I), tiene el poder de matarlo (hay varios momentos en que est&aacute; solo con Claudio), pero no lo hace hasta el final &mdash;y entonces solo cuando ya todos est&aacute;n muriendo. Esta parálisis entre el conocimiento y la acci&oacute;n es el n&uacute;cleo psicol&oacute;gico y filos&oacute;fico de la obra.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Qu&eacute; plantea el mon&oacute;logo "Ser o no ser" (Acto III, Escena 1) y por qu&eacute; es el m&aacute;s famoso de la literatura universal?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Hamlet reflexiona sobre si debe casarse con Ofelia o abandonarla; el dilema es entre el amor rom&aacute;ntico y sus obligaciones como pr&iacute;ncipe; es famoso por ser el primer poema de amor del Renacimiento ingl&eacute;s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Hamlet medita sobre si vale m&aacute;s vivir (soportando el sufrimiento del mundo) o morir (escapar de &eacute;l mediante la muerte); pero el miedo a lo desconocido despu&eacute;s de la muerte y la conciencia moral paralizan la acci&oacute;n; es el primer gran monólogo sobre la condici&oacute;n humana en la literatura occidental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Hamlet decide en este monólogo que matar&aacute; a Claudio esa misma noche con veneno; es el punto de inflexi&oacute;n en que Hamlet supera su indecisi&oacute;n; es famoso porque marca el momento de mayor heroísmo del protagonista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Hamlet recuerda a su padre fallecido y promete mantenerlo vivo en su memoria; es una elegía funeral que lamenta la brevedad de la vida humana; su fama se debe a que Shakespeare la recit&oacute; en el funeral de la reina Isabel I</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El mon&oacute;logo <B>"Ser o no ser"</B> (Acto III, Escena 1) es una meditaci&oacute;n filos&oacute;fica sobre la condici&oacute;n humana. Sus puntos fundamentales: (1) <B>El dilema:</B> ¿es m&aacute;s noble sufrir los golpes de la fortuna adversa o rebelarse contra ellos? En un sentido m&aacute;s profundo: ¿merece la pena vivir? (2) <B>La muerte como posible liberaci&oacute;n:</B> "morir, dormir" &mdash;si la muerte fuera solo un sue&ntilde;o eterno, seria deseable. (3) <B>El freno:</B> el miedo a "el pa&iacute;s no descubierto" (lo que hay tras la muerte) hace que sigamos soportando el sufrimiento. (4) <B>La conciencia como paralizadora:</B> "as&iacute; la conciencia nos hace a todos cobardes" &mdash;la reflexi&oacute;n moral impide la acci&oacute;n. Es el m&aacute;s famoso de la literatura universal porque plantea la pregunta fundamental de la existencia humana en los versos m&aacute;s densos y bellos de la historia del teatro.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qu&eacute; es "La Ratonera" y cu&aacute;l es su funci&oacute;n dentro de Hamlet?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) "La Ratonera" es el apodo que los guardias del castillo dan al foso donde encierran a los prisioneros; Hamlet planea liberar a Ofelia de all&iacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) "La Ratonera" es la obra de teatro que Hamlet organiza dentro de la obra para reproducir el asesinato del rey ante Claudio; la reacci&oacute;n de Claudio (se levanta y abandona la sala) confirma su culpabilidad; es el recurso de "la obra dentro de la obra" (<I>play within a play</I>)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) "La Ratonera" es el nombre del disfraz que usa Hamlet para acercarse a Claudio sin ser reconocido; el nombre viene de que Hamlet se mueve sigilosamente por el castillo como un rat&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) "La Ratonera" es la trampa que Claudio prepara con la copa envenenada para matar a Hamlet en el duelo del Acto V; el nombre lo inventa Hamlet cuando descubre el plan antes de morir</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"<B>La Ratonera</B>" (<I>The Mousetrap</I>) es el t&iacute;tulo que Hamlet da a la obra teatral que organiza en el Acto III, Escena 2. Llega una compa&ntilde;&iacute;a de actores al castillo y Hamlet los convence de representar una obra que reproduce el asesinato del rey: un sobrino que vierte veneno en el o&iacute;do de un rey dormido en el jard&iacute;n. Hamlet observa a Claudio durante la representaci&oacute;n. Cuando el actor del sobrino vierte el veneno, Claudio se levanta perturbado y abandona la sala, ordenando traer luces. Para Hamlet esto confirma la culpa de su t&iacute;o. La escena establece el recurso de <B>"la obra dentro de la obra"</B> (<I>play within a play</I>), que Shakespeare usa para explorar la relaci&oacute;n entre teatro y realidad: el teatro puede revelar verdades que la realidad oculta. Es tambi&eacute;n una met&aacute;fora del propio arte dram&aacute;tico: el teatro como espejo del mundo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;C&oacute;mo muere Ofelia y qu&eacute; simboliza su muerte en la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Ofelia es asesinada por Laertes cuando &eacute;ste descubre que ella ayud&oacute; a Hamlet a escapar a Inglaterra; su muerte simboliza la traici&oacute;n familiar en la sociedad danesa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Ofelia enloquece realmente tras la muerte de su padre Polonio a manos de Hamlet; muere ahogada en un arroyo (posiblemente por suicidio, aunque la obra lo deja ambiguo); su muerte simboliza la destrucci&oacute;n de la inocencia por la corrupci&oacute;n que la rodea</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Ofelia muere envenenada en el duelo del Acto V al beber de la misma copa que Gertrudis; su muerte simboliza la solidaridad femenina ante la violencia de los hombres</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Ofelia muere de tristeza en un convento adonde la env&iacute;a Hamlet tras rechazarla; su muerte simboliza el fracaso del amor rom&aacute;ntico en el mundo cortesano isabelino</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La muerte de <B>Ofelia</B> es uno de los episodios m&aacute;s poéticos y estudiados de la obra. Desencadenantes: (1) Hamlet mata accidentalmente a <B>Polonio</B> (su padre) en el Acto III. (2) Hamlet es enviado a Inglaterra. (3) Ofelia, sin padre y sin amado, enloquece realmente (a diferencia de Hamlet, que finge). La reina Gertrudis describe su muerte en el Acto IV: Ofelia estaba trepando a las ramas de un sauce sobre un arroyo, las ramas se rompieron y ella cay&oacute; al agua. No intent&oacute; salvarse, sino que sigui&oacute; cantando hasta hundirse. La obra deja ambiguo si fue <B>suicidio</B> o accidente (de hecho, la escena del entierro debate si merece sepultura cristiana). <B>Su simbolismo:</B> Ofelia representa la inocencia destruida por la corrupci&oacute;n que la rodea; su locura real contrasta con la locura fingida de Hamlet; su muerte provoca la ira de Laertes que precipita el desenlace final.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Explica la funci&oacute;n dram&aacute;tica de Laertes y Fortinbr&aacute;s como "espejos" (<I>foils</I>) de Hamlet.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Laertes y Fortinbr&aacute;s son foils de Hamlet porque tambi&eacute;n son pr&iacute;ncipes que aman a Ofelia; los tres compiten por su amor y esta rivalidad amorosa es el eje de la trama</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Laertes y Fortinbr&aacute;s son "dobles" de Hamlet: los tres son j&oacute;venes con padres muertos y motivaciones de venganza, pero reaccionan de forma opuesta a Hamlet (con acci&oacute;n inmediata sin reflexi&oacute;n); este contraste subraya la peculiaridad de Hamlet: su exceso de pensamiento que paraliza la voluntad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Laertes y Fortinbr&aacute;s son antagonistas de Hamlet: se alían con Claudio desde el principio para derrocarlo; sus acciones agresivas generan el conflicto central de la obra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Laertes y Fortinbr&aacute;s son foils de Hamlet porque representan los dos extremos pol&iacute;ticos: Laertes el republicanismo popular y Fortinbr&aacute;s la monarqu&iacute;a absoluta, mientras que Hamlet encarna el humanismo democr&aacute;tico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Un <B><I>foil</I></B> (espejo o doble) es un personaje que contrasta con el protagonista para iluminar sus rasgos distintivos. Shakespeare utiliza a <B>Laertes</B> y <B>Fortinbr&aacute;s</B> como foils de Hamlet con gran precisi&oacute;n: los tres tienen la misma situaci&oacute;n estructural &mdash;padre muerto, motivos de venganza&mdash; pero reacciones opuestas. <B>Laertes:</B> cuando su padre Polonio muere a manos de Hamlet, Laertes regresa inmediatamente de Francia, irrumpe en el castillo con una turba, exige justicia al rey, y se prepara para matar a Hamlet sin dudar. No piensa, act&uacute;a. <B>Fortinbr&aacute;s:</B> el pr&iacute;ncipe noruego quiere vengar a su padre (muerto por el padre de Hamlet) recuperando las tierras perdidas; moviliza un ej&eacute;rcito entero para hacerlo. Tampoco duda. <B>Hamlet:</B> sabe qui&eacute;n mató a su padre desde el Acto I y tiene cinco actos para vengarlo. No puede. El contraste con Laertes y Fortinbr&aacute;s hace que la pregunta central de la obra sea: &iquest;por qu&eacute; Hamlet no act&uacute;a como ellos?</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Analiza el tema de la "apariencia vs. realidad" en Hamlet: &iquest;c&oacute;mo se manifiesta a trav&eacute;s de los personajes y las situaciones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) El tema de la apariencia vs. realidad solo se aplica a Hamlet (que finge la locura) y no a ning&uacute;n otro personaje; los dem&aacute;s actores de la obra son transparentes y honestos en su conducta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) El tema permea toda la obra: Claudio aparenta ser un buen rey pero es un asesino; Hamlet finge la locura para investigar; los cortesanos aparentan lealtad pero espi&iacute;an; la obra de teatro imita la realidad para revelar la verdad; Polonio aparenta sabidur&iacute;a pero es un necio adulador; toda Elsinore es un reino del enga&ntilde;o</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) El tema solo se manifiesta en la escena de "La Ratonera" donde el teatro finge ser la realidad; en el resto de la obra todos los personajes son completamente sinceros entre s&iacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) El tema de la apariencia vs. realidad es propio de la comedia isabelina y est&aacute; mal aplicado a Hamlet, que es una tragedia; Shakespeare no us&oacute; este recurso en sus tragedias</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El tema de la <B>apariencia vs. la realidad</B> es el m&aacute;s omnipresente de Hamlet y se manifiesta en m&uacute;ltiples niveles: (1) <B>Claudio:</B> parece un rey leg&iacute;timo, generoso, preocupado por su sobrino; es en realidad un asesino que ha usurpado el trono. (2) <B>Hamlet:</B> finge estar loco para investigar sin ser sospechoso: "I am but mad north-north-west." (3) <B>Los cortesanos:</B> Rosencrantz y Guildenstern se presentan como amigos pero son espías. Polonio se presenta como sabio consejero ("Brevity is the soul of wit") pero es un viejo necio y servil. (4) <B>"La Ratonera":</B> el teatro (lo falso, lo fingido) es el instrumento para revelar la verdad oculta (la culpa de Claudio). (5) <B>El fantasma:</B> &iquest;es realmente el esp&iacute;ritu del padre o un demonio que "asume una forma agradable para tentarme"? La pregunta central de Hamlet &mdash;&iquest;qui&eacute;n soy yo realmente?&mdash; es tambi&eacute;n una pregunta sobre la identidad bajo la apariencia. Hamlet en el Acto I declara: "I know not 'seems'" (No sé lo que es el 'parecer') &mdash;rechaza toda apariencia y exige la esencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;Qu&eacute; significa la escena del cr&aacute;neo de Yorick (Acto V) y c&oacute;mo desarrolla el tema de la muerte en la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) La escena del cr&aacute;neo de Yorick es una broma c&oacute;mica que Shakespeare introduce para aliviar la tensi&oacute;n trag&eacute;dica; Yorick era el bufón que entretenía a Hamlet cuando era ni&ntilde;o y el cr&aacute;neo simboliza los buenos tiempos de la infancia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Hamlet sostiene el cr&aacute;neo del bufón Yorick y medita que incluso los seres que una vez hicieron re&iacute;r y estaban llenos de vida se reducen a polvo; la escena desarrolla el tema de la muerte como igualadora: reyes, h&eacute;roes y bufones terminan siendo tierra; es la meditaci&oacute;n m&aacute;s directa y visual sobre la mortalidad de la obra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Yorick era el nombre que Hamlet daba a su padre; el cr&aacute;neo es el de su padre encontrado por error en el cementerio; la escena funciona como revelaci&oacute;n: Hamlet descubre que su padre no era rey sino bufón</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) El cr&aacute;neo de Yorick es el de Polonio, desenterrado accidentalmente; Hamlet lo reconoce y lo entierra de nuevo con honores; la escena sirve para mostrar el arrepentimiento de Hamlet por haber matado al padre de Ofelia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La escena del cr&aacute;neo de <B>Yorick</B> (Acto V, Escena 1) es una de las m&aacute;s ic&oacute;nicas de la literatura universal. Hamlet y Horacio est&aacute;n en el cementerio donde van a enterrar a Ofelia. Un sepulturero desentierra un cr&aacute;neo. Hamlet lo toma y el sepulturero le dice que era de <B>Yorick</B>, el bufón del rey que muri&oacute; hace 23 a&ntilde;os &mdash;cuando Hamlet era un ni&ntilde;o, Yorick lo llevaba en la espalda y lo hac&iacute;a re&iacute;r. La frase <B>"Alas, poor Yorick! I knew him, Horatio"</B> ("&iexcl;Ay, pobre Yorick! Lo conocía, Horacio") es el inicio de una meditaci&oacute;n sobre la muerte igualadora: ese cr&aacute;neo "de excelente imaginaci&oacute;n" que una vez fes-tejó a mil comensales es ahora un hueso sin nariz. Y por extensi&oacute;n: <B>Alejandro Magno</B> y <B>Jul io C&eacute;sar</B> tambi&eacute;n son ahora polvo y tierra. La muerte no respeta la grandeza. La escena sintetiza el tema de la <I>memento mori</I> (recuerda que morir&aacute;s) que recorre toda la obra.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Explica el papel del personaje de Horacio en Hamlet y por qu&eacute; es fundamental que sea &eacute;l quien sobreviva al final.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Horacio es el antagonista de Hamlet: compite con &eacute;l por el amor de Ofelia y es el verdadero responsable de la muerte de Polonio; sobrevive porque huye cobardemente en el duelo final</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Horacio es el amigo fiel y confidente de Hamlet; estoico y racional, es la voz de la cordura frente a la locura de Elsinore; sobrevive porque Hamlet le pide expresamente que viva para contar su historia, lo cual es esencial: sin Horacio, nadie sabría la verdad de lo ocurrido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Horacio es el enviado del rey de Noruega que Fortinbr&aacute;s manda a Elsinore para espiar; sobrevive porque tiene inmunidad diplom&aacute;tica y al final redacta el informe oficial de la batalla para el rey noruego</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Horacio es el nombre que Shakespeare da al propio narrador de la obra; es un personaje metafictivo que no existe dentro del mundo de la obra sino que la narra desde fuera, razón por la que no puede morir en la trama</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Horacio</B> es el personaje estructuralmente m&aacute;s importante de Hamlet despu&eacute;s del propio protagonista. Sus funciones: (1) <B>Confidente:</B> Hamlet le revela sus pensamientos y planes porque es el &uacute;nico en quien conf&iacute;a plenamente: "Give me that man / That is not passion's slave, and I will wear him / In my heart's core." (2) <B>Testigo racional:</B> Horacio es el &uacute;nico que ve al fantasma sin enloquecerse; su testimonio da credibilidad a lo sobrenatural. (3) <B>Voz de la raz&oacute;n:</B> su estoicismo filos&oacute;fico contrasta con la turbulencia emocional de Hamlet. (4) <B>Necesidad narrativa:</B> en el Acto V, cuando Hamlet est&aacute; muriendo, quiere beber el veneno para "seguir a su amigo"; Hamlet se lo impide: "Horatio, I am dead; / Thou livest; report me and my cause aright / To the unsatisfied." Sin Horacio, nadie podr&iacute;a contar la verdad de lo que ocurri&oacute; en Elsinore. Horacio es la memoria de Hamlet y el garante de que la justicia ser&aacute; conocida.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Por qu&eacute; Hamlet no mata a Claudio cuando lo encuentra rezando (Acto III, Escena 3)? &iquest;Qu&eacute; revela esto del personaje?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Hamlet no lo mata porque Horacio le detiene el brazo y le convence de que Claudio podr&iacute;a ser inocente; esta escena revela que Hamlet siempre necesita la aprobaci&oacute;n de los dem&aacute;s para actuar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Hamlet no lo mata porque teme que al morir rezando, Claudio vaya al cielo; matar a un hombre en oraci&oacute;n ser&iacute;a enviar su alma a la gloria, no al infierno que merece; Hamlet quiere que Claudio muera en pecado; esta escena revela la complejidad teol&oacute;gica del personaje y su incapacidad de actuar por exceso de razonamiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Hamlet no lo mata porque en ese momento descubre que Claudio es su padre biol&oacute;gico; el impacto de la revelaci&oacute;n lo paraliza y no puede levantar la espada contra su progenitor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Hamlet no lo mata porque Claudio lleva armadura debajo de sus ropas de oración; Hamlet intenta apuñalarlo pero no puede penetrar el metal; esta escena revela la ingenuidad táctica del personaje</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La escena del Acto III, Escena 3 es una de las m&aacute;s reveladoras de la obra. Hamlet encuentra a Claudio solo, de rodillas, rezando (o intentando rezar: el pr&oacute;pio Claudio admite que sus palabras van al cielo pero su alma se queda en la tierra). Hamlet desenv&aacute;ina la espada y est&aacute; a punto de actuar &mdash;pero se detiene. Su razonamiento: si mata a Claudio mientras reza, Claudio morir&aacute; en estado de gracia y "su alma ir&aacute; al cielo" ("And so he goes to heaven"). Hamlet quiere que Claudio muera en pecado, como su padre muri&oacute; (sin absoluci&oacute;n). Esta escena revela: (1) La <B>complejidad teol&oacute;gica</B> de Hamlet: conoce en detalle la teolog&iacute;a de la gracia y la condenaci&oacute;n (contexto del catolicismo y la Reforma). (2) Su <B>exceso de racionalización</B>: encuentra siempre una razón para no actuar; en este caso, la raz&oacute;n es tan rebuscada que muchos cr&iacute;ticos la leen como otra excusa. (3) Su <B>deseo de una venganza perfecta</B> frente a la simple justicia. La iron&iacute;a: el mismo Claudio dice que no puede rezar realmente &mdash;as&iacute; que Hamlet pierde la mejor oportunidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Eval&uacute;a la interpretaci&oacute;n psicoanalítica de Hamlet propuesta por Sigmund Freud y Ernest Jones: &iquest;el Complejo de Edipo explica realmente la parálisis de Hamlet?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) La interpretaci&oacute;n de Freud y Jones es completamente correcta y la &uacute;nica v&aacute;lida: Hamlet es simplemente un caso cl&iacute;nico de neurosis ed&iacute;pica; todas las dem&aacute;s interpretaciones son superficiales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La tesis es seductora pero reduccionista: Freud y Jones argumentan que Hamlet no puede matar a Claudio porque &eacute;ste realiz&oacute; su propio deseo inconsciente (matar al padre y poseer a la madre); pero la obra tiene explicaciones alternativas (filosófica, religiosa, dramatúrgica) que la lectura psicoanalítica silencia; el texto no es un caso clínico sino una obra literaria que resiste lecturas &uacute;nicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) La tesis de Freud es incorrecta porque el psicoanalisis no exist&iacute;a en la &eacute;poca de Shakespeare; aplicar categor&iacute;as del siglo XX a una obra del siglo XVII es un anacronismo metodol&oacute;gico que invalida cualquier conclusi&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Freud y Jones nunca analizaron a Hamlet; la interpretaci&oacute;n psicoanalítica del Complejo de Edipo en Hamlet fue elaborada por Carl Gustav Jung como cr&iacute;tica al propio Freud</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Sigmund Freud</B> en <I>La interpretaci&oacute;n de los sue&ntilde;os</I> (1900) y <B>Ernest Jones</B> en <I>Hamlet y Edipo</I> (1949) argumentaron que la parálisis de Hamlet ante Claudio se explica por el <B>Complejo de Edipo</B>: Hamlet desea inconscientemente matar a su padre y poseer a su madre; Claudio ha realizado exactamente eso; por eso Hamlet no puede condenar en Claudio lo que desea para s&iacute; mismo. <B>Fortalezas de esta lectura:</B> explica convincentemente la intensidad del asco de Hamlet ante el matrimonio de su madre, su tratamiento violento de Ofelia (que proyecta sobre ella el desprecio por la sexualidad femenina) y su incapacidad de actuar específicamente contra Claudio (pero no contra Polonio o Laertes, a quienes no tiene problema en enfrentarse). <B>Debilidades:</B> (1) Anacronismo: Shakespeare no conoc&iacute;a el psicoanálisis; proyectar estas categorías puede distorsionar el texto. (2) Reduccionismo: convierte una obra de riqueza filos&oacute;fica, pol&iacute;tica y teatral en un caso cl&iacute;nico. (3) Alternativas: la parálisis puede explicarse por dudas teol&oacute;gicas (¿es el fantasma un demonio?), filosóficas (¿es la venganza moralmente legítima?) o dramatúrgicas (Shakespeare necesita cinco actos). La lectura psicoanalítica es una de las m&aacute;s in&shy;fluyentes pero no la &uacute;nica v&aacute;lida.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Analiza el papel de Gertrudis: &iquest;es c&oacute;mplice del asesinato del rey o una v&iacute;ctima manipulada por Claudio? &iquest;C&oacute;mo lo debate la cr&iacute;tica literaria?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La obra establece inequ&iacute;vocamente que Gertrudis sab&iacute;a del asesinato desde el principio y lo planeó con Claudio; es una villana igual que &eacute;l y su muerte al final es un castigo merecido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La ambig&uuml;edad de Gertrudis es intencional: el texto nunca dice que sab&iacute;a del asesinato, pero su apresurado matrimonio con Claudio y su docilidad ante &eacute;l la hacen moralmente sospechosa; la cr&iacute;tica feminista ha argumentado que es m&aacute;s v&iacute;ctima que c&oacute;mplice: una mujer en un mundo donde su supervivencia depend&iacute;a de casarse con el nuevo rey</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Gertrudis es irrelevante para la trama: solo aparece en tres escenas y no tiene l&iacute;neas significativas; su &uacute;nica funci&oacute;n es morir bebiendo el veneno para demostrar que Claudio es malvado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Gertrudis descubre el complot de Claudio en el Acto II y pasa el resto de la obra intentando proteger a Hamlet de &eacute;l; bebe el veneno voluntariamente al final para salvar la vida de su hijo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Gertrudis es uno de los personajes m&aacute;s debatidos de la cr&iacute;tica shakespeariana. <B>Lo que el texto muestra:</B> (1) El fantasma le dice a Hamlet que Claudio "seduj&oacute;" a Gertrudis pero no dice expl&iacute;citamente que ella supiera del asesinato. (2) En la "escena del closet" (Acto III), cuando Hamlet la confronta, Gertrudis parece genuinamente asombrada y horrorizada; no parece actuar. (3) Su matrimonio precipitado con Claudio (menos de dos meses tras la muerte del rey) es moralmente cuestionable pero quiz&aacute;s comprensible pol&iacute;ticamente (la reina necesitaba un marido con poder para sobrevivir). <B>Lecturas cr&iacute;ticas:</B> La <B>cr&iacute;tica cl&aacute;sica</B> (Coleridge, Goethe) la ve como una mujer d&eacute;bil y sensual, seduc&iacute;da por Claudio. La <B>cr&iacute;tica feminista</B> (Elaine Showalter, Rebecca Smith) la reivindica: no es c&oacute;mplice sino v&iacute;ctima de una estructura de poder que la obliga a aliarse con el hombre poderoso para sobrevivir; su silencio no es culpa sino impotencia. La <B>ambig&uuml;edad es intencional</B> en Shakespeare: el texto no resuelve la duda sobre su complicidad, lo que la convierte en un personaje m&aacute;s rico y humano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> &iquest;C&oacute;mo refleja Hamlet la crisis del humanismo renacentista y la angustia espiritual de la &eacute;poca de Shakespeare?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Hamlet refleja el optimismo del humanismo renacentista: el protagonista conf&iacute;a plenamente en la raz&oacute;n humana para resolver todos los problemas; su &eacute;xito al final (matar a Claudio) demuestra que el hombre puede triunfar sobre la corrupci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Hamlet muestra la crisis del humanismo: el hombre renacentista ("What a piece of work is a man!") que Hamlet celebra choca con la realidad de la corrupci&oacute;n moral, la muerte y la incertidumbre metaf&iacute;sica; la raz&oacute;n no libera sino que paraliza; la obra es el primer gran diagn&oacute;stico literario de la modernidad y sus angustias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Hamlet rechaza totalmente el humanismo renacentista y propone en su lugar una visi&oacute;n medieval del mundo: el hombre es pecador, la vida terrena no tiene valor y solo la muerte y el juicio final importan; Shakespeare era un escritor medieval que fingía ser renacentista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Hamlet no tiene ninguna relaci&oacute;n con el contexto hist&oacute;rico de su &eacute;poca; es una obra atemporal y universal que no puede ni debe analizarse en su contexto hist&oacute;rico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Hamlet es, entre otras cosas, un <B>diagn&oacute;stico de la crisis del humanismo renacentista</B>. El humanismo (Pico della Mirandola, Erasmo, Montaigne) ten&iacute;a una visi&oacute;n exaltada del ser humano: racional, libre, capaz de conocer y mejorar el mundo. En Hamlet, esa visi&oacute;n aparece en boca del propio protagonista: <B>"What a piece of work is a man! How noble in reason, how infinite in faculty [...] in apprehension how like a god!"</B>. Pero Hamlet termina esa misma frase con: "And yet, to me, what is this quintessence of dust?" El hombre es polvo. <B>La raz&oacute;n</B>, lejos de liberar, paraliza: cuanto m&aacute;s piensa Hamlet, menos puede actuar. <B>La fe</B> no da certeza: el protestantismo de la &eacute;poca isabelina hab&iacute;a destruido la autoridad de la Iglesia Cat&oacute;lica pero sin ofrecer certezas absolutas; la naturaleza del fantasma (¿espritu del purgatorio cat&oacute;lico o demonio protestante?) es un reflejo de la angustia religiosa del per&iacute;odo. <B>El poder</B> es corrupto. <B>La muerte</B> no puede vencerse. Hamlet es la primera gran obra literaria que confronta al lector con la angustia existencial de la modernidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Harold Bloom en <I>El canon occidental</I> (1994) afirma que Shakespeare "invent&oacute; lo humano" y que Hamlet es "el m&aacute;s complejo de todos los personajes literarios". &iquest;En qu&eacute; sentido puede sostenerse esta afirmaci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Bloom se refiere a que Shakespeare fue el primero en escribir obras de teatro en la historia de la humanidad; antes de &eacute;l, no existía ning&uacute;n tipo de literatura dram&aacute;tica en ning&uacute;n pa&iacute;s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Bloom argumenta que los personajes shakespearianos (y especialmente Hamlet) poseen una profundidad interior y una capacidad de cambio y autoconocimiento que no exist&iacute;a en la literatura anterior; Hamlet no solo actúa sino que observa sus propias reacciones, se critica, cambia y se contradice &mdash;lo que Bloom llama "la conciencia de s&iacute; mismo" moderna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Bloom se refiere a que Shakespeare fue el primer autor en escribir personajes de clase baja (sepultureros, taberneros, bufones) como protagonistas literarios dignos de atenci&oacute;n filos&oacute;fica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La afirmaci&oacute;n de Bloom es simplemente una opini&oacute;n subjetiva de un cr&iacute;tico estadounidense conservador sin ning&uacute;n fundamento te&oacute;rico o textual; no puede sostenerse académicamente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Harold Bloom</B> en <I>El canon occidental</I> y en <I>Shakespeare: la invenci&oacute;n de lo humano</I> (1998) desarrolla una tesis provocadora: Shakespeare no solo escribi&oacute; grandes obras sino que <B>invent&oacute; la psicolog&iacute;a moderna del yo</B>. Su argumento: antes de Shakespeare, los personajes literarios (incluso los griegos o los medievales) son relativamente estables; sus rasgos se mantienen; no cambian fundamentalmente a lo largo de la obra. Los personajes shakespearianos, en cambio, <B>evolucionan, se contradicen y se auto-observan</B>. <B>Hamlet espec&iacute;ficamente:</B> es el primer personaje literario que nos hace escuchar literalmente c&oacute;mo piensa &mdash;los monólogos son el flujo de su conciencia&mdash; y que se hace preguntas sobre s&iacute; mismo con una profundidad que no tiene precedente: "Why do I not do it?" (&iquest;por qu&eacute; no lo hago?). Se critica, se analiza, se contradice. Esta <B>conciencia reflexiva de s&iacute; mismo</B> es lo que Bloom llama "lo humano": la capacidad de observarse desde fuera. En ese sentido, Hamlet anticipa la psicolog&iacute;a moderna, la novela de conciencia y el psicoanálisis.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Compara la tragedia de Hamlet con la tragedia griega cl&aacute;sica (S&oacute;focles, Arist&oacute;teles): &iquest;en qu&eacute; se parece y en qu&eacute; se aleja del modelo aristot&eacute;lico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Hamlet sigue perfectamente el modelo aristot&eacute;lico: respeta las tres unidades (tiempo, lugar y acci&oacute;n), tiene un h&eacute;roe con <I>hamartia</I> clara, produce cat&aacute;rsis y sigue estrictamente la Poe&eacute;tica de Arist&oacute;teles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Hamlet comparte con la tragedia griega: el h&eacute;roe de alta condici&oacute;n, la <I>hamartia</I> (defecto tr&aacute;gico: la indecisi&oacute;n), el desenlace fatal y la cat&aacute;rsis. Pero se aleja del modelo aristot&eacute;lico al no respetar las tres unidades (el tiempo se extiende meses; la acci&oacute;n se fragmenta en m&uacute;ltiples subtramas; el escenario cambia), al mezclar lo trag&eacute;dico con lo c&oacute;mico (los sepultureros) y al dar una profundidad psicol&oacute;gica al personaje desconocida en el teatro griego</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Hamlet no tiene ninguna relaci&oacute;n con la tragedia griega; Shakespeare no hab&iacute;a le&iacute;do a los griegos y su teatro procede exclusivamente de la tradici&oacute;n popular medieval inglesa sin ning&uacute;n antecedente cl&aacute;sico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Hamlet es superior a la tragedia griega en todos los aspectos porque el Renacimiento ingl&eacute;s supera en calidad literaria a la Antig&uuml;edad cl&aacute;sica; la comparaci&oacute;n no es relevante porque son g&eacute;neros completamente diferentes sin ningún punto de contacto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparaci&oacute;n Hamlet&ndash;tragedia griega es un ejercicio cl&aacute;sico de cr&iacute;tica literaria comparada. <B>Elementos compartidos con la tragedia aristot&eacute;lica:</B> (1) <B>H&eacute;roe de alta condici&oacute;n:</B> Hamlet es pr&iacute;ncipe; su ca&iacute;da afecta a todo el reino (como Edipo o Agamen&oacute;n). (2) <B><I>Hamartia</I></B> (defecto tr&aacute;gico): la <I>hamartia</I> de Hamlet es la indecisi&oacute;n o el exceso de reflexi&oacute;n, que lo lleva a perder todas las oportunidades de actuar a tiempo. (3) <B>Reconocimiento y peripecia:</B> hay un momento de anagnórisis (La Ratonera confirma la culpa de Claudio). (4) <B>Cat&aacute;rsis:</B> el desenlace produce piedad y terror (los componentes aristot&eacute;licos). <B>Diferencias fundamentales:</B> (1) <B>Las tres unidades:</B> Arist&oacute;teles (y el teatro griego) respetaban la unidad de tiempo (24 horas), lugar y acci&oacute;n. Hamlet transcurre durante meses, en m&uacute;ltiples escenarios y con varias subtramas (Ofelia, Laertes, Fortinbr&aacute;s). (2) <B>Mezcla de reg&iacute;stros:</B> el teatro griego separaba tragedia y comedia; Shakespeare mezcla la escena de los sepultureros c&oacute;micos con la tragedia. (3) <B>Psicolog&iacute;a interior:</B> el teatro griego no tiene monólogos interiores de la profundidad de los de Hamlet; los h&eacute;roes griegos son m&aacute;s "arquetipos" que individualidades psicol&oacute;gicas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analiza la funci&oacute;n del teatro dentro del teatro en Hamlet ("La Ratonera") como met&aacute;fora sobre la naturaleza de la realidad y el arte dram&aacute;tico.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) "La Ratonera" es simplemente un recurso argumentativo para que Hamlet pueda confirmar la culpa de Claudio sin pruebas f&iacute;sicas; su &uacute;nica funci&oacute;n es narrativa y no tiene ninguna dimensi&oacute;n met&aacute;fórica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) "La Ratonera" funciona como met&aacute;fora sobre la naturaleza del teatro y la realidad: si el arte puede revelar la verdad que la realidad oculta, entonces la ficci&oacute;n (la obra de teatro) es m&aacute;s "real" que la realidad (la corte de Elsinore que vive en la mentira); Shakespeare reflexiona sobre el poder del teatro como espejo moral de la sociedad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) "La Ratonera" es una met&aacute;fora pol&iacute;tica: Shakespeare critica as&iacute; a la reina Isabel I compar&aacute;ndola con el personaje de Gertrudis; la obra dentro de la obra era la forma que Shakespeare ten&iacute;a de hacer cr&iacute;tica pol&iacute;tica sin ser censurado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) "La Ratonera" demuestra que Shakespeare consideraba el teatro un arte inferior a la realidad: Claudio se pertuba solo momentáneamente, lo que muestra que la ficci&oacute;n no puede realmente afectar a las personas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La escena de "La Ratonera" es uno de los momentos m&aacute;s te&oacute;ricamente ricos del teatro occidental. <B>Su funci&oacute;n inmediata:</B> confirmar la culpa de Claudio observando su reacci&oacute;n. <B>Su funci&oacute;n met&aacute;fórica:</B> Shakespeare est&aacute; reflexionando sobre la naturaleza del propio arte dram&aacute;tico. La l&oacute;gica es: la corte de Elsinore vive en la mentira (Claudio finge ser un buen rey); la &uacute;nica manera de revelar la verdad es mediante la ficci&oacute;n (la obra de teatro). Esto produce una paradoja fascinante: la <B>ficci&oacute;n</B> (la Ratonera) es m&aacute;s <B>real</B> que la realidad (la corte mentirosa). Shakespeare est&aacute; diciendo que el teatro tiene un poder moral que la vida cotidiana no tiene: puede mostrar la verdad que la vida oculta. Esta idea tiene resonancias filos&oacute;ficas: se vincula con el <B>"espejo de la naturaleza"</B> que Hamlet mismo formula en su discurso a los actores (Acto III, Escena 2): el prop&oacute;sito del teatro es "sostener un espejo ante la naturaleza para mostrar a la virtud su propia imagen y al vicio su verdadero rostro". La obra dentro de la obra anticipa las reflexiones modernas sobre la <B>metaficci&oacute;n</B> y la relaci&oacute;n entre arte y realidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Analiza c&oacute;mo el contexto de la Reforma protestante y la crisis religiosa del siglo XVI influye en los dilemas metaf&iacute;sicos de Hamlet.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La Reforma protestante no tiene ninguna influencia en Hamlet; Shakespeare era cat&oacute;lico practicante y sus obras no reflejan los debates religiosos de su &eacute;poca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La crisis religiosa de la &eacute;poca se refleja en Hamlet de forma central: la naturaleza del fantasma (¿alma del purgatorio cat&oacute;lico o demonio disfrazado, como argumenta el protestantismo?), la duda de Hamlet sobre si el fantasma miente, y su temor a lo que hay tras la muerte son dilemas directamente vinculados a la ruptura religiosa del siglo XVI</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La &uacute;nica influencia religiosa en Hamlet es el judaísmo: Shakespeare, de origen jud&iacute;o secreto, codific&oacute; mensajes de la cábala en los monólogos del pr&iacute;ncipe; la figura del fantasma representa al Sheol hebreo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La Reforma protestante influy&oacute; en Hamlet de forma positiva: gracias al protestantismo, Hamlet no cree en el purgatorio y por eso puede rechazar el mandato del fantasma sin problemas de conciencia; el protestantismo le da libertad para no vengarse</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Reforma protestante</B> (iniciada por Lutero en 1517) transform&oacute; la cosmovisi&oacute;n del norte de Europa y sus consecuencias se reflejan en Hamlet de forma directa. <B>El problema del fantasma:</B> En la teolog&iacute;a cat&oacute;lica, las almas de los muertos pod&iacute;an permanecer en el <B>Purgatorio</B> y aparecerse a los vivos para pedir oraciones o informar de injusticias. En la teolog&iacute;a <B>protestante</B>, no existe el Purgatorio: las almas van directamente al cielo o al infierno; luego, si un esp&iacute;ritu se aparece, solo puede ser un <B>demonio disfrazado</B> enviado para tentar y condenar. Hamlet lo sabe: "The spirit that I have seen / May be the devil, and the devil hath power / T'assume a pleasing shape." &iquest;Es el fantasma su padre o un demonio que quiere llevarlo al pecado de homicidio? Esta duda &mdash;imposible en el mundo cat&oacute;lico pre-Reforma&mdash; es la que justifica "La Ratonera": Hamlet necesita pruebas independientes de la culpa de Claudio para no actuar basándose en el testimonio de un posible demonio. Adem&aacute;s, el miedo al "pa&iacute;s no descubierto" en el mon&oacute;logo del "Ser o no ser" refleja la angustia de una &eacute;poca que ya no tiene certezas sobre lo que hay después de la muerte.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Compara la locura fingida de Hamlet con la locura real de Ofelia: &iquest;qu&eacute; dice esta oposici&oacute;n sobre el g&eacute;nero y el poder en la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La comparaci&oacute;n no es relevante: la locura de Hamlet es siempre fingida y la de Ofelia es siempre real; no existe ning&uacute;n punto de contacto entre los dos tipos de locura en la obra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La oposici&oacute;n Hamlet/Ofelia revela la asimetr&iacute;a de poder entre g&eacute;neros: Hamlet puede <I>fingir</I> la locura como estrategia (tiene agencia, puede controlar su conducta) porque es pr&iacute;ncipe y hombre; Ofelia enloquece <I>realmente</I> porque no tiene ning&uacute;n espacio de poder desde el que procesar el trauma (muerte del padre, abandono del amado, sin voz propia); su locura es la &uacute;nica "voz" que le queda en un mundo que la ha silenciado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La comparaci&oacute;n muestra que Ofelia es m&aacute;s inteligente que Hamlet: mientras &eacute;l finge torpemente, ella desarrolla un sistema de comunicaci&oacute;n críptica en su locura que revela todos los secretos de la corte de forma m&aacute;s eficaz que "La Ratonera"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La locura de Ofelia tambi&eacute;n es fingida: ella, como Hamlet, finge enloquecer para protegerse de Claudio; su muerte ahogada es en realidad una huida disfrazada a un convento, donde vive hasta el final de la obra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La oposici&oacute;n <B>locura fingida de Hamlet / locura real de Ofelia</B> es uno de los an&aacute;lisis m&aacute;s productivos de la cr&iacute;tica feminista contempor&aacute;nea. <B>La locura de Hamlet como privilegi&oacute;:</B> Hamlet puede <I>elegir</I> fingir la locura porque tiene recursos de poder: es pr&iacute;ncipe, tiene amigos (Horacio), tiene agencia dram&aacute;tica, puede planear ("La Ratonera"), puede rechazar (rechaza a Ofelia), puede viajar (va a Inglaterra). Su "locura" es una m&aacute;scara que controla conscientemente. <B>La locura de Ofelia como impotencia:</B> Ofelia no tiene ning&uacute;n espacio de poder. Est&aacute; definida enteramente por las relaciones masculinas que la rodean: obedece a su padre Polonio ("I did repel his letters"), obedece a Hamlet (se deja usar como ce&ntilde;uelo en el Acto III), no tiene voz propia. Cuando esos pilares se derrumban (Polonio muerto, Hamlet rechazándola), no tiene recursos internos ni institucionales para procesar el trauma. Su locura no es fingida sino real, y es <B>la &uacute;nica forma que le queda de expresarse</B>: sus canciones en el Acto IV dicen lo que no pod&iacute;a decir en la cordura. <B>Elaine Showalter</B> en "Representing Ophelia" (1985) analiz&oacute; c&oacute;mo cada &eacute;poca ha representado la locura de Ofelia seg&uacute;n sus propios conceptos sobre la locura femenina.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,498 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Gobiernos Republicanos Siglos XX y XXI - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA DEL PER&Uacute; &middot; TEMA 20</DIV>
+<H1>Gobiernos Republicanos Siglos XX y XXI</H1>
+<DIV CLASS="sub">Aristocracia &middot; Oncenio de Legu&iacute;a &middot; Militarismo &middot; APRA &middot; Ochenio de Odría &middot; Populismo &middot; Velasquismo &middot; Fujimori &middot; Democracia y Gobernabilidad</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Panorama general: la Rep&uacute;blica del siglo XX peruano</H3>
+El siglo XX peruano estuvo marcado por una constante tensi&oacute;n entre <B>democracia y autoritarismo</B>, entre reformas y conservadurismo, y entre el proyecto de una naci&oacute;n moderna e incluyente y la realidad de una sociedad profundamente desigual. A diferencia de la Rep&uacute;blica Aristocr&aacute;tica del siglo XIX, el siglo XX incorpor&oacute; nuevas fuerzas sociales: el movimiento obrero, el campesinado andino, las clases medias urbanas y los partidos pol&iacute;ticos de masas como el <B>APRA</B> y el <B>Partido Comunista</B>. Los gobiernos se alternaron entre civiles y militares, con interrupciones frecuentes del orden constitucional.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Domina las <B>fechas exactas</B> de cada gobierno, sus obras principales y sus características ideológicas. Los exámenes de alto rendimiento (UNI, UNMSM, Villarreal) preguntan especialmente sobre: (1) el <B>Oncenio de Leguía</B> (1919-1930), (2) el <B>gobierno de Velasco Alvarado</B> y la Reforma Agraria (1969), (3) la <B>Constitución de 1979 vs. 1993</B>, y (4) el <B>gobierno de Fujimori</B> y el autogolpe de 1992. No confundir: <B>Manuel Odría</B> es el "Ochenio" (1948-1956); <B>Augusto Leguía</B> es el "Oncenio" (1919-1930).</DIV>
+
+<H3>2. La Rep&uacute;blica Aristocr&aacute;tica (1899&ndash;1919)</H3>
+El per&iacute;odo conocido como <B>Rep&uacute;blica Aristocr&aacute;tica</B> abarca desde el gobierno de <B>Eduardo L&oacute;pez de Romana</B> hasta la ca&iacute;da de <B>Jos&eacute; Pardo y Barreda</B>. El poder pol&iacute;tico lo detentaba una oligarqu&iacute;a de terratenientes costeros, exportadores de az&uacute;car y algod&oacute;n, y comerciantes vinculados al capital ingl&eacute;s, organizada en torno al <B>Partido Civil</B> (civilismo).
+
+<H4>Caracter&iacute;sticas del per&iacute;odo:</H4>
+<UL>
+<LI><B>Dominio del Partido Civil:</B> los "civilistas" (plutocr&acias agroexportadoras) controlaron el aparato estatal; los presidentes fueron llamados "notables" por pertenecer a familias aristocr&aacute;ticas limeñas. La corrupci&oacute;n electoral era sistem&aacute;tica: el "voto cantado" y el fraude eran instrumentos normales de gobierno.</LI>
+<LI><B>Econom&iacute;a de enclave:</B> el Per&uacute; export&oacute; materias primas (caucho, az&uacute;car, algod&oacute;n, cobre) bajo control del capital extranjero (principalmente brit&aacute;nico y estadounidense). La W. R. Grace and Company y la <B>Cerro de Pasco Corporation</B> (minera norteamericana) dominaban sectores estrat&eacute;gicos.</LI>
+<LI><B>El "Contrato Grace" (1889):</B> aunque anterior al per&iacute;odo, sus consecuencias dominaron la Rep&uacute;blica Aristocr&aacute;tica: el Per&uacute; cedi&oacute; los ferrocarriles por 66 a&ntilde;os a los acreedores brit&aacute;nicos (Peruvian Corporation) para solucionar la deuda de la guerra con Chile. S&iacute;mbolo del entreguismo oligárquico seg&uacute;n la historiografía nacionalista.</LI>
+<LI><B>Jos&eacute; Pardo y Barreda (1904-1908 y 1915-1919):</B> dos gobiernos; en el primero impuls&oacute; la educaci&oacute;n primaria gratuita. En el segundo enfrent&oacute; las primeras huelgas obreras (jornada de 8 horas, 1919); fue derrocado por Legu&iacute;a antes de concluir su mandato.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1895&ndash;1919</DIV><DIV CLASS="dk-label">Per&iacute;odo civilista (Rep. Aristocr&aacute;tica)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">5</DIV><DIV CLASS="dk-label">Presidentes del Partido Civil en el per&iacute;odo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1919</DIV><DIV CLASS="dk-label">Golpe de Legu&iacute;a: fin de la Rep. Aristocr&aacute;tica</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">8 hrs</DIV><DIV CLASS="dk-label">Jornada laboral conquistada por obreros en 1919</DIV></DIV>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#127981; EL ONCENIO DE LEGU&Iacute;A (1919&ndash;1930)<SPAN>La "Patria Nueva": modernizaci&oacute;n, endeudamiento y autoritarismo</SPAN></DIV>
+
+<H3>3. El Oncenio de Legu&iacute;a (1919&ndash;1930)</H3>
+<B>Augusto Bernardino Legu&iacute;a</B> es una de las figuras m&aacute;s complejas de la historia peruana. Hab&iacute;a sido presidente entre 1908 y 1912 (gobierno civilista), pero en 1919 dio un <B>golpe de Estado preventivo</B> antes de que se oficializaran los resultados que ya le daban la victoria electoral, para evitar que el Congreso controlado por el civilismo anulara su triunfo. Su segundo gobierno (1919-1930) se llama <B>Oncenio</B> por su duraci&oacute;n de 11 a&ntilde;os.
+
+<H4>La "Patria Nueva": ideolog&iacute;a y obras:</H4>
+<UL>
+<LI><B>Modernizaci&oacute;n urbana de Lima:</B> Legu&iacute;a transform&oacute; Lima con grandes obras p&uacute;blicas financiadas con deuda externa: el <B>Palacio de Gobierno</B> (remodelaci&oacute;n), la avenida Legu&iacute;a (hoy Arequipa), el aeropuerto, los parques, el estadio Nacional. Lima pas&oacute; de una ciudad colonial a una ciudad moderna.</LI>
+<LI><B>La deuda externa:</B> para financiar sus obras, Legu&iacute;a endeud&oacute; al Per&uacute; masivamente con bancos estadounidenses. Los bonos peruanos en el mercado de Nueva York alcanzaron niveles sin precedentes. Cuando la crisis de 1929 estall&oacute;, el Per&uacute; no pudo pagar: la deuda se convirti&oacute; en un lastre generacional.</LI>
+<LI><B>Relaciones con EE.UU.:</B> Legu&iacute;a buscó activamente la inversi&oacute;n y el apoyo norteamericano. En 1922 firm&oacute; el <B>Tratado Salomón-Lozano</B> con Colombia (cedió el <B>Trapecio Amazónico</B>, incluyendo Leticia, a Colombia) y en 1929 firm&oacute; el <B>Tratado de Lima</B> con Chile (Tacna volvi&oacute; al Per&uacute;; Arica qued&oacute; para Chile definitivamente).</LI>
+<LI><B>Represión política:</B> desterr&oacute; a sus opositores (incluyendo a V&iacute;ctor Ra&uacute;l Haya de la Torre y a Jos&eacute; Carlos Mari&aacute;tegui). Control&oacute; la prensa. Logr&oacute; reformar la Constituci&oacute;n (1920) para permitir su reelecci&oacute;n y luego la prorrog&oacute; ilegalmente. Su r&eacute;gimen fue el primer autoritarismo moderno del Per&uacute;.</LI>
+<LI><B>El "Conscripci&oacute;n Vial":</B> obligó a los campesinos ind&iacute;genas a trabajar gratuitamente en la construcci&oacute;n de carreteras (trabajo forzado). Fue una de las políticas más denunciadas por intelectuales indigenistas como Mariátegui.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>Jos&eacute; Carlos Mari&aacute;tegui (1894&ndash;1930):</B> Fundador del <B>Partido Socialista Peruano</B> (1928) y de la revista <B>Amauta</B> (1926). Su obra <B>"7 Ensayos de Interpretaci&oacute;n de la Realidad Peruana"</B> (1928) es el texto marxista m&aacute;s importante producido en el Per&uacute;: analiz&oacute; el problema de la tierra, el ind&iacute;gena, la religi&oacute;n, la educaci&oacute;n y la literatura peruana desde una perspectiva marxista-indigenista original. Argument&oacute; que la comunidad ind&iacute;gena (el <B>ayllu</B>) era una forma de socialismo primitivo que pod&iacute;a servir de base para el socialismo peruano. Muri&oacute; a los 35 a&ntilde;os en 1930.</DIV>
+
+<H4>Ca&iacute;da de Legu&iacute;a (agosto 1930):</H4>
+La crisis de 1929 derrumb&oacute; los precios de las exportaciones y el Per&uacute; no pudo pagar su deuda. En agosto de 1930, el <B>teniente coronel Luis Miguel S&aacute;nchez Cerro</B> encabez&oacute; un golpe militar en Arequipa que se extendi&oacute; r&aacute;pidamente. Legu&iacute;a fue capturado, encarcelado en el Panóptico de Lima y muri&oacute; preso en 1932. El Oncenio termin&oacute; en el desastre econ&oacute;mico y la oprobia personal de su protagonista.
+
+<DIV CLASS="cultura-titulo">&#128481;&#65039; EL APRA Y EL MILITARISMO (1930&ndash;1948)<SPAN>S&aacute;nchez Cerro, Benavides, Bustamante: democracia bloqueada y violencia pol&iacute;tica</SPAN></DIV>
+
+<H3>4. El Per&iacute;odo de crisis: militarismo y APRA (1930&ndash;1948)</H3>
+
+<H4>V&iacute;ctor Ra&uacute;l Haya de la Torre y el APRA:</H4>
+<B>V&iacute;ctor Ra&uacute;l Haya de la Torre</B> fund&oacute; la <B>Alianza Popular Revolucionaria Americana (APRA)</B> en M&eacute;xico en <B>1924</B>, mientras estaba exiliado por Legu&iacute;a. El APRA propugnaba: (1) acci&oacute;n contra el imperialismo yanqui; (2) unidad pol&iacute;tica de Am&eacute;rica Latina; (3) nacionalizaci&oacute;n de tierras e industrias; (4) internacionalizaci&oacute;n del canal de Panamá; (5) solidaridad con los pueblos y clases oprimidos. En el Per&uacute; (donde se llam&oacute; <B>Partido Aprista Peruano</B>), el APRA fue la fuerza pol&iacute;tica popular m&aacute;s importante del siglo XX, pero jam&aacute;s lleg&oacute; al poder en los a&ntilde;os de su mayor &eacute;xito electoral (1930-1960) debido a que el ej&eacute;rcito y las &eacute;lites lo bloquearon sistem&aacute;ticamente.
+
+<UL>
+<LI><B>Luis M. S&aacute;nchez Cerro (1930-1933):</B> gan&oacute; las elecciones de 1931 frente a Haya de la Torre (el APRA denunci&oacute; fraude). Su gobierno fue de intensa represión contra el APRA: decret&oacute; la <B>Ley de Emergencia</B> que ilegalizó el partido. La <B>Revoluci&oacute;n del APRA en Trujillo</B> (julio 1932): militantes apristas tomaron el cuartel O'Donovan; el ej&eacute;rcito retom&oacute; la ciudad y ejecut&oacute; a cientos de apristas en las ruinas de Chan Chan. El odio entre el ej&eacute;rcito y el APRA qued&oacute; sellado. S&aacute;nchez Cerro fue asesinado por un militante aprista en abril de 1933.</LI>
+<LI><B>Oscar R. Benavides (1933-1939):</B> completó el mandato de S&aacute;nchez Cerro y luego se perpetuó: su eslogan fue "Paz, Orden y Trabajo". Continu&oacute; la represión aprista pero gobern&oacute; con relativa estabilidad econ&oacute;mica. Fund&oacute; el <B>Seguro Social Obrero</B> (1936).</LI>
+<LI><B>Manuel Prado Ugarteche (1939-1945):</B> primer gobierno moderado. El Per&uacute; declar&oacute; la guerra a Japón tras el ataque a Pearl Harbor (1941). En 1941, se produjo el conflicto con Ecuador: el <B>Protocolo de R&iacute;o de Janeiro</B> (1942) fij&oacute; la frontera favorable al Per&uacute;.</LI>
+<LI><B>Jos&eacute; Luis Bustamante y Rivero (1945-1948):</B> ganó con apoyo del APRA (que estaba legalizado). Represent&oacute; el intento m&aacute;s serio de democracia incluyente hasta entonces. Decret&oacute; las <B>200 millas de mar territorial</B> (1947), posición que el Per&uacute; defendi&oacute; internacionalmente por décadas. Fue derrocado por el general <B>Manuel Odría</B> en octubre de 1948 tras un alzamiento aprista fallido en el Callao.</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Presidente</TH><TH>Per&iacute;odo</TH><TH>Caracter&iacute;stica principal</TH><TH>Relaci&oacute;n con APRA</TH></TR>
+<TR><TD><B>S&aacute;nchez Cerro</B></TD><TD>1930-1933</TD><TD>Populismo militar; elecciones 1931</TD><TD>Represión sangrienta; masacre en Trujillo</TD></TR>
+<TR><TD><B>Benavides</B></TD><TD>1933-1939</TD><TD>Estabilidad conservadora; Seguro Social</TD><TD>APRA ilegalizado</TD></TR>
+<TR><TD><B>Manuel Prado I</B></TD><TD>1939-1945</TD><TD>Guerra con Ecuador; alineación con EE.UU.</TD><TD>APRA en la clandestinidad</TD></TR>
+<TR><TD><B>Bustamante</B></TD><TD>1945-1948</TD><TD>Democracia incluyente; 200 millas</TD><TD>Apoyo aprista; luego ruptura</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#128081; EL OCHENIO DE ODR&Iacute;A (1948&ndash;1956)<SPAN>Dictadura desarrollista: prosperidad económica y represión política</SPAN></DIV>
+
+<H3>5. El Ochenio de Odr&iacute;a (1948&ndash;1956)</H3>
+El general <B>Manuel Arturo Odría</B> gobernó el Perú durante 8 años (de ahí "Ochenio"). Su gobierno es paradigmático de las dictaduras latinoamericanas de mediados de siglo: represión política combinada con obras públicas y prosperidad macroeconómica basada en las exportaciones.
+
+<H4>Caracter&iacute;sticas del Ochenio:</H4>
+<UL>
+<LI><B>Represión política:</B> el APRA fue perseguido implacablemente; Haya de la Torre se asiló 5 años en la Embajada de Colombia en Lima (1949-1954). La <B>Ley de Seguridad Interior</B> permitió desterrar y encarcelar opositores sin juicio. Los sindicatos fueron controlados o disueltos.</LI>
+<LI><B>Prosperidad econ&oacute;mica:</B> el auge de las exportaciones (algodón, azúcar, minerales, petróleo) durante la Guerra de Corea (1950-1953) generó ingresos fiscales extraordinarios. Odría aplicó una política económica liberal con el asesoramiento del economista <B>Pedro Beltrán</B>: tipo de cambio libre, libre importación, no controles de precios.</LI>
+<LI><B>Obras p&uacute;blicas y populismo:</B> con los recursos del boom exportador, Odría construy&oacute; hospitales (Hospital del Empleado, hoy Rebagliati), el <B>Ministerio de Educación</B>, el <B>Estadio Nacional</B> (1952), unidades escolares y viviendas populares. Su esposa <B>Mar&iacute;a Delgado de Odría</B> distribuy&oacute; canastas de alimentos entre los pobres, generando una base de apoyo popular femenino (las mujeres obtuvieron el <B>voto en 1955</B> bajo Odría).</LI>
+<LI><B>Las barriadas:</B> durante el Ochenio se produjo la primera gran ola de migración campo-ciudad. Los migrantes andinos formaron los primeros <B>asentamientos informales</B> en Lima (llamados "barriadas"). Odría los toleró como base de apoyo social.</LI>
+<LI><B>El voto femenino (1955):</B> las mujeres peruanas obtuvieron el derecho al voto, aunque solo las alfabetizadas (excluyendo a la mayoría del campesinado rural femenino).</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>La convivencia (1956-1968):</B> Tras el Ochenio, se produjo un per&iacute;odo de democracia relativa. <B>Manuel Prado II</B> (1956-1962) gobernó con apoyo del APRA ("la convivencia" entre el otrora enemigo militar-oligárquico y el aprismo). <B>Fernando Belaunde Terry</B> ganó las elecciones de 1963 con Acción Popular: propugnó la reforma agraria y la modernización del país. Su gobierno (1963-1968) fue bloqueado por la coalición APRA-UNO en el Congreso y terminó en el golpe de Velasco. El episodio del <B>Acta de Talara</B> (1968) &mdash;acuerdo petrolero con la International Petroleum Company (IPC) acusado de favorecer a la empresa&mdash; fue el pretexto inmediato del golpe.</DIV>
+
+<DIV CLASS="cultura-titulo">&#9994; EL GOBIERNO REVOLUCIONARIO DE VELASCO (1968&ndash;1975)<SPAN>La reforma agraria, la expropiación de la IPC y el nacionalismo militar</SPAN></DIV>
+
+<H3>6. El Gobierno Revolucionario de las Fuerzas Armadas: Velasco (1968&ndash;1975)</H3>
+El <B>3 de octubre de 1968</B>, el general <B>Juan Velasco Alvarado</B> encabez&oacute; el golpe de Estado que derrocó a Belaunde. A diferencia de los golpes militares anteriores (que defendían el orden oligárquico), el de Velasco fue un golpe de izquierda militar: el <B>Gobierno Revolucionario de las Fuerzas Armadas</B> (GRFA) propuso un "socialismo no comunista" o "tercera vía" entre el capitalismo y el marxismo.
+
+<H4>Las reformas estructurales del velasquismo:</H4>
+<UL>
+<LI><B>Expropiación de la IPC (9 de octubre de 1968):</B> al d&iacute;a siguiente del golpe, Velasco expropió la <B>International Petroleum Company</B> (subsidiaria de la Standard Oil estadounidense) y sus instalaciones en Talara. Fund&oacute; <B>PetroPer&uacute;</B>. Fue el acto fundacional más simbólico del velasquismo: ruptura con el imperialismo norteamericano.</LI>
+<LI><B>La Reforma Agraria (Decreto Ley 17716, 24 de junio de 1969):</B> la transformaci&oacute;n estructural m&aacute;s profunda del siglo XX peruano. Expropió las grandes haciendas y latifundios (incluyendo los complejos azucareros de la costa norte: Casa Grande, Cartavio, Tumán). Las tierras se entregaron a <B>cooperativas agrarias</B> (SAIS, CAPs) y comunidades campesinas. Benefició a 370,000 familias campesinas. El <B>24 de junio</B> (Día del Campesino) reemplazó al Día del Indio. Velasco declaró: "¡Campesino, el patrón ya no comerá más de tu pobreza!"</LI>
+<LI><B>Otras nacionalizaciones:</B> la Cerro de Pasco Corporation (convertida en <B>CentroMin Perú</B>), los bancos (participación estatal), la pesquería (el boom del anchoveta y la fundación de <B>PescaPerú</B>), los medios de comunicación (los diarios fueron expropiados en 1974 y entregados a "organizaciones sociales").</LI>
+<LI><B>El quechua como idioma oficial (1975):</B> por primera vez en la historia republicana, el quechua fue reconocido como idioma oficial del Per&uacute; junto al espa&ntilde;ol.</LI>
+<LI><B>El SINAMOS:</B> Sistema Nacional de Apoyo a la Movilizaci&oacute;n Social: el intento del velasquismo de movilizar a las masas populares desde arriba, controladas por el Estado. Fue un experimento de participaci&oacute;n controlada.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La Reforma Agraria de Velasco (D.L. 17716, 1969) es el hito m&aacute;s preguntado. Memoriza: (1) fecha exacta: <B>24 de junio de 1969</B>; (2) afect&oacute; m&aacute;s de <B>15 millones de hect&aacute;reas</B>; (3) elimin&oacute; el <B>gamonalismo</B> y el <B>latifundio</B> andino; (4) cre&oacute; cooperativas agrarias, no propiedad individual; (5) fue una reforma <B>sin precedentes en Am&eacute;rica Latina</B> en cuanto a radicalidad y velocidad. La expropiaci&oacute;n de la IPC fue el <B>9 de octubre de 1968</B> (al d&iacute;a siguiente del golpe).</DIV>
+
+<H4>La segunda fase del GRFA: Morales Berm&uacute;dez (1975&ndash;1980):</H4>
+En agosto de 1975, el propio Velasco fue desplazado por su premier y ministro de Guerra, el general <B>Francisco Morales Berm&uacute;dez</B>, en el llamado "tacnazo". La segunda fase fue más conservadora: frenó las reformas, liberalizó la economía bajo presión del FMI, convocó a la <B>Asamblea Constituyente de 1978</B> (presidida por Haya de la Torre, quien murió antes de ver promulgada la <B>Constitución de 1979</B>) y convocó elecciones para 1980. La Constitución de 1979 otorgó el voto a los analfabetos por primera vez en la historia peruana.
+
+<DIV CLASS="cultura-titulo">&#128202; EL RETORNO A LA DEMOCRACIA Y LA CRISIS (1980&ndash;1990)<SPAN>Belaunde II, Alan García y Sendero: la d&eacute;cada perdida</SPAN></DIV>
+
+<H3>7. La D&eacute;cada Perdida: democracia en crisis (1980&ndash;1990)</H3>
+
+<H4>Segundo gobierno de Belaunde (1980&ndash;1985):</H4>
+Belaunde regresó al poder ganando las elecciones de 1980 con amplia mayoría. Fue el primer gobierno democrático después de 12 años de dictadura militar. Sin embargo, su segundo gobierno coincidió con la peor crisis económica desde los años 30 y con el inicio de la violencia terrorista.
+<UL>
+<LI><B>Sendero Luminoso:</B> el 17 de mayo de 1980 (véspera de las elecciones), el <B>Partido Comunista del Perú-Sendero Luminoso</B>, liderado por <B>Abimael Guzmán</B> ("Presidente Gonzalo"), quemó ánforas electorales en Chuschi (Ayacucho) e inició su "guerra popular". Hasta 1992 causó más de 30,000 muertos (en su mayoría campesinos andinos) y pérdidas económicas inmensas.</LI>
+<LI><B>El MRTA</B> (Movimiento Revolucionario Túpac Amaru): guerrilla de izquierda más ideológicamente convencional que Sendero, fundada en 1984. Menos mortífera pero significativa.</LI>
+<LI><B>Crisis econ&oacute;mica:</B> la deuda externa, la caída de precios de exportación y el desastre del Fenómeno El Niño (1983) hundieron la economía. La inflación alcanzó el 125% anual en 1983.</LI>
+</UL>
+
+<H4>Primer gobierno de Alan Garc&iacute;a P&eacute;rez (1985&ndash;1990):</H4>
+<B>Alan Garc&iacute;a</B> gan&oacute; las elecciones de 1985 a los 36 a&ntilde;os, convirtién-dose en el presidente m&aacute;s joven de la historia peruana. Su primer gobierno fue un desastre econ&oacute;mico y político sin precedentes.
+<UL>
+<LI><B>La política heterodoxa:</B> García rechazó pagar la deuda externa más del 10% de los ingresos por exportaciones. Controló precios, tipos de cambio y tasas de interés. Al inicio generó un boom de consumo (1986-1987), pero la economía colapsó desde 1988: <B>hiperinflación</B> (7,649% en 1990, la peor de la historia peruana).</LI>
+<LI><B>Estatización de la banca (1987):</B> García anunció la estatización de los bancos y compañías de seguros privados. La medida generó una reacción política sin precedentes: <B>Mario Vargas Llosa</B> encabezó la oposición cívica y fundó el <B>Movimiento Libertad</B>, inicio de su carrera política que lo llevó a candidatear en 1990.</LI>
+<LI><B>La masacre de los penales (junio 1986):</B> motines simultáneos de presos de Sendero en tres penales limeños (El Frontón, Lurigancho, Santa Bárbara). El gobierno ordenó la intervención militar: murieron más de 250 reclusos, la mayoría en circunstancias que la Comisión de la Verdad calificó de ejecuciones extrajudiciales.</LI>
+<LI><B>La Matanza de Cayara (1988):</B> masacre de campesinos en Ayacucho atribuida a fuerzas militares; el gobierno intentó encubrirla.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">7,649%</DIV><DIV CLASS="dk-label">Inflaci&oacute;n anual en 1990 (gobierno de Garc&iacute;a)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">69,000</DIV><DIV CLASS="dk-label">Muertos y desaparecidos por violencia 1980-2000</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1980</DIV><DIV CLASS="dk-label">Inicio de Sendero Luminoso en Chuschi, Ayacucho</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1979</DIV><DIV CLASS="dk-label">Constituci&oacute;n que dio voto a analfabetos</DIV></DIV>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#128081; EL FUJIMORISMO (1990&ndash;2000)<SPAN>Autogolpe, captura de Guzmán, Constitución de 1993 y corrupción sistémica</SPAN></DIV>
+
+<H3>8. El Gobierno de Alberto Fujimori (1990&ndash;2000)</H3>
+<B>Alberto Kenya Fujimori Fujimori</B>, ingeniero agr&oacute;nomo de origen japonés y rector de la Universidad Agraria, derrotó a <B>Mario Vargas Llosa</B> en la segunda vuelta de las elecciones de 1990. Su victoria fue una sorpresa: pasó de menos del 3% de las encuestas a ganar con más del 62%. Representó el rechazo popular al establishment político y económico tradicional.
+
+<H4>El "Fujishock" (agosto 1990):</H4>
+Fujimori aplicó el programa de ajuste económico más drástico de la historia peruana, en contradicción con lo prometido en campaña (había prometido no aplicar el "shock"). El precio de la gasolina subió 3,000% en un día. La hiperinflación fue controlada a costa de una severa recesión y empobrecimiento. A largo plazo, la estabilización funcionó: la inflación bajó del 7,649% (1990) al 15% (1994).
+
+<H4>El autogolpe del 5 de abril de 1992:</H4>
+El <B>5 de abril de 1992</B>, Fujimori cerró el Congreso, intervino el Poder Judicial, el Ministerio Público y el Tribunal de Garantías Constitucionales, con apoyo de las Fuerzas Armadas. Alegó que las instituciones bloqueaban su lucha contra el terrorismo y la corrupción. La comunidad internacional condenó el golpe; en el Per&uacute;, la opinión pública mayoritariamente lo apoyó (80% de aprobación según las encuestas de la época). Se creó un <B>Congreso Constituyente Democrático (CCD)</B> que redactó la nueva Constitución.
+
+<H4>La Constituci&oacute;n de 1993:</H4>
+La nueva Constitución, aprobada en referéndum (con acusaciones de fraude), estableció: (1) <B>reelección inmediata</B> del presidente; (2) <B>Congreso unicameral</B> (eliminó el Senado); (3) mayor poder ejecutivo; (4) economía de libre mercado como principio constitucional; (5) pena de muerte para terroristas. Reemplazó la Constitución de 1979, obra de la transición democrática y de Haya de la Torre.
+
+<H4>La captura de Abimael Guzm&aacute;n (12 de septiembre de 1992):</H4>
+El <B>GEIN</B> (Grupo Especial de Inteligencia), dirigido por el general <B>Antonio Vidal</B>, captur&oacute; a <B>Abimael Guzmán</B> en una casa de Surquillo (Lima). Fue el mayor golpe contra Sendero Luminoso. Guzmán fue condenado a cadena perpetua. La captura marcó el inicio del fin del terrorismo senderista como amenaza militar. Pocos meses antes (julio 1992) había ocurrido el <B>atentado de Tarata</B> (Miraflores): 25 muertos, el acto terrorista m&aacute;s destructivo en Lima.
+
+<H4>El r&eacute;gimen de Montesinos y la corrupci&oacute;n sist&eacute;mica:</H4>
+<B>Vladimiro Montesinos Torres</B>, asesor de inteligencia de Fujimori y jefe de facto del <B>SIN</B> (Servicio de Inteligencia Nacional), construyó una red de corrupción que abarcaba el Poder Judicial, el Congreso, los medios de comunicación, los militares y empresarios. Los <B>vladivideos</B> (septiembre 2000): grabaciones secretas de Montesinos sobornando a congresistas, jueces y periodistas desencadenaron la crisis final del fujimorismo. Fujimori huyó a Japón y renunció por fax en noviembre de 2000.
+
+<DIV CLASS="mapa-note">&#128221; <B>Constitución de 1979 vs. Constitución de 1993:</B> Para el examen, distingue claramente: la <B>Constituci&oacute;n de 1979</B> fue obra de la Asamblea Constituyente democr&aacute;tica, presidida por Haya de la Torre (APRA); otorg&oacute; el voto a los analfabetos; creó el Tribunal de Garantías Constitucionales; reconoció derechos sociales amplios; estableció el Congreso bicameral (C&aacute;mara de Diputados + Senado). La <B>Constituci&oacute;n de 1993</B> de Fujimori: Congreso unicameral; reelecci&oacute;n inmediata; economía de mercado constitucionalizada; mayor poder presidencial; más garantías individuales (habeas corpus, habeas data) pero menos derechos sociales.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127775; EL SIGLO XXI: DEMOCRACIA Y GOBERNABILIDAD (2000&ndash;HOY)<SPAN>Toledo, Garc&iacute;a II, Humala, PPK, Vizcarra y la inestabilidad pol&iacute;tica permanente</SPAN></DIV>
+
+<H3>9. El siglo XXI: transici&oacute;n democr&aacute;tica y crisis de gobernabilidad</H3>
+
+<H4>La transici&oacute;n democr&aacute;tica (2000&ndash;2001):</H4>
+Valentín Paniagua (2000-2001) asumió como presidente del Congreso y luego presidente transitorio tras la renuncia de Fujimori. Convocó la <B>Comisión de la Verdad y Reconciliación</B> (CVR), cuyo informe final (2003) estableció que entre 1980 y 2000 murieron o desaparecieron aproximadamente <B>69,000 personas</B>, siendo Sendero Luminoso responsable del 54% de las muertes y el Estado del 37%.
+
+<H4>Principales gobiernos del siglo XXI:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Presidente</TH><TH>Per&iacute;odo</TH><TH>Partido</TH><TH>Hecho principal</TH></TR>
+<TR><TD><B>Alejandro Toledo</B></TD><TD>2001-2006</TD><TD>Perú Posible</TD><TD>Primer presidente de origen quechua; crecimiento econ&oacute;mico; firma del TLC con EE.UU.; protestas sociales (Arequipazo 2002)</TD></TR>
+<TR><TD><B>Alan García II</B></TD><TD>2006-2011</TD><TD>APRA</TD><TD>Boom de materias primas; "El perro del hortelano"; masacre de Bagua (2009); crecimiento con desigualdad</TD></TR>
+<TR><TD><B>Ollanta Humala</B></TD><TD>2011-2016</TD><TD>Gana Per&uacute;</TD><TD>Inclusi&oacute;n social; Pensión 65, Beca 18; viraje al centro; conflictos mineros</TD></TR>
+<TR><TD><B>Pedro Pablo Kuczynski</B></TD><TD>2016-2018</TD><TD>PPK</TD><TD>Indulto a Fujimori (dic. 2017); vacancia frustrada; renuncia por corrupci&oacute;n (vladivideos Odebrecht)</TD></TR>
+<TR><TD><B>Martín Vizcarra</B></TD><TD>2018-2020</TD><TD>Sin partido</TD><TD>Reforma pol&iacute;tica y judicial; disoluci&oacute;n del Congreso (sept. 2019); vacado por el Congreso (nov. 2020)</TD></TR>
+<TR><TD><B>Manuel Merino</B></TD><TD>Nov. 2020</TD><TD>AP</TD><TD>5 d&iacute;as de gobierno; renunci&oacute; tras protestas y 2 muertos</TD></TR>
+<TR><TD><B>Francisco Sagasti</B></TD><TD>2020-2021</TD><TD>Morado</TD><TD>Transici&oacute;n democr&aacute;tica; vacunaci&oacute;n COVID</TD></TR>
+<TR><TD><B>Pedro Castillo</B></TD><TD>2021-2022</TD><TD>Per&uacute; Libre</TD><TD>Primer maestro rural presidente; escándalos de corrupción; 6 gabinetes; vacado dic. 2022</TD></TR>
+<TR><TD><B>Dina Boluarte</B></TD><TD>2022-</TD><TD>Sin partido</TD><TD>Vicepresidenta que asumió tras vacancia de Castillo; crisis política y protestas sur andino</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen (dato clave del siglo XXI):</B> El <B>Escándalo Odebrecht</B> (revelado en 2016-2017) involucró a todos los expresidentes peruanos vivos: Toledo, García, Humala y Kuczynski fueron investigados o procesados por recibir sobornos de la constructora brasileña. Alan Garc&iacute;a se suicid&oacute; el 17 de abril de 2019 cuando la polic&iacute;a iba a detenerlo. El Per&uacute; del siglo XXI se caracteriza por una <B>crisis de gobernabilidad permanente</B>: entre 2016 y 2023, el Per&uacute; tuvo <B>6 presidentes</B>. La inestabilidad combina alta rotación de liderazgos con continuidad de políticas económicas neoliberales.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== BANCO DE PREGUNTAS ===================== -->
+<DIV CLASS="bloque" STYLE="margin-top:50px;">
+<H2>Banco de Preguntas &mdash; Estilo Examen de Admisi&oacute;n</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>&#127381; NIVEL B&Aacute;SICO — Reconocimiento y comprensión</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> El per&iacute;odo de gobierno del presidente Augusto B. Legu&iacute;a entre 1919 y 1930 recibe el nombre de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) El Septenio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) El Oncenio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) El Ochenio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) La Patria Vieja</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El segundo gobierno de <B>Augusto Bernardino Leguía</B> (1919-1930) duró exactamente <B>11 años</B>, de ahí el nombre de <B>"Oncenio"</B> (once = 11). Leguía llamó a su proyecto político la <B>"Patria Nueva"</B>. No confundir: el <B>Ochenio</B> es el gobierno de <B>Manuel Odría</B> (1948-1956), que duró 8 años. El "Septenio" no existe como denominación oficial en la historia peruana del siglo XX. La "Patria Vieja" se refiere al período de la Independencia (1820-1821).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> La Reforma Agraria de 1969, que expropiú los latifundios y cre&oacute; cooperativas agrarias, fue promulgada durante el gobierno de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Fernando Belaunde Terry</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Manuel Odría</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Juan Velasco Alvarado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Alan García Pérez</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Decreto Ley 17716</B>, promulgado el <B>24 de junio de 1969</B> (Día del Campesino), fue la Reforma Agraria del gobierno del general <B>Juan Velasco Alvarado</B>. Es la transformación estructural más profunda del siglo XX peruano: afectó más de 15 millones de hectáreas, eliminó el gamonalismo y el latifundio, y benefició a 370,000 familias campesinas. Belaunde intentó una reforma agraria menor (Ley 15037, 1964), bloqueada por el Congreso APRA-UNO. Odría no hizo reforma agraria. García no realizó reforma agraria significativa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿En qué año y con qué acto simbólico inici&oacute; Sendero Luminoso su "guerra popular" contra el Estado peruano?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) En 1978, con el secuestro del embajador estadounidense en Lima</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) El 17 de mayo de 1980, quemando ánforas electorales en Chuschi (Ayacucho)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) En 1982, con la toma del cuartel de Vilcashuamán en Ayacucho</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) En 1985, con el atentado al Palacio de Gobierno en Lima</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>17 de mayo de 1980</B> &mdash;víspera de las elecciones generales que devolvieron la democracia al Perú y llevaron a Belaunde al poder&mdash;, militantes del <B>Partido Comunista del Perú-Sendero Luminoso</B> quemaron las ánforas electorales en la localidad de <B>Chuschi</B>, provincia de Cangallo, Ayacucho. Este acto simbólico (la quema de los instrumentos de la democracia burguesa) marcó el inicio oficial de su "guerra popular prolongada". El dato exacto (17 de mayo de 1980 / Chuschi / Ayacucho) es muy frecuente en los exámenes de admisión.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cu&aacute;l fue la política econ&oacute;mica central del primer gobierno de Alan García (1985-1990) que condujo a la hiperinflaci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Aplicación estricta de las recetas del Fondo Monetario Internacional (FMI) y la austeridad fiscal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Una política heterodoxa: límite del 10% del ingreso exportador para el pago de la deuda, control de precios y tipos de cambio, y expansión del gasto público</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Dolarización de la economía y liberalización total de las importaciones desde el primer día</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Nacionalización de toda la banca y las empresas mineras desde el inicio del mandato</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>García aplicó una política económica <B>heterodoxa</B> que rechazaba los programas de ajuste del FMI. Los pilares fueron: (1) limitar el pago de la deuda externa al <B>10% de los ingresos por exportaciones</B> (el Per&uacute; fue declarado "inelegible" por el FMI); (2) control de precios, tipos de cambio múltiples y tasas de interés fijadas por el Estado; (3) expansión del gasto público para reactivar el consumo. Inicialmente funcionó (1986-1987: crecimiento del 10%), pero desde 1988 el sistema colapsó al agotarse las reservas internacionales, disparándose la hiperinflación hasta el <B>7,649% anual en 1990</B>. La estatización de la banca (1987) fue parcial y no fue el origen de la crisis.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> El voto femenino fue reconocido en el Per&uacute; por primera vez mediante una ley promulgada durante el gobierno de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) José Luis Bustamante y Rivero (1945-1948)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Manuel Odría (1948-1956), en el año 1955</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Manuel Prado Ugarteche, en su segundo gobierno (1956-1962)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Juan Velasco Alvarado (1968-1975)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El sufragio femenino fue reconocido en el Per&uacute; en <B>1955</B>, durante el gobierno de <B>Manuel Odría</B>. La Ley 12391 otorgó el derecho al voto a las mujeres <B>alfabetizadas</B> mayores de 21 años (o 18 si eran casadas). Es un dato aparentemente contradictorio: una dictadura militar que otorgó el voto femenino. La explicación es política: Odría buscaba ampliar su base de apoyo electoral para la sucesión. Las mujeres analfabetas (la mayoría del campesinado andino) recién obtuvieron el voto con la <B>Constitución de 1979</B>, que extendió el sufragio a todos los mayores de 18 años sin distinción de alfabetismo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>&#9889; NIVEL INTERMEDIO — Análisis y relaciones causales</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> El Tratado Salom&oacute;n-Lozano (1922), suscrito durante el Oncenio de Legu&iacute;a, implicó la cesi&oacute;n a Colombia de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) La provincia de Tumbes, que regresó al Perú con la mediación de Chile</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El Trapecio Amazónico, incluyendo la ciudad de Leticia sobre el río Amazonas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) La ciudad de Iquitos y toda la cuenca del río Putumayo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) El departamento de Loreto, a cambio del reconocimiento de la frontera sur peruana</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Tratado Salomón-Lozano</B> (firmado el 24 de marzo de 1922, ratificado en 1928) cedió a Colombia el <B>Trapecio Amazónico</B>, incluyendo la ciudad de <B>Leticia</B> a orillas del río Amazonas, territorio que había sido peruano. Colombia así obtuvo salida directa al Amazonas. Este tratado fue muy impopular en el Perú: las élites regionales y el ejército lo consideraron una traición. En septiembre de 1932, civiles loretanos tomaron Leticia por la fuerza (el "Conflicto de Leticia"), iniciando un incidente armado con Colombia que terminó con la mediación de la Sociedad de Naciones y la restitución de Leticia a Colombia en 1933.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> La Masacre de la Plaza de Armas de Trujillo (julio 1932) y las ejecuciones masivas de apristas en las ruinas de Chan Chan fueron consecuencia directa de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Una rebelión campesina espontánea liderada por comunistas soviéticos infiltrados en el norte del Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) El levantamiento aprista del cuartel O'Donovan y la represión militar posterior del gobierno de Sánchez Cerro, que selló el odio institucional entre el ejército y el APRA por décadas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Un golpe militar del propio APRA que logró controlar Trujillo durante seis meses antes de ser sofocado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Una invasión ecuatoriana aprovechando la inestabilidad política interna del período post-Leguía</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En julio de 1932, militantes apristas tomaron el <B>cuartel O'Donovan</B> en Trujillo y ejecutaron a oficiales militares. El ejército retomó la ciudad con violencia: cientos de apristas y sospechosos fueron ejecutados en las ruinas de <B>Chan Chan</B>. Este episodio (conocido como "la Revolución de Trujillo" o "el Aprismo de Trujillo") fue el punto de quiebre que convirtió el conflicto entre el APRA y el ejército en un odio institucional profundo: el ejército juró que nunca permitiría que el APRA llegara al poder. Esta "promesa institucional" explica por qué el APRA, siendo la fuerza política más popular, nunca pudo gobernar entre 1930 y 1985, siendo bloqueado sistemáticamente por los militares en las elecciones de 1936, 1945, 1950, 1956, 1962 y 1963.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> La Constituci&oacute;n de 1979 fue significativamente diferente a la de 1993 en varios aspectos. ¿Cu&aacute;l de las siguientes afirmaciones describe correctamente una diferencia fundamental entre ambas constituciones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) La Constitución de 1979 establecía un Congreso unicameral, mientras que la de 1993 creó el sistema bicameral con Senado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) La Constitución de 1979 reconoció el voto para analfabetos y creó un Congreso bicameral; la de 1993 eliminó el Senado, permitió la reelección inmediata y constitucionalizó la economía de mercado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Ambas constituciones reconocieron el voto para analfabetos y ambas establecieron el Congreso bicameral; la única diferencia fue el período presidencial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La Constitución de 1993 amplió los derechos sociales (salud, trabajo, vivienda) con respecto a la de 1979, que era más liberal en lo económico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las diferencias fundamentales entre ambas constituciones son: <B>Constitución de 1979</B>: (1) Congreso <B>bicameral</B> (Cámara de Diputados + Senado); (2) voto para todos los ciudadanos mayores de 18 años, incluyendo <B>analfabetos</B>; (3) derechos sociales amplios (estabilidad laboral, vivienda, salud); (4) mayor rol del Estado en la economía; (5) prohibición de la reelección inmediata. <B>Constitución de 1993</B>: (1) Congreso <B>unicameral</B> (120 congresistas, hoy 130); (2) reelección inmediata del presidente (hasta 1996 cuando la "ley de interpretación auténtica" permitió a Fujimori un tercer período); (3) economía social de <B>mercado constitucionalizada</B>; (4) menor protección de derechos laborales; (5) mayor énfasis en derechos procesales individuales (habeas corpus, habeas data). La afirmación d) es falsa: fue al revés, la de 1993 redujo los derechos sociales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> El "autogolpe" del 5 de abril de 1992 ejecutado por Fujimori se diferenci&oacute; de los golpes militares cl&aacute;sicos del siglo XX peruano en que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Fue liderado por un civil elegido democráticamente que suspendió el orden constitucional con apoyo de las FFAA, alegando bloqueo institucional; la mayoría de la población lo apoyó inicialmente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Fue el único golpe de Estado del siglo XX peruano que contó con la aprobación del Congreso antes de ejecutarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Fujimori actuó sin el apoyo de los militares, disolviendo el Ejército y reemplazándolo por milicias civiles leales al gobierno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) El autogolpe contó con aprobación previa de la OEA y los EE.UU. como medida anticorrupción</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El "autogolpe" (o "fujigolpe") del <B>5 de abril de 1992</B> es un caso &uacute;nico en América Latina: fue ejecutado por un <B>presidente elegido democráticamente</B> (Fujimori, en el poder desde 1990) que disolvió el Congreso, intervino el Poder Judicial y suspendió la Constitución con apoyo de las FFAA (especialmente del asesor de inteligencia <B>Vladimiro Montesinos</B>). Los argumentos oficiales: el Congreso bloqueaba la lucha contra el terrorismo y la corrupción; el Poder Judicial era ineficaz y corrupto. La paradoja fue su <B>enorme apoyo popular</B>: el 80% de los peruanos aprobó el autogolpe en encuestas de esa semana (Sendero había alcanzado su punto máximo de violencia; el Estado parecía paralizado). La comunidad internacional condenó el golpe y exigió retorno a la democracia, lo que llevó a la creación del CCD y la Constitución de 1993.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> La captura de Abimael Guzm&aacute;n el 12 de septiembre de 1992 fue resultado del trabajo del GEIN (Grupo Especial de Inteligencia). ¿Cuál fue la metodología central del GEIN que lo diferenci&oacute; de los enfoques anteriores contra Sendero?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" Value="a"> a) El uso masivo de bombardeos aéreos y operaciones militares convencionales en las zonas de emergencia de Ayacucho</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Inteligencia policial cuidadosa basada en seguimiento de contactos, análisis de documentos incautados, perfiles psicológicos y paciencia operativa; sin torturas ni métodos convencionales de contrainsurgencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Infiltración masiva de agentes de la CIA en la dirección de Sendero Luminoso durante los años 1990-1992</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) El uso de delatores pagados dentro del Comité Central de Sendero Luminoso que revelaron la ubicación exacta de Guzmán</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>GEIN</B>, formado en 1990 dentro de la DINCOTE (Policía) y dirigido por el entonces coronel <B>Benedicto Jiménez</B>, adoptó un enfoque radicalmente diferente a la contrainsurgencia militar convencional (que en los 80 había producido masacres como Accomarca y Cayara sin resultados estratégicos). El GEIN: (1) recopiló y analizó meticulosamente los documentos incautados en operativos previos (encontrando patrones en las redes de apoyo logístico de Sendero en Lima); (2) realizó seguimientos pacientes de personas vinculadas a la dirección de Sendero; (3) nunca torturó ni aplicó métodos ilegales (comprendió que la tortura producía información falsa y destruía pistas reales); (4) construyó un perfil detallado de los hábitos de Guzmán (su psoriasis, sus medicamentos). La dirección senderista había instalado a Guzmán en una casa de Surquillo, Lima, confiando en que las FFAA lo buscarían en el campo, no en la capital.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>&#128293; NIVEL AVANZADO — Síntesis y pensamiento crítico</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> El historiador Jorge Basadre caracterizó el problema central del Per&uacute; del siglo XX como la contradicci&oacute;n entre el "Pa&iacute;s legal" y el "Pa&iacute;s real". ¿Qué gobiernos del siglo XX peruano ilustran mejor esta tensi&oacute;n entre instituciones formales y realidades sociales profundamente distintas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Solo el gobierno de Leguía ilustra esta tensión, porque fue el único que aplicó el fraude electoral de manera sistemática y documentada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La República Aristocrática (1895-1919) y el Ochenio de Odría (1948-1956) son los ejemplos paradigmáticos: constituciones formalmente democráticas conviviendo con exclusión estructural de las mayorías indígenas y campesinas del sistema político</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) El gobierno de Velasco (1968-1975) es el único que elimina la tensión entre "País legal" y "País real" al reformar estructuralmente la sociedad peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) La tensión "País legal/País real" de Basadre se refiere exclusivamente a la diferencia entre la Costa y la Sierra; no tiene relevancia para el análisis de los gobiernos republicanos del siglo XX</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Jorge Basadre</B> acuñó la distinción entre el <B>"País legal"</B> (el Estado, sus constituciones, leyes e instituciones formales) y el <B>"País real"</B> (la realidad social concreta: el campesinado andino excluido, la pobreza masiva, el analfabetismo, el gamonalismo, la violencia estructural). Esta tensión atraviesa toda la historia republicana peruana pero es especialmente visible en: (1) <B>República Aristocrática (1895-1919)</B>: constituciones formalmente liberales con elecciones fraudulentas y exclusión total de indígenas y campesinos del sistema político; (2) <B>Ochenio de Odría</B>: dictadura que paradójicamente amplió el voto (mujeres, 1955) mientras reprimía sindicatos y partidos políticos; el "País legal" odriísta favorecía a las oligarquías exportadoras mientras el "País real" experimentaba la primera gran migración campo-ciudad. La c) es discutible: Velasco reformó estructuras pero no eliminó la tensión (las cooperativas agrarias fracasaron y el campesinado siguió excluido de muchas decisiones).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Analiza la siguiente afirmaci&oacute;n: "El APRA fue la fuerza pol&iacute;tica m&aacute;s importante del Per&uacute; del siglo XX, pero tard&oacute; 61 años desde su fundaci&oacute;n en llegar al poder". ¿Cu&aacute;l es la explicaci&oacute;n hist&oacute;rica m&aacute;s completa de esta paradoja?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) El APRA nunca tuvo apoyo electoral mayoritario; siempre perdió elecciones limpias; su fracaso para llegar al poder refleja su incapacidad para convencer a los votantes peruanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La combinación de: (1) el odio institucional del ejército desde 1932 (Trujillo); (2) el miedo de las élites económicas a las reformas apristas; (3) los errores tácticos del propio APRA (violencia, alianzas contradictorias); y (4) el sistema electoral fraudulento que bloqueó sus victorias (1936, 1962) explica el "partido vedado" como fenómeno político sin paralelo en América Latina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) El APRA nunca llegó al poder porque Haya de la Torre prefirió mantenerse en la oposición; rechazó conscientemente varias ofertas presidenciales para mantener la pureza ideológica del partido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La OEA y los EE.UU. bloquearon sistemáticamente al APRA porque era un partido comunista alineado con la Unión Soviética durante la Guerra Fría</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El APRA como "partido vedado" es uno de los fenómenos políticos más analizados de América Latina. La explicación es multicausal: (1) <B>El veto militar desde 1932</B>: la masacre de Trujillo (1932) generó un odio institucional en el ejército que se transmitió como doctrina: el APRA nunca debía gobernar. En 1936, cuando el APRA claramente ganó las elecciones, el gobierno de Benavides anuló los resultados. En 1962, cuando Haya obtuvo el primer lugar (sin alcanzar el tercio constitucional), un golpe militar impidió que el Congreso resolviera la elección a su favor. (2) <B>El miedo oligárquico</B>: las élites terratenientes y exportadoras temían las reformas agrarias y laborales que el APRA prometía; financiaron y apoyaron las intervenciones militares. (3) <B>Los errores del APRA</B>: la violencia de 1932, los intentos de golpes (Callao 1948), la política de alianzas con sus enemigos (la "convivencia" con Prado, el apoyo a Odría en 1962, el indulto a Fujimori en 2000) erosionaron su credibilidad ideológica. (4) <B>El anticomunismo</B>: aunque el APRA no era comunista (de hecho fue anticomunista después de 1936), fue etiquetado como tal. Haya llegó al poder simbólico (presidir la Constituyente de 1978) pero murió antes de ver la Constitución promulgada. Alan García (aprista) llegó al gobierno en 1985, 61 años después de la fundación del APRA.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Compara los proyectos pol&iacute;ticos de Jos&eacute; Carlos Mari&aacute;tegui y V&iacute;ctor Ra&uacute;l Haya de la Torre. ¿En qu&eacute; coincidieron y en qu&eacute; diferieron fundamentalmente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Coincidieron en todo: fundaron juntos el APRA y el Partido Socialista como organizaciones hermanas con el mismo programa político e ideológico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Coincidieron en el antiimperialismo y la centralidad de la cuestión indígena; difirieron en que Mariátegui propugnaba el marxismo y la revolución proletaria, mientras Haya planteaba un "APRA" interclasista latinoamericano que incluía a las clases medias y burguesía nacional antiimperialista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Mariátegui era conservador y católico; Haya era marxista y ateo; ambos rechazaron el movimiento obrero como actor político relevante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Sus diferencias fueron solo personales y de ego; ideológicamente eran indistinguibles, ambos marxistas ortodoxos que seguían los lineamientos de la III Internacional de Moscú</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Mariátegui y Haya comenzaron como amigos y compañeros del exilio de Leguía, pero sus diferencias ideológicas los llevaron a una ruptura definitiva (1928). <B>Coincidencias</B>: (1) ambos lucharon contra el imperialismo norteamericano y el capitalismo dependiente; (2) ambos reconocieron la centralidad del <B>problema indígena</B> en el Perú (aunque lo abordaron diferente); (3) ambos fueron perseguidos por Leguía. <B>Diferencias fundamentales</B>: <B>Mariátegui</B>: marxista convicto aunque heterodoxo (no seguía mecánicamente a Moscú); creía que el proletariado industrial y el campesinado indígena eran los sujetos revolucionarios; el ayllu como base del socialismo peruano; fundó el <B>Partido Socialista</B> (1928) y la <B>CGTP</B>. <B>Haya de la Torre</B>: propugnó un APRA <B>interclasista</B> (obreros + campesinos + clases medias + burguesía nacional antiimperialista); rechazó la lucha de clases marxista como motor principal; creía que en América Latina el "imperialismo" era la primera fase del capitalismo (invertía el esquema leninista); fue anticomunista explícito desde los años 30. La <B>III Internacional</B> (Moscú) apoyó a Mariátegui y atacó al APRA como "pequeño burgués"; Mariátegui murió en 1930 antes de la ruptura definitiva con Moscú.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El velasquismo (1968-1975) fue calificado por distintos historiadores como "revoluci&oacute;n desde arriba", "bonapartismo militar" o "populismo nacionalista". ¿Cu&aacute;les de sus rasgos hacen v&aacute;lida la categor&iacute;a de "revoluci&oacute;n desde arriba"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Porque el gobierno de Velasco fue elegido democráticamente mediante el voto popular masivo, lo que lo convierte en una "revolución" desde las urnas hacia arriba en la escala social</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Porque realizó transformaciones estructurales profundas (reforma agraria, nacionalizaciones) sin movilización popular autónoma previa sino mediante decreto estatal; el Estado fue el actor de la transformación, no un movimiento social desde abajo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Porque Velasco fue un agente de la revolución comunista internacional coordinada desde Moscú a través del Partido Comunista Peruano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Porque Velasco aplicó exactamente el mismo modelo que la Revolución Cubana de Fidel Castro, con un partido único y colectivización agraria forzada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La categoría "revolución desde arriba" (acuñada por el historiador Henry Pease García y debatida por Carlos Franco, Julio Cotler y otros) se aplica al velasquismo porque: (1) las transformaciones estructurales (reforma agraria, expropiación de la IPC, nacionalizaciones) fueron <B>decretadas por el Estado militar</B>, no conquistadas mediante movilización popular autónoma o partido de masas; (2) el campesinado y los obreros fueron <B>objetos</B> de la reforma, no sujetos activos que la presionaron desde abajo (a diferencia de la Revolución Boliviana de 1952 o la Cubana de 1959); (3) el SINAMOS intentó crear participación popular <B>controlada desde arriba</B> y fracasó porque los sectores populares resistieron la tutela estatal; (4) cuando Velasco fue derrocado en 1975, no hubo movilización popular significativa para defenderlo: el "sujeto popular" del velasquismo era más una construcción discursiva que una realidad organizativa. Esto es diferente del "bonapartismo" (dominación personal carismática por encima de clases en equilibrio) y del populismo clásico (movilización de masas liderada por un caudillo carismático); el velasquismo fue las tres cosas simultáneamente en proporciones distintas según el momento.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>&#127775; NIVEL EXPERTO — Preguntas de alta dificultad para UNI / UNMSM</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> La Comisi&oacute;n de la Verdad y Reconciliaci&oacute;n (CVR, 2003) concluy&oacute; que el <B>54% de las v&iacute;ctimas</B> del conflicto armado (1980-2000) fueron causadas por <B>Sendero Luminoso</B> y el <B>37%</B> por las fuerzas del Estado. ¿Qu&eacute; implicaciones pol&iacute;ticas y historiogr&aacute;ficas tiene esta conclusi&oacute;n, y por qu&eacute; fue pol&eacute;mica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La conclusión es irrelevante porque la CVR fue un organismo sin credibilidad metodológica; sus cifras son inventadas y ningún historiador serio las usa como referencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La conclusión implicó que ni la narrativa de la "guerra sucia" estatal (que ignoraba la violencia de Sendero) ni la narrativa fujimorista ("el ejército salvó al Perú sin cometer crímenes") eran completas; estableció la responsabilidad simultánea de Sendero y del Estado, cuestionando el discurso de "excesos necesarios" del fujimorismo y de sectores que relativizaban la violencia de Sendero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La conclusión validó completamente la política antisubversiva de Fujimori y absolvió al Estado peruano de cualquier responsabilidad en violaciones de derechos humanos durante el conflicto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La CVR concluyó que Sendero Luminoso fue creado y financiado por Cuba y la URSS, lo que explicaba el 54% de las víctimas como resultado de la Guerra Fría en el Perú</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Informe Final de la <B>CVR</B> (presidida por el filósofo <B>Salomón Lerner Febres</B>, entregado en agosto de 2003) fue polémico precisamente porque desafiaba <B>todas</B> las narrativas políticas dominantes simultáneamente: (1) <B>Desafiaba la narrativa fujimorista</B>: el fujimorismo presentaba a las FFAA como salvadoras del Perú sin cuestionamiento sobre sus métodos. La CVR documentó masacres como <B>Barrios Altos</B> (1991), <B>La Cantuta</B> (1992) y decenas de otras operaciones del <B>Grupo Colina</B> (escuadrón de la muerte del SIN) como crímenes de lesa humanidad. El 37% de responsabilidad estatal contradecía el "exceso necesario" como explicación. (2) <B>Desafiaba las lecturas que relativizaban a Sendero</B>: el 54% de víctimas atribuido a Sendero Luminoso (que aplicaba una violencia clasista contra los propios campesinos que decía representar: "ajusticiamientos" de alcaldes, gobernadores y líderes comunales) demolía cualquier romantización de Sendero como "guerrilla popular". (3) <B>Reveló la geografía social de la violencia</B>: el 75% de las víctimas hablaban quechua como lengua materna; Ayacucho concentró el mayor número. La violencia fue una guerra contra los peruanos más pobres y excluidos. (4) <B>La polémica política</B>: el APRA, el fujimorismo y sectores militares cuestionaron las cifras y la metodología de la CVR. El número de 69,000 víctimas fue disputado (estimación estadística, no conteo exacto). Algunos cuestionaron la proporción del 54% como subestimación de la responsabilidad estatal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Desde la ciencia pol&iacute;tica, ¿c&oacute;mo puede explicarse la notable continuidad de las pol&iacute;ticas econ&oacute;micas neoliberales en el Per&uacute; desde 1990 hasta hoy, a pesar de que la mayor&iacute;a de los presidentes elegidos (Humala en 2011, Ollanta Humala, Castillo en 2021) campañaron contra ese modelo econ&oacute;mico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Los presidentes que prometían cambios económicos simplemente mintieron durante la campaña; no existe ninguna restricción estructural que explique la continuidad de las políticas: fue solo deshonestidad individual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La continuidad neoliberal se explica por la combinación de: (1) el peso constitucional de la Carta de 1993 (que constitucionaliza la economía de mercado); (2) la presión de organismos internacionales (FMI, BM, TLCs firmados); (3) la debilidad institucional del Estado para implementar reformas; (4) la resistencia de élites económicas con capacidad de fuga de capitales; y (5) la memoria colectiva del fracaso heterodoxo de García en los 80</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La continuidad se debe a que el modelo neoliberal es universalmente aceptado por todos los partidos políticos peruanos, incluyendo los de izquierda; no existe ningún partido con un programa económico alternativo real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) EE.UU. interviene directamente en las decisiones económicas de cada gobierno peruano, impidiendo cualquier desviación del modelo neoliberal mediante amenazas militares directas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La paradoja de la <B>"trampa neoliberal"</B> peruana &mdash;continuidad de políticas a pesar de la alternancia electoral de candidatos que prometían cambiarlas&mdash; es un problema central de la ciencia política comparada latinoamericana. Las explicaciones estructurales incluyen: (1) <B>Constitución de 1993</B>: establece la "economía social de mercado" y protecciones a la inversión extranjera que elevan el costo político-legal de las reformas; modificarla requiere mayoría parlamentaria que los reformistas no han tenido. (2) <B>TLCs firmados</B>: los Tratados de Libre Comercio (con EE.UU. desde 2009, UE, Chile, etc.) crean marcos legales internacionales que limitan el margen de política industrial, agraria y laboral. (3) <B>Dependencia fiscal de la minería e hidrocarburos</B>: el Estado peruano recauda el 30-40% de sus ingresos de la minería transnacional; un cambio radical implicaría un colapso fiscal inmediato. (4) <B>Memoria colectiva del fracaso de García</B>: la hiperinflación del 7,649% de 1990 creó un "trauma colectivo" que hace políticamente costosa cualquier política económica heterodoxa. (5) <B>Capacidad de presión empresarial</B>: las élites económicas tienen instrumentos (fuga de capitales, paralización de inversiones, control mediático) para castigar gobiernos que amenazan sus intereses. El caso de Humala (2011-2016) y Castillo (2021-2022) ilustran el "giro al centro" como respuesta a estas presiones.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El Per&uacute; entre 2016 y 2023 tuvo <B>seis presidentes</B> diferentes. Desde la teor&iacute;a de los sistemas pol&iacute;ticos, ¿cu&aacute;les son las causas estructurales (no solo coyunturales) de esta inestabilidad pol&iacute;tica cr&oacute;nica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La inestabilidad se debe exclusivamente a la corrupción individual de los presidentes; si el Perú eligiera presidentes honestos, el sistema político sería perfectamente estable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Las causas estructurales incluyen: (1) el sistema presidencialista con Congreso unicameral que favorece la confrontación ejecutivo-legislativo; (2) la fragmentación del sistema de partidos (docenas de organizaciones sin base institucional sólida); (3) la "cuestión de confianza" y la vacancia presidencial como armas de lucha política; (4) la ausencia de partidos institucionalizados con base territorial y programática estable; y (5) el déficit de legitimidad del Estado en las regiones andinas y amazónicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La inestabilidad es solo superficial: el Estado peruano funciona perfectamente a nivel técnico y burocrático; los cambios de presidente no afectan la gobernabilidad real del país</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La inestabilidad se debe a la intervención permanente de potencias extranjeras (Venezuela, Cuba, China) que desestabilizan al Perú para imponer un modelo bolivariano en la región</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La crisis de gobernabilidad peruana es un problema estructural estudiado por politólogos como <B>Steven Levitsky</B> y <B>Martín Tanaka</B>. Sus causas son sistémicas: (1) <B>Presidencialismo adversarial</B>: la Constitución de 1993 creó un diseño institucional que favorece el bloqueo ejecutivo-legislativo. El Congreso tiene poderes de vacancia presidencial (artículo 117) que ha sido usado como arma política más que como mecanismo excepcional; el ejecutivo puede disolver el Congreso (artículo 134). Esta "guerra de poderes" se volvió crónica desde 2016. (2) <B>Partidos políticos como "franquicias electorales"</B>: el sistema de partidos peruano es uno de los más débiles de América Latina (índice de institucionalización de Mainwaring y Scully). Los partidos no tienen militancia estable, programas coherentes ni organización territorial; son vehículos electorales personales que desaparecen entre elecciones. (3) <B>Fragmentación parlamentaria</B>: ningún partido ha obtenido mayoría parlamentaria en los últimos 20 años; los gobiernos siempre son en minoría, forzando coaliciones inestables. (4) <B>Brecha Estado-sociedad en las regiones</B>: el Estado peruano históricamente ha sido "fuerte en Lima, débil en el resto": las protestas del sur andino (2022-2023) tras la vacancia de Castillo revelaron la profundidad de este divorcio. (5) <B>El escándalo Odebrecht</B> (2016-presente) contaminó a todos los expresidentes vivos y destruyó la legitimidad del sistema político en su conjunto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Eval&uacute;a la siguiente afirmaci&oacute;n del historiador <B>Nelson Manrique</B>: "Sendero Luminoso fue la consecuencia m&aacute;s radical del fracaso del proyecto de inclusi&oacute;n social de la generaci&oacute;n universitaria de los a&ntilde;os 60 y 70 que encontr&oacute; en la universidad andina una movilidad social prometida que el sistema cerr&oacute; en el mercado laboral."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La afirmación es falsa: Sendero Luminoso fue exclusivamente el producto de la locura de Abimael Guzmán y no tiene ninguna explicación social o histórica más profunda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La afirmación captura una dimensión social real: la expansión universitaria en las regiones andinas (UNSCH en Ayacucho) creó una generación de maestros rurales con alta escolaridad pero sin oportunidades en el mercado laboral; Guzmán captó ese resentimiento; sin embargo, la explicación social no justifica ni explica la violencia indiscriminada de Sendero contra los propios campesinos que supuestamente representaba</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La afirmación demuestra que Sendero Luminoso fue una respuesta justificada y necesaria a la exclusión social peruana; sus métodos violentos eran la única respuesta posible a la injusticia estructural</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La afirmación es válida solo para la generación de líderes de Sendero pero no explica nada sobre su base social o su capacidad para reclutar militantes; la organización funcionó solo por terror y coerción sin ningún apoyo social genuino</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La tesis de <B>Nelson Manrique</B> (historiador y sociólogo peruano) sobre las raíces sociales de Sendero es una de las interpretaciones más sofisticadas del fenómeno. Sus elementos válidos: (1) La <B>Universidad Nacional San Cristóbal de Huamanga</B> (UNSCH) en Ayacucho fue el epicentro de Sendero: Guzmán era profesor de filosofía allí desde 1962. La expansión universitaria en los 60-70 llevó a miles de jóvenes andinos a las universidades (la matrícula universitaria peruana creció 700% entre 1960 y 1980). (2) Estos jóvenes universitarios de primera generación, muchos hijos de campesinos, enfrentaron una "trampa social": la educación universitaria les prometía ascenso social, pero el mercado laboral (dominado por redes familiares limeñas y racismo) no les ofrecía las oportunidades esperadas. (3) El magisterio rural fue el principal canal de reclutamiento de Sendero: maestros mal pagados, con títulos universitarios pero ejerciendo en condiciones precarias, fueron el "cuadro" ideal para la ideología senderista. <B>Los límites de la explicación</B>: (1) La explicación social no puede convertirse en justificación: Sendero asesinó a los propios campesinos y líderes comunitarios que supuestamente representaba (el 54% de víctimas de la CVR); eso requiere una explicación ideológica autónoma (la brutalidad del maoísmo de "guerra popular prolongada" de Guzmán). (2) La exclusión social peruana era generalizada; la mayoría de los excluidos no se convirtió en senderistas: la explicación social es condición necesaria pero no suficiente.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

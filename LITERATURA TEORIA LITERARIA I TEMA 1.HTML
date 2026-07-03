@@ -1,0 +1,473 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Teoría Literaria I - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 1</DIV>
+<H1>Teor&iacute;a Literaria I</H1>
+<DIV CLASS="sub">Definici&oacute;n de Literatura &middot; Rasgos Esenciales &middot; Funciones Literarias &middot; El Lenguaje Literario</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. ¿Qu&eacute; es la Literatura?</H3>
+La <B>literatura</B> es el arte que utiliza el <B>lenguaje verbal</B> (oral o escrito) como instrumento de expresi&oacute;n estética. No todo texto escrito es literatura: una receta de cocina, una ley o un aviso comercial usan el lenguaje, pero no son literatura. La diferencia fundamental está en la <B>intenci&oacute;n est&eacute;tica</B> y en el <B>uso creativo del lenguaje</B> que transforma la realidad en una obra de arte.
+
+La palabra "literatura" proviene del lat&iacute;n <B><I>littera</I></B> (letra), y en sus or&iacute;genes designaba todo lo relacionado con las letras y la escritura. Con el tiempo adquiri&oacute; un sentido m&aacute;s restringido y preciso: el conjunto de obras que poseen valor est&eacute;tico reconocido.
+
+<DIV CLASS="alerta"><B>Para el examen:</B> Los exámenes de admisión preguntan frecuentemente la diferencia entre lenguaje <B>denotativo</B> (literal, referencial, propio de la ciencia) y lenguaje <B>connotativo</B> (figurado, sugestivo, propio de la literatura). Recuerda también: la literatura usa el lenguaje en <B>función poética</B> (Jakobson), donde el mensaje se centra en sí mismo, no solo en transmitir información. No confundir <B>literatura</B> (arte verbal) con <B>lingüística</B> (ciencia del lenguaje) ni con <B>filología</B> (estudio histórico de textos).</DIV>
+
+<H4>Definiciones cl&aacute;sicas de literatura:</H4>
+<UL>
+<LI><B>Arist&oacute;teles</B> (<I>Poética</I>, siglo IV a.C.): la literatura es <B>m&iacute;mesis</B> (imitaci&oacute;n o representaci&oacute;n) de la realidad mediante el lenguaje. Pero no una copia exacta: una imitaci&oacute;n que revela lo universal a través de lo particular.</LI>
+<LI><B>Horacio</B> (<I>Arte Poética</I>): la literatura debe <B>"deleitar y enseñar"</B> (<I>aut prodesse aut delectare</I>). Esta dualidad función estética + función didáctica ha influido en toda la crítica occidental.</LI>
+<LI><B>Roman Jakobson</B> (siglo XX): la literatura es el uso del lenguaje en que predomina la <B>funci&oacute;n po&eacute;tica</B>, es decir, la atención al mensaje en sí mismo, a su forma, sonoridad y estructura.</LI>
+<LI><B>Jean-Paul Sartre</B> (<I>¿Qué es la literatura?</I>, 1948): la literatura es un acto de <B>libertad</B> y <B>compromiso</B> (<I>engagement</I>); el escritor toma partido ante la realidad social.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Dato clave para preguntas de identificaci&oacute;n:</B> La literatura se distingue de otros textos por su <B>literariedad</B> (<I>literaturnost</I>), concepto acuñado por los <B>formalistas rusos</B> (Shklosvky, Jakobson, Tynianov) en los años 20. La "literariedad" es aquella cualidad que hace que un texto sea literario: el uso especial del lenguaje que lo separa del uso cotidiano. Este concepto fue central en el desarrollo de la crítica literaria del siglo XX.</DIV>
+
+<DIV CLASS="cultura-titulo">RASGOS ESENCIALES DE LA LITERATURA<SPAN>Las características que distinguen el texto literario de cualquier otro tipo de texto</SPAN></DIV>
+
+<H3>2. Rasgos esenciales de la Literatura</H3>
+Los rasgos o características que definen a la literatura como arte verbal son:
+
+<H4>1. Ficci&oacute;n (o ficcionalidad):</H4>
+La literatura crea un <B>mundo imaginario</B> que no coincide necesariamente con la realidad histórica, aunque puede inspirarse en ella. Incluso cuando la literatura trata hechos reales (la novela histórica, la autobiografía, la crónica literaria), los transforma mediante la imaginación creadora. El lector acepta implícitamente este "pacto ficcional": sabe que lo que lee no es la realidad pero lo asume como verdadero dentro del mundo de la obra.
+<DIV CLASS="ej"><B>Ejemplo:</B> <I>Cien años de soledad</I> de García Márquez narra hechos imposibles (una mujer que sube al cielo, lluvias de mariposas amarillas) que el lector acepta como verdaderos dentro del mundo de Macondo. Eso es la ficción literaria.</DIV>
+
+<H4>2. Uso est&eacute;tico del lenguaje:</H4>
+En literatura, el <B>c&oacute;mo se dice</B> es tan importante como <B>qu&eacute; se dice</B>. El escritor elige cuidadosamente cada palabra, cada imagen, cada ritmo. El lenguaje literario busca la <B>belleza formal</B>, la <B>originalidad expresiva</B> y el impacto emocional en el lector. Utiliza recursos como la metáfora, la comparación, la hipérbole, la aliteración, el ritmo y la rima.
+<DIV CLASS="ej"><B>Ejemplo:</B> "Nuestras vidas son los r&iacute;os / que van a dar en la mar / que es el morir" (Jorge Manrique). El mismo contenido ("todos morimos") dicho de manera literaria se convierte en arte eterno.</DIV>
+
+<H4>3. Connotaci&oacute;n (lenguaje figurado o plurisignificativo):</H4>
+A diferencia del lenguaje cient&iacute;fico (que busca la <B>denotaci&oacute;n</B>: un significado único, preciso e inequívoco), el lenguaje literario es <B>connotativo</B>: una palabra o imagen puede tener múltiples significados, sugerencias y resonancias emocionales simultáneas. Esta plurisignificación es una riqueza, no un defecto.
+<DIV CLASS="ej"><B>Ejemplo:</B> En el verso "El amor es un pájaro en llamas", la palabra "pájaro" no denota al ave biológica sino que connota libertad, fragilidad, vuelo, y "en llamas" connota pasión destructiva. El poema significa varias cosas a la vez.</DIV>
+
+<H4>4. Universalidad:</H4>
+Las grandes obras literarias trascienden su época, su cultura y su idioma para hablar de temas eternos y universales: el amor, la muerte, el bien y el mal, la identidad, la libertad, la justicia. Una obra literaria es universal cuando sus temas y emociones resuenan en lectores de culturas y épocas distintas.
+<DIV CLASS="ej"><B>Ejemplo:</B> <I>Hamlet</I> de Shakespeare (1601) sigue siendo vigente porque trata la duda existencial, la traici&oacute;n familiar y la busqueda de la verdad: temas de todos los tiempos.</DIV>
+
+<H4>5. Originalidad:</H4>
+La literatura genuina aporta una <B>visi&oacute;n propia y novedosa</B> de la realidad. El escritor no repite f&oacute;rmulas sino que crea un estilo personal reconocible. La originalidad no significa negar la tradici&oacute;n: significa dialogar con ella y transformarla.
+
+<H4>6. Plurivalencia o ambig&uuml;edad:</H4>
+Los textos literarios admiten <B>diversas interpretaciones</B> válidas y complementarias. No hay una sola "lectura correcta" de un poema o una novela: la riqueza de la obra está en su capacidad de generar múltiples sentidos según el contexto del lector.
+
+<H4>7. Permanencia:</H4>
+Las obras literarias tienen vocaci&oacute;n de <B>perdurar en el tiempo</B>. A diferencia de un artículo periodístico (de consumo inmediato), la obra literaria busca ser leída, releída y recordada a través de los siglos.
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">Ficci&oacute;n</DIV><DIV CLASS="dk-label">Mundo imaginario creado por el autor</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Est&eacute;tica</DIV><DIV CLASS="dk-label">Belleza y cuidado en el uso del lenguaje</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Connotaci&oacute;n</DIV><DIV CLASS="dk-label">Plurisignificación y lenguaje figurado</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Universalidad</DIV><DIV CLASS="dk-label">Temas que trascienden épocas y culturas</DIV></DIV>
+</DIV>
+
+<DIV CLASS="cultura-titulo">EL LENGUAJE LITERARIO<SPAN>Denotación vs. connotación · Figuras literarias · Función poética de Jakobson</SPAN></DIV>
+
+<H3>3. El Lenguaje Literario</H3>
+El <B>lenguaje literario</B> es el instrumento fundamental de la literatura. Se diferencia del lenguaje cotidiano y del científico por su intención, sus recursos y sus efectos.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo de lenguaje</TH><TH>Caracter&iacute;stica</TH><TH>Funci&oacute;n principal</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Cient&iacute;fico / T&eacute;cnico</B></TD><TD>Denotativo, preciso, unívoco, objetivo</TD><TD>Informar con exactitud</TD><TD>"El agua hierve a 100°C a nivel del mar"</TD></TR>
+<TR><TD><B>Cotidiano / Coloquial</B></TD><TD>Mezcla de denotación y connotación; informal</TD><TD>Comunicarse eficientemente</TD><TD>"Hace un calor horrible hoy"</TD></TR>
+<TR><TD><B>Literario</B></TD><TD>Connotativo, figurado, plurisignificativo, estético</TD><TD>Crear belleza y emoción</TD><TD>"El sol es una hoguera que devora el día"</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Las funciones del lenguaje seg&uacute;n Roman Jakobson:</H4>
+El ling&uuml;ista <B>Roman Jakobson</B> identific&oacute; seis funciones del lenguaje, cada una asociada a un elemento del proceso comunicativo. Para la literatura, la m&aacute;s importante es la <B>funci&oacute;n po&eacute;tica</B>:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Funci&oacute;n</TH><TH>Elemento del que depende</TH><TH>Descripci&oacute;n</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Referencial</B></TD><TD>Contexto / mensaje</TD><TD>Informa sobre la realidad objetiva</TD><TD>"Lima tiene 10 millones de habitantes"</TD></TR>
+<TR><TD><B>Emotiva / Expresiva</B></TD><TD>Emisor</TD><TD>Expresa sentimientos del hablante</TD><TD>"¡Qué dolor tan grande siento!"</TD></TR>
+<TR><TD><B>Apelativa / Conativa</B></TD><TD>Receptor</TD><TD>Busca influir en el oyente</TD><TD>"¡Estudia ahora mismo!"</TD></TR>
+<TR><TD><B>F&aacute;tica</B></TD><TD>Canal</TD><TD>Verifica que el canal funciona</TD><TD>"¿Aló? ¿Me escuchas?"</TD></TR>
+<TR><TD><B>Metalingü&iacute;stica</B></TD><TD>C&oacute;digo</TD><TD>El lenguaje habla sobre el propio lenguaje</TD><TD>"'Can' es un sustantivo que significa perro"</TD></TR>
+<TR><TD><B>Po&eacute;tica</B></TD><TD>Mensaje</TD><TD>El mensaje se centra en s&iacute; mismo: en su forma, estructura y belleza</TD><TD>"Tres tristes tigres tragaban trigo"</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Clave para el examen:</B> La <B>funci&oacute;n po&eacute;tica</B> de Jakobson NO es exclusiva de la poes&iacute;a: está presente en cualquier texto donde el mensaje llama la atenci&oacute;n sobre su propia forma (publicidad creativa, canciones, refranes, eslóganes). Pero en la literatura es la función dominante. Tambi&eacute;n recuerda: en un mismo texto pueden coexistir varias funciones simult&aacute;neamente; lo que cambia es cu&aacute;l <B>predomina</B>.</DIV>
+
+<DIV CLASS="cultura-titulo">FUNCIONES DE LA LITERATURA<SPAN>Para qué sirve la literatura: estética, social, didáctica, catártica y otras</SPAN></DIV>
+
+<H3>4. Funciones de la Literatura</H3>
+¿Para qu&eacute; sirve la literatura? Esta pregunta, que parece simple, ha sido debatida por fil&oacute;sofos y cr&iacute;ticos durante siglos. Las principales funciones son:
+
+<H4>1. Funci&oacute;n Est&eacute;tica (o Po&eacute;tica):</H4>
+Es la funci&oacute;n primordial y definitoria: la literatura busca crear <B>belleza</B> mediante el lenguaje y producir en el lector un <B>placer estético</B>. El goce de leer una buena novela o un gran poema es en sí mismo una experiencia valiosa, independientemente de cualquier utilidad práctica.
+
+<H4>2. Funci&oacute;n Social:</H4>
+La literatura refleja, critica y transforma la sociedad. Los grandes autores son a menudo <B>cronistas de su época</B>: a través de sus obras podemos conocer la realidad social, política y cultural de un tiempo y un lugar. Al mismo tiempo, la literatura puede ser un instrumento de <B>denuncia social</B> y de <B>cambio cultural</B>.
+<DIV CLASS="ej"><B>Ejemplo:</B> <I>Oliver Twist</I> de Dickens denunció la miseria de los orfanatos y la explotación infantil en la Inglaterra victoriana; <I>El tungsteno</I> de César Vallejo denunció la explotaci&oacute;n minera en el Per&uacute;.</DIV>
+
+<H4>3. Funci&oacute;n Did&aacute;ctica o Moral:</H4>
+Desde la antigua tradici&oacute;n de las f&aacute;bulas y los refranes hasta la novela de formaci&oacute;n (<I>Bildungsroman</I>), la literatura ha cumplido una funci&oacute;n de <B>enseñanza de valores</B> y de transmisi&oacute;n de sabidur&iacute;a. No se trata de un mensaje ideológico directo: la literatura enseña mostrando experiencias humanas complejas, no predicando.
+
+<H4>4. Funci&oacute;n Cat&aacute;rtica:</H4>
+Concepto formulado por <B>Arist&oacute;teles</B> en su <I>Poética</I>: la literatura (especialmente la tragedia) produce en el espectador o lector una <B>purificaci&oacute;n emocional</B> (<I>c&aacute;tarsis</I>) mediante la identificación con los personajes y sus sufrimientos. Al vivir vicariamente las emociones de los personajes, el lector libera sus propias tensiones emocionales reprimidas.
+<DIV CLASS="ej"><B>Ejemplo:</B> Al leer una novela triste y llorar, o al identificarnos con el dolor de un personaje, experimentamos c&aacute;tarsis: una descarga emocional que nos deja m&aacute;s serenos.</DIV>
+
+<H4>5. Funci&oacute;n Cognoscitiva (o de conocimiento):</H4>
+La literatura es una forma de <B>conocimiento</B> que complementa al conocimiento cient&iacute;fico. A través de la ficción, podemos conocer la psicología humana en profundidad, explorar dilemas morales, comprender culturas ajenas y ampliar nuestra visión del mundo. Como decía el escritor peruano <B>Mario Vargas Llosa</B>: "la literatura nos hace más libres porque nos hace ver el mundo desde otras perspectivas".
+
+<H4>6. Funci&oacute;n L&uacute;dica (o de entretenimiento):</H4>
+La literatura también es un <B>juego creativo</B> y una fuente de placer y entretenimiento. Leer por el puro placer de la historia, de los personajes y de las aventuras es una función legítima y valiosa de la literatura. La literatura de género (terror, ciencia ficción, policial) suele privilegiar esta función.
+
+<H4>7. Funci&oacute;n Cultural y de Identidad:</H4>
+La literatura es uno de los principales veh&iacute;culos de transmisi&oacute;n de la <B>cultura, los valores y la identidad</B> de un pueblo. La literatura peruana, por ejemplo, construye y expresa la identidad nacional: el <I>Inca Garcilaso</I>, <I>Mar&iacute;atugui</I>, <I>Vallejo</I>, <I>Arguedas</I> y <I>Vargas Llosa</I> son voces que definen qué significa ser peruano.
+
+<DIV CLASS="cultura-titulo">CLASIFICACI&Oacute;N DE LA LITERATURA (G&Eacute;NEROS LITERARIOS)<SPAN>La gran división: lírica, épica y dramática — y los géneros modernos</SPAN></DIV>
+
+<H3>5. Los G&eacute;neros Literarios</H3>
+La clasificaci&oacute;n m&aacute;s cl&aacute;sica de la literatura la divide en tres grandes <B>g&eacute;neros</B>, establecidos por Arist&oacute;teles en su <I>Poética</I> y consolidados por la tradici&oacute;n cr&iacute;tica:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>G&eacute;nero</TH><TH>Definici&oacute;n</TH><TH>Subg&eacute;neros principales</TH><TH>Ejemplo cl&aacute;sico</TH></TR>
+<TR><TD><B>L&iacute;rico (Poes&iacute;a)</B></TD><TD>Expresi&oacute;n subjetiva de sentimientos, emociones e ideas del poeta. Usa el verso como forma privilegiada.</TD><TD>Oda, Elegia, Soneto, Himno, Canción, Epigrama</TD><TD>Los <I>Sonetos de la muerte</I> de Gabriela Mistral</TD></TR>
+<TR><TD><B>&Eacute;pico / Narrativo</B></TD><TD>Narración objetiva (con narrador) de hechos reales o ficticios protagonizados por personajes.</TD><TD>Epopeya, Cuento, Novela, Fábula, Leyenda, Mito</TD><TD><I>Don Quijote</I> de Cervantes; <I>La Ilíada</I> de Homero</TD></TR>
+<TR><TD><B>Dram&aacute;tico (Teatro)</B></TD><TD>Representaci&oacute;n de conflictos humanos mediante el di&aacute;logo y la acci&oacute;n directa de personajes, destinada a la puesta en escena.</TD><TD>Tragedia, Comedia, Drama, Tragicomedia, Auto Sacramental</TD><TD><I>Edipo Rey</I> de S&oacute;focles; <I>Hamlet</I> de Shakespeare</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El g&eacute;nero did&aacute;ctico-ensay&iacute;stico:</H4>
+Muchos autores añaden un cuarto género que Arist&oacute;teles no consideró:
+<UL>
+<LI><B>G&eacute;nero did&aacute;ctico:</B> obras cuyo fin principal es enseñar o transmitir conocimiento con forma literaria. Incluye el ensayo, la fábula, el apólogo, la máxima y el tratado. <B>Ejemplo:</B> <I>7 Ensayos de Interpretaci&oacute;n de la Realidad Peruana</I> de Mariátegui.</LI>
+</UL>
+
+<DIV CLASS="alerta"><B>Truco para el examen:</B> Para distinguir los géneros rápidamente recuerda: el <B>lírico</B> habla de sentimientos (YO); el <B>épico/narrativo</B> cuenta historias (ÉL/NARRADOR); el <B>dramático</B> muestra conflictos en escena (DIÁLOGO DIRECTO). Los exámenes de admisión frecuentemente presentan fragmentos y piden identificar el género: busca si hay verso y sentimientos (lírico), narrador y hechos pasados (narrativo), o diálogos y acotaciones escénicas (dramático).</DIV>
+
+<DIV CLASS="cultura-titulo">EL CIRCUITO DE LA COMUNICACI&Oacute;N LITERARIA<SPAN>Autor real · Autor implícito · Narrador · Personaje · Lector: quién habla y quién escucha</SPAN></DIV>
+
+<H3>6. El Circuito de la Comunicaci&oacute;n Literaria</H3>
+La comunicaci&oacute;n literaria tiene una estructura propia y m&aacute;s compleja que la comunicaci&oacute;n cotidiana. Es fundamental distinguir los siguientes elementos:
+
+<UL>
+<LI><B>Autor real:</B> la persona de carne y hueso que escribi&oacute; la obra (Cervantes, Vallejo, Vargas Llosa). Tiene una biograf&iacute;a, una ideolog&iacute;a y un contexto histórico.</LI>
+<LI><B>Autor impl&iacute;cito:</B> la imagen del autor que se construye a partir de la obra misma: sus valores, su visión del mundo, su voz "implícita" en el texto. No coincide necesariamente con el autor real (un autor puede crear una voz narrativa muy distinta a la suya).</LI>
+<LI><B>Narrador:</B> la voz que cuenta la historia dentro del texto narrativo. Es una creaci&oacute;n literaria, no una persona real. Puede ser: narrador omnisciente (sabe todo), narrador testigo (observa desde afuera), narrador protagonista (cuenta su propia historia), etc.</LI>
+<LI><B>Personaje:</B> los seres (humanos, animales o fantásticos) que protagonizan la historia narrada o representada.</LI>
+<LI><B>Lector impl&iacute;cito:</B> el lector "ideal" que el texto presupone: el tipo de lector para quien está escrita la obra (con ciertos conocimientos, sensibilidad y expectativas).</LI>
+<LI><B>Lector real:</B> la persona concreta que lee el texto hoy.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Error frecuente en exámenes:</B> No confundir al <B>autor</B> con el <B>narrador</B>. Cervantes escribi&oacute; <I>El Quijote</I> (autor real), pero quien narra la historia es un narrador ficticio que dice basarse en los manuscritos de Cide Hamete Benengeli (otro narrador ficticio dentro de la novela). Vallejo escribi&oacute; <I>Los heraldos negros</I> (autor real), pero el "yo" que habla en los poemas es el <B>yo po&eacute;tico</B> o <B>hablante l&iacute;rico</B>, una voz creada, no necesariamente idéntica a Vallejo la persona.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BASICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> La literatura se define fundamentalmente como:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Todo texto escrito, incluyendo documentos legales, noticias periodísticas y manuales científicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) El arte que utiliza el lenguaje verbal con intención estética para crear mundos imaginarios y producir experiencias emocionales en el lector</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Exclusivamente la poesía rimada y los textos escritos en verso clásico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) El conjunto de documentos históricos que preservan la memoria de una civilización</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La literatura es el <B>arte verbal</B>: usa el lenguaje como materia prima estética, igual que la pintura usa el color o la música usa el sonido. Sus elementos definitorios son: (1) uso del <B>lenguaje verbal</B>; (2) <B>intenci&oacute;n est&eacute;tica</B> (buscar la belleza y la emoción); (3) creaci&oacute;n de un <B>mundo ficcional</B>. La opción a) es incorrecta porque no todo texto escrito es literatura (una factura no lo es). La c) es incorrecta porque la literatura incluye la prosa narrativa, el teatro y el ensayo, no solo la poesía en verso. La d) confunde literatura con historiografía o archivística.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> La diferencia fundamental entre el lenguaje <B>denotativo</B> y el lenguaje <B>connotativo</B> radica en que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) El denotativo es propio de la literatura y el connotativo es propio de la ciencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El denotativo transmite un significado único, preciso y objetivo; el connotativo evoca múltiples significados, emociones y asociaciones subjetivas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) El denotativo usa palabras inventadas; el connotativo usa solo palabras del diccionario</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) El denotativo es propio del lenguaje oral y el connotativo del lenguaje escrito</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Denotaci&oacute;n:</B> es el significado literal, primario, objetivo y estable de una palabra; el que aparece en el diccionario. Ejemplo: "rosa" denota una flor del género <I>Rosa</I>. <B>Connotaci&oacute;n:</B> es el conjunto de significados secundarios, subjetivos y afectivos que una palabra evoca según el contexto. Ejemplo: "rosa" connota amor, belleza, romanticismo, fragilidad. La ciencia busca la denotaci&oacute;n (precisión unívoca); la literatura exploita la connotación (riqueza plurisignificativa). Por eso el lenguaje literario es <B>connotativo</B> y el científico es <B>denotativo</B>: exactamente lo contrario de la opción a).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Seg&uacute;n la clasificaci&oacute;n cl&aacute;sica aristotélica de los g&eacute;neros literarios, ¿a qu&eacute; género pertenece un texto que narra, mediante un narrador, las aventuras de un héroe en tierras lejanas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Género lírico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Género épico o narrativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Género dramático</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Género didáctico-ensayístico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>género épico o narrativo</B> se define precisamente por la presencia de un <B>narrador</B> que cuenta hechos (reales o ficticios) protagonizados por personajes. La clave para identificarlo es: ¿hay alguien que CUENTA la historia? → Narrativo/épico. Los indicadores en el texto son: verbos en pasado narrados desde una tercera voz ("el héroe caminó", "entonces el guerrero vio"), descripción de lugares y personajes. El <B>lírico</B> expresa sentimientos del "yo poético". El <B>dramático</B> se presenta en diálogos directos sin narrador. El <B>didáctico</B> busca enseñar, no narrar aventuras.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Roman Jakobson identificó seis funciones del lenguaje. ¿Cuál es la que predomina en los textos literarios y en qué consiste?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) La función referencial: el lenguaje informa objetivamente sobre la realidad externa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) La función apelativa: el lenguaje busca persuadir e influir sobre el receptor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) La función poética: el lenguaje centra la atención en el mensaje mismo, en su forma, estructura y belleza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) La función metalingüística: el lenguaje habla sobre el propio lenguaje</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>funci&oacute;n po&eacute;tica</B> de Jakobson es aquella en que el <B>mensaje se orienta hacia s&iacute; mismo</B>: importa no solo qué se dice sino cómo se dice, la sonoridad, el ritmo, las imágenes, la estructura. En literatura, esta función es dominante: un poema no solo comunica una idea sino que lo hace de una manera específica que forma parte esencial del significado. La función referencial (informar) domina en textos científicos y periodísticos. La apelativa en la publicidad y los discursos persuasivos. La metalingüística en los diccionarios y gramáticas. La fática en los saludos ("¿hola, cómo estás?"). La emotiva en las expresiones de sentimientos directos ("¡qué dolor!"). Recuerda: Jakobson asoció la función poética al elemento "mensaje" del circuito comunicativo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> El concepto de <B>c&aacute;tarsis</B>, central en la teoría literaria cl&aacute;sica, fue formulado por:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Platón en <I>La República</I>, como argumento para expulsar a los poetas de la ciudad ideal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Aristóteles en su <I>Poética</I>, como la purificación emocional que produce la tragedia en el espectador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Horacio en su <I>Arte Poética</I>, como el efecto de deleite que produce toda buena literatura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Jean-Paul Sartre en <I>¿Qué es la literatura?</I>, como el compromiso político del escritor con su época</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Arist&oacute;teles</B>, en su <I>Poética</I> (siglo IV a.C.), definió la tragedia como aquella forma literaria que, mediante la imitación de una acción seria, produce en el espectador <B>piedad y terror</B>, generando una <B>c&aacute;tarsis</B> (purificación o purgación) de esas emociones. La cátarsis no es solo entretenimiento: es una experiencia de descarga emocional que deja al espectador más equilibrado. <B>Platón</B> (a), por el contrario, criticó la literatura porque excitaba las pasiones en lugar de purificarlas (por eso quería expulsar a los poetas de su ciudad ideal). <B>Horacio</B> (c) formuló el ideal de "<I>deleitar y enseñar</I>" (aut prodesse aut delectare), no el de catarsis. <B>Sartre</B> (d) habló del <I>engagement</I> (compromiso), no de catarsis.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Lee el siguiente fragmento y determina qué función del lenguaje (Jakobson) predomina: <I>"Verde que te quiero verde. / Verde viento. Verdes ramas. / El barco sobre la mar / y el caballo en la montaña."</I> (Federico García Lorca)</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Función referencial, porque describe un paisaje verde con elementos naturales concretos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Función apelativa, porque el verso "verde que te quiero verde" es un ruego al interlocutor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Función poética, porque el mensaje centra la atención en sí mismo: la repetición de "verde", el ritmo, la sonoridad y las imágenes irracionales son el corazón del poema</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Función emotiva, porque expresa los sentimientos personales de Lorca hacia el color verde</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El fragmento es el inicio del "Romance sonámbulo" de <B>Federico García Lorca</B>. Predomina la <B>funci&oacute;n po&eacute;tica</B> porque: (1) la repetición obsesiva de "verde" (anáfora y epímone) llama la atención sobre el sonido y el ritmo, no sobre la información; (2) las imágenes son irracionales (¿cómo es que el viento es verde? ¿y el caballo en la montaña qué tiene que ver con el barco?): el significado semántico convencional queda subordinado al efecto musical y evocador; (3) la estructura rítmica del romance (octosílabos con rima asonante en los pares) es fundamental para el efecto. No es función referencial (no informa objetivamente), ni apelativa (no persuade), ni emotiva (no expresa directamente los sentimientos del poeta).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Cuál de los siguientes textos NO es un ejemplo de texto literario?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) "La muerte de Artemio Cruz" (novela de Carlos Fuentes)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) "Cantar de Mío Cid" (epopeya castellana medieval)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) "Artículo 1° de la Constitución Política del Perú: La defensa de la persona humana y el respeto de su dignidad son el fin supremo de la sociedad y del Estado"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) "Fábulas" de Esopo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>artículo constitucional</B> es un texto jurídico-normativo: usa el lenguaje de manera denotativa, precisa y unívoca para establecer una norma legal de obligatorio cumplimiento. No tiene intención estética, no crea mundos ficticios, no usa figuras literarias. Es el paradigma del lenguaje <B>referencial y normativo</B>. Los otros tres sí son textos literarios: <B>La muerte de Artemio Cruz</B> (novela, género narrativo); <B>Cantar de Mío Cid</B> (epopeya, género épico, uno de los primeros textos de la literatura castellana); <B>Fábulas de Esopo</B> (género didáctico: narración breve con moraleja). Las fábulas son literatura aunque tengan propósito didáctico: el cómo se narran (animales que hablan, situaciones alegóricas) es uso estético del lenguaje.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> El concepto de <B>"literariedad"</B> (<I>literaturnost</I>), acuñado por los formalistas rusos, se refiere a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) La cantidad de figuras retóricas (metáforas, hipérboles) presentes en un texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) La cualidad específica que hace que un texto sea literario: el uso especial del lenguaje que lo distingue del uso cotidiano y automático</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El número de páginas o la extensión mínima que debe tener una obra para ser considerada literatura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La presencia obligatoria de un narrador y personajes reconocibles en cualquier texto literario</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>formalistas rusos</B> (Shklovsky, Jakobson, Tynianov, Eikhenbaum; años 1910-1930) revolucionaron la crítica literaria al proponer que la pregunta central de la teoría literaria no debía ser "¿qué dice la literatura?" sino "¿qué hace que un texto sea literario?". A esa propiedad la llamaron <B><I>literaturnost</I></B> (literariedad). Su respuesta: la literariedad consiste en el procedimiento de <B>extrañamiento</B> (<I>ostranenie</I>): el lenguaje literario "desautomatiza" nuestra percepción habitual del mundo, nos hace ver lo cotidiano como si fuera nuevo. El arte existe para que recuperemos la sensación de la vida; el procedimiento artístico es el del <B>extrañamiento de los objetos</B> y la forma dificulta. Este concepto fue fundamental para el desarrollo del <B>Estructuralismo</B> y la moderna teoría literaria.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> En el famoso verso de César Vallejo: <I>"Hay golpes en la vida, tan fuertes... ¡Yo no sé! / Golpes como del odio de Dios"</I>, ¿qué rasgo esencial de la literatura está especialmente presente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) La función didáctica: Vallejo enseña al lector cómo enfrentar el sufrimiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El uso estético y connotativo del lenguaje: "golpes como del odio de Dios" es una imagen que connota sufrimiento inexplicable e injusto que va más allá de cualquier definición literal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) La universalidad temática: el poema trata un tema universal pero sin ningún uso especial del lenguaje</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) La función referencial: Vallejo informa sobre los accidentes físicos que sufrió durante su vida</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El verso pertenece a "Los heraldos negros", poema que abre el primer libro de <B>César Vallejo</B> (1918). El rasgo literario más evidente es el <B>uso est&eacute;tico y connotativo del lenguaje</B>: "golpes en la vida" no son golpes físicos sino sufrimientos existenciales; "como del odio de Dios" es una imagen blasfema y desgarradora que connota el sufrimiento injustificado, el absurdo del dolor inocente. La exclamación "¡Yo no sé!" connota perplejidad e impotencia. Ninguna de estas imágenes puede entenderse literalmente: son puro lenguaje connotativo. La opción c) es parcialmente correcta (hay universalidad temática), pero no responde lo que pregunta el enunciado: ¿qué rasgo está "especialmente presente"? La universalidad es consecuencia, pero el rasgo más visible es el lenguaje connotativo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Cuál es la diferencia fundamental entre el <B>autor real</B> y el <B>narrador</B> en un texto literario?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) No hay diferencia: el narrador siempre es el propio autor contando sus experiencias reales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) El autor real es la persona histórica que escribe la obra; el narrador es una voz ficticia creada por el autor dentro del texto, que puede tener valores, perspectivas y conocimientos distintos a los del autor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) El narrador siempre es omnisciente y el autor real nunca puede conocer la historia completa de sus personajes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) El autor real es el que habla en la poesía; el narrador es el que habla en el teatro</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta distinción es fundamental en teoría literaria. El <B>autor real</B> es la persona concreta (con nombre, apellido, biografía) que creó la obra. El <B>narrador</B> es una instancia ficticia, un "ser de palabras" que existe solo dentro del texto y que cuenta la historia. Un autor puede crear narradores muy diferentes a él mismo: Flaubert (burgués francés) creó a Emma Bovary (mujer romántica provinciana); Dostoievski creó narradores ateos siendo él profundamente creyente. Confundir ambos es el "error biográfico": pensar que el "yo" que habla en un poema ES el autor, o que los pensamientos de un personaje son los del escritor. La distinción narrador/autor es uno de los aportes fundamentales de la narratología moderna (Gerard Genette, Wayne Booth).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Platón expuls&oacute; a los poetas de su ciudad ideal (<I>La Rep&uacute;blica</I>) y Arist&oacute;teles los rehabilit&oacute; en su <I>Poética</I>. ¿Cuál fue el argumento central de cada uno y en qué se diferenciaban fundamentalmente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Platón admiraba la poesía por su capacidad de transmitir la verdad; Aristóteles la rechazaba por ser una imitación imperfecta de la realidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Platón condenó la literatura porque (1) es imitación de imitación (copia de lo sensible que ya es copia del mundo de las Ideas) y (2) excita las pasiones irracionales perturbando el alma; Aristóteles respondió que la mímesis es natural y placentera, y que la catarsis purifica las pasiones en lugar de excitarlas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Platón y Aristóteles coincidían en que la literatura es útil para la educación cívica; solo diferían en qué géneros debían estar permitidos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Platón rechazó solo la poesía épica por sus dioses inmorales; Aristóteles rechazó solo la comedia por ser de baja clase social</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El debate Platón-Aristóteles sobre la literatura es uno de los más importantes de la filosofía occidental. <B>Platón</B> (<I>La Rep&uacute;blica</I>, libro X): (1) Argumento ontológico: el mundo sensible ya es una copia del mundo de las Ideas (lo verdaderamente real); la poesía imita el mundo sensible, así que es una "copia de copia", alejada tres grados de la verdad. (2) Argumento psicológico: la poesía estimula la parte irracional del alma (las emociones) en detrimento de la razón; un hombre bien educado no debe entregarse al llanto y la desesperación que la tragedia provoca. Conclusión: los poetas deben ser expulsados de la ciudad ideal aunque se les reconozca cierto encanto. <B>Arist&oacute;teles</B> (<I>Po&eacute;tica</I>): (1) Contra el argumento ontológico: la mímesis no es copia sino <B>representaci&oacute;n creativa</B>; además, el arte revela lo universal (la esencia de las cosas) más que lo particular. (2) Contra el argumento psicológico: la tragedia no excita las pasiones sino que produce <B>c&aacute;tarsis</B>: las purifica y las libera, dejando al espectador más equilibrado. Aristóteles rehabilita la literatura como forma de conocimiento y de educación emocional.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Mario Vargas Llosa, en su discurso de aceptaci&oacute;n del Premio Nobel (2010), afirmó que la literatura "nos hace m&aacute;s libres" porque nos permite "vivir m&aacute;s vidas de las que nos ha tocado vivir". ¿Con qu&eacute; funci&oacute;n de la literatura y qu&eacute; concepto te&oacute;rico se relaciona m&aacute;s directamente esta idea?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Función lúdica: la literatura entretiene y nos hace pasar el tiempo de forma agradable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Función cognoscitiva y catártica: la literatura amplia nuestra experiencia del mundo (conocimiento vicario) y nos permite vivir emocionalmente situaciones que no hemos vivido en la realidad, relacionándose con la empatía y la identificación con los personajes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Función didáctica: la literatura nos enseña reglas morales y cívicas para vivir mejor en sociedad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Función estética: la literatura nos produce placer sensorial mediante el ritmo y la sonoridad de las palabras</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La afirmación de Vargas Llosa conecta la literatura con dos funciones: (1) La <B>funci&oacute;n cognoscitiva</B>: la literatura es un instrumento de conocimiento de lo humano; al leer <I>Crimen y castigo</I>, conocemos la psicología de un asesino desde dentro sin necesitar vivir esa experiencia; al leer <I>El Señor de los Anillos</I>, exploramos dilemas morales sobre el poder y la tentación. Es un <B>conocimiento vicario</B>: aprendemos a través de las experiencias de los personajes. (2) La <B>funci&oacute;n cat&aacute;rtica</B> y de <B>empatía</B>: al identificarnos con personajes distintos a nosotros (de otro sexo, cultura, época), desarrollamos la capacidad empática de ponernos en el lugar del otro. Investigaciones en psicología cognitiva (Mar & Oatley, 2008) han demostrado que los lectores habituales de ficción tienen mayor capacidad de empatía y "teoría de la mente" que los no lectores. La función lúdica (a) es demasiado superficial para capturar lo que Vargas Llosa dice. La didáctica (c) también es pertinente pero parcial. La estética (d) es la más alejada.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Los formalistas rusos propusieron el concepto de <B>"extrañamiento"</B> (<I>ostranenie</I>, Shklovsky). ¿En qu&eacute; consiste y por qu&eacute; es central para entender qu&eacute; hace el lenguaje literario?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) El extrañamiento consiste en el uso de palabras raras o arcaicas que el lector no comprende, lo que hace el texto difícil de entender</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El extrañamiento es el procedimiento por el que el arte nos hace ver lo habitual como si fuera por primera vez, desautomatizando la percepción; el lenguaje literario usa técnicas que rompen los automatismos del lenguaje cotidiano para que el lector experimente el mundo con renovada intensidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) El extrañamiento es la sensación de distancia emocional que el lector siente ante personajes de culturas muy distintas a la suya</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El extrañamiento es un defecto del texto literario que debe evitarse: la buena literatura debe ser clara y transparente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Viktor Shklovsky</B> formuló el concepto de <B><I>ostranenie</I></B> (extrañamiento o desfamiliarización) en su ensayo "El arte como técnica" (1917). Su argumento: la percepción cotidiana es automática y rutinaria; vemos el mundo sin realmente "verlo". El arte existe para quebrar esa automatización y devolvernos la capacidad de percibir. El lenguaje literario hace esto mediante: (1) uso inesperado de palabras ("un dolor de azul" en vez de "un dolor intenso"); (2) descripciones que muestran lo familiar como si fuera extraño (describir un tribunal de justicia como si nunca se hubiera visto uno, sin nombrar lo que es); (3) ritmos y estructuras que hacen la lectura más lenta y consciente. Ejemplos de extrañamiento en la literatura peruana: Vallejo describe el dolor como "golpes del odio de Dios" (extraña el sufrimiento); Arguedas describe Lima desde los ojos de un provinciano andino (extraña la ciudad). No tiene nada que ver con palabras raras (a) ni con distancia emocional (c).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El cr&iacute;tico literario <B>Roland Barthes</B> proclam&oacute; en 1967 "La muerte del autor". ¿Qu&eacute; implicaciones te&oacute;ricas tiene esta afirmaci&oacute;n para la interpretaci&oacute;n literaria y c&oacute;mo se relaciona con el concepto de "lector implícito" de Wolfgang Iser?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Barthes afirmó que los autores literarios deben morir físicamente para que sus obras sean interpretadas correctamente; Iser desarrolló una técnica para resucitar al autor mediante el análisis biográfico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Barthes argumentó que el significado de una obra no reside en la intención del autor sino en el acto de lectura; "matar al autor" significa liberar el texto de la tiranía de una sola interpretación. Iser desarrolló la idea del "lector implícito": el texto contiene instrucciones que guían la participación activa del lector en la construcción del sentido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Barthes propuso que toda literatura debe ser anónima para que el texto no sea influenciado por la fama del autor; Iser rechazó esta idea y defendió el método biográfico como único válido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Ambos teóricos coincidieron en que la interpretación correcta de un texto solo puede ser la que el propio autor explicó en entrevistas y cartas personales</DIV>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Roland Barthes</B>, en su influyente ensayo "La muerte del autor" (1967), argumentó contra el método <B>positivista-biográfico</B> de interpretación literaria (que buscaba el significado de las obras en la vida e intenciones del autor). Para Barthes, el texto literario es un <B>tejido de citas y referencias</B> provenientes de la cultura, no una expresión de la "persona" del autor; cuando el autor termina de escribir, "muere": ya no controla lo que significa su texto. El significado nace en la <B>lectura</B>, no en la escritura. Esto implica que hay múltiples interpretaciones válidas simultáneas. <B>Wolfgang Iser</B> (Escuela de Constanza, Estética de la Recepción) desarrolló el concepto de <B>"lector implícito"</B> (<I>Der implizite Leser</I>, 1972): el texto literario no es un objeto cerrado sino una estructura de <B>indeterminaciones</B> y "lugares de indeterminación" que el lector debe rellenar activamente. El "lector implícito" es el lector que el texto "convoca": las instrucciones de lectura inscritas en el propio texto. Juntos, Barthes e Iser representan el giro de la crítica literaria del siglo XX: del autor y el texto como objetos hacia el <B>proceso de lectura</B> como espacio de producción del sentido.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> En su obra <I>Ficci&oacute;n y Diegesis</I>, G&eacute;rard Genette estableci&oacute; la distinci&oacute;n entre <B>historia</B>, <B>relato</B> y <B>narraci&oacute;n</B>. ¿En qué consiste esta triple distinción y por qué es fundamental para el análisis narrativo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Historia = la película basada en el libro; relato = el libro original; narración = la obra de teatro adaptada del mismo tema</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Historia = los hechos tal como ocurrieron cronológicamente en el mundo ficcional; relato = la forma en que esos hechos son ordenados y presentados en el texto; narración = el acto mismo de contar (quién narra, cuándo, desde qué perspectiva)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Los tres términos son sinónimos: Genette los usa indistintamente para referirse al texto narrativo en su totalidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Historia = el género épico; relato = el género dramático; narración = el género lírico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>G&eacute;rard Genette</B>, en su obra fundamental <I>Figures III</I> (1972), estableció una distinción tripartita que es la base de la narratología moderna: (1) <B>Historia</B> (<I>histoire</I>): el contenido narrativo, los hechos y los personajes tal como ocurrieron en el tiempo del mundo ficcional; la lógica cronológica y causal de los eventos. (2) <B>Relato</B> (<I>récit</I>): el texto narrativo propiamente dicho; el modo en que la historia es presentada al lector: el orden (¿empieza in medias res? ¿hay flashbacks?), la duración (¿resumen o escena extensa?), la frecuencia (¿se narra una vez algo que pasó una vez, o varias veces?). (3) <B>Narraci&oacute;n</B> (<I>narration</I>): el acto de contar mismo: ¿quién narra? ¿desde cuándo narra? ¿en qué relación temporal está el narrador respecto a la historia (anterior, simultánea, posterior)?. Ejemplo: en <I>Crónica de una muerte anunciada</I> (García Márquez), la <B>historia</B> es el asesinato de Santiago Nasar; el <B>relato</B> empieza por el final (Santiago ya va a morir) y luego vuelve atrás; la <B>narración</B> la hace un narrador-testigo 27 años después, investigando los hechos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Desde una perspectiva te&oacute;rica integradora, ¿c&oacute;mo puede explicarse que una misma obra literaria pueda ser considerada "gran literatura" en una &eacute;poca e irrelevante en otra, o viceversa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) No puede ocurrir: las grandes obras literarias tienen un valor objetivo y eterno que no depende del contexto histórico ni del lector</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Se explica por la combinación de: (1) el "horizonte de expectativas" (Jauss) de cada época, que determina qué se considera literariamente valioso; (2) el carácter histórico del canon literario, que refleja relaciones de poder cultural; y (3) la plurivalencia del texto literario, que permite nuevas lecturas en nuevos contextos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Se explica porque las obras que se vuelven populares son siempre mejores que las que no lo son: el mercado editorial es el árbitro objetivo del valor literario</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Se explica exclusivamente por razones políticas: los gobiernos deciden qué obras son valiosas según sus intereses ideológicos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La pregunta toca uno de los problemas más complejos de la teoría y la historia literaria: el problema del <B>valor literario</B> y el <B>canon</B>. Las perspectivas más productivas: (1) <B>"Horizonte de expectativas" (Hans Robert Jauss</B>, Estética de la Recepción, 1967): toda obra es recibida dentro de un conjunto de expectativas previas del lector (sobre géneros, estilos, temas). Una obra puede ser revolucionaria (rompe las expectativas) o conservadora (las satisface). El valor literario cambia porque cambian los horizontes de expectativas históricos. Cervantes fue valorado de modo diferente en el siglo XVII, en el XIX y en el XX. (2) <B>El canon literario como constructo histórico</B> (Harold Bloom, <I>El canon occidental</I>, 1994; pero también sus críticos feministas y poscoloniales): el canon no es una lista "objetiva" de las mejores obras sino el resultado de luchas culturales, decisiones editoriales, sistemas educativos e ideologías. Muchas obras de mujeres, indígenas y culturas no occidentales fueron excluidas del canon no por su calidad sino por razones de poder. (3) <B>La plurivalencia del texto</B>: las grandes obras contienen múltiples capas de significado que permiten nuevas lecturas relevantes en nuevos contextos. <I>Don Quijote</I> puede leerse en el siglo XXI como una reflexión sobre la virtualidad y la realidad aumentada. Esto no invalida el valor literario: lo complejiza.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> La Literatura Peruana: ¿cu&aacute;les son los grandes temas y tensiones que la definen desde la Colonia hasta el siglo XX, y c&oacute;mo se relacionan con los conceptos de "todas las sangres" (Jos&eacute; Mar&iacute;a Arguedas) y el "trauma colonial"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La literatura peruana no tiene temas propios: es una copia de la literatura española peninsular y luego de la francesa; no existe una identidad literaria genuinamente peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La literatura peruana está atravesada por la tensión entre las herencias indígena, española y africana; el problema de la identidad nacional, la exclusión del indígena y el mundo andino, y la búsqueda de una síntesis cultural que Arguedas denominó "todas las sangres": la utopía de un Perú que integre su pluralidad étnica y cultural</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La literatura peruana es homogénea y no tiene tensiones internas: todos los autores desde el Inca Garcilaso hasta Vargas Llosa comparten la misma visión del país y los mismos recursos literarios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La única tensión de la literatura peruana es entre la literatura culta de Lima y la literatura popular de las regiones; el problema indígena no tiene presencia literaria significativa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La literatura peruana es uno de los corpus literarios latinoamericanos más ricos y complejos precisamente porque el Per&uacute; es un pa&iacute;s de profundas tensiones culturales, &eacute;tnicas y sociales que la literatura ha procesado de maneras extraordinariamente diversas. Las grandes tensiones son: (1) <B>La herencia colonial y el trauma de la Conquista</B>: el <I>Inca Garcilaso de la Vega</I> (siglo XVI-XVII) es el primer gran escritor peruano: mestizo, escribe en español pero desde una perspectiva andina; sus <I>Comentarios Reales</I> son el primer intento de integrar las tradiciones inca e hispánica. (2) <B>El problema del indígena</B>: desde el indigenismo del siglo XIX (<I>Aves sin nido</I>, Clorinda Matto de Turner, 1889) hasta el <B>neoindigenismo</B> de Arguedas (<I>Los ríos profundos</I>, 1958; <I>Todas las sangres</I>, 1964), la literatura peruana ha debatido cómo representar al indígena y qué lugar tiene en la nación. (3) <B>"Todas las sangres" de Arguedas</B>: la novela homónima (1964) es el intento más ambicioso de representar la totalidad social del Perú: la oligarquía criolla, los migrantes andinos, los indígenas comuneros, los técnicos extranjeros, los capitalistas. El título expresa la utopía arguediana: un Perú que integre (no asimile ni destruya) todas sus herencias culturales. (4) <B>Vargas Llosa</B>: desde una perspectiva liberal e individualista, representa la modernización y la tensión Lima-provincias, poder-marginalidad. Su debate con Arguedas en el Primer Encuentro de Narradores Peruanos (1965) es el más importante de la historia literaria peruana.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> En el contexto de los ex&aacute;menes de alta selectividad (UNI, UNMSM), se suele preguntar la diferencia entre <B>tema</B>, <B>motivo</B> y <B>tópico literario</B>. Define cada uno y da un ejemplo de cada uno present en la literatura hispanoamericana.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Los tres términos son sinónimos y se usan indistintamente en el análisis literario; no hay diferencia teórica entre ellos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Tema = asunto central y abstracto de la obra (el amor, la muerte, la identidad); motivo = unidad temática recurrente más concreta que el tema; tópico literario = fórmula convencional heredada de la tradición clásica que aparece repetida en diversas obras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Tema = el título de la obra; motivo = el argumento resumido en una frase; tópico = la moraleja o enseñanza final del texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Tema = el género literario al que pertenece la obra; motivo = el número de personajes; tópico = el lugar donde ocurre la acción</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Estos tres conceptos de tema&aacute;tica literaria son distintos y necesarios: (1) <B>Tema</B>: es el <B>asunto central y abstracto</B> de una obra; aquello de lo que trata en su nivel más profundo. Generalmente es un sustantivo abstracto: el amor, la muerte, la soledad, el poder, la traición, la identidad. Ejemplo: el tema central de <I>Cien años de soledad</I> de García Márquez es la <B>soledad</B> y el destino trágico irrepetible. (2) <B>Motivo</B>: es una <B>unidad tem&aacute;tica recurrente</B> más concreta que el tema; imagen, situación o idea que se repite en una obra o en varias obras de un mismo autor o período. Ejemplo: el <B>motivo del viaje</B> (aparece en la Odisea, en el Quijote, en <I>Los pasos perdidos</I> de Carpentier); el <B>motivo de la lluvia</B> en García Márquez; el <B>motivo del tr&eacute;n</B> en Vallejo. (3) <B>T&oacute;pico literario</B> (del latín <I>locus communis</I>, "lugar común"): es una <B>f&oacute;rmula convencional y heredada</B> de la tradición literaria clásica grecolatina, transmitida y repetida a lo largo de los siglos. Los tópicos literarios más conocidos son: <I>carpe diem</I> ("aprovecha el día", Horacio); <I>tempus fugit</I> ("el tiempo huye"); <I>locus amoenus</I> ("el lugar agradable", paisaje idealizado); <I>ubi sunt</I> ("¿dónde están?", reflexión sobre los muertos ilustres); <I>beatus ille</I> ("feliz aquel", elogio de la vida sencilla en el campo). Ejemplo en literatura hispana: el tópico <I>carpe diem</I> aparece en Garcilaso de la Vega ("coged de vuestra alegre primavera..."), en Góngora y en Sor Juana Inés de la Cruz.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

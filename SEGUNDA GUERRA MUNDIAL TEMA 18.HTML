@@ -1,0 +1,523 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>La Segunda Guerra Mundial - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA UNIVERSAL &middot; TEMA 18</DIV>
+<H1>La Segunda Guerra Mundial (1939&ndash;1945)</H1>
+<DIV CLASS="sub">Antecedentes &middot; El ascenso del fascismo &middot; Fases de la guerra &middot; Frentes &middot; El Holocausto &middot; Las bombas at&oacute;micas &middot; Consecuencias &middot; La ONU y la Guerra Fr&iacute;a</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. &iquest;Qu&eacute; fue la Segunda Guerra Mundial?</H3>
+La <B>Segunda Guerra Mundial</B> fue el conflicto armado m&aacute;s devastador de la historia humana, desarrollado entre <B>1939 y 1945</B> con frentes en Europa, &Aacute;frica, Asia, el Pac&iacute;fico y los oc&eacute;anos. Enfrent&oacute; a dos grandes bloques: los <B>Aliados</B> (Gran Breta&ntilde;a, Francia, la URSS desde 1941, EE.UU. desde 1941, China y otros) contra las <B>Potencias del Eje</B> (Alemania nazi, Italia fascista y el Imperio del Jap&oacute;n). Murieron entre <B>70 y 85 millones de personas</B> &mdash;la mayor&iacute;a civiles&mdash;, lo que la convierte en el evento m&aacute;s mortifero de la historia registrada. Termin&oacute; con la derrota total del Eje, el inicio de la <B>Guerra Fr&iacute;a</B>, la creaci&oacute;n de la <B>ONU</B> y la era nuclear.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La Segunda Guerra Mundial inici&oacute; oficialmente el <B>1 de septiembre de 1939</B> (invasi&oacute;n alemana de Polonia) y termin&oacute; el <B>2 de septiembre de 1945</B> (rendici&oacute;n formal del Jap&oacute;n). En Europa termin&oacute; el <B>8 de mayo de 1945</B> (D&iacute;a de la Victoria en Europa, V-E Day). No confundir: el ataque japon&eacute;s a Pearl Harbor fue el <B>7 de diciembre de 1941</B>, que llev&oacute; a EE.UU. a la guerra. Las bombas at&oacute;micas cayeron el <B>6 de agosto de 1945</B> (Hiroshima) y el <B>9 de agosto de 1945</B> (Nagasaki).</DIV>
+
+<H3>2. Antecedentes: las semillas de la guerra</H3>
+La Segunda Guerra Mundial no fue un fen&oacute;meno aislado sino la consecuencia directa de las contradicciones sin resolver de la Primera Guerra Mundial y del Tratado de Versalles.
+
+<H4>Las causas estructurales:</H4>
+<UL>
+<LI><B>El Tratado de Versalles (1919) y el resentimiento alem&aacute;n:</B> la cl&aacute;usula de culpabilidad de guerra (Art. 231), las reparaciones de 132.000 millones de marcos oro y las p&eacute;rdidas territoriales generaron una humillaci&oacute;n nacional que Hitler convirti&oacute; en combustible pol&iacute;tico. La hiperinflaci&oacute;n de 1923 y la Gran Depresi&oacute;n de 1929 arruinaron a la clase media alemana y la empujaron hacia el extremismo.</LI>
+<LI><B>El ascenso de los totalitarismos:</B> la crisis econ&oacute;mica y el miedo al comunismo crearon el caldo de cultivo para el fascismo italiano (Mussolini, 1922), el nazismo alem&aacute;n (Hitler, 1933) y el militarismo japon&eacute;s. Estos reg&iacute;menes compartían el rechazo a la democracia liberal, el ultranacionalismo agresivo y la expansi&oacute;n territorial como derecho.</LI>
+<LI><B>La pol&iacute;tica de apaciguamiento:</B> Gran Breta&ntilde;a y Francia, traumatizadas por la Primera Guerra Mundial y reacias a una nueva guerra, cedieron ante las demandas de Hitler (remilitarizaci&oacute;n del Rin, 1936; anexi&oacute;n de Austria, 1938; los Sudetes de Checoslovaquia, 1938). El punto culminante fue el <B>Acuerdo de M&uacute;nich</B> (septiembre 1938), donde Chamberlain y Daladier entregaron los Sudetes a Hitler a cambio de la promesa de "paz en nuestro tiempo".</LI>
+<LI><B>El fracaso de la Sociedad de Naciones:</B> sin EE.UU. y sin mecanismos coercitivos, la Sociedad fue incapaz de detener la invasi&oacute;n japonesa de Manchuria (1931), la italiana de Etiopía (1935) o el rearme alem&aacute;n.</LI>
+<LI><B>El Pacto Moli&oacute;tov-Ribbentrop (23 agosto 1939):</B> el pacto de no agresi&oacute;n secreto entre la Alemania nazi y la URSS estalinista fue una de las sorpresas diplom&aacute;ticas m&aacute;s impactantes de la historia. Inclu&iacute;a un <B>protocolo secreto</B> que divid&iacute;a Europa Oriental entre ambas potencias: la URSS obtendr&iacute;a los pa&iacute;ses b&aacute;lticos, Finlandia, Besarabia y la mitad oriental de Polonia. Libera a Hitler del temor a la guerra en dos frentes y abre el camino a la invasi&oacute;n de Polonia.</LI>
+</UL>
+
+<H3>3. El ascenso de Hitler y el nazismo</H3>
+<B>Adolf Hitler</B> (1889&ndash;1945) fue el dictador alem&aacute;n cuya ideolog&iacute;a y ambiciones expansionistas desencadenaron la guerra. Naci&oacute; en Austria, fue cabo en la Primera Guerra Mundial, y en 1919 ingres&oacute; al <B>Partido Nacionalsocialista Obrero Alem&aacute;n</B> (NSDAP, los "nazis"). Tras el fracasado <B>Putsch de M&uacute;nich</B> (1923), en prisi&oacute;n escribi&oacute; el <B><I>Mein Kampf</I></B> ("Mi lucha", 1925), donde expuso su ideolog&iacute;a: antisemitismo radical, pangermanismo, racismo biol&oacute;gico ("raza aria" superior), necesidad de <B><I>Lebensraum</I></B> ("espacio vital") en el este de Europa, y rechazo al comunismo y a la democracia liberal.
+
+<H4>La ideolog&iacute;a nazi: los elementos centrales</H4>
+<UL>
+<LI><B>El antisemitismo racial:</B> los jud&iacute;os eran presentados como la causa de todos los males de Alemania ("la pu&ntilde;alada por la espalda" de 1918, la hiperinflaci&oacute;n, el comunismo). Las <B>Leyes de N&uacute;remberg</B> (1935) privaron a los jud&iacute;os de la ciudadan&iacute;a alemana.</LI>
+<LI><B>El <I>Lebensraum</I>:</B> Alemania necesitaba territorios en el este (Polonia, Rusia) para expandir su poblaci&oacute;n y sus recursos; los pueblos eslavos ser&iacute;an esclavizados o exterminados.</LI>
+<LI><B>El F&uuml;hrerprinzip:</B> el principio del l&iacute;der: obediencia absoluta a Hitler como encarnaci&oacute;n de la voluntad del pueblo ("Volk").</LI>
+<LI><B>El anticomunismo:</B> la URSS era el enemigo ideol&oacute;gico principal; la guerra contra Rusia ser&iacute;a una "guerra de aniquilaci&oacute;n" (<I>Vernichtungskrieg</I>), no de reglas de combate convencionales.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>La llegada de Hitler al poder (1933):</B> Tras la Gran Depresi&oacute;n (1929), el desempleo en Alemania super&oacute; el 30%. En las elecciones de julio de 1932, el NSDAP obtuvo el 37% de los votos, convirti&eacute;ndose en el partido m&aacute;s votado. El <B>30 de enero de 1933</B>, el presidente Hindenburg nombr&oacute; a Hitler canciller. El <B>Incendio del Reichstag</B> (27 febrero 1933) fue usado como pretexto para el <B>Decreto del Incendio</B> (suprimi&oacute; libertades civiles) y la <B>Ley Habilitante</B> (23 marzo 1933, que dio a Hitler poderes legislativos plenos). Alemania se convirti&oacute; en una dictadura en menos de dos meses.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128163; EL INICIO DE LA GUERRA<SPAN>La invasi&oacute;n de Polonia y la "Blitzkrieg": 1939&ndash;1940</SPAN></DIV>
+
+<H3>4. El inicio de la guerra y la Blitzkrieg (1939&ndash;1940)</H3>
+El <B>1 de septiembre de 1939</B>, Alemania invadi&oacute; Polonia utilizando una t&aacute;ctica completamente nueva: la <B><I>Blitzkrieg</I></B> ("guerra rel&aacute;mpago"): coordinaci&oacute;n de tanques (<I>Panzer</I>), aviaci&oacute;n (<I>Luftwaffe</I>) e infantería mec&aacute;nizada para romper las l&iacute;neas enemigas a alta velocidad, evitando la guerra de trincheras de la Primera Guerra Mundial. Polonia cay&oacute; en menos de un mes. El <B>3 de septiembre de 1939</B>, Gran Breta&ntilde;a y Francia declararon la guerra a Alemania.
+
+<H4>La escalada de 1939 a 1941: la cronolog&iacute;a esencial</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fecha</TH><TH>Acontecimiento</TH><TH>Significado</TH></TR>
+<TR><TD><B>1 sep. 1939</B></TD><TD>Alemania invade Polonia (<I>Blitzkrieg</I>)</TD><TD>Inicio oficial de la Segunda Guerra Mundial</TD></TR>
+<TR><TD><B>17 sep. 1939</B></TD><TD>La URSS invade Polonia por el este (Pacto Moli&oacute;tov-Ribbentrop)</TD><TD>Polonia desaparece del mapa; dividida entre Alemania y la URSS</TD></TR>
+<TR><TD><B>Nov. 1939 &ndash; mar. 1940</B></TD><TD>Guerra de Invierno: URSS invade Finlandia</TD><TD>La URSS conquista territorios pero sufre enormes bajas; muestra debilidad militar</TD></TR>
+<TR><TD><B>Abr. &ndash; jun. 1940</B></TD><TD>Alemania invade Dinamarca, Noruega, Pa&iacute;ses Bajos, B&eacute;lgica y Francia</TD><TD>Ca&iacute;da de Francia en 6 semanas; humillaci&oacute;n total de la <I>Blitzkrieg</I></TD></TR>
+<TR><TD><B>May. 1940</B></TD><TD>Evacuaci&oacute;n de Dunkerque (338.000 soldados aliados rescatados del continente)</TD><TD>Derrota t&aacute;ctica pero victoria moral brit&aacute;nica; Churchill reemplaza a Chamberlain</TD></TR>
+<TR><TD><B>22 jun. 1940</B></TD><TD>Francia firma el armisticio en Compi&egrave;gne (mismo vagón que 1918, revancha de Hitler)</TD><TD>Francia dividida: zona ocupada (norte) y Francia de Vichy (sur, colaboracionista)</TD></TR>
+<TR><TD><B>Jul. &ndash; oct. 1940</B></TD><TD><B>Batalla de Gran Breta&ntilde;a</B> (batalla a&eacute;rea; RAF vs. Luftwaffe)</TD><TD>Primera derrota alemana: Hitler no puede invadir Gran Breta&ntilde;a; Churchill resiste</TD></TR>
+<TR><TD><B>22 jun. 1941</B></TD><TD><B>Operaci&oacute;n Barbarroja</B>: Alemania invade la URSS (3 millones de soldados)</TD><TD>Mayor invasi&oacute;n terrestre de la historia; la URSS entra en la guerra del lado aliado</TD></TR>
+<TR><TD><B>7 dic. 1941</B></TD><TD>Jap&oacute;n ataca Pearl Harbor (Hawaii, EE.UU.)</TD><TD>EE.UU. entra en la guerra; la guerra se vuelve verdaderamente mundial</TD></TR>
+<TR><TD><B>8 dic. 1941</B></TD><TD>EE.UU. y Gran Breta&ntilde;a declaran la guerra a Jap&oacute;n</TD><TD>Alemania e Italia declaran la guerra a EE.UU. el 11 de diciembre</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#9876; LAS FASES Y FRENTES DE LA GUERRA<SPAN>Del apogeo del Eje al contraataque aliado: 1941&ndash;1945</SPAN></DIV>
+
+<H3>5. Las fases de la Segunda Guerra Mundial</H3>
+
+<H4>Fase 1: La expansi&oacute;n del Eje (1939&ndash;1942)</H4>
+Entre 1939 y 1942, el Eje domin&oacute; casi todos los frentes. El Imperio del Jap&oacute;n controlaba el este de China, Indochina y se expandi&oacute; r&aacute;pidamente por el Pac&iacute;fico tras Pearl Harbor (Filipinas, Malasia, Singapur, Birmania, Indonesia). Alemania controlaba casi toda Europa continental. El punto culminante del poder del Eje fue <B>1942</B>: las tropas alemanas llegaron a las puertas de <B>El&aacute;mein</B> en &Aacute;frica del Norte y al <B>Volga</B> en la URSS.
+
+<H4>Fase 2: El punto de inflexi&oacute;n (1942&ndash;1943)</H4>
+Tres batallas decisivas cambiaron el rumbo de la guerra:
+<UL>
+<LI><B>Batalla de Midway</B> (junio 1942): EE.UU. hundi&oacute; cuatro portaaviones japoneses en el Pac&iacute;fico; Jap&oacute;n nunca recuper&oacute; la iniciativa naval.</LI>
+<LI><B>Segunda Batalla de El&aacute;mein</B> (octubre&ndash;noviembre 1942): el general brit&aacute;nico <B>Montgomery</B> derrot&oacute; al "Zorro del Desierto" alem&aacute;n <B>Rommel</B> en &Aacute;frica del Norte; Alemania perdi&oacute; el acceso al Canal de Suez y al petr&oacute;leo del Medio Oriente.</LI>
+<LI><B>Batalla de Stalingrado</B> (agosto 1942 &ndash; febrero 1943): el Ej&eacute;rcito alem&aacute;n del <B>6.&ordm; Ej&eacute;rcito</B> del mariscal <B>Paulus</B> fue rodeado y destruido por el Ej&eacute;rcito Rojo en la ciudad sovi&eacute;tica; m&aacute;s de <B>300.000 soldados alemanes</B> muertos o capturados. Fue el mayor desastre militar de la historia alemana y el punto de giro de la guerra en Europa.</LI>
+</UL>
+
+<H4>Las grandes batallas del Frente del Este (Frente Oriental):</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Batalla</TH><TH>Fecha</TH><TH>Datos</TH><TH>Resultado</TH></TR>
+<TR><TD><B>Operaci&oacute;n Barbarroja</B></TD><TD>Jun. &ndash; dic. 1941</TD><TD>Mayor invasi&oacute;n terrestre de la historia: 3,8 millones de soldados alemanes; tres grupos de ej&eacute;rcitos hacia Leningrado, Mosc&uacute; y Kiev</TD><TD>Alemania avanza enormemente pero no vence: el invierno ruso paraliza la ofensiva ante Mosc&uacute;</TD></TR>
+<TR><TD><B>Sitio de Leningrado</B></TD><TD>Sep. 1941 &ndash; ene. 1944</TD><TD>872 d&iacute;as de asedio; m&aacute;s de 800.000 civiles muertos por hambre y bombardeos</TD><TD>La ciudad resiste; el asedio es levantado en 1944; s&iacute;mbolo de la resistencia sovi&eacute;tica</TD></TR>
+<TR><TD><B>Stalingrado</B></TD><TD>Ago. 1942 &ndash; feb. 1943</TD><TD>Combate urbano calle por calle; 2 millones de bajas totales; temperatura de &ndash;30&deg;C</TD><TD>Victoria sovi&eacute;tica decisiva; el 6.&ordm; Ej&eacute;rcito alem&aacute;n se rinde; punto de giro de la guerra</TD></TR>
+<TR><TD><B>Kursk</B></TD><TD>Jul. &ndash; ago. 1943</TD><TD>Mayor batalla de tanques de la historia: 6.000 tanques enfrentados; Alemania lanz&oacute; la Operaci&oacute;n Ciudadela</TD><TD>Victoria sovi&eacute;tica definitiva; Alemania nunca m&aacute;s retoma la iniciativa en el este</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Fase 3: El contraataque aliado y la victoria (1943&ndash;1945)</H4>
+<UL>
+<LI><B>Invasi&oacute;n de Italia</B> (julio 1943): los Aliados desembarcaron en Sicilia (<I>Operaci&oacute;n Husky</I>); Mussolini fue derrocado por el Gran Consejo Fascista y arrestado; Italia capitula en septiembre de 1943. Alemania ocupa el norte de Italia y resiste.</LI>
+<LI><B>D&iacute;a D &ndash; Desembarco de Normand&iacute;a</B> (6 de junio de 1944, <I>Operaci&oacute;n Overlord</I>): el mayor desembarco anf&iacute;bio de la historia; 156.000 soldados aliados (estadounidenses, brit&aacute;nicos, canadienses) desembarcaron en 5 playas de Normand&iacute;a (Omaha, Utah, Gold, Juno, Sword). El general <B>Eisenhower</B> comandaba la operaci&oacute;n; el mariscal <B>Rommel</B> defend&iacute;a la costa franc&eacute;sa. Par&iacute;s fue liberada el 25 de agosto de 1944.</LI>
+<LI><B>Batalla de las Ardenas</B> (diciembre 1944 &ndash; enero 1945): &uacute;ltima contraofensiva alemana en el oeste; fue rechazada. Alemania ya no pod&iacute;a ganar.</LI>
+<LI><B>Ca&iacute;da de Berl&iacute;n</B> (abril&ndash;mayo 1945): el Ej&eacute;rcito Rojo (general <B>Zhukov</B>) rode&oacute; y tom&oacute; Berl&iacute;n; <B>Hitler se suicid&oacute; el 30 de abril de 1945</B> en su b&uacute;nker. El <B>8 de mayo de 1945</B> (V-E Day), Alemania firm&oacute; la rendici&oacute;n incondicional.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#127758; LA GUERRA EN EL PAC&Iacute;FICO<SPAN>Pearl Harbor, Midway, Iwo Jima y las bombas at&oacute;micas: 1941&ndash;1945</SPAN></DIV>
+
+<H3>6. La guerra en el Pac&iacute;fico y el fin de Jap&oacute;n</H3>
+
+<H4>Pearl Harbor (7 de diciembre de 1941):</H4>
+El Imperio del Jap&oacute;n, bloqueado econ&oacute;micamente por EE.UU. tras su expansi&oacute;n en China, lanz&oacute; un ataque sorpresa sobre la base naval estadounidense de <B>Pearl Harbor</B> (Hawaii) el <B>7 de diciembre de 1941</B> ("una fecha que vivir&aacute; en la infamia", discurso del presidente Roosevelt). Resultados: 2.403 estadounidenses muertos, 8 acorazados da&ntilde;ados o hundidos, 188 aviones destruidos. Al d&iacute;a siguiente, EE.UU. declar&oacute; la guerra a Jap&oacute;n; Alemania e Italia declararon la guerra a EE.UU. el 11 de diciembre: la guerra se volvió verdaderamente mundial.
+
+<H4>Las campañas del Pac&iacute;fico:</H4>
+<UL>
+<LI><B>Expansi&oacute;n japonesa</B> (dic. 1941 &ndash; jun. 1942): Jap&oacute;n conquer&oacute; Filipinas, Malasia, Singapur ("la mayor capitulaci&oacute;n brit&aacute;nica de la historia"), Birmania, Indonesia y amenazo Australia.</LI>
+<LI><B>Midway</B> (junio 1942): EE.UU. descifr&oacute; los c&oacute;digos japoneses y tendi&oacute; una emboscada; hundi&oacute; 4 portaaviones japoneses perdiendo solo uno. Punto de giro en el Pac&iacute;fico.</LI>
+<LI><B>Estrategia de "salto de isla en isla"</B>: el general <B>MacArthur</B> y el almirante <B>Nimitz</B> fueron recuperando is las del Pac&iacute;fico (Guadalcanal, Iwo Jima, Okinawa) con combates de una violencia extrema.</LI>
+<LI><B>Iwo Jima y Okinawa</B> (1945): las batallas m&aacute;s cruentas del Pac&iacute;fico; los japoneses emplearon pilotos kamikazes (ataques suicidas). Los planificadores militares estimaron que una invasi&oacute;n del archipi&eacute;lago japon&eacute;s costar&iacute;a hasta un mill&oacute;n de bajas aliadas.</LI>
+</UL>
+
+<H4>Las bombas at&oacute;micas (agosto 1945):</H4>
+El presidente <B>Harry S. Truman</B> (Roosevelt hab&iacute;a muerto en abril de 1945) autoriz&oacute; el uso de las bombas at&oacute;micas desarrolladas en el <B>Proyecto Manhattan</B> (dirigido por el f&iacute;sico <B>J. Robert Oppenheimer</B> en Los &Aacute;lamos, Nuevo M&eacute;xico) para evitar la invasi&oacute;n terrestre de Jap&oacute;n:
+<UL>
+<LI><B>6 de agosto de 1945</B>: la bomba "<B>Little Boy</B>" (uranio) cay&oacute; sobre <B>Hiroshima</B>; muri&oacute; entre 70.000 y 140.000 personas en el impacto y en los meses siguientes.</LI>
+<LI><B>9 de agosto de 1945</B>: la bomba "<B>Fat Man</B>" (plutonio) cay&oacute; sobre <B>Nagasaki</B>; muri&oacute; entre 40.000 y 80.000 personas.</LI>
+<LI><B>8 de agosto de 1945</B>: la URSS declar&oacute; la guerra a Jap&oacute;n e invadi&oacute; Manchuria (conform&oacute; a los acuerdos de Yalta).</LI>
+<LI><B>15 de agosto de 1945</B>: el Emperador <B>Hirohito</B> anunci&oacute; la rendici&oacute;n de Jap&oacute;n por radio.</LI>
+<LI><B>2 de septiembre de 1945</B>: firma de la rendici&oacute;n formal en el acorazado USS <I>Missouri</I> en la Bah&iacute;a de Tokio: fin oficial de la Segunda Guerra Mundial.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> El Proyecto Manhattan fue el programa secreto estadounidense para desarrollar la bomba at&oacute;mica. Participaron f&iacute;sicos europeos exiliados del nazismo como <B>Albert Einstein</B> (quien alert&oacute; a Roosevelt de la posibilidad alemana de desarrollar la bomba), <B>Enrico Fermi</B> y <B>Leo Szilard</B>. La primera detonaci&oacute;n nuclear de la historia fue la prueba "<B>Trinity</B>" (16 julio 1945, Nuevo M&eacute;xico). Oppenheimer cit&oacute; el <I>Bhagavad Gita</I> al verla: "Me he convertido en la Muerte, el destructor de mundos".</DIV>
+
+<DIV CLASS="cultura-titulo">&#9760; EL HOLOCAUSTO<SPAN>El genocidio m&aacute;s documentado de la historia: la "Soluci&oacute;n Final" nazi</SPAN></DIV>
+
+<H3>7. El Holocausto: el genocidio nazi</H3>
+El <B>Holocausto</B> (o <I>Shoah</I> en hebreo, "cat&aacute;strofe") fue el genocidio sistem&aacute;tico planificado y ejecutado por el r&eacute;gimen nazi, en el que fueron asesinadas aproximadamente <B>6 millones de personas jud&iacute;as</B> (cerca del 67% de los jud&iacute;os de Europa) y entre 5 y 6 millones de personas m&aacute;s: gitanos (entre 500.000 y 1,5 millones), eslavos, personas con discapacidad, homosexuales, testigos de Jehov&aacute;, prisioneros pol&iacute;ticos y sovi&eacute;ticos.
+
+<H4>Las etapas de la persecuci&oacute;n:</H4>
+<UL>
+<LI><B>Discriminaci&oacute;n legal (1933&ndash;1938):</B> Leyes de N&uacute;remberg (1935): los jud&iacute;os perdieron la ciudadan&iacute;a alemana y fueron prohibidos de casarse con "arios". Segregaci&oacute;n progresiva de la vida econ&oacute;mica, social y cultural.</LI>
+<LI><B>Kristallnacht</B> ("Noche de los Cristales Rotos", 9&ndash;10 noviembre 1938): violencia organizada por las SS y SA contra sinagogas, negocios y hogares jud&iacute;os en toda Alemania y Austria; m&aacute;s de 30.000 jud&iacute;os fueron arrestados y enviados a campos de concentraci&oacute;n.</LI>
+<LI><B>Los guetos (1939&ndash;1942):</B> en los territorios ocupados del este, los jud&iacute;os fueron confinados en guetos superpoblados y hambreados (el mayor: el <B>Gueto de Varsovia</B>, con 400.000 personas).</LI>
+<LI><B>Los <I>Einsatzgruppen</I> (1941):</B> unidades m&oacute;viles de exterminio que siguieron a las tropas alemanas en la invasi&oacute;n de la URSS; ejecutaron a m&aacute;s de 1,5 millones de jud&iacute;os sovi&eacute;ticos mediante fusilamientos masivos (Babi Yar, Kiev: 33.771 jud&iacute;os en dos d&iacute;as, 29&ndash;30 septiembre 1941).</LI>
+<LI><B>La "Soluci&oacute;n Final" (<I>Endlösung</I>, 1942):</B> la <B>Conferencia de Wannsee</B> (20 enero 1942) coord in&oacute; la burocracia nazi para el exterminio sistem&aacute;tico: los <B>campos de exterminio</B> (distintos de los campos de concentraci&oacute;n): <B>Auschwitz-Birkenau</B>, Treblinka, Sobibor, Belzec, Chelmno y Majdanek (todos en Polonia). Usaban c&aacute;maras de gas con <B>Zyklon B</B>. Auschwitz-Birkenau mat&oacute; entre 1,1 y 1,5 millones de personas.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>Resistencia y rescate:</B> Pese al terror, hubo resistencias notables: el <B>Levantamiento del Gueto de Varsovia</B> (abril&ndash;mayo 1943): los jud&iacute;os del gueto se sublevaron durante semanas contra las SS, sabiendo que no pod&iacute;an ganar. Personas "Justos entre las Naciones" arriesgaron sus vidas para salvar jud&iacute;os: el diplom&aacute;tico japon&eacute;s <B>Chiune Sugihara</B>, el empresario alem&aacute;n <B>Oskar Schindler</B> (la famosa "lista de Schindler"), el diplom&aacute;tico sueco <B>Raoul Wallenberg</B>, entre miles m&aacute;s. Los <B>Juicios de N&uacute;remberg</B> (1945&ndash;1946) juzgaron a los l&iacute;deres nazis por "cr&iacute;menes contra la humanidad", estableciendo un precedente fundamental del derecho internacional.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128203; LAS CONFERENCIAS ALIADAS Y EL NUEVO ORDEN MUNDIAL<SPAN>Teher&aacute;n, Yalta, Potsdam: c&oacute;mo los Aliados dividieron el mundo</SPAN></DIV>
+
+<H3>8. Las grandes conferencias aliadas: el nuevo orden mundial</H3>
+Los l&iacute;deres de los "Tres Grandes" &mdash;<B>Roosevelt</B> (EE.UU.), <B>Churchill</B> (Gran Breta&ntilde;a) y <B>Stalin</B> (URSS)&mdash; se reunieron en varias ocasiones para coordinar la guerra y dise&ntilde;ar la posguerra:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Conferencia</TH><TH>Fecha</TH><TH>Acuerdos principales</TH></TR>
+<TR><TD><B>Teher&aacute;n</B></TD><TD>Nov.&ndash;dic. 1943</TD><TD>Primera reuni&oacute;n de los Tres Grandes; coordinaci&oacute;n del Desembarco en Normand&iacute;a; la URSS se comprometió a declarar la guerra a Jap&oacute;n tras la derrota alemana</TD></TR>
+<TR><TD><B>Yalta</B></TD><TD>Feb. 1945</TD><TD>Divisi&oacute;n de Alemania en zonas de ocupaci&oacute;n (4 zonas: EE.UU., GB, Francia, URSS); la URSS declara la guerra a Jap&oacute;n a cambio de territorios en Asia; creaci&oacute;n de la ONU; los pa&iacute;ses de Europa oriental tendr&iacute;an elecciones "libres" (promesa incumplida por Stalin); acuerdos sobre Polonia</TD></TR>
+<TR><TD><B>Potsdam</B></TD><TD>Jul.&ndash;ago. 1945</TD><TD>Truman (reemplaz&oacute; a Roosevelt, muerto en abril), Churchill/Attlee y Stalin; definici&oacute;n del tratamiento de Alemania (desnazificaci&oacute;n, desmilitarizaci&oacute;n, democratizaci&oacute;n, descentralizaci&oacute;n &mdash;las "4 D"&mdash;); Truman informa a Stalin de la bomba at&oacute;mica; ultimátum a Jap&oacute;n</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note">&#128221; <B>Yalta y el inicio de la Guerra Fr&iacute;a:</B> En Yalta (febrero 1945), Stalin prometi&oacute; elecciones libres en Europa oriental a cambio del apoyo occidental a sus demandas territoriales. La promesa no fue cumplida: entre 1945 y 1948, la URSS instal&oacute; reg&iacute;menes comunistas prosoviéticos en Polonia, Checoslovaquia, Hungr&iacute;a, Rumania, Bulgaria y Alemania Oriental. Churchill describi&oacute; este proceso como el descenso de un "<B>Tel&oacute;n de Acero</B>" sobre Europa (discurso de Fulton, 5 marzo 1946). Esta divisi&oacute;n del mundo entre el bloque occidental (capitalista) y el bloque oriental (comunista) marc&oacute; la pol&iacute;tica internacional durante m&aacute;s de cuatro d&eacute;cadas.</DIV>
+
+<H3>9. Consecuencias de la Segunda Guerra Mundial</H3>
+
+<H4>Consecuencias humanas y materiales:</H4>
+<UL>
+<LI>Entre <B>70 y 85 millones de muertos</B> (aprox. el 3% de la poblaci&oacute;n mundial de 1940), la mayor&iacute;a civiles: la URSS perdi&oacute; entre 26 y 27 millones de personas; Polonia perdi&oacute; el 17% de su poblaci&oacute;n.</LI>
+<LI>Decenas de millones de <B>desplazados y refugiados</B> (<I>Displaced Persons</I>) en Europa.</LI>
+<LI>Destrucci&oacute;n total de las principales ciudades europeas y asi&aacute;ticas: Varsovia, Dresden, Tokio, Hiroshima, Nagasaki, Leningrado, Kiev.</LI>
+<LI>Inicio de la <B>era nuclear</B>: el mundo vive desde 1945 bajo la amenaza de la destrucci&oacute;n at&oacute;mica.</LI>
+</UL>
+
+<H4>Consecuencias pol&iacute;ticas: el nuevo mapa del mundo</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Pa&iacute;s / Regi&oacute;n</TH><TH>Lo que surgi&oacute; tras la guerra</TH></TR>
+<TR><TD><B>Alemania</B></TD><TD>Dividida en 4 zonas de ocupaci&oacute;n; 1949: Rep&uacute;blica Federal Alemana (oeste, occidental) y Rep&uacute;blica Democr&aacute;tica Alemana (este, comunista); Berl&iacute;n dividida</TD></TR>
+<TR><TD><B>Jap&oacute;n</B></TD><TD>Ocupaci&oacute;n estadounidense (1945&ndash;1952); nueva constituci&oacute;n democr&aacute;tica que renunci&oacute; a la guerra (Art. 9); reconstrucci&oacute;n econ&oacute;mica ("milagro japon&eacute;s")</TD></TR>
+<TR><TD><B>Europa Oriental</B></TD><TD>Satelizaci&oacute;n sovi&eacute;tica: Polonia, Checoslovaquia, Hungr&iacute;a, Rumania, Bulgaria, RDA y Albania quedan bajo la &oacute;rbita de la URSS</TD></TR>
+<TR><TD><B>China</B></TD><TD>Guerra civil entre comunistas (Mao Zedong) y nacionalistas (Chiang Kai-shek); victoria comunista: Rep&uacute;blica Popular China (1949)</TD></TR>
+<TR><TD><B>Colonias</B></TD><TD>Inicio de la descolonizaci&oacute;n: India (1947), Israel (1948), Indonesia (1949), Vietnam (guerra con Francia), &Aacute;frica (a&ntilde;os 1950&ndash;1970)</TD></TR>
+<TR><TD><B>Medio Oriente</B></TD><TD>Creaci&oacute;n del Estado de Israel (14 mayo 1948) por la ONU; primera guerra &aacute;rabe-israel&iacute; inmediata</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Consecuencias institucionales y ideol&oacute;gicas:</H4>
+<UL>
+<LI><B>La ONU (Organizaci&oacute;n de las Naciones Unidas):</B> fundada el <B>24 de octubre de 1945</B> en San Francisco; sucesora de la Sociedad de Naciones; con 51 miembros fundadores; el <B>Consejo de Seguridad</B> (con 5 miembros permanentes con poder de veto: EE.UU., URSS, Gran Breta&ntilde;a, Francia y China) fue dise&ntilde;ado para evitar un nuevo conflicto mundial.</LI>
+<LI><B>La Declaraci&oacute;n Universal de Derechos Humanos</B> (10 diciembre 1948): aprobada por la ONU como respuesta directa a los horrores del Holocausto y la guerra; primer documento internacional que reconoce derechos universales e inalienables.</LI>
+<LI><B>El Plan Marshall</B> (1947): EE.UU. invirti&oacute; m&aacute;s de 13.000 millones de d&oacute;lares en la reconstrucci&oacute;n de Europa Occidental (tambi&eacute;n para frenar el avance del comunismo).</LI>
+<LI><B>La OTAN</B> (Organizaci&oacute;n del Tratado del Atl&aacute;ntico Norte, 1949): alianza militar occidental liderada por EE.UU.</LI>
+<LI><B>La Guerra Fr&iacute;a:</B> la confrontaci&oacute;n ideol&oacute;gica, pol&iacute;tica y en ocasiones militar entre EE.UU. y la URSS que domin&oacute; las relaciones internacionales entre 1947 y 1991.</LI>
+<LI><B>Los Juicios de N&uacute;remberg</B> (1945&ndash;1946): 24 l&iacute;deres nazis fueron juzgados por cr&iacute;menes de guerra, cr&iacute;menes contra la paz y cr&iacute;menes contra la humanidad; 12 fueron condenados a muerte. Establecieron el precedente de que los l&iacute;deres de Estado son personalmente responsables de los cr&iacute;menes contra la humanidad.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1 sep. 1939</DIV><DIV CLASS="dk-label">Alemania invade Polonia: inicio oficial de la guerra</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">22 jun. 1941</DIV><DIV CLASS="dk-label">Operaci&oacute;n Barbarroja: Alemania invade la URSS</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">7 dic. 1941</DIV><DIV CLASS="dk-label">Jap&oacute;n ataca Pearl Harbor: EE.UU. entra en la guerra</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">6 jun. 1944</DIV><DIV CLASS="dk-label">D&iacute;a D: Desembarco de Normand&iacute;a (Operaci&oacute;n Overlord)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">8 may. 1945</DIV><DIV CLASS="dk-label">V-E Day: Alemania se rinde; fin de la guerra en Europa</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">2 sep. 1945</DIV><DIV CLASS="dk-label">Jap&oacute;n firma la rendici&oacute;n: fin oficial de la Segunda Guerra Mundial</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Antecedentes:</B> Versalles humillante &rarr; ascenso del nazismo &rarr; apaciguamiento &rarr; Pacto Moli&oacute;tov-Ribbentrop (23 ago. 1939)<BR>
+&bull; <B>Inicio:</B> 1 sep. 1939 (invasi&oacute;n de Polonia por Alemania); 3 sep. 1939 (GB y Francia declaran guerra a Alemania)<BR>
+&bull; <B>Bloques:</B> Aliados (GB, Francia, URSS desde jun. 1941, EE.UU. desde dic. 1941) vs. Potencias del Eje (Alemania, Italia, Jap&oacute;n)<BR>
+&bull; <B>T&aacute;ctica nueva:</B> Blitzkrieg (tanques + aviaci&oacute;n + infantería mec&aacute;nizada coordinados)<BR>
+&bull; <B>Puntos de inflexi&oacute;n:</B> Stalingrado (feb. 1943) &middot; El&aacute;mein (nov. 1942) &middot; Midway (jun. 1942)<BR>
+&bull; <B>Batallas clave:</B> Batalla de Gran Breta&ntilde;a (1940) &middot; Barbarroja (1941) &middot; Stalingrado (1942&ndash;43) &middot; Kursk (1943) &middot; D&iacute;a D (6 jun. 1944)<BR>
+&bull; <B>El Holocausto:</B> 6 millones de jud&iacute;os asesinados sistem&aacute;ticamente; "Soluci&oacute;n Final" decidida en Wannsee (ene. 1942); Auschwitz-Birkenau<BR>
+&bull; <B>Bombas at&oacute;micas:</B> Hiroshima (6 ago. 1945) &middot; Nagasaki (9 ago. 1945); Proyecto Manhattan; Oppenheimer<BR>
+&bull; <B>Fin en Europa:</B> 8 may. 1945 (V-E Day) &middot; Fin total: 2 sep. 1945 (rendici&oacute;n de Jap&oacute;n)<BR>
+&bull; <B>Consecuencias:</B> 70&ndash;85 millones de muertos &middot; ONU (1945) &middot; Declaraci&oacute;n DDHH (1948) &middot; Juicios de N&uacute;remberg &middot; Plan Marshall &middot; OTAN &middot; Guerra Fr&iacute;a &middot; Descolonizaci&oacute;n &middot; Estado de Israel (1948)
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;Cu&aacute;les fueron las fechas de inicio y fin oficiales de la Segunda Guerra Mundial y cu&aacute;les fueron los dos bloques enfrentados?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Inici&oacute; el 7 de diciembre de 1941 (ataque a Pearl Harbor) y termin&oacute; el 8 de mayo de 1945 (rendici&oacute;n de Alemania); los bloques fueron la OTAN contra el Pacto de Varsovia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Inici&oacute; oficialmente el 1 de septiembre de 1939 (invasi&oacute;n alemana de Polonia) y termin&oacute; el 2 de septiembre de 1945 (rendici&oacute;n formal de Jap&oacute;n en el USS <I>Missouri</I>); los Aliados (Gran Breta&ntilde;a, Francia, URSS, EE.UU. y otros) se enfrentaron a las Potencias del Eje (Alemania nazi, Italia fascista e Imperio del Jap&oacute;n)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Inici&oacute; el 3 de septiembre de 1939 (declaraci&oacute;n de guerra brit&aacute;nica) y termin&oacute; el 6 de agosto de 1945 (bomba sobre Hiroshima); los bloques fueron id&eacute;nticos a los de la Primera Guerra Mundial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Inici&oacute; el 22 de junio de 1941 (Operaci&oacute;n Barbarroja) y termin&oacute; el 8 de mayo de 1945 (V-E Day); Italia estuvo siempre del lado aliado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La cronolog&iacute;a exacta es clave para el examen. El inicio oficial es el <B>1 de septiembre de 1939</B>, cuando Alemania invadi&oacute; Polonia mediante la <I>Blitzkrieg</I>. Gran Breta&ntilde;a y Francia declararon la guerra a Alemania el <B>3 de septiembre de 1939</B>. El fin en Europa fue el <B>8 de mayo de 1945</B> (V-E Day, <I>Victory in Europe Day</I>); el fin global fue el <B>2 de septiembre de 1945</B> con la rendici&oacute;n formal del Jap&oacute;n a bordo del acorazado USS <I>Missouri</I> en la Bah&iacute;a de Tokio. Los bloques: <B>Aliados:</B> Gran Breta&ntilde;a, Francia, la URSS (desde junio 1941), EE.UU. (desde diciembre 1941), China, Australia, Ca nad&aacute;, y decenas de pa&iacute;ses m&aacute;s. <B>Potencias del Eje:</B> Alemania, Italia (hasta 1943, cuando cambi&oacute; de bando), Jap&oacute;n, Hungr&iacute;a, Rumania, Bulgaria, Croacia y Eslovaquia. La opci&oacute;n a) es incorrecta: la OTAN y el Pacto de Varsovia son organizaciones de la Guerra Fr&iacute;a, posteriores a la Segunda Guerra Mundial.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Qu&eacute; fue el Pacto Moli&oacute;tov-Ribbentrop y por qu&eacute; fue tan impactante para el mundo en 1939?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) El Pacto Moli&oacute;tov-Ribbentrop fue un tratado de paz entre Alemania y Francia firmado en agosto de 1939, en el que Hitler prometi&oacute; no atacar Francia a cambio de que esta no apoyara a Polonia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El Pacto Moli&oacute;tov-Ribbentrop (23 agosto 1939) fue un pacto de no agresi&oacute;n entre la Alemania nazi y la URSS estalinista &mdash;dos ideolog&iacute;as que se consideraban enemigas mortales&mdash;, con un protocolo secreto que divid&iacute;a Europa Oriental en esferas de influencia; liber&oacute; a Hitler del miedo a la guerra en dos frentes y permiti&oacute; la invasi&oacute;n de Polonia nueve d&iacute;as despu&eacute;s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) El Pacto Moli&oacute;tov-Ribbentrop fue el acuerdo de rendici&oacute;n de la URSS ante Alemania firmado en 1942, por el que Stalin cedi&oacute; Ucrania y Belarus a cambio de un armisticio; fue anulado por Stalin en 1943</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Fue un acuerdo militar entre Italia y la URSS para dividirse los Balcanes, firmado en 1939 por los ministros de exteriores de ambos pa&iacute;ses; Alemania no fue parte del acuerdo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Pacto Moli&oacute;tov-Ribbentrop</B> fue firmado el <B>23 de agosto de 1939</B> por los ministros de exteriores sovi&eacute;tico (<B>Viacheslav Moli&oacute;tov</B>) y alem&aacute;n (<B>Joachim von Ribbentrop</B>). Su impacto fue enorme por varias razones: (1) <B>Sorpresa ideol&oacute;gica:</B> el nazismo y el comunismo eran antagonistas declarados; Hitler hab&iacute;a descrito a los eslavos como "Untermenschen" y al bolchevismo como el gran enemigo en el <I>Mein Kampf</I>; que ambos regímenes se aliaran fue un choque para el mundo. (2) <B>Protocolo secreto:</B> divid&iacute;a Europa oriental: la URSS obtendr&iacute;a Finlandia, Estonia, Letonia, Besarabia y la mitad oriental de Polonia; Alemania obtendr&iacute;a la mitad occidental de Polonia y Lituania (reajustado luego). (3) <B>Impacto estrat&eacute;gico:</B> liberaba a Hitler del temor a la guerra en dos frentes, su mayor pesadilla estrat&eacute;gica. Nueve d&iacute;as despu&eacute;s, Alemania invad&iacute;a Polonia. El 17 de septiembre, la URSS invad&iacute;a Polonia por el este.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Qu&eacute; fue la Blitzkrieg y por qu&eacute; fue tan revolucionaria como t&aacute;ctica militar?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) La Blitzkrieg fue la t&aacute;ctica de guerra submarina alemana consistente en atacar r&aacute;pidamente los convoyes aliados en el Atl&aacute;ntico antes de que pudieran organizar la defensa; fue igual que la usada en la Primera Guerra Mundial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) La <I>Blitzkrieg</I> ("guerra rel&aacute;mpago") fue una t&aacute;ctica militar que coordinaba tanques, aviaci&oacute;n de apoyo cercano (bombarderos en picada Stuka) e infantería mec&anicé para penetrar r&aacute;pidamente las l&iacute;neas enemigas, rodear las fuerzas enemigas y destruirlas antes de que pudieran reorganizarse, evitando completamente la guerra de trincheras est&aacute;tica de 1914&ndash;1918</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) La Blitzkrieg fue una t&aacute;ctica defensiva alemana consistente en construir una l&iacute;nea de bunkers (similar a la L&iacute;nea Maginot francesa) para detener el avance aliado; fue usada principalmente en el Frente Occidental entre 1940 y 1944</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) La Blitzkrieg fue una t&aacute;ctica de bombardeo estrat&eacute;gico sobre ciudades industriales enemigas; fue usada por primera vez en Gran Breta&ntilde;a ("el Blitz") y luego adaptada por los Aliados contra Alemania</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B><I>Blitzkrieg</I></B> ("guerra rel&aacute;mpago") fue la revoluci&oacute;n t&aacute;ctica que Alemania us&oacute; con devastador &eacute;xito en 1939&ndash;1941. Sus elementos: (1) <B>Tanques <I>Panzer</I> en masa</B> (no dispersos sino concentrados en divisiones acorazadas) para abrir brechas en las l&iacute;neas enemigas. (2) <B>Aviaci&oacute;n de apoyo cercano</B>: el bombardero en picada <B>Junkers Ju 87 "Stuka"</B> atacaba posiciones enemigas justo delante de los tanques, actuando como artiller&iacute;a m&oacute;vil. (3) <B>Infantería mec&anicé en veh&iacute;culos</B>: segu&iacute;a a los tanques para consolidar el terreno ganado. (4) <B>Comunicaciones por radio</B>: permit&iacute;an coordinaci&oacute;n en tiempo real. La clave era la <B>velocidad</B>: el enemigo era rodeado antes de poder reorganizarse. Resultados: Polonia ca&iacute;da en <B>27 d&iacute;as</B>; Dinamarca en <B>6 horas</B>; Francia, considerada la mayor potencia militar continental, en <B>6 semanas</B>. La opci&oacute;n d) describe el "Blitz" (bombardeo alem&aacute;n sobre Gran Breta&ntilde;a), que es un concepto diferente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Por qu&eacute; la Batalla de Stalingrado (1942&ndash;1943) es considerada el punto de giro de la Segunda Guerra Mundial en Europa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Stalingrado fue importante porque fue la primera vez que Alemania us&oacute; la Blitzkrieg con pleno &eacute;xito; la ciudad cay&oacute; en tres semanas y permiti&oacute; a Alemania acceder al petr&oacute;leo del C&aacute;ucaso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Stalingrado (agosto 1942 &ndash; febrero 1943) fue el punto de giro porque el Ej&eacute;rcito Rojo rode&oacute; y destruy&oacute; al 6.&ordm; Ej&eacute;rcito alem&aacute;n del mariscal Paulus (m&aacute;s de 300.000 soldados alemanes muertos o capturados); fue la mayor derrota militar alemana y la primera vez que Alemania perd&iacute;a un ej&eacute;rcito entero; desde ese momento, Alemania nunca recuper&oacute; la iniciativa estrat&eacute;gica en el este</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Stalingrado fue el punto de giro porque fue donde EE.UU. envió sus primeras tropas a Europa; la participación estadounidense fue decisiva para la victoria del Ej&eacute;rcito Rojo en la batalla</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Stalingrado fue el punto de giro porque all&iacute; los alemanes usaron por primera vez armas qu&iacute;micas contra la poblaci&oacute;n civil sovi&eacute;tica, lo que provoc&oacute; la entrada de EE.UU. en la guerra al d&iacute;a siguiente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Batalla de Stalingrado</B> (agosto 1942 &ndash; 2 febrero 1943) es la batalla m&aacute;s importante de la Segunda Guerra Mundial en el Frente Oriental (y posiblemente de toda la guerra). <B>El contexto:</B> Hitler orden&oacute; capturar Stalingrado (hoy Volgogrado) &mdash;una ciudad con el nombre de Stalin, situada sobre el Volga y nodo industrial clave&mdash; como objetivo de prestige y estrat&eacute;gico. El 6.&ordm; Ej&eacute;rcito del <B>mariscal Friedrich Paulus</B> lleg&oacute; a controlar el 90% de la ciudad en combates calle por calle de enorme ferocidad. <B>El contraataque sovi&eacute;tico (Operaci&oacute;n Urano, noviembre 1942):</B> el mariscal <B>Zhukov</B> organiz&oacute; una maniobra de pinzas que rode&oacute; completamente al 6.&ordm; Ej&eacute;rcito alemán (330.000 hombres). Hitler prohibi&oacute; la retirada; Paulus se rindi&oacute; el 2 de febrero de 1943. <B>Por qu&eacute; fue el punto de giro:</B> Alemania nunca hab&iacute;a perdido un ej&eacute;rcito entero; la rendici&oacute;n de un mariscal de campo alem&aacute;n fue psicol&oacute;gicamente demoledora; desde Stalingrado, la URSS fue continuamente avanzando hacia el oeste hasta Berl&iacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qu&eacute; fue el D&iacute;a D (6 de junio de 1944) y cu&aacute;l fue su importancia estrat&eacute;gica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) El D&iacute;a D fue el bombardeo at&oacute;mico de Hiroshima (6 agosto 1945); fue el primer uso de armas nucleares en la historia y oblig&oacute; a Jap&oacute;n a capitular</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) El D&iacute;a D (6 junio 1944, <I>Operaci&oacute;n Overlord</I>) fue el mayor desembarco anf&iacute;bio de la historia: 156.000 soldados aliados desembarcaron en 5 playas de Normand&iacute;a (Francia); abri&oacute; el Frente Occidental que Stalin ven&iacute;a exigiendo; liber&oacute; a Par&iacute;s el 25 de agosto de 1944 y coloc&oacute; a Alemania en la situaci&oacute;n insostenible de luchar en tres frentes (este, oeste y sur/Italia)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) El D&iacute;a D fue la operaci&oacute;n militar sovi&eacute;tica de cerco de Berl&iacute;n en abril de 1945; fue el &uacute;ltimo gran combate de la guerra en Europa, que termin&oacute; con el suicidio de Hitler</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) El D&iacute;a D fue el ataque japon&eacute;s a Pearl Harbor el 7 de diciembre de 1941; el nombre proviene de la expresi&oacute;n japonesa "Deki-shima" (isla destruida)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>D&iacute;a D</B> (<I>D-Day</I>, la "D" es simplemente la inicial de "Day" en el lenguaje militar anglosaj&oacute;n para designar el d&iacute;a de un ataque) fue el <B>6 de junio de 1944</B>, nombre clave <B><I>Operaci&oacute;n Overlord</I></B>. Fue el mayor desembarco anf&iacute;bio de la historia. <B>Datos clave:</B> 156.000 soldados aliados desembarcaron en las primeras 24 horas; 5 playas de Normand&iacute;a (Omaha y Utah [estadounidenses], Gold y Sword [brit&aacute;nicas], Juno [canadiense]); el general <B>Dwight D. Eisenhower</B> comandaba las fuerzas aliadas; el mariscal <B>Erwin Rommel</B> defend&iacute;a la costa francesa. El desembarco fue apoyado por el mayor movimiento de engaño militar de la historia (<B>Operaci&oacute;n Fortitude</B>): los Aliados convencieron a Hitler de que el verdadero desembarco ser&iacute;a en Calais, no en Normand&iacute;a. <B>Impacto estrat&eacute;gico:</B> abri&oacute; el "segundo frente" en el oeste que Stalin llevaba dos a&ntilde;os exigiendo; con la URSS presionando desde el este, Italia desde el sur y los Aliados occidentales desde el oeste, Alemania qued&oacute; atrapada. Par&iacute;s fue liberada el <B>25 de agosto de 1944</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Explica c&oacute;mo la pol&iacute;tica de apaciguamiento de Gran Breta&ntilde;a y Francia contribuy&oacute; al estallido de la Segunda Guerra Mundial. &iquest;Fue una pol&iacute;tica racional o un error hist&oacute;rico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) El apaciguamiento fue una pol&iacute;tica correcta y exitosa: retras&oacute; el inicio de la guerra dos a&ntilde;os y permiti&oacute; a Gran Breta&ntilde;a y Francia rearmar su aviaci&oacute;n, lo que fue decisivo para ganar la Batalla de Gran Breta&ntilde;a en 1940</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El apaciguamiento (especialmente el Acuerdo de M&uacute;nich, septiembre 1938) busc&oacute; racionalmente evitar una nueva guerra; sin embargo, tuvo el efecto contrario: ense&ntilde;&oacute; a Hitler que pod&iacute;a obtener concesiones con amenazas, envalent&oacute; sus ambiciones y destruy&oacute; la credibilidad aliada; el sacrificio de Checoslovaquia no satisfizo a Hitler sino que lo estimul&oacute; a pedir m&aacute;s, llevando inevitablemente a la guerra que buscaba evitarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El apaciguamiento no tuvo ninguna influencia en el inicio de la guerra; Hitler habr&iacute;a atacado de todas formas; la &uacute;nica causa de la guerra fue el Pacto Moli&oacute;tov-Ribbentrop, que le dio a Hitler la seguridad de no luchar en dos frentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) El apaciguamiento fue una pol&iacute;tica estadounidense, no brit&aacute;nica ni francesa; EE.UU. alien t&oacute; a las democracias europeas a ceder ante Hitler para que Alemania eventualmente atacara a la URSS</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>apaciguamiento</B> es uno de los conceptos m&aacute;s debatidos de la historia diplomática del siglo XX. <B>La l&oacute;gica del apaciguamiento:</B> el primer ministro brit&aacute;nico <B>Neville Chamberlain</B> y el franc&eacute;s <B>&Eacute;douard Daladier</B> ten&iacute;an razones para ceder ante Hitler: (1) el trauma de la Primera Guerra Mundial: ning&uacute;n gobierno democr&aacute;tico quer&iacute;a repetir la carnicería; (2) la creencia de que las demandas de Hitler eran limitadas y que una vez satisfechas detendr&iacute;an su expansi&oacute;n; (3) el miedo al comunismo: algunos veían a Alemania como un muro contra la URSS; (4) la debilidad militar real de GB y Francia en 1938. <B>El Acuerdo de M&uacute;nich</B> (29&ndash;30 septiembre 1938): Chamberlain, Daladier, Hitler y Mussolini entregaron los <B>Sudetes</B> checos a Hitler sin que Checoslovaquia fuera siquiera invitada a la conferencia. Chamberlain regres&oacute; a Londres proclamando "paz en nuestro tiempo". <B>El fracaso:</B> en marzo de 1939, Hitler ocup&oacute; el resto de Checoslovaquia, violando los acuerdos de M&uacute;nich; qued&oacute; demostrado que su apetito era ilimitado. <B>Winston Churchill</B> lo calific&oacute;: "tuvisteis que elegir entre la guerra y el deshonor. Elegisteis el deshonor y tendr&eacute;is la guerra."</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Analiza las razones por las que EE.UU. entr&oacute; en la Segunda Guerra Mundial en diciembre de 1941 y c&oacute;mo su participaci&oacute;n cambi&oacute; el curso de la guerra.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) EE.UU. entr&oacute; en la guerra en 1941 porque su alianza con Gran Breta&ntilde;a lo obligaba autom&aacute;ticamente; no ten&iacute;a otra opci&oacute;n legal. Su participaci&oacute;n fue modesta: solo aport&oacute; materiales, no tropas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) EE.UU. entr&oacute; en la guerra el 8 de diciembre de 1941 tras el ataque japon&eacute;s a Pearl Harbor (7 dic. 1941); su participaci&oacute;n transform&oacute; la guerra: aport&oacute; una capacidad industrial sin precedentes ("el arsenal de la democracia"), millones de soldados, el Plan Lend-Lease a los Aliados, el Desembarco en Normand&iacute;a y la tecnolog&iacute;a de la bomba at&oacute;mica; fue determinante en todos los frentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) EE.UU. entr&oacute; en la guerra en 1939 junto con Gran Breta&ntilde;a y Francia tras la invasi&oacute;n de Polonia; el ataque a Pearl Harbor simplemente expandi&oacute; la guerra al Pac&iacute;fico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) EE.UU. entr&oacute; en la guerra solo contra Jap&oacute;n, no contra Alemania; fue la URSS quien declar&oacute; la guerra a Alemania por cuenta de los Aliados occidentales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>EE.UU. hab&iacute;a mantenido una neutralidad oficial (aunque proaliada) hasta el <B>7 de diciembre de 1941</B>, cuando Jap&oacute;n atac&oacute; Pearl Harbor. <B>Por qu&eacute; EE.UU. no hab&iacute;a entrado antes:</B> el <B>aislacionismo</B> era la posici&oacute;n dominante; las Leyes de Neutralidad (1935&ndash;1937) prohib&iacute;an vender armas a beligerantes. Roosevelt apoy&oacute; a los Aliados con el <B>Lend-Lease Act</B> (marzo 1941: "pr&eacute;stamo y arriendo" de material militar a GB y luego a la URSS) sin entrar formalmente en guerra. <B>El impacto de la entrada:</B> (1) <B>Capacidad industrial:</B> Roosevelt llam&oacute; a EE.UU. "el arsenal de la democracia"; la econom&iacute;a estadounidense produjo, entre 1941 y 1945, m&aacute;s aviones, tanques y barcos que todos los dem&aacute;s pa&iacute;ses del mundo juntos. (2) <B>Manpower:</B> 16 millones de estadounidenses sirvieron en las fuerzas armadas. (3) <B>Frente del Pac&iacute;fico:</B> EE.UU. lider&oacute; toda la campa&ntilde;a contra Jap&oacute;n. (4) <B>Frente Occidental:</B> el D&iacute;a D (junio 1944) y la liberaci&oacute;n de Francia fueron operaciones predominantemente estadounidenses. (5) <B>Bomba at&oacute;mica:</B> el Proyecto Manhattan fue un proyecto estadounidense. La entrada de EE.UU. hizo la victoria aliada virtualmente inevitable.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;Qu&eacute; fue el Holocausto, c&oacute;mo fue planificado y ejecutado, y por qu&eacute; fue un crimen hist&oacute;rico sin precedentes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El Holocausto fue un genocidio espont&aacute;neo realizado por soldados alemanes sin instrucciones del gobierno nazi; Hitler nunca orden&oacute; el exterminio de los jud&iacute;os por escrito y existe debate sobre si lo supo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El Holocausto fue el genocidio sistem&aacute;tico de aproximadamente 6 millones de jud&iacute;os y otros 5&ndash;6 millones de personas (gitanos, eslavos, discapacitados, homosexuales) planificado burocr&aacute;ticamente por el r&eacute;gimen nazi; la "Soluci&oacute;n Final" fue coordinada en la Conferencia de Wannsee (enero 1942) y ejecutada mediante campos de exterminio con c&aacute;maras de gas; fue sin precedentes por su escala industrial, su planificaci&oacute;n burocrática y su objetivo de exterminio racial total</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El Holocausto fue el bombardeo alem&aacute;n de ciudades brit&aacute;nicas durante la Batalla de Gran Breta&ntilde;a (el "Blitz"); el t&eacute;rmino fue acuñado por Churchill para describir el sufrimiento de la poblaci&oacute;n civil brit&aacute;nica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) El Holocausto fue perpetrado exclusivamente en Alemania; en los territorios ocupados, los jud&iacute;os fueron deportados a Palestina con el consentimiento brit&aacute;nico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Holocausto</B> (<I>Shoah</I>) es el genocidio m&aacute;s documentado de la historia. Sus caracter&iacute;sticas singulares: (1) <B>Escala:</B> aproximadamente <B>6 millones de jud&iacute;os</B> asesinados (el 67% de los jud&iacute;os europeos); en Polonia, el 90% de la poblaci&oacute;n jud&iacute;a fue exterminada. (2) <B>Planificaci&oacute;n burocrática:</B> la <B>Conferencia de Wannsee</B> (20 enero 1942) reunió a 15 altos funcionarios nazis coordinados por <B>Reinhard Heydrich</B> para organizar la log&iacute;stica del exterminio; las minutas de la reuni&oacute;n sobrevivieron y son uno de los documentos m&aacute;s escalofriantes de la historia. (3) <B>Industrializaci&oacute;n del asesinato:</B> campos de exterminio con c&aacute;maras de gas (<B>Zyklon B</B>), crematorios industriales; <B>Auschwitz-Birkenau</B> pod&iacute;a matar hasta 6.000 personas al d&iacute;a. (4) <B>Banalidad del mal:</B> la f&oacute;rmula de <B>Hannah Arendt</B> para describir c&oacute;mo funcionarios ordinarios ejecutaron el exterminio como si fuera burocracia rutinaria (el caso <B>Adolf Eichmann</B>). Lo que hace &uacute;nico al Holocausto: fue el primer genocidio en la historia con objetivo de exterminio total de un pueblo definido racialmente, llevado a cabo con los medios industriales del Estado moderno.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> &iquest;C&oacute;mo fue la Conferencia de Yalta (febrero 1945) y por qu&eacute; sus acuerdos sentaron las bases de la Guerra Fr&iacute;a?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Yalta fue la conferencia donde los Aliados decidieron lanzar las bombas at&oacute;micas sobre Jap&oacute;n; Roosevelt y Churchill convencieron a Stalin de que el uso de la bomba era necesario para evitar una invasi&oacute;n terrestre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) En Yalta (febrero 1945), Roosevelt, Churchill y Stalin acordaron la divisi&oacute;n de Alemania en zonas de ocupaci&oacute;n, la participaci&oacute;n sovi&eacute;tica en la guerra contra Jap&oacute;n y elecciones libres en Europa Oriental; Stalin incumpli&oacute; esta &uacute;ltima promesa instalando reg&iacute;menes comunistas prosoviéticos en Europa Oriental, lo que gener&oacute; la desconfianza mutua y la divisi&oacute;n del mundo en dos bloques que caracteriz&oacute; la Guerra Fr&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Yalta fue la conferencia donde Alemania firm&oacute; su rendici&oacute;n incondicional; los l&iacute;deres aliados se reunieron all&iacute; para presenciar el fin de la guerra en Europa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Yalta fue un fracaso total para los Aliados: Stalin no acept&oacute; ninguno de los puntos propuestos por Roosevelt y Churchill; la conferencia termin&oacute; sin ning&uacute;n acuerdo firmado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Conferencia de Yalta</B> (4&ndash;11 febrero 1945) se celebr&oacute; en Crimea (URSS) cuando la victoria sobre Alemania era inminente. Los "Tres Grandes": el presidente <B>Franklin D. Roosevelt</B> (ya gravemente enfermo; morir&iacute;a el 12 de abril de 1945), el primer ministro <B>Winston Churchill</B> y el premier sovi&eacute;tico <B>Jos&eacute;f Stalin</B>. <B>Acuerdos alcanzados:</B> (1) Alemania ser&iacute;a dividida en <B>4 zonas de ocupaci&oacute;n</B> (EE.UU., GB, Francia y URSS); Berl&iacute;n tambi&eacute;n ser&iacute;a dividida. (2) La URSS entrar&iacute;a en la guerra contra Jap&oacute;n <B>90 d&iacute;as despu&eacute;s</B> de la rendici&oacute;n alemana (lo cumpli&oacute; el 8 agosto 1945). (3) Los pa&iacute;ses liberados del este de Europa tendr&iacute;an <B>elecciones libres y democr&aacute;ticas</B>. (4) Se crear&iacute;a la <B>ONU</B>. <B>Por qu&eacute; prepar&oacute; la Guerra Fr&iacute;a:</B> Stalin incumpli&oacute; sistem&aacute;ticamente la promesa de elecciones libres: entre 1945 y 1948, impuso reg&iacute;menes comunistas en Polonia, Checoslovaquia, Hungr&iacute;a, Rumania, Bulgaria y la zona de Alemania controlada por la URSS. Churchill lo describi&oacute; como el descenso de un "<B>Tel&oacute;n de Acero</B>" (discurso de Fulton, 5 marzo 1946).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Por qu&eacute; la Operaci&oacute;n Barbarroja (junio 1941) fue un error estrat&eacute;gico decisivo de Hitler?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Barbarroja fue una operaci&oacute;n &eacute;xico que permiti&oacute; a Alemania tomar Mosc&uacute; en el oto&ntilde;o de 1941 y sacar a la URSS de la guerra; el error estrat&eacute;gico de Hitler fue no haber lanzado Barbarroja antes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Barbarroja fue un error estrat&eacute;gico porque reprodujo la pesadilla de la guerra en dos frentes: Alemania aún no hab&iacute;a derrotado a Gran Breta&ntilde;a cuando abri&oacute; un nuevo frente inmenso contra la URSS; subestim&oacute; la capacidad de resistencia sovi&eacute;tica, el invierno ruso y las enormes distancias; la guerra de exterminio ideol&oacute;gica alien&oacute; a pueblos que podr&iacute;an haber sido aliados; Alemania nunca pudo ganar en dos frentes simult&aacute;neos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Barbarroja fue un error porque Hitler deb&iacute;a haber atacado primero a EE.UU. antes de que entrara en la guerra, y luego atacar a la URSS desde el este y el oeste simult&aacute;neamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Barbarroja fue un error log&iacute;stico menor: las tropas alemanas llegaron a las puertas de Mosc&uacute; pero se quedaron sin combustible; un reabastecimiento mejor planeado habr&iacute;a garantizado la victoria en 1941</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Operaci&oacute;n Barbarroja</B> (22 junio 1941) fue la mayor operaci&oacute;n militar terrestre de la historia: 3,8 millones de soldados alemanes y de pa&iacute;ses aliados del Eje atacaron la URSS en tres grupos de ej&eacute;rcitos hacia Leningrado (norte), Mosc&uacute; (centro) y Kiev-C&aacute;ucaso (sur). <B>Por qu&eacute; fue un error estrat&eacute;gico:</B> (1) <B>Guerra en dos frentes:</B> Gran Breta&ntilde;a no estaba derrotada; Alemania asumió la misma pesadilla estrat&eacute;gica que la llevó al desastre en la Primera Guerra Mundial. (2) <B>Subestimaci&oacute;n del enemigo:</B> Hitler crey&oacute; que la URSS "se derrumbar&iacute;a como un castillo de naipes" en semanas; pero la URSS ten&iacute;a recursos humanos y materiales casi ilimitados y una determinaci&oacute;n de hierro. (3) <B>El factor invierno:</B> Alemania no equipó a sus tropas para inviernos de &ndash;40&deg;C; en diciembre de 1941, la ofensiva sobre Mosc&uacute; se detuvo. (4) <B>La guerra de exterminio:</B> el trato brutal a civiles y prisioneros sovi&eacute;ticos (3,3 millones de prisioneros de guerra sovi&eacute;ticos muertos de hambre y maltrato) moviliz&oacute; a la poblaci&oacute;n sovi&eacute;tica en una guerra de resistencia total. (5) Despu&eacute;s de Pearl Harbor, EE.UU. entr&oacute; en la guerra: Alemania enfrentaba a la URSS, GB y EE.UU. simult&aacute;neamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Eval&uacute;a la decisi&oacute;n del presidente Truman de lanzar las bombas at&oacute;micas sobre Hiroshima y Nagasaki: &iquest;fue justificada o constituy&oacute; un crimen de guerra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Las bombas at&oacute;micas fueron completamente innecesarias: Jap&oacute;n estaba a punto de rendirse de forma incondicional el d&iacute;a anterior al bombardeo de Hiroshima, por lo que la decisi&oacute;n de Truman fue puramente simb&oacute;lica y sin ning&uacute;n efecto estrat&eacute;gico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La decisi&oacute;n tiene argumentos en ambos sentidos: a favor, se estimaba que una invasi&oacute;n terrestre de Jap&oacute;n costar&iacute;a hasta un mill&oacute;n de bajas aliadas y millones m&aacute;s japonesas; en contra, las bombas mataron masivamente a civiles (crim en de guerra desde ciertos marcos del derecho internacional), Jap&oacute;n pod&iacute;a haber sido for zado a rendirse por el bloqueo naval y la declaraci&oacute;n de guerra sovi&eacute;tica; el debate sigue abierto entre historiadores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Las bombas at&oacute;micas fueron totalmente justificadas y no existe ningún debate historiogr&aacute;fico serio sobre su uso; la opini&oacute;n acad&eacute;mica es unnime en apoyar la decisi&oacute;n de Truman</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Las bombas fueron lanzadas exclusivamente por razones geopolíticas para intimidar a la URSS e iniciar la Guerra Fr&iacute;a; Jap&oacute;n era un pretexto y la ren dici&oacute;n no era el objetivo real</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La decisi&oacute;n de Truman de usar las bombas at&oacute;micas es uno de los debates morales e hist&oacute;ricos m&aacute;s profundos del siglo XX. <B>Argumentos a favor de la decisi&oacute;n:</B> (1) <B>La alternativa: <I>Operaci&oacute;n Downfall</I></B> (invasi&oacute;n terrestre del archipi&eacute;lago japon&eacute;s): los planificadores militares estimaban entre 250.000 y 1.000.000 de bajas aliadas; el gobierno japon&eacute;s hab&iacute;a armado a la poblaci&oacute;n civil ("Ketsugo": resistencia hasta el &uacute;ltimo civil). (2) La batalla de <B>Okinawa</B> (abril&ndash;junio 1945): 12.000 estadounidenses y entre 100.000 y 150.000 civiles japoneses muertos; ratio que extrapolada a las islas principales daba n&uacute;meros escalofriantes. (3) Las bombas terminaron la guerra en d&iacute;as, evitando meses o a&ntilde;os m&aacute;s de guerra. <B>Argumentos en contra:</B> (1) Las v&iacute;ctimas fueron masivamente <B>civiles</B> (Hiroshima: ciudad con escasa importancia militar; Nagasaki: la segunda ciudad cat&oacute;lica del Jap&oacute;n). (2) El bloqueo naval, la entrada sovi&eacute;tica y la devastaci&oacute;n convencional podr&iacute;an haber forzado la rendici&oacute;n. (3) El efecto sobre el Emperador (factor que finalmente lo llev&oacute; a rendirse) pudo lograrse con una demostraci&oacute;n en zona deshabitada. (4) Las radiaciones causaron muertes y sufrimiento durante d&eacute;cadas. (5) El historiador <B>Gar Alperovitz</B> argument&oacute; que las bombas ten&iacute;an un objetivo diplom&aacute;tico: intimidar a la URSS antes de la posguerra (tesis muy debatida). El debate permanece abierto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> &iquest;C&oacute;mo transform&oacute; la Segunda Guerra Mundial el papel de las mujeres y de las colonias en el esfuerzo b&eacute;lico, y qu&eacute; consecuencias tuvo esto en la posguerra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La Segunda Guerra Mundial no transform&oacute; el rol de la mujer ni de las colonias; la movilizaci&oacute;n fue exclusivamente de hombres blancos de los pa&iacute;ses metr&oacute;polis; las mujeres permanecieron en el hogar y las colonias no aportaron tropas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La guerra moviliz&oacute; masivamente a las mujeres en la industria de guerra (Rosie the Riveter en EE.UU.; m&aacute;s de 6 millones de mujeres brit&aacute;nicas en trabajos de guerra) y a millones de soldados y trabajadores coloniales (India, &Aacute;frica, Indochina); estas contribuciones hicieron pol&iacute;ticamente insostenible la discriminaci&oacute;n de posguerra y aceleraron el sufragio femenino y la descolonizaci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Las mujeres s&iacute; participaron en la guerra, pero solo en la URSS, donde sirvieron en unidades de combate; en los dem&aacute;s pa&iacute;ses solo trabajaron como enfermeras. Las colonias no aportaron nada al esfuerzo b&eacute;lico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Las mujeres ganaron el derecho al voto durante la guerra en todos los pa&iacute;ses occidentales como recompensa directa; las colonias declararon la independencia unilateralmente mientras las metr&oacute;polis estaban distra&iacute;das con la guerra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>El rol de la mujer:</B> La Segunda Guerra Mundial moviliz&oacute; a las mujeres masivamente. En EE.UU., la figura de <B>"Rosie the Riveter"</B> ("Rosie la remachadora") simboliz&oacute; a los 6 millones de mujeres que trabajaron en f&aacute;bricas de armamento. En la URSS, las mujeres no solo trabajaron en la industria sino que <B>sirvieron en combate</B>: el <B>Regimiento de las Brujas de la Noche</B> (588 Regimiento de Bombardeo Nocturno) realizó m&aacute;s de 23.000 misiones; <B>Lyudmila Pavlichenko</B> fue la francotiradora m&aacute;s letal de la historia (309 bajas confirmadas). En Gran Breta&ntilde;a, m&aacute;s de 6 millones de mujeres asumieron roles industriales, militares auxiliares y de servicios. <B>Las colonias:</B> India aport&oacute; <B>2,5 millones de soldados</B> (el mayor ej&eacute;rcito voluntario de la historia); &Aacute;frica Occidental Francesa y Brit&aacute;nica aportaron cientos de miles de combatientes; Indochina, Madagascar, el Caribe. <B>Consecuencias en la posguerra:</B> Las colonias que hab&iacute;an luchado "por la libertad" no aceptaron continuar en la servidumbre colonial; el movimiento de descolonizaci&oacute;n se aceler&oacute; enormemente. La India obtuvo la independencia en <B>1947</B>. La contribuci&oacute;n femenina hizo pol&iacute;ticamente imposible retrasar m&aacute;s el sufragio: Francia (1944), Italia (1945), Jap&oacute;n (1945).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Compara la Segunda Guerra Mundial con la Primera en t&eacute;rminos de t&aacute;cticas militares, bajas civiles y alcance global: &iquest;en qu&eacute; sentido la Segunda fue una "guerra total" a&uacute;n m&aacute;s profunda?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La Segunda Guerra Mundial fue menos "total" que la Primera porque la t&aacute;ctica de la Blitzkrieg fue m&aacute;s r&aacute;pida y eficiente; las guerras cortas son menos totales que las largas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La Segunda fue a&uacute;n m&aacute;s "total" que la Primera en tres dimensiones: (1) <B>T&aacute;ctica:</B> de trincheras est&aacute;ticas a guerra m&oacute;vil de Blitzkrieg, combinando tierra, mar y aire; (2) <B>Civiles:</B> mientras en la Primera m&aacute;s del 80% de las v&iacute;ctimas eran militares, en la Segunda la mayor&iacute;a eran civiles (bombardeos, Holocausto, hambre deliberada); (3) <B>Alcance:</B> se combati&oacute; en todos los continentes y oc&eacute;anos, con armas que inclu&iacute;an la bomba at&oacute;mica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Ambas guerras fueron igualmente totales; la diferencia de bajas se explica por la mayor poblaci&oacute;n mundial en 1939, no por la mayor intensidad del conflicto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La Segunda Guerra Mundial fue menos global que la Primera porque se limit&oacute; principalmente a Europa; la guerra en el Pac&iacute;fico fue un conflicto separado entre EE.UU. y Jap&oacute;n sin relaci&oacute;n con la guerra europea</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparaci&oacute;n entre ambas guerras mundiales ilustra la evoluci&oacute;n del concepto de "guerra total". <B>T&aacute;cticas militares:</B> la Primera Guerra Mundial estuvo dominada por la <I>guerra de posiciones</I> (trincheras, escasa movilidad); la Segunda fue definida por la <B>movilidad</B>: la Blitzkrieg alemana, la guerra de portaaviones en el Pac&iacute;fico (ya no hab&iacute;a grandes batallas navales entre acorazados como Jutlandia), los bombardeos estrat&eacute;gicos masivos sobre ciudades (Dresden, Tokio, Hiroshima). <B>Civiles:</B> En la Primera Guerra Mundial, aproximadamente el 60-70% de los muertos eran militares; en la Segunda, los civiles representaron m&aacute;s del 65% de los muertos totales: bombardeos masivos (el RAF brit&aacute;nico quem&oacute; Dresden en febrero 1945; los B-29 estadounidenses incendiaron Tokio en marzo 1945: 80.000&ndash;100.000 muertos civiles en una noche), el Holocausto, el hambre deliberada (Leningrado, Varsovia), los trabajos forzados. <B>Alcance global:</B> la Primera tuvo frentes principalmente en Europa y Medio Oriente; la Segunda se comba ti&oacute; en Europa, &Aacute;frica del Norte, el Pac&iacute;fico (desde Alaska hasta Australia), el Atl&aacute;ntico, el Mediterr&aacute;neo, el &Iacute;ndico, China y el sudeste asi&aacute;tico. La bomba at&oacute;mica represent&oacute; una nueva dimensi&oacute;n: por primera vez, un arma pod&iacute;a destruir una ciudad entera con un solo impacto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Analiza la tesis del historiador Richard Evans (<I>El Tercer Reich en la Historia y en la Memoria</I>): &iquest;fue el Holocausto el resultado inevitable de la ideolog&iacute;a nazi desde 1933, o fue una decisi&oacute;n que emergi&oacute; progresivamente durante la guerra (debate "intencionalista" vs. "funcionalista")?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Los intencionalistas y funcionalistas tienen exactamente la misma postura; el debate es puramente sem&aacute;ntico y no tiene repercusiones sobre la comprensi&oacute;n del Holocausto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Los <B>intencionalistas</B> (Lucy Dawidowicz, Eberhard J&auml;ckel) argumentan que Hitler ten&iacute;a un plan premeditado para el exterminio de los jud&iacute;os desde el <I>Mein Kampf</I> (1925); los <B>funcionalistas</B> (Hans Mommsen, Martin Broszat) sostienen que el Holocausto emergi&oacute; progresivamente de la din&aacute;mica del r&eacute;gimen nazi, las presiones burocr&aacute;ticas y la radicalizaci&oacute;n de la guerra en el este; la posici&oacute;n dominante hoy es "intencionalismo moderado" o "funcionalismo moderado": Hitler ten&iacute;a intenciones genocidas desde temprano pero la decisi&oacute;n operativa emergi&oacute; en el contexto de la guerra de 1941&ndash;1942</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Los funcionalistas argumentan que Hitler plane&oacute; el Holocausto desde 1919 y los intencionalistas que fue una decisi&oacute;n improvisada de los mandos medios sin conocimiento de Hitler; ninguna postura es aceptada por la historiograf&iacute;a actual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El debate intencionalista/funcionalista solo existe en Alemania; la historiograf&iacute;a anglosajona y latinoamericana acepta un&aacute;nimemente que el Holocausto fue planificado en detalle por Hitler desde 1923</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El debate entre <B>intencionalismo</B> y <B>funcionalismo</B> es uno de los debates historiográficos m&aacute;s importantes del siglo XX. <B>Intencionalismo:</B> Hitler ten&iacute;a un plan premeditado y coherente para el exterminio de los jud&iacute;os desde sus primeros escritos (<I>Mein Kampf</I>, 1925). Evidencia: el antisemitismo radical de Hitler era constante y central; las etapas de persecuci&oacute;n (1933, 1935, 1938, 1941, 1942) son una escalada l&oacute;gica. Representantes: <B>Lucy Dawidowicz</B> (<I>La guerra contra los jud&iacute;os</I>, 1975), <B>Eberhard J&auml;ckel</B>. <B>Funcionalismo:</B> el Holocausto no fue resultado de un plan maestro sino de la din&aacute;mica del r&eacute;gimen: la competencia burocrática entre agencias nazis, las presiones de la guerra en el este, la incapacidad de deportar a los jud&iacute;os fuera de Europa llevaron "funcionalmente" al exterminio. Hitler pudo no haber dado una orden escrita expl&iacute;cita (y de hecho ning&uacute;n documento as&iacute; ha sido hallado). Representantes: <B>Hans Mommsen</B>, <B>Martin Broszat</B>. <B>S&iacute;ntesis actual (Christopher Browning, Richard Evans):</B> "intencionalismo moderado" o "funcionalismo moderado": Hitler ten&iacute;a intenciones genocidas desde temprano (intencionali smo), pero la decisi&oacute;n operativa concreta de exterminar sistem&aacute;ticamente a todos los jud&iacute;os europeos emergi&oacute; en 1941&ndash;1942 en el contexto de la guerra de exterminio ideol&oacute;gica en el este (funcionalismo). La <b>Conferencia de Wannsee</b> (enero 1942) no "decidi&oacute;" el exterminio sino que coordin&oacute; burocr&aacute;ticamente lo que ya estaba ocurriendo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> &iquest;C&oacute;mo transform&oacute; la Segunda Guerra Mundial el orden internacional y por qu&eacute; se dice que estableci&oacute; un "orden liberal" basado en reglas que perdurar&iacute;a hasta el siglo XXI?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La Segunda Guerra Mundial no estableci&oacute; un nuevo orden internacional; el mundo volvió al mismo sistema de equilibrio de poder del siglo XIX, solo que ahora con EE.UU. y la URSS como potencias dominantes en lugar de Gran Breta&ntilde;a y Francia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La guerra estableci&oacute; un "orden liberal basado en reglas" cimentado en la ONU (1945), la Declaraci&oacute;n Universal de Derechos Humanos (1948), el sistema de Bretton Woods (FMI, Banco Mundial, GATT/OMC), la OTAN y el Plan Marshall; este orden fue impulsado por EE.UU. y busc&oacute; que la cooperaci&oacute;n multilateral y el derecho internacional sustituyeran la ley del m&aacute;s fuerte; su fragilidad qued&oacute; expuesta por la Guerra Fr&iacute;a y los desaf&iacute;os del siglo XXI</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) El nuevo orden internacional de posguerra fue dise&ntilde;ado exclusivamente por la URSS y China en la Conferencia de Potsdam; EE.UU. volvi&oacute; al aislacionismo como despu&eacute;s de la Primera Guerra Mundial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) El "orden liberal" fue un fracaso total desde su inicio: la ONU nunca funcion&oacute;, el Plan Marshall fue rechazado por todos los pa&iacute;ses europeos y la Guerra Fr&iacute;a comenz&oacute; en 1945 antes de que ning&uacute;n institución de posguerra pudiera establecerse</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La Segunda Guerra Mundial inaugur&oacute; el "<B>orden liberal basado en reglas</B>" (<I>rules-based liberal order</I>) que domin&oacute; las relaciones internacionales de 1945 al siglo XXI. Sus pilares: (1) <B>La ONU</B> (24 oct. 1945): 51 miembros fundadores; <B>Consejo de Seguridad</B> con 5 permanentes con veto (EE.UU., URSS/Rusia, GB, Francia, China); Asamblea General; y sus organismos especializados (UNESCO, OMS, UNICEF, FAO). (2) <B>La Declaraci&oacute;n Universal de Derechos Humanos</B> (10 dic. 1948): respuesta directa al Holocausto; impulsada por <B>Eleanor Roosevelt</B>; primer reconocimiento universal de derechos inherentes a toda persona. (3) <B>El sistema de Bretton Woods</B> (1944): dise&ntilde;&oacute; la arquitectura econ&oacute;mica internacional: el <B>FMI</B> (estabilidad monetaria), el <B>Banco Mundial</B> (desarrollo), el <B>GATT</B> (libre comercio, luego OMC); el d&oacute;lar se convirti&oacute; en moneda de reserva mundial. (4) <B>El Plan Marshall</B> (1947): 13.000 millones de d&oacute;lares para reconstruir Europa Occidental; tambi&eacute;n estrategia de contenci&oacute;n del comunismo. (5) <B>Los Juicios de N&uacute;remberg</B>: establecieron que los cr&iacute;menes contra la humanidad son justiciables individualmente. Este orden fue imperfecto (ignor&oacute; la Guerra Fr&iacute;a, guerras de descolonizaci&oacute;n, genocidios posteriores) pero represent&oacute; un salto cualitativo en la gobernanza global.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analiza los 14 Puntos de Wilson vs. la Carta del Atl&aacute;ntico (1941): &iquest;en qu&eacute; medida el proyecto de orden internacional de Roosevelt y Churchill corrigi&oacute; los errores de la paz de 1919?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La Carta del Atl&aacute;ntico fue id&eacute;ntica a los 14 Puntos de Wilson; Roosevelt simplemente copi&oacute; los principios de Wilson sin ninguna modificaci&oacute;n; los mismos errores de 1919 se repitieron en 1945</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La Carta del Atl&aacute;ntico (agosto 1941, Roosevelt y Churchill) recogi&oacute; los principios wilsonianos (autodeterminaci&oacute;n, libre comercio, organizaci&oacute;n internacional) pero los reforz&oacute; con mecanismos m&aacute;s s&oacute;lidos: la ONU incluir&iacute;a a las grandes potencias (incluida la URSS) con un Consejo de Seguridad con poder de decisi&oacute;n; EE.UU. no se retir&oacute; del mundo en 1945 como en 1919; el Plan Marshall evit&oacute; la austeridad punitiva de Versalles; sin embargo, la URSS desaf&iacute;&oacute; el orden desde el principio con la Guerra Fr&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La Carta del Atl&aacute;ntico fue un rechazo expl&iacute;cito de los 14 Puntos de Wilson; Roosevelt y Churchill no cre&iacute;an en la autodeterminaci&oacute;n ni en el libre comercio y dise&ntilde;aron un orden basado en las esferas de influencia de las grandes potencias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La Carta del Atl&aacute;ntico fue firmada despu&eacute;s de la guerra, en 1947, como respuesta al inicio de la Guerra Fr&iacute;a; fue el documento fundacional de la OTAN, no de la ONU</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Carta del Atl&aacute;ntico</B> fue firmada el <B>14 de agosto de 1941</B> (EE.UU. a&uacute;n no hab&iacute;a entrado en la guerra) por el presidente <B>Roosevelt</B> y el primer ministro <B>Churchill</B> a bordo del HMS <I>Prince of Wales</I> en el Atl&aacute;ntico Norte. Sus 8 principios: (1) no buscar engrandecimiento territorial; (2) no cambiar fronteras sin el consentimiento de los pueblos; (3) <B>autodeterminaci&oacute;n</B>; (4) libre comercio mundial; (5) cooperaci&oacute;n econ&oacute;mica; (6) libertad del miedo y la miseria; (7) libertad de navegaci&oacute;n; (8) <B>sistema de seguridad general</B> (la futura ONU). <B>C&oacute;mo mejor&oacute; sobre Wilson:</B> (1) EE.UU. no se retir&oacute; del mundo en 1945: la hegemon&iacute;a estadounidense fue la garante del orden (Pax Americana). (2) La ONU inclu&iacute;a a todas las grandes potencias en el Consejo de Seguridad (a diferencia de la Sociedad de Naciones, que careci&oacute; de EE.UU. y excluy&oacute; a la URSS y Alemania). (3) El Plan Marshall evit&oacute; la trampa de las reparaciones punitivas: en lugar de castigar a los vencidos econ&oacute;micamente, los ayud&oacute; a reconstruirse (Alemania Occidental se convirti&oacute; en la locomotora econ&oacute;mica de Europa). <B>Limitaciones:</B> la autodeterminaci&oacute;n no se aplic&oacute; a las colonias brit&oacute;nicas (Churchill lo neg&oacute; expl&iacute;citamente para el Imperio); la URSS desafi&oacute; el orden desde el inicio.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> &iquest;C&oacute;mo afect&oacute; la Segunda Guerra Mundial a los pa&iacute;ses latinoamericanos, y en particular al Per&uacute;, y qu&eacute; papel jugaron en el conflicto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Los pa&iacute;ses latinoamericanos, incluido el Per&uacute;, declararon la guerra a las Potencias del Eje en 1939 junto con Gran Breta&ntilde;a y Francia; enviaron tropas a Europa y el Pac&iacute;fico que jugaron un papel decisivo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La mayor&iacute;a de pa&iacute;ses latinoamericanos mantuvieron una neutralidad de facto hasta 1945, cuando declararon la guerra al Eje por exigencia estadounidense para ingresar a la ONU; el Per&uacute; declar&oacute; la guerra a Alemania y Jap&oacute;n en febrero de 1945; econ&oacute;micamente, la guerra transform&oacute; la regi&oacute;n: aument&oacute; las exportaciones de materias primas (azúcar, algod&oacute;n, cobre, caucho), aceler&oacute; la industrializaci&oacute;n por sustituci&oacute;n de importaciones y consolid&oacute; la hegemon&iacute;a econ&oacute;mica estadounidense sobre la regi&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) El Per&uacute; luch&oacute; activamente del lado de las Potencias del Eje por la presencia de grandes comunidades alemanas e italianas en Lima y Arequipa; cambi&oacute; de bando en 1944 cuando qued&oacute; claro que los Aliados ganar&iacute;an</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Am&eacute;rica Latina fue totalmente aislada de la Segunda Guerra Mundial; ni sus econom&iacute;as ni sus pol&iacute;ticas internas fueron afectadas por el conflicto; la regi&oacute;n mantuvo neutralidad efectiva y no particip&oacute; en ninguna conferencia de posguerra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La posici&oacute;n de Am&eacute;rica Latina ante la Segunda Guerra Mundial fue compleja. <B>Neutralidad inicial y alineaci&oacute;n progresiva:</B> tras Pearl Harbor (diciembre 1941), la Conferencia de R&iacute;o de Janeiro (enero 1942) recomend&oacute; romper relaciones con el Eje. La mayor&iacute;a lo hicieron en 1942, aunque declarar la guerra fue posterior. <B>Brasil</B> fue el &uacute;nico pa&iacute;s latinoamericano que envi&oacute; tropas a combate: la <B>Fuerza Expedicionaria Brasile&ntilde;a</B> (25.000 hombres) luch&oacute; en Italia en 1944&ndash;1945. <B>M&eacute;xico</B> envi&oacute; un escuadr&oacute;n a&eacute;reo (el Escuadr&oacute;n 201) al Pac&iacute;fico. <B>El Per&uacute;:</B> rompi&oacute; relaciones con el Eje en enero de 1942 y declar&oacute; la guerra a Alemania y Jap&oacute;n el <B>12 de febrero de 1945</B> (necesario para ser miembro fundador de la ONU). No envi&oacute; tropas. <B>Impacto econ&oacute;mico en el Per&uacute;:</B> (1) Fuerte demanda de materias primas: el algod&oacute;n y el az&uacute;car peruanos tuvieron alta demanda; el cobre del Per&uacute; fue estrat&eacute;gico. (2) La presencia japonesa en el Per&uacute; (la comunidad nikkei, una de las m&aacute;s grandes de Am&eacute;rica Latina) fue perseguida: peruanos de origen japon&eacute;s fueron deportados a campos de internamiento en EE.UU. (3) Aceleraci&oacute;n de la influencia econ&oacute;mica estadounidense: el capital brit&aacute;nico fue desplazado definitivamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Desde la teor&iacute;a de las relaciones internacionales, &iquest;la Segunda Guerra Mundial represent&oacute; el triunfo del "realismo" (la ley del m&aacute;s fuerte) o del "liberalismo institucional" (la cooperaci&oacute;n multilateral) como principio organizador del orden internacional?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La Segunda Guerra Mundial demostr&oacute; el triunfo definitivo del realismo: las grandes potencias siempre act&uacute;an en funci&oacute;n de sus intereses nacionales y la ONU fue solo un instrumento del poder estadounidense sin valor independiente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La posguerra de 1945 represent&oacute; una tensi&oacute;n no resuelta entre ambos paradigmas: el realismo explic&oacute; la Guerra Fr&iacute;a (EE.UU. y la URSS actuaron como potencias que buscan maximizar poder y seguridad) mientras el liberalismo institucional explic&oacute; la construcci&oacute;n europea (CECA, CEE, UE), la OTAN y la expansi&oacute;n del comercio mundial; el orden de posguerra fue hibrido: instituciones liberales dentro de un marco de poder realista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La Segunda Guerra Mundial demostr&oacute; el triunfo definitivo del liberalismo institucional: desde 1945, ning&uacute;n pa&iacute;s ha actuado por motivos de poder nacional; todas las guerras desde 1945 fueron errores puntuales que la ONU logr&oacute; detener r&aacute;pidamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El realismo y el liberalismo institucional son teor&iacute;as del siglo XXI que no se pueden aplicar retroactivamente a la Segunda Guerra Mundial; para entenderla solo sirven el marxismo y el constructivismo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta requiere aplicar las principales teor&iacute;as de relaciones internacionales al orden de posguerra, lo que es exactamente lo que exigen los ex&aacute;menes de alto rendimiento. <B>El realismo</B> (Hans Morgenthau, Kenneth Waltz): los Estados act&uacute;an racionalmente para maximizar poder y seguridad; las instituciones internacionales son epifenomenos del poder real. <B>Evidencia realista en la posguerra:</B> la Guerra Fr&iacute;a es un ejemplo de manual de pol&iacute;tica de poder: EE.UU. y la URSS compitieron por hegemon&iacute;a global mediante alianzas (OTAN vs. Pacto de Varsovia), guerras por proxy (Corea, Vietnam, Angola), carreras armamentistas y espionaje; el veto en el Consejo de Seguridad permiti&oacute; a las grandes potencias bloquear cualquier acci&oacute;n contraria a sus intereses. <B>El liberalismo institucional</B> (Robert Keohane, Joseph Nye): los Estados pueden cooperar establece ndo instituciones que cambian los incentivos y reducen la incertidumbre. <B>Evidencia liberal en la posguerra:</B> la integraci&oacute;n europea (CECA 1951, CEE 1957, UE 1993) es el ejemplo m&aacute;s exitoso: Francia y Alemania, enemigas mortales por 70 a&ntilde;os, se convirtieron en socios dentro de un marco institucional; la expansi&oacute;n del comercio mundial (GATT/OMC) bajo reglas comunes; la extensi&oacute;n de la democracia liberal. <B>Conclusi&oacute;n:</B> el orden de 1945 fue intr&iacute;nsecamente h&iacute;brido: instituciones liberales operando dentro de un marco de competencia de poder realista. Esta tensi&oacute;n sigue siendo el paradigma central de las relaciones internacionales contempor&aacute;neas.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

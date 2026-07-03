@@ -1,0 +1,578 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>La Guerra Fría - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA UNIVERSAL &middot; TEMA 19</DIV>
+<H1>La Guerra Fr&iacute;a (1947&ndash;1991)</H1>
+<DIV CLASS="sub">Origen &middot; Doctrina Truman &middot; Carreras armamentista y espacial &middot; Conflictos por proxy &middot; Descolonizaci&oacute;n &middot; Détente &middot; Ca&iacute;da del Muro &middot; Fin de la URSS</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. &iquest;Qu&eacute; fue la Guerra Fr&iacute;a?</H3>
+La <B>Guerra Fr&iacute;a</B> fue la confrontaci&oacute;n ideol&oacute;gica, pol&iacute;tica, econ&oacute;mica, militar y cultural entre dos superpotencias &mdash;<B>Estados Unidos</B> (capitalismo liberal) y la <B>Uni&oacute;n Sovi&eacute;tica</B> (comunismo marxista-leninista)&mdash; y sus respectivos bloques de aliados, que domin&oacute; las relaciones internacionales entre <B>1947 y 1991</B>. Se llama "fr&iacute;a" porque las dos superpotencias nunca se enfrentaron directamente en combate armado (lo que habr&iacute;a sido una guerra nuclear mutuamente destructiva), sino a trav&eacute;s de <B>guerras por proxy</B> (conflictos indirectos en terceros pa&iacute;ses), carrera armamentista, propaganda, espionaje e intervenciones econ&oacute;micas.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La Guerra Fr&iacute;a comenz&oacute; oficialmente en <B>1947</B> (Doctrina Truman, Plan Marshall) y termin&oacute; en <B>1991</B> (disoluci&oacute;n de la URSS el 25 de diciembre de 1991). El <B>Tel&oacute;n de Acero</B> fue el concepto acuñado por Churchill en su discurso de Fulton (<B>5 de marzo de 1946</B>). El muro de Berl&iacute;n cay&oacute; el <B>9 de noviembre de 1989</B>. La <B>Crisis de los Misiles de Cuba</B> (octubre 1962) fue el momento de mayor peligro de guerra nuclear. No confundir: la Guerra Fr&iacute;a no fue una guerra con batallas directas EE.UU.-URSS, sino una confrontaci&oacute;n global indirecta.</DIV>
+
+<H3>2. Origen e inicio de la Guerra Fr&iacute;a (1945&ndash;1947)</H3>
+La Guerra Fr&iacute;a no comenz&oacute; de manera repentina: fue el resultado de la acumulaci&oacute;n de tensiones entre las potencias aliadas durante y tras la Segunda Guerra Mundial.
+
+<H4>Las tensiones de posguerra:</H4>
+<UL>
+<LI><B>El incumplimiento de Yalta:</B> Stalin no cumpli&oacute; su promesa de celebrar elecciones libres en Europa Oriental; entre 1945 y 1948 instal&oacute; reg&iacute;menes comunistas prosoviéticos en Polonia, Checoslovaquia, Hungr&iacute;a, Rumania, Bulgaria y la zona de Alemania controlada por la URSS.</LI>
+<LI><B>El discurso del Tel&oacute;n de Acero (5 de marzo de 1946):</B> el ex primer ministro brit&aacute;nico <B>Winston Churchill</B>, en su discurso en Westminster College (Fulton, Misuri), acuñ&oacute; la famosa met&aacute;fora: <I>"Desde Stettin en el B&aacute;ltico hasta Trieste en el Adri&aacute;tico, un tel&oacute;n de acero ha descendido sobre el continente."</I> Dividía Europa en dos mundos irreconciliables.</LI>
+<LI><B>El monopolio nuclear:</B> EE.UU. era la &uacute;nica potencia con la bomba at&oacute;mica hasta <B>1949</B> (primer test nuclear sovi&eacute;tico). Esta asimetr&iacute;a hizo a la URSS desconfiada y agresiva en sus demandas territoriales en Europa y Asia.</LI>
+<LI><B>Las diferencias ideol&oacute;gicas estructurales:</B> el capitalismo y el comunismo eran sistemas incompatibles en sus fundamentos: propiedad privada vs. propiedad estatal, mercado libre vs. planificaci&oacute;n centralizada, democracia liberal vs. partido &uacute;nico, universalismo occidental vs. internacionalismo proletario.</LI>
+<LI><B>La Doctrina Truman (12 de marzo de 1947):</B> el presidente <B>Harry S. Truman</B> present&oacute; ante el Congreso la primera declaraci&oacute;n formal de la Guerra Fr&iacute;a: EE.UU. apoyar&iacute;a a todos los pueblos que resistieran la "subjugaci&oacute;n" comunista. Fue formulada en el contexto de las presiones sovi&eacute;ticas sobre Grecia y Turqu&iacute;a. Sent&oacute; las bases de la pol&iacute;tica de <B>contenci&oacute;n</B> (<I>containment</I>), diseñada por el diplom&aacute;tico <B>George Kennan</B> en su famoso "Telegrama Largo" de 1946: el comunismo no pod&iacute;a ser revertido (eso era la "liberaci&oacute;n"), pero s&iacute; contenido donde ya exist&iacute;a.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>El "Telegrama Largo" de George Kennan (22 febrero 1946):</B> El encargado de negocios estadounidense en Mosc&uacute;, <B>George F. Kennan</B>, envi&oacute; un telegrama de 8.000 palabras a Washington que se convirti&oacute; en el documento fundacional de la pol&iacute;tica exterior estadounidense de la Guerra Fr&iacute;a. Kennan arguy&oacute; que la URSS era expansionista por naturaleza (combinaci&oacute;n de la paranoia rusa tradicional y la ideolog&iacute;a marxista) pero que era sensible a la fuerza y retroceder&iacute;a ante obstáculos s&oacute;lidos. La respuesta no deb&iacute;a ser la guerra sino la <B>contenci&oacute;n</B>: rodear a la URSS de alianzas y presencia militar hasta que su sistema colapsara desde adentro. Esta predicci&oacute;n result&oacute; ser exacta: la URSS colaps&oacute; desde adentro en 1991.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127981; LA ARQUITECTURA DE LA GUERRA FR&Iacute;A<SPAN>Plan Marshall, OTAN, Pacto de Varsovia, COMECON: la divisi&oacute;n del mundo en dos bloques</SPAN></DIV>
+
+<H3>3. La arquitectura de los dos bloques (1947&ndash;1955)</H3>
+
+<H4>El bloque occidental: las instituciones del capitalismo liberal</H4>
+<UL>
+<LI><B>El Plan Marshall</B> (1947): el secretario de Estado estadounidense <B>George Marshall</B> propuso un programa de ayuda econ&oacute;mica masiva para reconstruir Europa Occidental: m&aacute;s de <B>13.000 millones de d&oacute;lares</B> entre 1948 y 1952 (equivalente a unos 150.000 millones actuales). Objetivos: (1) reconstruir econ&oacute;micamente a los pa&iacute;ses devastados; (2) crear mercados para las exportaciones estadounidenses; (3) hacer al capitalismo atractivo frente al comunismo. La URSS rechaz&oacute; el Plan Marshall para s&iacute; misma y presion&oacute; a los pa&iacute;ses de Europa Oriental para que lo rechazaran tambi&eacute;n. Checosl ovaquia y Polonia, que quer&iacute;an aceptarlo, fueron forzadas a rechazarlo.</LI>
+<LI><B>La OTAN</B> (Organizaci&oacute;n del Tratado del Atl&aacute;ntico Norte, <B>4 de abril de 1949</B>): alianza militar occidental con 12 miembros fundadores (EE.UU., Canad&aacute;, Gran Breta&ntilde;a, Francia, Belgica, Pa&iacute;ses Bajos, Luxemburgo, Dinamarca, Noruega, Islandia, Portugal e Italia). El principio central: el <B>Art&iacute;culo 5</B> (ataque a uno = ataque a todos). Primera alianza militar permanente de EE.UU. en tiempos de paz. Alemania Occidental ingres&oacute; en 1955.</LI>
+<LI><B>El sistema de Bretton Woods</B> (1944): el <B>d&oacute;lar</B> como moneda de reserva mundial (convertible en oro a 35 d&oacute;lares/onza), el <B>FMI</B> y el <B>Banco Mundial</B> como instituciones de estabilidad financiera internacional. EE.UU. era el centro econ&oacute;mico del mundo capitalista.</LI>
+</UL>
+
+<H4>El bloque oriental: las instituciones del comunismo sovi&eacute;tico</H4>
+<UL>
+<LI><B>El COMECON</B> (Consejo de Ayuda Mutua Econ&oacute;mica, <B>enero 1949</B>): la respuesta sovi&eacute;tica al Plan Marshall; integraci&oacute;n econ&oacute;mica planificada de los pa&iacute;ses del bloque sovi&eacute;tico. En la pr&aacute;ctica, fue un mecanismo de explotaci&oacute;n econ&oacute;mica de los sat&eacute;lites por la URSS.</LI>
+<LI><B>El Pacto de Varsovia</B> (<B>14 de mayo de 1955</B>): alianza militar del bloque sovi&eacute;tico, creada en respuesta al ingreso de Alemania Occidental en la OTAN. Miembros: URSS, Polonia, Checoslovaquia, Alemania Oriental, Hungr&iacute;a, Rumania, Bulgaria y Albania. El mando militar lo ejerc&iacute;a siempre un general sovi&eacute;tico.</LI>
+<LI><B>El Cominform</B> (Oficina de Informaci&oacute;n Comunista, 1947): coordinaci&oacute;n de los partidos comunistas europeos bajo la direcci&oacute;n de Mosc&uacute;.</LI>
+<LI><B>La "Doctrina Zhdanov"</B> (1947): la respuesta sovi&eacute;tica a la Doctrina Truman; el mundo estaba dividido en dos campos irreconciliables: el imperialista (EE.UU.) y el democr&aacute;tico-antiimperialista (URSS).</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Aspecto</TH><TH>Bloque Occidental (EE.UU.)</TH><TH>Bloque Oriental (URSS)</TH></TR>
+<TR><TD><B>Sistema econ&oacute;mico</B></TD><TD>Capitalismo de mercado, propiedad privada, libre comercio</TD><TD>Econom&iacute;a planificada, propiedad estatal, autarqu&iacute;a del bloque</TD></TR>
+<TR><TD><B>Sistema pol&iacute;tico</B></TD><TD>Democracia liberal representativa, multipartidismo</TD><TD>Partido comunista &uacute;nico, dictadura del proletariado</TD></TR>
+<TR><TD><B>Alianza militar</B></TD><TD>OTAN (1949)</TD><TD>Pacto de Varsovia (1955)</TD></TR>
+<TR><TD><B>Integraci&oacute;n econ&oacute;mica</B></TD><TD>Plan Marshall, Bretton Woods, GATT</TD><TD>COMECON (1949)</TD></TR>
+<TR><TD><B>Ideolog&iacute;a</B></TD><TD>Liberalismo, anticomunismo, derechos individuales</TD><TD>Marxismo-leninismo, antiimperialismo, internacionalismo proletario</TD></TR>
+<TR><TD><B>Propaganda</B></TD><TD>CIA, Radio Free Europe, Hollywood, cultura pop</TD><TD>KGB, TASS, Pravda, movimientos comunistas mundiales</TD></TR>
+<TR><TD><B>Armas nucleares</B></TD><TD>Bomba at&oacute;mica desde 1945; bomba H desde 1952</TD><TD>Bomba at&oacute;mica desde 1949; bomba H desde 1953</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#128163; LAS PRIMERAS CRISIS (1947&ndash;1953)<SPAN>Bloqueo de Berl&iacute;n, China comunista, Guerra de Corea: la Guerra Fr&iacute;a se calienta</SPAN></DIV>
+
+<H3>4. Las primeras crisis de la Guerra Fr&iacute;a (1947&ndash;1953)</H3>
+
+<H4>El Bloqueo de Berl&iacute;n (junio 1948 &ndash; mayo 1949):</H4>
+<UL>
+<LI>Berl&iacute;n estaba dividida en cuatro sectores (estadounidense, brit&aacute;nico, franc&eacute;s y sovi&eacute;tico), pero la ciudad entera estaba dentro de la zona sovi&eacute;tica de Alemania. En junio de 1948, Stalin <B>bloque&oacute; todos los accesos terrestres</B> a los sectores occidentales de Berl&iacute;n para forzar a los Aliados a abandonarla.</LI>
+<LI>La respuesta occidental fue el <B>Puente A&eacute;reo de Berl&iacute;n</B>: durante <B>11 meses</B>, los aviones aliados realizaron m&aacute;s de <B>278.000 vuelos</B>, suministrando 2,3 millones de toneladas de alimentos, carb&oacute;n y medicamentos a los 2 millones de habitantes del Berl&iacute;n occidental. Stalin levant&oacute; el bloqueo en mayo de 1949 sin haber logrado su objetivo.</LI>
+<LI>Consecuencia: en mayo de 1949 naci&oacute; la <B>Rep&uacute;blica Federal Alemana</B> (RFA, Alemania Occidental, capitalista) y en octubre de 1949 la <B>Rep&uacute;blica Democr&aacute;tica Alemana</B> (RDA, Alemania Oriental, comunista).</LI>
+</UL>
+
+<H4>China comunista (1949):</H4>
+<UL>
+<LI>El <B>1 de octubre de 1949</B>, <B>Mao Zedong</B> proclam&oacute; la <B>Rep&uacute;blica Popular China</B> tras derrotar al gobierno nacionalista de Chiang Kai-shek (que huy&oacute; a Taiw&aacute;n). Con 550 millones de habitantes, China se sumaba al bloque comunista. En Occidente se habl&oacute; de "qui&eacute;n perdi&oacute; China" y el anticomunismo estadounidense se intensific&oacute;.</LI>
+<LI>En 1950, China y la URSS firmaron un <B>Tratado de Amistad y Alianza</B>. Sin embargo, la alianza sino-sovi&eacute;tica se romper&iacute;a en los a&ntilde;os 1960 (escisi&oacute;n sino-sovi&eacute;tica): Mao y Jrush chov ten&iacute;an visiones incompatibles del comunismo.</LI>
+</UL>
+
+<H4>La Guerra de Corea (1950&ndash;1953): la primera guerra caliente de la Guerra Fr&iacute;a:</H4>
+<UL>
+<LI>Corea hab&iacute;a sido dividida en el paralelo 38 tras la Segunda Guerra Mundial: Corea del Norte (comunista, apoyada por la URSS y China) y Corea del Sur (capitalista, apoyada por EE.UU.).</LI>
+<LI>El <B>25 de junio de 1950</B>, Corea del Norte invadi&oacute; Corea del Sur. El Consejo de Seguridad de la ONU (la URSS estaba boicoteando las sesiones por la exclusi&oacute;n de China comunista) aprob&oacute; una resoluci&oacute;n autorizando una fuerza multinacional bajo mando estadounidense del general <B>Douglas MacArthur</B>.</LI>
+<LI>Los Aliados empujaron a Corea del Norte casi hasta la frontera china (r&iacute;o Yalu); China intervino con 300.000 "voluntarios" y empuj&oacute; de nuevo a los Aliados hasta el paralelo 38. La guerra concluy&oacute; con un <B>armisticio en julio de 1953</B>: la frontera qued&oacute; pr&aacute;cticamente donde estaba antes. M&aacute;s de <B>3 millones de muertos</B>.</LI>
+<LI>MacArthur quiso usar armas nucleares contra China; Truman lo destituy&oacute; por insubordinaci&oacute;n: reafirm&oacute; el principio de que los militares est&aacute;n subordinados al poder civil.</LI>
+</UL>
+
+<H4>El macartismo y la "caza de brujas" (1950&ndash;1954):</H4>
+<UL>
+<LI>El senador republicano <B>Joseph McCarthy</B> inici&oacute; una campa&ntilde;a de denuncias de "comunistas infiltrados" en el gobierno, el ej&eacute;rcito y Hollywood. Centenares de personas fueron acusadas sin pruebas, listas negras, perdieron sus empleos o fueron encarceladas.</LI>
+<LI>El "<B>macartismo</B>" se convirti&oacute; en sin&oacute;nimo de persecuci&oacute;n pol&iacute;tica anticomunista hist&eacute;rica. Finalmente, los abusos de McCarthy fueron transmitidos en televisi&oacute;n y la opini&oacute;n p&uacute;blica le retir&oacute; su apoyo; fue censurado por el Senado en diciembre de 1954.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#128640; LA CARRERA ARMAMENTISTA Y ESPACIAL<SPAN>Bomba H, misiles balist&iacute;cos, Sputnik, la Luna: la competencia tecnol&oacute;gica m&aacute;s intensa de la historia</SPAN></DIV>
+
+<H3>5. La carrera armamentista y espacial</H3>
+
+<H4>La carrera nuclear: la Destrucci&oacute;n Mutua Asegurada (MAD):</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>A&ntilde;o</TH><TH>Hito nuclear</TH><TH>Potencia</TH></TR>
+<TR><TD><B>1945</B></TD><TD>Primera bomba at&oacute;mica (prueba Trinity; bombas sobre Hiroshima y Nagasaki)</TD><TD>EE.UU.</TD></TR>
+<TR><TD><B>1949</B></TD><TD>Primera bomba at&oacute;mica sovi&eacute;tica ("Joe 1", 29 agosto 1949)</TD><TD>URSS</TD></TR>
+<TR><TD><B>1952</B></TD><TD>Primera bomba de hidr&oacute;geno (bomba H, 1.000 veces m&aacute;s poderosa que la at&oacute;mica)</TD><TD>EE.UU.</TD></TR>
+<TR><TD><B>1953</B></TD><TD>Primera bomba H sovi&eacute;tica</TD><TD>URSS</TD></TR>
+<TR><TD><B>1957</B></TD><TD>Primer misil balist&iacute;co intercontinental (ICBM): R-7</TD><TD>URSS</TD></TR>
+<TR><TD><B>1960</B></TD><TD>EE.UU. despliega misiles <I>Minuteman</I> y submarinos Polaris con misiles nucleares</TD><TD>EE.UU.</TD></TR>
+<TR><TD><B>1962</B></TD><TD>Crisis de los Misiles de Cuba: URSS despliega misiles en Cuba a 150 km de Florida</TD><TD>URSS/EE.UU.</TD></TR>
+<TR><TD><B>1968</B></TD><TD>Tratado de No Proliferaci&oacute;n Nuclear (TNP): EE.UU., URSS y GB se comprometen a no difundir la tecnolog&iacute;a nuclear</TD><TD>EE.UU./URSS/GB</TD></TR>
+<TR><TD><B>1972</B></TD><TD>SALT I (tratado de limitaci&oacute;n de armas estrat&eacute;gicas): primera limitaci&oacute;n acordada del arsenal nuclear</TD><TD>EE.UU./URSS</TD></TR>
+</TABLE>
+</DIV>
+
+<UL>
+<LI>La doctrina nuclear de la Guerra Fr&iacute;a fue la <B>Destrucci&oacute;n Mutua Asegurada</B> (<I>Mutually Assured Destruction</I>, MAD): ambas superpotencias ten&iacute;an suficientes armas para destruir varias veces al enemigo incluso despu&eacute;s de absorber un primer ataque. En este escenario, un ataque nuclear era suicida: nadie ganar&iacute;a. Esta "l&oacute;gica de la locura" fue, parad&oacute;jicamente, el mayor freno a una guerra directa entre EE.UU. y la URSS.</LI>
+</UL>
+
+<H4>La carrera espacial:</H4>
+<UL>
+<LI><B>4 de octubre de 1957: Sputnik 1</B> &mdash;la URSS lanz&oacute; el primer sat&eacute;lite artificial de la historia. El impacto en EE.UU. fue enorme: si la URSS pod&iacute;a poner un sat&eacute;lite en &oacute;rbita, pod&iacute;a poner una bomba nuclear en cualquier ciudad del mundo. El "<B>Shock del Sputnik</B>" llev&oacute; a EE.UU. a reformar radicalmente su sistema educativo (Ley Nacional de Educaci&oacute;n para la Defensa, 1958) y crear la <B>NASA</B> (1958).</LI>
+<LI><B>3 de noviembre de 1957: Sputnik 2</B> con la perra <B>Laika</B>, primer ser vivo en el espacio.</LI>
+<LI><B>12 de abril de 1961: Yuri Gagarin</B> (URSS) se convirti&oacute; en el primer ser humano en viajar al espacio, completando una &oacute;rbita de la Tierra en 108 minutos a bordo del <I>Vostok 1</I>.</LI>
+<LI><B>20 de julio de 1969: Apollo 11</B> &mdash;<B>Neil Armstrong</B> y <B>Buzz Aldrin</B> se convirtieron en los primeros seres humanos en pisar la Luna. Armstrong dijo: <I>"Un peque&ntilde;o paso para el hombre; un salto gigante para la humanidad."</I> EE.UU. gan&oacute; la carrera a la Luna.</LI>
+</UL>
+
+<DIV CLASS="ej">&#128640; <B>El programa espacial como propaganda:</B> Ambas superpotencias usaron sus logros espaciales como demostraci&oacute;n de la superioridad de su sistema. El Sputnik era propaganda comunista ("la URSS es tecnol&oacute;gicamente superior"); Apollo 11 fue propaganda capitalista ("la libertad individual y el libre mercado pueden lograr lo imposible"). La carrera espacial produjo como subproducto tecnolog&iacute;as que cambiaron el mundo: internet, GPS, Tel&eacute;fonos m&oacute;viles, materiales especiales y muchos m&aacute;s nacieron del esfuerzo espacial.</DIV>
+
+<DIV CLASS="cultura-titulo">&#9762; LA CRISIS DE LOS MISILES DE CUBA (1962)<SPAN>El momento m&aacute;s peligroso de la historia humana: el mundo al borde de la guerra nuclear</SPAN></DIV>
+
+<H3>6. La Crisis de los Misiles de Cuba (octubre 1962)</H3>
+La <B>Crisis de los Misiles de Cuba</B> (16&ndash;28 de octubre de 1962) fue el momento de mayor peligro de guerra nuclear de la historia. Durante 13 d&iacute;as, el mundo estuvo al borde de una guerra que habr&iacute;a matado a cientos de millones de personas.
+
+<H4>Antecedentes:</H4>
+<UL>
+<LI><B>La Revoluci&oacute;n Cubana (1959):</B> <B>Fidel Castro</B> derroc&oacute; al dictador pro-estadounidense Batista. Tras la fallida invasi&oacute;n de Bah&iacute;a de Cochinos (abril 1961, organizada por la CIA bajo Kennedy), Cuba se align&oacute; con la URSS. <B>Nikita Jrushchov</B> decidi&oacute; instalar misiles nucleares de alcance medio en Cuba, a <B>150 km</B> de Florida: pod&iacute;an alcanzar Washington en minutos.</LI>
+</UL>
+
+<H4>El desarrollo de la crisis:</H4>
+<UL>
+<LI><B>16 octubre 1962:</B> aviones espías U-2 fotografiaron las construcciones de rampas de misiles en Cuba. El presidente <B>John F. Kennedy</B> fue informado.</LI>
+<LI><B>22 octubre 1962:</B> Kennedy anunci&oacute; en televisi&oacute;n la existencia de los misiles y declar&oacute; una <B>cuarentena naval</B> (bloqueo de barcos sovi&eacute;ticos) alrededor de Cuba. Los bombarderos nucleares B-52 fueron mantenidos en vuelo permanente.</LI>
+<LI><B>24 octubre 1962:</B> los barcos sovi&eacute;ticos se acercaban a la l&iacute;nea de cuarentena. El Secretario de Estado <B>Dean Rusk</B> dijo: "Estamos cara a cara y creo que el otro parpadea."</LI>
+<LI><B>27 octubre 1962 ("El S&aacute;bado Negro"):</B> el d&iacute;a m&aacute;s peligroso. Un avi&oacute;n U-2 fue derribado sobre Cuba. Un submarino sovi&eacute;tico (B-59) con torpedo nuclear estuvo a punto de lanzarlo creyendo que la guerra ya hab&iacute;a comenzado; el oficial <B>Vasili Arjipov</B> vot&oacute; en contra del lanzamiento, siendo el &uacute;nico de los tres oficiales requeridos que se neg&oacute;: probablemente salv&oacute; al mundo.</LI>
+<LI><B>28 octubre 1962:</B> Jrushch&oacute;v y Kennedy llegaron a un acuerdo: la URSS retirar&iacute;a los misiles de Cuba; EE.UU. prometió p&uacute;blicamente no invadir Cuba y (secretamente) retirar sus misiles <I>Jupiter</I> de Turqu&iacute;a.</LI>
+</UL>
+
+<H4>Consecuencias:</H4>
+<UL>
+<LI>Se instal&oacute; el <B>Tel&eacute;fono Rojo</B> (l&iacute;nea directa entre la Casa Blanca y el Kremlin) para evitar malentendidos nucleares en futuras crisis.</LI>
+<LI>El <B>Tratado de Prohibici&oacute;n Parcial de Pruebas Nucleares</B> (agosto 1963): prohibi&oacute; las pruebas nucleares en la atm&oacute;sfera, bajo el agua y en el espacio exterior.</LI>
+<LI>La crisis demostr&oacute; que la comunicaci&oacute;n directa entre l&iacute;deres era indispensable y que la doctrina MAD funcionaba: ninguno quer&iacute;a el apocalipsis.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#127758; LAS GUERRAS POR PROXY<SPAN>Corea, Vietnam, Angola, Afganist&aacute;n: la Guerra Fr&iacute;a se libra en el Tercer Mundo</SPAN></DIV>
+
+<H3>7. Las guerras por proxy y la descolonizaci&oacute;n</H3>
+Las dos superpotencias no se enfrentaron directamente, pero apoyaron a bandos opuestos en decenas de conflictos en &Aacute;frica, Asia, Am&eacute;rica Latina y Medio Oriente. Estas "<B>guerras por proxy</B>" (<I>proxy wars</I>) fueron el campo de batalla real de la Guerra Fr&iacute;a.
+
+<H4>Las guerras por proxy m&aacute;s importantes:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Conflicto</TH><TH>Fechas</TH><TH>EE.UU. apoy&oacute;</TH><TH>URSS/China apoy&oacute;</TH><TH>Resultado</TH></TR>
+<TR><TD><B>Guerra de Corea</B></TD><TD>1950&ndash;1953</TD><TD>Corea del Sur (ONU)</TD><TD>Corea del Norte (China)</TD><TD>Armisticio; divisi&oacute;n en el paralelo 38; sin ganador claro</TD></TR>
+<TR><TD><B>Guerra de Vietnam</B></TD><TD>1955&ndash;1975</TD><TD>Vietnam del Sur (R&eacute;gimen de Saig&oacute;n)</TD><TD>Vietnam del Norte (Vietcong, Ho Chi Minh)</TD><TD>Victoria comunista; reunificaci&oacute;n de Vietnam bajo el norte; humillaci&oacute;n de EE.UU.</TD></TR>
+<TR><TD><B>Crisis del Suez</B></TD><TD>1956</TD><TD>Presi&oacute;n sobre Gran Breta&ntilde;a y Francia para retirarse</TD><TD>Apoyo dipl. a Nasser/Egipto</TD><TD>Fin del poder colonial franc&eacute;s y brit&aacute;nico; triunfo de Nasser; emergencia del Tercer Mundo</TD></TR>
+<TR><TD><B>Guerra civil angole&ntilde;a</B></TD><TD>1975&ndash;2002</TD><TD>UNITA (Savimbi)</TD><TD>MPLA (apoyado por Cuba y URSS)</TD><TD>Victoria del MPLA; Angola comunista; Cuba envi&oacute; 50.000 soldados</TD></TR>
+<TR><TD><B>Guerra de Afganist&aacute;n</B></TD><TD>1979&ndash;1989</TD><TD>Muyahidines afganos (CIA "Operaci&oacute;n Ciclón")</TD><TD>Gobierno comunista afgano</TD><TD>Retirada sovi&eacute;tica; el "Vietnam de la URSS"; los muyahidines derivaron en los talibanes</TD></TR>
+<TR><TD><B>Centroam&eacute;rica</B></TD><TD>1979&ndash;1990</TD><TD>R&eacute;gimen de El Salvador, Contras nicaragü&uuml;enses</TD><TD>Sandinistas de Nicaragua, guerrillas salvadoreñas (FMLN)</TD><TD>Conflicto prolongado; acuerdos de paz en los 90; democracias d&eacute;biles</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>La Guerra de Vietnam (1955&ndash;1975): el mayor fracaso militar de EE.UU.:</H4>
+<UL>
+<LI><B>Antecedentes:</B> Vietnam fue colonia francesa de Indochina hasta 1954. Tras la derrota francesa en <B>Dien Bien Phu</B> (mayo 1954) y los Acuerdos de Ginebra, Vietnam qued&oacute; dividido en el paralelo 17: Vietnam del Norte (comunista, Ho Chi Minh) y Vietnam del Sur (capitalista, apoyado por EE.UU.).</LI>
+<LI><B>La escalada estadounidense:</B> bajo los presidentes Kennedy, Johnson y Nixon, EE.UU. fue ampliando su presencia: de "asesores" militares a <B>550.000 soldados</B> en 1969. La <B>Resoluci&oacute;n del Golfo de Tonk&iacute;n</B> (agosto 1964, basada en un incidente fabricado) autoriz&oacute; a Johnson a escalar la guerra sin declaraci&oacute;n formal del Congreso.</LI>
+<LI><B>La ofensiva del Tet</B> (enero 1968): el Vietcong atac&oacute; simult&aacute;neamente 100 ciudades del sur. Fue una derrota militar para el Vietcong pero una victoria propagandística demoledora: demostr&oacute; que EE.UU. no estaba ganando la guerra como afirmaba su gobierno. La opini&oacute;n p&uacute;blica estadounidense se volc&oacute; en contra de la guerra.</LI>
+<LI><B>La "vietnamizaci&oacute;n"</B> de Nixon y los <B>Acuerdos de Par&iacute;s</B> (enero 1973): EE.UU. retir&oacute; sus tropas. El <B>30 de abril de 1975</B>, el ej&eacute;rcito norvietnamita tom&oacute; Saig&oacute;n: Vietnam qued&oacute; reunificado bajo el comunismo. <B>58.220 soldados estadounidenses</B> murieron; entre 2 y 3,5 millones de vietnamitas murieron.</LI>
+<LI><B>Consecuencias:</B> el "s&iacute;ndrome de Vietnam" limit&oacute; la disposici&oacute;n de EE.UU. a intervenir militarmente; el Congreso aprob&oacute; la Resoluci&oacute;n de Poderes de Guerra (1973) para limitar el poder presidencial de hacer la guerra.</LI>
+</UL>
+
+<H4>El Movimiento de Pa&iacute;ses No Alineados y el Tercer Mundo:</H4>
+<UL>
+<LI>La <B>Conferencia de Bandung</B> (abril 1955, Indonesia): 29 pa&iacute;ses afroasi&aacute;ticos se reunieron para afirmar su independencia frente a los dos bloques. Lideres: <B>Nehru</B> (India), <B>Nasser</B> (Egipto), <B>Sukarno</B> (Indonesia), <B>Nkrumah</B> (Ghana) y el ya&i<b>Tito</b> (Yugoslavia, el &uacute;nico pa&iacute;s comunista fuera de la &oacute;rbita sovi&eacute;tica).</LI>
+<LI>El <B>Movimiento de Pa&iacute;ses No Alineados</B> (MNOAL, 1961): formalmente no comprometidos con ninguno de los dos bloques, aunque en la pr&aacute;ctica muchos dependieron econ&oacute;mica o militarmente de uno de ellos.</LI>
+<LI>La descolonizaci&oacute;n acelerada de los a&ntilde;os 1950&ndash;1970 convirti&oacute; al Tercer Mundo en el principal escenario de la Guerra Fr&iacute;a: EE.UU. y la URSS compitieron por influencia en los nuevos Estados independientes de &Aacute;frica, Asia y el Caribe.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#9784; LA DÉTENTE Y LA CRISIS FINAL<SPAN>Nixon y Mao, Helsinki, Reagan y Gorbachov: el deshielo y el fin de la Guerra Fr&iacute;a</SPAN></DIV>
+
+<H3>8. La D&eacute;tente (distensi&oacute;n) y la crisis final de la URSS</H3>
+
+<H4>La D&eacute;tente (1969&ndash;1979):</H4>
+<UL>
+<LI>La <B>D&eacute;tente</B> (t&eacute;rmino franc&eacute;s que significa "distensi&oacute;n" o "aflojamiento") fue el per&iacute;odo de reducci&oacute;n de tensiones entre EE.UU. y la URSS impulsado por el presidente Richard <B>Nixon</B> y su asesor de Seguridad Nacional <B>Henry Kissinger</B>, y por el l&iacute;der sovi&eacute;tico <B>Le&oacute;nidas Br&eacute;znev</B>.</LI>
+<LI><B>Nixon en China (febrero 1972):</B> la visita m&aacute;s sorprendente de la pol&iacute;tica exterior del siglo XX. Nixon, el anticomunista que hab&iacute;a hecho carrera atacando a los "comunistas", fue el primero en reconocer diplom&aacute;ticamente a la China de Mao. Objetivo: explotara la escisi&oacute;n sino-sovi&eacute;tica para crear un tri&aacute;ngulo estrat&eacute;gico EE.UU.-China-URSS que debilitara a la URSS.</LI>
+<LI><B>SALT I</B> (1972): primer acuerdo de limitaci&oacute;n de armas estrat&eacute;gicas; congelaba el n&uacute;mero de misiles balist&iacute;cos intercontinentales de ambas potencias.</LI>
+<LI><B>Acuerdos de Helsinki</B> (1975): EE.UU., Canad&aacute;, la URSS y 33 pa&iacute;ses europeos acordaron reconocer las fronteras europeas de posguerra (lo que quer&iacute;a la URSS) a cambio de compromisos en derechos humanos (lo que quer&iacute;a Occidente). Los compromisos de Helsinki en derechos humanos se convirtieron en un instrumento de presi&oacute;n contra los reg&iacute;menes comunistas y alimentaron los movimientos disidentes en Europa Oriental.</LI>
+<LI><B>SALT II</B> (1979): acuerdo m&aacute;s ambicioso de reducci&oacute;n de arsenales nucleares; nunca fue ratificado por el Senado de EE.UU. por la invasi&oacute;n sovi&eacute;tica de Afganist&aacute;n (diciembre 1979).</LI>
+</UL>
+
+<H4>La "Segunda Guerra Fr&iacute;a" y el colapso sovi&eacute;tico (1979&ndash;1991):</H4>
+<UL>
+<LI><B>La invasi&oacute;n sovi&eacute;tica de Afganist&aacute;n (diciembre 1979):</B> la URSS envi&oacute; tropas para apuntalar al gobierno comunista afgano que enfrentaba una insurgencia islámica. EE.UU. (con Carter y luego Reagan) financi&oacute; y arm&oacute; a los muyahidines afganos a trav&eacute;s de la CIA y Pakistan ("Operaci&oacute;n Ciclón"). La guerra cost&oacute; a la URSS m&aacute;s de 15.000 muertos y un gasto econ&oacute;mico que no pod&iacute;a sostener. Se retiraron en 1989: el "Vietnam sovi&eacute;tico".</LI>
+<LI><B>La Doctrina Reagan (1980&ndash;1988):</B> el presidente <B>Ronald Reagan</B> llam&oacute; a la URSS el "<B>Imperio del Mal</B>" y elev&oacute; masivamente el gasto militar estadounidense (incluyendo la Iniciativa de Defensa Estrat&eacute;gica, "<B>Guerra de las Galaxias</B>": escudo antimisiles espacial, cuya viabilidad era dudosa pero cuyo anuncio oblig&oacute; a la URSS a gastar m&aacute;s en defensa, acelerando su crisis econ&oacute;mica).</LI>
+<LI><B>Mijail Gorbach&oacute;v</B> (secretario general del PCUS desde 1985): introdujo la <B><I>Glasnost</I></B> (transparencia: libertad de expresi&oacute;n y prensa) y la <B><I>Perestroika</I></B> (reestructuraci&oacute;n: reformas econ&oacute;micas de mercado parciales). Intent&oacute; reformar el socialismo soviético para salvarlo, pero las reformas desataron fuerzas que no pudo controlar.</LI>
+</UL>
+
+<H4>El fin de la Guerra Fr&iacute;a:</H4>
+<UL>
+<LI><B>Las revoluciones de 1989 en Europa Oriental:</B> entre agosto y diciembre de 1989, los reg&iacute;menes comunistas de Polonia (Solidaridad y Lech Wałęsa), Hungr&iacute;a, Checoslovaquia (<B>Revoluci&oacute;n de Terciopelo</B>, V&aacute;clav Havel), Bulgaria y Rumania cayeron uno tras otro. Gorbach&oacute;v se neg&oacute; a intervenir militarmente (a diferencia de las intervenciones sovi&eacute;ticas en Hungr&iacute;a en 1956 y Checoslovaquia en 1968).</LI>
+<LI><B>La ca&iacute;da del Muro de Berl&iacute;n (9 de noviembre de 1989):</B> el acontecimiento simb&oacute;lico m&aacute;s importante del fin de la Guerra Fr&iacute;a. Construido el <B>13 de agosto de 1961</B> para evitar la fuga masiva de ciudadanos de la RDA al oeste, el Muro hab&iacute;a costado la vida a m&aacute;s de 140 personas que intentaron cruzarlo. Su ca&iacute;da fue transmitida en vivo a todo el mundo. Alemania se reunific&oacute; el <B>3 de octubre de 1990</B>.</LI>
+<LI><B>El golpe de Estado fallido en la URSS (agosto 1991):</B> sectores duros del Partido Comunista intentaron derrocar a Gorbach&oacute;v; fracasaron ante la resistencia popular liderada por <B>Boris Yeltsin</B>, presidente de Rusia. El golpe aceler&oacute; la disoluci&oacute;n de la URSS.</LI>
+<LI><B>Disoluci&oacute;n de la URSS (25 de diciembre de 1991):</B> Gorbach&oacute;v renunci&oacute; y la bandera sovi&eacute;tica fue arriada del Kremlin. Las 15 rep&uacute;blicas sovi&eacute;ticas se convirtieron en Estados independientes. Rusia hered&oacute; el asiento permanente de la URSS en el Consejo de Seguridad de la ONU. Fin oficial de la Guerra Fr&iacute;a.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>Las causas del colapso sovi&eacute;tico:</B> El debate historiogr&aacute;fico sobre por qu&eacute; colaps&oacute; la URSS tiene varias corrientes: (1) <B>Presiones externas</B> (Reagan): el gasto armamentista forc&oacute; a la URSS a sobre-extenderse econ&oacute;micamente. (2) <B>Fracaso econ&oacute;mico interno:</B> la econom&iacute;a planificada era fundamentalmente ineficiente; el petróleo, la principal exportaci&oacute;n sovi&eacute;tica, se desplom&oacute; en los 80. (3) <B>Contradicciones ideol&oacute;gicas:</B> la <I>Glasnost</I> permiti&oacute; la cr&iacute;tica p&uacute;blica del sistema; una vez que los ciudadanos pudieron hablar, el sistema perdi&oacute; legitimidad. (4) <B>Nacionalismos:</B> las 15 rep&uacute;blicas quer&iacute;an la independencia; el intento de reprimirlos (como en los pa&iacute;ses b&aacute;lticos) fue cruel pero insuficiente. (5) <B>Afganist&aacute;n:</B> la guerra costó enormes recursos y vidas sin ning&uacute;n resultado. La mayor&iacute;a de los historiadores acepta una combinaci&oacute;n de todos estos factores.</DIV>
+
+<H3>9. Las doctrinas, intervenciones y l&iacute;neas ideol&oacute;gicas de la Guerra Fr&iacute;a</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Doctrina / Concepto</TH><TH>Origen</TH><TH>Contenido</TH></TR>
+<TR><TD><B>Doctrina Truman</B></TD><TD>EE.UU., 1947</TD><TD>EE.UU. apoyar&aacute; a todos los pueblos que resistan la subjugaci&oacute;n comunista; base de la pol&iacute;tica de contenci&oacute;n</TD></TR>
+<TR><TD><B>Doctrina Eisenhower</B></TD><TD>EE.UU., 1957</TD><TD>EE.UU. puede intervenir en Medio Oriente para evitar el comunismo; usada para intervenir en L&iacute;bano (1958)</TD></TR>
+<TR><TD><B>Doctrina Kennedy</B></TD><TD>EE.UU., 1961</TD><TD>Alianza para el Progreso: ayuda econ&oacute;mica a Am&eacute;rica Latina para evitar revoluciones comunistas como la cubana</TD></TR>
+<TR><TD><B>Doctrina Johnson</B></TD><TD>EE.UU., 1965</TD><TD>EE.UU. puede intervenir en cualquier pa&iacute;s del hemisferio occidental amenazado por el comunismo; usada para intervenir en la Rep. Dominicana (1965)</TD></TR>
+<TR><TD><B>Doctrina Nixon</B></TD><TD>EE.UU., 1969</TD><TD>"Vietnamizaci&oacute;n": los aliados deben defenderse solos con armas y dinero estadounidenses; EE.UU. no enviar&aacute; tropas</TD></TR>
+<TR><TD><B>Doctrina Carter</B></TD><TD>EE.UU., 1980</TD><TD>El Golfo P&eacute;rsico es zona vital para EE.UU.; cualquier intento de control externo ser&aacute; resistido militarmente; formulada tras la invasi&oacute;n sovi&eacute;tica de Afganist&aacute;n</TD></TR>
+<TR><TD><B>Doctrina Reagan</B></TD><TD>EE.UU., 1985</TD><TD>EE.UU. apoyar&aacute; a los movimientos anticomunistas en todo el mundo ("guerrilleros de la libertad"); aplicada en Afganist&aacute;n, Nicaragua, Angola y Camboya</TD></TR>
+<TR><TD><B>Doctrina Br&eacute;znev</B></TD><TD>URSS, 1968</TD><TD>La URSS tiene el derecho a intervenir en cualquier pa&iacute;s socialista cuyo r&eacute;gimen comunista est&eacute; amenazado; usada para justificar la invasi&oacute;n de Checoslovaquia (1968)</TD></TR>
+<TR><TD><B>Doctrina Sinatra</B></TD><TD>URSS, 1989</TD><TD>T&eacute;rmino irónico acuñado por el portavoz de Gorbach&oacute;v: cada pa&iacute;s del bloque sovi&eacute;tico podr&aacute; "hacerlo a su manera" (como la canci&oacute;n de Frank Sinatra); fin de la Doctrina Br&eacute;znev; permiti&oacute; las revoluciones de 1989</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>10. Consecuencias y legado de la Guerra Fr&iacute;a</H3>
+<UL>
+<LI><B>El "momento unipolar" de EE.UU. (1991&ndash;2001):</B> con la disoluci&oacute;n de la URSS, EE.UU. qued&oacute; como la &uacute;nica superpotencia mundial. El politólogo Charles Krauthammer lo llam&oacute; "el momento unipolar". El politólogo Francis Fukuyama proclam&oacute; el "<B>Fin de la Historia</B>": la democracia liberal capitalista hab&iacute;a derrotado definitivamente al totalitarismo comunista.</LI>
+<LI><B>La expansi&oacute;n de la democracia:</B> la "tercera ola de democratizaci&oacute;n" (Samuel Huntington) llev&oacute; la democracia a Europa Oriental, partes de &Aacute;frica y Am&eacute;rica Latina. M&aacute;s del 60% de los pa&iacute;ses del mundo son hoy democracias electorales.</LI>
+<LI><B>Los conflictos "congelados" y heredados:</B> muchos conflictos iniciados durante la Guerra Fr&iacute;a contin&uacute;an: Corea del Norte sigue siendo un r&eacute;gimen comunista con armas nucleares; los muyahidines financiados por la CIA evolucionaron en los talibanes de Afganist&aacute;n (que gobiernan desde 2021); el Medio Oriente sigue desestabilizado; los "conflictos congelados" del espacio postsoviético (Nagorno-Karabaj, Transnistria, Osetia del Sur).</LI>
+<LI><B>El problema de la proliferaci&oacute;n nuclear:</B> el arsenal nuclear de la URSS se distribuy&oacute; entre Rusia, Ucrania, Kazajist&aacute;n y Bielorrusia; los tres &uacute;ltimos cedieron sus armas a Rusia en los a&ntilde;os 90. Sin embargo, la tecnolog&iacute;a nuclear se difundi&oacute;: Pakistan, India, Corea del Norte e Ir&aacute;n (en proceso) desarrollaron programas nucleares.</LI>
+<LI><B>Am&eacute;rica Latina y la Guerra Fr&iacute;a:</B> la regi&oacute;n fue escenario de numerosas intervenciones: golpes de Estado apoyados por la CIA (Guatemala 1954, Chile 1973), las dictaduras militares del Cono Sur (Argentina, Chile, Uruguay, Brasil) apoyadas por EE.UU. como diques anticomunistas, las guerrillas inspiradas en la Revoluci&oacute;n Cubana (Sendero Luminoso en Per&uacute;, FARC en Colombia, Tupam aros en Uruguay), y la Operaci&oacute;n C&oacute;ndor (coordinaci&oacute;n represiva de las dictaduras del Cono Sur con apoyo de la CIA).</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">5 mar. 1946</DIV><DIV CLASS="dk-label">Discurso del Tel&oacute;n de Acero de Churchill en Fulton</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">12 mar. 1947</DIV><DIV CLASS="dk-label">Doctrina Truman: inicio formal de la Guerra Fr&iacute;a</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">4 oct. 1957</DIV><DIV CLASS="dk-label">Sputnik 1: la URSS llega primero al espacio</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">28 oct. 1962</DIV><DIV CLASS="dk-label">Fin de la Crisis de los Misiles de Cuba</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">20 jul. 1969</DIV><DIV CLASS="dk-label">Apollo 11: EE.UU. gana la carrera a la Luna</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">9 nov. 1989</DIV><DIV CLASS="dk-label">Ca&iacute;da del Muro de Berl&iacute;n</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">25 dic. 1991</DIV><DIV CLASS="dk-label">Disoluci&oacute;n de la URSS: fin de la Guerra Fr&iacute;a</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">44 años</DIV><DIV CLASS="dk-label">Duraci&oacute;n total de la Guerra Fr&iacute;a (1947&ndash;1991)</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Inicio:</B> 1947 &mdash; Doctrina Truman (12 mar.) + Plan Marshall; Telón de Acero: discurso Churchill (5 mar. 1946)<BR>
+&bull; <B>Bloques:</B> Occidental (OTAN 1949, Plan Marshall) vs. Oriental (Pacto de Varsovia 1955, COMECON 1949)<BR>
+&bull; <B>Primeras crisis:</B> Bloqueo de Berlín (1948&ndash;49) &middot; China comunista (1949) &middot; Guerra de Corea (1950&ndash;53)<BR>
+&bull; <B>Carrera nuclear:</B> MAD (Destrucción Mutua Asegurada) &middot; Bomba H (EE.UU. 1952; URSS 1953) &middot; SALT I (1972)<BR>
+&bull; <B>Carrera espacial:</B> Sputnik (4 oct. 1957) &rarr; Gagarin (12 abr. 1961) &rarr; Apollo 11 (20 jul. 1969)<BR>
+&bull; <B>Crisis de los Misiles:</B> 16&ndash;28 oct. 1962 &middot; Kennedy vs. Jrushchóv &middot; Cuba &middot; Teléfono Rojo<BR>
+&bull; <B>Vietnam:</B> 1955&ndash;1975 &middot; Tet (1968) &middot; Acuerdos de París (1973) &middot; caída de Saigón (30 abr. 1975)<BR>
+&bull; <B>Détente:</B> Nixon-Kissinger-Bréznev &middot; Nixon en China (feb. 1972) &middot; SALT I (1972) &middot; Helsinki (1975)<BR>
+&bull; <B>Colapso URSS:</B> Afganistán (1979&ndash;89) &middot; Reagan "Imperio del Mal" &middot; Gorbachóv (Glasnost + Perestroika) &middot; Muro cae (9 nov. 1989) &middot; URSS disuelta (25 dic. 1991)<BR>
+&bull; <B>Personas clave:</B> Truman &middot; Stalin &middot; Churchill &middot; Kennan &middot; Eisenhower &middot; Jrushchóv &middot; Kennedy &middot; Mao &middot; Ho Chi Minh &middot; Nixon &middot; Kissinger &middot; Bréznev &middot; Reagan &middot; Gorbachóv
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;Cu&aacute;les fueron las fechas de inicio y fin de la Guerra Fr&iacute;a, y a qu&eacute; se refiere el concepto de "guerra fr&iacute;a" en este contexto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) La Guerra Fr&iacute;a inici&oacute; en 1939 con el Pacto Moli&oacute;tov-Ribbentrop y termin&oacute; en 1945 con la rendicí&oacute;n de Alemania; se llama "fr&iacute;a" porque se desarroll&oacute; principalmente en el invierno ruso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) La Guerra Fr&iacute;a (1947&ndash;1991) fue la confrontaci&oacute;n ideol&oacute;gica, pol&iacute;tica y militar entre EE.UU. y la URSS; se llama "fr&iacute;a" porque las dos superpotencias nunca se enfrentaron directamente en combate, sino a trav&eacute;s de guerras por proxy, carrera armamentista, propaganda y espionaje, ya que un enfrentamiento directo habr&iacute;a sido una guerra nuclear mutuamente destructiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) La Guerra Fr&iacute;a inici&oacute; en 1949 con la creaci&oacute;n de la OTAN y termin&oacute; en 1989 con la ca&iacute;da del Muro de Berl&iacute;n; se llama "fr&iacute;a" porque fue un conflicto diplom&aacute;tico exclusivamente verbal, sin ning&uacute;n tipo de violencia en ninguna parte del mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) La Guerra Fr&iacute;a fue un conflicto entre EE.UU. y China; la URSS fue neutral y solo intervino en 1979 con la invasi&oacute;n de Afganist&aacute;n, que marc&oacute; su verdadero inicio</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Guerra Fr&iacute;a</B> se extendi&oacute; de <B>1947</B> (Doctrina Truman) a <B>1991</B> (disoluci&oacute;n de la URSS, 25 de diciembre). El t&eacute;rmino fue popularizado por el periodista y escritor <B>Walter Lippmann</B> en 1947. Se llama "fr&iacute;a" porque la confrontaci&oacute;n entre EE.UU. y la URSS nunca fue directa: ambas ten&iacute;an arsenal nuclear suficiente para destruirse mutuamente (doctrina MAD, Destrucci&oacute;n Mutua Asegurada). En cambio, la guerra se libr&oacute; mediante: guerras por proxy en terceros pa&iacute;ses (Corea, Vietnam, Angola, Afganist&aacute;n), carrera armamentista (nuclear, convencional y espacial), propaganda (Radio Free Europe, Hollywood vs. TASS y el cine sovi&eacute;tico), espionaje (CIA vs. KGB) e intervenciones econ&oacute;micas y pol&iacute;ticas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Qu&eacute; fue la Doctrina Truman (1947) y c&oacute;mo defini&oacute; la pol&iacute;tica exterior de EE.UU. durante la Guerra Fr&iacute;a?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La Doctrina Truman fue el programa econ&oacute;mico de 13.000 millones de d&oacute;lares para reconstruir Europa Occidental y frenar el avance comunista mediante la prosperidad capitalista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) La Doctrina Truman (12 marzo 1947) declar&oacute; que EE.UU. apoyar&iacute;a a todos los pueblos que resistieran la subjugaci&oacute;n comunista; formul&oacute; la pol&iacute;tica de contenci&oacute;n (diseñada por Kennan): no revertir el comunismo donde ya exist&iacute;a, sino impedirle expandirse; fue la base de toda la pol&iacute;tica exterior estadounidense durante la Guerra Fr&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) La Doctrina Truman fue el plan de EE.UU. para invadir la URSS antes de que esta desarrollara la bomba at&oacute;mica; fue rechazado por el Congreso y nunca se implement&oacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) La Doctrina Truman estableció que EE.UU. no intervendr&iacute;a en ning&uacute;n conflicto fuera del continente americano; fue una doctrina aislacionista que continu&oacute; la tradici&oacute;n de la Doctrina Monroe</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>12 de marzo de 1947</B>, el presidente <B>Harry Truman</B> se dirigi&oacute; al Congreso para solicitar 400 millones de d&oacute;lares en ayuda militar y econ&oacute;mica para Grecia y Turqu&iacute;a, amenazadas por presiones sovi&eacute;ticas y guerrillas comunistas. En ese discurso formul&oacute; la primera declaraci&oacute;n formal de la Guerra Fr&iacute;a. La pol&iacute;tica de <B>contenci&oacute;n</B> (<I>containment</I>) fue dise&ntilde;ada por el diplom&aacute;tico <B>George Kennan</B> en su "Telegrama Largo" (1946) y su art&iacute;culo "Las fuentes de la conducta sovi&eacute;tica" (1947): no se trataba de liberar a los pa&iacute;ses bajo el comunismo (eso implicar&iacute;a una guerra directa con la URSS) sino de impedir que el comunismo se expandiera a nuevos pa&iacute;ses. Esta pol&iacute;tica gui&oacute; a EE.UU. durante toda la Guerra Fr&iacute;a. La opci&oacute;n a) describe el Plan Marshall (tambi&eacute;n de 1947 pero distinto).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Qu&eacute; fue el Sputnik 1 y cu&aacute;l fue el impacto del "Shock del Sputnik" en EE.UU.?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) El Sputnik 1 fue el primer cohete intercontinental de la URSS capaz de alcanzar el territorio estadounidense; el "Shock" fue el pánico nuclear que llev&oacute; a EE.UU. a construir búnkeres en todas las ciudades</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) El Sputnik 1 (4 de octubre de 1957) fue el primer sat&eacute;lite artificial de la historia, lanzado por la URSS; el "Shock del Sputnik" en EE.UU. fue el impacto psicol&oacute;gico de saber que la URSS pod&iacute;a poner objetos en &oacute;rbita (y por tanto apuntar misiles nucleares a cualquier ciudad del mundo); llev&oacute; a reformar el sistema educativo y a crear la NASA (1958)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El Sputnik 1 fue el primer ser humano en el espacio, el cosmonauta Yuri Gagarin; su vuelo de 108 minutos en 1957 demostr&oacute; la superioridad tecnol&oacute;gica sovi&eacute;tica en la carrera espacial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El Sputnik 1 fue un misil experimental sovi&eacute;tico que sobrevolé el territorio de EE.UU. en 1957; el "Shock" fue la crisis diplom&aacute;tica que casi llev&oacute; a una guerra directa entre ambas superpotencias</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Sputnik 1</B> fue lanzado el <B>4 de octubre de 1957</B> por la URSS: una esfera met&aacute;lica de 58 cm de di&aacute;metro y 83 kg, que orbito la Tierra en 98 minutos emitiendo una señal de radio que cualquier receptor del mundo pod&iacute;a captar. Fue el primer objeto artificial en orbitar la Tierra. El "<B>Shock del Sputnik</B>" en EE.UU. fue enorme: (1) Si la URSS pod&iacute;a poner un sat&eacute;lite en &oacute;rbita, pod&iacute;a apuntar misiles balist&iacute;cos intercontinentales a cualquier ciudad estadounidense. (2) La superioridad tecnol&oacute;gica de EE.UU. (que se daba por descontada) era falsa. Consecuencias: (1) El Congreso aprob&oacute; la <B>Ley Nacional de Educaci&oacute;n para la Defensa (NDEA, 1958)</B>: masiva inversi&oacute;n en ciencias, matem&aacute;ticas e idiomas. (2) Creaci&oacute;n de la <B>NASA</B> (1958). (3) Aceleraci&oacute;n del programa de misiles balist&iacute;cos de EE.UU. El primer ser humano en el espacio fue <B>Yuri Gagarin</B> el 12 de abril de 1961 (no en 1957).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Cu&aacute;ndo cay&oacute; el Muro de Berl&iacute;n, cu&aacute;ndo fue construido y cu&aacute;l fue su significado simb&oacute;lico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) El Muro fue construido en 1949 cuando se dividi&oacute; Alemania y cay&oacute; el 25 de diciembre de 1991 junto con la URSS; su significado fue el inicio y el fin de la divisi&oacute;n de Alemania</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) El Muro de Berl&iacute;n fue construido el 13 de agosto de 1961 (para impedir la fuga masiva de ciudadanos de la RDA al oeste) y cay&oacute; el 9 de noviembre de 1989; simboliz&oacute; durante 28 a&ntilde;os la divisi&oacute;n del mundo en dos bloques y su ca&iacute;da marc&oacute; el fin pr&aacute;ctico de la Guerra Fr&iacute;a y del comunismo europeo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) El Muro fue construido en 1945 por los Aliados para separar las zonas de ocupaci&oacute;n de Berl&iacute;n y cay&oacute; en 1990 cuando Alemania firm&oacute; el Tratado de Reunificaci&oacute;n con la URSS</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) El Muro de Berl&iacute;n fue construido por EE.UU. como medida defensiva para proteger Berl&iacute;n Occidental de una posible invasi&oacute;n sovi&eacute;tica y cay&oacute; en 1989 tras la retirada de las tropas estadounidenses de Alemania</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Muro de Berl&iacute;n</B> fue construido por la RDA (Alemania Oriental, comunista) en la noche del <B>12 al 13 de agosto de 1961</B>. Raz&oacute;n: entre 1949 y 1961, <B>3,5 millones de ciudadanos de la RDA</B> hab&iacute;an huido al oeste por Berl&iacute;n (la &uacute;nica frontera permeable). El muro detuvo la fuga pero se convirti&oacute; en el s&iacute;mbolo del totalitarismo comunista: m&aacute;s de <B>140 personas</B> murieron intentando cruzarlo. <B>9 de noviembre de 1989</B>: un portavoz de la RDA anunci&oacute; err&oacute;neamente por televisi&oacute;n que los ciudadanos pod&iacute;an cruzar "inmediatamente"; miles de berlineses acudieron al muro y los guardias, sin &oacute;rdenes claras, lo dejaron pasar. El mundo lo vio en vivo. <B>3 de octubre de 1990:</B> Alemania se reunific&oacute; oficialmente. El muro simbolizaba: el Tel&oacute;n de Acero hecho f&iacute;sico, la divisi&oacute;n del mundo, la negaci&oacute;n de la libertad de movimiento en el comunismo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qu&eacute; fueron la <I>Glasnost</I> y la <I>Perestroika</I> de Gorbachóv y c&oacute;mo contribuyeron al fin de la URSS?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) La <I>Glasnost</I> fue la reforma militar sovi&eacute;tica y la <I>Perestroika</I> fue la reforma espacial; ambas buscaban superar tecnol&oacute;gicamente a EE.UU. en los a&ntilde;os 80</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) La <I>Glasnost</I> (transparencia: mayor libertad de prensa y expresi&oacute;n) y la <I>Perestroika</I> (reestructuraci&oacute;n: reformas econ&oacute;micas parciales de mercado) fueron las reformas introducidas por Gorbach&oacute;v desde 1985 para salvar el sistema sovi&eacute;tico; paradójicamente, desataron fuerzas &mdash;cr&iacute;tica p&uacute;blica, nacionalismos, demanda de m&aacute;s libertades&mdash; que Gorbach&oacute;v no pudo controlar y que aceleraron el colapso de la URSS</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) La <I>Glasnost</I> y la <I>Perestroika</I> fueron dos reformas exitosas que modernizaron la econom&iacute;a sovi&eacute;tica y permitieron que la URSS sobreviviera hasta el siglo XXI con un sistema de econom&iacute;a mixta similar al chino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) La <I>Glasnost</I> fue la pol&iacute;tica exterior de Gorbach&oacute;v de apertura hacia Occidente y la <I>Perestroika</I> fue su pol&iacute;tica de represión de los movimientos nacionalistas en las rep&uacute;blicas sovi&eacute;ticas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Mijail Gorbach&oacute;v</B> lleg&oacute; al poder como Secretario General del PCUS en marzo de 1985 con conciencia de que la URSS necesitaba reformas urgentes: la econom&iacute;a stagnaba, la guerra de Afganist&aacute;n sangraba recursos y el sistema tecnol&oacute;gico se quedaba atr&aacute;s. <B><I>Glasnost</I></B> (transparencia): mayor libertad de prensa, apertura de archivos, cr&iacute;tica p&uacute;blica de los errores del pasado sovi&eacute;tico (incluyendo el estalinismo). <B><I>Perestroika</I></B> (reestructuraci&oacute;n): reformas parciales de mercado, descentralizaci&oacute;n, cooperativas privadas. La <B>paradoja de Gorbach&oacute;v</B>: intent&oacute; reformar el comunismo para salvarlo, pero una vez que los ciudadanos sovi&eacute;ticos pudieron hablar libremente, criticaron el sistema; una vez que vieron cuánto mejor viv&iacute;an en Occidente, quisieron m&aacute;s cambios; los nacionalismos de las rep&uacute;blicas (Estonia, Letonia, Ucrania, Georgia) se dispararon. Las reformas abrieron la caja de Pandora que colaps&oacute; la URSS.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Analiza por qu&eacute; la Crisis de los Misiles de Cuba (1962) fue el momento m&aacute;s peligroso de la historia y qu&eacute; papel tuvo la comunicaci&oacute;n directa entre Kennedy y Jrushch&oacute;v en su resoluci&oacute;n.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) La crisis fue peligrosa pero controlable porque ambas potencias ten&iacute;an previsto un mecanismo autom&aacute;tico de desescalada nuclear; Kennedy simplemente activ&oacute; ese mecanismo y la crisis se resolvi&oacute; sin negociaci&oacute;n real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) La crisis fue la m&aacute;s peligrosa porque por primera vez misiles nucleares sovi&eacute;ticos estaban a 150 km de EE.UU.; la resoluci&oacute;n requiri&oacute; un intercambio intenso de mensajes privados entre Kennedy y Jrushch&oacute;v (incluido el incidente del submarino B-59 donde Vasili Arjipov impidi&oacute; el lanzamiento de un torpedo nuclear); el acuerdo final incluy&oacute; compromisos p&uacute;blicos y secretos que ninguno de los dos podía admitir p&uacute;blicamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) La crisis se resolvi&oacute; porque Cuba, por decisi&oacute;n soberana de Fidel Castro, rechaz&oacute; el despliegue de los misiles sovi&eacute;ticos; Jrushch&oacute;v no tuvo opci&oacute;n que aceptar la decisi&oacute;n de su aliado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) La crisis fue resuelta por la ONU a trav&eacute;s de una reuni&oacute;n de emergencia del Consejo de Seguridad que vot&oacute; obligar a la URSS a retirar los misiles; fue la primera y &uacute;nica vez que el Consejo tom&oacute; una decisi&oacute;n con el voto afirmativo de la URSS</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La Crisis de los Misiles de Cuba fue el momento en que la humanidad estuvo m&aacute;s cerca de una guerra nuclear total. Varios factores la hicieron extremadamente peligrosa: (1) <B>Escala del peligro:</B> los misiles sovi&eacute;ticos en Cuba pod&iacute;an alcanzar a la mayor&iacute;a de las ciudades de EE.UU. en minutos. (2) <B>El "S&aacute;bado Negro" (27 oct. 1962):</B> el submarino sovi&eacute;tico <B>B-59</B> se encontraba sin comunicaci&oacute;n con Mosc&uacute; y sus oficiales cre&iacute;an que la guerra ya hab&iacute;a comenzado; el capit&aacute;n y el comisario pol&iacute;tico aprobaron lanzar el torpedo nuclear, pero el oficial de flotilla <B>Vasili Arjipov</B> se neg&oacute;; se necesitaba unanimidad de los tres: Arjipov salv&oacute; al mundo. (3) <B>La resoluci&oacute;n:</B> fue un complejo intercambio de mensajes p&uacute;blicos y secretos: p&uacute;blicamente, la URSS retiraba los misiles; secretamente, EE.UU. prometi&oacute; retirar sus misiles Jupiter de Turqu&iacute;a en seis meses y no invadir Cuba. Kennedy no pod&iacute;a admitir el compromiso turco p&uacute;blicamente (parecer&iacute;a que cedi&oacute; al chantaje). Consecuencia: el <B>Tel&eacute;fono Rojo</B> (l&iacute;nea directa Casa Blanca-Kremlin, jun. 1963).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> &iquest;Por qu&eacute; la Guerra de Vietnam fue un fracaso estrat&eacute;gico para EE.UU. y cu&aacute;les fueron sus consecuencias a largo plazo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) La Guerra de Vietnam fue un fracaso porque EE.UU. nunca quiso ganarla realmente; el ej&eacute;rcito estadounidense gan&oacute; todas las batallas militares pero el gobierno civil siempre se lo impidi&oacute; por razones pol&iacute;ticas internas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) La Guerra de Vietnam fue un fracaso porque EE.UU. no pudo adaptar su superioridad militar convencional a una guerra de guerrillas en la selva; la ofensiva del Tet (1968) destruy&oacute; la credibilidad del gobierno en casa; 58.220 soldados muertos y miles de millones gastados sin resultado; el "s&iacute;ndrome de Vietnam" limit&oacute; la pol&iacute;tica exterior estadounidense por una generaci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) La Guerra de Vietnam fue un fracaso exclusivamente por la invasi&oacute;n china del norte de Vietnam en 1973; sin esa intervenci&oacute;n, EE.UU. habr&iacute;a ganado la guerra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) La Guerra de Vietnam fue un fracaso menor sin grandes consecuencias: Vietnam se reunific&oacute; brevemente bajo el comunismo pero volvió a ser capitalista en 1980; las consecuencias para EE.UU. fueron m&iacute;nimas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La Guerra de Vietnam (1955&ndash;1975) fue el mayor fracaso estrat&eacute;gico de EE.UU. en el siglo XX. Sus causas y consecuencias: (1) <B>Por qu&eacute; EE.UU. no pudo ganar:</B> la superioridad militar convencional (bombas, napalm, agente naranja, helic&oacute;pteros) no era efectiva contra una guerra de guerrillas apoyada por la poblaci&oacute;n civil; los vietcong luchaban en casa por su tierra; EE.UU. luchaba en terreno desconocido por objetivos abstractos. (2) <B>La ofensiva del Tet (enero 1968):</B> el Vietcong atac&oacute; 100 ciudades simult&aacute;neamente; fue detenido militarmente pero demostr&oacute; que EE.UU. no estaba ganando como dec&iacute;a su gobierno; el presentador <B>Walter Cronkite</B> llam&oacute; a la guerra "un embrollo"; la opini&oacute;n p&uacute;blica se volc&oacute;. (3) <B>El movimiento antibelicista</B> en EE.UU.: manifestaciones masivas (Kent State, 1970: la Guardia Nacional mató a 4 estudiantes manifestantes). (4) <B>Consecuencias:</B> el "s&iacute;ndrome de Vietnam" (renuencia a intervenir militarmente), la Resoluci&oacute;n de Poderes de Guerra (1973), la desconfianza en el gobierno ("credibility gap"), 58.220 muertos estadounidenses, hasta 3,5 millones de muertos vietnamitas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Explica el concepto de "Destrucci&oacute;n Mutua Asegurada" (MAD) y la paradoja de por qu&eacute; el armamento nuclear fue, parad&oacute;jicamente, el mayor factor de paz entre las superpotencias.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) La MAD fue una teor&iacute;a desacreditada: las superpotencias nunca tuvieron suficientes armas para destruirse mutuamente; la paz entre ellas se debi&oacute; exclusivamente a la medici&oacute;n diplom&aacute;tica de la ONU</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) La MAD (Destrucci&oacute;n Mutua Asegurada) estableci&oacute; que si cualquiera de las superpotencias atacaba nucleare a la otra, la segunda tendr&iacute;a suficientes misiles para responder y destruirla igualmente incluso tras recibir el primer golpe; como un ataque nuclear era suicida, ninguna superpotencia lo iniciar&iacute;a racionalmente; esta "l&oacute;gica de la locura" fue el mayor freno a la guerra directa entre EE.UU. y la URSS durante 44 a&ntilde;os</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) La MAD fue el acuerdo secreto firmado entre Kennedy y Jrushch&oacute;v tras la Crisis de los Misiles de Cuba, por el que ambas potencias se comprometieron a no usar jam&aacute;s sus armas nucleares</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La MAD fue una doctrina que s&oacute;lo favoreci&oacute; a la URSS: ten&iacute;a muchas m&aacute;s armas nucleares que EE.UU., por lo que la "destrucci&oacute;n mutua" no era simétrica; EE.UU. habr&iacute;a sido destruido pero la URSS habr&iacute;a sobrevivido</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Destrucci&oacute;n Mutua Asegurada</B> (<I>Mutually Assured Destruction</I>, MAD) es uno de los conceptos m&aacute;s paradójicos de la historia. <B>C&oacute;mo funciona:</B> cada superpotencia ten&iacute;a armas suficientes para destruir varias veces al enemigo. Adem&aacute;s, las armas estaban distribuidas en tri&aacute;das (misiles terrestres, submarinos y aviones bom barderos) de modo que ningún primer ataque pod&iacute;a destruirlas todas; siempre quedar&iacute;a capacidad de respuesta. Por tanto, un ataque nuclear era suicida: el atacante ser&iacute;a destruido en la respuesta. <B>La paradoja:</B> cuantas m&aacute;s armas nucleares ten&iacute;an, m&aacute;s segura era la paz entre ellas. El te&oacute;rico <B>Herman Kahn</B> y el economista <B>Thomas Schelling</B> (Nobel 2005) analizaron esta l&oacute;gica del disuasi&oacute;n. <B>El riesgo principal:</B> no era la decisi&oacute;n racional de atacar sino el error, el accidente o el malentendido (como casi ocurri&oacute; en la Crisis de Cuba con el submarino B-59, y en 1983 cuando el sistema sovi&eacute;tico de alerta report&oacute; err&oacute;neamente un ataque estadounidense y el teniente coronel <B>Stanislav Petrov</B> decidi&oacute; no informar a sus superiores).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> &iquest;Qu&eacute; fue la D&eacute;tente y c&oacute;mo la visita de Nixon a China (1972) fue un ejemplo magistral de diplomacia triangular?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) La D&eacute;tente fue la capitulaci&oacute;n diplom&aacute;tica de EE.UU. ante la URSS; la visita a China fue un error estrat&eacute;gico que fortaleci&oacute; el bloque comunista al unir a China y la URSS contra EE.UU.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) La D&eacute;tente fue el per&iacute;odo de reducci&oacute;n de tensiones impulsado por Nixon y Kissinger; la visita a China (febrero 1972) fue una maniobra de "diplomacia triangular": al abrir relaciones con China (aprovechando la escisión sino-sovi&eacute;tica de los 60), EE.UU. cre&oacute; una presi&oacute;n estrat&eacute;gica adicional sobre la URSS, que se vio amenazada de tener a EE.UU. aliado con su gran rival comunista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) La D&eacute;tente fue el acuerdo de paz de la Guerra de Vietnam; la visita de Nixon a China fue la condici&oacute;n que China puso para no intervenir militarmente en apoyo de Vietnam del Norte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) La visita de Nixon a China fue irrelevante estrat&eacute;gicamente: en 1972 China ya era un aliado de EE.UU. desde los a&ntilde;os 50; Nixon fue el &uacute;ltimo presidente en visitar China porque todos los dem&aacute;s ya la hab&iacute;an visitado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>D&eacute;tente</B> fue el per&iacute;odo de reducci&oacute;n de tensiones (1969&ndash;1979) impulsado por el presidente <B>Richard Nixon</B> y su asesor de Seguridad Nacional <B>Henry Kissinger</B>, y por el l&iacute;der sovi&eacute;tico <B>Le&oacute;nidas Br&eacute;znev</B>. <B>La "diplomacia triangular" con China:</B> Kissinger visit&oacute; secretamente Pek&iacute;n en julio de 1971 para preparar la visita de Nixon. La <B>escisi&oacute;n sino-sovi&eacute;tica</B> (desde ~1960) hab&iacute;a convertido a China y la URSS en rivales comunistas: disputas ideol&oacute;gicas (Mao acus&oacute; a Jrushch&oacute;v de "revisionismo") y fronterizas (conflicto del r&iacute;o Ussuri, 1969). Nixon explot&oacute; brillantemente esta grieta: al normalizar relaciones con China, EE.UU. cre&oacute; un tri&aacute;ngulo estrat&eacute;gico donde ninguna potencia quer&iacute;a verse aislada. La URSS, ahora amenazada por un posible eje EE.UU.-China, tuvo incentivos para negociar con EE.UU. (SALT I, mayo 1972, firm&oacute; solo meses despu&eacute;s de la visita a China). Era el M&aacute;s irónico: Nixon, el anticomunista que hab&iacute;a hecho carrera atacando a los "comunistas", fue el que abri&oacute; relaciones con la China comunista.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Cu&aacute;l fue el impacto de la Guerra de Afganist&aacute;n (1979&ndash;1989) en el colapso de la URSS?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) La guerra de Afganist&aacute;n fue un &eacute;xito military sovi&eacute;tico: la URSS logr&oacute; estabilizar el pa&iacute;s en pocos meses; el colapso de la URSS no tuvo ninguna relaci&oacute;n con Afganist&aacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) La invasi&oacute;n sovi&eacute;tica de Afganist&aacute;n (diciembre 1979) se convirti&oacute; en el "Vietnam de la URSS": m&aacute;s de 15.000 muertos, gasto inmenso que no pod&iacute;a sostener, desmoralizaci&oacute;n del ej&eacute;rcito, prestig io internacional destrozado y el boicot olímpico de 1980; contribuy&oacute; a la crisis econ&oacute;mica y legitimidad del r&eacute;gimen que aceler&oacute; el colapso de 1991</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Afganist&aacute;n fue importante porque all&iacute; EE.UU. y la URSS se enfrentaron directamente por primera vez; fue la &uacute;nica guerra caliente entre las dos superpotencias durante toda la Guerra Fr&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) La guerra en Afganist&aacute;n fue financiada exclusivamente por Ir&aacute;n tras la Revoluci&oacute;n Isl&aacute;mica de 1979; EE.UU. no tuvo ninguna participaci&oacute;n en el conflicto afgano hasta 2001</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La invasi&oacute;n sovi&eacute;tica de <B>Afganist&aacute;n</B> (25 diciembre 1979 &ndash; 15 febrero 1989) fue uno de los factores claves en el colapso de la URSS. <B>El contexto:</B> el gobierno comunista afgano (PDPA) enfrentaba una insurgencia isl&aacute;mica creciente; la URSS envi&oacute; tropas para apuntalarlo. <B>La respuesta estadounidense:</B> el presidente Carter y especialmente <B>Reagan</B> financiaron y armaron a los muyahidines afganos a trav&eacute;s de la CIA ("Operaci&oacute;n Ciclón") y Pakistán: entre 600 y 900 millones de d&oacute;lares anuales, incluyendo misiles antia&eacute;reos Stinger que destruyeron la ventaja a&eacute;rea sovi&eacute;tica. <B>El costo para la URSS:</B> m&aacute;s de <B>15.000 muertos</B> sovi&eacute;ticos (cifra oficial; la real fue mayor), decenas de miles de heridos, miles de millones de rublos gastados en una econom&iacute;a ya en crisis. Los ata&uacute;des de zinc (cuerpos de soldados) llegaban a familias sovi&eacute;ticas que no ten&iacute;an ni siquiera saber donde hab&iacute;an muerto sus hijos. Fue el "<B>Vietnam de la URSS</B>": igual que EE.UU. en Vietnam, la URSS no pudo ganar una guerra de guerrillas anticolonial. La retirada (1989) fue otro golpe a la legitimidad del r&eacute;gimen. Nota: los muyahidines financiados por la CIA derivaron en los talibanes y Al-Qaeda.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Compara la Doctrina Truman (contenci&oacute;n, 1947) con la Doctrina Reagan ("apoyo a los guerrilleros de la libertad", 1985): &iquest;en qu&eacute; eran diferentes estrat&eacute;gicamente y cu&aacute;les fueron las consecuencias no deseadas de cada una?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Ambas doctrinas fueron id&eacute;nticas en contenido y consecuencias; la &uacute;nica diferencia fue que Truman las aplic&oacute; en Europa y Reagan en Asia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La Doctrina Truman (contenci&oacute;n) busc&oacute; estabilizar fronteras existentes entre capitalismo y comunismo; su consecuencia no deseada fue legitimar dictaduras anticomunistas corruptas. La Doctrina Reagan busc&oacute; activamente revertir gobiernos comunistas apoyando insurgencias; su consecuencia no deseada m&aacute;s grave fue armar y financiar a los muyahidines afganos que luego derivaron en los talibanes y facilitaron el surgimiento de Al-Qaeda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) La Doctrina Truman fue agresiva (buscaba revertir el comunismo) y la Doctrina Reagan fue pasiva (solo buscaba defender las fronteras existentes); por eso la Doctrina Truman llevó a la guerra de Corea y la Doctrina Reagan permiti&oacute; que la URSS se expandiera en Centroam&eacute;rica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Ambas doctrinas fracasaron completamente: el comunismo se expandi&oacute; a&uacute;n m&aacute;s durante el per&iacute;odo de Truman (1947&ndash;1953) y durante el de Reagan (1981&ndash;1989); fue la Doctrina Carter la que realmente contuvo el comunismo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Doctrina Truman (contenci&oacute;n):</B> la estrategia de <B>Kennan</B> era def ensiva: no retroceder donde el comunismo ya exist&iacute;a (eso significar&iacute;a guerra directa con la URSS) sino impedirle avanzar. Implicaba apoyar a cualquier gobierno que resistiera el comunismo, sin importar su car&aacute;cter democr&aacute;tico. <B>Consecuencia no deseada:</B> EE.UU. apoy&oacute; dictaduras brutalmente anticomunistas (Somoza en Nicaragua, Pinochet en Chile, la junta militar argentina, Marcos en Filipinas, Park Chung-hee en Corea del Sur) que violaron masivamente los derechos humanos, erosionando la credibilidad moral de EE.UU. <B>Doctrina Reagan (reversionismo):</B> Reagan consider&oacute; la contenci&oacute;n insuficiente; quería revertir activamente los gobiernos comunistas apoyando guerrilleros anticomunistas. <B>Consecuencia no deseada m&aacute;s grave:</B> la "<B>Operaci&oacute;n Ciclón</B>" (financiamiento de los muyahidines afganos con Osama bin Laden entre sus receptores): cuando los muyahidines ganaron y la URSS se fue, el movimiento evolucion&oacute; hacia el radicalismo isl&aacute;mico, los talibanes tomaron el poder en Afganist&aacute;n y Al-Qaeda organiz&oacute; los atentados del 11 de septiembre de 2001 desde all&iacute;. El "blowback" (efecto bumerán) de la Doctrina Reagan.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Analiza el impacto de la Guerra Fr&iacute;a en Am&eacute;rica Latina y espec&iacute;ficamente en el Per&uacute;: &iquest;c&oacute;mo moldeo la confrontaci&oacute;n EE.UU.-URSS la pol&iacute;tica interna latinoamericana?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La Guerra Fr&iacute;a no impact&oacute; significativamente a Am&eacute;rica Latina; la regi&oacute;n estuvo aislada del conflicto por la Doctrina Monroe y ninguna intervenci&oacute;n extranjera ocurri&oacute; en los a&ntilde;os 60&ndash;80</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La Guerra Fr&iacute;a moldeo profundamente Am&eacute;rica Latina: la Revoluci&oacute;n Cubana (1959) desencaden&oacute; el miedo estadounidense a una expansi&oacute;n comunista; la CIA apoy&oacute; golpes de Estado (Guatemala 1954, Chile 1973) y dictaduras militares anticomunistas; la Operaci&oacute;n C&oacute;ndor coordin&oacute; la represi&oacute;n transnacional; en el Per&uacute;, la insurgencia de Sendero Luminoso y el MRTA deben comprenderse en ese contexto ideol&oacute;gico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) El &uacute;nico impacto de la Guerra Fr&iacute;a en Am&eacute;rica Latina fue la Revoluci&oacute;n Cubana; ning&uacute;n otro pa&iacute;s latinoamericano fue afectado significativamente por la confrontaci&oacute;n EE.UU.-URSS</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La URSS dominó Am&eacute;rica Latina durante la Guerra Fr&iacute;a: todos los pa&iacute;ses latinoamericanos excepto Brasil adoptaron sistemas de gobierno comunistas entre 1959 y 1975</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La Guerra Fr&iacute;a fue un factor determinante en la pol&iacute;tica latinoamericana. <B>Hitos principales:</B> (1) <B>Guatemala (1954):</B> la CIA organiz&oacute; la ca&iacute;da del gobierno reformista de <B>Jacobo Árbenz</B> (que hab&iacute;a expropiado tierras a la United Fruit Company) e instal&oacute; una dictadura militar. (2) <B>La Alianza para el Progreso</B> (Kennedy, 1961): 20.000 millones de d&oacute;lares en 10 a&ntilde;os para el desarrollo latinoamericano, buscando evitar m&aacute;s revoluciones como la cubana mediante la prosperidad. (3) <B>Brasil (1964):</B> golpe militar con apoyo de la CIA. (4) <B>Chile (1973):</B> el golpe de <B>Pinochet</B> derroc&oacute; al socialista electo <B>Salvador Allende</B> con activa participaci&oacute;n de la CIA; m&aacute;s de 3.000 asesinados. (5) <B>Operaci&oacute;n C&oacute;ndor</B> (1975&ndash;1989): coordinaci&oacute;n represiva de las dictaduras de Argentina, Chile, Uruguay, Paraguay, Bolivia y Brasil, con apoyo de la CIA; secuestros, torturas y asesinatos transnacionales de opositores pol&iacute;ticos. <B>Per&uacute;:</B> <B>Sendero Luminoso</B> (Abimael Guzmán, inspirado en el maois mo) y el <B>MRTA</B> fueron insurgencias comunistas nacidas del contexto ideol&oacute;gico de la Guerra Fr&iacute;a; el conflicto armado interno (1980&ndash;2000) cost&oacute; ~69.000 vidas (Comisi&oacute;n de la Verdad y Reconciliaci&oacute;n, 2003).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> &iquest;Por qu&eacute; la escisi&oacute;n sino-sovi&eacute;tica de los a&ntilde;os 60 fue tan importante para la din&aacute;mica de la Guerra Fr&iacute;a?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La escisi&oacute;n sino-sovi&eacute;tica no fue importante; China y la URSS siempre actuaron coordinadamente durante toda la Guerra Fr&iacute;a como un bloque comunista unido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La escisi&oacute;n sino-sovi&eacute;tica rompi&oacute; la unidad del bloque comunista y cre&oacute; un tri&aacute;ngulo estrat&eacute;gico EE.UU.-URSS-China que Nixon explot&oacute; brillantemente en 1972; demostr&oacute; que el comunismo no era monol&iacute;tico sino que los intereses nacionales primaban sobre la solidaridad ideol&oacute;gica; tambi&eacute;n llev&oacute; a un conflicto fronterizo sovi&eacute;tico-chino (1969) que casi se convirti&oacute; en una guerra nuclear</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La escisi&oacute;n sino-sovi&eacute;tica fue positiva para el comunismo: permiti&oacute; que China desarrollara su propio modelo y se convirtiera en una superpotencia econ&oacute;mica m&aacute;s r&aacute;pidamente de lo que habr&iacute;a logrado bajo la tutela sovi&eacute;tica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La escisi&oacute;n sino-sovi&eacute;tica fue causada exclusivamente por disputas econ&oacute;micas sobre el reparto de la ayuda sovi&eacute;tica a China; no tuvo componente ideol&oacute;gico ni estrat&eacute;gico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>escisi&oacute;n sino-sovi&eacute;tica</B> (visible desde ~1960, ruptura total ~1963) fue uno de los giros m&aacute;s importantes de la Guerra Fr&iacute;a. <B>Causas:</B> (1) <B>Ideol&oacute;gicas:</B> Mao acus&oacute; a Jrushch&oacute;v de "revisionismo" por su "desestalinizaci&oacute;n" y su disposici&oacute;n a coexistir con el capitalismo; Mao cre&iacute;a que la guerra nuclear era inevitable y que los comunistas deb&iacute;an prepararla. (2) <B>Nacionales:</B> China quer&iacute;a ser tratada como igual, no como sat&eacute;lite; la URSS hab&iacute;a retirado sus t&eacute;cnicos de China en 1960. (3) <B>Fronterizas:</B> conflictos sobre el trazado de la frontera entre ambos pa&iacute;ses (Ussuri, 1969: enfrentamiento armado con centenares de muertos; la URSS consider&oacute; seriamente un ataque nuclear preventivo contra los laboratorios nucleares chinos). <B>Consecuencias estrat&eacute;gicas:</B> el bloque comunista ya no era unido; hab&iacute;a DOS comunismos rivales. Nixon y Kissinger explotaron brillantemente esta grieta en 1972. La escisi&oacute;n tambi&eacute;n explic&oacute; la hostilidad chino-vietnamita: tras la victoria de Vietnam (1975), China y Vietnam (ambos comunistas) casi inmediatamente entraron en guerra (1979).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Compara las interpretaciones "revisionista" y "postrevisionist a" sobre el origen de la Guerra Fr&iacute;a: &iquest;qui&eacute;n fue m&aacute;s responsable de su inicio, EE.UU. o la URSS?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" Value="a"> a) Los revisionistas (William Appleman Williams, Gabriel Kolko) arguyen que EE.UU. fue el principal responsable del inicio de la Guerra Fr&iacute;a porque sus intereses econ&oacute;micos capitalistas requerian la "puerta abierta" en los mercados mundiales y usaron la amenaza comunista como pretexto; los postrevisionistas adoptan una posici&oacute;n m&aacute;s matizada: ambas potencias contribuyeron, aunque el comunismo sovi&eacute;tico era genuinamente expansionista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Los revisionistas afirman que la URSS fue enteramente responsable; los postrevisionistas afirman que EE.UU. fue enteramente responsable; el debate no tiene posici&oacute;n intermedia posible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El debate revisionista/postrevisioni sta es exclusivamente estadounidense y no tiene relevancia para entender la pol&iacute;tica exterior de la URSS durante la Guerra Fr&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Los postrevisionistas concluyen que ninguna de las dos superpotencias quiso la Guerra Fr&iacute;a; fue un accidente hist&oacute;rico causado por malentendidos culturales entre los l&iacute;deres de ambos pa&iacute;ses</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El debate historiogr&aacute;fico sobre las responsabilidades en el inicio de la Guerra Fr&iacute;a tiene tres corrientes principales: <B>Interpretaci&oacute;n tradicional u ortodoxa</B> (John Lewis Gaddis temprano, Herbert Feis): la URSS fue la responsable principal; Stalin era expansionista e impredecible, y EE.UU. tuvo que responder defensivamente. <B>Interpretaci&oacute;n revisionista</B> (William Appleman Williams, <I>La tragedia de la diplomacia estadounidense</I>, 1959; Gabriel Kolko; Gar Alperovitz): EE.UU. fue el responsable principal; su ideolog&iacute;a de la "puerta abierta" (acceso a mercados mundiales para el capitalismo estadounidense) lo llev&oacute; a una pol&iacute;tica imperialista que provoc&oacute; la respuesta defensiva sovi&eacute;tica; las bombas at&oacute;micas fueron un gesto diplom&aacute;tico antisoviético. <B>Interpretaci&oacute;n postrevisionista</B> (John Lewis Gaddis tard&iacute;o, Ernest May, Melvyn Leffler): ambas potencias contribuyeron; las percepciones mutuas de amenaza se retroalimentaron; las ideolog&iacute;as incompatibles hicieron inevitable la confrontaci&oacute;n aunque ninguno la quisiera en toda su intensidad. Hoy la posici&oacute;n dominante incorpora los archivos sovi&eacute;ticos abiertos tras 1991: confirman que el expansionismo sovi&eacute;tico era real, lo que debilita el revisionismo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Eval&uacute;a las tesis de Francis Fukuyama ("Fin de la Historia", 1989) y Samuel Huntington ("Choque de Civilizaciones", 1993) como marcos interpretativos del orden mundial post-Guerra Fr&iacute;a: &iquest;cu&aacute;l result&oacute; m&aacute;s predictivo y por qu&eacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La tesis de Fukuyama result&oacute; completamente correcta: desde 1991 no ha habido ning&uacute;n conflicto armado importante en el mundo y la democracia liberal se ha extendido a todos los pa&iacute;ses; Huntington estuvo equivocado en todo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Fukuyama argument&oacute; que la democracia liberal era el "estado final" de la evoluci&oacute;n pol&iacute;tica; Huntington predijo conflictos futuros a lo largo de l&iacute;neas civilizacionales (Occidente vs. Islam vs. China vs. Rusia); el 11 de septiembre de 2001, el auge de China, la guerra de Rusia en Ucrania y el resurgimiento de los autoritarismos dan m&aacute;s razones a Huntington, aunque su tesis tambi&eacute;n ha sido criticada por simplificar excesivamente las identidades culturales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Ambas tesis son igualmente incorrectas; el mundo post-Guerra Fr&iacute;a se entiende mejor con el marxismo: los conflictos son siempre de clase, no civilizacionales ni ideol&oacute;gicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Fukuyama y Huntington escribieron en el mismo a&ntilde;o (1989) y sus tesis son complementarias y mutuamente excluyentes; ning&uacute;n acad&eacute;mico serio cita hoy ninguna de las dos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Francis Fukuyama</B>, politólogo estadounidense de origen japon&eacute;s, escribi&oacute; "<B>El Fin de la Historia y el &uacute;ltimo Hombre</B>" (art&iacute;culo 1989, libro 1992). Su tesis: la ca&iacute;da del comunismo representaba el "fin de la historia" en el sentido hegeliano: la democracia liberal capitalista hab&iacute;a derrotado definitivamente a sus rivales ideol&oacute;gicos (monarqu&iacute;a absoluta, fascismo, comunismo); podr&iacute;a haber conflictos menores pero no competidores ideol&oacute;gicos serios. <B>Samuel Huntington</B>, politólogo de Harvard, public&oacute; "<B>El Choque de Civilizaciones y la Reconfiguración del Orden Mundial</B>" (1996). Su tesis: en el mundo post-Guerra Fr&iacute;a, los conflictos principales no ser&iacute;an entre ideolog&iacute;as sino entre <B>civilizaciones</B> (Occidente, Islam, China/Confuciana, Ortodoxa/Rusia, India/Hind&uacute;, Latinoamericana, Africana, Japonesa); las l&iacute;neas de fractura entre civilizaciones ser&iacute;an los nuevos frentes de conflicto. <B>Evaluaci&oacute;n:</B> Fukuyama result&oacute; demasiado optimista: el <B>11 de septiembre de 2001</B>, el auge del autoritarismo en China y Rusia, la guerra de Putin en Ucrania y el resurgimiento de los autoritarismos globales contradicen el "fin de la historia". Huntington es m&aacute;s predictivo en algunos aspectos pero ha sido criticado por: (1) tratar las "civilizaciones" como bloques monol&iacute;ticos; (2) ignorar los conflictos dentro de las civilizaciones; (3) ser una "profec&iacute;a autocumplida" que justifica la hostilidad hacia el Islam. El propio Fukuyama ha revisado su tesis desde el 2000.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> &iquest;En qu&eacute; medida la Guerra Fr&iacute;a cre&oacute; los problemas de seguridad m&aacute;s graves del siglo XXI: terrorismo islamista, proliferaci&oacute;n nuclear, conflictos "congelados" y el resurgimiento de Rusia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La Guerra Fr&iacute;a y el siglo XXI no tienen relaci&oacute;n: todos los problemas de seguridad actuales son completamente nuevos y no tienen ra&iacute;ces en el conflicto EE.UU.-URSS</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La Guerra Fr&iacute;a cre&oacute; condiciones directas para los principales desaf&iacute;os del siglo XXI: el terrorismo islamista tiene ra&iacute;ces en el apoyo estadounidense a los muyahidines afganos (Operaci&oacute;n Ciclón); la proliferaci&oacute;n nuclear fue posibilitada por la difusi&oacute;n de tecnolog&iacute;a sovi&eacute;tica; los "conflictos congelados" del espacio postsoviético son herencia directa del colapso de la URSS; el resentimiento ruso ante la expansi&oacute;n de la OTAN es el marco de la guerra en Ucrania</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La Guerra Fr&iacute;a resolvi&oacute; todos los problemas de seguridad que exist&iacute;an antes de 1947; el mundo de posguerra fr&iacute;a es mucho m&aacute;s seguro en todos los sentidos y ninguno de los problemas actuales tiene ra&iacute;ces en ese per&iacute;odo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Los problemas del siglo XXI son causados exclusivamente por China; la herencia de la Guerra Fr&iacute;a EE.UU.-URSS no tiene ninguna relevancia para entender los conflictos actuales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige comprender la conexi&oacute;n causal entre la Guerra Fr&iacute;a y los principales desaf&iacute;os geopolíticos del siglo XXI: (1) <B>Terrorismo islamista:</B> la CIA arm&oacute; y financi&oacute; a los muyahidines afganos contra la URSS; entre los beneficiarios estuvo <B>Osama bin Laden</B> y las redes que evolucionaron en Al-Qaeda; los talibanes, creados en el vacío de poder post-sovi&eacute;tico de Afganist&aacute;n, dieron refugio a Al-Qaeda que ejecut&oacute; el 11-S. El "blowback" m&aacute;s costoso de la historia. (2) <B>Proliferaci&oacute;n nuclear:</B> la tecnolog&iacute;a nuclear sovi&eacute;tica se difundi&oacute; (China en los 50, Corea del Norte, Pakist&aacute;n a trav&eacute;s de la red de <B>A. Q. Khan</B> que incluy&oacute; tecnolog&iacute;a de origen sovi&eacute;tico). El colapso de la URSS dej&oacute; armas nucleares en 4 rep&uacute;blicas. (3) <B>Conflictos "congelados":</B> Nagorno-Karabaj (Armenia-Azerbaiy&aacute;n), Transnistria (Moldavia), Osetia del Sur y Abjasia (Georgia) son herencias directas de los l&iacute;mites administrativos internos sovi&eacute;ticos que se convirtieron en fronteras internacionales. (4) <B>Rusia y Ucrania:</B> Putin interpreta la expansi&oacute;n de la OTAN hacia el este (incorporaci&oacute;n de pa&iacute;ses del Pacto de Varsovia) como una violaci&oacute;n de las promesas de 1990&ndash;1991; la guerra en Ucrania (2022) es, desde esa perspectiva, una manifestaci&oacute;n del resentimiento ruso ante el orden postguerra fr&iacute;a percibido como impuesto por Occidente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> &iquest;C&oacute;mo utiliz&oacute; la URSS la descolonizaci&oacute;n africana y asi&aacute;tica como instrumento de la Guerra Fr&iacute;a, y cu&aacute;l fue la respuesta estadounidense a trav&eacute;s de la Alianza para el Progreso y las intervenciones encubiertas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La URSS no se interes&oacute; en el proceso de descolonizaci&oacute;n; consider&oacute; a los pa&iacute;ses afroasi&aacute;ticos como "atrasados" y no aptos para el socialismo; la descolonizaci&oacute;n fue un proceso completamente autónomo ajeno a la Guerra Fr&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La URSS present&oacute; el comunismo como la ideolog&iacute;a antiimperialista natural de los pueblos colonizados; apoy&oacute; movimientos de liberaci&oacute;n en &Aacute;frica y Asia y utiliz&oacute; el racismo estadounidense (derechos civiles) como propaganda; EE.UU. respondi&oacute; con la Alianza para el Progreso, intervenciones encubiertas de la CIA contra l&iacute;deres considerados comunistas (Lumumba en el Congo, Allende en Chile, Árbenz en Guatemala) y programas de ayuda condicionada a la alineaci&oacute;n anticomunista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) EE.UU. apoy&oacute; activamente la descolonizaci&oacute;n presionando a sus aliados brit&aacute;nicos y franceses para que cedieran sus colonias; la URSS se opuso a la descolonizaci&oacute;n porque prefer&iacute;a que el colonialismo occidental generara resentimiento contra el capitalismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La descolonizaci&oacute;n fue exclusivamente un proceso europeo; las colonias de &Aacute;frica y Asia no fueron escenario de la Guerra Fr&iacute;a porque ninguna de las dos superpotencias ten&iacute;a intereses estrat&eacute;gicos en esas regiones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Tercer Mundo descolonizado</B> fue el principal campo de batalla geopolítico de la Guerra Fr&iacute;a desde los a&ntilde;os 50 en adelante. <B>La estrategia sovi&eacute;tica:</B> el marxismo-leninismo se presentaba como la ideolog&iacute;a "antiimperialista" natural: el capitalismo era el colonizador; el comunismo, el liberador. La URSS apoy&oacute; movimientos de liberaci&oacute;n (ANC en Sudr&aacute;frica, MPLA en Angola, FLN en Argelia, Vietcong, FRELIMO en Mozambique) con armas, entrenamiento y dinero. <B>El arma propagandística del racismo:</B> cuando EE.UU. no pod&iacute;a justificar su defensa de la libertad mientras hab&iacute;a segregaci&oacute;n racial, la URSS lo explotaba: im&aacute;genes de violencia contra manifestantes negros en el Sur de EE.UU. se transmit&iacute;an globalmente como propaganda. <B>La respuesta estadounidense:</B> (1) <B>Alianza para el Progreso</B> (Kennedy, 1961): 20.000 M$ para dem ocratizar el desarrollo latinoamericano y hacer al capitalismo atractivo. (2) <B>Intervenciones de la CIA:</B> Irán (1953, Mosaddegh), Guatemala (1954, Árbenz), Congo-Zaire (1960, Lumumba asesinado con participación de la CIA), Chile (1973, Allende), y decenas m&aacute;s. (3) <B>Apoyo a dictaduras "amigas"</B>: Mobutu en el Congo, Suharto en Indonesia, los "Shah" en Irán, etc.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Desde la teor&iacute;a de relaciones internacionales, &iquest;fue la Guerra Fr&iacute;a un conflicto esencialmente "realista" (lucha por el poder y la hegemon&iacute;a) o "constructivista" (confrontaci&oacute;n de identidades e ideolog&iacute;as incompatibles)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La Guerra Fr&iacute;a fue puramente "realista": la ideolog&iacute;a fue solo un pretexto y siempre primaron los intereses nacionales de poder; la prueba es que EE.UU. y la URSS cooper aron cuando sus intereses lo requer&iacute;an (por ejemplo, contra el colonialismo brit&aacute;nico y franc&eacute;s en Suez, 1956)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La Guerra Fr&iacute;a fue esencialmente "constructivista": la ideolog&iacute;a no fue un pretexto sino el motor real; la diferencia entre capitalismo y comunismo era genuina y produjo sistemas, instituciones e identidades colectivas radicalmente incompatibles que se retroalimentaron; sin la dimensi&oacute;n ideol&oacute;gica, el conflicto no puede explicarse: por qu&eacute; EE.UU. intervino en Vietnam (sin recursos naturales valiosos) solo se entiende desde la l&oacute;gica ideol&oacute;gica del domino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La Guerra Fr&iacute;a fue puramente "constructivista": los intereses nacionales no jugaron ning&uacute;n papel; todo fue una construcci&oacute;n cultural y discursiva sin base material alguna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Las teor&iacute;as de relaciones internacionales (realismo, constructivismo, liberalismo) no se aplican a la Guerra Fr&iacute;a; solo el marxismo puede explicar un conflicto entre capitalismo y comunismo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de nivel experto exige aplicar las teor&iacute;as de RRII al an&aacute;lisis de la Guerra Fr&iacute;a. <B>El realismo</B> (Morgenthau, Waltz, Mearsheimer) tendr&iacute;a razón en que la competencia por poder e influencia fue central: EE.UU. y la URSS actuaron como cualquier gran potencia que busca maximizar seguridad y esfera de influencia; la URSS apoy&oacute; a "comunistas" que en realidad eran m&aacute;s nacionalistas que marxistas (Ho Chi Minh, Castro inicialmente); EE.UU. apoy&oacute; dictaduras que contradec&iacute;an sus valores democr&aacute;ticos. <B>El constructivismo</B> (Alexander Wendt, "La anarqu&iacute;a es lo que los estados hacen de ella") arguy&oacute; que las <B>identidades e ideolog&iacute;as</B> no son solo pretextos sino que moldean genuinamente los intereses: lo que EE.UU. "quer&iacute;a" en Vietnam (no ser percibido como d&eacute;bil ante la URSS, no permitir el domino ideol&oacute;gico) era una construcci&oacute;n ideol&oacute;gica, no un inter&eacute;s material objetivo. La doctrina MAD tambi&eacute;n tiene componente constructivista: lo que hac&iacute;a peligrosa una crisis no era solo el poder material (las armas) sino las <B>percepciones</B> mutuas de amenaza. <B>Conclusi&oacute;n:</B> la Guerra Fr&iacute;a requiere ambas lentes: fue una lucha de poder (realismo) MEDIADA por ideolog&iacute;as genuinas incompatibles (constructivismo) que ampliaron y profundizaron el conflicto m&aacute;s all&aacute; de lo que la l&oacute;gica pura del poder habr&iacute;a dictado.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

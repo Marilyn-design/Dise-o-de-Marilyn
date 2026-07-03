@@ -1,0 +1,491 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Introducción a la Cartografía - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA &middot; TEMA 3 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Introducción a la Cartografía</H1>
+<DIV CLASS="sub">Concepto &middot; Historia &middot; Proyecciones cartográficas &middot; Escala &middot; Tipos de mapas &middot; Elementos del mapa</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Concepto y etimología de la Cartografía</H3>
+La <B>Cartografía</B> es la ciencia y técnica que se ocupa de la <B>representación gráfica de la superficie terrestre</B> (o de parte de ella) sobre un plano bidimensional. Su nombre proviene del latín <I>charta</I> (mapa, hoja) y del griego <I>graphos</I> (descripción, escritura): literalmente, <B>"descripción mediante mapas"</B>.
+
+Su objeto de estudio es la elaboración, análisis e interpretación de mapas, planos, cartas geográficas y cualquier otra representación del espacio geográfico. Es considerada una <B>ciencia auxiliar fundamental de la Geografía</B>, ya que el mapa es la herramienta principal con la que el geógrafo comunica y analiza la información espacial.
+
+<DIV CLASS="alerta">⚠️ <B>Error frecuente en exámenes:</B> La Cartografía NO es solo "hacer mapas". Es una ciencia completa que incluye la medición, el análisis matemático del espacio (geodesia), la proyección de la esfera sobre un plano y la representación simbólica de la información geográfica.</DIV>
+
+<H3>2. Breve historia de la Cartografía</H3>
+La Cartografía tiene una historia milenaria ligada a la necesidad humana de orientarse y conocer el territorio.
+
+<H4>Cartografía en la Antigüedad:</H4>
+<UL>
+<LI><B>Anaximandro de Mileto</B> (610–546 a.C.): considerado el autor del primer mapa del mundo conocido en Occidente. Representó la Tierra como un disco rodeado de océano.</LI>
+<LI><B>Eratóstenes de Cirene</B> (~276–194 a.C.): además de calcular la circunferencia de la Tierra, elaboró un mapa del mundo conocido con una red de meridianos y paralelos, base del sistema de coordenadas.</LI>
+<LI><B>Claudio Ptolomeo</B> (90–168 d.C.): geógrafo grecorromano que escribió la <I>Geographia</I>, obra de 8 volúmenes que sistematizó el conocimiento cartográfico de su época. Introdujo el uso de la latitud y la longitud para ubicar puntos en el mapa y propuso las primeras <B>proyecciones cartográficas</B>. Su obra fue la referencia cartográfica dominante durante más de 1 400 años.</LI>
+</UL>
+
+<H4>Cartografía en la Edad Media y el Renacimiento:</H4>
+<UL>
+<LI>En la Edad Media, los mapas europeos (<B>mappaemundi</B>) tenían carácter religioso y colocaban a Jerusalén en el centro del mundo. No eran herramientas de navegación sino representaciones simbólicas del cosmos cristiano.</LI>
+<LI>Los árabes, en cambio, desarrollaron una cartografía más científica. <B>Al-Idrisi</B> (1100–1165) elaboró el <I>Libro de Roger</I>, uno de los mapas medievales más precisos, para el rey normando Roger II de Sicilia.</LI>
+<LI><B>Gerardus Mercator</B> (1512–1594): cartógrafo flamenco que publicó en <B>1569</B> su célebre <B>proyección cilíndrica conforme</B>, que lleva su nombre. Esta proyección conserva los ángulos y fue fundamental para la navegación marítima, aunque deforma el tamaño de los continentes en latitudes altas.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">Anaximandro</DIV><DIV CLASS="dk-label">Primer mapa del mundo occidental (~550 a.C.)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Ptolomeo</DIV><DIV CLASS="dk-label">Sistematizó coordenadas y proyecciones (s. II d.C.)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Mercator</DIV><DIV CLASS="dk-label">Proyección cilíndrica conforme (1569)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1884</DIV><DIV CLASS="dk-label">Meridiano de Greenwich adoptado como 0° universal</DIV></DIV>
+</DIV>
+
+<H3>3. El problema de la representación: el geoide y las proyecciones</H3>
+El principal reto de la Cartografía es representar una superficie <B>curva e irregular</B> (el geoide terrestre) sobre una superficie <B>plana</B> (el mapa). Este proceso es matemáticamente imposible sin introducir algún tipo de <B>distorsión</B>. Según qué propiedad se quiera conservar, existen diferentes tipos de proyecciones:
+
+<H4>A) Según la propiedad que conservan:</H4>
+<UL>
+<LI><B>Proyecciones conformes (ortomórficas):</B> conservan los <B>ángulos y las formas</B> locales, pero deforman las áreas. Ejemplo: proyección de Mercator.</LI>
+<LI><B>Proyecciones equivalentes (equiáreas):</B> conservan las <B>superficies o áreas</B> en proporción correcta, pero deforman las formas. Ejemplo: proyección de Peters (1974), proyección de Mollweide.</LI>
+<LI><B>Proyecciones equidistantes:</B> conservan las <B>distancias</B> desde un punto central o a lo largo de ciertos meridianos, pero distorsionan otras propiedades.</LI>
+<LI><B>Proyecciones afilácticas:</B> no conservan con exactitud ninguna propiedad, pero intentan minimizar las distorsiones totales. Ejemplo: proyección de Robinson.</LI>
+</UL>
+
+<H4>B) Según la superficie de proyección:</H4>
+<UL>
+<LI><B>Proyección cilíndrica:</B> se proyecta sobre un cilindro tangente al Ecuador. Al desenvolver el cilindro se obtiene el mapa. Los meridianos y paralelos forman una cuadrícula de líneas rectas perpendiculares. La más famosa es la de <B>Mercator (1569)</B>. Deforma enormemente los polos (Groenlandia parece del tamaño de África, cuando África es 14 veces mayor).</LI>
+<LI><B>Proyección cónica:</B> se proyecta sobre un cono tangente al globo a lo largo de uno o dos paralelos estándar. Al desenvolver el cono, los meridianos son líneas que convergen y los paralelos son arcos de círculo. Buena para representar zonas de latitudes medias (América del Norte, Europa). Ejemplo: proyección de Lambert.</LI>
+<LI><B>Proyección acimutal (plana o cenital):</B> se proyecta sobre un plano tangente al globo en un punto (polo, ecuador o cualquier otro). Ideal para representar los polos. La proyección acimutal centrada en el <B>Polo Norte</B> es la usada en el <B>emblema de la ONU</B>.</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo de proyección</TH><TH>Superficie</TH><TH>Propiedad conservada</TH><TH>Uso principal</TH><TH>Ejemplo</TH></TR>
+<TR><TD>Cilíndrica</TD><TD>Cilindro</TD><TD>Ángulos (conforme)</TD><TD>Navegación marítima y aérea</TD><TD>Mercator (1569)</TD></TR>
+<TR><TD>Cónica</TD><TD>Cono</TD><TD>Distancias en paralelos estándar</TD><TD>Latitudes medias, atlas</TD><TD>Lambert, Albers</TD></TR>
+<TR><TD>Acimutal / Plana</TD><TD>Plano</TD><TD>Distancias desde el centro</TD><TD>Representación de polos</TD><TD>ONU, estereográfica</TD></TR>
+<TR><TD>Peters (1974)</TD><TD>Cilindro modificado</TD><TD>Áreas (equivalente)</TD><TD>Representación justa de continentes</TD><TD>Peters / Gall-Peters</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La proyección de <B>Mercator</B> conserva <B>ángulos</B> pero distorsiona <B>áreas</B> (los polos se ven enormes). La proyección de <B>Peters</B> conserva <B>áreas</B> pero distorsiona <B>formas</B>. Esta distinción es muy frecuente en preguntas de opción múltiple.</DIV>
+
+<H3>4. La Escala Cartográfica</H3>
+La <B>escala</B> es la relación matemática entre la distancia medida en el mapa y la distancia real en el terreno. Es uno de los elementos más importantes de todo mapa y una de las preguntas más frecuentes en los exámenes de admisión.
+
+<H4>Tipos de escala:</H4>
+<UL>
+<LI><B>Escala numérica:</B> se expresa como una fracción o razón entre la distancia en el mapa y la distancia real. Ejemplo: <B>1:50 000</B> significa que 1 cm en el mapa equivale a 50 000 cm (= 500 m = 0,5 km) en la realidad.</LI>
+<LI><B>Escala gráfica:</B> es una barra o línea dividida en segmentos que representa visualmente las distancias reales. Tiene la ventaja de que sigue siendo válida si el mapa es ampliado o reducido.</LI>
+<LI><B>Escala verbal o descriptiva:</B> se expresa con palabras. Ejemplo: "1 centímetro equivale a 5 kilómetros".</LI>
+</UL>
+
+<H4>Escala grande vs. escala pequeña:</H4>
+<UL>
+<LI><B>Escala grande</B> (denominador pequeño, ej. 1:5 000 o 1:10 000): representa una zona <B>pequeña</B> con <B>mucho detalle</B>. Ejemplo: plano de una ciudad, catastro, plano arquitectónico.</LI>
+<LI><B>Escala pequeña</B> (denominador grande, ej. 1:1 000 000 o 1:10 000 000): representa una zona <B>grande</B> con <B>poco detalle</B>. Ejemplo: mapa del mundo, mapa de un continente.</LI>
+</UL>
+
+<DIV CLASS="ej">📐 <B>Ejemplo de cálculo:</B> Si en un mapa con escala 1:200 000 mides 3 cm entre dos ciudades, la distancia real es: 3 cm × 200 000 = 600 000 cm = 6 km.</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Truco para recordar:</B> A mayor denominador en la escala → menor detalle → escala más pequeña. A menor denominador → mayor detalle → escala más grande. Parece contradictorio pero es la convención cartográfica universalmente aceptada.</DIV>
+
+<H3>5. Tipos de mapas</H3>
+Los mapas se clasifican según su contenido y finalidad:
+
+<H4>A) Según el contenido:</H4>
+<UL>
+<LI><B>Mapas físicos o topográficos:</B> representan el relieve, la hidrografía y los elementos naturales del terreno. Usan curvas de nivel (isolíneas) para indicar la altitud.</LI>
+<LI><B>Mapas políticos:</B> representan las divisiones administrativas: países, regiones, departamentos, provincias, capitales y fronteras.</LI>
+<LI><B>Mapas temáticos:</B> representan un fenómeno específico sobre una base cartográfica. Pueden ser de clima, población, vegetación, economía, transporte, etc.</LI>
+<LI><B>Mapas históricos:</B> representan el territorio en un momento pasado, mostrando imperios, rutas de exploración o batallas.</LI>
+<LI><B>Cartas náuticas:</B> mapas especializados para la navegación marítima. Muestran profundidades, corrientes, arrecifes y puertos.</LI>
+<LI><B>Cartas aeronáuticas:</B> usadas para la navegación aérea. Muestran altitudes, rutas aéreas y zonas de restricción.</LI>
+</UL>
+
+<H4>B) Según la escala:</H4>
+<UL>
+<LI><B>Planos:</B> representaciones a gran escala (1:500 a 1:10 000) de áreas muy pequeñas como ciudades, barrios o edificios.</LI>
+<LI><B>Mapas:</B> representaciones de áreas medianas o grandes (1:10 000 a 1:1 000 000 y más).</LI>
+<LI><B>Atlas:</B> colección organizada de mapas en un libro o formato digital.</LI>
+</UL>
+
+<H3>6. Elementos del mapa</H3>
+Todo mapa bien elaborado debe incluir los siguientes elementos básicos:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Elemento</TH><TH>Descripción</TH></TR>
+<TR><TD><B>Título</B></TD><TD>Indica qué representa el mapa y el área geográfica que muestra.</TD></TR>
+<TR><TD><B>Escala</B></TD><TD>Relación entre la distancia en el mapa y la real. Puede ser numérica o gráfica.</TD></TR>
+<TR><TD><B>Leyenda (o simbología)</B></TD><TD>Explica el significado de los colores, símbolos y convenciones usados en el mapa.</TD></TR>
+<TR><TD><B>Rosa de los vientos (orientación)</B></TD><TD>Indica los puntos cardinales. Generalmente una flecha apuntando al Norte es suficiente.</TD></TR>
+<TR><TD><B>Coordenadas geográficas</B></TD><TD>Red de meridianos y paralelos (graticule) que permite localizar cualquier punto.</TD></TR>
+<TR><TD><B>Fuente o autor</B></TD><TD>Indica quién elaboró el mapa y de dónde provienen los datos.</TD></TR>
+<TR><TD><B>Fecha</B></TD><TD>Año de elaboración o de los datos representados. Fundamental en mapas temáticos.</TD></TR>
+<TR><TD><B>Proyección cartográfica</B></TD><TD>Tipo de proyección utilizada para trasladar la esfera al plano.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Importante:</B> En los exámenes de admisión, las preguntas sobre elementos del mapa suelen pedir identificar cuál es el elemento ausente o cuál tiene una función específica. La <B>leyenda</B> y la <B>escala</B> son los más preguntados.</DIV>
+
+<H3>7. Curvas de nivel e isolíneas</H3>
+Las <B>curvas de nivel</B> (también llamadas <B>isohipsas</B>) son líneas que unen puntos de igual altitud en un mapa topográfico. Permiten representar el relieve tridimensional sobre una superficie plana.
+
+<H4>Características de las curvas de nivel:</H4>
+<UL>
+<LI>Nunca se cruzan entre sí (dos puntos no pueden tener dos altitudes diferentes al mismo tiempo).</LI>
+<LI>Curvas <B>muy juntas</B> indican pendiente <B>pronunciada</B> (terreno escarpado).</LI>
+<LI>Curvas <B>muy separadas</B> indican pendiente <B>suave</B> (terreno llano).</LI>
+<LI>Cuando forman <B>círculos concéntricos cerrados</B>, el punto central es una <B>cima</B> (si los valores aumentan hacia adentro) o una <B>depresión</B> (si los valores disminuyen hacia adentro).</LI>
+<LI>La diferencia de altitud entre dos curvas consecutivas se llama <B>equidistancia</B> o intervalo de curvas.</LI>
+</UL>
+
+<H4>Otras isolíneas importantes en Geografía:</H4>
+<UL>
+<LI><B>Isotermas:</B> unen puntos de igual temperatura.</LI>
+<LI><B>Isobaras:</B> unen puntos de igual presión atmosférica.</LI>
+<LI><B>Isoyetas:</B> unen puntos de igual precipitación.</LI>
+<LI><B>Isóbatas:</B> unen puntos de igual profundidad submarina.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> Las isolíneas son muy frecuentes en exámenes. Recuerda: el prefijo <B>iso-</B> significa "igual". Asocia cada tipo con su variable: <B>isoterma</B> = temperatura, <B>isobara</B> = presión, <B>isoyeta</B> = lluvia, <B>isóbata</B> = profundidad del mar.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Preguntas de práctica</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- NIVEL BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál es la definición más precisa de Cartografía?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Ciencia que estudia la historia de los mapas antiguos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Ciencia y técnica que se ocupa de la representación gráfica de la superficie terrestre sobre un plano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Arte de decorar mapas con ilustraciones geográficas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Rama de la Astronomía que estudia la posición de los astros</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Cartografía</B> es la ciencia y técnica que estudia la representación de la superficie terrestre sobre un plano bidimensional. Incluye tanto la elaboración matemática de las proyecciones como el diseño gráfico de los mapas y su interpretación. No se limita a los mapas históricos ni decorativos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Qué geógrafo griego sistematizó por primera vez el uso de latitud y longitud para ubicar puntos en un mapa, y cuya obra fue referencia durante más de 1 400 años?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Eratóstenes de Cirene</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Anaximandro de Mileto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Claudio Ptolomeo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Gerardus Mercator</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR><B>Claudio Ptolomeo</B> (90–168 d.C.) escribió la <I>Geographia</I>, obra en 8 volúmenes que sistematizó el conocimiento cartográfico de la Antigüedad e introdujo el uso sistemático de la latitud y la longitud para localizar puntos. Su obra dominó la cartografía occidental durante más de 14 siglos. Eratóstenes calculó la circunferencia terrestre y Anaximandro elaboró el primer mapa conocido, pero no sistematizaron las coordenadas como Ptolomeo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Qué significa una escala cartográfica de 1:100 000?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Que el mapa tiene 100 000 páginas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Que 1 cm en el mapa equivale a 100 000 cm (1 km) en la realidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Que el mapa fue elaborado por 100 000 cartógrafos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Que la superficie representada tiene 100 000 km²</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La escala numérica expresa la relación entre la medida en el mapa y la medida real. <B>1:100 000</B> significa que una unidad en el mapa corresponde a 100 000 unidades iguales en la realidad. Entonces: 1 cm en el mapa = 100 000 cm en el terreno = 1 000 m = <B>1 km</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál de los siguientes elementos NO es básico en todo mapa bien elaborado?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Título</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Escala</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Leyenda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Fotografía satelital del área representada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d)</B><BR>Los elementos básicos de todo mapa son: título, escala, leyenda (simbología), orientación (rosa de los vientos o flecha norte), coordenadas, fuente y fecha. Una <B>fotografía satelital</B> no es un elemento cartográfico obligatorio del mapa; puede complementarlo, pero no forma parte de sus componentes esenciales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Las curvas de nivel muy juntas en un mapa topográfico indican:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Terreno llano con poca variación de altitud</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Zona costera cerca del mar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Pendiente pronunciada o terreno escarpado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Presencia de un río o lago en la zona</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Las <B>curvas de nivel</B> (isohipsas) unen puntos de igual altitud. Cuando están muy <B>juntas</B>, significa que la altitud cambia mucho en poco espacio horizontal, lo que indica una <B>pendiente pronunciada</B> (acantilado, ladera empinada de montaña). Cuando están muy <B>separadas</B>, la altitud cambia poco en mucho espacio, lo que indica terreno suave o llano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Qué isolínea une puntos de igual temperatura en un mapa climático?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Isóbata</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Isobara</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Isoyeta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Isoterma</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d)</B><BR>Las <B>isotermas</B> (iso = igual, therma = calor/temperatura) unen puntos de igual temperatura. Las demás isolíneas son: <B>isobaras</B> = presión atmosférica, <B>isoyetas</B> = precipitación o lluvia, <B>isóbatas</B> = profundidad submarina. Recuerda el prefijo <I>iso-</I> que siempre significa "igual".</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> La proyección de Mercator (1569) es ampliamente usada en navegación porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Representa el tamaño real de todos los continentes sin distorsión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Es la única proyección que representa correctamente los polos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Conserva los ángulos, lo que permite trazar rutas de navegación como líneas rectas (loxodromas)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Elimina cualquier tipo de distorsión en la representación del Ecuador</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La proyección de <B>Mercator</B> es una proyección <B>conforme</B>: conserva los ángulos localmente, lo que significa que las formas pequeñas se representan correctamente y, sobre todo, que una línea de rumbo constante (llamada <B>loxodroma</B>) se traza como una línea recta en el mapa. Esto fue revolucionario para la navegación marítima: un marinero podía medir el ángulo con el norte en el mapa y mantener ese mismo rumbo en el mar. Su gran defecto es que deforma enormemente las áreas en latitudes altas (Groenlandia parece tan grande como África).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Comparando los mapas con escalas 1:5 000 y 1:2 000 000, ¿cuál es la afirmación correcta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El mapa 1:2 000 000 es de escala grande y tiene más detalle que el 1:5 000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El mapa 1:5 000 es de escala grande, representa una zona pequeña con mucho detalle</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Ambas escalas son iguales porque los dos denominadores son números enteros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) El mapa 1:5 000 representa zonas más amplias porque su denominador es menor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En cartografía, <B>escala grande</B> = denominador pequeño = mucho detalle = zona pequeña representada. El mapa <B>1:5 000</B> tiene denominador menor, por lo tanto es de <B>escala grande</B>: representa una zona pequeña (como un barrio o un edificio) con gran nivel de detalle. El mapa <B>1:2 000 000</B> es de escala pequeña: representa zonas muy amplias (un departamento, un país) con poco detalle. Esta convención parece contraintuitiva pero es la universalmente aceptada.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> La proyección usada en el emblema oficial de la Organización de las Naciones Unidas (ONU) es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Proyección cilíndrica de Mercator centrada en el Ecuador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Proyección acimutal equidistante centrada en el Polo Norte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Proyección cónica de Lambert centrada en Europa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Proyección equivalente de Peters centrada en África</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El emblema de la <B>ONU</B> usa una <B>proyección acimutal equidistante</B> centrada en el <B>Polo Norte</B>, que muestra los continentes rodeando el polo como si se viera la Tierra desde arriba. Se eligió este tipo de proyección porque no favorece a ningún continente en particular (no hay "arriba" ni "abajo" privilegiado) y muestra todos los países del mundo en una sola vista.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Cuál es la principal crítica que se hace a la proyección de Mercator desde un punto de vista geopolítico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Que no puede representar los océanos, solo los continentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Que sobredimensiona visualmente los países del norte (Europa, Norteamérica) en relación a los del sur (África, América del Sur), generando una percepción distorsionada del mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Que fue creada para favorecer a los países árabes en la representación del mundo islámico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Que no incluye las coordenadas geográficas, lo que la hace inútil para la navegación</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La crítica geopolítica central a la proyección de <B>Mercator</B> es que exagera enormemente el tamaño de los países de latitudes altas (Europa, Rusia, Canadá, Groenlandia) en comparación con los países tropicales. Por ejemplo, <B>África</B> aparece visualmente similar o más pequeña que <B>Groenlandia</B>, cuando en realidad África tiene una superficie aproximadamente <B>14 veces mayor</B>. Esto fue lo que motivó al historiador Arno Peters a proponer en 1974 su proyección equivalente que muestra los continentes en su proporción de área real.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> En un mapa topográfico, si las curvas de nivel forman círculos concéntricos y los valores de altitud DISMINUYEN hacia el centro, ¿qué forma del relieve representa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Una cima o cumbre montañosa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Una depresión o cuenca cerrada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Una llanura costera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Un valle fluvial en forma de V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Cuando las curvas de nivel forman círculos concéntricos y los valores <B>disminuyen</B> hacia el interior, el punto central tiene la menor altitud: es una <B>depresión</B> o cuenca cerrada (como un cráter volcánico, una laguna o una caldera). Si los valores <B>aumentan</B> hacia el centro, el punto más alto es una <B>cima o cumbre</B>. Esta interpretación es fundamental para leer correctamente un mapa topográfico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Cuál fue el aporte específico del cartógrafo árabe Al-Idrisi a la historia de la Cartografía?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Inventó la proyección cilíndrica que lleva el nombre de Mercator</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Elaboró el Libro de Roger, uno de los mapas medievales más precisos, para el rey normando de Sicilia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Estableció el Meridiano de Greenwich como referencia universal en 1884</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Fue el primero en calcular matemáticamente la circunferencia de la Tierra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Al-Idrisi</B> (1100–1165) fue un geógrafo y cartógrafo árabe que elaboró el <I>Libro de Roger</I> (Kitab Rujar) para el rey <B>Roger II de Sicilia</B>, que incluía un mapa del mundo de gran precisión para la época, con descripciones detalladas de rutas, ciudades y características geográficas. Fue la contribución árabe más importante a la cartografía medieval, en contraste con los mappaemundi europeos de carácter religioso.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> ¿Cuál es la diferencia fundamental entre una proyección CONFORME y una proyección EQUIVALENTE?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La conforme conserva las áreas reales y la equivalente conserva los ángulos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La conforme conserva los ángulos y formas locales (deforma áreas); la equivalente conserva las áreas (deforma formas y ángulos)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La conforme es usada solo en mapas históricos y la equivalente solo en mapas modernos digitales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Ambas conservan las mismas propiedades pero se diferencian en el tipo de superficie de proyección utilizada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una distinción fundamental en Cartografía. Una proyección <B>conforme</B> (u ortomórfica) conserva los <B>ángulos</B>: las formas pequeñas se reproducen fielmente, pero las áreas se distorsionan (Mercator es el ejemplo clásico). Una proyección <B>equivalente</B> (o equiárea) conserva la relación de <B>superficies o áreas</B>: cada región ocupa en el mapa la proporción correcta de superficie, pero las formas y los ángulos se distorsionan (Peters, Mollweide). Es matemáticamente imposible conservar ambas propiedades simultáneamente en un mapa plano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> En un mapa con escala 1:250 000, la distancia medida entre dos puntos es de 4,5 cm. ¿Cuál es la distancia real en kilómetros?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) 11,25 km</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) 1 125 km</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) 112,5 km</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) 0,1125 km</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Aplicamos la fórmula: Distancia real = Distancia en el mapa × Denominador de la escala.<BR>Distancia real = 4,5 cm × 250 000 = 1 125 000 cm.<BR>Convertimos: 1 125 000 cm ÷ 100 = 11 250 m ÷ 1 000 = <B>11,25 km</B>.<BR>El error más común es olvidar convertir de centímetros a kilómetros (÷ 100 000).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Por qué es matemáticamente imposible representar la superficie terrestre en un plano sin introducir ningún tipo de distorsión?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Porque la Tierra es demasiado grande para ser dibujada a escala en cualquier papel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Porque la superficie esférica tiene curvatura gaussiana positiva no nula, y al "aplanarla" siempre se deforman ángulos, áreas o distancias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Porque los cartógrafos aún no han desarrollado la tecnología para hacerlo sin distorsión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Porque el geoide terrestre está en constante movimiento sísmico, lo que impide una representación estable</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La razón matemática profunda es que la esfera tiene una <B>curvatura gaussiana positiva</B> (cada punto curva en todas las direcciones), mientras que un plano tiene curvatura gaussiana cero. El teorema de Gauss (<I>Theorema Egregium</I>, 1827) demuestra que no es posible transformar una superficie de curvatura no nula en una superficie plana sin distorsión. Por eso toda proyección cartográfica implica una elección: ¿qué propiedad es más importante conservar (ángulos, áreas o distancias)? No se puede conservar todo simultáneamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> La loxodroma y la ortodroma son dos tipos de líneas usadas en la navegación. ¿Cuál es la diferencia correcta entre ellas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La loxodroma es la línea más corta entre dos puntos de la Tierra; la ortodroma es la línea de rumbo constante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La ortodroma es la línea más corta entre dos puntos (arco de círculo máximo); la loxodroma corta todos los meridianos con el mismo ángulo (rumbo constante)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Ambas son idénticas en la proyección de Mercator pero diferentes en la proyección de Peters</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La loxodroma solo existe en los océanos y la ortodroma solo en tierra firme</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>ortodroma</B> es el camino más corto entre dos puntos sobre la superficie esférica: corresponde a un arco de <B>círculo máximo</B> (como el Ecuador o cualquier meridiano). Las rutas aéreas siguen ortodromas porque minimizan la distancia. La <B>loxodroma</B> (o rumbo de compás) es una línea que corta todos los meridianos con el <B>mismo ángulo</B>, manteniendo un rumbo constante. En la proyección de Mercator, la loxodroma se representa como una línea recta, lo que la hace útil para la navegación, aunque no sea la ruta más corta.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Los Sistemas de Información Geográfica (SIG) representan la evolución digital de la cartografía. ¿Cuál es su principal ventaja respecto al mapa en papel?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Son más económicos de imprimir y distribuir que los mapas en papel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Permiten superponer múltiples capas de información, analizarlas espacialmente y actualizarlas en tiempo real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Eliminan completamente la necesidad de proyecciones cartográficas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Solo pueden ser usados por geógrafos profesionales con equipos especializados</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La ventaja fundamental de los <B>SIG</B> es la gestión de <B>capas de información</B> digital que se pueden superponer, analizar estadísticamente y cruzar: sobre una misma base cartográfica se puede ver simultáneamente el relieve, la cobertura vegetal, la densidad de población, las carreteras y las zonas de riesgo. Además, se actualizan en tiempo real. Sus aplicaciones incluyen planificación urbana, gestión de desastres, epidemiología y geopolítica. Los SIG no eliminan las proyecciones: toda capa sigue usando una proyección de referencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> La Conferencia Internacional del Meridiano celebrada en Washington D.C. en 1884 estableció el Meridiano de Greenwich como meridiano 0° universal. ¿Cuál fue la principal razón para elegir Greenwich sobre otras opciones como el Meridiano de París?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Porque el Observatorio de Greenwich era el más moderno del mundo en 1884</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Porque la mayoría de los barcos y cartas náuticas del comercio mundial ya usaban el meridiano de Greenwich como referencia, lo que facilitaba la adopción universal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Porque el gobierno francés propuso a Greenwich como gesto diplomático</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Porque Greenwich es el punto donde el meridiano corta el Ecuador con mayor precisión geográfica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La razón pragmática fue que la <B>marina británica</B> era la más poderosa del mundo y ya había estandarizado sus cartas náuticas usando el meridiano de Greenwich. Como la mayoría del comercio marítimo mundial dependía de esas cartas, cambiar la referencia habría significado rehacer miles de documentos de navegación. La conferencia reunió a 25 naciones; <B>Francia</B> fue el único país importante que se abstuvo (siguió usando el Meridiano de París hasta 1911). Greenwich no está en el Ecuador: pasa por el Observatorio Real en Londres.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Qué es la geodesia y cuál es su relación con la Cartografía?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Es la ciencia que estudia las rocas del subsuelo y sirve de base para elaborar mapas geológicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Es la ciencia que estudia la forma, dimensiones y campo gravitacional de la Tierra, proporcionando la base matemática precisa sobre la que se construyen los mapas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Es la rama de la Cartografía que solo estudia los meridianos y paralelos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Es la ciencia que estudia los movimientos sísmicos para actualizar los mapas topográficos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Geodesia</B> es la ciencia que estudia con precisión la <B>forma, tamaño y campo gravitacional</B> de la Tierra. Determina el <B>geoide</B> (la forma real de la Tierra) y el <B>elipsoide de referencia</B> (modelo matemático simplificado) sobre el que se basan todas las proyecciones y los sistemas de coordenadas. Sin Geodesia no habría Cartografía precisa: cada proyección cartográfica parte de un elipsoide de referencia geodésico (como el WGS84, usado por el GPS). Es la base matemática de toda representación cartográfica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> En cartografía temática, un cartograma de valor por área (anamorfosis cartográfica) es una representación en la que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Los países se representan con su forma geográfica real pero con colores que indican su valor estadístico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) El tamaño de cada unidad geográfica es proporcional al valor de la variable estadística representada (población, PIB, votos, etc.) en lugar de su superficie real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Se usan símbolos proporcionales sobre el mapa base para indicar cantidades en cada región</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Es un mapa en 3D que representa el volumen real de los datos estadísticos como relieve</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>anamorfosis cartográfica</B> (o cartograma de valor por área) es una técnica de cartografía temática avanzada en la que el <B>tamaño visual de cada unidad geográfica</B> (país, región, departamento) se distorsiona intencionalmente para ser <B>proporcional a una variable estadística</B>, no a su área geográfica real. Por ejemplo, en un cartograma de población mundial, China e India aparecerían enormes (más de 1 400 millones de habitantes cada una) mientras que Canadá o Australia serían pequeñísimas a pesar de su gran extensión territorial. Son mapas muy impactantes visualmente para comunicar desigualdades.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

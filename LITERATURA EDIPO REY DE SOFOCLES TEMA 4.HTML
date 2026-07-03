@@ -1,0 +1,471 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Edipo Rey de Sófocles - Tema 4 - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGISTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 4</DIV>
+<H1>Edipo Rey de Sofocles</H1>
+<DIV CLASS="sub">Tragedia Griega &middot; Estructura Dramatica &middot; Mito y Destino &middot; Tecnicas de la Tragedia Clasica</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACION ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicacion completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Sofocles y el contexto de la tragedia griega</H3>
+<B>Sofocles</B> (496-406 a.C.) es el segundo de los tres grandes tragediografos griegos, entre Esquilo y Euripides, y es considerado por Aristoteles en su <I>Poetica</I> el mejor exponente de la tragedia perfecta. Vivio en Atenas durante el periodo de mayor esplendor de la democracia ateniense, la llamada <B>epoca de Pericles</B> (siglo V a.C.), contexto en el que el teatro era una institucion civica, religiosa y politica de primera importancia: las tragedias se representaban en el <B>Festival de las Dionisias</B>, en honor al dios Dioniso, ante miles de ciudadanos atenienses.
+
+<DIV CLASS="alerta"><B>Para el examen:</B> Los examenes de admision de alto nivel preguntan frecuentemente el siglo y el contexto de Sofocles. Recuerda: <B>siglo V a.C.</B>, Atenas, periodo clasico griego. Sofocles escribio aproximadamente 123 obras, de las cuales solo han sobrevivido completas 7 tragedias. <I>Edipo Rey</I> es considerada su obra maestra y el modelo perfecto de tragedia para Aristoteles.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">496 a.C.</DIV><DIV CLASS="dk-label">Nacimiento de Sofocles en Colono, Atenas</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Siglo V a.C.</DIV><DIV CLASS="dk-label">Periodo clasico griego, apogeo de la tragedia</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">7 tragedias</DIV><DIV CLASS="dk-label">Obras completas conservadas de las ~123 escritas</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">406 a.C.</DIV><DIV CLASS="dk-label">Muerte de Sofocles, el mismo ano que Euripides</DIV></DIV>
+</DIV>
+
+<DIV CLASS="cultura-titulo">ESTRUCTURA DE LA TRAGEDIA GRIEGA<SPAN>Prologo, Parodos, Episodios, Estagimos y Exodo: las partes del drama clasico</SPAN></DIV>
+
+<H3>2. La estructura formal de la tragedia griega</H3>
+La tragedia griega no era una obra libre: respondia a una estructura formal rigida y convencional que el publico ateniense conocia perfectamente.
+
+<H4>Las partes de la tragedia:</H4>
+<UL>
+<LI><B>Prologo:</B> escena inicial, antes de la entrada del coro, en la que se presenta la situacion dramatica y se expone el conflicto que se va a desarrollar. En <I>Edipo Rey</I>, el prologo muestra a Edipo ante el pueblo de Tebas, suplicante, pidiendo que se ponga fin a la peste que azota la ciudad.</LI>
+<LI><B>Parodos:</B> canto de entrada del coro al orchestra. El coro representa la voz colectiva del pueblo y funciona como comentarista moral de la accion. En <I>Edipo Rey</I>, el coro lamenta la peste y suplica a los dioses.</LI>
+<LI><B>Episodios:</B> las escenas dialogadas entre personajes, que hacen avanzar la accion dramatica. Son el equivalente a los "actos" del teatro moderno. <I>Edipo Rey</I> tiene cinco episodios.</LI>
+<LI><B>Estasimos:</B> cantos corales que separan los episodios. El coro reflexiona, comenta y valora moralmente lo que acaba de ocurrir en el episodio anterior.</LI>
+<LI><B>Exodo:</B> la escena final, tras el ultimo estasimo, en la que se resuelve la accion y el coro abandona el escenario. En <I>Edipo Rey</I>, el exodo muestra a Edipo cegado y a punto de ser desterrado.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Dato clave para el examen:</B> El <B>coro</B> en la tragedia griega no es simplemente un grupo de bailarines: tiene una funcion dramatica, moral y religiosa esencial. Representa la comunidad, la voz del pueblo o de los ciudadanos, y sus cantos (estasimos) enmarcan moralmente los hechos. Sofocles redujo el papel del coro respecto a Esquilo, dando mas peso al dialogo entre personajes individuales.</DIV>
+
+<H4>Innovaciones de Sofocles respecto a Esquilo:</H4>
+<UL>
+<LI>Introdujo el <B>tercer actor</B> en escena (Esquilo ya habia introducido el segundo), lo que permitio dialogos triangulares y mayor complejidad dramatica.</LI>
+<LI>Redujo el numero de versos del coro y aumento la importancia del dialogo entre personajes individuales.</LI>
+<LI>Perfecciono la <B>ironia tragica</B>: el espectador sabe lo que el protagonista ignora, generando una tension dramatica sin precedentes.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">EL MITO DE EDIPO: FUENTES Y ARGUMENTO<SPAN>El oraculo, el parricidio, el incesto y la caida del heroe que no podia escapar de su destino</SPAN></DIV>
+
+<H3>3. El mito de Edipo y el argumento de la obra</H3>
+Sofocles no invento el mito de Edipo: lo tomo de la tradicion mitica griega y lo transformo en drama. Es fundamental comprender que <I>Edipo Rey</I> comienza cuando Edipo <B>ya es rey de Tebas</B> y ya ha cometido, sin saberlo, los crimenes que el oraculo habia anunciado. La obra no narra los hechos: los va revelando progresivamente mediante la investigacion que el propio Edipo conduce.
+
+<H4>El mito completo (antecedentes a la obra):</H4>
+<OL>
+<LI>El oraculo de Delfos revelo a <B>Layo</B>, rey de Tebas, que su hijo lo mataria y se casaria con su propia madre.</LI>
+<LI>Para evitar el destino, Layo ordeno a un pastor que abandonara al recien nacido en el monte Citerion con los tobillos perforados y atados (de ahi el nombre <B>"Edipo"</B>, que en griego significa "pie hinchado").</LI>
+<LI>El pastor, en vez de abandonarlo, lo entrego a un mensajero de <B>Corinto</B>, quien lo llevo al rey <B>Polibo</B> y la reina <B>Merope</B>, que lo criaron como hijo propio.</LI>
+<LI>Al crecer, Edipo consulto el oraculo de Delfos y este le revelo que mataria a su padre y se casaria con su madre. Creyendo que sus padres eran Polibo y Merope, huyo de Corinto.</LI>
+<LI>En un cruce de caminos (<B>las tres vias</B>, cerca de Daulis), Edipo se encontro con Layo y su comitiva; tras una disputa, mato a Layo sin saber que era su padre biologico.</LI>
+<LI>Al llegar a Tebas, Edipo resolvio el enigma de la <B>Esfinge</B> (la criatura que diezmaba a los tebanos con su acertijo insoluble), liberando a la ciudad. Como recompensa, fue proclamado rey y se caso con la reina viuda, <B>Yocasta</B>, su propia madre biologica.</LI>
+</OL>
+
+<H4>Argumento de la obra (lo que ocurre en escena):</H4>
+<I>Edipo Rey</I> comienza con una <B>peste</B> que devasta Tebas. El oraculo revela que la causa es la presencia en la ciudad del asesino del rey Layo, cuyo crimen quedo impune. Edipo, convencido de su inocencia, inicia una investigacion para encontrar al culpable. La investigacion, mediante un proceso de revelaciones sucesivas protagonizadas por el adivino <B>Tiresias</B>, el mensajero de Corinto, y el pastor que salvo a Edipo de nino, conduce inexorablemente a la verdad: <B>Edipo mismo es el asesino de Layo y, por tanto, el responsable de la peste</B>. Yocasta, comprendiendo la verdad antes que Edipo, se suicida. Edipo, al descubrirlo todo, se arranca los ojos con los broches del vestido de Yocasta y pide ser desterrado de Tebas.
+
+<DIV CLASS="mapa-note"><B>Error frecuente en examenes:</B> Muchos estudiantes confunden el orden de los hechos del mito con el orden dramatico de la obra. Recuerda: en <I>Edipo Rey</I>, los crimenes (parricidio e incesto) ya han ocurrido antes de que comience la obra. Lo que presenciamos en escena es la <B>investigacion</B> y el <B>descubrimiento</B> progresivo de la verdad, no los crimenes en si mismos. Este es el genio de Sofocles: construir la maxima tension dramatica con hechos ya consumados.</DIV>
+
+<DIV CLASS="cultura-titulo">CONCEPTOS ARISTOTELICOS CLAVE EN EDIPO REY<SPAN>Hamartia, hybris, anagnorisis, peripecia y catarsis: el vocabulario del examen</SPAN></DIV>
+
+<H3>4. Los conceptos aristotelicos en Edipo Rey</H3>
+Aristoteles analizo <I>Edipo Rey</I> en su <I>Poetica</I> (siglo IV a.C.) como el modelo perfecto de tragedia. Por ello, esta obra es el mejor ejemplo para ilustrar todos los conceptos aristotelicos que el examen evaluara.
+
+<H4>Hamartia (el error tragico):</H4>
+La <B>hamartia</B> (del griego: error, falta, defecto) es el fallo o error del protagonista que desencadena su caida. No es necesariamente un defecto moral grave: puede ser un error de juicio, una ignorancia fatal o un exceso de una cualidad en si misma positiva. En Edipo, la hamartia se identifica con su <B>soberbia intelectual</B> y su <B>impulsividad</B>: el exceso de confianza en su propia razon, que lo lleva a insistir en la investigacion aun cuando todo le advierte que se detenga, y la violencia con que reacciona ante quienes intentan detenerlo (amenaza a Tiresias, acusa de conspiracion a Creonte).
+
+<H4>Hybris (la desmesura):</H4>
+La <B>hybris</B> es el exceso, la desmesura, el orgullo que lleva al mortal a desafiar los limites que los dioses han establecido. En Edipo, la hybris se manifiesta en su conviccion de que puede escapar al oraculo mediante la razon y la huida, y en su seguridad de que encontrara al culpable por sus propias fuerzas, desoyendo incluso la advertencia del adivino Tiresias, que representa la sabiduria divina.
+
+<H4>Anagnorisis (el reconocimiento):</H4>
+La <B>anagnorisis</B> es el momento en que el protagonista descubre una verdad fundamental que habia permanecido oculta. Aristoteles la considera uno de los recursos mas poderosos de la tragedia. En <I>Edipo Rey</I>, la anagnorisis es de una contundencia sin igual: Edipo descubre simultaneamente que <B>el asesino que buscaba es el mismo, que su padre era Layo y que su esposa Yocasta era su madre biologica</B>. Esta triple revelacion ocurre en el climax de la obra, cuando el pastor que salvo a Edipo de nino confirma la identidad del heroe.
+
+<H4>Peripecia (el giro de la fortuna):</H4>
+La <B>peripecia</B> es el giro brusco e inesperado de la fortuna del protagonista, de la dicha a la desgracia o viceversa. En la tragedia clasica, el modelo es siempre el de la caida: el protagonista pasa de la cumbre del poder y el reconocimiento social a la ruina total. En <I>Edipo Rey</I>, la peripecia coincide exactamente con la anagnorisis: en el mismo instante en que Edipo descubre la verdad de su identidad, su condicion cambia de la de <B>rey victorioso a la de parricida e incestuoso desterrado</B>. Aristoteles considera que la coincidencia de anagnorisis y peripecia en un mismo momento es el recurso dramatico mas eficaz para producir la catarsis.
+
+<H4>Catarsis (la purificacion emocional):</H4>
+La <B>catarsis</B> es el efecto que la tragedia produce en el espectador: una <B>purgacion o purificacion de las emociones</B>, especialmente de la compasion (eleos) y el temor (phobos), mediante su experimentacion controlada en el marco de la ficcion. El espectador, al ver caer a Edipo, siente compasion por un hombre que es victima de su propio destino y temor ante la fragilidad de la condicion humana, y esas emociones, al ser experimentadas en un espacio seguro (el teatro), producen un efecto liberador y purificador.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Concepto aristotelico</TH><TH>Definicion</TH><TH>Aplicacion en Edipo Rey</TH></TR>
+<TR><TD><B>Hamartia</B></TD><TD>Error o fallo del heroe que desencadena su caida</TD><TD>La soberbia intelectual y la impulsividad de Edipo</TD></TR>
+<TR><TD><B>Hybris</B></TD><TD>Desmesura, exceso de orgullo que desafia a los dioses</TD><TD>Creer que puede escapar al destino mediante la razon</TD></TR>
+<TR><TD><B>Anagnorisis</B></TD><TD>El reconocimiento: descubrimiento de una verdad oculta</TD><TD>Edipo descubre que el es el asesino y el hijo de Layo y Yocasta</TD></TR>
+<TR><TD><B>Peripecia</B></TD><TD>Giro brusco de la fortuna del protagonista</TD><TD>De rey victorioso a parricida e incestuoso desterrado</TD></TR>
+<TR><TD><B>Catarsis</B></TD><TD>Purgacion de emociones (compasion y temor) en el espectador</TD><TD>El espectador siente compasion por Edipo y temor ante el destino</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">LA IRONIA TRAGICA Y EL ROL DEL DESTINO<SPAN>El espectador sabe lo que el heroe ignora: la tension maxima de la dramaturgia clasica</SPAN></DIV>
+
+<H3>5. La ironia tragica: el recurso central de Sofocles</H3>
+El recurso tecnico mas caracteristico de <I>Edipo Rey</I> es la <B>ironia tragica</B> (tambien llamada ironia dramatica o ironia sofoclea). Consiste en que el espectador conoce la verdad sobre Edipo desde el comienzo de la representacion (conoce el mito), mientras que Edipo, el protagonista, la ignora completamente. Esta asimetria de conocimiento entre el publico y el personaje genera una tension dramatica extraordinaria y sostenida a lo largo de toda la obra.
+
+<H4>Como funciona la ironia tragica en la obra:</H4>
+<UL>
+<LI>Cuando Edipo proclama solemnemente que perseguira al asesino de Layo "como si fuera mi propio padre", el espectador sabe que Layo <B>era</B> su padre biologico.</LI>
+<LI>Cuando Edipo maldice al asesino de Layo y lo condena al destierro, el espectador sabe que se esta maldiciendo y condenando a si mismo.</LI>
+<LI>Cuando Yocasta intenta tranquilizar a Edipo diciendole que los oraculos mienten, el espectador sabe que el oraculo se ha cumplido exactamente.</LI>
+</UL>
+
+<DIV CLASS="ej"><B>Ejemplo textual clave:</B> Cuando Edipo dice "Voy a luchar como si fuera el hijo de Layo", la ironia tragica alcanza su punto mas intenso: el espectador griego sabe que Edipo <B>es</B> literalmente el hijo de Layo, lo que convierte una afirmacion de compromiso civico en una revelacion involuntaria de la verdad que el heroe aun no conoce. Esta es la esencia del genio dramatico de Sofocles.</DIV>
+
+<H4>El destino (Moira) y los dioses:</H4>
+En la vision del mundo que sustenta <I>Edipo Rey</I>, el <B>destino</B> (Moira) es inescapable. Todos los esfuerzos humanos por evadir lo que los dioses han decretado solo sirven para cumplirlo de forma mas inexorable. Layo intento evitar el oraculo abandonando a su hijo: el nino sobrevivio. Edipo intento evitar el oraculo huyendo de Corinto: su huida lo llevo directamente hacia su padre biologico. Este principio dramatico se llama <B>ironia del destino</B>: los actos que pretenden evitar el decreto divino terminan cumpliendolo.
+
+<DIV CLASS="mapa-note"><B>Dato clave para el examen:</B> La ironia tragica no es lo mismo que la ironia retorica. La ironia retorica (figura literaria) consiste en decir lo contrario de lo que se piensa. La <B>ironia tragica</B> (o dramatica) consiste en que el espectador posee una informacion que el personaje desconoce, de modo que las palabras y acciones del personaje adquieren un significado distinto para el publico que para el propio protagonista. En los examenes de admision, esta distincion es frecuentemente evaluada.</DIV>
+
+<DIV CLASS="cultura-titulo">PERSONAJES Y SU FUNCION DRAMATICA<SPAN>Edipo, Yocasta, Tiresias, Creonte y el Coro: cada figura cumple un rol en la estructura de la tragedia</SPAN></DIV>
+
+<H3>6. Los personajes y su funcion en la obra</H3>
+
+<H4>Edipo:</H4>
+El protagonista es un heroe de inteligencia excepcional (el unico que pudo resolver el enigma de la Esfinge), justo en sus intenciones, apasionado y comprometido con el bienestar de su pueblo. Sin embargo, su <B>impulsividad</B>, su <B>soberbia intelectual</B> y su incapacidad para aceptar la posibilidad de ser culpable son los rasgos que precipitan su caida. Es un heroe cuya grandeza y cuya ruina nacen de la misma fuente: su exceso de confianza en la razon humana frente al decreto divino.
+
+<H4>Yocasta:</H4>
+Esposa de Edipo y, en verdad, su madre biologica. Yocasta representa el escepticismo racional ante los oraculos: intenta convencer a Edipo de que los presagios divinos no se cumplen, precisamente en el momento en que ya se han cumplido. Su <B>agnorisis</B> ocurre antes que la de Edipo: comprende la verdad cuando el mensajero de Corinto revela el origen del heroe, y se suicida ahorcandose antes de que Edipo lo descubra.
+
+<H4>Tiresias:</H4>
+El adivino ciego que conoce toda la verdad desde el principio. Tiresias representa la <B>sabiduria divina</B> inaccesible a la razon humana. Su ceguera fisica contrasta con la ceguera moral de Edipo: Tiresias, que no ve, conoce la verdad; Edipo, que ve perfectamente, esta ciego ante ella. Este contraste es una de las ironias mas elaboradas de la obra.
+
+<H4>Creonte:</H4>
+Cunado de Edipo y hermano de Yocasta. Representa la <B>moderacion</B> y el equilibrio frente al exceso de Edipo. Cuando Edipo lo acusa injustamente de conspiracion, Creonte responde con argumentos racionales y templados, evidenciando aun mas el exceso emocional del rey. Al final de la obra, Creonte asume el gobierno de Tebas.
+
+<H4>El Coro:</H4>
+Formado por ancianos de Tebas, el coro representa la <B>comunidad ciudadana</B> y su vision del mundo. Al principio venera a Edipo; al final, constata la impotencia humana ante el destino. Sus estasimos articulan los grandes temas morales y religiosos de la obra: la fragilidad de la felicidad humana, el poder inexorable de los dioses y la necesidad de la piedad religiosa.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Personaje</TH><TH>Funcion dramatica</TH><TH>Representacion simbolica</TH></TR>
+<TR><TD><B>Edipo</B></TD><TD>Protagonista, heroe tragico, investigador y culpable</TD><TD>La razon humana que se estrella contra el destino divino</TD></TR>
+<TR><TD><B>Yocasta</B></TD><TD>Esposa-madre, escéptica ante los oraculos</TD><TD>El escepticismo racional que resulta ser la maxima ignorancia</TD></TR>
+<TR><TD><B>Tiresias</B></TD><TD>Adivino, portavoz de la verdad divina</TD><TD>La sabiduria sobrehumana: ciego que ve lo que los videntes no ven</TD></TR>
+<TR><TD><B>Creonte</B></TD><TD>Contrafigura moderada de Edipo</TD><TD>La mesura y el equilibrio frente a la hybris</TD></TR>
+<TR><TD><B>El Coro</B></TD><TD>Voz de la comunidad, comentarista moral</TD><TD>La humanidad comun confrontada al misterio del destino</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>7. Los temas fundamentales de Edipo Rey</H3>
+
+<H4>La libertad humana frente al destino:</H4>
+El tema central de la obra es la tension entre la <B>voluntad humana</B> y el <B>destino decretado por los dioses</B>. Edipo es, al mismo tiempo, victima del destino y responsable de sus actos: el oraculo decreta lo que ocurrira, pero los actos de Layo (el abandono del nino), de Edipo (la huida de Corinto, el asesinato en el cruce de caminos) y de Yocasta (el intento de matar al bebe) son acciones humanas libremente tomadas. Sofocles no resuelve la paradoja: la deja abierta, y en esa apertura reside la profundidad filosofica de la obra.
+
+<H4>El conocimiento y sus limites:</H4>
+Edipo es el heroe que sabe, el que resolvio el enigma de la Esfinge. Pero la obra muestra que hay un <B>conocimiento prohibido</B>, un saber que destruye al que lo alcanza. El proceso de busqueda de la verdad (la investigacion de Edipo) se convierte en un proceso de autodestruccion.
+
+<H4>La ceguera y la vision:</H4>
+El contraste entre <B>ver y no ver</B>, entre ceguera fisica y ceguera moral, recorre toda la obra. Tiresias es fisicamente ciego pero moralmente lucido. Edipo tiene una vista perfecta pero es moralmente ciego ante su propia identidad. Al final, Edipo se arranca los ojos: este acto simbolico implica que, ahora que ha visto la verdad, ya no quiere ver mas nada.
+
+<H4>La justicia y la responsabilidad:</H4>
+Edipo es inocente en un sentido: no sabia que mataba a su padre ni que se casaba con su madre. Pero es culpable en otro: los actos se cometieron. La obra plantea la pregunta sobre la <B>responsabilidad tragica</B>: puede alguien ser culpable de lo que hizo sin saber?
+
+<DIV CLASS="alerta"><B>Truco para el examen:</B> Para los examenes de admision universitaria de alto nivel, es fundamental distinguir claramente los tres momentos del proceso de revelacion en <I>Edipo Rey</I>: (1) <B>Tiresias revela</B> que Edipo es el culpable, pero Edipo no le cree y lo acusa de conspiracion con Creonte; (2) <B>el mensajero de Corinto revela</B> el origen adoptivo de Edipo, lo que hace que Yocasta comprenda la verdad y se retire desesperada; (3) <B>el pastor revela</B> que el fue quien salvo al nino y lo entrego al mensajero, confirmando definitivamente la identidad de Edipo. Solo en este tercer momento Edipo comprende la verdad completa.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BASICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Sofocles es considerado uno de los tres grandes tragediografos de la Grecia clasica. El siglo y la ciudad en que vivio y escribio son:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Siglo IV a.C., Esparta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Siglo V a.C., Atenas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Siglo III a.C., Corinto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Siglo VI a.C., Tebas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Sofocles vivio entre <B>496 y 406 a.C.</B>, es decir, en el <B>siglo V a.C.</B>, durante el periodo clasico de la cultura griega, conocido como la epoca de Pericles. Desarrollo toda su actividad en <B>Atenas</B>, donde el teatro era una institucion publica de primera importancia vinculada al Festival de las Dionisias. Los otros dos grandes tragediografos, <B>Esquilo</B> (primero) y <B>Euripides</B> (tercero), son sus contemporaneos en esa misma epoca y ciudad. Sofocles es el segundo en orden cronologico entre los tres y el que Aristoteles consagra como modelo de tragedia perfecta en su <I>Poetica</I>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> El nombre "Edipo" proviene del griego y hace referencia a una marca fisica del personaje. El significado de ese nombre es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) "El que no ve", aludiendo a su ceguera moral</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) "El que resuelve enigmas", en referencia a la Esfinge</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) "Pie hinchado", por haber sido abandonado con los tobillos perforados y atados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) "El desterrado", porque fue expulsado de Corinto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El nombre <B>Edipo</B> (en griego: Oidipous) significa literalmente <B>"pie hinchado"</B>. Cuando Layo ordeno que el recien nacido fuera abandonado para evitar el cumplimiento del oraculo, mando perforar y atar los tobillos del nino antes de entregarlo al pastor para que lo dejara morir en el monte Citerion. El pastor, movido por la piedad, no lo abandono sino que lo entrego a un mensajero de Corinto. Las marcas en sus pies son, dramaticamente, la prueba fisica que confirma su identidad al final de la obra, cuando el pastor que lo salvo lo reconoce. Esta marca corporal conecta directamente el nombre del heroe con su historia de origen y con el acto de abandono que, paradojicamente, permitio que el oraculo se cumpliera.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Al comienzo de Edipo Rey, la accion se desencadena por una calamidad que azota Tebas. Esa calamidad es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Una guerra contra Corinto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) La aparicion de la Esfinge</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Una peste que devasta la ciudad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El asesinato publico de Creonte</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La obra comienza con una <B>peste</B> que esta devastando Tebas: los cultivos se marchitan, el ganado perece, las mujeres dan a luz hijos muertos y la enfermedad diezma a la poblacion. El pueblo acude suplicante ante Edipo, su rey, implorando que ponga fin al mal. Edipo ha enviado a su cunado <B>Creonte</B> a consultar el oraculo de Apolo en Delfos, y Creonte regresa con la respuesta divina: la causa de la peste es la presencia en Tebas del asesino del rey Layo, que no ha sido castigado. Este es el punto de partida dramatico: la investigacion que Edipo inicia para encontrar al culpable es la que, progresivamente, lo ira revelando como el propio responsable.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> El adivino ciego que conoce toda la verdad desde el principio y que se enfrenta verbalmente a Edipo cuando este lo interroga se llama:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Creonte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Tiresias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Polibo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Yocasta</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Tiresias</B> es el adivino ciego de Tebas que aparece en numerosas obras de la mitologia griega. En <I>Edipo Rey</I>, Edipo lo convoca esperando que contribuya a la investigacion. Tiresias conoce la verdad completa pero se niega inicialmente a revelarla, pues sabe el dano que causara. Cuando Edipo lo presiona e insulta, Tiresias le revela directamente que el es el asesino que busca. Edipo, sin embargo, no le cree y lo acusa de conspirar con Creonte para usurpar el trono. El contraste entre la <B>ceguera fisica</B> de Tiresias y su <B>lucidez moral</B>, frente a la vista perfecta pero ceguera moral de Edipo, es uno de los recursos ironicos mas elaborados de Sofocles.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> En la estructura de la tragedia griega, el canto de entrada del coro al espacio escenico, que ocurre despues del prologo, se denomina:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Exodo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Estasimo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Parodos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Episodio</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>parodos</B> es el canto de entrada del coro al orchestra (el espacio circular donde el coro actuaba), que ocurre inmediatamente despues del prologo. Marca el comienzo de la participacion coral en la obra. Los <B>estasimos</B> (b) son los cantos corales que separan los episodios pero no son el canto de entrada; el <B>exodo</B> (a) es la escena y canto final, cuando el coro abandona el escenario; los <B>episodios</B> (d) son las escenas dialogadas entre personajes que hacen avanzar la accion. La estructura completa es: prologo → parodos → episodio 1 → estasimo 1 → episodio 2 → estasimo 2 → ... → exodo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> El concepto aristotelico que designa el momento en que el protagonista de la tragedia descubre una verdad fundamental que habia permanecido oculta se denomina:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Catarsis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Peripecia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Hamartia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Anagnorisis</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d)</B><BR>La <B>anagnorisis</B> (del griego: reconocimiento, descubrimiento) es el momento en que el protagonista revela o descubre una verdad decisiva sobre su identidad o sobre la identidad de otro personaje. Aristoteles la analiza en la <I>Poetica</I> y considera que su combinacion con la peripecia produce el efecto tragico mas poderoso. La <B>catarsis</B> (a) es el efecto de purgacion emocional en el espectador; la <B>peripecia</B> (b) es el giro de la fortuna del protagonista; la <B>hamartia</B> (c) es el error o fallo del heroe. En <I>Edipo Rey</I>, la anagnorisis maxima ocurre cuando el pastor confirma que Edipo fue el nino que el salvo y que era el hijo de Layo y Yocasta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Cuando Edipo, al descubrir toda la verdad al final de la obra, se arranca los ojos con los broches del vestido de Yocasta, este acto es fundamentalmente:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Una simple descripcion realista de como moria en la Grecia clasica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Un acto sin significado simbolico, puramente narrativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Un acto simbolico que invierte la ironia central de la obra: Edipo, que veia con los ojos pero era moralmente ciego, ahora que ha visto la verdad se vuelve fisicamente ciego como Tiresias, quien veia la verdad que Edipo no podia ver</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Una forma de castigo legal establecida por las leyes de Tebas para los parricidas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La ceguera final de Edipo es uno de los simbolos mas analizados de toda la literatura occidental. A lo largo de la obra, Sofocles ha construido un contraste persistente entre <B>ver y no ver</B>: Tiresias es fisicamente ciego pero moralmente lucido (ve la verdad que Edipo no ve); Edipo tiene vista perfecta pero es moralmente ciego (no puede ver la verdad sobre su propia identidad). Cuando Edipo se arranca los ojos, la inversion simbolica se completa: ahora que ha <B>visto</B> la verdad en toda su crudeza, ya no quiere ver nada mas. Su ceguera fisica es la consecuencia y el simbolo de su ceguera moral previa, y al mismo tiempo lo aproxima a la condicion de Tiresias, cuya ceguera era la condicion de su sabiduria. Este recurso es fundamental para los examenes de admision que preguntan por el simbolismo en <I>Edipo Rey</I>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> La catarsis, segun Aristoteles, es el efecto que la tragedia produce en el espectador. Ese efecto consiste en:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) La identificacion total del espectador con el heroe hasta perder la conciencia de estar en el teatro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) La purgacion o purificacion de emociones, especialmente la compasion y el temor, mediante su experimentacion en el marco controlado de la ficcion teatral</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) La ensenanza de una leccion moral clara y directa que el espectador debe aplicar en su vida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) El entretenimiento y la distraccion del publico sin ninguna funcion moral o emocional</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>catarsis</B> (del griego: purgacion, purificacion) es el concepto mas debatido de toda la teoria literaria clasica. Aristoteles, en la <I>Poetica</I>, afirma que la tragedia produce, mediante la representacion de hechos que inspiran <B>compasion</B> (eleos) y <B>temor</B> (phobos), una purgacion de esas mismas emociones en el espectador. El espectador de <I>Edipo Rey</I> siente compasion por un hombre que, sin saberlo, ha cometido los peores crimenes imaginables, y temor ante la fragilidad de la condicion humana y el poder inexorable del destino. Al experimentar esas emociones en un contexto ficcional y seguro, el espectador las purga, lo que produce un efecto a la vez estetico y psicologico de alivio y clarificacion. Esta es la funcion que Aristoteles asigna a la tragedia como forma artistica superior.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> La ironia tragica (o ironia dramatica) que Sofocles emplea sistematicamente en Edipo Rey consiste en:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Que los personajes dicen lo contrario de lo que sienten, como recurso de disimulo dentro de la obra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Que el espectador conoce la verdad sobre Edipo (conoce el mito de antemano), mientras el protagonista la ignora, de modo que las palabras y acciones de Edipo adquieren un significado adicional para el publico que el heroe mismo no percibe</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Que Sofocles incluye comentarios ironicos del coro que contradicen directamente lo que dicen los personajes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Que la obra termina de forma opuesta a lo que el espectador esperaba, generando sorpresa total</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>ironia tragica</B> (tambien llamada ironia dramatica o ironia sofoclea) es el recurso central de <I>Edipo Rey</I> y uno de los mas poderosos de toda la historia del teatro. A diferencia de la ironia retorica (decir lo contrario de lo que se piensa), la ironia tragica se basa en la <B>asimetria de conocimiento</B> entre el espectador y el protagonista: el publico ateniense conocia el mito de Edipo antes de entrar al teatro, por lo que sabia desde el principio que Edipo era el culpable. Esto hace que cada afirmacion de Edipo sobre su inocencia, cada maldicion que lanza sobre el asesino desconocido, cada gesto de confianza en su propio juicio, adquiera para el espectador un significado tragico y paradojico que el heroe no puede percibir. La tension entre lo que Edipo dice y lo que el espectador sabe que esas palabras significan en realidad es la fuente principal de la emocion tragica de la obra.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> El concepto de hamartia, central para entender la caida del heroe tragico, se aplica a Edipo en cuanto:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Edipo comete deliberadamente los crimenes de parricidio e incesto sabiendo que son prohibidos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) La hamartia de Edipo es su soberbia intelectual e impulsividad: el exceso de confianza en su propia razon, que lo lleva a perseguir la verdad aun cuando las advertencias divinas y humanas le indican que se detenga, y a reaccionar con violencia e injusticia ante quienes intentan disuadirlo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) La hamartia de Edipo es haber nacido de la union de Layo y Yocasta, un pecado del que no es responsable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) La hamartia en Edipo no existe: el es una victima pura del destino sin ningun error propio</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>hamartia</B> (error tragico) de Edipo es uno de los temas mas debatidos de la teoria literaria clasica. Edipo no conocia la identidad de su padre cuando lo mato ni la de su madre cuando se caso con ella: en ese sentido, es inocente. Pero su hamartia no radica en los crimenes cometidos sin saber, sino en rasgos de caracter que son al mismo tiempo sus virtudes: su <B>inteligencia excepcional</B> se convierte en soberbia al creer que puede resolver cualquier enigma; su <B>compromiso con la justicia</B> se convierte en impulsividad al amenazar a Tiresias y acusar injustamente a Creonte; su <B>determinacion</B> se convierte en obstinacion al seguir investigando cuando Yocasta y el pastor le imploran que se detenga. La hamartia de Edipo es el exceso de esas mismas cualidades que lo hicieron heroe, lo cual lo convierte en el modelo aristotelico del protagonista tragico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BASICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Yocasta intenta en varios momentos de la obra convencer a Edipo de que no siga investigando. Su argumento principal para desacreditar los oraculos es que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Los oraculos de Delfos han sido comprados por Creonte para conspirar contra Edipo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) El oraculo dado a Layo (que su hijo lo mataria) no se cumplio, pues Layo murio a manos de unos bandoleros en el cruce de caminos, y el hijo de Layo fue abandonado y murio nino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Los dioses griegos no tienen poder sobre los reyes que han ganado la corona por su propio merito</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Tiresias es un charlan que ya ha demostrado en el pasado que sus profecías son falsas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El argumento de Yocasta para desacreditar los oraculos es profundamente ironico: utiliza como prueba de que los oraculos mienten precisamente el oraculo que se ha cumplido. Afirma que el oraculo dado a Layo (que su hijo lo mataria) resulto falso, porque Layo murio a manos de unos bandoleros en una encrucijada de caminos, y su hijo fue abandonado en el monte cuando era un recien nacido. El espectador, que conoce la verdad, sabe que ese argumento es en realidad la confirmacion del cumplimiento del oraculo: los "bandoleros" del cruce de caminos eran Edipo, el hijo supuestamente muerto. La ironia tragica alcanza aqui uno de sus puntos maximos: Yocasta usa la prueba del cumplimiento del oraculo como argumento de que los oraculos no se cumplen.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El proceso de revelacion de la verdad en Edipo Rey se produce mediante tres momentos sucesivos de descubrimiento. El orden correcto de esos tres momentos es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) El pastor revela la verdad → el mensajero de Corinto llega → Tiresias acusa a Edipo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Tiresias revela que Edipo es el culpable (Edipo no le cree) → el mensajero de Corinto revela el origen adoptivo de Edipo (Yocasta comprende la verdad y se retira) → el pastor confirma que el salvo al nino y lo entrego (Edipo comprende la verdad completa)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) El mensajero llega con la muerte de Polibo → Tiresias confiesa voluntariamente → el coro revela la verdad al pueblo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Creonte revela el oraculo → Yocasta confiesa ser la madre de Edipo → Edipo acepta el destino</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La estructura de revelaciones en <I>Edipo Rey</I> es uno de los elementos mas estudiados de la dramaturgia clasica. Sofocles la construye en tres movimientos: (1) <B>Tiresias</B> acusa directamente a Edipo, pero Edipo lo rechaza acusandolo de conspiracion con Creonte; la verdad queda afirmada pero no aceptada. (2) El <B>mensajero de Corinto</B> llega con la noticia de la muerte natural del rey Polibo (que Edipo creia su padre), y al intentar tranquilizar a Edipo sobre el oraculo del parricidio, revela que Edipo fue un nino adoptado; en ese momento, Yocasta comprende la verdad completa y abandona escena para suicidarse. (3) El <B>pastor tebano</B>, presionado por Edipo, confirma que el fue quien recibio al nino de manos de Yocasta y lo entrego al mensajero corintio, cerrando definitivamente el circulo de la identidad de Edipo. Solo en este tercer momento Edipo comprende la verdad total.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> La hybris de Edipo, entendida como la desmesura que desafia los limites fijados por los dioses, se manifiesta principalmente en:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Su decision de casarse con Yocasta, de la que estaba enamorado a pesar del oraculo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Su conviccion de poder escapar al destino mediante la razon y sus propias fuerzas, desoyendo a Tiresias (portavoz de la sabiduria divina) y continuando la investigacion aun cuando todo le advierte que se detenga</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Su crueldad deliberada al matar a Layo y a toda su comitiva en el cruce de caminos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Su negativa a consultar el oraculo de Delfos cuando se lo proponen al inicio de la obra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>hybris</B> de Edipo no consiste en sus crimenes (que comete sin saberlo) sino en su actitud ante el conocimiento y el poder divino. Edipo representa el modelo del heroe racional que confía en que la inteligencia humana puede dominar cualquier problema, incluso el destino. Su hybris se expresa en: (1) la confianza de que huyendo de Corinto podia escapar al oraculo (la huida misma lo condujo hacia el cumplimiento); (2) el desprecio hacia Tiresias cuando este le revela la verdad, acusandolo de conspiracion; (3) la obstinacion en seguir investigando aun cuando Yocasta y despues el pastor le imploran que se detenga. Esta hybris, que en otra circunstancia seria simple valentia intelectual, se convierte en desmesura porque pretende que la razon humana puede superar lo que los dioses han decretado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> La innovacion tecnica mas importante que Sofocles introdujo en el teatro griego en relacion con el numero de actores en escena fue:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Introdujo el primer actor en la historia del teatro griego, antes de el solo existia el coro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Elimino el coro para dar todo el protagonismo a los actores individuales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Introdujo el tercer actor en escena, lo que permitio dialogos triangulares y una mayor complejidad dramatica, sumandose a la introduccion del segundo actor ya realizada por Esquilo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Introdujo el uso de mascaras en el teatro griego, recurso que no existia antes de el</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La historia del teatro griego puede leerse como una historia de la progresiva incorporacion de actores individuales al espacio dramatico. Segun la tradicion antigua, <B>Tespis</B> fue el primero en separar un actor del coro (primer actor). <B>Esquilo</B> introdujo el segundo actor, lo que hizo posible el dialogo dramatico entre dos personajes. <B>Sofocles</B> dio el paso siguiente al introducir el <B>tercer actor</B>, permitiendo dialogos triangulares, malentendidos entre personajes, contrastes de perspectivas en una misma escena y una complejidad psicologica y dramatica imposible con solo dos actores. Esta innovacion es fundamental en la historia del teatro occidental porque incrementa exponencialmente las posibilidades de representacion de conflictos humanos. Las mascaras (d) no fueron una innovacion de Sofocles: eran un elemento preexistente del ritual dionisiaco griego.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> El rol del Coro en la tragedia griega, y especificamente en Edipo Rey, es fundamentalmente:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Un grupo de bailarines que entretiene al publico en los intervalos entre los episodios, sin ninguna funcion dramatica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La voz de la comunidad ciudadana que comenta moralmente la accion, representa la sabiduria colectiva del pueblo y enmarca los grandes temas religiosos y filosoficos de la obra; su evolucion emocional a lo largo de la obra (de la veneracion de Edipo a la constatacion de su ruina) refleja la actitud que el espectador debe adoptar ante el destino del heroe</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Un grupo que siempre defiende al protagonista y nunca cuestiona sus decisiones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Un recurso meramente musical sin funcion narrativa ni simbolica en la obra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>coro</B> es uno de los elementos mas especificos y complejos de la tragedia griega clasica. En <I>Edipo Rey</I>, el coro esta formado por ancianos de Tebas y cumple multiples funciones: (1) <B>dramatica</B>: hace avanzar la accion al interactuar con los personajes y al crear marcos emocionales para cada episodio; (2) <B>moral y religiosa</B>: sus estasimos articulan las grandes preguntas sobre el destino, la justicia divina y la fragilidad humana que la obra plantea; (3) <B>social</B>: representa la perspectiva de la comunidad ciudadana, la voz colectiva del pueblo de Tebas. La trayectoria emocional del coro a lo largo de la obra es significativa: pasa de la veneracion entusiasta de Edipo al horror y la compasion ante su caida, articulando en su ultimo estasimo la leccion moral de la tragedia: ninguna felicidad humana puede considerarse segura mientras el hombre viva.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BASICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Aristoteles analizo Edipo Rey en su Poetica como el modelo perfecto de tragedia. El aspecto de la obra que mas valoro fue la coincidencia en un mismo momento de la anagnorisis y la peripecia, porque esa coincidencia:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Permite que el espectador no sienta ni compasion ni temor, sino solo admiracion intelectual por la habilidad del dramaturgo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Simplifica la obra para hacerla mas comprensible al publico menos culto de Atenas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Produce el efecto tragico mas intenso: en el mismo instante en que Edipo descubre la verdad (anagnorisis), su fortuna se invierte completamente de la cumbre del poder a la ruina total (peripecia), concentrando en un solo momento el maximo de compasion y temor que la tragedia puede producir</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Hace que la obra resulte inverosimil, pero Aristoteles la valoro como licencia poetica aceptable</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>En su <I>Poetica</I>, Aristoteles afirma que la forma mas perfecta de tragedia es aquella en que la <B>anagnorisis</B> (reconocimiento) y la <B>peripecia</B> (inversion de la fortuna) ocurren simultaneamente en el mismo momento dramatico. En <I>Edipo Rey</I>, este momento es el climax de la obra: cuando el pastor confirma la identidad de Edipo, en el mismo instante en que Edipo <B>descubre</B> que el es el asesino de su padre y el esposo de su madre (anagnorisis), su fortuna se invierte de manera radical e irreversible: de rey victorioso, celebrado por haber liberado Tebas dos veces (de la Esfinge y del culpable de la peste), pasa a ser el peor de los criminales, condenado al destierro (peripecia). Esta coincidencia maximiza simultaneamente la <B>compasion</B> (por un hombre que descubre de golpe toda la magnitud de su tragedia sin haberla buscado conscientemente) y el <B>temor</B> (ante la posibilidad de que cualquier ser humano pueda estar viviendo en la misma ignorancia).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Segun el mito de Edipo, la razon por la que el heroe huyo de Corinto (la ciudad donde habia sido criado) fue:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Porque fue expulsado por el rey Polibo, que descubrio que era adoptado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Porque quiso ir a Tebas a resolver el enigma de la Esfinge y ganar fama</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Porque el oraculo de Delfos le revelo que mataria a su padre y se casaria con su madre, y creyendo que sus padres eran el rey Polibo y la reina Merope de Corinto, huyo para evitar el cumplimiento del oraculo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Porque fue llamado por Layo para sucederle como rey de Tebas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Este es un punto de ironia fundamental del mito: el acto con el que Edipo intenta <B>evitar</B> el oraculo es precisamente el que lo lleva a <B>cumplirlo</B>. Edipo consulta el oraculo de Delfos (en algunas versiones porque alguien le ha dicho que no es el verdadero hijo de Polibo) y recibe la terrible revelacion de que matara a su padre y se casara con su madre. Convencido de que Polibo y Merope son sus padres biologicos, decide huir de Corinto para alejarse de ellos y hacer imposible el cumplimiento del oraculo. Esta huida lo conduce directamente al cruce de caminos donde encontrara a su padre verdadero (Layo) y lo matara, y despues a Tebas donde se casara con su madre verdadera (Yocasta). La tragedia de Edipo reside en que cada decision racional tomada para evitar el destino lo acerca a el.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> La figura del personaje Creonte en Edipo Rey funciona dramaticamente como contrafigura de Edipo. El rasgo que define a Creonte en contraste con el protagonista es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La cobardía: Creonte huye de sus responsabilidades mientras Edipo las asume</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La moderacion y el equilibrio: frente a la impulsividad y los excesos de Edipo, Creonte responde con argumentos racionales y templados, encarnando la mesura que la hybris de Edipo no puede sostener</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La maldad: Creonte conspira realmente contra Edipo, justificando las sospechas del protagonista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La ignorancia: Creonte no comprende la situacion en ningun momento de la obra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Creonte es el cunado de Edipo y hermano de Yocasta, y representa en la obra la virtud de la <B>moderacion</B> (sophrosyne) frente a la hybris del protagonista. Cuando Edipo lo acusa injustamente de haber conspirado con Tiresias para usurpar el trono, Creonte responde con argumentos racionales y serenos: explica que no tiene ningun motivo para querer ser rey (tiene ya todos los privilegios sin ninguna de las responsabilidades) y propone que consulten el oraculo para verificar la acusacion. La serenidad de Creonte ante la violencia verbal de Edipo evidencia aun mas el exceso emocional del protagonista. Al final de la obra, cuando Edipo cae, es Creonte quien asume el gobierno de Tebas con la moderacion que Edipo no pudo mantener. Esta funcion de contrafigura hace de Creonte un personaje esencial para que el espectador pueda calibrar la desmesura de Edipo.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

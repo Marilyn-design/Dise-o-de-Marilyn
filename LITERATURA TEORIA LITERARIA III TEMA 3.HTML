@@ -1,0 +1,478 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Teoría Literaria III: Técnicas Dramáticas, Épicas, Líricas y Narrativas - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 3</DIV>
+<H1>Teoría Literaria III</H1>
+<DIV CLASS="sub">Técnicas Dramáticas &middot; Técnicas Épicas &middot; Técnicas Líricas &middot; Técnicas Narrativas</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. ¿Qué son las técnicas literarias?</H3>
+Las <B>técnicas literarias</B>, es decir, los <B>procedimientos, recursos y herramientas concretas</B> que un autor utiliza <I>dentro</I> de cada género para construir su obra. Si el género responde a la pregunta "¿qué tipo de texto es?", la técnica responde a la pregunta "¿cómo está construido, paso a paso, este texto?".
+
+Una técnica literaria no es un adorno superficial: es una <B>decisión constructiva</B> que determina cómo el lector accede a la historia, a las emociones o a la acción. Elegir un narrador omnisciente en vez de un narrador testigo, o un soliloquio en vez de un diálogo, cambia radicalmente el efecto de la obra sobre el lector o el espectador.
+
+<DIV CLASS="alerta"><B>Para el examen:</B> Los exámenes de admisión de alto nivel (UNI, UNMSM, Villarreal) no solo preguntan definiciones: suelen presentar un <B>fragmento literario</B> y pedir que identifiques qué técnica narrativa, lírica o dramática está empleando el autor. Por eso, en este tema, cada técnica viene acompañada de un ejemplo concreto: memorízalos, porque son el tipo de evidencia que el examen espera que reconozcas.</DIV>
+
+<DIV CLASS="cultura-titulo">EL GÉNERO DRAMÁTICO<SPAN>Diálogo, acotaciones, unidades aristotélicas y los giros de la acción escénica</SPAN></DIV>
+
+<H3>2. Técnicas del género dramático</H3>
+El teatro construye su efecto mediante recursos exclusivos de la representación escénica: el diálogo, el movimiento de los cuerpos y la organización del tiempo dramático.
+
+<H4>El diálogo y las acotaciones (didascalias):</H4>
+El <B>diálogo</B> es el vehículo principal de la acción dramática: a diferencia de la narrativa, no hay un narrador que medie entre el lector y los hechos; los personajes hablan directamente. Las <B>acotaciones</B> o <B>didascalias</B> son las indicaciones del autor (normalmente entre paréntesis o en otro tipo de letra) sobre el movimiento escénico, el tono de voz, la escenografía o el vestuario: no son pronunciadas por los actores, pero guían la puesta en escena.
+
+<H4>Tres formas de habla en escena: monólogo, soliloquio y aparte:</H4>
+<UL>
+<LI><B>Monólogo:</B> un personaje habla extensamente, pudiendo ser escuchado por otros personajes presentes en la escena.</LI>
+<LI><B>Soliloquio:</B> un personaje habla en voz alta estando <B>solo</B> en escena, exteriorizando sus pensamientos o conflictos internos sin que nadie más lo oiga dentro de la ficción. El ejemplo más célebre es el "ser o no ser" de <I>Hamlet</I> (Shakespeare).</LI>
+<LI><B>Aparte:</B> un personaje dirige unas palabras breves directamente al público, mientras los demás personajes presentes en escena "no lo escuchan"; rompe momentáneamente la ilusión dramática.</LI>
+</UL>
+<DIV CLASS="ej"><B>Ejemplo:</B> En <I>Fuenteovejuna</I> de Lope de Vega, los apartes permiten que un personaje comente ante el público sus dudas sobre una decisión, mientras el resto de personajes continúa la escena sin escucharlo.</DIV>
+
+<H4>Las unidades aristotélicas:</H4>
+La tradición clásica y, sobre todo, el <B>Neoclasicismo</B> francés (Boileau, siglo XVII) codificaron tres "unidades" como ideal de composición dramática:
+<UL>
+<LI><B>Unidad de acción:</B> la obra debe desarrollar un solo conflicto central, sin tramas secundarias dispersas. Esta es la única unidad que Aristóteles defendió explícitamente en la <I>Poética</I>.</LI>
+<LI><B>Unidad de tiempo:</B> la acción representada debe transcurrir, idealmente, en no más de 24 horas.</LI>
+<LI><B>Unidad de lugar:</B> toda la acción debe ocurrir en un único espacio escénico.</LI>
+</UL>
+<DIV CLASS="mapa-note"><B>Dato clave para el examen:</B> Solo la <B>unidad de acción</B> proviene directamente de Aristóteles; las unidades de tiempo y lugar fueron añadidas por los teóricos neoclásicos del siglo XVII como un canon rígido. El teatro moderno (Shakespeare, Brecht, el teatro del absurdo) rompe deliberadamente estas unidades: <I>Hamlet</I> transcurre en varios meses y varios escenarios.</DIV>
+
+<H4>Anagnórisis y peripecia:</H4>
+Dos conceptos aristotélicos esenciales para el análisis de la tragedia: la <B>anagnórisis</B> es el reconocimiento, el momento en que un personaje descubre una verdad oculta sobre su propia identidad o la de otro; la <B>peripecia</B> es el giro súbito e inesperado de la fortuna del protagonista. En <I>Edipo Rey</I> de Sófocles, ambas ocurren casi simultáneamente: Edipo reconoce (anagnórisis) que el hombre que mató en el camino y la mujer con la que se casó eran su padre y su madre, lo que provoca el giro trágico final (peripecia).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Recurso dramático</TH><TH>Definición breve</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Acotación</B></TD><TD>Indicación escénica no hablada por los actores</TD><TD>"(Entra Hamlet, pálido, con un libro en la mano)"</TD></TR>
+<TR><TD><B>Soliloquio</B></TD><TD>Habla en voz alta y en soledad</TD><TD>El monólogo "ser o no ser" de Hamlet</TD></TR>
+<TR><TD><B>Aparte</B></TD><TD>Habla breve dirigida al público, no oída por los demás personajes</TD><TD>Comentarios de un gracioso en la comedia del Siglo de Oro</TD></TR>
+<TR><TD><B>Anagnórisis</B></TD><TD>Reconocimiento de una verdad oculta</TD><TD>Edipo descubre quién es realmente</TD></TR>
+<TR><TD><B>Peripecia</B></TD><TD>Giro súbito de la fortuna</TD><TD>La caída final de Edipo como rey</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">EL GÉNERO ÉPICO<SPAN>Invocación, catálogo, epíteto y símil: los recursos solemnes del relato heroico</SPAN></DIV>
+
+<H3>3. Técnicas del género épico</H3>
+La épica clásica (la <I>Ilíada</I>, la <I>Odisea</I>, la <I>Eneida</I>, el <I>Cantar de Mio Cid</I>) desarrolló un conjunto de recursos propios para narrar las hazañas de héroes colectivos en un tono solemne.
+
+<H4>Invocación a las musas:</H4>
+El poeta épico inicia su relato pidiendo inspiración a una musa o divinidad, reconociendo que la grandeza del tema supera sus propias fuerzas humanas. La <I>Ilíada</I> comienza invocando a la diosa para que cante "la cólera funesta de Aquiles".
+
+<H4>In medias res:</H4>
+La narración no comienza desde el principio cronológico de los hechos, sino <B>en medio de la acción</B>, para luego retroceder y completar la historia mediante relatos secundarios. La <I>Odisea</I> empieza años después de la guerra de Troya, cuando Ulises ya lleva tiempo extraviado, y solo después se cuentan sus aventuras anteriores.
+
+<H4>El catálogo épico:</H4>
+Una <B>enumeración extensa</B> de héroes, naves, linajes o ejércitos, que confiere solemnidad y amplitud al relato. El "catálogo de las naves" en el libro II de la <I>Ilíada</I> enumera decenas de contingentes griegos con sus líderes y procedencias.
+
+<H4>El epíteto épico:</H4>
+Un <B>adjetivo o frase fija</B> que acompaña repetidamente a un personaje, resaltando una cualidad esencial e inmutable. Ejemplos homéricos: "el de los pies ligeros Aquiles", "la aurora de dedos rosados", "Ulises, el de muchos ardides".
+
+<H4>El símil épico (o símil homérico):</H4>
+Una <B>comparación extensa y desarrollada</B>, a menudo de varios versos, que ilustra una acción bélica o heroica mediante una escena tomada de la naturaleza o la vida cotidiana, deteniendo momentáneamente el relato.
+<DIV CLASS="ej"><B>Ejemplo:</B> Homero compara el avance de un ejército con una manada de lobos hambrientos, desarrollando la imagen durante varios versos antes de regresar a la batalla: ese desarrollo extenso es lo que distingue al símil homérico de una simple comparación.</DIV>
+
+<H4>La intervención divina:</H4>
+Los dioses participan directamente en la acción humana, favoreciendo o entorpeciendo a los héroes; cuando una divinidad resuelve abruptamente un conflicto que los medios humanos no podían resolver, se habla de <B><I>deus ex machina</I></B> ("dios desde la máquina"), expresión que después se extendió a cualquier desenlace narrativo resuelto por una fuerza externa repentina.
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">Invocación</DIV><DIV CLASS="dk-label">Llamado inicial a la musa</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">In medias res</DIV><DIV CLASS="dk-label">Inicio en medio de la acción</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Epíteto</DIV><DIV CLASS="dk-label">Adjetivo fijo del héroe</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Símil homérico</DIV><DIV CLASS="dk-label">Comparación extensa y desarrollada</DIV></DIV>
+</DIV>
+
+<DIV CLASS="cultura-titulo">EL GÉNERO LÍRICO<SPAN>Metáfora, símil, hipérbole y las figuras que transforman la palabra en imagen</SPAN></DIV>
+
+<H3>4. Técnicas del género lírico</H3>
+La poesía construye su efecto mediante <B>figuras retóricas</B>: procedimientos que se desvían del uso habitual del lenguaje para producir belleza, intensidad expresiva o nuevos sentidos.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Figura retórica</TH><TH>Definición</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Metáfora</B></TD><TD>Identifica dos términos sin nexo comparativo: "A es B"</TD><TD>"Tus ojos son dos luceros"</TD></TR>
+<TR><TD><B>Símil (comparación)</B></TD><TD>Compara dos términos mediante un nexo ("como", "cual")</TD><TD>"Sus ojos brillan como luceros"</TD></TR>
+<TR><TD><B>Hipérbole</B></TD><TD>Exageración deliberada para intensificar una idea</TD><TD>"Te esperé una eternidad"</TD></TR>
+<TR><TD><B>Personificación (prosopopeya)</B></TD><TD>Atribuye cualidades humanas a seres inanimados o abstractos</TD><TD>"El viento susurraba secretos"</TD></TR>
+<TR><TD><B>Anáfora</B></TD><TD>Repetición de una palabra al inicio de versos sucesivos</TD><TD>"Verde que te quiero verde. / Verde viento. Verdes ramas." (Lorca)</TD></TR>
+<TR><TD><B>Aliteración</B></TD><TD>Repetición de sonidos consonánticos cercanos</TD><TD>"El ala aleve del leve abanico" (Darío)</TD></TR>
+<TR><TD><B>Hipérbaton</B></TD><TD>Alteración del orden lógico de la oración</TD><TD>"Del salón en el ángulo oscuro" (Bécquer, en vez de "en el ángulo oscuro del salón")</TD></TR>
+<TR><TD><B>Antítesis</B></TD><TD>Contraposición de ideas o términos opuestos</TD><TD>"Eres alta y delgada como el verano" (contraste implícito)</TD></TR>
+<TR><TD><B>Oxímoron</B></TD><TD>Une en una sola expresión dos términos contradictorios</TD><TD>"Música callada" (San Juan de la Cruz)</TD></TR>
+<TR><TD><B>Metonimia</B></TD><TD>Nombra algo usando un término relacionado por contigüidad (causa-efecto, autor-obra)</TD><TD>"Leer a Vallejo" (= leer la obra de Vallejo)</TD></TR>
+<TR><TD><B>Sinécdoque</B></TD><TD>Nombra el todo por la parte, o la parte por el todo</TD><TD>"Llegaron cien velas al puerto" (= cien barcos)</TD></TR>
+<TR><TD><B>Sinestesia</B></TD><TD>Mezcla impresiones de distintos sentidos</TD><TD>"Verde chillón", "dulce melodía"</TD></TR>
+<TR><TD><B>Apóstrofe</B></TD><TD>Invocación directa a un ser ausente, una abstracción o el lector</TD><TD>"¡Oh, muerte, ven callada!"</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej"><B>Ejemplo aplicado:</B> En el verso de César Vallejo "Hay golpes en la vida, tan fuertes... ¡Yo no sé!", la imagen "golpes en la vida" es una <B>metáfora</B> (el sufrimiento se identifica directamente con golpes físicos), mientras que la exclamación funciona como recurso expresivo que intensifica la perplejidad del hablante lírico.</DIV>
+
+<DIV CLASS="alerta"><B>Truco para el examen:</B> La diferencia entre <B>metáfora</B> y <B>símil</B> es la pregunta más frecuente en este bloque: si hay un nexo comparativo explícito ("como", "cual", "tal como"), es un símil; si se identifican directamente los dos términos sin nexo ("A es B", o simplemente "A" sustituyendo a "B"), es una metáfora. Asimismo, no confundas <B>metonimia</B> (relación de contigüidad: causa-efecto, contenedor-contenido, autor-obra) con <B>sinécdoque</B> (relación de parte-todo): son figuras vecinas pero lógicamente distintas.</DIV>
+
+<DIV CLASS="cultura-titulo">EL GÉNERO NARRATIVO<SPAN>Narrador, focalización y tiempo: las técnicas que organizan el relato</SPAN></DIV>
+
+<H3>5. Técnicas del género narrativo</H3>
+La narrativa moderna (la novela y el cuento) ha desarrollado las técnicas más complejas y estudiadas de la teoría literaria contemporánea, gracias sobre todo a los aportes de la narratología (Genette, Booth, Bajtín).
+
+<H4>El narrador y sus tipos:</H4>
+<UL>
+<LI><B>Narrador omnisciente:</B> conoce todo, incluidos los pensamientos íntimos de los personajes, el pasado y el futuro de la historia; narra en tercera persona.</LI>
+<LI><B>Narrador protagonista:</B> narra en primera persona su propia historia; conoce solo lo que él mismo vivió o pensó.</LI>
+<LI><B>Narrador testigo:</B> en primera persona, cuenta una historia que observó pero en la que no es el protagonista (frecuente en <I>El gran Gatsby</I>, narrado por Nick Carraway).</LI>
+<LI><B>Narrador equisciente:</B> sabe exactamente lo mismo que un personaje específico; su conocimiento está limitado a la perspectiva de ese personaje, aunque narre en tercera persona.</LI>
+<LI><B>Narrador múltiple o poliédrico:</B> la historia se cuenta a través de varias voces narrativas que se alternan, ofreciendo perspectivas distintas de los mismos hechos (técnica central en <I>La ciudad y los perros</I> de Vargas Llosa).</LI>
+</UL>
+
+<H4>La focalización (Gérard Genette):</H4>
+La <B>focalización</B> no debe confundirse con el narrador: el narrador es <I>quién habla</I>; la focalización es <I>desde qué perspectiva de conocimiento se filtra la información</I>.
+<UL>
+<LI><B>Focalización cero (omnisciente):</B> el relato sabe más que cualquier personaje.</LI>
+<LI><B>Focalización interna:</B> el relato se limita a lo que un personaje (fija), varios sucesivamente (variable) o varios a la vez sobre un mismo hecho (múltiple) pueden saber o percibir.</LI>
+<LI><B>Focalización externa:</B> el relato sabe menos que los personajes: solo describe comportamientos observables desde fuera, sin acceso a la interioridad (técnica explotada por el <I>nouveau roman</I> francés).</LI>
+</UL>
+
+<H4>El tiempo narrativo: orden, duración y frecuencia (Genette):</H4>
+<UL>
+<LI><B>Orden:</B> las <B>anacronías</B> son rupturas del orden cronológico: la <B>analepsis</B> (retrospección o "flashback") narra algo anterior al punto actual del relato; la <B>prolepsis</B> (anticipación o "flashforward") narra algo que ocurrirá después. La técnica de comenzar <B>in medias res</B> también pertenece al orden narrativo.</LI>
+<LI><B>Duración:</B> compara el tiempo de la historia con el tiempo del relato. La <B>elipsis</B> omite segmentos enteros de tiempo; el <B>resumen</B> condensa un periodo largo en pocas líneas; la <B>escena</B> narra con un ritmo cercano al tiempo real (típico del diálogo); la <B>pausa descriptiva</B> detiene el tiempo de la historia para describir.</LI>
+<LI><B>Frecuencia:</B> la narración <B>singulativa</B> cuenta una vez lo que ocurrió una vez; la <B>repetitiva</B> cuenta varias veces lo que ocurrió una sola vez (desde distintas perspectivas); la <B>iterativa</B> cuenta una sola vez lo que ocurrió varias veces ("Todos los domingos, mi abuelo salía a caminar").</LI>
+</UL>
+
+<H4>Los estilos de reproducción del discurso:</H4>
+<UL>
+<LI><B>Estilo directo:</B> reproduce literalmente las palabras de un personaje, generalmente con verbos como "dijo" y signos de puntuación específicos: <I>—¿Vendrás? —preguntó Pedro.</I></LI>
+<LI><B>Estilo indirecto:</B> el narrador reporta lo dicho sin citarlo literalmente: <I>Pedro preguntó si vendría.</I></LI>
+<LI><B>Estilo indirecto libre:</B> funde la voz del narrador con el pensamiento del personaje, sin verbos introductorios ni marcas tipográficas, dejando ambigua la frontera entre ambas voces; es uno de los grandes aportes técnicos de la novela moderna desde Flaubert.</LI>
+</UL>
+
+<H4>El monólogo interior y la corriente de conciencia:</H4>
+Técnica que reproduce directamente el flujo de pensamientos de un personaje, sin la mediación ordenadora de un narrador, a menudo con sintaxis fragmentada, asociaciones libres y ausencia de puntuación convencional. Ejemplos mayores: <I>Ulises</I> de James Joyce; en la narrativa hispanoamericana, Mario Vargas Llosa emplea variantes de esta técnica (combinadas con diálogos telescópicos) en <I>Conversación en La Catedral</I> (1969).
+
+<DIV CLASS="mapa-note"><B>Error frecuente en exámenes:</B> No confundir <B>narrador</B> con <B>focalización</B>. Un narrador en tercera persona puede tener focalización interna (limitarse a lo que un personaje sabe) o focalización cero (saberlo todo); por eso dos novelas narradas igualmente "en tercera persona" pueden ofrecer experiencias de lectura completamente distintas según su focalización.</DIV>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo de narrador</TH><TH>Persona gramatical</TH><TH>Conocimiento</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Omnisciente</B></TD><TD>Tercera persona</TD><TD>Total: hechos, pensamientos, pasado y futuro</TD><TD><I>Cien años de soledad</I></TD></TR>
+<TR><TD><B>Protagonista</B></TD><TD>Primera persona</TD><TD>Limitado a su propia experiencia</TD><TD><I>Los ríos profundos</I> (Arguedas)</TD></TR>
+<TR><TD><B>Testigo</B></TD><TD>Primera persona</TD><TD>Lo que observa, sin ser el centro de la acción</TD><TD><I>El gran Gatsby</I></TD></TR>
+<TR><TD><B>Equisciente</B></TD><TD>Tercera persona</TD><TD>Igual al de un personaje específico</TD><TD>Novelas de focalización interna fija</TD></TR>
+</TABLE>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BASICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> El narrador que conoce absolutamente todo sobre la historia —hechos, pensamientos íntimos de los personajes, pasado y futuro— y que narra en tercera persona, se denomina:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Narrador testigo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Narrador omnisciente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Narrador equisciente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Narrador protagonista</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>narrador omnisciente</B> es la voz narrativa que posee un conocimiento total e ilimitado: accede a los pensamientos y sentimientos de todos los personajes, conoce hechos pasados y futuros, y puede estar presente en varios lugares a la vez dentro del relato. El narrador testigo (a) solo observa desde fuera; el equisciente (c) sabe lo mismo que un personaje determinado; el protagonista (d) narra en primera persona su propia experiencia limitada. La omnisciencia es la forma de conocimiento narrativo más amplia posible.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cuál es la diferencia esencial entre la <B>metáfora</B> y el <B>símil</B> (comparación)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La metáfora solo puede usarse en poesía; el símil solo en prosa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El símil identifica dos términos sin ningún nexo comparativo; la metáfora siempre necesita la palabra "como"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) La metáfora identifica directamente dos términos ("A es B") sin nexo comparativo; el símil los relaciona mediante un nexo explícito como "como" o "cual"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) No existe ninguna diferencia: son sinónimos perfectos en la teoría literaria</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>metáfora</B> funde dos términos identificándolos directamente: "tus ojos son dos luceros", sin ningún nexo gramatical de comparación. El <B>símil</B> (o comparación) mantiene los dos términos separados pero los vincula explícitamente con un nexo comparativo: "tus ojos brillan como luceros". La opción b) invierte exactamente la relación correcta. Ambas figuras pueden aparecer tanto en poesía como en prosa, por lo que la opción a) es falsa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> En el teatro, un personaje que habla en voz alta estando completamente solo en escena, exteriorizando sus pensamientos y conflictos internos sin que ningún otro personaje lo escuche, está pronunciando:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Un aparte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Una acotación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Un soliloquio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Un catálogo épico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>soliloquio</B> ocurre cuando el personaje está <B>solo</B> en el escenario y habla en voz alta para exteriorizar su mundo interior, como en el famoso "ser o no ser" de <I>Hamlet</I>. Se diferencia del <B>aparte</B> (a) porque en el aparte sí hay otros personajes presentes en la escena, solo que "no lo escuchan"; la acotación (b) es una indicación escénica del autor, no una intervención hablada por un personaje; el catálogo épico (d) es un recurso de la épica, no del teatro.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> El recurso épico que consiste en empezar el relato en medio de la acción, sin seguir el orden cronológico de los hechos, se conoce como:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Invocación a las musas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) In medias res</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Epíteto épico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Anagnórisis</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B><I>In medias res</I></B> (literalmente, "en medio de las cosas") es la técnica de iniciar la narración en un punto avanzado de la acción, postergando o intercalando posteriormente los antecedentes. La <I>Odisea</I> es el ejemplo clásico: empieza años después de la guerra de Troya. La invocación a las musas (a) es el llamado inicial a la inspiración divina; el epíteto épico (c) es un adjetivo fijo que acompaña a un héroe; la anagnórisis (d) es el reconocimiento de una identidad oculta, propio de la tragedia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> La repetición de una misma palabra al inicio de varios versos consecutivos, como en "Verde que te quiero verde. / Verde viento. Verdes ramas." de García Lorca, es un ejemplo de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Hipérbaton</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Anáfora</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Sinécdoque</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Oxímoron</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>anáfora</B> es la repetición de una o varias palabras al comienzo de versos o frases sucesivas, generando un efecto rítmico y de insistencia: en el fragmento de Lorca, "verde" se repite al inicio reiteradamente. El hipérbaton (a) altera el orden sintáctico lógico de la oración; la sinécdoque (c) nombra el todo por la parte o viceversa; el oxímoron (d) combina dos términos contradictorios en una sola expresión.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Lee: <I>"María entró a la habitación. Qué cansada estaba. No podía más con esa vida, con ese hombre, con esa casa que nunca terminaba de ser suya."</I> ¿Qué técnica narrativa predomina en la segunda y tercera oración?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Estilo directo, porque reproduce literalmente un diálogo entre personajes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Estilo indirecto libre, porque el pensamiento del personaje se funde con la voz narrativa sin verbos introductorios ni marcas tipográficas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Catálogo épico, porque enumera varios elementos de la vida de María</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Aparte, porque María se dirige directamente al lector</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El fragmento es un caso típico de <B>estilo indirecto libre</B>: tras la primera oración narrada normalmente, las frases siguientes ("Qué cansada estaba. No podía más...") expresan el pensamiento íntimo de María sin ningún verbo introductorio ("pensó que", "se dijo que") ni comillas o guiones que marquen la cita; la voz del narrador y la conciencia del personaje se vuelven indistinguibles. No es estilo directo (a) porque no hay marcas de diálogo citado; no es catálogo épico (c), recurso propio de la épica clásica para enumerar héroes o ejércitos; tampoco es un aparte (d), técnica exclusivamente teatral.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Una novela narrada en tercera persona pero que nunca revela los pensamientos de ningún personaje, limitándose estrictamente a describir gestos, palabras y comportamientos observables desde fuera, emplea qué tipo de focalización según Gérard Genette:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Focalización cero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Focalización interna fija</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Focalización externa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Focalización múltiple</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>focalización externa</B> ocurre cuando el relato ofrece <I>menos</I> información que la que poseen los propios personajes: el lector solo accede a comportamientos observables (gestos, diálogos, acciones), sin ninguna entrada a la interioridad psicológica. Esta técnica fue explotada deliberadamente por el <I>nouveau roman</I> francés (Robbe-Grillet) para producir un efecto de distancia y opacidad. La focalización cero (a) es la del narrador omnisciente, que sabe más que los personajes; la interna (b y d) sí da acceso a la conciencia de uno o varios personajes, justamente lo que este caso excluye.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> En <I>Hamlet</I>, cuando un personaje secundario dirige unas breves palabras al público mientras el resto de personajes en escena continúa la acción "sin escucharlo", se trata de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Un soliloquio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Un aparte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Una analepsis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Una invocación a las musas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>aparte</B> se distingue del soliloquio (a) precisamente porque en el aparte <B>sí hay otros personajes presentes</B> en la escena: la convención teatral establece que esos personajes "no oyen" lo que se dice al público, rompiendo brevemente la ilusión escénica sin detener la acción general. La analepsis (c) es un recurso narrativo de orden temporal (un "flashback"), no una técnica de habla escénica; la invocación a las musas (d) pertenece a la épica clásica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Un narrador cuenta, en un solo párrafo, veinte años de la vida de un personaje ("Pasaron dos décadas. El pueblo cambió, la familia se dispersó, y el viejo molino quedó en ruinas"). ¿Qué técnica de duración narrativa (Genette) se está empleando?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Escena</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Pausa descriptiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Resumen</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Frecuencia iterativa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>resumen</B> condensa un periodo extenso de la historia (en este caso, veinte años) en un espacio breve del relato (un solo párrafo): el tiempo del relato es mucho menor que el tiempo de la historia. La <B>escena</B> (a) mantiene una correspondencia cercana entre ambos tiempos (típica del diálogo); la <B>pausa descriptiva</B> (b) detiene por completo el tiempo de la historia para describir algo; la <B>frecuencia iterativa</B> (d) es una categoría distinta: se refiere a contar una sola vez algo que ocurrió repetidamente, no a la velocidad con que se narra un período.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> "Llegaron cien velas al horizonte" para referirse a cien barcos es un ejemplo de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Metonimia, porque la vela es la causa del movimiento del barco</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Sinécdoque, porque se nombra el todo (el barco) mediante una de sus partes (la vela)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Hipérbole, porque exagera la cantidad de barcos que llegaron</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Sinestesia, porque mezcla una imagen visual con una sensación táctil</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es la <B>sinécdoque</B> clásica: se designa el todo (el barco completo) usando el nombre de una de sus partes (la vela). Se diferencia de la <B>metonimia</B> (a), que se basa en relaciones de contigüidad como causa-efecto, contenedor-contenido o autor-obra ("beber una copa", "leer a Vallejo"), y no en la relación parte-todo. No hay exageración cuantitativa explícita en el enunciado mismo (c), y no se mezclan sentidos distintos (d).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Homero combina, en un mismo pasaje, la invocación a una musa, un catálogo de héroes y varios epítetos fijos. ¿Por qué estos tres recursos, aunque distintos, cumplen una función conjunta dentro de la épica clásica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) No tienen ninguna función común: son simples adornos decorativos sin relación entre sí</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Los tres recursos construyen la solemnidad y la dimensión colectiva del relato heroico: la invocación legitima la voz del poeta ante una materia que lo supera, el catálogo amplía la escala social y numérica de la acción, y el epíteto fija una identidad heroica estable e inmutable en una tradición oral que se transmitía de memoria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Solo sirven para alargar artificialmente el poema y facilitar su recitación en público sin ningún propósito estético</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Son exclusivos de la épica escrita y nunca aparecieron en la tradición oral previa a Homero</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Estos tres recursos están profundamente conectados con la naturaleza <B>oral y colectiva</B> de la épica primitiva. (1) La <B>invocación a las musas</B> legitima al poeta como mero transmisor de una verdad que le ha sido revelada, no como inventor: el poeta canta lo que la diosa le permite recordar. (2) El <B>catálogo épico</B> amplía la escala del relato más allá del héroe individual, integrando la dimensión colectiva, política y geográfica de la guerra (los pueblos, los linajes, las alianzas). (3) El <B>epíteto épico</B> tiene un origen ligado a la composición oral formularia (estudiada por Milman Parry y Albert Lord): los epítetos fijos ("Aquiles, el de los pies ligeros") encajaban métricamente en el hexámetro y permitían al rapsoda improvisar y recordar versos extensos sin perder el ritmo. Los tres recursos, lejos de ser ornamentales, responden a las condiciones reales de producción y transmisión de la poesía épica antes de la escritura.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Mario Vargas Llosa, en <I>Conversación en La Catedral</I> (1969), emplea los llamados "vasos comunicantes": diálogos de distintos momentos temporales que se entrelazan dentro de un mismo párrafo o escena. ¿Con qué categoría narratológica se relaciona más directamente este procedimiento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Con el catálogo épico, porque enumera personajes de distintas épocas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Con el orden del tiempo narrativo (anacronías): el procedimiento multiplica y entrecruza analepsis y prolepsis dentro de un mismo espacio textual, fragmentando radicalmente la cronología lineal de la historia para que el lector reconstruya activamente la secuencia de los hechos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Con la unidad de tiempo aristotélica, porque concentra toda la acción en menos de 24 horas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Con la sinestesia, porque mezcla sensaciones de distintos sentidos en un mismo diálogo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los "vasos comunicantes" (término que el propio Vargas Llosa usa para describir su técnica) llevan al extremo la categoría genettiana del <B>orden temporal</B>: dentro de una misma escena pueden convivir fragmentos de conversaciones ocurridas en momentos completamente distintos, conectados no por la cronología sino por asociaciones temáticas, verbales o emocionales. Esto multiplica las <B>analepsis</B> (retrocesos) y, en ocasiones, las <B>prolepsis</B> (anticipaciones), exigiendo del lector un trabajo activo de reconstrucción cronológica que la novela tradicional, de orden lineal, no demandaba. No tiene relación con el catálogo épico (a, recurso enumerativo de la épica clásica), ni respeta la unidad de tiempo aristotélica (c, todo lo contrario: la dispersa), ni es un fenómeno de mezcla sensorial (d).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> El dramaturgo alemán Bertolt Brecht propuso el "efecto de distanciamiento" (<I>Verfremdungseffekt</I>) como ruptura deliberada de la ilusión teatral tradicional. ¿Cómo se relaciona esta propuesta con las técnicas dramáticas clásicas como el aparte y las unidades aristotélicas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Brecht eliminó por completo cualquier técnica que recordara al espectador que está viendo una obra de teatro, profundizando la ilusión escénica clásica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Brecht radicalizó y sistematizó procedimientos que ya rompían la ilusión escénica (como el aparte), convirtiendo esa ruptura en el principio estructural de todo el teatro épico: carteles, canciones que interrumpen la acción y actores que se dirigen al público buscan que el espectador mantenga distancia crítica en vez de identificarse emocionalmente, en abierta oposición al ideal aristotélico de la catarsis y de las unidades de tiempo y lugar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Brecht recuperó estrictamente las tres unidades aristotélicas como base de su teatro épico, sin ninguna innovación formal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El distanciamiento brechtiano no tiene relación alguna con la tradición teatral previa: es una invención completamente original sin antecedentes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>teatro épico</B> de Brecht parte de una crítica explícita al ideal aristotélico de la <B>catarsis</B> (la identificación emocional del espectador con los personajes, vista en el Tema 1): para Brecht, esa identificación anestesia el juicio crítico del público. Por eso sistematiza y lleva al extremo recursos que ya existían de forma puntual en la tradición teatral —como el <B>aparte</B>, que rompe momentáneamente la ilusión— convirtiéndolos en principio estructural permanente: carteles que anuncian lo que va a ocurrir (anulando la sorpresa), canciones que detienen la acción para comentarla, actores que se dirigen abiertamente al público. Todo ello se opone también a las <B>unidades de tiempo y lugar</B> neoclásicas, ya que el teatro épico salta libremente de espacio y época. El objetivo no es la inmersión emocional sino la <B>reflexión crítica</B> del espectador sobre la realidad social representada.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> En <I>Cien años de soledad</I>, García Márquez abre la novela con la frase: <I>"Muchos años después, frente al pelotón de fusilamiento, el coronel Aureliano Buendía había de recordar aquella tarde remota en que su padre lo llevó a conocer el hielo."</I> Analiza esta oración según las tres categorías del tiempo narrativo de Genette (orden, duración, frecuencia).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La oración es puramente lineal y cronológica, sin ninguna anacronía; ejemplifica solamente la frecuencia singulativa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) En una sola frase, García Márquez combina una <B>prolepsis</B> (anuncia un fusilamiento futuro, "muchos años después") con una <B>analepsis</B> simultánea (retrocede a "aquella tarde remota" del pasado), todo ello narrado desde un presente narrativo implícito que nunca se hace explícito; en términos de duración, es un <B>resumen</B> extremo que condensa decenas de años en una sola oración; este entrelazamiento de futuro y pasado en el punto de partida es la "anacronía total" característica del estilo de la novela</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Se trata exclusivamente de un catálogo épico, ya que enumera distintos momentos de la vida del coronel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Es un ejemplo de focalización externa, ya que no se conoce ningún pensamiento del personaje</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta frase inaugural es uno de los ejemplos más estudiados de la narratología hispanoamericana precisamente por su complejidad temporal. <B>Orden:</B> la frase proyecta simultáneamente hacia el futuro ("muchos años después... había de recordar", una <B>prolepsis</B> que anuncia el fusilamiento) y hacia el pasado ("aquella tarde remota", una <B>analepsis</B> hacia la infancia del coronel); el "presente" desde el cual se narra —el momento en que el padre lo lleva a conocer el hielo— se revela solo retrospectivamente como el verdadero punto de partida cronológico de la novela. <B>Duración:</B> la fórmula "había de recordar" comprime en una sola oración un arco de décadas, funcionando como un <B>resumen</B> extremo que anticipa el destino del personaje antes de narrar su vida. Este procedimiento, repetido con variantes en toda la novela, crea el efecto de un tiempo "circular" o "mítico" característico del realismo mágico, muy distinto del tiempo lineal de la novela realista del siglo XIX. No es un catálogo épico (c, que enumera personajes o ejércitos, no momentos de una sola vida) ni un caso de focalización externa (d, que se refiere al acceso o no a la interioridad psicológica, no al orden temporal).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Gustave Flaubert es considerado el creador del <B>estilo indirecto libre</B> moderno en <I>Madame Bovary</I> (1857). ¿Qué consecuencias teóricas tiene esta técnica para la relación entre narrador y personaje, y por qué se convirtió en un recurso central de la narrativa hispanoamericana del siglo XX?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) El estilo indirecto libre simplemente reemplaza los guiones de diálogo por comillas, sin ninguna otra consecuencia teórica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) El estilo indirecto libre disuelve la frontera nítida entre la voz del narrador y la conciencia del personaje, permitiendo que el juicio irónico o la simple empatía del narrador se infiltren en el discurso sin que el lector pueda atribuir con certeza cada palabra a una sola fuente; esta ambigüedad fue explotada por autores hispanoamericanos como García Márquez y Juan Rulfo para fusionar la voz colectiva de una comunidad con la conciencia individual de sus personajes, dando lugar a una narración donde lo mítico y lo íntimo se entrelazan sin costuras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) El estilo indirecto libre fue rechazado por completo por los narradores hispanoamericanos del siglo XX, que prefirieron exclusivamente el estilo directo tradicional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Esta técnica solo puede emplearse en narradores protagonistas que narran en primera persona</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El aporte teórico de Flaubert consiste en mostrar que la voz narrativa y la conciencia de un personaje pueden <B>fundirse sintácticamente</B>: la tercera persona y los tiempos verbales del relato se conservan, pero el contenido, el vocabulario y la perspectiva valorativa pasan a ser los del personaje, sin verbos como "pensó" que marquen la transición. Esta técnica genera una <B>ambigüedad productiva</B>: el lector no siempre puede determinar si una valoración pertenece al narrador (con su distancia, a veces irónica) o al personaje (con su subjetividad limitada). Autores como <B>Juan Rulfo</B> (<I>Pedro Páramo</I>) y <B>García Márquez</B> explotaron esta fusión para crear una voz narrativa que parece brotar de la memoria colectiva de un pueblo entero, entrelazando lo mítico-comunitario con lo íntimo-individual sin marcar nunca con claridad dónde termina una y empieza la otra. La técnica no se limita a narradores en primera persona (d): de hecho, su forma clásica opera en tercera persona, precisamente por eso resulta tan distintiva.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Compara la <B>anagnórisis</B> de Edipo en <I>Edipo Rey</I> de Sófocles con un reconocimiento equivalente en una novela moderna. ¿Qué transformación sufre este recurso al pasar de la tragedia clásica a la narrativa contemporánea?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La anagnórisis desapareció por completo en la literatura moderna: es un recurso exclusivo de la tragedia griega sin ninguna continuidad posterior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) En Sófocles, la anagnórisis es un reconocimiento objetivo y público (Edipo descubre un hecho verificable: su identidad biológica), comunicado mediante el diálogo escénico y seguido de inmediato por la peripecia trágica. En la narrativa psicológica moderna, el reconocimiento suele interiorizarse: el personaje no descubre un dato externo oculto, sino una verdad sobre su propia conciencia, sus deseos o su autoengaño, revelada gradualmente mediante el monólogo interior o el estilo indirecto libre, sin la contundencia de un solo momento escénico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La anagnórisis moderna es idéntica a la clásica en todos sus aspectos: ambas requieren obligatoriamente la presencia de un oráculo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Solo la épica clásica, nunca la tragedia, empleó la anagnórisis como recurso central</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En <I>Edipo Rey</I>, la anagnórisis tiene una naturaleza <B>objetiva y pública</B>: se trata del descubrimiento de un hecho concreto y verificable (la identidad de los padres de Edipo) que se revela mediante el diálogo y los testimonios de otros personajes (el mensajero, el pastor), en un momento escénico preciso, seguido inmediatamente por la <B>peripecia</B> (la caída del protagonista). Aristóteles consideraba esta combinación —anagnórisis seguida de peripecia— el recurso más efectivo para producir la catarsis trágica. En la novela psicológica moderna (piénsese en autores como Henry James, Vargas Llosa o Virginia Woolf), el reconocimiento tiende a <B>interiorizarse</B>: ya no se trata del descubrimiento de un dato externo oculto, sino de una toma de conciencia gradual sobre la propia identidad, el autoengaño o el deseo reprimido, comunicada al lector mediante el monólogo interior o el estilo indirecto libre, sin la nitidez de un único momento escénico revelador. Esta transformación refleja el desplazamiento general de la literatura moderna desde la acción externa hacia la interioridad psicológica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El <I>nouveau roman</I> francés (Alain Robbe-Grillet, Nathalie Sarraute) llevó la focalización externa a sus últimas consecuencias, eliminando casi por completo el acceso a la interioridad de los personajes. ¿Qué implicaciones tiene esta decisión técnica para la concepción misma de "personaje" en la novela?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Ninguna: la focalización externa es solo un cambio de estilo superficial que no afecta la noción de personaje</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Al negar sistemáticamente el acceso a pensamientos, motivaciones y emociones, el nouveau roman cuestiona el supuesto realista-decimonónico de que un personaje es una "psicología" coherente y cognoscible; el personaje se reduce a una superficie de gestos, objetos y descripciones minuciosas, lo que refleja una desconfianza filosófica (cercana al existencialismo y a la fenomenología) hacia la posibilidad de conocer una conciencia ajena, y desplaza el interés narrativo de "quién es" el personaje hacia "qué hace" y "qué se ve" de él</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) El nouveau roman, en realidad, profundiza la psicología de los personajes mucho más que la novela realista del siglo XIX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La focalización externa solo puede aplicarse a personajes secundarios, nunca al protagonista de una novela</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La decisión técnica del <I>nouveau roman</I> de sostener una <B>focalización externa</B> radical no es un mero experimento formal: implica una posición sobre la naturaleza misma del sujeto y de la novela. La narrativa realista del siglo XIX (Balzac, Tolstói) presuponía que un narrador podía explicar de forma fiable los motivos, deseos y pensamientos de sus personajes, como si la conciencia ajena fuera plenamente accesible y narrable. Robbe-Grillet y Sarraute, influidos por un clima filosófico de desconfianza hacia la introspección directa (próximo a ciertas corrientes fenomenológicas y existencialistas de mediados del siglo XX), reducen el personaje a lo que puede <B>verse y describirse desde fuera</B>: objetos, superficies, repeticiones de gestos minuciosamente detallados (la "escuela de la mirada"), evitando cualquier afirmación sobre su interioridad. El efecto es que el lector ya no puede dar por sentado que "conoce" psicológicamente al personaje; la atención se desplaza de la identidad profunda hacia la superficie observable de la conducta y el objeto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Sintetiza: ¿por qué la distinción entre <B>género</B> (Tema 2) y <B>técnica</B> (este tema) es necesaria para evitar errores comunes en el análisis literario, y cómo puede un mismo recurso técnico (por ejemplo, la anacronía o el catálogo) aparecer en géneros distintos a aquel en el que se originó históricamente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Género y técnica son exactamente lo mismo; no existe ninguna diferencia conceptual entre ambos términos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) El género es una categoría clasificatoria amplia (lírico, narrativo, dramático, épico) definida por su modo de enunciación (verso subjetivo, narración, diálogo escénico, relato heroico colectivo); la técnica es un procedimiento constructivo concreto que puede, en principio, migrar de un género a otro una vez que se independiza de su contexto histórico original: el catálogo épico reaparece como enumeración descriptiva en la novela moderna (por ejemplo, los inventarios minuciosos del nouveau roman); la anacronía, propia de la narrativa, puede aparecer también en el monólogo dramático cuando un personaje evoca el pasado en escena. Confundir género y técnica lleva a errores como creer que un texto en prosa no puede ser "poético" (función poética) o que el teatro no puede usar recursos narrativos (un personaje que narra retrospectivamente)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Las técnicas nunca pueden trasladarse de un género a otro: cada técnica pertenece de manera exclusiva y permanente a un solo género</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El género depende únicamente de la extensión del texto, mientras que la técnica depende únicamente de la época histórica en que fue escrito</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta sintetiza la relación entre los Temas 2 y 3. El <B>género</B> es una categoría amplia y relativamente estable, definida por el modo de enunciación dominante: el lírico expresa subjetividad, el narrativo despliega un narrador que cuenta, el dramático presenta diálogo escénico directo, el épico narra hazañas colectivas en tono solemne. La <B>técnica</B>, en cambio, es un procedimiento constructivo —un "cómo"— que, una vez desarrollado dentro de un género, puede <B>migrar</B> a otros géneros cuando los autores lo adaptan creativamente: el catálogo épico, nacido para enumerar ejércitos homéricos, reaparece transformado en los inventarios y enumeraciones obsesivas de la novela moderna; la anacronía (analepsis/prolepsis), categoría propiamente narrativa, puede colarse en un monólogo dramático cuando un personaje evoca escénicamente su pasado; la función poética del lenguaje (Jakobson, Tema 1), propia del género lírico, puede dominar también un pasaje en prosa narrativa particularmente trabajado estéticamente. Confundir género y técnica produce errores de clasificación: pensar que toda prosa carece de "poesía", o que el teatro no puede incorporar procedimientos narrativos, ignora precisamente esta capacidad de las técnicas de trascender el género en que nacieron históricamente.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

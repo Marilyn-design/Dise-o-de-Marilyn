@@ -1,0 +1,402 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Antonimia contextual - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="RAZONAMIENTO VERBAL.HTML">← Volver a los temas de Razonamiento Verbal</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">RAZONAMIENTO VERBAL · TEMA 4</DIV>
+<H1>Antonimia contextual</H1>
+<DIV CLASS="sub">Definición de antónimos · Sentido contextual · Distinción entre antónimos y antónimos en contexto</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Definición de antónimos</H3>
+Los <B>antónimos</B> son palabras que expresan significados <B>opuestos</B> dentro de un mismo eje o categoría semántica. Para que dos palabras sean antónimas no basta con que sean "distintas" o que no compartan significado: deben pertenecer al <B>mismo campo conceptual</B> y representar los dos polos (o dos puntos claramente contrastantes) de una misma escala o de una misma cualidad.
+
+<H4>Condición esencial de la antonimia</H4>
+Dos palabras son antónimas solo si existe un <B>eje común</B> que las contiene y respecto al cual se oponen. Sin ese eje compartido, dos palabras "distintas" no son antónimas: son simplemente ajenas entre sí.
+<DIV CLASS="ej"><B>Ejemplo:</B> "Alto" y "bajo" son antónimos porque ambas pertenecen al eje de la <B>estatura o altura</B> y representan sus dos extremos. En cambio, "alto" y "triste" no son antónimos: no comparten ningún eje semántico común, son simplemente palabras de campos distintos.</DIV>
+
+<H4>Tipos de antonimia</H4>
+<UL>
+<LI><B>Antonimia gradual (de escala):</B> existen grados intermedios entre los dos polos opuestos. Ejemplo: CALIENTE : FRÍO (existen estados intermedios como "tibio").</LI>
+<LI><B>Antonimia complementaria (binaria):</B> no admite grados intermedios; la negación de uno implica necesariamente la afirmación del otro. Ejemplo: VIVO : MUERTO (no existe un estado intermedio real entre ambos).</LI>
+<LI><B>Antonimia recíproca (relacional):</B> los dos términos se implican mutuamente y describen una misma relación desde perspectivas opuestas. Ejemplo: COMPRAR : VENDER (toda compra implica una venta correspondiente, y viceversa).</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo de antonimia</TH><TH>Ejemplo</TH><TH>Característica clave</TH></TR>
+<TR><TD>Gradual</TD><TD>GRANDE : PEQUEÑO</TD><TD>Admite grados intermedios (mediano, regular)</TD></TR>
+<TR><TD>Complementaria</TD><TD>PRESENTE : AUSENTE</TD><TD>No admite término medio; uno excluye al otro</TD></TR>
+<TR><TD>Recíproca</TD><TD>PREGUNTAR : RESPONDER</TD><TD>Cada término implica al otro desde un rol opuesto</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> antes de buscar el antónimo de una palabra, identifica primero a qué <B>tipo</B> de antonimia pertenece (gradual, complementaria o recíproca), porque eso determina si existen "casi antónimos" intermedios que pueden funcionar como distractores.</DIV>
+
+<H3>2. Sentido contextual de los antónimos</H3>
+Muchas palabras del español son <B>polisémicas</B>, y su antónimo exacto cambia según el sentido que adopten en un contexto específico. No existe un único antónimo fijo y universal para una palabra: el antónimo correcto depende del significado que esa palabra esté cumpliendo en el enunciado dado.
+
+<H4>a) Una misma palabra, antónimos distintos según el sentido activado</H4>
+<DIV CLASS="ej"><B>Ejemplo:</B> La palabra "claro" tiene antónimos distintos según su sentido: en "un día claro" (sentido de luminosidad), su antónimo es "nublado" u "oscuro"; en "una explicación clara" (sentido de comprensibilidad), su antónimo es "confusa" o "ambigua"; en "un café claro" (sentido de concentración), su antónimo es "cargado" o "fuerte".</DIV>
+
+<DIV CLASS="ej"><B>Ejemplo:</B> La palabra "ligero" tiene antónimos distintos según el contexto: en "una maleta ligera" (sentido de peso), su antónimo es "pesada"; en "un sueño ligero" (sentido de profundidad), su antónimo es "profundo"; en "una comida ligera" (sentido de cantidad o densidad), su antónimo es "abundante" o "pesada" (en sentido digestivo).</DIV>
+
+<H4>b) El contexto activa el eje semántico correcto</H4>
+Para determinar el antónimo contextual exacto, primero se debe identificar el <B>eje semántico</B> que el contexto activa en la palabra polisémica, y solo después buscar el término opuesto dentro de ese eje específico, no dentro de otro eje posible de la misma palabra.
+<DIV CLASS="ej"><B>Ejemplo:</B> "El profesor fue muy duro al calificar los exámenes." Aquí "duro" se usa en sentido de severidad o exigencia (no de dureza física), por lo que su antónimo contextual correcto es "indulgente" o "benevolente", no "blando" en sentido físico.</DIV>
+
+<H3>3. Distinción entre antónimos y antónimos en contexto</H3>
+Esta es la distinción central del tema: un <B>antónimo "de diccionario"</B> es la palabra opuesta más general o más frecuente que un hablante asocia de inmediato a un término, mientras que un <B>antónimo en contexto</B> es la palabra que resulta exactamente opuesta dentro de la oración específica, considerando el sentido preciso, el registro y la función que la palabra cumple en ese enunciado, aunque no sea el antónimo "típico" que aparecería aislado en un diccionario.
+
+<H4>a) El antónimo de diccionario no siempre es el antónimo contextual correcto</H4>
+<DIV CLASS="ej"><B>Ejemplo:</B> El antónimo de diccionario más inmediato de "rico" es "pobre" (en sentido económico). Pero en la oración "Este postre es muy rico", el sentido activado es el de sabor agradable, por lo que el antónimo contextual correcto es "desabrido" o "insípido", no "pobre", que rompería por completo el sentido de la oración.</DIV>
+
+<H4>b) Antónimos contextuales que no son antónimos "absolutos"</H4>
+En ciertos contextos, dos palabras que no son antónimos universales se comportan como opuestas dentro de esa oración particular, porque el contexto las coloca en polos opuestos de una misma idea.
+<DIV CLASS="ej"><B>Ejemplo:</B> "No fue una decisión impulsiva, sino profundamente meditada." Aquí "impulsiva" y "meditada" no son antónimos de diccionario en una lista general de antónimos, pero en este contexto específico funcionan como opuestos exactos dentro del eje "forma de tomar una decisión" (irreflexiva frente a reflexiva).</DIV>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> cuando una pregunta presenta una palabra subrayada dentro de una oración, el primer paso NO es pensar en el antónimo más común de esa palabra de forma aislada, sino determinar primero <B>qué sentido exacto</B> cumple esa palabra en esa oración, y solo entonces buscar su opuesto dentro de ese sentido específico.</DIV>
+
+<DIV CLASS="cultura-titulo">LA TRAMPA DEL "ANTÓNIMO AUTOMÁTICO"<SPAN>Por qué responder con el primer antónimo que viene a la mente suele llevar al error</SPAN></DIV>
+El error más frecuente en preguntas de antonimia contextual es responder con el antónimo "automático" o más memorizado de una palabra, sin verificar si ese es el sentido que la palabra tiene en el enunciado concreto. Por ejemplo, ante la palabra "ligero" aislada, muchos estudiantes piensan de inmediato en "pesado" (su antónimo más frecuente, asociado al peso físico). Pero si el enunciado dice "Tuvo un sueño ligero toda la noche por el ruido de la calle", el antónimo correcto no es "pesado" sino "profundo", porque el sentido activado es la calidad del sueño, no el peso de un objeto. El examen de alto rendimiento premia precisamente la capacidad de frenar esa respuesta automática y razonar primero el sentido contextual exacto.
+
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">3</DIV><DIV CLASS="dk-label">Tipos de antonimia: gradual, complementaria y recíproca</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1</DIV><DIV CLASS="dk-label">Eje semántico que debe identificarse antes de buscar el antónimo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">5</DIV><DIV CLASS="dk-label">Pasos de la estrategia de resolución recomendada</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">2</DIV><DIV CLASS="dk-label">Niveles de antónimo a distinguir: "de diccionario" y "en contexto"</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> El antónimo de ALTO es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Elevado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Bajo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Ancho</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Largo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Alto" y "bajo" comparten el eje semántico de la <B>estatura o altura</B> y representan sus dos polos opuestos: es un caso claro de antonimia gradual, pues admite grados intermedios (mediano, regular). "Elevado" (a) es prácticamente sinónimo de "alto"; "ancho" (c) y "largo" (d) pertenecen a otros ejes de medición (anchura, longitud), no al de altura.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> El antónimo de VIVO (en el sentido de "con vida") es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Cansado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Apagado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Muerto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Dormido</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>"Vivo" y "muerto" son un ejemplo clásico de <B>antonimia complementaria</B>: no existe un estado intermedio real entre ambos (no se puede estar "medio vivo" en sentido biológico estricto); negar uno implica afirmar el otro. "Cansado" y "dormido" describen estados compatibles con estar vivo, no su negación; "apagado" no pertenece al eje biológico de la vida.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> El antónimo recíproco de COMPRAR es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Pagar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Vender</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Adquirir</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Gastar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Comprar" y "vender" son <B>antónimos recíprocos</B>: describen una misma transacción desde dos perspectivas opuestas, y cada acción implica necesariamente a la otra (toda compra supone una venta correspondiente). "Pagar" (a) y "gastar" (d) son acciones asociadas a comprar, no su opuesto; "adquirir" (c) es prácticamente sinónimo de "comprar".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> "Un día claro" — en este contexto, el antónimo de CLARO es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Confuso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Nublado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Cargado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Ambiguo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Claro" es una palabra polisémica cuyo antónimo cambia según el sentido. En "un día claro", el sentido activado es el de <B>luminosidad atmosférica</B>, por lo que su antónimo contextual correcto es "nublado". "Confuso" (a) y "ambiguo" (d) corresponden al sentido de comprensibilidad ("una explicación clara"); "cargado" (c) corresponde al sentido de concentración ("un café claro").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> El antónimo de PRESENTE (en el sentido de asistencia) es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Lejano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Ausente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Pasado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Olvidado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Presente" y "ausente" son un ejemplo de <B>antonimia complementaria</B> en el eje de la asistencia a un lugar: no existe término medio (alguien está o no está). "Lejano" (a) pertenece al eje espacial de distancia, no al de asistencia; "pasado" (c) corresponde al sentido temporal de "presente" (como tiempo verbal), no al de asistencia; "olvidado" (d) no pertenece a este eje semántico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> "Este postre es muy rico." En este contexto, el antónimo de RICO es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Pobre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Desabrido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Humilde</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Escaso</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El antónimo "de diccionario" más inmediato de "rico" es "pobre" (sentido económico), pero en este enunciado el sentido activado es el de <B>sabor agradable</B>, por lo que el antónimo contextual correcto es "desabrido" (sin sabor, insípido). Elegir "pobre" (a), "humilde" (c) o "escaso" (d) sería caer en la trampa del antónimo automático, aplicando el sentido económico a un contexto gastronómico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> "Tuvo un sueño ligero toda la noche por el ruido de la calle." El antónimo contextual de LIGERO aquí es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Pesado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Profundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Lento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Largo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Ligero" es polisémico: en el sentido de peso físico, su antónimo sería "pesado"; pero aplicado a la calidad de un sueño, el eje activado es la <B>profundidad del descanso</B>, por lo que el antónimo correcto es "profundo". "Pesado" (a) sería el antónimo correcto solo si el contexto hablara de un objeto físico; "lento" (c) y "largo" (d) no pertenecen al eje de profundidad del sueño.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> "El profesor fue muy duro al calificar los exámenes." El antónimo contextual de DURO en esta oración es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Blando</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Suave</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Indulgente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Flexible</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>"Duro" se usa aquí en el sentido de <B>severidad o exigencia</B>, no de dureza física. El antónimo contextual correcto en ese eje es "indulgente" (que perdona o exige poco). "Blando" (a) y "suave" (b) serían los antónimos correctos en el sentido físico de "duro" (una superficie dura); "flexible" (d), aunque cercano, describe capacidad de adaptación más que benevolencia al calificar, por lo que es menos preciso que "indulgente".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> "No fue una decisión impulsiva, sino profundamente meditada." En este contexto, IMPULSIVA y MEDITADA funcionan como:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Sinónimos exactos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Antónimos contextuales dentro del eje "forma de tomar una decisión"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Palabras sin ninguna relación semántica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Cohipónimos de un mismo género</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aunque "impulsiva" y "meditada" no figuran como un par de antónimos fijo en una lista general de diccionario, en este enunciado específico el contexto las coloca como polos opuestos dentro del eje "forma de tomar una decisión" (irreflexiva frente a reflexiva). Esto ejemplifica que un <B>antónimo contextual</B> no siempre coincide con un antónimo "absoluto" o universal, sino que puede surgir de la oposición que el propio texto construye.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> "Una comida ligera" — el antónimo contextual de LIGERA aquí es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Profunda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Abundante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Rápida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Costosa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aplicada a una comida, "ligera" activa el sentido de <B>poca cantidad o baja densidad</B>, por lo que su antónimo contextual correcto es "abundante" (o "pesada" en sentido digestivo). "Profunda" (a) correspondería al sentido del sueño; "rápida" (c) y "costosa" (d) no pertenecen al eje de cantidad o densidad alimenticia que activa este contexto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · RAZONAMIENTO CRÍTICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> "El testigo dio una versión muy fría de los hechos, sin mostrar ninguna emoción." El antónimo contextual de FRÍA en esta oración es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Caliente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Cálida o emotiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Templada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Helada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Fría" se emplea aquí en sentido figurado, referido a la <B>ausencia de emoción</B> en el relato del testigo, no a una temperatura física. El antónimo contextual correcto es "cálida" o "emotiva" (que transmite o muestra sentimiento). "Caliente" (a), "templada" (c) y "helada" (d) pertenecen al eje físico de temperatura, sentido que el contexto descarta explícitamente ("sin mostrar ninguna emoción").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> "El nuevo gerente tiene una visión muy estrecha del negocio." El antónimo contextual de ESTRECHA en esta oración es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Ancha</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Amplia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Larga</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Espaciosa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aplicada a una "visión" del negocio, "estrecha" se usa en sentido figurado para indicar <B>limitación de perspectiva o de criterio</B>, no anchura física. El antónimo contextual correcto es "amplia" (que abarca muchos aspectos o perspectivas). "Ancha" (a), "espaciosa" (d) y "larga" (c) son antónimos válidos de "estrecho" solo en su sentido físico-espacial (un pasillo estrecho), no en el sentido figurado-intelectual que exige este enunciado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Analiza el siguiente caso: en "Juan es alto" el antónimo de ALTO es "bajo"; en "El volumen está muy alto" el antónimo de ALTO no es "bajo" en el mismo sentido de estatura, sino en el de intensidad sonora. ¿Qué principio del tema ilustra mejor este caso?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Que "alto" y "bajo" nunca pueden ser antónimos entre sí en ningún contexto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Que una misma pareja de antónimos "de diccionario" puede aplicarse a distintos ejes semánticos de una palabra polisémica, y que el antónimo sigue siendo válido en cada eje, pero el contraste exacto que se está evaluando (estatura física frente a intensidad sonora) cambia según el sentido contextual activado por el resto del enunciado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Que el volumen de un aparato no tiene relación alguna con la palabra "alto"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Que solo existe un eje semántico posible para la palabra "alto" en español</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Este caso ilustra que la pareja "alto/bajo" puede mantenerse como antónimos válidos en ejes semánticos distintos de una misma palabra polisémica (estatura física e intensidad sonora), pero lo que cambia es el <B>tipo de contraste</B> que se evalúa en cada contexto: en "Juan es alto" el eje es la estatura corporal; en "El volumen está alto" el eje es la intensidad sonora. Reconocer esto exige identificar primero el eje semántico exacto antes de aplicar el antónimo. La opción a) niega la antonimia válida en ambos contextos; c) es falsa, pues "alto" sí se aplica naturalmente al volumen; d) contradice directamente la premisa polisémica que el propio ejemplo demuestra.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Un estudiante afirma que, frente a la palabra "ligero", siempre se debe responder "pesado" como antónimo, sin importar el enunciado. Evalúa esta afirmación.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La afirmación es correcta: "pesado" es el único antónimo válido de "ligero" en cualquier contexto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La afirmación es incorrecta: "pesado" es el antónimo adecuado únicamente cuando "ligero" se refiere al peso físico de un objeto; en otros contextos polisémicos, como la profundidad de un sueño ("profundo") o la densidad de una comida ("abundante"), "pesado" puede no ser el término más preciso o puede incluso ser ambiguo, por lo que responder de forma automática sin atender al sentido contextual es precisamente el error que el tema busca prevenir</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La afirmación es incorrecta porque "ligero" no tiene ningún antónimo posible en español</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La afirmación es correcta solo si la palabra "ligero" aparece subrayada en el examen</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta evalúa directamente la "trampa del antónimo automático": responder siempre con el antónimo más memorizado de una palabra, sin verificar el sentido que tiene en el contexto específico, conduce al error en preguntas que evalúan precisamente la antonimia contextual. "Pesado" es un antónimo válido de "ligero" en el sentido de peso físico, pero no necesariamente el más preciso en otros sentidos polisémicos de la misma palabra (profundidad de un sueño, densidad de una comida). Las opciones a) y d) sostienen una respuesta mecánica sin atención al contexto, exactamente el error señalado en el tema; c) es falsa, pues "ligero" sí admite antónimos claros según cada sentido.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Compara los pares CALIENTE:FRÍO y VIVO:MUERTO en relación con el tipo de antonimia que representan. ¿Cuál es la diferencia estructural entre ambos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) No existe ninguna diferencia: ambos pares son ejemplos idénticos de antonimia gradual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) CALIENTE:FRÍO es un caso de antonimia gradual, pues existen estados intermedios reales en la escala de temperatura (tibio, templado); VIVO:MUERTO es un caso de antonimia complementaria, pues no existe en sentido biológico estricto un estado intermedio real entre estar vivo y estar muerto: la negación de uno implica necesariamente la afirmación del otro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Ambos pares son ejemplos de antonimia recíproca, pues cada término implica necesariamente al otro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) CALIENTE:FRÍO es complementario y VIVO:MUERTO es gradual, exactamente al revés de lo correcto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige distinguir con precisión los dos tipos de antonimia más comunes en el examen. CALIENTE:FRÍO es <B>gradual</B>: la temperatura es una magnitud continua que admite infinitos estados intermedios (tibio, templado, fresco). VIVO:MUERTO es <B>complementaria</B>: en sentido biológico estricto, un organismo está vivo o está muerto, sin un tercer estado real intermedio; afirmar la ausencia de uno implica necesariamente la presencia del otro. La opción a) ignora esta diferencia estructural fundamental; c) confunde ambos tipos con la antonimia recíproca, que corresponde a relaciones como COMPRAR:VENDER, no a estos pares; d) invierte exactamente la clasificación correcta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> "La crítica calificó la actuación del actor de plana, sin ningún matiz emocional perceptible." Determina el antónimo contextual más preciso de PLANA en este enunciado, descartando los que solo comparten el campo temático de la superficie física.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Inclinada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Curva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Expresiva o matizada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Rugosa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>"Plana" se usa aquí en sentido figurado, aplicada a una actuación, para indicar <B>ausencia de variación emocional o de matices interpretativos</B>, no una característica de superficie física. El antónimo contextual preciso es "expresiva" o "matizada" (rica en variaciones emocionales). "Inclinada" (a), "curva" (b) y "rugosa" (d) son antónimos válidos de "plana" únicamente en su sentido literal-geométrico (una superficie plana frente a una curva o rugosa), un eje semántico distinto al activado por este contexto crítico-artístico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Si tuvieras que definir el concepto de "antónimo en contexto" aplicando rigurosamente lo estudiado en el tema, ¿cuál de las siguientes opciones lo expresa con mayor exactitud?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) "Es cualquier palabra que un hablante asocia de inmediato como opuesta a otra, sin importar el enunciado en que aparezca"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "Es la palabra que resulta exactamente opuesta a otra dentro de una oración específica, considerando el sentido preciso, el registro y la función que la palabra original cumple en ese enunciado, aunque no coincida necesariamente con el antónimo más general o más frecuente que aparecería listado en un diccionario"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "Es cualquier palabra de significado distinto a otra, sin necesidad de compartir un eje semántico común"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) "Es la palabra más larga entre varias opciones de significado opuesto"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de síntesis exige reconocer los elementos clave del concepto: (1) el antónimo en contexto se define respecto a una <B>oración específica</B>, no de forma abstracta; (2) depende del <B>sentido exacto</B> que la palabra original cumple en ese enunciado, no de su sentido más general; (3) puede diferir del antónimo "de diccionario" sin dejar de ser correcto en ese contexto particular. La opción a) describe el antónimo "automático", precisamente el error que el tema busca corregir; c) es errónea, pues la antonimia exige un eje semántico común, como se estableció en la definición inicial del tema; d) propone un criterio arbitrario sin relación con el concepto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Evalúa la siguiente afirmación de un estudiante: "Si dos palabras son antónimos en una oración, automáticamente deben ser antónimos en cualquier otra oración donde aparezcan." Determina si esta afirmación es válida.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La afirmación es correcta, ya que la antonimia es siempre una propiedad fija e independiente del contexto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La afirmación es incorrecta: como se vio en el caso de IMPULSIVA:MEDITADA o ALTO:BAJO aplicado al volumen frente a la estatura, dos palabras pueden funcionar como antónimos exactos dentro de una oración específica gracias al contraste que el propio contexto construye, sin que eso garantice que mantengan esa misma relación opuesta, o incluso que sean relevantes entre sí, en otro enunciado con un sentido distinto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La afirmación es incorrecta porque ningún par de palabras puede ser antónimo en más de un contexto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La afirmación es correcta únicamente para los antónimos de tipo recíproco</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige el nivel más alto de comprensión del tema: la antonimia contextual no es una propiedad fija y trasladable mecánicamente entre oraciones distintas. Un par de palabras puede oponerse exactamente dentro de un enunciado específico (por el contraste que ese texto construye, como en IMPULSIVA:MEDITADA) sin que esa oposición sea universal o se mantenga igual en otro contexto con un sentido distinto de las mismas palabras. La opción a) contradice la premisa central del tema, que distingue precisamente entre antónimos "de diccionario" (más estables) y antónimos "en contexto" (dependientes del enunciado); c) es una generalización excesiva en sentido contrario, pues sí existen antónimos estables en muchos contextos; d) restringe sin fundamento el fenómeno a un solo tipo de antonimia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> En una pregunta de antonimia contextual, dos opciones parecen ser antónimos válidos de la palabra subrayada al considerarla de forma aislada. ¿Qué criterio adicional debe aplicarse para decidir cuál es la respuesta correcta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Debe elegirse la opción que sea antónimo en el diccionario más reciente publicado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Debe identificarse primero el eje semántico exacto que el contexto activa en la palabra polisémica subrayada, y luego comprobar cuál de las opciones constituye su opuesto preciso dentro de ese eje específico, descartando la que sería antónimo válido solo en otro sentido distinto de la misma palabra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Debe elegirse siempre la opción gramaticalmente más simple</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Debe elegirse la opción que tenga el mismo número de sílabas que la palabra original</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es la estrategia decisiva para los casos más difíciles del examen, donde una palabra polisémica admite más de un antónimo según el sentido. El criterio correcto es identificar primero <B>qué eje semántico activa el contexto específico</B> (físico, emocional, intelectual, etc.) y luego verificar cuál opción es el opuesto exacto dentro de ese eje, descartando la que sería válida solo en otro sentido de la palabra (como ocurre con "duro" en sentido físico frente a "duro" en sentido de severidad). Las opciones a), c) y d) proponen criterios arbitrarios (fecha de publicación, simplicidad gramatical, número de sílabas) ajenos por completo a la lógica semántica que el examen evalúa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Si tuvieras que resumir en una sola afirmación la competencia central que evalúan las preguntas de "Antonimia contextual" en un examen de admisión de alto rendimiento, ¿cuál de las siguientes la expresa con mayor exactitud?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Evalúan la memorización de listas fijas de antónimos del idioma español</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Evalúan la capacidad de identificar el sentido exacto que una palabra polisémica cumple dentro de un enunciado específico y, a partir de ese sentido, reconocer su opuesto preciso en ese contexto, evitando responder con el "antónimo automático" más memorizado cuando este corresponde a un eje semántico distinto al que el texto realmente activa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Evalúan principalmente la cultura general del estudiante sobre el significado literal de las palabras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Evalúan la rapidez con la que el estudiante puede asociar dos palabras de sonido parecido</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de cierre integra los tres pilares trabajados en todo el tema: (1) reconocer que muchas palabras son <B>polisémicas</B> y que el antónimo correcto depende del sentido exacto activado en el enunciado; (2) la capacidad de identificar ese <B>eje semántico específico</B> antes de buscar el opuesto; (3) la prevención frente al error central del tema: la "trampa del antónimo automático", es decir, responder con el primer antónimo memorizado sin verificar si corresponde al sentido contextual exigido. La opción a) reduce el tema a memorización fija, ignorando la dimensión contextual; c) confunde la competencia evaluada con cultura general superficial; d) ignora por completo que la relación de antonimia depende del significado y no del sonido de las palabras.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE — Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

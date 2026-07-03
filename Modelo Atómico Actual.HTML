@@ -1,0 +1,494 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Modelo Atómico Actual - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:22px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.formula{background:#0D1B36;color:#D7B06D;border-radius:10px;padding:10px 20px;display:inline-block;font-size:17px;font-weight:bold;margin:8px 0;letter-spacing:1px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="QUIMICA.HTML">&larr; Volver a los temas de Química</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">QUÍMICA &middot; TEMA 02 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Modelo Atómico Actual</H1>
+<DIV CLASS="sub">Descripción básica del átomo &middot; Partículas subatómicas &middot; Núcleo atómico &middot; Número atómico y de masa &middot; Núclidos &middot; Isótopos &middot; Notación de isótopos</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1 -->
+<H3 ID="atomo">1. Descripción básica del átomo</H3>
+
+El <B>átomo</B> es la unidad estructural más pequeña de la materia que conserva las propiedades químicas de un elemento. Su nombre proviene del griego <I>atomos</I> ("indivisible"), aunque hoy sabemos que el átomo sí está formado por partículas más pequeñas (partículas subatómicas).
+
+<H4>Estructura general del átomo:</H4>
+El átomo está formado por dos regiones claramente diferenciadas:
+<UL>
+<LI><B>Núcleo atómico:</B> región central, extremadamente pequeña y densa, donde se concentra prácticamente toda la masa del átomo (>99,9%). Contiene los protones y neutrones.</LI>
+<LI><B>Nube electrónica (envoltura o corteza):</B> región externa, mucho más voluminosa que el núcleo, donde se mueven los electrones a gran velocidad. Determina el volumen del átomo y su comportamiento químico.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Dato dimensional impactante:</B> Si el núcleo de un átomo fuera del tamaño de una canica (1 cm) colocada en el centro de un estadio de fútbol, los electrones estarían girando en las gradas más altas. El átomo es <B>99,99% espacio vacío</B>. El diámetro del átomo es del orden de 10⁻¹⁰ m (1 Ångström), mientras que el núcleo mide apenas 10⁻¹⁵ m (1 femtómetro), unas 100 000 veces más pequeño.</DIV>
+
+<!-- 2 -->
+<H3 ID="particulas">2. Partículas subatómicas principales</H3>
+
+El átomo está formado por tres partículas subatómicas fundamentales: protones, neutrones y electrones.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Partícula</TH><TH>Símbolo</TH><TH>Carga eléctrica</TH><TH>Masa relativa (uma)</TH><TH>Masa real (kg)</TH><TH>Ubicación</TH><TH>Descubridor / Año</TH></TR>
+<TR><TD><B>Protón</B></TD><TD>p⁺</TD><TD>+1 (positiva)</TD><TD>≈ 1</TD><TD>1,673 × 10⁻²⁷ kg</TD><TD>Núcleo</TD><TD>Ernest Rutherford, 1919</TD></TR>
+<TR><TD><B>Neutrón</B></TD><TD>n⁰</TD><TD>0 (neutra)</TD><TD>≈ 1</TD><TD>1,675 × 10⁻²⁷ kg</TD><TD>Núcleo</TD><TD>James Chadwick, 1932</TD></TR>
+<TR><TD><B>Electrón</B></TD><TD>e⁻</TD><TD>-1 (negativa)</TD><TD>≈ 1/1836</TD><TD>9,109 × 10⁻³¹ kg</TD><TD>Nube electrónica (orbitales)</TD><TD>J.J. Thomson, 1897</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Características clave de las partículas subatómicas:</H4>
+<UL>
+<LI>El <B>protón</B> y el <B>neutrón</B> tienen masas prácticamente iguales (≈ 1 unidad de masa atómica, uma) y se les llama colectivamente <B>nucleones</B>, porque ambos se encuentran en el núcleo.</LI>
+<LI>El <B>electrón</B> es <B>~1836 veces más liviano</B> que el protón. Por esta razón, la masa del átomo se concentra casi totalmente en el núcleo (protones + neutrones), y la masa de los electrones es prácticamente despreciable en los cálculos de masa atómica.</LI>
+<LI>Un átomo <B>neutro</B> (sin carga eléctrica) tiene el mismo número de protones que de electrones, ya que sus cargas (+1 y -1) se cancelan.</LI>
+<LI>El <B>protón</B> determina la identidad química del elemento: todos los átomos con el mismo número de protones pertenecen al mismo elemento.</LI>
+</UL>
+
+<DIV CLASS="ej">⚛️ <B>Línea de tiempo de los descubrimientos:</B> 1897: J.J. Thomson descubre el <B>electrón</B> mediante experimentos con tubos de rayos catódicos, proponiendo el modelo del "pudín de pasas". 1911: Ernest Rutherford, mediante el experimento de la lámina de oro, descubre que el átomo tiene un <B>núcleo</B> denso y positivo, proponiendo el modelo planetario. 1919: Rutherford identifica formalmente al <B>protón</B>. 1932: James Chadwick descubre el <B>neutrón</B>, completando el modelo de partículas subatómicas que usamos hoy.</DIV>
+
+<!-- 3 -->
+<H3 ID="nucleo">3. El núcleo atómico</H3>
+
+El <B>núcleo atómico</B> es la región central del átomo donde se ubican los protones y neutrones, unidos por la <B>fuerza nuclear fuerte</B> (una de las cuatro fuerzas fundamentales del universo), que es capaz de vencer la repulsión electrostática entre los protones (todos con carga positiva) a distancias extremadamente cortas.
+
+<H4>Características del núcleo:</H4>
+<UL>
+<LI>Contiene prácticamente toda la masa del átomo (>99,9%), pero ocupa solo una fracción ínfima de su volumen total.</LI>
+<LI>Tiene carga eléctrica <B>positiva</B>, debido a la presencia de los protones.</LI>
+<LI>Es extremadamente denso: si pudiéramos concentrar toda la materia de la Tierra a la densidad del núcleo atómico, cabría en una esfera de apenas unos cientos de metros de diámetro.</LI>
+<LI>Los neutrones contribuyen a la <B>estabilidad nuclear</B>, "diluyendo" la repulsión electrostática entre los protones sin añadir carga positiva adicional.</LI>
+</UL>
+
+<!-- 4 -->
+<H3 ID="numeros">4. Número atómico (Z) y Número de masa (A)</H3>
+
+<H4>A) Número atómico (Z):</H4>
+El <B>número atómico</B> es la cantidad de <B>protones</B> que tiene el núcleo de un átomo. Es la "huella digital" que identifica de manera única a cada elemento químico.
+
+<DIV CLASS="formula">Z = N° de protones</DIV>
+
+<UL>
+<LI>Todos los átomos de un mismo elemento tienen el <B>mismo número atómico</B>. Por ejemplo, todo átomo con Z = 6 es carbono; todo átomo con Z = 8 es oxígeno; todo átomo con Z = 1 es hidrógeno.</LI>
+<LI>El número atómico define el <B>orden de los elementos en la Tabla Periódica</B> (el hidrógeno es el elemento 1, el helio el 2, el litio el 3, y así sucesivamente).</LI>
+<LI>En un átomo <B>neutro</B>, el número atómico también es igual al número de electrones (Z = p⁺ = e⁻).</LI>
+</UL>
+
+<H4>B) Número de masa (A):</H4>
+El <B>número de masa</B> es la suma del número de protones y neutrones presentes en el núcleo de un átomo. Representa (de forma aproximada) la masa del átomo expresada en unidades de masa atómica (uma), ya que la masa de los electrones es despreciable.
+
+<DIV CLASS="formula">A = N° de protones + N° de neutrones = Z + n</DIV>
+
+<UL>
+<LI>El número de masa siempre es un <B>número entero</B> (a diferencia de la masa atómica promedio que aparece en la tabla periódica, que sí puede tener decimales debido a la mezcla de isótopos).</LI>
+<LI>Para calcular el <B>número de neutrones</B> de un átomo: <B>n = A − Z</B></LI>
+</UL>
+
+<H4>Notación convencional de un átomo:</H4>
+Un átomo se representa simbólicamente colocando el número de masa (A) como superíndice a la izquierda del símbolo del elemento, y el número atómico (Z) como subíndice a la izquierda:
+
+<DIV CLASS="formula">₂₆⁵⁶Fe &nbsp;&nbsp;(A=56, Z=26, símbolo Fe)</DIV>
+
+<DIV CLASS="ej">🧮 <B>Ejemplo resuelto:</B> Para el átomo <sup>23</sup><sub>11</sub>Na (sodio): Z = 11 (número atómico) → tiene 11 protones y 11 electrones (átomo neutro). A = 23 (número de masa) → n = A − Z = 23 − 11 = <B>12 neutrones</B>. Resumen: el sodio-23 tiene 11 protones, 12 neutrones y 11 electrones.</DIV>
+
+<!-- 5 -->
+<H3 ID="nuclidos">5. Núclidos e Isótopos</H3>
+
+<H4>Núclido:</H4>
+Un <B>núclido</B> es cada una de las especies o variedades nucleares de átomos, caracterizada por un número atómico (Z) y un número de masa (A) específicos. Cada núclido es, en esencia, un "tipo" particular de átomo definido por su composición nuclear exacta (protones y neutrones).
+
+<H4>Isótopos:</H4>
+Los <B>isótopos</B> son átomos de un <B>mismo elemento químico</B> (mismo número atómico Z, mismo número de protones) que tienen <B>diferente número de neutrones</B> y, por lo tanto, diferente número de masa (A).
+
+<DIV CLASS="alerta">⚠️ <B>Definición clave para el examen:</B> ISÓTOPOS = mismo Z (mismo elemento, mismos protones) + diferente A (diferente número de neutrones). El nombre "isótopo" proviene del griego <I>isos</I> (igual) y <I>topos</I> (lugar): ocupan el <B>mismo lugar</B> en la tabla periódica porque tienen las mismas propiedades químicas (determinadas por Z), aunque tengan distinta masa.</DIV>
+
+<H4>Ejemplos clásicos de isótopos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Elemento</TH><TH>Isótopo</TH><TH>Z (protones)</TH><TH>A (masa)</TH><TH>Neutrones</TH><TH>Abundancia / Uso</TH></TR>
+<TR><TD rowspan="3"><B>Hidrógeno</B></TD><TD>Protio (¹H)</TD><TD>1</TD><TD>1</TD><TD>0</TD><TD>99,985% — el más común</TD></TR>
+<TR><TD>Deuterio (²H o D)</TD><TD>1</TD><TD>2</TD><TD>1</TD><TD>0,015% — agua pesada (D₂O)</TD></TR>
+<TR><TD>Tritio (³H o T)</TD><TD>1</TD><TD>3</TD><TD>2</TD><TD>Radiactivo, trazas — armas nucleares, investigación</TD></TR>
+<TR><TD rowspan="3"><B>Carbono</B></TD><TD>Carbono-12 (¹²C)</TD><TD>6</TD><TD>12</TD><TD>6</TD><TD>98,9% — base de la masa atómica estándar</TD></TR>
+<TR><TD>Carbono-13 (¹³C)</TD><TD>6</TD><TD>13</TD><TD>7</TD><TD>1,1% — usado en resonancia magnética nuclear (RMN)</TD></TR>
+<TR><TD>Carbono-14 (¹⁴C)</TD><TD>6</TD><TD>14</TD><TD>8</TD><TD>Trazas, radiactivo — datación por carbono-14 (arqueología)</TD></TR>
+<TR><TD rowspan="2"><B>Uranio</B></TD><TD>Uranio-235 (²³⁵U)</TD><TD>92</TD><TD>235</TD><TD>143</TD><TD>0,72% — fisionable, usado en reactores y armas nucleares</TD></TR>
+<TR><TD>Uranio-238 (²³⁸U)</TD><TD>92</TD><TD>238</TD><TD>146</TD><TD>99,27% — el más abundante en la naturaleza</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Otros términos relacionados:</H4>
+<UL>
+<LI><B>Isóbaros:</B> átomos de elementos diferentes (distinto Z) que tienen el <B>mismo número de masa (A)</B>. Ejemplo: ¹⁴C (Z=6) y ¹⁴N (Z=7), ambos con A=14.</LI>
+<LI><B>Isótonos:</B> átomos de elementos diferentes que tienen el <B>mismo número de neutrones</B>. Ejemplo: ¹⁴C (6 protones, 8 neutrones) y ¹⁶O (8 protones, 8 neutrones).</LI>
+<LI><B>Isoelectrónicos:</B> átomos o iones que tienen el <B>mismo número de electrones</B>, aunque sean elementos diferentes. Ejemplo: Na⁺ y Ne tienen ambos 10 electrones.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Truco mnemotécnico:</B> ISÓ-<b>TOP</b>os = mismo número a<b>TOP</b> (arriba, el número atómico Z, que va abajo en la notación pero es la clave de identidad). ISÓ-<b>BAR</b>os = mismo número de m<b>BAR</b>... mejor recuerda: ISÓTOPOS (mismo Z) → topos = mismo "lugar" en la tabla. ISÓBAROS (mismo A) → "bar" se asocia a "A" de masa total igual. ISÓTONOS (mismo n) → "tono" suena como "neutrón".</DIV>
+
+<!-- 6 -->
+<H3 ID="notacion">6. Notación de isótopos y cálculo de masa atómica promedio</H3>
+
+<H4>Formas de nombrar y representar isótopos:</H4>
+Los isótopos se pueden representar de dos formas equivalentes:
+<UL>
+<LI><B>Notación nuclear:</B> colocando A como superíndice y Z como subíndice antes del símbolo. Ejemplo: <sup>14</sup><sub>6</sub>C</LI>
+<LI><B>Notación con guion (nombre-número de masa):</B> nombrando el elemento seguido del número de masa. Ejemplo: <B>Carbono-14</B>, <B>Uranio-235</B>, <B>Cobalto-60</B>.</LI>
+</UL>
+
+<H4>Masa atómica promedio (masa atómica relativa):</H4>
+La <B>masa atómica</B> que aparece en la Tabla Periódica para cada elemento NO es la masa de un solo átomo, sino el <B>promedio ponderado</B> de las masas de todos los isótopos naturales de ese elemento, considerando su <B>abundancia relativa</B> (porcentaje en que se encuentra cada isótopo en la naturaleza).
+
+<DIV CLASS="formula">Masa atómica promedio = Σ (masa del isótopo × % abundancia / 100)</DIV>
+
+<DIV CLASS="ej">🧮 <B>Ejemplo resuelto: masa atómica promedio del cloro.</B> El cloro natural tiene dos isótopos: <sup>35</sup>Cl (masa = 34,97 uma, abundancia = 75,77%) y <sup>37</sup>Cl (masa = 36,97 uma, abundancia = 24,23%).<BR><BR>
+Cálculo: Masa promedio = (34,97 × 0,7577) + (36,97 × 0,2423)<BR>
+Masa promedio = 26,50 + 8,96 = <B>35,46 uma</B><BR><BR>
+Este resultado (35,45 uma) es precisamente el valor que aparece en la Tabla Periódica para el cloro (Cl), y explica por qué la masa atómica de muchos elementos no es un número entero: es un promedio ponderado de sus isótopos naturales.</DIV>
+
+<H4>Aplicaciones de los isótopos:</H4>
+<UL>
+<LI><B>Datación radiométrica:</B> el carbono-14 se usa para datar restos orgánicos de hasta ~50 000 años de antigüedad (arqueología, paleontología). El uranio-238 y el potasio-40 se usan para datar rocas de millones a miles de millones de años (geología).</LI>
+<LI><B>Medicina nuclear:</B> el yodo-131 se usa para tratar problemas de tiroides; el cobalto-60 se usa en radioterapia contra el cáncer; el tecnecio-99m se usa en gammagrafías diagnósticas.</LI>
+<LI><B>Energía nuclear:</B> el uranio-235 es fisionable y se usa como combustible en reactores nucleares y en armas nucleares.</LI>
+<LI><B>Trazadores isotópicos:</B> en investigación biológica y médica, los isótopos permiten seguir el recorrido de moléculas en organismos vivos.</LI>
+</UL>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Las dos regiones principales en que se divide la estructura de un átomo son:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Protones y electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Núcleo atómico y nube electrónica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Orbitales y subniveles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Masa atómica y número atómico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El átomo se divide estructuralmente en dos regiones: el <B>núcleo atómico</B> (región central, densa, con carga positiva, donde están protones y neutrones) y la <B>nube electrónica</B> (región externa, voluminosa, donde se mueven los electrones). La opción a) menciona partículas, no regiones. Las opciones c) y d) corresponden a conceptos que se estudiarán en temas posteriores sobre la configuración electrónica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cuál de las siguientes partículas subatómicas tiene carga eléctrica negativa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Protón</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Neutrón</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Electrón</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Nucleón</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>electrón</B> (e⁻) tiene carga eléctrica <b>negativa</b> (-1). El <b>protón</b> (p⁺) tiene carga <b>positiva</b> (+1). El <b>neutrón</b> (n⁰) no tiene carga, es <b>neutro</b> (0). "Nucleón" no es una partícula con carga específica: es el nombre genérico que reciben tanto protones como neutrones por estar ubicados en el núcleo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> El número atómico (Z) de un elemento representa:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) La suma de protones y neutrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) El número de protones en el núcleo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El número de neutrones en el núcleo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El número total de partículas subatómicas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>número atómico (Z)</B> es el número de <b>protones</b> que tiene el núcleo de un átomo. Es la característica que identifica de forma única a cada elemento químico: todo átomo con Z=6 es carbono, sin importar cuántos neutrones tenga. La opción a) corresponde a la definición del <b>número de masa (A)</b>, no del número atómico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Para el átomo <sup>27</sup><sub>13</sub>Al (aluminio), ¿cuántos neutrones tiene?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) 13 neutrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 27 neutrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) 14 neutrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) 40 neutrones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El número de neutrones se calcula con la fórmula: <B>n = A − Z</B>. Para el aluminio: A = 27 (número de masa), Z = 13 (número atómico). n = 27 − 13 = <B>14 neutrones</B>. El aluminio-27 tiene entonces 13 protones, 14 neutrones y (si es neutro) 13 electrones.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Dos átomos son ISÓTOPOS cuando tienen:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) El mismo número de neutrones pero diferente número de protones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) El mismo número de protones (mismo elemento) pero diferente número de neutrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) El mismo número de masa pero diferente número atómico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) El mismo número de electrones pero diferente número de protones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>isótopos</B> son átomos del <b>mismo elemento</b> (mismo número de protones, mismo Z) pero con <b>diferente número de neutrones</b>, lo que resulta en diferente número de masa (A). Por ejemplo, el carbono-12 (6p, 6n) y el carbono-14 (6p, 8n) son isótopos: ambos son carbono (Z=6) pero tienen distinta cantidad de neutrones. La opción c) describe a los <b>isóbaros</b>, no a los isótopos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Un átomo neutro tiene 17 protones y 18 neutrones. ¿Cuántos electrones tiene y cuál es su número de masa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) 18 electrones, número de masa = 35</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) 17 electrones, número de masa = 35</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) 17 electrones, número de masa = 18</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) 35 electrones, número de masa = 17</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En un átomo <b>neutro</b>, el número de electrones es igual al número de protones (Z): por lo tanto tiene <B>17 electrones</B>. El número de masa se calcula: A = Z + n = 17 + 18 = <B>35</B>. Este átomo corresponde al cloro-35 (¹⁷Cl con A=35), el isótopo más abundante del cloro.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Por qué la masa atómica del cloro que aparece en la Tabla Periódica (35,45 uma) no es un número entero, a diferencia del número de masa de cada isótopo individual?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Porque los electrones del cloro tienen masa fraccionaria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Porque la masa atómica de la Tabla Periódica es el promedio ponderado de las masas de todos los isótopos naturales del cloro, según su abundancia relativa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Porque hay un error de medición histórico que nunca se ha corregido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Porque el cloro pierde masa constantemente por desintegración radiactiva</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La masa atómica de la Tabla Periódica es un <B>promedio ponderado</B> de las masas de todos los isótopos que existen naturalmente de ese elemento, tomando en cuenta su porcentaje de abundancia. El cloro natural es una mezcla de <sup>35</sup>Cl (75,77% de abundancia, masa ≈ 35) y <sup>37</sup>Cl (24,23% de abundancia, masa ≈ 37). El promedio ponderado de estas dos masas da 35,45 uma, un número con decimales, aunque cada isótopo individual tiene un número de masa entero (35 o 37). El cloro no es radiactivo en sus isótopos naturales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Los átomos ¹⁴C (carbono-14) y ¹⁴N (nitrógeno-14) se clasifican como:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Isótopos, porque tienen el mismo número de masa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Isóbaros, porque tienen el mismo número de masa (A=14) pero diferente número atómico (Z)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Isótonos, porque tienen el mismo número de neutrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Isoelectrónicos, porque tienen el mismo número de electrones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <sup>14</sup>C tiene Z=6 (6 protones, 8 neutrones) y el <sup>14</sup>N tiene Z=7 (7 protones, 7 neutrones). Ambos tienen el <b>mismo número de masa (A=14)</b> pero son <b>elementos diferentes</b> (distinto Z): por definición, son <B>isóbaros</B>. No son isótopos (eso requeriría mismo Z). No son isótonos (tienen 8 y 7 neutrones respectivamente, diferentes). No son isoelectrónicos como átomos neutros (6 vs. 7 electrones).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> El experimento de la lámina de oro de Rutherford (1911) llevó al descubrimiento de que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El átomo es indivisible y no tiene estructura interna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El átomo tiene un núcleo pequeño, denso y de carga positiva, rodeado de un gran espacio vacío donde se mueven los electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Los electrones se distribuyen uniformemente como pasas en un pudín</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Los neutrones son la partícula subatómica más abundante en el átomo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En el experimento de Rutherford, se bombardeó una delgada lámina de oro con partículas alfa (positivas). La mayoría atravesó la lámina sin desviarse, pero algunas se desviaron en ángulos grandes e incluso rebotaron. Rutherford concluyó que el átomo tiene un <B>núcleo pequeño, denso y positivo</B> (que repele las partículas alfa positivas que se acercan demasiado) rodeado de <b>mucho espacio vacío</b> donde están los electrones (por eso la mayoría de partículas pasaban sin desviarse). Este resultado refutó el modelo del "pudín de pasas" de Thomson (opción c).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Un ion Mg²⁺ se forma a partir de un átomo neutro de magnesio (Z=12) que pierde 2 electrones. ¿Cuántos electrones tiene el ion Mg²⁺?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) 12 electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) 14 electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) 10 electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) 2 electrones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El átomo neutro de magnesio (Z=12) tiene 12 protones y 12 electrones. Al formar el ion <B>Mg²⁺</B>, pierde <b>2 electrones</b> (la carga +2 indica que perdió 2 cargas negativas). Electrones del ion = 12 − 2 = <B>10 electrones</B>. Es importante notar que el número de protones <b>no cambia</b> al formar un ion (sigue siendo magnesio, Z=12); solo cambia el número de electrones. El Mg²⁺ resultante tiene 10 electrones, el mismo número que el neón (Ne), por lo que se dice que son <b>isoelectrónicos</b>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> El cobre natural está formado por dos isótopos: ⁶³Cu (masa = 62,93 uma, abundancia = 69,17%) y ⁶⁵Cu (masa = 64,93 uma, abundancia = 30,83%). Calcula la masa atómica promedio del cobre.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) 62,93 uma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) 63,55 uma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) 64,93 uma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) 63,93 uma</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aplicando la fórmula de masa atómica promedio: <BR>
+Masa promedio = (62,93 × 0,6917) + (64,93 × 0,3083)<BR>
+Masa promedio = 43,53 + 20,02<BR>
+Masa promedio = <B>63,55 uma</B><BR><BR>
+Este resultado coincide con el valor real del cobre en la Tabla Periódica (63,55 uma). Nota que el resultado está más cerca de la masa del isótopo <b>más abundante</b> (⁶³Cu, 69,17%), lo cual tiene sentido: el promedio ponderado siempre se "inclina" hacia el valor del componente con mayor peso relativo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Por qué los isótopos de un mismo elemento tienen prácticamente las MISMAS propiedades químicas, a pesar de tener diferente masa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Porque la masa atómica no influye en absoluto en ninguna propiedad de los átomos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Porque las propiedades químicas dependen principalmente del número y la distribución de los electrones (determinados por Z), y los isótopos de un mismo elemento tienen el mismo número de protones y, por tanto, el mismo número de electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Porque los neutrones adicionales se ubican fuera del núcleo, sin afectar la estructura química</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Porque los isótopos siempre tienen exactamente la misma masa, contrario a lo que se cree comúnmente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las <B>propiedades químicas</b> de un elemento (cómo reacciona, qué enlaces forma, su valencia, su reactividad) están determinadas principalmente por la <B>configuración electrónica</B>, especialmente por los electrones de la capa más externa (electrones de valencia). Como los isótopos de un mismo elemento tienen el mismo número atómico Z (mismo número de protones), también tienen el mismo número de electrones en estado neutro, y por lo tanto la misma configuración electrónica y las mismas propiedades químicas. La diferencia en el número de neutrones afecta principalmente la <b>masa</b> y propiedades <b>físicas y nucleares</b> (como la estabilidad radiactiva), pero tiene un efecto mínimo o nulo sobre el comportamiento químico (excepto en efectos isotópicos muy sutiles en cinética de reacciones, relevantes solo en casos especializados como el deuterio).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> El tritio (³H) es un isótopo radiactivo del hidrógeno con una vida media de ~12,3 años. ¿Cuál de las siguientes afirmaciones sobre el tritio es CORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) El tritio tiene 3 protones y 0 neutrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El tritio tiene 1 protón y 2 neutrones, lo que lo hace inestable porque el exceso de neutrones desestabiliza el núcleo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) El tritio no es un isótopo del hidrógeno, sino un elemento diferente con Z=3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El tritio tiene 3 electrones, lo que lo hace diferente químicamente del hidrógeno normal</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>tritio (³H)</B> es un isótopo del hidrógeno con Z=1 (1 protón, como todo hidrógeno) y A=3, por lo tanto: n = A − Z = 3 − 1 = <B>2 neutrones</B>. Esta proporción de 1 protón y 2 neutrones hace que el núcleo sea <b>inestable</b> (radiactivo), por eso el tritio se desintegra emitiendo radiación beta con una vida media de ~12,3 años, transformándose en helio-3. El tritio sigue siendo hidrógeno (Z=1 define el elemento) y, como átomo neutro, tiene <b>1 electrón</b>, igual que el hidrógeno-1 normal, por lo que sus propiedades químicas son casi idénticas (es el isótopo más pesado de los tres del hidrógeno, lo que genera pequeños "efectos isotópicos").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El boro natural tiene una masa atómica promedio de 10,81 uma, y está formado por dos isótopos: ¹⁰B (masa=10,01 uma) y ¹¹B (masa=11,01 uma). ¿Cuál de estos isótopos es más abundante en la naturaleza?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El ¹⁰B, porque es más liviano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El ¹¹B, porque la masa atómica promedio (10,81) está mucho más cerca de 11,01 que de 10,01, indicando que el isótopo más pesado domina la mezcla natural</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Ambos isótopos tienen exactamente la misma abundancia (50% cada uno)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) No se puede determinar la abundancia sin conocer el número de neutrones de cada isótopo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La masa atómica promedio (10,81 uma) es un promedio <B>ponderado</B>: se "acerca" más al valor del isótopo con <B>mayor abundancia</B>. Como 10,81 está mucho más próximo a 11,01 (¹¹B) que a 10,01 (¹⁰B), se concluye que el <B>¹¹B es el isótopo más abundante</B>. De hecho, los valores reales son: ¹⁰B ≈ 19,9% de abundancia y ¹¹B ≈ 80,1% de abundancia. Comprobación: (10,01 × 0,199) + (11,01 × 0,801) = 1,99 + 8,82 = 10,81 uma ✓. Esta lógica de "cercanía ponderada" es útil para estimar abundancias relativas sin necesidad de resolver la ecuación completa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Por qué casi toda la masa de un átomo se concentra en el núcleo, a pesar de que el núcleo ocupa una fracción ínfima del volumen total del átomo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Porque los protones y neutrones tienen una masa aproximadamente 1836 veces mayor que la del electrón, y son ellos los que están en el núcleo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Porque los electrones no tienen masa alguna, solo carga eléctrica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Porque el núcleo contiene partículas adicionales que no existen en la nube electrónica, como los fotones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Porque la fuerza de gravedad concentra toda la masa en el centro del átomo, igual que en los planetas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El núcleo concentra casi toda la masa del átomo porque está formado por <B>protones y neutrones</B>, cuya masa es aproximadamente <B>1836 veces mayor</B> que la masa de un electrón. Aunque el electrón sí tiene masa (no es cero, opción b incorrecta), esta es tan pequeña comparada con la de los nucleones que resulta prácticamente despreciable en los cálculos de masa atómica. Por ejemplo, en un átomo de hidrógeno (1 protón + 1 electrón), el protón aporta el 99,95% de la masa total y el electrón solo el 0,05%. La fuerza que mantiene unidos a los nucleones en el núcleo es la <b>fuerza nuclear fuerte</b>, no la gravedad (que es despreciable a escala atómica).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El método de datación por carbono-14 se basa en que los organismos vivos mantienen una proporción constante de ¹⁴C/¹²C mientras están vivos (por intercambio con la atmósfera), pero al morir, el ¹⁴C comienza a decaer radiactivamente con una vida media de 5 730 años, sin reponerse. ¿Por qué este método tiene un límite práctico de aproximadamente 50 000 años para datar restos orgánicos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Porque después de 50 000 años el carbono-14 se convierte espontáneamente en carbono-12, haciendo imposible la medición</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Después de aproximadamente 8-9 vidas medias (unos 50 000 años), la cantidad de ¹⁴C remanente es tan pequeña (menos del 0,2% del original) que se vuelve indistinguible del ruido de fondo y los errores de medición instrumental, perdiendo precisión estadística</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Porque la atmósfera terrestre dejó de producir carbono-14 hace exactamente 50 000 años</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Porque el carbono-12 se vuelve radiactivo después de ese tiempo, contaminando la muestra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El decaimiento radiactivo sigue una ley exponencial: después de cada <B>vida media</B> (5 730 años para el ¹⁴C), la cantidad de isótopo radiactivo se reduce a la <b>mitad</b>. Después de 8-9 vidas medias (≈ 46 000-51 000 años), la cantidad remanente de ¹⁴C es del orden de (1/2)⁸ ≈ 0,4% o (1/2)⁹ ≈ 0,2% de la cantidad original. A esas concentraciones extremadamente bajas, la señal de radiación se vuelve estadísticamente indistinguible del <b>ruido de fondo</b> (radiación cósmica ambiental, contaminación de la muestra, limitaciones del detector), haciendo que el margen de error sea demasiado grande para una datación confiable. Para muestras más antiguas se usan otros métodos radiométricos con vidas medias más largas, como el potasio-argón o el uranio-plomo, que pueden datar millones a miles de millones de años.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Considerando la fuerza nuclear fuerte y la repulsión electrostática entre protones, ¿por qué los núcleos con MUCHOS protones (elementos pesados, Z alto) requieren proporcionalmente MÁS neutrones para ser estables, en comparación con elementos livianos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Porque los neutrones son atraídos magnéticamente por los protones en mayor proporción cuando hay más protones presentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La fuerza nuclear fuerte actúa solo a muy corta distancia (entre nucleones vecinos), mientras que la repulsión electrostática entre protones actúa a toda distancia dentro del núcleo; al aumentar el número de protones, la repulsión total crece más rápido que la atracción nuclear, por lo que se necesitan neutrones adicionales para "diluir" esa repulsión sin sumar más carga positiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Porque los elementos pesados tienen órbitas electrónicas más grandes que requieren neutrones adicionales para equilibrar su carga</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) No existe tal relación: todos los núcleos estables tienen igual número de protones y neutrones, sin importar el tamaño del átomo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una de las explicaciones más profundas de la física nuclear. La <B>fuerza nuclear fuerte</B> que mantiene unidos a los nucleones es de <b>corto alcance</b>: solo actúa significativamente entre nucleones inmediatamente vecinos (a distancias del orden de 10⁻¹⁵ m). En cambio, la <B>repulsión electrostática</B> entre protones (todos con carga +1) es de <b>largo alcance relativo</b> dentro del núcleo: cada protón repele a TODOS los demás protones del núcleo, no solo a sus vecinos. A medida que el núcleo crece (más protones), la repulsión electrostática total crece aproximadamente con el cuadrado del número de protones, mientras que la fuerza nuclear fuerte solo crece linealmente (cada nucleón nuevo solo se enlaza con sus vecinos cercanos). Para compensar este desequilibrio, los núcleos pesados necesitan <B>más neutrones</B> que protones: los neutrones aportan fuerza nuclear fuerte adicional (atracción) sin sumar repulsión electrostática (no tienen carga). Por eso elementos livianos como el helio tienen proporción 1:1 (2p:2n), mientras que elementos pesados como el uranio tienen proporciones cercanas a 1:1,6 (92p:146n en ²³⁸U).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> En reactores nucleares, el agua pesada (D₂O, donde D es deuterio, ²H) se usa como "moderador" de neutrones en lugar de agua común (H₂O). ¿Cuál es la ventaja física específica del deuterio sobre el hidrógeno normal para esta aplicación?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) El deuterio es radiactivo y emite partículas que aceleran la fisión nuclear, aumentando la eficiencia del reactor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) El núcleo de deuterio (1 protón + 1 neutrón) tiene una masa más cercana a la del neutrón que el protón solo del hidrógeno común, lo que hace que las colisiones neutrón-deuterio transfieran energía cinética más eficientemente, frenando los neutrones rápidos sin absorberlos tanto como lo haría el hidrógeno común</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El agua pesada hierve a una temperatura mucho más alta, permitiendo reactores más calientes y eficientes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El deuterio reacciona químicamente con el uranio, formando un compuesto más estable</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En un reactor nuclear, los neutrones liberados por la fisión del uranio son muy rápidos (alta energía cinética), pero para sostener la reacción en cadena de forma controlada se necesitan neutrones <b>lentos (térmicos)</b>, que son más eficientes para inducir nuevas fisiones. El <b>moderador</b> frena los neutrones mediante colisiones elásticas (como bolas de billar). La física de colisiones elásticas indica que la transferencia de energía es <B>máxima cuando las masas de las partículas que colisionan son similares</B> (similar al principio de "billar": una bola pesada que choca con una mucho más liviana apenas pierde velocidad, pero choca con una de masa similar transfiere mucha energía). El <B>deuterio</B> (masa ≈ 2 uma) tiene una masa más parecida a la del <b>neutrón</b> (masa ≈ 1 uma) que el <B>hidrógeno-1</B> (masa ≈ 1 uma, casi idéntica al neutrón, lo que en teoría sería ideal), PERO el hidrógeno-1 tiene mucha mayor <b>probabilidad de absorber</b> el neutrón (formando deuterio) en lugar de solo dispersarlo, lo que "desperdicia" neutrones necesarios para sostener la reacción. El deuterio, en cambio, tiene una <b>sección eficaz de absorción mucho menor</b>, por lo que modera (frena) los neutrones eficientemente sin absorberlos en exceso, permitiendo el uso de uranio natural (no enriquecido) como combustible — esta es la base de los reactores CANDU canadienses.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Considera el ion S²⁻ (sulfuro) formado a partir de un átomo de azufre neutro (Z=16, masa atómica ≈32). ¿Con qué átomo o ion neutro es ISOELECTRÓNICO el S²⁻, y cuál es el número de electrones compartido?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Es isoelectrónico con el cloro neutro (Cl), ambos con 17 electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Es isoelectrónico con el argón neutro (Ar, Z=18), ambos con 18 electrones, ya que el S²⁻ gana 2 electrones (16+2=18)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Es isoelectrónico con el azufre neutro, porque la carga del ion no afecta el número de electrones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Es isoelectrónico con el oxígeno (O), ambos con 8 electrones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El azufre neutro tiene Z=16 (16 protones, 16 electrones). El ion <B>S²⁻</B> indica que el átomo <b>ganó 2 electrones</b> (la carga -2 representa exceso de carga negativa): electrones del ion = 16 + 2 = <B>18 electrones</B>. El elemento neutro que tiene exactamente 18 electrones es el <B>argón (Ar, Z=18)</B>. Por lo tanto, S²⁻ y Ar son <b>isoelectrónicos</b>: tienen el mismo número de electrones (18) aunque tienen diferente número de protones (16 vs. 18) y son especies químicamente distintas. Este concepto es clave para entender por qué muchos iones de elementos cercanos a los gases nobles en la tabla periódica tienden a formarse precisamente con esas cargas: alcanzan la configuración electrónica estable de un gas noble (regla del octeto), tema que se profundiza en el estudio de la configuración electrónica y el enlace químico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Un elemento desconocido X tiene dos isótopos naturales: ⁶⁹X (abundancia 60,0%) y ⁷¹X (abundancia 40,0%). Calcula la masa atómica promedio de X e identifica aproximadamente de qué elemento podría tratarse, sabiendo que su masa atómica en la tabla periódica es cercana a 69,7 uma.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Masa promedio = 70,0 uma; no corresponde a ningún elemento real con esa masa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Masa promedio = 69,8 uma; corresponde aproximadamente al Galio (Ga, Z=31, masa real ≈69,72 uma)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Masa promedio = 69,0 uma; corresponde al Zinc (Zn, Z=30)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) No se puede calcular sin conocer el número atómico de X</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aplicando la fórmula de masa atómica promedio:<BR>
+Masa promedio = (69 × 0,60) + (71 × 0,40)<BR>
+Masa promedio = 41,4 + 28,4 = <B>69,8 uma</B><BR><BR>
+Este valor coincide muy aproximadamente con la masa atómica real del <B>Galio (Ga)</B>, elemento con Z=31, cuya masa atómica en la Tabla Periódica es <b>69,72 uma</b>. En efecto, el galio natural está formado principalmente por los isótopos ⁶⁹Ga (60,1% de abundancia) y ⁷¹Ga (39,9% de abundancia), valores muy cercanos a los del ejercicio. Este tipo de problema demuestra cómo, a partir de datos de masas isotópicas y abundancias relativas (obtenidas experimentalmente mediante espectrometría de masas), es posible calcular la masa atómica promedio e identificar el elemento correspondiente comparando con los valores tabulados.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

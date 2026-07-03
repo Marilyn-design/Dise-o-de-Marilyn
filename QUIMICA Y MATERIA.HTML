@@ -1,0 +1,586 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Química y Materia - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:22px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.formula{background:#0D1B36;color:#D7B06D;border-radius:10px;padding:10px 20px;display:inline-block;font-size:17px;font-weight:bold;margin:8px 0;letter-spacing:1px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="QUIMICA.HTML">&larr; Volver a los temas de Química</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">QUÍMICA &middot; TEMA 01 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Química y Materia</H1>
+<DIV CLASS="sub">Campo de la Química &middot; La materia &middot; Estados de agregación &middot; Sustancias y mezclas &middot; Fenómenos físicos y químicos &middot; Propiedades extensivas e intensivas</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1 -->
+<H3 ID="campo">1. Campo de la Química: definición y ramas</H3>
+
+La <B>Química</B> es la ciencia natural que estudia la <B>composición, estructura, propiedades y transformaciones de la materia</B>, así como la energía que acompaña a dichos cambios. Es una de las ciencias fundamentales, íntimamente relacionada con la Física, la Biología, la Geología y la Medicina.
+
+<H4>Etimología:</H4>
+El término "Química" proviene del árabe <I>al-kīmiyā'</I>, que a su vez deriva del griego <I>khymeia</I> (fusión de metales). Sus raíces históricas se remontan a la <B>alquimia</B> medieval, la práctica proto-científica que buscaba transmutar metales en oro y hallar la piedra filosofal. La Química moderna como ciencia rigurosa se consolida en el siglo XVII-XVIII con <B>Antoine Lavoisier</B>, considerado el "padre de la Química moderna".
+
+<H4>Principales ramas de la Química:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Rama</TH><TH>¿Qué estudia?</TH><TH>Ejemplos de aplicación</TH></TR>
+<TR><TD><B>Química Inorgánica</B></TD><TD>Compuestos que NO están basados en cadenas de carbono-hidrógeno (sales, óxidos, ácidos, bases, metales).</TD><TD>Fabricación de acero, cemento, fertilizantes, sal de mesa.</TD></TR>
+<TR><TD><B>Química Orgánica</B></TD><TD>Compuestos basados en carbono unido al hidrógeno (y otros elementos como O, N, S, halogens).</TD><TD>Plásticos, medicamentos, combustibles, colorantes, proteínas.</TD></TR>
+<TR><TD><B>Química Física</B></TD><TD>Las bases físicas de los fenómenos químicos: termodinámica, cinética, equilibrio, espectroscopía.</TD><TD>Diseño de pilas de combustible, catalizadores industriales.</TD></TR>
+<TR><TD><B>Química Analítica</B></TD><TD>Métodos para identificar y cuantificar la composición de sustancias (análisis cualitativo y cuantitativo).</TD><TD>Análisis de agua potable, detección de contaminantes, doping.</TD></TR>
+<TR><TD><B>Bioquímica</B></TD><TD>Reacciones químicas en los seres vivos: metabolismo, ADN, proteínas, enzimas.</TD><TD>Desarrollo de vacunas, terapias génicas, nutrición.</TD></TR>
+<TR><TD><B>Química Industrial</B></TD><TD>Aplicación de procesos químicos a escala industrial.</TD><TD>Refinación de petróleo, producción de plásticos, síntesis de amoníaco (Proceso Haber-Bosch).</TD></TR>
+<TR><TD><B>Petroquímica</B></TD><TD>Derivados químicos del petróleo y gas natural.</TD><TD>Gasolina, plásticos, asfalto, solventes, fertilizantes nitrogenados.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Antoine Lavoisier (1743–1794):</B> Considerado el padre de la Química moderna. Estableció la <b>Ley de Conservación de la Masa</b> ("en una reacción química, la masa total de los reactivos es igual a la masa total de los productos"). Demostró que la combustión implica oxígeno, no flogisto. Fue guillotinado durante la Revolución Francesa. Su esposa María-Ana Paulze fue fundamental en la traducción y difusión de su trabajo.</DIV>
+
+<!-- 2 -->
+<H3 ID="materia">2. La Materia: definición y naturaleza corpuscular</H3>
+
+La <B>materia</B> es todo aquello que tiene <B>masa y ocupa un lugar en el espacio (volumen)</B>. Es la sustancia de la que está hecho el universo físico. Todo lo que podemos tocar, ver, oler o pesar es materia.
+
+<H4>¿Qué NO es materia?</H4>
+<UL>
+<LI>La <B>energía</B> (luz, calor, sonido, electricidad): no tiene masa ni ocupa volumen por sí misma.</LI>
+<LI>El <B>campo gravitacional</B>, el campo eléctrico, el campo magnético: son formas de energía o interacción, no materia.</LI>
+<LI>El <B>vacío</B>: espacio sin partículas ni energía.</LI>
+</UL>
+
+<H4>Naturaleza corpuscular de la materia:</H4>
+Toda la materia está compuesta por partículas extremadamente pequeñas llamadas <B>átomos</B> (del griego <I>atomos</I>: indivisible), que se combinan para formar <B>moléculas</B> e <B>iones</B>. Esta idea fue propuesta por los filósofos griegos Leucipo y <B>Demócrito</B> (~400 a.C.) y confirmada científicamente en el siglo XIX por <B>John Dalton</B> con su teoría atómica (1808).
+
+La naturaleza corpuscular de la materia explica:
+<UL>
+<LI>Por qué la materia puede comprimirse: las partículas se acercan más entre sí.</LI>
+<LI>Por qué la materia se difunde (mezcla de gases): las partículas se mueven libremente.</LI>
+<LI>Por qué la materia tiene masa: las partículas tienen masa propia.</LI>
+<LI>Por qué existen diferentes estados: depende de la separación y movimiento de las partículas.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La definición de materia más aceptada científicamente es: <b>"Todo lo que tiene masa y ocupa un volumen en el espacio"</b>. Aprende a distinguir materia de energía. La luz, el sonido y el calor son <b>energía</b>, no materia.</DIV>
+
+<!-- 3 -->
+<H3 ID="estados">3. Estados de agregación de la materia</H3>
+
+Los <B>estados de agregación</B> describen las diferentes formas en que la materia puede existir, dependiendo de la separación, disposición y movimiento de sus partículas. Los <B>tres estados clásicos</B> son sólido, líquido y gaseoso. Existe además un cuarto estado, el <B>plasma</B>, muy frecuente en el universo pero raro en condiciones cotidianas.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Propiedad</TH><TH>SÓLIDO</TH><TH>LÍQUIDO</TH><TH>GASEOSO</TH></TR>
+<TR><TD><B>Forma</B></TD><TD>Definida y fija</TD><TD>Indefinida (toma la forma del recipiente)</TD><TD>Indefinida (llena todo el recipiente)</TD></TR>
+<TR><TD><B>Volumen</B></TD><TD>Definido y fijo</TD><TD>Definido (no cambia con el recipiente)</TD><TD>Indefinido (se expande o comprime)</TD></TR>
+<TR><TD><B>Compresibilidad</B></TD><TD>Prácticamente incompresible</TD><TD>Prácticamente incompresible</TD><TD>Muy compresible</TD></TR>
+<TR><TD><B>Disposición de partículas</B></TD><TD>Muy ordenadas, empaquetadas (red cristalina o amorfa)</TD><TD>Poco ordenadas, próximas pero con movimiento</TD><TD>Muy desordenadas, separadas y en movimiento rápido</TD></TR>
+<TR><TD><B>Movimiento de partículas</B></TD><TD>Solo vibran en posición fija</TD><TD>Se deslizan unas sobre otras (fluyen)</TD><TD>Movimiento rápido y aleatorio en todas direcciones</TD></TR>
+<TR><TD><B>Fuerzas intermoleculares</B></TD><TD>Muy fuertes</TD><TD>Moderadas</TD><TD>Muy débiles (despreciables)</TD></TR>
+<TR><TD><B>Densidad</B></TD><TD>Alta</TD><TD>Media (generalmente menor que el sólido)</TD><TD>Muy baja</TD></TR>
+<TR><TD><B>Ejemplos</B></TD><TD>Hielo, sal, hierro, madera</TD><TD>Agua líquida, mercurio, alcohol</TD><TD>Vapor de agua, oxígeno, aire, dióxido de carbono</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Cambios de estado (transiciones de fase):</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Cambio de estado</TH><TH>Proceso</TH><TH>Energía</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Fusión</B></TD><TD>Sólido → Líquido</TD><TD>Absorbe calor (endotérmico)</TD><TD>Hielo que se derrite a 0°C</TD></TR>
+<TR><TD><B>Solidificación</B></TD><TD>Líquido → Sólido</TD><TD>Libera calor (exotérmico)</TD><TD>Agua que se congela a 0°C</TD></TR>
+<TR><TD><B>Vaporización</B> (ebullición / evaporación)</TD><TD>Líquido → Gas</TD><TD>Absorbe calor (endotérmico)</TD><TD>Agua hirviendo a 100°C</TD></TR>
+<TR><TD><B>Condensación</B></TD><TD>Gas → Líquido</TD><TD>Libera calor (exotérmico)</TD><TD>Vapor que forma gotas en un espejo frío</TD></TR>
+<TR><TD><B>Sublimación</B></TD><TD>Sólido → Gas (sin pasar por líquido)</TD><TD>Absorbe calor (endotérmico)</TD><TD>Hielo seco (CO₂ sólido), naftalina, yodo</TD></TR>
+<TR><TD><B>Deposición</B> (sublimación inversa)</TD><TD>Gas → Sólido (sin pasar por líquido)</TD><TD>Libera calor (exotérmico)</TD><TD>Escarcha que se forma en el congelador</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El cuarto estado: Plasma</H4>
+El <B>plasma</B> es un gas ionizado a temperaturas extremadamente altas (~10 000 K o más), donde los átomos pierden sus electrones formando una mezcla de iones y electrones libres. Es el <B>estado más abundante en el universo</B> (~99% de la materia visible del cosmos: estrellas, nebulosas, el Sol). En la Tierra se encuentra en los relámpagos, los tubos de neón y en los reactores de fusión nuclear (tokamaks).
+
+<DIV CLASS="ej">🔬 <B>Excepción famosa: el agua.</B> El agua es una sustancia inusual porque su forma sólida (hielo) es <b>menos densa</b> que su forma líquida. Por eso el hielo flota en el agua. Esto se debe a que las moléculas de agua en el hielo forman una estructura cristalina hexagonal con enlaces de hidrógeno que mantiene las moléculas más separadas que en el líquido. Esta propiedad es fundamental para la vida: los lagos y ríos se congelan de arriba hacia abajo, permitiendo que los organismos acuáticos sobrevivan bajo el hielo.</DIV>
+
+<!-- 4 -->
+<H3 ID="clasificacion">4. Clasificación de la materia: sustancias y mezclas</H3>
+
+La materia se puede clasificar según su <B>composición</B> en dos grandes grupos:
+
+<H4>A) Sustancias puras:</H4>
+Una <B>sustancia pura</B> tiene composición química definida y constante, con propiedades físicas y químicas invariables (punto de fusión, ebullición, densidad específicos). Se subdivide en:
+
+<UL>
+<LI><B>Elementos:</B> sustancias puras formadas por un solo tipo de átomo. No pueden descomponerse en sustancias más simples por medios químicos ordinarios. Actualmente se conocen <B>118 elementos</B> (confirmados). Ejemplos: hierro (Fe), oxígeno (O₂), oro (Au), carbono (C), nitrógeno (N₂), hidrógeno (H₂).</LI>
+<LI><B>Compuestos:</B> sustancias puras formadas por dos o más tipos de átomos distintos, unidos en proporciones fijas y definidas por enlaces químicos. Tienen propiedades completamente distintas a las de sus elementos constituyentes. Ejemplos: agua (H₂O), sal de mesa (NaCl), dióxido de carbono (CO₂), glucosa (C₆H₁₂O₆), ácido sulfúrico (H₂SO₄).</LI>
+</UL>
+
+<DIV CLASS="ej">⚗️ <B>Elemento vs. Compuesto:</B> El hidrógeno (H₂) y el oxígeno (O₂) son <b>elementos</b>. Cuando se combinan químicamente en proporción 2:1, forman agua (H₂O), un <b>compuesto</b> con propiedades totalmente distintas: no es inflamable como el H₂ ni comburente como el O₂. La composición del compuesto es siempre la misma: toda muestra de agua pura tiene exactamente 88,9% de oxígeno y 11,1% de hidrógeno en masa.</DIV>
+
+<H4>B) Mezclas:</H4>
+Una <B>mezcla</B> está formada por dos o más sustancias puras (elementos o compuestos) combinadas físicamente, sin reacción química entre ellas. Sus componentes mantienen sus propiedades individuales y pueden separarse por métodos físicos. La composición de una mezcla <B>no es fija</B> (puede variar).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo</TH><TH>Definición</TH><TH>Características</TH><TH>Ejemplos</TH></TR>
+<TR><TD><B>Mezcla Homogénea</B> (Solución)</TD><TD>Los componentes se distribuyen de manera <b>uniforme</b> a nivel molecular. Solo hay una fase visible.</TD><TD>Composición igual en toda la muestra. No se distinguen los componentes a simple vista. Pasa por filtros.</TD><TD>Agua con sal, agua con azúcar, aire, aleaciones metálicas (bronce = Cu+Sn), vinagre (agua + ácido acético), soluciones acuosas</TD></TR>
+<TR><TD><B>Mezcla Heterogénea</B></TD><TD>Los componentes NO se distribuyen uniformemente. Se pueden distinguir dos o más fases.</TD><TD>Composición variable en distintas partes de la muestra. Los componentes son visibles o distinguibles.</TD><TD>Arena con agua, aceite con agua, ensalada, granito, sangre (heterogénea a nivel microscópico), smog</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Subtipos de mezclas heterogéneas:</H4>
+<UL>
+<LI><B>Suspensiones:</B> mezclas heterogéneas donde las partículas sólidas (grandes, >1000 nm) están dispersas en un líquido y tienden a sedimentar con el tiempo. Ejemplo: barro en agua, jugo de naranja con pulpa, leche de magnesia.</LI>
+<LI><B>Coloides:</B> mezclas donde las partículas dispersas (tamaño intermedio: 1–1000 nm) no sedimentan espontáneamente y presentan el <B>efecto Tyndall</B> (dispersión de la luz). Ejemplo: leche (grasa en agua), mayonesa, niebla, humo, gelatina, espuma de afeitar.</LI>
+<LI><B>Soluciones (mezclas homogéneas):</B> partículas a nivel molecular o iónico (<1 nm). Completamente transparentes, no sedimentan, no presentan efecto Tyndall.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>El Efecto Tyndall:</B> Cuando se hace pasar un rayo de luz por una mezcla, si la luz se dispersa formando un haz visible (como el haz de luz del proyector en el cine), es un <b>coloide</b>. Si la luz pasa sin dispersarse, es una <b>solución verdadera</b>. Es la prueba más rápida para distinguir soluciones de coloides.</DIV>
+
+<H4>Métodos de separación de mezclas:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Método</TH><TH>Tipo de mezcla</TH><TH>Principio</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Filtración</B></TD><TD>Heterogénea (sólido-líquido)</TD><TD>Tamaño de partícula (el sólido no pasa por el filtro)</TD><TD>Separar arena del agua</TD></TR>
+<TR><TD><B>Decantación</B></TD><TD>Heterogénea (sólido-líquido o líquido-líquido)</TD><TD>Diferencia de densidad; sedimentación por gravedad</TD><TD>Separar aceite del agua, decantar barro del agua</TD></TR>
+<TR><TD><B>Destilación</B></TD><TD>Homogénea (líquido-líquido)</TD><TD>Diferencia de puntos de ebullición</TD><TD>Separar alcohol del agua (destilación del vino), obtener agua pura, refinar petróleo</TD></TR>
+<TR><TD><B>Evaporación / Cristalización</B></TD><TD>Homogénea (sólido disuelto en líquido)</TD><TD>Volatilidad diferente: el solvente se evapora y queda el soluto sólido</TD><TD>Obtener sal del agua de mar, obtener azúcar de la caña</TD></TR>
+<TR><TD><B>Cromatografía</B></TD><TD>Homogénea (sustancias en mezcla)</TD><TD>Diferente afinidad de los componentes por la fase estacionaria y móvil</TD><TD>Separar pigmentos de una hoja, análisis forense de tintas, doping</TD></TR>
+<TR><TD><B>Imantación</B></TD><TD>Heterogénea (sólido magnético + no magnético)</TD><TD>Propiedades magnéticas</TD><TD>Separar limaduras de hierro de la arena</TD></TR>
+<TR><TD><B>Tamización</B></TD><TD>Heterogénea (sólido-sólido)</TD><TD>Diferencia de tamaño de partícula</TD><TD>Separar harina de granos gruesos, arena gruesa de fina</TD></TR>
+<TR><TD><B>Centrifugación</B></TD><TD>Heterogénea o coloide</TD><TD>Diferencia de densidad amplificada por fuerza centrífuga</TD><TD>Separar células de la sangre del plasma, crema de la leche</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 5 -->
+<H3 ID="fenomenos">5. Fenómenos físicos y fenómenos químicos</H3>
+
+Un <B>fenómeno</B> es cualquier cambio o proceso observable en la materia. Se clasifican en físicos y químicos según afecten o no la naturaleza química de la sustancia.
+
+<H4>A) Fenómenos Físicos:</H4>
+Son cambios en los que la materia <B>NO cambia su composición química</B>. La sustancia sigue siendo la misma antes y después del cambio; solo cambia su forma, estado, tamaño o posición. Los cambios físicos son generalmente <B>reversibles</B>.
+
+<UL>
+<LI><B>Cambios de estado:</B> el agua líquida se congela en hielo (H₂O → H₂O). Sigue siendo agua.</LI>
+<LI><B>Cambios de forma:</B> doblar una lámina de aluminio, triturar sal en polvo fino.</LI>
+<LI><B>Cambios de tamaño:</B> cortar un papel, moler trigo.</LI>
+<LI><B>Disolución física:</B> disolver azúcar en agua. El azúcar sigue siendo azúcar (se puede recuperar evaporando el agua).</LI>
+<LI><B>Cambios de temperatura (sin cambio de composición):</B> calentar una barra de hierro hasta que brille.</LI>
+</UL>
+
+<H4>B) Fenómenos Químicos (Reacciones Químicas):</H4>
+Son cambios en los que la materia <B>SÍ cambia su composición química</B>: las sustancias originales (reactivos) se transforman en nuevas sustancias (productos) con diferentes propiedades. Los cambios químicos son generalmente <B>irreversibles</B> (o difícilmente reversibles).
+
+<UL>
+<LI><B>Combustión:</B> el papel arde y se convierte en cenizas (carbono, CO₂, H₂O). Las cenizas no son papel.</LI>
+<LI><B>Oxidación:</B> el hierro se oxida y se convierte en óxido de hierro (herrumbre = Fe₂O₃). La herrumbre tiene propiedades distintas al hierro.</LI>
+<LI><B>Descomposición:</B> el agua oxigenada (H₂O₂) se descompone en agua y oxígeno gaseoso.</LI>
+<LI><B>Fermentación:</B> el azúcar de la uva se convierte en alcohol etílico y CO₂ por la acción de levaduras.</LI>
+<LI><B>Digestión:</B> las proteínas de los alimentos se descomponen en aminoácidos por enzimas digestivas.</LI>
+<LI><B>Fotosíntesis:</B> CO₂ + H₂O + luz solar → glucosa + O₂. Sustancias completamente nuevas.</LI>
+</UL>
+
+<H4>Evidencias de un fenómeno químico:</H4>
+<UL>
+<LI>Cambio de color permanente (no reversible por medios físicos).</LI>
+<LI>Formación de un precipitado (sólido que aparece en una solución).</LI>
+<LI>Producción de gas (burbujas no debidas a cambio de estado).</LI>
+<LI>Cambio de temperatura notable (absorción o liberación de calor/luz).</LI>
+<LI>Formación de un olor diferente.</LI>
+<LI>Cambio irreversible de las propiedades.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Confusión frecuente:</B> ¿Disolver sal en agua es un fenómeno físico o químico? Es <b>físico</b>: la sal (NaCl) se disocia en iones Na⁺ y Cl⁻ en el agua, pero no cambia su naturaleza química. Se puede recuperar la sal evaporando el agua. En cambio, cuando el ácido clorhídrico (HCl) reacciona con el hidróxido de sodio (NaOH) para producir NaCl y agua, ESO sí es un cambio químico: se formaron sustancias nuevas.</DIV>
+
+<!-- 6 -->
+<H3 ID="propiedades">6. Propiedades de la materia</H3>
+
+Las <B>propiedades de la materia</B> son las características observables y medibles que permiten identificar y distinguir unas sustancias de otras. Se clasifican en físicas vs. químicas y en extensivas vs. intensivas.
+
+<H4>A) Propiedades Físicas:</H4>
+Son características que se pueden observar o medir <B>sin alterar la composición química</B> de la sustancia. No se necesita ninguna reacción química para observarlas.
+
+<UL>
+<LI><B>Punto de fusión:</B> temperatura a la que una sustancia pasa de sólido a líquido a presión constante. El agua funde a 0°C; el hierro a 1538°C; el mercurio a -39°C.</LI>
+<LI><B>Punto de ebullición:</B> temperatura a la que una sustancia hierve (pasa de líquido a gas). El agua hierve a 100°C a nivel del mar (1 atm).</LI>
+<LI><B>Densidad:</B> masa por unidad de volumen (d = m/V). El agua tiene d = 1 g/cm³; el oro d = 19,3 g/cm³; el aire d ≈ 0,0013 g/cm³.</LI>
+<LI><B>Solubilidad:</B> cantidad máxima de soluto que puede disolverse en un solvente a temperatura dada.</LI>
+<LI><B>Color y apariencia.</B></LI>
+<LI><B>Conductividad eléctrica y térmica.</B></LI>
+<LI><B>Maleabilidad y ductilidad</B> (metales).</LI>
+<LI><B>Dureza, brillo, opacidad, viscosidad.</B></LI>
+</UL>
+
+<H4>B) Propiedades Químicas:</H4>
+Son características que describen la <B>capacidad de una sustancia para transformarse en otra</B> mediante una reacción química. Para observarlas, la sustancia DEBE cambiar su naturaleza química.
+
+<UL>
+<LI><B>Inflamabilidad:</B> capacidad de arder. La gasolina es muy inflamable; el agua no.</LI>
+<LI><B>Reactividad con ácidos:</B> el zinc reacciona con ácido clorhídrico produciendo H₂; el oro no reacciona con la mayoría de ácidos (por eso se llama "metal noble").</LI>
+<LI><B>Oxidabilidad:</B> tendencia a reaccionar con el oxígeno. El hierro se oxida lentamente; el platino no.</LI>
+<LI><B>Toxicidad química:</B> capacidad de reaccionar con moléculas biológicas causando daño.</LI>
+<LI><B>Acidez / basicidad:</B> tendencia a donar o aceptar protones en reacciones.</LI>
+<LI><B>Estabilidad térmica:</B> si la sustancia se descompone al calentarla.</LI>
+</UL>
+
+<H4>C) Propiedades Extensivas (dependientes de la cantidad):</H4>
+Las <B>propiedades extensivas</B> dependen de la <B>cantidad de materia</B> presente. Si aumenta la cantidad de sustancia, la propiedad cambia proporcionalmente.
+
+<UL>
+<LI><B>Masa:</B> 1 kg de agua tiene más masa que 100 g de agua.</LI>
+<LI><B>Volumen:</B> 1 litro de agua ocupa más espacio que 0,5 litros.</LI>
+<LI><B>Peso:</B> depende de la masa y la gravedad.</LI>
+<LI><B>Longitud, área, cantidad de calor total.</B></LI>
+<LI><B>Energía interna total, entalpía total.</B></LI>
+</UL>
+
+<H4>D) Propiedades Intensivas (independientes de la cantidad):</H4>
+Las <B>propiedades intensivas</B> <B>NO dependen de la cantidad</B> de materia. Son las mismas para cualquier muestra de la misma sustancia, grande o pequeña. Son las más útiles para <B>identificar sustancias</B>.
+
+<UL>
+<LI><B>Densidad:</B> 1 kg de agua y 1 g de agua tienen la misma densidad (1 g/cm³).</LI>
+<LI><B>Punto de fusión y ebullición:</B> 1 kg de hielo y 1 g de hielo funden a 0°C.</LI>
+<LI><B>Temperatura:</B> una taza y un balde de agua hirviendo tienen ambos 100°C.</LI>
+<LI><B>Color, olor, sabor.</B></LI>
+<LI><B>Solubilidad, índice de refracción, viscosidad.</B></LI>
+<LI><B>Conductividad eléctrica y térmica específica.</B></LI>
+<LI><B>Presión de vapor, concentración.</B></LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Truco para recordar:</B> Las propiedades <b>IN</b>tensivas son <b>IN</b>dependientes de la cantidad. Las propiedades <b>EX</b>tensivas se <b>EX</b>tienden con la cantidad de materia. La <b>densidad</b> es intensiva: si cortas un bloque de oro a la mitad, cada mitad sigue teniendo la misma densidad (19,3 g/cm³). La <b>masa</b> es extensiva: cada mitad tiene la mitad de la masa original.</DIV>
+
+<H4>Resumen comparativo completo:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Clasificación</TH><TH>Tipo</TH><TH>Definición clave</TH><TH>Ejemplos</TH></TR>
+<TR><TD><B>Según cambio</B></TD><TD>Física</TD><TD>No altera la composición química</TD><TD>Punto de fusión, densidad, color, conductividad</TD></TR>
+<TR><TD><B>Según cambio</B></TD><TD>Química</TD><TD>SÍ altera la composición química para observarse</TD><TD>Inflamabilidad, oxidabilidad, acidez, reactividad</TD></TR>
+<TR><TD><B>Según cantidad</B></TD><TD>Extensiva</TD><TD>Depende de la cantidad de materia</TD><TD>Masa, volumen, peso, longitud, energía total</TD></TR>
+<TR><TD><B>Según cantidad</B></TD><TD>Intensiva</TD><TD>NO depende de la cantidad de materia</TD><TD>Densidad, punto de fusión/ebullición, temperatura, color</TD></TR>
+</TABLE>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> La Química se define correctamente como la ciencia que estudia:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) El movimiento de los cuerpos y las fuerzas que actúan sobre ellos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) La composición, estructura, propiedades y transformaciones de la materia, así como la energía involucrada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Los seres vivos y sus funciones vitales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Los astros y el universo en su conjunto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Química</B> es la ciencia que estudia la <b>composición</b> (qué átomos o moléculas forman la materia), la <b>estructura</b> (cómo están ordenados), las <b>propiedades</b> (qué características tiene) y las <b>transformaciones</b> (cómo reacciona y cambia) de la materia, así como la <b>energía</b> que se libera o absorbe en esos cambios. La opción a) define la Física mecánica; c) la Biología; d) la Astronomía.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> La materia se define como todo aquello que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Podemos ver y tocar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Tiene masa y ocupa un lugar en el espacio (volumen)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Tiene energía y puede transformarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Está formado por átomos de carbono</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La definición científica de materia es: todo lo que tiene <B>masa</B> (puede pesarse) y <B>ocupa un volumen</B> en el espacio. La opción a) es incorrecta porque el aire es materia aunque no podamos verlo directamente. La opción c) describe la energía, que no es materia. La opción d) es solo aplicable a la materia orgánica, no a toda la materia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> El estado de agregación en que la materia tiene forma y volumen definidos es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Gaseoso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Líquido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Sólido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Plasma</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El estado <B>sólido</B> es el único que tiene <b>forma definida</b> (no cambia con el recipiente) y <b>volumen definido</b> (fijo). Esto se debe a que sus partículas están muy ordenadas y unidas por fuerzas fuertes, solo vibran en su posición. El <b>líquido</b> tiene volumen definido pero forma indefinida (adopta la del recipiente). El <b>gas</b> no tiene ni forma ni volumen definidos (ocupa todo el espacio disponible).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál de los siguientes es un ejemplo de MEZCLA HOMOGÉNEA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Agua con arena</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Aceite con agua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Agua con sal disuelta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Ensalada de frutas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>agua con sal disuelta</B> es una mezcla homogénea (solución): la sal (NaCl) se disuelve completamente en el agua distribuyéndose de manera uniforme a nivel iónico (Na⁺ y Cl⁻). No se distinguen los componentes a simple vista y la composición es igual en toda la muestra. El agua con arena y la ensalada son mezclas <b>heterogéneas</b> (se ven los componentes). El aceite con agua es heterogénea (dos fases visibles: el aceite flota).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> La densidad de una sustancia es una propiedad:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Extensiva y química</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Intensiva y física</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Extensiva y física</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Intensiva y química</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>densidad</B> (d = m/V) es: (1) <b>Intensiva</b>: no depende de la cantidad de materia. 1 g o 1 kg de hierro tienen la misma densidad (7,87 g/cm³). (2) <b>Física</b>: se puede medir sin alterar la composición química de la sustancia (no se necesita una reacción para medirla). La densidad es una de las propiedades intensivas más útiles para identificar sustancias.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál de los siguientes cambios corresponde a un FENÓMENO QUÍMICO?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Disolver azúcar en agua caliente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Fundir un cubo de hielo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Quemar un papel en una llama</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Triturar un terrón de azúcar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR><B>Quemar papel</B> es un fenómeno <b>químico</b> (combustión): el papel (celulosa, C₆H₁₀O₅) reacciona con el oxígeno del aire produciendo CO₂, H₂O y cenizas (carbono). Las sustancias formadas (gases y cenizas) son completamente distintas al papel original. Las otras opciones son fenómenos <b>físicos</b>: disolver azúcar (el azúcar no cambia químicamente, se puede recuperar), fundir hielo (H₂O → H₂O, mismo compuesto), triturar azúcar (cambia de forma pero no de composición).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Se tiene una mezcla de agua y aceite de oliva. ¿Cuál es el método más adecuado para separarlos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Filtración, porque el aceite no pasa por el filtro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Decantación, aprovechando que el aceite es menos denso que el agua y flota formando dos fases</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Destilación, porque el agua y el aceite tienen diferentes puntos de ebullición</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Cristalización, dejando que el aceite solidifique</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El agua y el aceite forman una mezcla <b>heterogénea</b> de dos líquidos inmiscibles: el aceite (densidad ~0,9 g/mL) flota sobre el agua (densidad 1 g/mL) formando dos capas visibles. El método correcto es la <B>decantación</B>: se inclina el recipiente (o se usa un embudo de decantación) para separar la capa inferior (agua) de la superior (aceite). La filtración separa sólidos de líquidos. La destilación podría funcionar pero sería innecesariamente compleja para este caso sencillo. La cristalización aplica a sólidos disueltos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> El bronce es una aleación de cobre (Cu) y estaño (Sn). ¿Cómo se clasifica el bronce?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Compuesto, porque está formado por dos elementos diferentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Elemento, porque es un metal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Mezcla homogénea, porque los metales se combinan uniformemente sin reacción química fija</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Mezcla heterogénea, porque se pueden ver los dos metales a simple vista</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>bronce</B> es una <b>mezcla homogénea</b> (solución sólida o aleación). No es un compuesto porque: (1) Su composición no es fija (puede tener distintos porcentajes de Cu y Sn). (2) Los metales no se combinan por reacción química con proporciones definidas; simplemente se mezclan a nivel atómico de forma uniforme. (3) Sus propiedades son intermedias entre las de sus componentes. Las aleaciones son ejemplos clásicos de <b>mezclas homogéneas sólidas</b>: también son aleaciones el acero (Fe+C), el latón (Cu+Zn), el oro de joyería (Au+Cu) y las amalgamas dentales (Hg+Ag+Sn).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cuál de las siguientes es una PROPIEDAD EXTENSIVA de la materia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Temperatura de ebullición</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Densidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Color</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Volumen</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d)</B><BR>El <B>volumen</B> es una propiedad <b>extensiva</b>: depende de la cantidad de materia. 2 litros de agua ocupan el doble de espacio que 1 litro de agua. Las otras opciones son <b>intensivas</b>: la temperatura de ebullición del agua siempre es 100°C (a 1 atm) sin importar si es 1 mL o 1 000 L; la densidad siempre es 1 g/mL; el color sigue siendo incoloro. Para recordar: masa, volumen, peso, longitud = extensivas. Todo lo demás (temperatura, densidad, punto de fusión, color) = intensivas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> La leche es un ejemplo de coloide. ¿Qué evidencia lo confirma?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Que la leche tiene color blanco, lo que demuestra que es heterogénea</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Que la leche presenta el efecto Tyndall: al hacer pasar un rayo de luz, este se dispersa formando un haz visible dentro del líquido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Que la leche sedimenta rápidamente dejando agua abajo y grasa arriba</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Que la leche puede filtrarse fácilmente con papel de filtro normal</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La evidencia definitoria de un coloide es el <B>efecto Tyndall</B>: cuando se hace pasar un haz de luz por la leche, las partículas coloidales (glóbulos de grasa de 0,1–10 μm) dispersan la luz en todas direcciones, haciendo visible el rayo dentro del líquido. En una solución verdadera (como agua con sal), las partículas son tan pequeñas que no dispersan la luz y el rayo es invisible. La leche <b>no sedimenta</b> espontáneamente (si sedimentara rápido sería una suspensión). No pasa por filtro normal, pero sí por ultrafiltración. El color blanco es consecuencia de la dispersión de la luz, no la causa de ser coloide.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Se tiene una muestra de agua de mar. Al hacerla hervir y recoger el vapor condensado se obtiene agua pura, mientras que en el recipiente original quedan sales. ¿Qué demuestra este experimento sobre la naturaleza del agua de mar?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Que el agua de mar es un compuesto, porque puede descomponerse en agua pura y sal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Que el agua de mar es una mezcla homogénea que puede separarse por destilación, siendo el agua y la sal sustancias con diferentes puntos de ebullición</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Que el agua de mar es un elemento porque está formado principalmente por átomos de hidrógeno y oxígeno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Que hervir el agua de mar es un fenómeno químico porque se producen nuevas sustancias</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El experimento demuestra que el agua de mar es una <B>mezcla homogénea</B>: (1) Sus componentes (agua, NaCl, MgCl₂, etc.) conservan sus propiedades independientes. (2) Se puede separar por <b>destilación</b>, un método <b>físico</b>, sin reacción química. (3) El proceso es reversible (puedes volver a disolver sal en agua). NO es un compuesto porque: en un compuesto, los elementos están unidos por enlaces químicos en proporciones fijas y no pueden separarse por métodos físicos (para descomponer el agua H₂O necesitarías electrólisis, que sí es un proceso químico). La ebullición del agua es un fenómeno <b>físico</b> (cambio de estado, no cambia la fórmula química del agua).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Por qué el plasma es considerado el cuarto estado de la materia y no simplemente un gas muy caliente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Porque el plasma tiene mayor densidad que el gas y no puede comprimirse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Porque en el plasma los átomos pierden sus electrones y está formado por iones y electrones libres, lo que le confiere propiedades eléctricas, magnéticas y de respuesta a campos electromagnéticos completamente distintas a las de un gas neutro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Porque el plasma no tiene masa y por lo tanto no es materia convencional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Porque el plasma solo existe en el espacio exterior y no puede producirse en la Tierra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>plasma</B> se diferencia del gas en algo fundamental: en el gas, las partículas son <b>átomos o moléculas eléctricamente neutras</b>. En el plasma, la energía térmica extrema (~10 000 K o más) es suficiente para <b>ionizar los átomos</b>: los electrones se separan del núcleo, resultando en una mezcla de iones positivos y electrones libres. Esto le da al plasma propiedades únicas: (1) Conduce la electricidad muy eficientemente. (2) Responde a campos eléctricos y magnéticos de forma dramática. (3) Emite radiación característica. Existe en la Tierra: el Sol es plasma, los relámpagos crean plasma brevemente, los tubos de neón y plasma contienen gas ionizado, y los reactores de fusión nuclear (tokamaks) confinan plasma a millones de grados.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Un estudiante argumenta: "La oxidación del hierro (formación de herrumbre) es un fenómeno físico porque el hierro sigue siendo hierro." ¿Es correcto este argumento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Sí, es correcto porque el hierro no desaparece, solo cambia de color y textura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) No, es incorrecto: la oxidación del hierro es un fenómeno químico porque el hierro (Fe) reacciona con el oxígeno y el agua formando óxido de hierro (Fe₂O₃·nH₂O), una nueva sustancia con propiedades completamente distintas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Sí, es correcto porque los átomos de hierro no se destruyen en el proceso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Depende de si el hierro está en la sierra o en la costa: en la costa es químico y en la sierra es físico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El estudiante está <B>equivocado</B>. La oxidación del hierro es claramente un fenómeno <b>químico</b>. La reacción es: 4Fe + 3O₂ + nH₂O → 2Fe₂O₃·nH₂O (herrumbre hidratada). El óxido de hierro hidratado (Fe₂O₃·nH₂O) es una <b>sustancia diferente</b> al hierro (Fe): tiene diferente composición química, diferente color (rojo-anaranjado vs. gris metálico), diferente densidad, no conduce electricidad como el hierro puro y es frágil en lugar de dúctil. El argumento del estudiante confunde "los átomos de hierro siguen presentes" (verdad) con "la sustancia es la misma" (falso). En química, lo que importa es la <b>composición y estructura química</b>, no los átomos individuales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Se tienen dos muestras de cobre puro: una de 5 g y otra de 50 g. ¿Cuál de las siguientes afirmaciones es CORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La muestra de 50 g tiene mayor densidad porque tiene más masa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Ambas muestras tienen la misma densidad (8,96 g/cm³), el mismo punto de fusión (1085°C) y el mismo color (rojizo), porque estas son propiedades intensivas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La muestra de 50 g hierve a temperatura más alta porque tiene más calor acumulado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La muestra de 5 g tiene mayor densidad porque sus partículas están más comprimidas en menos espacio</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las propiedades <B>intensivas</B> son iguales para cualquier cantidad de la misma sustancia pura. Tanto la muestra de 5 g como la de 50 g de cobre puro tienen: densidad = 8,96 g/cm³, punto de fusión = 1085°C, punto de ebullición = 2562°C, color rojizo cobrizo, conductividad eléctrica idéntica. Lo que SÍ difiere entre ambas muestras son las propiedades <b>extensivas</b>: la masa (5 g vs. 50 g), el volumen (0,56 cm³ vs. 5,6 cm³), el peso. Las propiedades intensivas son las más útiles para <b>identificar sustancias</b> precisamente porque no cambian con la cantidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> El "agua oxigenada" (H₂O₂ al 3%) que se vende en farmacias efervece sobre una herida produciendo burbujas de oxígeno. ¿Este proceso es un fenómeno físico o químico? ¿Por qué?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Físico, porque las burbujas son simplemente gas que estaba disuelto en el líquido y se libera al calentarse con el contacto corporal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Químico, porque el H₂O₂ se descompone en agua (H₂O) y oxígeno gaseoso (O₂) por la acción de enzimas (catalasas) presentes en la sangre, formando sustancias nuevas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Físico, porque el H₂O₂ sigue siendo agua (ambos tienen hidrógeno y oxígeno)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Químico, pero solo cuando hay herida; sin herida es un fenómeno físico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Es un fenómeno <B>químico</B>: la reacción es 2H₂O₂ → 2H₂O + O₂↑. El peróxido de hidrógeno (H₂O₂) se <b>descompone</b> en agua (H₂O) y oxígeno gaseoso (O₂) por la acción de la enzima <b>catalasa</b> presente en las células de la sangre y tejidos (que actúa como catalizador biológico). Se forman <b>sustancias nuevas</b> (agua y oxígeno) distintas al reactivo original (H₂O₂). Las evidencias del cambio químico son visibles: producción de gas (burbujas de O₂), liberación de calor y el H₂O₂ se consume (si esperas, la efervescencia para). La opción c) es un error clásico: H₂O y H₂O₂ son compuestos <b>completamente diferentes</b> aunque compartan elementos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Antoine Lavoisier estableció la Ley de Conservación de la Masa. Si 16 g de metano (CH₄) se queman completamente con 64 g de oxígeno (O₂) produciendo CO₂ y H₂O, ¿cuántos gramos de productos se obtienen en total?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) 64 g (solo el oxígeno se transforma)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) 16 g (solo el metano se transforma)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) 80 g (suma de todos los reactivos)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 48 g (se pierde masa en forma de calor)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>Ley de Conservación de la Masa</B> (Lavoisier, 1789) establece que en toda reacción química, la masa total de los <b>reactivos</b> es igual a la masa total de los <b>productos</b>. La reacción de combustión del metano es: CH₄ + 2O₂ → CO₂ + 2H₂O. Masa de reactivos: 16 g CH₄ + 64 g O₂ = <B>80 g</B>. Por la ley de conservación: masa de productos = 80 g. Los productos son CO₂ (44 g) + H₂O (36 g) = 80 g ✓. El calor liberado es energía, no masa. (En realidad, Einstein demostró que E = mc² implica una pequeñísima pérdida de masa en las reacciones nucleares, pero en reacciones químicas ordinarias esta diferencia es absolutamente despreciable e indetectable).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> La cromatografía en papel se usa para separar los pigmentos de una hoja verde. Se obtienen manchas de distintos colores (verde oscuro, amarillo, naranja) a diferentes alturas del papel. ¿Qué propiedad de los pigmentos explica su separación?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La diferencia de masa molecular: los pigmentos más pesados suben más por el papel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La diferente afinidad (polaridad) de cada pigmento por el solvente (fase móvil) y por el papel (fase estacionaria): los pigmentos más atraídos por el solvente viajan más lejos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La diferencia de punto de ebullición: los pigmentos que hierven a menos temperatura suben más</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La diferencia de densidad: los pigmentos menos densos flotan más alto en el papel</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En la <B>cromatografía</B> (del griego <I>chroma</I>: color, <I>graphos</I>: escritura, método de Mikhail Tsvet, 1906), la separación se basa en la diferente <b>afinidad relativa</b> de cada componente por la <b>fase estacionaria</b> (el papel, que es polar) vs. la <b>fase móvil</b> (el solvente que sube por capilaridad). Los pigmentos más atraídos por el solvente (más solubles en él) viajan más lejos con el solvente. Los más atraídos por el papel quedan cerca del origen. Esto se cuantifica con el <b>factor de retención (Rf) = distancia recorrida por el pigmento / distancia recorrida por el solvente</b>. Cada pigmento tiene un Rf característico bajo condiciones fijas, lo que permite identificarlos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> El agua es la única sustancia común que se contrae al fundirse (el sólido es menos denso que el líquido). ¿Qué consecuencia fundamental tiene esta propiedad anómala para los ecosistemas acuáticos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Hace que el agua de los océanos sea más salada, concentrando sales en el fondo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) El hielo flota en el agua líquida, actuando como capa aislante térmica en la superficie de lagos y ríos que se congelan, permitiendo que el agua líquida (más densa a 4°C) permanezca en el fondo y los organismos acuáticos sobrevivan el invierno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Hace que el agua se evapore más fácilmente en invierno, reduciendo el volumen de los cuerpos de agua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Impide que los peces naden cerca de la superficie en verano por la alta densidad del agua fría</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una de las propiedades más importantes del agua para la vida. La consecuencia ecológica fundamental de que el hielo (d ≈ 0,917 g/cm³) sea <b>menos denso</b> que el agua líquida (d = 1,000 g/cm³ a 4°C) es que el hielo <B>flota</B>. Cuando un lago se congela en invierno, solo la <b>superficie</b> se convierte en hielo, formando una <b>capa aislante</b> que: (1) Impide que el frío del aire llegue al agua profunda. (2) El agua en el fondo permanece a ~4°C (donde el agua líquida es más densa y "cae" al fondo). (3) Los organismos acuáticos (peces, algas, bacterias) sobreviven en el agua líquida bajo el hielo. Si el hielo fuera más denso que el agua, se hundiría y los lagos se congelarían de abajo hacia arriba, imposibilitando la vida acuática en climas fríos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Un recipiente contiene una mezcla de tres sustancias: sal (NaCl), arena (SiO₂) y alcohol etílico (C₂H₅OH). Diseña la secuencia correcta de métodos de separación para obtener cada componente puro.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) 1° Filtración para separar todo, 2° Destilación del sólido, 3° Evaporación del líquido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) 1° Agregar agua y filtrar (retiene arena en el filtro; sal y alcohol pasan), 2° Destilación de la solución (el alcohol pasa primero por su menor punto de ebullición, ~78°C; el agua con sal queda), 3° Evaporación del agua para recuperar la sal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) 1° Calentar la mezcla para evaporar el alcohol, 2° Disolver en agua, 3° Decantar la arena</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) 1° Imantación para separar la sal, 2° Filtración para la arena, 3° Destilación para el alcohol</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La secuencia correcta aprovecha las propiedades de cada componente: <b>Paso 1:</b> Agregar agua a la mezcla. La sal (NaCl) se disuelve en el agua; el alcohol (C₂H₅OH) también es miscible en agua; la arena (SiO₂) es insoluble. Filtrar: la <b>arena queda en el filtro</b> (componente recuperado 1). <b>Paso 2:</b> El filtrado contiene agua + sal + alcohol. Destilar: el alcohol hierve a <b>~78°C</b> y el agua a <b>100°C</b>, así que el alcohol se evapora primero y se condensa en el colector (componente recuperado 2). Queda agua con sal. <b>Paso 3:</b> Evaporar el agua de la solución de sal → la sal cristaliza (componente recuperado 3). Esta pregunta integra: clasificación de mezclas, solubilidad, puntos de ebullición y selección de métodos físicos de separación.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> La Química es considerada la "ciencia central" (central science). ¿Cuál es la razón más precisa de este nombre?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Porque la Química es la ciencia más antigua y las demás ciencias derivan de ella históricamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Porque la Química conecta y sirve de puente entre las ciencias básicas (Física, Matemáticas) y las ciencias aplicadas y naturales (Biología, Medicina, Geología, Ingeniería, Ciencias Ambientales), siendo fundamental para comprender todas ellas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Porque la Química genera más empleo e ingresos económicos que cualquier otra ciencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Porque todos los fenómenos del universo son en última instancia fenómenos químicos, sin excepción</DIV>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El término <b>"ciencia central"</b> (<i>the central science</i>) fue popularizado por el libro de Brown, LeMay y Bursten. La Química ocupa esta posición porque: (1) <b>Hacia abajo</b> (ciencias más fundamentales): la Química se explica con la Física cuántica (estructura electrónica de los átomos) y las Matemáticas (estequiometría, cinética, termodinámica). (2) <b>Hacia arriba</b> (ciencias más complejas): la Biología se basa en la Bioquímica (reacciones metabólicas, ADN, proteínas); la Medicina en la Farmacología y la Bioquímica clínica; la Geología en la Mineralogía y Geoquímica; la Ingeniería en los Materiales y la Química Industrial; las Ciencias Ambientales en la Química Ambiental. Sin Química no se puede entender cómo funciona una célula, cómo se forma un mineral, por qué llueve ácida, ni cómo diseñar un medicamento.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

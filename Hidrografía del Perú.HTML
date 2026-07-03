@@ -1,0 +1,536 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Hidrografía del Perú - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA · TEMA 10 · NIVEL PREUNIVERSITARIO</DIV>
+<H1>Hidrografía del Perú</H1>
+<DIV CLASS="sub">Vertientes hidrográficas · Cuencas · Ríos principales · Lagos y lagunas · Lago Titicaca · Ciclo hidrológico peruano</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="vertientes">1. Las tres vertientes hidrográficas del Perú</H3>
+
+Una <B>vertiente hidrográfica</B> es el conjunto de cuencas que drenan sus aguas hacia un mismo océano o cuerpo receptor. El Perú, gracias a su posición geográfica y a los Andes como divisoria continental de aguas, cuenta con <B>tres vertientes hidrográficas</B>:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Vertiente</TH><TH>Destino de las aguas</TH><TH>% del territorio</TH><TH>Características</TH></TR>
+<TR><TD><B>Vertiente del Pacífico</B></TD><TD>Océano Pacífico</TD><TD>~22%</TD><TD>Ríos cortos, torrenciales, con fuertes variaciones estacionales. Nacen en la vertiente occidental de los Andes. Poco caudal en época seca.</TD></TR>
+<TR><TD><B>Vertiente del Atlántico</B></TD><TD>Océano Atlántico (vía Amazonas)</TD><TD>~75%</TD><TD>Ríos largos, caudalosos y navegables. Drenan la mayor parte del territorio. Son los ríos amazónicos.</TD></TR>
+<TR><TD><B>Vertiente del Titicaca</B></TD><TD>Lago Titicaca (sistema endorreico)</TD><TD>~3%</TD><TD>Sistema cerrado (endorreico): las aguas no llegan al mar. El lago Titicaca pierde agua principalmente por evaporación. Incluye el río Ramis (el más largo y caudaloso de esta vertiente).</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La vertiente del Atlántico abarca el <B>75%</B> del territorio pero tiene el menor porcentaje de población. La vertiente del Pacífico solo abarca el <B>22%</B> del territorio pero concentra más del 55% de la población. La vertiente del Titicaca es <B>endorreica</B>: sus aguas no llegan al mar.</DIV>
+
+<H4>La Divisoria Continental de Aguas:</H4>
+La línea imaginaria que separa las aguas que van al Pacífico de las que van al Atlántico sigue aproximadamente la cresta de la <B>Cordillera Occidental</B> de los Andes. Esta línea también se llama <B>divortium aquarum</B> o <B>línea divisoria de aguas</B>.
+
+<H3 ID="pacifica">2. Vertiente del Pacífico: características y principales ríos</H3>
+
+<H4>Características de los ríos del Pacífico:</H4>
+<UL>
+<LI><B>Cortos:</B> recorren entre 100 y 400 km en promedio desde su nacimiento en los Andes hasta el mar.</LI>
+<LI><B>Torrenciales:</B> tienen fuerte pendiente, especialmente en su curso alto, lo que los hace difícilmente navegables.</LI>
+<LI><B>Régimen irregular:</B> tienen mucho caudal en época de lluvias (diciembre–abril) y se secan o reducen drásticamente en época seca (mayo–noviembre). Algunos ríos de la costa norte son los únicos que mantienen caudal permanente.</LI>
+<LI><B>Escasos:</B> en la costa sur muchos son intermitentes (solo llevan agua en épocas de lluvia). La aridez de la costa hace que el agua que traen sea vital para la agricultura de la costa (valles costeños).</LI>
+<LI><B>Forman valles fértiles:</B> los oasis costeños (valles de los ríos) son los que permiten la agricultura en el desierto costero.</LI>
+</UL>
+
+<H4>Principales ríos de la vertiente del Pacífico (de norte a sur):</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Río</TH><TH>Región(es)</TH><TH>Longitud aprox.</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Tumbes</B></TD><TD>Tumbes</TD><TD>~160 km en el Perú</TD><TD>Nace en Ecuador (río Puyango). El más caudaloso de la costa norte. Tiene manglares en su desembocadura.</TD></TR>
+<TR><TD><B>Chira</B></TD><TD>Piura</TD><TD>~150 km</TD><TD>Nace en Ecuador. Alimenta el embalse de Poechos (la represa más grande del Perú).</TD></TR>
+<TR><TD><B>Piura</B></TD><TD>Piura</TD><TD>~190 km</TD><TD>Río con caudal variable; en años de El Niño se desborda causando inundaciones.</TD></TR>
+<TR><TD><B>Motupe / Leche / La Leche</B></TD><TD>Lambayeque</TD><TD>~100 km</TD><TD>Alimentan el canal Taymi y la agricultura del valle Lambayeque.</TD></TR>
+<TR><TD><B>Chancay-Lambayeque</B></TD><TD>Lambayeque</TD><TD>~250 km</TD><TD>Alimenta el Reservorio de Tinajones; irrigación del valle de Lambayeque.</TD></TR>
+<TR><TD><B>Chicama</B></TD><TD>La Libertad</TD><TD>~180 km</TD><TD>Valle cañero; zona de producción de azúcar.</TD></TR>
+<TR><TD><B>Moche</B></TD><TD>La Libertad</TD><TD>~110 km</TD><TD>Atraviesa Trujillo; zona de la cultura Moche.</TD></TR>
+<TR><TD><B>Santa</B></TD><TD>Áncash / La Libertad</TD><TD>~320 km</TD><TD><B>El más caudaloso de la vertiente del Pacífico.</B> Nace en la laguna Conococha y drena el Callejón de Huaylas.</TD></TR>
+<TR><TD><B>Pativilca</B></TD><TD>Lima</TD><TD>~160 km</TD><TD>Valle azucarero; zona de Caral (civilización más antigua de América).</TD></TR>
+<TR><TD><B>Chancay</B></TD><TD>Lima</TD><TD>~140 km</TD><TD>Alimenta la Represa de Yuracmayo (Huascacocha); abastece Lima.</TD></TR>
+<TR><TD><B>Rímac</B></TD><TD>Lima</TD><TD>~160 km</TD><TD><B>El más importante del Perú</B> por abastecer agua a Lima (10 millones de habitantes). Nace en la Cordillera Central.</TD></TR>
+<TR><TD><B>Lurín</B></TD><TD>Lima</TD><TD>~108 km</TD><TD>Valle al sur de Lima; zona de Pachacamac.</TD></TR>
+<TR><TD><B>Cañete</B></TD><TD>Lima / Ica</TD><TD>~220 km</TD><TD>Valle agrícola importante al sur de Lima.</TD></TR>
+<TR><TD><B>Ica</B></TD><TD>Ica</TD><TD>~220 km</TD><TD>Río que alimenta el famoso valle de Ica (pisco, uvas). Muy irregular.</TD></TR>
+<TR><TD><B>Ocoña</B></TD><TD>Arequipa</TD><TD>~320 km</TD><TD>Nace como río Apurímac; tiene gran potencial hidroeléctrico.</TD></TR>
+<TR><TD><B>Camaná (Colca)</B></TD><TD>Arequipa</TD><TD>~380 km</TD><TD>Nace como río Colca (forma el cañón del Colca); se llama Majes y luego Camaná al llegar a la costa.</TD></TR>
+<TR><TD><B>Tambo</B></TD><TD>Moquegua / Arequipa</TD><TD>~280 km</TD><TD>Formado por los ríos Ichuni y Coralaque.</TD></TR>
+<TR><TD><B>Osmore (Moquegua)</B></TD><TD>Moquegua</TD><TD>~100 km</TD><TD>Abastece Moquegua e Ilo.</TD></TR>
+<TR><TD><B>Sama</B></TD><TD>Tacna</TD><TD>~140 km</TD><TD>Zona de Locumba; río más austral del Perú en el Pacífico.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>El río Santa: el más caudaloso del Pacífico peruano.</B> Nace en la laguna Conococha (Áncash, ~4 200 m.s.n.m.), recorre el Callejón de Huaylas de sur a norte durante ~180 km, gira al oeste atravesando el Cañón del Pato (donde se ubica la central hidroeléctrica del Cañón del Pato) y desemboca en el Pacífico cerca de Chimbote. Su caudal medio es de ~200 m³/s, muy superior al de los demás ríos costeños.</DIV>
+
+<H3 ID="atlantica">3. Vertiente del Atlántico: el sistema amazónico</H3>
+
+<H4>Características de los ríos amazónicos del Perú:</H4>
+<UL>
+<LI><B>Largos y caudalosos:</B> el Amazonas, el Marañón y el Ucayali figuran entre los ríos más largos y caudalosos del mundo.</LI>
+<LI><B>Régimen regular:</B> aunque tienen variaciones estacionales (creciente en verano austral, vaciante en invierno), nunca se secan gracias a las lluvias amazónicas y el deshielo andino.</LI>
+<LI><B>Navegables:</B> la baja pendiente de los ríos amazónicos los hace navegables por grandes embarcaciones en su curso bajo.</LI>
+<LI><B>Meandrifomes:</B> en la selva baja forman amplias curvas sinuosas (meandros) debido a la mínima pendiente del terreno.</LI>
+<LI><B>Alta biodiversidad:</B> albergan la mayor diversidad de peces de agua dulce del mundo (~3 000 especies solo en el sistema amazónico).</LI>
+</UL>
+
+<H4>El río Amazonas:</H4>
+<UL>
+<LI>El <B>río más caudaloso del mundo</B>: descarga al Atlántico ~209 000 m³/s en promedio, el 20% de toda el agua dulce que los ríos del mundo vierten al mar.</LI>
+<LI><B>¿El más largo?</B> Históricamente se consideró al Nilo (~6 650 km) el más largo, pero estudios modernos (2007, 2008) sitúan al Amazonas como el más largo (~7 062 km desde sus nacientes peruanas en el nevado Mismi, Arequipa).</LI>
+<LI>Entra al territorio peruano por la confluencia del Marañón y el Ucayali en el sector de Nauta (Loreto) y recorre ~713 km en territorio peruano antes de entrar a Brasil.</LI>
+<LI>Su anchura en territorio peruano supera los <B>3 km</B> en muchos tramos; en épocas de crecida puede alcanzar los 50 km de ancho incluyendo sus zonas de inundación.</LI>
+</UL>
+
+<H4>Las nacientes del Amazonas en el Perú:</H4>
+En 2001, un equipo geográfico determinó que las nacientes más remotas del Amazonas se ubican en el <B>nevado Mismi</B> (~5 597 m.s.n.m., provincia de Caylloma, Arequipa), desde donde nacen arroyos que forman el río Apurímac, que confluye con el Ene, el Tambo y finalmente el Ucayali. Sin embargo, la mayoría de los textos peruanos considera que el río Amazonas propiamente dicho nace de la confluencia del <B>Marañón y el Ucayali</B> en Nauta.
+
+<DIV CLASS="alerta">⚠️ <B>Muy preguntado en exámenes:</B> El río Amazonas es el más <B>caudaloso</B> del mundo (no hay debate). La discusión sobre cuál es el más <B>largo</B> (Amazonas o Nilo) depende de cómo se midan sus nacientes. Para exámenes peruanos, aprende que las nacientes más remotas del Amazonas están en el <B>nevado Mismi</B> (Arequipa).</DIV>
+
+<H4>Principales ríos de la vertiente del Atlántico:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Río</TH><TH>Longitud en Perú</TH><TH>Cuenca / Afluentes</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Marañón</B></TD><TD>~1 800 km</TD><TD>Afluentes: Huallaga, Ucayali (indirecto), Pastaza, Tigre</TD><TD>Nace en el Nudo de Pasco; es el colector principal del norte del Perú. Atraviesa el Pongo de Manseriche.</TD></TR>
+<TR><TD><B>Ucayali</B></TD><TD>~1 771 km</TD><TD>Formado por el Urubamba y el Apurímac (que forman el Tambo-Ene-Ucayali)</TD><TD>Considerado por muchos el brazo principal del Amazonas. Junto con el Marañón forma el Amazonas en Nauta.</TD></TR>
+<TR><TD><B>Huallaga</B></TD><TD>~1 100 km</TD><TD>Afluente del Marañón</TD><TD>Nace en el Nudo de Pasco; recorre el valle del Huallaga (Huánuco-San Martín). Importante históricamente por el cultivo ilícito de coca.</TD></TR>
+<TR><TD><B>Mantaro</B></TD><TD>~735 km</TD><TD>Afluente del Apurímac (confluye como Ene)</TD><TD>Nace en el lago Junín. La central hidroeléctrica del Mantaro es la más importante del Perú.</TD></TR>
+<TR><TD><B>Apurímac</B></TD><TD>~900 km</TD><TD>Se une con el Mantaro y el Ene para formar el Ucayali</TD><TD>Nace en el nevado Mismi (Arequipa). Sus nacientes son las más remotas del Amazonas.</TD></TR>
+<TR><TD><B>Urubamba</B></TD><TD>~862 km</TD><TD>Nace como Vilcanota en Cusco</TD><TD>El "río sagrado" de los Incas. Atraviesa el Pongo de Mainique. Se une con el Apurímac para formar el Ucayali.</TD></TR>
+<TR><TD><B>Madre de Dios</B></TD><TD>~1 150 km</TD><TD>Afluentes: Manu, Inambari, Las Piedras</TD><TD>Nace en Cusco; desemboca en Bolivia (río Beni → río Madera → Amazonas). Gran diversidad biológica; zona de la reserva de Madre de Dios.</TD></TR>
+<TR><TD><B>Napo</B></TD><TD>~363 km en Perú</TD><TD>Nace en Ecuador; afluente directo del Amazonas</TD><TD>Ingresa por Loreto; históricamente la ruta de Francisco de Orellana (1542).</TD></TR>
+<TR><TD><B>Putumayo</B></TD><TD>~1 380 km en Perú</TD><TD>Nace en Colombia; río fronterizo</TD><TD>Forma la frontera natural entre Perú y Colombia en su mayor parte.</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El río Marañón: el gran colector del norte:</H4>
+El <B>Marañón</B> nace en la laguna de Lauricocha (~4 200 m.s.n.m., Huánuco), fluye hacia el norte formando un gran cañón entre las cordilleras Central y Oriental, atraviesa el famoso <B>Pongo de Manseriche</B> y luego gira hacia el este en la selva baja. Su cuenca drena el norte del Perú. Recibe como afluente al <B>Huallaga</B>, el principal tributario de la sierra del norte. La confluencia del Marañón y el Ucayali en <B>Nauta</B> (Loreto) forma el río Amazonas propiamente dicho.
+
+<H4>El río Ucayali: el brazo sur del Amazonas:</H4>
+El <B>Ucayali</B> se forma por la confluencia del <B>Urubamba</B> y el <B>Apurímac</B> (que a su vez pasa por el Ene y el Tambo). Es considerado por muchos geógrafos el brazo principal del Amazonas por ser más largo que el Marañón desde sus nacientes más remotas. Su principal ciudad ribereña es <B>Pucallpa</B> (Ucayali).
+
+<H3 ID="titicaca-vertiente">4. Vertiente del Titicaca (sistema endorreico)</H3>
+
+<H4>Características:</H4>
+<UL>
+<LI>Solo abarca el <B>~3% del territorio</B> peruano, concentrado en la región Puno.</LI>
+<LI>Es un <B>sistema endorreico</B>: las aguas no llegan al mar. El lago Titicaca pierde agua principalmente por <B>evaporación</B> (más del 90%) y en menor medida por el río Desaguadero que va a Bolivia.</LI>
+<LI>El lago Titicaca regula el nivel de agua del sistema: en años lluviosos sube su nivel; en años secos baja.</LI>
+</UL>
+
+<H4>Principales ríos de la vertiente del Titicaca:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Río</TH><TH>Longitud</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Ramis</B></TD><TD>~320 km</TD><TD>El más largo y caudaloso de la vertiente del Titicaca en el Perú. Nace en el Nudo de Vilcanota como río Ayaviri. Desemboca en el lago Titicaca por el norte.</TD></TR>
+<TR><TD><B>Ilave</B></TD><TD>~170 km</TD><TD>Segundo río más importante de la vertiente. Desemboca en el Titicaca por el sur de la bahía peruana.</TD></TR>
+<TR><TD><B>Coata</B></TD><TD>~145 km</TD><TD>Desemboca en el Titicaca por el noroeste; zona de Puno.</TD></TR>
+<TR><TD><B>Huancané</B></TD><TD>~100 km</TD><TD>Desemboca en el Titicaca por el norte.</TD></TR>
+<TR><TD><B>Desaguadero</B></TD><TD>~436 km totales</TD><TD>Sale del lago Titicaca (Bolivia) hacia el lago Poopó (Bolivia). El único efluente del Titicaca.</TD></TR>
+</TABLE>
+</DIV>
+
+<H3 ID="lagos">5. Lagos y lagunas del Perú</H3>
+
+El Perú posee una gran cantidad de lagos y lagunas, especialmente en la región andina y en el Altiplano.
+
+<H4>Lagos principales:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Lago / Laguna</TH><TH>Altitud</TH><TH>Área</TH><TH>Región</TH><TH>Características</TH></TR>
+<TR><TD><B>Lago Titicaca</B></TD><TD>3 812 m.s.n.m.</TD><TD>8 380 km² en Perú (total ~8 562 km²)</TD><TD>Puno / Bolivia</TD><TD>Lago navegable más alto del mundo. Lago más grande de América del Sur por volumen. Compartido con Bolivia (56% Perú, 44% Bolivia). Contiene la isla Uros (islas flotantes de totora).</TD></TR>
+<TR><TD><B>Lago Junín (Chinchaycocha)</B></TD><TD>~4 080 m.s.n.m.</TD><TD>~530 km²</TD><TD>Junín / Pasco</TD><TD>Segundo lago más grande del Perú. Reserva Nacional de Junín (flamingos y zambullidores). Alimenta el río Mantaro.</TD></TR>
+<TR><TD><B>Laguna de Parinacochas</B></TD><TD>~3 200 m.s.n.m.</TD><TD>~68 km²</TD><TD>Ayacucho</TD><TD>Famosa por los flamencos (parinas) que la habitan.</TD></TR>
+<TR><TD><B>Laguna Llanganuco</B></TD><TD>~3 850 m.s.n.m.</TD><TD>Pequeña</TD><TD>Áncash</TD><TD>Lagunas glaciales al pie del Huascarán. Colores turquesa espectaculares. Zona del PNHN.</TD></TR>
+<TR><TD><B>Laguna Lagunillas</B></TD><TD>~4 540 m.s.n.m.</TD><TD>~33 km²</TD><TD>Puno</TD><TD>La laguna más alta del Perú con tamaño significativo.</TD></TR>
+<TR><TD><B>Laguna de Huacachina</B></TD><TD>~390 m.s.n.m.</TD><TD>Pequeña</TD><TD>Ica</TD><TD>Oasis en medio del desierto costero; rodeada de médanos de arena. Laguna de aguas azufradas.</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El lago Titicaca: datos fundamentales para el examen:</H4>
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">3 812 m</DIV><DIV CLASS="dk-label">Altitud sobre el nivel del mar</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">8 562 km²</DIV><DIV CLASS="dk-label">Superficie total (Perú + Bolivia)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">932 km³</DIV><DIV CLASS="dk-label">Volumen de agua</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">281 m</DIV><DIV CLASS="dk-label">Profundidad máxima</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">56% Perú</DIV><DIV CLASS="dk-label">44% Bolivia</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">41</DIV><DIV CLASS="dk-label">Islas en el lago Titicaca</DIV></DIV>
+</DIV>
+
+<DIV CLASS="ej">🏝️ <B>Las islas del lago Titicaca:</B> Las más importantes son: <B>Isla Taquile</B> y la <B>Isla Amantaní</B> (peruanas, famosas por el turismo vivencial y la artesanía textil patrimonio de la UNESCO), la <B>Isla del Sol</B> y la <B>Isla de la Luna</B> (bolivianas, sagradas para los incas). Las <B>Islas Uros</B> son islas flotantes artificiales construidas con juncos de totora (<I>Schoenoplectus tatora</I>) por el pueblo Uros.</DIV>
+
+<H3 ID="ciclo">6. El ciclo hidrológico en el Perú y los regímenes fluviales</H3>
+
+<H4>El ciclo del agua en el contexto peruano:</H4>
+<UL>
+<LI><B>Evaporación:</B> el océano Pacífico y el Atlántico evaporan grandes cantidades de agua. El Pacífico, frío por la corriente de Humboldt, aporta poca humedad a la costa peruana.</LI>
+<LI><B>Transporte de vapor:</B> los vientos alisios llevan humedad del Atlántico hacia la Amazonía peruana. Esta es la principal fuente de precipitación de la sierra y la selva.</LI>
+<LI><B>Precipitación:</B> la humedad choca con los Andes y precipita, generando lluvias intensas en la selva alta y la sierra (diciembre–abril). La costa peruana es muy árida por la barrera andina y la corriente de Humboldt.</LI>
+<LI><B>Escorrentía:</B> el agua de lluvia y el deshielo glacial forman los ríos que descienden hacia el Pacífico, el Atlántico o el Titicaca.</LI>
+<LI><B>Infiltración y aguas subterráneas:</B> parte del agua se infiltra formando acuíferos, muy importantes en la costa árida donde los ríos son escasos.</LI>
+</UL>
+
+<H4>Régimen fluvial peruano según la vertiente:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Vertiente</TH><TH>Época de avenidas (crecida)</TH><TH>Época de estiaje (baja)</TH><TH>Variabilidad</TH></TR>
+<TR><TD><B>Pacífico</B></TD><TD>Enero – Abril</TD><TD>Mayo – Diciembre</TD><TD>MUY ALTA: algunos ríos se secan totalmente</TD></TR>
+<TR><TD><B>Atlántico</B></TD><TD>Noviembre – Abril</TD><TD>Mayo – Octubre</TD><TD>MEDIA: nunca se secan; diferencia menor entre crecida y estiaje</TD></TR>
+<TR><TD><B>Titicaca</B></TD><TD>Enero – Marzo</TD><TD>Junio – Octubre</TD><TD>MEDIA: regulados por el lago Titicaca</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Fenómeno El Niño e Hidrografía:</H4>
+El <B>Fenómeno El Niño</B> tiene un impacto directo en la hidrografía peruana:
+<UL>
+<LI>En la <B>costa norte</B> (Piura, Tumbes, Lambayeque): genera lluvias torrenciales extraordinarias, desbordamiento de ríos e inundaciones masivas (El Niño de 1983, 1997-98 y 2017 fueron los más intensos).</LI>
+<LI>En la <B>sierra y selva sur</B>: genera sequías al reducir las lluvias amazónicas.</LI>
+<LI>El río <B>Piura</B>, que en años normales casi se seca, en años de El Niño fuerte puede desbordarse e inundar la ciudad de Piura.</LI>
+</UL>
+
+<H3 ID="importancia">7. Importancia económica de los recursos hídricos del Perú</H3>
+
+<UL>
+<LI><B>Agricultura:</B> el 80% del agua que se usa en el Perú va al sector agrario. Los valles costeños dependen totalmente de los ríos de la vertiente del Pacífico para riego.</LI>
+<LI><B>Hidroelectricidad:</B> el Perú tiene un enorme potencial hidroeléctrico, el cuarto más grande del mundo. Las principales centrales son: <B>Mantaro</B> (Junín, la más grande del Perú), <B>Cañón del Pato</B> (Áncash, en el río Santa), <B>Chaglla</B> (Huánuco), <B>Cerro del Águila</B> (Junín).</LI>
+<LI><B>Agua potable:</B> el río <B>Rímac</B> abastece a Lima (~10 millones de hab.). El <B>lago Titicaca</B> abastece a Puno. Los ríos amazónicos abastecen a las ciudades de la selva.</LI>
+<LI><B>Pesca de agua dulce:</B> los ríos amazónicos tienen la mayor diversidad de peces de agua dulce del mundo. El paiche (<I>Arapaima gigas</I>) es el pez de agua dulce más grande de América.</LI>
+<LI><B>Navegación:</B> los ríos amazónicos son la única vía de transporte en gran parte de la selva (Iquitos, Pucallpa, Yurimaguas).</LI>
+<LI><B>Trasvases:</B> el Perú ha construido túneles transandinos para trasvasar agua de la vertiente del Atlántico (más húmeda) a la vertiente del Pacífico (árida). El <B>Proyecto Especial Chavimochic</B> (La Libertad) y el <B>Proyecto Olmos</B> (Lambayeque) son los más importantes.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Dato para examen:</B> El Perú es el <B>8° país con mayor disponibilidad de agua dulce del mundo</B> gracias a sus ríos amazónicos. Sin embargo, esta agua está muy mal distribuida: el 97% del territorio (Amazonía) tiene exceso de agua, mientras el 3% (costa) concentra la mayor parte de la población en zonas áridas. Esta paradoja hidrológica es uno de los problemas geográficos más importantes del Perú.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuántas vertientes hidrográficas tiene el Perú y cuál es la que abarca mayor extensión del territorio?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Dos vertientes: la del Pacífico (mayor extensión) y la del Atlántico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Tres vertientes: la del Atlántico abarca el ~75% del territorio, siendo la mayor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Tres vertientes: la del Pacífico abarca el ~75% del territorio, siendo la mayor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Cuatro vertientes: Pacífico, Atlántico, Titicaca y Caribe</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Perú tiene <B>tres vertientes hidrográficas</B>: la del <b>Pacífico</b> (~22% del territorio), la del <b>Atlántico</b> (~75%) y la del <b>Titicaca</b> (~3%). La vertiente del <b>Atlántico</b> es la más extensa porque incluye toda la cuenca amazónica peruana. Paradójicamente, la vertiente del Pacífico, siendo la más pequeña en extensión, alberga la mayor concentración de población del país.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> El río Rímac es el más importante del Perú principalmente porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Es el más largo de la vertiente del Pacífico, recorriendo más de 800 km</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Es el más caudaloso del Perú, superando al río Amazonas en volumen de agua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Abastece de agua potable a Lima, la ciudad más poblada del Perú, con más de 10 millones de habitantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Es navegable desde su nacimiento hasta su desembocadura, siendo la única vía fluvial de la costa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El río <B>Rímac</B> (~160 km) no es el más largo ni el más caudaloso de la vertiente del Pacífico (ese título es del río <b>Santa</b>). Sin embargo, es el <b>más importante</b> porque abastece de agua potable a <b>Lima</b>, la capital del Perú con más de 10 millones de habitantes. Sin el Rímac, Lima no sería viable como ciudad. También genera electricidad (Central de Huinco) y permite la irrigación del valle de Lima.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> El lago Titicaca es el lago navegable más alto del mundo. ¿A qué altitud se encuentra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) 2 800 m.s.n.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) 4 500 m.s.n.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) 3 812 m.s.n.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) 5 000 m.s.n.m.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>lago Titicaca</B> se ubica a <B>3 812 m.s.n.m.</B>, en el Altiplano del Collao, compartido entre Perú (56%) y Bolivia (44%). Es el lago navegable más alto del mundo, el lago más grande de América del Sur por volumen (~932 km³) y el segundo más grande por superficie (después del lago Maracaibo en Venezuela, aunque este tiene conexión al mar). Tiene ~281 m de profundidad máxima.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> La vertiente del Titicaca es un sistema ENDORREICO. Esto significa que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Sus ríos son los más cortos del Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Sus aguas no llegan al mar: el sistema es cerrado y el agua se pierde principalmente por evaporación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Sus ríos nacen en el mar y fluyen hacia el interior del continente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Sus aguas drenan directamente al océano Índico a través de Bolivia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Endorreico</B> significa que el sistema hidrológico <b>no tiene salida al mar</b>. Las aguas que llegan al lago Titicaca se pierden principalmente por <b>evaporación</b> (más del 90% del agua que recibe el lago, dada la intensa radiación solar a 3 812 m). El río <b>Desaguadero</b> lleva un pequeño porcentaje hacia el lago Poopó en Bolivia, que también es endorreico. Ninguna gota de agua de esta vertiente llega directamente al océano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> El río más caudaloso de la vertiente del Pacífico en el Perú es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) El río Rímac</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) El río Chira</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) El río Santa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) El río Tumbes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>río Santa</B> (~320 km, Áncash) es el más <b>caudaloso</b> de la vertiente del Pacífico, con un caudal medio de ~200 m³/s. Esto se debe a que drena el Callejón de Huaylas, donde los glaciares de la Cordillera Blanca aportan caudal permanente. El río <b>Rímac</b> es el más <b>importante</b> (por abastecer Lima) pero no el más caudaloso. El río <b>Tumbes</b> es el más caudaloso del norte, pero en volumen total el Santa lo supera.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Por qué los ríos de la vertiente del Pacífico tienen caudal muy irregular (casi se secan en época seca) mientras los ríos amazónicos tienen caudal más regular?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Porque los ríos del Pacífico son más cortos y pierden su agua en el desierto antes de llegar al mar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Porque los ríos del Pacífico dependen casi exclusivamente de las lluvias estacionales de la sierra, sin deshielo glacial significativo, mientras los amazónicos reciben lluvias de la selva tropical que son más distribuidas en el año</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Porque la costa tiene temperaturas más altas que la Amazonía, lo que evapora el agua de los ríos del Pacífico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Porque los ríos del Pacífico fluyen cuesta abajo más rápido y el agua no tiene tiempo de acumularse</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La irregularidad de los ríos del Pacífico se explica por su <b>régimen pluvionival</b> altamente estacional: dependen de las lluvias de la sierra andina (concentradas en diciembre-abril). En época seca (mayo-noviembre), sin lluvias y con poco deshielo, su caudal cae drásticamente. Los ríos amazónicos, en cambio, reciben lluvias más distribuidas durante el año gracias a la <b>densa cobertura forestal amazónica</b> que genera precipitaciones propias (lluvia convectiva) y a la mayor magnitud de sus cuencas, que amortiguan las variaciones estacionales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> El río Amazonas se forma en Nauta (Loreto) por la confluencia de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) El Marañón y el Huallaga</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) El Ucayali y el Madre de Dios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) El Marañón y el Ucayali</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) El Urubamba y el Apurímac</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El río <B>Amazonas</B> propiamente dicho comienza en la confluencia del <B>Marañón</B> (que viene del norte) y el <B>Ucayali</B> (que viene del sur), en el sector de <b>Nauta</b> (Loreto). El Huallaga es afluente del Marañón. El Madre de Dios desemboca en Bolivia. El Urubamba y el Apurímac forman el Ucayali (a través del Ene y el Tambo). Esta pregunta es muy frecuente en exámenes preuniversitarios.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> El Proyecto Especial Olmos (Lambayeque) y el Proyecto Chavimochic (La Libertad) tienen en común que ambos:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Son represas construidas en ríos de la vertiente del Atlántico para generar electricidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" Value="b"> b) Son trasvases que llevan agua de la vertiente del Atlántico (sierra y selva alta) hacia la árida costa del Pacífico para irrigación agrícola</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Son proyectos de navegación que conectan los ríos costeros con el río Amazonas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Son proyectos de tratamiento de agua del lago Titicaca para abastecer ciudades costeras</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Tanto <B>Chavimochic</B> (que trae agua del río Santa hacia La Libertad) como <B>Olmos</B> (que lleva agua del río Huancabamba, en la vertiente del Atlántico, hacia Lambayeque a través de un túnel transandino de 20 km) son <b>trasvases</b>: obras de ingeniería que cruzan los Andes para llevar agua de zonas lluviosas (vertiente atlántica) hacia la árida costa del Pacífico, donde la agricultura intensiva (espárragos, palta, arándanos) es altamente productiva y exportable pero carece de agua suficiente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> El río Marañón es considerado el "gran colector del norte" del Perú. ¿Qué río es su afluente más importante?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El río Ucayali</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El río Huallaga</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El río Urubamba</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) El río Mantaro</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El afluente más importante del <B>Marañón</B> es el <B>Huallaga</B> (~1 100 km), que nace en el Nudo de Pasco, recorre los valles de Huánuco, Tingo María y San Martín antes de unirse al Marañón. El <b>Ucayali</b> no es afluente del Marañón sino que junto con él forma el Amazonas. El <b>Mantaro</b> desemboca en el Apurímac, no en el Marañón. El <b>Urubamba</b> forma parte del sistema Ucayali.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> El lago Junín (Chinchaycocha) es importante hidrológicamente porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Es el más profundo del Perú, con más de 500 m de profundidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Es la naciente del río Mantaro y regula su caudal; además es Reserva Nacional por su biodiversidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Es el lago más grande del Perú en superficie, superando al Titicaca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Forma parte de la vertiente del Titicaca, siendo su principal afluente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>lago Junín</B> (~4 080 m.s.n.m., ~530 km²) es la naciente del río <B>Mantaro</B>, el río más importante de la sierra central del Perú (que genera electricidad en la central del Mantaro). Es el <b>segundo lago más grande del Perú</b> (después del Titicaca). Es <b>Reserva Nacional</b> por albergar especies endémicas como el zambullidorcillo del Junín (<I>Podiceps taczanowskii</I>) y grandes colonias de flamingos. Pertenece a la vertiente del <b>Atlántico</b>, no del Titicaca.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Las nacientes más remotas del río Amazonas se ubican en el nevado Mismi (Arequipa). ¿Cuál es la cadena hidrológica correcta desde el Mismi hasta el Amazonas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Mismi → Colca → Majes → Camaná → Pacífico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Mismi → Apurímac → Ene → Tambo → Ucayali → Amazonas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Mismi → Marañón → Huallaga → Amazonas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Mismi → Mantaro → Apurímac → Ucayali → Amazonas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La cadena hidrológica correcta es: <B>Nevado Mismi</B> (Arequipa, ~5 597 m) → arroyos que forman el río <B>Apurímac</B> → río <B>Ene</B> (al unirse el Apurímac con el Mantaro) → río <B>Tambo</B> (al continuar el Ene hacia el norte) → río <B>Ucayali</B> (al unirse el Tambo con el Urubamba) → río <B>Amazonas</B> (al confluir el Ucayali con el Marañón en Nauta). El nevado Mismi también vierte agua hacia el río Colca (que va al Pacífico), pero sus aguas que van al Atlántico siguen la cadena del Apurímac.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El Perú es el 8° país con mayor disponibilidad de agua dulce del mundo, pero sufre estrés hídrico en la costa. ¿Cuál es la paradoja hidrológica central que explica esta contradicción?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) El Perú exporta grandes cantidades de agua a Chile y Ecuador, reduciendo su disponibilidad interna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) El 97% del agua dulce peruana está en la Amazonía (vertiente atlántica), donde vive el 15% de la población, mientras la costa árida concentra el 55% de la población pero tiene solo el 1,8% del agua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) El Perú tiene mucha agua pero toda está contaminada por la minería y es inutilizable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La mayor parte del agua dulce peruana está congelada en glaciares inaccesibles que nunca se derriten</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es la <b>gran paradoja hídrica del Perú</b>: el país tiene abundantísima agua en términos absolutos (~2 billones de m³/año), pero está distribuida de forma extremadamente desigual. La <b>vertiente atlántica</b> (~75% del territorio, Amazonía) concentra el <b>~97% del agua</b> disponible, pero alberga solo el <b>~15% de la población</b>. La <b>vertiente del Pacífico</b> (costa árida, ~22% del territorio) tiene solo el <b>~1,8% del agua</b> pero concentra más del <b>55% de la población</b>. Esta brecha explica por qué Lima (10 millones de hab.) sufre cortes de agua y por qué los trasvases son estratégicamente vitales para el país.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> El Fenómeno El Niño de 1997-98 causó que el río Piura se desbordara masivamente. ¿Cuál es el mecanismo hidrológico-climático que explica por qué un río que casi se seca en años normales puede desbordarse en años de El Niño?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) El Niño calienta el océano Pacífico frente a la costa norte del Perú, lo que aumenta la evaporación local y genera lluvias torrenciales en la sierra de Piura, alimentando extraordinariamente el río</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El Niño trae corrientes subterráneas de agua caliente que emergen en el lecho del río Piura desde el fondo oceánico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) El Niño reduce la velocidad de los vientos alisios, lo que hace que el río fluya más lento y se acumule</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El Niño derrite todos los glaciares andinos simultáneamente, enviando agua extra al río Piura</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El mecanismo es el siguiente: en años de El Niño, las <b>aguas del Pacífico frente a la costa norte del Perú se calientan anormalmente</b> (hasta 5-7°C por encima de lo normal). Este calentamiento genera <b>mayor evaporación</b> y convección intensa: el aire cálido y húmedo sube, se condensa y produce <b>lluvias torrenciales</b> sobre la costa y sierra de Piura, Tumbes y Lambayeque. Ríos como el Piura, que en años normales tienen apenas 10-20 m³/s de caudal, pueden alcanzar <b>3 000-5 000 m³/s</b> durante El Niño fuerte, desbordándose catastróficamente. En el El Niño de 1983, Piura recibió en un mes lo que normalmente cae en 10 años.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> La central hidroeléctrica del Mantaro (Junín) es la más importante del Perú. ¿Qué característica hidrológica del río Mantaro la hace especialmente valiosa para la generación eléctrica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El río Mantaro tiene el mayor caudal del Perú, superando al Amazonas en metros cúbicos por segundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El Mantaro combina un caudal relativamente regular (regulado por el lago Junín) con un desnivel muy pronunciado al descender de los ~4 000 m del lago Junín hacia la selva, generando gran potencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El río Mantaro es el único navegable en su totalidad, lo que facilita el transporte de materiales para la central</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Sus aguas son las más puras del Perú, lo que reduce el mantenimiento de las turbinas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <b>potencia hidroeléctrica</b> de un río depende de dos factores: <b>caudal</b> (m³/s) y <b>desnivel o caída de agua</b> (metros de altura). El río Mantaro tiene ambos: nace en el <b>lago Junín</b> (~4 080 m.s.n.m.), cuya gran superficie actúa como <b>regulador natural</b> manteniendo un caudal relativamente estable a lo largo del año. Además, el río desciende unos 3 000 m en su recorrido hacia la selva central, generando un enorme desnivel aprovechable. Las centrales del <b>sistema Mantaro</b> (Santiago Antúnez de Mayolo, Restitución, etc.) generan aproximadamente el 40% de la electricidad del Perú.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> El río Putumayo forma la frontera natural entre Perú y Colombia. Desde una perspectiva de geografía política e hidrográfica, ¿qué implicancias tiene que un río sea "frontera natural"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Que el río pertenece exclusivamente a uno de los dos países ribereños, quien tiene control total de sus aguas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Que el curso del río delimita los territorios de ambos países; el talweg (línea de mayor profundidad) suele ser la línea fronteriza, lo que implica que cualquier cambio del curso del río puede generar disputas territoriales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Que ambos países deben compartir el río en partes iguales y ninguno puede pescar ni navegar sin permiso del otro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Que el río es zona neutral y ninguno de los dos países puede construir infraestructura en sus orillas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En Derecho Internacional, cuando un río sirve de frontera, la línea divisoria suele trazarse por el <b>talweg</b> (la línea que une los puntos de mayor profundidad o velocidad del río). Esto tiene implicancias prácticas importantes: los ríos <b>meandrizan con el tiempo</b>, cambiando su curso, lo que puede desplazar la frontera y generar disputas. Además, cada país tiene soberanía sobre su orilla y puede explotar los recursos de "su" mitad del río. Los tratados limítrofes suelen establecer reglas específicas para la navegación, pesca y uso del agua en ríos fronterizos. El Putumayo sirve de frontera natural Perú-Colombia en gran parte de Loreto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El "río volador" o "río aéreo" es un concepto acuñado por investigadores brasileños para describir un fenómeno hidrológico amazónico crucial. ¿En qué consiste y cómo se relaciona con la hidrología peruana?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Es un río subterráneo que conecta el lago Titicaca con el río Amazonas a través de cavernas andinas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Es la enorme cantidad de vapor de agua que la selva amazónica transpira y evapotranspira (unos 20 billones de litros/día), que viaja hacia el sur como una "corriente de aire húmedo" generando lluvias en el interior del continente, incluyendo los Andes peruanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Es el sistema de canales elevados construidos por los incas para llevar agua de los Andes a la costa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Es el nombre científico de la corriente del Niño cuando provoca inundaciones en la Amazonía</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <b>"río volador"</b> (concepto del climatólogo José Marengo y del físico Antonio Nobre) describe el flujo de vapor de agua que la selva amazónica libera por evapotranspiración: los árboles de la Amazonia "bombean" agua del suelo hacia la atmósfera en cantidades astronómicas (~20 billones de litros/día), formando una corriente de aire húmedo que viaja hacia el sur y el oeste. Al chocar con los <b>Andes peruanos y bolivianos</b>, este vapor precipita generando las lluvias que alimentan los ríos de la vertiente atlántica del Perú. Esto explica por qué la <b>deforestación amazónica</b> en Brasil afecta directamente la disponibilidad de agua en los Andes peruanos: sin árboles, no hay "río volador" y los Andes se secan.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El río Amazonas descarga al Atlántico ~209 000 m³/s. Para dimensionar este dato: el río Nilo descarga ~2 830 m³/s y el río Rímac ~30 m³/s. ¿Qué porcentaje aproximado del total de agua dulce que todos los ríos del mundo vierten al mar representa el Amazonas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Aproximadamente el 5% del total mundial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Aproximadamente el 20% del total mundial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Aproximadamente el 50% del total mundial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Aproximadamente el 1% del total mundial</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El río Amazonas aporta aproximadamente el <B>20%</B> (un quinto) de toda el agua dulce que los ríos del planeta vierten a los océanos. Para dimensionarlo: el caudal del Nilo es ~74 veces menor que el del Amazonas. La enorme cuenca amazónica (~7 M km²) recibe precipitaciones anuales de 2 000–3 000 mm en promedio, y la densa selva amazónica recicla el agua localmente (lluvia → evapotranspiración → lluvia), amplificando la escorrentía. Esta cifra explica por qué la desembocadura del Amazonas en el Atlántico, cerca de Marajó (Brasil), tiene un ancho de ~240 km y su caudal en épocas de crecida puede superar los 340 000 m³/s.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> En geomorfología fluvial, la diferencia entre un río "consecuente" y un río "antecedente" es relevante para entender por qué ríos amazónicos como el Marañón o el Urubamba atraviesan las cordilleras andinas en lugar de rodearlas. El Marañón corta transversalmente la Cordillera Oriental formando cañones profundos. ¿Cómo se explica esto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) El Marañón es más reciente que los Andes; fue canalizado artificialmente por los Incas a través de las montañas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) El Marañón es un río "antecedente": existía antes del levantamiento andino y mantuvo su curso erosionando las rocas a medida que los Andes se elevaban, lo que explica sus profundos cañones y pongos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El Marañón sigue una falla geológica activa que abrió un paso a través de la Cordillera Oriental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Los glaciares cuaternarios excavaron el canal del Marañón a través de la cordillera durante la última glaciación</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Un río <b>antecedente</b> es aquel cuya existencia es anterior al levantamiento de la montaña que actualmente atraviesa. Cuando los Andes comenzaron a elevarse (hace ~25-10 millones de años, proceso aún activo), ríos como el <B>Marañón</B> ya fluían por esa zona. A medida que la cordillera se elevaba, el río <b>erosionaba hacia abajo</b> (incisión fluvial) al mismo ritmo que las rocas se levantaban, manteniendo su curso y creando profundos cañones y <b>pongos</b>. Este proceso (río antecedente + incisión tectónica) explica por qué el Pongo de Manseriche tiene paredes verticales de 800 m de alto: el río fue "cortando" la roca mientras los Andes se levantaban a su alrededor.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Desde una perspectiva de gobernanza del agua, el Perú adoptó el enfoque de "gestión por cuencas hidrográficas" en su Ley de Recursos Hídricos (Ley 29338, 2009). ¿Qué ventaja principal tiene gestionar el agua por cuencas en lugar de por divisiones político-administrativas (departamentos)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Permite que cada departamento tenga mayor autonomía para vender sus derechos de agua a empresas privadas sin restricciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Una cuenca es la unidad natural del ciclo hidrológico: gestionar el agua donde fluye naturalmente, integrando a todos los usuarios (aguas arriba y abajo), permite decisiones coherentes y sostenibles que las fronteras departamentales arbitrarias no permiten</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Reduce los costos administrativos al eliminar los gobiernos regionales de la gestión del agua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Permite que los países vecinos (Ecuador, Colombia, Brasil) participen en la gestión del agua peruana bajo supervisión de la ONU</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <b>cuenca hidrográfica</b> es la unidad geográfica natural del ciclo del agua: todo lo que llueve dentro de ella fluye hacia el mismo punto de salida (desembocadura). Gestionar el agua por cuencas en lugar de por departamentos tiene ventajas cruciales: (1) <b>Integra todos los actores</b>: agricultores de la sierra (aguas arriba) y de la costa (aguas abajo) de la misma cuenca comparten el mismo recurso y sus decisiones se afectan mutuamente. (2) <b>Evita conflictos interdepartamentales</b>: un río que cruza varios departamentos (como el Santa, que cruza Áncash y La Libertad) requiere acuerdos supradepartamentales. (3) <b>Permite planificación integral</b>: reforestación, riego, hidroelectricidad y agua potable se planifican considerando toda la cuenca como sistema.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> El lago Titicaca comparte sus aguas entre Perú (56%) y Bolivia (44%). Geopolíticamente, esto plantea el desafío de la gestión compartida de un recurso transfronterizo. ¿Qué instrumento bilateral regula actualmente el uso y protección del lago Titicaca?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) El Tratado de Tordesillas (1494), que originalmente dividió el lago entre ambos países</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) El Estatuto del Río de la Plata (1973) que incluye al Titicaca como cuenca asociada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) La Autoridad Binacional del Lago Titicaca (ALT), creada por el Convenio Perú-Bolivia de 1996, que coordina el uso sostenible y la descontaminación del lago</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El lago Titicaca no tiene regulación bilateral; cada país gestiona su porción de forma completamente independiente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>Autoridad Binacional Autónoma del Sistema Hídrico del Lago Titicaca, río Desaguadero, lago Poopó y Salar de Coipasa (ALT)</B> fue creada mediante el Convenio Perú-Bolivia de 1996. Su mandato incluye: (1) <b>Planificación</b> del uso sostenible del agua del sistema TDPS (Titicaca-Desaguadero-Poopó-Salar). (2) <b>Descontaminación</b>: el lago sufre grave contaminación por las ciudades de Puno y Juliaca (Perú) y El Alto (Bolivia), que vierten aguas residuales sin tratar. (3) <b>Monitoreo</b> de niveles y calidad del agua. (4) <b>Coordinación</b> en caso de inundaciones o sequías extremas. Es un ejemplo de <b>gobernanza transfronteriza</b> de recursos hídricos.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

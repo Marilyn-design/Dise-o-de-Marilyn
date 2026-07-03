@@ -1,0 +1,570 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>La Corriente Libertadora del Norte - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA DEL PER&Uacute; &middot; TEMA 13</DIV>
+<H1>La Corriente Libertadora del Norte</H1>
+<DIV CLASS="sub">Sim&oacute;n Bol&iacute;var &middot; Campa&ntilde;a de Venezuela y Nueva Granada &middot; Paso de los Andes &middot; Batallas decisivas &middot; Llegada al Per&uacute;</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ==================== EXPLICACIÓN ==================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Contexto: &iquest;por qu&eacute; dos corrientes libertadoras?</H3>
+La independencia de Am&eacute;rica del Sur no fue obra de un solo hombre ni de un solo ej&eacute;rcito. El proceso emancipador se organiz&oacute; en dos grandes frentes militares que avanzaron simult&aacute;neamente desde los extremos del continente hacia el centro &mdash;el Per&uacute;, &uacute;ltimo basti&oacute;n del poder espa&ntilde;ol en Sudam&eacute;rica&mdash;:
+
+<UL>
+<LI><B>Corriente Libertadora del Norte:</B> organizada desde Venezuela y Colombia, liderada por <B>Sim&oacute;n Bol&iacute;var</B>, que descendi&oacute; por los Andes hacia el sur.</LI>
+<LI><B>Corriente Libertadora del Sur:</B> organizada desde Argentina y Chile, liderada por <B>Jos&eacute; de San Mart&iacute;n</B>, que cruzó los Andes hacia el norte.</LI>
+</UL>
+
+Ambas corrientes convergieron en el Per&uacute;, donde se libraron las batallas definitivas que pusieron fin al dominio espa&ntilde;ol en toda Am&eacute;rica del Sur. Este tema se centra exclusivamente en la <B>Corriente del Norte</B>.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Es frecuente que los alumnos confundan las dos corrientes. Recuerda: <B>Norte = Bol&iacute;var</B> (Venezuela &rarr; Colombia &rarr; Ecuador &rarr; Per&uacute;); <B>Sur = San Mart&iacute;n</B> (Argentina &rarr; Chile &rarr; Per&uacute;). La clave es que ambas convergen en territorio peruano.</DIV>
+
+<H3>2. Sim&oacute;n Bol&iacute;var: el L&iacute;bertador</H3>
+<B>Sim&oacute;n Jos&eacute; Antonio de la Sant&iacute;sima Trinidad Bol&iacute;var Palacios</B> (Caracas, <B>24 de julio de 1783</B> &ndash; Santa Marta, <B>17 de diciembre de 1830</B>) fue el principal l&iacute;der de la independencia hispanoamericana. Pertenec&iacute;a a la aristocracia criolla venezolana (familia de terratenientes blancos enriquecidos con el cacao). Qued&oacute; hu&eacute;rfano a los nueve a&ntilde;os y fue educado bajo las ideas ilustradas de la &eacute;poca, especialmente bajo la influencia de su maestro <B>Sim&oacute;n Rodr&iacute;guez</B> (llamado también "Samuel Robinson"), quien lo form&oacute; en Rousseau, Locke y Montesquieu.
+
+<H4>Formaci&oacute;n ideol&oacute;gica y el Juramento del Monte Sacro (1805):</H4>
+Durante su viaje a Europa (1804&ndash;1807), Bol&iacute;var presenci&oacute; la coronaci&oacute;n de Napole&oacute;n como Emperador y visit&oacute; Roma. En el <B>Monte Sacro</B> (Roma, <B>15 de agosto de 1805</B>), en presencia de Sim&oacute;n Rodr&iacute;guez, jur&oacute; solemnemente no dar descanso a su brazo ni reposo a su alma hasta no ver rotas las cadenas que oprimían a Am&eacute;rica. Este juramento es uno de los episodios simb&oacute;licos m&aacute;s citados en los ex&aacute;menes preuniversitarios.
+
+<H4>Caracter&iacute;sticas ideol&oacute;gicas de Bol&iacute;var:</H4>
+<UL>
+<LI><B>Ilustrado:</B> cre&iacute;a en la soberan&iacute;a popular, la separaci&oacute;n de poderes y los derechos naturales del hombre.</LI>
+<LI><B>Republicano:</B> rechazaba la monarqu&iacute;a y abogaba por rep&uacute;blicas independientes.</LI>
+<LI><B>Unionista:</B> so&ntilde;aba con una gran confederaci&oacute;n de naciones hispanoamericanas (el proyecto de la <B>Gran Colombia</B> y el Congreso Anfit&iacute;ct&oacute;nico de Panam&aacute;, 1826).</LI>
+<LI><B>Pragm&aacute;tico:</B> no dud&oacute; en aliarse con Haití, con llaneros realistas convertidos al bando patriota (P&aacute;ez) o con Gran Breta&ntilde;a para conseguir sus objetivos.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#127981; LA CAMPA&Ntilde;A LIBERTADORA DEL NORTE<SPAN>De Venezuela a la Gran Colombia: el camino hacia el Per&uacute;</SPAN></DIV>
+
+<H3>3. Las guerras de independencia en Venezuela y Nueva Granada</H3>
+La lucha por la independencia en el norte de Sudam&eacute;rica fue un proceso largo y sangriento (1810&ndash;1821) que tuvo varias etapas, con avances y retrocesos del bando patriota:
+
+<H4>Primera Rep&uacute;blica de Venezuela (1810&ndash;1812):</H4>
+El <B>19 de abril de 1810</B> (Jueves Santo), el Cabildo de Caracas destituy&oacute; al capit&aacute;n general espa&ntilde;ol en lo que se conoce como el <B>primer grito de independencia venezolano</B>. Se form&oacute; una Junta Conservadora de los Derechos de Fernando VII. El <B>5 de julio de 1811</B> se declar&oacute; la independencia formal de Venezuela &mdash;la primera en Sudam&eacute;rica&mdash;. Sin embargo, la Primera Rep&uacute;blica colaps&oacute; en 1812 por la reconquista realista de Monteverde y el terremoto de Caracas (que fue aprovechado por el clero realista como castigo divino a los rebeldes).
+
+<H4>La "Guerra a Muerte" (1813) y la Segunda Rep&uacute;blica:</H4>
+Bol&iacute;var regres&oacute; desde Nueva Granada y en <B>1813</B> proclam&oacute; el famoso decreto de <B>"Guerra a Muerte"</B>: "Espa&ntilde;oles y canarios: contad con la muerte, aunque seais indiferentes, si no obr&aacute;is activamente en obsequio de la libertad de Am&eacute;rica. Americanos: contad con la vida, aunque seais culpables." Fue una medida desesperada para radicalizar el conflicto y evitar neutralidades. La Segunda Rep&uacute;blica tambi&eacute;n fue derrotada por los temibles <B>Llaneros</B> de <B>Boves</B> (1814), caudillo realista que moviliz&oacute; a las masas mestizas y pardas contra los criollos patriotas.
+
+<H4>Tercer intento: el apoyo de Hait&iacute; y los llaneros (1816&ndash;1819):</H4>
+Bol&iacute;var busc&oacute; refugio en Jamaica (donde escribi&oacute; la famosa <B>Carta de Jamaica</B>, 1815, analizando l&uacute;cidamente el futuro de la independencia hispanoamericana) y luego en <B>Hait&iacute;</B>, cuyo presidente <B>Alejandro Pet&iacute;on</B> le brind&oacute; apoyo material a cambio de que Bol&iacute;var aboliera la esclavitud en los territorios liberados. De regreso, Bol&iacute;var logr&oacute; ganarse a <B>Jos&eacute; Antonio P&aacute;ez</B> y sus llaneros &mdash;antes realistas&mdash; para la causa patriota, un giro decisivo.
+
+<DIV CLASS="mapa-note">&#128221; <B>La Carta de Jamaica (6 de septiembre de 1815)</B> es uno de los documentos pol&iacute;ticos m&aacute;s importantes de la historia latinoamericana. Escrita en Kingston, Jamaica, respondiendo al comerciante ingl&eacute;s Henry Cullen, Bol&iacute;var analiza las causas de la independencia, la situaci&oacute;n actual y el futuro de las naciones hispanoamericanas. Predice con notable lucidez que M&eacute;xico ser&aacute; una rep&uacute;blica federal, que los pa&iacute;ses del sur formar&aacute;n naciones separadas, y reflexiona sobre la identidad americana: "No somos indios ni europeos, sino una especie media entre los leg&iacute;timos propietarios del pa&iacute;s y los usurpadores espa&ntilde;oles."</DIV>
+
+<DIV CLASS="cultura-titulo">&#9917; EL CONGRESO DE ANGOSTURA Y LA GRAN COLOMBIA<SPAN>La base pol&iacute;tica y jur&iacute;dica de la Corriente del Norte</SPAN></DIV>
+
+<H3>4. El Congreso de Angostura (1819) y la creaci&oacute;n de la Gran Colombia</H3>
+El <B>15 de febrero de 1819</B>, Bol&iacute;var inaugur&oacute; el <B>Congreso de Angostura</B> (hoy Ciudad Bol&iacute;var, Venezuela) con su famoso <B>Discurso de Angostura</B>, considerado una de las piezas m&aacute;s importantes del pensamiento pol&iacute;tico latinoamericano. En &eacute;l propuso su visi&oacute;n de gobierno para las nuevas naciones: una rep&uacute;blica con poderes ejecutivo, legislativo y judicial, m&aacute;s un novedoso <B>Poder Moral</B> (especie de tribunal censor de la &eacute;tica p&uacute;blica) y un <B>Senado hereditario</B> como estabilizador institucional. 
+
+El Congreso aprob&oacute; la <B>Ley Fundamental</B> que uni&oacute; a Venezuela y la Nueva Granada en la <B>Rep&uacute;blica de Colombia</B> (llamada por los historiadores <B>"Gran Colombia"</B> para distinguirla de la actual). Bol&iacute;var fue elegido <B>Presidente</B> y <B>Francisco de Paula Santander</B>, Vicepresidente.
+
+<H4>Composici&oacute;n de la Gran Colombia (1819&ndash;1830):</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Territorio</TH><TH>Equivale hoy a</TH><TH>A&ntilde;o de integraci&oacute;n</TH></TR>
+<TR><TD><B>Venezuela</B></TD><TD>Venezuela</TD><TD>1819</TD></TR>
+<TR><TD><B>Nueva Granada</B></TD><TD>Colombia y Panam&aacute;</TD><TD>1819</TD></TR>
+<TR><TD><B>Ecuador (Quito)</B></TD><TD>Ecuador</TD><TD>1822 (tras Pichincha)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#9975;&#65039; LA CAMPA&Ntilde;A ADMIRABLE Y EL PASO DE LOS ANDES<SPAN>Las operaciones militares que definieron la libertad del norte</SPAN></DIV>
+
+<H3>5. La Batalla de Boyac&aacute; (7 de agosto de 1819): liberaci&oacute;n de Nueva Granada</H3>
+Tras el Congreso de Angostura, Bol&iacute;var emprendi&oacute; una de las haza&ntilde;as militares m&aacute;s audaces de la historia americana: el <B>cruce de los Andes</B> en pleno invierno para sorprender al ej&eacute;rcito realista en Nueva Granada.
+
+<H4>El cruce de los Andes (junio&ndash;julio 1819):</H4>
+<UL>
+<LI>Bol&iacute;var condujo a unos <B>2.500 soldados</B> (venezolanos, granadinos y voluntarios brit&aacute;nicos de la <B>Legi&oacute;n Brit&aacute;nica</B>) a trav&eacute;s del <B>P&aacute;ramo de Pisba</B>, a m&aacute;s de 4.000 metros sobre el nivel del mar, en plena &eacute;poca de lluvias (junio 1819).</LI>
+<LI>Las condiciones fueron extremas: fr&iacute;o, p&aacute;ramo, escasez de alimentos; muchos soldados murieron de hipotermia; casi todos los caballos perecieron.</LI>
+<LI>Fue un movimiento estrat&eacute;gico de sorpresa total: los realistas no cre&iacute;an que nadie cruzara los Andes en invierno.</LI>
+</UL>
+
+<H4>La Batalla de Boyac&aacute;:</H4>
+El <B>7 de agosto de 1819</B>, el ej&eacute;rcito patriota de Bol&iacute;var (con el General <B>Francisco de Paula Santander</B> como jefe de vanguardia) derrot&oacute; decisivamente al ej&eacute;rcito realista del Brigadier <B>Jos&eacute; Mar&iacute;a Barreiro</B> en el <B>Puente de Boyac&aacute;</B> (actual Colombia). La batalla dur&oacute; apenas dos horas. Barreiro y m&aacute;s de 1.600 soldados realistas fueron capturados. Tres d&iacute;as despu&eacute;s, el <B>10 de agosto de 1819</B>, Bol&iacute;var entraba triunfante a <B>Bogot&aacute;</B>. Esta victoria consolid&oacute; la independencia de Nueva Granada y la formaci&oacute;n de la Gran Colombia.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La <B>Batalla de Boyac&aacute; (7 de agosto de 1819)</B> es la m&aacute;s importante de la Corriente del Norte en territorio neogranadino. Fecha, lugar (Puente de Boyac&aacute;, Colombia) y consecuencia (liberaci&oacute;n de Nueva Granada, entrada a Bogot&aacute; el 10 de agosto) son datos frecuentes en las pruebas universitarias.</DIV>
+
+<H3>6. La Batalla de Carabobo (24 de junio de 1821): liberaci&oacute;n de Venezuela</H3>
+Con Nueva Granada liberada, Bol&iacute;var volvi&oacute; la mirada a Venezuela, donde a&uacute;n quedaban fuertes contingentes realistas. El <B>24 de junio de 1821</B>, en la llanura de <B>Carabobo</B> (Venezuela), se libr&oacute; la batalla definitiva por la independencia venezolana.
+
+<H4>Desarrollo de la batalla:</H4>
+<UL>
+<LI>El ej&eacute;rcito patriota estaba al mando de Bol&iacute;var, con los generales <B>Jos&eacute; Antonio P&aacute;ez</B>, <B>Manuel Ced&ntilde;o</B> y la <B>Legi&oacute;n Brit&aacute;nica</B> (irlandeses y brit&aacute;nicos voluntarios).</LI>
+<LI>P&aacute;ez ejecut&oacute; una maniobra de flanqueo con su caballería llanera que result&oacute; decisiva: rode&oacute; al ej&eacute;rcito realista del General <B>Miguel de la Torre</B> y lo destruy&oacute;.</LI>
+<LI>La victoria fue aplastante: el ej&eacute;rcito realista qued&oacute; pr&aacute;cticamente aniquilado; solo un peque&ntilde;o contingente se refugi&oacute; en la fortaleza de Puerto Cabello.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>Importancia de Carabobo:</B> Esta victoria consolid&oacute; definitivamente la independencia de Venezuela. El <B>24 de junio</B> es hoy el D&iacute;a del Ej&eacute;rcito venezolano. La <B>Legi&oacute;n Brit&aacute;nica</B> &mdash;compuesta por veteranos de las guerras napole&oacute;nicas que vinieron a Am&eacute;rica en busca de aventura y pago&mdash; jug&oacute; un papel clave en esta batalla al resistir el contraataque realista.</DIV>
+
+<H3>7. La Batalla de Pichincha (24 de mayo de 1822): liberaci&oacute;n de Ecuador</H3>
+Para llegar al Per&uacute;, la Corriente del Norte deb&iacute;a liberar el territorio de la Real Audiencia de Quito (actual Ecuador). Esta misi&oacute;n fue encomendada al venezolano <B>Antonio Jos&eacute; de Sucre</B>, el m&aacute;s brillante de los generales de Bol&iacute;var.
+
+<H4>Antonio Jos&eacute; de Sucre:</H4>
+<B>Antonio Jos&eacute; de Sucre</B> (Cuman&aacute;, Venezuela, <B>3 de febrero de 1795</B> &ndash; Berruecos, Colombia, <B>4 de junio de 1830</B>) fue el <B>Gran Mariscal de Ayacucho</B>, considerado el m&aacute;s capaz de los generales de Bol&iacute;var. Se form&oacute; militarmente desde muy joven (ingres&oacute; al ej&eacute;rcito patriota a los 15 a&ntilde;os) y se distingui&oacute; por su honestidad, moderaci&oacute;n y genio estrat&eacute;gico.
+
+<H4>La batalla:</H4>
+El <B>24 de mayo de 1822</B>, Sucre derrot&oacute; al ej&eacute;rcito realista del General <B>Melchor Aymerich</B> en las faldas del <B>volcán Pichincha</B>, a 3.500 metros sobre el nivel del mar, junto a la ciudad de Quito. La victoria fue r&aacute;pida y decidida: las tropas patriotas, que inclu&iacute;an granadinos, venezolanos, peruanos y una guerrilla local guayaquile&ntilde;a, lograron ocupar las alturas del Pichincha y desde all&iacute; rechazaron los ataques realistas. Quito cay&oacute; ese mismo d&iacute;a. Ecuador qued&oacute; libre e integrado a la Gran Colombia.
+
+<DIV CLASS="cultura-titulo">&#129309; LA ENTREVISTA DE GUAYAQUIL (1822)<SPAN>El encuentro hist&oacute;rico entre los dos grandes libertadores</SPAN></DIV>
+
+<H3>8. La Entrevista de Guayaquil (26&ndash;27 de julio de 1822)</H3>
+Tras la liberaci&oacute;n de Ecuador, Bol&iacute;var descendi&oacute; a Guayaquil, donde se produjo uno de los encuentros m&aacute;s famosos y m&aacute;s misteriosos de la historia americana: la <B>Entrevista de Guayaquil</B> con el General <B>Jos&eacute; de San Mart&iacute;n</B>, L&iacute;bertador del Sur, quien ya hab&iacute;a proclamado la independencia del Per&uacute; en 1821 y se encontraba en una situaci&oacute;n militar complicada.
+
+<H4>Lo que se sabe:</H4>
+<UL>
+<LI>Los dos libertadores se reunieron en privado el <B>26 y 27 de julio de 1822</B> en Guayaquil.</LI>
+<LI>No exist&iacute;a ning&uacute;n testigo directo y no se levant&oacute; acta oficial de la reuni&oacute;n.</LI>
+<LI>Lo que s&iacute; es seguro: al t&eacute;rmino de la entrevista, San Mart&iacute;n decidi&oacute; retirarse definitivamente de la vida p&uacute;blica y dejar a Bol&iacute;var la conducci&oacute;n de la guerra en el Per&uacute;.</LI>
+<LI>San Mart&iacute;n march&oacute; al exilio en Europa, donde muri&oacute; en Boulogne-sur-Mer, Francia, en 1850.</LI>
+</UL>
+
+<H4>Los grandes debates hist&oacute;ricos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tema debatido</TH><TH>Posici&oacute;n de Bol&iacute;var</TH><TH>Posici&oacute;n de San Mart&iacute;n</TH></TR>
+<TR><TD>Forma de gobierno para el Per&uacute;</TD><TD>Rep&uacute;blica</TD><TD>Monarqu&iacute;a constitucional (con un pr&iacute;ncipe europeo)</TD></TR>
+<TR><TD>Incorporaci&oacute;n de Guayaquil</TD><TD>A la Gran Colombia (ya la hab&iacute;a anexado)</TD><TD>Al Per&uacute; o a decisi&oacute;n del pueblo</TD></TR>
+<TR><TD>Mando de la guerra en el Per&uacute;</TD><TD>Comandar personalmente</TD><TD>Apoyo conjunto o ceder el mando a Bol&iacute;var</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La Entrevista de Guayaquil (26&ndash;27 julio 1822) es uno de los temas m&aacute;s preguntados en preuniversitarios. Hay que recordar: (1) No hay acta oficial &rarr; es un misterio hist&oacute;rico; (2) San Mart&iacute;n abandon&oacute; el Per&uacute; despu&eacute;s; (3) Los debates sobre monarqu&iacute;a vs. rep&uacute;blica y sobre Guayaquil; (4) La consecuencia directa: Bol&iacute;var asumi&oacute; la conducci&oacute;n de la guerra peruana.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127477;&#127466; LA CORRIENTE LIBERTADORA EN EL PER&Uacute;<SPAN>El desenlace: las batallas de Juni&iacute;n y Ayacucho</SPAN></DIV>
+
+<H3>9. Bol&iacute;var en el Per&uacute;: el llamado del Congreso (1823)</H3>
+La situaci&oacute;n en el Per&uacute; tras la partida de San Mart&iacute;n era muy dif&iacute;cil: el gobierno del Marqu&eacute;s de Torre Tagle era inestable; las fuerzas realistas del Virrey <B>Jos&eacute; de la Serna</B> controlaban la sierra y el sur del pa&iacute;s; los ej&eacute;rcitos patriotas hab&iacute;an sufrido los desastres de <B>Macacona</B> (1822) y la <B>Primera Campa&ntilde;a Intermedia</B> (1823). El Congreso peruano, desesperado, confiri&oacute; a Bol&iacute;var la <B>dictadura suprema</B> del Per&uacute; (<B>febrero de 1824</B>), d&aacute;ndole plenos poderes militares y civiles.
+
+<H4>Reorganizaci&oacute;n del ej&eacute;rcito patriota:</H4>
+Bol&iacute;var reorganiz&oacute; meticulosamente el Ej&eacute;rcito Unido Libertador en el Calder&oacute;n de Hu&aacute;nuco y Cerro de Pasco (1824). Este ej&eacute;rcito era multinacional: venezolanos, colombianos, argentinos, chilenos y peruanos lucharon juntos bajo el mando unificado de Bol&iacute;var. El General Sucre actuó como segundo al mando.
+
+<H3>10. La Batalla de Juni&iacute;n (6 de agosto de 1824)</H3>
+El <B>6 de agosto de 1824</B>, en la pampa de <B>Juni&iacute;n</B> (a 4.100 m.s.n.m., departamento de Ju&iacute;n, Per&uacute;), se enfrentaron la caballería patriota y la realista en lo que fue la penúltima batalla decisiva de la independencia sudamericana. 
+
+<H4>Caracter&iacute;sticas &uacute;nicas de esta batalla:</H4>
+<UL>
+<LI>Fue una batalla <B>exclusivamente de caballería</B>: no se us&oacute; artiller&iacute;a ni infanter&iacute;a; los combatientes pelearon con sables, lanzas y pistolas.</LI>
+<LI>No se dispar&oacute; ni un solo cañ&oacute;n.</LI>
+<LI>Dur&oacute; menos de una hora (aproximadamente 45 minutos).</LI>
+<LI>El General <B>Guillermo Miller</B> (brit&aacute;nico al servicio del Per&uacute;) fue clave en el momento cr&iacute;tico de la batalla.</LI>
+<LI>Bol&iacute;var estuvo presente en el campo de batalla pero no dirigi&oacute; directamente el combate (que fue conducido por el general venezolano <B>Lara</B> y el argentino <B>Brandsen</B>).</LI>
+</UL>
+
+<H4>Resultado:</H4>
+La caballería patriota derrot&oacute; a la realista del General <B>Canterac</B>, quien se retir&oacute; apresuradamente. Junín no fue una victoria total (el grueso del ej&eacute;rcito realista no fue destruido), pero fue una victoria moral y estrat&eacute;gica decisiva: demostró la superioridad del ej&eacute;rcito libertador y abri&oacute; el camino a la batalla final.
+
+<DIV CLASS="mapa-note">&#128221; <B>Bol&iacute;var tras Juni&iacute;n:</B> Despu&eacute;s de Juni&iacute;n, Bol&iacute;var dej&oacute; el mando operativo al General <B>Sucre</B> y regres&oacute; a Lima para atender los asuntos pol&iacute;ticos. Fue Sucre quien condujo las operaciones que culminaron en Ayacucho.</DIV>
+
+<H3>11. La Batalla de Ayacucho (9 de diciembre de 1824): independencia definitiva</H3>
+El <B>9 de diciembre de 1824</B>, en la pampa de <B>La Quinua</B>, cerca de Ayacucho (Per&uacute;), se libr&oacute; la <B>batalla final de la independencia hispanoamericana</B>. Esta batalla fue comandada por el General <B>Antonio Jos&eacute; de Sucre</B> por el lado patriota, y por el Virrey <B>Jos&eacute; de la Serna</B> (quien fue herido y capturado en combate) por el lado realista.
+
+<H4>Fuerzas en combate:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Bando</TH><TH>Comandante principal</TH><TH>Efectivos aprox.</TH><TH>Resultado</TH></TR>
+<TR><TD><B>Patriota (Libertador)</B></TD><TD>Gral. Antonio Jos&eacute; de Sucre</TD><TD>~5.780 soldados</TD><TD><B>Victoria decisiva</B></TD></TR>
+<TR><TD><B>Realista (Real)</B></TD><TD>Virrey Jos&eacute; de la Serna</TD><TD>~9.310 soldados</TD><TD>Derrota total; capitulaci&oacute;n</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Desarrollo de la batalla:</H4>
+<UL>
+<LI>Los realistas ten&iacute;an ventaja num&eacute;rica (~9.300 vs ~5.780), pero Sucre aprovech&oacute; el terreno y la superior moral de sus tropas.</LI>
+<LI>El General realista <B>Valdés</B> logr&oacute; romper el centro patriota momentáneamente, pero Sucre reaccion&oacute; con rapidez.</LI>
+<LI>El Virrey de la Serna fue herido y capturado; con ello la moral realista se desplom&oacute;.</LI>
+<LI>El General realista <B>Jos&eacute; de Canterac</B>, ahora al mando, solicit&oacute; una tregua.</LI>
+</UL>
+
+<H4>La Capitulaci&oacute;n de Ayacucho:</H4>
+Ese mismo d&iacute;a, Sucre y Canterac firmaron la <B>Capitulaci&oacute;n de Ayacucho</B>, un documento hist&oacute;rico que puso fin a la presencia militar espa&ntilde;ola en toda Sudam&eacute;rica continental. Sus condiciones fueron generosas: los soldados realistas podían regresar a Espa&ntilde;a libremente; se respetaban sus honores militares; Espa&ntilde;a reconoc&iacute;a la independencia de las rep&uacute;blicas americanas. El &uacute;ltimo reducto realista en el Per&uacute; &mdash;el Callao, bajo el mando del realista <B>Jos&eacute; Ramon Rodil</B>&mdash; se rindi&oacute; el <B>22 de enero de 1826</B>.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Datos ESENCIALES para el examen universitario:</B><BR>
+&bull; <B>Batalla de Ayacucho:</B> 9 de diciembre de 1824 &middot; Pampa de La Quinua, Ayacucho, Per&uacute;<BR>
+&bull; <B>Comandante patriota:</B> Gral. Antonio Jos&eacute; de Sucre (Bol&iacute;var no estuvo en la batalla)<BR>
+&bull; <B>Comandante realista:</B> Virrey Jos&eacute; de la Serna (herido y capturado en combate)<BR>
+&bull; <B>Resultado:</B> Victoria patriota decisiva; Capitulaci&oacute;n de Ayacucho<BR>
+&bull; <B>Significado:</B> Fin de la dominaci&oacute;n espa&ntilde;ola en toda Sudam&eacute;rica continental<BR>
+&bull; Sucre recibe el t&iacute;tulo de <B>Gran Mariscal de Ayacucho</B></DIV>
+
+<H3>12. Consecuencias de la Corriente Libertadora del Norte</H3>
+<UL>
+<LI><B>Pol&iacute;ticas:</B> creaci&oacute;n de las rep&uacute;blicas de Venezuela, Colombia, Ecuador, Per&uacute; y Bolivia como naciones independientes; fin del colonialismo espa&ntilde;ol en Sudam&eacute;rica continental.</LI>
+<LI><B>Jur&iacute;dicas:</B> la Capitulaci&oacute;n de Ayacucho oblig&oacute; a Espa&ntilde;a a reconocer la independencia de facto de sus ex colonias.</LI>
+<LI><B>Sociales:</B> abolici&oacute;n de la esclavitud en los territorios liberados por Bol&iacute;var (aunque se implement&oacute; gradualmente); eliminaci&oacute;n legal del tributo ind&iacute;gena; proclamaci&oacute;n formal de la igualdad jur&iacute;dica.</LI>
+<LI><B>Territoriales:</B> creaci&oacute;n de Bolivia (1825) en honor a Bol&iacute;var, como nuevo Estado para el Alto Per&uacute;; Sucre fue su primer Presidente.</LI>
+<LI><B>Ideol&oacute;gicas:</B> el <B>bolivarismo</B> o pensamiento bolivariano &mdash;que propugnaba la uni&oacute;n de las naciones hispanoamericanas&mdash; qued&oacute; como legado, aunque el sue&ntilde;o unionista fracas&oacute; con la disoluci&oacute;n de la Gran Colombia (1830).</LI>
+</UL>
+
+<H3>13. Cuadro resumen de batallas y personajes clave</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fecha</TH><TH>Batalla / Evento</TH><TH>Lugar</TH><TH>Protagonista(s)</TH><TH>Resultado</TH></TR>
+<TR><TD><B>5 jul. 1811</B></TD><TD>Declaraci&oacute;n independencia Venezuela</TD><TD>Caracas</TD><TD>Congreso venezolano</TD><TD>1.&ordf; Rep&uacute;blica (efímera)</TD></TR>
+<TR><TD><B>6 sep. 1815</B></TD><TD>Carta de Jamaica</TD><TD>Kingston</TD><TD>Bol&iacute;var</TD><TD>Documento pol&iacute;tico fundacional</TD></TR>
+<TR><TD><B>15 feb. 1819</B></TD><TD>Congreso de Angostura</TD><TD>Angostura, Venezuela</TD><TD>Bol&iacute;var + Santander</TD><TD>Creaci&oacute;n de la Gran Colombia</TD></TR>
+<TR><TD><B>7 ago. 1819</B></TD><TD><B>Batalla de Boyac&aacute;</B></TD><TD>Boyac&aacute;, Colombia</TD><TD>Bol&iacute;var / Santander vs. Barreiro</TD><TD>Liberaci&oacute;n de Nueva Granada</TD></TR>
+<TR><TD><B>24 jun. 1821</B></TD><TD><B>Batalla de Carabobo</B></TD><TD>Carabobo, Venezuela</TD><TD>Bol&iacute;var / P&aacute;ez vs. De la Torre</TD><TD>Liberaci&oacute;n de Venezuela</TD></TR>
+<TR><TD><B>24 may. 1822</B></TD><TD><B>Batalla de Pichincha</B></TD><TD>Volcán Pichincha, Ecuador</TD><TD>Sucre vs. Aymerich</TD><TD>Liberaci&oacute;n de Ecuador</TD></TR>
+<TR><TD><B>26&ndash;27 jul. 1822</B></TD><TD>Entrevista de Guayaquil</TD><TD>Guayaquil, Ecuador</TD><TD>Bol&iacute;var y San Mart&iacute;n</TD><TD>San Mart&iacute;n se retira; Bol&iacute;var asume</TD></TR>
+<TR><TD><B>6 ago. 1824</B></TD><TD><B>Batalla de Juni&iacute;n</B></TD><TD>Juni&iacute;n, Per&uacute; (4.100 m)</TD><TD>Bol&iacute;var / Miller vs. Canterac</TD><TD>Victoria patriota; caballería</TD></TR>
+<TR><TD><B>9 dic. 1824</B></TD><TD><B>Batalla de Ayacucho</B></TD><TD>La Quinua, Ayacucho, Per&uacute;</TD><TD>Sucre vs. De la Serna</TD><TD>Fin del dominio espa&ntilde;ol en Sudam&eacute;rica</TD></TR>
+<TR><TD><B>22 ene. 1826</B></TD><TD>Rendici&oacute;n del Callao</TD><TD>El Callao, Per&uacute;</TD><TD>Rodil (realista) se rinde</TD><TD>&Uacute;ltimo basti&oacute;n espa&ntilde;ol cae</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1783</DIV><DIV CLASS="dk-label">Nacimiento de Bol&iacute;var en Caracas (24 de julio)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1805</DIV><DIV CLASS="dk-label">Juramento del Monte Sacro, Roma (15 agosto)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1819</DIV><DIV CLASS="dk-label">Boyac&aacute; (7 ago.) + Gran Colombia + Angostura</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1821</DIV><DIV CLASS="dk-label">Carabobo (24 jun.): Venezuela libre</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1822</DIV><DIV CLASS="dk-label">Pichincha (24 may.) + Entrevista Guayaquil</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1824</DIV><DIV CLASS="dk-label">Juni&iacute;n (6 ago.) + Ayacucho (9 dic.): fin del Imperio espa&ntilde;ol</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>L&iacute;der:</B> Sim&oacute;n Bol&iacute;var (Caracas, 1783&ndash;1830) &middot; Juramento Monte Sacro 1805 &middot; Carta de Jamaica 1815<BR>
+&bull; <B>Gran Colombia:</B> fundada en Angostura (15 feb. 1819) = Venezuela + Nueva Granada + Ecuador; Bol&iacute;var presidente, Santander vicepresidente<BR>
+&bull; <B>Boyac&aacute;:</B> 7 agosto 1819 &middot; cruce P&aacute;ramo de Pisba &middot; Santander en vanguardia &middot; libera Nueva Granada<BR>
+&bull; <B>Carabobo:</B> 24 junio 1821 &middot; P&aacute;ez + Legi&oacute;n Brit&aacute;nica &middot; libera Venezuela<BR>
+&bull; <B>Pichincha:</B> 24 mayo 1822 &middot; Sucre &middot; libera Ecuador<BR>
+&bull; <B>Guayaquil:</B> 26&ndash;27 julio 1822 &middot; Bol&iacute;var + San Mart&iacute;n &middot; sin acta &middot; San Mart&iacute;n se retira<BR>
+&bull; <B>Juni&iacute;n:</B> 6 agosto 1824 &middot; 4.100 msnm &middot; solo caballería &middot; sin cañones &middot; Bol&iacute;var presente<BR>
+&bull; <B>Ayacucho:</B> 9 diciembre 1824 &middot; Sucre vs. Virrey De la Serna &middot; La Quinua &middot; Capitulaci&oacute;n &middot; Sucre = Gran Mariscal<BR>
+&bull; <B>Fin total:</B> rendici&oacute;n del Callao, 22 enero 1826
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ==================== PREGUNTAS ==================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;Qui&eacute;n lider&oacute; la Corriente Libertadora del Norte y desde qu&eacute; pa&iacute;s parti&oacute; este proceso?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Jos&eacute; de San Mart&iacute;n, partiendo desde Argentina y cruzando los Andes hacia Chile y luego al Per&uacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Sim&oacute;n Bol&iacute;var, partiendo principalmente desde Venezuela y Nueva Granada (actual Colombia), avanzando hacia el sur hasta liberar el Per&uacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Antonio Jos&eacute; de Sucre, quien organiz&oacute; la campa&ntilde;a desde Ecuador y avanz&oacute; hacia Venezuela y Colombia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Francisco de Paula Santander, quien organiz&oacute; la campa&ntilde;a desde Per&uacute; con apoyo de tropas inglesas y estadounidenses</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Corriente Libertadora del Norte</B> fue liderada por <B>Sim&oacute;n Bol&iacute;var</B>, quien organiz&oacute; sus fuerzas en Venezuela y Nueva Granada (actual Colombia) y las condujo hacia el sur, liberando sucesivamente Nueva Granada (Boyac&aacute;, 1819), Venezuela (Carabobo, 1821), Ecuador (Pichincha, 1822) y finalmente el Per&uacute; (Juni&iacute;n y Ayacucho, 1824). La <B>Corriente del Sur</B> fue liderada por <B>San Mart&iacute;n</B> desde Argentina. <B>Sucre</B> fue el segundo al mando de Bol&iacute;var y quien gan&oacute; Ayacucho. <B>Santander</B> fue el Vicepresidente de la Gran Colombia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Qu&eacute; fue el Juramento del Monte Sacro (1805) y cu&aacute;l fue su importancia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Fue el juramento que Bol&iacute;var hizo en Lima comprometiéndose a nunca abandonar el Per&uacute; hasta ver la &uacute;ltima batalla contra los espa&ntilde;oles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Fue el juramento que Bol&iacute;var pronunci&oacute; en Roma (15 de agosto de 1805), en presencia de su maestro Sim&oacute;n Rodr&iacute;guez, comprometiéndose a no dar reposo a su brazo ni a su alma hasta ver libres a los pueblos americanos del dominio espa&ntilde;ol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Fue el juramento de lealtad al rey espa&ntilde;ol Fernando VII que Bol&iacute;var hizo en Espa&ntilde;a antes de convertirse en revolucionario, y que luego rompi&oacute; al regresar a Venezuela</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Fue el tratado firmado entre Bol&iacute;var y el Papa L&eacute;on XII por el cual la Iglesia Cat&oacute;lica apoy&oacute; oficialmente la independencia de Am&eacute;rica Latina</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Juramento del Monte Sacro</B> fue pronunciado por Bol&iacute;var el <B>15 de agosto de 1805</B> en Roma, en la colina del Monte Sacro (lugar hist&oacute;rico de la antigua Roma donde la plebe romana se retir&oacute; para protestar). Bol&iacute;var estaba con su maestro <B>Sim&oacute;n Rodr&iacute;guez</B>, quien le hab&iacute;a formado en las ideas ilustradas. El joven Bol&iacute;var jur&oacute;: <I>"Juro delante de usted, juro por el Dios de mis padres, juro por ellos, juro por mi honor y juro por mi Patria, que no dar&eacute; descanso a mi brazo ni reposo a mi alma hasta que haya roto las cadenas que nos oprimen por voluntad del poder espa&ntilde;ol."</I> Es el momento fundacional de la vocaci&oacute;n libertadora de Bol&iacute;var.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Qu&eacute; fue la Batalla de Boyac&aacute; (1819), qui&eacute;nes participaron y qu&eacute; consecuencia tuvo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Fue la batalla donde Bol&iacute;var derrot&oacute; al Virrey de la Serna en Colombia, poniendo fin a la dominaci&oacute;n espa&ntilde;ola en toda Sudam&eacute;rica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Fue la batalla del 7 de agosto de 1819 en el Puente de Boyac&aacute; (Colombia) donde Bol&iacute;var y Santander derrotaron al brigadier realista Barreiro, liberando definitivamente a Nueva Granada y permitiendo la entrada a Bogot&aacute; el 10 de agosto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Fue la primera batalla de la Corriente del Norte, librada en Venezuela en 1813, donde Bol&iacute;var derrot&oacute; por primera vez a las fuerzas realistas del General Boves</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Fue una batalla naval en el r&iacute;o Boyac&aacute; donde la flota patriota de Bol&iacute;var destruy&oacute; los barcos espa&ntilde;oles que abastec&iacute;an a Bogot&aacute;</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Batalla de Boyac&aacute;</B> se libr&oacute; el <B>7 de agosto de 1819</B> en el <B>Puente de Boyac&aacute;</B> (actual Colombia). Fue la culminaci&oacute;n de la audaz maniobra de Bol&iacute;var de cruzar el <B>P&aacute;ramo de Pisba</B> en invierno. El General <B>Santander</B> comandaba la vanguardia patriota; el Brigadier <B>Barreiro</B> commandaba a los realistas. La victoria fue r&aacute;pida: Barreiro y m&aacute;s de 1.600 realistas fueron capturados. El <B>10 de agosto</B>, Bol&iacute;var entraba triunfante a <B>Bogot&aacute;</B>, liberando Nueva Granada del dominio espa&ntilde;ol. La Batalla de <B>Ayacucho</B> (no Boyac&aacute;) puso fin al dominio en toda Sudam&eacute;rica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qui&eacute;n gan&oacute; la Batalla de Pichincha (1822) y qu&eacute; territorio lib&eacute;r&oacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Bol&iacute;var lider&oacute; personalmente la Batalla de Pichincha y liber&oacute; Per&uacute; del dominio espa&ntilde;ol en mayo de 1822</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) El General Antonio Jos&eacute; de Sucre derrot&oacute; al General realista Melchor Aymerich el 24 de mayo de 1822 en las faldas del volc&aacute;n Pichincha, liberando el territorio de Quito (Ecuador) e integr&aacute;ndolo a la Gran Colombia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) San Mart&iacute;n gan&oacute; la Batalla de Pichincha desde el sur, liberando Ecuador antes de su famosa entrevista con Bol&iacute;var en Guayaquil</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) El General P&aacute;ez derrot&oacute; a los realistas en Pichincha, lo que abri&oacute; el paso hacia Venezuela donde a&uacute;n quedaban tropas espa&ntilde;olas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Batalla de Pichincha</B> fue librada el <B>24 de mayo de 1822</B> por el General <B>Antonio Jos&eacute; de Sucre</B> en las faldas del <B>volc&aacute;n Pichincha</B>, a 3.500 m.s.n.m., junto a Quito (actual Ecuador). Sucre derrot&oacute; al General realista <B>Melchor Aymerich</B>; ese mismo d&iacute;a Quito cay&oacute;. El territorio de la <B>Real Audiencia de Quito</B> (actual Ecuador) fue liberado e integrado a la <B>Gran Colombia</B>. La batalla es uno de los 4 hitos mayores de la Corriente del Norte: Boyac&aacute; (1819), Carabobo (1821), Pichincha (1822) y Ayacucho (1824).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qu&eacute; caracter&iacute;stica hizo &uacute;nica a la Batalla de Juni&iacute;n (6 de agosto de 1824)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Fue la &uacute;nica batalla de la independencia americana donde participaron tropas femeninas; las mujeres lucharon en primera l&iacute;nea junto a los soldados patriotas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Fue una batalla exclusivamente de caballería (sin infanter&iacute;a ni artiller&iacute;a), se libr&oacute; a 4.100 metros sobre el nivel del mar en la pampa de Juni&iacute;n (Per&uacute;), no se dispar&oacute; un solo cañ&oacute;n y dur&oacute; menos de una hora</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Fue la &uacute;nica batalla de toda la campa&ntilde;a donde Bol&iacute;var luch&oacute; en combate cuerpo a cuerpo, siendo herido levemente en el pecho por una lanza realista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Fue la batalla m&aacute;s larga de la independencia sudamericana, dur&oacute; tres d&iacute;as y fue ganada gracias a los ca&ntilde;ones modernos que Gran Breta&ntilde;a don&oacute; al ej&eacute;rcito patriota</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Batalla de Juni&iacute;n</B> (6 de agosto de 1824) es c&eacute;lebre por sus caracter&iacute;sticas &uacute;nicas: (1) Fue combatida <B>exclusivamente por caball&eacute;ria</B>, con sables y lanzas. (2) <B>No se dispar&oacute; ni un solo cañ&oacute;n</B>. (3) Se libr&oacute; a <B>4.100 metros sobre el nivel del mar</B> en la pampa de Juni&iacute;n (departamento de Jun&iacute;n, Per&uacute;). (4) Dur&oacute; <B>menos de una hora</B> (aprox. 45 minutos). El General <B>Guillermo Miller</B> (brit&aacute;nico al servicio del Per&uacute;) fue crucial en el momento cr&iacute;tico. Bol&iacute;var estuvo presente en el campo pero no dirigi&oacute; directamente el combate.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> &iquest;Por qu&eacute; la Entrevista de Guayaquil (1822) es uno de los mayores misterios de la historia latinoamericana?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Porque los dos libertadores se encontraron por primera vez sin reconocerse mutuamente, ya que nunca hab&iacute;an visto un retrato del otro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Porque la reuni&oacute;n fue completamente privada (sin testigos ni acta oficial), por lo que nunca se supo con certeza qu&eacute; se dijeron Bol&iacute;var y San Mart&iacute;n; solo es seguro que despu&eacute;s San Mart&iacute;n renunci&oacute; y se fue al exilio, dejando a Bol&iacute;var a cargo de la guerra peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Porque ambos libertadores acordaron en secreto repartirse Am&eacute;rica del Sur: Bol&iacute;var gobernar&iacute;a el norte y San Mart&iacute;n el sur, pero este acuerdo fue descubierto y rechazado por los congresos de ambos pa&iacute;ses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Porque San Mart&iacute;n fue asesinado poco despu&eacute;s de la entrevista por agentes espa&ntilde;oles, lo que impidi&oacute; que &eacute;l mismo contara lo que ocurri&oacute;</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Entrevista de Guayaquil</B> (26&ndash;27 julio 1822) es uno de los grandes enigmas hist&oacute;ricos porque: (1) Los dos libertadores se reunieron en <B>privado absoluto</B>, sin secretarios, sin testigos y sin levantar acta. (2) Solo existen las versiones parciales que cada uno dio posteriormente en cartas y declaraciones. (3) Las versiones <B>no coinciden</B>: Bol&iacute;var siempre fue reservado; San Mart&iacute;n dio una versi&oacute;n en su "Carta al General Guido" (1827). Lo que es seguro: San Mart&iacute;n se fue a Guayaquil, renunci&oacute; al Protectorado del Per&uacute; (20 de setiembre 1822) y parti&oacute; a Europa, donde vivi&oacute; hasta su muerte en <B>Boulogne-sur-Mer, Francia, en 1850</B>. San Mart&iacute;n <b>no fue asesinado</b>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Explica por qu&eacute; el cruce del P&aacute;ramo de Pisba (1819) fue una hazaña militar comparable al cruce de los Alpes de Aníbal o al cruce de los Andes de San Mart&iacute;n.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Porque Bol&iacute;var cruzó los Andes en verano con un ej&eacute;rcito de 20.000 hombres perfectamente equipados, lo que fue un triunfo log&iacute;stico sin precedentes en la historia militar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" Value="b"> b) Porque Bol&iacute;var condujo ~2.500 soldados a través del P&aacute;ramo de Pisba (m&aacute;s de 4.000 m.s.n.m.) en plena &eacute;poca de lluvias (junio), con fr&iacute;o extremo, escasez de alimentos y sin equipo de monta&ntilde;a adecuado, logrando el efecto de sorpresa total sobre los realistas que nunca esperaban tal maniobra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Porque durante el cruce del P&aacute;ramo de Pisba, Bol&iacute;var neg&oacute; a los soldados cualquier comida o descanso durante 30 d&iacute;as continuos, probando as&iacute; la dureza extrema de su ej&eacute;rcito</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) El cruce del P&aacute;ramo de Pisba no fue una hazaña: fue una marcha normal por caminos establecidos con apoyo log&iacute;stico ingl&eacute;s; su fama es exagerada por la historiograf&iacute;a venezolana</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>cruce del P&aacute;ramo de Pisba</B> (junio 1819) fue una haza&ntilde;a militar excepcional por varias razones: (1) <B>Altitud extrema:</B> el p&aacute;ramo supera los 4.000 m.s.n.m., con temperaturas bajo cero, vientos y lluvia constante. (2) <B>&Eacute;poca:</B> junio es plena &eacute;poca de lluvias en los Andes orientales colombianos. (3) <B>Falta de equipo:</B> los soldados, muchos de ellos venezolanos de los llanos tropicales, no ten&iacute;an ropa adecuada para el fr&iacute;o. (4) <B>Bajas:</B> varios cientos de soldados murieron de hipotermia y agotamiento; casi todos los caballos perecieron. (5) <B>Sorpresa estrat&eacute;gica:</B> los realistas consideraban el cruce del p&aacute;ramo en invierno una imposibilidad, por lo que sus defensas estaban orientadas a las rutas normales. Esta sorpresa fue decisiva en Boyac&aacute;.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;Qu&eacute; fue la Carta de Jamaica (1815) y por qu&eacute; es un documento hist&oacute;rico fundamental?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Fue el tratado comercial firmado entre Gran Breta&ntilde;a y la Gran Colombia en Jamaica que garantizaba apoyo brit&aacute;nico a la independencia hispanoamericana a cambio de privilegios comerciales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Fue un escrito pol&iacute;tico de Bol&iacute;var (Kingston, 6 de septiembre de 1815) donde analizaba las causas de la independencia hispanoamericana, la situaci&oacute;n del continente y predec&iacute;a con notable lucidez el futuro de las naciones latinoamericanas; es considerado uno de los textos pol&iacute;ticos m&aacute;s importantes de Am&eacute;rica Latina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Fue el documento donde Bol&iacute;var solicit&oacute; formalmente al Parlamento brit&aacute;nico el reconocimiento oficial de la Gran Colombia como Estado independiente soberano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Fue el testamento pol&iacute;tico que Bol&iacute;var escribi&oacute; en Jamaica al final de su vida, donde se lamentaba del fracaso de sus sue&ntilde;os unionistas para Hispanoam&eacute;rica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Carta de Jamaica</B> (6 de septiembre de 1815) fue escrita por Bol&iacute;var en Kingston (Jamaica) mientras estaba exiliado tras el fracaso de la Segunda Rep&uacute;blica venezolana. La escribi&oacute; en forma de carta respondiendo al comerciante brit&aacute;nico <B>Henry Cullen</B>. Es un documento excepcional por su lucidez: analiza las causas del movimiento independentista (el sistema colonial espa&ntilde;ol), la condici&oacute;n particular de los americanos ("no somos europeos ni indios"), y hace predicciones notablemente acertadas sobre el futuro de las naciones (M&eacute;xico como rep&uacute;blica federal, el sur dividido en varias naciones, la dificultad de la uni&oacute;n). Su famosa frase: <I>"Nosotros somos un peque&ntilde;o g&eacute;nero humano; poseemos un mundo aparte, cercado por dilatados mares."</I> La d) describe la <B>Carta de Santa Marta</B> (1830), su testamento real al morir.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> &iquest;Por qu&eacute; Bol&iacute;var decret&oacute; la "Guerra a Muerte" en 1813 y qu&eacute; implicaciones &eacute;ticas tuvo este decreto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El decreto de Guerra a Muerte fue una medida de defensa despu&eacute;s de que los espa&ntilde;oles ordenaran el exterminio de toda la poblaci&oacute;n criolla; fue exclusivamente reactivo y no hubo v&iacute;ctimas inocentes de ninguno de los dos bandos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El decreto de Guerra a Muerte (1813) fue proclamado por Bol&iacute;var para radicalizar el conflicto y eliminar toda neutralidad posible: declaraba que los espa&ntilde;oles y canarios morir&iacute;an aunque fueran inocentes, pero que los americanos vivir&iacute;an aunque fueran culpables; fue una medida extrema que conllevó ejecuciones masivas y tuvo profundas implicaciones &eacute;ticas que los historiadores siguen debatiendo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El decreto de Guerra a Muerte fue una decisi&oacute;n humanitaria de Bol&iacute;var que prohib&iacute;a matar prisioneros de guerra en ninguna circunstancia y garantizaba que todos los soldados capturados ser&iacute;an tratados con respeto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) El decreto de Guerra a Muerte fue una medida econ&oacute;mica: Bol&iacute;var orden&oacute; confiscar todas las propiedades de los espa&ntilde;oles para financiar el ej&eacute;rcito patriota, sin implicar nada sobre la vida o muerte de las personas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Decreto de Guerra a Muerte</B> fue proclamado por Bol&iacute;var en <B>Trujillo (Venezuela) el 15 de junio de 1813</B> durante la <B>Campa&ntilde;a Admirable</B>. Sus palabras exactas fueron: <I>"Espa&ntilde;oles y Canarios, contad con la muerte, aunque seais indiferentes, si no obr&aacute;is activamente en obsequio de la libertad de Am&eacute;rica. Americanos, contad con la vida aunque seais culpables."</I> El decreto establec&iacute;a una divisi&oacute;n radical por <B>origen</B> (no por culpabilidad individual). Su objetivo estrat&eacute;gico era forzar a todos a tomar partido (eliminar la neutralidad) y movilizar a los americanos de origen. Sus consecuencias &eacute;ticas fueron graves: miles de prisioneros espa&ntilde;oles fueron ejecutados; los realistas respondieron con igual violencia. Los historiadores debaten si fue una medida necesaria o moralmente justificable. Bol&iacute;var mismo derog&oacute; el decreto en 1820 con el <B>Armisticio y Tratado de Regularizaci&oacute;n de la Guerra</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Qu&eacute; fue el Congreso de Angostura (1819), qu&eacute; propuso Bol&iacute;var y qu&eacute; result&oacute; de &eacute;l?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Fue el congreso donde todos los pa&iacute;ses latinoamericanos se unieron bajo el liderazgo de Bol&iacute;var para firmar el tratado de paz con Espa&ntilde;a y poner fin a las guerras de independencia en toda Am&eacute;rica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Fue el congreso convocado por Bol&iacute;var el 15 de febrero de 1819 en Angostura (Venezuela), donde pronunci&oacute; su famoso Discurso proponiendo un modelo de gobierno republicano con cuatro poderes (incluido un Poder Moral) y Senado hereditario; result&oacute; en la creaci&oacute;n de la Gran Colombia (Venezuela + Nueva Granada) con Bol&iacute;var como presidente y Santander como vicepresidente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Fue el congreso donde los generales de Bol&iacute;var discutieron la estrategia militar para invadir el Per&uacute;; no tuvo ninguna dimensi&oacute;n pol&iacute;tica ni constitucional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Fue el primer congreso latinoamericano de car&aacute;cter panamericano, equivalente a las Naciones Unidas actuales, donde participaron delegados de todos los pa&iacute;ses americanos incluyendo Estados Unidos y Brasil</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Congreso de Angostura</B> se inaugur&oacute; el <B>15 de febrero de 1819</B> en la ciudad de Angostura (hoy Ciudad Bol&iacute;var, Venezuela), a orillas del r&iacute;o Orinoco. Bol&iacute;var lo inaugur&oacute; con el <B>Discurso de Angostura</B>, uno de los textos pol&iacute;ticos m&aacute;s importantes de la historia latinoamericana, donde propuso: (1) Un <B>gobierno republicano</B> con tres poderes cl&aacute;sicos. (2) Un <B>Poder Moral</B> (tribunal censor de la ética p&uacute;blica, inspirado en la censura romana). (3) Un <B>Senado hereditario</B> (para dar estabilidad, inspirado en la C&aacute;mara de los Lores brit&aacute;nica). El Congreso aprob&oacute; la <B>Ley Fundamental</B> que cre&oacute; la <B>Rep&uacute;blica de Colombia</B> ("Gran Colombia"): Bol&iacute;var = Presidente; <B>Santander</B> = Vicepresidente. El congreso panamericano citado en la d) fue el <B>Congreso de Panam&aacute;</b> (1826).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza las diferencias ideol&oacute;gicas entre Bol&iacute;var y Santander que llevaron a la fragmentaci&oacute;n de la Gran Colombia (1830).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Bol&iacute;var y Santander no ten&iacute;an diferencias ideol&oacute;gicas: se separaron &uacute;nicamente por razones personales de enemistad y celos; la Gran Colombia colaps&oacute; por la muerte prematura de Bol&iacute;var en 1830</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Bol&iacute;var propugnaba un ejecutivo fuerte (casi dictatorial) y la uni&oacute;n de las naciones hispanoamericanas; Santander defendía el constitucionalismo liberal y las prerrogativas del Congreso. Esta tensi&oacute;n entre "bolivarismo" (centralismo, unidad continental) y "santanderismo" (legalismo, federalismo) dividi&oacute; a la Gran Colombia y prefigur&oacute; el debate entre conservadores y liberales que marcar&iacute;a a toda Hispanoam&eacute;rica en el siglo XIX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Bol&iacute;var era conservador cat&oacute;lico que defend&iacute;a la monarqu&iacute;a, mientras Santander era socialista que propugnaba la eliminaci&oacute;n de la propiedad privada; estas posiciones eran irreconciliables</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) La Gran Colombia se fragment&oacute; exclusivamente por presi&oacute;n externa: Espa&ntilde;a, Gran Breta&ntilde;a y Estados Unidos conspiraron para dividirla y as&iacute; controlar m&aacute;s f&aacute;cilmente sus recursos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La tensi&oacute;n Bol&iacute;var&ndash;Santander refleja uno de los grandes debates del siglo XIX latinoamericano. <B>Bol&iacute;var</B>: cre&iacute;a que las sociedades hispanoamericanas, sin tradici&oacute;n democr&aacute;tica y con enorme desigualdad social, requer&iacute;an un <B>ejecutivo fuerte</B> ("Presidente de por vida" en su Constituci&oacute;n Boliviana de 1826) y la uni&oacute;n de las naciones como &uacute;nica forma de sobrevivir frente a las potencias. <B>Santander</B>: "hombre de las leyes", cre&iacute;a que la autoridad del <B>Congreso y la Constituci&oacute;n</B> deb&iacute;an estar por encima del ejecutivo; defend&iacute;a el federalismo y el liberalismo cl&aacute;sico. La conspiraci&oacute;n septembrinas de 1828 (atentado contra Bol&iacute;var, en la que Santander fue acusado de complicidad) agudiz&oacute; la ruptura. En 1830 Venezuela se separ&oacute; (P&aacute;ez), Ecuador tambi&eacute;n, y Bol&iacute;var muri&oacute; en diciembre de ese a&ntilde;o con su sue&ntilde;o unionista roto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> La Batalla de Ayacucho (9 de diciembre de 1824) fue ganada por Sucre, no por Bol&iacute;var. &iquest;Qu&eacute; importancia tiene este hecho para la historiograf&iacute;a y c&oacute;mo se explica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Bol&iacute;var estuvo presente en Ayacucho y dirigi&oacute; personalmente la batalla; la atribuci&oacute;n a Sucre es un error hist&oacute;rico introducido por la historiograf&iacute;a peruana para minimizar la figura del venezolano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Bol&iacute;var no estuvo en Ayacucho: hab&iacute;a delegado el mando operativo a Sucre para atender la crisis pol&iacute;tica en Lima. Sucre demostr&oacute; ser el m&aacute;s brillante estratega de la independencia; su victoria contra un ej&eacute;rcito num&eacute;ricamente superior mereci&oacute; el t&iacute;tulo de Gran Mariscal de Ayacucho. La victoria es atribuida a la Corriente del Norte de Bol&iacute;var porque fue &eacute;l quien organiz&oacute;, financi&oacute; y condujo la campa&ntilde;a hasta su &uacute;ltima fase</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Sucre gan&oacute; Ayacucho en contra de la voluntad de Bol&iacute;var, quien prefer&iacute;a negociar la paz con los espa&ntilde;oles en lugar de arriesgar otra batalla; por esto sus relaciones se deterioraron tras la victoria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) El hecho de que Sucre ganara Ayacucho sin Bol&iacute;var demuestra que la Corriente del Norte no fue necesaria: Sucre habr&iacute;a liberado el Per&uacute; de todos modos por su propia cuenta sin la intervenci&oacute;n bolivariana</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Este punto es crucial para entender correctamente la historia. <B>Bol&iacute;var no particip&oacute; en la Batalla de Ayacucho</B>: tras Juni&iacute;n, regres&oacute; a Lima para resolver la crisis pol&iacute;tica (el Congreso lo amenazaba con revocarle poderes) y dej&oacute; el mando operativo al General <B>Sucre</B>. El 9 de diciembre de 1824, fue <B>Sucre</B> quien planific&oacute; y dirigi&oacute; la batalla en la pampa de La Quinua, derrotando a un ej&eacute;rcito considerablemente m&aacute;s numeroso (~9.300 vs ~5.780). Por esto, Sucre recibi&oacute; el t&iacute;tulo de <B>Gran Mariscal de Ayacucho</B>. Sin embargo, la victoria se atribuye a la <B>Corriente del Norte</B> porque fue Bol&iacute;var quien: organizó y financi&oacute; el ej&eacute;rcito, lo condujo desde Venezuela hasta el Per&uacute;, gan&oacute; Juni&iacute;n, y form&oacute; a Sucre como su mejor general. Sucre era, en todos los sentidos, el ejecutor m&aacute;s brillante del proyecto bolivariano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Compara el modelo pol&iacute;tico que Bol&iacute;var propuso en su Constituci&oacute;n Boliviana (1826) con los principios liberales cl&aacute;sicos: &iquest;era Bol&iacute;var un dem&oacute;crata liberal?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) S&iacute;, Bol&iacute;var era un dem&oacute;crata liberal cl&aacute;sico: su Constituci&oacute;n Boliviana (1826) fue la m&aacute;s liberal de toda Am&eacute;rica, con sufragio universal, separaci&oacute;n de poderes y libertad de prensa absolutas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) No exactamente: aunque Bol&iacute;var se inspiró en la Ilustraci&oacute;n y la Revoluci&oacute;n Francesa, su Constituci&oacute;n Boliviana (1826) propugnaba un Presidente vitalicio, un Senado hereditario y un Poder Moral censor; consideraba que las sociedades hispanoamericanas, sin tradici&oacute;n republicana, necesitaban un orden firme antes de poder ejercer la democracia plena; era un "republicano autoritario" o un "liberal conservador"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Bol&iacute;var era un mon&aacute;rquico encubierto que siempre quiso coronarse rey o emperador de Sudam&eacute;rica; su ret&oacute;rica republicana era solo una estrategia para ganar apoyos populares</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Bol&iacute;var era un pensador socialista avant la lettre: su Constituci&oacute;n propugnaba la distribuci&oacute;n igualitaria de la tierra entre campesinos e ind&iacute;genas, anticipando las reformas agrarias del siglo XX</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La pregunta sobre el pensamiento pol&iacute;tico de Bol&iacute;var es uno de los debates historiogr&aacute;ficos m&aacute;s ricos. La <B>Constituci&oacute;n Boliviana</B> (1826, redactada por Bol&iacute;var para Bolivia) propon&iacute;a: (1) <B>Presidente vitalicio</B> (inamovible, sin elecci&oacute;n peri&oacute;dica). (2) <B>Senado hereditario</B> (para la estabilidad, inspirado en los lores brit&aacute;nicos). (3) <B>Poder Moral</B> (tribunal censor). (4) <B>Sufragio restringido</B> (solo alfabetos propietarios). Esto lo aleja del liberalismo cl&aacute;sico (soberan&iacute;a popular, sufragio universal, limitaci&oacute;n del ejecutivo). Bol&iacute;var cre&iacute;a, como Hobbes, que las sociedades sin tradici&oacute;n de autogobierno caerían en la anarqu&iacute;a sin un poder fuerte. Se le puede calificar como <B>"republicano autoritario"</B> o seguidor del "liberalismo conservador" (como Montesquieu). La acusaci&oacute;n de c) fue lanzada por sus opositores pero no es correcta: Bol&iacute;var siempre rechaz&oacute; expl&iacute;citamente la monarqu&iacute;a. La d) es anacr&oacute;nica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Varios historiadores (John Lynch, Hans-Joachim K&ouml;nig) se&ntilde;alan que la independencia hispanoamericana fue "una revoluci&oacute;n de los criollos, no una revoluci&oacute;n social". Eval&uacute;a esta afirmaci&oacute;n en el contexto de la Corriente Libertadora del Norte.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La afirmaci&oacute;n es completamente falsa: la independencia fue liderada por ind&iacute;genas y esclavos africanos, quienes usaron a los criollos como figuras decorativas para darle apariencia de legitimidad ante Europa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La afirmaci&oacute;n es sustancialmente correcta: Bol&iacute;var y la mayor&iacute;a de los l&iacute;deres independentistas eran criollos ricos que buscaban el poder pol&iacute;tico que el sistema colonial les negaba; aunque se abolieron algunos aspectos del orden colonial (esclavitud, tributo ind&iacute;gena formalmente), la estructura socioecon&oacute;mica de desigualdad racial y de clase se mantuvo, cambiando las &eacute;lites gobernantes pero no el orden social de fondo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La afirmaci&oacute;n es completamente incorrecta: la independencia de Am&eacute;rica Latina fue la primera revoluci&oacute;n social del mundo moderno, m&aacute;s profunda que la francesa, que redistribuy&oacute; completamente la riqueza y elimin&oacute; todas las desigualdades coloniales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La afirmaci&oacute;n es anacr&oacute;nica: el concepto de "revoluci&oacute;n social" no exist&iacute;a en el siglo XIX y no puede aplicarse a los movimientos de independencia; es un error metodol&oacute;gico de los historiadores mencionados</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una pregunta de an&aacute;lisis historiogr&aacute;fico de alto nivel. Los historiadores <B>John Lynch</B> (<I>The Spanish American Revolutions</I>) y otros se&ntilde;alan que: (1) Los l&iacute;deres del movimiento independentista (Bol&iacute;var, Miranda, Santander, San Mart&iacute;n, O'Higgins) eran en su mayor&iacute;a <B>criollos</B> (americanos de ascendencia espa&ntilde;ola pura o casi pura), pertenecientes a la élite terrateniente y comercial. (2) Su principal queja contra el sistema colonial no era la injusticia social, sino las restricciones que les imped&iacute;an gobernar sus propios territorios y comerciar libremente. (3) Tras la independencia, la <B>estructura social colonial</B> (hacienda, desigualdad racial, marginaci&oacute;n ind&iacute;gena y afroamericana) se mantuvo en lo esencial. (4) Si bien Bol&iacute;var abol&iacute;a la esclavitud y el tributo ind&iacute;gena <B>formalmente</B>, estas medidas tardaron d&eacute;cadas en implementarse. Lo que cambi&oacute; fue <B>qui&eacute;n govern&oacute;</B> (de los peninsulares a los criollos), no la estructura social de fondo: por eso se llama "revoluci&oacute;n de los criollos" o "revoluci&oacute;n pasiva" (Gramsci).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> El "sue&ntilde;o bolivariano" de la uni&oacute;n hispanoamericana fracas&oacute; con la disoluci&oacute;n de la Gran Colombia (1830) y el colapso del Congreso de Panam&aacute; (1826). Explica las razones estructurales de este fracaso.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) El sue&ntilde;o bolivariano fracas&oacute; &uacute;nicamente por la muerte prematura de Bol&iacute;var en 1830; si hubiera vivido 20 a&ntilde;os m&aacute;s, habr&iacute;a logrado la uni&oacute;n de Hispanoam&eacute;rica sin ning&uacute;n obst&aacute;culo significativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) El sue&ntilde;o bolivariano fracas&oacute; por razones estructurales: los caudillos locales (P&aacute;ez, Flores, Santa Cruz) prefer&iacute;an el poder regional a someterse a un gobierno central; las identidades regionales eran m&aacute;s fuertes que la identidad hispanoamericana com&uacute;n; las econom&iacute;as eran competidoras entre s&iacute; (no complementarias); Gran Breta&ntilde;a y EE.UU. prefer&iacute;an naciones peque&ntilde;as f&aacute;ciles de influir; y las enormes distancias y diferencias geogr&aacute;ficas hac&iacute;an imposible una administraci&oacute;n centralizada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) El fracaso del sue&ntilde;o bolivariano fue exclusivamente culpa de Santander, quien conspir&oacute; activamente con Espa&ntilde;a para dividir las rep&uacute;blicas hispanoamericanas y devolverlas al dominio colonial espa&ntilde;ol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) El proyecto bolivariano era inviable desde el principio porque Am&eacute;rica Latina nunca tuvo ning&uacute;n elemento com&uacute;n (idioma, religi&oacute;n, tradici&oacute;n jur&iacute;dica); la independencia simplemente repuso el orden natural de naciones siempre separadas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El fracaso del proyecto unionista fue <B>multicausal y estructural</B>, no solo personal: (1) <B>Caudillismo regional:</B> los generales-caudillos que hab&iacute;an ganado la independencia (P&aacute;ez en Venezuela, Flores en Ecuador, Gamarra en Per&uacute;) ten&iacute;an s&oacute;lidas bases de poder locales y no quer&iacute;an someterse a un gobierno central lejano. (2) <B>Econom&iacute;as competidoras:</B> Venezuela (cacao, caf&eacute;), Nueva Granada (oro, platino) y Ecuador (cacao) compet&iacute;an en los mismos mercados en vez de complementarse. (3) <B>Intereses externos:</B> Gran Breta&ntilde;a prefer&iacute;a m&uacute;ltiples rep&uacute;blicas peque&ntilde;as con las que negociar tratados comerciales bilaterales favorables; EE.UU. tem&iacute;a una potencia unida latinoamericana. (4) <B>Distancias y comunicaciones:</B> las enormes distancias (sin ferrocarriles ni tel&eacute;grafo) hac&iacute;an pr&aacute;cticamente imposible gobernar un territorio de esa magnitud. (5) <B>Identidades regionales:</B> la identidad "venezolana", "neogranadina" o "quit&eacute;ña" era m&aacute;s concreta que la abstracta "hispanoamericana". Como dijo el propio Bol&iacute;var al final: "He arado en el mar."</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Compara el rol estrat&eacute;gico del General Sucre en la Corriente del Norte con el del General San Mart&iacute;n en la Corriente del Sur: &iquest;en qu&eacute; sentido ambos fueron "el brazo ejecutor" de un proyecto mayor?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) No tiene sentido compararlos: Sucre era venezolano y San Mart&iacute;n argentino, y eso define todo; sus roles militares no tienen ninguna similitud estructural</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Tanto Sucre (respecto a Bol&iacute;var) como San Mart&iacute;n (respecto al proyecto de la Logia Lautaro y Belgrano) fueron genios militares que ejecutaron brillantemente proyectos pol&iacute;tico-militares concebidos en una escala mayor; Sucre gan&oacute; Pichincha y Ayacucho; San Mart&iacute;n cruzó los Andes y gan&oacute; Chacabuco. Ambos cedieron el protagonismo en el momento decisivo (Sucre recibi&oacute; el mando de Bol&iacute;var; San Mart&iacute;n se retir&oacute; en Guayaquil) y ambos murieron sin ver completados sus sue&ntilde;os</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Sucre y San Mart&iacute;n fueron rivales que compitieron entre s&iacute; para ver qui&eacute;n liberaba el Per&uacute; primero; Sucre gan&oacute; la competencia al ganar Ayacucho antes de que San Mart&iacute;n pudiera regresar del exilio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) San Mart&iacute;n fue superior a Sucre en todos los aspectos militares y pol&iacute;ticos; si San Mart&iacute;n no se hubiera retirado voluntariamente, habr&iacute;a ganado Ayacucho &eacute;l mismo en 1822 sin necesidad de Bol&iacute;var ni Sucre</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparaci&oacute;n Sucre&ndash;San Mart&iacute;n es un ejercicio historiogr&aacute;fico muy valioso. <B>Paralelismos:</B> (1) Ambos fueron los <B>ejecutores militares</B> m&aacute;s brillantes de sus respectivas corrientes, no los iniciadores del proyecto pol&iacute;tico total. (2) Ambos <B>ganaron batallas en terrenos extremos</B>: Sucre en Pichincha (3.500 m) y Ayacucho; San Mart&iacute;n cruzó los Andes (Paso de los Libertadores) y gan&oacute; Chacabuco (1817) y Maip&uacute; (1818). (3) Ambos <B>cedieron el protagonismo:</B> Sucre recibi&oacute; el mando operativo de Bol&iacute;var para Ayacucho; San Mart&iacute;n cedi&oacute; a Bol&iacute;var en Guayaquil. (4) Ambos tuvieron <B>finales tr&aacute;gicos:</B> Sucre fue asesinado en Berruecos (4 junio 1830, Colombia), a los 35 a&ntilde;os; San Mart&iacute;n muri&oacute; en el exilio en Boulogne-sur-Mer (1850), olvidado por Argentina durante d&eacute;cadas. <B>Diferencias:</B> Sucre fue siempre subordinado leal a Bol&iacute;var; San Mart&iacute;n fue el creador aut&oacute;nomo de la Corriente del Sur.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Analiza el significado hist&oacute;rico de la Capitulaci&oacute;n de Ayacucho (9 de diciembre de 1824) en el contexto del derecho internacional de la &eacute;poca y de las relaciones entre las nuevas rep&uacute;blicas y Espa&ntilde;a.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La Capitulaci&oacute;n de Ayacucho fue un documento sin ninguna relevancia jur&iacute;dica internacional porque Espa&ntilde;a jam&aacute;s la reconoci&oacute; ni firm&oacute; ning&uacute;n tratado de paz posterior; las rep&uacute;blicas latinoamericanas siguieron siendo colonias espa&ntilde;olas legalmente hasta 1898</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La Capitulaci&oacute;n de Ayacucho tuvo enorme significado: puso fin a las operaciones militares espa&ntilde;olas en Sudam&eacute;rica continental; fue firmada por el m&aacute;ximo representante militar del rey en la regi&oacute;n (Canterac), lo que le daba valor jur&iacute;dico; sus condiciones generosas (permitir el retorno de los soldados espa&ntilde;oles) reflejaban la magnanimidad de Sucre y facilitaron la transici&oacute;n pacífica; Espa&ntilde;a no reconoci&oacute; formalmente las independencias hasta d&eacute;cadas despu&eacute;s, pero el acuerdo fue respetado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La Capitulaci&oacute;n de Ayacucho fue un error estrat&eacute;gico de Sucre: deber&iacute;a haber ejecutado a todos los oficiales espa&ntilde;oles capturados para eliminar definitivamente cualquier posible resistencia futura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La Capitulaci&oacute;n de Ayacucho fue inmediatamente ratificada por el Parlamento espa&ntilde;ol y el rey Fernando VII, quien reconoci&oacute; la independencia de todas las rep&uacute;blicas latinoamericanas en enero de 1825</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Capitulaci&oacute;n de Ayacucho</B> (firmada el 9 de diciembre de 1824 entre Sucre y el General <B>Canterac</B>) fue un documento hist&oacute;rico excepcional por varias razones: (1) <B>Valor jur&iacute;dico:</B> fue firmada por el Jefe del Ej&eacute;rcito Real del Per&uacute; (<B>Canterac</B>, sucesor del herido Virrey de la Serna), lo que le daba autoridad legal como representante del Rey de Espa&ntilde;a. (2) <B>Contenido generoso:</B> a diferencia de otras capitulaciones, no impon&iacute;a humillaciones a los vencidos: los soldados realistas podían elegir entre quedarse o regresar a Espa&ntilde;a; se respect&oacute; su honor militar. (3) <B>Trascendencia:</B> aunque Espa&ntilde;a (bajo el absolutismo de Fernando VII) <b>no reconoci&oacute; formalmente</b> las independencias hasta la d&eacute;cada de 1830 (algunas hasta mucho despu&eacute;s, como Venezuela 1845, Per&uacute; 1879), la capitulaci&oacute;n signific&oacute; el fin de las operaciones militares espa&ntilde;olas. La d) es incorrecta: Fernando VII jam&aacute;s reconoci&oacute; las independencias en vida (muri&oacute; en 1833).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Compara la Corriente Libertadora del Norte con la Corriente Libertadora del Sur en cuanto a estrategia militar, base social de apoyo, proyecto pol&iacute;tico y legado hist&oacute;rico.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Ambas corrientes fueron id&eacute;nticas en todos los aspectos: misma estrategia, misma base social, mismo proyecto pol&iacute;tico y mismo legado; la &uacute;nica diferencia fue la direcci&oacute;n geogr&aacute;fica (norte vs. sur)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Difirieron en estrategia (Bol&iacute;var: guerra de guerrillas + grandes batallas continentales; San Mart&iacute;n: operaci&oacute;n de cruce de Andes + guerra convencional), base social (Bol&iacute;var apel&oacute; a llaneros, pardos y esclavos liberados; San Mart&iacute;n tuvo m&aacute;s base criolla-regular), proyecto pol&iacute;tico (Bol&iacute;var: rep&uacute;blicas fuertes y uni&oacute;n continental; San Mart&iacute;n: preferi&oacute; monarqu&iacute;a constitucional), y legado (Bol&iacute;var = m&aacute;s difuso continentalmente; San Mart&iacute;n = concentrado en Argentina, Chile y Per&uacute;)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La Corriente del Norte fue muy superior a la del Sur en todos los aspectos; sin Bol&iacute;var, San Mart&iacute;n nunca habr&iacute;a podido liberar Chile ni el Per&uacute;; la Corriente del Sur fue un fracaso que solo la del Norte rescató</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La Corriente del Sur fue m&aacute;s importante hist&oacute;ricamente porque San Mart&iacute;n fue el primero en llegar al Per&uacute; y declarar su independencia (1821), mientras Bol&iacute;var fue solo un auxiliar tardo que lleg&oacute; cuando ya estaba todo decidido</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta comparaci&oacute;n es un cl&aacute;sico de examen universitario. Diferencias en:<BR><BR><B>Estrategia militar:</B> Bol&iacute;var combin&oacute; guerra de guerrillas de larga duraci&oacute;n (1810&ndash;1821 en Venezuela) con grandes maniobras continentales (cruce del P&aacute;ramo de Pisba). San Mart&iacute;n prefiri&oacute; la preparaci&oacute;n exhaustiva y el golpe decisivo (cruzó los Andes con un ej&eacute;rcito bien equipado en enero 1817).<BR><BR><B>Base social:</B> Bol&iacute;var moviliz&oacute; a los <B>llaneros</B> (mestizos y pardos de los llanos venezolanos), a los <B>esclavos liberados</B> y a voluntarios brit&aacute;nicos; fue m&aacute;s audaz en ampliar la base social del movimiento. San Mart&iacute;n tuvo un ej&eacute;rcito m&aacute;s regular y criollol&iacute;der del <B>Ej&eacute;rcito de los Andes</B>.<BR><BR><B>Proyecto pol&iacute;tico:</B> Bol&iacute;var &rarr; rep&uacute;blicas fuertes + uni&oacute;n continental. San Mart&iacute;n &rarr; en Per&uacute; prefer&iacute;a una <B>monarqu&iacute;a constitucional</B> con un pr&iacute;ncipe europeo (por eso fracasó en atraer apoyos internos, pues la élite criolla peruana desconfiaba).<BR><BR><B>Legado:</B> Bol&iacute;var es el héroe nacional de Venezuela, Colombia, Ecuador, Bolivia y Peru; San Mart&iacute;n lo es principalmente de Argentina, Chile y Per&uacute;.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> El historiador venezolano Germer&aacute;n Carrera Damas acu&ntilde;&oacute; el concepto de "culto bolivariano" para describir la instrumentalizaci&oacute;n pol&iacute;tica de la figura de Bol&iacute;var en Venezuela. &iquest;Qu&eacute; implica esta cr&iacute;tica y c&oacute;mo se relaciona con los usos contempor&aacute;neos del bolivarianismo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Carrera Damas tiene raz&oacute;n: Bol&iacute;var fue en realidad un tirano y su figura debe ser completamente retirada de los libros de historia latinoamericanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Carrera Damas señ la que la figura de Bol&iacute;var fue progresivamente convertida en un mito rel&iacute;gioso-pol&iacute;tico al servicio de diferentes regímenes: los conservadores del siglo XIX, los liberales del XX y los socialistas del XXI (Chávez) lo reivindicaron igualmente, lo que sugiere que "el Bol&iacute;var hist&oacute;rico" es deformado por "el Bol&iacute;var m&iacute;tico" seg&uacute;n las necesidades de cada r&eacute;gimen; el historiador debe separar al personaje hist&oacute;rico de sus usos ideol&oacute;gicos posteriores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Carrera Damas fue un escritor colombiano del siglo XVIII cuya cr&iacute;tica fue rechazada por todos los historiadores profesionales por ser claramente motivada por el antivenezuelanismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El "culto bolivariano" que describe Carrera Damas es un fen&oacute;meno positivo que ha contribuido a la unidad nacional venezolana; su cr&iacute;tica no tiene fundamento hist&oacute;rico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Germer&aacute;n Carrera Damas</B> (1930&ndash;, historiador venezolano, uno de los m&aacute;s importantes de Am&eacute;rica Latina) desarrolló el concepto de <B>"culto bolivariano"</B> en obras como <I>El culto a Bol&iacute;var</I> (1969). Su tesis: desde el siglo XIX, la figura de Bol&iacute;var fue progresivamente "<B>sacralizad</B>a": se le atribuyeron cualidades casi divinas, se cre&oacute; una ritualidad casi religiosa alrededor de su figura, y distintos reg&iacute;menes pol&iacute;ticos venezolanos lo instrumentalizaron para legitimarse &mdash;desde P&aacute;ez y Guzm&aacute;n Blanco en el siglo XIX hasta <B>Hugo Ch&aacute;vez</B> (que renombr&oacute; al pa&iacute;s "Rep&uacute;blica Bolivariana de Venezuela" en 1999 y construy&oacute; todo un sistema ideol&oacute;gico llamado "bolivarianismo del siglo XXI"). La cr&iacute;tica de Carrera Damas es metodol&oacute;gica, no antibol&iacute;variana: defiende separar al <B>Bol&iacute;var hist&oacute;rico</B> (con sus contradicciones, su autoritarismo, sus errores y sus logros reales) del <B>Bol&iacute;var m&iacute;tico</B> que cada r&eacute;gimen construye a su imagen y semejanza. Es un llamado al rigor hist&oacute;rico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Desde la perspectiva de los pueblos ind&iacute;genas y afrodescendientes del norte de Sudam&eacute;rica, &iquest;fue la Corriente Libertadora del Norte una liberaci&oacute;n real o una transferencia de dominaci&oacute;n de un grupo &eacute;lite a otro?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Fue una liberaci&oacute;n total y absoluta para todos: la independencia elimin&oacute; instant&aacute;neamente el racismo, la esclavitud, la explotaci&oacute;n ind&iacute;gena y todas las desigualdades coloniales en los territorios liberados por Bol&iacute;var</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Fue una liberaci&oacute;n contradictoria: Bol&iacute;var proclam&oacute; la abolici&oacute;n de la esclavitud y el tributo ind&iacute;gena, lo que fue un avance real; pero la estructura de la hacienda, la desigualdad racial y la marginaci&oacute;n de ind&iacute;genas y afrodescendientes se mantuvo en lo esencial bajo las nuevas rep&uacute;blicas criollas, que reemplazaron a los espa&ntilde;oles peninsulares como clase dominante sin transformar las relaciones socioecon&oacute;micas de base</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) La Corriente Libertadora del Norte fue claramente perjudicial para ind&iacute;genas y afrodescendientes: con el sistema colonial al menos ten&iacute;an la protecci&oacute;n de las Leyes de Indias; tras la independencia, quedaron completamente desprotegidos frente a la codicia criolla</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) La pregunta es irrelevante desde el punto de vista hist&oacute;rico porque ind&iacute;genas y afrodescendientes no participaron en la independencia y por tanto no son sujetos hist&oacute;ricos del proceso</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige una mirada cr&iacute;tica y multidimensional del proceso independentista. <B>Avances reales:</B> (1) Bol&iacute;var <B>abol&iacute;a la esclavitud</B> en los territorios que libraba (a cambio del apoyo de Hait&iacute;; en la pr&aacute;ctica fue gradual). (2) Se elimin&oacute; formalmente el <B>tributo ind&iacute;gena</B>. (3) Se declar&oacute; la <B>igualdad jur&iacute;dica</B> de todos los ciudadanos. <B>L&iacute;mites estructurales:</B> (1) La <B>hacienda</B> (el latifundio de origen colonial) se mantuvo intacta; los nuevos propietarios eran criollos, no espa&ntilde;oles, pero el sistema de trabajo dependiente continu&oacute;. (2) El <B>racismo social</B> (jerarqu&iacute;as basadas en el color de piel) siguió operando en las nuevas rep&uacute;blicas. (3) Las &eacute;lites criollas que asumieron el poder frecuentemente <B>desmantelaron las protecciones coloniales</B> para las comunidades ind&iacute;genas (resguardos, tierras comunales) para privatizarlas. (4) La participaci&oacute;n de ind&iacute;genas y afrodescendientes en el nuevo sistema pol&iacute;tico fue m&iacute;nima o nula. El historiador <B>Tulio Halper&iacute;n Donghi</B> habla de "independencia sin cambio social" para describir este fen&oacute;meno. La d) es incorrecta: los llaneros de P&aacute;ez (mestizos, pardos), los esclavos liberados y los ind&iacute;genas de los Andes fueron actores clave del proceso.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

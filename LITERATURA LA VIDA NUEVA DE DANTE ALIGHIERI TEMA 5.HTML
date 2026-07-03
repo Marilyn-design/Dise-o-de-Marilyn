@@ -1,0 +1,455 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>La Vida Nueva de Dante Alighieri - Tema 5 - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGISTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 5</DIV>
+<H1>La Vida Nueva de Dante Alighieri</H1>
+<DIV CLASS="sub">Dolce Stil Novo &middot; Amor Cortés &middot; Beatriz como Figura de Salvacion &middot; Prosa y Poesia Medieval</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACION ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicacion completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Dante Alighieri y su epoca</H3>
+<B>Dante Alighieri</B> (1265-1321) es considerado el padre de la lengua y la literatura italiana, y uno de los escritores mas importantes de toda la historia de la literatura occidental. Nacio en <B>Florencia</B>, en la Italia medieval, durante un periodo de intensas tensiones politicas entre los <B>Gibelinos</B> (partidarios del Emperador) y los <B>Gelfos</B> (partidarios del Papa), conflicto en el que Dante se vio directamente implicado: pertenecia al bando Gelfo, pero fue desterrado de Florencia en 1302 y nunca pudo regresar, muriendo en el exilio en <B>Ravena</B>.
+
+Dante escribio en lengua <B>vulgar toscana</B> (el italiano popular de su epoca), no en latin, lo que fue una decision revolucionaria: el latin era la lengua de la cultura y la iglesia, y escribir literatura seria en la lengua del pueblo fue un acto de enorme innovacion que influyo en toda la literatura europea posterior. Su obra cumbre es la <I>Divina Comedia</I>, pero <B><I>La Vida Nueva</I></B> (<I>Vita Nuova</I>, compuesta entre 1292 y 1295 aproximadamente) es su primera gran obra y el texto fundamental para comprender el origen de su poesia y su filosofia del amor.
+
+<DIV CLASS="alerta"><B>Para el examen:</B> Los examenes de admision preguntan frecuentemente el siglo de Dante (<B>siglos XIII-XIV</B>), su ciudad natal (<B>Florencia</B>), la lengua en que escribio (<B>toscano vulgar</B>, no latin) y la diferencia entre <I>La Vida Nueva</I> y la <I>Divina Comedia</I>. Recuerda: <I>La Vida Nueva</I> es una obra <B>lirico-narrativa</B> en prosa y verso; la <I>Divina Comedia</I> es un extenso poema epico-alegorico.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1265</DIV><DIV CLASS="dk-label">Nacimiento de Dante en Florencia, Italia</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1292-1295</DIV><DIV CLASS="dk-label">Composicion aproximada de La Vida Nueva</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">42 capitulos</DIV><DIV CLASS="dk-label">Numero de secciones de La Vida Nueva</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1321</DIV><DIV CLASS="dk-label">Muerte de Dante en Ravena, en el exilio</DIV></DIV>
+</DIV>
+
+<DIV CLASS="cultura-titulo">QUE ES LA VIDA NUEVA: GENERO Y ESTRUCTURA<SPAN>Una obra unica en su especie: prosimetrum medieval, autobiografia amorosa y tratado poetico</SPAN></DIV>
+
+<H3>2. Genero y estructura de La Vida Nueva</H3>
+<I>La Vida Nueva</I> (<I>Vita Nuova</I>) es una obra absolutamente singular en la historia de la literatura. No pertenece a un unico genero literario: es lo que los estudiosos llaman un <B>prosimetrum</B>, es decir, una composicion que alterna <B>prosa narrativa y poesia</B> de forma organica y deliberada. Esta combinacion no es un capricho formal: cada parte cumple una funcion especifica dentro de la obra.
+
+<H4>Las tres dimensiones de la obra:</H4>
+<UL>
+<LI><B>Autobiografia amorosa:</B> la obra narra, en primera persona, la historia del amor de Dante por <B>Beatriz</B>, desde el primer encuentro cuando ambos tenian nueve anos hasta la muerte de ella y el voto del poeta de escribir sobre ella lo que nunca se habia escrito sobre ninguna mujer.</LI>
+<LI><B>Antologia poetica comentada:</B> la obra incluye <B>31 poemas</B> (sonetos, canciones y baladas) que Dante habia compuesto a lo largo de esos anos, presentados y explicados por la prosa que los rodea. La prosa no solo narra los hechos: explica las circunstancias de composicion de cada poema y, en muchos casos, hace un analisis formal y retorico del propio poema.</LI>
+<LI><B>Tratado sobre el amor y la poesia:</B> a traves de los comentarios en prosa, Dante elabora una teoria implicita sobre la naturaleza del amor cortés, la funcion de la poesia lirica y la relacion entre el sentimiento amoroso y la perfeccion moral y espiritual del amante.</LI>
+</UL>
+
+<H4>La estructura del prosimetrum:</H4>
+El esquema de cada seccion de <I>La Vida Nueva</I> es generalmente el siguiente: (1) la prosa narrativa presenta los hechos o el estado emocional del poeta; (2) el poema expresa ese estado emocional en forma lirica; (3) la prosa vuelve para explicar la division y las partes del poema, es decir, hace un comentario casi academico de la propia composicion. Este tercer elemento —el <B>comentario del poeta a su propio poema</B>— es uno de los aspectos mas originales e influyentes de la obra en la historia de la critica literaria.
+
+<DIV CLASS="mapa-note"><B>Dato clave para el examen:</B> El termino <B>prosimetrum</B> (alternancia de prosa y verso en una misma obra) es fundamental para definir el genero de <I>La Vida Nueva</I>. Otros ejemplos de prosimetrum en la literatura medieval son la <I>Consolacion de la Filosofia</I> de Boecio, que influyo directamente en Dante. No confundir <I>La Vida Nueva</I> con una simple coleccion de poemas: la prosa tiene tanto peso artistico e intelectual como los poemas que incluye.</DIV>
+
+<DIV CLASS="cultura-titulo">BEATRIZ: HISTORIA, SIMBOLISMO Y FUNCION LITERARIA<SPAN>La mujer real, la figura poetica y la guia espiritual: tres niveles de una misma presencia</SPAN></DIV>
+
+<H3>3. Beatriz: la musa, el amor y el simbolo</H3>
+<B>Beatriz</B> es el personaje central de <I>La Vida Nueva</I> y uno de los personajes femeninos mas importantes de toda la literatura occidental. La tradicion identifica a Beatriz con <B>Bice Portinari</B>, una dama florentina real que vivio entre 1266 y 1290 y que murio a los 24 anos. Dante la habria conocido en su infancia. Sin embargo, en la obra literaria, Beatriz trasciende enormemente su identidad historica para convertirse en un simbolo de multiples dimensiones.
+
+<H4>Los tres niveles de Beatriz en la obra:</H4>
+<UL>
+<LI><B>La mujer real:</B> Dante describe encuentros concretos en las calles de Florencia, el saludo que Beatriz le dirige o le niega, la presencia fisica de ella en reuniones sociales, su muerte y el duelo del poeta. En este nivel, Beatriz es una persona real con presencia concreta en el mundo.</LI>
+<LI><B>La musa poetica:</B> Beatriz es la fuente de inspiracion que genera toda la poesia de Dante. El amor que siente por ella es la condicion de posibilidad de su creacion lirica: sin Beatriz, no hay poesia. En este nivel, Beatriz cumple la funcion clasica de la musa, pero Dante la interioriza y la convierte en el motor de su propia transformacion interior.</LI>
+<LI><B>La figura de salvacion espiritual:</B> en <I>La Vida Nueva</I>, y de forma plenamente desarrollada en la <I>Divina Comedia</I>, Beatriz adquiere una dimension teologica: es una figura de gracia divina, un ser enviado por el cielo cuya presencia en el mundo tiene un efecto santificador sobre quienes la contemplan. Su nombre mismo (del latin <I>beatrix</I>: la que hace bienaventurado) es emblematico de esta funcion.</LI>
+</UL>
+
+<DIV CLASS="ej"><B>Ejemplo del texto:</B> Dante narra que cuando Beatriz lo saluda, el experimenta una transformacion interior tan intensa que parece una experiencia mistica: el amor que siente no es un simple deseo sensual sino una fuerza que lo eleva hacia la perfeccion moral. Esta concepcion del amor como camino de purificacion espiritual es el nucleo del <B>Dolce Stil Novo</B> y la innovacion fundamental de Dante respecto a la tradicion anterior del amor cortés.</DIV>
+
+<H4>La muerte de Beatriz y su funcion en la obra:</H4>
+La muerte de Beatriz en 1290 (cuando ambos tenian alrededor de 25 anos) es el acontecimiento que da su sentido final a la obra. Ante la muerte de la amada, Dante no la llora simplemente como una perdida personal: la interpreta como un misterio divino, como el retorno al cielo de un ser que pertenecia a la esfera de lo sagrado. La obra termina con el <B>voto de Dante</B>: promete escribir sobre Beatriz lo que nunca antes se habia escrito de ninguna mujer. Ese voto se cumplira con la <I>Divina Comedia</I>, donde Beatriz aparece como guia del poeta por el Paraiso.
+
+<DIV CLASS="cultura-titulo">EL DOLCE STIL NOVO: LA ESCUELA POETICA DE DANTE<SPAN>El amor como nobleza del alma, la dama angelical y la nueva poetica del siglo XIII italiano</SPAN></DIV>
+
+<H3>4. El Dolce Stil Novo y su contexto literario</H3>
+<I>La Vida Nueva</I> es la obra fundacional del movimiento poetico conocido como <B>Dolce Stil Novo</B> (el dulce estilo nuevo), termino que el propio Dante emplea en la <I>Divina Comedia</I> para referirse al estilo de su escuela poetica. Este movimiento surgio en la segunda mitad del siglo XIII en el centro y norte de Italia, especialmente en Florencia y Bolonia, y representa una transformacion decisiva de la lirica italiana respecto a sus predecesores.
+
+<H4>Caracteristicas del Dolce Stil Novo:</H4>
+<UL>
+<LI><B>El amor como fuerza espiritual:</B> a diferencia del amor cortés provenzal (que era fundamentalmente un juego social y literario de cortejo), el Dolce Stil Novo concibe el amor como una fuerza que transforma y eleva espiritualmente al amante. El amor noble ennoblece el alma del que lo siente.</LI>
+<LI><B>La donna angelicata (la dama angelical):</B> la amada no es solo una mujer bella y distante, como en la lirica provenzal, sino una criatura de origen casi celestial cuya presencia produce en el amante efectos de purificacion moral y espiritual. La belleza exterior de la dama es signo de su bondad interior y de su proximidad a lo divino.</LI>
+<LI><B>El amor y la nobleza del alma:</B> el Dolce Stil Novo rompe con la concepcion feudal de la nobleza (que era un privilegio de sangre y linaje) y propone que la verdadera nobleza es la del alma, que se manifiesta en la capacidad de amar noblemente. Solo el corazon gentil (<I>cuore gentile</I>) puede amar de verdad, y ese corazon no depende del rango social.</LI>
+<LI><B>El refinamiento formal:</B> los estilnovistas desarrollaron una lirica de gran perfeccion formal, con predominio del <B>soneto</B> y la <B>cancion</B>, lenguaje depurado y construccion metaforica elaborada que vincula el amor con la teologia y la filosofia escolastica.</LI>
+</UL>
+
+<H4>Antecedentes y diferencias con el Amor Cortés provenzal:</H4>
+El <B>amor cortés</B> (o <I>fin'amor</I>) fue el modelo amoroso desarrollado por los trovadores provenzales del sur de Francia en los siglos XI y XII. Sus caracteristicas principales eran: el amor como servicio feudal a una dama superior y generalmente casada, el sufrimiento del amante como prueba de la autenticidad de su amor, y el caracter secreto y literariamente codificado de esa relacion. El Dolce Stil Novo hereda varios elementos de esta tradicion (el amor no correspondido, la exaltacion de la dama, la introspeccion del amante) pero los transforma profundamente al <B>incorporar la dimension teologica y filosofica</B>: la amada ya no es solo la mujer del senor feudal inaccesible, sino una figura casi sagrada que conecta al amante con Dios.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Aspecto</TH><TH>Amor Cortés Provenzal</TH><TH>Dolce Stil Novo (Dante)</TH></TR>
+<TR><TD><B>Naturaleza del amor</B></TD><TD>Juego social y literario de cortejo feudal</TD><TD>Fuerza espiritual que eleva y purifica el alma</TD></TR>
+<TR><TD><B>La dama</B></TD><TD>Mujer bella, distante, generalmente casada con el senor</TD><TD>Donna angelicata: criatura de origen casi celestial</TD></TR>
+<TR><TD><B>La nobleza</B></TD><TD>Privilegio de sangre y rango social</TD><TD>Nobleza del alma: el corazon gentil que ama noblemente</TD></TR>
+<TR><TD><B>Funcion del amor</B></TD><TD>Expresion de lealtad y sufrimiento como codigo social</TD><TD>Camino de perfeccion moral y aproximacion a lo divino</TD></TR>
+<TR><TD><B>Lengua</B></TD><TD>Occitano provenzal (lengua de los trovadores)</TD><TD>Toscano vulgar (italiano popular de Florencia)</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Los principales representantes del Dolce Stil Novo:</H4>
+<UL>
+<LI><B>Guido Guinizelli</B> (Bolonia, c. 1230-1276): considerado el fundador o precursor del movimiento; en su cancion <I>Al cor gentil rempaira sempre amore</I> formula la doctrina del corazon gentil como condicion del amor noble.</LI>
+<LI><B>Guido Cavalcanti</B> (Florencia, c. 1255-1300): amigo y maestro de Dante en los primeros anos; su poesia es mas filosofica y sombria, y concibe el amor como una fuerza destructiva que perturba el equilibrio del alma.</LI>
+<LI><B>Dante Alighieri</B> (Florencia, 1265-1321): el mas grande del grupo; eleva el Dolce Stil Novo a su maxima expresion en <I>La Vida Nueva</I> y, posteriormente, en la <I>Divina Comedia</I>.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Error frecuente en examenes:</B> No confundir <B>Guido Guinizelli</B> con <B>Guido Cavalcanti</B>. Guinizelli es el fundador teorico del Dolce Stil Novo (escribe la cancion del corazon gentil); Cavalcanti es el amigo y precursor directo de Dante en Florencia. En los examenes de admision se pregunta frecuentemente cual de los dos es el "maestro" o "precursor" de Dante: la respuesta es <B>Cavalcanti</B> en terminos de relacion personal y directa, pero <B>Guinizelli</B> es el fundador ideologico del movimiento al que Dante mismo reconoce como padre poetico en la <I>Divina Comedia</I>.</DIV>
+
+<DIV CLASS="cultura-titulo">ESTRUCTURA NUMEROLOGICA Y EL NUMERO 9<SPAN>El simbolismo del tres, del nueve y el significado mistico de los numeros en La Vida Nueva</SPAN></DIV>
+
+<H3>5. El simbolismo numerologico en La Vida Nueva</H3>
+Uno de los aspectos mas caracteristicos de <I>La Vida Nueva</I> es el uso sistematico del <B>simbolismo numerologico</B>, especialmente del numero <B>9</B> y su raiz, el <B>3</B>. En la filosofia y la teologia medievales, los numeros tenian un valor simbolico preciso: el 3 era el numero de la Trinidad divina (Padre, Hijo y Espiritu Santo), y el 9 (3 x 3) era el numero de la perfeccion por excelencia.
+
+<H4>El nueve y Beatriz en la obra:</H4>
+<UL>
+<LI>Dante y Beatriz se ven por primera vez cuando ambos tienen <B>nueve anos</B>.</LI>
+<LI>El segundo encuentro significativo ocurre cuando han pasado exactamente <B>nueve anos</B> desde el primero.</LI>
+<LI>Beatriz muere en 1290, ano que corresponde, segun el calculo de Dante, al <B>noveno mes</B> del ano sirio y al noveno dia del mes, segun varios sistemas de calculo que el mismo explica.</LI>
+<LI>Dante declara explicitamente en la obra que Beatriz <B>era ella misma ese numero</B>, es decir, que el nueve no es una coincidencia sino la expresion de su naturaleza esencial: Beatriz es perfecta porque es una criatura gobernada por la Trinidad (3 x 3 = 9).</LI>
+</UL>
+
+<DIV CLASS="ej"><B>Cita parafraseada del texto:</B> En el capitulo XXIX de <I>La Vida Nueva</I>, Dante explica que el numero 9 ha estado siempre relacionado con Beatriz porque ese numero es la raiz cuadrada de si mismo (9 = 3 x 3) y la Trinidad es la raiz de todos los milagros. Beatriz es ella misma un milagro, y por eso el nueve la acompana desde su nacimiento hasta su muerte. Esta explicacion no es una curiosidad anecdotica: es un ejemplo perfecto del metodo de Dante de vincular la experiencia amorosa concreta con un sistema simbolico de alcance cosmico y teologico.</DIV>
+
+<H4>La importancia del simbolismo medieval:</H4>
+En la Edad Media, la realidad visible era interpretada como un conjunto de <B>signos</B> que apuntaban a realidades espirituales mas profundas. Este modo de leer el mundo se llama <B>pensamiento simbolico medieval</B>. Para Dante, los hechos concretos de su amor (la edad del primer encuentro, el numero de anos transcurridos, la fecha de la muerte de Beatriz) no son azares: son senales que Dios ha inscrito en la realidad para comunicar verdades espirituales. El numero 9, leido correctamente, revela que Beatriz es una criatura divina, un milagro. Este metodo de lectura simbolica es inseparable de la formacion intelectual de Dante en la filosofia escolastica medieval.
+
+<DIV CLASS="cultura-titulo">LOS TEMAS CENTRALES DE LA VIDA NUEVA<SPAN>El amor, la muerte, el duelo, la poesia y la promesa de la Divina Comedia</SPAN></DIV>
+
+<H3>6. Los grandes temas de la obra</H3>
+
+<H4>El amor como transformacion espiritual:</H4>
+El tema central de <I>La Vida Nueva</I> es el amor, pero no el amor como simple sentimiento o como convencion literaria: el amor es presentado como una experiencia que <B>transforma radicalmente</B> al sujeto que lo vive. Dante no solo ama a Beatriz: el amor por Beatriz lo convierte en un poeta, lo purifica moralmente y lo orienta hacia Dios. En esto reside la diferencia fundamental entre el Dolce Stil Novo y las tradiciones anteriores.
+
+<H4>El duelo y la muerte de la amada:</H4>
+La muerte de Beatriz ocupa la parte central y mas emotiva de la obra. Dante no describe la muerte directamente (considera que seria indigno hacerlo sin la grandeza literaria suficiente) sino que narra sus propias reacciones: el llanto, la desolacion, la enfermedad fisica que sigue al duelo. La muerte de Beatriz no cierra la obra con desesperacion: la abre hacia una promesa de escritura que solo se cumplira en la <I>Divina Comedia</I>.
+
+<H4>La funcion de la poesia:</H4>
+<I>La Vida Nueva</I> reflexiona constantemente sobre el acto mismo de escribir poesia. Dante presenta la poesia no como un adorno o una habilidad tecnica, sino como el unico medio adecuado para expresar la experiencia del amor verdadero. El poeta tiene la obligacion de comprender lo que siente y de traducirlo en lenguaje bello y preciso: de ahi la importancia de los comentarios en prosa donde Dante analiza sus propios poemas.
+
+<H4>La promesa final: el voto de Dante:</H4>
+La obra concluye con uno de los finales mas famosos de la literatura medieval: Dante declara que ha tenido una vision que le revela que debe escribir algo sobre Beatriz que nunca antes se habia escrito sobre ninguna mujer, y que para ello debe estudiar y prepararse. Esta promesa apunta directamente a la <I>Divina Comedia</I>, donde Beatriz sera la guia del poeta por el Paraiso, elevada ya a la categoria de figura de salvacion espiritual.
+
+<H3>7. La Vida Nueva y la Divina Comedia: relacion entre las dos obras</H3>
+<I>La Vida Nueva</I> y la <I>Divina Comedia</I> son las dos grandes obras de Dante, y entre ellas existe una relacion de continuidad y desarrollo que es fundamental para los examenes de admision.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Aspecto</TH><TH>La Vida Nueva (1292-1295)</TH><TH>La Divina Comedia (1308-1321)</TH></TR>
+<TR><TD><B>Genero</B></TD><TD>Prosimetrum lirico-narrativo (prosa y verso)</TD><TD>Poema epico-alegorico en tercetos encadenados</TD></TR>
+<TR><TD><B>Extension</B></TD><TD>42 capitulos breves con 31 poemas intercalados</TD><TD>3 canticas, 100 cantos, 14.233 versos</TD></TR>
+<TR><TD><B>Beatriz</B></TD><TD>Musa y amada real en la tierra; muere y sube al cielo</TD><TD>Guia espiritual del poeta por el Paraiso</TD></TR>
+<TR><TD><B>Tema central</B></TD><TD>El amor a Beatriz y su efecto espiritual en el poeta</TD><TD>El viaje del alma humana desde el pecado hasta Dios</TD></TR>
+<TR><TD><B>Tono</B></TD><TD>Intimo, confesional, lirico y analitico</TD><TD>Epico, cosmico, teologico y filosofico</TD></TR>
+<TR><TD><B>Lengua</B></TD><TD>Toscano vulgar (protsa y versos en italiano)</TD><TD>Toscano vulgar elevado a lenguaje poetico canonico</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta"><B>Truco para el examen:</B> La pregunta mas frecuente sobre Dante en los examenes de admision es: <B>que es el Dolce Stil Novo</B>, <B>quien es Beatriz</B> y <B>cual es la relacion entre La Vida Nueva y la Divina Comedia</B>. Recuerda la formula: <I>La Vida Nueva</I> es el origen y la promesa; la <I>Divina Comedia</I> es el cumplimiento de esa promesa. En <I>La Vida Nueva</I>, Beatriz vive, muere y es llorada; en la <I>Divina Comedia</I>, Beatriz es ya un ser celestial que guia a Dante por el Paraiso.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BASICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Dante Alighieri nacio en Florencia en 1265. La decision mas revolucionaria que tomo en cuanto a la lengua de su obra literaria fue:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Escribir exclusivamente en latin clasico, siguiendo la tradicion de los escritores romanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Escribir en lengua vulgar toscana (el italiano popular de su epoca), en vez de en latin, convirtiendo la lengua del pueblo en instrumento de una literatura de altisima ambicion intelectual y artistica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Escribir en occitano provenzal, la lengua de los trovadores, para conectar con la tradicion del amor cortés</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Escribir en griego antiguo, recuperando la tradicion de los clasicos de la Antiguedad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En la Europa medieval, el <B>latin</B> era la lengua de la cultura escrita, la iglesia, la filosofia y la ciencia: toda la literatura seria y toda la produccion intelectual se escribia en latin. Las lenguas vulgares (frances, italiano, castellano, etc.) eran las lenguas del pueblo, consideradas inferiores e inadecuadas para la alta literatura. La decision de Dante de escribir sus obras en <B>toscano vulgar</B> fue un acto de enorme innovacion cultural: demostro que la lengua popular podia ser tan rica, precisa y bella como el latin, y que podia emplearse para tratar los temas mas elevados (el amor, la teologia, la filosofia, la politica). Esta decision tuvo consecuencias historicas: el toscano de Dante se convirtio en la base de la lengua italiana literaria y, siglos despues, de la lengua italiana estandar. Por eso Dante es llamado el <B>padre de la lengua italiana</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> El genero literario de La Vida Nueva es singular porque combina dos formas de expresion en una misma obra. Ese genero mixto se denomina:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Epopeya, porque narra hazanas heroicas del autor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Prosimetrum, porque alterna prosa narrativa y poesia de forma organica dentro de una misma composicion</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Tragedia, porque relata la muerte de Beatriz con efectos catarticos sobre el lector</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Cronica historica, porque narra hechos reales de la vida de Florencia en el siglo XIII</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El termino <B>prosimetrum</B> (del latin: prosa + metrum, es decir, verso) designa una forma literaria que combina de manera deliberada y organica la prosa narrativa y la poesia. En <I>La Vida Nueva</I>, esta combinacion tiene una funcion precisa: la <B>prosa</B> narra los hechos, presenta el contexto emocional y biogr&aacute;fico, y despues comenta y analiza los poemas; la <B>poesia</B> expresa el estado interior del poeta con la intensidad formal que solo el verso puede ofrecer. Esta alternancia no es aleatoria: cada poema surge organicamente de la situacion narrada en la prosa que lo precede. El prosimetrum tiene una larga tradicion medieval (la <I>Consolacion de la Filosofia</I> de Boecio es el ejemplo mas influyente para Dante), pero Dante lo usa de forma completamente original al hacerlo vehiculo de una autobiografia amorosa y un tratado poetico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Segun la tradicion historica, Beatriz es identificada con una dama florentina real. Su nombre y la edad aproximada a la que murio son:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Laura de Noves, que murio a los 40 anos en Aviñon</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Bice Portinari, que murio a los 24 anos aproximadamente en Florencia en 1290</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Fiammetta, que murio a los 30 anos en Napoles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Isabella d'Este, que murio a los 18 anos en Milan</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La tradicion identifica a la Beatriz de Dante con <B>Bice Portinari</B>, hija de un ciudadano florentino llamado Folco Portinari. Habria nacido en 1266, un ano despues que Dante, y murio en 1290, a los aproximadamente 24 anos, de causas que no se conocen con certeza. Dante habria tenido su primer encuentro con ella cuando ambos tenian <B>nueve anos</B>, segun narra en <I>La Vida Nueva</I>. Es importante distinguir a Beatriz de las musas de otros poetas contemporaneos: <B>Laura</B> es la amada de <B>Petrarca</B> (no de Dante); <B>Fiammetta</B> es la amada literaria de <B>Boccaccio</B>. Esta distincion entre musa de Dante (Beatriz), musa de Petrarca (Laura) y musa de Boccaccio (Fiammetta) es una pregunta clasica en los examenes de admision universitaria.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> El movimiento poetico italiano del siglo XIII al que pertenece Dante y del que La Vida Nueva es la obra mas representativa se llama:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Petrarquismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Romanticismo italiano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Dolce Stil Novo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Humanismo renacentista</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Dolce Stil Novo</B> (el dulce estilo nuevo) es el movimiento poetico italiano que florece en la segunda mitad del siglo XIII, especialmente en Florencia y Bolonia. El propio Dante usa este termino en la <I>Divina Comedia</I> (Purgatorio, Canto XXIV) para referirse al estilo de su escuela poetica. Sus rasgos fundamentales son: el amor concebido como fuerza espiritual purificadora, la donna angelicata (la dama casi celestial), la doctrina del corazon gentil como condicion del amor noble, y un estilo lirico refinado y filosoficamente denso. No debe confundirse con el <B>Petrarquismo</B> (a), que es el movimiento inspirado en <B>Petrarca</B>, poeta del siglo XIV posterior a Dante; ni con el <B>Romanticismo</B> (b), que es un movimiento del siglo XIX; ni con el <B>Humanismo renacentista</B> (d), que corresponde al siglo XV.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> La doctrina del "corazon gentil" (<I>cuore gentile</I>), central en el Dolce Stil Novo, sostiene que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Solo los nobles de sangre (los aristócratas de alto linaje) pueden amar verdaderamente, ya que el amor requiere elegancia y educacion de clase</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) La verdadera nobleza no es de sangre sino del alma: solo el corazon espiritualmente elevado y refinado es capaz de amar de forma noble, independientemente del rango social del amante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) El amor es una enfermedad del corazon que solo afecta a los debiles de caracter y debe ser evitado por los hombres sabios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Solo las mujeres pueden amar con verdadera nobleza, ya que los hombres son naturalmente pasionales e irracionales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La doctrina del <B>corazon gentil</B> es una de las innovaciones mas importantes del Dolce Stil Novo respecto a la tradicion anterior. Fue formulada teoricamente por <B>Guido Guinizelli</B> en su cancion <I>Al cor gentil rempaira sempre amore</I> (El amor siempre vuelve al corazon gentil) y adoptada plenamente por Dante. La idea central es que la nobleza verdadera no es un privilegio heredado por sangre o titulo, sino una cualidad espiritual del alma: la capacidad de amar con desinteres, con pureza y con aspiracion a lo bello y lo bueno. Esta concepcion es revolucionaria en el contexto feudal medieval, donde la nobleza era estrictamente una categoria social heredada. Al democratizar la nobleza (cualquier persona de alma refinada puede ser noble), el Dolce Stil Novo abre una tension con el orden social establecido y vincula el amor con la etica y la espiritualidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> En La Vida Nueva, el numero 9 tiene una importancia simbolica central. La razon por la que Dante vincula a Beatriz con este numero es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Porque Beatriz vivia en el noveno barrio de Florencia y tenia nueve hermanas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Porque el 9 era el numero de los planetas conocidos en la Edad Media y Beatriz era su reina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Porque el 9 es el producto de 3 por 3, y el 3 es el numero de la Trinidad divina; Beatriz es ella misma ese numero porque es una criatura de perfeccion milagrosa gobernada por la Trinidad, como lo demuestran las coincidencias numericas de su vida: el primer encuentro a los nueve anos, el segundo nueve anos despues, la muerte en el noveno mes del ano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Porque Dante escribio nueve poemas en su honor y ese numero le parecio esteticamente perfecto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El simbolismo del numero 9 en <I>La Vida Nueva</I> es uno de los elementos mas caracteristicos del pensamiento simbolico medieval de Dante. En la filosofia y teologia medievales, el <B>3</B> es el numero de la <B>Trinidad divina</B> (Padre, Hijo y Espiritu Santo), y el <B>9</B> (3 x 3) es el numero de la perfeccion absoluta, el cuadrado de la divinidad. Dante observa que el numero 9 aparece en todos los momentos decisivos de la vida de Beatriz: el primer encuentro ocurre cuando ambos tienen nueve anos, el segundo encuentro ocurre nueve anos despues del primero, y la muerte de Beatriz puede calcularse como el noveno dia del noveno mes del ano segun distintos sistemas de calculo que el propio Dante explica. De estas coincidencias, Dante concluye que no son azares: son senales divinas que revelan que Beatriz es en si misma un ser de perfeccion trinitaria, un <B>milagro</B>. Este razonamiento es tipico del pensamiento simbolico medieval, que leia la realidad visible como un conjunto de signos que apuntan a verdades espirituales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> La obra literaria en que Beatriz reaparece como guia espiritual del poeta, esta vez por el Paraiso, y que representa el cumplimiento del voto que Dante formula al final de La Vida Nueva, es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) El Convivio, tratado filosofico de Dante en prosa italiana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) La Divina Comedia, en especial su tercera parte, el Paraiso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) De vulgari eloquentia, tratado de Dante sobre la lengua poetica italiana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Las Rimas, coleccion de poemas sueltos que Dante no incluyo en La Vida Nueva</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Al final de <I>La Vida Nueva</I>, Dante declara haber tenido una vision que le revela que debe escribir algo sobre Beatriz que jamas se habia escrito sobre ninguna mujer, y que para ello debe estudiar y prepararse. Este <B>voto final</B> es la promesa de la <I>Divina Comedia</I>. En esa obra monumental (compuesta entre 1308 y 1321), Beatriz reaparece en el <B>Paraiso</B>: no como la mujer amada en la tierra, sino como una figura de gracia divina que desciende al Purgatorio para guiar a Dante hasta los ultimos cielos, donde el alma alcanza la vision de Dios. La transformacion de Beatriz desde la musa lirica de <I>La Vida Nueva</I> hasta la guia celestial de la <I>Divina Comedia</I> es la trayectoria mas importante de la obra completa de Dante: el amor humano se convierte en camino de salvacion divina.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> El poeta considerado fundador teorico del Dolce Stil Novo, autor de la cancion Al cor gentil rempaira sempre amore que establece la doctrina del corazon gentil, es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Guido Cavalcanti</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Francesco Petrarca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Guido Guinizelli</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Giovanni Boccaccio</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR><B>Guido Guinizelli</B> (Bolonia, c. 1230-1276) es reconocido como el fundador o precursor ideologico del Dolce Stil Novo. Su cancion <I>Al cor gentil rempaira sempre amore</I> (El amor siempre vuelve al corazon gentil) establece los principios fundamentales del movimiento: el amor nace en el corazon noble (gentil) como el fuego nace en el pedernal, y la dama amada es tan luminosa que actua sobre el amante como los angeles actuan sobre las esferas celestes. El propio Dante lo reconoce como padre poetico en el <I>Purgatorio</I> de la <I>Divina Comedia</I> (Canto XXVI). No debe confundirse con <B>Guido Cavalcanti</B> (a), que fue el amigo y precursor personal de Dante en Florencia, con una vision mas pesimista del amor; ni con <B>Petrarca</B> (b) o <B>Boccaccio</B> (d), que pertenecen a la generacion siguiente y representan el <B>Humanismo</B>, no el Dolce Stil Novo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> La principal diferencia entre la concepcion del amor en el Dolce Stil Novo y la del amor cortés provenzal es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El amor cortés exaltaba a la dama mientras el Dolce Stil Novo la degradaba al papel de simple pretexto poetico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El Dolce Stil Novo incorpora una dimension espiritual y teologica ausente en el amor cortés: la dama ya no es solo la mujer inaccesible del senor feudal sino una figura casi celestial cuya presencia eleva y purifica el alma del amante, convirtiendose el amor en camino hacia Dios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El amor cortés era espiritual y religioso mientras el Dolce Stil Novo era puramente sensual y mundano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) No existe ninguna diferencia sustancial: el Dolce Stil Novo es simplemente el amor cortés traducido al italiano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>amor cortés</B> provenzal (siglos XI-XII) concebia el amor como un <B>juego social y literario</B> basado en el modelo del servicio feudal: el amante era el vasallo de la dama (generalmente casada y de rango superior), que le exigia pruebas de devotion y le concedia sus favores como recompensa. Era fundamentalmente un codigo de comportamiento aristocratico con expresion lirica, no un sistema de pensamiento filosofico o teologico. El <B>Dolce Stil Novo</B>, sin abandonar muchos elementos de esta tradicion (el amor no correspondido, la exaltacion de la dama, el sufrimiento del amante), los transforma radicalmente al vincularlos con la filosofia escolastica y la teologia cristiana: la dama se convierte en <I>donna angelicata</I>, un ser de naturaleza casi divina, y el amor por ella es un camino de elevacion espiritual que orienta al amante hacia Dios. Esta innovacion es la que hace del Dolce Stil Novo un movimiento decisivo en la historia de la lirica occidental.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Cuando Dante describe en La Vida Nueva que Beatriz le niega el saludo en una reunion social, ese hecho aparentemente menor tiene en realidad una importancia decisiva porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) El saludo de Beatriz era, en el codigo del Dolce Stil Novo, la maxima gracia que la dama podia conceder al amante: la fuente de toda la felicidad y la inspiracion poetica del poeta; perderlo significaba perder el fundamento mismo de su bienestar espiritual y de su capacidad creadora</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) En la Florencia medieval, negar el saludo era una ofensa legal punible con el destierro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Dante describe ese momento solo como pretexto para quejarse del caracter arrogante de Beatriz</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) El saludo de Beatriz no tiene ninguna funcion simbolica en la obra: es un detalle cotidiano sin trascendencia literaria</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>En la concepcion del amor del Dolce Stil Novo, el <B>saludo</B> de la dama no es un gesto social ordinario: es la manifestacion visible de la gracia que ella porta, el signo externo de su bondad interior. Cuando Beatriz saluda a Dante, el experimenta una transformacion interior de caracter casi mistico, una felicidad que el poeta describe como un estado de bienaventuranza. El <B>saludo</B> (en italiano <I>salute</I>, que significa a la vez saludo y salvacion) funciona como el vehiculo de la gracia espiritual que Beatriz transmite a quienes la contemplan. Cuando Beatriz se lo niega, posiblemente porque Dante ha usado como "pantalla" el amor por otras damas para disimular su verdadero sentimiento, Dante pierde el fundamento de su alegria y de su inspiracion poetica. Este episodio es uno de los mas comentados de la obra precisamente porque revela como un gesto cotidiano puede tener, en la logica del Dolce Stil Novo, una dimension espiritual y existencial de primer orden.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BASICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> La Vida Nueva termina con un voto solemne de Dante. El contenido de ese voto final es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Renunciar para siempre a la poesia, pues considera que es incapaz de expresar el dolor por la muerte de Beatriz</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Escribir sobre Beatriz lo que nunca antes se habia escrito sobre ninguna mujer, una vez que haya estudiado y alcanzado la grandeza literaria suficiente para hacerlo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Casarse con otra mujer para superar el duelo y reintegrarse a la vida social florentina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Emprender una peregrinacion a Roma para consagrar su amor por Beatriz ante el Papa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El final de <I>La Vida Nueva</I> es uno de los cierres mas memorables de la literatura medieval. Dante describe haber tenido una vision sobrenatural que le revela un camino hacia adelante: debe prepararse espiritualmente e intelectualmente para poder escribir sobre Beatriz algo que supere todo lo que jamas se habia escrito sobre ninguna mujer. Este voto no es una promesa vaga: es la declaracion programatica de lo que sera la <I>Divina Comedia</I>, donde Beatriz aparece transfigurada como guia celestial por el Paraiso. La belleza de este final reside en que <I>La Vida Nueva</I> se presenta a si misma como un libro de aprendizaje y preparacion: la obra juvenil que hace posible la obra maestra. Dante concluye diciendo que si Dios le concede vida suficiente, espera escribir sobre Beatriz lo que su voto promete. Esa promesa se cumple entre 1308 y 1321 con la composicion de la <I>Divina Comedia</I>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> En La Vida Nueva, Dante no solo presenta sus poemas sino que tambien los comenta y analiza en la prosa. Esta practica de analizar el propio poema dentro de la misma obra tiene una funcion que va mas alla de la simple explicacion porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Revela que Dante no confiaba en la capacidad de comprension de sus lectores y necesitaba aclaraciones constantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Convierte a Dante en simultaneamente poeta y critico de su propia obra: el autor reflexiona sobre el proceso de creacion, las intenciones de cada poema y los recursos formales empleados, inaugurando una forma de autoevaluacion critica que influira en la teoria literaria posterior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Es simplemente un rasgo de vanidad personal de Dante, que queria demostrar que era mas inteligente que sus lectores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Esos comentarios fueron anadidos por copistas medievales y no son obra de Dante</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El comentario que Dante hace de sus propios poemas dentro de <I>La Vida Nueva</I> es uno de los aspectos mas originales e influyentes de la obra en la historia de la critica literaria. Despues de cada poema (o de la mayoria), Dante introduce una seccion en prosa donde explica la <B>division</B> del poema (es decir, analiza su estructura en partes) y el sentido de cada seccion. Este procedimiento convierte a Dante en el primer gran ejemplo de <B>autocomentario critico</B> en la literatura occidental: el autor se convierte en el primer interprete de su propia obra. Esto tiene varias implicaciones: (1) revela que Dante concibe la poesia como un arte racional y consciente, no como simple inspiracion; (2) establece un modelo de analisis formal de la lirica que anticipa muchos procedimientos de la critica literaria moderna; (3) integra la reflexion metaliteraria (sobre la escritura) dentro de la obra misma, rompiendo la separacion entre creacion y critica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> La figura de la donna angelicata (la dama angelical) en el Dolce Stil Novo, tal como aparece representada por Beatriz en La Vida Nueva, implica que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La dama es literalmente un angel descendido del cielo, sin naturaleza humana ni cuerpo fisico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La belleza y la bondad de la dama son de tal magnitud que su presencia produce en quienes la contemplan efectos de purificacion moral y espiritual analogos a los que los angeles producen sobre las esferas celestes; la dama es un ser humano, pero su perfeccion moral la aproxima a lo divino y la convierte en instrumento de la gracia de Dios en el mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La dama angelical es simplemente una mujer muy bella, sin ninguna dimension espiritual ni teologica adicional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La donna angelicata es una figura exclusivamente decorativa del Dolce Stil Novo, sin relevancia filosofica ni religiosa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>donna angelicata</B> es el concepto central de la concepcion de la amada en el Dolce Stil Novo y representa una de las innovaciones mas radicales del movimiento. La dama no es simplemente una mujer hermosa: su belleza exterior es el signo visible de una bondad interior y de una proximidad a lo divino que la hacen diferente de las demas criaturas humanas. Cuando esta dama pasa por la calle, los que la ven experimentan un efecto purificador: los malos pensamientos se disipan, el alma se eleva y se orienta hacia el bien. Guinizelli, en su cancion fundacional, compara la influencia de la dama sobre el amante con la influencia que los angeles tienen sobre las esferas celestes: asi como los angeles mueven las esferas con su perfeccion, la dama eleva el alma del amante con la suya. En Dante, esta concepcion llega a su culminacion: Beatriz no solo eleva a Dante moralmente; en la <I>Divina Comedia</I> lo guia literalmente hasta Dios. La donna angelicata es, por tanto, una figura que une lo humano y lo divino, lo estetico y lo teologico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Dante fue desterrado de Florencia en 1302 y nunca regreso a su ciudad natal. El conflicto politico que provoco su destierro enfrentaba a dos bandos dentro de los Gelfos florentinos. Esos dos bandos eran:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Los Romanos y los Barbaros, conflicto heredado de la caida del Imperio Romano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Los Gelfos Blancos (a los que pertenecia Dante, partidarios de la autonomia de Florencia) y los Gelfos Negros (partidarios de la intervencion del Papa Bonifacio VIII en los asuntos florentinos)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Los Gibelinos y los Venecianos, que disputaban el control del norte de Italia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Los Dominicos y los Franciscanos, ordenes religiosas en conflicto por el control de la Universidad de Florencia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La vida politica de Dante estuvo marcada por el conflicto entre <B>Gibelinos</B> (partidarios del Emperador) y <B>Gelfos</B> (partidarios del Papa), y despues por la division interna de los Gelfos en dos facciones: los <B>Gelfos Blancos</B> (a los que pertenecia Dante), que defendian la independencia de Florencia frente a la intervencion papal, y los <B>Gelfos Negros</B>, que apoyaban al papa <B>Bonifacio VIII</B> y su politica de intervencion en los asuntos de las ciudades italianas. Cuando los Gelfos Negros tomaron el control de Florencia con el apoyo del papado, Dante, que habia ejercido cargos publicos importantes, fue acusado de corrupcion y condenado al destierro en 1302. Esta condena fue para el irreversible: nunca regreso a Florencia, y murio en <B>Ravena</B> en 1321. El resentimiento y la amargura del exilio impregnan la <I>Divina Comedia</I>, donde Dante no oculta su juicio severo sobre los politicos y eclesiasticos que considera responsables de la degradacion de Italia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> La forma poetica predominante en La Vida Nueva, y en general en el Dolce Stil Novo, es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) El verso libre sin rima ni medida, que permitia mayor libertad expresiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La copla de romance de ocho silabas, forma tipica de la lirica popular castellana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) El soneto y la cancion, formas de alta exigencia formal que permiten la maxima precision y densidad expresiva del lenguaje lirico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La octava real, forma epica empleada por los poetas renacentistas italianos del siglo XV</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Las formas metricas predominantes en <I>La Vida Nueva</I> y en el Dolce Stil Novo son el <B>soneto</B> y la <B>cancion</B>. El <B>soneto</B> (composicion de 14 versos distribuidos en dos cuartetos y dos tercetos) ya habia sido desarrollado en la poesia italiana anterior (Escuela Siciliana del siglo XIII) y el Dolce Stil Novo lo adopta como forma privilegiada por su compactez, su exigencia formal y su capacidad de desarrollar un argumento lirico con precision filosofica. La <B>cancion</B> es una forma mas extensa y de mayor ambicion lirica, con estrofas (coblas) de estructura fija y un envio final. Dante emplea ambas formas en <I>La Vida Nueva</I>, pero el soneto es la que aparece con mayor frecuencia. No debe confundirse con el <B>verso libre</B> (a), que es un recurso de la poesia moderna del siglo XX; ni con las formas epicas del Renacimiento como la <B>octava real</B> (d), que corresponde a una epoca y un genero completamente distintos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BASICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> La tríada de los grandes autores del Trecento italiano (siglo XIV), que definen el paso de la literatura medieval al Humanismo, esta formada por Dante, Petrarca y Boccaccio. Cada uno de ellos tiene una obra lirica o narrativa asociada a una musa o amada. La correspondencia correcta entre autor y musa es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Dante - Laura / Petrarca - Beatriz / Boccaccio - Fiammetta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Dante - Fiammetta / Petrarca - Laura / Boccaccio - Beatriz</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Dante - Beatriz / Petrarca - Laura / Boccaccio - Fiammetta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Dante - Beatriz / Petrarca - Fiammetta / Boccaccio - Laura</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Esta correspondencia es una de las preguntas mas frecuentes y directas en los examenes de admision sobre literatura medieval italiana. La tríada correcta es: <B>Dante</B> - <B>Beatriz</B> (la musa de <I>La Vida Nueva</I> y de la <I>Divina Comedia</I>, identificada con Bice Portinari); <B>Petrarca</B> - <B>Laura</B> (la musa del <I>Cancionero</I> o <I>Rerum vulgarium fragmenta</I>, identificada con Laura de Noves, dama de Aviñon a quien Petrarca vio por primera vez el 6 de abril de 1327); <B>Boccaccio</B> - <B>Fiammetta</B> (la musa y personaje de varias obras de Boccaccio, identificada con una dama napolitana, posiblemente Maria d'Aquino). Esta correspondencia triple define tres modelos distintos del amor lirico medieval italiano: el amor espiritual y teologico de Dante, el amor humanista y psicologico de Petrarca, y el amor mundano y narrativo de Boccaccio.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El concepto de amor que desarrolla Dante en La Vida Nueva representa una innovacion respecto a toda la tradicion anterior porque vincula por primera vez de manera sistematica:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) El amor sensual y el amor espiritual, considerando que solo la satisfaccion fisica del deseo puede elevar el alma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) El amor cortés feudal con el amor mistico cristiano, la filosofia escolastica y la estetica lirica refinada, de modo que amar a la dama perfecta equivale a orientarse hacia Dios y el amor se convierte en camino de salvacion espiritual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) El amor romantico moderno con la filosofia platonica antigua, anticipando el Romanticismo del siglo XIX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El amor y la politica, convirtiendo a Beatriz en un simbolo de la Florencia ideal que Dante queria construir</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La innovacion de Dante en <I>La Vida Nueva</I> reside en la sintesis extraordinaria que realiza entre tradiciones que hasta entonces habian permanecido separadas. Toma del <B>amor cortés provenzal</B> la estructura del amante que sirve a una dama inalcanzable y que expresa su sentimiento en forma lirica refinada. Toma de la <B>filosofia escolastica</B> (especialmente de Tomas de Aquino y Alberto Magno) el marco conceptual para entender el amor como fuerza que orienta el alma hacia su bien mayor. Toma de la <B>teologia cristiana</B> la idea de que la belleza visible de la dama es un reflejo de la bondad y la gloria divinas. Y toma de la tradicion <B>lirica italiana</B> anterior las formas metricas y el lenguaje depurado. De esta sintesis nace la concepcion del amor de <i>La Vida Nueva</i>: amar a Beatriz no es solo un sentimiento humano, es un acto espiritual que orienta al amante hacia Dios. Esta es la premisa que hace posible la <I>Divina Comedia</I>, donde Beatriz puede ser la guia hacia la vision divina.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> En el contexto literario medieval, la importancia historica de La Vida Nueva para la historia de la literatura se puede resumir en que esta obra:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Fue la primera obra escrita en latin por un autor italiano, inaugurando la tradicion del humanismo latinizante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Demostro que la literatura en lengua vulgar podia alcanzar la maxima profundidad intelectual y la maxima belleza formal; establece el modelo del prosimetrum autobiografico; formula la concepcion del Dolce Stil Novo; y abre el camino hacia la Divina Comedia, creando una tradicion lirica en toscano que sera el fundamento de la literatura italiana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Fue la primera novela de la historia de la literatura occidental, inaugurando el genero narrativo moderno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Tuvo escasa influencia en la historia de la literatura y fue redescubierta solo en el siglo XIX por los romanticos alemanes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolucion</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><I>La Vida Nueva</I> ocupa un lugar fundamental en la historia de la literatura por varias razones que se superponen: (1) es una demostracion practica de que la <B>lengua vulgar italiana</B> puede ser el vehiculo de una literatura de la maxima ambicion intelectual y artistica, abriendo el camino que seguiran Petrarca y Boccaccio; (2) crea el modelo del <B>prosimetrum autobiografico</B>, la combinacion de prosa y verso al servicio de una narracion de experiencia personal, que influira en toda la lirica posterior; (3) formula de forma definitiva la doctrina del <B>Dolce Stil Novo</B> y la concepcion de la donna angelicata, que seran modelos para siglos de poesia amorosa europea; (4) es el punto de partida biogr&aacute;fico e intelectual de la <I>Divina Comedia</I>: sin <i>La Vida Nueva</i>, sin la experiencia del amor por Beatriz y sin el voto final, la obra maestra de Dante no tendria el fundamento que la sostiene. Su influencia en Petrarca, en los petrarquistas del Renacimiento y en toda la tradicion lirica europea es inmensa.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

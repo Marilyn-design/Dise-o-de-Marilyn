@@ -1,0 +1,296 @@
+<HTML>
+<HEAD>
+<TITLE>INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+<STYLE>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+BODY{
+    font-family:Arial, sans-serif;
+    background:
+    radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),
+    linear-gradient(to right,#F6F2EB,#F6F2EB);
+}
+
+
+.header{
+    background:#0D1B36;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.25);
+}
+
+.logo{
+    font-size:38px;
+    font-weight:bold;
+    letter-spacing:3px;
+    color:white;
+    font-family:"Lobster",cursive
+}
+
+.logo span{
+    color:#1F6A67;
+}
+
+
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:flex-end;
+}
+
+.menu button{
+    border:none;
+    border-radius:25px;
+    padding:10px 15px;
+    background:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.menu button:hover{
+    background:#F6F2EB;
+    transform:translateY(-3px);
+}
+
+.menu a{
+    text-decoration:none;
+    color:#0D1B36;
+    font-weight:bold;
+}
+
+.menu .registrate{
+    background:#D7B06D;
+}
+.menu .registrate:hover{
+    background:#D7B06D;
+}
+
+.contenedor{
+    padding:40px;
+}
+
+.imagen-principal{
+    float:right;
+    width:580px;
+    height:380px;
+    margin-left:30px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.25);
+}
+
+.titulo{
+    font-family:"Cooper Black";
+    color:#1F6A67;
+    font-size:57px;
+    line-height:1.2;
+    max-width:750px;
+}
+
+.subtitulo{
+    margin-top:25px;
+    font-size:22px;
+    color:#333;
+    max-width:700px;
+}
+
+.tarjetas{
+    clear:both;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:70px;
+    flex-wrap:wrap;
+}
+
+.tarjeta{
+    background:white;
+    width:220px;
+    padding:25px;
+    text-align:center;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12);
+    transition:0.3s;
+}
+
+.tarjeta:hover{
+    transform:translateY(-8px);
+}
+
+.tarjeta img{
+    width:80px;
+    height:80px;
+}
+
+.tarjeta h3{
+    color:#0D1B36;
+    margin-top:15px;
+}
+
+.tarjeta p{
+    margin-top:8px;
+    color:#555;
+}
+
+.linea{
+    width:150px;
+    height:5px;
+    background:#D7B06D;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+.seccion{
+    max-width:900px;
+    margin:90px auto 0;
+    text-align:center;
+}
+.seccion h2{
+    color:#0D1B36;
+    font-size:40px;
+}
+.linea-c{
+    width:150px;
+    height:5px;
+    background:#D7B06D;
+    border-radius:10px;
+    margin:15px auto 25px;
+}
+.seccion p{
+    font-size:20px;
+    color:#333;
+    line-height:1.7;
+}
+.seccion .destacado{
+    font-weight:bold;
+    color:#1F6A67;
+}
+
+.quienes{
+    background:#1F6A67;
+    max-width:900px;
+    margin:90px auto 20px;
+    padding:55px 45px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,0.2);
+}
+.quienes h2{
+    color:white;
+    font-size:40px;
+}
+.quienes .lema{
+    color:#D7B06D;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+.quienes p{
+    color:#eaeaf2;
+    font-size:20px;
+    line-height:1.7;
+}
+
+</STYLE>
+
+</HEAD>
+
+<BODY>
+
+<DIV CLASS="header">
+
+<DIV CLASS="logo">
+Inka<span>edu</span>
+</DIV>
+
+<DIV CLASS="menu">
+
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+
+</DIV>
+
+</DIV>
+
+<DIV CLASS="contenedor">
+
+<IMG SRC="INKA1.JPEG" CLASS="imagen-principal">
+
+<P CLASS="titulo">
+Aprende, refuerza y alcanza tus metas con INKAEDU
+</P>
+
+<DIV CLASS="linea"></DIV>
+
+<P CLASS="subtitulo">
+Una plataforma educativa ideal para los estudiantes de secundaria y postulantes preuniversitarios.
+<br><br>
+Aquí encontrarás:
+</P>
+
+<DIV CLASS="tarjetas">
+
+<DIV CLASS="tarjeta">
+<IMG SRC="DOC.PNG">
+<H3>Información</H3>
+<P>Por temas</P>
+</DIV>
+
+<DIV CLASS="tarjeta">
+<IMG SRC="EVA.PNG">
+<H3>Exámenes</H3>
+<P>De Admisión</P>
+</DIV>
+
+<DIV CLASS="tarjeta">
+<IMG SRC="R.PNG">
+<H3>100% Gratis</H3>
+<P>Fácil de usar</P>
+</DIV>
+
+</DIV>
+
+<DIV CLASS="seccion">
+<H2>Bienvenid@</H2>
+<DIV CLASS="linea-c"></DIV>
+<P>
+Nos alegra que formes parte de este espacio educativo creado para inspirarte, motivarte y monitorearte en cada paso de tu aprendizaje. Recuerda que con esfuerzo, constancia y dedicación, puedes alcanzar grandes metas.
+</P>
+</DIV>
+ 
+<DIV CLASS="quienes">
+<H2>¿Quiénes somos?</H2>
+<DIV CLASS="linea-c"></DIV>
+<P CLASS="lema">Somos un equipo de estudiantes comprometidas con la educación.</P>
+<P>
+Inkaedu.pe es un emprendimiento estudiantil creado para ayudar a miles de estudiantes como tú a acceder a recursos educativos claros, útiles y gratuitos.
+</P>
+</DIV>
+
+</DIV>
+
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+
+</BODY>
+
+</HTML>

@@ -1,0 +1,376 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Información eliminada - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="RAZONAMIENTO VERBAL.HTML">← Volver a los temas de Razonamiento Verbal</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">RAZONAMIENTO VERBAL · TEMA 6</DIV>
+<H1>Información eliminada</H1>
+<DIV CLASS="sub">Criterios de eliminación · Redundancia · Impertinencia o incompatibilidad</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+
+<H3>1. Primer criterio: Redundancia</H3>
+Una oración es <B>redundante</B> cuando repite, total o parcialmente, una información que ya fue expresada en otra oración del conjunto, sin agregar ningún dato, matiz o desarrollo nuevo. La redundancia no exige que las palabras sean idénticas: basta con que el <B>contenido informativo</B> ya esté presente en otra parte del texto, aunque se reformule con sinónimos.
+
+<H4>a) Redundancia total</H4>
+La oración repite, casi sin variación de contenido, lo que otra oración ya estableció.
+<DIV CLASS="ej"><B>Ejemplo:</B> I. "El reciclaje reduce la cantidad de residuos que llegan a los rellenos sanitarios." (...) IV. "Reciclar disminuye el volumen de basura depositado en los vertederos." La oración IV es redundante: repite, con otras palabras, exactamente la misma idea que la oración I, sin añadir información nueva.</DIV>
+
+<H4>b) Redundancia parcial o disfrazada</H4>
+La oración utiliza sinónimos, cambia el orden de las palabras o añade un dato mínimo y trivial, pero en esencia repite el contenido central de otra oración, sin un aporte sustantivo nuevo al desarrollo del tema.
+<DIV CLASS="ej"><B>Ejemplo:</B> Si una oración ya afirmó que "el ejercicio regular mejora la salud cardiovascular", una oración posterior que diga "practicar deporte con frecuencia beneficia al corazón" es redundante, aunque use un vocabulario distinto: el contenido informativo es esencialmente el mismo.</DIV>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> al detectar redundancia, pregúntate: si elimino esta oración, ¿el lector pierde alguna información que no podía deducir de las demás oraciones? Si la respuesta es no, la oración es candidata a ser eliminada por redundante.</DIV>
+
+<H3>2. Segundo criterio: Impertinencia o incompatibilidad</H3>
+Este segundo criterio agrupa, en realidad, dos fenómenos distintos pero relacionados: la oración que se aparta del tema (impertinencia) y la oración que contradice lo ya afirmado (incompatibilidad).
+
+<H4>a) Impertinencia</H4>
+Una oración es <B>impertinente</B> cuando, aunque pueda relacionarse vagamente con el campo temático general, introduce un dato que <B>no pertenece al asunto específico</B> que las demás oraciones desarrollan en conjunto. Es el equivalente, en este tipo de pregunta, a la "falsa pista temática": comparte el tema amplio, pero no el foco preciso del texto.
+<DIV CLASS="ej"><B>Ejemplo:</B> Un conjunto de oraciones que desarrolla específicamente "los beneficios del reciclaje para el medioambiente" incluye una oración III que dice: "El plástico fue inventado a finales del siglo XIX." Esta oración pertenece al campo temático general (los plásticos, los residuos), pero no aporta nada al asunto específico que el conjunto desarrolla (los beneficios del reciclaje), por lo que es impertinente y debe eliminarse.</DIV>
+
+<H4>b) Incompatibilidad</H4>
+Una oración es <B>incompatible</B> cuando su contenido entra en <B>contradicción lógica</B> con lo afirmado en otra u otras oraciones del conjunto, de modo que ambas no pueden ser verdaderas al mismo tiempo dentro del texto.
+<DIV CLASS="ej"><B>Ejemplo:</B> I. "El reciclaje reduce significativamente el volumen de residuos en los vertederos." (...) IV. "El reciclaje no tiene ningún impacto medible en la cantidad de basura que llega a los rellenos sanitarios." La oración IV es incompatible con la I: ambas no pueden ser ciertas a la vez dentro del mismo texto, por lo que una de ellas (la que rompe la línea argumentativa del conjunto) debe eliminarse.</DIV>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Criterio</TH><TH>¿Qué ocurre con la oración?</TH><TH>Pregunta-clave para detectarla</TH></TR>
+<TR><TD>Redundancia</TD><TD>Repite información ya dada, con o sin sinónimos</TD><TD>¿Aporta algún dato que no estaba ya presente en otra oración?</TD></TR>
+<TR><TD>Impertinencia</TD><TD>Se aparta del asunto específico, aunque comparta el campo temático general</TD><TD>¿Desarrolla el foco preciso del conjunto o solo un tema vecino?</TD></TR>
+<TR><TD>Incompatibilidad</TD><TD>Contradice lógicamente otra oración del conjunto</TD><TD>¿Puede ser verdadera al mismo tiempo que las demás oraciones?</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>3. Diferencia entre los dos criterios principales</H3>
+Es fundamental distinguir con precisión cuándo una oración se elimina por <B>redundancia</B> y cuándo por <B>impertinencia/incompatibilidad</B>, porque el razonamiento que sustenta cada elección es distinto:
+<UL>
+<LI>La oración <B>redundante</B> SÍ pertenece al tema, e incluso podría haber sido información relevante, pero <B>ya fue dicha</B> de otra forma en el conjunto: el problema es la repetición, no el contenido en sí.</LI>
+<LI>La oración <B>impertinente</B> NO pertenece al foco específico del conjunto: el problema es que su contenido, aunque nuevo, está fuera de lugar.</LI>
+<LI>La oración <B>incompatible</B> SÍ pertenece al tema y aporta información nueva, pero esa información <B>contradice</B> lo ya establecido: el problema es la coherencia lógica interna, no la repetición ni el desvío temático.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">LA TRAMPA DE LA "ORACIÓN VERDADERA PERO INNECESARIA"<SPAN>Por qué una oración puede ser cierta, estar bien escrita y aun así ser la respuesta correcta</SPAN></DIV>
+El error más frecuente en este tipo de pregunta es descartar como candidata de eliminación a una oración por el simple hecho de que es <B>verdadera y está bien redactada</B>. Sin embargo, el criterio de eliminación no depende de la corrección gramatical o de la veracidad del enunciado, sino de su <B>función dentro del conjunto</B>: una oración perfectamente cierta y bien escrita puede, aun así, ser prescindible porque ya fue dicha (redundancia), porque no aporta al foco específico (impertinencia) o porque rompe la coherencia interna del texto (incompatibilidad). El examen de alto rendimiento premia precisamente la capacidad de evaluar la oración en función del conjunto, no de forma aislada.
+
+
+<DIV CLASS="mapa-note"><B>Errores típicos que el examen evalúa.</B> (1) Descartar la oración correcta solo porque es verdadera o está bien redactada, ignorando que el criterio de eliminación es funcional, no de veracidad. (2) Confundir una oración redundante con una que aporta un matiz realmente nuevo al tema. (3) Eliminar por error una oración que sí pertenece al foco específico del conjunto, solo porque utiliza vocabulario distinto al de las demás. (4) No detectar una incompatibilidad sutil, cuando la contradicción no es explícita sino que se deduce al comparar dos afirmaciones del conjunto.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">5</DIV><DIV CLASS="dk-label">Oraciones que conforman cada conjunto de este tipo de pregunta (I, II, III, IV, V)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">2</DIV><DIV CLASS="dk-label">Criterios principales de eliminación: redundancia e impertinencia/incompatibilidad</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">5</DIV><DIV CLASS="dk-label">Pasos de la estrategia de resolución recomendada</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1</DIV><DIV CLASS="dk-label">Oración que se elimina, sin importar si es verdadera o está bien escrita</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> I. El reciclaje reduce significativamente el volumen de residuos en los vertederos. II. Reciclar plástico, vidrio y papel disminuye la presión sobre los rellenos sanitarios. III. El proceso de reciclaje también ahorra energía respecto a fabricar materiales desde cero. IV. Reciclar genera empleos en la industria del tratamiento de residuos. V. El reciclaje contribuye a reducir la contaminación del suelo y del agua. ¿Qué oración debe eliminarse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) I</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La oración II repite, con otras palabras y un ejemplo más específico, el mismo contenido ya expresado en la oración I: ambas afirman que el reciclaje reduce el volumen de residuos en los vertederos o rellenos sanitarios. Es un caso de <B>redundancia</B>. Las oraciones III, IV y V aportan datos distintos y nuevos (ahorro energético, generación de empleo, reducción de contaminación), por lo que enriquecen el desarrollo del tema sin repetirlo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> I. Los beneficios del reciclaje del plástico son numerosos para el medioambiente. II. Reciclar plástico reduce la cantidad de petróleo necesario para fabricar nuevos envases. III. El plástico fue inventado a finales del siglo XIX. IV. El reciclaje del plástico evita que este material termine contaminando ríos y océanos. V. Reciclar plástico también disminuye las emisiones de gases contaminantes durante su producción. ¿Qué oración debe eliminarse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La oración III, sobre el origen histórico del plástico, pertenece al campo temático amplio ("el plástico") pero no al asunto específico que el conjunto desarrolla: los <B>beneficios del reciclaje</B> del plástico. Es un caso de <B>impertinencia</B>. Las demás oraciones (II, IV, V) sí desarrollan, cada una con un dato distinto, los beneficios concretos del reciclaje (ahorro de petróleo, menor contaminación de cuerpos de agua, menor emisión de gases).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> I. El ejercicio físico regular mejora la salud cardiovascular. II. Practicar deporte con frecuencia fortalece el corazón y reduce el riesgo de enfermedades cardíacas. III. El ejercicio también ayuda a controlar el peso corporal. IV. Hacer actividad física con regularidad mejora el estado de ánimo gracias a la liberación de endorfinas. V. El ejercicio regular favorece un sueño de mejor calidad. ¿Qué oración debe eliminarse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La oración II repite, con sinónimos y un dato casi idéntico, lo ya afirmado en la oración I sobre el beneficio cardiovascular del ejercicio: es <B>redundancia disfrazada</B>, pues cambia "salud cardiovascular" por "fortalece el corazón y reduce riesgo de enfermedades cardíacas", sin aportar contenido sustancialmente nuevo. Las oraciones III, IV y V sí desarrollan beneficios distintos (control de peso, estado de ánimo, calidad del sueño).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> I. La Revolución Industrial transformó profundamente los procesos de producción en Europa. II. La introducción de la máquina de vapor permitió mecanizar tareas antes realizadas manualmente. III. Muchos países europeos exportan actualmente productos tecnológicos de alta calidad. IV. El crecimiento de las fábricas provocó una migración masiva del campo a la ciudad. V. La Revolución Industrial generó también nuevas condiciones laborales, muchas veces precarias. ¿Qué oración debe eliminarse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La oración III se refiere a las exportaciones tecnológicas actuales de Europa, un dato que pertenece al campo temático amplio (Europa, economía) pero que es <B>impertinente</B> respecto al foco específico del conjunto: las transformaciones históricas provocadas por la Revolución Industrial. Las demás oraciones (II, IV, V) desarrollan consecuencias directas y específicas de ese proceso histórico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> I. Una alimentación balanceada incluye frutas, verduras, proteínas y carbohidratos en proporciones adecuadas. II. Consumir una dieta equilibrada con todos los grupos de alimentos en su justa medida favorece la salud general. III. Una buena nutrición fortalece el sistema inmunológico. IV. La alimentación balanceada también contribuye a mantener un peso corporal saludable. V. Comer de forma equilibrada mejora la concentración y el rendimiento académico. ¿Qué oración debe eliminarse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La oración II repite, con palabras distintas ("dieta equilibrada", "todos los grupos de alimentos en su justa medida"), exactamente la misma idea de definición ya planteada en la oración I sobre qué es una alimentación balanceada: es un caso claro de <B>redundancia</B>. Las oraciones III, IV y V, en cambio, desarrollan beneficios concretos y distintos entre sí (sistema inmunológico, peso corporal, rendimiento académico).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> I. El reciclaje reduce significativamente el volumen de residuos que llegan a los rellenos sanitarios. II. Reciclar también disminuye la necesidad de extraer nuevas materias primas. III. El reciclaje fomenta una cultura de responsabilidad ambiental en la población. IV. El reciclaje no tiene ningún impacto medible en la cantidad de basura que llega a los vertederos. V. Reciclar contribuye, además, a reducir las emisiones de gases de efecto invernadero. ¿Qué oración debe eliminarse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La oración IV afirma que el reciclaje "no tiene ningún impacto medible" en la basura de los vertederos, lo cual <B>contradice directamente</B> a la oración I, que afirma que el reciclaje reduce significativamente ese volumen de residuos. Ambas no pueden ser ciertas al mismo tiempo dentro del conjunto: es un caso de <B>incompatibilidad</B>. Las demás oraciones desarrollan beneficios adicionales coherentes entre sí (materias primas, cultura ambiental, emisiones de gases).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> I. La fotosíntesis es el proceso mediante el cual las plantas transforman la energía solar en energía química. II. Durante la fotosíntesis, las plantas captan dióxido de carbono y liberan oxígeno como subproducto. III. Las plantas necesitan clorofila para realizar el proceso de fotosíntesis. IV. Algunas plantas, como los cactus, pueden sobrevivir varios meses sin recibir agua. V. La fotosíntesis ocurre principalmente en las hojas, gracias a estructuras llamadas cloroplastos. ¿Qué oración debe eliminarse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La oración IV, sobre la resistencia de los cactus a la sequía, es un dato verdadero y relacionado con el mundo de las plantas en términos generales, pero <B>impertinente</B> respecto al foco específico del conjunto: el proceso de la fotosíntesis. Las demás oraciones (II, III, V) desarrollan distintos aspectos concretos de ese proceso (captación de CO2 y liberación de oxígeno, necesidad de clorofila, lugar donde ocurre).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> I. La inteligencia artificial ha transformado numerosos sectores productivos en la última década. II. En el sector salud, los algoritmos de IA ayudan a detectar enfermedades en etapas tempranas. III. En la industria financiera, la IA permite identificar patrones de fraude con mayor rapidez. IV. La inteligencia artificial ha modificado de forma notable el funcionamiento de diversas industrias en los últimos diez años. V. En el transporte, los sistemas de IA optimizan rutas y reducen tiempos de entrega. ¿Qué oración debe eliminarse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La oración IV repite, con sinónimos ("modificado de forma notable" por "transformado", "diversas industrias" por "sectores productivos", "últimos diez años" por "última década"), exactamente la misma idea general ya planteada en la oración I: es <B>redundancia parcial disfrazada</B> con vocabulario distinto. Las oraciones II, III y V, en cambio, desarrollan ejemplos concretos y distintos en sectores específicos (salud, finanzas, transporte).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> I. El imperio incaico desarrolló un complejo sistema de caminos conocido como el Qhapaq Ñan. II. Los incas utilizaron el sistema de quipus para registrar información numérica y administrativa. III. La papa fue uno de los principales cultivos domesticados en la región andina. IV. El Tahuantinsuyo estuvo organizado en cuatro grandes regiones administrativas. V. Los incas construyeron terrazas agrícolas para aprovechar el relieve montañoso. ¿Qué oración debe eliminarse, considerando que el conjunto desarrolla la organización y los logros administrativos del imperio incaico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) I</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) IV</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La oración III, sobre la domesticación de la papa, es un dato verdadero relacionado con la cultura andina en general, pero <B>impertinente</B> respecto al foco específico señalado en el enunciado: la organización y los logros administrativos del imperio incaico. Las demás oraciones (I, II, IV, V) sí describen directamente logros de organización administrativa, registro de información o infraestructura estatal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> I. Dormir entre siete y ocho horas diarias favorece la consolidación de la memoria. II. El sueño insuficiente está asociado a un mayor riesgo de enfermedades cardiovasculares. III. Descansar lo suficiente cada noche ayuda a fijar mejor los recuerdos en el cerebro. IV. La falta crónica de sueño puede afectar negativamente el sistema inmunológico. V. Dormir bien mejora también el estado de ánimo durante el día. ¿Qué oración debe eliminarse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La oración III repite, con otras palabras ("descansar lo suficiente" por "dormir entre siete y ocho horas", "fijar mejor los recuerdos" por "consolidación de la memoria"), exactamente la misma idea ya expresada en la oración I: es <B>redundancia</B>. Las oraciones II, IV y V desarrollan beneficios o riesgos distintos asociados al sueño (salud cardiovascular, sistema inmunológico, estado de ánimo).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · RAZONAMIENTO CRÍTICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> I. Los estudios indican que el consumo excesivo de azúcar está vinculado a un mayor riesgo de obesidad. II. El exceso de azúcar en la dieta también se relaciona con el desarrollo de diabetes tipo 2. III. Investigaciones recientes muestran que el azúcar no guarda ninguna relación con el aumento de peso corporal. IV. El consumo elevado de azúcar puede contribuir además a problemas dentales como las caries. V. Reducir el consumo de azúcar añadida es una recomendación frecuente de los nutricionistas. ¿Qué oración debe eliminarse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La oración III afirma que el azúcar "no guarda ninguna relación con el aumento de peso corporal", lo cual <B>contradice directamente</B> a la oración I, que vincula el consumo excesivo de azúcar con un mayor riesgo de obesidad. Es un caso de <B>incompatibilidad</B> lógica dentro del conjunto. Las demás oraciones (II, IV, V) son coherentes entre sí y desarrollan distintos efectos o recomendaciones relacionados con el consumo de azúcar.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> I. El cambio climático está provocando un aumento sostenido en la temperatura promedio del planeta. II. El derretimiento de los glaciares es una de las consecuencias visibles del calentamiento global. III. Numerosas especies marinas han debido migrar hacia aguas más frías debido al aumento de la temperatura oceánica. IV. El calentamiento global se manifiesta también en la mayor frecuencia de eventos climáticos extremos. V. El planeta Tierra tiene una edad aproximada de 4 600 millones de años. ¿Qué oración debe eliminarse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d)</B><BR>La oración V, sobre la edad del planeta Tierra, es un dato científico verdadero, pero completamente <B>impertinente</B> respecto al foco específico del conjunto: las consecuencias del cambio climático. Pertenece al campo temático amplio (ciencias de la Tierra) pero no aporta nada al asunto preciso que desarrollan las demás oraciones (aumento de temperatura, derretimiento de glaciares, migración de especies, eventos extremos).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Analiza el siguiente conjunto: I. La lectura frecuente amplía el vocabulario del lector. II. Leer con regularidad mejora la capacidad de comprensión de textos complejos. III. Quienes leen habitualmente desarrollan un repertorio léxico más amplio que quienes no lo hacen. IV. La lectura estimula también la imaginación y la creatividad. V. Leer en exceso puede provocar fatiga visual si no se toman pausas adecuadas. Determina cuál oración debe eliminarse y explica con precisión por qué las demás no califican como respuesta, a pesar de tener cierta cercanía temática entre sí.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) I, porque es la primera oración y siempre se elimina la oración introductoria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) III, porque repite con sinónimos ("repertorio léxico más amplio") exactamente la misma idea ya expresada en la oración I ("amplía el vocabulario"), constituyendo una redundancia disfrazada; aunque II y IV también tratan beneficios de la lectura, cada una aporta un beneficio distinto y nuevo (comprensión de textos, imaginación), por lo que no son redundantes entre sí ni con I</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) V, porque es la única oración negativa y las preguntas de este tipo nunca incluyen contenido negativo correcto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) II, porque es la oración más larga del conjunto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La oración III es redundante respecto a la I: "desarrollar un repertorio léxico más amplio" es, en esencia, la misma idea que "ampliar el vocabulario", solo reformulada con sinónimos y una estructura comparativa distinta, sin agregar contenido informativo nuevo al conjunto. Las oraciones II y IV sí aportan beneficios distintos y específicos (comprensión de textos complejos, imaginación y creatividad), por lo que no son candidatas válidas. La oración V, aunque introduce un matiz distinto (un posible efecto negativo si se abusa de la lectura sin pausas), no contradice ni repite a las demás, sino que matiza el tema sin romper su coherencia, por lo que tampoco es la respuesta correcta. Las opciones a), c) y d) proponen criterios arbitrarios (posición, polaridad o longitud) ajenos a los criterios reales de redundancia, impertinencia o incompatibilidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Un estudiante sostiene que en un conjunto de cinco oraciones nunca se debe eliminar una oración que sea "verdadera y esté bien redactada", porque "no tiene ningún error". Evalúa esta afirmación con el siguiente ejemplo: I. El agua potable es esencial para la vida humana. II. El acceso al agua potable sigue siendo limitado en varias regiones del mundo. III. La escasez de agua potable afecta principalmente a comunidades rurales y de bajos recursos. IV. El cuerpo humano está compuesto aproximadamente en un 60% de agua. V. La falta de acceso al agua potable incrementa el riesgo de enfermedades gastrointestinales.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La afirmación es correcta: como ninguna de las cinco oraciones contiene errores gramaticales, ninguna debería eliminarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La afirmación es incorrecta: el criterio de eliminación no depende de la corrección gramatical ni de la veracidad de la oración, sino de su función dentro del conjunto; la oración IV, aunque verdadera y bien redactada, es impertinente, pues mientras el conjunto desarrolla específicamente el acceso limitado al agua potable y sus consecuencias, IV aporta un dato fisiológico (la composición del cuerpo humano) ajeno a ese foco específico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La afirmación es incorrecta porque todas las oraciones del conjunto son redundantes entre sí</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La afirmación es correcta únicamente cuando el conjunto trata temas científicos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta evalúa directamente la "trampa de la oración verdadera pero innecesaria": el criterio de eliminación depende de la <B>función</B> que la oración cumple dentro del conjunto, no de si es cierta o está bien escrita. La oración IV es un dato fisiológico real y bien redactado, pero no pertenece al foco específico del conjunto (el acceso limitado al agua potable y sus consecuencias sociales y sanitarias), por lo que constituye un caso de <B>impertinencia</B>. La opción a) repite exactamente el error que el tema busca corregir; c) es falsa, pues I, II, III y V desarrollan, cada una, un aspecto distinto y necesario del tema (importancia del agua, acceso limitado, población afectada, consecuencia sanitaria); d) es una restricción arbitraria sin fundamento en el criterio real de eliminación.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Compara los criterios de "redundancia" e "incompatibilidad" en relación con el tipo de error que cada uno representa dentro de un conjunto de oraciones.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Ambos criterios son idénticos: cualquier oración redundante es también incompatible con las demás</DIV>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Son criterios opuestos en su naturaleza: la redundancia ocurre cuando una oración repite información ya verdadera y coherente con el resto del conjunto (el problema es que "ya fue dicha"), mientras que la incompatibilidad ocurre cuando una oración aporta información nueva que contradice lógicamente lo ya establecido (el problema es que "no puede ser cierta junto con las demás"); por eso, una oración redundante refuerza sin querer el tema, mientras que una oración incompatible lo desestabiliza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La redundancia ocurre solo en textos científicos, mientras que la incompatibilidad ocurre solo en textos históricos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) No existe ninguna diferencia relevante entre ambos criterios para efectos del examen</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige un análisis fino de la naturaleza lógica de cada criterio. La <B>redundancia</B> implica que la información de la oración es coherente con el resto, pero ya fue comunicada antes (problema de repetición, no de contenido). La <B>incompatibilidad</B> implica que la información es nueva, pero entra en conflicto lógico con lo ya afirmado (problema de coherencia interna, no de repetición). Son, en ese sentido, fenómenos casi opuestos: uno "no aporta nada nuevo" y el otro "aporta algo que no debería ser cierto a la vez que el resto". Las opciones a), c) y d) ignoran esta distinción estructural central del tema.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> I. La música clásica ha influido en numerosos géneros musicales contemporáneos. II. Compositores de bandas sonoras de cine recurren frecuentemente a estructuras armónicas propias del período romántico. III. Algunos artistas de música electrónica incorporan samples de obras orquestales clásicas en sus producciones. IV. La música clásica se originó, según algunos historiadores, en las cortes europeas del período barroco. V. El rock progresivo de los años setenta tomó prestados elementos formales de la sinfonía clásica. Si el conjunto desarrolla específicamente la influencia de la música clásica en géneros contemporáneos, ¿qué oración debe eliminarse y por qué las demás resisten el análisis?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) II, porque menciona un género distinto a la música clásica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) IV, porque, aunque pertenece al campo temático amplio de la música clásica, se refiere a su origen histórico y no a su influencia en géneros contemporáneos, que es el foco específico señalado; las oraciones II, III y V, en cambio, sí desarrollan ejemplos concretos de esa influencia en distintos géneros (bandas sonoras, música electrónica, rock progresivo), reforzando directamente la idea presentada en I</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) III, porque la música electrónica es un género demasiado reciente para compararse con la música clásica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) V, porque el rock progresivo no es un género musical reconocido académicamente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El conjunto desarrolla específicamente cómo la música clásica influye en géneros contemporáneos; la oración IV, sobre el origen histórico de la música clásica, pertenece al campo temático amplio (la música clásica en general) pero no al foco específico (su influencia posterior en otros géneros): es un caso de <B>impertinencia</B>. Las oraciones II, III y V no son intercambiables ni redundantes entre sí, pues cada una ejemplifica esa influencia en un género distinto (bandas sonoras, electrónica, rock progresivo), aportando evidencia concreta y variada a la idea general de la oración I. Las opciones a), c) y d) introducen criterios de exclusión arbitrarios y ajenos a la lógica real de redundancia, impertinencia o incompatibilidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Si tuvieras que definir el concepto de "información eliminada" aplicando rigurosamente lo estudiado en el tema, ¿cuál de las siguientes opciones lo expresa con mayor exactitud?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) "Es identificar, dentro de un conjunto de oraciones sobre un mismo tema, aquella que debe suprimirse por repetir información ya dada (redundancia), por apartarse del foco específico del conjunto aunque comparta el campo temático general (impertinencia), o por contradecir lógicamente lo afirmado en otra oración (incompatibilidad), independientemente de si esa oración es, en sí misma, verdadera y está bien redactada"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "Es eliminar siempre la oración más corta de un conjunto, porque suele aportar menos información"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "Es identificar la oración que contiene errores gramaticales evidentes dentro de un conjunto de cinco oraciones"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) "Es eliminar la oración que el estudiante considere menos interesante entre las cinco presentadas"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Esta pregunta de síntesis exige reconocer los tres criterios exactos trabajados en el tema (redundancia, impertinencia, incompatibilidad) y la advertencia central: la corrección gramatical o la veracidad de la oración <B>no son criterios de eliminación</B>. La opción a) recoge con precisión esos elementos. La opción b) propone un criterio arbitrario de longitud, ajeno al tema; c) confunde este tipo de pregunta con la corrección de errores gramaticales, una habilidad distinta; d) reduce el criterio a una valoración subjetiva de "interés", contrario a la naturaleza objetiva y argumentable que exige el examen.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Evalúa la siguiente afirmación de un estudiante: "Si una oración contradice a otra dentro del conjunto, simplemente debo eliminar cualquiera de las dos, porque el resultado será igual de correcto." Determina si esta estrategia es válida.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La afirmación es correcta: ante una incompatibilidad, ambas oraciones son intercambiables como respuesta, sin ningún criterio adicional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La afirmación es incorrecta: ante una incompatibilidad, debe eliminarse la oración que rompe la línea argumentativa sostenida por el resto del conjunto, no cualquiera de las dos al azar; si cuatro de las cinco oraciones son coherentes entre sí y respaldan una misma idea, la oración aislada que la contradice es la que debe eliminarse, precisamente porque es la que se aparta de la coherencia mayoritaria del conjunto, no porque "cualquiera de las dos" sea igualmente válida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La afirmación es incorrecta porque nunca existen contradicciones reales dentro de un conjunto de cinco oraciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La afirmación es correcta únicamente si las dos oraciones contradictorias están una al lado de la otra en el orden de presentación</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige el nivel más alto de razonamiento del tema: ante una incompatibilidad, el criterio decisivo no es "eliminar cualquiera de las dos oraciones en conflicto", sino identificar cuál de ellas <B>rompe la coherencia mayoritaria</B> del conjunto. Si el resto de las oraciones (generalmente tres o cuatro) sostiene una misma línea argumentativa coherente, la oración aislada que la contradice es la candidata correcta a eliminarse, precisamente porque su eliminación restaura la unidad y coherencia del conjunto completo, mientras que eliminar la oración mayoritariamente respaldada dejaría al resto del conjunto sin sustento. La opción a) ignora este criterio de coherencia mayoritaria; c) es falsa, pues el propio tema ha mostrado ejemplos reales de incompatibilidad; d) introduce un criterio posicional arbitrario sin relación con la lógica argumentativa real del conjunto.</DIV></DETAILS>
+</DIV>
+
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE — Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

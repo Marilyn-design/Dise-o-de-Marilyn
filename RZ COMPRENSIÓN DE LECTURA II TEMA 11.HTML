@@ -1,0 +1,573 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Comprensión de Lectura II - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.parrafo{margin-top:12px;background:#F6F2EB;border-radius:10px;padding:14px 18px;font-size:16px;line-height:1.95;color:#333;font-weight:normal;}
+.parrafo b{color:#1F6A67;}
+.parrafo .hueco{color:#D7B06D;font-weight:bold;}
+.parrafo .fuente{display:block;margin-top:10px;font-size:13px;color:#888;font-style:italic;text-align:right;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+.texto-bloque-label{display:inline-block;background:#0D1B36;color:#D7B06D;font-size:12px;font-weight:bold;letter-spacing:1px;padding:4px 14px;border-radius:20px 20px 0 0;margin-top:18px;}
+.discontinuo-tabla{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px;}
+.discontinuo-tabla th{background:#1F6A67;color:white;padding:10px 14px;text-align:center;}
+.discontinuo-tabla td{padding:9px 14px;border:1px solid #c8e0de;text-align:center;background:white;color:#333;}
+.discontinuo-tabla tr:nth-child(even) td{background:#e8f4f3;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="RAZONAMIENTO VERBAL.HTML">← Volver a los temas de Razonamiento Verbal</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">RAZONAMIENTO VERBAL · TEMA 11</DIV>
+<H1>Comprensión de Lectura II</H1>
+<DIV CLASS="sub">Textos continuos y discontinuos · Tipos de textos continuos: descriptivos, narrativos y argumentativos · Estrategias de lectura para el examen de admisión</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Textos continuos y textos discontinuos</H3>
+En los exámenes de admisión de alto rendimiento, los textos que se presentan al estudiante no son siempre párrafos de prosa corrida: también pueden ser tablas, gráficos, mapas, listas o formularios. La distinción fundamental entre <B>texto continuo</B> y <B>texto discontinuo</B> determina qué estrategia de lectura conviene aplicar y qué tipo de preguntas suele generar cada formato.
+
+<H4>Texto continuo</H4>
+Es aquel cuyas oraciones se organizan en <B>párrafos</B> que se leen de manera secuencial, de izquierda a derecha y de arriba hacia abajo, siguiendo el flujo de la argumentación, la narración o la descripción. La comprensión avanza de forma lineal: cada párrafo se apoya en el anterior y prepara el siguiente.
+<DIV CLASS="ej"><B>Ejemplos:</B> un artículo periodístico, un cuento, un ensayo filosófico, un informe científico, una crónica histórica, una novela.</DIV>
+
+<H4>Texto discontinuo</H4>
+Es aquel cuya información está organizada en <B>formatos no lineales</B>, como tablas, gráficos estadísticos, mapas conceptuales, listas numeradas, diagramas de flujo, formularios o afiches. Su lectura no sigue un orden único predeterminado: el lector selecciona qué sección consultar según la información que necesita.
+<DIV CLASS="ej"><B>Ejemplos:</B> una tabla de datos estadísticos, un gráfico de barras sobre exportaciones, un mapa de rutas, un afiche publicitario, un cuadro comparativo entre dos teorías.</DIV>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Característica</TH><TH>Texto continuo</TH><TH>Texto discontinuo</TH></TR>
+<TR><TD>Organización</TD><TD>Párrafos secuenciales</TD><TD>Formatos visuales no lineales</TD></TR>
+<TR><TD>Lectura</TD><TD>Lineal, de inicio a fin</TD><TD>Selectiva, según la información buscada</TD></TR>
+<TR><TD>Cohesión visible</TD><TD>Conectores, pronombres, elipsis</TD><TD>Títulos, ejes, leyendas, etiquetas</TD></TR>
+<TR><TD>Pregunta típica</TD><TD>¿Cuál es la idea principal del párrafo?</TD><TD>¿Qué dato muestra la tabla en el año X?</TD></TR>
+<TR><TD>Dificultad frecuente</TD><TD>Distinguir idea explícita de inferida</TD><TD>Relacionar datos de distintas partes del gráfico</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> en textos discontinuos, el primer paso es leer el título, los ejes o encabezados y la leyenda <I>antes</I> de revisar los datos. En textos continuos, el primer paso es leer el primer y el último párrafo para anticipar la estructura y la tesis antes de profundizar en los párrafos centrales.</DIV>
+
+<H3>2. Tipos de textos continuos</H3>
+Dentro de los textos continuos existe una tipología clásica que los exámenes de admisión de alto rendimiento aplican sistemáticamente: los textos <B>descriptivos</B>, <B>narrativos</B> y <B>argumentativos</B>. Reconocer el tipo de texto permite al lector anticipar su estructura, identificar la intención del autor y localizar con mayor rapidez la información que las preguntas van a evaluar.
+
+<H4>a) Texto descriptivo</H4>
+El texto descriptivo tiene como propósito <B>representar o caracterizar</B> un objeto, persona, lugar, fenómeno o proceso mediante la enumeración ordenada de sus rasgos, propiedades o partes. No cuenta sucesos ni defiende una postura: muestra cómo es algo o alguien.
+
+<B>Estructura:</B>
+<UL>
+<LI><B>Presentación:</B> se introduce el objeto, la persona o el fenómeno que se va a describir.</LI>
+<LI><B>Desarrollo:</B> se enumeran sus características, propiedades o partes, con frecuencia siguiendo un orden (de lo general a lo particular, del exterior al interior, de arriba abajo, etc.).</LI>
+<LI><B>Cierre:</B> se puede ofrecer una impresión global o un dato de síntesis, aunque no siempre aparece.</LI>
+</UL>
+
+<B>Recursos lingüísticos:</B> adjetivos calificativos abundantes, verbos de estado (ser, estar, tener, parecer), comparaciones, enumeraciones, metáforas sensoriales.
+
+<DIV CLASS="ej"><B>Ejemplo de fragmento descriptivo:</B> "El lago Titicaca se extiende entre el Perú y Bolivia a una altitud de 3 812 metros sobre el nivel del mar, convirtiéndose en el lago navegable más alto del mundo. Sus aguas, de un azul profundo que contrasta con el cielo despejado del altiplano, albergan más de veinte especies de peces nativos. Las islas flotantes de los uros, tejidas con totora, salpican la superficie del lago desde tiempos preincaicos."</DIV>
+
+<H4>b) Texto narrativo</H4>
+El texto narrativo tiene como propósito <B>relatar hechos o sucesos</B> (reales o ficticios) protagonizados por personajes en un tiempo y un espacio determinados, organizados en una secuencia con lógica causal o temporal.
+
+<B>Estructura:</B>
+<UL>
+<LI><B>Situación inicial (presentación):</B> se establecen los personajes, el tiempo y el espacio, y el estado de equilibrio previo al conflicto.</LI>
+<LI><B>Nudo (complicación):</B> ocurre un evento que rompe el equilibrio inicial y genera tensión o conflicto.</LI>
+<LI><B>Desenlace (resolución):</B> el conflicto se resuelve —de manera favorable o adversa para los personajes— y se restaura un nuevo estado de equilibrio.</LI>
+</UL>
+
+<B>Recursos lingüísticos:</B> verbos de acción en pasado (pretérito perfecto simple e imperfecto), conectores temporales (luego, después, entonces, mientras tanto), narrador (en primera o tercera persona), diálogos directos o indirectos.
+
+<DIV CLASS="ej"><B>Ejemplo de fragmento narrativo:</B> "Aquella mañana, Fermín se despertó antes del amanecer. Recogió su red, la echó sobre el hombro y bajó por el sendero de piedra hasta la orilla del lago. El agua estaba inmóvil como un espejo oscuro. Lanzó la red una primera vez; no atrapó nada. La segunda vez, el peso que sintió en los brazos le dijo que algo distinto sucedía esa madrugada."</DIV>
+
+<H4>c) Texto argumentativo</H4>
+El texto argumentativo tiene como propósito <B>persuadir o convencer</B> al lector de la validez de una tesis, una postura o una conclusión, mediante el uso de argumentos, pruebas, datos, ejemplos o razonamientos lógicos.
+
+<B>Estructura:</B>
+<UL>
+<LI><B>Tesis:</B> afirmación central que el autor defiende, que puede aparecer al inicio (estructura deductiva) o al final (estructura inductiva).</LI>
+<LI><B>Argumentos:</B> razones, datos, ejemplos o citas que sustentan la tesis. Pueden estar acompañados de la refutación de posturas contrarias.</LI>
+<LI><B>Conclusión:</B> síntesis de lo argumentado y reafirmación de la tesis, a veces con una llamada a la acción o una recomendación.</LI>
+</UL>
+
+<B>Recursos lingüísticos:</B> conectores de oposición (sin embargo, no obstante, aunque), de causalidad (porque, dado que, por lo tanto), de refuerzo (incluso, además, es más), modalizadores (es necesario, cabe destacar, resulta evidente), verbos en primera persona del plural o en forma impersonal.
+
+<DIV CLASS="ej"><B>Ejemplo de fragmento argumentativo:</B> "La lectura en papel y la lectura en pantalla no son actividades equivalentes. Aunque ambas permiten acceder al contenido de un texto, diversos estudios en neurociencia cognitiva indican que la lectura sostenida en papel favorece una comprensión más profunda y una mejor retención de la información a largo plazo. Por esta razón, resulta inadecuado reemplazar completamente los libros físicos en la educación formal, especialmente en niveles en los que se busca desarrollar la capacidad de lectura crítica."</DIV>
+
+<DIV CLASS="cultura-titulo">CÓMO IDENTIFICAR RÁPIDAMENTE EL TIPO DE TEXTO EN EL EXAMEN<SPAN>Tres preguntas para resolver en menos de 30 segundos</SPAN></DIV>
+
+Ante cualquier texto en el examen, el estudiante debe hacerse tres preguntas rápidas antes de leer las preguntas: (1) <B>¿El texto cuenta hechos o sucesos con personajes en un tiempo y espacio?</B> → narrativo. (2) <B>¿El texto presenta características o propiedades de algo o alguien sin defender ninguna postura?</B> → descriptivo. (3) <B>¿El texto defiende una postura, usa argumentos y busca convencer?</B> → argumentativo. En la práctica, muchos textos combinan rasgos de más de un tipo: la clave está en identificar cuál es el propósito dominante, porque ese propósito determina la tesis que el autor quiere comunicar y, con ello, el eje sobre el que se construirán las preguntas de mayor dificultad.
+
+<H3>3. El texto discontinuo en el examen de admisión</H3>
+Los textos discontinuos aparecen cada vez con mayor frecuencia en los exámenes de admisión de alto rendimiento peruanos, integrados con preguntas que exigen <B>relacionar datos</B>, detectar <B>tendencias</B>, identificar <B>excepciones</B> y formular <B>conclusiones</B> a partir de la información visual. Estas son sus formas más habituales:
+<UL>
+<LI><B>Tablas de datos:</B> organizan información cuantitativa en filas y columnas. La clave es leer siempre los encabezados antes que los datos.</LI>
+<LI><B>Gráficos estadísticos (barras, líneas, circulares):</B> representan tendencias o proporciones. Importa identificar la variable que cada eje representa y la unidad de medida.</LI>
+<LI><B>Infografías:</B> combinan texto breve e imagen para sintetizar información compleja. Exigen leer tanto el texto verbal como los elementos visuales.</LI>
+<LI><B>Cuadros comparativos:</B> yuxtaponen dos o más elementos según criterios comunes. La pregunta típica pide identificar similitudes o diferencias entre columnas.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Estrategia global de lectura para el examen.</B> (1) Lee el título o encabezado principal del texto para anticipar el tema. (2) Identifica el tipo de texto (continuo/discontinuo; descriptivo/narrativo/argumentativo). (3) Lee la pregunta <I>antes</I> de leer el texto en profundidad, para saber exactamente qué información buscar. (4) Ubica la información relevante sin perderte en detalles periféricos. (5) Contrasta tu respuesta con lo que el texto dice explícitamente o permite inferir con seguridad.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">2</DIV><DIV CLASS="dk-label">Grandes categorías textuales: continuo y discontinuo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">3</DIV><DIV CLASS="dk-label">Tipos de texto continuo: descriptivo, narrativo, argumentativo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Tesis</DIV><DIV CLASS="dk-label">Elemento central del texto argumentativo que toda pregunta de alto rendimiento busca que identifiques</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">30 s</DIV><DIV CLASS="dk-label">Tiempo recomendado para identificar el tipo de texto antes de responder</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- ========== NIVEL BÁSICO ========== -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Lee el siguiente texto y responde:</DIV>
+<DIV CLASS="parrafo">
+El cóndor andino es el ave voladora más grande del mundo por envergadura alar. Sus alas desplegadas pueden alcanzar los 3,2 metros de extremo a extremo. Su plumaje es negro en su mayor parte, excepto por un llamativo collar blanco de plumas en la base del cuello y franjas blancas en las alas. La cabeza y el cuello del macho están desprovistos de plumas y presentan una coloración rojiza oscura. Es un ave carroñera que habita principalmente en los Andes, desde Venezuela hasta la Patagonia argentina, donde aprovecha las corrientes de aire ascendente para planear durante horas con un mínimo gasto de energía.
+<SPAN CLASS="fuente">Adaptado de texto informativo sobre fauna andina.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué tipo de texto es el fragmento anterior y cuál es su propósito comunicativo principal?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Narrativo, porque relata las acciones del cóndor en orden cronológico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Argumentativo, porque defiende la necesidad de proteger al cóndor andino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Descriptivo, porque presenta las características físicas, el hábitat y el comportamiento del cóndor sin defender ninguna postura ni relatar sucesos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Discontinuo, porque contiene datos numéricos sobre la envergadura del cóndor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El texto presenta sistemáticamente los rasgos del cóndor andino: su tamaño, plumaje, coloración, hábitat y comportamiento de vuelo. No hay sucesos con personajes en una línea de tiempo (lo que descarta el narrativo), ni se defiende ninguna tesis ni se busca convencer al lector de nada (lo que descarta el argumentativo). El hecho de contener datos numéricos no lo convierte en discontinuo (d): sigue siendo un texto de párrafos con lectura lineal. El propósito es exactamente el del texto descriptivo: representar cómo es un objeto o ser mediante la enumeración ordenada de sus propiedades.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Lee el siguiente texto y responde:</DIV>
+<DIV CLASS="parrafo">
+Era domingo por la mañana cuando Rosa llegó al mercado de Surquillo con una lista corta pero urgente. Quería papas amarillas, ají limo y hierba buena fresca. El mercado bullía de voces y olores. Ella avanzó entre los puestos sin detenerse, hasta que una vendedora la llamó con una sonrisa: "¡Lleva, señorita, están llegadas de Huancayo!". Rosa se acercó, tocó las papas, las olió. Pagó sin regatear y salió del mercado más rápido de lo que había entrado.
+<SPAN CLASS="fuente">Adaptado de texto literario narrativo.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Cuál de los siguientes elementos confirma que este es un texto narrativo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La presencia de adjetivos calificativos como "corta", "urgente" y "fresca"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) La existencia de una tesis que el autor defiende sobre el mercado de Surquillo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) La presencia de un personaje (Rosa), acciones en secuencia temporal (llegó, avanzó, se acercó, pagó, salió), un espacio (mercado de Surquillo) y un tiempo (domingo por la mañana)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) La inclusión de datos estadísticos sobre el comercio en los mercados de Lima</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Los elementos definitorios del texto narrativo son: personaje, acciones en secuencia temporal, espacio y tiempo. Este fragmento los contiene todos: Rosa (personaje), el mercado de Surquillo (espacio), el domingo por la mañana (tiempo) y la secuencia de acciones narradas con verbos en pasado (llegó, avanzó, se acercó, pagó, salió). La presencia de adjetivos (a) es un recurso compartido con la descripción y no define por sí sola a la narración. No existe ninguna tesis (b), lo que descarta el argumentativo. Y la ausencia de datos estadísticos (d) no tiene relación alguna con la definición del texto narrativo.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Lee el siguiente texto y responde:</DIV>
+<DIV CLASS="parrafo">
+La expansión de la minería informal en zonas de amortiguamiento de reservas naturales constituye una amenaza real e inmediata para la biodiversidad peruana. Los registros satelitales de los últimos cinco años muestran una deforestación acelerada en áreas adyacentes a la Reserva Nacional Tambopata, directamente vinculada a actividades extractivas no reguladas. Resulta, por tanto, imprescindible que el Estado implemente mecanismos de control territorial efectivos antes de que el daño ecológico alcance un punto de no retorno. Aplazar esta decisión equivale a ceder ante intereses particulares en detrimento del patrimonio natural de todos los peruanos.
+<SPAN CLASS="fuente">Adaptado de artículo de opinión periodística.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Cuál es la tesis que el texto defiende?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) La minería informal genera empleos en zonas rurales alejadas del país</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) La Reserva Nacional Tambopata ha perdido el 50% de su superficie forestal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El Estado peruano debe implementar mecanismos de control territorial efectivos para frenar la expansión de la minería informal en áreas naturales protegidas antes de que el daño sea irreversible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) La biodiversidad peruana es la más rica de América del Sur según registros satelitales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>En un texto argumentativo, la tesis es la afirmación central que el autor busca sostener mediante argumentos. El texto usa evidencia (registros satelitales de deforestación) y modalizadores de necesidad ("resulta imprescindible", "aplazar equivale a ceder") para defender que el Estado debe actuar con urgencia. La opción c) recoge exactamente esa postura central. Las opciones a) y d) son afirmaciones que el texto no plantea ni menciona; la opción b) podría parecer un dato del texto, pero no es la postura que se defiende, sino un argumento de apoyo (y además el texto no da ese porcentaje exacto).</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Observa el siguiente texto discontinuo y responde:</DIV>
+<DIV CLASS="parrafo">
+<SPAN CLASS="fuente" STYLE="text-align:left;font-style:normal;font-weight:bold;color:#0D1B36;font-size:14px;">Tabla: Porcentaje de estudiantes con nivel satisfactorio en comprensión lectora — Regiones seleccionadas del Perú (ECE 2023)</SPAN>
+<TABLE CLASS="discontinuo-tabla" STYLE="margin-top:10px;">
+<TR><TH>Región</TH><TH>2019 (%)</TH><TH>2021 (%)</TH><TH>2023 (%)</TH></TR>
+<TR><TD>Moquegua</TD><TD>52,4</TD><TD>47,1</TD><TD>54,8</TD></TR>
+<TR><TD>Tacna</TD><TD>49,3</TD><TD>44,7</TD><TD>51,2</TD></TR>
+<TR><TD>Lima Metropolitana</TD><TD>43,1</TD><TD>38,6</TD><TD>46,0</TD></TR>
+<TR><TD>Loreto</TD><TD>12,7</TD><TD>10,2</TD><TD>13,5</TD></TR>
+<TR><TD>Ucayali</TD><TD>14,3</TD><TD>11,8</TD><TD>15,1</TD></TR>
+</TABLE>
+<SPAN CLASS="fuente">Datos referenciales elaborados con fines didácticos (basados en formato ECE-Minedu).</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué tendencia general muestran los datos de la tabla en el período 2019-2023?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Un descenso constante en todas las regiones durante los tres años registrados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Una caída en 2021 respecto de 2019 en todas las regiones, seguida de una recuperación en 2023 que supera en todos los casos el nivel de 2019</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Un crecimiento continuo y sin interrupciones en todas las regiones entre 2019 y 2023</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Que Loreto y Ucayali alcanzaron en 2023 niveles similares a los de Lima Metropolitana en 2019</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Al revisar la tabla columna por columna: todas las regiones muestran un valor menor en 2021 que en 2019 (Moquegua baja de 52,4 a 47,1; Tacna de 49,3 a 44,7; Lima de 43,1 a 38,6; Loreto de 12,7 a 10,2; Ucayali de 14,3 a 11,8), lo que sugiere un impacto negativo en ese período (posiblemente relacionado con la pandemia). En 2023, todas las regiones recuperan y superan sus valores de 2019 (Moquegua llega a 54,8 > 52,4; Tacna a 51,2 > 49,3; Lima a 46,0 > 43,1; Loreto a 13,5 > 12,7; Ucayali a 15,1 > 14,3). La opción a) es incorrecta porque en 2023 hay recuperación; c) ignora la caída de 2021; d) es falsa: Loreto (13,5%) y Ucayali (15,1%) están muy lejos de los 43,1% que Lima tenía en 2019.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Lee el siguiente texto y responde:</DIV>
+<DIV CLASS="parrafo">
+La quinua (<I>Chenopodium quinoa</I>) es un pseudocereal originario de los Andes centrales, cultivado desde hace más de cinco mil años. Su tallo puede alcanzar entre 1 y 3 metros de altura. Las hojas son anchas en la base y se van tornando más pequeñas hacia la parte superior de la planta. El grano, que constituye la parte de mayor valor nutricional, puede ser blanco, rojo, negro o de una mezcla de colores según la variedad. Contiene los ocho aminoácidos esenciales para el ser humano, lo que la convierte en una de las fuentes vegetales de proteína más completas del mundo.
+<SPAN CLASS="fuente">Adaptado de ficha técnica del INIA Perú.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Cuál de las siguientes preguntas corresponde al nivel literal de comprensión de este texto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) ¿Por qué la quinua podría contribuir a reducir la desnutrición infantil en el mundo?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) ¿Cuántos aminoácidos esenciales contiene la quinua según el texto?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) ¿Es correcto que el autor no mencione el impacto económico de la quinua en el Perú?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) ¿Qué implicaría para la seguridad alimentaria global que la quinua fuera cultivada en otros continentes?</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comprensión literal recupera información que el texto afirma de forma explícita, sin necesidad de deducir ni evaluar nada. La pregunta b) ("¿cuántos aminoácidos esenciales contiene?") tiene su respuesta directamente en el texto: "ocho aminoácidos esenciales". Las preguntas a) y d) exigen inferir o proyectar consecuencias que el texto no menciona: son preguntas de nivel inferencial. La pregunta c) pide evaluar una omisión del autor: es una pregunta de nivel crítico-valorativo. La distinción entre los tres niveles es exactamente lo que este tipo de pregunta, muy frecuente en los exámenes de alto rendimiento, busca que el estudiante aplique.</DIV></DETAILS>
+</DIV>
+
+<!-- ========== NIVEL INTERMEDIO ========== -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Lee el siguiente texto y responde:</DIV>
+<DIV CLASS="parrafo">
+El pueblo de Llachón se alza sobre una península que se adentra en el lago Titicaca por el lado peruano. Sus casas de adobe y techo de paja se organizan en pequeños grupos en torno a parcelas de cultivo donde crecen habas, papas y quinua. Desde cualquier punto del pueblo, la vista alcanza el agua del lago, que cambia de color a lo largo del día: azul verdoso en la mañana, violeta oscuro al atardecer. Los hombres pescan en pequeñas barcas de madera mientras las mujeres tejen chullos y chompas con lanas teñidas con plantas silvestres. El silencio solo se interrumpe por el ladrido de algún perro o el paso del viento entre los totorales.
+<SPAN CLASS="fuente">Adaptado de crónica de viaje publicada en revista peruana.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué tipo de texto es este fragmento y qué estrategia de organización interna utiliza para presentar la información?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Argumentativo; presenta primero la tesis y luego los argumentos en orden de importancia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Narrativo; sigue un orden cronológico de los sucesos que ocurren en el pueblo durante el día</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Descriptivo; organiza la información mediante un recorrido visual del espacio (de lo general —el pueblo— hacia detalles concretos —las actividades, los sonidos—), usando recursos sensoriales para representar el lugar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Discontinuo; combina una tabla de datos sobre el lago con una descripción oral del pueblo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El texto es descriptivo: no defiende ninguna postura ni narra una secuencia de hechos con conflicto y desenlace, sino que presenta sistemáticamente las características de un lugar (Llachón) usando recursos sensoriales (colores, sonidos, texturas). Su organización interna sigue un recorrido de lo general a lo concreto y de lo visual a lo auditivo: primero la ubicación geográfica y la arquitectura, luego los cultivos, los colores del lago, las actividades de las personas y, al final, los sonidos del entorno. La opción b) es atractiva como distractor porque menciona cambios a lo largo del día, pero esos cambios no son acciones de personajes con conflicto: son rasgos del paisaje. La opción d) es incorrecta porque el texto es completamente continuo y lineal, sin ningún formato visual de tabla o gráfico.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Lee el siguiente texto y responde:</DIV>
+<DIV CLASS="parrafo">
+Don Aurelio llevaba cuarenta años vendiendo periódicos en el mismo quiosco de la avenida Arequipa. Una mañana, una joven se detuvo ante el mostrador y le preguntó si tenía algún diario que todavía mencionara su nombre. Él no entendió. Ella explicó que su abuelo había muerto la semana anterior y que en algún diario de los años setenta aparecía una foto suya. Don Aurelio la miró, torció la boca y señaló hacia el fondo del local, donde se apilaban periódicos amarillentos hasta el techo. "Ahí están todos", dijo. "Pero te va a costar encontrarlo." La joven sonrió, se remangó el saco y empezó a buscar.
+<SPAN CLASS="fuente">Adaptado de cuento breve contemporáneo peruano.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Cuál es el nudo o complicación de este texto narrativo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Que don Aurelio lleva cuarenta años en el mismo quiosco de la avenida Arequipa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Que la joven le pregunta a don Aurelio si tiene un diario que mencione a su abuelo fallecido, lo cual introduce la complicación que mueve el relato: la búsqueda de una foto perdida en décadas de periódicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Que don Aurelio señala el fondo del local donde están los periódicos apilados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Que la joven sonríe y se remanga el saco al final del texto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En la estructura del texto narrativo, el <B>nudo</B> es el evento que rompe el equilibrio inicial y genera la tensión o el conflicto que mueve el relato. La situación inicial es don Aurelio en su quiosco en una rutina de cuarenta años; la complicación se introduce cuando la joven llega con su petición inusual —encontrar un periódico de los años setenta con la foto de su abuelo fallecido—, transformando un encuentro cotidiano en una búsqueda. La opción a) es parte de la situación inicial (presentación de personaje), no el nudo; c) es la reacción de don Aurelio ante la complicación, no la complicación misma; d) corresponde al inicio del desenlace: la joven acepta el reto y comienza la búsqueda.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Lee el siguiente texto y responde:</DIV>
+<DIV CLASS="parrafo">
+Afirmar que el acceso a internet equivale automáticamente al acceso al conocimiento es una simplificación peligrosa. Tener conectividad no garantiza saber leer críticamente, evaluar fuentes, ni distinguir la información rigurosa de la desinformación. Las estadísticas de consumo digital en el Perú revelan que los adolescentes pasan en promedio cuatro horas diarias conectados, pero apenas treinta minutos leyendo textos de extensión media o larga. Si la democratización del conocimiento dependiera solo de la conectividad, estas cifras deberían traducirse en generaciones más informadas. Sin embargo, los resultados de las evaluaciones nacionales de comprensión lectora muestran que el problema persiste. La solución no es más internet: es mejor formación lectora.
+<SPAN CLASS="fuente">Adaptado de columna de opinión en revista educativa peruana.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué recurso argumentativo utiliza el autor en la tercera y cuarta oración del texto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Una descripción detallada del entorno digital de los adolescentes peruanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Una narración cronológica del uso de internet en el Perú durante la última década</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Un argumento de tipo estadístico-contrafáctico: el autor presenta datos cuantitativos reales (4 horas conectados vs. 30 minutos de lectura) y luego señala que, si la tesis contraria fuera verdadera (más conectividad = más conocimiento), esos datos deberían haber producido un resultado diferente al que muestran las evaluaciones, lo que invalida esa tesis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Una cita directa de una autoridad educativa que respalda la postura del autor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Las oraciones referidas usan dos movimientos argumentativos combinados: primero presentan datos cuantitativos (estadísticas de consumo digital) y luego aplican un razonamiento contrafáctico —"si la conectividad equivaliera a conocimiento, entonces X debería ocurrir; pero X no ocurre; por tanto, esa equivalencia es falsa"—, que es una forma clásica del argumento por reducción al absurdo. No se trata de descripción (a): no se enumera el entorno, se usan datos para sostener una postura. No es narración (b): no hay sucesos en secuencia temporal. No es una cita de autoridad (d): el texto no menciona a ningún especialista ni fuente nominada. Reconocer el tipo de recurso argumentativo es la habilidad evaluada en este nivel.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Observa el siguiente texto discontinuo y responde:</DIV>
+<DIV CLASS="parrafo">
+<SPAN CLASS="fuente" STYLE="text-align:left;font-style:normal;font-weight:bold;color:#0D1B36;font-size:14px;">Tabla: Principales causas de deserción escolar en el nivel secundario — Perú 2022 (% de casos reportados por región)</SPAN>
+<TABLE CLASS="discontinuo-tabla" STYLE="margin-top:10px;">
+<TR><TH>Causa</TH><TH>Costa (%)</TH><TH>Sierra (%)</TH><TH>Selva (%)</TH></TR>
+<TR><TD>Necesidad de trabajar</TD><TD>38,2</TD><TD>44,6</TD><TD>51,3</TD></TR>
+<TR><TD>Lejanía de la escuela</TD><TD>5,1</TD><TD>27,4</TD><TD>33,7</TD></TR>
+<TR><TD>Embarazo adolescente</TD><TD>18,7</TD><TD>12,3</TD><TD>22,1</TD></TR>
+<TR><TD>Falta de interés</TD><TD>24,4</TD><TD>10,2</TD><TD>8,9</TD></TR>
+<TR><TD>Violencia familiar</TD><TD>13,6</TD><TD>5,5</TD><TD>−</TD></TR>
+</TABLE>
+<SPAN CLASS="fuente">Datos referenciales elaborados con fines didácticos.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué conclusión puede extraerse al comparar los datos de la región Selva con los de la Costa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) En la Selva, la falta de interés es la causa dominante de deserción, superando ampliamente a la necesidad de trabajar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) En la Costa, la lejanía de la escuela es el principal factor de deserción, equivalente al de la Selva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) En la Selva, la necesidad de trabajar y la lejanía de la escuela son causas significativamente más frecuentes que en la Costa, mientras que la falta de interés tiene un peso mucho menor en la Selva (8,9%) que en la Costa (24,4%)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) La violencia familiar es la causa más frecuente en ambas regiones según los datos de la tabla</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La comparación directa de columnas revela dos diferencias destacadas: (1) "Necesidad de trabajar" es más alta en Selva (51,3%) que en Costa (38,2%), y "Lejanía de la escuela" es notablemente mayor en Selva (33,7%) que en Costa (5,1%), lo que refleja condiciones de acceso geográfico y necesidad económica más severas. (2) "Falta de interés" es mucho más baja en Selva (8,9%) que en Costa (24,4%), lo que sugiere que cuando la deserción ocurre en la Selva, responde más a presiones externas (trabajo, distancia) que a motivación personal. La opción a) invierte los datos: en la Selva, necesidad de trabajar (51,3%) domina, no falta de interés (8,9%). La opción b) es falsa: la lejanía en Costa es solo 5,1%, muy inferior al 33,7% de Selva. La opción d) es incorrecta: la violencia familiar es baja en ambas regiones y ni siquiera aparece registrada en Selva (marcada con −).</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Lee el siguiente texto y responde:</DIV>
+<DIV CLASS="parrafo">
+La calle Junín, en el Centro Histórico de Lima, conserva una arquitectura que combina el barroco colonial con influencias republicanas del siglo XIX. Sus balcones de madera tallada, algunos con más de doscientos años de antigüedad, se proyectan sobre la acera formando una suerte de corredor techado que protege al transeúnte del sol y la lluvia. Los portones de cedro, ennegrecidos por el tiempo pero todavía sólidos, guardan en su interior patios empedrados donde crecen palmeras y naranjos. Por las noches, la luz amarilla de los faroles de hierro forjado tiñe las fachadas de un color cálido que recuerda a las estampas del virreinato.
+<SPAN CLASS="fuente">Adaptado de guía de turismo cultural de Lima.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué inferencia puede obtenerse a partir de la descripción de los balcones y los portones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Que la calle Junín fue construida íntegramente durante el siglo XIX y nunca tuvo influencia colonial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Que el material con el que están construidos los balcones y los portones es el acero moderno, más resistente que la madera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Que las edificaciones de la calle Junín han sobrevivido varios siglos en parte porque sus materiales originales (madera de calidad, cedro) fueron suficientemente resistentes como para mantenerse en pie con el paso del tiempo, aunque con señales visibles de envejecimiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Que los faroles de hierro forjado son elementos decorativos instalados recientemente por el Ministerio de Cultura</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El texto dice que los portones de cedro están "ennegrecidos por el tiempo pero todavía sólidos" y que los balcones tienen "más de doscientos años de antigüedad". De estos datos explícitos puede inferirse —sin que el texto lo afirme de manera directa— que la longevidad de esas estructuras se debe en parte a la calidad de sus materiales, ya que el cedro y la madera tallada han resistido dos siglos pese al evidente desgaste visible. La opción a) contradice el texto, que menciona explícitamente tanto el barroco colonial como las influencias republicanas. La opción b) contradice de manera directa el texto, que habla de madera y cedro, no de acero. La opción d) es una suposición sin respaldo en el texto.</DIV></DETAILS>
+</DIV>
+
+<!-- ========== NIVEL AVANZADO ========== -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · RAZONAMIENTO CRÍTICO</SPAN></DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Lee el siguiente texto y responde la pregunta:</DIV>
+<DIV CLASS="parrafo">
+<B>Texto A — El precio del silencio</B><BR><BR>
+Durante décadas, las comunidades campesinas del corredor minero del sur peruano han convivido con pasivos ambientales sin remediar: relaves a cielo abierto, ríos con altos niveles de metales pesados, suelos contaminados que ya no producen los cultivos que alguna vez sostuvieron a esas familias. El Estado ha reconocido públicamente la existencia de estos pasivos en al menos tres informes oficiales entre 2010 y 2020, pero la remediación efectiva sigue siendo, en la mayoría de los casos, una promesa diferida. No es que falten recursos: el canon minero ha generado en esas regiones ingresos millonarios. Lo que parece faltar es la voluntad política de priorizar el derecho a un ambiente sano sobre los intereses de quienes prefieren que el problema permanezca invisible. El silencio tiene un precio, y lo están pagando quienes menos culpa tienen.
+<SPAN CLASS="fuente">Adaptado de informe de organización civil peruana de derechos ambientales.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿En qué tipo de texto se clasifica este fragmento y cuáles son los dos argumentos principales que el autor usa para sustentar su tesis?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Descriptivo; describe los problemas ambientales de las comunidades mineras sin tomar partido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Narrativo; cuenta la historia de las comunidades afectadas por la minería en orden cronológico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Argumentativo; los dos argumentos principales son: (1) que el Estado tiene conocimiento documentado del problema desde hace más de una década pero no ha actuado, y (2) que los recursos existen (canon minero) y, por tanto, la inacción no se debe a falta de medios sino a falta de voluntad política</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Argumentativo; el único argumento es la descripción de los daños físicos que sufren las comunidades</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El texto es argumentativo: tiene una tesis ("lo que parece faltar es la voluntad política") que el autor defiende con dos argumentos diferenciados. El primero es un argumento de responsabilidad por conocimiento: si el Estado ha reconocido el problema en tres informes oficiales y no ha actuado, su inacción no puede atribuirse a ignorancia. El segundo es un argumento de refutación de la excusa económica: si el canon minero ha generado ingresos millonarios en esas regiones, la falta de remediación no puede justificarse por ausencia de recursos, lo que remite la causa al nivel político. La opción a) es incorrecta porque el texto claramente toma partido; b) es incorrecta porque, aunque hay referencias temporales, no hay personajes ni un conflicto con estructura narrativa; d) es parcialmente correcta al identificar el tipo pero incompleta: el argumento sobre los daños físicos es la situación inicial, no el argumento central —que es la doble refutación sobre conocimiento y recursos.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Considerando el mismo Texto A ("El precio del silencio"), ¿cuál sería una objeción legítima que un lector crítico podría plantear a la argumentación del texto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Que el texto es demasiado largo y debería ser más breve para ser convincente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Que el autor usa lenguaje emotivo ("quienes menos culpa tienen") que podría comprometer la objetividad del análisis e impedir que el texto sea considerado un informe técnico neutral</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Que el texto no tiene ninguna debilidad argumentativa porque todos sus datos son verificables</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Que el autor debería haber escrito el texto en inglés para llegar a más lectores internacionales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Una objeción crítico-valorativa legítima señala una debilidad real en la argumentación o en la presentación del texto. El uso de lenguaje emocionalmente cargado ("lo están pagando quienes menos culpa tienen", "el silencio tiene un precio") es un recurso retórico que puede movilizar al lector, pero que también puede ser cuestionado desde la perspectiva del rigor argumentativo: un lector que detecte ese recurso puede objetar que el texto combina análisis con apelación emocional, lo que podría reducir su credibilidad ante un público que busca un informe estrictamente técnico y neutral. Esto no invalida el texto, pero sí es una limitación que un lector en nivel crítico tiene derecho a señalar. La opción a) es un criterio estético, no lógico; c) comete el error opuesto: ningún texto argumentativo es perfectamente inobjetable, y además el texto no cita sus fuentes de datos con suficiente precisión; d) es completamente irrelevante para evaluar la calidad de la argumentación.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Lee el siguiente par de fragmentos y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Texto B — Fragmento 1 (narrativo):</B><BR>
+Esa tarde, la profesora Marta entró al aula con una caja de cartón bajo el brazo. Los alumnos dejaron de hablar. Ella colocó la caja sobre el escritorio, la abrió despacio y sacó un libro viejo, con las tapas gastadas. "Este libro perteneció a mi abuela", dijo. "Ella lo leyó en esta misma escuela, hace cincuenta años." Nadie preguntó nada. Todos miraban el libro como si fuera algo que no debía tocarse.<BR><BR>
+<B>Texto B — Fragmento 2 (descriptivo):</B><BR>
+El libro medía unos veinte centímetros de alto por quince de ancho. Sus tapas de cartón grueso habían sido en algún momento de un color azul intenso, aunque el tiempo las había desteñido hasta un gris desigual. Las hojas amarilleaban en los bordes y desprendían un olor suave a humedad y papel viejo. En la portada, escrito a mano con tinta negra que ya se había corrido levemente, se leía un nombre: Elena.
+<SPAN CLASS="fuente">Texto elaborado con fines didácticos.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué diferencia fundamental permite distinguir el Fragmento 1 del Fragmento 2, más allá de que ambos hablen del mismo libro?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) El Fragmento 1 usa palabras más largas y complejas que el Fragmento 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El Fragmento 1 es más largo que el Fragmento 2 y por eso resulta más informativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) El Fragmento 1 presenta acciones de personajes en secuencia temporal (la profesora entra, coloca, saca, habla; los alumnos reaccionan) con una tensión dramática implícita, mientras que el Fragmento 2 detiene el tiempo y enumera las propiedades físicas y sensoriales del libro sin que nadie actúe ni ocurra nada: uno narra, el otro describe</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El Fragmento 2 es argumentativo porque defiende la importancia de preservar los libros antiguos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Esta pregunta evalúa la capacidad de distinguir los tipos textuales cuando ambos fragmentos comparten el mismo tema y campo léxico. El criterio no es el tema (ambos hablan del mismo libro) sino la función comunicativa: en el Fragmento 1 hay un personaje (la profesora Marta) que realiza acciones en una secuencia con tiempo, espacio y una tensión implícita (el silencio de los alumnos, la solemnidad del momento), lo que lo convierte en un texto narrativo. En el Fragmento 2, el tiempo se "detiene" para enumerar las características físicas del libro (tamaño, color, textura, olor, inscripción), sin que nadie actúe ni ocurra nada: es un texto descriptivo puro. Las opciones a) y b) aplican criterios irrelevantes (longitud, complejidad léxica) que no definen el tipo de texto. La opción d) es incorrecta: el Fragmento 2 no defiende ninguna postura ni usa argumentos; simplemente describe.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Lee el siguiente texto y responde:</DIV>
+<DIV CLASS="parrafo">
+La medicina tradicional andina y la medicina occidental no son sistemas necesariamente irreconciliables. Durante siglos, las comunidades indígenas del Perú desarrollaron un conocimiento detallado de las plantas medicinales de su entorno —conocimiento que la farmacología moderna ha comenzado a validar en los últimos cuarenta años. La maca, la uña de gato y la sangre de grado son solo tres ejemplos de plantas cuyos principios activos han sido analizados en laboratorios de Europa y Asia con resultados prometedores. Ignorar este saber ancestral en nombre de una supuesta superioridad científica occidental no solo es epistemológicamente arrogante, sino también prácticamente costoso: implica desaprovechar décadas de observación empírica acumulada en contextos que la ciencia formal apenas está comenzando a explorar.
+<SPAN CLASS="fuente">Adaptado de artículo académico de etnobotánica peruana.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Cuál es la estrategia argumentativa central del texto y cómo la despliega el autor a lo largo del fragmento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El autor utiliza una descripción exhaustiva de las plantas medicinales peruanas para informar al lector sobre su existencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El autor narra la historia de la medicina andina desde sus orígenes hasta el presente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El autor plantea una tesis conciliadora en la primera oración, la sustenta con evidencia empírica (validación farmacológica de plantas andinas) y ejemplos concretos (maca, uña de gato, sangre de grado), y cierra con una doble refutación al argumento contrario: tacha de arrogante a la postura que ignora el saber ancestral y además la califica de contraproducente en términos prácticos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El autor presenta dos posturas contradictorias sin tomar partido, dejando al lector que decida cuál prefiere</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El análisis de la estrategia argumentativa es una habilidad de nivel avanzado que exige seguir el movimiento lógico del texto de principio a fin. La tesis aparece en la primera oración: los dos sistemas no son irreconciliables. El desarrollo la sostiene con evidencia empírica (validación farmacológica de cuarenta años) y tres ejemplos concretos que dan credibilidad. El cierre es una refutación doble: la postura opuesta (ignorar la medicina ancestral) recibe primero una crítica epistemológica ("arrogante") y luego una crítica pragmática ("prácticamente costoso"), lo que cierra el argumento sin dejar salida fácil a quien lo rechace. La opción a) clasifica mal el texto como descriptivo; b) lo clasifica como narrativo sin que haya secuencia de sucesos con personajes; d) es la opción opuesta a la correcta, ya que el autor sí toma partido con claridad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Observa el siguiente texto discontinuo y luego responde:</DIV>
+<DIV CLASS="parrafo">
+<SPAN CLASS="fuente" STYLE="text-align:left;font-style:normal;font-weight:bold;color:#0D1B36;font-size:14px;">Tabla: Distribución del tiempo de lectura semanal por tipo de texto — Estudiantes de 5.° de secundaria, Lima Metropolitana (muestra de 1 200 estudiantes, 2023)</SPAN>
+<TABLE CLASS="discontinuo-tabla" STYLE="margin-top:10px;">
+<TR><TH>Tipo de texto</TH><TH>Minutos/semana (promedio)</TH><TH>% del total</TH></TR>
+<TR><TD>Redes sociales (texto breve)</TD><TD>312</TD><TD>52,0</TD></TR>
+<TR><TD>Mensajes de texto / chat</TD><TD>154</TD><TD>25,7</TD></TR>
+<TR><TD>Noticias digitales (texto medio)</TD><TD>68</TD><TD>11,3</TD></TR>
+<TR><TD>Libros / textos largos</TD><TD>41</TD><TD>6,8</TD></TR>
+<TR><TD>Textos académicos o escolares</TD><TD>25</TD><TD>4,2</TD></TR>
+</TABLE>
+<SPAN CLASS="fuente">Datos referenciales elaborados con fines didácticos.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué conclusión crítico-valorativa puede extraerse de esta tabla respecto a la formación lectora de los estudiantes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Los estudiantes de Lima Metropolitana no leen en absoluto, según lo que muestra la tabla</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La tabla demuestra que las redes sociales son más valiosas para la formación lectora que los libros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Los datos sugieren que más del 77% del tiempo de lectura semanal se dedica a textos breves o fragmentarios (redes sociales y chats), mientras que los textos largos y los académicos —que son los que exigen y desarrollan la comprensión lectora profunda— representan juntos apenas el 11% del tiempo: esto es problemático para la formación de lectores críticos, aunque la tabla no puede afirmar por sí sola que esa distribución sea la única causa del bajo rendimiento en comprensión lectora</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La solución al problema de comprensión lectora es prohibir el uso de redes sociales en los colegios, tal como lo indica la tabla</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Esta pregunta evalúa la comprensión crítico-valorativa aplicada a un texto discontinuo. La lectura crítica de una tabla no se limita a repetir los datos (nivel literal) ni a inferir tendencias (nivel inferencial), sino a formular un juicio razonado sobre su significado y sus implicaciones, reconociendo también sus límites. La opción c) hace exactamente eso: usa los datos (sumando los porcentajes de texto breve: 52,0 + 25,7 = 77,7%) para identificar un patrón preocupante para la formación lectora, pero añade la cautela crítica de que la tabla por sí sola no puede establecer causalidad. La opción a) niega los datos: los estudiantes sí leen, solo que mayoritariamente textos breves. La opción b) hace una inferencia valorativa no sustentada: leer más tiempo en redes no implica mayor calidad formativa, sino precisamente lo opuesto. La opción d) extrae una recomendación de política que la tabla en ningún momento permite establecer.</DIV></DETAILS>
+</DIV>
+
+<!-- ========== NIVEL EXPERTO ========== -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Lee el siguiente texto con atención y responde las preguntas 16, 17 y 18:</DIV>
+<DIV CLASS="parrafo">
+<B>Texto C — "La memoria del agua"</B><BR><BR>
+El glaciar Pastoruri, en la Cordillera Blanca de Áncash, ha perdido más del 40% de su masa en los últimos treinta años. Lo que fue durante siglos un reservorio natural de agua dulce para las comunidades del callejón de Huaylas se ha reducido a una lengua de hielo que los científicos estiman podría desaparecer por completo antes de 2040. Cada temporada, los guías turísticos que llevan visitantes al glaciar deben marcar nuevos puntos de llegada, cada vez más alejados del límite del hielo y más próximos al suelo desnudo que el glaciar fue dejando atrás.<BR><BR>
+Sin embargo, frente a esta realidad documentada, un sector de la comunidad local se resiste a modificar las prácticas de crianza del ganado que históricamente han presionado sobre los pastos de altura. La tradición, arguyen, es anterior al problema. La respuesta científica a ese argumento es precisa: la tradición puede ser anterior al problema, pero no puede ser anterior a sus consecuencias. Y las consecuencias, en este caso, incluyen la progresiva salinización de los acuíferos bajos, la pérdida de productividad agrícola y, a mediano plazo, el desplazamiento forzado de las familias que dependen del agua glaciar.<BR><BR>
+Hay quienes proponen una solución técnica: la construcción de represas artificiales que almacenen el agua de deshielo. La propuesta es plausible como medida de transición, pero resuelve el síntoma sin atacar la causa. Un sistema hídrico que ha tardado miles de años en formarse no puede ser reemplazado en décadas por ingeniería, y tratarlo como si pudiera serlo implica asumir que la tecnología puede sustituir indefinidamente a los ecosistemas que destruimos. Esa suposición ha demostrado ser errónea en demasiados contextos para seguir siendo aceptada sin cuestionamiento.
+<SPAN CLASS="fuente">Adaptado de ensayo académico sobre cambio climático y recursos hídricos en los Andes peruanos.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Cuál es la tesis central del Texto C y en qué parte del texto aparece de manera más explícita?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La tesis es que el glaciar Pastoruri desaparecerá antes de 2040 y aparece en el primer párrafo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La tesis es que la solución técnica de las represas es perfectamente suficiente para reemplazar a los glaciares andinos y aparece en el tercer párrafo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La tesis central, desplegada a lo largo de los tres párrafos, es que las soluciones parciales —tanto la resistencia al cambio de prácticas tradicionales como la propuesta técnica de represas— resultan insuficientes frente a la pérdida glaciar, porque ninguna ataca la causa estructural del problema; la formulación más explícita aparece en el tercer párrafo: "resuelve el síntoma sin atacar la causa"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La tesis es que los guías turísticos de Áncash deben cambiar sus rutas de trabajo y aparece en el primer párrafo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>En textos argumentativos complejos de nivel experto, la tesis no siempre aparece en la primera oración: puede construirse de manera inductiva a lo largo de varios párrafos. Aquí, el primer párrafo establece el problema (pérdida del glaciar); el segundo refuta la postura que opone tradición a cambio (primera solución insuficiente: mantener las prácticas); el tercero refuta la solución técnica (segunda solución insuficiente: las represas). La tesis que unifica los tres movimientos argumentativos es que ninguna respuesta parcial basta porque ninguna aborda la causa. La expresión más explícita de esa tesis es la frase del tercer párrafo: "resuelve el síntoma sin atacar la causa". La opción a) confunde un dato del texto (el dato sobre la desaparición) con la tesis; b) invierte la postura del autor, que en realidad critica la solución técnica como insuficiente; d) malinterpreta un detalle descriptivo del primer párrafo como si fuera la postura central del texto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> En el segundo párrafo del Texto C, el autor escribe: "La tradición puede ser anterior al problema, pero no puede ser anterior a sus consecuencias." ¿Qué tipo de recurso argumentativo representa esta oración?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Una descripción de las tradiciones de las comunidades campesinas del callejón de Huaylas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Una narración del origen histórico de las prácticas de pastoreo andino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Una refutación lógica de tipo concesivo-adversativo: el autor concede parcialmente el argumento del oponente ("la tradición es anterior al problema") para inmediatamente invalidarlo con una distinción crucial: la antigüedad de una práctica no la exime de las consecuencias que produce hoy; la frase además funciona como un silogismo comprimido que deja sin salida lógica a quien apele solo a la antigüedad de una costumbre para justificarla</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Un argumento de autoridad: el autor cita la opinión de científicos especialistas en glaciología andina para sustentar su postura</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Esta oración es un ejemplo de refutación concesivo-adversativa, uno de los recursos argumentativos más elegantes y frecuentes en textos de alto rendimiento: el autor no niega el argumento del oponente ("la tradición es anterior al problema"), sino que lo concede ("puede ser anterior") para luego aplicar una distinción que lo invalida como defensa ("no puede ser anterior a sus consecuencias"). La estructura "sí, pero no en lo que importa" es retóricamente eficaz porque no confronta directamente la afirmación del oponente, sino que la acepta y la supera. No es descripción (a) ni narración (b) porque no enumera propiedades ni relata sucesos. No es argumento de autoridad (d): el autor habla en primera persona argumentativa, no cita a ningún experto identificado en esa oración específica.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Considerando la estructura global del Texto C, ¿cuál de las siguientes afirmaciones describe con mayor exactitud la organización argumentativa del texto completo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) El texto presenta un problema y su solución definitiva en tres pasos sucesivos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) El texto es de tipo narrativo porque relata el deterioro del glaciar Pastoruri desde el pasado hasta el presente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El texto sigue una estructura argumentativa de problema → refutación de solución 1 → refutación de solución 2, sin ofrecer una solución propia: el primer párrafo establece el problema con evidencia empírica; el segundo descarta la inacción basada en la tradición; el tercero descarta la solución técnica como respuesta suficiente, dejando implícito que la única respuesta real sería abordar la causa estructural (el cambio climático y las prácticas que lo aceleran)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El texto alterna párrafos descriptivos con párrafos narrativos para hacer más accesible un tema científico complejo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Esta pregunta exige mapear la estructura global del texto, no solo su contenido. El movimiento argumentativo es: (1) Párrafo 1: evidencia del problema → establece la urgencia y el contexto. (2) Párrafo 2: refutación de la postura de quienes apelan a la tradición → primera solución descartada por ser anterior a las consecuencias, no a las causas. (3) Párrafo 3: refutación de la solución técnica (represas) → segunda solución descartada por atacar el síntoma, no la causa. El texto no ofrece una "solución definitiva" propia (lo que descarta a), sino que elimina las respuestas insuficientes y deja al lector frente a la implicación inevitable: la única respuesta suficiente es abordar la causa estructural. No es narrativo (b): aunque hay referencias temporales, no hay personajes ni conflicto dramático. No alterna descripción y narración (d): los tres párrafos son argumentativos con diferentes movimientos lógicos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Lee el siguiente texto y responde:</DIV>
+<DIV CLASS="parrafo">
+Las ciudades inteligentes no son el futuro: son ya el presente en desigual distribución. Singapur gestiona su tráfico en tiempo real mediante sensores integrados a una red de inteligencia artificial que reduce los tiempos de desplazamiento en un 20%. Ámsterdam redistribuye su consumo energético barrio por barrio en función de la demanda horaria, reduciendo el desperdicio en un 15%. Mientras tanto, en las ciudades medianas de América Latina —donde vive más del 40% de la población urbana de la región— la mayoría de los semáforos siguen funcionando con temporizadores fijos instalados hace tres décadas. No se trata de una brecha tecnológica inevitable: se trata de una brecha de inversión pública y de voluntad de modernización institucional. La tecnología existe. La pregunta no es si podemos, sino si decidimos.
+<SPAN CLASS="fuente">Adaptado de ensayo sobre urbanismo y tecnología en América Latina.</SPAN>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Cuál es la función argumentativa de los ejemplos de Singapur y Ámsterdam en el texto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Son descripciones de ciudades que el autor admira y que no tienen ninguna función argumentativa concreta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Son ejemplos que refutan la tesis del autor, porque demuestran que las ciudades inteligentes solo existen en países ricos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Funcionan como evidencia empírica concreta que sustenta la primera parte de la tesis (que las ciudades inteligentes ya existen y producen resultados medibles) y, a la vez, como contraste deliberado con la situación latinoamericana, para demostrar que la diferencia no es de posibilidad tecnológica sino de decisión política y de inversión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Son datos estadísticos que el autor usa para describir las ciudades europeas y asiáticas sin ninguna intención persuasiva</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>En un texto argumentativo de alto rendimiento, los ejemplos no son decorativos ni informativos en sí mismos: cumplen una función específica dentro de la estrategia argumentativa. Los ejemplos de Singapur (reducción de tiempos de tráfico en 20%) y Ámsterdam (reducción de desperdicio energético en 15%) cumplen dos funciones simultáneas: (1) prueban con evidencia empírica concreta y cuantificable que la tecnología funciona en la práctica, lo que da credibilidad a la tesis de que es posible; (2) el contraste inmediato con las ciudades latinoamericanas ("mientras tanto, semáforos con temporizadores de tres décadas") convierte esos ejemplos en la base del argumento central del texto: si la tecnología existe y funciona en otro contexto, la diferencia no puede ser tecnológica, sino de decisión. La opción a) los trata como meros datos de admiración sin función argumentativa, lo que ignora su papel estructural; b) invierte el argumento; d) reduce los datos a descripción, ignorando su función persuasiva.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Frente al siguiente enunciado: "Un texto puede ser descriptivo en su estructura predominante y, al mismo tiempo, servir como argumento dentro de un texto mayor de tipo argumentativo." ¿Esta afirmación es correcta? ¿Por qué?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) No, es incorrecta: un texto solo puede pertenecer a un tipo y ese tipo determina absolutamente todas sus funciones posibles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) No, es incorrecta: los textos descriptivos nunca pueden aparecer dentro de textos argumentativos porque sus propósitos son incompatibles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Sí, es correcta: la tipología textual clasifica los textos por su propósito dominante, pero en la práctica los textos combinan rasgos de distintos tipos; un párrafo descriptivo puede funcionar, dentro de un argumento mayor, como evidencia empírica o como presentación del problema que la tesis luego busca resolver, sin que eso lo convierta en un texto argumentativo por sí solo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Sí, es correcta, y esto significa que no tiene sentido distinguir entre tipos de textos en un examen de admisión</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Esta pregunta de cierre evalúa la comprensión metacognitiva más alta del tema: la capacidad de entender que la tipología textual no es una clasificación rígida e impermeable, sino una herramienta analítica que describe el propósito dominante de un texto. En la práctica —y en los textos de examen de alto rendimiento especialmente— los textos son híbridos: el Texto C de las preguntas anteriores, por ejemplo, usa descripciones del glaciar (Párrafo 1) como base empírica de un texto que es globalmente argumentativo. Reconocer que un fragmento descriptivo puede funcionar como argumento dentro de un texto mayor no anula la distinción entre tipos: la anula sólo si se concluye, como hace la opción d), que la clasificación es inútil —lo que no es correcto, ya que identificar el propósito dominante sigue siendo la clave para anticipar la estructura y las preguntas. Las opciones a) y b) defienden una visión rígida que contradice la realidad de los textos complejos y la práctica de los exámenes de alto rendimiento, donde los textos combinan deliberadamente recursos de varios tipos.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE — Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

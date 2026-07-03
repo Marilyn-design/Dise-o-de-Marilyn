@@ -1,0 +1,408 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Conectores lógico-textuales - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="RAZONAMIENTO VERBAL.HTML">← Volver a los temas de Razonamiento Verbal</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">RAZONAMIENTO VERBAL · TEMA 5</DIV>
+<H1>Conectores lógico-textuales</H1>
+<DIV CLASS="sub">Conjunciones · Locuciones conjuntivas · Expresiones lexicalizadas</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. ¿Qué es un conector lógico-textual?</H3>
+Un <B>conector lógico-textual</B> es una palabra o un grupo de palabras que articula dos ideas, oraciones o párrafos, señalando con precisión la <B>relación lógica</B> que existe entre ellos (causa, consecuencia, oposición, adición, condición, etc.). El conector no añade información nueva al contenido del texto: su función es exclusivamente <B>organizativa</B>, guiar al lector para que interprete correctamente cómo se conectan las ideas entre sí.
+
+<DIV CLASS="ej"><B>Ejemplo:</B> "Estudió toda la noche; ____, no aprobó el examen." Entre "estudiar mucho" y "no aprobar" existe una relación de <B>oposición o contraste inesperado</B>, por lo que el conector correcto es "sin embargo", no "por lo tanto" (que indicaría consecuencia lógica esperada).</DIV>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> antes de mirar las opciones, identifica primero, en tus propias palabras, qué tipo de relación lógica conecta las dos ideas del enunciado (¿se oponen?, ¿una es causa de la otra?, ¿una añade información a la otra?). Solo después busca, entre las alternativas, el conector que representa exactamente esa relación.</DIV>
+
+<H3>2. Conjunciones</H3>
+Las <B>conjunciones</B> son la categoría gramatical más básica de los conectores: palabras invariables de una sola unidad léxica que enlazan palabras, frases u oraciones estableciendo entre ellas una relación sintáctica y lógica precisa.
+
+<H4>a) Conjunciones coordinantes</H4>
+Unen elementos de igual jerarquía gramatical (dos sustantivos, dos oraciones independientes, etc.), sin que uno dependa sintácticamente del otro.
+<UL>
+<LI><B>Copulativas (adición):</B> y, e, ni. Ejemplo: "Compró pan <B>y</B> leche."</LI>
+<LI><B>Disyuntivas (alternativa):</B> o, u. Ejemplo: "Puedes estudiar Medicina <B>o</B> Ingeniería."</LI>
+<LI><B>Adversativas (oposición):</B> pero, mas, sino. Ejemplo: "Es inteligente, <B>pero</B> perezoso."</LI>
+</UL>
+
+<H4>b) Conjunciones subordinantes</H4>
+Introducen una oración que depende sintácticamente de otra (la oración principal), estableciendo relaciones lógicas como causa, condición, finalidad o consecuencia.
+<UL>
+<LI><B>Causales:</B> porque, ya que, puesto que. Ejemplo: "Llegó tarde <B>porque</B> el bus se averió."</LI>
+<LI><B>Condicionales:</B> si, con tal de que. Ejemplo: "Aprobarás <B>si</B> estudias con constancia."</LI>
+<LI><B>Finales:</B> para que, a fin de que. Ejemplo: "Estudia <B>para que</B> tengas un mejor futuro."</LI>
+<LI><B>Consecutivas:</B> que (precedido de tan, tanto). Ejemplo: "Llovió tanto <B>que</B> se inundó la calle."</LI>
+</UL>
+
+<H3>3. Locuciones conjuntivas</H3>
+Una <B>locución conjuntiva</B> es un grupo fijo de dos o más palabras que, en conjunto, funciona como una sola conjunción: cumple la misma función de enlace lógico que una conjunción simple, pero está formada por varias palabras que ya no pueden alterarse ni separarse sin perder su sentido conector.
+
+<H4>Diferencia clave entre conjunción y locución conjuntiva</H4>
+La conjunción es una <B>palabra única e invariable</B> ("pero", "porque"); la locución conjuntiva es una <B>combinación fija de varias palabras</B> que, en conjunto, equivale funcionalmente a una conjunción ("sin embargo", "a pesar de que", "con tal de que", "no obstante").
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Relación lógica</TH><TH>Conjunción simple</TH><TH>Locución conjuntiva equivalente</TH></TR>
+<TR><TD>Oposición / contraste</TD><TD>pero, mas</TD><TD>sin embargo, no obstante, aun así</TD></TR>
+<TR><TD>Causa</TD><TD>porque</TD><TD>ya que, puesto que, debido a que, dado que</TD></TR>
+<TR><TD>Consecuencia</TD><TD>luego</TD><TD>por lo tanto, por consiguiente, en consecuencia, de ahí que</TD></TR>
+<TR><TD>Condición</TD><TD>si</TD><TD>con tal de que, siempre que, a condición de que</TD></TR>
+<TR><TD>Concesión</TD><TD>aunque</TD><TD>a pesar de que, pese a que, si bien</TD></TR>
+<TR><TD>Finalidad</TD><TD>para</TD><TD>a fin de que, con el propósito de que, con el objeto de</TD></TR>
+<TR><TD>Adición</TD><TD>y</TD><TD>además, asimismo, por otra parte, así también</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej"><B>Ejemplo:</B> "El proyecto fue aprobado <B>a pesar de que</B> presentaba varias observaciones técnicas." La locución conjuntiva "a pesar de que" funciona exactamente como la conjunción simple "aunque", introduciendo una relación de <B>concesión</B>: se reconoce un obstáculo (las observaciones), pero la acción principal (la aprobación) se cumple de todas formas.</DIV>
+
+<H3>4. Expresiones lexicalizadas (marcadores discursivos)</H3>
+Las <B>expresiones lexicalizadas</B>, también llamadas marcadores discursivos, son combinaciones de palabras que, con el uso, se han fijado como una unidad de sentido propia para organizar el discurso, señalando relaciones como el orden de las ideas, la reformulación, el énfasis, el ejemplo o el cierre, más allá de la pura lógica oracional de causa-efecto u oposición que cubren las conjunciones y locuciones.
+
+<H4>Principales tipos de expresiones lexicalizadas</H4>
+<UL>
+<LI><B>Ordenadores del discurso:</B> en primer lugar, en segundo lugar, por último, para empezar, para concluir.</LI>
+<LI><B>Reformuladores (aclaración o explicación):</B> es decir, o sea, dicho de otro modo, en otras palabras.</LI>
+<LI><B>Ejemplificadores:</B> por ejemplo, a saber, tal es el caso de, como muestra de ello.</LI>
+<LI><B>De énfasis:</B> en efecto, cabe destacar, sobre todo, más aún.</LI>
+<LI><B>De cierre o conclusión:</B> en suma, en definitiva, en conclusión, en resumen.</LI>
+<LI><B>De adición progresiva:</B> es más, lo que es más, incluso, más todavía.</LI>
+</UL>
+
+<DIV CLASS="ej"><B>Ejemplo:</B> "El proyecto fracasó por falta de planificación; <B>es más</B>, ni siquiera se había definido un presupuesto inicial." La expresión lexicalizada "es más" no solo añade información (como haría "y"), sino que intensifica la idea anterior, presentando un dato que agrava o refuerza lo ya dicho.</DIV>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> distingue entre conectores que solo <B>suman</B> ideas (y, además) y expresiones lexicalizadas que suman <B>intensificando</B> o agravando la idea anterior (es más, incluso, más aún): aunque ambos parecen "añadir", el matiz de intensidad progresiva es la clave que el examen suele evaluar en el nivel más alto.</DIV>
+
+<DIV CLASS="cultura-titulo">LA TRAMPA DEL "CONECTOR DE FAMILIA CORRECTA, MATIZ INCORRECTO"<SPAN>Por qué dos conectores de la misma categoría lógica no siempre son intercambiables</SPAN></DIV>
+El error más frecuente en preguntas de conectores es elegir una opción que pertenece a la <B>categoría lógica correcta en términos generales</B> (por ejemplo, ambas son "causales" o ambas son "adversativas"), pero que no encaja con precisión por razones de matiz, registro o posición sintáctica. Por ejemplo, frente a un contraste fuerte e inesperado, "no obstante" y "aunque" son ambas adversativas, pero "aunque" introduce típicamente una oración subordinada dentro de la misma frase ("Aunque llovió, salimos"), mientras que "no obstante" suele encabezar una oración nueva, frecuentemente tras punto y seguido o punto y coma ("Llovió. No obstante, salimos"). Usar "aunque" donde la sintaxis exige un conector de inicio de oración rompe la coherencia gramatical del texto, aunque la relación lógica general (oposición) sea la correcta.
+
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">3</DIV><DIV CLASS="dk-label">Categorías de conectores: conjunciones, locuciones conjuntivas y expresiones lexicalizadas</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">7</DIV><DIV CLASS="dk-label">Relaciones lógicas principales estudiadas en este tema</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">5</DIV><DIV CLASS="dk-label">Pasos de la estrategia de resolución recomendada</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1</DIV><DIV CLASS="dk-label">Relación lógica exacta que el conector debe representar, no solo su categoría general</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> "Estudió toda la noche; ____, no aprobó el examen." Elige el conector correcto:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Por lo tanto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Sin embargo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Es decir</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Además</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Entre "estudiar toda la noche" y "no aprobar" existe una relación de <B>oposición o contraste inesperado</B> (lo esperado sería aprobar). "Sin embargo" es la locución conjuntiva adversativa que representa exactamente esa relación. "Por lo tanto" (a) indicaría consecuencia lógica esperada, lo opuesto al sentido del enunciado; "es decir" (c) es un reformulador, no aplica aquí; "además" (d) indicaría adición, no contraste.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> "Llegó tarde ____ el bus se averió en el camino." Elige el conector causal correcto:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Porque</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Aunque</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Por lo tanto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Sin embargo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El enunciado presenta una relación de <B>causa</B>: la avería del bus es la razón de la tardanza. "Porque" es la conjunción causal exacta. "Aunque" (b) y "sin embargo" (d) introducirían una oposición, no una causa; "por lo tanto" (c) indicaría consecuencia, invirtiendo la dirección lógica: aquí la causa va después, no antes, del efecto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> "Compró pan ____ leche para el desayuno." Elige la conjunción copulativa correcta:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) O</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Pero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Y</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Porque</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El enunciado exige una relación de <B>adición</B> simple entre dos elementos (pan y leche), ambos comprados. "Y" es la conjunción copulativa que cumple esa función. "O" (a) indicaría alternativa excluyente; "pero" (b) introduciría oposición; "porque" (d) introduciría una causa, ninguna de las cuales corresponde a la relación de suma simple del enunciado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> "El proyecto fue aprobado ____ presentaba varias observaciones técnicas." Elige la locución conjuntiva de concesión correcta:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Debido a que</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) A pesar de que</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Con tal de que</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) A fin de que</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación entre "tener observaciones técnicas" y "ser aprobado" es de <B>concesión</B>: se reconoce un obstáculo, pero la acción principal se cumple igual. "A pesar de que" es la locución conjuntiva exacta para esa relación. "Debido a que" (a) indicaría causa; "con tal de que" (c) indicaría condición; "a fin de que" (d) indicaría finalidad, ninguna coherente con el sentido concesivo del enunciado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> "Aprobarás el curso ____ estudies con constancia." Elige el conector condicional correcto:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Porque</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Si</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Aunque</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Es decir</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El enunciado plantea una relación de <B>condición</B>: aprobar depende de que se cumpla estudiar con constancia. "Si" es la conjunción condicional exacta. "Porque" (a) indicaría causa ya cumplida, no una condición futura; "aunque" (c) introduciría concesión; "es decir" (d) es un reformulador, ajeno a la relación condicional exigida.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> "Llovió toda la tarde. ____, el partido no se suspendió." Elige el conector que respeta tanto la relación lógica como la posición de inicio de oración:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Aunque</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) No obstante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Ya que</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Por consiguiente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación entre ambas oraciones es de <B>oposición</B> (lo esperado sería que un partido se suspendiera por la lluvia), y el espacio en blanco está al inicio de una nueva oración (tras punto y seguido). "No obstante" es la locución conjuntiva adversativa que encaja correctamente en esa posición sintáctica. "Aunque" (a), aunque también es adversativo, típicamente introduce una subordinada dentro de la misma oración ("Aunque llovió..."), no el inicio de una oración nueva; "ya que" (c) indicaría causa; "por consiguiente" (d) indicaría consecuencia, ambas incompatibles con la oposición del enunciado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> "El proyecto fracasó por falta de planificación; ____, ni siquiera se había definido un presupuesto inicial." Elige la expresión lexicalizada que intensifica correctamente la idea anterior:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Por ejemplo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Es más</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) En conclusión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Es decir</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Es más" no solo añade información, sino que <B>intensifica y agrava</B> la idea anterior, presentando un dato que refuerza la gravedad de la falta de planificación. "Por ejemplo" (a) introduciría una ilustración concreta, no un agravante; "en conclusión" (c) cerraría el texto, función inadecuada en este punto intermedio; "es decir" (d) reformularía la idea anterior con otras palabras, sin añadir información nueva, que es justamente lo que el enunciado hace.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> "El estudio analiza tres factores: ____, el nivel socioeconómico; ____, el acceso a internet; ____, el acompañamiento familiar." Elige la secuencia de ordenadores del discurso correcta:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Es decir / o sea / en suma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) En primer lugar / en segundo lugar / por último</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Sin embargo / no obstante / aun así</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Porque / ya que / puesto que</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El enunciado enumera tres factores en una secuencia ordenada, lo que exige <B>ordenadores del discurso</B> que marquen la progresión (primero, segundo, último). "En primer lugar / en segundo lugar / por último" cumple exactamente esa función. Las opciones a), c) y d) repiten conectores de una misma categoría lógica (reformulación, oposición, causa) que no corresponden a una función de ordenación secuencial, y además serían redundantes al repetirse tres veces con el mismo valor lógico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> "Cabe destacar que, ____ las dificultades económicas del país, las exportaciones aumentaron un 12% este año." Elige el conector de concesión adecuado:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) debido a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) a pesar de</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) en consecuencia de</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) con el fin de</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Entre "dificultades económicas" y "aumento de exportaciones" hay un contraste: lo esperado sería que las dificultades frenaran las exportaciones, pero ocurrió lo contrario. "A pesar de" introduce correctamente esa relación de <B>concesión</B>. "Debido a" (a) y "en consecuencia de" (c) indicarían causa o consecuencia directa, contradiciendo el contraste real entre ambos hechos; "con el fin de" (d) indicaría finalidad, ajena por completo a la relación del enunciado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> "El experimento confirmó la hipótesis inicial; ____, los datos obtenidos en laboratorio coincidieron con las predicciones del modelo teórico." Elige el reformulador adecuado:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) sin embargo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) es decir</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) aunque</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) con tal de que</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La segunda parte de la oración explica con otras palabras, de forma más concreta, en qué consistió la confirmación de la hipótesis: es una relación de <B>reformulación o explicación</B>, propia de "es decir". "Sin embargo" (a) y "aunque" (c) introducirían oposición, inexistente entre ambas ideas, que son coherentes entre sí; "con tal de que" (d) introduciría una condición, ajena al carácter explicativo del enunciado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · RAZONAMIENTO CRÍTICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> "El comité analizó la propuesta con detenimiento; ____, decidió posponer su aprobación hasta contar con más información." Elige el conector consecutivo más preciso, considerando que la decisión surge directamente del análisis detenido:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Por consiguiente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Sin embargo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) A pesar de ello</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Es decir</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La decisión de posponer la aprobación es la <B>consecuencia lógica</B> directa del análisis detenido (precisamente porque se analizó con cuidado, se decidió esperar más información). "Por consiguiente" representa con exactitud esa relación consecutiva. "Sin embargo" (b) y "a pesar de ello" (c) introducirían un contraste inexistente entre ambas ideas, que son coherentes y no opuestas; "es decir" (d) reformularía sin añadir la idea de consecuencia que el enunciado exige.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> "Numerosos especialistas han cuestionado la metodología del estudio; ____, sus conclusiones siguen citándose con frecuencia en publicaciones académicas." Elige el conector que representa con precisión el contraste entre el cuestionamiento y la persistencia de las citas:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Por lo tanto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Aun así</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Dado que</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) A fin de que</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Aun así" introduce con precisión la relación de <B>oposición</B> entre el cuestionamiento metodológico y la persistencia del uso académico del estudio: a pesar de la crítica, el resultado contrario se mantiene. "Por lo tanto" (a) indicaría consecuencia esperada, contraria al contraste real; "dado que" (c) introduciría causa; "a fin de que" (d) introduciría finalidad, ninguna coherente con la relación adversativa exigida por el enunciado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Analiza el siguiente fragmento: "El acusado declaró ser inocente. No obstante, las pruebas presentadas lo contradecían." Si se reemplazara "no obstante" por "aunque" sin modificar nada más, ¿qué ocurriría con la oración?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La oración seguiría siendo perfectamente correcta, porque "no obstante" y "aunque" son intercambiables en cualquier posición sin ninguna restricción</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La oración resultaría gramaticalmente incompleta o forzada, porque "aunque" introduce típicamente una subordinada dentro de una misma oración compuesta (por ejemplo, "Aunque el acusado declaró ser inocente, las pruebas lo contradecían"), mientras que "no obstante" está diseñado para encabezar una oración independiente nueva tras un punto; sustituir uno por otro sin reorganizar la puntuación rompe la estructura sintáctica del fragmento, aunque ambos compartan la misma categoría lógica de oposición</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La oración cambiaría su sentido lógico de oposición a uno de causa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La oración se volvería incoherente porque "aunque" no es un conector adversativo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta evalúa precisamente la "trampa del conector de familia correcta, matiz incorrecto": "no obstante" y "aunque" pertenecen a la misma categoría lógica (adversativa/concesiva), pero tienen comportamientos sintácticos distintos. "Aunque" introduce normalmente una oración subordinada integrada en una sola oración compuesta; "no obstante" funciona como enlace entre dos oraciones independientes, frecuentemente tras un punto. Sustituir directamente uno por otro, manteniendo la puntuación original (el punto y seguido), genera una estructura forzada o incompleta. La opción a) ignora esta restricción sintáctica; c) y d) son falsas, pues ambos conectores comparten efectivamente la relación de oposición; el problema no es de sentido lógico sino de estructura gramatical.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Un estudiante afirma que "además" y "es más" son completamente intercambiables porque ambos "agregan información". Evalúa esta afirmación con un ejemplo: "El restaurante tiene un servicio lento; ____, los precios son excesivos para la calidad ofrecida."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La afirmación es correcta: cualquiera de las dos expresiones cumple exactamente la misma función en cualquier contexto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La afirmación es parcialmente acertada pero imprecisa: ambas expresiones suman información, pero "es más" añade un matiz de intensificación progresiva (presenta el segundo dato como un agravante que refuerza la crítica anterior), mientras que "además" suma de forma neutra, sin ese matiz acumulativo de gravedad; en un texto que busca reforzar progresivamente una queja, como este, "es más" resulta más preciso, aunque "además" no sea gramaticalmente incorrecto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La afirmación es incorrecta porque "es más" no tiene ninguna relación de significado con "además"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La afirmación es correcta únicamente en textos literarios, nunca en textos argumentativos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige distinguir matices finos dentro de una misma categoría lógica general (la adición). "Además" y "es más" comparten la función de sumar información, pero "es más" incorpora un matiz de <B>intensificación progresiva</B>, propio de expresiones lexicalizadas que agravan o refuerzan la idea anterior, mientras que "además" es más neutro. En un contexto de queja o crítica creciente, como el del enunciado, "es más" resulta más preciso, sin que "además" sea estrictamente incorrecto. Las opciones a) y d) ignoran esta diferencia de matiz; c) es falsa, pues ambas expresiones comparten la función básica de adición.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Compara las locuciones conjuntivas "ya que" y "puesto que" frente a la conjunción simple "porque" en cuanto a su posición habitual dentro de la oración y su registro.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Las tres son absolutamente idénticas en posición, registro y uso, sin ninguna diferencia relevante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) "Porque" se usa típicamente para responder o introducir la causa después de presentado el efecto ("No fue porque..."), y rara vez encabeza una oración; "ya que" y "puesto que", en cambio, admiten con naturalidad iniciar la oración colocando la causa antes del efecto ("Ya que llovió, suspendieron el partido"), y suelen percibirse como ligeramente más formales que "porque" en el registro escrito</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) "Porque" es más formal que "ya que" y "puesto que", motivo por el cual se usa exclusivamente en textos académicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) "Ya que" y "puesto que" son conjunciones simples, mientras que "porque" es una locución conjuntiva</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige un análisis fino de posición sintáctica y registro dentro de una misma categoría lógica (causal). "Porque" tiende a usarse para introducir la causa después de mencionado el efecto, y resulta menos natural al inicio absoluto de una oración; "ya que" y "puesto que", como locuciones conjuntivas, admiten con más naturalidad encabezar la oración colocando la causa antes que el efecto, y se perciben con un registro ligeramente más formal en el español escrito. La opción a) ignora estas diferencias; c) invierte la relación de formalidad real entre los términos; d) es incorrecta gramaticalmente, pues "porque" es la conjunción simple y "ya que"/"puesto que" son las locuciones conjuntivas, exactamente al revés de lo que propone la opción.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> "El gobierno anunció un paquete de reformas económicas; ____, el desempleo aumentó en los meses siguientes; ____, los analistas advierten que sus efectos podrían revertirse en el próximo trimestre." Elige la secuencia de conectores que respeta con precisión la relación lógica entre las tres ideas.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) además / por ejemplo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) sin embargo / no obstante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) porque / ya que</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) es decir / en consecuencia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La primera relación es de <B>oposición</B>: se esperaba que las reformas mejoraran la economía, pero el desempleo aumentó ("sin embargo"). La segunda relación es también de <B>oposición o matiz contrario</B> respecto al resultado negativo recién mencionado: los analistas anticipan que ese efecto adverso podría revertirse ("no obstante"). "Además" y "por ejemplo" (a) no encajan, pues no hay adición ni ejemplificación; "porque" y "ya que" (c) invertirían la lógica al introducir causas donde hay contraste; "es decir" (d) reformularía sin sentido en este punto, y "en consecuencia" supondría una consecuencia esperada, no un contraste con lo anterior.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Si tuvieras que definir el concepto de "conector lógico-textual" aplicando rigurosamente lo estudiado en el tema, ¿cuál de las siguientes opciones lo expresa con mayor exactitud?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) "Es cualquier palabra que se coloca entre dos oraciones para que el texto sea más largo"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "Es una palabra o un grupo fijo de palabras (conjunción, locución conjuntiva o expresión lexicalizada) cuya función exclusiva es señalar con precisión la relación lógica (causal, adversativa, consecutiva, concesiva, etc.) que existe entre dos ideas, oraciones o párrafos, sin añadir contenido informativo nuevo al texto"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "Es cualquier palabra que aparece al inicio de un párrafo, sin importar su función gramatical"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) "Es un sinónimo elegante que reemplaza a una palabra repetida en el texto"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de síntesis exige reconocer los elementos clave del concepto: (1) puede tratarse de una <B>conjunción, una locución conjuntiva o una expresión lexicalizada</B>; (2) su función es exclusivamente <B>organizativa</B>, señalar la relación lógica entre ideas; (3) no aporta <B>contenido informativo nuevo</B>, solo organiza el ya existente. La opción a) ignora por completo la función lógica del conector, reduciéndolo a relleno; c) confunde posición textual con función gramatical; d) confunde el conector con un recurso de sinonimia estilística, una categoría distinta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Evalúa la siguiente afirmación de un estudiante: "Da igual usar 'por lo tanto' que 'es decir' en cualquier punto de un texto, porque ambos sirven para conectar ideas." Determina si esta justificación es válida.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La afirmación es correcta, ya que cualquier conector puede sustituir a otro sin alterar el sentido del texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La afirmación es incorrecta: aunque ambos son conectores que enlazan ideas, pertenecen a categorías lógicas completamente distintas: "por lo tanto" es consecutivo (presenta la segunda idea como efecto o conclusión lógica de la primera), mientras que "es decir" es un reformulador (presenta la segunda idea como una explicación o reformulación de la primera, sin relación de causa-efecto); usar uno por otro alteraría por completo la relación lógica que el texto establece entre sus ideas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La afirmación es incorrecta porque "por lo tanto" y "es decir" no son conectores en ningún sentido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La afirmación es correcta únicamente en textos de ficción, donde no importa la precisión lógica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige el nivel más alto de comprensión del tema: que "conectar ideas" no es una función única e indiferenciada, sino que cada conector representa un <B>tipo específico de relación lógica</B>. "Por lo tanto" señala consecuencia (la segunda idea se deriva lógicamente de la primera como efecto); "es decir" señala reformulación (la segunda idea explica o reformula la primera con otras palabras, sin relación causal). Confundirlos altera por completo la estructura lógica del texto, incluso si gramaticalmente la oración resultante parece correcta. La opción a) ignora la especificidad lógica de cada conector, exactamente el error que el tema busca prevenir; c) es falsa, pues ambos son efectivamente conectores; d) es una generalización sin fundamento, pues la precisión lógica importa en cualquier tipo de texto coherente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> En una pregunta de conectores, dos opciones parecen pertenecer a la misma categoría lógica general exigida por el texto (por ejemplo, ambas son adversativas). ¿Qué criterio adicional debe aplicarse para decidir cuál es la respuesta correcta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Debe elegirse la opción de menor número de palabras, porque suele ser la más simple</DIV>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Cuando ambas opciones comparten la categoría lógica general, debe evaluarse la posición sintáctica exacta del conector dentro de la oración (inicio de oración independiente o interior de una subordinada), su registro (formal o coloquial) y, si corresponde, el matiz de intensidad (adición simple frente a adición intensificadora), descartando la que rompe alguno de estos criterios aunque comparta la categoría lógica general</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Debe elegirse siempre la opción que empieza con mayúscula en el texto original</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Debe elegirse la opción que se use con más frecuencia en redes sociales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es la estrategia decisiva para los casos más difíciles del examen, donde dos conectores comparten la categoría lógica general exigida (por ejemplo, ambos son adversativos o ambos son causales). El criterio de desempate es evaluar la <B>posición sintáctica</B> exacta (inicio de oración independiente o subordinada interna), el <B>registro</B> (formal o coloquial, coherente con el resto del texto) y, cuando corresponde, el <B>matiz de intensidad</B> (como en "además" frente a "es más"). Las opciones a), c) y d) proponen criterios arbitrarios (longitud, mayúscula inicial, frecuencia coloquial) sin relación alguna con la lógica interna del texto que el examen evalúa.</DIV></DETAILS>
+</DIV>
+
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE — Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

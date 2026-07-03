@@ -1,0 +1,499 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Las Grandes Revoluciones Liberales - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA &middot; TEMA 11</DIV>
+<H1>Las Grandes Revoluciones Liberales</H1>
+<DIV CLASS="sub">Revoluci&oacute;n Inglesa &middot; Independencia de EE.UU. &middot; Revoluci&oacute;n Francesa &middot; Ilustraci&oacute;n &middot; Legado Liberal</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. ¿Qu&eacute; es el liberalismo y cu&aacute;l es su contexto hist&oacute;rico?</H3>
+El <B>liberalismo</B> es la corriente pol&iacute;tica, filos&oacute;fica y econ&oacute;mica que defiende la libertad individual, la igualdad ante la ley, la soberan&iacute;a popular, la separaci&oacute;n de poderes y la limitaci&oacute;n del poder del Estado. Sus bases intelectuales se forjaron durante los siglos XVII y XVIII a partir de la <B>Ilustraci&oacute;n</B>, y sus fundamentos pr&aacute;cticos surgieron de tres grandes procesos revolucionarios: la <B>Revoluci&oacute;n Inglesa</B> (1642&ndash;1688), la <B>Independencia de los Estados Unidos</B> (1776) y la <B>Revoluci&oacute;n Francesa</B> (1789). Estos tres procesos son las "grandes revoluciones liberales" porque transformaron el mundo moderno al reemplazar el absolutismo mon&aacute;rquico y el orden estamental por sistemas basados en derechos individuales, constituciones escritas y gobiernos representativos.
+
+<H4>El Antiguo R&eacute;gimen: lo que las revoluciones destruyeron:</H4>
+<UL>
+<LI><B>Absolutismo mon&aacute;rquico:</B> el rey concentraba todos los poderes (legislativo, ejecutivo, judicial) y gobernaba por "derecho divino". La f&oacute;rmula era: "el rey no rinde cuentas ante nadie excepto ante Dios".</LI>
+<LI><B>Sociedad estamental:</B> la sociedad estaba dividida en estamentos (nobleza, clero, pueblo llano) con derechos y obligaciones distintos seg&uacute;n el nacimiento, no seg&uacute;n el m&eacute;rito.</LI>
+<LI><B>Econom&iacute;a mercantilista:</B> el Estado controlaba el comercio mediante monopolios, aranceles y restricciones que beneficiaban a la Corona a expensas de la libre iniciativa individual.</LI>
+<LI><B>Iglesia como poder pol&iacute;tico:</B> la Iglesia no era solo una instituci&oacute;n religiosa sino tambi&eacute;n un actor pol&iacute;tico y econ&oacute;mico fundamental, con tribunales propios, propiedades enormes y control sobre la educaci&oacute;n.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1642</DIV><DIV CLASS="dk-label">Inicio de la Revoluci&oacute;n Inglesa (Guerra Civil)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1776</DIV><DIV CLASS="dk-label">Declaraci&oacute;n de Independencia de EE.UU.</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1789</DIV><DIV CLASS="dk-label">Inicio de la Revoluci&oacute;n Francesa</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1804</DIV><DIV CLASS="dk-label">C&oacute;digo Napole&oacute;nico: codificaci&oacute;n del liberalismo jur&iacute;dico</DIV></DIV>
+</DIV>
+
+<H3>2. La Ilustraci&oacute;n: el sustento intelectual de las revoluciones</H3>
+La <B>Ilustraci&oacute;n</B> (siglo XVIII) fue el movimiento intelectual europeo que postul&oacute; la raz&oacute;n como &uacute;nico criterio de conocimiento y cuestion&oacute; las bases del poder absoluto, la tradici&oacute;n y la superstici&oacute;n. Su lema, tomado de <B>Immanuel Kant</B>, era "<I>Sapere aude</I>" ("At&eacute;vete a saber"). Fue el combustible ideol&oacute;gico de las tres grandes revoluciones.
+
+<H4>Los pensadores fundamentales:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Pensador</TH><TH>Origen</TH><TH>Ideas clave</TH><TH>Obra principal</TH></TR>
+<TR><TD><B>John Locke</B> (1632&ndash;1704)</TD><TD>Inglaterra</TD><TD>Derechos naturales (vida, libertad, propiedad); el gobierno surge de un "contrato social"; el pueblo puede rebelarse si el gobernante viola sus derechos</TD><TD><I>Dos tratados sobre el gobierno civil</I> (1689)</TD></TR>
+<TR><TD><B>Montesquieu</B> (1689&ndash;1755)</TD><TD>Francia</TD><TD>Separaci&oacute;n de poderes (ejecutivo, legislativo, judicial) para evitar la tiran&iacute;a; defensa del sistema constitucional ingl&eacute;s</TD><TD><I>El esp&iacute;ritu de las leyes</I> (1748)</TD></TR>
+<TR><TD><B>Jean-Jacques Rousseau</B> (1712&ndash;1778)</TD><TD>Ginebra/Francia</TD><TD>Soberan&iacute;a popular; la "voluntad general" como fuente de la ley; la desigualdad social como producto artificial de la civilizaci&oacute;n</TD><TD><I>El contrato social</I> (1762)</TD></TR>
+<TR><TD><B>Voltaire</B> (1694&ndash;1778)</TD><TD>Francia</TD><TD>Cr&iacute;tica radical a la Iglesia y la superstici&oacute;n; defensa de la tolerancia religiosa y la libertad de expresi&oacute;n; "Aplastemos al infame" (la Iglesia)</TD><TD><I>C&aacute;ndido</I> (1759), <I>Tratado sobre la tolerancia</I> (1763)</TD></TR>
+<TR><TD><B>Adam Smith</B> (1723&ndash;1790)</TD><TD>Escocia</TD><TD>Liberalismo econ&oacute;mico: el mercado libre regulado por la "mano invisible"; cr&iacute;tica al mercantilismo; trabajo como fuente de valor</TD><TD><I>La riqueza de las naciones</I> (1776)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La diferencia entre <B>Locke</B> y <B>Rousseau</B> es clave. Locke defiende los derechos naturales individuales (propiedad privada central) y un gobierno limitado que los proteja: es el padre del liberalismo cl&aacute;sico. Rousseau defiende la "voluntad general" del pueblo soberano (que puede subordinar al individuo al bien com&uacute;n): es el padre del pensamiento democr&aacute;tico radical e inspira tanto al republicanismo franc&eacute;s como a corrientes posteriores de izquierda.</DIV>
+
+<DIV CLASS="cultura-titulo">&#9876; REVOLUCI&Oacute;N INGLESA (1642&ndash;1688)<SPAN>Del absolutismo de los Estuardo a la Monarqu&iacute;a Constitucional: el primer modelo liberal del mundo moderno</SPAN></DIV>
+
+<H3>3. La Revoluci&oacute;n Inglesa (1642&ndash;1688)</H3>
+La <B>Revoluci&oacute;n Inglesa</B> fue la primera gran revoluci&oacute;n pol&iacute;tica de la &eacute;poca moderna. No fue un proceso &uacute;nico sino una secuencia de crisis que, entre 1642 y 1688, transform&oacute; a Inglaterra de una monarqu&iacute;a absoluta en la primera monarqu&iacute;a constitucional del mundo.
+
+<H4>Las fases de la Revoluci&oacute;n Inglesa:</H4>
+<UL>
+<LI><B>La Guerra Civil (1642&ndash;1649):</B> el rey <B>Carlos I</B> (Estuardo) intent&oacute; gobernar sin el Parlamento durante 11 a&ntilde;os (1629&ndash;1640). Al necesitar fondos para una guerra contra Escocia, convoc&oacute; el Parlamento y el conflicto estall&oacute;. Las fuerzas parlamentarias (<I>Roundheads</I>), lideradas por <B>Oliver Cromwell</B> y su "Nuevo Ej&eacute;rcito Modelo", derrotaron a las realistas (<I>Cavaliers</I>). Carlos I fue juzgado y <B>decapitado el 30 de enero de 1649</B>: primer caso en la historia de Europa Occidental en que un rey fue ejecutado por sus propios s&uacute;bditos.</LI>
+<LI><B>La Mancomunidad y el Protectorado (1649&ndash;1660):</B> Inglaterra se declar&oacute; rep&uacute;blica (<I>Commonwealth</I>). Cromwell gobern&oacute; como <B>Lord Protector</B> (1653&ndash;1658), un gobierno militar de facto que result&oacute; tan autoritario como el del rey. Muri&oacute; en 1658; su hijo Richard fracas&oacute; como sucesor.</LI>
+<LI><B>La Restauraci&oacute;n (1660&ndash;1685):</B> el Parlamento restaur&oacute; la monarqu&iacute;a con <B>Carlos II</B>, hijo del ejecutado. Retorno al orden anterior, pero con el Parlamento ahora con mayor poder. En 1679 se aprob&oacute; el <B>Habeas Corpus Act</B> (derecho a no ser detenido sin proceso judicial).</LI>
+<LI><B>La Revoluci&oacute;n Gloriosa (1688):</B> cuando <B>Jacobo II</B> intent&oacute; restaurar el catolicismo y el absolutismo, el Parlamento invit&oacute; al holand&eacute;s <B>Guillermo de Orange</B> a invadir Inglaterra. Jacobo II huy&oacute; sin combatir. Guillermo III y su esposa <B>Mar&iacute;a II</B> aceptaron la <B>Declaraci&oacute;n de Derechos (<I>Bill of Rights</I>, 1689)</B>, estableciendo la monarqu&iacute;a constitucional.</LI>
+</UL>
+
+<H4>La Declaraci&oacute;n de Derechos de 1689 (<I>Bill of Rights</I>): contenido fundamental:</H4>
+<UL>
+<LI>El rey no pod&iacute;a recaudar impuestos ni mantener un ej&eacute;rcito permanente sin aprobaci&oacute;n del Parlamento.</LI>
+<LI>Los ciudadanos ten&iacute;an derecho a presentar peticiones al rey.</LI>
+<LI>Las elecciones parlamentarias deb&iacute;an ser libres.</LI>
+<LI>La libertad de expresi&oacute;n en el Parlamento estaba garantizada.</LI>
+<LI>Los castigos crueles e inusuales quedaban prohibidos.</LI>
+</UL>
+
+<DIV CLASS="ej">&#128221; <B>El Acta de Tolerancia (1689):</B> junto al <I>Bill of Rights</I>, se aprob&oacute; el <I>Toleration Act</I>, que otorgaba libertad de culto a los protestantes no anglicanos (baptistas, cu&aacute;queros, presbiterianos). No incluy&oacute; a cat&oacute;licos ni jud&iacute;os, pero fue el primer paso hacia la tolerancia religiosa en un Estado europeo. John Locke public&oacute; su <I>Carta sobre la Tolerancia</I> ese mismo a&ntilde;o.</DIV>
+
+<DIV CLASS="cultura-titulo">&#9876; INDEPENDENCIA DE LOS ESTADOS UNIDOS (1776&ndash;1783)<SPAN>La primera revoluci&oacute;n liberal triunfante: del ideario ilustrado a una constituci&oacute;n escrita</SPAN></DIV>
+
+<H3>4. La Independencia de los Estados Unidos (1776&ndash;1783)</H3>
+La <B>Independencia de los Estados Unidos</B> fue la primera revoluci&oacute;n liberal triunfante que produjo un Estado completamente nuevo basado en principios ilustrados. Inspir&oacute; directamente a la Revoluci&oacute;n Francesa y a los movimientos de independencia latinoamericanos.
+
+<H4>Causas:</H4>
+<UL>
+<LI><B>Fiscales:</B> tras la guerra contra Francia (1756&ndash;1763), Gran Breta&ntilde;a impuso nuevos impuestos a sus 13 colonias americanas (<I>Stamp Act</I> 1765, <I>Townshend Acts</I> 1767, impuesto al t&eacute;) sin concederles representaci&oacute;n en el Parlamento de Westminster. El lema colono fue: "<B>No taxation without representation</B>".</LI>
+<LI><B>Ideol&oacute;gicas:</B> los colonos hab&iacute;an absorbido las ideas de Locke sobre los derechos naturales y el derecho de rebeli&oacute;n contra un gobierno tiránico. <B>Thomas Paine</B> populariz&oacute; estas ideas en su panfleto <I>El sentido com&uacute;n</I> (<I>Common Sense</I>, 1776).</LI>
+<LI><B>El "Boston Tea Party" (1773):</B> colonos disfrazados de indios mohawk arrojaron 342 barriles de t&eacute; brit&aacute;nico al puerto de Boston como protesta contra el impuesto.</LI>
+</UL>
+
+<H4>Los documentos fundamentales:</H4>
+<UL>
+<LI><B>La Declaraci&oacute;n de Independencia (4 de julio de 1776):</B> redactada principalmente por <B>Thomas Jefferson</B>, proclam&oacute; que "todos los hombres son creados iguales" y que tienen derechos inalienables: "vida, libertad y la b&uacute;squeda de la felicidad". Basada directamente en Locke (que hab&iacute;a escrito "vida, libertad y propiedad"). Jefferson sustituy&oacute; "propiedad" por "b&uacute;squeda de la felicidad" para darle un alcance m&aacute;s universal.</LI>
+<LI><B>La Constituci&oacute;n de los Estados Unidos (1787):</B> primera constituci&oacute;n escrita y vigente del mundo moderno. Estableci&oacute; el sistema federal, la separaci&oacute;n de tres poderes (inspirada en Montesquieu), la rep&uacute;blica presidencialista y, con las primeras diez enmiendas (<I>Bill of Rights</I> americano, 1791), los derechos civiles fundamentales.</LI>
+</UL>
+
+<H4>Los "Padres Fundadores" y sus roles:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Personaje</TH><TH>Rol</TH><TH>Aporte fundamental</TH></TR>
+<TR><TD><B>George Washington</B></TD><TD>General en jefe; 1.er presidente (1789&ndash;1797)</TD><TD>Lider&oacute; la victoria militar; cedi&oacute; voluntariamente el poder tras dos mandatos, estableciendo el precedente democr&aacute;tico</TD></TR>
+<TR><TD><B>Thomas Jefferson</B></TD><TD>Principal redactor de la Declaraci&oacute;n de Independencia; 3.er presidente</TD><TD>Tradujo las ideas ilustradas (Locke) en lenguaje pol&iacute;tico fundacional</TD></TR>
+<TR><TD><B>Benjamin Franklin</B></TD><TD>Diplom&aacute;tico; cient&iacute;fico</TD><TD>Consigui&oacute; la alianza con Francia (1778), crucial para la victoria</TD></TR>
+<TR><TD><B>Alexander Hamilton</B></TD><TD>Secretario del Tesoro</TD><TD>Arquitecto del sistema financiero federal y de los <I>Federalist Papers</I></TD></TR>
+<TR><TD><B>James Madison</B></TD><TD>"Padre de la Constituci&oacute;n"</TD><TD>Principal dise&ntilde;ador de la Constituci&oacute;n de 1787 y del <I>Bill of Rights</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>La guerra y la alianza francesa:</B> Las 13 colonias derrotaron militarmente a Gran Breta&ntilde;a con apoyo crucial de Francia (que buscaba venganza tras la guerra de 1756&ndash;1763). El marqu&eacute;s de <B>Lafayette</B> y el espa&ntilde;ol <B>Bernardo de G&aacute;lvez</B> fueron figuras militares aliadas clave. La victoria se consolid&oacute; con el Tratado de Par&iacute;s de <B>1783</B>.</DIV>
+
+<DIV CLASS="cultura-titulo">&#9876; REVOLUCI&Oacute;N FRANCESA (1789&ndash;1799)<SPAN>Libertad, Igualdad, Fraternidad: la revoluci&oacute;n que cambi&oacute; el mundo</SPAN></DIV>
+
+<H3>5. La Revoluci&oacute;n Francesa (1789&ndash;1799)</H3>
+La <B>Revoluci&oacute;n Francesa</B> es el evento pol&iacute;tico m&aacute;s importante de la historia moderna. En diez a&ntilde;os (1789&ndash;1799) destruy&oacute; el Antiguo R&eacute;gimen en Francia, proclam&oacute; los derechos del hombre, ejecut&oacute; a su rey y termin&oacute; en la dictadura de Napole&oacute;n, quien difundi&oacute; sus principios por toda Europa. Su lema: <B>"Libert&eacute;, &Eacute;galit&eacute;, Fraternit&eacute;"</B>.
+
+<H4>Causas de la Revoluci&oacute;n Francesa:</H4>
+<UL>
+<LI><B>Crisis financiera:</B> Francia estaba en bancarrota tras las guerras de Luis XIV y el apoyo a la Independencia estadounidense. El Estado no pod&iacute;a pagar sus deudas.</LI>
+<LI><B>Crisis social:</B> el Tercer Estado (98% de la poblaci&oacute;n: burgues&iacute;a, campesinado, clases populares urbanas) pagaba todos los impuestos mientras la nobleza y el clero estaban exentos.</LI>
+<LI><B>Crisis ideol&oacute;gica:</B> la Ilustraci&oacute;n hab&iacute;a cuestionado los fundamentos del Antiguo R&eacute;gimen; la Revoluci&oacute;n Americana hab&iacute;a demostrado que era posible construir un Estado nuevo sobre principios racionales.</LI>
+<LI><B>Crisis clim&aacute;tica y alimentaria:</B> malas cosechas en 1788 dispararon el precio del pan; el hambre radicalizó a las masas parisienses.</LI>
+</UL>
+
+<H4>Las fases de la Revoluci&oacute;n Francesa:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fase</TH><TH>Per&iacute;odo</TH><TH>Caracter&iacute;sticas</TH><TH>Personajes clave</TH></TR>
+<TR><TD><B>1. Monarqu&iacute;a Constitucional</B></TD><TD>1789&ndash;1792</TD><TD>La Asamblea Nacional Constituyente redacta la <I>Declaraci&oacute;n de los Derechos del Hombre</I> (1789) y la Constituci&oacute;n de 1791. Luis XVI acepta ser rey constitucional</TD><TD>Mirabeau, Lafayette, Luis XVI</TD></TR>
+<TR><TD><B>2. Primera Rep&uacute;blica y el Terror</B></TD><TD>1792&ndash;1794</TD><TD>Francia declara la guerra a Austria y Prusia. La monarqu&iacute;a es abolida (sept. 1792). Luis XVI es guillotinado (enero 1793). El Comit&eacute; de Salvaci&oacute;n P&uacute;blica impone el "Terror": m&aacute;s de 17.000 guillotinados</TD><TD>Robespierre, Danton, Marat</TD></TR>
+<TR><TD><B>3. Termidor y el Directorio</B></TD><TD>1794&ndash;1799</TD><TD>Ca&iacute;da y ejecuci&oacute;n de Robespierre (9 de Termidor, julio 1794). Gobierno m&aacute;s moderado del Directorio (5 miembros); inestabilidad pol&iacute;tica y militar</TD><TD>Barras, Sieyes</TD></TR>
+<TR><TD><B>4. Consulado / Napole&oacute;n</B></TD><TD>1799&ndash;1815</TD><TD>El golpe del 18 de Brumario (noviembre 1799) lleva a Napole&oacute;n al poder como Primer C&oacute;nsul. Fin de la Revoluci&oacute;n propiamente dicha; inicio del Imperio (1804)</TD><TD>Napole&oacute;n Bonaparte</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>La Declaraci&oacute;n de los Derechos del Hombre y del Ciudadano (26 de agosto de 1789):</H4>
+Es el documento fundacional del liberalismo pol&iacute;tico moderno. Sus principios principales:
+<UL>
+<LI>Los hombres nacen y permanecen libres e iguales en derechos.</LI>
+<LI>El fin de toda asociaci&oacute;n pol&iacute;tica es la conservaci&oacute;n de los derechos naturales: libertad, propiedad, seguridad y resistencia a la opresi&oacute;n.</LI>
+<LI>El principio de toda soberan&iacute;a reside esencialmente en la naci&oacute;n.</LI>
+<LI>La ley es la expresi&oacute;n de la voluntad general.</LI>
+<LI>Nadie puede ser acusado, detenido ni apresado sino en los casos determinados por la ley.</LI>
+<LI>La libre comunicaci&oacute;n de pensamientos y opiniones es uno de los derechos m&aacute;s preciosos del hombre.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen &mdash; El Terror (1793&ndash;1794):</B> El per&iacute;odo del "Terror" es especialmente importante. <B>Maximiliano Robespierre</B>, l&iacute;der del Comit&eacute; de Salvaci&oacute;n P&uacute;blica, justific&oacute; el terror como instrumento de "virtud republicana" contra los enemigos de la Revoluci&oacute;n. Fueron guillotinados no solo aristocr&aacute;ticos sino tambi&eacute;n revolucionarios moderados (los <I>girondinos</I>) y radicales (los <I>h&eacute;bertistas</I>). La misma l&oacute;gica que elimin&oacute; a los enemigos de la libertad termin&oacute; eliminando a los propios revolucionarios. Robespierre fue guillotinado el 27 de julio de 1794 (9 de Termidor) por sus propios aliados.</DIV>
+
+<H3>6. Napole&oacute;n Bonaparte: ¿continuaci&oacute;n o traici&oacute;n de la Revoluci&oacute;n?</H3>
+<B>Napole&oacute;n Bonaparte</B> (1769&ndash;1821) es la figura m&aacute;s pol&eacute;mica del per&iacute;odo: &iquest;fue el heredero de la Revoluci&oacute;n o su sepulturero?
+
+<H4>Continuidades con la Revoluci&oacute;n:</H4>
+<UL>
+<LI><B>El C&oacute;digo Civil Napole&oacute;nico (1804):</B> codific&oacute; los principios revolucionarios en derecho positivo: igualdad ante la ley, propiedad privada garantizada, laicismo del Estado, libertad de conciencia. Se difundi&oacute; por toda Europa y es la base de muchos sistemas jur&iacute;dicos actuales (incluyendo el peruano).</LI>
+<LI><B>Difusi&oacute;n de los principios revolucionarios:</B> las conquistas napole&oacute;nicas abolieron el feudalismo en los territorios ocupados (Espa&ntilde;a, Italia, Alemania, Polonia) y difundieron los principios de soberan&iacute;a popular y derechos civiles.</LI>
+</UL>
+
+<H4>Rupturas con la Revoluci&oacute;n:</H4>
+<UL>
+<LI>Concentr&oacute; el poder en su persona (se coron&oacute; Emperador en 1804, en presencia del Papa).</LI>
+<LI>Suprim&oacute; la libertad de prensa y los cuerpos legislativos independientes.</LI>
+<LI>Restaur&oacute; la esclavitud en las colonias francesas (1802), revertiendo la abolici&oacute;n de 1794.</LI>
+</UL>
+
+<H3>7. Legado de las Revoluciones Liberales</H3>
+Las tres grandes revoluciones liberales transformaron irreversiblemente el mundo moderno:
+<UL>
+<LI><B>Constitucionalismo:</B> el principio de que el poder pol&iacute;tico debe estar limitado por una constituci&oacute;n escrita se expandi&oacute; globalmente.</LI>
+<LI><B>Derechos humanos:</B> la idea de que los individuos tienen derechos inalienables que ning&uacute;n Estado puede suprimir es el fundamento de toda la legislaci&oacute;n internacional moderna.</LI>
+<LI><B>Democracia representativa:</B> el gobierno ya no deriva de Dios sino del pueblo.</LI>
+<LI><B>Independencias latinoamericanas:</B> la Independencia de EE.UU. y la Revoluci&oacute;n Francesa inspiraron directamente los movimientos independentistas en Am&eacute;rica Latina (1810&ndash;1824).</LI>
+<LI><B>Nacionalismo:</B> la Revoluci&oacute;n Francesa forj&oacute; el concepto de "naci&oacute;n" como comunidad de ciudadanos iguales bajo una misma ley.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Impacto en el Per&uacute;:</B> Las ideas de la Ilustraci&oacute;n y la Revoluci&oacute;n Francesa llegaron al virreinato peruano a trav&eacute;s de libros prohibidos por la Inquisici&oacute;n, de estudiantes que viajaban a Europa y de las noticias de la Independencia norteamericana. Figuras como <B>Juan Pablo Vizcardo y Guzm&aacute;n</B> (jesuita expulsado que escribi&oacute; la primera proclama de independencia latinoamericana en 1792) y <B>Mariano Moreno</B> en el R&iacute;o de la Plata conectaron directamente el liberalismo revolucionario con el movimiento independentista americano.</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque" STYLE="margin-top:60px;">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; CONOCIMIENTO DIRECTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cu&aacute;l fue la fecha y el documento que marc&oacute; formalmente el inicio del liberalismo constitucional moderno en Inglaterra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) La Carta Magna de 1215, por la que el rey Juan I limit&oacute; su propio poder y cre&oacute; el Parlamento ingl&eacute;s moderno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) La Declaraci&oacute;n de Derechos (<I>Bill of Rights</I>) de 1689, que tras la Revoluci&oacute;n Gloriosa estableci&oacute; la supremac&iacute;a del Parlamento sobre el rey e inaugur&oacute; la monarqu&iacute;a constitucional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) El Habeas Corpus Act de 1679, que garantiz&oacute; por primera vez el derecho a no ser detenido sin proceso judicial y es considerado la constituci&oacute;n informal de Inglaterra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) La decapitaci&oacute;n del rey Carlos I en 1649, que al eliminar la monarqu&iacute;a convirti&oacute; autom&aacute;ticamente a Inglaterra en una rep&uacute;blica constitucional con soberan&iacute;a popular plena</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Declaraci&oacute;n de Derechos (<I>Bill of Rights</I>) de 1689</B> es el documento fundacional del constitucionalismo liberal ingl&eacute;s. Fue aprobada tras la <B>Revoluci&oacute;n Gloriosa</B> (1688), cuando el Parlamento expuls&oacute; a Jacobo II e invit&oacute; a Guillermo de Orange (Guillermo III) y su esposa Mar&iacute;a II a reinar bajo condiciones. Sus disposiciones fundamentales: (1) el rey no pod&iacute;a recaudar impuestos ni mantener un ej&eacute;rcito permanente sin el Parlamento; (2) las elecciones parlamentarias deb&iacute;an ser libres; (3) la libertad de expresi&oacute;n en el Parlamento quedaba garantizada; (4) se prohib&iacute;an las penas crueles e inusuales. Por qu&eacute; no las otras opciones: la Carta Magna (1215) limit&oacute; al rey pero en beneficio de la nobleza feudal, no como liberalismo moderno. El Habeas Corpus (1679) fue un avance importante pero no estableci&oacute; la supremac&iacute;a parlamentaria. La decapitaci&oacute;n de Carlos I (1649) no cre&oacute; una democracia sino el Protectorado de Cromwell, tan autoritario como la monarqu&iacute;a.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Qu&eacute; frase sintetiza la principal queja pol&iacute;tica de las colonias norteamericanas antes de la Independencia de 1776?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) "Libertad, Igualdad, Fraternidad": la demanda de los colonos de ser tratados con los mismos derechos que los ciudadanos franceses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) "No taxation without representation": los colonos rechazaban pagar impuestos al Parlamento brit&aacute;nico en el que no ten&iacute;an representantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) "Sapere aude": el lema ilustrado con el que los intelectuales colonos exig&iacute;an la libertad de pensamiento frente a la censura brit&aacute;nica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) "El gobierno mejor es el que gobierna menos": la frase de Thomas Jefferson que sintetizaba la demanda de autogobierno total sin ning&uacute;n v&iacute;nculo con Gran Breta&ntilde;a</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"<B>No taxation without representation</B>" ("Ning&uacute;n impuesto sin representaci&oacute;n") fue el lema central de la protesta colonial norteamericana. Sintetizaba la contradicci&oacute;n fundamental: Gran Breta&ntilde;a impuso una serie de impuestos a las 13 colonias (Stamp Act 1765, Townshend Acts 1767, impuesto al t&eacute;) para pagar las deudas de la guerra contra Francia, pero los colonos no ten&iacute;an representantes en el Parlamento de Westminster que votara esos impuestos. Desde la perspectiva de la tradici&oacute;n jur&iacute;dica inglesa (heredada de la Carta Magna y el Bill of Rights), ningún impuesto pod&iacute;a imponerse sin el consentimiento de los representados. Los colonos argumentaban que se les negaba un derecho que cualquier ciudadano brit&aacute;nico en Inglaterra ten&iacute;a. La aclaraci&oacute;n de las otras opciones: "Libert&eacute;, &Eacute;galit&eacute;, Fraternit&eacute;" es el lema de la Revoluci&oacute;n Francesa (1789), no de la norteamericana. "Sapere aude" es el lema de Kant para la Ilustraci&oacute;n. La atribuci&oacute;n a Jefferson de la tercera frase es imprecisa y posterior.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿En qu&eacute; fecha fue aprobada la Declaraci&oacute;n de los Derechos del Hombre y del Ciudadano durante la Revoluci&oacute;n Francesa, y cu&aacute;l es su importancia hist&oacute;rica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) El 14 de julio de 1789, el mismo d&iacute;a que la toma de la Bastilla; fue la primera medida que adopt&oacute; la multitud parisina al tomar el control de la ciudad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) El 26 de agosto de 1789, aprobada por la Asamblea Nacional Constituyente; es el documento fundacional del liberalismo pol&iacute;tico moderno que proclam&oacute; la libertad, igualdad y soberan&iacute;a popular como principios universales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El 21 de enero de 1793, el mismo d&iacute;a de la ejecuci&oacute;n de Luis XVI; fue aprobada como justificaci&oacute;n legal por el Comit&eacute; de Salvaci&oacute;n P&uacute;blica para legitimar la guillotina del rey</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El 9 de noviembre de 1799 (18 de Brumario), durante el golpe de Napole&oacute;n; fue el documento que Napole&oacute;n promulg&oacute; para legitimarse como sucesor constitucional de la Revoluci&oacute;n</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Declaraci&oacute;n de los Derechos del Hombre y del Ciudadano</B> fue aprobada por la Asamblea Nacional Constituyente el <B>26 de agosto de 1789</B>, semanas despu&eacute;s de la toma de la Bastilla (14 de julio). Es considerada el documento fundacional del liberalismo pol&iacute;tico moderno por varias razones: (1) <B>Universalidad:</B> a diferencia del Bill of Rights ingl&eacute;s (que hablaba de "los derechos de los ingleses"), la Declaraci&oacute;n proclamaba los derechos del "hombre" en abstracto, con vocaci&oacute;n universal. (2) <B>Principios revolucionarios:</B> soberan&iacute;a nacional, igualdad ante la ley, libertad de expresi&oacute;n, propiedad privada, garant&iacute;as procesales. (3) <B>Influencia global:</B> inspir&oacute; constituciones en todo el mundo, incluyendo las independencias latinoamericanas. Sus l&iacute;mites: no incluy&oacute; a las mujeres (Olympe de Gouges redact&oacute; su propia <I>Declaraci&oacute;n de los Derechos de la Mujer</I> en 1791, por la que fue guillotinada) ni a los esclavos de las colonias (la esclavitud no fue abolida hasta 1794).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; APLICACI&Oacute;N Y RELACI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Compara las ideas pol&iacute;ticas de John Locke y Jean-Jacques Rousseau. ¿En qu&eacute; se parecen y en qu&eacute; se diferencian fundamentalmente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Locke y Rousseau son pensadores id&eacute;nticos: ambos defendieron el contrato social, los derechos naturales, la soberan&iacute;a popular y la propiedad privada con ex&aacute;ctamente los mismos argumentos; la &uacute;nica diferencia es que uno era ingl&eacute;s y el otro franc&eacute;s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Ambos usaron el concepto de "contrato social" y cuestionaron el absolutismo, pero difieren fundamentalmente: Locke pone la propiedad privada individual en el centro (el Estado existe para proteger la vida, la libertad y la propiedad) y admite la desigualdad econ&oacute;mica como natural; Rousseau prioriza la "voluntad general" de la comunidad sobre el individuo, desconf&iacute;a de la propiedad privada como ra&iacute;z de la desigualdad y apunta hacia una democracia directa; Locke inspir&oacute; el liberalismo cl&aacute;sico; Rousseau, la democracia radical y el republicanismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Rousseau era m&aacute;s conservador que Locke: defend&iacute;a la monarqu&iacute;a constitucional y los derechos tradicionales de la nobleza; Locke era el revolucionario que propugnaba la rep&uacute;blica y la abolici&oacute;n de la nobleza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Locke era un te&oacute;logo que fundament&oacute; el poder pol&iacute;tico en la revelaci&oacute;n divina; Rousseau fue el primero en basar completamente el gobierno en la raz&oacute;n humana; no tienen ninguna idea en com&uacute;n</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta comparaci&oacute;n es fundamental para entender las dos grandes tradiciones del pensamiento pol&iacute;tico moderno. <B>Similitudes:</B> (1) Ambos usan el marco del "contrato social": el gobierno leg&iacute;timo surge de un acuerdo entre los gobernados, no del derecho divino. (2) Ambos cuestionan el absolutismo monarquico. (3) Ambos defienden derechos naturales previos al Estado. <B>Diferencias fundamentales:</B> (1) <B>Locke:</B> los derechos naturales son individuales (vida, libertad, propiedad); el Estado existe para protegerlos; si los viola, el pueblo puede rebelarse. La propiedad privada es un derecho natural sagrado. El individuo precede a la comunidad. Inspiraci&oacute;n del liberalismo anglosaj&oacute;n (EE.UU., Gran Breta&ntilde;a). (2) <B>Rousseau:</B> la "voluntad general" del pueblo soberano es superior a la voluntad individual; el individuo debe someterse al bien com&uacute;n; la propiedad privada es el origen de la desigualdad ("el primer hombre que cerr&oacute; un terreno y dijo <I>esto es m&iacute;o</I> fue el fundador de la sociedad civil y de todos sus males"). Inspiraci&oacute;n del republicanismo jacobino, del socialismo y del pensamiento dem&oacute;cratico radical. La tensi&oacute;n entre estas dos tradiciones es el eje del debate pol&iacute;tico moderno.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Por qu&eacute; la Revoluci&oacute;n Gloriosa inglesa de 1688 es llamada "gloriosa" y cu&aacute;l fue su resultado institucional duradero?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Es "gloriosa" porque el pueblo ingl&eacute;s logr&oacute; la democracia plena con sufragio universal y voto secreto; su resultado fue la primera rep&uacute;blica democr&aacute;tica de Europa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Es llamada "gloriosa" porque se logr&oacute; sin pr&aacute;cticamente derramamiento de sangre: el Parlamento invit&oacute; a Guillermo de Orange, Jacobo II huy&oacute; sin luchar, y el resultado fue la monarqu&iacute;a constitucional parlamentaria recogida en el Bill of Rights (1689), modelo que inspir&oacute; al resto del mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Es "gloriosa" por las grandes batallas que ganaron las fuerzas parlamentarias contra el ej&eacute;rcito del rey Jacobo II; la victoria militar fue tan aplastante que se consider&oacute; una gloria nacional equivalente a la derrota de la Armada Invencible en 1588</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) El t&eacute;rmino "gloriosa" es una denominaci&oacute;n retrospectiva del siglo XIX sin ning&uacute;n significado preciso; en realidad la Revoluci&oacute;n de 1688 fue tan sangrienta como la de 1642 y no produjo ning&uacute;n cambio institucional duradero</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La denominaci&oacute;n "Revoluci&oacute;n Gloriosa" (<I>Glorious Revolution</I>) hace referencia precisamente a su car&aacute;cter pac&iacute;fico, en contraposici&oacute;n con la violenta Guerra Civil de 1642&ndash;1649. El proceso fue el siguiente: (1) <B>Jacobo II</B> (cat&oacute;lico) intent&oacute; restaurar el catolicismo como religi&oacute;n de Estado y gobernar sin Parlamento. (2) El Parlamento invit&oacute; formalmente al estadista holand&eacute;s <B>Guillermo de Orange</B> (casado con Mar&iacute;a, hija protestante de Jacobo II) a invadir con un ej&eacute;rcito. (3) Guillermo desembarc&oacute; en noviembre de 1688; las tropas de Jacobo II se rindieron o se pasaron al invasor; el rey huy&oacute; a Francia. (4) Guillermo III y Mar&iacute;a II firmaron el <B>Bill of Rights</B> (febrero 1689), aceptando la supremac&iacute;a parlamentaria. <B>Resultado institucional duradero:</B> la monarqu&iacute;a constitucional parlamentaria, en la que el rey reina pero el Parlamento gobierna. Este modelo fue adoptado con variantes por casi todas las monarqu&iacute;as europeas en los siglos XIX y XX y sigue vigente en Gran Breta&ntilde;a, Espa&ntilde;a, Suecia, Holanda y otras democracias parlamentarias.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Qu&eacute; fue el "Terror" (1793&ndash;1794) durante la Revoluci&oacute;n Francesa y qu&eacute; paradoja pol&iacute;tica encarn&oacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) El "Terror" fue la invasi&oacute;n de Francia por las monarqu&iacute;as europeas (Austria, Prusia, Gran Breta&ntilde;a) que causaron terror entre la poblaci&oacute;n francesa; el gobierno republicano respond&iacute;a con medidas militares excepcionales para defender la patria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El "Terror" fue el per&iacute;odo (1793&ndash;1794) en que el Comit&eacute; de Salvaci&oacute;n P&uacute;blica, bajo Robespierre, guillotinó sistematicamente a los "enemigos de la Revoluci&oacute;n" (m&aacute;s de 17.000 ejecutados); la paradoja es que un r&eacute;gimen nacido para defender la libertad recurri&oacute; al terror sistem&aacute;tico, eliminando no solo a aristócratas sino tambi&eacute;n a revolucionarios moderados e incluso a sus propios aliados, hasta que el mismo Robespierre fue guillotinado por sus camaradas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El "Terror" fue exclusivamente una campaña de propaganda brit&aacute;nica para desacreditar la Revoluci&oacute;n Francesa; los historiadores modernos han demostrado que las ejecuciones fueron m&iacute;nimas y que el n&uacute;mero de 17.000 muertos es una exageraci&oacute;n relist&iacute;ca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) El "Terror" fue el nombre que Napole&oacute;n dio a su golpe del 18 de Brumario (1799); al tomar el poder por la fuerza, termin&oacute; con el terror de la guillotina y restaur&oacute; el orden republicano en Francia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Terror</B> (<I>La Terreur</I>) es uno de los episodios m&aacute;s debatidos de la historia pol&iacute;tica moderna. Se produjo entre septiembre de 1793 y julio de 1794, bajo el control del <B>Comit&eacute; de Salvaci&oacute;n P&uacute;blica</B>, dominado por <B>Maximiliano Robespierre</B>. M&aacute;s de <B>17.000 personas fueron guillotinadas</B> oficialmente (otras estimaciones elevan la cifra a 40.000 si se incluyen los muertos sin juicio), incluyendo: la reina Mar&iacute;a Antonieta, los l&iacute;deres <I>girondinos</I> (moderados), Georges Danton (uno de los padres de la Revoluci&oacute;n), y finalmente el propio Robespierre (el 9 de Termidor, 27 de julio de 1794). <B>La paradoja pol&iacute;tica:</B> Robespierre justificaba el terror como necesario para la "virtud republicana": una rep&uacute;blica libre solo puede sobrevivir si elimina a sus enemigos internos. Pero al usar el terror para eliminar no solo a enemigos sino a cualquier disidente o rival, el r&eacute;gimen se volvi&oacute; tan tiránico como la monarqu&iacute;a que hab&iacute;a derrocado. Esta paradoja &mdash;una revoluci&oacute;n libertaria que genera su propio terror&mdash; ha sido analizada por fil&oacute;sofos como <B>Hannah Arendt</B> (<I>Los or&iacute;genes del totalitarismo</I>) como un patr&oacute;n que se repetir&iacute;a en las revoluciones del siglo XX.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Por qu&eacute; la Independencia de los Estados Unidos (1776) es considerada un hito del liberalismo pol&iacute;tico y no simplemente una guerra de independencia colonial?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Porque fue la primera vez en la historia que una colonia se separaba militarmente de su metr&oacute;poli; el m&eacute;rito hist&oacute;rico fue exclusivamente militar, no ideol&oacute;gico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Porque por primera vez en la historia, una revoluci&oacute;n exit&oacute;sa construy&oacute; un Estado completamente nuevo basado en principios ilustrados: la Declaraci&oacute;n de Independencia proclam&oacute; los derechos naturales inalienables y la Constituci&oacute;n de 1787 materializ&oacute; la separaci&oacute;n de poderes, el federalismo y los derechos civiles en un texto escrito y vigente; fue un modelo pr&aacute;ctico de que las ideas de la Ilustraci&oacute;n pod&iacute;an aplicarse a la construcci&oacute;n de un Estado real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Porque la Independencia norteamericana fue directamente causada por la Revoluci&oacute;n Francesa: las ideas de Rousseau llegaron a las colonias y desencadenaron el movimiento independentista; sin la Revoluci&oacute;n Francesa, la independencia americana no habr&iacute;a ocurrido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Porque Thomas Jefferson era discipulo directo de Rousseau y Voltaire, con quienes hab&iacute;a estudiado en Par&iacute;s; la Declaraci&oacute;n de Independencia es una traducci&oacute;n literal al ingl&eacute;s de las ideas contenidas en <I>El contrato social</I></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La Independencia de EE.UU. es un hito del liberalismo por varias razones estructurales, no solo por ser una guerra de independencia: (1) <B>La Declaraci&oacute;n de Independencia (4 de julio de 1776)</B>: redactada por Thomas Jefferson, fue el primer documento estatal moderno que proclam&oacute; los derechos naturales inalienables como fundamento del gobierno ("vida, libertad y b&uacute;squeda de la felicidad"). Tomaba la filosof&iacute;a de Locke y la convert&iacute;a en documento pol&iacute;tico fundacional. (2) <B>La Constituci&oacute;n de 1787</B>: primera constituci&oacute;n escrita y operativa del mundo moderno; implement&oacute; la separaci&oacute;n de tres poderes (Montesquieu), el federalismo (soberan&iacute;a compartida entre estados y gobierno federal) y el republicanismo presidencialista. (3) <B>El Bill of Rights americano (1791)</B>: las primeras diez enmiendas garantizaron la libertad de expresi&oacute;n, religi&oacute;n, prensa y el derecho a portar armas. (4) <B>Impacto global:</B> inspir&oacute; directamente a la Revoluci&oacute;n Francesa y a los movimientos independentistas latinoamericanos. La nota cronol&oacute;gica: la Revoluci&oacute;n Francesa (1789) fue posterior a la norteamericana (1776), no su causa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; AN&Aacute;LISIS Y RAZONAMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Analiza la figura de Napole&oacute;n Bonaparte como "hijo de la Revoluci&oacute;n" y como "traidor a la Revoluci&oacute;n". ¿Qu&eacute; elementos de su gobierno justifican cada una de estas interpretaciones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Napole&oacute;n fue exclusivamente un traidor a la Revoluci&oacute;n: al proclamarse Emperador, restaur&oacute; en todos los aspectos el Antiguo R&eacute;gimen; sus guerras destruyeron todos los logros revolucionarios en Francia y en Europa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Napole&oacute;n encarna una contradicci&oacute;n real: como "hijo de la Revoluci&oacute;n", codific&oacute; sus principios en el C&oacute;digo Civil (1804), abolió el feudalismo en los territorios conquistados y difundi&oacute; la igualdad ante la ley; como "traidor", concentr&oacute; el poder en su persona (Emperador), suprimi&oacute; libertades p&uacute;blicas, restaur&oacute; la esclavitud en las colonias (1802) y subordin&oacute; Europa a sus ambiciones din&aacute;sticas; sus guerras generaron tambi&eacute;n el nacionalismo europeo que resistir&iacute;a al liberalismo en el siglo XIX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Napole&oacute;n fue exclusivamente un heredero leal de la Revoluci&oacute;n: todo lo que hizo fue continuaci&oacute;n coherente de sus principios; la coronaci&oacute;n como Emperador fue una decisi&oacute;n pragm&aacute;tica que no contradijo ning&uacute;n valor revolucionario</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Napole&oacute;n no tiene ninguna relaci&oacute;n con la Revoluci&oacute;n Francesa: era un militar corso ajeno a la pol&iacute;tica francesa que tom&oacute; el poder de un Estado ya estabilizado; sus reformas fueron completamente originales y no guardaban ninguna conexi&oacute;n con los principios de 1789</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La debatida figura de Napole&oacute;n es un tema cl&aacute;sico de historiograf&iacute;a. <B>Como "hijo de la Revoluci&oacute;n":</B> (1) <B>El C&oacute;digo Civil Napole&oacute;nico (1804)</B>: su legado m&aacute;s duradero; codific&oacute; en 2.281 art&iacute;culos los principios revolucionarios: igualdad ante la ley, propiedad privada garantizada, laicismo del Estado, libertad de conciencia, abolici&oacute;n de los privilegios nobiliarios. Se adopt&oacute; en casi toda Europa continental y es la base del derecho civil de Per&uacute; y de muchos pa&iacute;ses latinoamericanos. (2) <B>Abolici&oacute;n del feudalismo:</B> en Italia, Alemania, Espa&ntilde;a y Polonia, las conquistas napole&oacute;nicas abolieron la servidumbre y los privilegios estamentales. (3) <B>M&eacute;rito personal, no herencia de sangre:</B> bajo Napole&oacute;n, los cargos militares y civiles se otorgaban por m&eacute;rito, no por origen noble. <B>Como "traidor a la Revoluci&oacute;n":</B> (1) Se coron&oacute; Emperador (1804), restaurando un sistema din&aacute;stico que la Revoluci&oacute;n hab&iacute;a rechazado. (2) Restaur&oacute; la esclavitud en las colonias (1802), revirtiendo la abolici&oacute;n de 1794. (3) Control&oacute; la prensa y suprimi&oacute; la libertad de expresi&oacute;n. (4) Cre&oacute; una nueva nobleza imperial y coloc&oacute; a su familia en los tronos europeos. El historiador <B>Albert Soboul</B> lo llam&oacute; "el hijo que la Revoluci&oacute;n engendr&oacute; y que la enterr&oacute;".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Las tres grandes revoluciones liberales (inglesa, norteamericana y francesa) compartieron algunos principios pero difirieron en sus formas, radicalidad y consecuencias. Realiza una comparaci&oacute;n sistem&aacute;tica identificando sus similitudes y sus diferencias fundamentales.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Las tres revoluciones fueron id&eacute;nticas en todos sus aspectos: el mismo proceso, la misma cronolog&iacute;a, los mismos resultados; la &uacute;nica diferencia es el pa&iacute;s donde ocurrieron</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Las tres compartieron el cuestionamiento del absolutismo y la reivindicaci&oacute;n de los derechos individuales; pero difirieron en radicalidad (la inglesa fue la m&aacute;s pragm&aacute;tica; la francesa, la m&aacute;s radical), en resultado (monarqu&iacute;a constitucional en Inglaterra, rep&uacute;blica federal en EE.UU., ciclo revolucionario-imperial en Francia), y en alcance social (la francesa cuestion&oacute; la propiedad y la desigualdad social; la inglesa y la norteamericana protegieron la propiedad privada como derecho natural); todas influyeron en las independencias latinoamericanas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Las tres revoluciones tuvieron como resultado final la rep&uacute;blica democr&aacute;tica con sufragio universal: en Inglaterra en 1689, en EE.UU. en 1787 y en Francia en 1799; fue el mismo resultado pol&iacute;tico en los tres casos, aunque con diferentes plazos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) La &uacute;nica similitud entre las tres revoluciones es cronol&oacute;gica: ocurrieron en el mismo siglo; sus causas, ideolog&iacute;as y consecuencias fueron completamente distintas y no existe ninguna conexi&oacute;n causal entre ellas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparaci&oacute;n de las tres revoluciones es un tema cl&aacute;sico de nivel preuniversitario avanzado. <B>Similitudes:</B> (1) Las tres cuestionaron el absolutismo y afirmaron que el gobierno debe fundarse en el consentimiento de los gobernados. (2) Las tres reivindicaron derechos individuales naturales (vida, libertad, propiedad o felicidad). (3) Las tres produjeron constituciones o declaraciones que limitaron el poder del gobierno. (4) Las tres influyeron en los movimientos de independencia latinoamericanos. <B>Diferencias fundamentales:</B><BR>(1) <B>Radicalidad:</B> la Inglesa fue la m&aacute;s pragm&aacute;tica (monarqu&iacute;a constitucional); la Norteamericana fue moderada (rep&uacute;blica con propiedad protegida); la Francesa fue la m&aacute;s radical (cuestion&oacute; la propiedad, la religi&oacute;n, la monarqu&iacute;a y la desigualdad social).<BR>(2) <B>Resultado:</B> Inglaterra mantuvo la monarqu&iacute;a (constitucional); EE.UU. cre&oacute; una rep&uacute;blica federal presidencialista; Francia oscil&oacute; entre la monarqu&iacute;a constitucional, la rep&uacute;blica jacobina y el Imperio napole&oacute;nico.<BR>(3) <B>Clase motriz:</B> en Inglaterra fue la alianza Parlamento-nobleza protestante; en EE.UU., los colonos propietarios con liderazgo criollo ilustrado; en Francia, la burgues&iacute;a urban a apoyada por el pueblo llano.<BR>(4) <B>Alcance social:</B> la francesa fue la &uacute;nica que cuestion&oacute; abiertamente la desigualdad econ&oacute;mica y la propiedad (especialmente en la fase jacobina), prefigurando los debates del siglo XIX sobre socialismo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Por qu&eacute; el C&oacute;digo Civil Napole&oacute;nico de 1804 es considerado uno de los documentos jur&iacute;dicos m&aacute;s influyentes de la historia, y c&oacute;mo se relaciona con los principios liberales de la Revoluci&oacute;n Francesa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) El C&oacute;digo Civil de 1804 fue una restauraci&oacute;n del derecho romano medieval que Napole&oacute;n implement&oacute; para restaurar el Antiguo R&eacute;gimen; su importancia hist&oacute;rica es principalmente art&iacute;stica y filos&oacute;fica, no jur&iacute;dica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) El C&oacute;digo Civil Napole&oacute;nico codific&oacute; por primera vez en un texto sistem&aacute;tico y claro los principios liberales: igualdad de todos los ciudadanos ante la ley (abolici&oacute;n de los privilegios nobiliarios), inviolabilidad de la propiedad privada, laicismo del derecho civil, libertad de conciencia y contratos basados en la voluntad de las partes; al extenderse por Europa y Latinoam&eacute;rica, sustituy&oacute; los sistemas jur&iacute;dicos feudales y constituy&oacute; la base del derecho civil moderno en decenas de pa&iacute;ses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) El C&oacute;digo Civil de 1804 era un texto estrictamente religioso que codificaba el derecho can&oacute;nico cat&oacute;lico para toda Francia; su importancia fue que reconcili&oacute; a la Iglesia Cat&oacute;lica con los principios de la Revoluci&oacute;n y sigue siendo la base del concordato entre el Vaticano y Francia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) El C&oacute;digo Civil fue adoptado solo en Francia y nunca se extendi&oacute; a otros pa&iacute;ses; su influencia hist&oacute;rica es por tanto limitada a la historia interna francesa del siglo XIX</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>C&oacute;digo Civil Napole&oacute;nico</B> (<I>Code civil des Fran&ccedil;ais</I>, 21 de marzo de 1804) es, junto a la Constituci&oacute;n estadounidense de 1787, el documento jur&iacute;dico m&aacute;s influyente del mundo moderno. Sus principios fundamentales: (1) <B>Igualdad ante la ley:</B> todos los ciudadanos tienen los mismos derechos civiles, independientemente de su origen social; fin de los privilegios nobiliarios. (2) <B>Propiedad privada:</B> garantizada como derecho inviolable; cualquier expropiaci&oacute;n requiere compensaci&oacute;n justa. (3) <B>Libertad de contratos:</B> los individuos pueden pactar libremente sus acuerdos econ&oacute;micos sin intervenci&oacute;n estatal, siempre dentro de la ley. (4) <B>Laicismo del derecho civil:</B> el matrimonio, el divorcio y la familia se rigen por el derecho civil del Estado, no por el can&oacute;nico de la Iglesia. (5) <B>Libertad de conciencia:</B> no persecuci&oacute;n por creencias religiosas. <B>Extensi&oacute;n:</B> el C&oacute;digo se adopt&oacute; directamente en Italia, Espa&ntilde;a, Polonia, los Pa&iacute;ses Bajos, Bélgica, Portugal y &mdash;a trav&eacute;s de Espa&ntilde;a&mdash; en toda Latinoam&eacute;rica, incluyendo Per&uacute;. Napole&oacute;n dijo que sus batallas se olvidar&iacute;an, pero su C&oacute;digo Civil durar&iacute;a eternamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; HISTORIOGRAF&Iacute;A Y TEOR&Iacute;A</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> El historiador Eric Hobsbawm llam&oacute; al per&iacute;odo 1789&ndash;1848 "la era de la revoluci&oacute;n". ¿Qu&eacute; entend&iacute;a con este concepto y c&oacute;mo se conecta con las grandes revoluciones liberales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Hobsbawm se refer&iacute;a &uacute;nicamente a la Revoluci&oacute;n Francesa; para &eacute;l, las revoluciones inglesa y norteamericana no fueron verdaderas revoluciones sino simples revueltas coloniales sin consecuencias globales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Hobsbawm argument&oacute; que entre 1789 y 1848 se produjo una "doble revoluci&oacute;n" que transform&oacute; el mundo: la Revoluci&oacute;n Francesa (pol&iacute;tica: triunfo del liberalismo, los derechos civiles y la soberan&iacute;a popular) y la Revoluci&oacute;n Industrial brit&aacute;nica (econ&oacute;mica: capitalismo industrial y econom&iacute;a de mercado); ambas juntas establecieron las estructuras del mundo contempor&aacute;neo, y las oleadas revolucionarias de 1830 y 1848 fueron su expansi&oacute;n por Europa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Hobsbawm argument&oacute; que la "era de la revoluci&oacute;n" fue un per&iacute;odo de retroceso del liberalismo: las revoluciones de 1789&ndash;1848 fracasaron todas sin excepci&oacute;n y el absolutismo se impuso definitivamente en toda Europa hasta 1914</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) El concepto de "era de la revoluci&oacute;n" de Hobsbawm es exclusivamente militar: se refiere a las guerras napole&oacute;nicas (1800&ndash;1815) y a las guerras de independencia latinoamericanas (1810&ndash;1824) como el mayor per&iacute;odo de conflicto armado de la historia mundial hasta 1914</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El historiador brit&aacute;nico de orientaci&oacute;n marxista <B>Eric Hobsbawm</B> (1917&ndash;2012) argument&oacute; en su trilog&iacute;a (<I>La era de la revoluci&oacute;n</I>, 1962; <I>La era del capital</I>, 1975; <I>La era del Imperio</I>, 1987) que entre 1789 y 1848 se produjo una "<B>doble revoluci&oacute;n</B>" que estableci&oacute; los fundamentos del mundo contempor&aacute;neo: (1) <B>La Revoluci&oacute;n Francesa (pol&iacute;tica):</B> difundi&oacute; los principios liberales (soberan&iacute;a popular, derechos civiles, constitucionalis mo, naci&oacute;n) por toda Europa y Latinoam&eacute;rica. (2) <B>La Revoluci&oacute;n Industrial brit&aacute;nica (econ&oacute;mica):</B> cre&oacute; el capitalismo industrial con la f&aacute;brica, el proletariado, la econom&iacute;a de mercado y el libre comercio. Ambas juntas son la matriz del mundo moderno. Las oleadas revolucionarias de <B>1830</B> (Francia, B&eacute;lgica) y <B>1848</B> ("Primavera de los Pueblos": revoluciones en casi toda Europa) fueron expansiones de esta "doble revoluci&oacute;n". La perspectiva de Hobsbawm es especialmente rica porque conecta el liberalismo pol&iacute;tico con el capitalismo econ&oacute;mico: para &eacute;l, ambas son caras de la misma moneda hist&oacute;rica. Su enfoque marxista le lleva a ver las limitaciones del liberalismo (que protege la propiedad privada y no cuestiona la desigualdad de clases), prefigurando las cr&iacute;ticas socialistas del siglo XIX.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> La Declaraci&oacute;n de Independencia de EE.UU. proclam&oacute; que "todos los hombres son creados iguales", pero su principal autor, Thomas Jefferson, era propietario de esclavos. ¿C&oacute;mo se explica esta contradicci&oacute;n y qu&eacute; nos dice sobre los l&iacute;mites del liberalismo cl&aacute;sico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La contradicci&oacute;n no existe: Jefferson lib&eacute;r&oacute; a todos sus esclavos antes de redactar la Declaraci&oacute;n; los historiadores que afirman lo contrario est&aacute;n confundiendo a Jefferson con otros Padres Fundadores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La contradicci&oacute;n es real y estructural: el liberalismo cl&aacute;sico de los siglos XVII-XVIII defendi&oacute; los derechos de los "hombres" entendidos como propietarios blancos varones; la esclavitud, la exclusi&oacute;n de las mujeres y la discriminaci&oacute;n racial eran compatibles con el liberalismo en su formulaci&oacute;n original; esta contradicci&oacute;n gener&oacute; una expansi&oacute;n progresiva del concepto de "derechos" a lo largo de los siglos XIX y XX (abolicionismo, sufragio femenino, derechos civiles de los afroamericanos)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) La contradicci&oacute;n se explica porque Jefferson escribi&oacute; "todos los hombres" en el sentido de "todos los seres humanos racionales", incluyendo expl&iacute;citamente a los africanos y mujeres; fue el Congreso quien elimin&oacute; esas referencias antes de aprobar el documento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) No hay contradicci&oacute;n porque en el siglo XVIII el concepto de "igualdad" significaba algo completamente distinto a lo que significa hoy: Jefferson se refer&iacute;a a la igualdad entre las naciones, no entre los individuos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta aborda uno de los debates historiogr&aacute;ficos m&aacute;s importantes sobre el liberalismo. <B>La contradicci&oacute;n es real:</B> Thomas Jefferson pose&iacute;a m&aacute;s de 600 esclavos a lo largo de su vida y liber&oacute; solo a 7 en su testamento. George Washington, Benjamin Franklin (este &uacute;ltimo se volvi&oacute; abolicionista al final de su vida) y muchos otros Padres Fundadores eran propietarios de esclavos. <B>La explicaci&oacute;n estructural:</B> el liberalismo cl&aacute;sico del siglo XVII-XVIII defini&oacute; al sujeto de los derechos como el "hombre propietario" (var&oacute;n, blanco, due&ntilde;o de propiedades). Desde esta perspectiva: (1) Las mujeres eran excluidas ("hombre" = var&oacute;n); (2) Los esclavos eran "propiedad", no sujetos de derechos; (3) Los pueblos no europeos pod&iacute;an ser considerados "fuera" de la comunidad de iguales. <B>La expansi&oacute;n progresiva de los derechos:</B> la historia del liberalismo desde el siglo XVIII hasta el XX es la historia de la extensi&oacute;n del concepto de "derechos" a grupos exclu&iacute;dos originalmente: abolicionismo (siglo XIX), sufragio femenino (siglos XIX-XX), movimiento de derechos civiles afroamericano (siglo XX, con Martin Luther King), derechos LGBTQ (siglo XXI). Cada expansi&oacute;n fue resistida por quienes invocaban el liberalismo original para defender el status quo. La historiadora <B>Fran&ccedil;oise Vergès</B> y otros estudios poscoloniales han analizado esta contradicci&oacute;n como constitutiva del pensamiento liberal moderno.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> El fil&oacute;sofo Edmund Burke public&oacute; en 1790 sus <I>Reflexiones sobre la Revoluci&oacute;n en Francia</I>, la primera gran cr&iacute;tica conservadora del liberalismo revolucionario. ¿En qu&eacute; consisti&oacute; su argumento y c&oacute;mo anticipa el debate entre conservadurismo y liberalismo que estructur&oacute; la pol&iacute;tica del siglo XIX?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Burke apoy&oacute; la Revoluci&oacute;n Francesa en sus primeras fases pero la critic&oacute; cuando se volvi&oacute; violenta con el Terror; su cr&iacute;tica era exclusivamente moral (contra la violencia) y no cuestionaba los principios liberales de libertad e igualdad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Burke argument&oacute; que las instituciones pol&iacute;ticas no pueden ser destruidas y reconstruidas desde la raz&oacute;n abstracta: las tradiciones, las instituciones heredadas y la sabidur&iacute;a acumulada de generaciones tienen un valor que ning&uacute;n dise&ntilde;o racional puede sustituir; predijo que la Revoluci&oacute;n terminar&iacute;a en tiran&iacute;a militar (Napole&oacute;n le dio la raz&oacute;n); su obra fund&oacute; el conservadurismo moderno como cr&iacute;tica al racionalismo ilustrado y al cambio revolucionario abrupto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Burke era un fil&oacute;sofo franc&eacute;s il&oacute;grafo que defendi&oacute; el absolutismo monárquico sin ninguna matizaci&oacute;n; sus <I>Reflexiones</I> fueron el manifiesto ideol&oacute;gico de los &eacute;migrés aristócratas que quer&iacute;an restaurar a Luis XVI</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El argumento de Burke era exclusivamente religioso: la Revoluci&oacute;n era mala porque era ateia; si hubiera respetado a la Iglesia Cat&oacute;lica, Burke la habr&iacute;a apoyado completamente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Edmund Burke</B> (1729&ndash;1797), pol&iacute;tico y fil&oacute;sofo irland&eacute;s-brit&aacute;nico, public&oacute; sus <I>Reflexiones sobre la Revoluci&oacute;n en Francia</I> en octubre de 1790, antes del Terror, lo que le dio un car&aacute;cter profético. Su argumento central es sofisticado: (1) <B>Contra el racionalismo abstracto:</B> la Ilustraci&oacute;n asumía que la raz&oacute;n humana pod&iacute;a dise&ntilde;ar sociedades perfectas desde cero. Burke argüía que las instituciones pol&iacute;ticas son organismos vivos que incorporan la sabidur&iacute;a acumulada de generaciones; destruirlas por "princ ipios racionales abstractos" equivale a tirar siglos de experiencia pr&aacute;ctica. (2) <B>Reforma vs. revoluci&oacute;n:</B> Burke no era contrario al cambio; hab&iacute;a apoyado la Independencia americana y reformas en el Parlamento brit&aacute;nico. Su argumento era que el cambio debe ser gradual, respetuoso de las instituciones existentes, no rupturista. (3) <B>Predicci&oacute;n verificada:</B> Burke predijo que la Revoluci&oacute;n terminar&iacute;a en un dictador militar que restaurar&iacute;a el orden tras el caos; Napole&oacute;n se coron&oacute; Emperador 14 a&ntilde;os despu&eacute;s. <B>Legado:</B> las <I>Reflexiones</I> fundaron el <B>conservadurismo moderno</B> como tradici&oacute;n intelectual: el respeto a la tradici&oacute;n, a las instituciones heredadas y el escepticismo ante los grandes proyectos de transformaci&oacute;n social racionales. La respuesta inmediata de <B>Thomas Paine</B> (<I>Los derechos del hombre</I>, 1791) articuló la r&eacute;plica liberal: las generaciones pasadas no pueden atar a las futuras.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> La Revoluci&oacute;n Haitiana (1791&ndash;1804), liderada por <B>Toussaint Louverture</B>, fue la &uacute;nica revoluci&oacute;n de la &eacute;poca que extendi&oacute; los principios liberales a los esclavos africanos. ¿Por qu&eacute; es considerada la revoluci&oacute;n m&aacute;s radical del ciclo liberal y cu&aacute;l fue su relaci&oacute;n contradictoria con la Revoluci&oacute;n Francesa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La Revoluci&oacute;n Haitiana fue apoyada entusiastamente por la Revoluci&oacute;n Francesa desde el principio; Robespierre fue su principal defensor y Francia aboli&oacute; la esclavitud en las colonias en 1789, el mismo a&ntilde;o de la Toma de la Bastilla</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La Revoluci&oacute;n Haitiana tom&oacute; los principios de la Declaraci&oacute;n de los Derechos del Hombre y los aplic&oacute; consecuentemente a los esclavos, lo que la Revoluci&oacute;n Francesa no hac&iacute;a; fue la m&aacute;s radical porque cuestion&oacute; no solo el absolutismo pol&iacute;tico sino el racismo y la esclavitud que el liberalismo original toleraba; su relaci&oacute;n con Francia fue contradictoria: Francia aboli&oacute; la esclavitud en 1794 (en parte por la presi&oacute;n de la rebelión), pero Napole&oacute;n la restaur&oacute; en 1802 y trat&oacute; de reconquistar Hait&iacute;, siendo derrotado; Hait&iacute; se independiz&oacute; en 1804, convirtie ndose en la primera rep&uacute;blica negra del mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La Revoluci&oacute;n Haitiana no tiene ninguna relaci&oacute;n con el liberalismo; fue exclusivamente una rebeli&oacute;n racial y religiosa (vud&uacute;) sin ning&uacute;n contenido pol&iacute;tico ni influencia de las ideas ilustradas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Toussaint Louverture era un agente secreto de la monarqu&iacute;a brit&aacute;nica que us&oacute; el discurso de la libertad para establecer un protectorado ingl&eacute;s en el Caribe; la "Revoluci&oacute;n Haitiana" fue en realidad una operaci&oacute;n geopol&iacute;tica brit&aacute;nica disfrazada de liberaci&oacute;n</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Revoluci&oacute;n Haitiana</B> (1791&ndash;1804) es la revoluci&oacute;n m&aacute;s radical del ciclo liberal por razones estructurales. <B>Contexto:</B> Saint-Domingue (hoy Hait&iacute;) era la colonia m&aacute;s rica del mundo en 1789: produc&iacute;a el 40% del az&uacute;car y el 50% del caf&eacute; consumido en Europa, con una poblaci&oacute;n de 500.000 esclavos africanos controlados por 40.000 colonos blancos. <B>La radicalidad:</B> los esclavos tomaron los principios de la Declaraci&oacute;n de los Derechos del Hombre ("todos los hombres nacen libres e iguales") y los aplicaron literalmente. Era la l&oacute;gica interna del propio liberalismo, que los revolucionarios blancos en Francia y EE.UU. no quer&iacute;an aplicar. <B>La relaci&oacute;n contradictoria con Francia:</B> (1) La Convenci&oacute;n Nacional francesa abolió la esclavitud en febrero de 1794, en parte presionada por la rebelión haitiana. (2) Napole&oacute;n restaur&oacute; la esclavitud en 1802 y envi&oacute; una expedici&oacute;n para reconquistar Hait&iacute;; fue derrotado por una combinaci&oacute;n de las tropas de <B>Jean-Jacques Dessalines</B> y la fiebre amarilla. (3) Hait&iacute; se independiz&oacute; el <B>1 de enero de 1804</B>, primera rep&uacute;blica negra del mundo y primer Estado fundado por esclavos libertos. <B>Consecuencias globales:</B> Francia exigi&oacute; a Hait&iacute; el pago de una "indemnizaci&oacute;n" de 150 millones de francos (por la "p&eacute;rdida" de sus esclavos), deuda que Hait&iacute; pag&oacute; hasta 1947, condenando al pa&iacute;s a la pobreza durante siglos. El historiador <B>C.L.R. James</B> analiz&oacute; brillantemente este proceso en <I>Los jacobinos negros</I> (1938).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿En qu&eacute; sentido puede afirmarse que la Revoluci&oacute;n Francesa invent&oacute; el concepto moderno de "naci&oacute;n" y c&oacute;mo este concepto transform&oacute; la pol&iacute;tica europea del siglo XIX?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La Revoluci&oacute;n Francesa no invent&oacute; el concepto de naci&oacute;n; ese concepto exist&iacute;a desde la Edad Media en todos los pa&iacute;ses europeos con el mismo significado que tiene hoy</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La Revoluci&oacute;n Francesa transform&oacute; "naci&oacute;n" de un concepto de sangre y territorio en un concepto c&iacute;vico: la naci&oacute;n era la comunidad de ciudadanos libres e iguales bajo una misma ley, no un grupo &eacute;tnico ni los s&uacute;bditos de un rey; este concepto c&iacute;vico de naci&oacute;n aliment&oacute; los movimientos liberales-nacionales del siglo XIX (Risorgimento italiano, unificaci&oacute;n alemana, independencias latinoamericanas) que buscaban crear Estados-naci&oacute;n constitucionales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) El concepto de "naci&oacute;n" inventado por la Revoluci&oacute;n Francesa fue exclusivamente militar: defini&oacute; a la naci&oacute;n como el ej&eacute;rcito de ciudadanos armados; solo tuvo impacto en la organizaci&oacute;n de los ej&eacute;rcitos europeos, sin consecuencias pol&iacute;ticas m&aacute;s amplias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La Revoluci&oacute;n Francesa rechaz&oacute; el concepto de naci&oacute;n por considerarlo contrario al cosmopolitismo ilustrado; Robespierre y los jacobinos quer&iacute;an crear una "rep&uacute;blica universal" sin fronteras nacionales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Antes de 1789, "naci&oacute;n" en el lenguaje pol&iacute;tico franc&eacute;s significaba el estrato social privilegiado (la nobleza y el alto clero eran "la naci&oacute;n"); el pueblo llano no era parte de ella. La Revoluci&oacute;n transform&oacute; radicalmente este concepto: el pamp flet de Sieyes <I>¿Qu&eacute; es el Tercer Estado?</I> (enero 1789) proclam&oacute; que la naci&oacute;n era el Tercer Estado (el 98% de la poblaci&oacute;n) y que la nobleza era un par&aacute;sito. La Declaraci&oacute;n de los Derechos del Hombre estableci&oacute; que "el principio de toda soberan&iacute;a reside esencialmente en la naci&oacute;n": la naci&oacute;n como comunidad de ciudadanos iguales, no como linaje noble ni como s&uacute;bditos del rey. <B>Dos concepciones de naci&oacute;n en tensi&oacute;n desde 1789:</B> (1) <B>Naci&oacute;n c&iacute;vica (modelo franc&eacute;s):</B> pertenece a la naci&oacute;n quien acepta sus leyes e instituciones; la ciudadan&iacute;a es un estatus jur&iacute;dico, no &eacute;tnico. (2) <B>Naci&oacute;n &eacute;tnica o cultural (modelo alem&aacute;n, Herder, Fichte):</B> la naci&oacute;n es una comunidad de lengua, cultura y sangre; el Estado debe coincidir con la naci&oacute;n &eacute;tnica. Esta segunda concepci&oacute;n, aunque tambi&eacute;n surgida en parte como respuesta a Napole&oacute;n, ser&iacute;a la base del nacionalismo &eacute;tnico que causar&iacute;a graves problemas en el siglo XX (nazismo, guerras balc&aacute;nicas). <B>El impacto en el siglo XIX:</B> el concepto franc&eacute;s de naci&oacute;n c&iacute;vica aliment&oacute; los movimientos liberales-nacionales de 1848 (Risorgimento italiano con Garibaldi y Mazzini; unificaci&oacute;n alemana; renacimiento polaco) y las independencias latinoamericanas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> La fil&oacute;sofa Mary Wollstonecraft public&oacute; en 1792 <I>Vindicaci&oacute;n de los derechos de la mujer</I>, respondiendo directamente a la Declaraci&oacute;n de los Derechos del Hombre. ¿Cuál fue su argumento central y qu&eacute; nos dice sobre las contradicciones de g&eacute;nero en el liberalismo revolucionario?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Wollstonecraft critic&oacute; la Revoluci&oacute;n Francesa por ser demasiado radical en su defensa de la igualdad; su argumento era que las mujeres deb&iacute;an permanecer en la esfera dom&eacute;stica y que los derechos pol&iacute;ticos eran exclusivos de los hombres</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Wollstonecraft argument&oacute; que los principios de igualdad y raz&oacute;n proclamados por la Ilustraci&oacute;n deb&iacute;an aplicarse consecuentemente a las mujeres: si todos los seres humanos tienen raz&oacute;n, no hay justificaci&oacute;n racional para excluir a las mujeres de la educaci&oacute;n, los derechos civiles y la participaci&oacute;n pol&iacute;tica; denunci&oacute; que el liberalismo de los "derechos del hombre" era, en realidad, el liberalismo de los derechos del var&oacute;n; es la fundadora del feminismo liberal moderno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Wollstonecraft no ten&iacute;a ninguna relaci&oacute;n con el liberalismo; era una pensadora socialista que critic&oacute; tanto la Revoluci&oacute;n Francesa como el liberalismo burgués desde una perspectiva de clase, no de g&eacute;nero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) <I>Vindicaci&oacute;n de los derechos de la mujer</I> fue inmediatamente adoptada por la Revoluci&oacute;n Francesa: la Convenci&oacute;n Nacional vot&oacute; el sufragio femenino en 1793 como consecuencia directa de su obra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Mary Wollstonecraft</B> (1759&ndash;1797) public&oacute; <I>A Vindication of the Rights of Woman</I> en 1792, considerado el texto fundador del feminismo moderno. Su argumento es una aplicaci&oacute;n consecuente de la l&oacute;gica ilustrada: (1) <B>La premisa ilustrada:</B> si la raz&oacute;n es el fundamento de los derechos y todos los seres humanos tienen raz&oacute;n, entonces las mujeres tienen raz&oacute;n y por tanto derechos. (2) <B>La contradicci&oacute;n liberal:</B> la Declaraci&oacute;n de los Derechos del Hombre hablaba de "l'homme" (el hombre/ser humano), pero en la pr&aacute;ctica excluy&oacute; a las mujeres de los derechos civiles y pol&iacute;ticos. La Constituci&oacute;n de 1791 les negaba el voto y los cargos p&uacute;blicos. (3) <B>La educaci&oacute;n:</B> Wollstonecraft argument&oacute; que las mujeres parecen irracionales y fr&iacute;volas porque se les niega la educaci&oacute;n racional; si se les diera la misma educaci&oacute;n que a los hombres, demostrar&iacute;an igual capacidad racional. <B>La respuesta de la Revoluci&oacute;n:</B> ignoró y reprimi&oacute; sus demandas. <B>Olympe de Gouges</B>, que redact&oacute; la <I>Declaraci&oacute;n de los Derechos de la Mujer y la Ciudadana</I> (1791), fue guillotinada en 1793. Los clubes pol&iacute;ticos de mujeres fueron prohibidos por los jacobinos ese mismo a&ntilde;o. El sufragio femenino en Francia no lleg&oacute; hasta 1944. <B>Legado:</B> los argumentos de Wollstonecraft inspiran directamente el sufragismo del siglo XIX y el feminismo liberal del XX.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> La Revoluci&oacute;n Francesa gener&oacute; tambi&eacute;n el concepto de "izquierda" y "derecha" pol&iacute;tica. ¿De d&oacute;nde proviene este vocabulario y c&oacute;mo reflejaba las diferencias ideol&oacute;gicas reales en la Asamblea Nacional?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Los t&eacute;rminos "izquierda" y "derecha" fueron inventados por el periodista Karl Marx en 1848 para describir las dos tendencias del movimiento obrero europeo; no tienen ning&uacute;n v&iacute;nculo con la Revoluci&oacute;n Francesa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Los t&eacute;rminos "izquierda" y "derecha" surgieron literalmente de la disposici&oacute;n f&iacute;sica en la Asamblea Nacional Constituyente (1789): los diputados que apoyaban cambios radicales se sentaban a la izquierda del presidente de la Asamblea; los que defend&iacute;an el orden establecido y los privilegios del Antiguo R&eacute;gimen, a la derecha; esta divisi&oacute;n espacial se convirti&oacute; en metáfora pol&iacute;tica universal que estructura el debate pol&iacute;tico hasta hoy</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "Izquierda" y "derecha" son traducciones al franc&eacute;s de los t&eacute;rminos griegos "aristos" (los mejores) y "demos" (el pueblo); fue Robespierre quien los import&oacute; de la filosof&iacute;a griega para describir las dos facciones de la Convenci&oacute;n Nacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Los t&eacute;rminos surgieron de la arquitectura del Palacio de Versalles, donde el ala izquierda alojaba a los ministros reformistas y el ala derecha a los conservadores; Napole&oacute;n los populariz&oacute; tras la Revoluci&oacute;n</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Uno de los legados m&aacute;s curiosos y duraderos de la Revoluci&oacute;n Francesa es la creaci&oacute;n del vocabulario "izquierda/derecha" pol&iacute;tica. El origen es literal y espacial: en la <B>Asamblea Nacional Constituyente</B> (1789&ndash;1791), los diputados se distribu&iacute;an f&iacute;sicamente alrededor del sillón del presidente de la Asamblea. Los que apoyaban la monarqu&iacute;a constitucional moderada, los privilegios del clero y la nobleza, y los cambios graduales se sentaban a la <B>derecha</B> del presidente. Los que apoyaban la soberan&iacute;a popular plena, la abolici&oacute;n de privilegios y cambios m&aacute;s radicales se sentaban a la <B>izquierda</B>. Esta disposici&oacute;n espacial se convirti&oacute; en met&aacute;fora: "sentarse a la izquierda" = ser m&aacute;s radical y reformista; "sentarse a la derecha" = ser m&aacute;s conservador. Durante el siglo XIX el significado se consolid&oacute; y extendi&oacute; a todos los parlamentos europeos. En el siglo XX adquiri&oacute; nuevas connotaciones: izquierda = socialismo, progresismo, Estado interventor; derecha = conservadurismo, mercado libre, tradici&oacute;n. Hoy el vocabulario "izquierda/derecha" es universal en la pol&iacute;tica mundial, aunque su contenido exacto var&iacute;a por contexto. Es un ejemplo notable de c&oacute;mo un accidente espacial-hist&oacute;rico se convierte en categor&iacute;a conceptual duradera.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Analiza el impacto de las grandes revoluciones liberales en los movimientos de independencia de Am&eacute;rica Latina (1810&ndash;1824), se&ntilde;alando qu&eacute; ideas tomaron, qu&eacute; adaptaron y qu&eacute; contradicciones heredaron.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Las independencias latinoamericanas no tienen ning&uacute;n v&iacute;nculo con las revoluciones liberales europeas; fueron procesos aut&oacute;ctonos causados exclusivamente por factores econ&oacute;micos internos sin influencia de ideas externas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Los movimientos independentistas latinoamericanos tomaron de las revoluciones liberales la doctrina de los derechos naturales (Locke), la separaci&oacute;n de poderes (Montesquieu), la soberan&iacute;a popular (Rousseau) y el modelo constitucional (EE.UU.); los adaptaron a contextos sociales diferentes (sociedades multirraciales con mayor&iacute;as ind&iacute;genas y afrodescendientes); y heredaron las mismas contradicciones: las independencias fueron lideradas por &eacute;lites criollas blancas que mantuvieron la exclusi&oacute;n de ind&iacute;genas, africanos y mujeres, produciendo rep&uacute;blicas liberales en su arquitectura jur&iacute;dica pero oligárquicas en su realidad social</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Las independencias latinoamericanas fueron directamente organizadas por agentes de la Revoluci&oacute;n Francesa enviados por Napole&oacute;n para debilitar a Espa&ntilde;a; sin el apoyo franc&eacute;s directo, las colonias espa&ntilde;olas no habr&iacute;an podido independizarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Las independencias latinoamericanas adoptaron &uacute;nicamente el modelo brit&aacute;nico de monarqu&iacute;a constitucional; todos los nuevos pa&iacute;ses surgidos entre 1810 y 1824 se convirtieron en monarqu&iacute;as parlamentarias similares a la inglesa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El impacto de las revoluciones liberales en las independencias latinoamericanas fue profundo y complejo. <B>Ideas tomadas:</B> (1) <B>Locke:</B> derechos naturales inalienables; el gobierno leg&iacute;timo surge del consentimiento de los gobernados. (2) <B>Montesquieu:</B> separaci&oacute;n de tres poderes: casi todas las constituciones latinoamericanas del siglo XIX la adoptaron. (3) <B>Rousseau:</B> soberan&iacute;a popular; el poder emana del pueblo. (4) <B>Modelo estadounidense:</B> rep&uacute;blicas presidencialistas federales (aunque en la pr&aacute;ctica tendieron al centralismo); constituciones escritas. (5) <B>C&oacute;digo Civil Napole&oacute;nico:</B> la legislaci&oacute;n civil de casi toda Latinoam&eacute;rica se bas&oacute; en &eacute;l. <B>Figuras conectoras:</B> Sim&oacute;n Bol&iacute;var hab&iacute;a le&iacute;do a Montesquieu, Rousseau y Voltaire; presenció en Roma la coronaci&oacute;n de Napole&oacute;n. Jos&eacute; de San Mart&iacute;n era masón, como muchos l&iacute;deres ilustrados. <B>Adaptaciones:</B> las constituciones latinoamericanas enfrentaban sociedades con mayor&iacute;as ind&iacute;genas y afrodescendientes, cosa que los modelos europeo y norteamericano no contemplaban. Algunos l&iacute;deres (Bol&iacute;var) fueron m&aacute;s conscientes de esta complejidad que otros. <B>Contradicciones heredadas:</B> las rep&uacute;blicas liberales latinoamericanas del siglo XIX tuvieron sufragio restringido (exclu&iacute;an a analfabetos, mujeres, indigentes), mantuvieron pr&aacute;cticamente la esclavitud hasta mediados del XIX, y preservaron el orden social colonial bajo nueva arquitectura jur&iacute;dica. El liberalismo latinoamericano fue, seg&uacute;n el historiador Tulio Halper&iacute;n Donghi, una "promesa" que tard&oacute; d&eacute;cadas en empezar a cumplirse.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> El fil&oacute;sofo Immanuel Kant propuso en 1795 el ensayo <I>La paz perpetua</I>, en el que argumentaba que las rep&uacute;blicas liberales tender&iacute;an a la paz entre s&iacute;. ¿En qu&eacute; consiste este argumento, c&oacute;mo se relaciona con el proyecto liberal ilustrado y qu&eacute; evidencia hist&oacute;rica lo apoya o refuta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Kant argumentaba que la paz perpetua se lograría eliminando todos los Estados y creando un gobierno mundial &uacute;nico; su propuesta era completamente utópica y nunca ha tenido ning&uacute;n impacto pr&aacute;ctico en las relaciones internacionales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Kant argument&oacute; que las rep&uacute;blicas (en las que los ciudadanos votan sobre las guerras) tender&aacute;n a la paz porque los ciudadanos soportan las consecuencias de la guerra (muertos, impuestos); propuso una federaci&oacute;n de rep&uacute;blicas libres como base de la paz duradera; la teor&iacute;a inspir&oacute; a la Sociedad de Naciones (1919) y la ONU (1945); la evidencia emp&iacute;rica de la "paz democr&aacute;tica" (las democracias raramente se hacen la guerra entre s&iacute;) es debatida pero significativa, aunque las democracias liberales s&iacute; han hecho guerras contra no-democracias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Kant propuso que la paz perpetua se alcanzar&iacute;a mediante el libre comercio universal: cuando todos los pa&iacute;ses comercien entre s&iacute;, les resultar&aacute; m&aacute;s rentable mantener la paz; el comercio, no la democracia, es el fundamento de la paz internacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) La propuesta de Kant en <I>La paz perpetua</I> fue directamente implementada por Napole&oacute;n en el Congreso de Viena (1815); el sistema de "equilibrio europeo" de Metternich fue la realizaci&oacute;n pr&aacute;ctica del proyecto kantiano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Immanuel Kant</B> (1724&ndash;1804) public&oacute; <I>Zum ewigen Frieden</I> (<I>La paz perpetua</I>) en 1795, en plena &eacute;poca revolucionaria. Su argumento tiene varias dimensiones: (1) <B>El argumento republicano:</B> en una rep&uacute;blica, los ciudadanos tienen que consentir la guerra; como son ellos quienes mueren, pagan impuestos y sufren la devastaci&oacute;n, ser&aacute;n mucho m&aacute;s cautelosos con la decisi&oacute;n de ir a la guerra que un rey absoluto que decide unilateralmente. (2) <B>La federaci&oacute;n de rep&uacute;blicas:</B> Kant propuso una asociaci&oacute;n voluntaria de rep&uacute;blicas libres que se comprometan a resolver sus disputas por medio del derecho, no de la guerra. (3) <B>El derecho cosmopolita:</B> todo ser humano tiene derecho de hospitalidad en cualquier Estado (germen de los derechos humanos internacionales). <B>Influencia pr&aacute;ctica:</B> la propuesta kantiana inspir&oacute; directamente a los dise&ntilde;adores de la <B>Sociedad de Naciones</B> (1919, Woodrow Wilson) y de la <B>ONU</B> (1945). <B>La evidencia emp&iacute;rica ("paz democr&aacute;tica"):</B> el politólogo Michael Doyle (1983) restableci&oacute; la tesis kantiana: las democracias liberales establecidas raramente se han hecho la guerra entre s&iacute; desde 1800. Pero s&iacute; han hecho guerras contra no-democracias (guerras coloniales, Vietnam, Iraq), lo que sugiere que el mecanismo no es la democracia en s&iacute; sino la pertenencia a una comunidad liberal de normas compartidas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> ¿En qu&eacute; sentido puede afirmarse que las grandes revoluciones liberales crearon al mismo tiempo la libertad moderna y sus principales enemigos ideol&oacute;gicos (conservadurismo, socialismo, nacionalismo)? ¿Por qu&eacute; el liberalismo no fue, tras las revoluciones, la &uacute;nica ideolog&iacute;a pol&iacute;tica del mundo moderno?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) El liberalismo s&iacute; fue la &uacute;nica ideolog&iacute;a del mundo moderno desde 1789; el conservadurismo, el socialismo y el nacionalismo son invenciones del siglo XX sin ninguna relaci&oacute;n con las revoluciones liberales del XVIII</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Las revoluciones liberales crearon sus propios antagonismos dialecticamente: el conservadurismo (Burke) naci&oacute; como cr&iacute;tica al racionalismo abstracto revolucionario y la destrucci&oacute;n de la tradici&oacute;n; el socialismo naci&oacute; al constatar que la igualdad jur&iacute;dica liberal coexist&iacute;a con la desigualdad econ&oacute;mica creciente del capitalismo industrial; el nacionalismo &eacute;tnico naci&oacute; como respuesta cultural a la expansi&oacute;n napole&oacute;nica; el liberalismo se convirti&oacute; en una ideolog&iacute;a en competencia con otras porque sus promesas de igualdad y libertad eran m&aacute;s limitadas de lo que su retorica sugeria, generando nuevas demandas que el liberalismo cl&aacute;sico no pod&iacute;a satisfacer</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) El conservadurismo, el socialismo y el nacionalismo son simplemente nombres distintos para la misma reacci&oacute;n ant&iacute;liberal; no tienen ninguna diferencia entre s&iacute; y sus bases sociales son id&eacute;nticas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El liberalismo fracas&oacute; completamente despu&eacute;s de las revoluciones; el conservadurismo, representado por el Congreso de Viena (1815), lo aplast&oacute; definitivamente y el liberalismo no volvió a ser relevante hasta el siglo XX</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de s&iacute;ntesis de m&aacute;ximo nivel integra la historia de las ideas pol&iacute;ticas del mundo moderno. Las grandes revoluciones liberales no solo crearon el liberalismo: tambi&eacute;n generaron las ideolog&iacute;as que lo cuestionaron, cada una apuntando a una contradicci&oacute;n diferente. <B>(1) Conservadurismo:</B> naci&oacute; en respuesta directa a la Revoluci&oacute;n Francesa (Burke, 1790). Contradicci&oacute;n que se&ntilde;alaba: el liberalismo destruye tradiciones e instituciones valiosas con un racionalismo abstracto peligroso; la libertad individual sin v&iacute;nculos comunitarios genera caos social. Respuesta: cambio gradual, respeto a la tradici&oacute;n. <B>(2) Socialismo:</B> naci&oacute; en la primera mitad del siglo XIX (Saint-Simon, Fourier, Owen; luego Marx y Engels) al constatar que la igualdad jur&iacute;dica del liberalismo (igualdad ante la ley) coexist&iacute;a con la desigualdad econ&oacute;mica extrema generada por la Revoluci&oacute;n Industrial. Contradicci&oacute;n: ¿c&oacute;mo puede haber libertad real cuando el trabajador no tiene m&aacute;s opci&oacute;n que vender su trabajo en condiciones miserables? Respuesta: igualdad econ&oacute;mica, propiedad colectiva, Estado social. <B>(3) Nacionalismo &eacute;tnico:</B> naci&oacute; en Alemania como respuesta cultural a la expansi&oacute;n napole&oacute;nica; Herder, Fichte y el romanticismo alemán argumentaron que la naci&oacute;n no es una comunidad c&iacute;vica racional sino una comunidad de lengua, cultura y esp&iacute;ritu; eventualmente deriv&oacute; en formas exclusivistas y violentas. <B>Por qu&eacute; el liberalismo no fue el &uacute;nico:</B> sus promesas (libertad, igualdad) eran m&aacute;s amplias que sus realizaciones (libertad para propietarios varones blancos; igualdad jur&iacute;dica sin igualdad real). Cada nueva ideolog&iacute;a represent&oacute; una demanda de extensi&oacute;n o profundizaci&oacute;n de las promesas revolucionarias que el liberalismo cl&aacute;sico no satisfac&iacute;a.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

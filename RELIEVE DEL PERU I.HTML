@@ -1,0 +1,467 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Relieve del Perú I - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA &middot; TEMA 8 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Relieve del Perú I</H1>
+<DIV CLASS="sub">Regiones naturales &middot; Relieve de la Costa &middot; Relieve de la Sierra &middot; Cordilleras andinas &middot; Nevados y volcanes &middot; Valles interandinos</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Las tres regiones naturales del Perú</H3>
+El territorio peruano se divide tradicionalmente en tres grandes regiones naturales determinadas principalmente por la Cordillera de los Andes:
+
+<UL>
+<LI><B>Costa (Chala):</B> franja desértica paralela al océano Pacífico, de unos 80–160 km de ancho. Se extiende desde Tumbes hasta Tacna. Ocupa aproximadamente el <B>11% del territorio</B> nacional pero concentra más del <B>60% de la población</B>.</LI>
+<LI><B>Sierra:</B> región andina que ocupa aproximadamente el <B>28% del territorio</B>. Incluye la Cordillera de los Andes con sus valles, mesetas (punas) y cañones. Alberga cerca del <B>30% de la población</B>.</LI>
+<LI><B>Selva (Amazonía):</B> región más extensa, ocupa el <B>61% del territorio</B> nacional. Incluye la selva alta (ceja de selva) y la selva baja (Amazonia). Solo el <B>10% de la población</B> vive en esta región a pesar de su enorme extensión.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La selva es la región más extensa (61%), pero la costa es la más poblada (60% de la población). La sierra ocupa el 28% y la costa solo el 11%. Estos porcentajes son muy frecuentes en exámenes de admisión.</DIV>
+
+<H3>2. Relieve de la Costa peruana</H3>
+La costa peruana es una estrecha franja árida entre el océano Pacífico y la Cordillera Occidental de los Andes. Su relieve es variado a pesar de ser relativamente plana:
+
+<H4>Elementos principales del relieve costero:</H4>
+<UL>
+<LI><B>Tablazos:</B> antiguas terrazas marinas elevadas sobre el nivel del mar actual. Son plataformas planas de material sedimentario marino. Los más importantes están en Piura (Tablazo de Paita) y Ica. Son evidencia del levantamiento tectónico de la costa peruana.</LI>
+<LI><B>Pampas desérticas:</B> extensas llanuras áridas de arena o material aluvial. Las más importantes son las pampas de La Joya (Arequipa), Nazca, Ica y Villacurí. Las famosas <B>Líneas de Nazca</B> están trazadas sobre las pampas de Nazca.</LI>
+<LI><B>Médanos y dunas:</B> acumulaciones de arena formadas por el viento (erosión eólica). Son frecuentes en la costa sur (Ica, Arequipa). El <B>Cerro Blanco</B> en Nasca es la duna más alta del mundo (~1 176 m sobre el nivel del mar).</LI>
+<LI><B>Valles costeros:</B> valles fluviales transversales formados por los ríos que bajan de los Andes hasta el Pacífico. Son los principales espacios de agricultura costera. Ejemplos: valles de Chicama, Moche, Virú, Chao (La Libertad); Cañete, Lurín, Chillón, Rímac (Lima).</LI>
+<LI><B>Puntas y bahías:</B> la costa peruana es relativamente rectilínea, con algunas puntas rocosas (Punta Aguja, Punta Negra) y bahías importantes (bahía de Paracas, bahía de Matarani).</LI>
+<LI><B>Lomas:</B> elevaciones costeras cubiertas de vegetación estacional producida por la humedad de la garúa. Las más importantes son las Lomas de Lachay (Lima), Atiquipa (Arequipa) y Mejía. Son ecosistemas únicos del desierto costero peruano.</LI>
+</UL>
+
+<H4>Costa norte, central y sur:</H4>
+<UL>
+<LI><B>Costa norte (Tumbes, Piura, Lambayeque, La Libertad norte):</B> más ancha, con tablazos elevados, bosques secos de algarrobo y lluvias estacionales. El mar es más cálido.</LI>
+<LI><B>Costa central (La Libertad sur, Áncash, Lima, Ica norte):</B> más estrecha y árida. Muchos valles fluviales importantes. Lima está en esta sección.</LI>
+<LI><B>Costa sur (Ica, Arequipa, Moquegua, Tacna):</B> extremadamente árida, con pampas extensas, dunas y tablazos. El desierto de Atacama comienza aquí y continúa hacia Chile.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>La plataforma continental peruana:</B> La plataforma continental (0–200 m de profundidad) es relativamente estrecha frente a la costa peruana (30–80 km) porque la <B>Fosa Perú-Chile</B> comienza muy cerca de la costa. Esta estrechez tiene importancia económica: limita las zonas de pesca de arrastre de fondo pero concentra la surgencia costera en una franja muy productiva.</DIV>
+
+<H3>3. La Cordillera de los Andes en el Perú</H3>
+La <B>Cordillera de los Andes</B> es el elemento geográfico más importante del Perú. Es la cadena montañosa continental más larga del mundo (~7 000 km desde Venezuela hasta la Patagonia) y la segunda más alta del planeta después del Himalaya. En el Perú presenta su mayor complejidad estructural.
+
+<H4>Estructura de los Andes peruanos:</H4>
+Los Andes peruanos no son una sola cadena sino un sistema de <B>cordilleras paralelas</B> separadas por valles y mesetas:
+
+<UL>
+<LI><B>Cordillera Occidental:</B> la más elevada y continua. Corre paralela a la costa. En ella se encuentran los principales nevados del norte y centro peruano. Actúa como divisoria continental: al oeste drenan los ríos hacia el Pacífico y al este hacia el Atlántico (vía el Amazonas).</LI>
+<LI><B>Cordillera Central:</B> paralela a la Occidental, ubicada entre las cuencas del río Marañón y el río Mantaro. Presente principalmente en la zona central del Perú (Pasco, Junín, Huancavelica).</LI>
+<LI><B>Cordillera Oriental:</B> la más oriental y la que forma el límite con la selva. En ella nacen los principales ríos amazónicos peruanos. Está muy disectada por la erosión fluvial amazónica.</LI>
+</UL>
+
+<H4>El Nudo de Pasco y el Nudo de Vilcanota:</H4>
+Los <B>nudos</B> son zonas donde las cordilleras andinas convergen y se unen antes de volver a separarse:
+<UL>
+<LI><B>Nudo de Pasco:</B> ubicado en el departamento de Pasco (~4 000 m). Es el punto de convergencia de las cordilleras peruanas en la zona central. Al norte de este nudo los Andes peruanos se dividen en tres cordilleras (Occidental, Central y Oriental) con el Marañón entre ellas. Al sur se simplifican en dos cordilleras.</LI>
+<LI><B>Nudo de Vilcanota:</B> ubicado en el límite entre Cusco y Puno. Es el nudo más importante del Perú: de él nacen las cordilleras Occidental y Oriental del sur peruano, el río Vilcanota-Urubamba y parte de las cabeceras del Lago Titicaca. Tiene los principales nevados del sur peruano.</LI>
+</UL>
+
+<H3>4. Principales nevados y puntos más altos del Perú</H3>
+El Perú tiene numerosos nevados (montañas con nieve permanente), todos ubicados por encima de los 4 800 m s.n.m.:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Nevado</TH><TH>Altitud</TH><TH>Departamento</TH><TH>Cordillera</TH></TR>
+<TR><TD><B>Huascarán Sur</B></TD><TD>6 768 m</TD><TD>Áncash</TD><TD>Occidental (Cordillera Blanca)</TD></TR>
+<TR><TD><B>Huascarán Norte</B></TD><TD>6 655 m</TD><TD>Áncash</TD><TD>Occidental (Cordillera Blanca)</TD></TR>
+<TR><TD><B>Yerupajá</B></TD><TD>6 635 m</TD><TD>Huánuco / Lima</TD><TD>Occidental (Cordillera Huayhuash)</TD></TR>
+<TR><TD><B>Coropuna</B></TD><TD>6 377 m</TD><TD>Arequipa</TD><TD>Occidental (sur)</TD></TR>
+<TR><TD><B>Ausangate</B></TD><TD>6 384 m</TD><TD>Cusco</TD><TD>Oriental (Cordillera Vilcanota)</TD></TR>
+<TR><TD><B>Salcantay</B></TD><TD>6 271 m</TD><TD>Cusco</TD><TD>Oriental</TD></TR>
+<TR><TD><B>El Misti</B></TD><TD>5 822 m</TD><TD>Arequipa</TD><TD>Volcánico (Cordillera Occidental sur)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El <B>Huascarán</B> (6 768 m, Áncash) es el punto más alto del Perú y el segundo de Sudamérica (después del Aconcagua, 6 961 m, en Argentina). Está en la <B>Cordillera Blanca</B>. No confundir con el Coropuna (Arequipa) que es el nevado más alto del sur peruano pero no del país.</DIV>
+
+<H3>5. Cordilleras y cadenas montañosas más importantes del Perú</H3>
+
+<H4>Cordillera Blanca (Áncash):</H4>
+La más extensa cadena de nevados tropicales del mundo. Tiene más de 27 cumbres por encima de los 6 000 m. Incluye el Huascarán (6 768 m, el más alto), Chopicalqui, Chopicalqui, Artesonraju (fotografiado para el logo de Paramount Pictures). El <B>Callejón de Huaylas</B> es el valle interandino que corre paralelo a la Cordillera Blanca (con el río Santa), separándola de la Cordillera Negra (sin nevados).
+
+<H4>Cordillera Negra (Áncash):</H4>
+Paralela a la Cordillera Blanca pero al oeste del Callejón de Huaylas. No tiene nevados (está en la sombra orográfica de la Cordillera Blanca). Sus cumbres rondan los 4 000–5 000 m.
+
+<H4>Cordillera Huayhuash (Huánuco/Lima):</H4>
+Al sur de la Cordillera Blanca. Incluye el Yerupajá (6 635 m, segundo más alto del Perú). Es conocida por su belleza y por el famoso circuito de trekking Huayhuash.
+
+<H4>Cordillera Vilcanota (Cusco/Puno):</H4>
+En el sur del Perú. Incluye el Ausangate (6 384 m). Es la fuente de las aguas del río Vilcanota-Urubamba y del lago Titicaca.
+
+<H4>Cordillera Volcánica (Arequipa/Moquegua/Tacna):</H4>
+En el extremo sur peruano. Incluye los principales volcanes activos: El Misti (5 822 m), Ubinas, Sabancaya, Ticsani, Tutupaca. Son todos estratovolcanes del Cinturón de Fuego del Pacífico.
+
+<H3>6. Valles interandinos y mesetas del Perú</H3>
+
+<H4>Principales valles interandinos:</H4>
+<UL>
+<LI><B>Valle del Mantaro (Junín):</B> el valle interandino más extenso y fértil del Perú. Atravesado por el río Mantaro. En él se ubica Huancayo (3 271 m). Es la principal zona agrícola de la sierra central.</LI>
+<LI><B>Valle del Vilcanota-Urubamba (Cusco):</B> también llamado Valle Sagrado de los Incas. Atravesado por el río Urubamba. Incluye sitios arqueológicos como Pisac, Ollantaytambo y el acceso a Machu Picchu.</LI>
+<LI><B>Callejón de Huaylas (Áncash):</B> valle interandino entre la Cordillera Blanca (este) y la Cordillera Negra (oeste), recorrido por el río Santa. Ciudad principal: Huaraz (3 091 m).</LI>
+<LI><B>Valle del Colca (Arequipa):</B> uno de los cañones más profundos del mundo (~3 270 m). Hogar del cóndor andino. Valle agrícola con terrazas de origen preincaico.</LI>
+<LI><B>Valle del Marañón:</B> importante fosa tectónica que recorre el norte y centro del Perú. El río Marañón es uno de los principales formadores del Amazonas.</LI>
+</UL>
+
+<H4>Principales mesetas y altiplanos:</H4>
+<UL>
+<LI><B>Altiplano del Collao:</B> la meseta más extensa del Perú (y de Sudamérica), ubicada entre Puno (Perú) y La Paz (Bolivia) a ~3 800 m s.n.m. En ella se encuentra el lago Titicaca. También se le llama Meseta del Collao.</LI>
+<LI><B>Meseta de Bombón (Pasco/Junín):</B> alta meseta en la que se ubica el lago Junín (o Chinchaycocha), el segundo lago más grande del Perú. Altitud ~4 080 m.</LI>
+<LI><B>Puna:</B> término general para las mesetas andinas entre 3 800 y 4 800 m s.n.m. Cubiertas de gramíneas (ichu) y habitadas principalmente por camélidos sudamericanos (llamas, alpacas) y por comunidades quechua y aymara.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">6 768 m</DIV><DIV CLASS="dk-label">Huascarán: punto más alto del Perú (Áncash)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">3 270 m</DIV><DIV CLASS="dk-label">Profundidad del Cañón del Colca (Arequipa)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">3 800 m</DIV><DIV CLASS="dk-label">Altitud del Altiplano del Collao</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">61%</DIV><DIV CLASS="dk-label">Territorio peruano que ocupa la Selva</DIV></DIV>
+</DIV>
+
+<H3>7. Huaicos y geodinámica externa de la Sierra</H3>
+Un aspecto fundamental del relieve serrano peruano son los procesos de <B>remoción en masa</B> que modelan constantemente los valles andinos:
+
+<H4>El huaico (aluvión):</H4>
+El <B>huaico</B> (del quechua <I>wayq'u</I> = quebrada, barranco) es un flujo rápido de barro, rocas y agua que desciende por las quebradas y valles andinos. Es uno de los desastres naturales más frecuentes y destructivos del Perú. Se forma cuando lluvias intensas saturan los suelos de las laderas andinas, desencadenando un flujo torrencial de sedimentos. Son especialmente frecuentes durante la época lluviosa (enero–abril) y se intensifican durante los eventos El Niño.
+
+<H4>Otros procesos de remoción en masa:</H4>
+<UL>
+<LI><B>Deslizamiento de tierra:</B> movimiento de masas de suelo o roca a lo largo de una superficie de rotura. Frecuente en laderas deforestadas.</LI>
+<LI><B>Derrumbe:</B> caída libre de materiales rocosos desde laderas escarpadas.</LI>
+<LI><B>Aluvión glaciar:</B> flujo catastrófico de agua, hielo y rocas producido por el desbordamiento o rotura de una laguna glaciar. El más trágico fue el aluvión de Yungay (Áncash) en 1970, causado por el terremoto del 31 de mayo de ese año, que generó un aluvión del nevado Huascarán que sepultó las ciudades de Yungay y Ranrahirca.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>El terremoto y aluvión de 1970:</B> El 31 de mayo de 1970, un terremoto de magnitud 7,9 sacudió Áncash. El sismo desestabilizó la cima norte del Huascarán, generando un aluvión que viajó a más de 200 km/h y sepultó las ciudades de <B>Yungay</B> y <B>Ranrahirca</B> en minutos. Murieron más de 25 000 personas solo en Yungay. Fue el desastre natural más mortífero de la historia de Sudamérica.</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de práctica</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál es el punto más alto del Perú y en qué departamento se ubica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) El Misti, en Arequipa (5 822 m)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) El Coropuna, en Arequipa (6 377 m)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) El Huascarán, en Áncash (6 768 m)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) El Ausangate, en Cusco (6 384 m)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Nevado Huascarán</B> (6 768 m s.n.m.) en el departamento de <B>Áncash</B> es el punto más alto del Perú. Forma parte de la <B>Cordillera Blanca</B>, que es la cadena de nevados tropicales más extensa del mundo. El Huascarán es también el segundo pico más alto de Sudamérica, después del Aconcagua (6 961 m) en Argentina. Tiene dos cumbres: la Sur (6 768 m) y la Norte (6 655 m).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Qué porcentaje del territorio peruano ocupa la selva amazónica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) 11%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) 28%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) 45%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) 61%</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d)</B><BR>La <B>selva</B> (Amazonía peruana) ocupa aproximadamente el <B>61%</B> del territorio nacional, siendo la región más extensa del Perú. Sin embargo, solo alberga alrededor del 10% de la población. La sierra ocupa el 28% y la costa apenas el 11%, pero la costa concentra más del 60% de la población. Estos porcentajes son muy frecuentes en exámenes de admisión.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Qué es un huaico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Una laguna glaciar de altura ubicada en los nevados andinos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Un flujo rápido de barro, rocas y agua que desciende por quebradas andinas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Un viento frío que desciende de los nevados hacia los valles interandinos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Una terraza agrícola de origen preincaico en laderas andinas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>huaico</B> (del quechua <I>wayq'u</I>) es un flujo torrencial de lodo, rocas y agua que desciende violentamente por quebradas y valles andinos, generalmente desencadenado por lluvias intensas que saturan los suelos de las laderas. Es uno de los desastres naturales más frecuentes y destructivos del Perú, especialmente durante la época lluviosa y los años de El Niño. Puede destruir cultivos, viviendas, carreteras y comunidades enteras en minutos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cómo se llama el valle interandino de Áncash formado entre la Cordillera Blanca y la Cordillera Negra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Valle Sagrado de los Incas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Valle del Mantaro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Callejón de Huaylas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Valle del Colca</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Callejón de Huaylas</B> es el valle interandino ubicado entre la <B>Cordillera Blanca</B> (al este) y la <B>Cordillera Negra</B> (al oeste), en el departamento de Áncash. Es recorrido por el río Santa de sur a norte. Su ciudad principal es <B>Huaraz</B> (3 091 m). Es uno de los valles andinos más impresionantes del mundo por el espectáculo visual de los nevados de la Cordillera Blanca.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Dónde se ubica el Altiplano del Collao y a qué altitud aproximada se encuentra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) En Cusco, a 2 500 m s.n.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) En Puno y parte de Bolivia, a ~3 800 m s.n.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) En Pasco y Junín, a ~4 500 m s.n.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) En Arequipa, a ~2 000 m s.n.m.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Altiplano del Collao</B> (también llamado Meseta del Collao) es la meseta más extensa de América del Sur. Se ubica principalmente entre el departamento de <B>Puno</B> (Perú) y el departamento de <B>La Paz</B> (Bolivia), a una altitud media de ~3 800 m s.n.m. En él se encuentra el lago Titicaca, el lago navegable más alto del mundo. La ciudad de Puno (3 827 m) es la principal ciudad peruana del altiplano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Qué son los tablazos costeros y qué evidencia geológica representan?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Son depresiones del terreno costero formadas por hundimiento tectónico reciente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Son antiguas terrazas marinas elevadas sobre el nivel actual del mar, evidencia del levantamiento tectónico de la costa peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Son plataformas artificiales construidas por culturas preincaicas para la pesca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Son acumulaciones de arena eólica que forman plataformas planas en la costa norte</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>tablazos</B> son antiguas <B>terrazas marinas</B> que en el pasado estuvieron al nivel del mar o por debajo de él, y que fueron elevadas por el levantamiento tectónico de la costa peruana (resultado de la subducción de la Placa de Nazca). Actualmente se encuentran entre 5 y 400 m sobre el nivel del mar actual y contienen fósiles marinos que evidencian su origen oceánico. Los más importantes están en Piura (Tablazo de Paita, a ~60 m) y en Ica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Cuál es la diferencia entre la Cordillera Blanca y la Cordillera Negra en Áncash?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) La Cordillera Blanca está al oeste y la Negra al este del Callejón de Huaylas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) La Cordillera Blanca (al este) tiene nevados permanentes; la Negra (al oeste) no tiene nevados por estar en la sombra de lluvia y ser más seca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Ambas tienen nevados pero la Blanca los tiene de color blanco y la Negra de color oscuro por su composición mineral</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) La Cordillera Negra es más alta que la Blanca pero sin actividad volcánica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Cordillera Blanca</B> (al este del Callejón de Huaylas) debe su nombre a sus numerosos <B>nevados permanentes</B> que le dan un aspecto blanco. Es la cadena de nevados tropicales más extensa del mundo con más de 27 cumbres sobre los 6 000 m. La <B>Cordillera Negra</B> (al oeste del Callejón) recibe ese nombre porque está en la <B>sombra de lluvia</B> de la Cordillera Blanca: los vientos húmedos amazónicos precipitan en la Cordillera Blanca y llegan secos a la Negra. Sin humedad suficiente no hay nevados, por lo que las rocas oscuras de la cordillera quedan expuestas, dándole su aspecto negro.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Por qué la costa peruana tiene una plataforma continental estrecha y qué consecuencia tiene esto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Por la acumulación de sedimentos de los ríos andinos que rellenan la plataforma; esto reduce la pesca de fondo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Porque la Fosa Perú-Chile comienza muy cerca de la costa (resultado de la subducción activa); esto concentra la surgencia costera en una franja estrecha pero muy productiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Por la erosión de las olas que destruyen la plataforma; esto genera mayor profundidad cerca de la costa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Porque los Andes se adentraron al mar en el pasado geológico reduciendo el tamaño de la plataforma</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La plataforma continental peruana es estrecha (30–80 km) porque la <B>Fosa Perú-Chile</B> se inicia muy cerca de la costa, resultado directo de la <B>subducción activa</B> de la Placa de Nazca bajo la Placa Sudamericana. No hay espacio para que se desarrolle una plataforma continental amplia. Paradójicamente, esta estrechez tiene una consecuencia positiva: la <B>surgencia costera</B> se concentra en una franja muy estrecha y productiva, generando la mayor concentración de anchoveta del mundo y haciendo del mar peruano uno de los más ricos biológicamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cuál es la función de los nudos andinos (Nudo de Pasco y Nudo de Vilcanota) en la estructura del relieve peruano?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Son zonas volcánicas donde convergen los principales volcanes activos del Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Son zonas donde las cordilleras andinas convergen y se unen, actuando como divisorias de aguas y puntos de origen de importantes ríos y sistemas montañosos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Son depresiones tectónicas donde se ubican los principales lagos andinos del Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Son zonas sísmicas de alta actividad donde se producen los terremotos más frecuentes del Perú</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>nudos andinos</B> son zonas de convergencia donde las cordilleras se unen y redistribuyen antes de separarse nuevamente. El <B>Nudo de Pasco</B> es el punto donde convergen las cordilleras del norte peruano; al norte se dividen en tres cadenas (Occidental, Central y Oriental) separadas por el Marañón y el Huallaga. El <B>Nudo de Vilcanota</B> es el más importante: es divisoria de aguas entre la cuenca del Titicaca y la del Urubamba-Amazonas, y punto de origen de varios sistemas montañosos del sur peruano. Funcionan como "cimas estructurales" de la cadena andina.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Por qué el aluvión de Yungay de 1970 fue el desastre natural más mortífero de la historia de Sudamérica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Porque fue causado por una erupción volcánica del Huascarán que generó flujos de lava sobre Yungay</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Porque el terremoto de magnitud 7,9 desestabilizó la cima del Huascarán, generando un aluvión que viajó a más de 200 km/h y sepultó Yungay y Ranrahirca en minutos, matando a más de 25 000 personas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Porque una laguna glaciar del Huascarán se desbordó gradualmente durante semanas inundando el Callejón de Huaylas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Porque el aluvión fue causado por el deshielo acelerado del Huascarán durante El Niño de 1970</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El 31 de mayo de 1970, un <B>terremoto de magnitud 7,9</B> sacudió el norte del Perú. El sismo desestabilizó la cima norte del <B>Huascarán</B>, desprendiendo un bloque de hielo y roca estimado en 50–100 millones de m³. La masa descendió por la quebrada de Llanganuco a más de <B>200 km/h</B>, mezcló con materiales del fondo de la quebrada y sepultó bajo metros de lodo y rocas las ciudades de <B>Yungay</B> (~25 000 muertos) y <B>Ranrahirca</B> en apenas 3 minutos. Fue el más mortífero aluvión de la historia registrada de Sudamérica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> ¿Cuál es el valle interandino más extenso y fértil del Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) El Valle Sagrado de los Incas (Urubamba, Cusco)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) El Valle del Mantaro (Junín)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) El Callejón de Huaylas (Áncash)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) El Valle del Colca (Arequipa)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Valle del Mantaro</B> (Junín) es el valle interandino más extenso y fértil del Perú. Es atravesado por el río Mantaro y en él se ubica la ciudad de <B>Huancayo</B> (3 271 m). Por su extensión y productividad agrícola, es conocido como el "granero de la sierra central del Perú". Produce papa, maíz, hortalizas y frutas que abastecen Lima. También es importante por su producción artesanal (textiles, mates burilados).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Qué son las lomas costeras y por qué tienen vegetación en medio del desierto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Son elevaciones costeras irrigadas artificialmente por canales que traen agua de los Andes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Son elevaciones costeras que captan la humedad de la garúa y las neblinas marinas, permitiendo el crecimiento de vegetación estacional única en medio del desierto costero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Son zonas de manantiales subterráneos que emergen en las colinas costeras durante el invierno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Son antiguas zonas agrícolas preincaicas que conservan su vegetación por el humus acumulado durante siglos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las <B>lomas</B> son ecosistemas únicos del desierto costero peruano. Son elevaciones (generalmente entre 200 y 1 000 m) ubicadas cerca de la costa que captan la <B>humedad de la garúa y las neblinas marinas</B> invernales. Esta humedad permite el crecimiento de vegetación estacional (principalmente entre junio y octubre) de hierbas, arbustos, orquídeas y cactus que sería imposible en el desierto circundante. Las más famosas son las <B>Lomas de Lachay</B> (Lima), declaradas Reserva Nacional, y las de Atiquipa (Arequipa). En verano, cuando desaparecen las neblinas, la vegetación se seca hasta la siguiente temporada.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> ¿Por qué la Cordillera de los Andes peruanos tiene mayor complejidad estructural (más cordilleras paralelas) en el norte que en el sur del país?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Porque en el norte hay más actividad volcánica que genera más cadenas montañosas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Porque en el norte el ángulo de subducción de la Placa de Nazca es más superficial, generando mayor deformación compresional y más cordilleras; además los ríos Marañón y Huallaga han disectado el macizo creando más valles y cadenas diferenciadas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Porque en el norte los Andes son más jóvenes geológicamente y aún no han tenido tiempo de simplificarse en dos cordilleras como en el sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Porque en el norte el mayor volumen de lluvias erosiona más profundamente el macizo andino separando las cordilleras</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La complejidad estructural de los Andes del norte peruano tiene dos causas principales: (1) El <B>ángulo de subducción</B> de la Placa de Nazca es más bajo (subducción plana o casi horizontal) en el norte, lo que genera mayor deformación compresional en una zona más amplia de la corteza sudamericana, creando más pliegues y más cordilleras paralelas. (2) Los ríos <B>Marañón</B> y <B>Huallaga</B>, con gran poder erosivo, han disectado profundamente el macizo andino norteño, creando valles profundos que separan visualmente las distintas cadenas. En el sur, el altiplano del Collao funciona como una vasta meseta elevada que "simplifica" la estructura andina en dos cordilleras bien definidas (Occidental y Oriental).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿Cuál es la relación entre la subducción de la Placa de Nazca y la formación de la Fosa Perú-Chile y los Andes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La Fosa se formó por extensión tectónica independiente de los Andes; son procesos geológicos separados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Son dos expresiones del mismo proceso de subducción: la Fosa marca donde la Placa de Nazca se hunde bajo la Sudamericana (límite convergente), mientras los Andes se elevan por la compresión y el magmatismo generados por esa misma subducción</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La Fosa se hundió por el peso de los Andes que empuja la corteza oceánica hacia abajo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Los Andes se formaron primero y luego su peso hundió la corteza oceánica frente a ellos creando la Fosa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Fosa Perú-Chile</B> y la <B>Cordillera de los Andes</B> son las dos manifestaciones superficiales del mismo proceso: la <B>subducción</B> de la Placa de Nazca bajo la Placa Sudamericana. La Fosa marca el punto donde la Placa de Nazca se dobla y comienza a hundirse (límite convergente), creando la depresión característica. Simultáneamente, la compresión generada por este choque pliega y eleva la corteza sudamericana formando los Andes. El magma generado por la fusión de la placa subductada asciende creando los volcanes andinos. Son dos caras del mismo proceso tectónico: donde uno se hunde (Fosa), el otro se eleva (Andes).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Por qué el Cañón del Colca en Arequipa es más profundo que el Gran Cañón del Colorado en EE.UU.?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Porque el río Colca tiene mayor caudal que el río Colorado y erosiona más profundamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Porque la combinación del rápido levantamiento tectónico andino y la intensa erosión fluvial del río Colca que desciende desde ~4 800 m hasta menos de 1 000 m en poco trecho horizontal genera un corte extraordinariamente profundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Porque el Cañón del Colca es más antiguo que el Gran Cañón y ha tenido más tiempo para erosionarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Porque el Colca se formó por actividad volcánica que excavó el terreno, mientras el Gran Cañón solo por erosión fluvial</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Cañón del Colca</B> (~3 270 m de profundidad) supera al Gran Cañón del Colorado (~1 800 m) por la combinación de dos factores excepcionales: (1) el <B>rápido levantamiento tectónico</B> andino: los Andes siguen elevándose activamente, lo que aumenta el gradiente erosivo de los ríos. (2) El río Colca desciende desde el altiplano (~4 800 m) hasta la selva en una distancia horizontal relativamente corta, generando una enorme energía erosiva que excava profundamente la roca. El Gran Cañón se formó en una meseta estable con un río de menor energía erosiva. La actividad tectónica activa es la clave de la profundidad del Colca.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> ¿Cuál es la importancia geopolítica y económica de la posición del Perú como país de triple vertiente hidrográfica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) El Perú tiene ríos que drenan al Pacífico, al Atlántico y al lago Titicaca (cuenca endorreica), lo que le da control sobre recursos hídricos estratégicos para la costa árida, la selva amazónica y el altiplano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) El Perú tiene costas en tres océanos: Pacífico, Atlántico y Antártico, lo que le da gran poder marítimo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) El Perú tiene ríos que cruzan las fronteras de tres continentes diferentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) El Perú exporta agua a tres países vecinos a través de acuerdos internacionales de recursos hídricos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El Perú tiene la excepcional característica de ser un país de <B>triple vertiente hidrográfica</B>: (1) <B>Vertiente del Pacífico:</B> ríos cortos, de fuerte pendiente y régimen irregular que riegan la árida costa peruana (Chira, Piura, Santa, Rímac, Ica, Quilca, etc.). (2) <B>Vertiente del Atlántico:</B> la más extensa (97% del agua dulce del Perú), formada por los grandes ríos amazónicos (Amazonas, Marañón, Ucayali, Huallaga, Madre de Dios). (3) <B>Vertiente del Titicaca:</B> cuenca endorreica (sin salida al mar) que drena hacia el lago Titicaca. Esta triple vertiente da al Perú enorme riqueza hídrica pero distribuida muy desigualmente respecto a donde vive la población.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> ¿Qué es la "deflexión de Abancay" y cuál es su importancia para entender la estructura andina del Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Es una falla tectónica transversal en Apurímac que divide los Andes peruanos en norte y sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Es un cambio de orientación de las cordilleras andinas en la zona de Abancay (Apurímac) donde los Andes giran de su orientación NW-SE del norte peruano a la orientación N-S del sur peruano, marcando una inflexión estructural mayor de la cadena andina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Es el nombre del punto más bajo del Perú, ubicado en el valle del Apurímac</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Es una zona de subducción especial frente a Apurímac donde la Placa de Nazca cambia de dirección</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Deflexión de Abancay</B> es una inflexión estructural mayor de los Andes peruanos ubicada en la zona de Abancay-Apurímac. Al norte de este punto, las cordilleras andinas tienen una orientación predominantemente <B>NW-SE</B> (noroeste-sureste). Al sur de Abancay, la orientación cambia a <B>N-S</B> (norte-sur) o incluso NNW-SSE. Esta deflexión está asociada a la presencia del profundo valle del río Apurímac y marca un cambio en la estructura geológica andina. También coincide aproximadamente con el límite entre los Andes de subducción con ángulo normal (al norte) y la zona de subducción plana (flat slab) al norte de Lima.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> ¿Qué son las "pampas de altura" o "punas" y cuál es su origen geomorfológico en el contexto andino peruano?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Son llanuras formadas por deposición de lava volcánica en las partes altas de los Andes durante erupciones pasadas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Son superficies de erosión relictas (antiguas penillanuras) que fueron elevadas tectónicamente hasta las alturas actuales, combinadas con la acumulación de sedimentos glaciales y fluviales en los valles intermontanos; representan antiguos paisajes de baja altitud preservados a gran altura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Son depresiones tectónicas rellenas de sedimentos que forman planicies elevadas entre las cordilleras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Son superficies formadas exclusivamente por la acumulación de morrenas glaciares durante las glaciaciones del Pleistoceno</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las <B>punas</B> son geomorfológicamente complejas. Su origen principal son <B>superficies de erosión relictas</B>: en el pasado geológico (Mioceno-Plioceno), los Andes eran mucho más bajos y estaban siendo arrasados por la erosión hasta formar paisajes de baja altitud (penillanuras). El posterior levantamiento tectónico rápido de los Andes elevó estas superficies de erosión hasta las altitudes actuales (3 800–4 800 m), preservándolas como las planicies que hoy llamamos puna. A esto se suma la colmatación de cuencas intermontanas con sedimentos glaciales, fluviales y lacustres que también contribuyen a la planeza característica. Son paisajes de "palimpsesto": antiguas superficies de baja altitud preservadas a gran altura.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Cuál es la diferencia geomorfológica entre un valle glaciar en U y un valle fluvial en V en la sierra peruana, y qué información paleoclimática nos dan?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Los valles en U son más modernos que los en V porque los glaciares son más recientes que los ríos en la historia andina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Los valles en U fueron excavados por glaciares durante las glaciaciones del Pleistoceno y nos indican que esas zonas estuvieron cubiertas de hielo; los valles en V son excavados por ríos actualmente; la presencia de valles en U en zonas hoy sin glaciares evidencia el retroceso glaciar postglacial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Los valles en U son exclusivos de la costa y los en V de la sierra andina, dependiendo del tipo de roca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Ambos tipos de valles se forman por ríos; la diferencia de forma se debe al tipo de roca: las rocas duras forman valles en U y las blandas valles en V</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En la sierra peruana, la presencia de valles en <B>U</B> es una evidencia paleoclimática fundamental: indica que durante las <B>glaciaciones del Pleistoceno</B> (especialmente el Último Máximo Glacial, ~18 000 años atrás), los glaciares andinos eran mucho más extensos y descendían a altitudes mucho menores que los actuales, excavando estos valles de paredes casi verticales y fondo plano. Muchos valles andinos que hoy no tienen glaciares (como partes del Callejón de Huaylas por debajo de los 3 000 m) tienen forma de U, evidenciando esa antigua cobertura glaciar. Los valles en <B>V</B> activos hoy indican erosión fluvial actual. Esta lectura del paisaje permite reconstruir la extensión de los antiguos glaciares andinos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> ¿Qué es el fenómeno de "subsidencia tectónica" y cómo podría relacionarse con la formación de la depresión del Lago Titicaca?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) La subsidencia tectónica es el hundimiento local de la corteza terrestre por fallas normales o por el peso excesivo de la cordillera andina; la cuenca del Titicaca se formó parcialmente por este hundimiento del altiplano entre las cordilleras Occidental y Oriental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) La subsidencia tectónica es el ascenso lento de la corteza después de perder el peso de los glaciares; explica por qué el Titicaca está a 3 812 m sobre el nivel del mar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) La subsidencia tectónica creó el Titicaca al hundirse el altiplano por el peso del agua acumulada durante miles de años de lluvias andinas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) La subsidencia tectónica no tiene relación con el Titicaca; el lago se formó exclusivamente por actividad volcánica que bloqueó el drenaje del altiplano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La <B>subsidencia tectónica</B> es el hundimiento relativo de bloques de la corteza terrestre por fallas normales, por el peso de sedimentos o de la corteza engrosada. La <B>cuenca del Titicaca</B> se formó por una combinación de procesos: (1) La <B>subsidencia tectónica</B> del altiplano entre las Cordilleras Occidental y Oriental, que creó la depresión donde se acumula el agua. (2) La naturaleza <B>endorreica</B> de la cuenca (sin salida al mar): el agua que llega por lluvias y deshielo no puede escapar y se acumula formando el lago. (3) El lago fue mucho más extenso en el pasado (Lago Ballivián, durante el Pleistoceno) y ha ido reduciéndose. El lago Titicaca es el remanente de ese lago mayor, conservado por el balance entre precipitaciones y evaporación en la cuenca endorreica del altiplano.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

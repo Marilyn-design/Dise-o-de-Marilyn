@@ -1,0 +1,506 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>La Reconstrucción Nacional y la República Aristocrática - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA DEL PER&Uacute; &middot; TEMA 16</DIV>
+<H1>La Reconstrucci&oacute;n Nacional y la Rep&uacute;blica Aristocr&aacute;tica (1884&ndash;1919)</H1>
+<DIV CLASS="sub">Posguerra &middot; Contrato Grace &middot; Cacerismo &middot; Civilismo &middot; Rep&uacute;blica Aristocr&aacute;tica &middot; Oncenio de Legu&iacute;a &middot; Gonzalez Prada &middot; Indigenismo</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. El Per&uacute; en ruinas: el punto de partida (1884)</H3>
+Al terminar la Guerra del Pac&iacute;fico, el Per&uacute; era un pa&iacute;s devastado en todos los sentidos. El <B>Tratado de Anc&oacute;n (1883)</B> hab&iacute;a cedido <B>Tarapac&aacute;</B> a Chile a perpetuidad y dejado <B>Tacna y Arica</B> bajo administraci&oacute;n chilena. El Estado estaba en quiebra absoluta, la infraestructura destru&iacute;da, Lima saqueada y el tejido social desgarrado. La reconstrucci&oacute;n nacional fue el gran desaf&iacute;o de las siguientes d&eacute;cadas.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Contexto clave:</B> El per&iacute;odo 1884&ndash;1919 abarca dos grandes etapas: (1) la <B>posguerra inmediata</B> (1884&ndash;1895), marcada por la guerra civil entre C&aacute;ceres e Iglesias y los gobiernos del "militarismo cacerista"; (2) la <B>Rep&uacute;blica Aristocr&aacute;tica</B> (1895&ndash;1919), dominada por el Partido Civil y la oligarqu&iacute;a exportadora. El per&iacute;odo concluye con el inicio del <B>Oncenio de Legu&iacute;a</B> (1919), que marca el fin de la Rep&uacute;blica Aristocr&aacute;tica.</DIV>
+
+<H3>2. La guerra civil entre C&aacute;ceres e Iglesias (1884&ndash;1885)</H3>
+Firmado el Tratado de Anc&oacute;n, el Per&uacute; se dividi&oacute; entre dos caudillos con visiones irreconciliables:
+
+<UL>
+<LI><B>Miguel Iglesias</B> (reconocido presidente por Chile): hab&iacute;a firmado el Tratado de Anc&oacute;n y era considerado por sus cr&iacute;ticos un traidor. Para sus seguidores, fue un pragm&aacute;tico que puso fin a una guerra irremediablemente perdida.</LI>
+<LI><B>Andr&eacute;s Avelino C&aacute;ceres</B> (el "Brujo de los Andes"): se neg&oacute; a reconocer la legitimidad de Iglesias y lo consider&oacute; un r&eacute;gimen impuesto por el enemigo. Sus fuerzas marcharon desde la sierra y derrotaron militarmente a Iglesias.</LI>
+</UL>
+
+En <B>1885</B>, C&aacute;ceres triunf&oacute;. Iglesias renunci&oacute; y parti&oacute; al exilio. C&aacute;ceres convoc&oacute; elecciones y fue elegido presidente en 1886, iniciando el per&iacute;odo conocido como el <B>militarismo cacerista</B>.
+
+<H3>3. El Contrato Grace (1889): la soluci&oacute;n financiera de la posguerra</H3>
+El principal problema del Per&uacute; posguerra era su deuda externa impagable con acreedores brit&aacute;nicos. La soluci&oacute;n fue el controversial <B>Contrato Grace</B>, negociado entre el gobierno de C&aacute;ceres y el empresario brit&aacute;nico <B>Michael Grace</B>, en representaci&oacute;n del <B>Comit&eacute; de Tenedores de Bonos de la Deuda Peruana</B>.
+
+<H4>T&eacute;rminos del Contrato Grace:</H4>
+<UL>
+<LI>El Per&uacute; entregaba a los acreedores brit&aacute;nicos (organizados en la <B>Peruvian Corporation</B>) la <B>administraci&oacute;n de los ferrocarriles del Estado</B> por <B>66 a&ntilde;os</B>.</LI>
+<LI>A cambio, la Peruvian Corporation asumía toda la deuda externa peruana y aportaba capital para terminar la construcci&oacute;n de l&iacute;neas ferroviarias inconclusas.</LI>
+<LI>El Per&uacute; tambi&eacute;n cedi&oacute; el <B>guano residual</B> (hasta 3 millones de toneladas) y los derechos de navegaci&oacute;n del <B>lago Titicaca</B> por el mismo per&iacute;odo.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>El debate sobre el Contrato Grace:</B> Fue aprobado en el Congreso tras un &aacute;spero debate. Sus cr&iacute;ticos (entre ellos <B>Manuel Gonz&aacute;lez Prada</B>) lo llamaron una "entrega de la soberan&iacute;a econ&oacute;mica" al capital brit&aacute;nico. Sus defensores argumentaban que era la &uacute;nica salida viable a la quiebra total del Estado. La historiograf&iacute;a moderna reconoce sus efectos mixtos: libr&oacute; al Per&uacute; de una deuda impagable pero entreg&oacute; la infraestructura clave del pa&iacute;s a intereses extranjeros por casi siete d&eacute;cadas (la Peruvian Corporation oper&oacute; los ferrocarriles hasta <B>1972</B>, cuando fueron estatizados por Velasco).</DIV>
+
+<DIV CLASS="cultura-titulo">&#127963; EL PRIMER CIVILISMO Y EL CACERISMO<SPAN>Los gobiernos del militarismo y la reacci&oacute;n civil (1886&ndash;1895)</SPAN></DIV>
+
+<H3>4. Los gobiernos del militarismo cacerista (1886&ndash;1895)</H3>
+C&aacute;ceres gobern&oacute; en dos per&iacute;odos con una breve interrupci&oacute;n:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Gobierno</TH><TH>Per&iacute;odo</TH><TH>Principales hechos</TH></TR>
+<TR><TD><B>1.&deg; gobierno de C&aacute;ceres</B></TD><TD>1886&ndash;1890</TD><TD>Contrato Grace (1889); inicio de la reconstrucci&oacute;n econ&oacute;mica; funda el Partido Constitucional ("cacerista")</TD></TR>
+<TR><TD><B>Gobierno de Remigio Morales Berm&uacute;dez</B></TD><TD>1890&ndash;1894</TD><TD>Muere en el cargo (1894); su sucesor Justiniano Borgoño asume provisionalmente</TD></TR>
+<TR><TD><B>2.&deg; gobierno de C&aacute;ceres</B></TD><TD>1894&ndash;1895</TD><TD>El fraude electoral que lo llev&oacute; al poder desencaden&oacute; la rebelión de la "Coalici&oacute;n Nacional" liderada por Nicol&aacute;s de Pi&eacute;rola</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>La Revoluci&oacute;n de 1895 y la ca&iacute;da de C&aacute;ceres:</H4>
+La reelecci&oacute;n fraudulenta de C&aacute;ceres en 1894 desencaden&oacute; una alianza entre el <B>Partido Civil</B> (los grandes propietarios y comerciantes) y el <B>Partido Dem&oacute;crata</B> de <B>Nicol&aacute;s de Pi&eacute;rola</B> (popular, apodado "el Cal&iacute;fato"). Los <B>montoneros pierolistas</B> tomaron Lima en marzo de 1895 tras combates en las calles. C&aacute;ceres abandon&oacute; el poder. Pi&eacute;rola fue elegido presidente en elecciones limpias: con &eacute;l comenzaba un nuevo per&iacute;odo.
+
+<DIV CLASS="cultura-titulo">&#127963; LA REP&Uacute;BLICA ARISTOCR&Aacute;TICA (1895&ndash;1919)<SPAN>El Partido Civil, la oligarqu&iacute;a exportadora y la modernizaci&oacute;n selectiva</SPAN></DIV>
+
+<H3>5. &iquest;Qu&eacute; fue la Rep&uacute;blica Aristocr&aacute;tica?</H3>
+La expresi&oacute;n <B>"Rep&uacute;blica Aristocr&aacute;tica"</B> fue acuñada por el historiador <B>Jorge Basadre</B> para describir el per&iacute;odo 1895&ndash;1919, dominado por el <B>Partido Civil</B> y la oligarqu&iacute;a agro-exportadora peruana. No fue una "aristocracia" en sentido nobiliario, sino una <B>plutocracia</B>: el gobierno de los m&aacute;s ricos (grandes terratenientes, exportadores de az&uacute;car, algod&oacute;n y minerales, y sus aliados comerciales y financieros en Lima).
+
+<H4>Caracter&iacute;sticas del sistema:</H4>
+<UL>
+<LI><B>Dominio del Partido Civil:</B> fundado en 1871 por <B>Manuel Pardo</B>, el Partido Civil representaba a la elite econ&oacute;mica urbana y agraria. Durante la Rep&uacute;blica Aristocr&aacute;tica, casi todos los presidentes fueron civilistas o aliados del Partido Civil.</LI>
+<LI><B>Exclusi&oacute;n pol&iacute;tica:</B> el sufragio exig&iacute;a saber leer y escribir, lo que exclu&iacute;a autom&aacute;ticamente a la mayor&iacute;a de la poblaci&oacute;n, especialmente a los ind&iacute;genas de la sierra. Solo una minor&iacute;a de hombres letrados votaba.</LI>
+<LI><B>Modelo exportador:</B> la econom&iacute;a peruana se bas&oacute; en la exportaci&oacute;n de materias primas (az&uacute;car en La Libertad y Lambayeque; algod&oacute;n en Ica e Ica; caucho en Loreto y Madre de Dios; minerales en la sierra central). El capital extranjero (brit&aacute;nico y, progresivamente, estadounidense) domin&oacute; los sectores m&aacute;s rentables.</LI>
+<LI><B>Modernizaci&oacute;n selectiva:</B> se moderniz&oacute; Lima (saneamiento, luz el&eacute;ctrica, tranv&iacute;as, escuelas), pero la sierra y la selva permanecieron en el atraso y la explotaci&oacute;n del sistema del <I>enganche</I> y el gamonalismo.</LI>
+</UL>
+
+<H3>6. Los presidentes de la Rep&uacute;blica Aristocr&aacute;tica</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Presidente</TH><TH>Per&iacute;odo</TH><TH>Partido</TH><TH>Principales hechos</TH></TR>
+<TR><TD><B>Nicol&aacute;s de Pi&eacute;rola</B></TD><TD>1895&ndash;1899</TD><TD>Dem&oacute;crata (aliado con Civil)</TD><TD>Reforma monetaria (libra peruana de oro); misi&oacute;n militar francesa (profesionalizaci&oacute;n del ej&eacute;rcito); saneamiento de Lima; primer periodo de estabilidad democr&aacute;tica</TD></TR>
+<TR><TD><B>Eduardo L&oacute;pez de Romana</B></TD><TD>1899&ndash;1904</TD><TD>Civil</TD><TD>Ley de aguas (1902); auge del azúcar y algodón; primeros conflictos obrero-patronales en las haciendas</TD></TR>
+<TR><TD><B>Manuel Candamo</B></TD><TD>1904</TD><TD>Civil</TD><TD>Muere en el cargo; gobierno muy breve</TD></TR>
+<TR><TD><B>Jos&eacute; Pardo y Barreda</B> (1.&deg; gobierno)</TD><TD>1904&ndash;1908</TD><TD>Civil</TD><TD><B>Reforma educativa:</B> educaci&oacute;n primaria gratuita y obligatoria; construcci&oacute;n de escuelas; primera legislaci&oacute;n laboral; jornada de 8 horas en algunos sectores</TD></TR>
+<TR><TD><B>Augusto B. Legu&iacute;a</B> (1.&deg; gobierno)</TD><TD>1908&ndash;1912</TD><TD>Civil</TD><TD>Auge econ&oacute;mico; obras p&uacute;blicas; comienzo de la "americanizaci&oacute;n" del Per&uacute; (capital estadounidense); conflicto con Ecuador y Colombia por territorios amaz&oacute;nicos</TD></TR>
+<TR><TD><B>Guillermo Billinghurst</B></TD><TD>1912&ndash;1914</TD><TD>Dem&oacute;crata</TD><TD>Primer presidente con apoyo popular urbano (apodado "Pan Grande"); jornada de 8 horas; depuesto por golpe militar del general <B>Oscar R. Benavides</B> (1914)</TD></TR>
+<TR><TD><B>Oscar R. Benavides</B></TD><TD>1914&ndash;1915</TD><TD>Militar</TD><TD>Gobierno provisional tras el golpe; convoca elecciones</TD></TR>
+<TR><TD><B>Jos&eacute; Pardo y Barreda</B> (2.&deg; gobierno)</TD><TD>1915&ndash;1919</TD><TD>Civil</TD><TD>Primera Guerra Mundial (el Per&uacute; permanece neutral); auge de exportaciones; agitaci&oacute;n obrera (huelga general de 1919); jornada de 8 horas reconocida (1919); derrocado por Legu&iacute;a</TD></TR>
+<TR><TD><B>Augusto B. Legu&iacute;a</B> (2.&deg; gobierno/Oncenio)</TD><TD>1919&ndash;1930</TD><TD>---</TD><TD>Marca el fin de la Rep&uacute;blica Aristocr&aacute;tica; inicia la "Patria Nueva"</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Los dos presidentes m&aacute;s importantes de la Rep&uacute;blica Aristocr&aacute;tica para los ex&aacute;menes son <B>Jos&eacute; Pardo</B> (reforma educativa) y <B>Augusto Legu&iacute;a</B> (oncenio). La excepci&oacute;n al dominio civilista es <B>Billinghurst</B> (dem&oacute;crata, apoyado por obreros y artesanos), cuya ca&iacute;da por golpe militar anuncia la crisis del sistema.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127807; EL AUGE ECON&Oacute;MICO Y SUS L&Iacute;MITES<SPAN>Az&uacute;car, algod&oacute;n, caucho, minerales: el modelo exportador y sus costos sociales</SPAN></DIV>
+
+<H3>7. La econom&iacute;a de la Rep&uacute;blica Aristocr&aacute;tica</H3>
+
+<H4>Los productos de exportaci&oacute;n:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Producto</TH><TH>Regi&oacute;n</TH><TH>Empresa / Propietarios</TH><TH>Caracter&iacute;sticas</TH></TR>
+<TR><TD><B>Az&uacute;car</B></TD><TD>La Libertad, Lambayeque (costa norte)</TD><TD>Familias Larco, Gild emeister, Grace; haciendas como Casa Grande, Cartavio</TD><TD>Modernizaci&oacute;n de la producci&oacute;n; sistema del <I>enganche</I> para reclutar trabajadores de la sierra; enclave econ&oacute;mico</TD></TR>
+<TR><TD><B>Algod&oacute;n</B></TD><TD>Ica, Lima, Piura (costa)</TD><TD>Familias Aspillaga, Pardo, Garland</TD><TD>Producci&oacute;n exportada principalmente a Gran Breta&ntilde;a; m&eacute;todos de cultivo modernizados</TD></TR>
+<TR><TD><B>Caucho</B></TD><TD>Loreto, Madre de Dios (Amazonia)</TD><TD>Caucheros como <B>Julio C&eacute;sar Arana</B> (Casa Arana / Peruvian Amazon Company)</TD><TD>Esclavitud y genocidio de ind&iacute;genas amazónicos; el escándalo Putumayo (1912) sacudi&oacute; al mundo; boom hasta 1912 cuando los caucho malayos compiten</TD></TR>
+<TR><TD><B>Minerales</B> (cobre, plata, plomo)</TD><TD>Junín, Pasco, Cajamarca (sierra)</TD><TD><B>Cerro de Pasco Corporation</B> (capital estadounidense, desde 1901)</TD><TD>Enorme inversi&oacute;n de capital extranjero; domina la miner&iacute;a peruana; condiciones laborales duras; genera conflicto sindical</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El sistema del enganche:</H4>
+El <B>enganche</B> fue el mecanismo de reclutamiento laboral t&iacute;pico de la Rep&uacute;blica Aristocr&aacute;tica. Un <I>enganchador</I> (intermediario) ofrec&iacute;a a campesinos serranos un adelanto en dinero a cambio de trabajar por meses o a&ntilde;os en las haciendas coste&ntilde;as o en las minas. Una vez endeudados, los trabajadores no pod&iacute;an salir hasta saldar la deuda (que crec&iacute;a por las tiendas de raya del hacendado). Era pr&aacute;cticamente una forma de trabajo forzado legal.
+
+<H4>El gamonalismo en la sierra:</H4>
+En la sierra, el poder local estaba en manos de los <B>gamonales</B>: grandes terratenientes que controlaban a la vez las tierras, la mano de obra ind&iacute;gena, la justicia local y la pol&iacute;tica regional. Los ind&iacute;genas que viv&iacute;an en sus haciendas (<I>yanaconas</I> o <I>colonos</I>) estaban obligados a trabajar gratuitamente en las tierras del hacendado a cambio de usar una parcela. El Estado central, controlado por la oligarqu&iacute;a, no intervino contra este sistema.
+
+<DIV CLASS="mapa-note">&#128221; <B>El escándalo del caucho (Caso Putumayo):</B> El empresario loretano <B>Julio C&eacute;sar Arana</B> dirigi&oacute; la <B>Casa Arana</B> (luego Peruvian Amazon Company, con registro brit&aacute;nico) que esclaviz&oacute; y extermin&oacute; a decenas de miles de ind&iacute;genas <B>huitotos, boras y andoques</B> en el Putumayo para explotar el caucho. El escándalo fue denunciado por el diplom&aacute;tico brit&aacute;nico <B>Roger Casement</B> (1910&ndash;1911) y sacudi&oacute; a la opini&oacute;n p&uacute;blica internacional. El gobierno peruano no pudo o no quiso juzgar a Arana. El caso Putumayo es uno de los episodios m&aacute;s vergonzosos de la Rep&uacute;blica Aristocr&aacute;tica y del colonialismo interno peruano.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128218; EL PENSAMIENTO CR&Iacute;TICO: GONZ&Aacute;LEZ PRADA Y EL SURGIMIENTO DEL INDIGENISMO<SPAN>La crisis intelectual del Per&uacute; posguerra y los nuevos horizontes ideol&oacute;gicos</SPAN></DIV>
+
+<H3>8. Manuel Gonz&aacute;lez Prada y la cr&iacute;tica radical (1848&ndash;1918)</H3>
+<B>Manuel Gonz&aacute;lez Prada</B> (Lima, 1844&ndash;1918) fue la voz intelectual m&aacute;s radical de la posguerra. Aristócrata de origen, rompi&oacute; con su clase social para convertirse en el cr&iacute;tico m&aacute;s feroz del Per&uacute; oficial.
+
+<H4>Sus ideas principales:</H4>
+<UL>
+<LI><B>Cr&iacute;tica a la oligarqu&iacute;a criolla:</B> "Los viejos a la tumba, los j&oacute;venes a la obra" (Discurso del Politeama, 1888). La elite criolla &mdash;militares, clero, pol&iacute;ticos&mdash; hab&iacute;a demostrado ser incapaz de defender y modernizar el pa&iacute;s.</LI>
+<LI><B>El problema del ind&iacute;gena como problema nacional:</B> "El Per&uacute; es Lima; Lima es el jir&oacute;n de la Uni&oacute;n; el jir&oacute;n de la Uni&oacute;n son unos cuantos cafés" (cr&iacute;tica irónica al centralismo limeño). Gonz&aacute;lez Prada argument&oacute; que el Per&uacute; "real" era el Per&uacute; ind&iacute;gena excluido; sin su integraci&oacute;n, el pa&iacute;s nunca ser&iacute;a una naci&oacute;n genuina.</LI>
+<LI><B>Anticlericalismo:</B> critic&oacute; duramente a la Iglesia Cat&oacute;lica como c&oacute;mplice del sistema de opresión ind&iacute;gena.</LI>
+<LI><B>Evoluci&oacute;n hacia el anarquismo:</B> en su &uacute;ltima etapa, Gonz&aacute;lez Prada abraz&oacute; el <B>anarquismo</B> (rechazo del Estado y defensa de la organizaci&oacute;n obrera autónoma). Sus textos tard&iacute;os (<I>Horas de lucha</I>, <I>Anarqu&iacute;a</I>) influyeron en la primera generaci&oacute;n obrera peruana.</LI>
+<LI><B>Fundaci&oacute;n del C&iacute;rculo Literario y la Uni&oacute;n Nacional:</B> organiz&oacute; movimientos intelectuales y pol&iacute;ticos alternativos a los partidos tradicionales.</LI>
+</UL>
+
+<DIV CLASS="ej">&#128221; <B>La influencia de Gonz&aacute;lez Prada:</B> Fue el precursor de casi todas las corrientes de renovaci&oacute;n intelectual del siglo XX peruano. <B>Jos&eacute; Carlos Mari&aacute;tegui</B> (marxismo indigenista) y <B>V&iacute;ctor Ra&uacute;l Haya de la Torre</B> (APRA) reconocieron explícitamente su deuda con Gonz&aacute;lez Prada. Fue director de la <B>Biblioteca Nacional</B> (sucedi&oacute; a Palma en 1912), cargo que ocup&oacute; hasta su muerte en 1918.</DIV>
+
+<H3>9. El indigenismo: la "cuesti&oacute;n ind&iacute;gena" en el debate intelectual</H3>
+El <B>indigenismo</B> fue una corriente intelectual, art&iacute;stica y pol&iacute;tica que puso al ind&iacute;gena en el centro del debate sobre la identidad peruana. Sus or&iacute;genes estaban en la posguerra del Pac&iacute;fico (Gonz&aacute;lez Prada), pero su momento de m&aacute;ximo desarrollo fue la d&eacute;cada de 1920&ndash;1930.
+
+<H4>Precursores indigenistas en la Rep&uacute;blica Aristocr&aacute;tica:</H4>
+<UL>
+<LI><B>Clorinda Matto de Turner</B> (Cusco, 1852&ndash;1909): novelista y periodista. Su novela <B><I>Aves sin nido</I> (1889)</B> fue la primera novela indigenista del Per&uacute;: denunci&oacute; la explotaci&oacute;n del ind&iacute;gena por el gamonalismo, el clero y el Estado. Fue excomulgada por la Iglesia y exiliada a Argentina.</LI>
+<LI><B>Pedro Zulen</B>: fundador de la <B>Asociaci&oacute;n Pro-Ind&iacute;gena</B> (1909), primera organizaci&oacute;n de defensa legal de los derechos ind&iacute;genas en el Per&uacute;.</LI>
+<LI><B>Dora Mayer</B>: intelectual alemana radicada en el Per&uacute;, cofundadora de la Asociaci&oacute;n Pro-Ind&iacute;gena y uno de los primeros defensores sistem&aacute;ticos de los derechos ind&iacute;genas.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#127981; EL SURGIMIENTO DEL MOVIMIENTO OBRERO<SPAN>Las primeras organizaciones sindicales y la lucha por la jornada de 8 horas</SPAN></DIV>
+
+<H3>10. El movimiento obrero y la jornada de 8 horas (1904&ndash;1919)</H3>
+La industrializaci&oacute;n incipiente de Lima y el auge de las haciendas azucareras y las minas generaron un proletariado urbano y minero con creciente capacidad de organizaci&oacute;n. El per&iacute;odo de la Rep&uacute;blica Aristocr&aacute;tica fue el de la <B>formaci&oacute;n del movimiento obrero peruano</B>.
+
+<H4>Hitos del movimiento obrero:</H4>
+<UL>
+<LI><B>1904:</B> Primer congreso obrero en Lima; primeras mutuales y sociedades de socorro mutuo de artesanos.</LI>
+<LI><B>1904&ndash;1908 (gobierno de Jos&eacute; Pardo):</B> Primera legislaci&oacute;n laboral: se regula el trabajo de menores; jornada de 8 horas en algunos sectores p&uacute;blicos.</LI>
+<LI><B>1912 (gobierno de Billinghurst):</B> El apoyo masivo de obreros y artesanos limeños a Billinghurst ("Pan Grande") mostr&oacute; el peso electoral del proletariado urbano por primera vez.</LI>
+<LI><B>1919: La gran huelga general de Lima.</B> Los obreros paralizaron la capital exigiendo la jornada de <B>8 horas</B> para todos los sectores. El presidente <B>Jos&eacute; Pardo</B>, ante la presi&oacute;n social, promulg&oacute; el <B>decreto de jornada de 8 horas</B> (enero de 1919). Fue la primera gran victoria del movimiento obrero peruano y una de las primeras legislaciones laborales de Am&eacute;rica Latina.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La jornada de <B>8 horas</B> en el Per&uacute; fue conquistada en <B>enero de 1919</B>, durante el segundo gobierno de <B>Jos&eacute; Pardo</B>, como resultado de una huelga general. Es un hecho fundamental del per&iacute;odo. No confundir con la legislaci&oacute;n parcial de su primer gobierno (1904&ndash;1908).</DIV>
+
+<H3>11. La reforma educativa de Jos&eacute; Pardo (1904&ndash;1908)</H3>
+El primer gobierno de <B>Jos&eacute; Pardo y Barreda</B> es recordado en la historia del Per&uacute; principalmente por su <B>reforma educativa</B>, la m&aacute;s ambiciosa desde la fundaci&oacute;n de la rep&uacute;blica.
+
+<H4>Medidas educativas de Pardo (1904&ndash;1908):</H4>
+<UL>
+<LI><B>Educaci&oacute;n primaria gratuita y obligatoria</B> para todos los ni&ntilde;os del Pa&iacute;s.</LI>
+<LI>Construcci&oacute;n masiva de <B>escuelas fiscales</B> en Lima y las provincias.</LI>
+<LI>Creaci&oacute;n de <B>escuelas nocturnas</B> para obreros y artesanos adultos.</LI>
+<LI>Contrataci&oacute;n de profesores europeos para modernizar los m&eacute;todos pedag&oacute;gicos.</LI>
+<LI>Reorganizaci&oacute;n de la <B>Universidad de San Marcos</B> y creaci&oacute;n de nuevas escuelas t&eacute;cnicas.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>El l&iacute;mite de la reforma educativa de Pardo:</B> Aunque la reforma declar&oacute; la educaci&oacute;n obligatoria, en la pr&aacute;ctica la asistencia escolar en las comunidades campesinas e ind&iacute;genas siguió siendo muy baja: no hab&iacute;a maestros, las escuelas no llegaban a las zonas alejadas, y los hacendados no ten&iacute;an inter&eacute;s en educar a sus trabajadores. La brecha educativa entre Lima y la sierra fue uno de los grandes fracasos no resueltos de la Rep&uacute;blica Aristocr&aacute;tica.</DIV>
+
+<H3>12. El fin de la Rep&uacute;blica Aristocr&aacute;tica: el golpe de Legu&iacute;a (1919)</H3>
+En 1919, <B>Augusto B. Legu&iacute;a</B> &mdash;antiguo civilista que hab&iacute;a gobernado entre 1908 y 1912&mdash; se present&oacute; a las elecciones presidenciales. Ante el temor de que el Congreso (controlado por el Partido Civil) anulara su victoria, Legu&iacute;a dio un <B>golpe de Estado</B> en julio de 1919, disolvió el Congreso y se proclamó presidente provisorio. Convoc&oacute; una asamblea constituyente que le otorg&oacute; plenos poderes e inici&oacute; el per&iacute;odo conocido como el <B>Oncenio de Legu&iacute;a</B> (1919&ndash;1930), que marc&oacute; el fin definitivo de la Rep&uacute;blica Aristocr&aacute;tica.
+
+<H4>Causas de la crisis del sistema oligárquico:</H4>
+<UL>
+<LI><B>Agotamiento del modelo exportador:</B> la dependencia de materias primas hac&iacute;a al Per&uacute; vulnerable a las fluctuaciones del mercado mundial (la Primera Guerra Mundial alter&oacute; los precios).</LI>
+<LI><B>Emergencia del movimiento obrero:</B> la clase trabajadora organizada fue un actor pol&iacute;tico nuevo que el sistema oligárquico no pod&iacute;a ignorar.</LI>
+<LI><B>Crisis del Partido Civil:</B> los conflictos internos entre facciones civilistas debilitaron al partido.</LI>
+<LI><B>Surgimiento de nuevos actores:</B> la clase media urbana, los estudiantes universitarios (Reforma Universitaria de 1919) y los sectores populares presionaban por cambios que el sistema oligárquico no pod&iacute;a absorber.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1886</DIV><DIV CLASS="dk-label">1.&deg; gobierno de C&aacute;ceres; inicio de la reconstrucci&oacute;n</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1889</DIV><DIV CLASS="dk-label">Contrato Grace: ferrocarriles a la Peruvian Corporation por 66 a&ntilde;os</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1895</DIV><DIV CLASS="dk-label">Pi&eacute;rola derroca a C&aacute;ceres; inicio de la Rep&uacute;blica Aristocr&aacute;tica</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1904&ndash;08</DIV><DIV CLASS="dk-label">Jos&eacute; Pardo: educaci&oacute;n primaria gratuita y obligatoria</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1912</DIV><DIV CLASS="dk-label">Billinghurst: primer gobierno con base popular urbana</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1919</DIV><DIV CLASS="dk-label">Jornada de 8 horas; golpe de Legu&iacute;a; fin de la Rep. Aristocr&aacute;tica</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Posguerra:</B> guerra civil C&aacute;ceres vs. Iglesias (1884&ndash;1885) &middot; C&aacute;ceres triunfa; gobierna 1886&ndash;1890 &middot; Contrato Grace (1889): deuda por ferrocarriles a Peruvian Corporation<BR>
+&bull; <B>Ca&iacute;da del militarismo:</B> Pi&eacute;rola derroca a C&aacute;ceres (1895); inicia Rep&uacute;blica Aristocr&aacute;tica<BR>
+&bull; <B>Rep&uacute;blica Aristocr&aacute;tica (1895&ndash;1919):</B> dominio del Partido Civil &middot; sufragio censitario (solo alfabetos) &middot; modelo agroexportador (az&uacute;car, algod&oacute;n, caucho, minerales) &middot; gamonalismo en la sierra &middot; enganche laboral<BR>
+&bull; <B>Presidentes clave:</B> Pi&eacute;rola (reforma monetaria) &middot; Jos&eacute; Pardo 1.&deg; (educaci&oacute;n gratuita) &middot; Legu&iacute;a 1.&deg; (auge econ&oacute;mico) &middot; Billinghurst (base popular; golpe 1914) &middot; Jos&eacute; Pardo 2.&deg; (8 horas, 1919)<BR>
+&bull; <B>Intelectuales:</B> Gonz&aacute;lez Prada (cr&iacute;tica oligarqu&iacute;a; precursor indigenismo) &middot; Clorinda Matto de Turner (<I>Aves sin nido</I>, 1889) &middot; Asociaci&oacute;n Pro-Ind&iacute;gena (Zulen, Mayer, 1909)<BR>
+&bull; <B>Econom&iacute;a:</B> Cerro de Pasco Corporation (EEUU, minería) &middot; Casa Arana / caucho (escándalo Putumayo 1912) &middot; Peruvian Corporation (ferrocarriles, GB)<BR>
+&bull; <B>Fin del per&iacute;odo:</B> huelga general (ene. 1919) &rarr; jornada de 8 horas &rarr; golpe de Legu&iacute;a (jul. 1919) &rarr; inicio del Oncenio
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;Qu&eacute; fue el Contrato Grace (1889) y cu&aacute;l fue su principal consecuencia para el Per&uacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) El Contrato Grace fue un acuerdo con el gobierno brit&aacute;nico por el cual Gran Breta&ntilde;a perdonaba la deuda externa peruana a cambio de que el Per&uacute; abandonara el salitre y se concentrara en exportar az&uacute;car y algod&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) El Contrato Grace fue un acuerdo entre el gobierno de C&aacute;ceres y acreedores brit&aacute;nicos por el cual el Per&uacute; entregaba la administraci&oacute;n de sus ferrocarriles a la Peruvian Corporation por 66 a&ntilde;os a cambio de que esta asumiera la deuda externa peruana; fue la soluci&oacute;n a la bancarrota posguerra, pero implic&oacute; ceder el control de la infraestructura nacional a capitales extranjeros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) El Contrato Grace fue un tratado secreto entre Per&uacute; y Bolivia por el cual ambos pa&iacute;ses acordaban reconstruir sus econom&iacute;as con capitales británicos; Chile se opuso y provoc&oacute; una nueva crisis diplom&aacute;tica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) El Contrato Grace fue el acuerdo por el cual el empresario brit&aacute;nico Michael Grace compraba al Per&uacute; las salitreras de Tarapac&aacute; que Chile hab&iacute;a ocupado, en un intento de reclamarlas internacionalmente mediante el capital brit&aacute;nico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Contrato Grace</B> fue negociado entre 1886 y 1889 durante el primer gobierno de <B>C&aacute;ceres</B>. El Per&uacute; no pod&iacute;a pagar su deuda externa (contraída principalmente en la era del guano para construir los ferrocarriles de Meiggs). <B>Michael Grace</B>, en representaci&oacute;n de los tenedores de bonos brit&aacute;nicos, propuso la permuta: la deuda entera ser&iacute;a cancelada a cambio de que el Per&uacute; entregara la administraci&oacute;n de sus <B>ferrocarriles</B> a la <B>Peruvian Corporation</B> por <B>66 a&ntilde;os</B>, adem&aacute;s de ceder el <B>guano residual</B> y los derechos de navegaci&oacute;n del lago Titicaca. Su impacto fue doble: econ&oacute;micamente liberó al Estado de una deuda impagable, pero estructuralmente entregó la infraestructura clave del país a capitales extranjeros hasta <B>1972</B> (cuando Velasco la estatizó). La oposici&oacute;n intelectual m&aacute;s dura fue la de <B>Gonz&aacute;lez Prada</B>, quien lo consider&oacute; una cesión de soberanía económica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Qu&eacute; se entiende por "Rep&uacute;blica Aristocr&aacute;tica" y qui&eacute;n acu&ntilde;&oacute; ese t&eacute;rmino?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) "Rep&uacute;blica Aristocr&aacute;tica" es el nombre oficial que le dio el Partido Civil a su sistema de gobierno durante 1895&ndash;1919; es un t&eacute;rmino que los propios gobernantes usaban para distinguirse del militarismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) "Rep&uacute;blica Aristocr&aacute;tica" fue la expresi&oacute;n acuñada por el historiador <B>Jorge Basadre</B> para describir el per&iacute;odo 1895&ndash;1919 dominado por el Partido Civil y la oligarqu&iacute;a agroexportadora; fue una plutocracia (gobierno de los m&aacute;s ricos) con sufragio restringido a los alfabetos, que excluy&oacute; a la mayor&iacute;a ind&iacute;gena de la vida pol&iacute;tica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) "Rep&uacute;blica Aristocr&aacute;tica" es el nombre que le dio <B>Manuel Gonz&aacute;lez Prada</B> al per&iacute;odo en sus ensayos cr&iacute;ticos; Gonz&aacute;lez Prada lo usaba elogiosamente para referirse a los avances culturales logrados por la elite criolla en el per&iacute;odo posguerra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) "Rep&uacute;blica Aristocr&aacute;tica" es una categor&iacute;a que alude al gobierno de la nobleza colonial que retom&oacute; el poder tras la Guerra del Pac&iacute;fico; el t&eacute;rmino fue acuñado por el historiador marxista Heraclio Bonilla para denunciar la restauraci&oacute;n del orden colonial</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El t&eacute;rmino <B>"Rep&uacute;blica Aristocr&aacute;tica"</B> fue acu&ntilde;ado por el gran historiador peruano <B>Jorge Basadre Grohmann</B> en su monumental <I>Historia de la Rep&uacute;blica del Per&uacute;</I>. Basadre lo aplic&oacute; al per&iacute;odo <B>1895&ndash;1919</B> para describir un sistema político caracterizado por el dominio del <B>Partido Civil</B>, que representaba a la oligarqu&iacute;a agroexportadora (familias propietarias de haciendas azucareras, algodoneras y minas). No era "aristocr&aacute;tica" en el sentido nobiliario (no hab&iacute;a t&iacute;tulos heredados), sino en el sentido de que el poder estaba reservado a una minor&iacute;a rica. El <B>sufragio censitario</B> (solo vot&oacute;an los que sab&iacute;an leer y escribir) exclu&iacute;a a la mayor&iacute;a de la poblaci&oacute;n, especialmente a los ind&iacute;genas de la sierra. La frase de Basadre captura la paradoja del per&iacute;odo: fue una democracia formal pero una plutocracia real.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Qu&eacute; logro educativo se asocia al primer gobierno de Jos&eacute; Pardo y Barreda (1904&ndash;1908)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Pardo fund&oacute; la Universidad Nacional Mayor de San Marcos y decret&oacute; que la educaci&oacute;n universitaria fuera gratuita para todos los peruanos, incluidos los ind&iacute;genas de la sierra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) El primer gobierno de Jos&eacute; Pardo (1904&ndash;1908) es recordado principalmente por la <B>educaci&oacute;n primaria gratuita y obligatoria</B>: decret&oacute; que todos los ni&ntilde;os del pa&iacute;s deb&iacute;an asistir a la escuela primaria sin costo; construy&oacute; masivamente escuelas fiscales y contrat&oacute; maestros europeos para modernizar la pedagog&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Pardo construy&oacute; las primeras universidades en la sierra peruana (Cusco, Arequipa, Ayacucho) para integrar a los ind&iacute;genas a la educaci&oacute;n superior; es el padre de la descentralizaci&oacute;n educativa peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El mayor logro educativo de Pardo fue la creaci&oacute;n del <B>Ministerio de Educaci&oacute;n P&uacute;blica</B> (1904), que unific&oacute; la administraci&oacute;n escolar del pa&iacute;s; antes de Pardo, la educaci&oacute;n depend&iacute;a exclusivamente de la Iglesia Cat&oacute;lica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El primer gobierno de <B>Jos&eacute; Pardo y Barreda</B> (1904&ndash;1908) es el m&aacute;s asociado a la <B>reforma educativa</B> en la historia de la Rep&uacute;blica Aristocr&aacute;tica. Sus principales medidas fueron: (1) Decreto de <B>educaci&oacute;n primaria gratuita y obligatoria</B> para todos los ni&ntilde;os. (2) Construcci&oacute;n masiva de <B>escuelas fiscales</B> tanto en Lima como en provincias. (3) Creaci&oacute;n de <B>escuelas nocturnas</B> para obreros adultos. (4) Contrataci&oacute;n de docentes europeos. (5) Organizaci&oacute;n de la educaci&oacute;n secundaria y t&eacute;cnica. Sin embargo, el alcance real fue limitado: en zonas rurales e ind&iacute;genas, la escuela f&iacute;sicamente no exist&iacute;a o los gamonales impid&iacute;an que los ni&ntilde;os asistieran. La reforma fue m&aacute;s efectiva en las ciudades que en el campo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qui&eacute;n fue Clorinda Matto de Turner y cu&aacute;l fue su aporte a la literatura y al debate sobre el ind&iacute;gena?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Clorinda Matto de Turner fue una poetisa que celebr&oacute; la grandeza del Incanato en sus versos; su obra m&aacute;s famosa, <I>Flores del Inca</I> (1885), fue el primer poema moderno sobre el mundo andino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Clorinda Matto de Turner fue novelista y periodista cusque&ntilde;a; su novela <B><I>Aves sin nido</I> (1889)</B> fue la primera novela indigenista peruana: denunci&oacute; la explotaci&oacute;n del campesino ind&iacute;gena por el gamonalismo, el clero y el Estado; fue excomulgada por la Iglesia y exiliada a Argentina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Clorinda Matto de Turner fue la primera mujer en el gabinete ministerial peruano durante el gobierno de Billinghurst; su obra pol&iacute;tica fue m&aacute;s importante que su producci&oacute;n literaria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Clorinda Matto de Turner fue la directora de la Biblioteca Nacional entre 1890 y 1905, sucediendo a Ricardo Palma; su mayor aporte fue reconstruir la colecci&oacute;n de manuscritos quechuas saqueados por Chile</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Clorinda Matto de Turner</B> (Cusco, 1852 &ndash; Buenos Aires, 1909) es una de las figuras literarias e intelectuales m&aacute;s importantes del siglo XIX peruano. Novelista, periodista y defensora de los derechos de la mujer y del ind&iacute;gena. Su obra maestra, <B><I>Aves sin nido</I> (1889)</B>, es considerada la primera novela <B>indigenista</B> de la literatura peruana: narra la historia de una familia ind&iacute;gena de un pueblo andino y c&oacute;mo es explotada por el p&aacute;rroco, el gobernador y el juez (los tres poderes abusivos del gamonal local). La novela caus&oacute; esc&aacute;ndalo: la Iglesia Cat&oacute;lica la excomulg&oacute;, sus imprentas fueron quemadas por grupos cat&oacute;licos durante la Revoluci&oacute;n de 1895, y tuvo que exiliarse a Argentina, donde muri&oacute;. Fue precursora del indigenismo del siglo XX y del debate sobre los derechos de las mujeres en el Per&uacute;.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;C&oacute;mo se conquist&oacute; la jornada de 8 horas en el Per&uacute; y en qu&eacute; gobierno se decret&oacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) La jornada de 8 horas fue una concesi&oacute;n espont&aacute;nea del presidente Legu&iacute;a en su primer gobierno (1908&ndash;1912), como medida de modernizaci&oacute;n social; fue la primera legislaci&oacute;n laboral de Am&eacute;rica del Sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) La jornada de 8 horas fue conquistada en <B>enero de 1919</B>, durante el segundo gobierno de <B>Jos&eacute; Pardo</B>, como resultado directo de una <B>huelga general de obreros limeños</B>; fue el primer gran triunfo sindical peruano y una de las primeras legislaciones laborales de Am&eacute;rica Latina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) La jornada de 8 horas fue establecida en el Per&uacute; por <B>Nicol&aacute;s de Pi&eacute;rola</B> en 1896 como parte de su programa de reformas democratizadoras; fue adoptada siguiendo el modelo franc&eacute;s y britl&aacute;nico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) La jornada de 8 horas fue decretada por el gobierno militar del general Benavides en 1914, como medida para calmar la agitaci&oacute;n popular que hab&iacute;a derrocado a Billinghurst y justificar el golpe</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La conquista de la <B>jornada de 8 horas</B> es uno de los hitos m&aacute;s importantes de la historia laboral peruana. En <B>enero de 1919</B>, los obreros limeños convocaron una <B>huelga general</B> exigiendo la jornada de 8 horas de trabajo para todos los sectores (hasta entonces era norm&aacute; trabajar 10, 12 e incluso 14 horas diarias). La huelga paraliz&oacute; Lima. El presidente <B>Jos&eacute; Pardo y Barreda</B> (en su segundo gobierno, 1915&ndash;1919), ante la presi&oacute;n social y la amenaza de agravamiento del conflicto, promulg&oacute; el <B>decreto</B> estableciendo la jornada de <B>8 horas</B> para todos los trabajadores. Fue una de las primeras legislaciones de este tipo en <B>Am&eacute;rica Latina</B> (junto con Uruguay). El &eacute;xito de la huelga mostr&oacute; la madurez del movimiento obrero peruano y la crisis del sistema oligárquico de la Rep&uacute;blica Aristocr&aacute;tica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Analiza el sistema del enganche laboral y el gamonalismo como mecanismos de control social durante la Rep&uacute;blica Aristocr&aacute;tica. &iquest;Por qu&eacute; el Estado no los elimin&oacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) El Estado no elimin&oacute; el enganche y el gamonalismo porque no ten&iacute;a conocimiento de su existencia; los gobiernos de la Rep&uacute;blica Aristocr&aacute;tica gobernaban desde Lima sin informaci&oacute;n sobre lo que pasaba en la sierra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El Estado no elimin&oacute; el enganche y el gamonalismo porque <B>quienes controlaban el Estado eran exactamente los beneficiarios del sistema</B>: los hacendados agroexportadores y sus aliados eran el Partido Civil; legislar contra el gamonalismo significaba legislar contra s&iacute; mismos; la exclusi&oacute;n pol&iacute;tica del ind&iacute;gena (que no vot&oacute;) eliminaba cualquier presi&oacute;n electoral para reformar el sistema</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El Estado s&iacute; intent&oacute; eliminar el enganche y el gamonalismo: las leyes agrarias de 1902 y 1910 prohib&iacute;an explícitamente ambas pr&aacute;cticas; el problema fue la resistencia armada de los gamonales que impidi&oacute; la aplicaci&oacute;n de las leyes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) El enganche y el gamonalismo no eran sistemas de explotaci&oacute;n sino mecanismos de integraci&oacute;n econ&oacute;mica que permit&iacute;an a los campesinos serranos acceder al mercado laboral coste&ntilde;o; su eliminaci&oacute;n habr&iacute;a perjudicado a los propios trabajadores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>enganche</B> (reclutamiento por deudas) y el <B>gamonalismo</B> (poder total del hacendado sobre los campesinos) fueron los pilares del sistema laboral de la Rep&uacute;blica Aristocr&aacute;tica. La pregunta de por qu&eacute; el Estado no los elimin&oacute; revela la naturaleza de clase del sistema pol&iacute;tico. El <B>Partido Civil</B> representaba exactamente a los gamonales y hacendados: los L&oacute;pez de Romana (az&uacute;car), los Aspillaga (algod&oacute;n), los Pardo (finanzas y haciendas) eran a la vez los due&ntilde;os de las haciendas y los gobernantes del pa&iacute;s. Legislar contra el gamonal era legislar contra ellos mismos. Adem&aacute;s, el <B>sufragio censitario</B> exclu&iacute;a al ind&iacute;gena analfabeto: no hab&iacute;a ninguna presi&oacute;n electoral para reformar el sistema. El <B>Congreso</B> estaba dominado por los representantes de las oligarqu&iacute;as regionales (muchos de ellos gamonales). La Iglesia y el Poder Judicial locales tambi&eacute;n depend&iacute;an del gamonal. Era un sistema de dominaci&oacute;n total, autoperpetuado pol&iacute;tica e institucionalmente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> &iquest;Por qu&eacute; el gobierno de Guillermo Billinghurst (1912&ndash;1914) represent&oacute; una anomal&iacute;a dentro del sistema de la Rep&uacute;blica Aristocr&aacute;tica y c&oacute;mo fue el fin de su gobierno?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Billinghurst represent&oacute; una anomal&iacute;a porque fue el &uacute;nico presidente elegido por el Congreso (y no por votaci&oacute;n popular) durante la Rep&uacute;blica Aristocr&aacute;tica; fue depuesto cuando intentó convocar a elecciones directas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Billinghurst fue el primer presidente de la Rep&uacute;blica Aristocr&aacute;tica en construir su base de apoyo en las <B>clases populares urbanas</B> (obreros y artesanos limeños) en lugar de la oligarqu&iacute;a; su programa social amenazaba los intereses del Partido Civil y los militares; fue derrocado por el <B>golpe del general Oscar R. Benavides</B> en febrero de 1914, el primer golpe militar exitoso del siglo XX peruano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Billinghurst fue una anomal&iacute;a porque era de origen boliviano y representaba los intereses de empresas mineras extranjeras; el Partido Civil lo depuso cuando intent&oacute; vender la Cerro de Pasco Corporation a inversores bolivianos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Billinghurst gobern&oacute; correctamente dentro del sistema de la Rep&uacute;blica Aristocr&aacute;tica y no representa ninguna anomal&iacute;a; la histirografia lo ha exagerado como figura "popular" pero en realidad era tan oligarca como sus predecesores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Guillermo Billinghurst</B> (1851&ndash;1915) fue un exitoso comerciante de Iquique que construy&oacute; su base pol&iacute;tica entre los <B>artesanos y obreros limeños</B>, a quienes prometi&oacute; "pan barato" (de ah&iacute; su apodo "Pan Grande"). En las elecciones de 1912, el Congreso oligárquico bloqueó inicialmente su victoria, pero la amenaza de sus seguidores de paralizar Lima forz&oacute; al Congreso a reconocerlo. En el gobierno, impuls&oacute; medidas sociales que inquietaron a la oligarqu&iacute;a y a los militares (mejor&oacute; condiciones laborales, enfrento al Congreso civilista). El <B>9 de febrero de 1914</B>, el general <B>Oscar Raimundo Benavides</B> ejecut&oacute; un golpe de Estado: fue el primer golpe militar exitoso del siglo XX en el Per&uacute; y marc&oacute; el precedente de la intervenci&oacute;n armada para restaurar el "orden" oligárquico cuando el sistema electoral lo desafiaba. Billinghurst fue exiliado y muri&oacute; en Iquique en 1915.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;En qu&eacute; consisti&oacute; el escándalo del caucho en el Putumayo (1910&ndash;1912) y qu&eacute; revela sobre el "Estado" peruano en la Amazon&iacute;a?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El escándalo del Putumayo fue un conflicto diplom&aacute;tico entre Per&uacute; y Colombia por el control de los territorios amaz&oacute;nicos; no involucr&oacute; a ninguna empresa privada sino a los ej&eacute;rcitos de ambos pa&iacute;ses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El escándalo del Putumayo denunci&oacute; que la <B>Casa Arana</B> (Peruvian Amazon Company) hab&iacute;a esclavizado y exterminado a decenas de miles de ind&iacute;genas amaz&oacute;nicos para explotar el caucho; el diplomat brit&aacute;nico <B>Roger Casement</B> lo documnet&oacute; en 1910&ndash;1911; revel&oacute; que el Estado peruano era inexistente en la Amazon&iacute;a, donde los caucheros ejerc&iacute;an un poder absoluto sin control legal ni institucional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El escándalo del Putumayo fue un conflicto entre empresas caucheras brit&aacute;nicas y alemanas por el control del mercado amazónico; el nombre de Julio C&eacute;sar Arana fue inventado por la prensa brit&aacute;nica para ocultar la responsabilidad de empresas europeas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) El escándalo del Putumayo fue el detonante de la Guerra Colombo-Peruana (1932): Colombia acus&oacute; al Per&uacute; de ejecutar el genocidio y exigi&oacute; la cesi&oacute;n del Putumayo, lo que condujo al conflicto armado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>escándalo del Putumayo</B> es uno de los episodios m&aacute;s oscuros de la historia peruana y del colonialismo interno del siglo XX. <B>Julio C&eacute;sar Arana</B>, empresario loretano, fund&oacute; la <B>Casa Arana</B>, que explotaba caucho en el r&iacute;o Putumayo. Para controlar la mano de obra ind&iacute;gena (<B>huitotos, boras, andoques</B>), utiliz&oacute; un sistema de <B>esclavitud por deudas</B> combinado con terror sistemático: torturas, mutilaciones, asesinatos y ataques a comunidades enteras. Se estima que entre 30.000 y 40.000 ind&iacute;genas murieron durante su explotaci&oacute;n. El diplom&aacute;tico brit&aacute;nico <B>Roger Casement</B> (que ya había documentado el genocidio belga en el Congo) visit&oacute; el Putumayo en 1910 y 1911 y produjo informes detallados que sacudieron a la opini&oacute;n p&uacute;blica mundial. El escándalo revela que el Estado peruano era prácticamente inexistente en la Amazonía: las empresas caucheras ejercían poder absoluto, sin jueces, sin policía, sin ninguna institución del Estado que protegiera a los ciudadanos indígenas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Compara las ideas de Manuel Gonz&aacute;lez Prada con las de la oligarqu&iacute;a civilista sobre el rol del ind&iacute;gena en la naci&oacute;n peruana.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Gonz&aacute;lez Prada y la oligarqu&iacute;a civilista compartían la misma visi&oacute;n: ambos cre&iacute;an que la modernizaci&oacute;n del Per&uacute; pasaba por la educaci&oacute;n del ind&iacute;gena y su integraci&oacute;n al mercado laboral; la diferencia era solo de ritmo y m&eacute;todos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) La oligarqu&iacute;a civilista consideraba al ind&iacute;gena como fuerza de trabajo necesaria pero pol&iacute;ticamente indeseable (por eso el sufragio exig&iacute;a alfabetizaci&oacute;n); Gonz&aacute;lez Prada argument&oacute; exactamente lo contrario: el ind&iacute;gena era el Per&uacute; real, su explotaci&oacute;n era el principal problema nacional, y sin su integraci&oacute;n el pa&iacute;s nunca ser&iacute;a una naci&oacute;n verdadera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Gonz&aacute;lez Prada era m&aacute;s conservador que la oligarqu&iacute;a: propuso que los ind&iacute;genas fueran "educados" primero en la religi&oacute;n cat&oacute;lica antes de recibir derechos pol&iacute;ticos; la oligarqu&iacute;a en cambio prefer&iacute;a la educaci&oacute;n laica y republicana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Gonz&aacute;lez Prada y la oligarqu&iacute;a estaban de acuerdo en que el Per&uacute; deb&iacute;a "blanquearse" recibiendo inmigraci&oacute;n europea; discrepaban solo en si los ind&iacute;genas deb&iacute;an ser asimilados o expulsados a las reservas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El contraste entre la visi&oacute;n oligárquica y la de Gonz&aacute;lez Prada sobre el ind&iacute;gena es uno de los debates intelectuales m&aacute;s importantes del Per&uacute; del XIX al XX. <B>La oligarqu&iacute;a civilista</B> veía al ind&iacute;gena de forma instrumental: era <B>mano de obra</B> necesaria para las haciendas y las minas, pero pol&iacute;ticamente era una masa que deb&iacute;a mantenerse al margen del poder. El sufragio censitario (solo alfabetos) garantizaba su exclusi&oacute;n. La teor&iacute;a del "blanqueamiento" (modernizaci&oacute;n a trav&eacute;s de la migraci&oacute;n europea) era otra vertiente de la misma ideolog&iacute;a. <B>Gonz&aacute;lez Prada</B> invirtió radicalmente el argumento: no era el ind&iacute;gena el problema del Per&uacute;, sino la oligarqu&iacute;a que lo explotaba. El Peru "real" era el mundo andino e ind&iacute;gena; la Lima criolla era un parásito. Sin la integraci&oacute;n del ind&iacute;gena como ciudadano pleno, el Per&uacute; sería siempre una naci&oacute;n fict&iacute;cia. Esta tesis fue el fundamento del indigenismo y del pensamiento de Mari&aacute;tegui.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Por qu&eacute; la Reforma Universitaria de C&oacute;rdoba (1918) tuvo eco en el Per&uacute; y c&oacute;mo contribuy&oacute; a la crisis de la Rep&uacute;blica Aristocr&aacute;tica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) La Reforma de C&oacute;rdoba no tuvo ninguna repercusi&oacute;n en el Per&uacute;; las universidades peruanas eran instituciones modernas y democr&aacute;ticas que no necesitaban reforma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) La Reforma Universitaria de C&oacute;rdoba (Argentina, 1918) propugnó la <B>autonom&iacute;a universitaria, el cogobierno estudiantil y la extensi&oacute;n universitaria</B>; sus ideas se difundieron r&aacute;pidamente en Per&uacute; (1919), donde los estudiantes de San Marcos exigieron reformas; el movimiento estudiantil se ali&oacute; con el obrero, creando una presi&oacute;n social combinada que agudiz&oacute; la crisis del sistema oligárquico en el año decisivo de 1919</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) La Reforma de C&oacute;rdoba lleg&oacute; al Per&uacute; s&oacute;lo en 1930, con el inicio del segundo gobierno de Legu&iacute;a; fue Legu&iacute;a quien la introdujo como parte de su "Patria Nueva"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) La Reforma de C&oacute;rdoba fue rechazada en el Per&uacute; por la Iglesia Cat&oacute;lica y el Partido Civil; nunca tuvo influencia real en las universidades peruanas hasta el gobierno militar de Velasco (1968)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Reforma Universitaria de C&oacute;rdoba</B> (Argentina, junio 1918) fue un movimiento estudiantil que exigi&oacute; la <B>autonom&iacute;a universitaria</B> (la universidad debe gobernarse sin interferencia del Estado o la Iglesia), el <B>cogobierno</B> (participaci&oacute;n de estudiantes en la direcci&oacute;n de la universidad), la <B>gratuidad</B> de la ense&ntilde;anza y la <B>extensi&oacute;n universitaria</B> (la universidad debe servir a la sociedad). Sus ideas se difundieron por toda Am&eacute;rica Latina con notable rapidez. En el <B>Per&uacute; de 1919</B>, los estudiantes de <B>San Marcos</B> adoptaron los postulados de C&oacute;rdoba y protagonizaron movilizaciones que se sumaron a la huelga obrera de enero de 1919. La alianza entre el <B>movimiento obrero</B> (que exig&iacute;a las 8 horas) y el <B>movimiento estudiantil</B> (que exig&iacute;a la reforma universitaria) cre&oacute; una presi&oacute;n social combinada que el sistema pol&iacute;tico oligárquico ya no pod&iacute;a controlar. <B>V&iacute;ctor Ra&uacute;l Haya de la Torre</B>, quien se convertir&iacute;a en el fundador del APRA, fue uno de los l&iacute;deres estudiantiles de este movimiento en 1919.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza la paradoja del per&iacute;odo: la Rep&uacute;blica Aristocr&aacute;tica fue el per&iacute;odo de mayor crecimiento econ&oacute;mico del siglo XIX&ndash;XX peruano, y al mismo tiempo el de mayor exclusi&oacute;n social. &iquest;C&oacute;mo se explica esta contradicci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) La contradicci&oacute;n es aparente: el crecimiento econ&oacute;mico s&iacute; benefici&oacute; a todos los peruanos, incluidos los ind&iacute;genas; la historiograf&iacute;a cr&iacute;tica exagera la exclusi&oacute;n para fines ideol&oacute;gicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) El crecimiento econ&oacute;mico de la Rep&uacute;blica Aristocr&aacute;tica fue un crecimiento <B>enclavista</B>: se concentr&oacute; en sectores exportadores que usaban trabajo explotado (enganche, yanaconaje), generaba riqueza que era apropiada por la oligarqu&iacute;a y las empresas extranjeras, y no redistribu&iacute;a hacia el conjunto de la sociedad; la exclusi&oacute;n no fue un efecto no deseado sino una condici&oacute;n estructural del modelo: el bajo costo de la mano de obra ind&iacute;gena forzada era parte de la ventaja competitiva del sector exportador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) La Rep&uacute;blica Aristocr&aacute;tica no fue un per&iacute;odo de crecimiento econ&oacute;mico: es un mito creado por Basadre; en realidad fue un per&iacute;odo de estancamiento en comparaci&oacute;n con el auge del guano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) El crecimiento econ&oacute;mico s&iacute; se distribuy&oacute; ampliamente en el per&iacute;odo: la educaci&oacute;n de Pardo y la jornada de 8 horas de 1919 demostraron que la oligarqu&iacute;a estaba dispuesta a compartir los beneficios del crecimiento con las clases populares</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La paradoja crecimiento&ndash;exclusi&oacute;n de la Rep&uacute;blica Aristocr&aacute;tica es uno de los temas anal&iacute;ticos m&aacute;s importantes para los ex&aacute;menes preuniversitarios. La clave es el concepto de <B>enclave econ&oacute;mico</B>. El crecimiento se concentr&oacute; en sectores espec&iacute;ficos: (1) <B>Haciendas azucareras y algodoneras</B> de la costa, que usaban mano de obra semiesclava (enganche) y cuyos beneficios quedaban en las familias oligárquicas o en empresas extranjeras. (2) <B>Miner&iacute;a</B> controlada por la Cerro de Pasco Corporation (EEUU), que repatriaba utilidades. (3) <B>Caucho amaz&oacute;nico</B>, con esclavitud de ind&iacute;genas. Estos enclaves generaban divisas para el Estado (que las invertía en Lima) pero no desarrollaban mercados internos ni distribu&iacute;an ingresos hacia la sierra o la Amazonia. El bajo costo del trabajo ind&iacute;gena no era un "defecto" del sistema sino su condici&oacute;n de rentabilidad: si el gamonal hubiera pagado salarios justos, el az&uacute;car peruana no habr&iacute;a sido competitiva internacionalmente. La exclusi&oacute;n social era estructuralmente necesaria para el modelo de crecimiento elegido.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> &iquest;De qu&eacute; manera el Partido Civil represent&oacute; una modernizaci&oacute;n del poder oligárquico respecto al caudillismo militar del siglo XIX, y cu&aacute;les fueron los l&iacute;mites de esa modernizaci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) El Partido Civil no represent&oacute; ninguna modernizaci&oacute;n: era esencialmente igual al caudillismo militar, solo que los caudillos usaban traje en lugar de uniforme</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) El Partido Civil moderniz&oacute; el poder oligárquico instituyendo la <B>alternancia civil en el poder, elecciones formales y Estado de derecho formal</B> en lugar de los golpes y pronunciamientos militares; pero sus l&iacute;mites fueron profundos: sufragio censitario excluyente, Congreso controlado por la oligarqu&iacute;a, ausencia de reforma agraria y persistencia del gamonalismo; era una democracia formal para una minor&iacute;a, no una democracia sustancial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) El Partido Civil moderni&oacute; el poder excluyendo completamente a los militares de la pol&iacute;tica; gracias al Partido Civil, el Per&uacute; no tuvo ning&uacute;n golpe militar entre 1895 y 1919, a diferencia del resto de Am&eacute;rica Latina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) El Partido Civil moderniz&oacute; el poder mediante la inclusi&oacute;n gradual del ind&iacute;gena: fue el primer partido en reconocer el voto de los analfabetos y crear escuelas interculturales bilingues en la sierra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Partido Civil</B>, fundado por <B>Manuel Pardo</B> en 1871, represent&oacute; una novedad hist&oacute;rica en el Per&uacute;: fue el primer partido pol&iacute;tico organizado y el primer intento de establecer un gobierno civil estable en un pa&iacute;s acostumbrado a los caudillos militares. Sus aportaciones reales: (1) <B>Legitimidad electoral</B>: los cambios de gobierno se realizaban mediante elecciones (aunque fraudulentas a veces), no mediante golpes. (2) <B>Continuidad institucional</B>: creaci&oacute;n de ministerios modernos, reorganizaci&oacute;n del sistema fiscal, misi&oacute;n militar francesa para profesionalizar el ej&eacute;rcito. (3) <B>Educaci&oacute;n e infraestructura</B> (Pardo). Pero sus l&iacute;mites fueron igualmente reales: (1) <B>Sufragio censitario</B>: exclu&iacute;a a la mayor&iacute;a. (2) <B>Sin reforma agraria</B>: el gamonalismo intacto. (3) <B>Sin integraci&oacute;n ind&iacute;gena</B>. (4) <B>Fraude electoral</B> sistem&aacute;tico. (5) Cuando el sistema fue desafiado (Billinghurst), recurrieron al golpe militar. La "modernizaci&oacute;n" civilista fue real pero estrecha: moderniz&oacute; el Estado para la oligarqu&iacute;a, no para la naci&oacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Analiza la importancia hist&oacute;rica de la Asociaci&oacute;n Pro-Ind&iacute;gena (1909) como antecedente de los derechos humanos en el Per&uacute;.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La Asociaci&oacute;n Pro-Ind&iacute;gena fue una organizaci&oacute;n fundada por ind&iacute;genas de la sierra para defender autónomamente sus derechos; su fuerza radicaba en su base comunitaria y en su rechazo de cualquier tutor&iacute;a intelectual limena</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La Asociaci&oacute;n Pro-Ind&iacute;gena (1909), fundada por <B>Pedro Zulen</B> y <B>Dora Mayer</B>, fue la primera organizaci&oacute;n sistem&aacute;tica de defensa legal de los ind&iacute;genas en el Per&uacute;: recibi&oacute; denuncias de abusos, las document&oacute;, las public&oacute; y buscaba remedios legales; represent&oacute; el primer reconocimiento formal de que el ind&iacute;gena era un <B>sujeto de derechos</B> que el Estado deb&iacute;a proteger; su limitaci&oacute;n era que actuaba desde Lima sin poder de coacci&oacute;n sobre los gamonales locales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La Asociaci&oacute;n Pro-Ind&iacute;gena fue una organizaci&oacute;n auspiciada por el Partido Civil como gesto pol&iacute;tico sin consecuencias reales; nunca denunci&oacute; a ning&uacute;n hacendado ni procur&oacute; ninguna condena judicial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La Asociaci&oacute;n Pro-Ind&iacute;gena fue fundada por la Iglesia Cat&oacute;lica como parte de su programa social; fue la instituci&oacute;n que document&oacute; el escándalo del Putumayo y lo present&oacute; ante el Vaticano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Asociaci&oacute;n Pro-Ind&iacute;gena</B> (fundada en Lima en <B>1909</B>) es una instituci&oacute;n pionera en la historia de los derechos humanos en el Per&uacute;. Sus fundadores, <B>Pedro Zulen</B> (intelectual limen&iacute;o) y <B>Dora Mayer</B> (intelectual alemana radicada en Per&uacute;), establecieron un sistema para: recibir denuncias escritas de abusos contra comunidades ind&iacute;genas de todo el pa&iacute;s; documentarlas y publicarlas en su peri&oacute;dico <I>El Deber Pro-Ind&iacute;gena</I>; buscar remedios legales y diplom&aacute;ticos. Fu la primera vez que existía en Per&uacute; una instituci&oacute;n civil organizada para la defensa de los derechos ind&iacute;genas. Sus l&iacute;mites fueron reales: no ten&iacute;a poder coercitivo, los jueces locales depend&iacute;an de los gamonales, y el Estado no implementaba sus recomendaciones. La organizaci&oacute;n decay&oacute; con la muerte de Zulen en 1925. Pero su importancia hist&oacute;rica reside en haber establecido el principio de que el <B>ind&iacute;gena era un sujeto de derechos</B>, no solo un problema econ&oacute;mico o social.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> &iquest;En qu&eacute; medida el per&iacute;odo 1884&ndash;1919 represent&oacute; una "reconstrucci&oacute;n nacional" real o solo una reconstrucci&oacute;n del orden oligárquico interrumpido por la guerra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Fue una reconstrucci&oacute;n nacional genuina: el Per&uacute; reconstuy&oacute; su territorio, su econom&iacute;a, su infraestructura y su sistema pol&iacute;tico de forma inclusiva; para 1919 era un pa&iacute;s moderno, democratico y prósper</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El per&iacute;odo fue principalmente una reconstrucci&oacute;n del <B>orden oligárquico</B>: se recuperaron las finanzas estatales, la infraestructura y la estabilidad pol&iacute;tica, pero sin resolver las causas estructurales de la derrota (exclusi&oacute;n ind&iacute;gena, Estado d&eacute;bil, dependencia externa); el Per&uacute; de 1919 era m&aacute;s estable y rico que el de 1884, pero los campesinos y obreros no hab&iacute;an cambiado su situaci&oacute;n estructural; la crisis de 1919 demostr&oacute; que esa "reconstrucci&oacute;n" era incompleta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) No fue ningún tipo de reconstrucci&oacute;n: el per&iacute;odo 1884&ndash;1919 fue de continuo declive; el Per&uacute; de 1919 estaba peor que el de 1884 en todos los indicadores econ&oacute;micos y sociales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Fue una reconstrucci&oacute;n nacional genuina pero incompleta: s&iacute; se atendi&oacute; la cuesti&oacute;n ind&iacute;gena (mediante la Asociaci&oacute;n Pro-Ind&iacute;gena y la educaci&oacute;n de Pardo), pero la reconstrucci&oacute;n financiera (Contrato Grace) fue un fracaso total que agrav&oacute; la dependencia brit&aacute;nica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Este es uno de los debates interpretativos centrales del per&iacute;odo y requiere un an&aacute;lisis matizado. <B>Lo que s&iacute; se reconstruy&oacute;:</B> (1) <B>Estabilidad financiera</B>: el Contrato Grace cancel&oacute; la deuda externa; el Per&uacute; volvi&oacute; a tener acceso al cr&eacute;dito internacional. (2) <B>Crecimiento econ&oacute;mico</B>: el auge del az&uacute;car, algod&oacute;n, caucho y miner&iacute;a gener&oacute; divisas y moderniz&oacute; ciertos sectores. (3) <B>Instituciones</B>: sistema educativo (Pardo), profesionalizaci&oacute;n del ej&eacute;rcito (misi&oacute;n francesa), organizaci&oacute;n del Estado. (4) <B>Infraestructura limeña</B>: saneamiento, luz, comunicaciones. <B>Lo que NO se reconstruy&oacute;:</B> (1) La integraci&oacute;n del ind&iacute;gena y el campesinado: siguieron excluidos pol&iacute;ticamente y explotados econ&oacute;micamente. (2) La dependencia del capital externo: Contrato Grace (GB), Cerro de Pasco Corporation (EEUU), deuda externa. (3) La reforma agraria: el gamonalismo intacto. (4) La cohesi&oacute;n nacional: el Per&uacute; de 1919 seguía siendo dos países en uno: Lima moderna y la sierra colonial. La crisis de 1919 (huelgas, reforma universitaria, golpe de Legu&iacute;a) fue la expresi&oacute;n de los l&iacute;mites de esa reconstrucci&oacute;n parcial.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Desde una perspectiva de historia econ&oacute;mica, &iquest;en qu&eacute; medida el modelo agroexportador de la Rep&uacute;blica Aristocr&aacute;tica repiti&oacute; los errores de la era del guano y qu&eacute; lecciones no se aprendieron?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) El modelo agroexportador super&oacute; completamente los errores del guano: la diversificaci&oacute;n de productos (az&uacute;car, algod&oacute;n, caucho, minerales) evit&oacute; la dependencia de un solo recurso; el Per&uacute; de 1919 era estructuralmente m&aacute;s s&oacute;lido que el de 1872</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) El modelo agroexportador repiti&oacute; los errores estructurales del guano: <B>dependencia de materias primas cuyos precios fijaba el mercado externo; ausencia de industrializaci&oacute;n; riqueza concentrada en una elite; Estado financiado por exportaciones sin redistribuci&oacute;n; dominio del capital extranjero</B>; cuando los precios cayeron (Primera Guerra Mundial, crisis del caucho), el sistema se mostr&oacute; igualmente vulnerable que en la era del guano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) El modelo agroexportador super&oacute; el error principal del guano: invirti&oacute; en industria nacional; la cervecera Backus (1876) y la textil Vitarte son ejemplos del desarrollo industrial que la Rep&uacute;blica Aristocr&aacute;tica gener&oacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La Rep&uacute;blica Aristocr&aacute;tica no tuvo ning&uacute;n modelo econ&oacute;mico coherente; fue un per&iacute;odo de improvisaci&oacute;n y oportunismo, sin ninguna estrategia de desarrollo nacional art&iacute;culada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparaci&oacute;n entre la era del guano y la Rep&uacute;blica Aristocr&aacute;tica desde la historia econ&oacute;mica es un an&aacute;lisis de las <B>estructuras de larga duraci&oacute;n</B>. <B>Errores que se repitieron:</B> (1) <B>Dependencia de materias primas</B>: como el guano, los nuevos productos (az&uacute;car, caucho, minerales) eran recursos naturales cuyos precios fijaban los mercados internacionales; cuando los precios ca&iacute;an (como el caucho tras el auge de las plantaciones malayas en 1912), la econom&iacute;a se resentía. (2) <B>Sin industrializaci&oacute;n</B>: el Per&uacute; de 1919 no hab&iacute;a desarrollado ninguna industria manufacturera significativa; la econom&iacute;a seguía siendo primario-exportadora. (3) <B>Capital extranjero dominante</B>: la Cerro de Pasco Corporation y la Peruvian Corporation drenaban utilidades al exterior, igual que los consignatarios del guano. (4) <B>Estado dependiente de exportaciones</B>: como con el guano, el Estado financiaba sus gastos con los impuestos a las exportaciones, sin una base tributaria interna s&oacute;lida. (5) <B>Concentraci&oacute;n de la riqueza</B>: igual que en la era del guano, la bonanza enriquecía a una elite y no redund&oacute; en desarrollo nacional inclusivo. La diferencia est&aacute; en que la Rep&uacute;blica Aristocr&aacute;tica s&iacute; mantuvo cierta disciplina fiscal (a diferencia del despilfarro del guano), pero los problemas estructurales eran esencialmente los mismos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analiza el rol de la mujer en el debate intelectual del Per&uacute; de la Rep&uacute;blica Aristocr&aacute;tica: &iquest;qu&eacute; figuras femeninas participaron en los debates p&uacute;blicos y c&oacute;mo fue su recepci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Las mujeres estuvieron completamente excluidas de cualquier debate p&uacute;blico durante la Rep&uacute;blica Aristocr&aacute;tica; la primera mujer en participar en el debate intelectual peruano fue <B>Mar&iacute;a Jes&uacute;s Alvarado Rivera</B> en la d&eacute;cada de 1930</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Figuras como <B>Clorinda Matto de Turner</B> (novela indigenista), <B>Dora Mayer</B> (defensa de los ind&iacute;genas), <B>Mar&iacute;a Jes&uacute;s Alvarado Rivera</B> (primer movimiento feminista organizado) y <B>Teresa Gonz&aacute;lez de Fanning</B> (educaci&oacute;n de la mujer) participaron activamente en el debate p&uacute;blico; su recepci&oacute;n fue ambivalente: reconocimiento literario pero exclusi&oacute;n pol&iacute;tica (las mujeres no votaban) y condenas de instituciones conservadoras como la Iglesia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Las mujeres de la Rep&uacute;blica Aristocr&aacute;tica participaban solo en debates religiosos y de caridad; nunca cuestionaron el orden pol&iacute;tico o social; sus obras no tienen ning&uacute;n contenido pol&iacute;tico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) El sufragio femenino fue reconocido en el Per&uacute; en 1913 gracias a la presi&oacute;n del movimiento feminista liderado por Clorinda Matto de Turner; fue uno de los primeros países de Am&eacute;rica Latina en conceder el voto a las mujeres</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La Rep&uacute;blica Aristocr&aacute;tica, a pesar de su conservadurismo estructural, vio surgir un grupo significativo de intelectuales y activistas mujeres. <B>Clorinda Matto de Turner</B> (ya estudiada): su <I>Aves sin nido</I> (1889) no solo denunci&oacute; la explotaci&oacute;n ind&iacute;gena sino que cuestion&oacute; el rol del clero y defendi&oacute; la educaci&oacute;n de la mujer; fue excomulgada. <B>Dora Mayer</B> (alemana radicada en Lima): cofundadora de la Asociaci&oacute;n Pro-Ind&iacute;gena; sus ensayos en <I>El Deber Pro-Ind&iacute;gena</I> combinaron denuncia del gamonalismo con reflexi&oacute;n sobre los derechos. <B>Mar&iacute;a Jes&uacute;s Alvarado Rivera</B> (1878&ndash;1971): pionera del feminismo peruano; fund&oacute; <B>Evoluci&oacute;n Femenina</B> (1914), la primera organizaci&oacute;n feminista peruana; exigi&oacute; el voto femenino (que el Per&uacute; no conceder&iacute;a hasta 1955). <B>Teresa Gonz&aacute;lez de Fanning</B>: defendi&oacute; la educaci&oacute;n de la mujer como condici&oacute;n del progreso nacional. En conjunto, estas figuras mostraron que la exclusi&oacute;n de la mujer del sistema pol&iacute;tico (no vot&oacute; hasta 1955) no impidi&oacute; su participaci&oacute;n intelectual y social.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> &iquest;Por qu&eacute; el golpe de Legu&iacute;a en 1919 fue recibido con simpat&iacute;a por amplios sectores populares y estudiantiles, y qu&eacute; nos dice esto sobre la crisis de legitimidad del sistema oligárquico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) El golpe de Legu&iacute;a fue rechazado por todos los sectores populares; fue apoyado solo por los grandes terratenientes y el capital estadounidense, que quer&iacute;an reemplazar a la oligarqu&iacute;a brit&aacute;nica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) El golpe de Legu&iacute;a fue recibido con simpat&iacute;a popular porque prometía la "<B>Patria Nueva</B>": un programa que combinaba obras p&uacute;blicas, reconocimiento de las comunidades ind&iacute;genas, reforma constitucional y ruptura con la vieja oligarqu&iacute;a; el hecho de que un golpe fuera bienvenido demuestra que la Rep&uacute;blica Aristocr&aacute;tica hab&iacute;a perdido su legitimidad entre obreros, estudiantes e ind&iacute;genas que no se sen&iacute;an representados por el sistema</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Legu&iacute;a no dio un golpe de Estado: gan&oacute; las elecciones de 1919 limpiamente y fue reconocido por todas las fuerzas pol&iacute;ticas; la acusaci&oacute;n de "golpe" es una invenci&oacute;n de sus enemigos oligárquicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El golpe fue recibido con simpat&iacute;a solo por los militares; los sectores populares y estudiantiles lo rechazaron pero no tuvieron capacidad de resistir a las fuerzas armadas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El golpe de <B>Augusto B. Legu&iacute;a</B> del <B>4 de julio de 1919</B> es uno de los momentos m&aacute;s reveladores de la crisis de la Rep&uacute;blica Aristocr&aacute;tica. Legu&iacute;a, antiguo civilista, se hab&iacute;a distanciado del Partido Civil y se presentaba como el candidato del cambio. Hab&iacute;a ganado las elecciones de 1919, pero ante el temor de que el Congreso civilista desconociera su victoria, ejecut&oacute; un golpe preventivo. La clave interpretativa es que el golpe fue recibido con <B>alivio e incluso entusiasmo</B> por sectores que hab&iacute;an protagonizado la agitaci&oacute;n de 1919: (1) Los <B>obreros</B> que acababan de conquistar las 8 horas. (2) Los <B>estudiantes</B> de la reforma universitaria. (3) Sectores de <B>clase media</B> Lima harta del Partido Civil. Legu&iacute;a prometi&oacute; la "<B>Patria Nueva</B>": nuevo nombre para su programa de modernizaci&oacute;n autoritaria. Su primera Constituci&oacute;n (1920) reconoci&oacute; formalmente a las <B>comunidades ind&iacute;genas</B>. Que un golpe fuera recibido positivamente por sectores progresistas demuestra que el sistema oligárquico hab&iacute;a perdido la batalla de la legitimidad: ya no representaba a la mayor&iacute;a de los peruanos, si es que alguna vez lo hizo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Eval&uacute;a la afirmaci&oacute;n de Jorge Basadre: "La Rep&uacute;blica Aristocr&aacute;tica fue el per&iacute;odo en que el Per&uacute; tuvo el gobierno que mereci&oacute; pero no el que necesitaba." &iquest;Es una evaluaci&oacute;n justa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La afirmaci&oacute;n de Basadre es completamente justa e implica que los peruanos pobres y los ind&iacute;genas "merecían" su exclusi&oacute;n; es una tesis conservadora que naturaliza la desigualdad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La afirmaci&oacute;n de Basadre es una reflexi&oacute;n compleja: el gobierno que "mereci&oacute;" significa el que emergi&oacute; de las estructuras sociales y pol&iacute;ticas existentes (una sociedad con sufragio censitario solo pod&iacute;a producir un gobierno oligárquico); el que "necesitaba" implica lo que habr&iacute;a requerido para su desarrollo incluyente (reforma agraria, integraci&oacute;n ind&iacute;gena, industrializaci&oacute;n); la frase captura la tragedia de un per&iacute;odo que fue lo mejor posible dentro de sus l&iacute;mites estructurales pero insuficiente para los desaf&iacute;os reales del pa&iacute;s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La afirmaci&oacute;n de Basadre es incorrecta: el Per&uacute; no "mereci&oacute;" la Rep&uacute;blica Aristocr&aacute;tica; fue impuesta por la violencia y el fraude electoral; si hubiera habido sufragio universal, habr&iacute;a surgido un gobierno radicalmente diferente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La afirmaci&oacute;n de Basadre es anacrónica: Basadre juzga el pasado con criterios democr&aacute;ticos del siglo XX; en el contexto del siglo XIX&ndash;XX, la Rep&uacute;blica Aristocr&aacute;tica era una democracia avanzada en comparaci&oacute;n con sus vecinos latinoamericanos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta requiere evaluar uno de los juicios hist&oacute;ricos m&aacute;s sofisticados de <B>Jorge Basadre</B>, el m&aacute;ximo historiador peruano del siglo XX. La afirmaci&oacute;n atr&iacute;buida a Basadre (en el esp&iacute;ritu de su obra, si no literalmente) captura una paradoja real. <B>"El gobierno que mereci&oacute;"</B> no es un juicio moral sino sociol&oacute;gico: dadas las estructuras existentes &mdash;sufragio censitario, poder de la oligarqu&iacute;a, debilidad del Estado, gamonalismo en la sierra, movimiento obrero incipiente&mdash; era casi inevitable que el Per&uacute; produjera exactamente el tipo de gobierno que produjo. En ese sentido, el sistema fue coherente con sus condiciones de posibilidad. <B>"El que necesitaba"</B> es un juicio normativo y comparativo: dado el nivel de desigualdad, la exclusi&oacute;n ind&iacute;gena, la dependencia externa y la debilidad institucional, lo que el Pa&iacute;s habr&iacute;a necesitado era un Estado reformador capaz de democratizar la sociedad, industrializar la econom&iacute;a e integrar a las mayor&iacute;as. <B>Evaluaci&oacute;n cr&iacute;tica:</B> las opciones c) y d) también capturan verdades parciales. La c) señala que el sufragio universal habr&iacute;a cambiado el resultado &mdash;esto es cierto, pero el sufragio universal no exist&iacute;a en casi ningún pa&iacute;s del mundo en ese entonces. La d) señala que en comparaci&oacute;n regional el Per&uacute; fue estable &mdash;también cierto. Basadre es el m&aacute;s justo porque ve simult&aacute;neamente los logros reales del per&iacute;odo y sus l&iacute;mites estructurales, sin caer ni en la apolog&iacute;a ni en la condena simplista.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

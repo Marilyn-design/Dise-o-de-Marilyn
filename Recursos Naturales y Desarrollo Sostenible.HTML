@@ -1,0 +1,577 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Recursos Naturales y Desarrollo Sostenible - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA · TEMA 12 · NIVEL PREUNIVERSITARIO</DIV>
+<H1>Recursos Naturales y Desarrollo Sostenible</H1>
+<DIV CLASS="sub">Clasificación de recursos · Recursos del Perú · Problemática ambiental · Desarrollo sostenible · Áreas naturales protegidas</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="definicion">1. Definición y clasificación de los recursos naturales</H3>
+
+Un <B>recurso natural</B> es todo elemento, sustancia o proceso que se encuentra en la naturaleza y que el ser humano puede aprovechar para satisfacer sus necesidades. La clasificación más importante para el examen es según su capacidad de renovación:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo</TH><TH>Definición</TH><TH>Ejemplos peruanos</TH><TH>Característica clave</TH></TR>
+<TR><TD><B>Renovables</B></TD><TD>Se regeneran de forma natural en tiempos accesibles al ser humano, si no se sobreexplotan</TD><TD>Bosques, peces, agua, suelo, energía solar, eólica, hidroeléctrica</TD><TD>Pueden agotarse si la extracción supera la tasa de regeneración</TD></TR>
+<TR><TD><B>No renovables</B></TD><TD>Se forman en millones de años; una vez extraídos no se regeneran en escala humana</TD><TD>Petróleo, gas natural, carbón, minerales metálicos (cobre, oro, zinc, plata)</TD><TD>Stock finito; su uso implica necesariamente su agotamiento</TD></TR>
+<TR><TD><B>Inagotables (perpetuos)</B></TD><TD>Su uso no los consume ni los agota</TD><TD>Energía solar, energía eólica, energía de las mareas</TD><TD>Flujos continuos de energía; no se "gastan"</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La clasificación más evaluada distingue entre recursos <B>renovables</B> y <B>no renovables</B>. Ojo: el agua y los bosques son renovables pero pueden <B>agotarse por sobreexplotación</B>. El suelo es renovable pero en escala de miles de años: en la práctica se trata como si fuera no renovable. No confundas "inagotable" con "renovable".</DIV>
+
+<H4>Otras clasificaciones complementarias:</H4>
+<UL>
+<LI><B>Por su origen:</B> bióticos (tienen vida: fauna, flora, hongos) y abióticos (sin vida: agua, minerales, suelo, energía solar).</LI>
+<LI><B>Por su estado de aprovechamiento:</B> actuales (ya se aprovechan), potenciales (existen pero aún no se explotan), virtuales (conocidos pero aún inaccesibles por tecnología o costo).</LI>
+<LI><B>Por su distribución:</B> ubicuos (en todas partes: aire, luz solar) y localizados (en zonas específicas: petróleo de Talara, cobre de Las Bambas).</LI>
+</UL>
+
+<H3 ID="peru-recursos">2. El Perú: país megadiverso en recursos naturales</H3>
+
+El Perú es uno de los países con <B>mayor riqueza natural del mundo</B>. Esto se refleja en tres grandes categorías:
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1°</DIV><DIV CLASS="dk-label">Productor mundial de plata (2023)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">2°</DIV><DIV CLASS="dk-label">Productor de cobre en América Latina</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">8°</DIV><DIV CLASS="dk-label">País con mayor disponibilidad de agua dulce</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">70%</DIV><DIV CLASS="dk-label">De los glaciares tropicales del mundo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">3 000+</DIV><DIV CLASS="dk-label">Variedades nativas de papa</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">72 M ha</DIV><DIV CLASS="dk-label">De bosques amazónicos (2° en Sudamérica)</DIV></DIV>
+</DIV>
+
+<H3 ID="mineros">3. Recursos minerales del Perú</H3>
+
+<H4>Minerales metálicos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Mineral</TH><TH>Principales yacimientos</TH><TH>Posición mundial</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Cobre</B></TD><TD>Las Bambas (Apurímac), Cerro Verde (Arequipa), Antamina (Áncash), Toquepala (Tacna)</TD><TD>2° en Latinoamérica, ~3° mundial</TD><TD>Principal producto de exportación minera</TD></TR>
+<TR><TD><B>Oro</B></TD><TD>Yanacocha (Cajamarca), La Arena (La Libertad), minería informal (Madre de Dios)</TD><TD>6° mundial</TD><TD>2° producto de exportación; también explotado ilegalmente</TD></TR>
+<TR><TD><B>Plata</B></TD><TD>Antamina (Áncash), Uchucchacua (Lima), Julcani</TD><TD>1° mundial</TD><TD>El Perú es el mayor productor de plata del mundo</TD></TR>
+<TR><TD><B>Zinc</B></TD><TD>Antamina (Áncash), Cerro de Pasco (Pasco)</TD><TD>2° mundial</TD><TD>Usado en galvanizado y aleaciones</TD></TR>
+<TR><TD><B>Plomo</B></TD><TD>Cerro de Pasco, Chungar (Pasco)</TD><TD>3° mundial</TD><TD>Usado en baterías y aleaciones</TD></TR>
+<TR><TD><B>Hierro</B></TD><TD>Marcona (Ica)</TD><TD>Importante a nivel regional</TD><TD>El único gran yacimiento de hierro del Perú</TD></TR>
+<TR><TD><B>Estaño</B></TD><TD>San Rafael (Puno)</TD><TD>3° mundial</TD><TD>Importante yacimiento estannífero</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Muy evaluado en exámenes:</B> El Perú es <B>1° productor mundial de plata</B>, <B>2° de zinc</B> y <B>3° de cobre y plomo</B> aproximadamente. Las exportaciones mineras representan más del <B>60%</B> de las exportaciones totales del Perú. El yacimiento de <B>Antamina</B> (Áncash) es polimetálico (produce cobre, zinc, plata y molibdeno a la vez).</DIV>
+
+<H4>Minerales no metálicos:</H4>
+<UL>
+<LI><B>Fosfatos:</B> Bayóvar (Piura), en el desierto de Sechura. Es uno de los mayores yacimientos de fosfatos del mundo; se usa como fertilizante.</LI>
+<LI><B>Sal:</B> Salinas de Huacho, minas de sal en Cusco (Maras).</LI>
+<LI><B>Mármol, travertino:</B> en diversas zonas de la sierra.</LI>
+<LI><B>Yeso, silice, calizas:</B> materiales de construcción ampliamente distribuidos.</LI>
+</UL>
+
+<H4>Combustibles fósiles (no renovables):</H4>
+<UL>
+<LI><B>Petróleo:</B> cuencas de Talara (Piura, explotación desde 1860), Loreto (selva norte) y Ucayali. La producción ha declinado desde los años 70.</LI>
+<LI><B>Gas natural:</B> <B>Camisea</B> (Cusco-Ayacucho) es el yacimiento más grande del Perú y uno de los mayores de América del Sur. Produce gas natural y líquidos de gas natural (LGN). Inició producción en 2004 y ha transformado la matriz energética peruana.</LI>
+<LI><B>Carbón:</B> yacimientos en La Libertad (Yanahuanca) y Junín; producción limitada.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Camisea:</B> El yacimiento de gas natural de Camisea (bloques 56 y 88, provincia de La Convención, Cusco) tiene reservas probadas de más de 10 trillones de pies cúbicos (TCF). El gas llega a Lima por gasoducto y el Perú exporta GNL (Gas Natural Licuado) principalmente a México y España. Ha reducido la dependencia peruana del petróleo importado.</DIV>
+
+<H3 ID="pesqueros">4. Recursos pesqueros</H3>
+
+El Perú tiene una de las <B>pesquerías más productivas del mundo</B> gracias a la corriente de Humboldt, que genera el afloramiento de aguas frías ricas en nutrientes.
+
+<H4>Principales recursos pesqueros:</H4>
+<UL>
+<LI><B>Anchoveta</B> (<I>Engraulis ringens</I>): el recurso pesquero más importante del Perú. Se transforma en <B>harina de pescado y aceite de pescado</B> para exportación (alimento para acuicultura mundial). El Perú es el 1° o 2° productor mundial de harina de pescado. La anchoveta vive en las aguas frías de la corriente de Humboldt.</LI>
+<LI><B>Jurel y caballa:</B> peces pelágicos para consumo humano directo.</LI>
+<LI><B>Merluza:</B> pez demersal (de fondo) de la costa peruana; importante para consumo nacional.</LI>
+<LI><B>Pota o calamar gigante</B> (<I>Dosidicus gigas</I>): el recurso pesquero de mayor crecimiento en exportación en los últimos años.</LI>
+<LI><B>Langostinos:</B> criados en acuicultura en Tumbes; importante exportación.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El Fenómeno El Niño es la principal amenaza para la anchoveta: cuando el mar se calienta, la corriente de Humboldt se debilita, los nutrientes desaparecen y la anchoveta migra hacia aguas más frías (sur o profundidades), colapsando la pesquería. El colapso de la anchoveta en 1971–1973 (por sobreexplotación + El Niño) fue el mayor desastre pesquero de la historia hasta ese momento.</DIV>
+
+<H3 ID="forestales">5. Recursos forestales</H3>
+
+El Perú posee el <B>segundo bosque amazónico más grande de América del Sur</B> (después de Brasil), con aproximadamente <B>72 millones de hectáreas</B> de bosques.
+
+<H4>Principales recursos forestales:</H4>
+<UL>
+<LI><B>Madera preciosa:</B> caoba (<I>Swietenia macrophylla</I>), cedro (<I>Cedrela odorata</I>), tornillo (<I>Cedrelinga catenaeformis</I>). La caoba está en CITES Apéndice II (comercio internacional controlado).</LI>
+<LI><B>Shiringa o caucho</B> (<I>Hevea brasiliensis</I>): fuente de látex natural. El boom del caucho (1879–1912) fue determinante en la historia amazónica peruana.</LI>
+<LI><B>Palmeras:</B> aguaje, pijuayo, ungurahui; fuentes de alimento y aceite.</LI>
+<LI><B>Plantas medicinales y biocomercio:</B> uña de gato (<I>Uncaria tomentosa</I>), sangre de grado (<I>Croton lechleri</I>), cat's claw, maca (<I>Lepidium meyenii</I>), yacón.</LI>
+</UL>
+
+<H4>Problemas del sector forestal:</H4>
+<UL>
+<LI><B>Deforestación:</B> el Perú pierde entre 150 000 y 200 000 hectáreas de bosque al año. Las principales causas son: tala ilegal, expansión agrícola (cultivos de coca, palma aceitera, café), minería ilegal, construcción de carreteras.</LI>
+<LI><B>Tala ilegal:</B> gran parte de la madera exportada no tiene origen legal documentado.</LI>
+<LI><B>Minería ilegal de oro:</B> en Madre de Dios devastó más de 50 000 hectáreas de bosque y contamina ríos con mercurio.</LI>
+</UL>
+
+<H3 ID="suelo">6. Recursos del suelo</H3>
+
+<H4>Capacidad de uso mayor del suelo peruano:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo de suelo</TH><TH>% del territorio</TH><TH>Uso adecuado</TH></TR>
+<TR><TD>Apto para cultivos en limpio</TD><TD>~5.9%</TD><TD>Agricultura intensiva</TD></TR>
+<TR><TD>Apto para cultivos permanentes</TD><TD>~2.6%</TD><TD>Frutales, café, cacao</TD></TR>
+<TR><TD>Apto para pastos</TD><TD>~13.9%</TD><TD>Ganadería extensiva</TD></TR>
+<TR><TD>Apto para producción forestal</TD><TD>~38.2%</TD><TD>Extracción maderera sostenible</TD></TR>
+<TR><TD>Apto para protección</TD><TD>~39.4%</TD><TD>Conservación, no debe cultivarse</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Dato clave:</B> Solo el <B>5.9%</B> del territorio peruano tiene suelos aptos para agricultura intensiva (cultivos en limpio). Sin embargo, el Perú tiene millones de hectáreas en la Amazonía con suelos clasificados como "aptos para protección" que están siendo deforestados para agricultura, lo cual es ecológica y agronómicamente incorrecto: los suelos amazónicos son frágiles (la fertilidad está en la biomasa del bosque, no en el suelo).</DIV>
+
+<H3 ID="energeticos">7. Recursos energéticos renovables del Perú</H3>
+
+<UL>
+<LI><B>Hidroelectricidad:</B> el Perú tiene el <B>4° potencial hidroeléctrico del mundo</B>. Las principales centrales son: Central del Mantaro (Junín, la mayor del Perú, ~1 000 MW), Cañón del Pato (Áncash, río Santa), Chaglla (Huánuco, río Huallaga), Cerro del Águila (Junín), El Platanal (Lima).</LI>
+<LI><B>Energía solar:</B> la costa sur y la Puna tienen alta irradiación solar. Proyectos solares en Moquegua, Arequipa y Puno.</LI>
+<LI><B>Energía eólica:</B> la costa peruana tiene vientos regulares. Parques eólicos en Marcona (Ica) y Cupisnique (La Libertad).</LI>
+<LI><B>Geotermia:</B> potencial en zonas volcánicas del sur (Ubinas, Ticsani); aún sin explotación comercial importante.</LI>
+</UL>
+
+<H3 ID="desarrollo-sostenible">8. Desarrollo Sostenible: concepto fundamental</H3>
+
+<H4>Definición clásica (Informe Brundtland, ONU, 1987):</H4>
+El desarrollo sostenible es aquel que <B>"satisface las necesidades del presente sin comprometer la capacidad de las generaciones futuras para satisfacer sus propias necesidades"</B>.
+
+<H4>Los tres pilares del desarrollo sostenible:</H4>
+<UL>
+<LI><B>Pilar económico:</B> crecimiento económico que genere riqueza y empleo de manera eficiente.</LI>
+<LI><B>Pilar social:</B> equidad y justicia social; los beneficios del desarrollo deben llegar a toda la población, especialmente a los más vulnerables.</LI>
+<LI><B>Pilar ambiental:</B> conservación de los ecosistemas y los recursos naturales para el largo plazo.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> Los <B>3 pilares</B> del desarrollo sostenible son: <B>económico, social y ambiental</B>. El desarrollo sostenible no es solo conservación del medio ambiente; también incluye justicia social y crecimiento económico. La clave es que los tres pilares deben estar en <B>equilibrio</B>.</DIV>
+
+<H4>Antecedentes históricos del desarrollo sostenible:</H4>
+<UL>
+<LI><B>Club de Roma (1972):</B> publicó "Los límites del crecimiento", primer informe que alertó sobre el agotamiento de los recursos naturales si la humanidad seguía creciendo al mismo ritmo.</LI>
+<LI><B>Conferencia de Estocolmo (1972):</B> primera conferencia internacional sobre medio ambiente. Creó el PNUMA (Programa de las Naciones Unidas para el Medio Ambiente).</LI>
+<LI><B>Informe Brundtland (1987):</B> acuñó la definición oficial de desarrollo sostenible.</LI>
+<LI><B>Cumbre de la Tierra (Río de Janeiro, 1992):</B> aprobó la Agenda 21, el Convenio sobre Diversidad Biológica y la Convención Marco sobre Cambio Climático.</LI>
+<LI><B>Cumbre del Milenio (2000):</B> los 8 Objetivos de Desarrollo del Milenio (ODM).</LI>
+<LI><B>Agenda 2030 (2015):</B> los 17 Objetivos de Desarrollo Sostenible (ODS), que reemplazaron a los ODM y son el marco actual.</LI>
+</UL>
+
+<H4>Los 17 ODS más importantes para el examen:</H4>
+<UL>
+<LI>ODS 6: Agua limpia y saneamiento.</LI>
+<LI>ODS 7: Energía asequible y no contaminante.</LI>
+<LI>ODS 13: Acción por el clima.</LI>
+<LI>ODS 14: Vida submarina (conservación de océanos).</LI>
+<LI>ODS 15: Vida de ecosistemas terrestres (conservación de bosques y biodiversidad).</LI>
+</UL>
+
+<H3 ID="problemas">9. Principales problemas ambientales del Perú</H3>
+
+<H4>A) Deforestación amazónica:</H4>
+<UL>
+<LI>El Perú pierde entre 150 000 y 200 000 ha de bosque por año.</LI>
+<LI>Causas: tala ilegal, cultivos ilegales de coca, palma aceitera, ganadería extensiva, carreteras.</LI>
+<LI>Consecuencias: pérdida de biodiversidad, emisión de CO₂, desplazamiento de comunidades indígenas, alteración del ciclo hidrológico.</LI>
+</UL>
+
+<H4>B) Minería ilegal e informal:</H4>
+<UL>
+<LI><B>Madre de Dios</B> es el principal foco de minería ilegal de oro en el Perú y uno de los mayores del mundo. Ha devastado más de 50 000 ha de bosque y contamina los ríos con <B>mercurio</B> (Hg), causando daños neurológicos en comunidades indígenas y ribereñas.</LI>
+<LI>El mercurio se bioacumula en la cadena alimentaria: agua → algas → peces → personas.</LI>
+</UL>
+
+<H4>C) Contaminación de cuencas hidrográficas:</H4>
+<UL>
+<LI>Pasivos mineros: relaves mineros que contaminan ríos en la sierra. Ejemplo: río Mantaro contaminado por la mina Cerro de Pasco.</LI>
+<LI>Derrames de petróleo: frecuentes en los oleoductos del Norperuano (Loreto), contaminando ríos amazónicos.</LI>
+<LI>Aguas residuales sin tratar: ciudades como Puno y Juliaca contaminan el lago Titicaca.</LI>
+</UL>
+
+<H4>D) Cambio climático e impactos en el Perú:</H4>
+<UL>
+<LI>Retroceso glaciar: el 70% de los glaciares tropicales del mundo están en el Perú. Han retrocedido entre 30% y 50% en 50 años.</LI>
+<LI>Intensificación del Fenómeno El Niño: mayor frecuencia e intensidad de sequías e inundaciones.</LI>
+<LI>Desertificación en la costa sur y la Puna.</LI>
+<LI>Impactos en la agricultura y la seguridad alimentaria.</LI>
+</UL>
+
+<H4>E) Pérdida de biodiversidad:</H4>
+<UL>
+<LI>Deforestación, caza furtiva y tráfico ilegal de especies amenazan la biodiversidad.</LI>
+<LI>Especies emblemáticas en peligro: oso de anteojos, tapir, manatí, cóndor andino, lobo de río.</LI>
+</UL>
+
+<H3 ID="anp">10. Áreas Naturales Protegidas (ANP) del Perú</H3>
+
+El Sistema Nacional de Áreas Naturales Protegidas por el Estado (<B>SINANPE</B>) es el conjunto de todas las ANP del Perú. Actualmente cubre más del <B>17%</B> del territorio nacional.
+
+<H4>Categorías de áreas naturales protegidas en el Perú:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Categoría</TH><TH>Características</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Parque Nacional</B></TD><TD>Máxima protección; no se permite ningún tipo de extracción ni asentamiento. Solo investigación científica y turismo controlado.</TD><TD>PN Manu, PN Huascarán, PN Bahuaja-Sonene</TD></TR>
+<TR><TD><B>Reserva Nacional</B></TD><TD>Permite uso sostenible de recursos por poblaciones locales. Actividades controladas como pesca y recolección.</TD><TD>RN Pacaya-Samiria (la más grande del Perú), RN de Junín, RN Titicaca</TD></TR>
+<TR><TD><B>Santuario Nacional</B></TD><TD>Protege ecosistemas o especies específicas de alto valor científico.</TD><TD>SN Lagunas de Mejía, SN Ampay</TD></TR>
+<TR><TD><B>Santuario Histórico</B></TD><TD>Protege un área de valor histórico-cultural Y ecológico.</TD><TD>SH Machu Picchu (el único que combina patrimonio natural y cultural), SH Pampa de Ayacucho</TD></TR>
+<TR><TD><B>Bosque de Protección</B></TD><TD>Protege cuencas hidrográficas y suelos frágiles.</TD><TD>BP Pui Pui (Junín)</TD></TR>
+<TR><TD><B>Zona Reservada</B></TD><TD>Categoría temporal mientras se estudia cuál categoría definitiva asignar.</TD><TD>ZR Sierra del Divisor</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Las ANP más importantes del Perú para el examen:</H4>
+<UL>
+<LI><B>Parque Nacional del Manu</B> (Madre de Dios/Cusco): Patrimonio Natural de la Humanidad (UNESCO, 1987) y Reserva de Biosfera. Considerada el área protegida con <B>mayor biodiversidad documentada del mundo</B>. Tiene un gradiente desde la Puna (4 000 m) hasta la Omagua (300 m).</LI>
+<LI><B>Reserva Nacional Pacaya-Samiria</B> (Loreto): la <B>más grande del Perú</B> (~2 millones de ha). Selva baja inundable; hábitat del paiche, el delfín rosado y la victoria amazónica.</LI>
+<LI><B>Parque Nacional Huascarán</B> (Áncash): Patrimonio Natural de la Humanidad (UNESCO, 1985). Protege la Cordillera Blanca con el Huascarán (6 768 m) y más de 600 glaciares.</LI>
+<LI><B>Santuario Histórico de Machu Picchu</B> (Cusco): Patrimonio Mundial Cultural Y Natural (UNESCO). El único caso en el Perú donde se combinan ambas categorías.</LI>
+<LI><B>Reserva Nacional de Paracas</B> (Ica): única ANP que incluye ecosistemas marino-costeros; protege la fauna marina de la corriente de Humboldt.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> Distingue entre <B>Parque Nacional</B> (ninguna extracción) y <B>Reserva Nacional</B> (uso sostenible permitido). El <B>Parque Nacional del Manu</B> tiene la mayor biodiversidad documentada del mundo. La <B>Reserva Nacional Pacaya-Samiria</B> es la más grande del Perú. El <B>Santuario Histórico de Machu Picchu</B> es el único que combina Patrimonio Natural y Cultural de la UNESCO.</DIV>
+
+<H3 ID="politica">11. Política ambiental del Perú</H3>
+
+<UL>
+<LI><B>MINAM</B> (Ministerio del Ambiente): creado en 2008, es el organismo rector de la política ambiental nacional.</LI>
+<LI><B>SERNANP</B> (Servicio Nacional de Áreas Naturales Protegidas por el Estado): gestiona el SINANPE.</LI>
+<LI><B>OEFA</B> (Organismo de Evaluación y Fiscalización Ambiental): fiscaliza el cumplimiento de las normas ambientales.</LI>
+<LI><B>Ley General del Ambiente (Ley 28611, 2005):</B> establece los principios de la política ambiental peruana, incluyendo el principio de precaución, el principio contaminador-pagador y el derecho de toda persona a un ambiente sano.</LI>
+<LI><B>Acuerdo de París (2015):</B> el Perú se comprometió a reducir sus emisiones de gases de efecto invernadero en 30% al 2030.</LI>
+</UL>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál es la diferencia fundamental entre un recurso natural renovable y uno no renovable?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Los renovables son vivos (animales y plantas) y los no renovables son inertes (minerales y agua)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Los renovables se regeneran de manera natural en tiempos accesibles al ser humano; los no renovables tardan millones de años en formarse y una vez extraídos no se regeneran en escala humana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Los renovables son los que el Estado puede renovar mediante leyes; los no renovables son los que están bajo concesión privada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Los renovables son baratos y abundantes; los no renovables son escasos y caros por definición</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Un <B>recurso renovable</B> es aquel que la naturaleza puede regenerar en un plazo de tiempo razonable para el ser humano (décadas o siglos): bosques, peces, agua, suelo (aunque este último en miles de años). Un <B>recurso no renovable</B> se formó en procesos geológicos que tomaron <b>millones de años</b> y que, una vez extraído y consumido, no se regenera en ninguna escala de tiempo humana: petróleo, gas natural, carbón, minerales metálicos. La distinción crítica es la <b>tasa de regeneración</b> comparada con la <b>tasa de uso humano</b>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cuál es la definición oficial de "desarrollo sostenible" según el Informe Brundtland de 1987?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) El desarrollo que maximiza el uso de los recursos naturales para generar la mayor riqueza posible en el menor tiempo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El desarrollo que satisface las necesidades del presente sin comprometer la capacidad de las generaciones futuras para satisfacer sus propias necesidades</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) El desarrollo basado exclusivamente en energías renovables como la solar y la eólica, eliminando el uso de combustibles fósiles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) El desarrollo que prioriza la conservación del medio ambiente sobre el crecimiento económico y el bienestar social</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La definición clásica y más citada de <B>desarrollo sostenible</B> fue formulada por la Comisión Mundial sobre Medio Ambiente y Desarrollo (Comisión Brundtland) en su informe "<b>Nuestro Futuro Común</b>" (1987): el desarrollo que <b>satisface las necesidades del presente sin comprometer la capacidad de las generaciones futuras para satisfacer sus propias necesidades</b>. Esta definición introduce el concepto de <b>equidad intergeneracional</b>: no solo nos debemos entre nosotros (equidad intrageneracional) sino también a las generaciones que aún no nacen.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> El Perú es el primer productor mundial de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Cobre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Oro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Plata</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Zinc</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El Perú es el <B>primer productor mundial de plata</B>. En cuanto a los otros minerales: es aproximadamente el 2° o 3° productor de <b>cobre</b> (a nivel mundial), el 2° de <b>zinc</b> y el 6° de <b>oro</b>. Los principales yacimientos de plata son Antamina (Áncash), que también produce cobre y zinc. La plata peruana proviene principalmente de yacimientos polimetálicos donde se obtiene como subproducto del cobre y el zinc.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál es el área natural protegida más grande del Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Parque Nacional del Manu</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Parque Nacional Huascarán</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Reserva Nacional Pacaya-Samiria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Reserva Nacional de Paracas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>Reserva Nacional Pacaya-Samiria</B> (Loreto) es el <b>área natural protegida más grande del Perú</b> con aproximadamente <b>2 millones de hectáreas</b>. Es una selva baja inundable (várzea) en la confluencia de los ríos Marañón y Ucayali. Alberga el paiche, el delfín rosado, la victoria amazónica y miles de especies. Diferente al Parque Nacional del Manu, que tiene la mayor <b>biodiversidad</b>, Pacaya-Samiria tiene la mayor <b>extensión</b>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Cuáles son los tres pilares del desarrollo sostenible?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Político, tecnológico y científico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Económico, social y ambiental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Industrial, agrario y forestal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Local, regional e internacional</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El desarrollo sostenible descansa sobre <B>tres pilares</B> que deben estar en equilibrio: (1) <b>Económico</b>: generación de riqueza, empleo y bienestar material de manera eficiente. (2) <b>Social</b>: equidad y justicia social; los beneficios del desarrollo deben alcanzar a toda la población. (3) <b>Ambiental</b>: conservación de los ecosistemas, la biodiversidad y los recursos naturales para el largo plazo. Cuando los tres pilares están en equilibrio se logra el desarrollo verdaderamente sostenible. Si uno de ellos falla, el sistema es insostenible.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> El gas natural de Camisea es un recurso de gran importancia para el Perú. ¿En qué región del Perú se ubica este yacimiento y qué tipo de recurso natural es?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Loreto; recurso renovable porque los gases se regeneran naturalmente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Cusco (provincia de La Convención); recurso no renovable porque tardó millones de años en formarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Ucayali; recurso renovable porque el Perú tiene reservas enormes que durarán siglos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Piura (cuenca de Talara); recurso no renovable pero de origen reciente (siglo XIX)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El yacimiento de <B>Camisea</B> se ubica en la provincia de <b>La Convención, Cusco</b> (los bloques 56 y 88). Es un recurso <b>no renovable</b>: el gas natural es un hidrocarburo fósil formado por la descomposición de materia orgánica a lo largo de millones de años. Una vez extraído y quemado, no puede regenerarse. El hecho de que las reservas sean grandes no lo convierte en renovable; solo significa que tardará más en agotarse. Camisea inició producción comercial en <b>2004</b> y es el yacimiento de gas más grande del Perú.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> La anchoveta peruana es considerada un recurso natural renovable, pero su población colapsó entre 1971 y 1973. ¿Qué combinación de factores causó ese colapso y qué lección ofrece sobre el concepto de "renovable"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) El colapso fue causado exclusivamente por el Fenómeno El Niño; los recursos renovables no pueden agotarse por acción humana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) La combinación de sobreexplotación pesquera (extracción por encima de la tasa de reproducción) más el Fenómeno El Niño de 1972 redujo la biomasa de anchoveta a niveles tan bajos que la pesquería colapsó; esto demuestra que "renovable" no significa "inagotable"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) El colapso fue causado por la contaminación industrial de Lima, que envenenó el mar con metales pesados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) La anchoveta emigró a aguas chilenas por la contaminación; no fue un colapso real de la población sino una migración</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El colapso de la anchoveta peruana en 1971–1973 fue causado por la confluencia de dos factores: (1) <B>Sobreexplotación</B>: a finales de los años 60, el Perú era el mayor país pesquero del mundo; se extraían más de 12 millones de toneladas de anchoveta por año (la flota pesquera capturaba más de lo que la especie podía reproducirse). (2) <B>El Niño 1972</B>: el calentamiento del Pacífico debilitó la corriente de Humboldt, redujo los nutrientes y obligó a la anchoveta a migrar hacia aguas más frías. La lección fundamental: un recurso <b>renovable puede agotarse efectivamente</b> si la tasa de extracción supera de manera sostenida la tasa de regeneración natural. "<B>Renovable</B>" no significa "<b>inagotable</b>".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> La minería ilegal de oro en Madre de Dios usa mercurio (Hg) para separar el oro del sedimento. ¿Por qué el mercurio representa un problema ambiental y de salud pública mucho más grave que simplemente contaminar el agua del río?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El mercurio es grave solo porque mata directamente a los peces, reduciendo la pesca local</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El mercurio se bioacumula en la cadena trófica (agua → plancton → peces pequeños → peces grandes → personas) en concentraciones crecientes; los pobladores que consumen pescado amazónico como principal proteína reciben dosis de mercurio que causan daño neurológico irreversible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El mercurio solo contamina el suelo superficial; una vez en el río se diluye y deja de ser peligroso a los pocos kilómetros de distancia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) El peligro del mercurio es solo para los mineros que lo manipulan directamente, no para las comunidades que viven río abajo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El mercurio (Hg) representa un peligro especial por su propiedad de <B>bioacumulación y biomagnificación</B> en la cadena trófica: las bacterias del fondo del río transforman el mercurio metálico en <b>metilmercurio</b> (forma orgánica, mucho más tóxica y biodisponible); este es absorbido por el plancton; el plancton es consumido por peces pequeños; los peces pequeños son consumidos por peces grandes (como el paiche o el boquichico); los peces son consumidos por las personas. En cada eslabón de la cadena, la concentración de mercurio se <b>multiplica</b> (biomagnificación). Estudios del MINAM encontraron niveles de mercurio <b>diez veces por encima del límite seguro</b> de la OMS en sangre de comunidades indígenas de Madre de Dios que consumen pescado local. El daño es especialmente grave en <b>niños y mujeres embarazadas</b> (daño neurológico del feto).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cuál es la diferencia entre un Parque Nacional y una Reserva Nacional en el sistema peruano de áreas naturales protegidas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El Parque Nacional protege fauna y la Reserva Nacional protege flora; en ambos se puede vivir y trabajar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El Parque Nacional tiene el nivel máximo de protección: no se permite ningún tipo de extracción, asentamiento ni actividad productiva (solo investigación y turismo controlado). La Reserva Nacional permite el uso sostenible de recursos por poblaciones locales bajo regulación estricta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El Parque Nacional es administrado por el gobierno nacional y la Reserva Nacional por los gobiernos regionales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) No hay diferencia real; ambos tienen el mismo nivel de protección y las mismas actividades permitidas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Según la Ley de Áreas Naturales Protegidas del Perú (Ley 26834) y el SINANPE: un <B>Parque Nacional</B> es la categoría de <b>máxima protección</b>; en él no se permite ninguna extracción de recursos, ningún asentamiento humano permanente, ni agricultura ni ganadería. Solo se permiten la <b>investigación científica</b> y el <b>turismo de bajo impacto</b> en zonas delimitadas. Una <B>Reserva Nacional</B>, en cambio, está creada para el <b>uso sostenible</b> de los recursos naturales por las comunidades locales: se puede pescar, recolectar productos del bosque y hacer ecoturismo, pero bajo cuotas y regulaciones del SERNANP. Ejemplo: en la RN Pacaya-Samiria, las comunidades indígenas pueden pescar el paiche de forma controlada.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> La Agenda 2030 de la ONU estableció 17 Objetivos de Desarrollo Sostenible (ODS). ¿Cuáles de los siguientes problemas peruanos están directamente vinculados con el ODS 15 ("Vida de ecosistemas terrestres")?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) La pobreza en Lima, el desempleo juvenil y la corrupción en las municipalidades</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) La deforestación amazónica, el tráfico ilegal de especies (madera, fauna silvestre) y la pérdida de biodiversidad por minería ilegal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) La contaminación del mar peruano por plásticos y el colapso de la pesca de anchoveta por El Niño</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) La falta de agua potable en zonas rurales de la sierra y la contaminación de ríos por aguas residuales urbanas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>ODS 15</B> se enfoca en "<b>Proteger, restaurar y promover el uso sostenible de los ecosistemas terrestres, gestionar sosteniblemente los bosques, luchar contra la desertificación, detener e invertir la degradación de las tierras y detener la pérdida de biodiversidad</b>". En el contexto peruano, esto abarca directamente: la <b>deforestación amazónica</b> (~150 000 ha/año), el <b>tráfico ilegal de madera</b> (caoba, cedro), el <b>tráfico de fauna silvestre</b> (uno de los mayores problemas del Perú), y la <b>pérdida de bosques</b> por minería ilegal en Madre de Dios. El ODS 14 (vida submarina) cubriría los problemas marinos; el ODS 6 el agua; el ODS 1 la pobreza.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> El Perú posee el 70% de los glaciares tropicales del mundo, pero estos han retrocedido entre 30% y 50% en los últimos 50 años. ¿Por qué el retroceso glaciar es un problema de "recurso natural no renovable en escala humana" aunque el hielo sea técnicamente agua congelada (recurso renovable)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Porque el hielo glaciar es químicamente diferente al agua líquida y no puede reutilizarse para riego ni consumo humano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Porque los glaciares tropicales se formaron en condiciones climáticas del pasado que ya no existen; en el clima actual no se regeneran al mismo ritmo que se derriten; la pérdida es prácticamente irreversible en escala de siglos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Porque el agua del glaciar es salada y no sirve para el consumo humano ni la agricultura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Porque los glaciares solo se forman en los polos y los glaciares tropicales nunca debieron existir en el Perú</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>glaciares tropicales</B> del Perú se formaron durante las glaciaciones del Pleistoceno (hace miles a millones de años) bajo condiciones climáticas más frías que las actuales. En el clima actual (con calentamiento global), los glaciares tropicales están en <b>desequilibrio</b>: se derriten más rápido de lo que se acumulan nieve nueva. La acumulación de hielo glaciar requiere siglos o milenios de condiciones frías. Una vez perdidos bajo el calentamiento actual, <b>no se regenerarán en escala de tiempo humana</b>. Esto los convierte, en términos prácticos, en un recurso no renovable: su pérdida reduce permanentemente la reserva de agua que alimenta los ríos andinos en época seca, amenazando la seguridad hídrica de millones de personas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El concepto de "maldición de los recursos naturales" postula que los países con grandes riquezas naturales (petróleo, minerales) tienden a tener peor desarrollo económico y mayor conflictividad social que los países sin esos recursos. ¿Cuál de las siguientes afirmaciones describe mejor cómo este fenómeno puede manifestarse en el Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La maldición no aplica al Perú porque la minería genera empleo directo e indirecto masivo en todas las regiones del país</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) El modelo extractivista peruano —donde los minerales y el gas se exportan sin procesamiento— genera ingresos fiscales que no llegan equitativamente a las comunidades del entorno minero; esto, combinado con la contaminación ambiental y el desplazamiento de actividades tradicionales, genera conflictos socioambientales recurrentes que frenan el desarrollo local</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) La maldición aplica solo a los países productores de petróleo (Venezuela, Arabia); los países mineros como el Perú están exentos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La maldición de los recursos naturales ya fue superada en el Perú mediante el canon minero, que distribuye el 50% de los impuestos mineros a las regiones productoras</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La "<B>maldición de los recursos naturales</B>" (también llamada "paradoja de la abundancia") se manifiesta en el Perú en varios planos: (1) <B>Conflictos socioambientales</B>: el Perú tiene más de 200 conflictos sociales activos registrados por la Defensoría del Pueblo, la mayoría vinculados a la minería y el petróleo. Las comunidades aledañas sufren contaminación del agua, desplazamiento y pérdida de tierras de cultivo sin recibir compensación justa. (2) <B>Extractivismo sin valor agregado</B>: el cobre sale del Perú como concentrado mineral sin procesar; la refinación y manufactura se realizan en el exterior. Los ingresos son menores que si se exportaran productos manufacturados. (3) <B>Canon insuficiente</B>: aunque el canon minero transfiere recursos a las regiones, su gestión eficiente es un problema: muchos municipios no tienen capacidad de ejecutar inversiones de calidad. (4) <B>Enfermedad holandesa</B>: el boom minero puede apreciar el tipo de cambio, perjudicando la competitividad de otras industrias (agricultura, manufactura).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> El Parque Nacional del Manu es considerado Patrimonio Natural de la Humanidad por la UNESCO. Su gestión prohíbe cualquier actividad extractiva en la zona núcleo, donde viven comunidades indígenas en aislamiento voluntario. ¿Qué tensión ética y legal fundamental plantea esta situación?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) No hay tensión porque los pueblos indígenas en aislamiento no tienen derechos legales reconocidos en el Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La tensión surge entre el derecho de los pueblos indígenas en aislamiento voluntario a mantener su modo de vida y territorio ancestral (protegido por el Convenio 169 de la OIT y la Ley 28736) y los intereses externos (turismo, investigación, evangelización) que podrían vulnerar ese aislamiento; el Estado debe proteger tanto la biodiversidad como los derechos de estos pueblos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La tensión solo existe entre el turismo y la conservación; los pueblos indígenas no están dentro del Parque Nacional del Manu</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La solución es reubicar a los pueblos indígenas fuera del parque para garantizar la máxima protección ambiental sin restricciones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Parque Nacional del Manu</B> contiene en su zona de amortiguamiento y núcleo comunidades indígenas de los pueblos <b>Matsigenka, Yora y otros en aislamiento voluntario</b>. La tensión ética y legal es compleja: (1) <b>Derecho a la autodeterminación</b>: el Convenio 169 de la OIT (ratificado por el Perú) y la Ley 28736 reconocen los derechos de los pueblos indígenas en aislamiento, incluyendo el derecho a mantenerse aislados. (2) <b>Vulnerabilidad epidemiológica</b>: los pueblos en aislamiento carecen de inmunidad ante enfermedades comunes (una gripe puede ser mortal); el contacto no controlado puede ser genocida. (3) <b>Intereses externos</b>: turistas, misioneros, investigadores e incluso extractivistas presionan por acceder a estas zonas. (4) <b>Solución institucional</b>: la Reserva Territorial Kugapakori Nahua Nanti (adyacente al Manu) fue creada específicamente para proteger a estos pueblos sin forzar el contacto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> La Ley General del Ambiente del Perú (Ley 28611) establece el "principio precautorio" como uno de sus pilares. ¿En qué consiste este principio y cómo debería aplicarse, por ejemplo, ante la autorización de una nueva actividad minera en la cabecera de una cuenca hídrica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El principio precautorio establece que toda actividad debe ser autorizada por defecto si la empresa minera paga una fianza ambiental suficiente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El principio precautorio establece que cuando exista incertidumbre científica sobre si una actividad puede causar daños graves o irreversibles al ambiente, la falta de certeza no puede usarse como razón para postergar medidas de protección; se debe aplicar la cautela y exigir estudios rigurosos antes de autorizar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El principio precautorio solo aplica a actividades nucleares o químicas peligrosas, no a la minería convencional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El principio precautorio significa que el Estado debe prohibir toda nueva minería en el Perú hasta que se remedien todos los pasivos ambientales existentes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>principio precautorio</B> (o de precaución) es un pilar del derecho ambiental internacional y de la Ley 28611 del Perú. Establece que: ante la <b>incertidumbre científica</b> sobre si una actividad puede generar daños <b>graves o irreversibles</b> al ambiente, la <b>ausencia de certeza no puede ser argumento para no tomar medidas protectoras</b>. En otras palabras: el costo de equivocarse autorizando una actividad peligrosa (daño ambiental irreversible) es mayor que el costo de equivocarse siendo cauteloso (no autorizar algo que podría haber sido seguro). Aplicado a la minería en cabeceras de cuenca: dado que la contaminación de las nacientes de un río puede afectar a millones de personas río abajo de forma irreversible, el principio precautorio exige estudios de impacto rigurosos, con participación de las comunidades afectadas (consulta previa, Convenio 169 OIT), y la opción de no autorizar si los riesgos son inciertos pero potencialmente graves.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> El Perú es signatario del Acuerdo de París (2015) y se comprometió a reducir sus emisiones de gases de efecto invernadero (GEI) en un 30% al 2030. Sin embargo, el país contribuye con apenas el 0.3% de las emisiones globales de GEI. ¿Qué argumentos existen tanto a favor como en contra de que el Perú invierta recursos significativos en mitigación del cambio climático, y cuál es la posición más sólida desde la geografía económica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) El Perú no debería invertir en mitigación porque contribuye tan poco a las emisiones globales que cualquier esfuerzo es irrelevante; debe enfocarse solo en adaptación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) El Perú está entre los países más vulnerables al cambio climático (glaciares, El Niño, biodiversidad); la mitigación tiene co-beneficios locales (reducir deforestación genera ingresos por REDD+, conserva cuencas); la posición geopolítica de ser "ejemplo" fortalece su diplomacia ambiental para obtener financiamiento internacional; y la transición a energías limpias puede ser una ventaja competitiva dada la riqueza hidroeléctrica y solar del país</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) El Perú debe esperar a que los países desarrollados (EE.UU., China, UE) reduzcan primero sus emisiones; solo entonces tiene sentido que un país pequeño como el Perú actúe</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La posición más sólida es que el Perú aumente su producción de gas natural de Camisea para sustituir el carbón y el petróleo en la matriz energética, lo que automáticamente cumple el compromiso del Acuerdo de París sin costo adicional</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aunque el Perú emite solo el ~0.3% del total global de GEI, existen razones sólidas para invertir en mitigación: (1) <B>Vulnerabilidad propia</B>: el Perú es uno de los <b>10 países más vulnerables</b> al cambio climático por la dependencia de los glaciares (agua), la biodiversidad (economía ecoturística), y la frecuencia de El Niño (agricultura). Mitigar globalmente reduce su propio riesgo. (2) <B>REDD+ y pagos por servicios ecosistémicos</B>: al conservar sus bosques amazónicos (~72 M ha), el Perú puede acceder a <b>financiamiento internacional</b> por el mecanismo REDD+ (Reducción de Emisiones por Deforestación y Degradación), convirtiendo la conservación en un activo económico. (3) <B>Co-beneficios locales</B>: reducir la deforestación mejora la calidad del agua, conserva biodiversidad con valor potencial (biocomercio, bioprospección) y protege a las comunidades indígenas. (4) <B>Ventaja competitiva energética</B>: el Perú tiene inmenso potencial hidroeléctrico (4° del mundo), solar y eólico; la transición energética puede ser una oportunidad de desarrollo, no un costo. (5) <B>Diplomacia climática</B>: ser un país con bosques tropicales intactos y comprometido con el clima mejora la posición del Perú en negociaciones internacionales para obtener cooperación técnica y financiera.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El concepto de "servicios ecosistémicos" amplía la valoración económica de los recursos naturales más allá de su valor extractivo directo. ¿Cómo se clasifican estos servicios y cuál es su importancia para entender por qué la conservación de los bosques amazónicos tiene un valor económico real, aunque no se extraiga madera ni minerales de ellos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Los servicios ecosistémicos son solo los bienes materiales que se extraen del bosque: madera, frutos, animales. No incluyen procesos inmateriales.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Los servicios ecosistémicos se clasifican en: de aprovisionamiento (bienes materiales: alimentos, agua, madera), de regulación (regulación del clima, purificación del agua, polinización, control de inundaciones), culturales (espirituales, recreativos, científicos) y de soporte (formación del suelo, ciclo de nutrientes). Un bosque amazónico en pie vale más por sus servicios de regulación (captura de CO₂, regulación hídrica, biodiversidad) que como madera talada.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Los servicios ecosistémicos son un concepto filosófico sin valor económico real; no pueden cuantificarse en dinero y por tanto no pueden compararse con el valor de la minería o la agricultura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Los servicios ecosistémicos solo tienen valor en países desarrollados que pueden pagar por conservación; en países en desarrollo como el Perú son un lujo que no se puede costear</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La economía ecológica y el Millennium Ecosystem Assessment (ONU, 2005) clasifican los <B>servicios ecosistémicos</B> en cuatro categorías: (1) <b>De aprovisionamiento</b>: bienes materiales que el ecosistema produce directamente (agua, madera, frutos, fibras, medicinas). (2) <b>De regulación</b>: procesos ecológicos que regulan las condiciones para la vida humana: la selva amazónica captura CO₂ (mitiga el cambio climático), regula el ciclo del agua (el "río volador" que produce lluvia en los Andes), filtra y purifica el agua, reduce la erosión. (3) <b>Culturales</b>: valores espirituales, recreativos, estéticos y científicos. (4) <b>De soporte</b>: procesos fundamentales que sostienen todos los demás (fotosíntesis, ciclo de nutrientes, formación de suelo). El bosque amazónico peruano tiene un valor económico cuantificable por sus servicios de regulación que puede superar largamente el valor de la madera que contiene; estudios estiman que los ecosistemas naturales del Perú proveen servicios por decenas de miles de millones de dólares anuales que no aparecen en el PIB.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El Perú aprobó la Ley de Consulta Previa (Ley 29785, 2011) que obliga al Estado a consultar a los pueblos indígenas antes de aprobar proyectos que afecten sus territorios. Sin embargo, varios proyectos extractivos han generado conflictos pese a que se realizaron consultas. ¿Cuál es la limitación estructural más importante de la consulta previa tal como se ha implementado en el Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La limitación es que la consulta se realiza en español y no en los idiomas indígenas, lo que impide la comprensión real del proyecto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La consulta previa en el Perú está diseñada para buscar el consentimiento (acuerdo) de los pueblos indígenas, pero en la práctica se ha implementado como un proceso de "información y diálogo" sin poder de veto real; el Estado puede avanzar con el proyecto aunque la comunidad no esté de acuerdo, lo que desnaturaliza el espíritu del Convenio 169 de la OIT (que sí reconoce el consentimiento libre, previo e informado)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La limitación es que solo aplica a comunidades amazónicas; las comunidades andinas no tienen acceso a la consulta previa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La limitación es que la ley es demasiado estricta y paraliza todos los proyectos de inversión; ninguna empresa minera puede operar en el Perú por las demandas de consulta</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Ley 29785</B> de Consulta Previa fue un avance significativo, pero tiene limitaciones estructurales documentadas: (1) <b>Consulta ≠ veto</b>: la ley establece que el objetivo es "llegar a un acuerdo", pero si no hay acuerdo, el Estado puede proceder con el proyecto de todas formas. El <b>Convenio 169 de la OIT</b> exige el "<b>consentimiento libre, previo e informado</b>" para proyectos de alto impacto en territorios indígenas, lo que va más allá de la mera consulta. (2) <b>Asimetría de información</b>: las empresas y el Estado manejan información técnica y jurídica que las comunidades no tienen en igualdad de condiciones. (3) <b>Timing</b>: frecuentemente la consulta se realiza cuando el proyecto ya tiene concesión otorgada y estudios aprobados, reduciendo el margen de negociación real. (4) <b>Conflictos persistentes</b>: el caso del Baguazo (2009, antes de la ley) y múltiples conflictos posteriores en Loreto, Ayacucho y Apurímac evidencian que la consulta sin poder real de decisión no resuelve el conflicto de fondo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Desde la perspectiva de la geografía económica y el desarrollo sostenible, ¿cómo podría el Perú transformar su modelo basado en la exportación de materias primas (commodities) hacia uno de mayor valor agregado, aprovechando su megadiversidad como ventaja competitiva?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) El Perú debería cerrar todas sus minas y explotaciones petroleras y dedicarse exclusivamente al turismo ecológico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La transformación requiere: bioprospección y desarrollo de productos farmacéuticos y cosméticos a partir de la biodiversidad amazónica (uña de gato, sangre de grado, maca), industrialización de minerales en el propio Perú (refinerías de cobre), biocomercio de productos nativos con certificación de origen (quinua, cacao, pisco, café de especialidad, fibra de vicuña), y turismo científico y de alta gama, combinando inversión en investigación, protección de derechos de propiedad intelectual colectiva indígena y acuerdos de comercio justo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La única transformación posible es atraer más inversión extranjera directa para aumentar el volumen de extracción minera y pesquera hasta alcanzar la escala de producción de Chile o Brasil</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El Perú debería patentar internacionalmente todas sus especies nativas para cobrar regalías a los países que las usen en sus industrias alimentarias y farmacéuticas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La transición de un modelo extractivista a uno de mayor valor agregado basado en la megadiversidad incluye múltiples estrategias complementarias: (1) <B>Biocomercio</B>: exportar la <b>maca</b> procesada (cápsulas, polvo, extractos) en lugar de maca en polvo a granel; exportar <b>cacao fino de aroma</b> en lugar de cacao crudo; exportar <b>café de especialidad</b> con trazabilidad. El valor por kg puede multiplicarse por 5 a 20. (2) <B>Bioprospección responsable</B>: el Convenio sobre Diversidad Biológica (CDB) y el Protocolo de Nagoya establecen la <b>distribución justa de beneficios</b> cuando recursos genéticos se comercializan. La <b>uña de gato</b> (Uncaria) es un ejemplo de planta amazónica peruana con mercado farmacéutico internacional creciente. (3) <B>Industrialización minera</B>: refinar el cobre en el Perú (catódos, alambre, cable) en lugar de exportar concentrado. (4) <B>Turismo científico</B>: el Parque del Manu tiene una demanda insatisfecha de investigadores y ecoturistas de alto poder adquisitivo dispuestos a pagar por experiencias únicas en el ecosistema más biodiverso del mundo. (5) <B>Derechos intelectuales indígenas</B>: reconocer y proteger el conocimiento tradicional como base para el biocomercio, evitando la biopiratería (caso de la maca patentada ilegalmente por empresas extranjeras).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> La Reserva Nacional de Paracas (Ica) protege el único ecosistema marino costero del sistema de ANP peruano. ¿Cómo se vincula la existencia de esta reserva con la corriente de Humboldt y qué amenazas específicas a este ecosistema ilustran la tensión entre desarrollo económico y conservación en la costa peruana?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Paracas protege arrecifes de coral tropical similares a los del Caribe; la corriente de Humboldt no tiene relación con esta reserva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) La corriente de Humboldt (fría, nutrientes) genera el afloramiento costero que sustenta la enorme productividad biológica del mar peruano; Paracas protege humedales, playas de anidamiento de tortugas, colonias de lobos marinos y aves guaneras; las amenazas son la pesca industrial de arrastre cerca de los límites, los proyectos portuarios e industriales (como la ampliación del puerto de San Martín) y el turismo mal gestionado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Paracas protege ecosistemas de selva tropical costera; la corriente de Humboldt afecta solo al norte del Perú (Piura, Tumbes)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) La reserva de Paracas fue creada exclusivamente para proteger el turismo de sandboard en las dunas; no tiene valor ecológico significativo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Reserva Nacional de Paracas</B> (375 000 ha, incluyendo zona marina) es la única ANP peruana que protege ecosistemas <b>marino-costeros</b>. Su existencia tiene relación directa con la <b>corriente de Humboldt</b>: esta corriente fría genera el fenómeno de <b>afloramiento</b> (upwelling) que trae agua fría y nutrientes del fondo del Pacífico a la superficie, sustentando una de las pesquerías más productivas del planeta. Paracas alberga: <b>colonias de lobos marinos</b> (<I>Otaria flavescens</I>), <b>aves guaneras</b> (pelícanos, guanayes, piqueros), playas de anidamiento de <b>tortugas marinas</b>, flamencos y flamencos andinos en las lagunas interiores. Las amenazas principales son: (1) <b>Pesca de arrastre</b> industrial fuera y dentro de sus límites. (2) <b>Ampliación del puerto San Martín</b> en Pisco, adyacente a la reserva, que podría contaminar y alterar la hidrodinámica costera. (3) <b>Derrame de ácido sulfúrico</b> (2004, buque Paracas): el mayor accidente ambiental marino en la historia del Perú, afectó la zona norte de la reserva. (4) <b>Turismo no regulado</b>: visitas masivas sin control alteran la reproducción de aves y lobos marinos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> El economista ambiental Herman Daly formuló los tres principios del "capital natural constante" para operacionalizar el desarrollo sostenible. Si se aplicaran estos principios a la gestión de los recursos naturales del Perú, ¿cuál sería la implicancia práctica más difícil de cumplir para el modelo económico peruano actual?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) El principio más difícil de cumplir sería no usar energía solar porque Daly considera que las energías renovables degradan el paisaje</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) El principio de que los recursos no renovables (minerales, petróleo) deben explotarse a un ritmo que permita desarrollar equivalentes renovables o sustitutos antes de que se agoten es incompatible con el modelo peruano actual, donde los ingresos mineros no se reinvierten sistemáticamente en desarrollar alternativas económicas sostenibles para las regiones extractivas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) El principio más difícil es que todos los ciudadanos peruanos tengan acceso al agua potable, porque las ciudades amazónicas están muy lejos de las redes de distribución</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El principio de no contaminar el aire sería el más difícil porque el Perú depende del transporte a gasolina y no tiene industria automotriz propia para producir vehículos eléctricos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Herman Daly formuló tres condiciones para el desarrollo sostenible real: (1) Los recursos <b>renovables</b> deben usarse a una tasa no superior a su tasa de regeneración. (2) Los recursos <b>no renovables</b> deben usarse a una tasa no superior a la velocidad con que se desarrollan sustitutos renovables. (3) Los <b>residuos y contaminantes</b> deben generarse a una tasa no superior a la capacidad de absorción del ecosistema. El segundo principio es el más difícil para el modelo peruano: el Perú extrae cobre, oro, plata, gas y petróleo (no renovables) a tasas crecientes, pero los ingresos (<b>canon minero, regalías, impuesto a la renta</b>) no se reinvierten sistemáticamente en crear <b>capacidades productivas alternativas</b> (educación, tecnología, industria) en las regiones afectadas. Cuando los minerales se agoten, regiones como Pasco, Cajamarca o Madre de Dios no tendrán economías diversificadas capaces de sostener a su población. Este es el fracaso del modelo extractivista en términos de sostenibilidad intergeneracional.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

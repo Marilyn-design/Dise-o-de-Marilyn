@@ -1,0 +1,583 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Nociones de Geografía - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA &middot; TEMA 1 &middot; </DIV>
+<H1>Nociones de Geografía</H1>
+<DIV CLASS="sub">Concepto &middot; Ramas &middot; Ciencias auxiliares &middot; Geosistema &middot; Coordenadas &middot; Movimientos de la Tierra &middot; Cartografía</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1 -->
+<H3 ID="concepto">1. Concepto y etimología de la Geografía</H3>
+La <B>Geografía</B> es la ciencia que estudia la <B>superficie terrestre</B>, los fenómenos naturales y humanos que en ella ocurren, y la relación que existe entre el medio físico y las sociedades humanas. Su nombre proviene del griego <I>geo</I> (tierra) y <I>graphos</I> (descripción): literalmente, <B>"descripción de la Tierra"</B>.
+
+El término fue acuñado por el sabio griego <B>Eratóstenes de Cirene</B> (~276 – 194 a.C.), quien también fue el primero en calcular con notable precisión la circunferencia de la Tierra (~40 000 km, muy cercano al valor real de 40 075 km), usando la diferencia de ángulos de la sombra solar entre Alejandría y Siena el día del solsticio de verano.
+
+<DIV CLASS="alerta">⚠️ <B>Error frecuente en exámenes:</B> La Geografía NO es solo la descripción de países y capitales. Es una ciencia que explica el <B>por qué</B> de la distribución de los fenómenos en el espacio terrestre y las relaciones entre el ser humano y el entorno.</DIV>
+
+<H4>Objeto de estudio de la Geografía:</H4>
+<UL>
+<LI><B>Espacio geográfico:</B> la porción de la superficie terrestre transformada y organizada por la acción humana. Es el objeto central de estudio.</LI>
+<LI><B>Paisaje:</B> la expresión visible del espacio geográfico; incluye elementos naturales (relieve, vegetación, agua) y antrópicos (ciudades, carreteras, cultivos).</LI>
+<LI><B>Lugar:</B> porción del espacio con características propias que lo distinguen de otros.</LI>
+<LI><B>Territorio:</B> espacio apropiado, controlado y delimitado por un grupo humano o un Estado.</LI>
+<LI><B>Región:</B> área con características homogéneas que la diferencian de las zonas adyacentes.</LI>
+</UL>
+
+<!-- 2 -->
+<H3 ID="ramas">2. Ramas de la Geografía</H3>
+La Geografía se divide en dos grandes ramas:
+
+<H4>A) Geografía Física:</H4>
+Estudia los elementos naturales de la superficie terrestre.
+<UL>
+<LI><B>Geomorfología:</B> estudia las formas del relieve terrestre (montañas, valles, llanuras, mesetas) y los procesos que las originan (erosión, tectónica, vulcanismo).</LI>
+<LI><B>Climatología:</B> estudia el clima, sus tipos y distribución en el planeta. Se diferencia de la <B>meteorología</B> (que estudia el tiempo atmosférico a corto plazo).</LI>
+<LI><B>Hidrografía:</B> estudia las aguas continentales (ríos, lagos, glaciares, aguas subterráneas).</LI>
+<LI><B>Oceanografía:</B> estudia los océanos, sus corrientes, temperatura, salinidad y profundidad.</LI>
+<LI><B>Biogeografía:</B> estudia la distribución de los seres vivos (flora y fauna) en la superficie terrestre.</LI>
+<LI><B>Edafología:</B> estudia los suelos, su composición, formación y capacidad productiva.</LI>
+<LI><B>Glaciología:</B> estudia los glaciares y las regiones polares y su dinámica.</LI>
+</UL>
+
+<H4>B) Geografía Humana:</H4>
+Estudia la organización del espacio por parte de las sociedades humanas.
+<UL>
+<LI><B>Geografía de la Población (Geodemografía):</B> distribución, densidad, crecimiento y movimientos migratorios de la población.</LI>
+<LI><B>Geografía Urbana:</B> origen, estructura, funciones y crecimiento de las ciudades.</LI>
+<LI><B>Geografía Rural:</B> organización del espacio agrario, tipos de agricultura y asentamientos rurales.</LI>
+<LI><B>Geografía Económica:</B> distribución de las actividades productivas (industria, comercio, servicios, minería) en el espacio.</LI>
+<LI><B>Geografía Política:</B> fronteras, Estados, organizaciones supranacionales y conflictos territoriales.</LI>
+<LI><B>Geografía Cultural:</B> distribución de culturas, lenguas, religiones y tradiciones en el espacio.</LI>
+</UL>
+
+<H4>C) Geografía Regional:</H4>
+Integra los elementos físicos y humanos para describir y explicar una región concreta del planeta. Por ejemplo: "Geografía de América del Sur" o "Geografía del Perú".
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> Distingue entre <B>Climatología</B> (ciencia geográfica que estudia el <I>clima</I>, fenómeno a largo plazo) y <B>Meteorología</B> (ciencia que estudia el <I>tiempo atmosférico</I>, fenómeno diario a corto plazo). Esta distinción es muy frecuente en preguntas de opción múltiple.</DIV>
+
+<!-- 3 -->
+<H3 ID="auxiliares">3. Ciencias auxiliares de la Geografía</H3>
+La Geografía no trabaja sola: se apoya en numerosas ciencias para estudiar el espacio terrestre con mayor precisión.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Ciencia auxiliar</TH><TH>Aporte a la Geografía</TH></TR>
+<TR><TD><B>Geología</B></TD><TD>Explica la composición y estructura interna de la Tierra, el origen del relieve y los minerales.</TD></TR>
+<TR><TD><B>Astronomía</B></TD><TD>Permite entender los movimientos de la Tierra (rotación, traslación, precesión) y su influencia en el clima y las estaciones.</TD></TR>
+<TR><TD><B>Meteorología</B></TD><TD>Proporciona datos sobre temperatura, presión, precipitación y vientos necesarios para la climatología.</TD></TR>
+<TR><TD><B>Biología / Ecología</B></TD><TD>Ayuda a comprender la distribución de la flora y la fauna (biogeografía).</TD></TR>
+<TR><TD><B>Historia</B></TD><TD>Explica la evolución del espacio geográfico a lo largo del tiempo (geografía histórica).</TD></TR>
+<TR><TD><B>Economía</B></TD><TD>Permite analizar la distribución de recursos, producción y comercio en el espacio.</TD></TR>
+<TR><TD><B>Sociología y Demografía</B></TD><TD>Aportan datos sobre población, grupos sociales y cultura para la geografía humana.</TD></TR>
+<TR><TD><B>Cartografía</B></TD><TD>Ciencia de la representación de la Tierra en mapas y planos. Herramienta fundamental de la Geografía.</TD></TR>
+<TR><TD><B>Estadística</B></TD><TD>Permite analizar datos geográficos (censos, índices climáticos, producción económica) de forma cuantitativa.</TD></TR>
+<TR><TD><B>Informática / SIG</B></TD><TD>Los Sistemas de Información Geográfica (SIG/GIS) permiten analizar y visualizar datos espaciales digitalmente (Google Maps, ArcGIS).</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 4 -->
+<H3 ID="tierra">4. La Tierra: forma, dimensiones y estructura</H3>
+La Tierra no es una esfera perfecta: es un <B>geoide</B>, es decir, un cuerpo achatado en los polos y ensanchado en el ecuador por efecto de la rotación. La forma más precisa es la de un <B>elipsoide de revolución</B>.
+
+<H4>Datos clave de la Tierra (muy preguntados en examen):</H4>
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">12 756 km</DIV><DIV CLASS="dk-label">Diámetro ecuatorial</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">12 714 km</DIV><DIV CLASS="dk-label">Diámetro polar (menor)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">40 075 km</DIV><DIV CLASS="dk-label">Circunferencia ecuatorial</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">510 M km²</DIV><DIV CLASS="dk-label">Superficie total</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">71%</DIV><DIV CLASS="dk-label">Superficie cubierta de agua</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">29%</DIV><DIV CLASS="dk-label">Superficie de tierra firme</DIV></DIV>
+</DIV>
+
+<H4>Estructura interna de la Tierra (capas):</H4>
+<UL>
+<LI><B>Corteza:</B> capa más externa y delgada. Corteza <I>continental</I> (30–70 km de espesor, granito) y corteza <I>oceánica</I> (5–10 km, basalto). En ella vivimos y se producen terremotos y volcanes.</LI>
+<LI><B>Manto:</B> capa intermedia (~2 900 km de grosor). Manto superior: roca semiplástica (astenosfera) sobre la que "flotan" las placas tectónicas. Manto inferior: más denso y rígido.</LI>
+<LI><B>Núcleo externo:</B> líquido, formado principalmente por hierro y níquel fundidos. Su movimiento genera el <B>campo magnético terrestre</B> (escudo contra el viento solar).</LI>
+<LI><B>Núcleo interno:</B> sólido a pesar de la altísima temperatura (~5 000°C) debido a la presión colosal. También de hierro y níquel.</LI>
+</UL>
+
+<DIV CLASS="ej">🌍 <B>¿Por qué importa el campo magnético?</B> El campo magnético terrestre, generado por el núcleo externo líquido, desvía las partículas cargadas del viento solar (radiación dañina). Sin él, la atmósfera sería erosionada como ocurrió en Marte, haciendo la vida imposible en la superficie.</DIV>
+
+<!-- 5 -->
+<H3 ID="geosistema">5. El Geosistema: subsistemas de la Tierra</H3>
+El <B>geosistema</B> (o sistema Tierra) es el conjunto de todos los componentes del planeta que interactúan entre sí. Se divide en cuatro grandes subsistemas o "esferas":
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Subsistema</TH><TH>Definición</TH><TH>Ejemplos de elementos</TH></TR>
+<TR><TD><B>Litosfera</B></TD><TD>La parte sólida externa de la Tierra: corteza y parte superior del manto. Incluye el relieve continental y oceánico.</TD><TD>Montañas, valles, mesetas, dorsales oceánicas, fosas submarinas</TD></TR>
+<TR><TD><B>Hidrosfera</B></TD><TD>Toda el agua en estado líquido, sólido o gaseoso en la Tierra: océanos, ríos, lagos, glaciares, agua subterránea, vapor de agua.</TD><TD>Océano Pacífico, río Amazonas, Antártida, acuíferos</TD></TR>
+<TR><TD><B>Atmósfera</B></TD><TD>La envoltura gaseosa que rodea la Tierra. Compuesta por N₂ (78%), O₂ (21%), Ar (0,93%) y CO₂ (0,04%), entre otros gases.</TD><TD>Tropósfera, estratósfera (capa de ozono), mesosfera, termosfera</TD></TR>
+<TR><TD><B>Biosfera</B></TD><TD>El conjunto de todos los seres vivos de la Tierra y los ecosistemas que forman, desde las profundidades oceánicas hasta las altas cumbres.</TD><TD>Selvas tropicales, arrecifes de coral, tundra ártica, suelos con bacterias</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Importante:</B> Algunos autores añaden una quinta esfera: la <B>Pedosfera</B> (los suelos) y una sexta: la <B>Noosfera</B> o <B>Antroposfera</B> (la capa de influencia humana sobre el planeta). En exámenes preuniversitarios peruanos es suficiente conocer las cuatro esferas clásicas.</DIV>
+
+<!-- 6 -->
+<H3 ID="coordenadas">6. Coordenadas Geográficas: latitud y longitud</H3>
+Las <B>coordenadas geográficas</B> son el sistema de referencia que permite localizar cualquier punto de la Tierra de forma única, usando dos valores angulares medidos en grados (°), minutos (') y segundos ('').
+
+<H4>A) Latitud:</H4>
+<UL>
+<LI>Es la distancia angular desde un punto hasta el <B>Ecuador</B> (paralelo 0°), medida sobre el meridiano que pasa por ese punto.</LI>
+<LI>Va de <B>0° (Ecuador) a 90°N (Polo Norte) y 90°S (Polo Sur)</B>.</LI>
+<LI>Los paralelos son los círculos imaginarios paralelos al Ecuador. Los más importantes son: Ecuador (0°), Trópico de Cáncer (23°27'N), Trópico de Capricornio (23°27'S), Círculo Polar Ártico (66°33'N) y Círculo Polar Antártico (66°33'S).</LI>
+<LI>La latitud determina las <B>zonas climáticas</B>: zona tropical (entre los dos trópicos), zonas templadas y zonas polares.</LI>
+</UL>
+
+<H4>B) Longitud:</H4>
+<UL>
+<LI>Es la distancia angular desde un punto hasta el <B>Meridiano de Greenwich</B> (meridiano 0°), medida sobre el Ecuador.</LI>
+<LI>Va de <B>0° a 180° Este (E) y 0° a 180° Oeste (O/W)</B>.</LI>
+<LI>Los meridianos son semicírculos que van de polo a polo. El Meridiano de Greenwich (0°) pasa por Greenwich, Londres, Reino Unido. Fue establecido como referencia en la Conferencia Internacional del Meridiano de Washington, <B>1884</B>.</LI>
+<LI>La longitud determina las <B>zonas horarias</B> (husos horarios): cada 15° de longitud equivalen a 1 hora de diferencia.</LI>
+</UL>
+
+<DIV CLASS="ej">🧭 <B>Ejemplo de localización:</B> Lima (Perú) se encuentra a aproximadamente <B>12°03'S, 77°02'W</B>. Esto significa: 12°03' al sur del Ecuador y 77°02' al oeste del Meridiano de Greenwich.</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La <B>latitud</B> va ligada a los <B>paralelos</B> y al <B>Ecuador</B>. La <B>longitud</B> va ligada a los <B>meridianos</B> y a <B>Greenwich</B>. Confundirlos es el error más común en este tema.</DIV>
+
+<!-- 7 -->
+<H3 ID="movimientos">7. Movimientos de la Tierra</H3>
+
+<H4>A) Movimiento de Rotación:</H4>
+<UL>
+<LI><B>Definición:</B> giro de la Tierra sobre su propio <B>eje</B> (eje terrestre o eje de rotación), que pasa por los dos polos geográficos.</LI>
+<LI><B>Duración:</B> 23 horas, 56 minutos y 4 segundos (día sidéreo) o exactamente 24 horas (día solar, incluyendo la compensación por el avance en la órbita).</LI>
+<LI><B>Sentido:</B> de oeste a este (sentido antihorario visto desde el Polo Norte). Por eso el Sol parece salir por el Este y ponerse por el Oeste.</LI>
+<LI><B>Velocidad:</B> ~1 670 km/h en el Ecuador; disminuye hacia los polos, donde es 0.</LI>
+<LI><B>Consecuencias de la rotación:</B>
+<OL>
+<LI>Sucesión del <B>día y la noche</B>.</LI>
+<LI>Diferencia de <B>horas</B> entre longitudes distintas (husos horarios).</LI>
+<LI><B>Fuerza de Coriolis:</B> desviación de las masas de aire y agua hacia la derecha en el hemisferio norte y hacia la izquierda en el hemisferio sur. Explica el sentido de rotación de los ciclones, vientos alisios y corrientes oceánicas.</LI>
+<LI><B>Achatamiento</B> de la Tierra en los polos y ensanchamiento en el Ecuador (la fuerza centrífuga empuja la masa hacia afuera en el Ecuador).</LI>
+<LI>Los <B>macareos</B> (mareas dinámicas) y ciertas oscilaciones de los océanos.</LI>
+</OL>
+</LI>
+</UL>
+
+<H4>B) Movimiento de Traslación:</H4>
+<UL>
+<LI><B>Definición:</B> desplazamiento de la Tierra alrededor del <B>Sol</B> siguiendo una órbita <B>elíptica</B> (no circular perfecta), con el Sol en uno de los focos (1ª Ley de Kepler).</LI>
+<LI><B>Duración:</B> 365 días, 5 horas, 48 minutos y 46 segundos (año trópico). Para compensar las ~6 horas extras, se añade un día cada 4 años: el <B>año bisiesto</B>.</LI>
+<LI><B>Velocidad:</B> ~107 000 km/h en promedio. La Tierra va más rápido cuando está más cerca del Sol (<B>perihelio</B>, ~3 de enero) y más lenta en el <B>afelio</B> (~4 de julio). 2ª Ley de Kepler.</LI>
+<LI><B>Inclinación del eje:</B> el eje terrestre está inclinado <B>23°27'</B> respecto a la perpendicular del plano orbital (plano de la eclíptica). Esta inclinación es la causa directa de las estaciones.</LI>
+<LI><B>Consecuencias de la traslación:</B>
+<OL>
+<LI>Las <B>estaciones del año</B> (primavera, verano, otoño, invierno) en las zonas templadas. Son opuestas entre hemisferios norte y sur.</LI>
+<LI>Variación en la <B>duración del día y la noche</B> a lo largo del año (excepto en el Ecuador, donde siempre hay ~12 h de cada).</LI>
+<LI>Los <B>solsticios</B>: momentos del año en que el día solar es más largo o más corto. Hay dos solsticios: de verano (~21 de junio en el hemisferio norte, el día más largo) y de invierno (~21 de diciembre en el hemisferio norte, el día más corto).</LI>
+<LI>Los <B>equinoccios</B>: momentos en que el día y la noche tienen la misma duración (12 h cada uno) en todo el planeta. Ocurren el ~21 de marzo (equinoccio de primavera en el hemisferio norte) y el ~22 de septiembre (equinoccio de otoño en el hemisferio norte).</LI>
+</OL>
+</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Característica</TH><TH>Rotación</TH><TH>Traslación</TH></TR>
+<TR><TD>¿Alrededor de qué?</TD><TD>Eje terrestre (propio)</TD><TD>El Sol</TD></TR>
+<TR><TD>Duración</TD><TD>24 horas (día)</TD><TD>365 días y ~6 h (año)</TD></TR>
+<TR><TD>Sentido</TD><TD>Oeste → Este</TD><TD>Oeste → Este (antihorario desde polo N)</TD></TR>
+<TR><TD>Consecuencia principal</TD><TD>Día y noche / husos horarios</TD><TD>Estaciones / solsticios / equinoccios</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>C) Movimiento de Precesión de los equinoccios:</H4>
+El eje terrestre no apunta siempre en la misma dirección: describe lentamente un <B>cono</B> en el espacio, como un trompo que pierde velocidad. Un ciclo completo dura aproximadamente <B>25 800 años</B>. Como consecuencia, la estrella polar cambia a lo largo de milenios: hace 5 000 años era <B>Thuban</B> (Alfa Draconis), hoy es <B>Polaris</B>, y en ~12 000 años será <B>Vega</B>.
+
+<!-- 8 -->
+<H3 ID="cartografia">8. Cartografía y tipos de mapas</H3>
+La <B>cartografía</B> es la ciencia y técnica de representar la superficie terrestre (o partes de ella) sobre un plano bidimensional (mapa). El reto principal es trasladar una superficie curva a una superficie plana, lo que siempre implica algún tipo de distorsión.
+
+<H4>Tipos de representación cartográfica (proyecciones):</H4>
+<UL>
+<LI><B>Proyección cilíndrica (Mercator, 1569):</B> la más usada históricamente. Conserva ángulos y formas, pero deforma enormemente el tamaño de los continentes en latitudes altas (Groenlandia parece del mismo tamaño que África, cuando África es 14 veces mayor). Útil para navegación.</LI>
+<LI><B>Proyección cónica:</B> se proyecta sobre un cono tangente al globo. Buena para representar continentes de latitudes medias (América del Norte, Europa). Deforma en los polos.</LI>
+<LI><B>Proyección acimutal (plana):</B> se proyecta sobre un plano tangente al globo. Ideal para representar los polos. La usada por la ONU en su emblema es una proyección acimutal centrada en el Polo Norte.</LI>
+<LI><B>Proyección de Peters (1974):</B> cilíndrica que conserva las proporciones de área (igual área). Los continentes del Sur (África, América del Sur) aparecen en su tamaño real relativo.</LI>
+</UL>
+
+<H4>Escala cartográfica:</H4>
+La <B>escala</B> expresa la relación entre la distancia en el mapa y la distancia real en el terreno.
+<UL>
+<LI><B>Escala numérica:</B> se expresa como fracción o razón. Ejemplo: 1:50 000 significa que 1 cm en el mapa equivale a 50 000 cm (= 500 m) en la realidad.</LI>
+<LI><B>Escala gráfica:</B> barra o línea dividida que representa gráficamente las distancias reales.</LI>
+<LI><B>Escala grande:</B> representa una zona pequeña con mucho detalle (ej. 1:5 000 — un plano urbano).</LI>
+<LI><B>Escala pequeña:</B> representa una zona grande con poco detalle (ej. 1:10 000 000 — un mapa del mundo).</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Truco para el examen:</B> Una escala 1:1 000 es <B>más grande</B> que una escala 1:1 000 000, aunque el número sea menor. Piénsalo como una fracción: 1/1 000 > 1/1 000 000. A mayor denominador, escala más pequeña y menos detalle por cm².</DIV>
+
+<H4>Tipos de mapas según su contenido:</H4>
+<UL>
+<LI><B>Mapas físicos:</B> representan el relieve (curvas de nivel, colores hipsométricos), la hidrografía y la vegetación natural.</LI>
+<LI><B>Mapas políticos:</B> representan fronteras, capitales, ciudades y divisiones administrativas.</LI>
+<LI><B>Mapas temáticos:</B> representan un fenómeno específico: mapa climático, mapa de densidad de población, mapa geológico, mapa de carreteras, mapa económico.</LI>
+<LI><B>Mapas topográficos:</B> representan el relieve con <B>curvas de nivel</B> (líneas que unen puntos de igual altitud). La distancia vertical entre dos curvas consecutivas se llama <B>equidistancia</B>.</LI>
+</UL>
+
+<DIV CLASS="ej">🗺️ <B>Curvas de nivel:</B> Cuando las curvas están muy juntas, el terreno es <B>empinado</B>. Cuando están separadas, el terreno es <B>suave o plano</B>. Si las curvas forman círculos concéntricos cerrándose hacia adentro, indican un <B>cerro o montaña</B>. Si los números disminuyen hacia el centro, indican un <B>depresión o valle</B>.</DIV>
+
+<!-- 9 -->
+<H3 ID="orientacion">9. Orientación y Rosa de los Vientos</H3>
+<B>Orientar</B> significa determinar la posición de un punto en relación con los puntos cardinales. Los puntos cardinales son los cuatro puntos fundamentales de referencia:
+
+<UL>
+<LI><B>Norte (N):</B> dirección hacia el Polo Norte geográfico. El Sol nunca está al norte en el hemisferio norte a mediodía.</LI>
+<LI><B>Sur (S):</B> dirección hacia el Polo Sur. En el hemisferio sur, el Sol a mediodía está al norte.</LI>
+<LI><B>Este (E) u Oriente:</B> dirección en que sale el Sol (en los equinoccios exactamente por el este).</LI>
+<LI><B>Oeste (O/W) u Occidente:</B> dirección en que se pone el Sol.</LI>
+</UL>
+
+La <B>Rosa de los Vientos</B> es la representación gráfica de las 32 direcciones del horizonte. Los ocho puntos principales son: N, NE, E, SE, S, SO, O, NO.
+
+<H4>Métodos de orientación:</H4>
+<UL>
+<LI><B>Brújula:</B> instrumento que señala el Norte magnético (no exactamente el Norte geográfico; la diferencia se llama <B>declinación magnética</B>).</LI>
+<LI><B>Sol:</B> sale por el Este y se pone por el Oeste. A mediodía solar está al Sur (hemisferio norte) o al Norte (hemisferio sur).</LI>
+<LI><B>Estrellas:</B> La <B>Estrella Polar (Polaris)</B> indica el Norte geográfico en el hemisferio norte. En el hemisferio sur se usa la <B>Cruz del Sur</B>.</LI>
+<LI><B>GPS y SIG:</B> en la actualidad, los sistemas de posicionamiento global (GPS) y los Sistemas de Información Geográfica (SIG/GIS) permiten una localización precisa mediante satélites artificiales.</LI>
+</UL>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- NIVEL BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Quién acuñó el término "Geografía" y fue el primero en calcular la circunferencia de la Tierra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Ptolomeo de Alejandría</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Aristóteles de Estagira</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Eratóstenes de Cirene</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Estrabón de Amasia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR><B>Eratóstenes de Cirene</B> (~276–194 a.C.) acuñó el término "Geografía" y calculó con gran precisión la circunferencia de la Tierra (~40 000 km, muy cercano al valor real de 40 075 km) usando la diferencia de sombras solares entre Alejandría y Siena en el solsticio de verano. Ptolomeo elaboró mapas del mundo conocido. Estrabón escribió una gran obra de geografía descriptiva.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> La Geografía Física estudia:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La distribución de la población y los Estados en el mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Los elementos naturales de la superficie terrestre: relieve, clima, hidrografía y vegetación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Las ciudades, su crecimiento y sus funciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Las fronteras políticas y los conflictos territoriales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Geografía Física</B> estudia los elementos naturales: relieve (geomorfología), clima (climatología), aguas (hidrografía), suelos (edafología) y seres vivos (biogeografía). La distribución de población corresponde a la Geografía Humana; las ciudades a la Geografía Urbana; las fronteras a la Geografía Política.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Cuál de las siguientes afirmaciones sobre la Tierra es CORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) La Tierra es una esfera perfecta con el mismo diámetro en todas las direcciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) La Tierra es un geoide: achatada en los polos y ensanchada en el Ecuador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El diámetro polar de la Tierra es mayor que el diámetro ecuatorial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) La superficie de la Tierra está cubierta en un 29% por agua y un 71% por tierra firme</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La Tierra es un <B>geoide</B> (también llamado elipsoide de revolución): el diámetro ecuatorial (12 756 km) es mayor que el diámetro polar (12 714 km) porque la rotación genera una fuerza centrífuga que ensancha el Ecuador. Además, el <B>71%</B> de la superficie terrestre es agua y solo el 29% es tierra firme, no al revés.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> El movimiento de rotación de la Tierra tiene como consecuencia principal:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Las estaciones del año</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) La sucesión del día y la noche</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Los solsticios y equinoccios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) La variación de la temperatura según la latitud</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>movimiento de rotación</B> (giro sobre el eje propio, duración 24 h) produce la alternancia del <B>día y la noche</B> y las diferencias horarias entre longitudes (husos horarios). Las estaciones, solsticios y equinoccios son consecuencia del <B>movimiento de traslación</B> y de la inclinación del eje terrestre (23°27').</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Los paralelos son líneas imaginarias que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Van de polo a polo y miden la longitud geográfica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Son círculos horizontales paralelos al Ecuador y miden la latitud geográfica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Pasan todas por el Meridiano de Greenwich</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Dividen la Tierra en husos horarios de 15° cada uno</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>paralelos</B> son círculos horizontales paralelos al Ecuador que sirven para medir la <B>latitud</B> (0° en el Ecuador, 90° en los polos). Los que van de polo a polo son los <B>meridianos</B> y miden la longitud. Los husos horarios se delimitan con meridianos separados 15° entre sí.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> La Fuerza de Coriolis, consecuencia de la rotación terrestre, produce:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) La desviación de masas de aire hacia la derecha en el hemisferio norte y hacia la izquierda en el sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El calentamiento diferencial de los continentes frente a los océanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Las mareas oceánicas por atracción gravitacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Las estaciones del año en las zonas templadas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La <B>Fuerza de Coriolis</B> es una fuerza ficticia generada por la rotación terrestre que desvía el movimiento de las masas de aire y agua: hacia la <B>derecha</B> en el hemisferio norte (ciclones giran en sentido antihorario) y hacia la <B>izquierda</B> en el hemisferio sur (ciclones giran en sentido horario). Las mareas se deben a la gravedad de la Luna y el Sol; las estaciones a la traslación.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Cuál es la diferencia entre CLIMATOLOGÍA y METEOROLOGÍA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) La climatología estudia el tiempo atmosférico a corto plazo; la meteorología estudia el clima a largo plazo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) La climatología estudia el clima (condiciones atmosféricas promedio a largo plazo); la meteorología estudia el tiempo atmosférico (condiciones diarias)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Son sinónimos: ambas estudian el tiempo y el clima sin diferencia conceptual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) La climatología es una subdisciplina de la meteorología</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Climatología</B> estudia el <I>clima</I>: el promedio estadístico de las condiciones atmosféricas (temperatura, precipitación, viento) de una región durante períodos largos (mínimo 30 años según la OMM). <B>Meteorología</B> estudia el <I>tiempo atmosférico</I>: las condiciones diarias o semanales (si lloverá mañana). La climatología es una rama de la Geografía Física; la meteorología es una ciencia auxiliar de ella.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Respecto a los solsticios y equinoccios, ¿cuál afirmación es CORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) En los solsticios, el día y la noche tienen la misma duración en todo el planeta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Los equinoccios ocurren cuando la Tierra está más cerca o más lejos del Sol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El solsticio de verano del hemisferio norte (~21 de junio) coincide con el solsticio de invierno del hemisferio sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Los equinoccios y solsticios son consecuencia del movimiento de rotación terrestre</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Los solsticios y equinoccios son consecuencia de la <B>traslación</B> y la inclinación del eje (23°27'). En los <b>equinoccios</b> (~21 de marzo y ~22 de septiembre), el día y la noche duran 12 h en todo el planeta. En el solsticio de junio (~21 de junio), es <b>verano</b> en el hemisferio norte (día más largo) e <b>invierno</b> en el hemisferio sur simultáneamente. Los solsticios no dependen de la distancia al Sol (eso sería perihelio/afelio).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> En cartografía, una escala 1:25 000 comparada con una escala 1:500 000 es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Más pequeña y muestra menos detalle</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Igual, porque ambas son escalas cartográficas válidas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Más grande y muestra mayor detalle de una zona más pequeña</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Más pequeña porque 25 000 es menor que 500 000</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La escala es una fracción: 1/25 000 > 1/500 000. Por tanto, 1:25 000 es una escala <B>más grande</B> que 1:500 000. Una escala grande representa una zona pequeña con <b>mucho detalle</b> (plano de un barrio, mapa topográfico de un valle). Una escala pequeña representa una zona grande con poco detalle (mapa de un país, mapa del mundo). El error más común es confundir el tamaño del número con el tamaño de la escala.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> El campo magnético terrestre es generado por:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) La corteza continental rica en minerales de hierro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) El movimiento del núcleo externo líquido de hierro y níquel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) La ionosfera en la parte alta de la atmósfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Las corrientes del manto superior (astenosfera)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>campo magnético terrestre</B> (magnetosfera) se genera por el movimiento convectivo del <B>núcleo externo</B>, que está en estado líquido y está compuesto principalmente de <B>hierro y níquel</B> fundidos. Estos metales conductores en movimiento crean una dinamo electromagnética. Su función vital es desviar el viento solar (partículas cargadas de alta energía) que de otro modo erosionaría la atmósfera.</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> La proyección cartográfica de Mercator (1569) es la más utilizada en mapas mundiales históricos porque conserva los ángulos, pero presenta la siguiente deformación crítica:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Distorsiona los ángulos de navegación, haciéndola inútil para la marina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Exagera enormemente el tamaño de los continentes en latitudes altas, haciendo que Groenlandia parezca tan grande como África</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Invierte los hemisferios norte y sur, dando una imagen distorsionada de los continentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Solo puede representar la mitad occidental de la Tierra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La proyección de Mercator conserva los <B>ángulos y las formas locales</B> (conforme), lo que la hace útil para la navegación (los rumbos constantes son líneas rectas). Sin embargo, <B>deforma enormemente el área</B> en latitudes altas: Groenlandia (~2,1 M km²) parece del tamaño de África (~30,4 M km²), cuando en realidad África es <b>14 veces mayor</b>. Esta distorsión ha influido en percepciones coloniales del tamaño relativo de los continentes. La proyección de Peters (1974) corrige esto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El movimiento de Precesión de los equinoccios tiene una duración de ~25 800 años. Una de sus consecuencias es que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Las estaciones del año se vuelven más largas con el tiempo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La estrella polar cambia a lo largo de miles de años; hace 5 000 años era Thuban y en ~12 000 años será Vega</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) La inclinación del eje terrestre aumenta progresivamente hasta hacerse perpendicular a la eclíptica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) El perihelio y afelio terrestres dejan de existir al cambiar la forma de la órbita</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>precesión</B> es el movimiento del eje terrestre describiendo un cono en ~25 800 años (como un trompo girando). Esto cambia hacia dónde apunta el eje norte de la Tierra en el espacio, por lo que la <B>estrella polar varía</B>: era <b>Thuban</b> (Alfa Draconis) hace ~5 000 años cuando los egipcios construyeron las pirámides; hoy es <b>Polaris</b>; en ~12 000 años será <b>Vega</b>. La precesión también desplaza lentamente los equinoccios respecto a la órbita, pero no cambia la inclinación del eje ni la forma de la órbita.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Según las Leyes de Kepler aplicadas al movimiento de traslación terrestre, la Tierra se desplaza más rápido cuando:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Está en el afelio (~4 de julio), en el punto más lejano al Sol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Se encuentra en el equinoccio de primavera, porque la energía solar es máxima</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Está en el perihelio (~3 de enero), en el punto más cercano al Sol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La velocidad orbital es constante durante todo el año porque la órbita es circular</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>2ª Ley de Kepler</B> (ley de las áreas) establece que el radio vector (línea Sol-planeta) barre áreas iguales en tiempos iguales. Esto implica que el planeta se mueve <B>más rápido cuando está más cerca del Sol</B>. La Tierra alcanza el <b>perihelio</b> (~147,1 M km del Sol) alrededor del <b>3 de enero</b> (~30,3 km/s) y el <b>afelio</b> (~152,1 M km) alrededor del <b>4 de julio</b> (~29,3 km/s). La órbita es <b>elíptica</b>, no circular.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El Meridiano de Greenwich fue establecido como meridiano 0° de referencia universal en:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La Conferencia de París de 1875, impulsada por el sistema métrico decimal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La Conferencia Internacional del Meridiano en Washington D.C. en 1884</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El Tratado de Tordesillas de 1494 que dividió el mundo entre España y Portugal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La publicación del Atlas de Mercator en 1569</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Meridiano de Greenwich</B> fue adoptado como meridiano 0° universal en la <B>Conferencia Internacional del Meridiano</B> celebrada en <b>Washington D.C. en octubre de 1884</b>, con representantes de 25 naciones. Se eligió Greenwich (Observatorio Real de Londres) porque la mayoría de la marina internacional ya usaba los mapas británicos con ese meridiano como referencia. Francia se abstuvo y siguió usando el Meridiano de París hasta 1911.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Cuál es la diferencia conceptual entre ESPACIO GEOGRÁFICO, PAISAJE, TERRITORIO y REGIÓN?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Son términos sinónimos que la geografía usa indistintamente para referirse a la superficie terrestre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Espacio geográfico es la superficie transformada por el ser humano; paisaje es su expresión visible; territorio implica control político; región implica homogeneidad interna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Espacio geográfico y paisaje son conceptos físicos; territorio y región son exclusivamente conceptos humanos sin relación con lo natural</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) El paisaje es el concepto más amplio que incluye a los otros tres</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Estos cuatro conceptos son distintos y complementarios: el <B>espacio geográfico</B> es la superficie terrestre organizada y transformada por la acción humana (el objeto de estudio central de la Geografía). El <B>paisaje</B> es la dimensión visible del espacio: lo que vemos (montañas, ciudades, campos). El <B>territorio</B> añade la dimensión de <b>control, poder y apropiación</b> por parte de un grupo o Estado (con fronteras delimitadas). La <B>región</B> es un área definida por <b>características homogéneas</b> que la distinguen del entorno (puede ser física: región andina; o humana: región industrial del Ruhr).</DIV></DETAILS>
+</DIV>
+
+<!-- NIVEL EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Los Sistemas de Información Geográfica (SIG/GIS) representan la fusión entre la cartografía tradicional y la informática. Su principal ventaja sobre los mapas en papel es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Son más bonitos visualmente y fáciles de imprimir en gran formato</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Permiten superponer múltiples capas de información, analizarlas espacialmente y actualizarlas en tiempo real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Eliminan la necesidad de coordenadas geográficas al usar inteligencia artificial para localizar lugares</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Solo pueden representar datos físicos (relieve y clima) pero no datos socioeconómicos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La ventaja central de los <B>SIG</B> es la gestión de múltiples <B>capas de información</B> digital que se pueden superponer, analizar y cruzar estadísticamente: sobre una misma base cartográfica se puede ver simultáneamente el relieve, la cobertura vegetal, la densidad de población, las carreteras y las zonas de riesgo sísmico. Además, se pueden actualizar en tiempo real (tráfico, precipitaciones, noticias de crisis). Su uso es esencial en planificación urbana, gestión de desastres, geopolítica y epidemiología.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> ¿Cuál de las siguientes afirmaciones sobre los subsistemas terrestres (geosistema) es INCORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La atmósfera contiene principalmente nitrógeno (~78%) y oxígeno (~21%)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La litosfera incluye la corteza terrestre y la parte superior del manto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La hidrosfera se limita a los océanos; los glaciares y el vapor de agua pertenecen a la criosfera y atmósfera respectivamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La biosfera abarca todos los ecosistemas de la Tierra, desde las fosas oceánicas hasta las altas cumbres</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>La incorrecta es c)</B><BR>La <B>hidrosfera</B> comprende <b>toda el agua de la Tierra</b> en sus tres estados: líquida (océanos, ríos, lagos, aguas subterráneas), sólida (glaciares, casquetes polares) y gaseosa (vapor de agua). No se limita a los océanos. Es cierto que algunos autores modernos separan la <b>criosfera</b> (hielos y glaciares) como un subsistema adicional, pero en la definición clásica de los cuatro subsistemas, los glaciares forman parte de la hidrosfera. Las opciones a), b) y d) son correctas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> La declinación magnética es relevante para la orientación porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Es el ángulo entre el Norte geográfico (verdadero) y el Norte magnético, que varía según el lugar y el tiempo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Indica la inclinación del eje de la Tierra respecto a la eclíptica (23°27')</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Es la diferencia de horas entre dos meridianos separados 15° de longitud</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Indica la distorsión angular de los mapas producida por las proyecciones cartográficas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La <B>declinación magnética</B> es el ángulo que forma el <b>Norte magnético</b> (hacia donde apunta la brújula, el Polo Magnético Norte) con el <b>Norte geográfico</b> (el Polo Norte verdadero). Este ángulo varía según la ubicación en la Tierra y también cambia con el tiempo porque el campo magnético terrestre se desplaza lentamente. En navegación precisa, los cartógrafos indican la declinación magnética en los mapas para que los navegantes corrijan la lectura de su brújula y obtengan el rumbo verdadero.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Eratóstenes calculó la circunferencia de la Tierra usando la diferencia de ángulos de la sombra solar entre dos ciudades. ¿Qué dato fundamental necesitó para completar el cálculo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) El diámetro del Sol y la distancia Tierra-Sol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) La distancia terrestre entre Alejandría y Siena (hoy Asuán), medida en estadios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) La velocidad de la luz para calcular cuánto tardaba el Sol en iluminar las dos ciudades</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El peso de la Tierra para deducir su radio por gravedad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El método de Eratóstenes fue elegante: sabía que en Siena (hoy Asuán) el Sol estaba exactamente en el cénit al mediodía del solsticio de verano (proyectaba sombra al fondo de un pozo). Simultáneamente en Alejandría, el Sol formaba un ángulo de <b>~7,2°</b> con la vertical (≈ 1/50 de 360°). Entonces necesitaba la <b>distancia entre ambas ciudades</b> (~800 km, medida por viajeros en "estadios") y la regla de tres: si 7,2° corresponden a 800 km, entonces 360° corresponden a 800 × 50 = 40 000 km. Solo necesitó geometría básica y esa medida de distancia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> En el marco del estudio del geosistema, el concepto de "teleconexión climática" se refiere a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) La transmisión de datos meteorológicos por satélite entre países</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) La influencia que eventos climáticos en una región del planeta ejercen sobre el clima de regiones muy distantes a través de ondas atmosféricas y corrientes oceánicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) La conexión digital de los sistemas de alerta temprana contra ciclones tropicales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El transporte de calor entre el Ecuador y los polos exclusivamente a través de las corrientes oceánicas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las <B>teleconexiones climáticas</B> son uno de los fenómenos más importantes de la climatología moderna: demuestran que el geosistema está interconectado a escala planetaria. El ejemplo más conocido es <b>El Niño-Oscilación del Sur (ENSO)</b>: el calentamiento anómalo del Pacífico tropical ecuatorial produce simultáneamente sequías en Australia e Indonesia, lluvias intensas en la costa oeste de América del Sur y mayor actividad de huracanes en el Atlántico. También existen la <b>Oscilación del Atlántico Norte (NAO)</b> y la <b>Oscilación Decadal del Pacífico (PDO)</b>, entre otras.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,207 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<TITLE>Iniciar sesión - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+BODY{
+    font-family:Arial, sans-serif;
+    background:
+    radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),
+    linear-gradient(to right,#F6F2EB,#F6F2EB);
+    min-height:100vh;
+}
+.header{
+    background:#0D1B36;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.25);
+}
+.logo{
+    font-size:38px;
+    font-weight:bold;
+    letter-spacing:3px;
+    color:white;
+    font-family:"Lobster",cursive;
+}
+.logo span{
+    color:#1F6A67;
+}
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:flex-end;
+}
+.menu button{
+    border:none;
+    border-radius:25px;
+    padding:10px 15px;
+    background:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+.menu button:hover{
+    background:#F6F2EB;
+    transform:translateY(-3px);
+}
+.menu a{
+    text-decoration:none;
+    color:#0D1B36;
+    font-weight:bold;
+}
+.menu .registrate{
+    background:#D7B06D;
+}
+/* TARJETA DE LOGIN */
+.login-wrap{
+    max-width:430px;
+    margin:65px auto 0;
+    padding:0 25px;
+}
+.tarjeta-login{
+    background:white;
+    border-radius:22px;
+    padding:42px 38px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.12);
+}
+.tarjeta-login h1{
+    color:#1F6A67;
+    font-size:34px;
+    font-family:"Cooper Black";
+    text-align:center;
+}
+.linea-c{
+    width:120px;
+    height:5px;
+    background:#D7B06D;
+    border-radius:10px;
+    margin:14px auto 16px;
+}
+.tarjeta-login .sub{
+    text-align:center;
+    color:#555;
+    font-size:16px;
+    margin-bottom:28px;
+}
+.form-login label{
+    display:block;
+    color:#0D1B36;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+.form-login input{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid #d8d2c4;
+    border-radius:10px;
+    font-family:Arial, sans-serif;
+    font-size:16px;
+    margin-bottom:18px;
+    background:#fdfcf9;
+}
+.form-login input:focus{
+    outline:2px solid #1F6A67;
+    border-color:#1F6A67;
+}
+.olvido{
+    display:block;
+    text-align:right;
+    margin:-8px 0 20px;
+    font-size:14px;
+}
+.olvido a{
+    color:#1F6A67;
+    text-decoration:none;
+}
+.olvido a:hover{
+    text-decoration:underline;
+}
+.btn-login{
+    width:100%;
+    background:#0D1B36;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:25px;
+    font-weight:bold;
+    font-size:17px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.btn-login:hover{
+    background:#D7B06D;
+    color:#0D1B36;
+}
+.registro-link{
+    text-align:center;
+    margin-top:22px;
+    color:#555;
+    font-size:15px;
+}
+.registro-link a{
+    color:#1F6A67;
+    font-weight:bold;
+    text-decoration:none;
+}
+.registro-link a:hover{
+    text-decoration:underline;
+}
+.pie{
+    margin-top:60px;
+}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">
+Inka<span>edu</span>
+</DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<DIV CLASS="login-wrap">
+<DIV CLASS="tarjeta-login">
+<H1>Iniciar sesión</H1>
+<DIV CLASS="linea-c"></DIV>
+<P CLASS="sub">Bienvenido de vuelta a INKAEDU.PE</P>
+
+<FORM CLASS="form-login" ACTION="#" METHOD="post">
+<LABEL>Correo electrónico</LABEL>
+<INPUT TYPE="email" NAME="correo" placeholder="tucorreo@ejemplo.com" required>
+
+<LABEL>Contraseña</LABEL>
+<INPUT TYPE="password" NAME="clave" placeholder="Tu contraseña" required>
+
+<SPAN CLASS="olvido"><A HREF="#">¿Olvidaste tu contraseña?</A></SPAN>
+
+<BUTTON TYPE="submit" CLASS="btn-login">Entrar</BUTTON>
+</FORM>
+
+<P CLASS="registro-link">¿No tienes cuenta? <A HREF="REGISTRATE.HTML">Regístrate</A></P>
+</DIV>
+</DIV>
+
+<DIV CLASS="pie">
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</DIV>
+
+</BODY>
+</HTML>

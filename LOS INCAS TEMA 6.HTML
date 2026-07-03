@@ -1,0 +1,589 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>El Imperio Inca - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA &middot; TEMA 6</DIV>
+<H1>El Imperio Inca &mdash; Tawantinsuyu</H1>
+<DIV CLASS="sub">Origen &middot; Organizaci&oacute;n &middot; Econom&iacute;a &middot; Sociedad &middot; Religi&oacute;n &middot; Arte &middot; Conquista espa&ntilde;ola</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. El Tawantinsuyu: el mayor imperio de Am&eacute;rica</H3>
+El <B>Tawantinsuyu</B> (en quechua: <I>tawa</I> = cuatro, <I>suyu</I> = regi&oacute;n; "las cuatro regiones reunidas") fue el mayor estado precolombino de Am&eacute;rica y uno de los m&aacute;s extensos del mundo en su &eacute;poca. En su apogeo (siglo XV &ndash; inicios del XVI) abarcaba m&aacute;s de <B>2 millones de km²</B> y entre <B>10 y 12 millones de habitantes</B>, extendi&eacute;ndose desde el sur de Colombia y Ecuador hasta el norte de Argentina y Chile, incluyendo todo el Per&uacute;, Bolivia occidental y el noroeste de Argentina.
+
+<H4>Datos b&aacute;sicos:</H4>
+<UL>
+<LI><B>Periodo:</B> Horizonte Tard&iacute;o (1 438 &ndash; 1 532 d.C.) en su fase imperial. Los or&iacute;genes cusque&ntilde;os son anteriores (~1 200 d.C.).</LI>
+<LI><B>Capital:</B> <B>Cusco</B> (en quechua: <I>Qosqo</I>, "ombligo del mundo"), a 3 400 m s.n.m.</LI>
+<LI><B>Idioma oficial:</B> <B>Quechua</B> (<I>runa simi</I>, "lengua de la gente"), impuesto como <I>lingua franca</I> del imperio, aunque conviv&iacute;a con decenas de lenguas locales (aimara, muchik, puquina, etc.).</LI>
+<LI><B>Gobernante:</B> el <B>Sapa Inca</B> ("el &uacute;nico Inca"), considerado hijo del Sol (Inti) y figura divina en vida.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> El Tawantinsuyu pertenece al <B>Horizonte Tard&iacute;o</B> (no al Intermedio Tard&iacute;o). La <B>fase imperial</B> comienza con <B>Pachac&uacute;tec</B> (1438 d.C.), quien transform&oacute; el pe-que&ntilde;o curacazgo cusque&ntilde;o en un imperio. La ca&iacute;da se da en <B>1532 d.C.</B> con la captura de Atahualpa en Cajamarca por Francisco Pizarro.</DIV>
+
+<H3>2. Origen y mitos fundacionales</H3>
+El origen de los incas es explicado por dos grandes tradiciones:
+
+<H4>Mito de Manco C&aacute;pac y Mama Ocllo (versi&oacute;n solar):</H4>
+El dios Sol (<B>Inti</B>) envi&oacute; a sus hijos <B>Manco C&aacute;pac</B> y <B>Mama Ocllo</B> desde las aguas del lago Titicaca con una barilla de oro. Deb&iacute;an caminar hasta que la barilla se hundiera sola en la tierra: ese lugar ser&iacute;a el ombligo del mundo. La barilla se hundi&oacute; en el <B>Cerro Huanacauri</B>, junto al valle del Cusco. All&iacute; fundaron la ciudad y ense&ntilde;aron a los hombres la agricultura y a las mujeres el tejido.
+
+<H4>Mito de los Hermanos Ayar (versi&oacute;n de Pacaritambo):</H4>
+Cuatro parejas de hermanos salieron de las tres ventanas de la cueva de <B>Pacaritambo</B> ("posada del alba"): Ayar Manco, Ayar Cachi, Ayar Uchu y Ayar Sauca, con sus respectivas hermanas-esposas. Tras un largo viaje, Ayar Manco (luego llamado <B>Manco C&aacute;pac</B>) fund&oacute; el Cusco. Los otros hermanos se convirtieron en piedras sagradas (<I>huacas</I>) en puntos del camino.
+
+<DIV CLASS="ej">&#127748; <B>Nota hist&oacute;rica:</B> Los or&iacute;genes incas son objeto de debate. La evidencia arqueol&oacute;gica muestra asentamientos en el valle del Cusco desde ~1 200 d.C. El <B>grupo &eacute;tnico inca</B> era originalmente uno de varios grupos del altiplano sur&mdash;probablemente relacionados con la tradici&oacute;n Tiahuanaco&mdash;que fue expandiendo su poder gradualmente. Los mitos fundacionales fueron elaborados y codificados por los propios incas para legitimar su dominio.</DIV>
+
+<H3>3. La lista de Sapa Incas</H3>
+La tradici&oacute;n registra <B>13 Sapa Incas</B> desde Manco C&aacute;pac hasta Atahualpa. La lista se divide en dos grandes grupos:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sapa Inca</TH><TH>Cronolog&iacute;a aprox.</TH><TH>Aporte principal</TH></TR>
+<TR><TD><B>1. Manco C&aacute;pac</B></TD><TD>~1 200 d.C.</TD><TD>Fundador m&iacute;tico del Cusco. Primer Sapa Inca seg&uacute;n la tradici&oacute;n.</TD></TR>
+<TR><TD><B>2. Sinchi Roca</B></TD><TD>~1 230</TD><TD>Consolida el poder en el valle del Cusco.</TD></TR>
+<TR><TD><B>3. Lloque Yupanqui</B></TD><TD>~1 260</TD><TD>Expande control sobre pueblos vecinos.</TD></TR>
+<TR><TD><B>4. Mayta C&aacute;pac</B></TD><TD>~1 290</TD><TD>Primeras guerras de expansi&oacute;n fuera del Cusco.</TD></TR>
+<TR><TD><B>5. C&aacute;pac Yupanqui</B></TD><TD>~1 320</TD><TD>Primera expansi&oacute;n significativa. Llega al Contisuyu.</TD></TR>
+<TR><TD><B>6. Inca Roca</B></TD><TD>~1 350</TD><TD>Funda el <I>yachaywasi</I> (casa del saber, primera escuela inca).</TD></TR>
+<TR><TD><B>7. Yahuar Huac&aacute;c</B></TD><TD>~1 380</TD><TD>Reinado turbulento; amenaza de los chancas.</TD></TR>
+<TR><TD><B>8. Viracocha Inca</B></TD><TD>~1 410</TD><TD>Expansi&oacute;n hacia el Collao. Huye ante los chancas.</TD></TR>
+<TR><TD><B>9. Pachac&uacute;tec &#11088;</B></TD><TD>1 438 &ndash; 1 471</TD><TD><B>El m&aacute;s grande:</B> derrota a los chancas, funda el Imperio, reconstruye el Cusco, construye Machu Picchu, crea el Qhapaq &Ntilde;an.</TD></TR>
+<TR><TD><B>10. T&uacute;pac Yupanqui</B></TD><TD>1 471 &ndash; 1 493</TD><TD>Conquista Chim&uacute;, Ecuador, Bolivia, norte de Argentina y Chile. M&aacute;xima expansi&oacute;n territorial.</TD></TR>
+<TR><TD><B>11. Huayna C&aacute;pac</B></TD><TD>1 493 &ndash; 1 527</TD><TD>Consolida Ecuador (Quito como segunda capital). Muere de epidemia (viruela). Divide el imperio.</TD></TR>
+<TR><TD><B>12. Hu&aacute;scar</B></TD><TD>1 527 &ndash; 1 532</TD><TD>Gobernaba el Cusco. Derrotado y capturado por Atahualpa en la guerra civil.</TD></TR>
+<TR><TD><B>13. Atahualpa</B></TD><TD>1 532</TD><TD>Vence a Hu&aacute;scar. Capturado por Pizarro en Cajamarca (16 nov. 1532). Ejecutado en 1533.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>El dato m&aacute;s importante:</B> <B>Pachac&uacute;tec</B> (1438&ndash;1471) es el Inca m&aacute;s relevante en los ex&aacute;menes. Derrota a los <B>chancas</B> (~1438), inicia la expansi&oacute;n imperial, reconstruye el Cusco en forma de puma, construye <B>Machu Picchu</B> (c. 1450), crea la red vial <B>Qhapaq &Ntilde;an</B> y organiza el sistema administrativo. Es comparable a Augusto en Roma o a Alejandro en Macedonia.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127963; ORGANIZACI&Oacute;N TERRITORIAL Y POL&Iacute;TICA<SPAN>El estado m&aacute;s sofisticado de Am&eacute;rica precolombina</SPAN></DIV>
+
+<H3>4. Las Cuatro Regiones: los Suyus</H3>
+El Tawantinsuyu estaba dividido en <B>cuatro suyus</B> que irradiaban desde el Cusco:
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Suyu</TH><TH>Significado</TH><TH>Territorio aproximado</TH></TR>
+<TR><TD><B>Chinchaysuyu</B></TD><TD>Regi&oacute;n del norte</TD><TD>Per&uacute; norte, Ecuador, sur de Colombia</TD></TR>
+<TR><TD><B>Antisuyu</B></TD><TD>Regi&oacute;n del oriente (selva)</TD><TD>Vertiente oriental de los Andes, Amaz&oacute;n&iacute;a</TD></TR>
+<TR><TD><B>Qollasuyu</B></TD><TD>Regi&oacute;n del sur</TD><TD>Bolivia, norte de Argentina y Chile, sur del Per&uacute;</TD></TR>
+<TR><TD><B>Kuntisuyu</B></TD><TD>Regi&oacute;n del occidente</TD><TD>Costa sur del Per&uacute;, Arequipa, Moquegua</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Jerarqu&iacute;a pol&iacute;tico-administrativa:</H4>
+<UL>
+<LI><B>Sapa Inca</B>: gobernante supremo, hijo del Sol, poder absoluto y divino.</LI>
+<LI><B>Auqui</B>: pr&iacute;ncipe heredero, co-gobernante en vida del Sapa Inca.</LI>
+<LI><B>Apu Suyuyoc</B> (o <I>Suyuyoc Apu</I>): gobernador de cada uno de los cuatro suyus. Siempre un noble inca de sangre real (<I>orejones</I>).</LI>
+<LI><B>Tocricoc</B>: gobernador de provincia (<I>wamani</I>). Supervisaba grupos de 10 000 familias.</LI>
+<LI><B>Curaca</B>: jefe local hereditario de pueblos conquistados. Los incas los respetaban y usaban como intermediarios, siempre que aceptaran la soberan&iacute;a inca.</LI>
+<LI><B>Decimal:</B> el sistema de control poblacional se organizaba en base 10: grupos de 10, 50, 100, 500, 1 000, 5 000, 10 000 familias, cada uno con su responsable.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>El sistema decimal inca</B> es uno de los mecanismos de control poblacional m&aacute;s eficientes de la historia. Cada individuo pertenec&iacute;a simult&aacute;neamente a una unidad familiar, un <I>ayllu</I>, un grupo decimal y un suyu. Esto permit&iacute;a al estado localizar, movilizar y controlar a cualquier persona en cualquier punto del imperio en cuesti&oacute;n de d&iacute;as mediante los <I>chasquis</I>.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127807; ECONOM&Iacute;A INCA<SPAN>Sin moneda, sin mercado: el estado redistributivo m&aacute;s avanzado del mundo premoderno</SPAN></DIV>
+
+<H3>5. La Econom&iacute;a Inca: redistribuci&oacute;n y reciprocidad</H3>
+La econom&iacute;a inca fue <B>estatal redistributiva</B>: no exist&iacute;a el comercio libre ni la moneda. El estado recaud&oacute; trabajo (<B>mita</B>) en vez de impuestos en dinero, y redistribuy&oacute; los bienes producidos.
+
+<H4>La Mita:</H4>
+La <B>mita</B> (<I>mit'a</I>: "turno de trabajo") era la obligaci&oacute;n de todo hombre adulto tributario de dedicar cierto n&uacute;mero de meses al a&ntilde;o al trabajo para el estado. No era trabajo gratuito: el estado alimentaba, vest&iacute;a y prote&iacute;a al mitayo durante su turno, y le devolvía chicha y coca. Era una forma de <B>reciprocidad asim&eacute;trica</B> entre el estado y el pueblo.
+<UL>
+<LI><B>Mita agr&iacute;cola:</B> trabajo en las tierras del Sol (Inti) y del Inca.</LI>
+<LI><B>Mita de construcci&oacute;n:</B> edificaci&oacute;n de caminos, puentes, templos, andenes.</LI>
+<LI><B>Mita militar:</B> servicio en el ej&eacute;rcito.</LI>
+<LI><B>Mita minera:</B> extracci&oacute;n de oro, plata y cobre.</LI>
+<LI><B>Mita de los chasquis:</B> servicio de correos.</LI>
+</UL>
+
+<H4>Las Tres Tierras:</H4>
+<UL>
+<LI><B>Tierras del Inca (Estado):</B> su producci&oacute;n se almacenaba en los <I>qollqas</I> y se usaba para alimentar al ej&eacute;rcito, los funcionarios, los artesanos y en emergencias.</LI>
+<LI><B>Tierras del Sol (Iglesia):</B> su producci&oacute;n se destinaba al culto (templos, sacerdotes, V&iacute;rgenes del Sol).</LI>
+<LI><B>Tierras del pueblo (ayllu):</B> divididas entre los miembros del <I>ayllu</I> seg&uacute;n el n&uacute;mero de miembros de cada familia. La unidad b&aacute;sica era el <B>tupu</B> (unidad de medida de tierra).</LI>
+</UL>
+
+<H4>El Ayllu:</H4>
+El <B>ayllu</B> era la c&eacute;lula fundamental de la sociedad andina: un grupo de familias emparentadas (reales o ficticias) que compart&iacute;an un territorio, un antepasado com&uacute;n (<I>mallqui</I>), obligaciones de trabajo mutuo (<I>ayni</I> y <I>minka</I>) y un culto comunitario. No era propiedad privada individual: la tierra pertenec&iacute;a al <I>ayllu</I> colectivamente.
+
+<H4>Los Qollqas (dep&oacute;sitos):</H4>
+La red de <B>qollqas</B> (dep&oacute;sitos estatales) a lo largo del Qhapaq &Ntilde;an era el sistema log&iacute;stico del imperio: almacenaban alimentos (ch&uacute;&ntilde;o, charki, maíz, quinua), ropa, armas y herramientas. En caso de sequ&iacute;a, hambruna o guerra, el estado redistribuía desde los qollqas. Se han encontrado miles de qollqas en todo el Per&uacute;.
+
+<DIV CLASS="cultura-titulo">&#128101; SOCIEDAD INCA<SPAN>Una sociedad estratificada con movilidad limitada</SPAN></DIV>
+
+<H3>6. Estructura Social</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Estrato</TH><TH>Denominaci&oacute;n</TH><TH>Caracter&iacute;stica</TH></TR>
+<TR><TD><B>Nobleza de sangre</B></TD><TD>Incas de sangre / <I>orejones</I></TD><TD>Descendientes directos de los Sapa Incas. Usaban orejeras de oro que dilataban sus l&oacute;bulos (de ah&iacute; "orejones" en boca de los espa&ntilde;oles). Ocupaban los m&aacute;s altos cargos.</TD></TR>
+<TR><TD><B>Nobleza de privilegio</B></TD><TD>Incas de privilegio / <I>curacas</I></TD><TD>Jefes locales de pueblos conquistados que aceptaron la soberan&iacute;a inca y recibieron privilegios. Tambi&eacute;n personas de m&eacute;rito.</TD></TR>
+<TR><TD><B>Cl&eacute;rigos y especialistas</B></TD><TD>Sacerdotes, <I>amautas</I>, <I>acllas</I></TD><TD>Sacerdotes del culto solar; <I>amautas</I> (sabios, maestros); <I>acllas</I> (V&iacute;rgenes del Sol, escogidas).</TD></TR>
+<TR><TD><B>Pueblo com&uacute;n</B></TD><TD><I>Hatun runa</I> (hombre grande)</TD><TD>La gran mayor&iacute;a: agricultores, artesanos, pastores. Pagaban mita.</TD></TR>
+<TR><TD><B>Servidumbre personal</B></TD><TD><I>Yanaconas</I></TD><TD>Servidores perpetuos del Inca o de la nobleza, separados de su ayllu. No pagaban mita pero tampoco ten&iacute;an autonom&iacute;a.</TD></TR>
+<TR><TD><B>Artesanos especializados</B></TD><TD><I>Mitimaes</I></TD><TD>Grupos trasladados forzosamente a territorios conquistados para colonizarlos, difundir la cultura inca o proporcionar servicios especializados.</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Las Acllas (Elegidas):</H4>
+Las <B>acllas</B> (<I>acllacona</I>: "mujeres escogidas") eran ni&ntilde;as de entre 8 y 10 a&ntilde;os, elegidas por los <I>apu panaca</I> por su belleza y habilidad, y llevadas al <I>acllawasi</I> (casa de las escogidas). All&iacute; aprendan a tejer, preparar chicha y realizar ceremonias. Algunas se convert&iacute;an en <B>V&iacute;rgenes del Sol</B> (consagradas a Inti), otras eran entregadas como esposas secundarias a nobles o curacas aliados, y algunas serv&iacute;an al Sapa Inca.
+
+<DIV CLASS="cultura-titulo">&#127980; RELIGI&Oacute;N INCA<SPAN>Un pante&oacute;n jer&aacute;rquico con Inti a la cabeza</SPAN></DIV>
+
+<H3>7. Religi&oacute;n y Cosmovisión</H3>
+La religi&oacute;n inca era pol&iacute;te&iacute;sta, con un panteón jer&aacute;rquico:
+
+<H4>Principales divinidades:</H4>
+<UL>
+<LI><B>Inti (Sol):</B> dios principal, padre del Sapa Inca. Su templo principal era el <B>Coricancha</B> en el Cusco (recubierto de oro). Su fiesta mayor: <B>Inti Raymi</B> (Fiesta del Sol, en el solsticio de invierno austral, 21 de junio).</LI>
+<LI><B>Viracocha:</B> dios creador, el ser supremo original que cre&oacute; el universo. Fue asimilado por los espa&ntilde;oles como un posible "dios cristiano" previa. Su nombre fue dado al conquistador Pizarro inicialmente.</LI>
+<LI><B>Mama Quilla (Luna):</B> esposa de Inti, patrona del tiempo y el calendario. Las mujeres nobles le rend&iacute;an culto especial.</LI>
+<LI><B>Illapa (Rayo/Trueno):</B> dios del clima, la lluvia y la agricultura. Muy venerado en la sierra.</LI>
+<LI><B>Pachamama (Tierra Madre):</B> deidad de la tierra, la fertilidad y la agricultura. Su culto persiste hoy en el mundo andino.</LI>
+<LI><B>Mama Cocha (Mar):</B> diosa del mar, los lagos y la pesca. Venerada en la costa.</LI>
+</UL>
+
+<H4>Conceptos clave:</H4>
+<UL>
+<LI><B>Huaca:</B> cualquier objeto, lugar o ser con poder sagrado: una piedra inusual, una monta&ntilde;a, un manantial, una momia. El Cusco ten&iacute;a m&aacute;s de 400 huacas organizadas en el sistema de <I>ceques</I>.</LI>
+<LI><B>Ceques:</B> 41 l&iacute;neas imaginarias que irradiaban desde el Coricancha hacia los cuatro suyus, organizando las huacas del Cusco en un sistema religioso-territorial-calendar&aacute;rico.</LI>
+<LI><B>Mallquis:</B> momias de los ancestros (incluidos los Sapa Incas muertos), conservadas y tratadas como vivos: se les alimentaba, vest&iacute;a, consultaba y llevaba a festividades. La <B>panaca</B> de cada Sapa Inca cuidaba su mallqui.</LI>
+<LI><B>Capacocha:</B> sacrificio humano de ni&ntilde;os (generalmente de &eacute;lite) en ocasiones excepcionales: entronizaci&oacute;n de un Sapa Inca, victorias militares importantes, cat&aacute;strofes naturales. Los ni&ntilde;os eran sedados con chicha y enterrados vivos o estrangulados en las cimas de los Andes. El ejemplo m&aacute;s famoso: la <B>Doncella de Llullaillaco</B> (Argentina, 6 150 m s.n.m.).</LI>
+</UL>
+
+<DIV CLASS="ej">&#127775; <B>El Coricancha:</B> El Templo del Sol en el Cusco era el edificio m&aacute;s sagrado del Tawantinsuyu. Sus paredes interiores estaban recubiertas de l&aacute;minas de oro puro. Alojaba estatuas de oro de Inti, Mama Quilla, Illapa y Viracocha, adem&aacute;s del <I>punchao</I> (imagen de oro del Sol con rayos). Los espa&ntilde;oles lo saquearon en 1533 y construyeron sobre sus muros el convento de Santo Domingo, visible hasta hoy en el Cusco.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128739; TECNOLOG&Iacute;A E INFRAESTRUCTURA<SPAN>El Qhapaq &Ntilde;an: 30 000 km de caminos que unieron un continente</SPAN></DIV>
+
+<H3>8. El Qhapaq &Ntilde;an y las Obras P&uacute;blicas</H3>
+
+<H4>El Qhapaq &Ntilde;an (Gran Camino Real):</H4>
+La red vial inca fue declarada <B>Patrimonio de la Humanidad UNESCO en 2014</B>, reconocida como uno de los mayores logros de ingenier&iacute;a de la humanidad. Constaba de m&aacute;s de <B>30 000 km</B> de caminos que comunicaban todo el Tawantinsuyu:
+<UL>
+<LI><B>Camino de la Sierra</B> (<I>Qhapaq &Ntilde;an</I>): recorr&iacute;a la cordillera desde Pasto (Colombia) hasta Tucum&aacute;n (Argentina), ~5 000 km.</LI>
+<LI><B>Camino de la Costa</B> (<I>&Ntilde;an Mayu</I>): recorr&iacute;a la costa pac&iacute;fica desde Ecuador hasta Chile.</LI>
+<LI><B>Caminos transversales:</B> conect&oacute;ban ambas arterias principales a trav&eacute;s de la cordillera.</LI>
+</UL>
+Los caminos ten&iacute;an escaleras en las pendientes, puentes colgantes (<I>ch'aca</I>) sobre los r&iacute;os (el m&aacute;s famoso: el puente de Huanachiri sobre el Apur&iacute;mac), posadas (<I>tambos</I>) cada 20&ndash;30 km, y refugios para emergencias.
+
+<H4>Los Chasquis (correos):</H4>
+Los <B>chasquis</B> eran j&oacute;venes mensajeros que corr&iacute;an de tambo en tambo portando mensajes (quipus) y bienes perecederos (pescado fresco del mar lleg&oacute; al Cusco en menos de 48 horas, seg&uacute;n Garcilaso). Cada chasqui cubr&iacute;a ~2 km antes de pasar el relevo, llog&aacute;ndose alcanzar una velocidad de transmisi&oacute;n de ~400 km/d&iacute;a.
+
+<H4>Los Andenes (Terrazas agr&iacute;colas):</H4>
+El sistema de andenes inca cubri&oacute; m&aacute;s de <B>1 mill&oacute;n de hect&aacute;reas</B> en los Andes, transformando laderas inc&uacute;ltivables en tierras productivas. Inclu&iacute;an sistemas de riego por canales y una ingenier&iacute;a de drenaje que evitaba la erosi&oacute;n. Los andenes de <B>Moray</B> (Cusco) funcionaban como laboratorio agr&iacute;cola con diferentes microclimas en sus c&iacute;rculos conc&eacute;ntricos.
+
+<H4>Machu Picchu:</H4>
+Construido por <B>Pachac&uacute;tec</B> hacia 1450 d.C. en una cordillera a 2 430 m s.n.m. entre los r&iacute;os Urubamba y Wilkamayu (Cusco). Era un complejo real y ceremonial: residencia del Sapa Inca, centro de culto solar y posiblemente un observatorio astron&oacute;mico. Fue abandonado durante la conquista espa&ntilde;ola y "redescubierto" por el explorador estadounidense <B>Hiram Bingham</B> el <B>24 de julio de 1911</B>. Declarado Patrimonio UNESCO en <B>1983</B> y una de las 7 Maravillas del Mundo Moderno en <B>2007</B>.
+
+<H3>9. El Quipu: el sistema de registro inca</H3>
+Los incas no tuvieron escritura alfab&eacute;tica, pero desarrollaron el <B>quipu</B> (<I>khipu</I>: "nudo"), un sistema de registro mediante cuerdas de lana o algod&oacute;n con nudos de distintos tipos, colores y posiciones. Los <B>quipucamayocs</B> eran los especialistas en leer y elaborar quipus.
+
+Los quipus registraban datos num&eacute;ricos (censos, tributos, inventarios de qollqas, cuentas militares) en base decimal. Algunos investigadores, como <B>Gary Urton</B> y <B>Marcia y Robert Ascher</B>, proponen que los quipus m&aacute;s complejos pod&iacute;an contener informaci&oacute;n narrativa (quipus narrativos), aunque esto sigue siendo debatido.
+
+<DIV CLASS="cultura-titulo">&#127981; ARTE Y ARQUITECTURA INCA<SPAN>La piedra perfecta: sin argamasa y sin destrucci&oacute;n</SPAN></DIV>
+
+<H3>10. Arte, Arquitectura y Cer&aacute;mica</H3>
+
+<H4>Arquitectura:</H4>
+La arquitectura inca se distingue por:
+<UL>
+<LI><B>Piedra labrada en seco</B>: bloques de andesita o granito tallados con tal precisi&oacute;n que encajan sin argamasa (<I>ashlar</I>). Un papel no puede introducirse entre las juntas. El secreto era la t&eacute;cnica de desbaste de superficies planas perfectas con piedras abrasivas.</LI>
+<LI><B>Paredes trapezoidales:</B> las ventanas, puertas y nichos tienen forma trapezoidal (m&aacute;s anchos en la base), lo que las hace m&aacute;s resistentes a los sismos. Cusco soportó el terremoto de 1950 con muros incas intactos mientras caían paredes coloniales.</LI>
+<LI><B>La planta en forma de puma:</B> Pachac&uacute;tec redise&ntilde;&oacute; el Cusco con planta de puma: la cabeza era Sacsayhuam&aacute;n, el cuerpo era el barrio principal, y la cola era la confluencia de los r&iacute;os Huatanay y Tullumayo.</LI>
+<LI><B>Sacsayhuam&aacute;n:</B> fortaleza-templo sobre el Cusco con bloques de hasta 125 toneladas. Construida con mita durante d&eacute;cadas. Las tres terrazas zigzagueantes representan los rayos del rayo (Illapa) o los dientes del puma.</LI>
+</UL>
+
+<H4>Cer&aacute;mica:</H4>
+La cer&aacute;mica inca m&aacute;s representativa es el <B>ar&iacute;balo</B> (<I>urpu</I>): vasija de cuello largo y cuerpo ovoidal con asas laterales y base punt&iacute;aguda. Se usaba para almacenar y transportar chicha (cerveza de ma&iacute;z). Decoraci&oacute;n geom&eacute;trica en rojo, negro y blanco.
+
+<H4>Textiler&iacute;a:</H4>
+El tejido fue el arte m&aacute;s valorado en el mundo andino. Los <B>cumbi</B> (tejidos de alta calidad, de lana de vicu&ntilde;a o alpaca) eran exclusivos de la nobleza. Los textiles incas se usaban como ofrenda, tributo y symbol de poder. Las <I>acllas</I> eran las principales tejedoras del estado.
+
+<H3>11. La Conquista Espa&ntilde;ola (1532)</H3>
+La ca&iacute;da del Tawantinsuyu fue el resultado de una confluencia de factores:
+
+<H4>Factores internos (debilidad inca):</H4>
+<UL>
+<LI><B>Guerra civil:</B> la muerte de <B>Huayna C&aacute;pac</B> (~1527, viruela) sin sucesor designado desencaden&oacute; la guerra entre <B>Hu&aacute;scar</B> (Cusco) y <B>Atahualpa</B> (Quito). Atahualpa venci&oacute; y captur&oacute; a Hu&aacute;scar justo antes de la llegada de Pizarro.</LI>
+<LI><B>Epidemias:</B> la viruela y otras enfermedades europeas precedieron a los espa&ntilde;oles, matando a millones de ind&iacute;genas (incluyendo al propio Huayna C&aacute;pac) y desestabilizando el sistema pol&iacute;tico.</LI>
+<LI><B>Alianzas ind&iacute;genas:</B> numerosos pueblos sometidos (ca&ntilde;aris, huancas, chachapoyas) se aliaron con los espa&ntilde;oles contra el poder inca.</LI>
+</UL>
+
+<H4>Factores externos (ventaja espa&ntilde;ola):</H4>
+<UL>
+<LI><B>Superioridad tecnol&oacute;gica:</B> caballos, armas de fuego, armadura de acero, espadas de hierro.</LI>
+<LI><B>Estrategia:</B> Francisco Pizarro captur&oacute; a <B>Atahualpa</B> en la <B>Batalla de Cajamarca</B> (16 de noviembre de 1532) con solo 168 hombres contra decenas de miles. El elemento sorpresa y el caos causado por los caballos y las armas de fuego fueron decisivos.</LI>
+</UL>
+
+<H4>La Captura de Atahualpa y el Rescate:</H4>
+Atahualpa, capturado en Cajamarca, ofreci&oacute; llenar una habitaci&oacute;n con oro y dos con plata a cambio de su libertad (<B>el cuarto del rescate</B>). Los incas cumplieron: se recaudaron m&aacute;s de <B>6 toneladas de oro</B> y <B>12 toneladas de plata</B>, el mayor rescate de la historia. Sin embargo, Pizarro orden&oacute; ejecutar a Atahualpa el <B>26 de julio de 1533</B>, acusado de rebeli&oacute;n y asesinato de Hu&aacute;scar. La resistencia inca continu&oacute; con los <B>Incas de Vilcabamba</B> hasta 1572, cuando fue ejecutado <B>T&uacute;pac Amaru I</B> por el virrey Toledo.
+
+<H3>12. Cuadro resumen: Aspectos clave del Tawantinsuyu</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Aspecto</TH><TH>Concepto clave</TH><TH>Dato para el examen</TH></TR>
+<TR><TD><B>Organizaci&oacute;n pol&iacute;tica</B></TD><TD>Monarqu&iacute;a teocrática y absolutista</TD><TD>Sapa Inca = hijo del Sol; 4 suyus; sistema decimal</TD></TR>
+<TR><TD><B>Econom&iacute;a</B></TD><TD>Redistributiva, sin moneda ni mercado</TD><TD>Mita + tres tierras + qollqas + ayni</TD></TR>
+<TR><TD><B>Infraestructura</B></TD><TD>Red vial Qhapaq &Ntilde;an</TD><TD>30 000 km de caminos; UNESCO 2014; chasquis; tambos</TD></TR>
+<TR><TD><B>Registro</B></TD><TD>Quipu (nudos en cuerda)</TD><TD>Sin escritura alfab&eacute;tica; base decimal; quipucamayocs</TD></TR>
+<TR><TD><B>Arquitectura</B></TD><TD>Piedra en seco, trapezoidal, antisísmica</TD><TD>Machu Picchu (UNESCO 1983, 7 Maravillas 2007); Sacsayhuam&aacute;n; Coricancha</TD></TR>
+<TR><TD><B>Religi&oacute;n</B></TD><TD>Pol&iacute;te&iacute;sta, culto solar central</TD><TD>Inti + Viracocha + Pachamama; Inti Raymi (21 jun); Coricancha; Capacocha</TD></TR>
+<TR><TD><B>Inca m&aacute;s importante</B></TD><TD>Pachac&uacute;tec (1438&ndash;1471)</TD><TD>Derrota chancas, funda el Imperio, construye Machu Picchu</TD></TR>
+<TR><TD><B>Ca&iacute;da</B></TD><TD>Guerra civil + epidemias + conquista espa&ntilde;ola</TD><TD>Cajamarca: 16 nov. 1532; Atahualpa ejecutado: 26 jul. 1533</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1438</DIV><DIV CLASS="dk-label">A&ntilde;o en que Pachac&uacute;tec inicia el Imperio</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">2 mill. km²</DIV><DIV CLASS="dk-label">Extensi&oacute;n del Tawantinsuyu en su apogeo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">30 000 km</DIV><DIV CLASS="dk-label">Red vial Qhapaq &Ntilde;an (UNESCO 2014)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">13</DIV><DIV CLASS="dk-label">N&uacute;mero de Sapa Incas en la tradici&oacute;n oficial</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1911</DIV><DIV CLASS="dk-label">Redescubrimiento de Machu Picchu por Hiram Bingham</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1983</DIV><DIV CLASS="dk-label">Machu Picchu: Patrimonio UNESCO</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">16 nov. 1532</DIV><DIV CLASS="dk-label">Batalla de Cajamarca: captura de Atahualpa</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">6 ton.</DIV><DIV CLASS="dk-label">Oro del rescate de Atahualpa, el mayor de la historia</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>Datos clave para el examen:</B><BR>
+&bull; <B>Pachac&uacute;tec:</B> el Inca m&aacute;s importante &middot; derrota chancas 1438 &middot; funda el Imperio &middot; reconstruye Cusco en forma de puma &middot; construye Machu Picchu &middot; crea Qhapaq &Ntilde;an<BR>
+&bull; <B>T&uacute;pac Yupanqui:</B> conquista Chim&uacute; &middot; m&aacute;xima expansi&oacute;n territorial<BR>
+&bull; <B>Organizaci&oacute;n:</B> 4 suyus &middot; sistema decimal &middot; mita (trabajo, no dinero) &middot; tres tierras &middot; ayllu &middot; qollqas<BR>
+&bull; <B>Religi&oacute;n:</B> Inti (Sol) &middot; Viracocha (creador) &middot; Pachamama &middot; Coricancha &middot; Inti Raymi (21 jun) &middot; Capacocha &middot; mallquis &middot; huacas<BR>
+&bull; <B>Infraestructura:</B> Qhapaq &Ntilde;an 30 000 km (UNESCO 2014) &middot; chasquis &middot; tambos &middot; quipu (sin escritura alfab&eacute;tica)<BR>
+&bull; <B>Conquista:</B> Huayna C&aacute;pac muere de viruela &middot; guerra civil Hu&aacute;scar/Atahualpa &middot; Cajamarca 16 nov. 1532 &middot; rescate 6 ton. oro &middot; Atahualpa ejecutado 26 jul. 1533<BR>
+&bull; <B>Machu Picchu:</B> Pachac&uacute;tec &middot; c. 1450 d.C. &middot; Hiram Bingham 24 jul. 1911 &middot; UNESCO 1983 &middot; 7 Maravillas 2007
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Qu&eacute; significa "Tawantinsuyu" y cu&aacute;les son los cuatro suyus que lo compon&iacute;an?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) "Imperio del Sol"; los suyus eran Norte, Sur, Este y Oeste, nombrados en espa&ntilde;ol por los cronistas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) "Las cuatro regiones reunidas"; los suyus eran Chinchaysuyu (norte), Antisuyu (oriente), Qollasuyu (sur) y Kuntisuyu (occidente)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) "El ombligo del mundo"; los suyus eran Cusco, Quito, Cajamarca y Tiwanaku</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) "El gran camino"; los suyus eran los cuatro caminos del Qhapaq &Ntilde;an que salen del Cusco</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En quechua, <I>tawa</I> = cuatro y <I>suyu</I> = regi&oacute;n. El Tawantinsuyu era literalmente "<B>las cuatro regiones reunidas</B>". Los cuatro suyus eran: <B>Chinchaysuyu</B> (norte: Per&uacute; norte, Ecuador, Colombia); <B>Antisuyu</B> (oriente: selva amaz&oacute;nica andina); <B>Qollasuyu</B> (sur: Bolivia, Argentina, Chile) y <B>Kuntisuyu</B> (occidente: costa sur peruana). Todos irradiaban desde el <B>Cusco</B> ("ombligo del mundo") como centro.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Qu&eacute; es la mita y en qu&eacute; se diferencia de un impuesto moderno?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La mita era un impuesto en oro y plata que cada familia pagaba al Sapa Inca dos veces al a&ntilde;o</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) La mita era la obligaci&oacute;n de prestar trabajo al estado durante cierto tiempo al a&ntilde;o; a diferencia de un impuesto, no era en dinero sino en fuerza laboral, y el estado alimentaba y vest&iacute;a al mitayo durante su turno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) La mita era el nombre del cargo de gobernador provincial equivalente al actual prefecto regional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) La mita era una fiesta anual en que los pueblos conquistados enviaban tributos al Cusco en forma de animales, telas y alimentos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>mita</B> (del quechua <I>mit'a</I>: "turno") era la obligaci&oacute;n de trabajo que todo hombre adulto tributario deb&iacute;a al estado un n&uacute;mero determinado de meses al a&ntilde;o. La diferencia fundamental con un impuesto moderno es que no se pagaba en <B>dinero</B> (los incas no ten&iacute;an moneda) sino en <B>trabajo</B>. Adem&aacute;s, el estado alimentaba, vest&iacute;a y prote&iacute;a al mitayo durante su trabajo, configurando un sistema de <B>reciprocidad asim&eacute;trica</B>: el individuo daba trabajo; el estado daba manutenci&oacute;n, seguridad y redistribuci&oacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Qui&eacute;n "redescubri&oacute;" Machu Picchu, en qu&eacute; a&ntilde;o y qu&eacute; reconocimientos internacionales ha recibido?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Julio C. Tello en 1919; declarada Patrimonio UNESCO en 1985</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Hiram Bingham el 24 de julio de 1911; declarada Patrimonio UNESCO en 1983 y una de las 7 Maravillas del Mundo Moderno en 2007</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Francisco Pizarro en 1535 durante la conquista del Cusco; declarada Patrimonio UNESCO en 2000</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Antonio Raimondi en 1870 durante su viaje cient&iacute;fico por el Per&uacute;; reconocida como 7 Maravillas en 1994</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El explorador estadounidense <B>Hiram Bingham III</B> "redescubri&oacute;" (para el mundo acad&eacute;mico occidental) Machu Picchu el <B>24 de julio de 1911</B>, guiado por un campesino local llamado Melchor Arteaga. En realidad, la poblaci&oacute;n local ya conocía el lugar. Machu Picchu fue declarado <B>Patrimonio de la Humanidad UNESCO en 1983</B> y elegida una de las <B>7 Maravillas del Mundo Moderno el 7 de julio de 2007</B> por votaci&oacute;n popular mundial. Fue construida por <B>Pachac&uacute;tec</B> alrededor de 1450 d.C.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Qu&eacute; es el quipu y qu&eacute; informaci&oacute;n registraba?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Un instrumento musical de cuerdas usado en las ceremonias religiosas del Inti Raymi</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Un sistema de registro mediante cuerdas con nudos de distintos tipos, colores y posiciones; registraba datos num&eacute;ricos en base decimal (censos, tributos, inventarios) y posiblemente informaci&oacute;n narrativa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Un c&oacute;digo de escritura jeroglífica grabada en piedra usado por los <I>amautas</I> para transmitir historia oral</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Un sistema de se&ntilde;ales de humo usado por los chasquis para comunicar mensajes urgentes entre el Cusco y las provincias</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>quipu</B> (<I>khipu</I>: "nudo" en quechua) era el sistema de registro inca: una cuerda principal de la que colgaban cuerdas secundarias con nudos de distintos <B>tipos</B> (simples, dobles, en ocho), <B>colores</B> y <B>posiciones</B>. Los <B>quipucamayocs</B> eran los especialistas que los leían y elaboraban. Se ha comprobado que registraban datos <B>num&eacute;ricos en base decimal</B>: censos, inventarios de qollqas, tributos, calendarios. Los incas <B>no tuvieron escritura alfab&eacute;tica</B>. Investigadores como Gary Urton estudian si los quipus m&aacute;s complejos tambi&eacute;n conten&iacute;an informaci&oacute;n narrativa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Por qu&eacute; es Pachac&uacute;tec el Inca m&aacute;s importante de la historia y cu&aacute;ndo gobern&oacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Porque fue el primer Inca de la historia y fund&oacute; el Cusco hacia el a&ntilde;o 1 200 d.C.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Porque (1438&ndash;1471) derrот&oacute; a los chancas, transform&oacute; un peque&ntilde;o curacazgo en el mayor imperio de Am&eacute;rica, reconstruy&oacute; el Cusco, construy&oacute; Machu Picchu y organiz&oacute; el Qhapaq &Ntilde;an y el sistema administrativo imperial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Porque fue quien conquist&oacute; el reino Chim&uacute; y extendi&oacute; el imperio hasta el sur de Chile</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Porque fue el &uacute;ltimo Inca libre, resistiendo la conquista espa&ntilde;ola desde Vilcabamba hasta 1572</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Pachac&uacute;tec</B> (1438&ndash;1471) es considerado el fundador real del Tawantinsuyu imperial. Sus logros: (1) derrota de los <B>chancas</B> (~1438), que ten&iacute;an sitiado el Cusco y ante quienes su padre Viracocha Inca hab&iacute;a huido; (2) transformaci&oacute;n del peque&ntilde;o curacazgo cusque&ntilde;o en el <B>mayor imperio de Am&eacute;rica</B>; (3) reconstrucci&oacute;n del <B>Cusco</B> en forma de puma; (4) construcci&oacute;n de <B>Machu Picchu</B> (~1450); (5) creaci&oacute;n del <B>Qhapaq &Ntilde;an</B>; (6) organizaci&oacute;n del sistema decimal, los qollqas y la mita. Su hijo T&uacute;pac Yupanqui conquist&oacute; Chim&uacute;.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿C&oacute;mo explica el concepto de "reciprocidad asim&eacute;trica" el funcionamiento de la econom&iacute;a inca?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Significa que los pueblos del norte del imperio pagaban m&aacute;s mita que los del sur, lo que generaba tensiones regionales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Significa que el estado y el pueblo intercambiaban prestaciones de distinta naturaleza: el pueblo daba trabajo (mita) y el estado daba manutenci&oacute;n, protecci&oacute;n y redistribuci&oacute;n de bienes; era "asim&eacute;trica" porque el estado ten&iacute;a m&aacute;s poder en la relaci&oacute;n, pero ambas partes se beneficiaban</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Significa que el comercio inca era unilateral: los pueblos conquistados enviaban bienes al Cusco pero no recib&iacute;an nada a cambio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Significa que los incas comerciaban con Asia y &Aacute;frica de forma desigual, obteniendo m&aacute;s de lo que enviaban</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El concepto de <B>reciprocidad asim&eacute;trica</B> (propuesto por el antrop&oacute;logo <B>John Murra</B>) es clave para entender la econom&iacute;a inca: el <B>pueblo</B> daba trabajo (<I>mit'a</I>) y el <B>estado</B> daba a cambio manutenci&oacute;n durante el trabajo, protecci&oacute;n, redistribuci&oacute;n en caso de hambruna o cat&aacute;strofe, y organizaci&oacute;n de obras colectivas. Era "asim&eacute;trica" porque el estado ten&iacute;a el poder real, pero formalmente reproduc&iacute;a la l&oacute;gica del <B>ayni</B> andino (reciprocidad entre iguales) a nivel estatal. Este sistema permitía al Tawantinsuyu movilizar millones de trabajadores sin dinero ni mercado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Qu&eacute; papel cumplieron las epidemias en la ca&iacute;da del Tawantinsuyu antes incluso de que Pizarro llegara?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Las epidemias no tuvieron papel significativo; la ca&iacute;da se debi&oacute; exclusivamente a la superioridad militar espa&ntilde;ola</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) La viruela y otras enfermedades europeas, transmitidas por contacto indirecto antes de la llegada de Pizarro, mataron a millones de ind&iacute;genas incluyendo al Sapa Inca Huayna C&aacute;pac (~1527), desencadenando la guerra civil entre Hu&aacute;scar y Atahualpa que fragment&oacute; al imperio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Los incas ya conoc&iacute;an estas enfermedades y ten&iacute;an tratamientos, por lo que su impacto fue m&iacute;nimo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Las epidemias solo afectaron a las zonas costeras; la sierra, donde estaba el Cusco, no fue afectada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las epidemias fueron un factor devastador. La <B>viruela</B> (y posiblemente el sarampi&oacute;n y otras enfermedades) viaj&oacute; m&aacute;s r&aacute;pido que los propios espa&ntilde;oles, transmiti&eacute;ndose por redes comerciales ind&iacute;genas desde el Caribe hacia el sur. Hacia <B>~1527</B>, la epidemia mat&oacute; al Sapa Inca <B>Huayna C&aacute;pac</B> y a su hijo y heredero designado, sin dejar sucesor claro. Esto desencaden&oacute; la <B>guerra civil</B> entre <B>Hu&aacute;scar</B> (Cusco) y <B>Atahualpa</B> (Quito), que dividi&oacute; y debilit&oacute; al Imperio justo cuando Pizarro desembarcaba. El historiador Alfred Crosby llam&oacute; a esto "el intercambio colombino": Europa llev&oacute; enfermedades; Am&eacute;rica pagó con millones de vidas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Qu&eacute; estrategia us&oacute; Pizarro en Cajamarca (1532) y por qu&eacute; fue tan efectiva con solo 168 hombres?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Pizarro atac&oacute; el campamento de Atahualpa de noche, aprovechando la oscuridad para compensar su inferioridad num&eacute;rica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Pizarro invit&oacute; a Atahualpa a una reuni&oacute;n de paz en la plaza de Cajamarca; cuando el Inca lleg&oacute; con su cortejo desarmado, los espa&ntilde;oles atacaron por sorpresa con caballos y armas de fuego causando p&aacute;nico masivo y capturando a Atahualpa en minutos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Pizarro logr&oacute; un acuerdo diplomatico con los generales de Atahualpa, quienes traicionaron al Inca a cambio de tierras y t&iacute;tulos nobiliarios espa&ntilde;oles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Pizarro esper&oacute; a que las fuerzas de Hu&aacute;scar derrotaran a Atahualpa y captur&oacute; al vencedor exhausto despu&eacute;s de la batalla</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Batalla (o Emboscada) de Cajamarca</B> del 16 de noviembre de 1532 fue m&aacute;s una emboscada que una batalla. Pizarro invit&oacute; a Atahualpa a una reuni&oacute;n; el Inca lleg&oacute; con una enorme comitiva pero <B>desarmada</B> (era un acto ceremonial). El fraile Valverde le present&oacute; una Biblia; Atahualpa la tir&oacute; al suelo. Eso fue la se&ntilde;al: los espa&ntilde;oles ocultos en los edificios atacaron con <B>caballos</B> (animales desconocidos para los incas), <B>arcabuces</B> y <B>ca&ntilde;ones</B>. El p&aacute;nico y la confusi&oacute;n fueron absolutos; se estima que murieron entre 2 000 y 7 000 incas sin bajas espa&ntilde;olas. Atahualpa fue capturado vivo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cu&aacute;l es la diferencia entre el <I>ayni</I>, la <I>minka</I> y la <I>mita</I> en la econom&iacute;a andina?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Son tres nombres distintos para el mismo sistema de trabajo obligatorio impuesto por el estado inca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El <I>ayni</I> era reciprocidad entre iguales del mismo ayllu (te ayudo hoy, me ayudas ma&ntilde;ana); la <I>minka</I> era trabajo comunal para obras del ayllu a cambio de alimentaci&oacute;n; la <I>mita</I> era el trabajo obligatorio para el estado inca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El <I>ayni</I> era el cargo de gobernador provincial; la <I>minka</I> era el sistema de riego; la <I>mita</I> era el nombre del impuesto en plata</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Los tres conceptos son exclusivos del Imperio Inca; no exist&iacute;an en las culturas andinas anteriores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Son tres formas distintas de trabajo colectivo en la sociedad andina: (1) <B>Ayni:</B> principio de reciprocidad directa entre familias del mismo <I>ayllu</I>. "Hoy te ayudo en tu cosecha; ma&ntilde;ana me ayudas en la m&iacute;a". No media pago sino la obligaci&oacute;n moral de devolver el favor. (2) <B>Minka:</B> trabajo comunal en beneficio de la comunidad (<I>ayllu</I>): construcci&oacute;n de canales, caminos locales, casas comunales. El <I>ayllu</I> alimenta y bebe chicha a los que trabajan. (3) <B>Mita:</B> trabajo obligatorio para el <B>estado inca</B>: caracter&iacute;stica la escala y la organizaci&oacute;n vertical. El estado movilizaba trabajadores de todo el imperio. Los tres comparten la l&oacute;gica andina de reciprocidad, pero a diferentes escalas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Por qu&eacute; la arquitectura inca es considerada antisísmica y qu&eacute; evidencia lo demuestra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Porque los incas constru&iacute;an sobre suelos de arena que absorben las ondas s&iacute;smicas, aunque esto ocasionalmente causaba hundimientos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Porque las paredes trapezoidales y la t&eacute;cnica de piedra en seco (sin argamasa r&iacute;gida) permiten que los bloques "floten" levemente ante un sismo sin colapsar; el terremoto de Cusco de 1950 derrumb&oacute; muros coloniales mientras los muros incas permanecieron intactos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Porque los incas usaban aleaciones de metal en la uni&oacute;n de las piedras, creando una estructura flexible pero resistente a nivel molecular</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Porque todas las construcciones incas estaban enterradas parcialmente bajo tierra, lo que las proteg&iacute;a de las vibraciones s&iacute;smicas superficiales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La arquitectura inca es naturalmente antis&iacute;smica por dos razones: (1) <B>Paredes trapezoidales</B>: las ventanas, puertas y nichos m&aacute;s anchos en la base y m&aacute;s estrechos en la cima, que distribuy&eacute;n mejor las cargas y son m&aacute;s estables ante movimientos horizontales. (2) <B>Piedra en seco sin argamasa r&iacute;gida</B>: los bloques encajan con precisi&oacute;n pero no est&aacute;n fijados con mortero. Ante un sismo, los bloques "se mueven" ligeramente y regresan a su posici&oacute;n, en vez de agrietarse. La prueba hist&oacute;rica es el <B>terremoto de Cusco de 1950</B>: los muros coloniales (de mezcla r&iacute;gida) colapsaron, mientras los <B>muros incas</B> de Sacsayhuam&aacute;n, el Coricancha y otros edificios permanecieron en pie.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; S&Iacute;NTESIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> ¿Qu&eacute; rol cumpl&iacute;a el culto a los <I>mallquis</I> (momias de los ancestros) en el sistema pol&iacute;tico inca y qu&eacute; consecuencias tuvo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Los mallquis eran &uacute;nicamente objeto de culto privado familiar sin ninguna funci&oacute;n pol&iacute;tica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Cada Sapa Inca muerto era conservado como mallqui por su panaca y seguía "participando" en la vida pol&iacute;tica; esto generaba un problema de herencia: el nuevo Inca heredaba el poder pero no las riquezas (que quedaban con el mallqui), forzando a cada gobernante a conquistar nuevas tierras para financiarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Los mallquis eran usados como escudos en las batallas, ya que los enemigos no atacar&iacute;an a los difuntos sagrados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) El culto a los mallquis fue abolido por Pachac&uacute;tec, quien orden&oacute; que todos los Sapa Incas anteriores fueran enterrados en el Coricancha</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El culto a los <B>mallquis</B> ten&iacute;a consecuencias pol&iacute;ticas profundas. Cada Sapa Inca muerto era momificado y su <B>panaca</B> (grupo familiar descendiente) conservaba y administraba todas sus propiedades, tierras, servidores y riquezas. El nuevo Sapa Inca heredaba el <B>t&iacute;tulo</B> y el <B>poder</B>, pero no las propiedades de su antecesor. El antropólogo <B>John Rowe</B> llam&oacute; a esto "<B>herencia dividida</B>" o "<I>split inheritance</I>": cada nuevo gobernante deb&iacute;a conquistar <B>nuevas tierras</B> para financiar su corte y acumular riqueza propia, lo que impuls&oacute; estructuralmente la expansi&oacute;n imperial. Este mecanismo explica en parte por qu&eacute; los incas expand&iacute;an el imperio constantemente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿En qu&eacute; se diferencia la pol&iacute;tica de expansi&oacute;n inca de la de otros imperios hist&oacute;ricos como Roma o los mongoles?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) El Imperio Inca nunca us&oacute; la guerra para expandirse; solo la diplomacia y los matrimonios entre noblezas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Los incas prefer&iacute;an la integraci&oacute;n por persuasi&oacute;n antes que la conquista brutal: ofrec&iacute;an al curaca local dones y privilegios a cambio de sumisi&oacute;n voluntaria; sol&oacute; si se negaban usaban la fuerza. Adem&aacute;s, integraban las deidades locales al pante&oacute;n inca y respetaban los curacazgos existentes, a diferencia de Roma que impon&iacute;a su ley directamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Los incas eran m&aacute;s violentos que Roma y los mongoles: destruyendo completamente las ciudades conquistadas y exterminando a las poblaciones locales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Los incas solo se expandieron hacia el sur; a diferencia de Roma, nunca intentaron controlar territorios al norte de Cusco</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La expansi&oacute;n inca ten&iacute;a una l&oacute;gica particular: el Sapa Inca primero enviaba emisarios con dones al curaca local ofreciendo integraci&oacute;n al Tawantinsuyu con conservaci&oacute;n de su cargo y privilegios. Si accept&oacute;: integraci&oacute;n pac&iacute;fica, los <B>curacas</B> quedaban como intermediarios y sus hijos iban al Cusco como "rehenes honorables" para educarse. Si se negaban: guerra. Los incas tambi&eacute;n integraban las <B>deidades locales</B> al pante&oacute;n cusque&ntilde;o (las "custodiaban" en el Coricancha). Esto los diferencia de Roma (que impon&iacute;a ley directamente) y de los mongoles (que pod&iacute;an arrasar ciudades enteras). Era un imperialismo m&aacute;s pragm&aacute;tico: se prefer&iacute;a la integraci&oacute;n a la destrucci&oacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> ¿C&oacute;mo utilizaban los incas la religi&oacute;n como instrumento de control pol&iacute;tico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Los incas mantu-vieron la religi&oacute;n estrictamente separada del estado; el Sapa Inca no ten&iacute;a funciones religiosas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El Sapa Inca era hijo del Sol (divinidad viviente), lo que hac&iacute;a sacr&iacute;lega cualquier oposici&oacute;n; las deidades locales eran "custodiadas" en el Cusco como rehenes sagrados; el sistema de ceques asignaba obligaciones religiosas a cada grupo social vinculando religi&oacute;n con deberes c&iacute;vicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Los incas obligaban a todos los pueblos conquistados a abandonar sus dioses locales y adorar &uacute;nicamente a Inti, bajo pena de muerte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La religi&oacute;n inca era puramente personal y privada; el estado no interfería en las pr&aacute;cticas religiosas de los pueblos conquistados</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La religi&oacute;n era un pilar del control pol&iacute;tico inca en varios niveles: (1) el <B>Sapa Inca como divinidad viva</B> (hijo del Sol) hac&iacute;a que desobedecer al Inca equivaliera a desobedecer a Inti, un acto sacr&iacute;lego. (2) Las <B>deidades locales</B> de los pueblos conquistados eran llevadas al Cusco y "custodiadas" en el Coricancha; si el pueblo se rebelaba, el dios pod&iacute;a ser "castigado". (3) El sistema de <B>ceques</B> vinculaba a cada grupo social (panaca, ayllu, grupo &eacute;tnico) con huacas espec&iacute;ficas y obligaciones de mantenimiento ritual, integrando a toda la sociedad en un sistema religioso-territorial centralizado. (4) El <B>Inti Raymi</B> y otras fiestas eran ocasiones de redistribuci&oacute;n masiva de bienes, reforzando la legitimidad del estado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿C&oacute;mo sintetiza el Tawantinsuyu las innovaciones de las culturas que lo precedieron (Huari, Sic&aacute;n, Chim&uacute;, Tiahuanaco)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El Tawantinsuyu fue una civilizaci&oacute;n completamente original que no debi&oacute; nada a sus predecesoras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Los incas integraron y escalaron a nivel continental: de Huari (andenes y red vial), de Tiahuanaco (Dios de los B&aacute;culos y tecnolog&iacute;a del altiplano), de Sic&aacute;n (orfebrer&iacute;a de oro, orfebres trasladados al Cusco), y de Chim&uacute; (ingenier&iacute;a hidr&aacute;ulica y ciudadelas administrativas); el Tawantinsuyu fue el punto de convergencia de 3 000 a&ntilde;os de civilizaci&oacute;n andina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Los incas solo heredaron de Tiahuanaco; las dem&aacute;s culturas pertenec&iacute;an a periodos tan lejanos que no hab&iacute;a transmisi&oacute;n cultural posible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El principal legado que los incas tomaron de sus predecesores fue la escritura jeroglífica de Nazca y la metalurgia de Chavín</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Tawantinsuyu fue la s&iacute;ntesis m&aacute;xima de la civilizaci&oacute;n andina. Sus deudas son concretas: de <B>Huari</B>: andenes agr&iacute;colas + centros administrativos provinciales (tambos) + red de caminos. De <B>Tiahuanaco</B>: verticalidad ecol&oacute;gica, camellones en el altiplano, iconograf&iacute;a del Dios de los B&aacute;culos. De <B>Sic&aacute;n</B>: orfebres de oro trasladados al Cusco tras la conquista de Chim&uacute; (~1470), cuya tecnolog&iacute;a produjo los objetos de oro inca. De <B>Chim&uacute;</B>: ingenier&iacute;a hidr&aacute;ulica de gran escala + sistema de ciudadelas con audiencias y dep&oacute;sitos. De <B>Chavín y Moche</B>: la tradici&oacute;n iconogr&aacute;fica felino-ser sobrenatural. El genio inca fue integrar todo esto a escala <B>continental</B> con un aparato estatal cohesionado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Analiza la figura de Atahualpa: ¿fue un gobernante leg&iacute;timo o un usurpador?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Atahualpa era claramente leg&iacute;timo porque fue el primog&eacute;nito de Huayna C&aacute;pac y hab&iacute;a sido designado sucesor formalmente en su testamento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La cuesti&oacute;n de la legitimidad es compleja: Hu&aacute;scar era el hijo de la coya (esposa principal) y gobernaba el Cusco, lo que lo hac&iacute;a el heredero "legítimo" seg&uacute;n la tradici&oacute;n; Atahualpa era hijo de una esposa secundaria y gobernaba Quito, pero venci&oacute; en la guerra civil y captur&oacute; y mand&oacute; ejecutar a Hu&aacute;scar. Los espa&ntilde;oles usaron esta ambig&uuml;edad para justificar la conquista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Atahualpa era el heredero leg&iacute;timo porque en el mundo inca, la fuerza militar determinaba la sucesi&oacute;n, no el linaje matrilineal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Ni Hu&aacute;scar ni Atahualpa eran leg&iacute;timos: ambos eran hijos adoptivos de Huayna C&aacute;pac, quien no tuvo descendencia biol&oacute;gica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La sucesi&oacute;n inca no era autom&aacute;ticamente primog&eacute;nita: importaba ser hijo de la <I>coya</I> (esposa principal, generalmente hermana del Sapa Inca) y ser reconocido por el Consejo de Nobles. <B>Hu&aacute;scar</B> era hijo de la coya leg&iacute;tima y gobernaba desde el <B>Cusco</B> (centro del poder tradicional), lo que le daba mayor legitimidad formal. <B>Atahualpa</B> era hijo de una esposa secundaria quize&ntilde;a y gobernaba <B>Quito</B>, zona de reciente conquista. Sin embargo, Atahualpa ten&iacute;a el apoyo de los mejores generales de Huayna C&aacute;pac (Quizquiz, Chalcuchimac, Ruminahui) y venci&oacute; la guerra civil. Los espa&ntilde;oles aprovecharon este conflicto de legitimidad: apoyaron inicialmente a Hu&aacute;scar y condenaron a Atahualpa como fratricida. La ambig&uuml;edad legal facilit&oacute; la conquista.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> ¿C&oacute;mo explica la tesis del "imperialismo redistributivo" de John Murra el funcionamiento econ&oacute;mico del Tawantinsuyu y en qu&eacute; se diferencia del capitalismo y del feudalismo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La tesis de Murra no tiene validez; el Tawantinsuyu fue en esencia un sistema feudal an&aacute;logo al europeo medieval</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Murra argumenta que el estado inca no explotaba al pueblo mediante plusval&iacute;a (capitalismo) ni mediante vasallaje territorial (feudalismo), sino mediante reciprocidad: el estado movilizaba trabajo a cambio de manutenci&oacute;n y redistribuci&oacute;n; la acumulaci&oacute;n en qollqas no era para lucro sino para seguridad colectiva y redistribuci&oacute;n en crisis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Murra sostiene que el Tawantinsuyu era esencialmente capitalista porque los curacas actuaban como empresarios que obten&iacute;an ganancias de la mano de obra ind&iacute;gena</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La tesis de Murra se aplica solo a la econom&iacute;a del ayllu, no al nivel estatal del Tawantinsuyu</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El antrop&oacute;logo <B>John V. Murra</B> (su obra m&aacute;s influyente: <I>La organizaci&oacute;n econ&oacute;mica del Estado Inca</I>, 1956) propuso que el Tawantinsuyu fue un "<B>modo de producci&oacute;n andino</B>" sui g&eacute;neris, diferente del capitalismo y el feudalismo: (1) No hab&iacute;a <B>mercado</B> ni <B>moneda</B>: los bienes no se intercambiaban por precio sino por reciprocidad. (2) No hab&iacute;a <B>plusval&iacute;a</B> en sentido marxista: el estado no se quedaba con el trabajo excedente del obrero; le daba manutenci&oacute;n completa durante la mita. (3) No era <B>feudal</B>: los campesinos no estaban atados a una tierra de un se&ntilde;or; pertenec&iacute;an al <I>ayllu</I>. El estado acumulaba en qollqas no para lucrar sino para redistribuir en sequ&iacute;as, guerras y ceremonias. Murra lo llam&oacute; "redistribuci&oacute;n": el estado como gran redistributor de excedentes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El cronista Garcilaso de la Vega (hijo de una princesa inca y un conquistador espa&ntilde;ol) es una fuente fundamental sobre los incas. ¿Qu&eacute; limitaciones tiene su obra como fuente hist&oacute;rica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Garcilaso no tiene limitaciones; es la &uacute;nica fuente confiable porque fue testigo directo de la vida inca antes de la conquista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Garcilaso escribe desde el exilio en Espa&ntilde;a, 50 a&ntilde;os despu&eacute;s de los hechos, idealizando el mundo inca y minimizando sus aspectos violentos (sacrificios, conquistas forzadas, esclavitud de los yanaconas); adem&aacute;s, escribe para un p&uacute;blico europeo y en espa&ntilde;ol, filtrando la realidad andina por esquemas occidentales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Garcilaso era espa&ntilde;ol puro y nunca tuvo contacto con la cultura inca, por lo que sus descripciones son pura invenci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La &uacute;nica limitaci&oacute;n de Garcilaso es que escrib&iacute;a en latin y sus textos requieren traducci&oacute;n especializada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Inca Garcilaso de la Vega</B> (1539&ndash;1616), autor de los <I>Comentarios Reales de los Incas</I> (1609), es una fuente invaluable pero con importantes limitaciones: (1) <B>Distancia temporal:</B> escribe desde Espa&ntilde;a ~50 a&ntilde;os despu&eacute;s de la conquista, bas&aacute;ndose en recuerdos de infancia y relatos de parientes. (2) <B>Idealizaci&oacute;n:</B> presenta un mundo inca casi ut&oacute;pico, omitiendo la violencia estructural del sistema (sacrificios, guerras de expansi&oacute;n, sistema yanacona). (3) <B>Filtro europeo:</B> usa categor&iacute;as del humanismo renacentista espa&ntilde;ol para describir realidades andinas, distorsionando conceptos como "rey", "ley" o "dios". (4) <B>Inter&eacute;s personal:</B> como descendiente de nobleza inca, ten&iacute;a inter&eacute;s en enaltecer el linaje de su madre. Debe usarse junto a fuentes arqueol&oacute;gicas y a cronistas como Guam&aacute;n Poma o Betanzos para obtener una visi&oacute;n m&aacute;s completa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> ¿Por qu&eacute; la conquista espa&ntilde;ola del Tawantinsuyu fue tan r&aacute;pida (1532&ndash;1572) si era el mayor estado de Am&eacute;rica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Porque los incas no ten&iacute;an ej&eacute;rcito y nunca hab&iacute;an conocido la guerra antes de la llegada espa&ntilde;ola</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Por una confluencia de factores: la guerra civil Hu&aacute;scar-Atahualpa fragment&oacute; el poder; las epidemias diezmaron la poblaci&oacute;n; la captura del Sapa Inca (figura divina que concentraba toda la toma de decisiones) paralizó el estado; alianzas de pueblos sometidos con Pizarro; y superioridad tecnol&oacute;gica espa&ntilde;ola (caballos, acero, armas de fuego)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Porque Atahualpa decidi&oacute; entregar voluntariamente el imperio a los espa&ntilde;oles a cambio de ser reconocido como rey cristiano de las Indias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Porque el ej&eacute;rcito inca era mayoritariamente de pueblos conquistados que prefirieron aliarse con los espa&ntilde;oles antes que combatirlos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La rapidez de la conquista se explica por la convergencia de m&uacute;ltiples factores: (1) <B>Guerra civil</B> (Hu&aacute;scar vs. Atahualpa): el Imperio llegaba fragmentado pol&iacute;ticamente a 1532. (2) <B>Epidemias previas</B>: la viruela hab&iacute;a matado entre 50 y 90% de la poblaci&oacute;n en algunas regiones. (3) <B>Captura del Sapa Inca</B>: en el sistema pol&iacute;tico inca, toda decisi&oacute;n pasaba por el Sapa Inca (dios viviente); sin &eacute;l, el aparato estatal se paralizó. (4) <B>Alianzas ind&iacute;genas</B>: ca&ntilde;aris, huancas, chachapoyas odiaban el dominio inca y apoyaron a Pizarro con miles de guerreros. (5) <B>Ventaja tecnol&oacute;gica</B>: caballos, arcabuces, can&oacute;nes y armadura de acero. Nota: la resistencia inca dur&oacute; 40 a&ntilde;os m&aacute;s desde Vilcabamba (1532&ndash;1572), lo que muestra que el Tawantinsuyu no cay&oacute; sin lucha.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Cu&aacute;l de las siguientes afirmaciones sobre la religi&oacute;n inca es INCORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) El Coricancha (Templo del Sol) en el Cusco ten&iacute;a sus paredes interiores recubiertas de l&aacute;minas de oro; hoy sus muros sostienen el convento de Santo Domingo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) El Inti Raymi era la fiesta mayor del Sol, celebrada el 21 de junio (solsticio de invierno austral) con grandes ceremonias en el Cusco</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Viracocha era el dios de la guerra y era invocado &uacute;nicamente antes de las batallas; Inti era el dios creador del universo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) La Capacocha era un sacrificio humano de ni&ntilde;os de &eacute;lite en ocasiones excepcionales (entronizaci&oacute;n, victorias importantes, cat&aacute;strofes); la Doncella de Llullaillaco (6 150 m) es el ejemplo m&aacute;s conocido</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>La incorrecta es c)</B><BR>Los roles est&aacute;n intercambiados. <B>Viracocha</B> era el <B>dios creador</B> del universo, el ser supremo original que cre&oacute; el mundo, el Sol y los hombres; no era el dios de la guerra. <B>Inti</B> era el dios <B>Sol</B>, hijo de Viracocha, y padre del Sapa Inca; era el dios principal del culto estatal inca, no el creador. El dios de la guerra y el rayo era <B>Illapa</B>. Las otras afirmaciones son correctas: el Coricancha ten&iacute;a paredes de oro y hoy sostiene Santo Domingo; el Inti Raymi se celebra el 21 de junio; la Capacocha implicaba sacrificios de ni&ntilde;os de &eacute;lite en cimas andinas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> ¿Cu&aacute;l de las siguientes afirmaciones sobre el Tawantinsuyu es CORRECTA y m&aacute;s completa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) El Tawantinsuyu fue un estado sin escritura, sin ruedas, sin hierro y sin moneda, lo que demuestra que era una civilizaci&oacute;n "primitiva" en comparaci&oacute;n con Europa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Aunque carecía de escritura alfab&eacute;tica, rueda, hierro y moneda, el Tawantinsuyu construy&oacute; 30 000 km de caminos, administr&oacute; 12 millones de personas sin mercado mediante el quipu y la mita, desarroll&oacute; una arquitectura antis&iacute;smica sin par y logr&oacute; erradicar el hambre dentro de sus fronteras mediante los qollqas; sus "ausencias" son respuestas adaptadas al entorno andino, no carencias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) El Tawantinsuyu fue el &uacute;nico estado de Am&eacute;rica que conoci&oacute; la escritura; su sistema de quipus alfab&eacute;ticos ha sido completamente descifrado por los arque&oacute;logos modernos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El Tawantinsuyu colaps&oacute; en 1532 y no dej&oacute; ninguna herencia cultural en el Per&uacute; moderno; la cultura andina fue totalmente reemplazada por la espa&ntilde;ola</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta busca evaluar la comprensi&oacute;n profunda de la civilizaci&oacute;n inca. La opci&oacute;n a) comete el error del <B>eurocentrismo</B>: juzgar una civilizaci&oacute;n por lo que le "falta" seg&uacute;n par&aacute;metros europeos. La verdad es que el Tawantinsuyu <B>resolvi&oacute; brillantemente sus desaf&iacute;os</B> con soluciones originales: el <B>quipu</B> en vez de escritura alfab&eacute;tica; el <B>chasqui</B> en vez de la rueda (in&uacute;til en los Andes); el <B>bronce</B> en vez del hierro (no ten&iacute;an yacimientos de hierro accesibles); la <B>mita y los qollqas</B> en vez de moneda. Sus logros son extraordinarios: administrar 2 millones de km² sin mercado, construir 30 000 km de caminos de monta&ntilde;a, y seg&uacute;n las cr&oacute;nicas, no hab&iacute;a hambruna en el Tawantinsuyu. La herencia inca persiste hoy: quechua, andenes, Pachamama, ayllu, agricultura andina y Machu Picchu son parte de la identidad peruana contempor&aacute;nea.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

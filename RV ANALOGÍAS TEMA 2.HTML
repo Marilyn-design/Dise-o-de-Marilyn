@@ -1,0 +1,450 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Analogías - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="RAZONAMIENTO VERBAL.HTML">← Volver a los temas de Razonamiento Verbal</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">RAZONAMIENTO VERBAL · TEMA 2</DIV>
+<H1>Analogías</H1>
+<DIV CLASS="sub">Concepto · Sinonimia · Complementariedad · Cohiponimia · Antonimia · Especie-género · Causa-efecto · Intensidad · Objeto-característica · Actividad-lugar · Agente-instrumento · Objeto-lugar · Elemento-conjunto · Otros casos</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. ¿Qué es una analogía verbal?</H3>
+Una <B>analogía</B> es una relación de <B>semejanza estructural</B> entre dos pares de términos: el vínculo lógico, semántico o funcional que une a las palabras del primer par es exactamente el mismo (o el más parecido posible) que une a las palabras del segundo par, aunque los significados concretos de las palabras sean completamente distintos. En Razonamiento Verbal, la pregunta de analogía no evalúa el significado aislado de cada palabra, sino la capacidad de <B>extraer el patrón relacional</B> que conecta un par de términos y reconocer ese mismo patrón, ya disfrazado con otras palabras, entre varias opciones.
+
+<H4>Notación habitual</H4>
+La relación analógica se representa con el esquema <B>A : B :: C : D</B>, que se lee "A es a B como C es a D". Los dos puntos simples (:) representan la relación interna de cada par; los dos puntos dobles (::) representan la equivalencia entre ambas relaciones.
+<DIV CLASS="ej"><B>Ejemplo:</B> CIRUJANO : BISTURÍ :: CARPINTERO : MARTILLO. La relación interna de cada par es "agente que usa el instrumento propio de su oficio". Ambos pares comparten exactamente esa misma relación, aunque las cuatro palabras pertenezcan a campos semánticos distintos.</DIV>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> el primer paso ante cualquier analogía es construir una <B>oración-puente</B> breve que conecte las dos palabras del par base (por ejemplo, "el cirujano usa el bisturí para operar") y luego comprobar cuál de las opciones permite construir, con sus propias palabras, una oración-puente del <B>mismo tipo</B>, no solo del mismo tema.</DIV>
+
+<H3>2. Principales relaciones analógicas</H3>
+Las preguntas de analogía de un examen de admisión de alto rendimiento se construyen, casi siempre, a partir de un repertorio limitado y identificable de relaciones lógico-semánticas. Conocerlas permite reconocer en segundos el patrón de cualquier par de palabras.
+
+<H4>a) Sinonimia</H4>
+Las dos palabras del par tienen un significado <B>equivalente o muy cercano</B>.
+<DIV CLASS="ej"><B>Ejemplo:</B> FELIZ : CONTENTO. Ambas palabras describen el mismo estado de ánimo positivo.</DIV>
+
+<H4>b) Antonimia</H4>
+Las dos palabras del par tienen significados <B>opuestos</B> dentro de un mismo eje semántico.
+<DIV CLASS="ej"><B>Ejemplo:</B> VALIENTE : COBARDE. Ambas palabras califican la actitud ante el peligro, pero en sentidos contrarios.</DIV>
+
+<H4>c) Complementariedad</H4>
+Las dos palabras designan elementos que se <B>necesitan mutuamente</B> para cumplir su función: ninguno de los dos cumple su propósito completo sin el otro.
+<DIV CLASS="ej"><B>Ejemplo:</B> LLAVE : CERRADURA. La llave solo cumple su función junto a una cerradura, y la cerradura solo se abre con su llave correspondiente.</DIV>
+
+<H4>d) Cohiponimia</H4>
+Las dos palabras son <B>especies distintas que comparten el mismo género (hiperónimo)</B>: están al mismo nivel jerárquico, sin que una incluya a la otra.
+<DIV CLASS="ej"><B>Ejemplo:</B> ROSA : CLAVEL. Ninguna de las dos palabras incluye a la otra; ambas son, al mismo nivel, tipos de flor.</DIV>
+
+<H4>e) Especie - género</H4>
+La primera palabra designa una <B>clase particular</B> y la segunda, la <B>categoría más general</B> que la incluye (relación jerárquica vertical, no horizontal como la cohiponimia).
+<DIV CLASS="ej"><B>Ejemplo:</B> GORRIÓN : AVE. El gorrión es una especie particular dentro de la categoría general "ave".</DIV>
+
+<H4>f) Causa - efecto</H4>
+La primera palabra nombra un <B>fenómeno que provoca</B> a la segunda, su <B>consecuencia directa</B>.
+<DIV CLASS="ej"><B>Ejemplo:</B> TERREMOTO : DESTRUCCIÓN. El terremoto es la causa; la destrucción, su efecto característico.</DIV>
+
+<H4>g) Intensidad (grado dentro de una misma escala)</H4>
+Las dos palabras pertenecen al mismo eje semántico, pero representan <B>distinto grado o magnitud</B> del mismo fenómeno.
+<DIV CLASS="ej"><B>Ejemplo:</B> LLOVIZNA : DILUVIO. Ambas son precipitaciones de agua, pero en grados de intensidad opuestos: mínimo y máximo.</DIV>
+
+<H4>h) Objeto - característica</H4>
+La segunda palabra nombra una <B>cualidad esencial o muy asociada</B> que define a la primera.
+<DIV CLASS="ej"><B>Ejemplo:</B> NIEVE : BLANCURA. La blancura es la cualidad sensorial más característica de la nieve.</DIV>
+
+<H4>i) Actividad - lugar apropiado</H4>
+La segunda palabra nombra el <B>espacio donde se realiza normalmente</B> la actividad de la primera.
+<DIV CLASS="ej"><B>Ejemplo:</B> NADAR : PISCINA. La piscina es el lugar apropiado para realizar la actividad de nadar.</DIV>
+
+<H4>j) Agente - instrumento</H4>
+La primera palabra nombra a <B>quien realiza una acción</B> y la segunda, el <B>instrumento característico</B> que usa para realizarla.
+<DIV CLASS="ej"><B>Ejemplo:</B> CIRUJANO : BISTURÍ. El bisturí es el instrumento propio del oficio del cirujano.</DIV>
+
+<H4>k) Objeto - lugar apropiado</H4>
+La segunda palabra nombra el <B>sitio donde normalmente se encuentra o se guarda</B> el objeto de la primera (distinta de "actividad-lugar": aquí la primera palabra es una cosa, no una acción).
+<DIV CLASS="ej"><B>Ejemplo:</B> LIBRO : BIBLIOTECA. La biblioteca es el lugar apropiado donde se conservan y consultan los libros.</DIV>
+
+<H4>l) Elemento - conjunto</H4>
+La primera palabra nombra una <B>unidad individual</B> y la segunda, el <B>conjunto o agrupación natural</B> que esa unidad forma junto con otras semejantes.
+<DIV CLASS="ej"><B>Ejemplo:</B> ÁRBOL : BOSQUE. El árbol es la unidad individual; el bosque, la agrupación de muchos árboles.</DIV>
+
+<H4>m) Otros casos frecuentes</H4>
+<UL>
+<LI><B>Parte - todo:</B> DEDO : MANO (el dedo es una parte constitutiva de la mano).</LI>
+<LI><B>Material - objeto:</B> MADERA : MESA (la madera es la materia con la que se fabrica la mesa).</LI>
+<LI><B>Función u objeto - utilidad:</B> OJO : VER (el ojo es el órgano cuya función es ver).</LI>
+<LI><B>Agente - acción típica:</B> MAESTRO : ENSEÑAR (la enseñanza es la acción característica del maestro).</LI>
+<LI><B>Secuencia o etapa temporal:</B> SEMILLA : ÁRBOL (etapa inicial respecto de la etapa de desarrollo posterior).</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Relación</TH><TH>Ejemplo</TH><TH>Pregunta-puente</TH></TR>
+<TR><TD>Sinonimia</TD><TD>FELIZ : CONTENTO</TD><TD>¿Significan prácticamente lo mismo?</TD></TR>
+<TR><TD>Antonimia</TD><TD>VALIENTE : COBARDE</TD><TD>¿Significan lo contrario en el mismo eje?</TD></TR>
+<TR><TD>Complementariedad</TD><TD>LLAVE : CERRADURA</TD><TD>¿Se necesitan mutuamente para funcionar?</TD></TR>
+<TR><TD>Cohiponimia</TD><TD>ROSA : CLAVEL</TD><TD>¿Son dos especies del mismo género, sin incluirse?</TD></TR>
+<TR><TD>Especie - género</TD><TD>GORRIÓN : AVE</TD><TD>¿La primera es un caso particular de la segunda?</TD></TR>
+<TR><TD>Causa - efecto</TD><TD>TERREMOTO : DESTRUCCIÓN</TD><TD>¿La primera provoca a la segunda?</TD></TR>
+<TR><TD>Intensidad</TD><TD>LLOVIZNA : DILUVIO</TD><TD>¿Es el mismo fenómeno en distinto grado?</TD></TR>
+<TR><TD>Objeto - característica</TD><TD>NIEVE : BLANCURA</TD><TD>¿La segunda es la cualidad esencial de la primera?</TD></TR>
+<TR><TD>Actividad - lugar</TD><TD>NADAR : PISCINA</TD><TD>¿La segunda es el lugar donde se hace la primera?</TD></TR>
+<TR><TD>Agente - instrumento</TD><TD>CIRUJANO : BISTURÍ</TD><TD>¿La segunda es la herramienta de quien hace la primera?</TD></TR>
+<TR><TD>Objeto - lugar</TD><TD>LIBRO : BIBLIOTECA</TD><TD>¿La segunda es donde se guarda o ubica la primera?</TD></TR>
+<TR><TD>Elemento - conjunto</TD><TD>ÁRBOL : BOSQUE</TD><TD>¿La segunda es la agrupación natural de la primera?</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">EL RIESGO DE LA "FALSA PISTA TEMÁTICA"<SPAN>Por qué dos pares del mismo campo semántico no necesariamente comparten la misma relación</SPAN></DIV>
+El error más frecuente al resolver analogías es elegir la opción que <B>"suena parecida" por el tema</B>, sin comprobar si comparte la <B>misma relación lógica</B>. Por ejemplo, frente al par base MÉDICO : HOSPITAL (agente - lugar apropiado de trabajo), un distractor como MÉDICO : ESTETOSCOPIO (agente - instrumento) usa la misma palabra "médico" y pertenece al mismo campo temático, pero la relación interna es distinta: una vincula al agente con su <I>lugar</I>, la otra con su <I>instrumento</I>. El examen de alto rendimiento premia precisamente la capacidad de no confundir "mismo tema" con "misma relación".
+
+<H3>3. Estrategia de resolución paso a paso</H3>
+<UL>
+<LI><B>Paso 1 — Construir la oración-puente del par base:</B> redactar mentalmente una frase corta y exacta que conecte las dos palabras (por ejemplo, "el bibliotecario trabaja en la biblioteca").</LI>
+<LI><B>Paso 2 — Identificar el tipo de relación y su dirección:</B> determinar si es agente-lugar, agente-instrumento, causa-efecto, etc., y en qué orden aparecen los términos (la dirección importa: CAUSA:EFECTO no es lo mismo que EFECTO:CAUSA).</LI>
+<LI><B>Paso 3 — Probar la misma oración-puente en cada opción:</B> sustituir las palabras de cada alternativa en la oración-puente original y comprobar si sigue siendo coherente y verdadera.</LI>
+<LI><B>Paso 4 — Descartar las opciones de "falsa pista temática":</B> eliminar las alternativas que comparten el campo semántico pero no la relación exacta.</LI>
+<LI><B>Paso 5 — Verificar el grado y la dirección exactos:</B> entre las opciones que sobreviven, elegir la que reproduce con mayor fidelidad tanto el tipo de relación como su orden y su intensidad relativa.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Errores típicos que el examen evalúa.</B> (1) Confundir <I>cohiponimia</I> (dos especies del mismo género, ROSA:CLAVEL) con <I>especie-género</I> (una especie y su categoría, ROSA:FLOR): son relaciones distintas aunque compartan vocabulario. (2) Invertir la dirección de una relación de causa-efecto o de agente-instrumento. (3) Confundir <I>objeto-lugar apropiado</I> (LIBRO:BIBLIOTECA) con <I>actividad-lugar apropiado</I> (LEER:BIBLIOTECA): en el primer caso el término inicial es una cosa; en el segundo, una acción. (4) Elegir una opción que comparte el campo temático del par base pero no su relación lógica interna.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">13</DIV><DIV CLASS="dk-label">Relaciones analógicas principales estudiadas en este tema</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">A:B::C:D</DIV><DIV CLASS="dk-label">Notación estándar de toda analogía verbal</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">5</DIV><DIV CLASS="dk-label">Pasos de la estrategia de resolución recomendada</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1</DIV><DIV CLASS="dk-label">Relación lógica exacta que debe compartir cada par, no solo el tema</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> FELIZ es a CONTENTO como TRISTE es a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Alegre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Apesadumbrado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Veloz</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Cobarde</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación del par base es de <B>sinonimia</B>: "feliz" y "contento" describen prácticamente el mismo estado de ánimo positivo. Para mantener la misma relación, "triste" necesita un sinónimo, y "apesadumbrado" cumple exactamente esa función: ambas palabras describen el mismo estado de ánimo negativo. "Alegre" (a) es antónimo de "triste", no sinónimo; "veloz" (c) no pertenece al campo semántico emocional; "cobarde" (d) describe una actitud ante el peligro, no un estado de ánimo, por lo que rompe la relación de sinonimia exigida.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> VALIENTE es a COBARDE como GENEROSO es a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Caritativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Solidario</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Avaro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Amable</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La relación del par base es de <B>antonimia</B>: "valiente" y "cobarde" son opuestos dentro del eje de la actitud ante el peligro. Para reproducir esa misma relación con "generoso", se necesita su opuesto exacto dentro del eje de la actitud ante los bienes propios: "avaro" (quien acumula y no comparte). Las opciones a), b) y d) son, en cambio, prácticamente sinónimos de "generoso", por lo que invierten el tipo de relación exigido (de oposición a semejanza).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ROSA es a CLAVEL como PERRO es a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Animal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Mamífero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Gato</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Cachorro</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La relación del par base es de <B>cohiponimia</B>: "rosa" y "clavel" son dos especies distintas que comparten el mismo género próximo ("flor"), sin que una incluya a la otra. La opción correcta debe presentar otra especie del mismo nivel jerárquico que "perro": "gato" (otra especie de mascota doméstica, co-hipónimo junto con "perro" del género "animal doméstico"). Las opciones a) y b) son, en cambio, géneros que incluyen a "perro" (relación especie-género, no cohiponimia); "cachorro" (d) designa una etapa de desarrollo del propio perro, no una especie distinta al mismo nivel.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> GORRIÓN es a AVE como TRUCHA es a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Salmón</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Pez</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Río</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Aleta</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación del par base es de <B>especie - género</B>: "gorrión" es una especie particular dentro de la categoría general "ave". Para reproducir esa misma relación jerárquica vertical, "trucha" necesita su género inmediato: "pez". La opción a) repite el error de la cohiponimia (salmón es co-hipónimo de trucha, no su género); c) es el hábitat, no el género biológico; d) es una parte del cuerpo del pez, una relación completamente distinta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> LLAVE es a CERRADURA como ENCHUFE es a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Electricidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Tomacorriente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Cable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Luz</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación del par base es de <B>complementariedad</B>: la llave y la cerradura se necesitan mutuamente para cumplir su función (abrir o cerrar); ninguna de las dos sirve plenamente sin la otra. De forma análoga, el enchufe necesita un "tomacorriente" para cumplir su función de conectar un dispositivo a la red eléctrica: ambos elementos se complementan físicamente. "Electricidad" (a) y "luz" (d) son consecuencias o usos generales, no el objeto complementario físico; "cable" (c) es parte del mismo enchufe, no su complemento externo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> TERREMOTO es a DESTRUCCIÓN como INCENDIO es a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Bombero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Cenizas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Fósforo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Bosque</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación del par base es de <B>causa - efecto</B>: el terremoto es el fenómeno que provoca, como consecuencia directa, la destrucción. Manteniendo la misma dirección (causa : efecto), el incendio provoca, como consecuencia directa, las "cenizas". "Bombero" (a) es el agente que combate el incendio, no su efecto; "fósforo" (c) puede ser la causa del incendio (relación invertida: efecto:causa); "bosque" (d) es, frecuentemente, el lugar donde ocurre el incendio, no su consecuencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> LLOVIZNA es a DILUVIO como BRISA es a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Viento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Huracán</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Nube</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Frío</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación del par base es de <B>intensidad</B>: "llovizna" y "diluvio" son el mismo fenómeno (precipitación de agua) en grados opuestos, mínimo y máximo. De igual manera, "brisa" y "huracán" son el mismo fenómeno (corriente de aire) en grados opuestos: la brisa es el viento más suave posible, el huracán, el más violento. "Viento" (a) es el género que incluye tanto a la brisa como al huracán, no su punto opuesto en intensidad; "nube" (c) y "frío" (d) pertenecen a fenómenos meteorológicos distintos, sin relación de grado con "brisa".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> NIEVE es a BLANCURA como LIMÓN es a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Fruta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Acidez</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Cáscara</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Amarillo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación del par base es de <B>objeto - característica</B>: la blancura es la cualidad sensorial más esencial y asociada a la nieve. Siguiendo la misma relación, la cualidad más característica del limón es su "acidez" (su sabor distintivo). "Fruta" (a) es el género al que pertenece el limón, no su cualidad sensorial; "cáscara" (c) es una parte física del fruto, no una cualidad abstracta; "amarillo" (d), aunque es un rasgo real, describe el color y no la cualidad sensorial primaria por la que el limón es reconocido universalmente (su sabor ácido es el rasgo definitorio más fuerte, paralelo a la blancura de la nieve, que es justamente su rasgo visual más fuerte; aun así, entre acidez y amarillo, la acidez es la cualidad esencial e inequívoca del limón frente al color, que también comparten otras frutas).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> NADAR es a PISCINA como ORAR es a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Sacerdote</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Biblia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Templo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Fe</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La relación del par base es de <B>actividad - lugar apropiado</B>: la piscina es el espacio diseñado y apropiado para realizar la actividad de nadar. De igual modo, el "templo" es el lugar apropiado para realizar la actividad de orar. "Sacerdote" (a) es un agente, no un lugar; "Biblia" (b) es un objeto/instrumento de la actividad religiosa, no el espacio físico; "fe" (d) es una disposición interior, no un lugar.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> CIRUJANO es a BISTURÍ como CARPINTERO es a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Madera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Taller</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Martillo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Mueble</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La relación del par base es de <B>agente - instrumento</B>: el bisturí es el instrumento característico que el cirujano usa para realizar su labor. De igual manera, el "martillo" es el instrumento característico del carpintero. "Madera" (a) es el material con el que trabaja (relación material-objeto, distinta); "taller" (b) es su lugar de trabajo (relación agente-lugar, distinta); "mueble" (d) es el producto final de su labor (relación agente-producto, distinta).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · RAZONAMIENTO CRÍTICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> LIBRO es a BIBLIOTECA como CUADRO es a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Pintor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Pincel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Museo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Pintar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La relación del par base es de <B>objeto - lugar apropiado</B>: la biblioteca es el lugar donde normalmente se conservan y se consultan los libros, que son objetos (no acciones). Es importante distinguir esta relación de "actividad-lugar apropiado" (como LEER:BIBLIOTECA), donde el primer término sería una acción. Aquí, "cuadro" es también un objeto, y su lugar apropiado de conservación y exhibición es el "museo". "Pintor" (a) es el agente que lo crea; "pincel" (b) es el instrumento de creación; "pintar" (d) es la actividad, no el lugar: si la opción correcta hubiera sido una actividad, la relación habría cambiado de tipo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ÁRBOL es a BOSQUE como ABEJA es a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Miel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Colmena</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Insecto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Polen</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación del par base es de <B>elemento - conjunto</B>: el árbol es la unidad individual y el bosque es la agrupación natural que muchos árboles forman juntos. De igual manera, la abeja es la unidad individual y la "colmena" es la agrupación o estructura social que muchas abejas forman juntas. "Miel" (a) es el producto que fabrican, no el conjunto de individuos; "insecto" (c) es el género al que pertenece la abeja (relación especie-género, distinta); "polen" (d) es el material con el que trabajan, sin relación de conjunto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Analiza el par DEDO : MANO. ¿Qué tipo de relación analógica representa y cuál de las siguientes opciones comparte exactamente esa misma relación?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Es una relación de especie-género; la opción correcta sería MANO : CUERPO, porque "mano" sería una especie de "cuerpo"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Es una relación de <B>parte - todo</B>: el dedo es un componente físico que integra la mano sin agotarla por sí solo; la opción que comparte esta misma relación es RUEDA : BICICLETA, porque la rueda es un componente físico que integra la bicicleta sin agotarla por sí sola</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Es una relación de causa-efecto; la opción correcta sería LESIÓN : DEDO, porque una lesión puede afectar al dedo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Es una relación de sinonimia, ya que "dedo" y "mano" se refieren prácticamente a lo mismo en el lenguaje coloquial</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>DEDO:MANO es el ejemplo clásico de relación <B>parte-todo</B>: el dedo es un componente físico necesario pero no suficiente por sí solo para constituir la mano completa (una mano normal tiene varios dedos, además de palma y muñeca). Esta relación se diferencia claramente de "elemento-conjunto" (donde el elemento es una unidad completa y autónoma que se agrupa con otras unidades iguales, como ÁRBOL:BOSQUE) porque aquí el dedo no es una unidad autónoma equivalente a la mano, sino una pieza estructural de ella. RUEDA:BICICLETA reproduce exactamente esta misma lógica: la rueda es una pieza estructural necesaria pero no suficiente para constituir la bicicleta completa. La opción a) confunde la relación con especie-género (jerarquía de clases, no de partes físicas); c) propone una relación de causa-efecto que no corresponde al par original; d) es claramente errónea, pues dedo y mano no son sinónimos en ningún sentido.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Un estudiante afirma que el par MÉDICO : HOSPITAL y el par MÉDICO : ESTETOSCOPIO comparten la misma relación analógica "porque ambos hablan del médico". Evalúa si esta afirmación es correcta.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La afirmación es correcta: comparten el mismo campo temático y eso basta para que sean analogías equivalentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La afirmación es incorrecta: aunque ambos pares comparten el término "médico" y el mismo campo temático, representan relaciones lógicas distintas: MÉDICO:HOSPITAL es una relación de agente - lugar apropiado de trabajo, mientras que MÉDICO:ESTETOSCOPIO es una relación de agente - instrumento; compartir tema no equivale a compartir relación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La afirmación es incorrecta, porque ninguno de los dos pares constituye una analogía válida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La afirmación es correcta, siempre y cuando ambos pares se refieran a profesiones relacionadas con la salud</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta evalúa directamente el error de la "falsa pista temática" señalado en la teoría del tema: dos pares pueden compartir una palabra y un campo semántico sin compartir el tipo de relación lógica que los conecta. MÉDICO:HOSPITAL vincula al agente con el <B>lugar apropiado</B> donde ejerce su actividad; MÉDICO:ESTETOSCOPIO vincula al mismo agente con el <B>instrumento</B> característico de su oficio. Son relaciones estructuralmente distintas, aunque ambas sean perfectamente válidas como analogías en otros contextos (por ejemplo, MÉDICO:HOSPITAL :: PROFESOR:COLEGIO; o MÉDICO:ESTETOSCOPIO :: PINTOR:PINCEL). Las opciones a) y d) cometen exactamente el error que la pregunta busca identificar; c) es falsa, ya que ambos pares sí constituyen analogías válidas, solo que de tipos diferentes entre sí.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Compara los pares SEMILLA : ÁRBOL y HUEVO : GALLINA. ¿Qué tienen en común y en qué se diferencian sutilmente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) No tienen nada en común: son completamente distintos porque uno se refiere a plantas y el otro a animales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Ambos representan una relación de etapa o secuencia de desarrollo(un estado inicial que, mediante un proceso natural, da origen al organismo adulto o desarrollado); se diferencian en que SEMILLA:ÁRBOL describe el desarrollo de un único organismo a lo largo del tiempo, mientras que HUEVO:GALLINA puede leerse además como el origen reproductivo de un nuevo individuo de la misma especie, no necesariamente del "mismo" organismo que fue huevo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Ambos son ejemplos de relación de causa-efecto en sentido estricto, exactamente igual que TERREMOTO:DESTRUCCIÓN, sin ninguna diferencia relevante entre ellos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Ambos son ejemplos de cohiponimia, ya que semilla y huevo son estructuras biológicas comparables</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige un análisis fino dentro de la categoría "otros casos": ambos pares describen una <B>secuencia o etapa de desarrollo</B> biológico, donde el primer término es el estado inicial o germinal y el segundo, el organismo desarrollado o adulto. Sin embargo, hay un matiz importante: en SEMILLA:ÁRBOL, la semilla se transforma directamente, a través de un proceso de crecimiento, en el mismo organismo que llegará a ser árbol (es, en cierto sentido, el mismo ser vivo en una etapa anterior). En HUEVO:GALLINA, en cambio, el huevo no necesariamente se convierte en "la" gallina que lo puso, sino que da origen a un nuevo individuo (un polluelo que, al crecer, será una gallina distinta); además, "huevo" puede entenderse tanto como el origen de un nuevo individuo como producto de una gallina existente. Esta sutileza es justamente el tipo de matiz que distingue al nivel experto del nivel básico de análisis analógico. La opción a) ignora la semejanza estructural evidente; c) confunde la secuencia de desarrollo con la causalidad estricta (no es que la semilla "cause" al árbol en el mismo sentido en que un terremoto causa destrucción, sino que se transforma en él); d) es incorrecta porque semilla y huevo no son dos especies del mismo género, sino etapas de desarrollo de organismos distintos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Determina la relación exacta del par OJO : VER y selecciona la opción que reproduce con mayor precisión esa misma relación, descartando las alternativas que solo comparten el campo temático.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) OJO : PÁRPADO, porque ambos son partes de la cara relacionadas entre sí</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) OÍDO : OÍR, porque, igual que OJO:VER vincula un órgano con su función biológica esencial, OÍDO:OÍR vincula otro órgano con su propia función biológica esencial, manteniendo exactamente el mismo tipo y dirección de relación (órgano : función)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) OJO : LENTES, porque los lentes corrigen los problemas de visión del ojo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) CIEGO : VER, porque un ciego es alguien que no puede ver</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>OJO:VER es una relación de <B>objeto (órgano) - función</B>: el ojo es el órgano cuya función biológica esencial es precisamente "ver". La opción b), OÍDO:OÍR, reproduce con exactitud el mismo patrón: otro órgano sensorial vinculado a su propia función biológica esencial, en la misma dirección (órgano : función, no función : órgano). Las demás opciones caen en la "falsa pista temática": a) vincula dos partes anatómicas entre sí (relación parte-parte o de proximidad anatómica, no órgano-función); c) describe una relación de instrumento corrector, no de función biológica propia; d) invierte además el orden lógico y describe una negación de la función, no la función misma. Esta pregunta exige distinguir con precisión entre relaciones que "suenan parecidas" por pertenecer al campo de la anatomía y la relación lógica exacta que se pide reproducir.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Si tuvieras que definir el concepto de "analogía verbal" aplicando rigurosamente lo estudiado en el tema, ¿cuál de las siguientes opciones lo expresa con mayor exactitud?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) "Una analogía es un ejercicio en el que dos palabras parecen tener algo en común a simple vista"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "Una analogía verbal es una relación de equivalencia estructural entre dos pares de términos, en la que el vínculo lógico, semántico o funcional que conecta a las palabras del primer par es el mismo, en tipo y dirección, que conecta a las palabras del segundo par, con independencia del significado concreto de cada palabra"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "Una analogía verbal es cualquier pareja de palabras que pertenece al mismo campo temático, como animales, profesiones o emociones"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) "Una analogía verbal es un tipo de pregunta que solo se usa en exámenes de admisión y que no tiene ninguna aplicación fuera de ese contexto"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de síntesis evalúa si el estudiante ha comprendido la esencia lógica del concepto más allá de la mecánica de resolver ejercicios. La opción b) recoge con precisión los tres elementos clave estudiados: (1) la analogía es una relación de <B>equivalencia estructural</B>, no de mero parecido superficial; (2) lo que debe coincidir es el <B>tipo y la dirección</B> de la relación, no el significado concreto de las palabras; (3) esa coincidencia se exige entre los <B>dos pares completos</B>, no entre palabras sueltas. La opción a) es vaga e impone como criterio la apariencia superficial, exactamente el error de la "falsa pista temática"; c) confunde campo temático con relación lógica, el error central que el tema busca corregir; d) es falsa, pues el razonamiento analógico es una herramienta cognitiva general (usada en ciencia, derecho, retórica) y no un artificio exclusivo de los exámenes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Evalúa la siguiente analogía propuesta por un estudiante: "PEZ es a ACUARIO como AVE es a JAULA, porque ambos son animales encerrados por el ser humano." Determina si esta justificación describe correctamente la relación analógica o si comete un error de fondo.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La justificación es correcta, ya que "encierro humano" es exactamente la relación que conecta ambos pares</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La justificación es parcialmente acertada en el resultado pero imprecisa en la explicación</B>: la relación más rigurosa de PEZ:ACUARIO y AVE:JAULA no es "encierro" en términos punitivos, sino <B>objeto - lugar apropiado de contención o exhibición (el acuario y la jaula son los espacios construidos específicamente para contener y observar a esos animales, paralelo a LIBRO:BIBLIOTECA), una relación más precisa y menos cargada de connotación negativa que la simple idea de "encierro"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La analogía es completamente errónea, porque el pez y el ave no tienen ninguna relación posible con el acuario y la jaula</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La analogía es errónea porque "acuario" y "jaula" son sinónimos exactos y no deberían compararse</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige distinguir entre llegar a la respuesta correcta por una vía argumentativa imprecisa y llegar a ella con la categorización exacta. Es cierto que PEZ:ACUARIO y AVE:JAULA comparten la misma relación analógica (por lo que la intuición del estudiante no es errónea en el resultado), pero la explicación dada ("animales encerrados") es imprecisa y connotativamente cargada: la relación lógica más exacta, coherente con el resto del tema, es <B>objeto - lugar apropiado de contención o exhibición</B>, exactamente el mismo tipo de relación que LIBRO:BIBLIOTECA o CUADRO:MUSEO, donde el segundo término es el espacio construido específicamente para albergar al primero. Nombrar la relación como "encierro" introduce un matiz emocional y moral ajeno a la estructura lógica que se evalúa, y podría incluso inducir a error en otras analogías donde el "lugar apropiado" no implica ningún tipo de privación de libertad (por ejemplo, LIBRO:BIBLIOTECA no implica que el libro esté "encerrado"). Las opciones c) y d) son incorrectas: la analogía sí es válida y "acuario" y "jaula" no son sinónimos, sino términos paralelos dentro de la misma estructura relacional.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> En una pregunta de analogía, dos opciones comparten aparentemente el mismo tipo general de relación que el par base. ¿Qué criterio adicional debe aplicarse para decidir cuál es la respuesta correcta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Debe elegirse la opción con las palabras más largas, porque suelen ser las más "técnicas" y por tanto las correctas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Cuando el tipo general de relación coincide en ambas opciones, debe evaluarse la dirección exacta de la relación (qué término va primero y cuál segundo) y el grado o precisión con que cada opción reproduce la relación del par base, descartando la que invierte el orden o generaliza de más</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Debe elegirse siempre la primera opción en orden alfabético entre las que parecen correctas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Debe elegirse la opción que contenga la palabra más común o más usada en el lenguaje cotidiano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es la estrategia decisiva para los casos más difíciles del examen, donde dos opciones comparten el mismo tipo general de relación (por ejemplo, ambas parecen ser "causa-efecto") pero solo una respeta exactamente la <B>dirección</B> (cuál es la causa y cuál el efecto, en el mismo orden que el par base) y el <B>grado de precisión</B> exigido (sin generalizar a una categoría más amplia ni restringir a un caso más estrecho de lo que el par base permite). Por ejemplo, frente al par base FUEGO:CENIZA (causa:efecto), una opción como CENIZA:FUEGO invertiría el orden y sería incorrecta aunque use exactamente las mismas categorías de causa y efecto. Las opciones a), c) y d) proponen criterios arbitrarios (longitud de palabra, orden alfabético, frecuencia de uso) que no tienen ninguna relación con la lógica interna de la analogía y que el examen está diseñado para no premiar.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Si tuvieras que resumir en una sola afirmación la competencia central que evalúan las preguntas de "Analogías" en un examen de admisión de alto rendimiento, ¿cuál de las siguientes la expresa con mayor exactitud?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Evalúan la memorización de listas de sinónimos y antónimos del idioma español</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Evalúan la capacidad de abstraer el patrón relacional exacto (tipo, dirección y grado) que conecta un par de términos, y de reconocer ese mismo patrón —no solo el mismo campo temático— entre varias opciones, evitando las "falsas pistas temáticas" y las inversiones de orden</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Evalúan principalmente la cultura general del estudiante sobre profesiones, animales y fenómenos naturales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Evalúan la rapidez con la que el estudiante puede leer cuatro palabras y elegir una al azar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de cierre evalúa la comprensión metacognitiva del tema completo. La opción b) integra los tres pilares trabajados: (1) la capacidad de <B>abstraer el patrón relacional</B> (identificar si es sinonimia, antonimia, causa-efecto, agente-instrumento, etc.) más allá del significado concreto de las palabras; (2) la atención a la <B>dirección</B> exacta de la relación (qué término ocupa cada posición); y (3) la prevención frente a los errores típicos señalados en todo el tema: la "falsa pista temática" (confundir mismo campo semántico con misma relación lógica) y las inversiones de orden. La opción a) reduce el tema a memorización léxica, ignorando que las relaciones estudiadas (causa-efecto, agente-instrumento, elemento-conjunto, etc.) van mucho más allá de sinónimos y antónimos; c) confunde la herramienta de razonamiento con el contenido cultural superficial que usan los ejemplos; d) ignora por completo que el razonamiento analógico riguroso es exactamente lo opuesto a la elección al azar.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE — Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

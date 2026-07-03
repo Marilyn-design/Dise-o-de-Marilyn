@@ -1,0 +1,409 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Inecuaciones de Segundo Grado - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:38px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .formula-linea{background:#e8f4f3;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:18px;text-align:center;letter-spacing:0.5px;color:#0D1B36;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.bloque-f{max-width:1000px;margin:55px auto 0;padding:0 40px;}
+.bloque-f h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.formulario{background:#0D1B36;border-radius:20px;padding:30px 36px;box-shadow:0 6px 22px rgba(0,0,0,0.18);color:#fff;}
+.formulario .grupo{margin-bottom:22px;}
+.formulario .grupo:last-child{margin-bottom:0;}
+.formulario .grupo h4{color:#D7B06D;font-size:17px;margin-bottom:10px;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:6px;}
+.formulario .f{font-size:18px;line-height:2.2;color:#fff;}
+.formulario .f b{color:#7FD1CE;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ALGEBRA.HTML">&larr; Volver a los temas de Álgebra</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ÁLGEBRA &middot; TEMA 19</DIV>
+<H1>Inecuaciones de Segundo Grado</H1>
+<DIV CLASS="sub">Puntos críticos &middot; Regla de signos &middot; Análisis con la parábola &middot; Casos del discriminante</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="def">1. ¿Qué es una inecuación cuadrática?</H3>
+Es una desigualdad en la que la incógnita aparece al cuadrado como mayor potencia:
+<DIV CLASS="formula-linea"><B>ax<SUP>2</SUP> + bx + c &gt; 0</B> &nbsp; (o con &lt;, &ge;, &le;) &nbsp; con a &ne; 0</DIV>
+A diferencia de la ecuación, aquí no buscamos puntos sueltos sino <B>intervalos</B> donde el trinomio cumple la condición de signo.
+
+<H3 ID="criticos">2. Método de los puntos críticos</H3>
+Es el método estrella. Tres pasos:
+<OL>
+<LI>Llevar todo a un lado para que quede comparado con cero y <B>factorizar</B> (o hallar las raíces con la fórmula del Tema de cuadráticas).</LI>
+<LI>Ubicar las <B>raíces</B> (puntos críticos) en la recta numérica; estas dividen la recta en zonas.</LI>
+<LI>Evaluar el <B>signo</B> en cada zona y elegir las que cumplen la desigualdad.</LI>
+</OL>
+<DIV CLASS="ej">📐 x<SUP>2</SUP> &minus; 5x + 6 &gt; 0 &rarr; (x &minus; 2)(x &minus; 3) &gt; 0. Puntos críticos 2 y 3. El producto es positivo "por fuera" de las raíces: x &lt; 2 o x &gt; 3.</DIV>
+
+<H3 ID="regla">3. Regla práctica (cuando a &gt; 0)</H3>
+Si el coeficiente principal es positivo y ya está factorizado como (x &minus; r<sub>1</sub>)(x &minus; r<sub>2</sub>), con r<sub>1</sub> &lt; r<sub>2</sub>:
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Desigualdad</TH><TH>Solución</TH><TH>Frase clave</TH></TR>
+<TR><TD>&gt; 0 &nbsp;(o &ge; 0)</TD><TD>x &lt; r<sub>1</sub> o x &gt; r<sub>2</sub></TD><TD>"por fuera" de las raíces</TD></TR>
+<TR><TD>&lt; 0 &nbsp;(o &le; 0)</TD><TD>r<sub>1</sub> &lt; x &lt; r<sub>2</sub></TD><TD>"por dentro" de las raíces</TD></TR>
+</TABLE>
+</DIV>
+<DIV CLASS="alerta">⚠️ Esta regla supone a &gt; 0. Si a &lt; 0, primero multiplica toda la inecuación por (&minus;1) — recordando <B>invertir el signo</B> — para dejar el coeficiente positivo.</DIV>
+
+<H3 ID="parabola">4. Interpretación con la parábola</H3>
+El trinomio ax<SUP>2</SUP> + bx + c es una parábola. Si a &gt; 0 abre hacia arriba: es <B>positiva por fuera</B> de las raíces y <B>negativa entre</B> ellas. Esto es justo lo que dice la tabla anterior.
+
+<H3 ID="discriminante">5. Casos especiales del discriminante</H3>
+Cuando el trinomio <B>no tiene raíces reales</B> (&Delta; = b<SUP>2</SUP> &minus; 4ac &lt; 0), no cambia de signo nunca:
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Si &Delta; &lt; 0 y...</TH><TH>El trinomio es...</TH><TH>Ejemplo de solución</TH></TR>
+<TR><TD>a &gt; 0</TD><TD>siempre positivo</TD><TD>"&gt; 0" &rarr; todo R ; "&lt; 0" &rarr; vacío</TD></TR>
+<TR><TD>a &lt; 0</TD><TD>siempre negativo</TD><TD>"&lt; 0" &rarr; todo R ; "&gt; 0" &rarr; vacío</TD></TR>
+</TABLE>
+</DIV>
+<DIV CLASS="ej">📐 x<SUP>2</SUP> + x + 1 &gt; 0: como &Delta; = 1 &minus; 4 = &minus;3 &lt; 0 y a &gt; 0, el trinomio es siempre positivo &rarr; la solución es <B>todo R</B>.</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque-f">
+<H2>Formulario</H2>
+<DIV CLASS="formulario">
+<DIV CLASS="grupo">
+<H4>MÉTODO</H4>
+<DIV CLASS="f">
+1) Comparar con 0 y factorizar<BR>
+2) Ubicar puntos críticos (raíces)<BR>
+3) Analizar signos por zonas
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>REGLA (a &gt; 0)</H4>
+<DIV CLASS="f">
+(x&minus;r<sub>1</sub>)(x&minus;r<sub>2</sub>) &gt; 0 &rarr; por fuera<BR>
+(x&minus;r<sub>1</sub>)(x&minus;r<sub>2</sub>) &lt; 0 &rarr; por dentro
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>DISCRIMINANTE &Delta; &lt; 0</H4>
+<DIV CLASS="f">
+a &gt; 0 &rarr; siempre positivo<BR>
+a &lt; 0 &rarr; siempre negativo
+</DIV>
+</DIV>
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Problemas tipo admisión</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Resuelve: (x &minus; 2)(x &minus; 3) &gt; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) x &lt; 2 o x &gt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) 2 &lt; x &lt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) x &gt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) x &lt; 2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Producto positivo &rarr; "por fuera" de las raíces 2 y 3: <B>x &lt; 2 o x &gt; 3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Resuelve: (x &minus; 1)(x + 4) &lt; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) &minus;4 &lt; x &lt; 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) x &lt; &minus;4 o x &gt; 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) 1 &lt; x &lt; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) x &gt; 1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Producto negativo &rarr; "por dentro" de las raíces &minus;4 y 1: <B>&minus;4 &lt; x &lt; 1</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Cuáles son los puntos críticos de x<SUP>2</SUP> &minus; 5x + 6 = 0?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) 2 y 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) &minus;2 y &minus;3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) 5 y 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) 1 y 6</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>(x &minus; 2)(x &minus; 3) = 0 &rarr; puntos críticos <B>2 y 3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Para a &gt; 0, la inecuación (x &minus; r<sub>1</sub>)(x &minus; r<sub>2</sub>) &lt; 0 tiene como solución...</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) los valores entre las raíces</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) los valores fuera de las raíces</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) todo R</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) ningún valor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Producto negativo (con a &gt; 0) &rarr; solución "por dentro": <B>entre las raíces</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Resuelve: x<SUP>2</SUP> &minus; 9 &lt; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) &minus;3 &lt; x &lt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) x &lt; &minus;3 o x &gt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) x &lt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) x &gt; 9</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>x<SUP>2</SUP> &minus; 9 = (x &minus; 3)(x + 3) &lt; 0 &rarr; "por dentro" de &minus;3 y 3: <B>&minus;3 &lt; x &lt; 3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Resuelve: x<SUP>2</SUP> &minus; 5x + 6 &gt; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) &#10216;&minus;&infin; ; 2&#10217; &cup; &#10216;3 ; +&infin;&#10217;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) &#10216;2 ; 3&#10217;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) [2 ; 3]</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) todo R</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>(x &minus; 2)(x &minus; 3) &gt; 0 &rarr; por fuera: <B>&#10216;&minus;&infin; ; 2&#10217; &cup; &#10216;3 ; +&infin;&#10217;</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Resuelve: x<SUP>2</SUP> &minus; x &minus; 6 &le; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) [&minus;2 ; 3]</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) &#10216;&minus;2 ; 3&#10217;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) x &le; &minus;2 o x &ge; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) [2 ; 3]</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>(x &minus; 3)(x + 2) &le; 0 &rarr; por dentro, con extremos incluidos: <B>[&minus;2 ; 3]</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Resuelve: x<SUP>2</SUP> + 2x &minus; 8 &gt; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) x &lt; &minus;4 o x &gt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) &minus;4 &lt; x &lt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) &minus;2 &lt; x &lt; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) x &gt; 2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>(x + 4)(x &minus; 2) &gt; 0 &rarr; por fuera de &minus;4 y 2: <B>x &lt; &minus;4 o x &gt; 2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Resuelve: x<SUP>2</SUP> &le; 4</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) &minus;2 &le; x &le; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) x &le; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) x &le; &minus;2 o x &ge; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) x &le; 4</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>x<SUP>2</SUP> &minus; 4 &le; 0 &rarr; (x &minus; 2)(x + 2) &le; 0 &rarr; <B>&minus;2 &le; x &le; 2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Resuelve: x<SUP>2</SUP> &minus; 4x &ge; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) x &le; 0 o x &ge; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) 0 &le; x &le; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) x &ge; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) x &le; 0</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>x(x &minus; 4) &ge; 0 &rarr; por fuera de 0 y 4 (incluidos): <B>x &le; 0 o x &ge; 4</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Resuelve: 2x<SUP>2</SUP> &minus; 7x + 3 &lt; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) 1/2 &lt; x &lt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) x &lt; 1/2 o x &gt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) &minus;3 &lt; x &lt; 1/2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) x &gt; 3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>2x<SUP>2</SUP> &minus; 7x + 3 = (2x &minus; 1)(x &minus; 3). Raíces 1/2 y 3. Como es "&lt; 0" (a &gt; 0), va por dentro: <B>1/2 &lt; x &lt; 3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Resuelve: x<SUP>2</SUP> &minus; 6x + 9 &gt; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Todo R menos x = 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) x &gt; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Todo R</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) x = 3</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Es (x &minus; 3)<SUP>2</SUP> &gt; 0. Un cuadrado es positivo siempre, salvo cuando vale 0 (en x = 3). Solución: <B>todo R excepto x = 3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Resuelve: x<SUP>2</SUP> + x + 1 &gt; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Todo R</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) No tiene solución</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) x &gt; 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) x &gt; &minus;1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>&Delta; = 1 &minus; 4 = &minus;3 &lt; 0 y a &gt; 0 &rarr; el trinomio es siempre positivo. Solución: <B>todo R</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Resuelve: &minus;x<SUP>2</SUP> + 4 &gt; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) &minus;2 &lt; x &lt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) x &lt; &minus;2 o x &gt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) x &gt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) todo R</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Multiplico por &minus;1 (invierto): x<SUP>2</SUP> &minus; 4 &lt; 0 &rarr; (x &minus; 2)(x + 2) &lt; 0 &rarr; <B>&minus;2 &lt; x &lt; 2</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Resuelve: x<SUP>2</SUP> &minus; 2x &minus; 3 &ge; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) x &le; &minus;1 o x &ge; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) &minus;1 &le; x &le; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) x &ge; 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) x &le; &minus;1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>(x &minus; 3)(x + 1) &ge; 0 &rarr; por fuera de &minus;1 y 3 (incluidos): <B>x &le; &minus;1 o x &ge; 3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Resuelve: (x &minus; 1)<SUP>2</SUP> &le; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) x = 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) todo R</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) x &le; 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) no tiene solución</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Un cuadrado nunca es negativo; solo puede ser &le; 0 cuando vale exactamente 0, es decir en <B>x = 1</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> ¿Para qué valores de k la ecuación x<SUP>2</SUP> + kx + 9 = 0 NO tiene raíces reales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) &minus;6 &lt; k &lt; 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) k &gt; 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) k &lt; &minus;6 o k &gt; 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) k = 6</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Sin raíces reales &rarr; &Delta; &lt; 0: k<SUP>2</SUP> &minus; 4(1)(9) &lt; 0 &rarr; k<SUP>2</SUP> &minus; 36 &lt; 0 &rarr; (k &minus; 6)(k + 6) &lt; 0 &rarr; <B>&minus;6 &lt; k &lt; 6</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Resuelve: x<SUP>2</SUP> + 4 &gt; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Todo R</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) x &gt; 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) x &gt; &minus;4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) no tiene solución</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>x<SUP>2</SUP> &ge; 0 siempre, así que x<SUP>2</SUP> + 4 &ge; 4 &gt; 0 para todo valor. Solución: <B>todo R</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Cuántos enteros satisfacen x<SUP>2</SUP> &minus; 5x + 4 &lt; 0?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) 1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>(x &minus; 1)(x &minus; 4) &lt; 0 &rarr; 1 &lt; x &lt; 4. Los enteros en ese intervalo son 2 y 3 &rarr; <B>2</B> enteros.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Resuelve: x<SUP>2</SUP> &minus; 7x + 10 &ge; 0</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) &#10216;&minus;&infin; ; 2] &cup; [5 ; +&infin;&#10217;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) [2 ; 5]</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) &#10216;2 ; 5&#10217;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) todo R</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>(x &minus; 2)(x &minus; 5) &ge; 0 &rarr; por fuera de 2 y 5 (incluidos): <B>&#10216;&minus;&infin; ; 2] &cup; [5 ; +&infin;&#10217;</B>.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

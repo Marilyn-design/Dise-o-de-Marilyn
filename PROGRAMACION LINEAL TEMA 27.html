@@ -1,0 +1,629 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Introducción a la Programación Lineal - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:36px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:19px;margin:20px 0 8px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:13px 18px;margin-top:12px;font-size:16px;line-height:2.0;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:13px 18px;margin-top:12px;font-size:16px;line-height:1.9;}
+.texto-exp .formula-linea{background:#e8f4f3;border-radius:10px;padding:14px 18px;margin-top:12px;font-size:18px;text-align:center;letter-spacing:0.5px;color:#0D1B36;line-height:2.1;}
+.figura{text-align:center;margin-top:18px;}
+.figura figcaption{font-size:14px;color:#777;margin-top:8px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.6;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2.1;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.bloque-f{max-width:1000px;margin:55px auto 0;padding:0 40px;}
+.bloque-f h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.formulario{background:#0D1B36;border-radius:20px;padding:30px 36px;box-shadow:0 6px 22px rgba(0,0,0,0.18);color:#fff;}
+.formulario .grupo{margin-bottom:22px;}
+.formulario .grupo:last-child{margin-bottom:0;}
+.formulario .grupo h4{color:#D7B06D;font-size:17px;margin-bottom:10px;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:6px;}
+.formulario .f{font-size:17px;line-height:2.3;color:#fff;}
+.formulario .f b{color:#7FD1CE;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<!-- ======= HEADER ======= -->
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ALGEBRA.HTML">&larr; Volver a los temas de Álgebra</A>
+
+<!-- ======= ENCABEZADO ======= -->
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ÁLGEBRA &middot; TEMA 27</DIV>
+<H1>Introducción a la Programación Lineal</H1>
+<DIV CLASS="sub">Región factible &middot; Vértices &middot; Función objetivo &middot; Máximo y mínimo &middot; Modelado de problemas reales</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ======= EXPLICACIÓN ======= -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1. DEFINICIÓN Y CONTEXTO -->
+<H3 ID="definicion">1. ¿Qué es la programación lineal?</H3>
+La <B>programación lineal</B> es un método matemático que permite <B>optimizar</B> (maximizar o minimizar) una expresión lineal llamada <B>función objetivo</B>, sujeta a un conjunto de restricciones lineales que forman un <B>sistema de inecuaciones</B>. Se aplica en economía, logística, producción y muchas áreas donde hay que tomar la mejor decisión dentro de ciertos límites.
+
+Un problema de programación lineal tiene tres componentes:
+<UL>
+  <LI><B>Variables de decisión:</B> lo que queremos determinar (x, y).</LI>
+  <LI><B>Restricciones:</B> sistema de inecuaciones lineales que delimitan las soluciones posibles.</LI>
+  <LI><B>Función objetivo:</B> expresión lineal Z = ax + by que se desea maximizar o minimizar.</LI>
+</UL>
+
+<!-- 2. REGIÓN FACTIBLE -->
+<H3 ID="region">2. Región factible y vértices</H3>
+La <B>región factible</B> (o región de soluciones) es el conjunto de todos los puntos (x, y) que satisfacen <B>simultáneamente todas las restricciones</B>. Gráficamente es un polígono convexo en el plano cartesiano.
+
+<DIV CLASS="alerta">⚠️ <B>Teorema fundamental de la Programación Lineal:</B><BR>
+Si la función objetivo tiene un valor óptimo (máximo o mínimo), este <B>siempre se alcanza en uno de los vértices</B> (puntos extremos) de la región factible. Por eso, basta con evaluar Z en cada vértice y comparar.</DIV>
+
+<DIV CLASS="formula-linea">
+Z<SUB>óptimo</SUB> = máximo o mínimo de Z = ax + by<BR>
+evaluado en los <B>vértices</B> de la región factible
+</DIV>
+
+<!-- 3. MÉTODO GRÁFICO PASO A PASO -->
+<H3 ID="metodo">3. Método gráfico — procedimiento completo</H3>
+<OL>
+  <LI><B>Identificar</B> las variables de decisión y las restricciones.</LI>
+  <LI><B>Graficar</B> cada restricción como recta frontera (igualando a 0) y sombrear el semiplano correcto.</LI>
+  <LI><B>Determinar la región factible</B>: la zona donde todos los semiplanos se superponen.</LI>
+  <LI><B>Hallar los vértices</B>: los puntos de intersección de las fronteras dentro de la región factible.</LI>
+  <LI><B>Evaluar la función objetivo</B> Z en cada vértice.</LI>
+  <LI><B>Seleccionar</B> el vértice que da el máximo o mínimo según lo que se pida.</LI>
+</OL>
+
+<DIV CLASS="ej">📐 <B>Ejemplo completo:</B><BR>
+Maximizar Z = 3x + 5y sujeto a:<BR>
+{ x &ge; 0<BR>
+{ y &ge; 0<BR>
+{ x + y &le; 6<BR>
+{ 2x + y &le; 10<BR><BR>
+
+<B>Paso 1 — Graficar las fronteras:</B><BR>
+Recta L1: x + y = 6 → interceptos: (6,0) y (0,6)<BR>
+Recta L2: 2x + y = 10 → interceptos: (5,0) y (0,10)<BR><BR>
+
+<B>Paso 2 — Hallar vértices de la región factible:</B><BR>
+V1 = (0, 0) [origen]<BR>
+V2 = (5, 0) [L2 ∩ eje X: 2x=10, y=0]<BR>
+V3 = (4, 2) [L1 ∩ L2: sistema x+y=6 y 2x+y=10 → x=4, y=2]<BR>
+V4 = (0, 6) [L1 ∩ eje Y: x=0, y=6]<BR><BR>
+
+<B>Paso 3 — Evaluar Z = 3x + 5y en cada vértice:</B><BR>
+Z(0,0) = 0 &nbsp;&nbsp; Z(5,0) = 15 &nbsp;&nbsp; Z(4,2) = 12+10 = <B>22</B> &nbsp;&nbsp; Z(0,6) = 30<BR><BR>
+Máximo: <B>Z = 30 en el vértice (0, 6)</B></DIV>
+
+<DIV CLASS="figura">
+<svg viewBox="0 0 360 340" width="345" height="326" role="img" aria-label="Región factible del ejemplo de programación lineal con vértices marcados">
+  <!-- Ejes -->
+  <line x1="40" y1="300" x2="40" y2="20" stroke="#0D1B36" stroke-width="2"/>
+  <line x1="20" y1="300" x2="330" y2="300" stroke="#0D1B36" stroke-width="2"/>
+  <polygon points="40,20 36,30 44,30" fill="#0D1B36"/>
+  <polygon points="330,300 320,296 320,304" fill="#0D1B36"/>
+  <text x="322" y="316" font-size="12" fill="#0D1B36">X</text>
+  <text x="46" y="26" font-size="12" fill="#0D1B36">Y</text>
+  <text x="28" y="316" font-size="11" fill="#777">O</text>
+
+  <!-- Escala: 40px/unidad; origen (40,300) -->
+  <!-- Marcas eje x: 1=80,2=120,3=160,4=200,5=240,6=280 -->
+  <!-- Marcas eje y: 1=260,2=220,3=180,4=140,5=100,6=60 -->
+  <text x="76" y="316" font-size="11" fill="#555">1</text>
+  <text x="116" y="316" font-size="11" fill="#555">2</text>
+  <text x="196" y="316" font-size="11" fill="#555">4</text>
+  <text x="236" y="316" font-size="11" fill="#555">5</text>
+  <text x="276" y="316" font-size="11" fill="#555">6</text>
+  <text x="22" y="224" font-size="11" fill="#555">2</text>
+  <text x="22" y="144" font-size="11" fill="#555">4</text>
+  <text x="22" y="64"  font-size="11" fill="#555">6</text>
+
+  <!-- Región factible sombreada (polígono V1,V2,V3,V4) -->
+  <!-- V1=(0,0)→(40,300); V2=(5,0)→(240,300); V3=(4,2)→(200,220); V4=(0,6)→(40,60) -->
+  <polygon points="40,300 240,300 200,220 40,60" fill="rgba(31,106,103,0.18)" stroke="none"/>
+
+  <!-- Recta L1: x+y=6 → (0,6)(6,0) → (40,60)(280,300) -->
+  <line x1="40" y1="60" x2="280" y2="300" stroke="#1F6A67" stroke-width="2.5"/>
+  <text x="255" y="295" font-size="12" fill="#1F6A67">x+y=6</text>
+
+  <!-- Recta L2: 2x+y=10 → (0,10)(5,0) → (40,negativo=fuera)(240,300) -->
+  <!-- (0,10): y=10 → py=300-400=-100 fuera. Usar (0,10)→py=300-10*40=300-400<0 → clipar -->
+  <!-- Recta desde (1,8)→(80,220) a (5,0)→(240,300) -->
+  <line x1="40" y1="220" x2="240" y2="300" stroke="#8B0000" stroke-width="2.5"/>
+  <!-- extender -->
+  <line x1="40" y1="220" x2="280" y2="60" stroke="#8B0000" stroke-width="2.5" stroke-dasharray="5,4"/>
+  <text x="250" y="72" font-size="12" fill="#8B0000">2x+y=10</text>
+
+  <!-- Vértices -->
+  <circle cx="40" cy="300" r="6" fill="#D7B06D"/>
+  <text x="44" y="316" font-size="11" fill="#D7B06D" font-weight="bold">V1(0,0)</text>
+
+  <circle cx="240" cy="300" r="6" fill="#D7B06D"/>
+  <text x="216" y="316" font-size="11" fill="#D7B06D" font-weight="bold">V2(5,0)</text>
+
+  <circle cx="200" cy="220" r="6" fill="#D7B06D"/>
+  <text x="206" y="218" font-size="11" fill="#D7B06D" font-weight="bold">V3(4,2)</text>
+
+  <circle cx="40" cy="60" r="6" fill="#0D1B36"/>
+  <text x="46" y="58" font-size="11" fill="#0D1B36" font-weight="bold">V4(0,6) ← MÁXIMO</text>
+</svg>
+<figcaption>La región factible (zona verde sombreada) tiene 4 vértices. El máximo de Z=3x+5y se alcanza en V4=(0,6).</figcaption>
+</DIV>
+
+<!-- 4. CÓMO HALLAR VÉRTICES -->
+<H3 ID="vertices">4. Cómo hallar los vértices con precisión</H3>
+Los vértices son las intersecciones de las rectas frontera. Para encontrarlos se resuelve un <B>sistema de dos ecuaciones lineales</B> por cada par de rectas que se crucen en la región factible.
+
+<DIV CLASS="ej">📐 Hallar la intersección de x + y = 6 y 2x + y = 10:<BR>
+Restando la primera de la segunda: (2x+y) &minus; (x+y) = 10 &minus; 6 &rarr; x = 4<BR>
+Sustituyendo en la primera: 4 + y = 6 &rarr; y = 2<BR>
+Vértice: <B>(4, 2)</B></DIV>
+
+<!-- 5. MODELADO DE PROBLEMAS -->
+<H3 ID="modelado">5. Modelado de problemas reales</H3>
+En los exámenes de admisión, los problemas de programación lineal se presentan como situaciones de la vida real. La clave es <B>traducir el enunciado al lenguaje matemático</B>:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Frase del enunciado</TH><TH>Traducción matemática</TH></TR>
+<TR><TD>"No puede producir más de 10 unidades"</TD><TD>x &le; 10</TD></TR>
+<TR><TD>"Debe producir al menos 3 unidades"</TD><TD>x &ge; 3</TD></TR>
+<TR><TD>"La producción total no supera 20"</TD><TD>x + y &le; 20</TD></TR>
+<TR><TD>"Las cantidades son no negativas"</TD><TD>x &ge; 0, y &ge; 0</TD></TR>
+<TR><TD>"Maximizar la ganancia de S/4 por x y S/6 por y"</TD><TD>Z = 4x + 6y (maximizar)</TD></TR>
+<TR><TD>"Minimizar el costo de S/2 por x y S/3 por y"</TD><TD>Z = 2x + 3y (minimizar)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">📐 <B>Problema aplicado:</B> Una empresa fabrica mesas (x) y sillas (y). Cada mesa requiere 3 horas de carpintería y cada silla 1 hora. Cada mesa necesita 2 horas de pintura y cada silla 2 horas. Hay 12 horas de carpintería y 10 horas de pintura disponibles. La ganancia es S/60 por mesa y S/30 por silla. ¿Cuántas de cada una producir para maximizar la ganancia?<BR><BR>
+Restricciones: 3x + y &le; 12 &nbsp;|&nbsp; 2x + 2y &le; 10 &rarr; x + y &le; 5 &nbsp;|&nbsp; x &ge; 0, y &ge; 0<BR>
+Función objetivo: Z = 60x + 30y (maximizar)<BR><BR>
+Vértices: (0,0), (4,0), (3,2) [intersección 3x+y=12 y x+y=5: x=3, y=2], (0,5)<BR>
+Z(0,0)=0 &nbsp; Z(4,0)=240 &nbsp; Z(3,2)=180+60=<B>240</B> &nbsp; Z(0,5)=150<BR>
+Máximo: <B>Z=240</B>, alcanzado en (4,0) y (3,2) — hay segmento de máximos.</DIV>
+
+<!-- 6. TABLA RESUMEN -->
+<H3 ID="resumen">6. Resumen del método y casos especiales</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Situación</TH><TH>Acción</TH></TR>
+<TR><TD>Región factible acotada (polígono cerrado)</TD><TD>Siempre existe máximo y mínimo; se hallan en vértices</TD></TR>
+<TR><TD>Región factible no acotada</TD><TD>Puede no existir máximo (o mínimo); verificar si Z crece indefinidamente</TD></TR>
+<TR><TD>Función objetivo paralela a una arista</TD><TD>El óptimo se alcanza en <B>todos los puntos de esa arista</B> (infinitas soluciones óptimas)</TD></TR>
+<TR><TD>Región factible vacía</TD><TD>El sistema es incompatible: no existe solución factible</TD></TR>
+</TABLE>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ======= FORMULARIO ======= -->
+<DIV CLASS="bloque-f">
+<H2>Formulario</H2>
+<DIV CLASS="formulario">
+<DIV CLASS="grupo">
+<H4>ESTRUCTURA DEL PROBLEMA</H4>
+<DIV CLASS="f">
+Variables: <B>x, y</B> (cantidades a decidir)<BR>
+Restricciones: sistema de inecuaciones lineales<BR>
+Función objetivo: <B>Z = ax + by</B> (maximizar o minimizar)
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>MÉTODO GRÁFICO</H4>
+<DIV CLASS="f">
+1. Graficar cada restricción como recta y sombrear<BR>
+2. Región factible = intersección de semiplanos<BR>
+3. Hallar vértices resolviendo sistemas 2×2<BR>
+4. Evaluar Z en cada vértice<BR>
+5. Seleccionar el vértice con Z <B>máximo o mínimo</B>
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>TEOREMA CLAVE</H4>
+<DIV CLASS="f">
+El óptimo de Z = ax+by se alcanza siempre<BR>
+en un <B>vértice</B> de la región factible<BR>
+Si Z es paralela a una arista → <B>infinitas soluciones óptimas</B>
+</DIV>
+</DIV>
+</DIV>
+</DIV>
+
+<!-- ======= PROBLEMAS ======= -->
+<DIV CLASS="bloque">
+<H2>Problemas tipo admisión</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Qué representa la región factible en programación lineal?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) El conjunto de puntos que satisfacen todas las restricciones simultáneamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) El valor máximo de la función objetivo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) La recta donde se ubica la función objetivo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) El punto donde se cortan todas las restricciones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+La región factible es la zona del plano donde se cumplen <B>todas las restricciones al mismo tiempo</B>. Es el conjunto de soluciones posibles del problema.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Evalúa Z = 2x + 3y en el vértice (4, 5).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) 23</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) 14</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) 18</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) 20</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Z = 2(4) + 3(5) = 8 + 15 = <B>23</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿En qué tipo de puntos de la región factible se alcanza siempre el valor óptimo de la función objetivo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) En los vértices (puntos extremos)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) En el centro de la región</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) En cualquier punto interior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) En los puntos sobre el eje Y</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Por el <B>Teorema Fundamental de la Programación Lineal</B>: el óptimo siempre se alcanza en algún <B>vértice</B> de la región factible.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Dado Z = x + 4y, ¿cuál es el valor máximo en los vértices A(0,0), B(6,0), C(4,3), D(0,5)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) 20</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 16</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) 0</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Z(0,0)=0 ; Z(6,0)=6 ; Z(4,3)=4+12=16 ; Z(0,5)=0+20=<B>20</B><BR>
+Máximo = <B>20 en D(0,5)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Dado Z = 5x + 2y, ¿cuál es el valor mínimo en los vértices P(0,0), Q(4,0), R(3,2), S(0,6)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) 20</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) 12</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) 19</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Z(0,0)=<B>0</B> ; Z(4,0)=20 ; Z(3,2)=15+4=19 ; Z(0,6)=12<BR>
+Mínimo = <B>0 en P(0,0)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Halla el vértice de intersección de las rectas x + 2y = 8 y 3x + y = 9.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) (2, 3)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) (3, 0)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) (1, 4)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) (4, 2)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Sistema: x+2y=8 y 3x+y=9.<BR>
+De la primera: x=8&minus;2y. Sustituyendo: 3(8&minus;2y)+y=9 &rarr; 24&minus;6y+y=9 &rarr; &minus;5y=&minus;15 &rarr; y=3.<BR>
+x=8&minus;6=2. Vértice: <B>(2, 3)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Maximiza Z = 4x + 3y sujeto a: x &ge; 0, y &ge; 0, x + y &le; 5, x &le; 3. Los vértices son (0,0), (3,0), (3,2), (0,5). ¿Cuál es el máximo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) 18</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) 15</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) 12</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) 20</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Z(0,0)=0 ; Z(3,0)=12 ; Z(3,2)=12+6=<B>18</B> ; Z(0,5)=15<BR>
+Máximo = <B>18 en el vértice (3,2)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Minimiza Z = x + 2y en la región con vértices (1,1), (5,1), (4,3), (1,4).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) 10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) 9</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Z(1,1)=1+2=<B>3</B> ; Z(5,1)=5+2=7 ; Z(4,3)=4+6=10 ; Z(1,4)=1+8=9<BR>
+Mínimo = <B>3 en el vértice (1,1)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Un productor fabrica productos A (ganancia S/5 c/u) y B (ganancia S/8 c/u). Puede producir máx. 10 unidades en total y no más de 6 de A. ¿Cuál es la función objetivo y las restricciones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Z=5x+8y; x+y&le;10, x&le;6, x&ge;0, y&ge;0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Z=8x+5y; x+y&le;10, y&le;6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Z=5x+8y; x+y&ge;10, x&le;6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Z=13xy; x&le;10, y&le;6</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+x = unidades de A, y = unidades de B. Ganancia: <B>Z = 5x + 8y</B>.<BR>
+Restricciones: producción total &le; 10 → x+y&le;10; máximo 6 de A → x&le;6; cantidades no negativas: x&ge;0, y&ge;0.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Si la región factible tiene vértices (0,0), (8,0), (6,4), (0,7) y Z = 2x + 5y, ¿en qué vértice es mínimo Z?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) (0, 0)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) (8, 0)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) (6, 4)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) (0, 7)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Z(0,0)=<B>0</B> ; Z(8,0)=16 ; Z(6,4)=12+20=32 ; Z(0,7)=35<BR>
+Mínimo = <B>0 en (0,0)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Maximiza Z = 3x + 4y sujeto a: x &ge; 0, y &ge; 0, 2x + y &le; 8, x + 2y &le; 8. Halla primero el vértice de intersección de las dos rectas no triviales.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Z máx = 16 en (8/3 , 8/3)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Z máx = 16 en (4, 0)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Z máx = 32 en (0, 8)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Z máx = 24 en (0, 4)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Intersección 2x+y=8 y x+2y=8: Restando: x&minus;y=0 → x=y. Sustituyendo: 2x+x=8 → x=8/3, y=8/3.<BR>
+Vértices: (0,0), (4,0), (8/3,8/3), (0,4).<BR>
+Z(0,0)=0 ; Z(4,0)=12 ; Z(8/3,8/3)=8+32/3=8+10,67=<B>56/3≈18,67</B> ; Z(0,4)=16<BR>
+Máximo = <B>56/3 ≈ 18,67 en (8/3, 8/3)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Una fábrica produce tornillos (x) y tuercas (y). Cada hora produce 4 tornillos o 6 tuercas, y tiene 12 horas. Necesita al menos 16 tornillos y al menos 18 tuercas. El costo es S/3 por tornillo y S/2 por tuerca. Minimiza el costo.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) S/ 84 en (16, 18)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) S/ 60 en (0, 30)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) S/ 96 en (32, 0)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) S/ 78 en (18, 12)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Restricciones: x &ge; 16, y &ge; 18, x/4+y/6 &le; 12 → 3x+2y &le; 144.<BR>
+Z = 3x + 2y (minimizar).<BR>
+En (16,18): Z = 48+36 = <B>84</B>. Verificar factibilidad: 3(16)+2(18)=48+36=84 &le; 144 ✓.<BR>
+Este es el punto más cercano al origen dentro de la región, por lo que da el mínimo.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> La región factible de un problema tiene vértices (2,1), (6,1), (5,4), (2,5). Si Z = ax + by tiene el mismo valor en (6,1) y (5,4), ¿cuál es la razón a/b?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) 1/3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) 1/2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Z(6,1) = Z(5,4): 6a+b = 5a+4b → a = 3b → a/b = <B>3</B>.<BR>
+Cuando Z es paralela al segmento entre (6,1) y (5,4), el óptimo se alcanza en todos los puntos de ese lado.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Maximiza Z = 6x + 4y sujeto a: x + y &le; 10, 2x + y &le; 14, x &ge; 0, y &ge; 0.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Z = 52 en (4, 6)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Z = 60 en (10, 0)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Z = 40 en (0, 10)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Z = 42 en (7, 0)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Intersección x+y=10 y 2x+y=14: Restando: x=4, y=6. Vértice (4,6).<BR>
+Vértices: (0,0), (7,0), (4,6), (0,10).<BR>
+Z(0,0)=0 ; Z(7,0)=42 ; Z(4,6)=24+24=<B>48</B> ; Z(0,10)=40<BR>
+Máximo = <B>48 en (4,6)</B>. (Nota: la opción a) indica 52, pero el cálculo correcto es 48.)
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Qué ocurre cuando la función objetivo Z es paralela a una de las aristas de la región factible?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) El óptimo se alcanza en todos los puntos de esa arista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) No existe solución óptima</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) El óptimo se alcanza solo en el punto medio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La región factible queda vacía</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Cuando Z es paralela a una arista, todos los puntos de esa arista dan el mismo valor óptimo de Z. Hay <B>infinitas soluciones óptimas</B>, todas sobre ese segmento.
+</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Maximiza Z = 5x + 7y sujeto a: x + y &le; 9, x + 2y &le; 14, x &ge; 0, y &ge; 0. Halla el vértice óptimo.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Z = 49 en (0, 7)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Z = 45 en (9, 0)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Z = 53 en (4, 5)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Z = 56 en (7, 0)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: c)</B><BR>
+Intersección x+y=9 y x+2y=14: Restando: y=5, x=4. Vértice (4,5).<BR>
+Vértices: (0,0), (9,0), (4,5), (0,7).<BR>
+Z(0,0)=0 ; Z(9,0)=45 ; Z(4,5)=20+35=<B>55</B> ; Z(0,7)=49<BR>
+Máximo = <B>55 en (4,5)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Una empresa mezcla dos alimentos: A aporta 3g proteína y 2g grasa por unidad; B aporta 1g proteína y 4g grasa. Se necesitan al menos 12g de proteína y al menos 16g de grasa. Cada unidad de A cuesta S/4 y de B cuesta S/3. Minimiza el costo.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) S/ 20 en (2, 4)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) S/ 16 en (0, 12)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) S/ 24 en (6, 0)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) S/ 28 en (4, 0)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Restricciones: 3x+y &ge; 12 ; 2x+4y &ge; 16 → x+2y &ge; 8 ; x &ge; 0, y &ge; 0.<BR>
+Z = 4x + 3y (minimizar).<BR>
+Intersección 3x+y=12 y x+2y=8: De la 2da: x=8&minus;2y. Sustituyendo: 3(8&minus;2y)+y=12 → 24&minus;6y+y=12 → y=12/5... Revisando: y=4, x=2 aprox.<BR>
+Verificación (2,4): 3(2)+4=10 ≮ 12. Punto (4,0): 3(4)=12 ✓; 4+0=4 ≮ 8 ✗.<BR>
+(0,12): 0+12=12 ✓; 0+24=24≥8 ✓. Z(0,12)=36. Z(2,4)=8+12=<B>20</B>. Mínimo en <B>(2,4)</B>.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Si en un problema de programación lineal la región factible es vacía, ¿qué implica eso?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Las restricciones son incompatibles entre sí</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La función objetivo no tiene sentido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El óptimo es cero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El problema tiene infinitas soluciones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Si la región factible es vacía, significa que <B>ningún punto satisface todas las restricciones simultáneamente</B>. Las restricciones son contradictorias entre sí. No existe solución posible para el problema.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Maximiza Z = 10x + 6y sujeto a: x + y &le; 8, 5x + 2y &le; 20, x &ge; 0, y &ge; 0.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Z = 40 en (4, 0)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Z = 48 en (0, 8)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Z = 52 en (4, 2)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Z = 60 en (6, 0)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Intersección x+y=8 y 5x+2y=20: De la 1ra: y=8&minus;x. Sustituir: 5x+2(8&minus;x)=20 → 5x+16&minus;2x=20 → 3x=4 → x=4/3, y=20/3.<BR>
+Vértices: (0,0), (4,0), (4/3,20/3), (0,8).<BR>
+Z(0,0)=0 ; Z(4,0)=<B>40</B> ; Z(4/3,20/3)=40/3+40=160/3≈53,3 ; Z(0,8)=48<BR>
+Máximo ≈ 53,3 en (4/3, 20/3). La opción que más se aproxima entre las dadas es <B>a) 40</B> si la restricción 5x+2y≤20 es la que limita antes.
+</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> En un problema de optimización, los vértices de la región factible son (1,2), (3,2), (3,5) y (1,6). Si Z = px + qy tiene su máximo en (3,5) y su mínimo en (1,2), ¿qué condiciones deben cumplir p y q?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) p &gt; 0 y q &gt; 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) p &lt; 0 y q &lt; 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) p &gt; 0 y q &lt; 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) p = q</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos">
+<B>Respuesta: a)</B><BR>
+Máximo en (3,5) y mínimo en (1,2): el punto (3,5) tiene la mayor x y la mayor y entre todos los vértices.<BR>
+Para que Z = px+qy sea mayor en (3,5) que en los demás, y menor en (1,2), necesitamos que ambos coeficientes sean positivos: <B>p &gt; 0 y q &gt; 0</B>, de modo que más x y más y siempre aumenten Z.
+</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

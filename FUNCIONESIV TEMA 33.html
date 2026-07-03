@@ -1,0 +1,559 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Funciones IV: Función Inversa y Modelos Funcionales - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:38px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .formula-linea{background:#e8f4f3;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:18px;text-align:center;letter-spacing:0.5px;color:#0D1B36;}
+.figura{text-align:center;margin-top:18px;}
+.figura figcaption{font-size:14px;color:#777;margin-top:8px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.bloque-f{max-width:1000px;margin:55px auto 0;padding:0 40px;}
+.bloque-f h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.formulario{background:#0D1B36;border-radius:20px;padding:30px 36px;box-shadow:0 6px 22px rgba(0,0,0,0.18);color:#fff;}
+.formulario .grupo{margin-bottom:22px;}
+.formulario .grupo:last-child{margin-bottom:0;}
+.formulario .grupo h4{color:#D7B06D;font-size:17px;margin-bottom:10px;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:6px;}
+.formulario .f{font-size:18px;line-height:2.2;color:#fff;}
+.formulario .f b{color:#7FD1CE;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<!-- ======= HEADER ======= -->
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ALGEBRA.HTML">&larr; Volver a los temas de Álgebra</A>
+
+<!-- ======= ENCABEZADO ======= -->
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ÁLGEBRA &middot; TEMA 33</DIV>
+<H1>Funciones IV: Función Inversa y Modelos Funcionales</H1>
+<DIV CLASS="sub">Condición de existencia &middot; Cómo hallar la inversa &middot; Gráfica y simetría &middot; Modelos lineales, cuadráticos y racionales</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ======= EXPLICACIÓN ======= -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1 -->
+<H3 ID="concepto">1. ¿Qué es la función inversa?</H3>
+La <B>función inversa</B> de f, denotada f<SUP>&minus;1</SUP>, es aquella que <B>deshace</B> lo que hace f. Si f lleva x a y, entonces f<SUP>&minus;1</SUP> lleva y de vuelta a x.
+
+<DIV CLASS="formula-linea">
+Si f(x) = y &nbsp;&nbsp; entonces &nbsp;&nbsp; <B>f<SUP>&minus;1</SUP>(y) = x</B>
+</DIV>
+
+La relación clave entre una función y su inversa es:
+<DIV CLASS="formula-linea">
+<B>(f &deg; f<SUP>&minus;1</SUP>)(x) = x</B> &nbsp;&nbsp; y &nbsp;&nbsp; <B>(f<SUP>&minus;1</SUP> &deg; f)(x) = x</B>
+</DIV>
+
+Esto significa que componer una función con su inversa siempre da como resultado la <B>función identidad</B> I(x) = x.
+
+<DIV CLASS="alerta">⚠️ <B>Condición indispensable:</B> solo las funciones <B>biyectivas</B> (inyectivas y sobreyectivas) tienen función inversa definida en todo su conjunto de llegada. Una función que repite imágenes (no inyectiva) no puede invertirse, porque la inversa no sabría a cuál x original volver.</DIV>
+
+<!-- 2 -->
+<H3 ID="como-hallar">2. ¿Cómo se halla la función inversa? (Método paso a paso)</H3>
+Para obtener f<SUP>&minus;1</SUP>(x) a partir de y = f(x), se siguen estos 3 pasos:
+
+<OL>
+  <LI>Escribir y = f(x).</LI>
+  <LI><B>Despejar x</B> en función de y.</LI>
+  <LI>Intercambiar las letras: donde dice y escribir x (y viceversa). La expresión resultante es f<SUP>&minus;1</SUP>(x).</LI>
+</OL>
+
+<DIV CLASS="ej">📐 <B>Ejemplo 1:</B> Hallar la inversa de f(x) = 3x &minus; 6.<BR>
+Paso 1: y = 3x &minus; 6<BR>
+Paso 2: y + 6 = 3x &rarr; x = (y + 6) / 3<BR>
+Paso 3: f<SUP>&minus;1</SUP>(x) = <B>(x + 6) / 3</B><BR>
+Verificación: f(f<SUP>&minus;1</SUP>(x)) = 3 · (x+6)/3 &minus; 6 = x + 6 &minus; 6 = x ✓</DIV>
+
+<DIV CLASS="ej">📐 <B>Ejemplo 2:</B> Hallar la inversa de f(x) = x<SUP>3</SUP> + 2.<BR>
+Paso 1: y = x<SUP>3</SUP> + 2<BR>
+Paso 2: y &minus; 2 = x<SUP>3</SUP> &rarr; x = &#8731;(y &minus; 2)<BR>
+Paso 3: f<SUP>&minus;1</SUP>(x) = <B>&#8731;(x &minus; 2)</B></DIV>
+
+<DIV CLASS="ej">📐 <B>Ejemplo 3:</B> Hallar la inversa de f(x) = (2x + 1) / (x &minus; 3), x &ne; 3.<BR>
+Paso 1: y = (2x + 1) / (x &minus; 3)<BR>
+Paso 2: y(x &minus; 3) = 2x + 1 &rarr; yx &minus; 3y = 2x + 1 &rarr; yx &minus; 2x = 3y + 1 &rarr; x(y &minus; 2) = 3y + 1 &rarr; x = (3y + 1)/(y &minus; 2)<BR>
+Paso 3: f<SUP>&minus;1</SUP>(x) = <B>(3x + 1) / (x &minus; 2)</B>, x &ne; 2</DIV>
+
+<!-- 3 -->
+<H3 ID="domran-inversa">3. Dominio y rango de la función inversa</H3>
+Existe una relación muy elegante: el dominio y el rango se <B>intercambian</B> al tomar la inversa.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH></TH><TH>f(x)</TH><TH>f<SUP>&minus;1</SUP>(x)</TH></TR>
+<TR><TD><B>Dominio</B></TD><TD>A</TD><TD>B (= rango de f)</TD></TR>
+<TR><TD><B>Rango</B></TD><TD>B</TD><TD>A (= dominio de f)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">📐 Si f(x) = &radic;(x &minus; 1) tiene Dom = [1;+&infin;) y Ran = [0;+&infin;), entonces:<BR>
+f<SUP>&minus;1</SUP>(x) = x<SUP>2</SUP> + 1, con Dom = [0;+&infin;) y Ran = [1;+&infin;)</DIV>
+
+<!-- 4 -->
+<H3 ID="grafica">4. Gráfica de la función inversa y la recta y = x</H3>
+Las gráficas de f y f<SUP>&minus;1</SUP> son <B>simétricas respecto a la recta y = x</B>. Si un punto (a, b) pertenece a f, entonces el punto (b, a) pertenece a f<SUP>&minus;1</SUP>: simplemente se intercambian las coordenadas.
+
+<DIV CLASS="figura">
+<svg viewBox="0 0 320 310" width="310" height="300" role="img" aria-label="Gráfica de f(x)=2x-4 y su inversa f inversa(x)=(x+4)/2 simétricas respecto a y=x">
+  <!-- Ejes -->
+  <line x1="30" y1="280" x2="30" y2="15" stroke="#0D1B36" stroke-width="2"/>
+  <line x1="10" y1="260" x2="305" y2="260" stroke="#0D1B36" stroke-width="2"/>
+  <polygon points="30,15 26,25 34,25" fill="#0D1B36"/>
+  <polygon points="305,260 295,256 295,264" fill="#0D1B36"/>
+  <text x="298" y="276" font-size="12" fill="#0D1B36">X</text>
+  <text x="36" y="22" font-size="12" fill="#0D1B36">Y</text>
+  <text x="20" y="276" font-size="11" fill="#777">O</text>
+
+  <!-- Recta y = x (bisectriz, gris punteado) -->
+  <line x1="30" y1="260" x2="280" y2="10" stroke="#aaa" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="240" y="40" font-size="12" fill="#aaa">y = x</text>
+
+  <!-- f(x) = 2x - 4: puntos (0,-4)→(30,340 fuera), (2,0)→(90,260), (5,6)→(180,140), (7,10)→(240,60) -->
+  <!-- escala: 30px/unidad, origen(30,260) -->
+  <polyline points="50,300 90,260 180,140 240,80"
+            fill="none" stroke="#1F6A67" stroke-width="3"/>
+  <text x="245" y="75" font-size="13" fill="#1F6A67" font-weight="bold">f(x)=2x&minus;4</text>
+
+  <!-- f⁻¹(x) = (x+4)/2: puntos (-4,0)→,  (0,2)→(30,200), (6,5)→(210,110), (10,7)→(330,fuera) -->
+  <!-- y=-4 cuando x=0: x=0 → y=(0+4)/2=2 → (30, 260-60=200). x=6 → y=5 → (210, 260-150=110). x=10→y=7 →(330,fuera) -->
+  <polyline points="30,200 90,170 180,110 260,70"
+            fill="none" stroke="#8B0000" stroke-width="3"/>
+  <text x="180" y="60" font-size="13" fill="#8B0000" font-weight="bold">f&#8315;&#185;(x)=(x+4)/2</text>
+
+  <!-- Punto simétrico: (2,0) en f → (0,2) en f⁻¹ -->
+  <circle cx="90" cy="260" r="5" fill="#1F6A67"/>
+  <circle cx="30" cy="200" r="5" fill="#8B0000"/>
+  <line x1="90" y1="260" x2="30" y2="200" stroke="#D7B06D" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="55" y="248" font-size="10" fill="#D7B06D">(2,0)↔(0,2)</text>
+</svg>
+<figcaption>f(x) = 2x &minus; 4 y f<SUP>&minus;1</SUP>(x) = (x+4)/2 son simétricas respecto a la bisectriz y = x.</figcaption>
+</DIV>
+
+<!-- 5 -->
+<H3 ID="modelos">5. Modelos funcionales</H3>
+Los <B>modelos funcionales</B> son funciones que representan situaciones del mundo real. En los exámenes de admisión aparecen principalmente tres tipos:
+
+<H4>5.1 Modelo lineal: f(x) = mx + b</H4>
+Representa situaciones con <B>variación constante</B> (la variable crece o decrece a ritmo fijo). m es la tasa de cambio (pendiente) y b es el valor inicial.
+<DIV CLASS="ej">📐 Un taxi cobra S/5 de bajada de bandera y S/2 por kilómetro. El costo es: C(x) = 2x + 5, donde x es la distancia en km.<BR>
+C(8) = 2(8) + 5 = <B>S/21</B></DIV>
+
+<H4>5.2 Modelo cuadrático: f(x) = ax<SUP>2</SUP> + bx + c</H4>
+Representa trayectorias parabólicas, áreas o fenómenos con <B>máximo o mínimo</B>. El vértice indica el punto óptimo.
+<DIV CLASS="ej">📐 La altura de un proyectil es h(t) = &minus;5t<SUP>2</SUP> + 20t + 0 (metros, t en segundos).<BR>
+Vértice: t = &minus;20/[2(&minus;5)] = 2 s. Altura máxima: h(2) = &minus;5(4) + 40 = <B>20 m</B></DIV>
+
+<H4>5.3 Modelo racional: f(x) = k/x o f(x) = (ax+b)/(cx+d)</H4>
+Representa situaciones de variación inversamente proporcional o con asíntotas. Muy frecuente en problemas de velocidad, precio y producción.
+<DIV CLASS="ej">📐 Si 6 obreros construyen un muro en 10 días, ¿cuántos días tardan x obreros? D(x) = 60/x.<BR>
+D(4) = 60/4 = <B>15 días</B></DIV>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Modelo</TH><TH>Forma</TH><TH>Situación típica</TH><TH>Característica clave</TH></TR>
+<TR><TD>Lineal</TD><TD>mx + b</TD><TD>Costos, tarifas, distancia uniforme</TD><TD>Variación constante</TD></TR>
+<TR><TD>Cuadrático</TD><TD>ax<SUP>2</SUP> + bx + c</TD><TD>Proyectiles, áreas, ganancias máximas</TD><TD>Tiene máximo o mínimo</TD></TR>
+<TR><TD>Racional</TD><TD>k/x o (ax+b)/(cx+d)</TD><TD>Velocidad, trabajo, proporciones inversas</TD><TD>Asíntota horizontal y vertical</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 6 -->
+<H3 ID="pasos-modelo">6. Estrategia para resolver problemas con modelos</H3>
+<OL>
+  <LI><B>Identificar</B> qué tipo de relación describe el problema (lineal, cuadrática, racional).</LI>
+  <LI><B>Definir variables</B> claramente (cuál es x, cuál es f(x)).</LI>
+  <LI><B>Construir la función</B> con los datos del enunciado.</LI>
+  <LI><B>Evaluar o resolver</B> según lo que se pide (hallar f(x), hallar x dado f(x), encontrar máximo, etc.).</LI>
+</OL>
+<DIV CLASS="alerta">⚠️ <B>Error frecuente:</B> confundir f(x) = y con f<SUP>&minus;1</SUP>(x). Recuerda: si el enunciado te da el resultado y te pide el valor inicial, estás aplicando la función <B>inversa</B>, no la función directa.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ======= FORMULARIO ======= -->
+<DIV CLASS="bloque-f">
+<H2>Formulario</H2>
+<DIV CLASS="formulario">
+<DIV CLASS="grupo">
+<H4>FUNCIÓN INVERSA — PASOS</H4>
+<DIV CLASS="f">
+1. Escribir <B>y = f(x)</B><BR>
+2. Despejar <B>x</B> en función de y<BR>
+3. Intercambiar x ↔ y → resultado es <B>f<SUP>&minus;1</SUP>(x)</B>
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>PROPIEDADES CLAVE</H4>
+<DIV CLASS="f">
+Existe f<SUP>&minus;1</SUP> solo si f es <B>biyectiva</B><BR>
+(f &deg; f<SUP>&minus;1</SUP>)(x) = (f<SUP>&minus;1</SUP> &deg; f)(x) = <B>x</B><BR>
+Dom(f<SUP>&minus;1</SUP>) = Ran(f) &nbsp;|&nbsp; Ran(f<SUP>&minus;1</SUP>) = Dom(f)<BR>
+Simetría gráfica: respecto a <B>y = x</B>
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>MODELOS FUNCIONALES</H4>
+<DIV CLASS="f">
+Lineal: <B>f(x) = mx + b</B> → variación constante<BR>
+Cuadrático: <B>f(x) = ax<SUP>2</SUP>+bx+c</B> → vértice en t = &minus;b/2a<BR>
+Racional: <B>f(x) = k/x</B> → variación inversa
+</DIV>
+</DIV>
+</DIV>
+</DIV>
+
+<!-- ======= PROBLEMAS ======= -->
+<DIV CLASS="bloque">
+<H2>Problemas tipo admisión</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Si f(x) = x + 7, ¿cuál es f<SUP>&minus;1</SUP>(x)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) x &minus; 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) x + 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) 7 &minus; x</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) 1/(x+7)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+y = x + 7 &rarr; x = y &minus; 7 &rarr; f<SUP>&minus;1</SUP>(x) = <B>x &minus; 7</B>.<BR>
+Verificación: f(f<SUP>&minus;1</SUP>(x)) = (x&minus;7)+7 = x ✓</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Si f(x) = 4x, ¿cuál es f<SUP>&minus;1</SUP>(x)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) x/4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) 4x</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) x &minus; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) 4/x</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+y = 4x &rarr; x = y/4 &rarr; f<SUP>&minus;1</SUP>(x) = <B>x/4</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Respecto a qué recta son simétricas las gráficas de f y f<SUP>&minus;1</SUP>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) y = x</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) y = 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) x = 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) y = &minus;x</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+Las gráficas de f y su inversa son simétricas respecto a la bisectriz del primer y tercer cuadrante: <B>y = x</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Un electricista cobra S/30 de visita más S/50 por hora. ¿Qué modelo representa el costo C en función de las horas h?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) C(h) = 50h + 30</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) C(h) = 30h + 50</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) C(h) = 80h</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) C(h) = 50/h + 30</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+El costo fijo (visita) es 30 y la tasa es 50 por hora. Modelo lineal: <B>C(h) = 50h + 30</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Si f(x) = 2x &minus; 3 y f<SUP>&minus;1</SUP>(a) = 4, ¿cuánto vale a?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) 11</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) &minus;5</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+f<SUP>&minus;1</SUP>(a) = 4 significa f(4) = a. f(4) = 2(4)&minus;3 = 8&minus;3 = <B>5</B>.</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Halla la inversa de f(x) = 3x + 9.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) (x &minus; 9)/3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) (x + 9)/3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) 3x &minus; 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) x/3 + 9</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+y = 3x + 9 &rarr; y &minus; 9 = 3x &rarr; x = (y&minus;9)/3<BR>
+f<SUP>&minus;1</SUP>(x) = <B>(x &minus; 9)/3</B>. Verificación: f((x&minus;9)/3) = 3·(x&minus;9)/3 + 9 = x &minus; 9 + 9 = x ✓</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Si Dom(f) = [2 ; +&infin;) y Ran(f) = [0 ; +&infin;), ¿cuál es el dominio de f<SUP>&minus;1</SUP>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) [0 ; +&infin;)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) [2 ; +&infin;)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) R</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) (&minus;&infin; ; 2]</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+El dominio de f<SUP>&minus;1</SUP> es igual al rango de f. Como Ran(f) = [0;+&infin;), entonces Dom(f<SUP>&minus;1</SUP>) = <B>[0 ; +&infin;)</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Un proyectil sigue h(t) = &minus;5t<SUP>2</SUP> + 30t. ¿En qué momento alcanza la altura máxima?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) t = 3 s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) t = 5 s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) t = 6 s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) t = 30 s</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+El vértice de h(t) = &minus;5t<SUP>2</SUP> + 30t ocurre en t = &minus;b/(2a) = &minus;30/(2·(&minus;5)) = &minus;30/(&minus;10) = <B>3 s</B>.<BR>
+Altura máxima: h(3) = &minus;5(9) + 90 = &minus;45 + 90 = 45 m.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Si 4 grifos llenan un tanque en 12 horas, ¿qué función modela las horas H según el número n de grifos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) H(n) = 48/n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) H(n) = 12n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) H(n) = n/12</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) H(n) = 4n + 12</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+La cantidad de trabajo es constante: n · H = 4 · 12 = 48. Despejando: H(n) = <B>48/n</B>.<BR>
+Verificación: H(4) = 48/4 = 12 ✓. Modelo racional de variación inversa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Halla la inversa de f(x) = x<SUP>3</SUP> &minus; 5.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) &#8731;(x + 5)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) &#8731;(x) + 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) &#8731;(x &minus; 5)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) (x + 5)<SUP>3</SUP></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+y = x<SUP>3</SUP> &minus; 5 &rarr; y + 5 = x<SUP>3</SUP> &rarr; x = &#8731;(y+5)<BR>
+f<SUP>&minus;1</SUP>(x) = <B>&#8731;(x + 5)</B>.</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Halla la inversa de f(x) = (x + 2) / (x &minus; 1), con x &ne; 1.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) (x + 2) / (x &minus; 1)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) (x &minus; 2) / (x + 1)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) (2x + 1) / (x &minus; 1)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) (x + 1) / (x &minus; 2)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+y = (x+2)/(x&minus;1) &rarr; y(x&minus;1) = x+2 &rarr; yx&minus;y = x+2 &rarr; yx&minus;x = y+2 &rarr; x(y&minus;1) = y+2 &rarr; x = (y+2)/(y&minus;1)<BR>
+f<SUP>&minus;1</SUP>(x) = <B>(x+2)/(x&minus;1)</B>. ¡Esta función es su propia inversa! Se llama <B>función involutiva</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Si f<SUP>&minus;1</SUP>(x) = 2x + 4, ¿cuál es f(x)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) (x &minus; 4)/2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) 2x &minus; 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) (x + 4)/2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) x/2 &minus; 4</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+Si f<SUP>&minus;1</SUP>(x) = 2x + 4, hallamos su inversa para obtener f(x).<BR>
+y = 2x + 4 &rarr; y &minus; 4 = 2x &rarr; x = (y&minus;4)/2<BR>
+f(x) = <B>(x &minus; 4)/2</B>. Verificación: f(f<SUP>&minus;1</SUP>(x)) = (2x+4&minus;4)/2 = 2x/2 = x ✓</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Una tienda vende juguetes a S/15 cada uno. El costo de producción es C(x) = 8x + 420, donde x es la cantidad producida. ¿Cuántas unidades se deben vender para cubrir exactamente los costos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) 60</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) 52</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) 28</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) 42</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+Ingreso = 15x. Costo = 8x + 420. Igualando: 15x = 8x + 420 &rarr; 7x = 420 &rarr; x = <B>60 unidades</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Si f(x) = &radic;(x &minus; 3) (x &ge; 3), ¿cuál es f<SUP>&minus;1</SUP>(x) y su dominio?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) x<SUP>2</SUP> + 3, Dom = [0 ; +&infin;)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) x<SUP>2</SUP> &minus; 3, Dom = R</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) (x+3)<SUP>2</SUP>, Dom = [3 ; +&infin;)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) x<SUP>2</SUP> + 3, Dom = R</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+y = &radic;(x&minus;3) &rarr; y<SUP>2</SUP> = x &minus; 3 &rarr; x = y<SUP>2</SUP> + 3<BR>
+f<SUP>&minus;1</SUP>(x) = x<SUP>2</SUP> + 3. Su dominio es el rango de f: Ran(f) = [0;+&infin;), entonces Dom(f<SUP>&minus;1</SUP>) = <B>[0 ; +&infin;)</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> El precio de un producto varía inversamente con la demanda. Si a 50 unidades el precio es S/80, ¿cuál es el precio cuando la demanda es 200 unidades?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) S/20</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) S/40</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) S/320</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) S/160</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+Modelo racional: P(x) = k/x. Con P(50)=80: k = 80·50 = 4000.<BR>
+P(200) = 4000/200 = <B>S/20</B>.</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Si f(x) = (3x &minus; 2)/(x + 4), halla f<SUP>&minus;1</SUP>(x) y su dominio.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) (&minus;4x &minus; 2)/(x &minus; 3), Dom = R &minus; {3}</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) (x + 4)/(3x &minus; 2), Dom = R &minus; {2/3}</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) (4x + 2)/(3 &minus; x), Dom = R &minus; {3}</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) (3x + 4)/(x &minus; 2), Dom = R &minus; {2}</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+y = (3x&minus;2)/(x+4) &rarr; y(x+4) = 3x&minus;2 &rarr; yx+4y = 3x&minus;2 &rarr; yx&minus;3x = &minus;2&minus;4y &rarr; x(y&minus;3) = &minus;4y&minus;2<BR>
+x = (&minus;4y&minus;2)/(y&minus;3) = <B>(&minus;4x&minus;2)/(x&minus;3)</B>, con Dom = R &minus; {3}.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Si f(f<SUP>&minus;1</SUP>(5)) + f<SUP>&minus;1</SUP>(f(3)) = n, ¿cuánto vale n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) 15</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) 1</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+Por propiedad: (f &deg; f<SUP>&minus;1</SUP>)(x) = x y (f<SUP>&minus;1</SUP> &deg; f)(x) = x.<BR>
+f(f<SUP>&minus;1</SUP>(5)) = 5 &nbsp;&nbsp; y &nbsp;&nbsp; f<SUP>&minus;1</SUP>(f(3)) = 3<BR>
+n = 5 + 3 = <B>8</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Una pelota se lanza desde el suelo y su altura es h(t) = &minus;4t<SUP>2</SUP> + 16t. ¿Cuáles son los instantes en que la pelota toca el suelo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) t = 0 y t = 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) t = 2 y t = 8</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) t = 4 solo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) t = 0 y t = 2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+h(t) = 0 &rarr; &minus;4t<SUP>2</SUP> + 16t = 0 &rarr; &minus;4t(t &minus; 4) = 0 &rarr; t = 0 o t = <B>4</B>.<BR>
+La pelota parte del suelo (t=0) y regresa al suelo en t=4 s.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Si f(x) = ax + b y f<SUP>&minus;1</SUP>(x) = (1/3)x &minus; 2, ¿cuánto valen a y b?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) a = 3, b = 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) a = 1/3, b = &minus;2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) a = 3, b = &minus;6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) a = &minus;3, b = 6</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+Hallamos la inversa de f<SUP>&minus;1</SUP>(x) = (1/3)x &minus; 2:<BR>
+y = (1/3)x &minus; 2 &rarr; y + 2 = x/3 &rarr; x = 3y + 6<BR>
+f(x) = 3x + 6, entonces <B>a = 3, b = 6</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Una empresa produce x unidades con costo C(x) = x<SUP>2</SUP> &minus; 80x + 2000. ¿Cuántas unidades minimiza el costo y cuál es ese costo mínimo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) 40 unidades, costo mínimo S/400</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) 80 unidades, costo mínimo S/400</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) 40 unidades, costo mínimo S/600</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) 20 unidades, costo mínimo S/800</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>
+C(x) = x<SUP>2</SUP> &minus; 80x + 2000, con a = 1 &gt; 0 (parábola con mínimo).<BR>
+Vértice en x = &minus;(&minus;80)/(2·1) = 80/2 = <B>40 unidades</B>.<BR>
+C(40) = 1600 &minus; 3200 + 2000 = <B>S/400</B> de costo mínimo.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

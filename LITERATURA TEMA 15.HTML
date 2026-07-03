@@ -1,0 +1,575 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>El T&uacute;nel - Ernesto S&aacute;bato - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 15</DIV>
+<H1>El T&uacute;nel &mdash; Ernesto S&aacute;bato</H1>
+<DIV CLASS="sub">Existencialismo &middot; Narrador no confiable &middot; Castel y Mar&iacute;a &middot; Soledad y celos &middot; Incomunicaci&oacute;n &middot; Literatura argentina del siglo XX</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ==================== EXPLICACI&Oacute;N ==================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Ernesto S&aacute;bato: vida, pensamiento y contexto hist&oacute;rico</H3>
+<B>Ernesto S&aacute;bato</B> naci&oacute; el <B>24 de junio de 1911</B> en <B>Rojas</B>, provincia de Buenos Aires, Argentina, y muri&oacute; el <B>30 de abril de 2011</B> en Santos Lugares, Buenos Aires, a los <B>99 a&ntilde;os</B>. Es uno de los escritores m&aacute;s importantes de la literatura hispanoamericana del siglo XX y la figura central de la narrativa existencialista argentina.
+
+<H4>Datos biogr&aacute;ficos esenciales:</H4>
+<UL>
+<LI><B>Formaci&oacute;n cient&iacute;fica:</B> S&aacute;bato fue antes que escritor un <B>f&iacute;sico</B> brillante. Se doctor&oacute; en Ciencias F&iacute;sico-Matem&aacute;ticas en la <B>Universidad de La Plata</B> (1937) y realiz&oacute; investigaciones en el <B>Laboratorio Curie</B> de Par&iacute;s y en el <B>MIT</B> de Boston. Esta doble formaci&oacute;n &mdash;cient&iacute;fica y humanista&mdash; marcar&iacute;a toda su obra: la preocupaci&oacute;n por la raz&oacute;n moderna, sus l&iacute;mites y su fracaso.</LI>
+<LI><B>Ruptura con la ciencia:</B> A fines de los a&ntilde;os 30, influido por el surrealismo (entr&oacute; en contacto con Andr&eacute; Breton en Par&iacute;s) y sumido en una crisis existencial profunda, S&aacute;bato abandon&oacute; definitivamente la f&iacute;sica. Ten&iacute;a 30 a&ntilde;os. Decidi&oacute; que la literatura pod&iacute;a explorar verdades sobre el ser humano que la ciencia no alcanzaba.</LI>
+<LI><B>Contexto pol&iacute;tico:</B> Vivi&oacute; en la Argentina del peronismo (1943&ndash;1955) y de las sucesivas dictaduras militares. Fue presidente de la <B>CONADEP</B> (Comisi&oacute;n Nacional sobre la Desaparici&oacute;n de Personas) en 1983, que elabor&oacute; el informe <B><I>Nunca M&aacute;s</I></B> sobre los cr&iacute;menes de la &uacute;ltima dictadura argentina (1976&ndash;1983). Esta labor humanitaria lo convirti&oacute; en s&iacute;mbolo de la conciencia moral argentina.</LI>
+<LI><B>Amistades literarias:</B> trat&oacute; a <B>Jorge Luis Borges</B> (con quien tuvo una relaci&oacute;n compleja de admiraci&oacute;n y rivalidad), a <B>Albert Camus</B>, a <B>Graham Greene</B> y a <B>Thomas Mann</B>. Borges y S&aacute;bato representaron los dos grandes polos de la narrativa argentina del siglo XX: la escritura intelectual y ludica (Borges) vs. la escritura existencial y comprometida (S&aacute;bato).</LI>
+<LI><B>Premios:</B> Premio Miguel de Cervantes (<B>1984</B>), el m&aacute;ximo reconocimiento de las letras en espa&ntilde;ol; Premio Jerusalem (1989); Comendador de la Legi&oacute;n de Honor francesa.</LI>
+</UL>
+
+<H4>Obra literaria de S&aacute;bato:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Obra</TH><TH>A&ntilde;o</TH><TH>G&eacute;nero</TH><TH>Tema central</TH></TR>
+<TR><TD><B>El T&uacute;nel</B></TD><TD>1948</TD><TD>Novela</TD><TD>La incomunicaci&oacute;n, los celos, el crimen de un pintor obsesivo</TD></TR>
+<TR><TD><B>Sobre h&eacute;roes y tumbas</B></TD><TD>1961</TD><TD>Novela</TD><TD>La historia argentina, el amor imposible, el "Informe sobre ciegos"</TD></TR>
+<TR><TD><B>Abadd&oacute;n el exterminador</B></TD><TD>1974</TD><TD>Novela</TD><TD>El apocalipsis, la Argentina en crisis, metatexto</TD></TR>
+<TR><TD><B>Uno y el universo</B></TD><TD>1945</TD><TD>Ensayo</TD><TD>Cr&iacute;tica a la ciencia moderna y la deshumanizaci&oacute;n</TD></TR>
+<TR><TD><B>El escritor y sus fantasmas</B></TD><TD>1963</TD><TD>Ensayo</TD><TD>Reflexi&oacute;n sobre la novela y la condici&oacute;n del escritor</TD></TR>
+<TR><TD><B>Hombres y engranajes</B></TD><TD>1951</TD><TD>Ensayo</TD><TD>Cr&iacute;tica a la sociedad de masas y la t&eacute;cnica</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Datos clave de S&aacute;bato: naci&oacute; en <B>Rojas, Buenos Aires, 1911</B> &middot; muri&oacute; <B>2011 (99 a&ntilde;os)</B> &middot; doctor en <B>F&iacute;sica</B> (La Plata) &middot; investig&oacute; en el <B>Laboratorio Curie, Par&iacute;s</B> &middot; abandon&oacute; la ciencia por la literatura &middot; presidente de la <B>CONADEP</B> (informe <I>Nunca M&aacute;s</I>, 1984) &middot; Premio <B>Cervantes 1984</B> &middot; tres novelas: <B>El T&uacute;nel (1948), Sobre h&eacute;roes y tumbas (1961), Abadd&oacute;n el exterminador (1974)</B>.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128218; EL T&Uacute;NEL: CONTEXTO Y PUBLICACI&Oacute;N<SPAN>La primera novela de S&aacute;bato y su recepci&oacute;n internacional (1948)</SPAN></DIV>
+
+<H3>2. Historia de la publicaci&oacute;n y recepci&oacute;n de El T&uacute;nel</H3>
+<B>El T&uacute;nel</B> fue publicada en <B>1948</B> por la revista <B>Sur</B> de Buenos Aires, dirigida por <B>Victoria Ocampo</B>, la publicaci&oacute;n literaria m&aacute;s influyente de la Argentina del siglo XX. Era la primera novela de S&aacute;bato, qui&eacute;n ten&iacute;a 37 a&ntilde;os. Fue escrita durante los a&ntilde;os del peronismo y represent&oacute; un quiebre en el panorama narrativo argentino, dominado entonces por el criollismo costumbrista y la narrativa fantástica de Borges.
+
+<H4>Recepci&oacute;n cr&iacute;tica y elogios internacionales:</H4>
+<UL>
+<LI><B>Albert Camus</B>, el gran escritor existencialista franc&eacute;s y Premio Nobel (1957), ley&oacute; el manuscrito y se entusiasm&oacute; tanto que gestion&oacute; su publicaci&oacute;n en Francia por la editorial <B>Gallimard</B> (1952), la m&aacute;s prestigiosa de Europa. La recomendaci&oacute;n de Camus lanz&oacute; internacionalmente la obra.</LI>
+<LI><B>Graham Greene</B>, el novelista brit&aacute;nico, la describi&oacute; como "una de las mejores novelas de la lengua espa&ntilde;ola".</LI>
+<LI><B>Thomas Mann</B>, el gran novelista alem&aacute;n y Nobel (1929), elogio la profundidad psicol&oacute;gica de la obra.</LI>
+<LI>Fue traducida a m&aacute;s de <B>30 idiomas</B> y se convirti&oacute; en referencia obligada de la narrativa existencialista hispanoamericana.</LI>
+</UL>
+
+<H4>Contexto literario e intelectual:</H4>
+<UL>
+<LI>La obra nace en el clima del <B>existencialismo europeo</B> de posguerra: Jean-Paul Sartre (<I>La n&aacute;usea</I>, 1938; <I>El ser y la nada</I>, 1943), Albert Camus (<I>El extranjero</I>, 1942; <I>El mito de S&iacute;sifo</I>, 1942) hab&iacute;an instalado en la literatura occidental las preguntas sobre la angustia, la soledad, el absurdo y la incomunicaci&oacute;n del ser humano moderno.</LI>
+<LI>S&aacute;bato recoge estas preocupaciones y las filtra a trav&eacute;s de la experiencia latinoamericana y argentina: la novela transcurre en <B>Buenos Aires</B>, ciudad cosmopolita y solitaria, y su protagonista es un pintor de clase media argentina.</LI>
+<LI>La influencia de <B>Dostoievski</B> es decisiva: el narrador obsesivo, culpable y autoanal&iacute;tico de El T&uacute;nel tiene claros antecedentes en el "hombre del subsuelo" de Dostoievski y en Raskolnikov de <I>Crimen y castigo</I>.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>S&aacute;bato y Borges: los dos polos de la narrativa argentina.</B> Ambos escritores dominaron el panorama literario argentino del siglo XX pero desde posiciones radicalmente opuestas. Borges: intelectual puro, la literatura como juego de espejos, la realidad como construcci&oacute;n mental, sin personajes psicol&oacute;gicos complejos. S&aacute;bato: apasionado, existencialista, la literatura como exploraci&oacute;n del dolor y la angustia del ser humano concreto. Borges dijo de El T&uacute;nel que era "una de las mejores novelas argentinas". S&aacute;bato admiraba a Borges pero cre&iacute;a que su literatura era demasiado cerebral y escapista. La tensi&oacute;n entre ambos enriqueci&oacute; la cultura literaria argentina.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128203; ARGUMENTO COMPLETO<SPAN>Resumen detallado de la novela cap&iacute;tulo a cap&iacute;tulo</SPAN></DIV>
+
+<H3>3. Argumento completo de El T&uacute;nel</H3>
+La novela est&aacute; narrada en <B>primera persona</B> por el propio protagonista, el pintor <B>Juan Pablo Castel</B>, quien desde el principio confiesa al lector que ha matado a <B>Mar&iacute;a Iribarne Hunter</B>. No hay suspenso sobre el <I>qui&eacute;n</I>: el suspense est&aacute; en el <I>por qu&eacute;</I>. La novela es la confesión-justificaci&oacute;n que Castel escribe desde la c&aacute;rcel.
+
+<H4>Estructura y desarrollo de la trama:</H4>
+<OL>
+<LI><B>La exposici&oacute;n del Sal&oacute;n Nacional (Cap&iacute;tulos I&ndash;IV):</B> Castel expone su cuadro "Maternidad" en un sal&oacute;n de arte de Buenos Aires. Entre miles de personas que lo ven, solo una mujer &mdash;<B>Mar&iacute;a Iribarne</B>&mdash; se detiene ante un peque&ntilde;o detalle de la esquina inferior izquierda del cuadro: una escena de playa con una mujer solitaria mirando el mar. Castel interpreta esa mirada como una "comprensi&oacute;n total" de su mundo interior. Desde ese instante queda obsesionado con Mar&iacute;a.</LI>
+<LI><B>La b&uacute;squeda de Mar&iacute;a (Cap&iacute;tulos V&ndash;X):</B> Castel busca desesperadamente a esa mujer por toda Buenos Aires durante semanas. Cuando finalmente la encuentra en la calle, la sigue y la acosa hasta lograr que le hable. La persigue hasta su trabajo, espera horas en la puerta de su edificio. Su conducta oscila entre la adoraci&oacute;n y la agresividad.</LI>
+<LI><B>El inicio de la relaci&oacute;n (Cap&iacute;tulos XI&ndash;XVIII):</B> Mar&iacute;a acepta verse con Castel. Entre ellos surge una relaci&oacute;n intensa, atormentada, llena de silencios y malentendidos. Castel descubre que Mar&iacute;a est&aacute; casada con un hombre ciego, <B>Allende</B>, y que adem&aacute;s mantiene una relaci&oacute;n con el primo de este, <B>Hunter</B>, un hombre de mundo que Castel aborrecerá. Mar&iacute;a vive parte del tiempo en la estancia de Allende en el campo.</LI>
+<LI><B>La espiral de los celos (Cap&iacute;tulos XIX&ndash;XXX):</B> Castel comienza a sospechar de todas las personas en la vida de Mar&iacute;a. Los celos lo devoran: sospecha de Hunter, del propio Allende (el marido ciego), de desconocidos. Espía a Mar&iacute;a, la sigue, la vigila cuando ella no lo sabe, la llama a todas horas. Su obsesi&oacute;n se convierte en un sistema de c&aacute;lculos paranoicos: interpreta cada pausa, cada silencio, cada palabra de Mar&iacute;a como evidencia de una traici&oacute;n.</LI>
+<LI><B>El viaje a la estancia y la confirmaci&oacute;n de la traici&oacute;n (Cap&iacute;tulos XXXI&ndash;XXXVIII):</B> Castel viaja a la estancia de Allende buscando a Mar&iacute;a. All&iacute; encuentra a Hunter. Convencido de que Mar&iacute;a y Hunter son amantes (a partir de indicios ambiguos), Castel confronta a Mar&iacute;a en una escena violenta. Mar&iacute;a no lo desmiente claramente. Castel queda destrozado.</LI>
+<LI><B>El crimen (Cap&iacute;tulos XXXIX&ndash;XXXIX final):</B> Castel regresa a Buenos Aires, llama a Mar&iacute;a por tel&eacute;fono, finge reconciliarse, vuelve a la estancia y la <B>asesina apuñal&aacute;ndola repetidamente</B>. Antes de hacerlo, llama por tel&eacute;fono al marido ciego (Allende) para que sepa que su esposa lo traicionaba. Allende, al enterarse, se suicida. Castel es detenido y conducido a la c&aacute;rcel, desde donde escribe la novela.</LI>
+</OL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen &mdash; estructura b&aacute;sica:</B> La novela comienza con la confesi&oacute;n del crimen (el lector sabe desde la primera p&aacute;gina que Castel mat&oacute; a Mar&iacute;a) &middot; La tensi&oacute;n narrativa est&aacute; en el <I>por qu&eacute;</I>, no en el <I>qui&eacute;n</I> &middot; Estructura: cuadro "Maternidad" &rarr; b&uacute;squeda de Mar&iacute;a &rarr; relaci&oacute;n tormentosa &rarr; celos y paranoias &rarr; crimen &rarr; c&aacute;rcel &middot; Final: Castel en prisi&oacute;n, Allende suicidado, Mar&iacute;a muerta.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128101; LOS PERSONAJES<SPAN>An&aacute;lisis profundo de Castel, Mar&iacute;a y los personajes secundarios</SPAN></DIV>
+
+<H3>4. Personajes: an&aacute;lisis psicol&oacute;gico y funci&oacute;n narrativa</H3>
+
+<H4>Juan Pablo Castel &mdash; el narrador-asesino:</H4>
+<UL>
+<LI><B>Pintor de prestigio</B>, reconocido en el mundo del arte porteno. Su obra m&aacute;s famosa, "Maternidad", contiene el peque&ntilde;o detalle de la mujer solitaria en la playa que desencadena toda la historia.</LI>
+<LI>Es un <B>narrador extremadamente no confiable</B>: cuenta su historia desde la c&aacute;rcel, buscando justificarse, pero el lector percibe constantemente que su interpretaci&oacute;n de los hechos es distorsionada por la paranoia y los celos. Lo que Castel llama "evidencias" de la traici&oacute;n de Mar&iacute;a son a menudo inferencias absurdas a partir de datos triviales.</LI>
+<LI>Sufre de <B>hiperraci&oacute;n</B>: razona obsesivamente sobre todo, construye sistemas de inferencia l&oacute;gica sobre los sentimientos de Mar&iacute;a, pero esa misma capacidad racional lo lleva al error porque aplica la l&oacute;gica formal a algo que no admite l&oacute;gica formal: las emociones humanas.</LI>
+<LI>Es <B>solitario radical</B>: cree que nadie lo comprende, que el mundo es estupido y superficial. Su primer impulso ante alguien es el desprecio. Solo en Mar&iacute;a creyó encontrar a alguien que lo comprend&iacute;a totalmente &mdash;y esa expectativa imposible fue la ra&iacute;z de la tragedia.</LI>
+<LI>Tiene rasgos claros de <B>personalidad narcisista y paranoica</B>: se cree superior a todos, interpreta la realidad en funci&oacute;n de su propio mundo interior, y cualquier ambigu&uuml;edad en la conducta de Mar&iacute;a la lee autom&aacute;ticamente como traici&oacute;n.</LI>
+</UL>
+
+<H4>Mar&iacute;a Iribarne Hunter &mdash; el misterio:</H4>
+<UL>
+<LI>Es el personaje m&aacute;s <B>enigm&aacute;tico</B> de la novela: dado que solo la conocemos a trav&eacute;s de los ojos de Castel (un narrador no confiable), el lector nunca sabe con certeza qui&eacute;n es realmente Mar&iacute;a.</LI>
+<LI>Aparece como una mujer <B>melancólica, profunda, con una vida interior rica</B> pero que no comparte con nadie. Su relaci&oacute;n con Allende (el marido ciego) es misteriosa; su relaci&oacute;n con Hunter, ambigua.</LI>
+<LI>La pregunta que el lector nunca puede responder con certeza: <B>&iquest;realmente amaba a Castel o solo lo compadec&iacute;a?</B> &iquest;Realmente ten&iacute;a una relaci&oacute;n con Hunter o Castel inventó esa relaci&oacute;n a partir de indicios mal interpretados?</LI>
+<LI>Su nombre completo (Mar&iacute;a Iribarne <B>Hunter</B>) es significativo: "Hunter" = cazador en ingl&eacute;s. Algunos cr&iacute;ticos leen en esto una ironia narrativa: la supuesta v&iacute;ctima lleva en su apellido la idea de quien caza. Sin embargo, desde el punto de vista del texto, ella es claramente la v&iacute;ctima del crimen.</LI>
+<LI>Representa la <B>alteridad radical</B>: el otro ser humano que nunca puede ser conocido completamente, la barrera infranqueable entre dos conciencias. El fracaso de Castel es el fracaso de quien pretende conocer totalmente al otro.</LI>
+</UL>
+
+<H4>Allende &mdash; el marido ciego:</H4>
+<UL>
+<LI>Marido de Mar&iacute;a; <B>ciego</B> f&iacute;sicamente, lo que en el nivel simb&oacute;lico representa la incapacidad de ver la realidad. Sin embargo, paradójicamente, Allende puede ser m&aacute;s l&uacute;cido que Castel en su relaci&oacute;n con Mar&iacute;a.</LI>
+<LI>Su suicidio al final (cuando Castel lo llama para revelarle la infidelidad de su esposa) plantea una pregunta perturbadora: <B>&iquest;ya sab&iacute;a Allende la verdad y prefer&iacute;a no verla?</B> Su muerte pone en evidencia que Castel destruy&oacute; dos vidas, no solo una.</LI>
+<LI>El personaje tiene un paralelo simb&oacute;lico con el <B>ciego de Borges</B> y con la figura del marido "cornudo" pero clemente de la literatura tradicional; S&aacute;bato lo subvierte: Allende no es r&iacute;diculo sino trag&eacute;dico.</LI>
+</UL>
+
+<H4>Hunter &mdash; el rival:</H4>
+<UL>
+<LI>Primo de Allende; hombre de mundo, frivolo, elegante, que representa todo lo que Castel desprecia: la superficialidad social, el &eacute;xito f&aacute;cil, la vida sin angustia existencial.</LI>
+<LI>Castel lo odia desde el primer momento con una intensidad que sugiere que Hunter funciona como proyecci&oacute;n de sus propios miedos: teme no ser tan interesante como Hunter para Mar&iacute;a.</LI>
+<LI>La prueba de que Hunter y Mar&iacute;a son amantes nunca es definitiva en el texto; Castel la da por establecida, pero el lector cr&iacute;tico puede dudar.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>El cuadro "Maternidad" y su funci&oacute;n narrativa:</B> El cuadro tiene dos planos: el principal (la escena de maternidad obvia) y un peque&ntilde;o detalle en la esquina inferior izquierda (una mujer sola en una playa mirando el mar). Solo Mar&iacute;a repara en ese detalle secundario. Castel interpreta que ese detalle es la expresi&oacute;n m&aacute;s profunda de su angustia interior &mdash;la soledad, la marginalidad&mdash; y que al percibirlo Mar&iacute;a ha "visto" lo que nadie m&aacute;s ve. Esta interpretaci&oacute;n es la ra&iacute;z de toda la tragedia: Castel proyecta en Mar&iacute;a una capacidad de comprensi&oacute;n total que ning&uacute;n ser humano real puede tener. El cuadro dentro de la novela es tambi&eacute;n una met&aacute;fora de la obra literaria misma: el texto que la mayor&iacute;a lee superficialmente (el argumento) y el nivel profundo (la angustia existencial) que solo algunos perciben.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127775; EL T&Uacute;NEL COMO METÁFORA CENTRAL<SPAN>El s&iacute;mbolo que da t&iacute;tulo a la novela y sus significados</SPAN></DIV>
+
+<H3>5. La met&aacute;fora del t&uacute;nel: an&aacute;lisis del s&iacute;mbolo central</H3>
+El t&iacute;tulo de la novela remite a una de las im&aacute;genes m&aacute;s ricas y densas de la literatura existencialista hispanoamericana. El <B>t&uacute;nel</B> aparece como met&aacute;fora de la soledad radical del ser humano moderno, formulada por Castel en un pasaje clave:
+
+<DIV CLASS="ej">&#128218; <B>Pasaje del t&uacute;nel (cap&iacute;tulo central de la novela):</B><BR><BR>
+Castel reflexiona que cada ser humano camina por un t&uacute;nel subterr&aacute;neo propio, oscuro y solitario, sin poder ver ni comunicarse con los dem&aacute;s. En un momento crey&oacute; que a trav&eacute;s de las paredes del t&uacute;nel pod&iacute;a ver la silueta de otra persona (Mar&iacute;a) caminando en un t&uacute;nel paralelo. Se obsesion&oacute; con la idea de comunicarse con ella, de que sus t&uacute;neles se unieran. Pero al final comprende que los t&uacute;neles nunca se unen: cada ser humano est&aacute; condenado a su soledad radical e irremediable. El intento de fusi&oacute;n con el otro (el amor, la comunicaci&oacute;n total) es imposible y, al pretenderlo, solo se genera destrucci&oacute;n.
+</DIV>
+
+<H4>Dimensiones del s&iacute;mbolo del t&uacute;nel:</H4>
+<UL>
+<LI><B>Soledad existencial:</B> el t&uacute;nel representa la condena del ser humano a vivir encerrado en su propia conciencia, sin poder transmitir completamente su experiencia interior a ning&uacute;n otro ser.</LI>
+<LI><B>Incomunicaci&oacute;n:</B> por m&aacute;s que dos personas hablen, se amen o compartan, hay un n&uacute;cleo inaccesible de la experiencia personal que nunca puede ser transmitido. El lenguaje es insuficiente; el amor, ilimitado.</LI>
+<LI><B>La ilusi&oacute;n del amor:</B> el amor rom&aacute;ntico (especialmente en su variante obsesiva) crea la ilusi&oacute;n de que el otro puede ser conocido totalmente, de que los t&uacute;neles pueden fundirse. Cuando esa ilusi&oacute;n se rompe &mdash;cuando el amado resulta ser un ser humano opaco, impredecible, diferente&mdash; el amor se convierte en odio o en destrucci&oacute;n.</LI>
+<LI><B>La raz&oacute;n como laberinto:</B> el t&uacute;nel tambi&eacute;n simboliza la prisi&oacute;n de la raz&oacute;n obsesiva de Castel: cuanto m&aacute;s razona sobre Mar&iacute;a, m&aacute;s se aleja de ella; la raz&oacute;n anal&iacute;tica produce una celda, no una salida.</LI>
+<LI><B>La modernidad y el individuo:</B> el t&uacute;nel es un s&iacute;mbolo de la condici&oacute;n del individuo moderno en la ciudad: rodeado de millones de personas, pero profundamente solo; con m&uacute;ltiples medios de comunicaci&oacute;n, pero incapaz de comunicarse verdaderamente.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#127775; TEMAS Y MOTIVOS LITERARIOS<SPAN>Los grandes ejes tem&aacute;ticos de la novela</SPAN></DIV>
+
+<H3>6. Temas principales de El T&uacute;nel</H3>
+
+<H4>1. La incomunicaci&oacute;n y la soledad radical:</H4>
+Es el tema central y el que da t&iacute;tulo a la obra. S&aacute;bato plantea que la soledad del ser humano es constitutiva, no accidental: no es un problema que pueda resolverse con m&aacute;s comunicaci&oacute;n o m&aacute;s amor, sino una condici&oacute;n ontol&oacute;gica del ser humano moderno. Castel no fracasa en la comunicaci&oacute;n porque sea un mal comunicador; fracasa porque la comunicaci&oacute;n total es imposible. Este tema conecta con la filosof&iacute;a existencialista de Sartre (<I>"El infierno son los otros"</I>) y con la angustia heideggeriana del <I>Dasein</I> (el ser-en-el-mundo).
+
+<H4>2. Los celos como forma del conocimiento imposible:</H4>
+Los celos de Castel no son un simple problema emocional: son la expresi&oacute;n de su deseo de conocer totalmente a Mar&iacute;a, de no tolerar la opacidad del otro. Cada momento que Mar&iacute;a no est&aacute; con &eacute;l es un misterio intolerable que su mente llena con hip&oacute;tesis. Los celos son el intento desesperado y fallido de eliminar la alteridad del otro (su irreductible diferencia e independencia). Al no poder soportar que Mar&iacute;a sea un ser aut&oacute;nomo con su propia vida, Castel la destruye.
+
+<H4>3. El amor como destrucci&oacute;n:</H4>
+La relaci&oacute;n de Castel y Mar&iacute;a es una forma de amor que lleva inev&iacute;tablemente a la destrucci&oacute;n. S&aacute;bato muestra que el amor obsesivo, que pretende la posesi&oacute;n total del otro, no es amor sino una forma de aniquilaci&oacute;n. La paradoja tr&aacute;gica: Castel mata a Mar&iacute;a porque la ama; al no poder tenerla completamente, prefiere que no exista. Este tema tiene resonancias con el amor rom&aacute;ntico en su versi&oacute;n oscura (el eros tanático de Freud, el amor como deseo de fusi&oacute;n imposible con el otro).
+
+<H4>4. La raz&oacute;n como trampa:</H4>
+Castel es un personaje excepcionalmente racional; su razonamiento es preciso, l&oacute;gico, aparentemente coherente. Pero esa misma capacidad de razonar lo destruye: aplica la l&oacute;gica al terreno de los afectos humanos, donde la l&oacute;gica no funciona. S&aacute;bato, el ex-f&iacute;sico, hace aqu&iacute; una cr&iacute;tica profunda a la raz&oacute;n instrumental moderna: la misma raz&oacute;n que ha producido la ciencia y la tecnolog&iacute;a es inc&atilde;paz de explicar o resolver los problemas fundamentales del ser humano (el amor, la comunicaci&oacute;n, la muerte). La raz&oacute;n no es la soluci&oacute;n; a veces es el problema.
+
+<H4>5. La culpa y la confesión:</H4>
+La novela entera es una confesi&oacute;n: Castel no esconde lo que hizo (lo declara en la primera l&iacute;nea) sino que intenta justificarlo, explicarlo, buscar la comprensi&oacute;n del lector. Este acto confesional tiene resonancias religiosas pero tambi&eacute;n psicoanal&iacute;ticas. Castel quiere ser comprendido, pero su narración revela constantemente lo que él no quiere revelar: su paranoia, su crueldad, su egocentrismo. La forma de la novela &mdash;la confesión&mdash; es as&iacute; un dispositivo de exposici&oacute;n involuntaria del narrador.
+
+<H4>6. El artista y su mundo:</H4>
+Castel es un artista (pintor) que se cree incomprendido por la sociedad superficial. Esta figura del artista incomprendido tiene una larga tradici&oacute;n rom&aacute;ntica. S&aacute;bato la toma pero la subvierte: la "sensibilidad superior" de Castel no lo hace mejor persona sino m&aacute;s peligroso. Su capacidad artística coexiste con la paranoia y la crueldad. El arte no redime moralmente; el artista puede ser a la vez genial y monstruoso.
+
+<H4>7. La ciudad moderna como espacio de alienaci&oacute;n:</H4>
+Buenos Aires es el escenario de la novela, pero no como ciudad pintoresca sino como espacio de anonimato y alienaci&oacute;n. Los edificios, las calles, los cafés y los tel&eacute;fonos son los instrumentos de la incomunicaci&oacute;n moderna: Castel llama a Mar&iacute;a por tel&eacute;fono obsesivamente pero no puede comunicarse con ella; la sigue por calles llenas de gente pero est&aacute; absolutamente solo.
+
+<DIV CLASS="cultura-titulo">&#127916; G&Eacute;NERO, ESTRUCTURA Y RECURSOS NARRATIVOS<SPAN>An&aacute;lisis formal de la novela</SPAN></DIV>
+
+<H3>7. G&eacute;nero literario, estructura y t&eacute;cnicas narrativas</H3>
+
+<H4>G&eacute;nero y corriente:</H4>
+<UL>
+<LI><B>G&eacute;nero mayor:</B> Literatura narrativa (novela).</LI>
+<LI><B>Subg&eacute;nero:</B> Novela psicol&oacute;gica / novela existencialista / novela de confesión.</LI>
+<LI><B>Corriente literaria:</B> <B>Existencialismo</B> hispanoamericano, con influencias del <B>realismo psicol&oacute;gico</B> (Dostoievski) y la narrativa <B>modernista</B> del siglo XX.</LI>
+<LI>Algunos cr&iacute;ticos la ubican tambi&eacute;n dentro de la tradici&oacute;n de la <B>novela policial</B> (hay un crimen, hay una investigaci&oacute;n de los motivos) aunque subvirtiendo el g&eacute;nero: el asesino es el propio narrador.</LI>
+</UL>
+
+<H4>Estructura de la novela:</H4>
+<UL>
+<LI>No est&aacute; dividida en partes formales con t&iacute;tulos, sino en <B>cap&iacute;tulos numerados</B> (aproximadamente 39 cap&iacute;tulos cortos).</LI>
+<LI>Tiene una estructura <B>circular</B>: empieza con la confesi&oacute;n del crimen y termina con Castel en la c&aacute;rcel tras haberlo cometido. El lector viaja desde el final hacia las causas.</LI>
+<LI>Es una novela breve: aproximadamente <B>120&ndash;150 p&aacute;ginas</B> seg&uacute;n la edici&oacute;n. La brevedad es parte de su intensidad: la narraci&oacute;n no tiene excesos descriptivos; todo est&aacute; concentrado en la psicolog&iacute;a del narrador.</LI>
+</UL>
+
+<H4>T&eacute;cnicas narrativas fundamentales:</H4>
+<UL>
+<LI><B>Narrador en primera persona (narrador-protagonista):</B> toda la novela est&aacute; narrada por Castel. Esto crea una perspectiva &uacute;nica pero radicalmente limitada: solo conocemos lo que Castel quiere (o puede) contar. El lector debe constantemente "leer entre l&iacute;neas" para distinguir lo que realmente ocurrió de la interpretaci&oacute;n deformada de Castel.</LI>
+<LI><B>Narrador no confiable (<I>unreliable narrator</I>):</B> este es el recurso t&eacute;cnico m&aacute;s importante de la novela. Castel es un narrador cuya versi&oacute;n de los hechos no puede aceptarse sin espíritu cr&iacute;tico. Sus inferencias son frecuentemente absurdas, sus conclusiones exageradas, su autojustificaci&oacute;n transparentemente sesgada. El lector inteligente percibe la distancia entre lo que Castel dice y lo que realmente ocurri&oacute;.</LI>
+<LI><B>El monologo interior:</B> amplios pasajes de la novela son monólogos de Castel consigo mismo, razonando obsesivamente sobre los comportamientos de Mar&iacute;a. Esta t&eacute;cnica, heredada de la novela modernista (Joyce, Woolf), permite la exposici&oacute;n directa del mundo mental del personaje.</LI>
+<LI><B>El "in medias res" invertido:</B> la novela comienza en el final (la confesi&oacute;n del crimen ya cometido) y luego retrocede para explicar los hechos. Esta estructura produce una iron&iacute;a dram&aacute;tica: el lector sabe desde el principio que la relaci&oacute;n con Mar&iacute;a terminar&aacute; en tragedia, lo que carga cada escena de amor con el peso del desenlace conocido.</LI>
+<LI><B>El tiempo subjetivo:</B> el tiempo de la narración no es lineal ni objetivo. S&aacute;bato dilata los momentos de obsesi&oacute;n de Castel y comprime los momentos felices. El tiempo que la novela dedica a las cavilaciones sobre los celos es enormemente mayor que el dedicado a los momentos de amor. Esto refleja la psicolog&iacute;a del personaje: la angustia se vive lentamente; la felicidad, r&aacute;pido.</LI>
+<LI><B>El arte como metacomentario:</B> el cuadro "Maternidad" dentro de la novela funciona como reflexi&oacute;n sobre la propia novela: el texto literario tambi&eacute;n tiene un nivel superficial (el argumento del crimen) y un nivel profundo (la angustia existencial) que solo los lectores atentos perciben.</LI>
+</UL>
+
+<H3>8. Relaciones intertextuales: S&aacute;bato y sus influencias</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Autor / Obra</TH><TH>Influencia en El T&uacute;nel</TH></TR>
+<TR><TD><B>Fiodor Dostoievski</B> &mdash; <I>Crimen y castigo</I> (1866)</TD><TD>El narrador que mata y luego justifica intelectualmente su crimen; la culpa como motor narrativo; el "hombre del subsuelo" como antecedente directo de Castel</TD></TR>
+<TR><TD><B>Dostoievski</B> &mdash; <I>Memorias del subsuelo</I> (1864)</TD><TD>El antih&eacute;roe racional que se odia a s&iacute; mismo y odia al mundo; el monólogo obsesivo y autoflagelante</TD></TR>
+<TR><TD><B>Albert Camus</B> &mdash; <I>El extranjero</I> (1942)</TD><TD>El protagonista que mata sin motivaci&oacute;n convencional; la alienaci&oacute;n del individuo moderno; la narrativa confesional fr&iacute;a</TD></TR>
+<TR><TD><B>Jean-Paul Sartre</B> &mdash; <I>La n&aacute;usea</I> (1938)</TD><TD>La angustia existencial del intelectual moderno; el asco ante el mundo y los dem&aacute;s; "el infierno son los otros"</TD></TR>
+<TR><TD><B>Franz Kafka</B> &mdash; <I>El proceso</I> (1925)</TD><TD>La sensaci&oacute;n de culpa sin causa clara; la burocracia opresiva; el individuo atrapado en un sistema absurdo</TD></TR>
+<TR><TD><B>Stendhal</B> &mdash; <I>Rojo y negro</I> (1830)</TD><TD>El protagonista que mata a la mujer amada por celos; la destrucci&oacute;n del amor como desenlace</TD></TR>
+<TR><TD><B>Marcel Proust</B> &mdash; <I>En busca del tiempo perdido</I></TD><TD>Los celos como forma del conocimiento imposible del otro; la obsesi&oacute;n por el pasado de la amada</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note">&#128221; <B>S&aacute;bato vs. Camus: dos visiones del absurdo.</B> Tanto <I>El extranjero</I> de Camus (1942) como <I>El t&uacute;nel</I> de S&aacute;bato (1948) tienen un protagonista que mata a una mujer y narra el crimen sin emoci&oacute;n convencional. Pero hay diferencias fundamentales: Meursault (Camus) mata de manera casi accidental, sin motivaci&oacute;n emocional, en estado de indiferencia radical; Castel (S&aacute;bato) mata por exceso de emoci&oacute;n, por una obsesi&oacute;n demasiado intensa. Meursault no puede amar; Castel no puede dejar de amar. El absurdo de Camus es la indiferencia del universo; la angustia de S&aacute;bato es la incomunicaci&oacute;n entre dos personas que quiz&aacute;s se aman.</DIV>
+
+<H3>9. La novela y el existencialismo: conceptos clave</H3>
+Para comprender plenamente <I>El T&uacute;nel</I> es indispensable conocer los conceptos del <B>existencialismo</B> que S&aacute;bato dramatiza en la novela:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Concepto existencialista</TH><TH>C&oacute;mo aparece en El T&uacute;nel</TH><TH>Fil&oacute;sofo asociado</TH></TR>
+<TR><TD><B>Angustia existencial</B></TD><TD>El estado permanente de Castel: la ansiedad sin objeto que lo domina incluso cuando no tiene raz&oacute;n concreta para estar angustiado</TD><TD>Kierkegaard, Heidegger</TD></TR>
+<TR><TD><B>Soledad radical</B></TD><TD>La met&aacute;fora del t&uacute;nel: cada ser humano est&aacute; encerrado en su propia conciencia, inasequible al otro</TD><TD>Sartre, Heidegger</TD></TR>
+<TR><TD><B>Incomunicaci&oacute;n</B></TD><TD>La imposibilidad de Castel de hacerse comprender por Mar&iacute;a a pesar de todos sus intentos</TD><TD>Sartre ("el infierno son los otros")</TD></TR>
+<TR><TD><B>La mala fe (<I>mauvaise foi</I>)</B></TD><TD>Castel se engaña a s&iacute; mismo sobre sus propias motivaciones: cree que act&uacute;a por amor cuando act&uacute;a por miedo y necesidad de control</TD><TD>Sartre</TD></TR>
+<TR><TD><B>El absurdo</B></TD><TD>La vida de Castel no tiene sentido m&aacute;s all&aacute; de su obsesi&oacute;n; cuando la obsesi&oacute;n termina (con el crimen), no queda nada</TD><TD>Camus</TD></TR>
+<TR><TD><B>La alteridad</B></TD><TD>Mar&iacute;a como "el otro" irreductible: un ser que nunca puede ser completamente conocido o poseído</TD><TD>Levinas, Sartre</TD></TR>
+<TR><TD><B>La culpa</B></TD><TD>Castel sabe que es culpable pero busca razones externas (la traici&oacute;n de Mar&iacute;a, la hipocres&iacute;a del mundo) para justificarse</TD><TD>Kierkegaard, Heidegger</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>10. Cuadro resumen: datos esenciales de El T&uacute;nel</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Aspecto</TH><TH>Dato esencial</TH></TR>
+<TR><TD><B>Autor</B></TD><TD>Ernesto S&aacute;bato (Rojas, Buenos Aires, 1911&ndash;2011)</TD></TR>
+<TR><TD><B>T&iacute;tulo</B></TD><TD>El T&uacute;nel</TD></TR>
+<TR><TD><B>A&ntilde;o de publicaci&oacute;n</B></TD><TD>1948 (revista Sur, Buenos Aires)</TD></TR>
+<TR><TD><B>Publicaci&oacute;n internacional</B></TD><TD>1952, Gallimard, Francia (gestionada por Albert Camus)</TD></TR>
+<TR><TD><B>G&eacute;nero</B></TD><TD>Novela psicol&oacute;gica / existencialista / de confesi&oacute;n</TD></TR>
+<TR><TD><B>Corriente literaria</B></TD><TD>Existencialismo hispanoamericano</TD></TR>
+<TR><TD><B>Pa&iacute;s</B></TD><TD>Argentina</TD></TR>
+<TR><TD><B>Narrador</B></TD><TD>Primera persona (Juan Pablo Castel) &mdash; narrador no confiable</TD></TR>
+<TR><TD><B>Escenario</B></TD><TD>Buenos Aires, Argentina (ciudad moderna y alienante)</TD></TR>
+<TR><TD><B>Protagonista</B></TD><TD>Juan Pablo Castel, pintor obsesivo y asesino</TD></TR>
+<TR><TD><B>Antagonista / v&iacute;ctima</B></TD><TD>Mar&iacute;a Iribarne Hunter</TD></TR>
+<TR><TD><B>Tema central</B></TD><TD>La incomunicaci&oacute;n, los celos, la soledad existencial, el amor destructivo</TD></TR>
+<TR><TD><B>S&iacute;mbolo central</B></TD><TD>El t&uacute;nel: la conciencia solitaria e incomunicada del ser humano moderno</TD></TR>
+<TR><TD><B>Cuadro emblem&aacute;tico</B></TD><TD>"Maternidad": la obra de Castel con la escena de la mujer sola en la playa</TD></TR>
+<TR><TD><B>Influencias clave</B></TD><TD>Dostoievski, Camus, Sartre, Kafka, Proust</TD></TR>
+<TR><TD><B>Premio del autor</B></TD><TD>Premio Cervantes 1984 (m&aacute;ximo de las letras en espa&ntilde;ol)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1911&ndash;2011</DIV><DIV CLASS="dk-label">Fechas de nacimiento y muerte de Ernesto S&aacute;bato</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1948</DIV><DIV CLASS="dk-label">A&ntilde;o de publicaci&oacute;n de El T&uacute;nel en la revista Sur</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Albert Camus</DIV><DIV CLASS="dk-label">Gestion&oacute; la publicaci&oacute;n en Francia (Gallimard, 1952)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1&ordf; persona</DIV><DIV CLASS="dk-label">Narrador no confiable: Castel confiesa desde la c&aacute;rcel</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Cervantes 1984</DIV><DIV CLASS="dk-label">M&aacute;ximo premio de las letras en espa&ntilde;ol, otorgado a S&aacute;bato</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">CONADEP</DIV><DIV CLASS="dk-label">S&aacute;bato presidi&oacute; la Comisi&oacute;n; elabor&oacute; <I>Nunca M&aacute;s</I> (1984)</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Autor:</B> Ernesto S&aacute;bato &middot; Rojas, Buenos Aires, 1911&ndash;2011 &middot; Doctor en F&iacute;sica (La Plata) &middot; investig&oacute; en Curie (Par&iacute;s) y MIT &middot; Premio Cervantes 1984 &middot; presidente CONADEP (Nunca M&aacute;s) &middot; tres novelas: El T&uacute;nel, Sobre h&eacute;roes y tumbas, Abadd&oacute;n el exterminador<BR>
+&bull; <B>Publicaci&oacute;n:</B> 1948 (revista Sur, Buenos Aires) &middot; 1952 Gallimard Francia (gracias a Albert Camus) &middot; +30 idiomas<BR>
+&bull; <B>Argumento:</B> Castel (pintor) mata a Mar&iacute;a Iribarne &middot; lo confiesa desde la primera l&iacute;nea &middot; narraci&oacute;n retrosp ectiva desde la c&aacute;rcel &middot; cuadro "Maternidad" &rarr; b&uacute;squeda obsesiva &rarr; relaci&oacute;n tormentosa &rarr; celos paranoicos &rarr; crimen &rarr; Allende se suicida<BR>
+&bull; <B>Personajes:</B> Castel (pintor, narrador no confiable, obsesivo, paranoico) &middot; Mar&iacute;a Iribarne (enigm&aacute;tica, v&iacute;ctima) &middot; Allende (marido ciego, se suicida) &middot; Hunter (rival, primo de Allende)<BR>
+&bull; <B>T&uacute;nel:</B> met&aacute;fora de la soledad radical, la incomunicaci&oacute;n y la imposibilidad de conocer totalmente al otro<BR>
+&bull; <B>Temas:</B> incomunicaci&oacute;n &middot; celos &middot; amor destructivo &middot; raz&oacute;n como trampa &middot; soledad moderna &middot; culpa &middot; artista y sociedad<BR>
+&bull; <B>T&eacute;cnicas:</B> narrador en 1&ordf; persona no confiable &middot; monólogo interior &middot; estructura circular &middot; tiempo subjetivo &middot; arte como metacomentario<BR>
+&bull; <B>Corriente:</B> Existencialismo hispanoamericano &middot; influencias: Dostoievski, Camus, Sartre, Kafka<BR>
+&bull; <B>G&eacute;nero:</B> Novela psicol&oacute;gica / existencialista / de confesi&oacute;n &middot; Argentina
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ==================== PREGUNTAS ==================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;Qu&eacute; ocurre al inicio de El T&uacute;nel y c&oacute;mo se presenta el conflicto central de la novela desde la primera p&aacute;gina?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) La novela comienza con el encuentro rom&aacute;ntico entre Castel y Mar&iacute;a en una galería de arte; el conflicto central es si Castel lograr&aacute; conquistar el amor de Mar&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) La novela comienza con la confesión de Castel desde la c&aacute;rcel de que &eacute;l mat&oacute; a Mar&iacute;a Iribarne; el conflicto central no es qui&eacute;n mat&oacute; sino por qu&eacute;; toda la novela es la explicaci&oacute;n retrospectiva del crimen</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) La novela comienza con la investigaci&oacute;n policial del asesinato de Mar&iacute;a; el conflicto central es si la polic&iacute;a lograr&aacute; descubrir al asesino antes de que escape</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) La novela comienza con la muerte de Castel en la c&aacute;rcel; el conflicto central es si sus memorias escritas llegar&aacute;n a publicarse y justificar&aacute;n su crimen ante la sociedad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La apertura de El T&uacute;nel es una de las m&aacute;s famosas de la narrativa hispanoamericana. La primera l&iacute;nea es esencialmente: "Bastar&aacute; decir que soy Juan Pablo Castel, el pintor que mat&oacute; a Mar&iacute;a Iribarne; supongo que el proceso est&aacute; en el recuerdo de todos y que no se necesitan mayores explicaciones sobre mi persona." S&aacute;bato elimina as&iacute; cualquier suspenso convencional sobre el resultado: el lector sabe desde el inicio que Mar&iacute;a morir&aacute; y que Castel es el asesino. La tensi&oacute;n narrativa se desplaza hacia el <B>por qu&eacute;</B>: &iquest;c&oacute;mo un pintor inteligente y sensible llega a asesinar a la mujer que ama? Esta estructura &mdash;revelar el final desde el principio&mdash; es una decisi&oacute;n t&eacute;cnica deliberada que permite al lector observar el proceso de destrucci&oacute;n sabiendo que terminar&aacute; en crimen, lo que carga cada escena de amor con una iron&iacute;a trag&eacute;dica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Qu&eacute; es el cuadro "Maternidad" y qu&eacute; papel cumple en la trama de la novela?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) "Maternidad" es el cuadro que Castel regala a Mar&iacute;a como declaraci&oacute;n de amor; representa a Mar&iacute;a embarazada y desencadena la crisis final cuando ella lo rechaza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) "Maternidad" es el cuadro de Castel expuesto en el Sal&oacute;n Nacional; contiene en la esquina inferior izquierda una peque&ntilde;a escena de una mujer solitaria en la playa; solo Mar&iacute;a repara en ese detalle, lo que Castel interpreta como "comprensi&oacute;n total" de su mundo interior; este momento desencadena su obsesi&oacute;n por Mar&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) "Maternidad" es el t&iacute;tulo de la autobiograf&iacute;a que escribe la madre de Castel y que &eacute;ste encuentra despu&eacute;s de su muerte; en ella descubre que fue adoptado, lo que explica su sensaci&oacute;n de no pertenecer al mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) "Maternidad" es el apodo que Castel le da a Mar&iacute;a porque ella le recuerda a su madre muerta; la obsesi&oacute;n de Castel tiene un origen edípico que S&aacute;bato expone expl&iacute;citamente en el cap&iacute;tulo central</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El cuadro "Maternidad" es el detonante de toda la trama y uno de los dispositivos narrativos m&aacute;s ingeniosos de la novela. Castel expone el cuadro en el Sal&oacute;n Nacional de Buenos Aires. El cuadro tiene dos planos: el principal (una escena de maternidad obvia, que es lo que todo el p&uacute;blico ve) y un detalle secundario en la <B>esquina inferior izquierda</B> (una mujer sola en una playa, dando la espalda al espectador, mirando el mar). Castel considera que ese detalle peque&ntilde;o es la expresi&oacute;n m&aacute;s profunda y verdadera de su vida interior: la soledad, la marginalidad, la incomprensi&oacute;n. Nadie lo ve &mdash;excepto Mar&iacute;a. Ella se detiene ante ese detalle. Para Castel, ese acto significa que Mar&iacute;a lo ha "comprendido totalmente". Esta interpretaci&oacute;n es la ra&iacute;z de la tragedia: Castel proyecta en Mar&iacute;a una capacidad de comprensi&oacute;n absoluta que ning&uacute;n ser humano real puede tener. El cuadro es adem&aacute;s una met&aacute;fora de la propia novela: tiene un nivel obvio (el argumento del crimen) y un nivel profundo (la angustia existencial) que solo los lectores atentos perciben.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;En qu&eacute; corriente literaria se inscribe El T&uacute;nel y cu&aacute;les son sus caracter&iacute;sticas formales principales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Realismo m&aacute;gico latinoamericano; la novela mezcla elementos sobrenaturales (el fantasma de la madre de Castel) con la realidad cotidiana de Buenos Aires; su estilo es exuberante y barroco</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Existencialismo hispanoamericano; narrada en primera persona por un narrador no confiable (Castel); estructura circular (comienza con el crimen ya cometido); breve (aprox. 150 p&aacute;ginas); monólogo interior; temas de soledad, incomunicaci&oacute;n, culpa y amor destructivo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Indigenismo latinoamericano; como en Alegr&iacute;a y Arguedas, la novela denuncia la opresi&oacute;n del indio; Castel representa al campesino explotado por la sociedad burguesa argentina del siglo XX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Modernismo hispanoamericano de Rub&eacute;n Dar&iacute;o; la novela est&aacute; escrita en verso libre intercalado con prosa; su est&eacute;tica es preciosista y simbolista, alejada del tema social o psicol&oacute;gico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El T&uacute;nel pertenece al <B>existencialismo hispanoamericano</B>, corriente que adapt&oacute; a la realidad latinoamericana las preocupaciones del existencialismo europeo (Sartre, Camus, Heidegger). Sus caracter&iacute;sticas formales: (1) <B>Narraci&oacute;n en primera persona:</B> Juan Pablo Castel narra desde la c&aacute;rcel. (2) <B>Narrador no confiable:</B> la versi&oacute;n de Castel es parcial, paranoica y autoexculpatoria. (3) <B>Estructura circular:</B> empieza en el final (el crimen ya cometido) y termina en el mismo punto. (4) <B>Brevedad:</B> aprox. 120&ndash;150 p&aacute;ginas; cap&iacute;tulos cortos y concentrados. (5) <B>Monólogo interior:</B> largos pasajes de razonamiento obsesivo de Castel. (6) <B>Temas existenciales:</B> soledad radical, incomunicaci&oacute;n, angustia, culpa, amor destructivo. (7) <B>Influencias literarias:</B> Dostoievski (narrador-asesino), Camus (alienaci&oacute;n), Sartre (incomunicaci&oacute;n), Kafka (culpa absurda).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qui&eacute;nes son los personajes principales de El T&uacute;nel y cu&aacute;l es la relaci&oacute;n entre ellos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Los personajes principales son Castel (pintor asesino), su madre (a quien adora), y Mar&iacute;a (pintora rival); Castel mata a Mar&iacute;a porque ella le roba sus ideas art&iacute;sticas y las presenta como propias en concursos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Los personajes principales son Juan Pablo Castel (pintor, narrador, asesino), Mar&iacute;a Iribarne Hunter (la mujer obsesionada y asesinada), Allende (marido ciego de Mar&iacute;a, que se suicida) y Hunter (primo de Allende, rival que Castel cree amante de Mar&iacute;a)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Los personajes principales son Castel (detective), Mar&iacute;a (sospechosa de matar a su marido ciego) y el Inspector Hunter (polic&iacute;a que investiga el caso); Castel se enamora de Mar&iacute;a durante la investigaci&oacute;n y la mata al descubrir que s&iacute; era culpable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Los personajes principales son Castel y su doble, "El T&uacute;nel" (un alter ego que solo Castel puede ver); Mar&iacute;a es un personaje secundario que aparece solo en los &uacute;ltimos tres cap&iacute;tulos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los cuatro personajes esenciales de la novela: (1) <B>Juan Pablo Castel:</B> pintor porteno de prestigio, inteligente pero paranoico y obsesivo; narrador de la novela desde la c&aacute;rcel donde cumple condena por el crimen. (2) <B>Mar&iacute;a Iribarne Hunter:</B> mujer enigm&aacute;tica que repara en el detalle del cuadro; casada con Allende; su verdadera vida interior nunca se revela completamente al lector (solo la vemos a trav&eacute;s de los ojos deformados de Castel). (3) <B>Allende:</B> marido de Mar&iacute;a; ciego f&iacute;sicamente; al final Castel lo llama para revelarle la "infidelidad" de Mar&iacute;a antes de matarla; Allende se suicida. (4) <B>Hunter:</B> primo de Allende; hombre mundano y frivolo; Castel est&aacute; convencido de que es el amante de Mar&iacute;a, aunque el texto nunca lo confirma inequívocamente. La relaci&oacute;n central: Castel y Mar&iacute;a mantienen una relaci&oacute;n intensa y atormentada; los celos de Castel ante Hunter y ante la vida propia de Mar&iacute;a terminan en el crimen.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qu&eacute; significa la met&aacute;fora del t&uacute;nel que da t&iacute;tulo a la novela?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) El t&uacute;nel es el espacio f&iacute;sico subterr&aacute;neo donde Castel esconde el cuerpo de Mar&iacute;a despues de asesinarla; el t&iacute;tulo es una referencia literal al lugar del crimen</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) El t&uacute;nel es la met&aacute;fora de la conciencia solitaria e incomunicada del ser humano moderno: cada persona camina por su propio t&uacute;nel oscuro sin poder comunicarse verdaderamente con los dem&aacute;s; Castel crey&oacute; que Mar&iacute;a caminaba en un t&uacute;nel paralelo al suyo y que podr&iacute;an encontrarse, pero descubri&oacute; que los t&uacute;neles nunca se unen</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) El t&uacute;nel es una met&aacute;fora del nacimiento: Castel siente que al conocer a Mar&iacute;a "renaci&oacute;" como persona; el t&iacute;tulo alude al t&uacute;nel por el que pasan los ni&ntilde;os al nacer y que Castel revive psicol&oacute;gicamente en su relaci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) El t&uacute;nel es una cr&iacute;tica al sistema carcelario argentino: Castel describe la c&aacute;rcel como un t&uacute;nel del que es imposible escapar; el t&iacute;tulo alude a la injusticia de condenar a alguien que mat&oacute; por amor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La met&aacute;fora del t&uacute;nel es el n&uacute;cleo filosófico y emocional de la novela. En un pasaje central, Castel formula la imagen: cada ser humano camina por su propio t&uacute;nel subterr&aacute;neo, oscuro, solo, sin poder ver ni comunicarse con los dem&aacute;s. En un momento de su vida, Castel crey&oacute; vislumbrar en la pared de su t&uacute;nel la silueta de Mar&iacute;a caminando en un t&uacute;nel paralelo. Se obsesion&oacute; con la idea de que sus t&uacute;neles pod&iacute;an unirse, de que ella pod&iacute;a comprenderlo totalmente, de que no estaba solo. Pero al final comprende que los t&uacute;neles nunca se unen: cada conciencia humana est&aacute; condenada a su soledad radical. La imagen condensa los temas centrales de la novela: (1) La <B>soledad existencial</B> como condici&oacute;n constitutiva del ser humano. (2) La <B>incomunicaci&oacute;n</B>: ning&uacute;n ser humano puede ser completamente conocido por otro. (3) El <B>fracaso del amor obsesivo</B>: la ilusi&oacute;n de la fusi&oacute;n con el otro que termina en destrucci&oacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Explica por qu&eacute; Castel es un "narrador no confiable" y c&oacute;mo afecta esto a la lectura de la novela.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Castel es un narrador no confiable porque miente deliberadamente al lector sobre los hechos; sabe que no mat&oacute; a Mar&iacute;a pero finge haberlo hecho para proteger al verdadero asesino, que es Hunter</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Castel es no confiable porque su paranoica y su obsesi&oacute;n deforman involuntariamente su percepci&oacute;n de los hechos: interpreta pausas, silencios y ambig&uuml;edades como evidencias de traici&oacute;n cuando pueden tener explicaciones inocentes; el lector cr&iacute;tico debe "leer entre l&iacute;neas" para separar los hechos reales de la interpretaci&oacute;n delirante del narrador</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Castel es no confiable porque narra desde la c&aacute;rcel, donde sus cartas son censuradas por los guardias antes de ser publicadas; lo que el lector lee es la versi&oacute;n alterada por la censura carcelaria, no el texto original de Castel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Castel no es un narrador no confiable: su versi&oacute;n de los hechos es perfectamente objetiva y verificada por los testimonios de otros personajes que aparecen en un "ap&eacute;ndice" al final de la novela</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El concepto de <B>narrador no confiable</B> (<I>unreliable narrator</I>) fue formalizado por el cr&iacute;tico Wayne Booth en <I>The Rhetoric of Fiction</I> (1961): es un narrador cuya credibilidad est&aacute; comprometida por razones psicol&oacute;gicas, morales o cognitivas. Castel es el ejemplo m&aacute;s paradigm&aacute;tico de la literatura hispanoamericana. Su falta de confiabilidad no es deliberada (no miente conscientemente) sino estructural: su paranoia y su necesidad de tener raz&oacute;n deforman su percepci&oacute;n. Ejemplos concretos en el texto: (1) Castel concluye que Mar&iacute;a y Hunter son amantes a partir de indicios mínimos (una sonrisa, una pausa, el hecho de que Hunter est&eacute; en la estancia). (2) Interpreta cualquier ambigu&uuml;edad de Mar&iacute;a (su reserva, sus silencios) como evidencia de enga&ntilde;o. (3) Su "razonamiento" sobre los comportamientos de Mar&iacute;a es a menudo circular: parte de la conclusi&oacute;n (ella me traiciona) y busca pruebas que la confirmen. El efecto sobre el lector: debe mantener una <B>doble lectura</B> constante: lo que Castel dice que ocurri&oacute; y lo que "realmente" pudo haber ocurrido. Mar&iacute;a se vuelve un misterio irresuelto precisamente porque nunca la vemos directamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Analiza los celos de Castel como tema literario: &iquest;son una simple emoci&oacute;n amorosa o tienen una dimensi&oacute;n filos&oacute;fica m&aacute;s profunda en la novela?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Los celos de Castel son una simple emoci&oacute;n amorosa patol&oacute;gica; S&aacute;bato retrata un caso cl&iacute;nico de trastorno obsesivo-compulsivo sin ning&uacute;n inter&eacute;s filos&oacute;fico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Los celos de Castel tienen una dimensi&oacute;n filos&oacute;fica profunda: son la expresi&oacute;n de su deseo imposible de conocer totalmente al otro; no puede tolerar que Mar&iacute;a sea un ser aut&oacute;nomo con vida propia; los celos son el intento desesperado de eliminar la alteridad de Mar&iacute;a, de poseerla completamente, lo que refleja la incapacidad del ser humano de aceptar la independencia radical del otro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Los celos de Castel est&aacute;n totalmente justificados: Mar&iacute;a era efectivamente infiel con Hunter; S&aacute;bato presenta los celos como una respuesta racional y proporcionada a una traici&oacute;n real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Los celos son un pretexto narrativo que S&aacute;bato usa para criticar a la sociedad argentina machista; la novela es un manifiesto feminista que denuncia la violencia de g&eacute;nero a trav&eacute;s del personaje de Castel</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los celos de Castel en El T&uacute;nel trascienden la psicopatolog&iacute;a individual para convertirse en una met&aacute;fora filosófica. En el nivel superficial, son celos amorosos: Castel sospecha que Mar&iacute;a tiene una relaci&oacute;n con Hunter. Pero en el nivel profundo, los celos expresan algo m&aacute;s fundamental: la <B>intolerancia ante la opacidad del otro</B>. Castel no puede aceptar que Mar&iacute;a sea un ser aut&oacute;nomo, que tenga una vida interior que &eacute;l no controla ni conoce. Cada momento que ella no est&aacute; con &eacute;l es un momento en que ella existe independientemente de &eacute;l, lo que Castel vive como una traici&oacute;n ontol&oacute;gica. Esta dimensi&oacute;n filos&oacute;fica conecta con: (1) Sartre: "el infierno son los otros" &mdash;el otro es el ser que escapa a mi control y me define desde afuera. (2) Proust: en <I>En busca del tiempo perdido</I>, los celos de Marcel por Albertine tienen la misma estructura: el amado es tanto m&aacute;s deseable cuanto m&aacute;s opaco e inaccesible. (3) Levinas: la alteridad del otro como horizonte inaccesible. Los celos de Castel son, en definitiva, el fracaso del proyecto de conocer totalmente al otro &mdash;proyecto que la met&aacute;fora del t&uacute;nel ya declara imposible desde el inicio.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> S&aacute;bato fue antes cient&iacute;fico (f&iacute;sico) antes de ser escritor. &iquest;C&oacute;mo se refleja esa doble formaci&oacute;n en el personaje de Castel y en los temas de la novela?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) La formaci&oacute;n cient&iacute;fica de S&aacute;bato no tiene ninguna influencia en la novela; Castel es un pintor y la novela no menciona ni discute la ciencia en ning&uacute;n momento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) La doble formaci&oacute;n se refleja en Castel: como S&aacute;bato, Castel tiene una mente hiperracional que aplica la l&oacute;gica anal&iacute;tica a los sentimientos; la novela critica la ilusi&oacute;n de que la raz&oacute;n puede comprender y controlar la experiencia humana; la raz&oacute;n de Castel, lejos de salvarlo, lo conduce al crimen</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) S&aacute;bato convierte a Castel en f&iacute;sico nuclear para simbolizar la destrucci&oacute;n: as&iacute; como la bomba at&oacute;mica destruye la materia, Castel destruye el amor; la novela es una alegor&iacute;a de la amenaza nuclear de la Guerra Fr&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La formaci&oacute;n cient&iacute;fica de S&aacute;bato se refleja en el estilo de la novela: est&aacute; escrita con el rigor y la precisi&oacute;n de un informe cient&iacute;fico, sin metáforas ni recursos literarios, como un documento objetivo sobre un caso psicol&oacute;gico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La biograf&iacute;a de S&aacute;bato es inseparable de la compresi&oacute;n de su obra. Como doctor en F&iacute;sica que trabaj&oacute; en el Laboratorio Curie y el MIT, S&aacute;bato encarn&oacute; en s&iacute; mismo el conflicto entre la raz&oacute;n cient&iacute;fica y la experiencia humana. Su abandono de la f&iacute;sica por la literatura fue la expresi&oacute;n de su convicci&oacute;n de que la ciencia &mdash;por brillante que sea&mdash; no puede responder las preguntas fundamentales: &iquest;c&oacute;mo vivir? &iquest;c&oacute;mo amar? &iquest;c&oacute;mo soportar la soledad y la muerte? Esta tensi&oacute;n se proyecta en Castel: el pintor tiene una mente extraordinariamente racional y anal&iacute;tica; construye silogismos sobre los comportamientos de Mar&iacute;a con precisi&oacute;n casi cient&iacute;fica. Pero esa misma raz&oacute;n, aplicada al terreno de los afectos (que no obedecen a la l&oacute;gica formal), produce conclusiones delirantes. La novela es, entre otras cosas, una <B>cr&iacute;tica al cientificismo</B>: la raz&oacute;n instrumental que ha producido la tecnolog&iacute;a moderna es incapaz de resolver &mdash;y puede agravar&mdash; los problemas existenciales del ser humano. Esta cr&iacute;tica est&aacute; formulada expl&iacute;citamente en los ensayos de S&aacute;bato (<I>Uno y el universo</I>, 1945; <I>Hombres y engranajes</I>, 1951) y dramatizada en la novela.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Compara El T&uacute;nel de S&aacute;bato con El extranjero de Camus: similitudes y diferencias fundamentales.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Son id&eacute;nticas: ambas novelas tienen el mismo argumento (un artista mata a su amante por celos), el mismo narrador (en primera persona desde la c&aacute;rcel) y el mismo mensaje filos&oacute;fico (el amor es imposible en la modernidad)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Comparten: protagonista que mata a una mujer, narraci&oacute;n en primera persona, alienaci&oacute;n del individuo moderno, contexto existencialista. Se diferencian: Meursault (Camus) mata por indiferencia emocional; Castel (S&aacute;bato) mata por exceso de emoci&oacute;n y celos; Meursault no puede amar; Castel no puede dejar de amar obsesivamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Son opuestas en todo: El extranjero tiene un final feliz (Meursault es absuelto) mientras El T&uacute;nel termina tr&aacute;gicamente; Meursault est&aacute; casado y es padre de familia mientras Castel es soltero y aisaldo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) El extranjero influy&oacute; en El T&uacute;nel solo en el t&iacute;tulo: S&aacute;bato quiso homenajear a Camus con el nombre de su novela; por lo dem&aacute;s, ambas obras son completamente independientes en argumento, forma y filosof&iacute;a</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparaci&oacute;n entre El T&uacute;nel y El extranjero es uno de los ejercicios de literatura comparada m&aacute;s ricos del canon hispanoamericano. <B>Similitudes:</B> (1) Ambas tienen un protagonista masculino que mata a una mujer (o en la playa, en el caso de Meursault). (2) Narradas en primera persona, retrospectivamente. (3) El protagonista no muestra remordimiento convencional. (4) Ambas exploran la alienaci&oacute;n del individuo moderno. (5) Camus gestion&oacute; la publicaci&oacute;n francesa de El T&uacute;nel (admiraci&oacute;n real). <B>Diferencias fundamentales:</B> (1) <B>Motivaci&oacute;n:</B> Meursault mata de manera casi accidental, en un estado de indiferencia radical (el sol, el calor, el arma); Castel mata por una obsesi&oacute;n emocional extrema. (2) <B>Emocionalidad:</B> Meursault es el hombre de la indiferencia total (no llora en el funeral de su madre, no ama a Marie); Castel es el hombre del exceso emocional. (3) <B>Absurdo vs. angustia:</B> Camus explora el absurdo (la indiferencia del universo); S&aacute;bato explora la angustia (el dolor de la incomunicaci&oacute;n). (4) <B>Estilo:</B> Camus es fr&iacute;o, lacónico, minimalista; S&aacute;bato es apasionado, verboso, introspectivo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Qu&eacute; papel cumple el personaje de Allende (el marido ciego) en la novela y qu&eacute; significado tiene su suicidio al final?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Allende es un personaje puramente instrumental: su &uacute;nica funci&oacute;n es ser el marido de Mar&iacute;a para que Castel pueda sentirse culpable; su suicidio es un golpe de efecto sin significado simb&oacute;lico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Allende, el ciego, representa la paradoja de ver sin ver: es f&iacute;sicamente ciego pero puede ser m&aacute;s l&uacute;cido que Castel; su suicidio al saber de la "infidelidad" de Mar&iacute;a revela que Castel destruy&oacute; dos vidas con su crimen y plantea la pregunta de si Allende prefer&iacute;a "no ver" la realidad de su matrimonio conscientemente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Allende sobrevive al final de la novela: recupera la vista por una operaci&oacute;n y se convierte en el testigo principal en el juicio contra Castel; su testimonio es el que condena a Castel a la c&aacute;rcel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Allende es el verdadero protagonista de la novela: S&aacute;bato lo usa para demostrar que los ciegos tienen una comprensi&oacute;n superior de la realidad; al suicidarse, Allende "ve" por primera vez la verdad y no puede soportarla</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Allende es un personaje secundario pero de gran riqueza simb&oacute;lica. Su ceguera f&iacute;sica funciona en el nivel simb&oacute;lico como una paradoja: el ciego puede "ver" (comprender) lo que los que tienen vista no perciben. Castel, con toda su inteligencia racional, est&aacute; ciego ante la realidad de su propia paranoia; Allende, ciego f&iacute;sicamente, puede haber tenido una comprensi&oacute;n m&aacute;s paciente y amorosa de Mar&iacute;a. Su <B>suicidio al final</B> es uno de los momentos m&aacute;s perturbadores de la novela: Castel lo llama por tel&eacute;fono antes de matar a Mar&iacute;a para revelarle la "infidelidad" de su esposa. Allende, al enterarse, se suicida. Esto revela que Castel ha destruido <B>dos vidas</B>, no solo una. Adem&aacute;s, el suicidio de Allende plantea una pregunta perturbadora: <B>&iquest;ya lo sab&iacute;a y prefer&iacute;a no verlo?</B> ¿Su ceguera era tambi&eacute;n una elecci&oacute;n de "no ver"? Si es as&iacute;, Allende es la v&iacute;ctima m&aacute;s trag&eacute;dica: destroy&oacute; su propia ilusi&oacute;n al ser forzado a "ver" por la crueldad de Castel.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza cr&iacute;ticamente si Mar&iacute;a Iribarne es realmente infiel a Castel con Hunter o si esa infidelidad es una construcci&oacute;n paranoica del narrador. &iquest;Qu&eacute; evidencias del texto apoyan cada lectura?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) La infidelidad de Mar&iacute;a est&aacute; claramente establecida en el texto: Castel la sorprende en la cama con Hunter en la estancia; no hay lugar para la duda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) El texto deliberadamente no resuelve esta pregunta: los "indicios" que Castel usa son ambiguos (la presencia de Hunter en la estancia, una sonrisa, un silencio de Mar&iacute;a) y admiten interpretaciones inocentes; la incertidumbre es intencional en S&aacute;bato porque subraya que Castel mat&oacute; a Mar&iacute;a sin certeza real sobre su culpabilidad; el crimen es m&aacute;s trag&eacute;dico precisamente porque puede haber sido innecesario</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Mar&iacute;a confiesa expl&iacute;citamente su relaci&oacute;n con Hunter en una carta que le env&iacute;a a Castel en el cap&iacute;tulo 35; la pregunta sobre la infidelidad est&aacute; perfectamente resuelta en el texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Hunter es en realidad el hermano desaparecido de Castel; la "infidelidad" de Mar&iacute;a es en realidad una historia de familia que Castel malinterpreta por su paranoia y desconocimiento de su propia genealog&iacute;a</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es la pregunta central e irresuelve de la novela, y su ambig&uuml;edad es deliberada. <B>Lo que Castel presenta como "evidencias" de la infidelidad:</B> (1) Hunter est&aacute; en la estancia cuando Castel llega sin avisar. (2) Mar&iacute;a no desmiente categ&oacute;ricamente la acusaci&oacute;n de Castel. (3) Los silencios y la reserva de Mar&iacute;a. <B>Por qu&eacute; estas "evidencias" son insuficientes:</B> (1) Hunter es primo de Allende; tiene razones leg&iacute;timas para estar en la estancia de su primo. (2) Mar&iacute;a no desmiente porque Castel no le da oportunidad: la acusaci&oacute;n es violenta e hiperacional, y la respuesta de Mar&iacute;a ("&iquest;Y si fuera cierto?") puede ser una respuesta desesperada ante la imposibilidad de comunicarse con un Castel que ya ha decidido la "verdad". (3) Los silencios de Mar&iacute;a pueden ser reserva, melancolía o protecci&oacute;n ante la agresividad de Castel. La <B>ambig&uuml;edad intencional</B> de S&aacute;bato tiene una funci&oacute;n literaria precisa: si Mar&iacute;a realmente traicionaba a Castel, el crimen tendr&iacute;a una l&oacute;gica emocional comprensible. Pero si Castel mat&oacute; a alguien que quiz&aacute;s lo amaba sin traicionarlo, la tragedia es infinitamente m&aacute;s oscura: es el crimen de la paranoia, no de los celos justificados. Esta segunda lectura convierte la novela en una meditaci&oacute;n sobre la violencia que nace de la incapacidad de tolerar la opacidad del otro.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Analiza la novela desde una perspectiva de g&eacute;nero: &iquest;c&oacute;mo construye S&aacute;bato la figura de Mar&iacute;a y qu&eacute; critica feminista puede hacerse al texto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) S&aacute;bato construye a Mar&iacute;a como un personaje plenamente desarrollado y aut&oacute;nomo: tiene voz propia, abundantes monólogos interiores y es tan protagonista como Castel; la novela es un modelo de representaci&oacute;n feminista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Mar&iacute;a es construida exclusivamente a trav&eacute;s de los ojos de Castel: nunca tiene voz propia ni perspectiva independiente en la narraci&oacute;n; es un objeto del deseo y la obsesi&oacute;n del narrador masculino; la cr&iacute;tica feminista se&ntilde;ala que su muerte sileneia definitivamente a quien ya estaba silenciada por la forma narrativa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) La perspectiva de g&eacute;nero no aplica a El T&uacute;nel porque la novela transcurre en los a&ntilde;os 40 cuando el feminismo no exist&iacute;a; analizar la novela desde el g&eacute;nero es un anacronismo metodol&oacute;gico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) S&aacute;bato escribe deliberadamente desde una perspectiva feminista: critica a Castel como representante del machismo argentino; Mar&iacute;a es el &uacute;nico personaje moralmente superior de la novela y su muerte es una indignaci&oacute;n que S&aacute;bato condena expl&iacute;citamente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La lectura de g&eacute;nero de El T&uacute;nel es una de las m&aacute;s productivas y controvertidas de la cr&iacute;tica contempor&aacute;nea. <B>La construcci&oacute;n de Mar&iacute;a:</B> siendo narrada en primera persona por Castel, Mar&iacute;a nunca tiene voz directa en la novela. Todo lo que sabemos de ella proviene del filtro paranoico de Castel. Sus pensamientos, sus motivaciones, sus sentimientos reales son permanentemente inaccesibles &mdash;no porque ella sea misteriosa sino porque la forma narrativa la silencia estructuralmente. Ella es, en t&eacute;rminos narratol&oacute;gicos, el <B>objeto de la mirada</B> masculina, no el sujeto de su propia historia. <B>La cr&iacute;tica feminista</B> (Julia Kristeva, Elaine Showalter aplicados al texto) señala: (1) Mar&iacute;a es definida enteramente por su relaci&oacute;n con hombres (el marido, el amante potencial, el obsesionado). (2) Su muerte la silencia definitivamente: quien ya estaba sin voz en vida queda eternamente sin voz en la muerte. (3) La novela puede leerse como la historia de un <B>feminicidio</B> narrado desde la perspectiva del agresor que se autojustifica. <B>Matiz importante:</B> el hecho de que Castel sea claramente un narrador no confiable y paranoico puede leerse como la cr&iacute;tica impl&iacute;cita de S&aacute;bato hacia el narrador masculino obsesivo &mdash;aunque este matiz no elimina la problematicidad de dar exclusivamente la voz al agresor.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Relaciona el tema de la incomunicaci&oacute;n en El T&uacute;nel con el concepto sartriano de "el infierno son los otros" y con la filosof&iacute;a de Levinas sobre la alteridad.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) S&aacute;bato no conoc&iacute;a a Sartre ni a Levinas; sus ideas sobre la incomunicaci&oacute;n provienen exclusivamente de la tradici&oacute;n cat&oacute;lica argentina y no tienen ning&uacute;n v&iacute;nculo con la filosof&iacute;a existencialista europea</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La novela dramatiza la tesis sartriana ("el infierno son los otros": el otro me niega mi libertad al observarme y definirme desde afuera) y la tensi&oacute;n con Levinas (la alteridad del otro como horizonte &eacute;tico que exige respeto, no posesi&oacute;n); Castel encarna la negaci&oacute;n violenta de la alteridad de Mar&iacute;a: al no poder tolerarla como ser diferente e independiente, la aniquila</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La novela refuta a Sartre: S&aacute;bato demuestra que el problema no son "los otros" sino el propio yo; el infierno est&aacute; dentro de Castel, no en Mar&iacute;a; la filosof&iacute;a existencialista es incorrecta y S&aacute;bato lo prueba con la novela</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Levinas es el fil&oacute;sofo que m&aacute;s directamente influy&oacute; en S&aacute;bato para escribir El T&uacute;nel: ambos nacieron el mismo a&ntilde;o y se conocieron en Par&iacute;s en los a&ntilde;os 40; la novela es la ilustraci&oacute;n narrativa del pensamiento de Levinas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relaci&oacute;n entre El T&uacute;nel y la filosof&iacute;a existencialista es profunda y permite una lectura muy rica. <B>Sartre y "el infierno son los otros"</B> (de la obra teatral <I>Huis Clos</I>, 1944): la frase no significa que los dem&aacute;s sean malvados, sino que el otro me define desde afuera, captura mi libertad con su mirada, me reduce a un objeto en su mundo. Para Sartre, la conciencia ajena es una amenaza ontol&oacute;gica. En El T&uacute;nel, Castel vive esto intensamente: la existencia de Mar&iacute;a independiente de &eacute;l (sus otras relaciones, su vida propia) es una amenaza intolerable para su ego. <B>Levinas y la alteridad:</B> Emmanuel Levinas (1906&ndash;1995) propone la tesis opuesta a Sartre: el otro no es mi infierno sino mi responsabilidad &eacute;tica; el rostro del otro me exige respeto, no control. "El otro" (l'Autrui) es sagrado en su irreductible diferencia. Desde Levinas, el crimen de Castel es la violaci&oacute;n suprema de la &eacute;tica: al no poder aceptar la alteridad de Mar&iacute;a (su vida propia, su misterio), la destruye. La novela puede leerse como la dramatizaci&oacute;n del fracaso &eacute;tico de quien trata al otro no como "rostro" (Levinas) sino como objeto de posesi&oacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> S&aacute;bato afirm&oacute; en sus ensayos que la novela puede explorar verdades sobre el ser humano que la ciencia no puede alcanzar. &iquest;C&oacute;mo demuestra El T&uacute;nel esta tesis?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El T&uacute;nel demuestra la tesis de S&aacute;bato mostrando que la psicolog&iacute;a cl&iacute;nica puede explicar perfectamente el caso de Castel; la novela es en realidad un tratado de psicolog&iacute;a cl&iacute;nica disfrazado de ficci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El T&uacute;nel demuestra la tesis al explorar la experiencia subjetiva de la soledad, los celos y la incomunicaci&oacute;n desde adentro, algo que ning&uacute;n estudio cient&iacute;fico puede hacer; la novela nos hace vivir la paranoia de Castel, no solo describirla; la literatura produce una forma de conocimiento emp&aacute;tico que la ciencia (que trabaja con datos externos y generalizables) no puede producir</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El T&uacute;nel demuestra la tesis mostrando que la ciencia moderna es moralmente corrupta; Castel, como ex-cient&iacute;fico, encarna los valores de la ciencia (la raz&oacute;n fr&iacute;a, el control, la manipulaci&oacute;n) que llevan al crimen</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) S&aacute;bato no afirm&oacute; esa tesis; siempre consider&oacute; que la ciencia y la literatura eran complementarias y de igual valor; su abandono de la f&iacute;sica fue por razones econ&oacute;micas, no filos&oacute;ficas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>S&aacute;bato articul&oacute; expl&iacute;citamente esta tesis en <I>El escritor y sus fantasmas</I> (1963): la novela puede explorar territorios de la experiencia humana &mdash;el dolor, la angustia, el amor, la locura&mdash; que la ciencia, por su método (objetividad, generalizaci&oacute;n, externalizaci&oacute;n) no puede alcanzar. La ciencia describe los celos de Castel desde afuera (como psicolog&iacute;a cl&iacute;nica: "trastorno paranoico de la personalidad"); la novela nos hace <B>vivir</B> los celos de Castel desde adentro. Esta diferencia epistemológica es decisiva: el lector de El T&uacute;nel no solo entiende intelectualmente que Castel es paranoico; <B>experimenta</B> la l&oacute;gica interna de la paranoia, ve el mundo como Castel lo ve, y momentáneamente la paranoia parece razonable. Esta capacidad de la literatura &mdash;producir conocimiento emp&aacute;tico, hacer experimentar desde adentro lo que la ciencia solo puede describir desde afuera&mdash; es lo que S&aacute;bato llama el valor irreemplazable de la novela. La literatura no es mejor que la ciencia; es diferente: accede a dimensiones de la experiencia subjetiva que la ciencia no puede alcanzar por su propia naturaleza metodol&oacute;gica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Analiza el sentido de la estructura circular de El T&uacute;nel: la novela comienza con el crimen ya cometido y termina en el mismo punto. &iquest;Qu&eacute; efectos produce esta decisi&oacute;n formal sobre la lectura?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La estructura circular es un defecto formal de la novela: S&aacute;bato no sab&iacute;a c&oacute;mo terminarla y simplemente volvió al punto de partida; es una soluci&oacute;n f&aacute;cil que los cr&iacute;ticos han criticado unánimemente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La estructura circular produce efectos formales precisos: elimina el suspenso conventional (reemplazado por iron&iacute;a dram&aacute;tica), convierte la narraci&oacute;n en una trampa sin salida (como el t&uacute;nel del t&iacute;tulo), y subraya la imposibilidad de escapar del destino: Castel no aprende nada, no crece, no cambia; el t&uacute;nel es tambi&eacute;n la estructura formal de la novela</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La estructura circular tiene un significado cat&oacute;lico: como el rosario o la misa, vuelve al principio para indicar que el arrepentimiento de Castel es sincero y que la historia puede recomenzar desde la gracia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La estructura circular es una decisi&oacute;n del editor, no del autor; el texto original de S&aacute;bato era lineal y cronol&oacute;gico; fue la editorial Sur quien decidi&oacute; reordenar los cap&iacute;tulos para crear el efecto circular</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La estructura circular de El T&uacute;nel es una decisi&oacute;n formal de enorme inteligencia que produce m&uacute;ltiples efectos: (1) <B>Iron&iacute;a dram&aacute;tica permanente:</B> el lector sabe desde la primera p&aacute;gina que Mar&iacute;a morir&aacute;; eso significa que cada escena de amor entre Castel y Mar&iacute;a est&aacute; cargada de la sombra del desenlace conocido. La ternura se vuelve tr&aacute;gica, la felicidad efímera y la violencia inevitable. (2) <B>Forma que refleja el contenido:</B> el t&uacute;nel del t&iacute;tulo no solo es la met&aacute;fora de la soledad existencial; es tambi&eacute;n la <B>estructura formal de la novela</B>. Un t&uacute;nel no tiene salida hacia la luz; la narraci&oacute;n de Castel tampoco: empieza y termina en el mismo punto sin iluminaci&oacute;n, sin redenci&oacute;n, sin crecimiento. (3) <B>Castel no cambia:</B> la novela no es un Bildungsroman (novela de formaci&oacute;n); Castel no aprende nada de su experiencia. En el &uacute;ltimo cap&iacute;tulo está igual que en el primero: solo en la c&aacute;rcel, convencido de su propia l&oacute;gica, sin acceso al mundo exterior. (4) <B>La confesi&oacute;n como trampa:</B> Castel escribe para ser comprendido, pero su texto lo expone sin que &eacute;l lo sepa. La circularidad refuerza este efecto: la confesi&oacute;n no produce catarsis ni redenci&oacute;n; vuelve al mismo punto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Compara a Juan Pablo Castel con el "hombre del subsuelo" de Dostoievski y con Raskolnikov de Crimen y Castigo: &iquest;qu&eacute; tradici&oacute;n literaria inaugura Dostoievski que S&aacute;bato recoge?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La comparaci&oacute;n con Dostoievski es incorrecta: Castel es un personaje positivo y heroico (el artista incomprendido que lucha por el amor verdadero) mientras Raskolnikov y el hombre del subsuelo son puras figuras del mal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Dostoievski inaugura la tradici&oacute;n del narrador-protagonista que razona obsesivamente sobre su propio crimen o su propia inferioridad; S&aacute;bato la recoge en Castel: los tres personajes (hombre del subsuelo, Raskolnikov, Castel) comparten la hiperraci&oacute;n, el desprecio al mundo, la incapacidad de relacionarse normalmente con los dem&aacute;s y la autojustificaci&oacute;n intelectual de conductas moralmente aberrantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Castel es el opuesto al hombre del subsuelo: Dostoievski presenta un personaje resignado y pasivo; Castel es activo, decide, actua; la diferencia es que Castel tiene el coraje que el hombre del subsuelo nunca tuvo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) S&aacute;bato no ley&oacute; a Dostoievski; la similitud entre Castel y los personajes rusos es una coincidencia; S&aacute;bato proviene exclusivamente de la tradici&oacute;n narrativa argentina criolla sin influencias europeas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La influencia de Dostoievski en S&aacute;bato es reconocida expl&iacute;citamente por el propio escritor argentino y es una de las m&aacute;s productivas de la literatura hispanoamericana. <B>El hombre del subsuelo</B> (<I>Memorias del subsuelo</I>, 1864): un funcionario menor que vive aislado de la sociedad, que se odia a s&iacute; mismo y la odia, que razona obsesivamente sobre su propia inferioridad y su desprecio al mundo, que no puede actuar porque el exceso de conciencia paraliza la voluntad. <B>Raskolnikov</B> (<I>Crimen y castigo</I>, 1866): un estudiante brillante que mata a una anciana para demostrar (a s&iacute; mismo) que es un hombre "extraordinario" por encima de la moral convencional; luego se destruye a s&iacute; mismo con la culpa. <B>Castel:</B> re&uacute;ne ambos: el aislamiento y el desprecio del hombre del subsuelo + el crimen racionalizado y la culpa de Raskolnikov. Los rasgos compartidos: (1) <B>Hiperraci&oacute;n:</B> los tres razonan obsesivamente, construyendo sistemas intelectuales sobre sus propias acciones. (2) <B>Incapacidad de relaci&oacute;n normal:</B> los tres son incapaces de relacionarse afectivamente sin destruir la relaci&oacute;n. (3) <B>Autojustificaci&oacute;n intelectual de lo inaceptable:</B> los tres usan la inteligencia para dar una pátina de razonabilidad a conductas moralmente reprobables. <B>La tradici&oacute;n que inaugura Dostoievski:</B> el antih&eacute;roe intelectual que fracasa existencialmente no a pesar de su inteligencia sino <B>por ella</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> S&aacute;bato presidi&oacute; la CONADEP y elabor&oacute; el informe Nunca M&aacute;s sobre los desaparecidos de la dictadura argentina. &iquest;Existe alguna relaci&oacute;n tem&aacute;tica entre este compromiso humanitario y los temas de El T&uacute;nel (publicada 36 a&ntilde;os antes)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) No existe ninguna relaci&oacute;n: El T&uacute;nel es una novela de amor psicol&oacute;gico sin ning&uacute;n contenido pol&iacute;tico o social; la labor de S&aacute;bato en la CONADEP fue una actividad completamente separada de su obra literaria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Existe una coherencia profunda: tanto en El T&uacute;nel como en la CONADEP, S&aacute;bato explora las consecuencias de la negaci&oacute;n de la humanidad del otro; en la novela, Castel destruye a Mar&iacute;a al no poder aceptar su alteridad; en la dictadura, el terrorismo de Estado destruy&oacute; personas al negarles su condici&oacute;n humana; en ambos casos el horror surge de la incapacidad de reconocer al otro como sujeto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La relaci&oacute;n es opuesta: El T&uacute;nel es una defensa impl&iacute;cita de la violencia; S&aacute;bato present&oacute; a Castel como un h&eacute;roe; la CONADEP fue una contradicci&oacute;n en su obra porque &eacute;l hab&iacute;a glorificado el crimen en su novela</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) S&aacute;bato no presidi&oacute; la CONADEP; confundes a Ernesto S&aacute;bato con otro intelectual argentino; la CONADEP fue presidida por Jorge Luis Borges</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La pregunta apunta a una de las dimensiones m&aacute;s interesantes de la figura de S&aacute;bato: la coherencia entre su obra literaria y su compromiso humanitario. <B>El T&uacute;nel (1948)</B> explora, a escala individual y psicol&oacute;gica, el horror que nace de la negaci&oacute;n de la alteridad del otro: Castel destruye a Mar&iacute;a porque no puede aceptarla como ser aut&oacute;nomo, irreductible, misterioso, diferente de &eacute;l. No puede tolerar que ella tenga una vida propia fuera de su control. <B>La dictadura argentina (1976&ndash;1983)</B> realiz&oacute; a escala pol&iacute;tica y masiva el mismo mecanismo: desapareci&oacute; a 30.000 personas negándoles su condici&oacute;n humana, su identidad, su alteridad. El terrorismo de Estado es la negaci&oacute;n masiva del "rostro" del otro en el sentido de Levinas. <B>S&aacute;bato en la CONADEP</B> (1983&ndash;1984) realiz&oacute; exactamente el trabajo opuesto: recuperar la humanidad, el nombre y el rostro de cada desaparecido, restituir su alteridad. El informe <I>Nunca M&aacute;s</I> es un acto de reconocimiento del otro como sujeto. La coherencia es profunda: en la novela S&aacute;bato dramatiz&oacute; el fracaso de ese reconocimiento; en la CONADEP, intent&oacute; repararlo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Desde la perspectiva de la teor&iacute;a de la recepc&iacute;on (Hans Robert Jauss), analiza c&oacute;mo diferentes &eacute;pocas y lectores han le&iacute;do El T&uacute;nel de manera distinta, y qu&eacute; dice esto sobre la riqueza de la novela.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La teor&iacute;a de la recepci&oacute;n no aplica a El T&uacute;nel porque la novela tiene un significado fijo e inmutable que S&aacute;bato estableci&oacute; en sus ensayos; cualquier lectura diferente a la del autor es una deformaci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Distintas &eacute;pocas han le&iacute;do El T&uacute;nel desde distintos "horizontes de expectativa": los lectores del 48 la leyeron como novela existencialista; los del psicoan&aacute;lisis la leyeron como caso cl&iacute;nico; los feministas la leen como feminicidio narrado por el agresor; la generaci&oacute;n post-dictadura la lee como alegor&iacute;a del autoritarismo; esta pluralidad de lecturas revela la riqueza sem&aacute;ntica de la novela</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La teor&iacute;a de la recepci&oacute;n demuestra que El T&uacute;nel es una novela menor: al ser susceptible de m&uacute;ltiples lecturas, prueba que su significado es ambiguo e indefinido; las grandes obras tienen un &uacute;nico significado claro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Jauss analiz&oacute; espec&iacute;ficamente El T&uacute;nel en su obra principal (<I>La historia de la literatura como provocaci&oacute;n</I>, 1967) y concluy&oacute; que era la novela hispanoamericana que mejor ilustraba su teor&iacute;a de los horizontes de expectativa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Hans Robert Jauss</B> (1921&ndash;1997), de la Escuela de Constanza, propuso en <I>La historia de la literatura como provocaci&oacute;n de la ciencia literaria</I> (1967) el concepto de <B>"horizonte de expectativa"</B>: cada &eacute;poca y cada comunidad de lectores se acerca a un texto con un conjunto de expectativas, valores y preocupaciones que determinan lo que ven en &eacute;l. La pluralidad de lecturas no es una debilidad sino una marca de la riqueza sem&aacute;ntica de la obra. <B>El T&uacute;nel a lo largo del tiempo:</B> (1) <B>1948&ndash;1960 (existencialismo en auge):</B> la novela es le&iacute;da como contribuci&oacute;n al existencialismo; Castel como el hombre moderno alienado; la soledad y la incomunicaci&oacute;n como temas universales. Camus la celebra desde este horizonte. (2) <B>1960&ndash;1980 (psicoan&aacute;lisis y estructuralismo):</B> lecturas cl&iacute;nicas de Castel (paranoia, narcisismo); lecturas estructuralistas del narrador no confiable; el texto como mecanismo formal. (3) <B>1980&ndash;presente (feminismo):</B> Mar&iacute;a como v&iacute;ctima silenciada; Castel como prototipo del agresor narcisista; el texto como representaci&oacute;n (involuntaria) del feminicidio. (4) <B>Post-dictadura argentina:</B> la destrucci&oacute;n del otro como alegor&iacute;a del terrorismo de Estado; la CONADEP como contexto de relectura. Esta pluralidad de lecturas demuestra que El T&uacute;nel, lejos de ser una novela de tesis &uacute;nica, es una obra abierta en el sentido de Umberto Eco: sus significados se multiplican con cada nuevo lector y cada nueva &eacute;poca.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

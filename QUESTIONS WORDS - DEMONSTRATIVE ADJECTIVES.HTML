@@ -1,0 +1,454 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Question Words and Demonstrative Adjectives - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 3 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Question Words and Demonstrative Adjectives</H1>
+<DIV CLASS="sub">Palabras interrogativas (Wh- questions) &middot; Adjetivos demostrativos &middot; This / That / These / Those &middot; Estructura de preguntas</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- SECCIÓN 1: QUESTION WORDS -->
+<H3 ID="questionwords">1. Question Words — Palabras Interrogativas (Wh- Words)</H3>
+
+Las <B>question words</B> (también llamadas <I>Wh- words</I>, porque la mayoría empieza con "wh-") son palabras que se colocan al inicio de una pregunta para solicitar información específica: una persona, un lugar, un momento, una razón, una manera, una cantidad, etc.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Question word</TH><TH>Significado</TH><TH>Se usa para preguntar por...</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>What</B></TD><TD>qué</TD><TD>cosas, acciones, identificación general</TD><TD><SPAN CLASS="eng">What is your name?</SPAN></TD></TR>
+<TR><TD><B>Who</B></TD><TD>quién</TD><TD>personas (sujeto de la oración)</TD><TD><SPAN CLASS="eng">Who is your English teacher?</SPAN></TD></TR>
+<TR><TD><B>Where</B></TD><TD>dónde</TD><TD>lugar</TD><TD><SPAN CLASS="eng">Where are you from?</SPAN></TD></TR>
+<TR><TD><B>When</B></TD><TD>cuándo</TD><TD>tiempo, momento</TD><TD><SPAN CLASS="eng">When is your birthday?</SPAN></TD></TR>
+<TR><TD><B>Why</B></TD><TD>por qué</TD><TD>razón, motivo</TD><TD><SPAN CLASS="eng">Why are you late?</SPAN></TD></TR>
+<TR><TD><B>How</B></TD><TD>cómo</TD><TD>manera, modo, estado</TD><TD><SPAN CLASS="eng">How are you today?</SPAN></TD></TR>
+<TR><TD><B>Which</B></TD><TD>cuál(es)</TD><TD>elección entre opciones limitadas y conocidas</TD><TD><SPAN CLASS="eng">Which book is yours, this one or that one?</SPAN></TD></TR>
+<TR><TD><B>Whose</B></TD><TD>de quién</TD><TD>posesión</TD><TD><SPAN CLASS="eng">Whose backpack is this?</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Combinaciones de "How" — variaciones muy frecuentes en exámenes:</H4>
+<UL>
+<LI><B>How much</B> — cantidad de sustantivos incontables. <BR><SPAN CLASS="eng">Ejemplo: How much water is in the bottle?</SPAN></LI>
+<LI><B>How many</B> — cantidad de sustantivos contables (plural). <BR><SPAN CLASS="eng">Ejemplo: How many students are in your class?</SPAN></LI>
+<LI><B>How old</B> — edad. <BR><SPAN CLASS="eng">Ejemplo: How old is your grandmother?</SPAN></LI>
+<LI><B>How often</B> — frecuencia. <BR><SPAN CLASS="eng">Ejemplo: How often are you absent?</SPAN></LI>
+<LI><B>How long</B> — duración (tiempo) o longitud (distancia/objeto). <BR><SPAN CLASS="eng">Ejemplo: How long is the exam?</SPAN></LI>
+<LI><B>How far</B> — distancia. <BR><SPAN CLASS="eng">Ejemplo: How far is the university from here?</SPAN></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>What vs. Which — error muy frecuente en exámenes de admisión:</B> Se usa <B>what</B> cuando las opciones son abiertas e ilimitadas: <I>"What is your favorite subject?"</I> (puede ser cualquiera). Se usa <B>which</B> cuando existe un grupo limitado y conocido de opciones: <I>"Which subject do you prefer, Math or English?"</I></DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Who vs. Whose — no confundir:</B> <B>Who</B> pregunta por la persona que realiza la acción (sujeto): <I>"Who is calling?"</I> = ¿Quién llama? <B>Whose</B> pregunta por el dueño de algo (posesión) y siempre va acompañado de un sustantivo: <I>"Whose phone is calling?"</I> = ¿De quién es el teléfono que está llamando?</DIV>
+
+<!-- SECCIÓN 2: ESTRUCTURA -->
+<H3 ID="estructura">2. Estructura de Preguntas con Wh- Words y To Be</H3>
+
+Cuando una pregunta con <I>question word</I> incluye el verbo <I>to be</I>, el orden de las palabras es: <B>Wh- word + to be + sujeto + complemento?</B> Es la misma inversión que en las preguntas simples de <I>to be</I>, solo que ahora la pregunta empieza con la palabra interrogativa.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Pregunta</TH><TH>Respuesta</TH></TR>
+<TR><TD><SPAN CLASS="eng">What is your name?</SPAN></TD><TD><SPAN CLASS="eng">My name is Camila.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="eng">Where are you from?</SPAN></TD><TD><SPAN CLASS="eng">I'm from Trujillo.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="eng">Who is your favorite teacher?</SPAN></TD><TD><SPAN CLASS="eng">My favorite teacher is Mr. Díaz.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="eng">How old are you?</SPAN></TD><TD><SPAN CLASS="eng">I am 17 years old.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="eng">Why are they nervous?</SPAN></TD><TD><SPAN CLASS="eng">They are nervous because of the exam.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="eng">Whose books are these?</SPAN></TD><TD><SPAN CLASS="eng">They are my brother's books.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">💡 <B>Nota clave:</B> A diferencia del español, en inglés la palabra interrogativa <B>nunca se omite</B> y siempre va al inicio absoluto de la oración, antes incluso del verbo. No existe la posibilidad de decir <I>"Is what your name?"</I> — el orden correcto es siempre <B>Wh- word + verbo + sujeto</B>.</DIV>
+
+<!-- SECCIÓN 3: DEMONSTRATIVE ADJECTIVES -->
+<H3 ID="demonstrative">3. Demonstrative Adjectives — Adjetivos Demostrativos</H3>
+
+Los <B>adjetivos demostrativos</B> (<I>this, that, these, those</I>) acompañan a un sustantivo para señalar su <B>ubicación</B> (cerca o lejos del hablante) y su <B>número</B> (singular o plural).
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>&nbsp;</TH><TH>Singular</TH><TH>Plural</TH></TR>
+<TR><TD><B>Cerca del hablante</B></TD><TD><B>this</B> (este, esta, esto)</TD><TD><B>these</B> (estos, estas)</TD></TR>
+<TR><TD><B>Lejos del hablante</B></TD><TD><B>that</B> (ese/aquel, esa/aquella)</TD><TD><B>those</B> (esos/aquellos, esas/aquellas)</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Reglas de concordancia (agreement):</H4>
+<UL>
+<LI><B>this</B> + sustantivo singular + <B>is</B>. <BR><SPAN CLASS="eng">Ejemplo: This pencil is mine.</SPAN></LI>
+<LI><B>these</B> + sustantivo plural + <B>are</B>. <BR><SPAN CLASS="eng">Ejemplo: These pencils are mine.</SPAN></LI>
+<LI><B>that</B> + sustantivo singular + <B>is</B>. <BR><SPAN CLASS="eng">Ejemplo: That building is very old.</SPAN></LI>
+<LI><B>those</B> + sustantivo plural + <B>are</B>. <BR><SPAN CLASS="eng">Ejemplo: Those buildings are very old.</SPAN></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Regla de examen — concordancia obligatoria:</B> El adjetivo demostrativo SIEMPRE debe concordar en número con el sustantivo que acompaña. <I>"This books"</I> es INCORRECTO (this = singular, books = plural). Debe ser <I>"These books"</I> o <I>"This book"</I>.</DIV>
+
+<H4>This/That/These/Those también funcionan como pronombres demostrativos</H4>
+Cuando no acompañan a un sustantivo explícito (porque ya se entiende por el contexto), funcionan como <B>pronombres</B> y reemplazan al sustantivo completo. <BR><SPAN CLASS="eng">Ejemplo: "Is this your bag?" "Yes, this is mine."</SPAN> (aquí "this" reemplaza a "this bag").
+
+<DIV CLASS="ej">📌 <B>Distancia física y también temporal:</B> <I>This/these</I> se usan para lo cercano en el espacio o en el tiempo (el presente, lo que se está mencionando ahora): <SPAN CLASS="eng">"This year is very important for me."</SPAN> <I>That/those</I> se usan para lo lejano en el espacio o en el tiempo (el pasado, algo ya mencionado): <SPAN CLASS="eng">"That year was very difficult for my family."</SPAN></DIV>
+
+<!-- SECCIÓN 4: COMBINANDO -->
+<H3 ID="combinando">4. Combinando Question Words y Demonstrative Adjectives</H3>
+
+En los exámenes de admisión es muy frecuente encontrar preguntas que combinan ambos temas: una <I>question word</I> que pregunta por la identidad, el dueño o la cantidad de algo señalado con un adjetivo demostrativo.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Pregunta combinada</TH><TH>Uso</TH></TR>
+<TR><TD><SPAN CLASS="eng">What is this?</SPAN></TD><TD>Pedir identificación de un objeto singular cercano.</TD></TR>
+<TR><TD><SPAN CLASS="eng">What are these?</SPAN></TD><TD>Pedir identificación de objetos plurales cercanos.</TD></TR>
+<TR><TD><SPAN CLASS="eng">Whose is that?</SPAN></TD><TD>Preguntar el dueño de un objeto singular lejano (uso pronominal).</TD></TR>
+<TR><TD><SPAN CLASS="eng">Whose books are those?</SPAN></TD><TD>Preguntar el dueño de objetos plurales lejanos (uso adjetival).</TD></TR>
+<TR><TD><SPAN CLASS="eng">Which is your favorite, this one or that one?</SPAN></TD><TD>Elegir entre una opción cercana y una lejana.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Cuidado con la concordancia del verbo to be:</B> El verbo siempre concuerda con el número del demostrativo, NUNCA con el de la question word. En <I>"What are those?"</I>, "those" es plural → se usa <B>are</B>, sin importar que "what" no tenga número propio.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">8</DIV><DIV CLASS="dk-label">Question words<BR>principales</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">4</DIV><DIV CLASS="dk-label">Demonstrative<BR>adjectives</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">this</DIV><DIV CLASS="dk-label">Singular<BR>y cercano</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">those</DIV><DIV CLASS="dk-label">Plural<BR>y lejano</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- =================== EJERCICIOS =================== -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de práctica</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; Reconocimiento y uso directo</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Qué <I>question word</I> se usa para preguntar por un lugar? — <SPAN CLASS="eng">"_____ are you from?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) When</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Where</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Who</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Why</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Where</B><BR><I>Where</I> se usa exclusivamente para preguntar por un lugar. <I>When</I> pregunta por tiempo, <I>who</I> por personas y <I>why</I> por razones.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Elige el adjetivo demostrativo correcto (objeto singular, cercano al hablante): <SPAN CLASS="eng">"_____ pencil is mine."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) This</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) These</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Those</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) That</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) This</B><BR>"Pencil" es singular y el contexto indica cercanía ("mine", el objeto que el hablante sostiene o señala) → se usa <B>this</B>. "These" y "those" son plurales; "that" indicaría lejanía.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Completa: <SPAN CLASS="eng">"_____ is your name?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Who</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Where</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) What</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Whose</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) What</B><BR>Se pregunta por la identificación de algo (el nombre) → se usa <B>what</B>. "Who" se usaría para preguntar por una persona como sujeto ("Who is your friend?"), no por el nombre en sí mismo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Elige el demostrativo correcto (objetos plurales, cercanos): <SPAN CLASS="eng">"_____ are my shoes."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) This</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) That</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) These</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Those</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) These</B><BR>"Shoes" es plural y cercano al hablante → <B>these</B> + <B>are</B>. "Those" sería correcto solo si los zapatos estuvieran lejos del hablante.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Qué <I>question word</I> se usa para preguntar por una persona (sujeto)? — <SPAN CLASS="eng">"_____ is calling you?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) What</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Who</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Whose</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Which</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Who</B><BR><I>Who</I> pregunta por la persona que realiza la acción. <I>Whose</I> preguntaría por el dueño de algo, no por quién hace la acción.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Elige el demostrativo correcto (montañas lejanas, plural): <SPAN CLASS="eng">"_____ mountains are very tall."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) This</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) That</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) These</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Those</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d) Those</B><BR>"Mountains" es plural y lejano → se usa <B>those</B>. "These" sería incorrecto porque indica cercanía, no lejanía.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Completa con la combinación correcta de <I>how</I>: <SPAN CLASS="eng">"_____ are you?"</SPAN> (preguntar por la edad).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) How much</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) How old</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) How long</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) How often</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) How old</B><BR>Para preguntar por la edad de una persona se usa específicamente <B>how old</B>. "How much" pregunta por cantidad incontable, "how long" por duración o longitud, y "how often" por frecuencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Cuál de estas oraciones tiene concordancia correcta entre el demostrativo y el sustantivo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) This books are interesting.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) These book is interesting.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) That books are interesting.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Those books are interesting.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d) Those books are interesting.</B><BR>"Books" es plural → necesita un demostrativo plural: <B>these</B> (cerca) o <B>those</B> (lejos), siempre con <B>are</B>. Las opciones a), b) y c) mezclan un demostrativo singular con un sustantivo o verbo plural, o viceversa.</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; Aplicación y transformación</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Selecciona la opción correcta: el hablante le ofrece a su amigo dos camisas, una azul y una roja, y le pregunta <SPAN CLASS="eng">"_____ shirt do you prefer, the blue one or the red one?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) What</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Which</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Whose</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Who</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Which</B><BR>Existen solo dos opciones conocidas y limitadas (la camisa azul o la roja) → se usa <B>which</B>, no "what". "What" se usaría si las opciones fueran abiertas e ilimitadas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Un estudiante señala un edificio muy distante y pregunta por su dueño. ¿Cuál es la pregunta correcta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) "Whose is this building?" (señalando algo lejano)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) "Whose building is that?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) "Who is that building?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) "Whose are those building?"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) "Whose building is that?"</B><BR>El edificio es singular y lejano → corresponde <B>that</B> (no "this" ni "those"). Se usa <B>whose</B> + sustantivo para preguntar por el dueño. "Who" (opción c) sería incorrecto porque "who" pregunta por personas como sujeto, no por posesión.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Completa el diálogo con la cantidad correcta de <I>how</I>: <SPAN CLASS="eng">"_____ sugar do you need for the cake?" "Just one cup."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) How many</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) How much</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) How long</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) How old</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) How much</B><BR>"Sugar" (azúcar) es un sustantivo <B>incontable</B> → se usa <B>how much</B>. "How many" se usaría solo con sustantivos contables en plural, como "how many eggs".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Identifica la pregunta con la estructura Wh-word + to be + sujeto correctamente formada:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) "Where you are from?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) "Where are you from?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) "From where are you?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) "Are where you from?"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) "Where are you from?"</B><BR>El orden correcto es: <B>Wh-word + to be + sujeto + complemento</B>. La opción a) no invierte el verbo y el sujeto; c) y d) rompen el orden fijo del inglés.</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; Análisis y corrección de errores</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Un estudiante escribe: <SPAN CLASS="eng">"This pencils are on the table. That pens are in the box."</SPAN> — Identifica y corrige todos los errores de concordancia.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Solo "This pencils" está mal; "That pens" es correcto.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) "This pencils" → "These pencils"; "That pens" → "Those pens"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) "This pencils" → "This pencil"; "That pens" → "That pen"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Ambas oraciones son gramaticalmente correctas.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Pencils" y "pens" son sustantivos plurales (terminan en -s y el verbo es "are") → el demostrativo debe ser plural también. <B>This</B> (singular, cerca) → debe convertirse en <B>these</B> (plural, cerca). <B>That</B> (singular, lejos) → debe convertirse en <B>those</B> (plural, lejos). La opción c) cambiaría el sustantivo a singular, lo cual alteraría el significado original de la oración (que es plural, según "are").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Analiza la diferencia de significado entre estas dos oraciones y elige la afirmación correcta: <SPAN CLASS="eng">"This year is very important for my career." / "That year was very difficult for my family."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Ambas oraciones se refieren al mismo año, sin diferencia de tiempo.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) "This year" se refiere al año actual/presente (cercanía temporal); "that year" se refiere a un año del pasado (lejanía temporal), reforzado por el verbo "was".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) "This" y "that" son intercambiables en cualquier contexto temporal.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La diferencia es únicamente de lugar (espacio), nunca de tiempo.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los demostrativos no solo indican distancia física, también distancia <B>temporal</B>. <I>This year is</I> (presente, "is") indica el año actual, cercano en el tiempo. <I>That year was</I> (pasado, "was") indica un año lejano, ya transcurrido. El propio tiempo verbal del verbo confirma esta lectura temporal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Traduce con precisión, eligiendo la question word y el demostrativo correctos: <B>"¿De quién son esos cuadernos que están allá?"</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) "Who are those notebooks?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) "Whose are these notebooks?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) "Whose notebooks are those?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) "Whose is those notebooks?"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) "Whose notebooks are those?"</B><BR>"De quién" + posesión → <B>whose</B> (no "who"). "Cuadernos" es plural → "notebooks". "Allá" indica lejanía → <B>those</B> (no "these"). El verbo debe ser <B>are</B> porque el sujeto ("notebooks"/"those") es plural; la opción d) usa "is" incorrectamente con un sujeto plural.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Completa correctamente el diálogo, prestando atención a la concordancia y al uso de which/what: <SPAN CLASS="eng">"_____ (1) is your favorite color?" "Blue." "And _____ (2) of these two shirts do you like more, the blue or the green one?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) (1) Which — (2) what</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) (1) What — (2) which</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) (1) Who — (2) whose</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) (1) What — (2) what</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) What — which</B><BR>(1) "Favorite color" es una pregunta abierta, sin opciones limitadas → <B>what</B>. (2) La segunda pregunta presenta exactamente dos opciones conocidas ("the blue or the green one") → <B>which</B>. Este contraste es exactamente la regla what (abierto) vs. which (opciones limitadas).</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; Ingreso universitario</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Analiza el siguiente intercambio y determina cuál opción corrige TODOS los errores con la justificación gramatical más precisa:<BR><SPAN CLASS="eng">"What is your name?" "What this is my brother." "Whose is that books over there?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Solo la última oración tiene un error.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "What this is" → "This is" (se eliminó "what" pues no es necesario al presentar a alguien); "Whose is that books" → "Whose books are those" (concordancia plural + orden correcto).</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "What this is" → "What is this"; "Whose is that books" → "Whose is those books".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Todo el intercambio es gramaticalmente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>① <B>"What this is my brother"</B> no tiene sentido: al presentar a una persona simplemente se dice <B>"This is my brother"</B> (sin "what", que es innecesario y agramatical aquí).<BR>② <B>"Whose is that books over there"</B> contiene dos errores: "books" es plural y "that" es singular → debe ser <B>those</B>; además el orden correcto coloca el sustantivo después de "whose": <B>"Whose books are those?"</B> en vez de "Whose is that books". La opción c) mantiene la falta de concordancia número (those vs. books con "is"), por lo que sigue siendo incorrecta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Traduce con precisión al inglés: <B>"¿Cuántos años tiene aquel edificio que se ve a lo lejos, y de quién es?"</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) "How old is this building, and who is it?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) "How old is that building, and whose is it?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) "How many years has that building, and who is it?"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) "How old are those buildings, and whose are they?"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) "How old is that building, and whose is it?"</B><BR>• "Aquel edificio... a lo lejos" → singular y lejano → <B>that building</B> (no "this", no plural "those buildings", que cambiaría el número descrito en el original).<BR>• "¿Cuántos años tiene...?" al hablar de la antigüedad de un objeto se traduce con <B>how old</B>, no literalmente con "how many years has" (calco incorrecto del español).<BR>• "¿De quién es?" → posesión sobre un objeto singular ya mencionado → <B>whose is it</B> (no "who is it", que preguntaría por identidad de persona, no por dueño).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Por qué la mayoría de las <I>question words</I> en inglés comienzan con las letras <B>"wh-"</B> (what, who, where, when, why, which, whose), mientras que "how" es la única excepción notable? ¿Qué explicación refleja mejor el origen histórico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Es una coincidencia sin relación etimológica entre estas palabras.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Todas estas palabras provienen de un mismo grupo de pronombres interrogativos del inglés antiguo (Old English) y, más atrás, de raíces protogermánicas e indoeuropeas comunes; "how" comparte ese mismo origen, pero su evolución fonética perdió la "w" inicial frente al resto.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Estas palabras fueron creadas artificialmente en el siglo XIX para estandarizar la gramática inglesa.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) "Wh-" es un prefijo proveniente del francés normando, añadido tras la conquista de 1066.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las question words en "wh-" descienden de un grupo de pronombres y adverbios interrogativos del inglés antiguo (como <I>hwæt, hwā, hwær, hwænne, hwȳ, hwilc</I>), que a su vez provienen de raíces protogermánicas e indoeuropeas relacionadas con la interrogación. <I>How</i> proviene de la misma familia (<I>hū</I> en inglés antiguo), pero su evolución fonética particular eliminó la consonante que en las demás palabras se conservó como el dígrafo "wh-". No tiene relación con el francés normando (opción d) ni es una creación artificial reciente (opción c); este tipo de análisis etimológico es propio de exámenes de ingreso de alto nivel.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Lee el siguiente fragmento de un examen oral transcrito e identifica la opción que señala <B>todos</B> los errores y propone la corrección con la justificación gramatical más precisa:<BR><SPAN CLASS="eng">"What is name of that students over there? Whose is this backpacks? How much classmates are in your section?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo la última pregunta tiene un error: "How much" debería ser "How many".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "What is name of that students" → "What is the name of those students"; "Whose is this backpacks" → "Whose are these backpacks"; "How much classmates" → "How many classmates"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) "What is name of that students" → "What is the name of that student"; "Whose is this backpacks" → "Whose is this backpack"; "How much classmates" → "How many classmates"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El fragmento completo es gramaticalmente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) — Tres errores con corrección precisa que conserva el número original (plural)</B><BR>① <B>"What is name of that students"</B> → <B>"What is the name of those students"</B>: falta el artículo "the" antes de "name"; "students" es plural → el demostrativo debe ser <B>those</B>, no "that" (singular).<BR>② <B>"Whose is this backpacks"</B> → <B>"Whose are these backpacks"</B>: "backpacks" es plural → el demostrativo debe ser <B>these</B> y el verbo <B>are</B> (no "is", que es singular).<BR>③ <B>"How much classmates"</B> → <B>"How many classmates"</B>: "classmates" es un sustantivo <B>contable</B> en plural → corresponde <B>how many</B>, no "how much" (que es para incontables).<BR>La opción c) cambia los sustantivos a singular ("student", "backpack"), lo cual altera el significado original del fragmento (que claramente describe varios estudiantes y varias mochilas); por eso la corrección más precisa es la b), que corrige el error sin modificar el número original.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+
+</BODY>
+</HTML>

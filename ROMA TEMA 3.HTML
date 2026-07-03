@@ -1,0 +1,673 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Roma Antigua - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA &middot; TEMA 3</DIV>
+<H1>La Antigua Roma</H1>
+<DIV CLASS="sub">Monarquía &middot; República &middot; Imperio &middot; Derecho &middot; Ejército &middot; Arte &middot; Legado</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Geografía e influencia en la civilización romana</H3>
+Roma nació en el centro de la <B>Península Itálica</B>, una lengua de tierra que se adentra en el Mediterráneo con forma de bota. Su posición geográfica privilegiada fue decisiva para su destino imperial:
+<UL>
+<LI><B>La colina del Palatino y el río Tíber:</B> según la tradición, Roma fue fundada sobre siete colinas a orillas del Tíber, río que facilitaba el comercio interior y permitía el acceso al mar Tirreno. Las colinas (Palatino, Capitolino, Aventino, Quirinal, Viminal, Esquilino y Celio) ofrecían defensa natural.</LI>
+<LI><B>Centro del Mediterráneo:</B> Italia ocupa el centro geométrico del mar Mediterráneo. Desde Roma, las rutas marítimas alcanzaban en tiempos similares tanto el Oriente griego como las costas ibéricas y norteafricanas. Esto facilitó el control comercial y militar del mare nostrum ("nuestro mar").</LI>
+<LI><B>Terreno fértil:</B> el valle del Po al norte y la llanura del Lacio (donde nació Roma) tenían suelos mucho más productivos que Grecia. Roma nunca padeció la escasez de tierras que impulsó a los griegos a colonizar masivamente.</LI>
+<LI><B>Frontera natural al norte:</B> los Alpes protegían la península de invasiones continentales, aunque no resultaron infranqueables (Aníbal cruzó los Alpes con elefantes en 218 a.C.).</LI>
+</UL>
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> A diferencia de Grecia, cuya geografía fragmentada impidió la unificación, la geografía italiana favoreció la expansión romana: desde una posición central en el Mediterráneo y con tierra fértil abundante, Roma pudo crecer sin la presión colonizadora griega y dominar gradualmente toda la cuenca mediterránea.</DIV>
+
+<H3>2. Periodización de la Historia de Roma</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Periodo</TH><TH>Cronología</TH><TH>Características principales</TH></TR>
+<TR><TD><B>Monarquía</B></TD><TD>753 – 509 a.C.</TD><TD>Según la tradición, Roma fue fundada por Rómulo en 753 a.C. Siete reyes gobernaron la ciudad. Los últimos tres fueron etruscos. El rey Tarquinio el Soberbio fue expulsado en 509 a.C. por su tiranía. Sistema gentilicio: las grandes familias (gentes) controlaban la tierra y el poder.</TD></TR>
+<TR><TD><B>República</B></TD><TD>509 – 27 a.C.</TD><TD>El poder lo compartían dos cónsules elegidos anualmente, el Senado y las Asambleas populares. Conflicto entre patricios (nobleza) y plebeyos. Conquista de Italia, Guerras Púnicas, conquista del Mediterráneo. Crisis y guerras civiles del siglo I a.C. terminan con la República.</TD></TR>
+<TR><TD><B>Alto Imperio (Principado)</B></TD><TD>27 a.C. – 235 d.C.</TD><TD>Augusto inaugura el Principado: mantenía las formas republicanas pero concentraba el poder real. Dos siglos de paz relativa (Pax Romana). Máxima expansión territorial. Apogeo cultural: Virgilio, Horacio, Ovidio, Tácito. Trajano lleva el Imperio a su máxima extensión.</TD></TR>
+<TR><TD><B>Bajo Imperio (Dominado)</B></TD><TD>235 – 476 d.C.</TD><TD>Crisis del siglo III (anarquía militar). Diocleciano divide el Imperio. Constantino legaliza el Cristianismo (Edicto de Milán, 313 d.C.) y funda Constantinopla. Teodosio lo divide definitivamente (395 d.C.). El Imperio Romano de Occidente cae en 476 d.C. ante Odoacro.</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>3. La Monarquía Romana (753 – 509 a.C.)</H3>
+Según la tradición romana, la ciudad fue <B>fundada el 21 de abril de 753 a.C.</B> por <B>Rómulo</B>, primer rey de Roma, descendiente de los troyanos Eneas y de los dioses (hijo de Marte, según el mito). La arqueología confirma asentamientos en el Lacio desde el siglo X a.C., aunque la fecha exacta de "fundación" es simbólica.
+
+<H4>Los siete reyes de Roma:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Rey</TH><TH>Origen</TH><TH>Aportación principal</TH></TR>
+<TR><TD><B>Rómulo</B></TD><TD>Latino</TD><TD>Fundador mítico. Creó el Senado de 100 padres. El rapto de las Sabinas para poblar Roma.</TD></TR>
+<TR><TD><B>Numa Pompilio</B></TD><TD>Sabino</TD><TD>Organizó la religión romana: sacerdotes, Vestales, calendario romano de 12 meses.</TD></TR>
+<TR><TD><B>Tulo Hostilio</B></TD><TD>Latino</TD><TD>Conquistó Alba Longa. Creó la Legión romana. El combate de los Horacios y los Curiacios.</TD></TR>
+<TR><TD><B>Anco Marcio</B></TD><TD>Sabino</TD><TD>Fundó Ostia (puerto de Roma en el Tíber). Construyó el primer puente sobre el Tíber.</TD></TR>
+<TR><TD><B>Tarquinio Prisco</B></TD><TD>Etrusco</TD><TD>Construyó la Cloaca Máxima (alcantarillado). Inició el Circo Máximo y el templo de Júpiter.</TD></TR>
+<TR><TD><B>Servio Tulio</B></TD><TD>Latino/Etrusco</TD><TD>Primer censo de la población. Dividió a los ciudadanos en clases por riqueza. Muralla Serviana.</TD></TR>
+<TR><TD><B>Tarquinio el Soberbio</B></TD><TD>Etrusco</TD><TD>Tirano expulsado en 509 a.C. Su expulsión puso fin a la Monarquía. Inicio de la República.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">🐺 <B>El mito de Rómulo y Remo:</B> Según la tradición, los gemelos hijos de Marte y de la vestal Rea Silvia fueron arrojados al Tíber por su tío usurpador. Una loba (<I>lupa</I>) los amamantó y el pastor Fáustulo los crió. Al crecer, Rómulo mató a Remo en una disputa y fundó Roma. La loba capitolina es el símbolo eterno de Roma. Los romanos llamaron a su año de fundación <I>Ab Urbe Condita</I> (AUC), calculando desde 753 a.C.</DIV>
+
+<H3>4. La República Romana (509 – 27 a.C.)</H3>
+
+<H4>Instituciones de la República:</H4>
+<UL>
+<LI><B>Cónsules:</B> dos magistrados elegidos anualmente por los comicios para gobernar Roma. Tenían <I>imperium</I> (mando supremo civil y militar). El hecho de que fueran dos y por un año limitaba el abuso de poder. En caso de emergencia se nombraba un <B>dictador</B> por un máximo de 6 meses.</LI>
+<LI><B>Senado:</B> cuerpo de 300 (luego 600) senadores vitalicios, en su mayoría ex magistrados. No dictaba leyes directamente pero poseía enorme autoridad moral (<I>auctoritas</I>): controlaba el tesoro, la política exterior y las provincias. Era el verdadero poder de Roma.</LI>
+<LI><B>Comicios:</B> las asambleas del pueblo romano donde se votaban leyes y se elegían magistrados. Los principales eran los Comicios Centuriados (organización militar, elegía cónsules) y los Comicios por Tribus (elegían tribunos de la plebe).</LI>
+<LI><B>Otros magistrados:</B> Pretores (justicia y gobierno provincial), Censores (censo y costumbres), Cuestores (finanzas), Ediles (obras públicas y espectáculos), Tribunos de la Plebe (protección de los plebeyos, derecho de veto o <I>intercessio</I>).</LI>
+</UL>
+
+<H4>Patricios y Plebeyos: el conflicto de los órdenes:</H4>
+<UL>
+<LI><B>Patricios:</B> la nobleza romana original, descendientes de los <I>patres</I> fundadores. Monopolizaban los cargos políticos, sacerdotales y el acceso a las tierras del <I>ager publicus</I>.</LI>
+<LI><B>Plebeyos:</B> el resto de la ciudadanía libre romana. Agricultores, artesanos, comerciantes. Pagaban impuestos y servían en el ejército, pero no podían acceder a los cargos políticos ni conocer las leyes (no escritas).</LI>
+<LI><B>Conquistas plebeyas:</B> a lo largo del siglo V y IV a.C., los plebeyos lograron: la <B>Ley de las XII Tablas</B> (~450 a.C., primer código legal escrito), la creación del <B>Tribunado de la Plebe</B> (con derecho de veto), acceso al consulado (<B>Ley Licinia-Sextia</B>, 367 a.C.) y finalmente la equiparación legal con los patricios.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">📜 <B>La Ley de las XII Tablas</B> (~450 a.C.) fue el primer código jurídico escrito de Roma. Los plebeyos exigieron que las leyes se pusieran por escrito para que los patricios no las interpretaran arbitrariamente. Se grabaron en doce tablas de bronce expuestas en el Foro. Es el origen de todo el Derecho Romano.</DIV>
+
+<H4>La expansión romana en Italia:</H4>
+<UL>
+<LI>Siglo V–IV a.C.: guerras contra etruscos, volscos y ecuos en el Lacio.</LI>
+<LI>Guerras Samnitas (343–290 a.C.): control del centro-sur de Italia.</LI>
+<LI>Guerras contra Pirro, rey de Epiro (280–275 a.C.): "victoria pírrica" (tan costosa que equivale a una derrota). Roma controla toda la Italia peninsular en 270 a.C.</LI>
+</UL>
+
+<H3>5. Las Guerras Púnicas (264 – 146 a.C.)</H3>
+Las Guerras Púnicas fueron los tres grandes conflictos entre Roma y <B>Cartago</B>, la potencia comercial y marítima del norte de África (actual Túnez). El término "púnico" viene del latín <I>Punicus</I> (fenicio), pues Cartago fue fundada por colonos fenicios. Su resultado determinó quién dominaría el Mediterráneo occidental.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Guerra</TH><TH>Fecha</TH><TH>Causa</TH><TH>Resultado</TH><TH>Consecuencia</TH></TR>
+<TR><TD><B>Primera Guerra Púnica</B></TD><TD>264–241 a.C.</TD><TD>Control de Sicilia. Intervención de Roma ante la petición de los mamertinos de Mesina.</TD><TD>Victoria romana. Tratado de paz: Cartago cede Sicilia y paga indemnización.</TD><TD>Roma conquista su primera provincia (Sicilia). Construye su primera flota de guerra real, usando el corvus (gancho de abordaje).</TD></TR>
+<TR><TD><B>Segunda Guerra Púnica</B></TD><TD>218–201 a.C.</TD><TD>Aníbal Barca cruza los Alpes con 37 elefantes. Busca destruir el poder romano en Italia.</TD><TD>Victoria romana a largo plazo. Escipión el Africano derrota a Aníbal en Zama (202 a.C.).</TD><TD>Cartago pierde Hispania y su flota. Roma domina el Mediterráneo occidental. Aníbal fue el mayor enemigo de Roma.</TD></TR>
+<TR><TD><B>Tercera Guerra Púnica</B></TD><TD>149–146 a.C.</TD><TD>Presión romana preventiva. Catón el Viejo insistía: <I>"Carthago delenda est"</I> (Cartago debe ser destruida).</TD><TD>Roma destruye completamente Cartago. La ciudad es arrasada y sus tierras saladas (según la tradición).</TD><TD>Roma es la potencia hegemónica indiscutible del Mediterráneo. El año 146 a.C. marca también la destrucción de Corinto: Roma controla también el Mediterráneo oriental.</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Aníbal Barca: el genio militar que estuvo a punto de destruir Roma:</H4>
+<UL>
+<LI><B>El cruce de los Alpes (218 a.C.):</B> Aníbal partió de Hispania con 50 000 infantes, 9 000 jinetes y 37 elefantes de guerra. Cruzó los Pirineos y los Alpes en otoño. Llegó a Italia con 26 000 hombres, habiendo perdido a más de la mitad por el frío, los aludes y las emboscadas.</LI>
+<LI><B>Batalla del Trebia (218 a.C.):</B> primera gran victoria de Aníbal en suelo itálico.</LI>
+<LI><B>Batalla del lago Trasimeno (217 a.C.):</B> emboscada perfecta: destruyó un ejército romano de 30 000 hombres.</LI>
+<LI><B>Batalla de Cannas (216 a.C.):</B> la mayor derrota de Roma. Aníbal rodeó y destruyó a 86 000 romanos con 50 000 soldados. Es aún hoy estudiada en las academias militares del mundo como el modelo de táctica de doble envolvimiento.</LI>
+<LI>Pese a estar a las puertas de Roma, Aníbal nunca atacó directamente la ciudad (falta de maquinaria de asedio, y quizá esperando aliados itálicos que no llegaron). Escipión respondió invadiendo el norte de África. Aníbal tuvo que regresar a defender Cartago y fue derrotado en Zama.</LI>
+</UL>
+<DIV CLASS="ej">🐘 <B>El cruce de los Alpes:</B> Uno de los mayores prodigios logísticos de la historia. Aníbal atravesó los Alpes en 15 días, probablemente por el paso del Mont Cenis o del Col de la Traversette, a más de 2 500 m de altitud, en otoño. Sus soldados nunca habían visto nieve. Solo sobrevivieron unos 26 000 hombres y quizá 2 o 3 elefantes.</DIV>
+
+<H3>6. La Crisis de la República y el Fin de la Era Republicana</H3>
+Las conquistas del Mediterráneo trajeron riquezas enormes a Roma, pero también profundas crisis sociales y políticas que acabaron destruyendo el sistema republicano.
+
+<H4>Las reformas de los Gracos (133 – 121 a.C.):</H4>
+<UL>
+<LI>Los hermanos <B>Tiberio</B> y <B>Cayo Graco</B>, tribunos de la plebe, intentaron reformar la distribución del <I>ager publicus</I> (tierras del Estado que los ricos habían acaparado) para beneficiar a los campesinos empobrecidos.</LI>
+<LI>Los optimates (senadores conservadores) los asesinaron: Tiberio en 133 a.C. y Cayo en 121 a.C. Las reformas fracasaron, pero inauguraron una era de violencia política en Roma.</LI>
+</UL>
+
+<H4>Mario y Sila: el ejército como instrumento político:</H4>
+<UL>
+<LI><B>Cayo Mario</B> (157–86 a.C.): reformó el ejército romano (reforma mariana): de ejército ciudadano a ejército profesional, reclutando incluso a los proletarii (los sin tierra). Los soldados juraban lealtad al general, no al Estado. Fue cónsul 7 veces. Abrió la puerta a los ejércitos privados.</LI>
+<LI><B>Lucio Cornelio Sila</B> (138–78 a.C.): primer romano en marchar con sus legiones sobre Roma. Impuso una dictadura y proscripciones (listas de enemigos a los que se podía matar impunemente). Murió de muerte natural tras renunciar voluntariamente a la dictadura.</LI>
+</UL>
+
+<H4>El Primer Triunvirato y Julio César:</H4>
+<UL>
+<LI>El <B>Primer Triunvirato</B> (60 a.C.): alianza informal entre <B>Pompeyo</B> (el general más prestigioso), <B>Craso</B> (el más rico de Roma) y <B>Julio César</B> (el político más hábil). Dominaron la República durante una década.</LI>
+<LI><B>Guerras Galas (58–50 a.C.):</B> César conquistó toda la Galia (actual Francia, Bélgica y parte de Alemania). Sus campañas, narradas en los <I>Comentarios sobre la guerra de las Galias</I>, son un clásico militar y literario.</LI>
+<LI><B>El cruce del Rubicón (49 a.C.):</B> muerto Craso en Carrhae (53 a.C.), Pompeyo y el Senado ordenaron a César disolver su ejército. César respondió cruzando el río Rubicón con sus tropas, acto ilegal que equivalía a declarar la guerra civil. "Alea iacta est" ("la suerte está echada").</LI>
+<LI><B>Julio César dictador:</B> derrotó a Pompeyo en Farsalia (48 a.C.) y luego a los pompeyanos en Tapso (46 a.C.) y Munda (45 a.C.). Fue nombrado dictador perpetuo. Reformó el calendario (Calendario Juliano: 365 días y año bisiesto), reorganizó las provincias y emprendió grandes obras públicas.</LI>
+<LI><B>Los Idus de Marzo (15 de marzo del 44 a.C.):</B> un grupo de senadores republicanos (los liberatores) liderados por <B>Bruto y Casio</B> asesinaron a César en el teatro de Pompeyo, en el Senado. Le asestaron 23 puñaladas. La República no sobrevivió a su muerte.</LI>
+</UL>
+
+<H4>El Segundo Triunvirato y el fin de la República:</H4>
+<UL>
+<LI><B>Segundo Triunvirato</B> (43 a.C.): <B>Marco Antonio</B>, <B>Octavio</B> (sobrino nieto y heredero de César) y <B>Lépido</B>. Proscripciones masivas: Cicerón fue asesinado.</LI>
+<LI>La alianza se rompió entre Antonio (que se alió con Cleopatra VII de Egipto) y Octavio.</LI>
+<LI><B>Batalla de Actium (31 a.C.):</B> la flota de Octavio, bajo el mando de Agripa, destruyó la flota de Marco Antonio y Cleopatra. Ambos se suicidaron. Egipto fue anexionado como provincia personal de Octavio. El Mediterráneo quedó unificado bajo un solo poder.</LI>
+</UL>
+
+<H3>7. El Imperio Romano: el Principado de Augusto (27 a.C. – 14 d.C.)</H3>
+<B>Octavio Augusto</B> fue el arquitecto del sistema político más durable de la historia antigua: el <B>Principado</B>. Con extraordinaria habilidad política, transformó la República en una monarquía de facto sin abolir formalmente ninguna institución republicana.
+
+<H4>Los poderes de Augusto:</H4>
+<UL>
+<LI>Recibió del Senado el título de <B>Augustus</B> ("el venerable") en 27 a.C., y el de <B>Princeps</B> ("el primero entre los ciudadanos").</LI>
+<LI>Acumuló el <B>tribunado de la plebe</B> vitalicio (inviolabilidad personal y derecho de veto), el <B>imperium proconsular</B> (mando sobre todas las provincias con ejércitos) y la <B>potestad censoria</B> (control del Senado). Era el <I>imperator</I>: el comandante supremo.</LI>
+<LI>Reorganizó el ejército: 28 legiones permanentes, guardia pretoriana (su guardia personal en Roma), flota permanente. Los soldados juraban lealtad al Princeps.</LI>
+<LI>Reformó la administración provincial, estableció un sistema fiscal eficiente y emprendió un programa colosal de obras públicas. Dijo: "Encontré Roma de ladrillo y la dejo de mármol."</LI>
+</UL>
+
+<H4>La Pax Romana (27 a.C. – 180 d.C.):</H4>
+<UL>
+<LI>Dos siglos de relativa paz interior en el Imperio.</LI>
+<LI>Máxima expansión territorial: bajo <B>Trajano</B> (98–117 d.C.), el Imperio alcanzó su mayor extensión: Britania, el Rin, el Danubio, Mesopotamia, Egipto, el norte de África y toda la cuenca mediterránea.</LI>
+<LI>Florecimiento de la literatura (Virgilio, Horacio, Ovidio), la arquitectura (Panteón, Coliseo, foros imperiales) y el derecho.</LI>
+</UL>
+
+<H3>8. La Organización Social Romana</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Grupo social</TH><TH>Características</TH></TR>
+<TR><TD><B>Patricios</B></TD><TD>Antigua aristocracia de sangre. En el Imperio conservaron privilegios sociales aunque perdieron el monopolio político.</TD></TR>
+<TR><TD><B>Equites (Caballeros)</B></TD><TD>Clase media-alta enriquecida por el comercio y la banca. Censada con un patrimonio mínimo de 400 000 sestercios. Ocupaban puestos militares medios y administrativos del Imperio.</TD></TR>
+<TR><TD><B>Plebeyos libres</B></TD><TD>Ciudadanos romanos sin privilegios especiales. Agricultores, artesanos, comerciantes. En el Imperio se beneficiaban del sistema de <I>panem et circenses</I> (pan gratis y juegos).</TD></TR>
+<TR><TD><B>Libertos</B></TD><TD>Esclavos manumitidos. Podían alcanzar notable prosperidad económica; sus hijos eran ciudadanos plenos. Muchos libertos imperiales llegaron a tener enorme influencia en la burocracia.</TD></TR>
+<TR><TD><B>Esclavos</B></TD><TD>Base económica de Roma. Se calcula entre 30% y 40% de la población del Imperio. Procedían de las guerras de conquista. Trabajaban en minas, agricultura, artesanía y el hogar. No eran personas jurídicas.</TD></TR>
+<TR><TD><B>Peregrini</B></TD><TD>Habitantes libres del Imperio sin ciudadanía romana. El Edicto de Caracalla (212 d.C.) extendió la ciudadanía romana a todos los hombres libres del Imperio.</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>La familia romana: el paterfamilias:</H4>
+<UL>
+<LI>El <B>paterfamilias</B> tenía el <I>patria potestas</I>: autoridad legal absoluta sobre su esposa, hijos, nietos, esclavos y libertos. Podía vender a sus hijos, desheredarlos o incluso (en teoría) condenarlos a muerte.</LI>
+<LI>Las mujeres romanas, aunque jurídicamente dependientes, tenían más libertad que las griegas: podían asistir a los banquetes, salir a la calle, administrar negocios y en la práctica ejercían gran influencia familiar.</LI>
+<LI>El <B>matrimonio romano</B> era principalmente un contrato civil, sin intervención religiosa obligatoria. El divorcio era legal y relativamente sencillo para ambas partes.</LI>
+</UL>
+
+<H3>9. El Ejército Romano: la Máquina de Guerra más Eficiente de la Antigüedad</H3>
+El ejército romano fue el instrumento que hizo posible la creación y mantenimiento del Imperio. Su profesionalización, disciplina y capacidad de innovación no tenían parangón en el mundo antiguo.
+
+<H4>La Legión romana:</H4>
+<UL>
+<LI>La unidad táctica fundamental era la <B>legión</B>: unos 4 200 a 6 000 infantes ciudadanos romanos organizados en 10 cohortes de 3 manípulos cada una.</LI>
+<LI>Cada legionario llevaba: el <I>pilum</I> (lanza arrojadiza pesada de 2 m), el <I>gladius</I> (espada corta de combate cuerpo a cuerpo), el <I>scutum</I> (escudo rectangular curvo) y el <I>lorica segmentata</I> (armadura articulada de metal).</LI>
+<LI><B>La tortuga (<I>testudo</I>):</B> formación defensiva en que los legionarios cubrían todos sus flancos y la cabeza con escudos superpuestos, haciendo al grupo casi invulnerable a los proyectiles.</LI>
+<LI>Las legiones construían un <B>campamento fortifcado (<I>castra</I>)</B> cada noche en campaña, con foso, terraplén y empalizada. De estos campamentos nacieron decenas de ciudades europeas (Chester, Lancaster, York, Colonia, Viena, etc.).</LI>
+<LI>El ejército romano era también un cuerpo de ingeniería: construía puentes, caminos, catapultas, balistas y torres de asedio con una eficacia sin igual.</LI>
+</UL>
+
+<H4>La reforma mariana y el ejército profesional:</H4>
+<UL>
+<LI>Antes de Mario, el ejército romano era ciudadano y de convocatoria: solo podían servir quienes tuvieran propiedades. Mario abrió el reclutamiento a los proletarios (sin tierra), equipó a los soldados con cargo al Estado y los entrenó profesionalmente. El servicio duró 16 (luego 20–25) años, con tierra y dinero como recompensa al licenciarse.</LI>
+</UL>
+
+<H4>La red de calzadas romanas:</H4>
+<UL>
+<LI>Roma construyó más de <B>400 000 km de calzadas</B> por todo el Imperio. Las vías principales, de 6 m de ancho, estaban pavimentadas con piedra y podían durar siglos. La más famosa: la <B>Vía Apia</B> (Roma–Brindisi, 312 a.C.), "la reina de las calzadas".</LI>
+<LI>Las calzadas servían para mover legiones con rapidez, facilitar el comercio y unificar administrativamente el Imperio. "Todos los caminos llevan a Roma."</LI>
+</UL>
+
+<H3>10. El Derecho Romano: el legado jurídico más importante de la Historia</H3>
+El Derecho Romano es el sistema jurídico que más ha influido en la historia de la humanidad. La mayoría de los sistemas legales modernos de Europa, América Latina y el mundo se basan directa o indirectamente en él.
+
+<H4>Evolución del Derecho Romano:</H4>
+<UL>
+<LI><B>Ley de las XII Tablas</B> (~450 a.C.): primer código escrito. Regulaba la propiedad, los contratos, la herencia y los delitos.</LI>
+<LI><B>Derecho Civil (Ius Civile):</B> aplicable solo a los ciudadanos romanos.</LI>
+<LI><B>Derecho de Gentes (Ius Gentium):</B> reglas jurídicas comunes a todos los pueblos del Imperio, independientemente de su ciudadanía. Antecedente del Derecho Internacional.</LI>
+<LI><B>Derecho Natural (Ius Naturale):</B> principios jurídicos universales basados en la razón, influidos por la filosofía estoica.</LI>
+<LI><B>Corpus Iuris Civilis</B> (529–534 d.C.): el emperador <B>Justiniano I</B> (Imperio Romano de Oriente) ordenó compilar todo el derecho romano en un solo cuerpo legal. Es la base de la mayoría de los códigos civiles modernos (incluyendo el Código de Napoleón y los códigos civiles latinoamericanos).</LI>
+</UL>
+
+<H4>Principios jurídicos romanos vigentes hoy:</H4>
+<UL>
+<LI><I>Iura novit curia</I>: el juez conoce el derecho.</LI>
+<LI><I>Nemo iudex in causa propia</I>: nadie puede ser juez en su propia causa.</LI>
+<LI><I>In dubio pro reo</I>: en la duda, a favor del acusado.</LI>
+<LI><I>Pacta sunt servanda</I>: los pactos deben cumplirse.</LI>
+<LI><I>Res iudicata</I>: la cosa juzgada (una causa no puede juzgarse dos veces).</LI>
+</UL>
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El Derecho Romano es uno de los legados más preguntados. Recuerda: XII Tablas (primera ley escrita), Ius Civile / Ius Gentium / Ius Naturale (clasificación del derecho), Corpus Iuris Civilis de Justiniano (compilación final). El derecho peruano, como todos los latinoamericanos, tiene raíces directas en el derecho romano.</DIV>
+
+<H3>11. La Religión Romana</H3>
+La religión romana era <B>politeísta, sincrética y eminentemente pragmática</B>: los dioses se veneraban no por devoción mística sino para obtener su favor (<I>pax deorum</I>: la paz de los dioses). Roma absorbió los dioses de todos los pueblos que conquistó, especialmente los griegos.
+
+<H4>Los dioses romanos y sus equivalentes griegos:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Dios romano</TH><TH>Equivalente griego</TH><TH>Dominio</TH></TR>
+<TR><TD><B>Júpiter</B></TD><TD>Zeus</TD><TD>Rey de los dioses, cielo, trueno, justicia. La Tríada Capitolina: Júpiter, Juno y Minerva.</TD></TR>
+<TR><TD><B>Juno</B></TD><TD>Hera</TD><TD>Matrimonio, familia, protectora del Estado romano.</TD></TR>
+<TR><TD><B>Minerva</B></TD><TD>Atenea</TD><TD>Sabiduría, artesanía, artes.</TD></TR>
+<TR><TD><B>Marte</B></TD><TD>Ares</TD><TD>Guerra. Especialmente venerado en Roma como padre de Rómulo.</TD></TR>
+<TR><TD><B>Venus</B></TD><TD>Afrodita</TD><TD>Amor y belleza. Ancestro mítico de Julio César (descendía de Eneas, hijo de Venus).</TD></TR>
+<TR><TD><B>Mercurio</B></TD><TD>Hermes</TD><TD>Comercio, mensajero de los dioses, viajeros.</TD></TR>
+<TR><TD><B>Neptuno</B></TD><TD>Poseidón</TD><TD>Mar, ríos, terremotos.</TD></TR>
+<TR><TD><B>Diana</B></TD><TD>Ártemis</TD><TD>Caza, luna, naturaleza.</TD></TR>
+<TR><TD><B>Apolo</B></TD><TD>Apolo</TD><TD>Sol, música, medicina, profecía (igual nombre en ambas culturas).</TD></TR>
+<TR><TD><B>Vulcano</B></TD><TD>Hefesto</TD><TD>Fuego y forja. Las islas Vulcano dan nombre a los volcanes.</TD></TR>
+<TR><TD><B>Baco</B></TD><TD>Dioniso</TD><TD>Vino y festividad.</TD></TR>
+<TR><TD><B>Jano</B></TD><TD>(Sin equivalente)</TD><TD>Dios romano original: las puertas, los comienzos. Le da nombre al mes de Enero.</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El Culto Imperial:</H4>
+<UL>
+<LI>A partir de Augusto, los emperadores muertos eran <B>divinizados</B> por decreto del Senado. Algunos emperadores (como Calígula y Domiciano) exigieron ser adorados en vida.</LI>
+<LI>El culto imperial fue un potente instrumento de cohesión política: rendir culto al emperador era un acto de lealtad al Estado. La negativa de los primeros <B>cristianos</B> a hacerlo fue una de las causas de sus persecuciones.</LI>
+</UL>
+
+<H4>El Cristianismo y Roma:</H4>
+<UL>
+<LI><B>Jesús de Nazaret</B> fue crucificado durante el reinado de Tiberio, bajo el prefecto <B>Poncio Pilato</B> (~33 d.C.), en la provincia romana de Judea.</LI>
+<LI>Las comunidades cristianas se extendieron por el Imperio en los siglos I y II d.C. El apóstol <B>Pablo de Tarso</B> fue determinante en su difusión.</LI>
+<LI><B>Persecuciones:</B> Nerón (64 d.C., incendio de Roma), Domiciano, Decio, Diocleciano.</LI>
+<LI><B>Edicto de Milán (313 d.C.):</B> el emperador <B>Constantino I</B> legalizó el Cristianismo. La tradición dice que antes de la batalla del Puente Milvio vio una visión con la frase <I>In hoc signo vinces</I> ("con este signo vencerás").</LI>
+<LI><B>Edicto de Tesalónica (380 d.C.):</B> el emperador <B>Teodosio I</B> declaró el Cristianismo religión oficial del Imperio Romano.</LI>
+</UL>
+
+<H3>12. Arte y Arquitectura Romana</H3>
+Los romanos fueron los mayores constructores de la Antigüedad. Heredaron el arte griego y lo transformaron con innovaciones técnicas revolucionarias: el <B>arco, la bóveda y el hormigón romano (<I>opus caementicium</I>)</B>.
+
+<H4>Innovaciones arquitectónicas romanas:</H4>
+<UL>
+<LI><B>El arco de medio punto:</B> los griegos construían con sistemas de viga y poste (arco lintel). Los romanos perfeccionaron el arco semicircular, que distribuía las cargas lateralmente y permitía construir estructuras mucho más grandes.</LI>
+<LI><B>La bóveda de cañón y la cúpula:</B> aplicaciones del arco en tres dimensiones. La cúpula del Panteón (43,4 m de diámetro, 125 d.C.) no fue superada hasta el Renacimiento.</LI>
+<LI><B>El hormigón romano (<I>opus caementicium</I>):</B> mezcla de cal, puzolana (ceniza volcánica) y agua. Más resistente que el hormigón moderno para ciertas aplicaciones. Permitió construir con formas curvas y a gran escala.</LI>
+<LI><B>Los acueductos:</B> sistemas de transporte de agua a larga distancia usando la gravedad. El Acueducto de Segovia (España) y el Pont du Gard (Francia) siguen en pie. Roma tenía 11 acueductos que suministraban más de 1 000 millones de litros diarios.</LI>
+</UL>
+
+<H4>Los grandes monumentos romanos:</H4>
+<UL>
+<LI><B>El Coliseo (Anfiteatro Flavio, 72–80 d.C.):</B> capacidad para 50 000–80 000 espectadores. Escenario de combates de gladiadores, luchas con fieras y naumaquias (batallas navales inundando la arena). Construido por los emperadores Vespasiano y Tito con trabajo esclavo tras la destrucción de Jerusalén.</LI>
+<LI><B>El Panteón (125 d.C., Adriano):</B> templo dedicado a todos los dioses. Su cúpula de 43,4 m de diámetro y el óculo (abertura de 9 m en el centro) son prodigios de ingeniería. Aún se usa como iglesia (Santa María de los Mártires).</LI>
+<LI><B>Los Foros Imperiales:</B> los emperadores sucesivos construyeron sus propios foros adyacentes al Foro Romano original. El Foro de Trajano, diseñado por Apolodoro de Damasco, era el más grande.</LI>
+<LI><B>La Columna Trajana (113 d.C.):</B> columna de 40 m con un friso en espiral que narra las guerras de Trajano contra los dacios. Es el más completo documento visual de la legión romana en acción.</LI>
+<LI><B>El Circo Máximo:</B> el hipódromo más grande de la historia: 300 000 espectadores. Escenario de las carreras de cuádrigas (<I>ludi circenses</I>).</LI>
+</UL>
+
+<H4>La escultura romana:</H4>
+<UL>
+<LI>Los romanos adoptaron el estilo griego pero lo enriquecieron con el <B>retrato realista</B>: mientras los griegos idealizaban la figura humana, los romanos representaban a sus sujetos con toda su individualidad, incluso con defectos y arrugas.</LI>
+<LI>Las <B>estatuas ecuestres</B> (jinete a caballo) eran el honor máximo para un general victorioso. La más famosa es la de Marco Aurelio (siglo II d.C.), único bronce ecuestre romano conservado.</LI>
+<LI>Los <B>arcos de triunfo</B> (Arco de Tito, de Constantino, de Septimio Severo) celebraban las victorias militares con relieves narrativos.</LI>
+</UL>
+
+<H3>13. Literatura y Pensamiento Romano</H3>
+<UL>
+<LI><B>Virgilio</B> (70–19 a.C.): el mayor poeta latino. La <I>Eneida</I> narra el viaje de Eneas desde Troya hasta Italia y la fundación mítica de Roma. También escribió las <I>Geórgicas</I> y las <I>Bucólicas</I>.</LI>
+<LI><B>Horacio</B> (65–8 a.C.): poesía lírica. Autor del <I>Carpe diem</I> ("aprovecha el día") y el <I>Aurea mediocritas</I> ("el justo medio de oro").</LI>
+<LI><B>Ovidio</B> (43 a.C. – 17 d.C.): las <I>Metamorfosis</I>, enciclopedia mitológica en verso. Fue exiliado por Augusto.</LI>
+<LI><B>Cicerón</B> (106–43 a.C.): el mejor orador y prosista latino. Sus discursos (<I>Catilinarias, Filípicas</I>) y obras filosóficas (<I>De Re Publica, De Legibus</I>) son modelos de la prosa latina. Fue asesinado por Marco Antonio.</LI>
+<LI><B>Julio César</B> (100–44 a.C.): sus <I>Comentarios sobre la guerra de las Galias</I> y <I>Sobre la guerra civil</I> son escritura militar de gran valor histórico y literario.</LI>
+<LI><B>Tácito</B> (~56–120 d.C.): historiador de los primeros emperadores (<I>Anales, Germania</I>). Maestro de la prosa histórica incisiva y crítica.</LI>
+<LI><B>Plinio el Viejo</B> (23–79 d.C.): su <I>Naturalis Historia</I> es la enciclopedia científica más completa de la Antigüedad (37 volúmenes). Murió observando la erupción del Vesubio que sepultó Pompeya.</LI>
+<LI><B>Marco Aurelio</B> (121–180 d.C.): emperador y filósofo estoico. Sus <I>Meditaciones</I> son el diario privado de un gobernante que intentaba vivir según la virtud.</LI>
+</UL>
+
+<H3>14. La Caída del Imperio Romano de Occidente (476 d.C.)</H3>
+La caída de Roma fue un proceso gradual de siglos, no un evento súbito. Historiadores modernos señalan múltiples causas interrelacionadas:
+
+<H4>Causas de la caída:</H4>
+<UL>
+<LI><B>Crisis económica:</B> devaluación de la moneda, aumento de impuestos, decadencia del comercio, escasez de esclavos (las conquistas cesaron). La inflación y la miseria empobrecieron a los ciudadanos.</LI>
+<LI><B>Crisis militar:</B> el ejército se "barbarizó": cada vez más germanos servían en las legiones. Los generales bárbaros llegaron a controlar el trono. El ejército era caro y cada vez menos efectivo para defender las largas fronteras.</LI>
+<LI><B>Inestabilidad política:</B> el siglo III fue la "anarquía militar": 26 emperadores en 50 años. La corrupción y las guerras civiles agotaron los recursos.</LI>
+<LI><B>Las invasiones bárbaras:</B> visigodos, ostrogodos, vándalos, hunos, francos y otros pueblos germánicos presionaron y penetraron las fronteras desde el siglo III. Los hunos de Atila aterrorizaron Europa en el siglo V.</LI>
+<LI><B>División del Imperio:</B> Diocleciano dividió el gobierno (284 d.C.) en cuatro partes (tetrarquía). Teodosio lo dividió definitivamente en 395 d.C.: el Imperio de Occidente (Roma) y el de Oriente (Constantinopla).</LI>
+<LI><B>La fecha convencional:</B> el <B>4 de septiembre del 476 d.C.</B>, el jefe germano <B>Odoacro</B> depuso al último emperador romano de Occidente, <B>Rómulo Augústulo</B>, y no nombró sucesor. El Imperio Romano de Oriente (Imperio Bizantino) continuó hasta 1453 d.C.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">📖 <B>Historiografía:</B> La pregunta de "por qué cayó Roma" es uno de los grandes debates de la historia. Edward Gibbon (<I>Historia de la decadencia y caída del Imperio Romano</I>, 1776) culpó al Cristianismo y la "barbarización". Los historiadores modernos prefieren modelos multicausales: económicos, militares, climáticos y políticos.</DIV>
+
+<H3>15. El Legado de Roma al Mundo Actual</H3>
+Roma es, junto con Grecia, el pilar fundamental de la civilización occidental. Su influencia es inseparable de la cultura, las instituciones y el idioma del mundo moderno:
+<UL>
+<LI><B>Derecho:</B> el Derecho Romano es la base de todos los sistemas jurídicos de la Europa continental y América Latina (código civil, contratos, familia, propiedad).</LI>
+<LI><B>Lengua:</B> el latín es la madre del español, portugués, francés, italiano y rumano (lenguas romances). Miles de términos científicos, jurídicos y filosóficos son latín puro. El español es el idioma romano más hablado del mundo.</LI>
+<LI><B>Arquitectura:</B> el arco, la bóveda y el hormigón romanos están en todas partes: iglesias, puentes, acueductos. Los edificios neoclásicos del mundo (Capitolio de EE.UU., Parlamentos europeos) imitan el estilo romano.</LI>
+<LI><B>Religión:</B> la Iglesia Católica heredó la estructura del Imperio Romano: el Papa ocupa el papel del Pontifex Maximus, los obispos corresponden a los gobernadores provinciales, y Roma sigue siendo la capital.</LI>
+<LI><B>Calendario:</B> el Calendario Gregoriano (que usamos hoy) es una reforma del Calendario Juliano de César. Los nombres de los meses (Enero/Janus, Marzo/Marte, Julio/Julio César, Agosto/Augusto) y los días de la semana tienen origen latino.</LI>
+<LI><B>Política:</B> palabras como república, senado, constitución, veto, dictador, municipio, provincia, cónsul son términos romanos usados hoy. El concepto de ciudadanía universal viene del Edicto de Caracalla.</LI>
+<LI><B>Ingeniería:</B> técnicas de construcción de puentes, carreteras, alcantarillas y acueductos desarrolladas por Roma siguen siendo estudiadas e incluso usadas.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">753 a.C.</DIV><DIV CLASS="dk-label">Fundación tradicional de Roma por Rómulo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">509 a.C.</DIV><DIV CLASS="dk-label">Expulsión de Tarquinio: inicio de la República</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">450 a.C.</DIV><DIV CLASS="dk-label">Ley de las XII Tablas (primer código escrito)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">216 a.C.</DIV><DIV CLASS="dk-label">Batalla de Cannas: mayor derrota de Roma</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">44 a.C.</DIV><DIV CLASS="dk-label">Asesinato de Julio César (Idus de Marzo)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">27 a.C.</DIV><DIV CLASS="dk-label">Augusto inicia el Imperio (Principado)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">313 d.C.</DIV><DIV CLASS="dk-label">Edicto de Milán: Constantino legaliza el Cristianismo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">476 d.C.</DIV><DIV CLASS="dk-label">Caída del Imperio Romano de Occidente</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+⭐ <B>Fechas y datos clave para el examen:</B><BR>
+• Fundación de Roma: <B>753 a.C.</B> (tradicional) por Rómulo<BR>
+• Fin de la Monarquía: <B>509 a.C.</B> – expulsión de Tarquinio el Soberbio<BR>
+• Primeras leyes escritas: <B>Ley de las XII Tablas (~450 a.C.)</B><BR>
+• Guerras Púnicas: <B>1ª (264–241), 2ª (218–201), 3ª (149–146)</B> a.C.<BR>
+• Aníbal en Cannas: <B>216 a.C.</B>; derrotado en Zama por Escipión: <B>202 a.C.</B><BR>
+• Primer Triunvirato: <B>Pompeyo + Craso + César</B> (60 a.C.)<BR>
+• Asesinato de César: <B>15 de marzo (Idus) del 44 a.C.</B><BR>
+• Augusto y el Imperio: <B>27 a.C.</B>; Pax Romana hasta <B>180 d.C.</B><BR>
+• Edicto de Milán: <B>313 d.C.</B> (Constantino); Cristianismo oficial: <B>380 d.C.</B> (Teodosio)<BR>
+• División del Imperio: <B>395 d.C.</B> (Teodosio); Caída de Occidente: <B>476 d.C.</B> (Odoacro)<BR>
+• Corpus Iuris Civilis: <B>Justiniano (529–534 d.C.)</B> – base del Derecho moderno
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿En qué año y por quién fue fundada Roma según la tradición, y cuál fue el período político que inauguró este evento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) 509 a.C., por Tarquinio el Soberbio; inicio de la República</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) 753 a.C., por Rómulo; inicio de la Monarquía</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) 776 a.C., por Remo y Rómulo juntos; inicio del Imperio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) 27 a.C., por Augusto; inicio del Principado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Según la tradición, Roma fue fundada el 21 de abril del <B>753 a.C.</B> por <B>Rómulo</B>, primer rey de la ciudad. Este evento marca el inicio del período monárquico (753–509 a.C.), durante el cual gobernaron siete reyes. Rómulo mató a su hermano Remo en una disputa y dio su nombre a la ciudad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Qué fue la Ley de las XII Tablas y cuál fue su importancia histórica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) El código militar que organizó la primera legión romana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El primer código jurídico escrito de Roma, que permitió a los plebeyos conocer y exigir sus derechos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) El tratado de paz entre Roma y Cartago al final de la Primera Guerra Púnica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) La compilación jurídica ordenada por el emperador Justiniano en el siglo VI d.C.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Ley de las XII Tablas</B> (~450 a.C.) fue el primer código legal <B>escrito</B> de Roma, conseguido por los plebeyos como conquista política. Al exponerse en el Foro, cualquier ciudadano podía conocer las leyes, impidiendo que los patricios las interpretaran arbitrariamente. Es el origen de todo el Derecho Romano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿En qué fecha y qué hecho convencional marca el fin del Imperio Romano de Occidente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) 395 d.C., cuando Teodosio dividió el Imperio en dos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) 313 d.C., cuando Constantino legalizó el Cristianismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) 476 d.C., cuando Odoacro depuso al último emperador romano occidental, Rómulo Augústulo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) 1453 d.C., cuando los otomanos tomaron Constantinopla</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La fecha convencional del fin del Imperio Romano de Occidente es el <B>4 de septiembre del 476 d.C.</B>, cuando el jefe germano <B>Odoacro</B> depuso al último emperador, <B>Rómulo Augústulo</B>. El Imperio Romano de Oriente (Bizancio) sobrevivió hasta 1453. La fecha de 395 d.C. marca la división definitiva por Teodosio.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Qué fue el Edicto de Milán (313 d.C.) y quién lo promulgó?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Una ley de Teodosio que declaró el Cristianismo religión oficial del Imperio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Un decreto de Constantino que legalizó el Cristianismo y garantizó la tolerancia religiosa en el Imperio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Una constitución de Augusto que reorganizó las provincias imperiales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Un edicto de Diocleciano que inició la persecución sistemática de los cristianos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Edicto de Milán (313 d.C.)</B> fue promulgado por el emperador <B>Constantino I</B> (junto con Licinio). Legalizó el Cristianismo y garantizó la libertad religiosa en el Imperio. No lo declaró religión oficial (eso lo haría Teodosio en 380 d.C. con el Edicto de Tesalónica), pero puso fin a las persecuciones.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> El principal instrumento militar de Roma era la legión. ¿Cuántos soldados aproximadamente componían una legión romana completa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) 300 guerreros de élite seleccionados por nacimiento patricio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Entre 4 200 y 6 000 infantes ciudadanos organizados en 10 cohortes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Exactamente 10 000 hombres divididos en 100 centurias de 100 soldados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Entre 500 y 800 jinetes auxiliares reclutados en las provincias</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La legión romana estaba compuesta por <B>4 200 a 6 000 infantes</B> ciudadanos romanos, organizados en <B>10 cohortes</B> de 3 manípulos cada una. Cada legionario llevaba el pilum (lanza), el gladius (espada corta), el scutum (escudo) y la lorica (armadura). A la legión se añadían tropas auxiliares de caballería e infantes no ciudadanos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál fue la causa directa de que Julio César cruzara el río Rubicón en el 49 a.C. y qué significó históricamente este acto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Fue una orden del Senado para llevar sus victorias galas a Roma; significó el fin de las guerras civiles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El Senado le ordenó disolver su ejército; al cruzar el Rubicón con sus tropas desafió la ley y declaró en la práctica la guerra civil</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Quería escapar de una conspiración de sus generales en la Galia; cruzar el Rubicón fue un acto defensivo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Recibió la orden de perseguir a Pompeyo hasta Grecia; el Rubicón era la frontera con Macedonia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Senado, controlado por Pompeyo, ordenó a César disolver su ejército. Cruzar el río <B>Rubicón</B> con sus legiones era ilegal (ningún general podía introducir tropas en Italia). La frase <I>"Alea iacta est"</I> ("la suerte está echada") resume la irreversibilidad del acto. Inició la guerra civil que terminó con la República. De ahí la expresión moderna "cruzar el Rubicón" para referirse a una decisión sin retorno.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Qué diferencia fundamental existía entre el sistema político de la República y el del Principado (Imperio) inaugurado por Augusto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) La República era una monarquía absoluta; el Principado era una democracia directa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) La República dividía el poder entre cónsules, Senado y asambleas; el Principado concentraba el poder real en el Princeps manteniendo las formas republicanas exteriormente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) El Principado abolió el Senado y las magistraturas republicanas; la República las mantenía</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) No había diferencia real: ambos sistemas compartían el poder entre el pueblo y el Senado en igual medida</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>República</B> (509–27 a.C.) distribuía el poder entre los cónsules, el Senado y las asambleas, con mecanismos como la anualidad y la colegialidad para evitar abusos. El <B>Principado</B> de Augusto mantuvo formalmente el Senado y los magistrados, pero acumuló en el <I>Princeps</I> los poderes reales: mando militar (imperium), tribunado vitalicio (veto) y control del tesoro. Era una monarquía encubierta en formas republicanas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Explica por qué la Batalla de Cannas (216 a.C.) es considerada una de las mayores derrotas militares de Roma y qué consecuencias tuvo:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Fue una derrota menor que llevó a Roma a firmar la paz con Cartago temporalmente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Aníbal rodeó y destruyó a 86 000 romanos con 50 000 soldados; demostró la superioridad táctica cartaginesa y estuvo a punto de provocar el colapso de la alianza romana en Italia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Fue la derrota que marcó el fin de la Segunda Guerra Púnica y obligó a Roma a ceder Hispania</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Solo fue importante porque en ella murió el cónsul Publio Cornelio Escipión, padre del Africano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Cannas (216 a.C.)</B> fue la mayor derrota de Roma: Aníbal, con 50 000 soldados, rodeó completamente a 86 000 romanos y mató entre 50 000 y 70 000. Fue el modelo táctico de "doble envolvimiento" que todavía se estudia en academias militares. Sin embargo, Aníbal no atacó Roma directamente; varios aliados itálicos (incluida Capua) se pasaron a Cartago, pero la mayoría se mantuvo leal a Roma, que se recuperó.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Cuál fue la principal innovación arquitectónica romana que les permitió superar las limitaciones constructivas de los griegos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El uso del mármol blanco en lugar de la piedra caliza para las columnas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El arco de medio punto, la bóveda y el hormigón romano (opus caementicium), que permitieron estructuras de mayor tamaño y formas curvas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El sistema de columnas dóricas, jónicas y corintias adaptado a la escala monumental imperial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) El uso de madera de cedro importada del Líbano para cubiertas de grandes dimensiones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los griegos construían con el sistema de <B>viga y poste</B> (arquitrabado), limitado en el tamaño de los vanos. Los romanos perfeccionaron el <B>arco de medio punto</B>, que distribuye las cargas lateralmente, y lo extendieron a bóvedas y cúpulas (Panteón: 43,4 m). El <B>hormigón romano</B> (<I>opus caementicium</I>) permitía construir en formas curvas y a gran escala con menos material.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Qué papel cumplía el Senado en la República romana y en qué se diferenciaba de las asambleas populares?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) El Senado era elegido anualmente por el pueblo; las asambleas eran cuerpos vitalicios de ex-magistrados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) El Senado era un cuerpo vitalicio de ex-magistrados con enorme autoridad moral (auctoritas) que controlaba el tesoro y la política exterior; las asambleas votaban leyes y elegían magistrados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) El Senado dictaba las leyes directamente; las asambleas solo ratificaban las decisiones del Senado sin poder modificarlas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Ambos cuerpos tenían las mismas funciones y competencias; la diferencia era solo el número de miembros</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Senado</B> (300, luego 600 miembros) estaba compuesto por ex-magistrados de forma vitalicia. No dictaba leyes directamente, pero controlaba el tesoro, las provincias y la política exterior con su <I>auctoritas</I> (autoridad moral). Era el verdadero poder de Roma. Las <B>asambleas populares</B> (Comicios) votaban leyes y elegían magistrados, pero la organización del voto favorecía a los ricos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza por qué, pese a sus victorias en Trebia, Trasimeno y Cannas, Aníbal no pudo destruir definitivamente a Roma durante la Segunda Guerra Púnica:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Porque el Senado cartaginés le envió refuerzos que llegaron tarde y le ordenaron retirarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Porque Aníbal carecía de maquinaria de asedio suficiente para atacar Roma, la mayoría de los aliados itálicos se mantuvieron leales a Roma, y Escipión respondió invadiendo África obligando a Aníbal a volver a Cartago</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Porque una epidemia de malaria diezmó al ejército cartaginés en Italia durante el invierno del 215 a.C.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Porque los galos del norte de Italia traicionaron a Aníbal y atacaron su retaguardia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aníbal tenía tres problemas críticos: (1) <B>sin maquinaria de asedio</B>, Roma era inexpugnable; (2) <B>los aliados itálicos</B> (salvo algunas excepciones como Capua) se mantuvieron leales a Roma: sin su apoyo, Aníbal no podía abastecer su ejército; (3) el Senado cartaginés <B>no le envió refuerzos suficientes</B>. La estrategia de Escipión de invadir África directamente fue el golpe decisivo: Aníbal tuvo que abandonar Italia y fue derrotado en Zama (202 a.C.).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> La reforma militar de Cayo Mario (~107 a.C.) tuvo consecuencias políticas que van más allá del campo de batalla. Explica cuál fue la más significativa:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Eliminó la caballería del ejército romano, transformándolo en una fuerza exclusivamente de infantería</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Al convertir el ejército en profesional y hacer que los soldados juraran lealtad al general (no al Estado), creó ejércitos personales que los ambiciosos usaron para tomar el poder, precipitando las guerras civiles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Obligó a los patricios a servir en las legiones junto a los plebeyos, eliminando definitivamente la distinción de clases en Roma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Redujo el número de legiones de 28 a 10 para hacer el ejército más manejable y barato</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La consecuencia más grave de la <B>reforma mariana</B> fue política: al reclutar proletarios que dependían del general para su equipo y su pensión de retiro, los soldados juraban lealtad <B>al general, no al Estado</B>. Esto creó ejércitos personales. Mario usó ese poder para ser cónsul 7 veces; Sila fue el primero en marchar sobre Roma; César cruzó el Rubicón; Octavio y Marco Antonio lucharon por el trono. La reforma convirtió el ejército en el árbitro de la política romana.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> ¿En qué consiste la distinción romana entre Ius Civile, Ius Gentium e Ius Naturale y cuál de ellos tiene mayor vigencia en el derecho internacional moderno?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Son tres nombres distintos para el mismo código, el Corpus Iuris Civilis, aplicable a todos por igual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El Ius Civile regía solo para ciudadanos romanos; el Ius Gentium para todos los pueblos del Imperio; el Ius Naturale eran principios universales de justicia basados en la razón; el Ius Gentium es el antecedente del Derecho Internacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) El Ius Naturale solo aplicaba a los esclavos liberados; el Ius Gentium a los senadores; el Ius Civile a los plebeyos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Los tres cuerpos jurídicos eran equivalentes pero se aplicaban en distintas provincias del Imperio según su tradición local</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Ius Civile:</B> derecho exclusivo de los ciudadanos romanos. <B>Ius Gentium:</B> reglas comunes a todos los pueblos del Imperio, independientemente de su ciudadanía; regulaba el comercio y los contratos entre diferentes pueblos. <B>Ius Naturale:</B> principios jurídicos universales basados en la razón, influidos por el estoicismo. El <B>Ius Gentium</B> es el antecedente histórico del Derecho Internacional Público moderno.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿Por qué el Principado de Augusto representó el fin real de la República romana, aunque formalmente se mantuvieran sus instituciones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Porque Augusto abolió el Senado y el cargo de cónsul en el 27 a.C.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Porque concentró en su persona el control del ejército (único factor de poder real), el veto sobre toda legislación y el control del tesoro, vaciando de contenido real a las instituciones republicanas aunque las respetara en la forma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Porque convenció al pueblo de que la República era ineficiente mediante un referéndum popular que aprobó la monarquía</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Porque declaró abiertamente que Roma era un Imperio y él su emperador absoluto, ante la aprobación del Senado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Augusto fue políticamente genial: preservó el Senado, los cónsules y los magistrados, pero concentró el poder real: el <B>imperium proconsular</B> le daba mando sobre las provincias militarizadas (donde estaban las legiones), el <B>tribunado vitalicio</B> le daba veto sobre toda ley, y su control del tesoro de las provincias imperiales era decisivo. Las instituciones republicanas continuaron, pero eran vacías de poder. Era la esencia de la monarquía con la apariencia de la República.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Cuál fue la causa más profunda del conflicto entre patricios y plebeyos en la Roma republicana, y cuál fue la conquista más importante de los plebeyos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La causa fue la escasez de agua; la conquista fue el derecho al voto en los Comicios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La causa fue el monopolio patricio sobre cargos políticos, tierras del Estado y leyes no escritas; la conquista más importante fue la Ley de las XII Tablas (~450 a.C.) y el acceso gradual a todas las magistraturas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La causa fue el diferente origen étnico (los patricios eran griegos; los plebeyos, etruscos); se resolvió con el matrimonio mixto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La causa fue exclusivamente económica (los plebeyos querían el derecho a comerciar); la conquista fue la abolición del pago de impuestos para los más pobres</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>patricios</B> monopolizaban: los cargos políticos (consulado, sacerdocio), las tierras del <I>ager publicus</I> y las leyes (no escritas y aplicadas arbitrariamente). Los <B>plebeyos</B> combatían (eran la base del ejército) y pagaban impuestos sin tener voz. La conquista más importante fue la <B>Ley de las XII Tablas</B> (~450 a.C.): las leyes escritas eran iguales para todos. Luego vinieron el Tribunado de la Plebe (con derecho de veto), y por la Ley Licinia-Sextia (367 a.C.) el acceso al consulado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El historiador Edward Gibbon atribuyó la caída del Imperio Romano en parte al Cristianismo. ¿Qué elementos del texto justifican una interpretación multicausal más compleja de la caída de Roma?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La caída se explica únicamente por las invasiones bárbaras del siglo V, que fueron irresistibles dado el tamaño del Imperio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La caída fue resultado de una crisis simultánea en múltiples frentes: económico (devaluación, impuestos, cese de conquistas), militar (barbarización del ejército, fronteras indefendibles), político (inestabilidad, anarquía militar del siglo III) y presión exterior (pueblos germánicos, hunos)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La causa principal fue la división del Imperio por Teodosio en 395 d.C., que dejó a Occidente sin el apoyo económico y militar de Oriente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La caída se debió exclusivamente a la corrupción moral del pueblo romano, que dejó de valorar las virtudes militares ancestrales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La historiografía moderna rechaza las explicaciones monocausales. La caída de Roma fue <B>multicausal</B>: (1) <B>económica:</B> devaluación monetaria, inflación, agotamiento del sistema esclavista al cesar las conquistas; (2) <B>militar:</B> barbarización del ejército, fronteras imposibles de defender con los medios disponibles; (3) <B>política:</B> "anarquía militar" del siglo III (26 emperadores en 50 años), corrupción, guerras civiles; (4) <B>exterior:</B> presión de los pueblos germánicos amplificada por la llegada de los hunos que empujaron a los godos hacia el Imperio. La religión fue un factor, no la causa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> ¿En qué se diferencia fundamentalmente el concepto romano de <i>pax deorum</i> del concepto cristiano de religión, y cómo explica esto las persecuciones a los primeros cristianos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La pax deorum era un sistema de meditación filosófica; el Cristianismo era más práctico y orientado a obras de caridad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La pax deorum era un contrato pragmático entre los ciudadanos y los dioses para obtener su favor; los romanos persiguieron a los cristianos no por sus creencias sino porque su negativa a rendir culto al emperador rompía ese contrato colectivo y amenazaba la cohesión del Estado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) No había diferencia real: los romanos toleraban cualquier religión siempre que sus seguidores pagaran impuestos al fisco imperial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La pax deorum exigía el monoteísmo; el politeísmo romano fue una degeneración posterior introducida por los griegos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La religión romana era pragmática: la <B><I>pax deorum</I></B> era el acuerdo por el que los ciudadanos veneraban a los dioses a cambio de su favor colectivo. Era un acto cívico, no espiritual. Por eso Roma era tolerante con todas las religiones (incluido el judaísmo): solo pedía que se rindiera culto al Genio del Emperador como acto de lealtad política. Los <B>cristianos</B>, por su monoteísmo exclusivista, se negaban a este acto, lo que se interpretaba como subversión del orden político. No fueron perseguidos por sus creencias, sino por sus consecuencias cívicas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> El Corpus Iuris Civilis de Justiniano fue compilado en el siglo VI d.C., siglos después de la caída de Roma Occidental. ¿Por qué es, no obstante, el legado jurídico más importante de Roma?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Porque fue el único código legal que tuvo vigencia en todo el Imperio Romano en vida de Augusto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Porque sistematizó y transmitió 1 000 años de jurisprudencia romana a la Europa medieval y moderna, siendo la base directa del Código de Napoleón y de todos los sistemas jurídicos de Europa continental y América Latina, incluyendo Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Porque fue redactado en latín clásico puro, preservando la lengua romana durante la Edad Media</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Porque reemplazó todas las leyes tribales bárbaras y fue adoptado inmediatamente por los reinos germánicos que sucedieron a Roma en Occidente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Corpus Iuris Civilis</B> (Digesto, Instituciones, Código y Novelas) ordenado por Justiniano recopiló 10 siglos de derecho romano. Su redescubrimiento en la Europa medieval (siglo XI, Bolonia) lo convirtió en la base de la educación jurídica universitaria. El <B>Código de Napoleón (1804)</B> se basa directamente en él; de ahí se derivaron todos los códigos civiles de América Latina, incluyendo el Código Civil peruano. Principios como la presunción de inocencia, la cosa juzgada o la libertad contractual son herencia directa de Roma.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Compara el conflicto de patricios y plebeyos en Roma con la democracia ateniense en Grecia. ¿Cuál fue el resultado político más diferente entre ambos sistemas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) En ambos casos, la solución fue idéntica: la creación de una asamblea popular con sufragio universal masculino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Atenas desarrolló una democracia directa (aunque excluyente) donde los ciudadanos votaban personalmente las leyes; Roma desarrolló un sistema de equilibrio de poderes (cónsules, Senado, asambleas) con garantías jurídicas escritas, pero nunca alcanzó la participación directa ateniense</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Roma alcanzó una democracia más plena que Atenas porque sus plebeyos tenían más derechos que los ciudadanos atenienses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) En Roma los esclavos acabaron obteniendo la ciudadanía; en Atenas esto nunca ocurrió</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>democracia ateniense</B> (directa, excluyente) implicaba que cada ciudadano votaba personalmente cada ley en la Asamblea. La <B>República romana</B> no llegó a ese nivel de participación directa: sus Comicios favorecían a los ricos en la distribución del voto, y el Senado vitalicio mantenía el poder real. Pero Roma aportó algo que Atenas no desarrolló igual: el <B>Estado de Derecho</B> escrito (XII Tablas), las garantías procesales, y el Tribunado de la Plebe como mecanismo de control popular. Dos modelos distintos de gobierno que influyeron en el mundo occidental de maneras diferentes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> ¿Cuál de las siguientes afirmaciones sobre la Roma imperial es INCORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) El Edicto de Caracalla (212 d.C.) extendió la ciudadanía romana a todos los hombres libres del Imperio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) El Imperio Romano alcanzó su máxima extensión territorial bajo el emperador Trajano (98–117 d.C.)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Augusto afirmó haber encontrado Roma de ladrillo y haberla dejado de mármol, refiriéndose a su programa de construcciones públicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El Coliseo romano fue construido por el emperador Augusto para conmemorar las victorias en las Guerras Púnicas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>La incorrecta es d)</B><BR>El <B>Coliseo</B> (Anfiteatro Flavio) fue construido por los emperadores <B>Vespasiano y Tito</B> entre el 72 y el 80 d.C., con el botín y los esclavos obtenidos tras la destrucción de Jerusalén (70 d.C.). Augusto murió en el 14 d.C., más de medio siglo antes de su construcción, y las Guerras Púnicas terminaron en 146 a.C. Las otras afirmaciones son correctas.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

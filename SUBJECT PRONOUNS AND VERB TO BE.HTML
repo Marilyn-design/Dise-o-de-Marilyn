@@ -1,0 +1,505 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Subject pronouns and Verb to be - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 1 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Introduction to English</H1>
+<DIV CLASS="sub">Pronombres personales &middot; Verbo To Be &middot; Formas afirmativa, negativa e interrogativa &middot; Contracciones</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- SECCIÓN 1: SUBJECT PRONOUNS -->
+<H3 ID="pronouns">1. Subject Pronouns — Pronombres Personales Sujeto</H3>
+
+Los <B>pronombres personales sujeto</B> (subject pronouns) reemplazan al sujeto de una oración, es decir, a la persona, animal o cosa que realiza la acción o es descrita. 
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Persona</TH><TH>Singular</TH><TH>Plural</TH><TH>Equivalente en español</TH></TR>
+<TR><TD><B>1.ª persona</B></TD><TD><B>I</B></TD><TD><B>we</B></TD><TD>yo / nosotros</TD></TR>
+<TR><TD><B>2.ª persona</B></TD><TD><B>you</B></TD><TD><B>you</B></TD><TD>tú, usted / vosotros, ustedes</TD></TR>
+<TR><TD><B>3.ª persona masc.</B></TD><TD><B>he</B></TD><TD rowspan="3"><B>they</B></TD><TD>él / ellos, ellas</TD></TR>
+<TR><TD><B>3.ª persona fem.</B></TD><TD><B>she</B></TD><TD>ella</TD></TR>
+<TR><TD><B>3.ª persona neutro</B></TD><TD><B>it</B></TD><TD>ello (cosas, animales)</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Reglas clave para elegir el pronombre correcto:</H4>
+<UL>
+<LI><B>I</B> — siempre hace referencia al hablante. En inglés se escribe siempre en mayúscula, sin excepción. <BR><SPAN CLASS="eng">Ejemplo: I am a student. / Am I late?</SPAN></LI>
+<LI><B>you</B> — se usa tanto para el singular como para el plural (misma forma). En español equivale a <I>tú, usted, vosotros y ustedes</I>. El contexto determina cuántas personas son. <BR><SPAN CLASS="eng">Ejemplo: You are my friend, David. / You are good friends, John and Sarah.</SPAN></LI>
+<LI><B>he</B> — para una sola persona de género masculino, o un animal macho (especialmente si es mascota). <BR><SPAN CLASS="eng">Ejemplo: My brother is a doctor. He is very kind.</SPAN></LI>
+<LI><B>she</B> — para una sola persona de género femenino, o un animal hembra (especialmente si es mascota). <BR><SPAN CLASS="eng">Ejemplo: My teacher is from Australia. She is very strict.</SPAN></LI>
+<LI><B>it</B> — para cosas, animales (cuando el género es desconocido o irrelevante) y sujetos impersonales (clima, hora, distancia). <BR><SPAN CLASS="eng">Ejemplo: The book is heavy. It is on the table. / It is cold today.</SPAN></LI>
+<LI><B>we</B> — Para hablar de un grupo que incluye a la persona que habla ("yo") y a una o más personas.<BR><SPAN CLASS="eng">Ejemplo: My friend and I are ready. → We are ready.</SPAN></LI>
+<LI><B>they</B> — para dos o más personas, animales o cosas, sin importar el género. <BR><SPAN CLASS="eng">Ejemplo: Anton and Luca are friends. → They are friends.</SPAN></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Error frecuente en exámenes:</B> En inglés, toda oración necesita un sujeto explícito, incluso cuando es obvio. No se puede decir <I>"Is cold today"</I> — se debe decir <I>"It is cold today."</I> El pronombre <B>it</B> cumple la función de sujeto impersonal para hablar del clima (<I>It is raining</I>), la hora (<I>It is 3 o'clock</I>) y la distancia (<I>It is far from here</I>).</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">7</DIV><DIV CLASS="dk-label">Pronombres personales<BR>en inglés</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">I</DIV><DIV CLASS="dk-label">Siempre en<BR>MAYÚSCULA</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">you</DIV><DIV CLASS="dk-label">Igual para singular<BR>y plural</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">it</DIV><DIV CLASS="dk-label">Cosas, animales<BR>y clima</DIV></DIV>
+</DIV>
+
+<!-- SECCIÓN 2: VERB TO BE -->
+<H3 ID="tobe">2. Verb <I>To Be</I> — El verbo "ser / estar"</H3>
+
+El verbo <B>to be</B> es el verbo más importante e irregular del inglés. En el presente simple tiene tres formas distintas: <B>am, is, are</B>. Equivale a los verbos españoles <I>ser</I> y <I>estar</I> — en inglés no existe esa distinción: el contexto determina el significado.
+
+<H4>¿Para qué se usa <I>to be</I>?</H4>
+<UL>
+<LI><B>Identidad y datos personales:</B> nombre, edad, nacionalidad, ocupación.<BR><SPAN CLASS="eng">She is a nurse. / We are Peruvian. / I am 17 years old.</SPAN></LI>
+<LI><B>Descripción de personas y cosas</B> (con adjetivos calificativos).<BR><SPAN CLASS="eng">The sky is blue. / They are very intelligent.</SPAN></LI>
+<LI><B>Ubicación:</B> dónde se encuentra algo o alguien.<BR><SPAN CLASS="eng">The keys are on the table. / We are at school.</SPAN></LI>
+<LI><B>Uso impersonal</B> con <I>it</I> para clima, hora y distancia.<BR><SPAN CLASS="eng">It is sunny. / It is 8 o'clock. / It is 5 km from here.</SPAN></LI>
+</UL>
+
+<DIV CLASS="ej">💡 <B>Diferencia clave con el español:</B> En inglés <I>to be</I> abarca tanto a <I>ser</I> como a <I>estar</I>. Así: <SPAN CLASS="eng">"He is a doctor"</SPAN> (ser) y <SPAN CLASS="eng">"He is in the office"</SPAN> (estar) usan el mismo verbo <I>is</I>. El contexto aclara el significado.</DIV>
+
+<!-- SECCIÓN 3: AFIRMATIVA -->
+<H3 ID="afirmativa">3. Forma Afirmativa — Affirmative Form</H3>
+
+La estructura de la oración afirmativa es: <B>Sujeto + to be + complemento.</B>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Pronombre</TH><TH>Forma larga</TH><TH>Contracción</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>I</B></TD><TD>I am</TD><TD>I'm</TD><TD><SPAN CLASS="eng">I'm a student.</SPAN></TD></TR>
+<TR><TD><B>you</B></TD><TD>you are</TD><TD>you're</TD><TD><SPAN CLASS="eng">You're very smart.</SPAN></TD></TR>
+<TR><TD><B>he</B></TD><TD>he is</TD><TD>he's</TD><TD><SPAN CLASS="eng">He's my brother.</SPAN></TD></TR>
+<TR><TD><B>she</B></TD><TD>she is</TD><TD>she's</TD><TD><SPAN CLASS="eng">She's from Lima.</SPAN></TD></TR>
+<TR><TD><B>it</B></TD><TD>it is</TD><TD>it's</TD><TD><SPAN CLASS="eng">It's cold today.</SPAN></TD></TR>
+<TR><TD><B>we</B></TD><TD>we are</TD><TD>we're</TD><TD><SPAN CLASS="eng">We're ready for the test.</SPAN></TD></TR>
+<TR><TD><B>you</B></TD><TD>you are</TD><TD>you're</TD><TD><SPAN CLASS="eng">You're good friends.</SPAN></TD></TR>
+<TR><TD><B>they</B></TD><TD>they are</TD><TD>they're</TD><TD><SPAN CLASS="eng">They're my classmates.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Regla de examen — Contracciones afirmativas:</B> En inglés coloquial (conversación, mensajes, textos informales) se usa la contracción. En textos formales y en las <B>respuestas cortas afirmativas</B> se usa siempre la forma larga. NUNCA se dice "Yes, I'm." — lo correcto es <B>"Yes, I am."</B></DIV>
+
+<!-- SECCIÓN 4: NEGATIVA -->
+<H3 ID="negativa">4. Forma Negativa — Negative Form</H3>
+
+Para negar con <I>to be</I>, se añade <B>not</B> después del verbo. Estructura: <B>Sujeto + to be + not + complemento.</B>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Pronombre</TH><TH>Forma larga</TH><TH>Contracción</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>I</B></TD><TD>I am not</TD><TD>I'm not</TD><TD><SPAN CLASS="eng">I'm not tired.</SPAN></TD></TR>
+<TR><TD><B>you</B></TD><TD>you are not</TD><TD>you aren't</TD><TD><SPAN CLASS="eng">You aren't ready.</SPAN></TD></TR>
+<TR><TD><B>he</B></TD><TD>he is not</TD><TD>he isn't</TD><TD><SPAN CLASS="eng">He isn't at home.</SPAN></TD></TR>
+<TR><TD><B>she</B></TD><TD>she is not</TD><TD>she isn't</TD><TD><SPAN CLASS="eng">She isn't my sister.</SPAN></TD></TR>
+<TR><TD><B>it</B></TD><TD>it is not</TD><TD>it isn't</TD><TD><SPAN CLASS="eng">It isn't hot today.</SPAN></TD></TR>
+<TR><TD><B>we</B></TD><TD>we are not</TD><TD>we aren't</TD><TD><SPAN CLASS="eng">We aren't from Cusco.</SPAN></TD></TR>
+<TR><TD><B>you</B></TD><TD>you are not</TD><TD>you aren't</TD><TD><SPAN CLASS="eng">You aren't wrong.</SPAN></TD></TR>
+<TR><TD><B>they</B></TD><TD>they are not</TD><TD>they aren't</TD><TD><SPAN CLASS="eng">They aren't my friends.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Caso especial — I am not:</B> La única forma negativa de <I>I am</I> es <B>I'm not</B>. No existe la contracción "I amn't" ni "I aren't" en el inglés estándar. Es la única excepción al patrón.</DIV>
+
+<!-- SECCIÓN 5: INTERROGATIVA -->
+<H3 ID="interrogativa">5. Forma Interrogativa — Question Form &amp; Short Answers</H3>
+
+Para formar una pregunta con <I>to be</I>, se <B>invierte el orden</B>: el verbo va antes del sujeto. Estructura: <B>To be + Sujeto + complemento + ?</B>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Pregunta</TH><TH>Respuesta afirmativa corta</TH><TH>Respuesta negativa corta</TH></TR>
+<TR><TD><SPAN CLASS="eng">Am I late?</SPAN></TD><TD><SPAN CLASS="eng">Yes, I am.</SPAN></TD><TD><SPAN CLASS="eng">No, I'm not.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="eng">Are you a student?</SPAN></TD><TD><SPAN CLASS="eng">Yes, you are.</SPAN></TD><TD><SPAN CLASS="eng">No, you aren't.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="eng">Is he your brother?</SPAN></TD><TD><SPAN CLASS="eng">Yes, he is.</SPAN></TD><TD><SPAN CLASS="eng">No, he isn't.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="eng">Is she from Trujillo?</SPAN></TD><TD><SPAN CLASS="eng">Yes, she is.</SPAN></TD><TD><SPAN CLASS="eng">No, she isn't.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="eng">Is it cold today?</SPAN></TD><TD><SPAN CLASS="eng">Yes, it is.</SPAN></TD><TD><SPAN CLASS="eng">No, it isn't.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="eng">Are we late?</SPAN></TD><TD><SPAN CLASS="eng">Yes, we are.</SPAN></TD><TD><SPAN CLASS="eng">No, we aren't.</SPAN></TD></TR>
+<TR><TD><SPAN CLASS="eng">Are they your friends?</SPAN></TD><TD><SPAN CLASS="eng">Yes, they are.</SPAN></TD><TD><SPAN CLASS="eng">No, they aren't.</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Preguntas negativas — Negative Questions:</H4>
+Las preguntas negativas se forman anteponiendo la contracción negativa de <I>to be</I> al sujeto. Se usan cuando el hablante <B>espera o asume que la respuesta es "Sí"</B>, para expresar sorpresa o buscar confirmación.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Pronombre</TH><TH>Pregunta negativa</TH><TH>Contexto típico</TH></TR>
+<TR><TD><B>I</B></TD><TD><SPAN CLASS="eng">Aren't I?</SPAN></TD><TD>Buscando confirmación: <SPAN CLASS="eng">"Aren't I right?"</SPAN></TD></TR>
+<TR><TD><B>you</B></TD><TD><SPAN CLASS="eng">Aren't you?</SPAN></TD><TD><SPAN CLASS="eng">"Aren't you tired after the race?"</SPAN></TD></TR>
+<TR><TD><B>he / she / it</B></TD><TD><SPAN CLASS="eng">Isn't he/she/it?</SPAN></TD><TD><SPAN CLASS="eng">"Isn't she the new student?"</SPAN></TD></TR>
+<TR><TD><B>we / you / they</B></TD><TD><SPAN CLASS="eng">Aren't we/you/they?</SPAN></TD><TD><SPAN CLASS="eng">"Aren't they from the same school?"</SPAN></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">📌 <B>Ejemplo de pregunta negativa en contexto:</B><BR>
+<SPAN CLASS="eng">"Isn't it hot today?"</SPAN> — El hablante cree que SÍ hace calor y espera que el otro esté de acuerdo.<BR>
+→ Respuesta: <SPAN CLASS="eng">"Yes, it is. It's very hot."</SPAN><BR><BR>
+<B>Regla irregular:</B> La pregunta negativa para <I>I</I> es <B>Aren't I?</B> — no "Amn't I?" (incorrecto en inglés estándar).</DIV>
+
+<!-- SECCIÓN 6: CONTRACCIONES -->
+<H3 ID="contracciones">6. Contracciones — Contractions</H3>
+
+Las contracciones son formas abreviadas que se usan en el <B>inglés coloquial e informal</B>. Dominarlas es esencial para la comprensión lectora y la producción escrita en exámenes.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Forma larga</TH><TH>Contracción</TH><TH>Ejemplo</TH><TH>¡Cuidado!</TH></TR>
+<TR><TD>I am</TD><TD><B>I'm</B></TD><TD><SPAN CLASS="eng">I'm a student.</SPAN></TD><TD>No usar en respuestas cortas afirmativas.</TD></TR>
+<TR><TD>you are</TD><TD><B>you're</B></TD><TD><SPAN CLASS="eng">You're very kind.</SPAN></TD><TD>Confundible con <I>your</I> (posesivo).</TD></TR>
+<TR><TD>he is</TD><TD><B>he's</B></TD><TD><SPAN CLASS="eng">He's my cousin.</SPAN></TD><TD>También significa <I>he has</I>.</TD></TR>
+<TR><TD>she is</TD><TD><B>she's</B></TD><TD><SPAN CLASS="eng">She's from Arequipa.</SPAN></TD><TD>También significa <I>she has</I>.</TD></TR>
+<TR><TD>it is</TD><TD><B>it's</B></TD><TD><SPAN CLASS="eng">It's cold outside.</SPAN></TD><TD>Confundible con <I>its</I> (posesivo sin apóstrofe).</TD></TR>
+<TR><TD>we are</TD><TD><B>we're</B></TD><TD><SPAN CLASS="eng">We're ready.</SPAN></TD><TD>Confundible con <I>were</I> (pasado de be).</TD></TR>
+<TR><TD>they are</TD><TD><B>they're</B></TD><TD><SPAN CLASS="eng">They're my friends.</SPAN></TD><TD>Confundible con <I>their</I> (posesivo) y <I>there</I> (lugar).</TD></TR>
+<TR><TD>you are not</TD><TD><B>you aren't</B></TD><TD><SPAN CLASS="eng">You aren't wrong.</SPAN></TD><TD>&nbsp;</TD></TR>
+<TR><TD>he/she/it is not</TD><TD><B>isn't</B></TD><TD><SPAN CLASS="eng">She isn't here.</SPAN></TD><TD>&nbsp;</TD></TR>
+<TR><TD>we/you/they are not</TD><TD><B>aren't</B></TD><TD><SPAN CLASS="eng">They aren't ready.</SPAN></TD><TD>&nbsp;</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Los 3 errores más comunes en exámenes — Homófonos:</B><BR>
+• <B>it's</B> (= it is) vs. <B>its</B> (posesivo): <SPAN CLASS="eng">"It's a great day." / "The cat licked its paw."</SPAN><BR>
+• <B>they're</B> (= they are) vs. <B>their</B> (posesivo) vs. <B>there</B> (lugar/existencia): <SPAN CLASS="eng">"They're happy." / "Their house is big." / "There is a park."</SPAN><BR>
+• <B>you're</B> (= you are) vs. <B>your</B> (posesivo): <SPAN CLASS="eng">"You're smart." / "Your book is here."</SPAN></DIV>
+
+</DIV>
+</DIV>
+
+<!-- =================== EJERCICIOS =================== -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de práctica</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BÁSICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; Reconocimiento y uso directo</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Qué pronombre personal reemplaza correctamente al sujeto subrayado? — <U>My mother</U> is a nurse.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) He</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) She</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) It</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) They</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) She</B><BR>"My mother" es una sola persona de género femenino → el pronombre correcto es <B>she</B>. Recordar: <I>he</I> = masculino singular, <I>she</I> = femenino singular, <I>it</I> = cosa o animal (género desconocido), <I>they</I> = plural (dos o más personas o cosas).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Elige la forma correcta del verbo <I>to be</I>: "The books _____ on the desk."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) am</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) is</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) are</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) be</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) are</B><BR>"The books" es un sujeto en <B>plural</B> → equivale a <I>they</I> → se usa <B>are</B>. Regla de concordancia: <I>am</I> solo con <I>I</I>; <I>is</I> con <I>he, she, it</I> (singular 3.ª persona); <I>are</I> con <I>you, we, they</I> (plural o 2.ª persona). La forma <I>be</I> sola nunca se usa en declaraciones del presente simple.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Selecciona el pronombre que reemplaza a: <U>Uncle John and I</U> are ready.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) They</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) He</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) We</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) You</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) We</B><BR>Cuando el sujeto incluye "I" (el hablante) junto a otras personas, todo el grupo se reemplaza por <B>we</B>. "They" se usaría solo si el hablante NO forma parte del grupo. "He" es incorrecto porque abarca solo a una persona masculina, no incluye al hablante.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Identifica la oración gramaticalmente correcta:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) She are happy.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) He am a doctor.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) They is my friends.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) We are tired.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d) We are tired. ✅</B><BR>• <I>"She are"</I> ❌ → she requiere <I>is</I>.<BR>• <I>"He am"</I> ❌ → he requiere <I>is</I>.<BR>• <I>"They is"</I> ❌ → they requiere <I>are</I>.<BR>• <I>"We are"</I> ✅ → concordancia correcta: we + are.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Cuál es la contracción correcta de "I am not"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) I amn't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) I isn't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) I'm not</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) I aren't</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) I'm not</B><BR>La única contracción válida en inglés estándar para la negación de <I>I am</I> es <B>I'm not</B>. Las formas "I amn't" e "I aren't" son incorrectas gramaticalmente. Esta es la única excepción al patrón general de contracciones negativas (he isn't / they aren't).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Completa con la forma afirmativa correcta: "The cat _____ on the sofa."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) are</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) am</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) is</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) be</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) is</B><BR>"The cat" es un sujeto singular (equivale a <I>it</I>) → usa <B>is</B>. Aunque el gato sea una mascota y se le llame "he" o "she" en otros contextos, el verbo siempre es <I>is</I> porque es 3.ª persona singular.</DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; Aplicación y transformación</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Transforma a la forma negativa: "The flowers are in the garden." ¿Cuál es la opción correcta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) The flowers isn't in the garden.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) The flowers not are in the garden.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) The flowers are not in the garden.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) The flowers amn't in the garden.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) The flowers are not in the garden.</B><BR>"The flowers" es plural → verbo <I>are</I>. Para negar, <I>not</I> va <B>inmediatamente después</B> del verbo <I>to be</I>: <I>are not</I>. La opción b) es incorrecta porque coloca "not" antes del verbo — en inglés eso solo es posible con verbos auxiliares en construcciones especiales, nunca con <I>to be</I>. La contracción equivalente sería: <I>The flowers aren't in the garden.</I></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Completa el diálogo con las formas correctas de <I>to be</I>:<BR><SPAN CLASS="eng">"_____ you and your sister from Arequipa?" / "Yes, _____ are. We're from Yanahuara district."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Is / she</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Are / we</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Are / you</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Is / we</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Are / we</B><BR>"You and your sister" es sujeto plural (dos personas) → la pregunta usa <B>Are</B>. La respuesta corta la da la persona que fue preguntada: desde su perspectiva, "you and your sister" se convierte en <B>we</B> (mi hermana y yo). Este ejercicio evalúa simultáneamente la forma interrogativa y el cambio de perspectiva en las respuestas cortas — muy frecuente en preuniversitarios.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Identifica la oración con el uso INCORRECTO de una contracción:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) "Its a beautiful day today."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) "They're my best friends."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) "She isn't at home right now."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) "We aren't ready for the exam."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a) "Its a beautiful day today."</B><BR><I>"Its"</I> sin apóstrofe es un <B>pronombre posesivo</B> (ej: <SPAN CLASS="eng">"The dog wagged its tail"</SPAN>). Para decir "It is a beautiful day" se necesita la contracción <B>it's</B> (con apóstrofe = it is). Esta confusión entre <I>its</I> e <I>it's</I> es uno de los errores más evaluados en exámenes de inglés a todo nivel.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Transforma a pregunta y proporciona la respuesta corta negativa correcta: "Anton and Luca are friends."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Is Anton and Luca friends? — No, he isn't.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Are Anton and Luca friends? — No, they aren't.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Are Anton and Luca friends? — No, it isn't.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Do Anton and Luca are friends? — No, they don't.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Are Anton and Luca friends? — No, they aren't.</B><BR>"Anton and Luca" es plural → pregunta con <B>Are</B>. En la respuesta corta, "Anton and Luca" se reemplaza por <B>they</B>. La opción d) es incorrecta porque usa <I>do</I>, que es el auxiliar para otros verbos, nunca para <I>to be</I>. La opción a) usa <I>Is</I> (incorrecto para plural) y <I>he</I> (pronombre singular).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> ¿Cuál de estas oraciones usa <I>to be</I> en su función <B>impersonal</B> (con <I>it</I>)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) My parents are teachers.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) It is 25 degrees and very humid today.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) The car is red and fast.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) She is a brilliant scientist.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) It is 25 degrees and very humid today.</B><BR>Las opciones a), c) y d) usan <I>to be</I> para describir una característica u ocupación de una persona o cosa específica. La opción b) usa <B>it</B> como <B>sujeto impersonal</B> (sin referente real) para hablar del clima — construcción fundamental en inglés que no tiene equivalente directo en español (en español decimos simplemente "Hace 25 grados").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Reescribe con el pronombre personal correcto: "Mum and Dad aren't in the kitchen." → _____ aren't in the kitchen.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) He</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) She</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) We</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) They</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d) They</B><BR>"Mum and Dad" son dos personas → sujeto plural → pronombre <B>they</B>. Aunque "Mum" sea femenino y "Dad" masculino, cuando hay dos o más personas de géneros mixtos (o del mismo género) se usa <I>they</I>, nunca "he" o "she" para el grupo completo.</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; Análisis y corrección de errores</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Un estudiante escribe: <SPAN CLASS="eng">"Isn't the actor good? Yes, he isn't."</SPAN> — Identifica el error y selecciona la versión corregida:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La pregunta es incorrecta; debe ser "Is the actor good?" — la respuesta no cambia.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La pregunta es correcta; la respuesta corta debe ser "Yes, he is." porque ante preguntas negativas que esperan respuesta afirmativa, se usa la forma afirmativa sin contracción.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Ambas (pregunta y respuesta) son correctas.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La pregunta debe ser "Aren't the actor good?" — la respuesta no cambia.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La pregunta <SPAN CLASS="eng">"Isn't the actor good?"</SPAN> es <B>gramaticalmente correcta</B> (sujeto singular "the actor" → <I>Isn't</I>). El <B>error está en la respuesta</B>: "Yes, he isn't" es una contradicción lógica — no se puede decir "Sí" y luego usar forma negativa. Regla: cuando una pregunta negativa se responde afirmativamente, se usa la <B>respuesta corta positiva</B>: <B>"Yes, he is."</B> (sin contracción, porque las respuestas cortas afirmativas nunca contraen el verbo).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿Por qué se usa <B>she</B> (y no <I>it</I>) en la oración: <SPAN CLASS="eng">"My cat's name is Luna. She is very playful."</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Porque todos los animales en inglés usan he o she obligatoriamente.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Porque el gato tiene nombre femenino (Luna), por lo tanto debe ser she.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Porque cuando un animal es una mascota cuyo género se conoce o tiene nombre propio, en inglés se usa comúnmente he o she para expresar cercanía y afecto, aunque <i>it</i> también sería gramaticalmente aceptable.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Porque usar <i>it</i> para cualquier ser vivo es incorrecto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La regla general es que los animales usan <I>it</I> cuando el género es desconocido o irrelevante (<SPAN CLASS="eng">"Look at that bird — it is beautiful"</SPAN>). Sin embargo, para <B>mascotas</B> con género conocido o nombre propio, los hablantes de inglés frecuentemente usan <B>he/she</B> para expresar vínculo afectivo. Es una elección pragmática, no una regla obligatoria. La opción a) es incorrecta (los animales salvajes generalmente usan <I>it</I>) y la opción d) es incorrecta (<I>it</I> sí puede usarse para animales).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Lee el párrafo y determina cuántos errores gramaticales relacionados con pronombres y <I>to be</I> contiene:<BR><SPAN CLASS="eng">"My friend Ana and me is very good students. Its a big school. Their are many teachers and they is all very kind."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Dos errores: "me is" e "Its"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Tres errores: "me is", "Its" y "they is"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Cuatro errores: "me is" → "I am"; "Its" → "It's"; "Their" → "There"; "they is" → "they are"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) El párrafo no tiene errores.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) — Cuatro errores</B><BR>① <B>"Ana and me is"</B> → debe ser <B>"Ana and I are"</B>. Cuando el sujeto incluye al hablante, se usa <I>I</I> (pronombre sujeto), no <I>me</I> (pronombre objeto). El verbo debe ser <I>are</I> (plural).<BR>② <B>"Its"</B> → debe ser <B>"It's"</B> (= it is). "Its" sin apóstrofe es posesivo.<BR>③ <B>"Their are"</B> → debe ser <B>"There are"</B>. "Their" = posesivo; "there" = existencial/locativo.<BR>④ <B>"they is"</B> → debe ser <B>"they are"</B>. "They" siempre toma <I>are</I>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Completa correctamente el texto con <I>is, isn't, are</I> o <I>aren't</I>. Elige la secuencia que corresponde a los espacios (1) y (2):<BR><SPAN CLASS="eng">"_____(1) Aki happy today? Yes, he is. It _____(2) a beautiful day."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) (1) Are — (2) isn't</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) (1) Is — (2) is</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) (1) Aren't — (2) are</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) (1) Is — (2) aren't</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Is — is</B><BR>(1) "Aki" es 3.ª persona singular masculino → la pregunta usa <B>Is</B>. (2) "It" (sujeto impersonal para hablar del clima) es singular → <B>is</B>. La respuesta confirma que es afirmativa ("Yes, he is"), por lo tanto el segundo espacio también debe ser afirmativo. La opción d) usa "aren't" en el segundo espacio, lo que contradice el tono positivo del párrafo.</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; Ingreso universitario</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Analiza el siguiente intercambio y determina cuál respuesta demuestra el dominio más avanzado de las reglas de <I>to be</I> y las respuestas cortas:<BR><SPAN CLASS="eng">Entrevistador: "Aren't you and your colleague the new researchers from the University of Trujillo?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) "Yes, we're." (respuesta afirmativa corta con contracción)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "Yes, we are." (respuesta afirmativa corta sin contracción — forma correcta)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "No, we are." (pregunta negativa respondida con forma afirmativa completa)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) "Yes, they are." (pronombre de 3.ª persona para referirse al grupo)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) "Yes, we are."</B><BR>Esta pregunta evalúa tres reglas simultáneas:<BR>① La pregunta negativa <SPAN CLASS="eng">"Aren't you and your colleague..."</SPAN> genera un cambio de perspectiva: el respondente es parte del grupo → usa <B>we</B> (no "you" ni "they").<BR>② Las respuestas cortas afirmativas <B>nunca usan contracciones</B> → "Yes, we're" es INCORRECTO.<BR>③ La opción c) es contradicción lógica ("No" + forma afirmativa).<BR>④ La opción d) usaría "they" solo si un tercero respondiera sobre otras personas. La respuesta correcta es <B>"Yes, we are."</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Traduce con precisión al inglés, eligiendo el pronombre y la forma de <I>to be</I> correctos: <B>"Mi perro y mi gata son muy traviesos. Él ladra mucho y ella araña los muebles."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) "My dog and my cat is very naughty. He barks a lot and she scratches the furniture."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) "My dog and my cat are very naughty. It barks a lot and it scratches the furniture."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) "My dog and my cat are very naughty. He barks a lot and she scratches the furniture."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) "My dog and my cat are very naughty. They bark a lot and scratch the furniture."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Análisis paso a paso:<BR>• "My dog and my cat" → sujeto plural → <B>are</B> ✅ (elimina a).<BR>• El texto original distingue "él" (perro, macho) y "ella" (gata, hembra) como individuos con acciones distintas → el inglés debe mantener esa distinción con <B>he</B> y <B>she</B> (mascotas con género conocido) ✅.<BR>• Opción b) usa "it/it" → gramaticalmente posible, pero pierde la distinción de género intencionada en el original.<BR>• Opción d) fusiona ambos animales → cambia el significado (ambos ladran Y arañan, que no es lo que dice el español).<BR>Por tanto, c) es la traducción más precisa y sofisticada.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Por qué el inglés usa la <B>misma forma "you"</B> para singular y plural, mientras el español distingue <I>tú / vosotros / usted / ustedes</I>? ¿Qué afirmación refleja mejor la razón histórica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) El inglés es un idioma más simple que el español y carece de complejidad gramatical.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) El inglés antiguo (Old English) tenía "thou" (singular) y "ye/you" (plural), pero con el tiempo "you" reemplazó a "thou" por presiones sociales e históricas, dejando una sola forma para ambos números.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) El inglés tomó "you" del latín y nunca tuvo una forma singular separada.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) La forma singular fue eliminada por la conquista normanda de 1066 de manera abrupta.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El inglés antiguo (anglosajón) SÍ distinguía singular <B>"thou/thee"</B> del plural <B>"ye/you"</B>. A partir del siglo XIV, dirigirse a alguien con "you" (plural) se convirtió en señal de formalidad y respeto (similar al <I>vous</I> francés). Con los cambios sociales del Renacimiento y la Reforma Protestante (los cuáqueros rechazaban usar "you" para individuos por considerarlo deshonesto), <B>"thou" cayó en desuso</B> y "you" se universalizó hacia el siglo XVII. La opción a) es incorrecta — el inglés tiene gran complejidad en otras áreas. Este nivel de conocimiento lingüístico cultural es típicamente evaluado en exámenes de alto rendimiento.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Lee este fragmento de un ensayo estudiantil e identifica la opción que señala <B>todos</B> los errores correctamente y propone su corrección con la justificación gramatical precisa:<BR><SPAN CLASS="eng">"My classmates and me is at the university. Its very far from our house. Their are many students and the campus aren't very big."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo "me is" está mal → debe ser "I am". Los demás están bien.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "me is" → "I are"; "Its" → "It's"; "Their are" → "There are"; "campus aren't" → "campus isn't"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) "me is" → "I are"; "Its" → "It's"; "Their are" → "They are"; "campus aren't" → "campus isn't"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) "me is" → "I are" es incorrecto — debe ser "my classmates and I are"; "Its" → "It's"; "Their are" → "There are"; "campus aren't" → "campus isn't"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d) — Cuatro errores con corrección precisa</B><BR>① <B>"My classmates and me is"</B> → <B>"My classmates and I are"</B>: Se usa <I>I</I> (pronombre sujeto), no <I>me</I> (objeto). Sujeto plural ("classmates and I") → verbo <B>are</B>.<BR>② <B>"Its very far"</B> → <B>"It's very far"</B>: <I>it's</I> = it is (con apóstrofe); <I>its</I> sin apóstrofe es posesivo.<BR>③ <B>"Their are many students"</B> → <B>"There are many students"</B>: construcción existencial; <I>there</I> = existencia/lugar; <I>their</I> = posesivo.<BR>④ <B>"the campus aren't"</B> → <B>"the campus isn't"</B>: "campus" es sustantivo singular → usa <B>isn't</B>, no "aren't".<BR><BR>La opción b) y c) proponen "I are" como corrección del primer error, lo cual es también incorrecto. La única opción que identifica correctamente las CUATRO correcciones es la d).</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+
+</BODY>
+</HTML>
+

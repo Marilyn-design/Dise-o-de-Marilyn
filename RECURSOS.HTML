@@ -1,0 +1,195 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<TITLE>Recursos - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+BODY{
+    font-family:Arial, sans-serif;
+    background:
+    radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),
+    linear-gradient(to right,#F6F2EB,#F6F2EB);
+    min-height:100vh;
+}
+.header{
+    background:#0D1B36;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.25);
+}
+.logo{
+    font-size:38px;
+    font-weight:bold;
+    letter-spacing:3px;
+    color:white;
+    font-family:"Lobster",cursive;
+}
+.logo span{
+    color:#1F6A67;
+}
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:flex-end;
+}
+.menu button{
+    border:none;
+    border-radius:25px;
+    padding:10px 15px;
+    background:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+.menu button:hover{
+    background:#F6F2EB;
+    transform:translateY(-3px);
+}
+.menu a{
+    text-decoration:none;
+    color:#0D1B36;
+    font-weight:bold;
+}
+.menu .registrate{
+    background:#D7B06D;
+}
+.titulo-pagina{
+    text-align:center;
+    margin-top:50px;
+}
+.titulo-pagina h1{
+    color:#1F6A67;
+    font-size:48px;
+    font-family:"Cooper Black";
+}
+.titulo-pagina p{
+    color:#555;
+    font-size:18px;
+    margin-top:10px;
+}
+.linea-c{
+    width:150px;
+    height:5px;
+    background:#D7B06D;
+    border-radius:10px;
+    margin:18px auto 0;
+}
+.subtitulo-seccion{
+    text-align:center;
+    color:#0D1B36;
+    font-size:26px;
+    margin-top:55px;
+}
+.uni-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    padding:40px 40px 30px;
+}
+.card-uni{
+    display:block;
+    width:255px;
+    background:white;
+    border-radius:20px;
+    padding:35px 25px;
+    text-align:center;
+    text-decoration:none;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+    border-top:6px solid #D7B06D;
+}
+.card-uni:hover{
+    transform:translateY(-8px);
+    box-shadow:0 14px 30px rgba(0,0,0,0.16);
+}
+.card-uni .sigla{
+    width:90px;
+    height:90px;
+    margin:0 auto 18px;
+    border-radius:50%;
+    background:#0D1B36;
+    color:#D7B06D;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:21px;
+    font-weight:bold;
+}
+.card-uni h3{
+    color:#0D1B36;
+    font-size:19px;
+    line-height:1.35;
+}
+.card-uni p{
+    color:#1F6A67;
+    font-weight:bold;
+    margin-top:12px;
+    font-size:14px;
+}
+.pie{
+    margin-top:60px;
+}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">
+Inka<span>edu</span>
+</DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<DIV CLASS="titulo-pagina">
+<H1>Recursos</H1>
+<DIV CLASS="linea-c"></DIV>
+<P>Material de estudio para tu preparación</P>
+</DIV>
+
+<H2 CLASS="subtitulo-seccion">Exámenes de admisión</H2>
+
+<DIV CLASS="uni-grid">
+
+<A CLASS="card-uni" HREF="UNT.HTML">
+<DIV CLASS="sigla">UNT</DIV>
+<H3>Universidad Nacional de Trujillo</H3>
+<P>Ver exámenes &rsaquo;</P>
+</A>
+
+<A CLASS="card-uni" HREF="#">
+<DIV CLASS="sigla">UNMSM</DIV>
+<H3>Universidad Nacional Mayor de San Marcos</H3>
+<P>Próximamente</P>
+</A>
+
+<A CLASS="card-uni" HREF="#">
+<DIV CLASS="sigla">UNI</DIV>
+<H3>Universidad Nacional de Ingeniería</H3>
+<P>Próximamente</P>
+</A>
+
+</DIV>
+
+<DIV CLASS="pie">
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</DIV>
+
+</BODY>
+</HTML>

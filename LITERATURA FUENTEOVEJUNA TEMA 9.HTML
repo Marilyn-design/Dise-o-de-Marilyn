@@ -1,0 +1,478 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Fuenteovejuna - Lope de Vega - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 9</DIV>
+<H1>Fuenteovejuna &mdash; Lope de Vega</H1>
+<DIV CLASS="sub">Autor &middot; Contexto hist&oacute;rico &middot; G&eacute;nero y estructura &middot; Argumento &middot; Personajes &middot; Temas &middot; Estilo &middot; Valor literario</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Lope de Vega: el F&eacute;nix de los Ingenios</H3>
+<B>Lope F&eacute;lix de Vega Carpio</B> (Madrid, 25 de noviembre de 1562 &ndash; Madrid, 27 de agosto de 1635) es el dramaturgo m&aacute;s importante del <B>Siglo de Oro espa&ntilde;ol</B> y uno de los escritores m&aacute;s prol&iacute;ficos de la historia de la literatura universal. Su contempor&aacute;neo Cervantes lo llam&oacute; <B>"F&eacute;nix de los Ingenios"</B> y <B>"Monstruo de la Naturaleza"</B> por la asombrosa cantidad y calidad de su obra.
+
+<H4>Datos biogr&aacute;ficos esenciales:</H4>
+<UL>
+<LI><B>Naci&oacute;</B> en Madrid en el seno de una familia humilde de origen montañ&eacute;s. Fue un ni&ntilde;o prodigio: compuso sus primeros versos a los 10 a&ntilde;os.</LI>
+<LI>Estudi&oacute; en el <B>Colegio Imperial de los Jesuitas</B> y luego en la Universidad de Alcal&aacute; de Henares.</LI>
+<LI>Su vida personal fue tumultuosa: amores, duelos, destierros, tres matrimonios y numerosas aventuras amorosas. En 1588 particip&oacute; en la <B>Armada Invencible</B>.</LI>
+<LI>Se orden&oacute; sacerdote en 1614, aunque no abandon&oacute; su vida amorosa.</LI>
+<LI><B>Obra total:</B> escribi&oacute; entre 1.500 y 1.800 comedias (se conservan alrededor de 400), adem&aacute;s de poemas l&iacute;ricos, novelas y obras religiosas. Su producci&oacute;n es incomparable en la historia literaria.</LI>
+</UL>
+
+<H4>Su reforma teatral: el Arte nuevo de hacer comedias (1609):</H4>
+Lope de Vega revolucion&oacute; el teatro espa&ntilde;ol con su obra te&oacute;rica <B><I>Arte nuevo de hacer comedias en este tiempo</I> (1609)</B>, donde expuso sus principios dram&aacute;ticos, rompiendo deliberadamente con las normas cl&aacute;sicas aristotélicas:
+<UL>
+<LI><B>Mezcla de lo tr&aacute;gico y lo c&oacute;mico</B> en una misma obra (frente a la separaci&oacute;n cl&aacute;sica de g&eacute;neros).</LI>
+<LI><B>Tres actos</B> en lugar de los cinco cl&aacute;sicos (exposici&oacute;n, nudo, desenlace).</LI>
+<LI><B>Polimetría</B>: uso de distintos metros seg&uacute;n la situaci&oacute;n dram&aacute;tica (no solo un metro fijo).</LI>
+<LI><B>El decoro po&eacute;tico</B>: cada personaje habla según su condici&oacute;n social.</LI>
+<LI><B>El <I>gracioso</I></B>: personaje c&oacute;mico y cr&iacute;tico, contrapunto del héroe.</LI>
+<LI><B>Verosimilitud</B> y proximidad a la realidad cotidiana española.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Los apodos de Lope son <B>"F&eacute;nix de los Ingenios"</B> (por Cervantes) y <B>"Monstruo de la Naturaleza"</B> (tambi&eacute;n de Cervantes). Su obra te&oacute;rica se llama <B><I>Arte nuevo de hacer comedias en este tiempo</I> (1609)</B>. <I>Fuenteovejuna</I> fue escrita entre <B>1612 y 1614</B> (fecha debatida) y publicada en <B>1619</B>.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127981; EL SIGLO DE ORO ESPA&Ntilde;OL<SPAN>El contexto hist&oacute;rico, cultural y literario de Fuenteovejuna</SPAN></DIV>
+
+<H3>2. El Siglo de Oro espa&ntilde;ol y el contexto de la obra</H3>
+<B>Fuenteovejuna</B> se inscribe en el <B>Siglo de Oro espa&ntilde;ol</B> (aproximadamente 1492&ndash;1681), per&iacute;odo de esplendor cultural que coincide con el apogeo del Imperio Espa&ntilde;ol. Es una obra del <B>Barroco literario</B> espa&ntilde;ol, caracterizado por la complejidad, el contraste, el desengaño y la tensi&oacute;n entre apariencia y realidad.
+
+<H4>El hecho hist&oacute;rico que inspir&oacute; la obra:</H4>
+<I>Fuenteovejuna</I> se basa en un hecho <B>hist&oacute;rico real</B> ocurrido en <B>1476</B> en la villa de <B>Fuenteovejuna</B> (C&oacute;rdoba, España). El <B>Comendador Fern&aacute;n G&oacute;mez de Guzm&aacute;n</B>, jefe de la Orden Militar de Calatrava en esa zona, abusaba sistem&aacute;ticamente de las mujeres del pueblo. Cansados de sus atropellos, los vecinos se sublevaron y lo asesinaron colectivamente. Cuando el juez enviado por los Reyes Cat&oacute;licos interrog&oacute; a los habitantes preguntando qui&eacute;n hab&iacute;a matado al Comendador, todos respondieron lo mismo: <B>"¡Fuenteovejuna, se&ntilde;or!"</B> Ante la imposibilidad de individualizar culpables, los Reyes Cat&oacute;licos perdonaron al pueblo. Lope encontr&oacute; este episodio en las <B><I>Cr&oacute;nicas de las &Oacute;rdenes Militares</I></B> de Francisco de Rades y Andrada y lo convirti&oacute; en una de las obras cumbre del teatro universal.
+
+<DIV CLASS="mapa-note">&#128221; <B>El contexto pol&iacute;tico de la obra:</B> La obra est&aacute; ambientada en el reinado de los <B>Reyes Cat&oacute;licos</B> (Fernando e Isabel), que en la &eacute;poca de Lope eran el s&iacute;mbolo de la unidad nacional española y la monarqu&iacute;a fuerte. La obra tiene una <B>dimensi&oacute;n pol&iacute;tica</B> clara: exalta la lealtad al rey legítimo frente a los abusos de la nobleza intermedia (los comendadores). Los Reyes Cat&oacute;licos aparecen como jueces supremos y garantes del orden justo. En la &eacute;poca de Felipe III (cuando Lope escribi&oacute; la obra), el mensaje ten&iacute;a resonancia: el rey como protector del pueblo frente a la nobleza abusiva.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128218; G&Eacute;NERO, ESTRUCTURA Y FORMA<SPAN>La "comedia" lopesca: tragedia, comedia y drama hist&oacute;rico en una sola obra</SPAN></DIV>
+
+<H3>3. G&eacute;nero, estructura y forma de Fuenteovejuna</H3>
+
+<H4>G&eacute;nero literario:</H4>
+<I>Fuenteovejuna</I> pertenece al g&eacute;nero <B>dram&aacute;tico</B> y est&aacute; escrita en verso. Dentro del sistema teatral de Lope, es una <B>"comedia"</B> en el sentido amplio del t&eacute;rmino lopesco (no c&oacute;mica sino "obra teatral"), concretamente un <B>drama de honor</B> o <B>drama hist&oacute;rico-social</B>. Algunos cr&iacute;ticos la clasifican como <B>tragicomedia</B> por su mezcla de elementos tr&aacute;gicos (el abuso, la violaci&oacute;n del honor, el asesinato, la tortura) y c&oacute;micos (el gracioso Mengo, el idilio amoroso de Frondoso y Laurencia).
+
+<H4>Estructura: tres actos (jornadas)</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Acto</TH><TH>Contenido principal</TH><TH>Funci&oacute;n dram&aacute;tica</TH></TR>
+<TR><TD><B>Primer acto (Jornada I)</B></TD><TD>Presentaci&oacute;n del Comendador y sus abusos en Fuenteovejuna. Enamoramiento de Frondoso y Laurencia. El Comendador acosa a Laurencia. Contexto pol&iacute;tico: la traici&oacute;n del Maestre de Calatrava a los Reyes Cat&oacute;licos.</TD><TD>Exposici&oacute;n: presenta conflictos, personajes y el estado de cosas injusto</TD></TR>
+<TR><TD><B>Segundo acto (Jornada II)</B></TD><TD>Boda de Frondoso y Laurencia. El Comendador irrumpe en la boda, apresa a Frondoso y rapta a Laurencia. Creciente indignaci&oacute;n del pueblo.</TD><TD>Nudo: el conflicto escala hasta el punto de ruptura; el agravio es m&aacute;ximo</TD></TR>
+<TR><TD><B>Tercer acto (Jornada III)</B></TD><TD>Laurencia aparece ante el concejo del pueblo ultrajada y exige venganza. Sublevaci&oacute;n y asesinato del Comendador. La investigaci&oacute;n real: "¿Qui&eacute;n mat&oacute; al Comendador? / ¡Fuenteovejuna, se&ntilde;or!" Los Reyes Cat&oacute;licos perdonan al pueblo.</TD><TD>Desenlace: la rebeli&oacute;n colectiva y la justicia real restauran el orden</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>La polimetr&iacute;a:</H4>
+Siguiendo los principios del <I>Arte nuevo</I>, Lope usa distintos metros seg&uacute;n la situaci&oacute;n:
+<UL>
+<LI><B>Redondillas</B> (abba): para di&aacute;logos amorosos y conversaciones cotidianas.</LI>
+<LI><B>Romances</B>: para narraciones y escenas populares.</LI>
+<LI><B>D&eacute;cimas (espinelas)</B>: para lamentos y reflexiones líricas.</LI>
+<LI><B>Octavas reales</B>: para momentos elevados y solemnes.</LI>
+<LI><B>Sonetos</B>: para monólogos reflexivos.</LI>
+<LI><B>Tercetos</B> y otras formas: para situaciones variadas.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#128101; LOS PERSONAJES<SPAN>H&eacute;roes populares, villanos poderosos y el pueblo como protagonista colectivo</SPAN></DIV>
+
+<H3>4. Los personajes de Fuenteovejuna</H3>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Personaje</TH><TH>Condici&oacute;n</TH><TH>Descripci&oacute;n y funci&oacute;n</TH></TR>
+<TR><TD><B>Laurencia</B></TD><TD>Villana (campesina libre)</TD><TD>Protagonista femenina. Hija del Alcalde Esteban. Independiente, valiente, elocuente. Rechaza los intentos del Comendador. Tras ser raptada y ultrajada, vuelve ante el concejo y con su discurso encendido desata la rebeli&oacute;n. Su monólogo del acto III ("¿Vosotros sois hombres nobles?") es el punto de inflexi&oacute;n de la obra.</TD></TR>
+<TR><TD><B>Frondoso</B></TD><TD>Villano (campesino libre)</TD><TD>Protagonista masculino y amado de Laurencia. Valiente: en el acto I, apunta con la ballesta al Comendador para defender a Laurencia. Su arresto en la boda precipita la crisis.</TD></TR>
+<TR><TD><B>Fern&aacute;n G&oacute;mez de Guzm&aacute;n (el Comendador)</B></TD><TD>Noble, jefe militar de la Orden de Calatrava</TD><TD>Antagonista principal. Representa el abuso del poder señorial, la deshonra y la tiranía. Carece de virtud y justicia: usa su poder para acosar y violar a las mujeres del pueblo. Su asesinato es presentado como un acto de justicia, no de crimen.</TD></TR>
+<TR><TD><B>Esteban</B></TD><TD>Alcalde de Fuenteovejuna</TD><TD>Padre de Laurencia. Representa la dignidad y autoridad del pueblo; inicialmente prudente ante los abusos, finalmente lidera la sublevaci&oacute;n.</TD></TR>
+<TR><TD><B>Mengo</B></TD><TD>Villano (pastor)</TD><TD>El <I>gracioso</I> de la obra. C&oacute;mico, cobarde al principio pero que finalmente participa en la rebeli&oacute;n. Su tortura sin confesar representa la resistencia colectiva del pueblo.</TD></TR>
+<TR><TD><B>Pascuala</B></TD><TD>Villana</TD><TD>Amiga de Laurencia. Representa la voz colectiva de las mujeres del pueblo.</TD></TR>
+<TR><TD><B>El Maestre Rodrigo Tellez Gir&oacute;n</B></TD><TD>Maestre de la Orden de Calatrava</TD><TD>Joven noble manipulado por el Comendador para traicionar a los Reyes Cat&oacute;licos. Al final reconoce su error y se somete.</TD></TR>
+<TR><TD><B>Los Reyes Cat&oacute;licos (Fernando e Isabel)</B></TD><TD>Monarqu&iacute;a</TD><TD>Personajes de segundo plano pero fundamentales: representan la justicia suprema y el orden leg&iacute;timo. Su perd&oacute;n al pueblo restaura el equilibrio.</TD></TR>
+<TR><TD><B>El pueblo de Fuenteovejuna</B></TD><TD>Colectividad</TD><TD><B>El verdadero protagonista colectivo</B>: hombres, mujeres, ancianos y j&oacute;venes que act&uacute;an como una sola entidad. "Fuenteovejuna" se convierte en el nombre de la justicia popular.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#9997; LOS TEMAS FUNDAMENTALES<SPAN>Honor, justicia, tiranía, amor y el protagonismo del pueblo</SPAN></DIV>
+
+<H3>5. Los temas de Fuenteovejuna</H3>
+
+<H4>1. El honor villanesco:</H4>
+El <B>honor</B> es el tema central del teatro barroco español y en <I>Fuenteovejuna</I> adquiere una dimensi&oacute;n colectiva única. En el teatro de la &eacute;poca, el honor era un valor esencialmente nobiliario (solo los nobles podían tenerlo y defenderlo). Lope da un giro radical: los <B>villanos</B> (campesinos libres) tambi&eacute;n tienen honor; su honor colectivo es tan legítimo como el de la nobleza, y tienen derecho a defenderlo incluso con la muerte del agresor. El Comendador no solo ofende a individuos: ofende el honor del pueblo entero.
+
+<H4>2. La justicia y la tiranía:</H4>
+La obra plantea la legitimidad de la <B>rebeli&oacute;n contra el tirano</B>. El Comendador no es solo moralmente corrupto: es un <B>tirano</B> en el sentido clásico (quien gobierna para su propio beneficio, violando el bien común). Lope sigue la doctrina escolástica del <I>tiranicidio</I>: el pueblo tiene derecho a matar al tirano cuando este niega la justicia. Pero la obra matiza esto: la rebeli&oacute;n se justifica porque los Reyes Cat&oacute;licos &mdash;la autoridad leg&iacute;tima&mdash; la ratifican con el perd&oacute;n. No es anarquismo: es apelaci&oacute;n al rey justo contra el noble injusto.
+
+<H4>3. El amor y la igualdad:</H4>
+El idilio entre <B>Frondoso y Laurencia</B> representa el amor puro, libre y recíproco como contrapunto al deseo violento e injusto del Comendador. Lope humaniza a los villanos dándoles una vida amorosa y sentimental plena.
+
+<H4>4. El protagonismo colectivo del pueblo:</H4>
+Es la gran innovaci&oacute;n de <I>Fuenteovejuna</I>: <B>el pueblo como sujeto colectivo</B>. La respuesta "¡Fuenteovejuna, se&ntilde;or!" ante las preguntas del juez (incluso bajo tortura) convierte al pueblo en una entidad unificada, invencible porque es colectiva. Nadie puede ser condenado porque todos son responsables; la culpa colectiva equivale a la inocencia colectiva.
+
+<H4>5. La lealtad al monarca:</H4>
+La obra exalta la <B>monarquía leg&iacute;tima</B> de los Reyes Cat&oacute;licos como garant&iacute;a del orden justo. La rebeli&oacute;n no es contra el rey sino en nombre del rey: el Comendador traiciona el orden real al abusar de sus vasallos. Los Reyes Cat&oacute;licos son la instancia superior que restaura la justicia.
+
+<DIV CLASS="mapa-note">&#128221; <B>El "caso de la honra":</B> En el teatro barroco español, el llamado "drama de honor" o "caso de la honra" era uno de los géneros más frecuentes: el honor de un hombre o una familia es violado por un superior y se toma venganza. Lo novedoso en <I>Fuenteovejuna</I> es que el "caso de la honra" es colectivo, no individual, y que los ofendidos son villanos, no nobles. Lope democratiza el honor y la venganza, lo que hace de la obra un texto de valor político y social sin precedentes en su época.</DIV>
+
+<H3>6. El monólogo de Laurencia (Acto III): la escena cumbre</H3>
+El momento dram&aacute;tico m&aacute;s intenso de la obra es el <B>mon&oacute;logo-arenga de Laurencia</B> ante el concejo del pueblo en el acto III. Tras ser raptada y violada por el Comendador en el día de su boda, Laurencia aparece despeinada y en desorden ante los hombres del pueblo reunidos en concejo. Su discurso es una acusaci&oacute;n feroz contra los hombres cobardes que no la defendieron y un llamado a la rebeli&oacute;n:
+
+<DIV CLASS="ej">&#128221; <B>Fragmento central del monólogo de Laurencia (Acto III):</B><BR><BR>
+<I>"¿Vosotros sois hombres nobles? / ¿Vosotros, padres y deudos? / ¿Vosotros, que no se os caen / de verme en tanto aprieto / las l&aacute;grimas de los ojos, / con f&uacute;nebres lamentos?<br><br>
+Ovejas sois, bien lo dice / de Fuenteovejuna el nombre. / ¡Dadme unas armas a m&iacute;, / pues sois piedras, pues sois bronces, / pues sois jaspes, pues sois tigres!"</I><BR><BR>
+<B>An&aacute;lisis:</B> La met&aacute;fora de las "ovejas" juega con el nombre del pueblo (Fuente <I>Ovejuna</I>): son ovejas sumisas que deben convertirse en leones. La enumeraci&oacute;n de materiales duros (piedras, bronces, jaspes, tigres) insulta la pasividad de los hombres. Laurencia es m&aacute;s valiente que ellos: es una mujer quien llama a la guerra.</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La escena del monólogo de Laurencia (Acto III) es la más citada en los exámenes. Su función dramática es triple: (1) revela la dimensión del agravio, (2) desata la rebeli&oacute;n colectiva, (3) invierte los roles de género (es la mujer quien llama a los hombres a luchar). La pregunta "¿Qui&eacute;n mat&oacute; al Comendador?" con respuesta "¡Fuenteovejuna, se&ntilde;or!" es el momento más famoso de toda la obra.</DIV>
+
+<H3>7. El estilo: caracter&iacute;sticas del lenguaje de Lope</H3>
+<UL>
+<LI><B>Naturalidad y fluidez</B>: el verso de Lope es ágil, cercano al habla cotidiana sin perder calidad poética. Logra que los personajes hablen de forma verosímil según su condici&oacute;n.</LI>
+<LI><B>Lirismo intenso</B>: las escenas amorosas entre Frondoso y Laurencia tienen una delicadeza lírica que contrasta con la brutalidad del Comendador.</LI>
+<LI><B>Figuras retóricas barrocas</B>: antítesis, hipérbole, metáfora, apóstrofe, enumeraci&oacute;n, anáfora. El monólogo de Laurencia es un modelo de retórica barroca al servicio de la emoci&oacute;n.</LI>
+<LI><B>Polimetría funcional</B>: el cambio de metro señala el cambio de tono o situaci&oacute;n, lo que crea variedad y dinamismo.</LI>
+<LI><B>Mezcla de registros</B>: desde el tono culto y elevado de los personajes nobles hasta el lenguaje rústico y cómico del gracioso Mengo.</LI>
+<LI><B>Uso dramático de las canciones populares</B>: la obra incorpora canciones del folclore español que refuerzan el ambiente popular.</LI>
+</UL>
+
+<H3>8. Valor literario e influencia posterior</H3>
+<I>Fuenteovejuna</I> es considerada una de las obras maestras del <B>teatro universal</B> y la obra más importante del teatro barroco español junto con <I>La vida es sueño</I> de Calderón de la Barca.
+
+<H4>Su valor e influencia:</H4>
+<UL>
+<LI><B>Innovaci&oacute;n social</B>: fue la primera obra teatral importante en hacer del pueblo colectivo (no un rey, no un héroe individual) el protagonista de un drama de honor.</LI>
+<LI><B>Influencia pol&iacute;tica</B>: la obra fue interpretada como texto de resistencia popular en épocas posteriores. En la Rusia zarista fue censurada; los teatros soviéticos la reestrenaron como emblema de la lucha del pueblo contra la opresión. Federico García Lorca y el grupo "La Barraca" la pusieron en escena en la República española (1932).</LI>
+<LI><B>Modernidad tem&aacute;tica</B>: sus temas (abuso de poder, honor colectivo, rebeli&oacute;n justa, solidaridad popular) siguen siendo vigentes en el siglo XXI.</LI>
+<LI><B>La expresi&oacute;n "Fuenteovejuna"</B>: ha pasado al lenguaje común en español para designar la responsabilidad colectiva difusa: "aquí lo hizo Fuenteovejuna".</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1562&ndash;1635</DIV><DIV CLASS="dk-label">Vida de Lope de Vega, "F&eacute;nix de los Ingenios"</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1476</DIV><DIV CLASS="dk-label">Hecho hist&oacute;rico real en Fuenteovejuna (C&oacute;rdoba)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1609</DIV><DIV CLASS="dk-label"><I>Arte nuevo de hacer comedias</I>: manifiesto dram&aacute;tico de Lope</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1612&ndash;14</DIV><DIV CLASS="dk-label">Escritura de <I>Fuenteovejuna</I>; publicada en 1619</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">3 actos</DIV><DIV CLASS="dk-label">Jornadas: exposici&oacute;n, nudo, desenlace</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">"¡Fuenteovejuna!"</DIV><DIV CLASS="dk-label">La respuesta del pueblo al juez: protagonismo colectivo</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Autor:</B> Lope de Vega (1562&ndash;1635) &middot; "F&eacute;nix de los Ingenios" y "Monstruo de la Naturaleza" (Cervantes) &middot; Siglo de Oro / Barroco<BR>
+&bull; <B>Obra te&oacute;rica:</B> <I>Arte nuevo de hacer comedias</I> (1609): mezcla de g&eacute;neros, 3 actos, polimetría, gracioso, decoro poético<BR>
+&bull; <B>G&eacute;nero:</B> Drama histórico-social / tragicomedia / "comedia" lopesca &middot; escrita en verso &middot; polimetría<BR>
+&bull; <B>Base hist&oacute;rica:</B> revuelta real de 1476 en Fuenteovejuna (C&oacute;rdoba) contra el Comendador Fernán Gómez<BR>
+&bull; <B>Estructura:</B> 3 actos &middot; Exposición (I): abusos del Comendador; Nudo (II): rapto de Laurencia en la boda; Desenlace (III): rebeli&oacute;n, asesinato, perd&oacute;n real<BR>
+&bull; <B>Personajes:</B> Laurencia (protagonista), Frondoso (galán), Comendador (antagonista tirano), Esteban (alcalde), Mengo (gracioso), Reyes Cat&oacute;licos (justicia suprema)<BR>
+&bull; <B>Temas:</B> honor colectivo villanesco &middot; rebeli&oacute;n contra el tirano &middot; justicia popular &middot; amor libre vs. deseo violento &middot; lealtad al rey legítimo<BR>
+&bull; <B>Escena cumbre:</B> mon&oacute;logo de Laurencia (Acto III) &middot; "¡Fuenteovejuna, se&ntilde;or!" (escena del interrogatorio)<BR>
+&bull; <B>Innovaci&oacute;n:</B> pueblo colectivo como protagonista &middot; honor democratizado (villanos con honor) &middot; tiranicidio justificado<BR>
+&bull; <B>Estilo:</B> verso barroco, polimetría, lirismo, figuras retóricas, mezcla de registros, canciones populares
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;A qu&eacute; movimiento literario pertenece <I>Fuenteovejuna</I> y cu&aacute;les son los apodos con que se conoce a su autor?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Pertenece al Renacimiento espa&ntilde;ol; Lope de Vega es conocido como "El Divino" y "Príncipe de las Letras", apodos que le dio el rey Felipe II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Pertenece al Barroco literario del Siglo de Oro espa&ntilde;ol; Lope de Vega es conocido como <B>"F&eacute;nix de los Ingenios"</B> y <B>"Monstruo de la Naturaleza"</B>, apodos que le dio Miguel de Cervantes en el <I>Quijote</I></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Pertenece al Neoclasicismo; Lope de Vega es conocido como "El F&eacute;nix de España" y "Gran Dramaturgo del Siglo XIX", apodos acuñados por la Real Academia Española</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Pertenece al Romanticismo espa&ntilde;ol; Lope de Vega es conocido como "F&eacute;nix de los Poetas" y "Padre del Teatro Moderno", apodos que le dio su discípulo Calder&oacute;n de la Barca</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><I>Fuenteovejuna</I> pertenece al <B>Barroco literario</B> del <B>Siglo de Oro español</B> (aprox. 1492&ndash;1681), per&iacute;odo de máximo esplendor cultural de España. Los apodos de Lope de Vega son fundamentales para cualquier examen: <B>"F&eacute;nix de los Ingenios"</B> (porque renacía creativamente sin agotarse, como el ave fénix) y <B>"Monstruo de la Naturaleza"</B> (por la prodigiosa cantidad y calidad de su producción). Ambos le fueron atribuidos por <B>Miguel de Cervantes</B>, quien los usa en el prólogo al <I>Don Quijote</I> y en otras obras. Lope escribió entre 1.500 y 1.800 comedias, de las que se conservan alrededor de 400. Su obra teórica fundamental es el <I>Arte nuevo de hacer comedias en este tiempo</I> (1609).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;En qu&eacute; hecho hist&oacute;rico real se basa <I>Fuenteovejuna</I> y cu&aacute;ndo ocurri&oacute; ese hecho?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La obra se basa en la conquista de Granada (1492) por los Reyes Cat&oacute;licos; el Comendador Fern&aacute;n G&oacute;mez fue el gobernador árabe que oprim&iacute;a a la poblaci&oacute;n cristiana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) La obra se basa en una <B>revuelta popular real ocurrida en 1476</B> en la villa de <B>Fuenteovejuna</B> (C&oacute;rdoba, España): los habitantes asesinaron al Comendador <B>Fern&aacute;n G&oacute;mez de Guzm&aacute;n</B> por sus abusos, y ante el interrogatorio del juez todos respondieron "¡Fuenteovejuna, se&ntilde;or!", logrando el perd&oacute;n de los Reyes Cat&oacute;licos; Lope encontr&oacute; el episodio en las <I>Cr&oacute;nicas de las &Oacute;rdenes Militares</I></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) La obra es completamente ficcional; Lope de Vega invent&oacute; todos los personajes y situaciones sin ning&uacute;n fundamento hist&oacute;rico; el "Comendador" es una met&aacute;fora del poder eclesi&aacute;stico en la España del siglo XVI</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) La obra se basa en hechos ocurridos en 1520 durante la Revuelta de los Comuneros: los campesinos castellanos se rebelaron contra el rey Carlos I y el pueblo de Fuenteovejuna lider&oacute; la resistencia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Uno de los datos más importantes sobre <I>Fuenteovejuna</I> es su base histórica real. En <B>1476</B>, en la villa de <B>Fuenteovejuna</B> (provincia de Córdoba), los vecinos del pueblo se sublevaron contra el Comendador <B>Fernán Gómez de Guzmán</B>, jefe de la Orden Militar de Calatrava en esa región, quien abusaba sistemáticamente de las mujeres del pueblo y cometía todo tipo de desmanes. Los habitantes lo mataron colectivamente. Cuando el juez enviado por los Reyes Católicos (Fernando e Isabel) interrogó a los vecinos, uno por uno, todos respondieron lo mismo: <B>"¡Fuenteovejuna, señor!"</B> Ante la imposibilidad de determinar culpables individuales, los Reyes Católicos concedieron el perdón al pueblo. Lope encontró este hecho en la <B><I>Crónica de las Tres Órdenes y Caballerías de Santiago, Calatrava y Alcántara</I></B> (1572) de Francisco de Rades y Andrada.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Qu&eacute; estructura tiene <I>Fuenteovejuna</I> y cu&aacute;l es el contenido de cada acto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) La obra tiene cinco actos seg&uacute;n las normas cl&aacute;sicas aristotélicas: pr&oacute;logo, p&aacute;rodos, episodios, est&aacute;simo y &eacute;xodo; Lope respet&oacute; las unidades de tiempo, lugar y acci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) La obra tiene <B>tres actos (jornadas)</B>: el primero presenta los abusos del Comendador y el idilio de Frondoso y Laurencia (exposici&oacute;n); el segundo culmina con el rapto de Laurencia en su boda (nudo); el tercero contiene el mon&oacute;logo de Laurencia, la rebeli&oacute;n popular, el asesinato del Comendador y el perd&oacute;n real (desenlace)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) La obra tiene cuatro actos: los dos primeros presentan el conflicto entre el Comendador y el pueblo; el tercero muestra la derrota militar del pueblo y el cuarto el milagro divino que castiga al Comendador sin intervenci&oacute;n humana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) La obra tiene tres actos pero s&oacute;lo uno de ellos (el segundo) ocurre en Fuenteovejuna; los otros dos transcurren en la corte de los Reyes Cat&oacute;licos, que son los verdaderos protagonistas de la acci&oacute;n dram&aacute;tica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Siguiendo los principios de su propio <I>Arte nuevo de hacer comedias</I> (1609), Lope estructura <I>Fuenteovejuna</I> en <B>tres actos o "jornadas"</B> (término que usaba el teatro español del Siglo de Oro en lugar de "actos"): (1) <B>Primera jornada</B>: presentaci&oacute;n del Comendador Fernán Gómez y sus abusos sobre el pueblo; el idilio entre Frondoso y Laurencia; el primer intento de acoso del Comendador (Frondoso lo enfrenta con una ballesta). También aparece la subtrama política: el Comendador empuja al joven Maestre de Calatrava a atacar Ciudad Real, traicionando a los Reyes Católicos. (2) <B>Segunda jornada</B>: los abusos continúan; la boda de Frondoso y Laurencia es interrumpida por el Comendador, que arresta a Frondoso y rapta a Laurencia el día de sus esponsales. La indignación del pueblo llega al límite. (3) <B>Tercera jornada</B>: Laurencia aparece ante el concejo y pronuncia su arenga; el pueblo se rebela y mata al Comendador; el juez investiga; el pueblo responde "¡Fuenteovejuna, señor!"; los Reyes Católicos perdonan. La estructura responde perfectamente al esquema exposición-nudo-desenlace.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qui&eacute;n es Laurencia y cu&aacute;l es su funci&oacute;n en la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Laurencia es la esposa del Comendador, una noble que se rebela contra su marido tir&aacute;nico y lidera al pueblo; su condici&oacute;n social elevada le da autoridad para encabezar la rebeli&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Laurencia es la <B>protagonista femenina</B>, villana (campesina libre) e hija del alcalde Esteban; valiente e independiente, rechaza al Comendador; tras ser raptada y ultrajada en su boda, pronuncia ante el concejo el mon&oacute;logo m&aacute;s poderoso de la obra, desatando la rebeli&oacute;n colectiva; es la voz moral que transforma la pasividad del pueblo en acci&oacute;n justa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Laurencia es un personaje secundario: su funci&oacute;n es ser la amada de Frondoso y el objeto del deseo del Comendador; no tiene ninguna iniciativa propia ni discursos relevantes; es un personaje pasivo que representa la vulnerabilidad femenina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Laurencia es la hija del Comendador que se enamora del villano Frondoso en contra de la voluntad de su padre; su rebeli&oacute;n contra la autoridad paterna es el motor de la acci&oacute;n dram&aacute;tica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Laurencia es uno de los personajes femeninos más complejos y poderosos del teatro del Siglo de Oro. Es una <B>villana</B> (campesina libre, no sierva) e <B>hija del Alcalde Esteban</B>, la máxima autoridad civil del pueblo. Sus características: (1) <B>Valentía</B>: desde el principio rechaza los intentos de seducción/acoso del Comendador con inteligencia y dignidad. (2) <B>Amor genuino</B>: su relación con Frondoso es de igual a igual, libre y recíproca. (3) <B>Voz moral</B>: es ella quien, tras ser violada, tiene la valentía de presentarse ante los hombres del concejo y acusarlos de cobardes. (4) <B>Protagonismo dramático</B>: su monólogo del Acto III es la pieza retórica central de la obra; sin ese discurso no habría rebelión. (5) <B>Inversión de roles</B>: en una sociedad patriarcal, es una mujer quien llama a los hombres a luchar, acusándolos de no merecer su condición masculina. Laurencia ha sido analizada por la crítica feminista moderna como precursora literaria de la mujer activa y agente de su propia historia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qu&eacute; innovaciones introdujo Lope de Vega en el teatro español con el <I>Arte nuevo de hacer comedias</I> (1609)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Lope respet&oacute; plenamente las normas cl&aacute;sicas aristotélicas (unidades de tiempo, lugar y acci&oacute;n; separaci&oacute;n de géneros; cinco actos) y s&oacute;lo introdujo innovaciones métricas menores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Lope revolucion&oacute; el teatro proponiendo: <B>mezcla de lo tr&aacute;gico y c&oacute;mico</B> en una misma obra; <B>tres actos</B> en lugar de cinco; <B>polimetr&iacute;a</B> (distintos metros seg&uacute;n la situaci&oacute;n); el personaje del <B>gracioso</B> c&oacute;mico; el <B>decoro po&eacute;tico</B> (cada personaje habla seg&uacute;n su condici&oacute;n) y la <B>verosimilitud</B> cercana a la realidad española</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Lope introdujo el teatro en prosa en lugar del verso, la escenografía realista con decorados pintados y la división de la obra en escenas numeradas; también prohibi&oacute; el uso del gracioso por considerarlo inadecuado para la dignidad del teatro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Lope redujo el teatro a un solo acto continuo sin divisiones, eliminó los personajes secundarios para centrar la acción en dos protagonistas, e introdujo el soliloquio psicológico como técnica principal de caracterización</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B><I>Arte nuevo de hacer comedias en este tiempo</I></B> (1609) es el manifiesto teórico del teatro lopesco y uno de los textos fundamentales de la teoría dramática universal. Escrito en verso (endecasílabos y heptasílabos), Lope expone sus principios con cierta ironía: sabe que viola las normas aristotélicas pero argumenta que el teatro debe complacer al público, no a los preceptistas. Sus innovaciones: (1) <B>Mezcla de géneros</B>: tragedia y comedia en la misma obra, porque "así lo usa el pueblo" (la vida mezcla lo trágico y lo cómico). (2) <B>Tres actos</B>: exposición (I), nudo (II) y desenlace (III). (3) <B>Polimetría</B>: "acomode los versos con prudencia a los sujetos de que va tratando"; las redondillas para el diálogo amoroso, el romance para la narración, etc. (4) <B>El gracioso</B>: figura del sirviente o rústico cómico que contrasta con el héroe y puede criticar irónicamente la situación. (5) <B>Decoro poético</B>: adecuación del lenguaje a la condición del personaje. (6) <B>Verosimilitud</B>: las situaciones deben ser creíbles para el público.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Analiza el tema del honor en <I>Fuenteovejuna</I>: &iquest;en qu&eacute; sentido Lope "democratiza" el honor villanesco y qu&eacute; innovaci&oacute;n supone respecto al teatro barroco anterior?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) En <I>Fuenteovejuna</I> el honor sigue siendo exclusivo de la nobleza; los villanos no tienen honor propiamente dicho sino solo dignidad personal; la rebeli&oacute;n del pueblo es un acto de desesperaci&oacute;n, no una defensa del honor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Lope "democratiza" el honor al presentar a los <B>villanos</B> (campesinos libres) como <B>sujetos de honor</B> tan leg&iacute;timo como el de la nobleza: cuando el Comendador viola a Laurencia y ofende al pueblo, no solo comete un crimen individual sino que mancha el honor <B>colectivo</B> del pueblo; su defensa violenta es tan justa y leg&iacute;tima como la que haría cualquier noble; esto es radicalmente nuevo en el teatro barroco, donde el honor era prerrogativa casi exclusiva de los estamentos superiores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El honor en <I>Fuenteovejuna</I> es un tema secundario; el tema principal es el conflicto político entre la Orden de Calatrava y los Reyes Cat&oacute;licos; el honor personal de Laurencia es solo el pretexto argumental para plantear ese conflicto mayor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Lope no democratiza el honor sino que lo aristocratiza: demuestra que los villanos solo pueden defender su honor si reciben la sanción de los Reyes Cat&oacute;licos; sin el perdón real, su rebeli&oacute;n sería un crimen, no una defensa del honor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El honor es el tema más debatido de <I>Fuenteovejuna</I> y su tratamiento es profundamente innovador. En el teatro barroco español, el honor era un valor ligado a la sangre, el linaje y el estamento: los nobles tenían honor que defender; los villanos, en principio, no. Lope subvierte radicalmente esta convención. En la obra, los villanos de Fuenteovejuna son <B>labradores libres</B> (no siervos ni esclavos): tienen tierra, tienen dignidad y tienen honor. Cuando el Comendador viola a Laurencia, Lope lo presenta no como un "caso de honra" individual (que debería resolver el padre o el esposo) sino como una <B>ofensa al honor colectivo del pueblo</B>. El pueblo entero se convierte en el "caballero" ofendido que tiene derecho a la venganza. Esto es radicalmente nuevo: (1) el sujeto del honor es colectivo, no individual; (2) ese sujeto es el pueblo llano, no la nobleza. La opción d) captura una verdad parcial: el perdón real sanciona la legitimidad de la acción; pero la obra presenta el honor villanesco como intrínsecamente válido, no meramente dependiente del rey.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> &iquest;Qu&eacute; doctrina pol&iacute;tica subyace en la rebeli&oacute;n de Fuenteovejuna y c&oacute;mo la justifica Lope desde el pensamiento de la &eacute;poca?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Lope justifica la rebeli&oacute;n desde el pensamiento revolucionario moderno: el pueblo tiene soberan&iacute;a propia y puede deponer a cualquier autoridad que le desagrade; es un antecedente del republicanismo dem&oacute;crata del siglo XVIII</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Lope sigue la doctrina escolástica del <B>tiranicidio</B>: el gobernante que usa el poder para el bien propio en lugar del bien común se convierte en <B>tirano</B> y pierde la legitimidad; el pueblo puede entonces deponerlo o matarlo; pero en la obra esto se matiza: la rebeli&oacute;n es justa porque el rey leg&iacute;timo (los Reyes Cat&oacute;licos) la ratifica, lo que la convierte en defensa del orden monárquico, no en su subversi&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Lope justifica la rebeli&oacute;n mediante la teolog&iacute;a de la providencia divina: Dios interviene directamente para guiar la mano del pueblo, de modo que el asesinato del Comendador es un acto divino, no humano; por eso nadie puede ser castigado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) La obra no justifica pol&iacute;ticamente la rebeli&oacute;n: Lope la presenta como un error colectivo que los Reyes perdonan por clemencia, no como un acto leg&iacute;timo; la moraleja es que el pueblo nunca debe rebelarse sino esperar pacientemente la justicia del rey</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La dimensión política de <I>Fuenteovejuna</I> es uno de sus aspectos más estudiados. Lope de Vega, hombre de su tiempo, no era un revolucionario moderno; pero sí conocía y compartía la doctrina política de los teólogos escolásticos españoles, especialmente la escuela de Salamanca (Francisco de Vitoria, Francisco Suárez). Esta doctrina distinguía entre el <B>rey legítimo</B> (que gobierna para el bien común) y el <B>tirano</B> (que gobierna para su propio beneficio). El <B>tiranicidio</B> &mdash;el derecho del pueblo a matar al tirano&mdash; era una doctrina aceptada en la escolástica española, aunque con matices. En la obra: el Comendador es un tirano clásico: usa su poder para satisfacer su lujuria y su crueldad, violando el bien común. Su asesinato está justificado. Pero Lope no va más lejos: la rebeli&oacute;n no es contra el rey sino en nombre del rey; los Reyes Católicos son los árbitros que confirman la justicia del acto. La obra no es subversiva del orden monárquico; es una crítica a los abusos de la nobleza intermedia (comendadores, señores feudales) que se interpone entre el rey y el pueblo. La opción d) comete el error de no ver que el perdón real en la obra significa aprobación, no indulto de un crimen.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Analiza la funci&oacute;n del personaje del gracioso Mengo en <I>Fuenteovejuna</I>: &iquest;qu&eacute; representa y c&oacute;mo evoluciona?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Mengo es el antagonista secundario de la obra: un villano que inicialmente apoya al Comendador y luego lo traiciona; su funci&oacute;n es mostrar la divisin interna del pueblo antes de la rebeli&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Mengo es el <B>gracioso</B> de la obra: personaje c&oacute;mico, cobarde e interesado que contrasta con el héroe (Frondoso); inicialmente niega que exista el amor, es cobarde ante el Comendador, y sufre una paliza por defender a Jacinta; bajo tortura no confiesa el nombre del asesino, lo que lo convierte sorpresivamente en s&iacute;mbolo de la resistencia colectiva del pueblo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Mengo es el filósofo del pueblo: su función es formular mediante el di&aacute;logo socrático las ideas centrales de la obra (honor, justicia, tiranía); sus di&aacute;logos con Barrildo y Frondoso son el núcleo intelectual de <I>Fuenteovejuna</I></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Mengo es el único personaje de la obra que no participa en el asesinato del Comendador; su abstenci&oacute;n lo convierte en el portavoz de la moralidad cristiana que condena la violencia incluso contra el tirano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Mengo es la encarnación del <B>gracioso</B>, figura típica del teatro lopesco. El gracioso es el sirviente o rústico cómico, contrapunto del galán: donde el galán (Frondoso) es valiente, el gracioso es cobarde; donde el galán ama apasionadamente, el gracioso es materialista e interesado; donde el galán es serio, el gracioso es cómico. En <I>Fuenteovejuna</I>, Mengo tiene además una función filosófica en la primera jornada: en el debate con Barrildo y Frondoso sobre el amor, Mengo sostiene que el amor solo existe hacia uno mismo (posición epicúrea o egoísta), frente a los que defienden el amor hacia los demás. Pero la evolución de Mengo es la más sorprendente de la obra: el personaje cobarde y ridículo que recibe una paliza por defender (torpemente) a Jacinta de los hombres del Comendador, es luego sometido a tortura durante el interrogatorio y <B>no confiesa</B>. El cobarde resulta ser el más resistente. Esto tiene un efecto dramático poderoso: si incluso Mengo, el más cobarde, no cede, el pueblo es verdaderamente invencible. La c) también captura algo verdadero: hay un debate filosófico con Mengo, pero su función principal es la cómica y la dramática.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> &iquest;Por qu&eacute; se dice que en <I>Fuenteovejuna</I> el pueblo colectivo es el verdadero protagonista de la obra? &iquest;Qu&eacute; t&eacute;cnicas usa Lope para lograr este efecto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El pueblo no es el protagonista: Lope sigue la convenci&oacute;n cl&aacute;sica del protagonista individual; Laurencia es la heroína indiscutible y el pueblo solo es su instrumento; sin Laurencia no habría rebeli&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El pueblo colectivo es protagonista porque: (1) la venganza es ejecutada por todos simult&aacute;neamente; (2) ante el juez, <B>todos sin excepci&oacute;n</B> dan la misma respuesta; (3) incluso bajo tortura (Mengo, mujeres, ancianos, ni&ntilde;os) nadie cede; (4) el nombre del pueblo se convierte en el nombre del protagonista colectivo: "¡Fuenteovejuna!"; Lope logra este efecto acumulando escenas corales y personajes que no son individuos sino voces del colectivo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El pueblo es protagonista colectivo porque Lope eliminó a todos los personajes individuales; la obra no tiene protagonistas nombrados sino solo voces anónimas del pueblo; Laurencia, Frondoso y Mengo son nombres simbólicos, no personajes con psicología propia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) El pueblo colectivo aparece solo en el tercer acto; en los dos primeros la obra sigue la estructura de un drama de honor individual entre Frondoso (héroe) y el Comendador (antagonista); el protagonismo colectivo es un recurso de desenlace, no una característica estructural</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El protagonismo colectivo del pueblo es la innovación dramática más radical de <I>Fuenteovejuna</I> y la que más la distingue del resto del teatro barroco español. Las técnicas que Lope usa para lograrlo: (1) <B>La escena del concejo</B> (Acto III): todos los vecinos deliberan juntos; las decisiones son colectivas. (2) <B>La escena del asesinato</B>: no hay un asesino individual; el Comendador es matado por el pueblo en masa, de modo que "todos" son el asesino. (3) <B>La escena del interrogatorio</B>: el juez interroga a cada persona individualmente, pero todos dan la misma respuesta. Lope muestra además las respuestas de hombres, mujeres, ancianos, el gracioso Mengo, e incluso niños: ninguna franja de la comunidad queda fuera de la solidaridad. (4) <B>La escena de la tortura</B>: Mengo y otros son torturados; ninguno cede. (5) <B>El nombre colectivo</B>: "Fuenteovejuna" deja de ser el nombre de un lugar y se convierte en el nombre del protagonista: el pueblo unificado. La opción a) tiene algo de verdad (Laurencia es el catalizador), pero Lope la presenta como voz del pueblo, no como heroína individual que lo usa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Compara el amor de Frondoso y Laurencia con el deseo del Comendador: &iquest;qu&eacute; valores opone Lope en este contraste?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) El Comendador y Frondoso representan el mismo tipo de amor: la diferencia es solo social (uno es noble, el otro villano); Lope no hace un juicio moral entre ambos, solo un juicio de clase</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Lope opone dos modelos radicalmente distintos: el amor de Frondoso y Laurencia es <B>rec&iacute;proco, libre, igualitario y respetuoso</B> (culmina en matrimonio, respeta la voluntad de la mujer, se basa en la admiraci&oacute;n mutua); el del Comendador es <B>deseo violento, unilateral, abusivo y deshumanizador</B> (no busca el consentimiento, usa el poder para forzar, reduce a la mujer a objeto); el contraste define los valores morales de la obra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) El amor entre Frondoso y Laurencia es presentado negativamente: Lope critica que un villano se atreva a pretender a la mujer que el Comendador desea; la obra ensalza el derecho del noble a elegir esposa entre las villanas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) El Comendador no siente deseo hacia Laurencia sino odio hacia Frondoso: sus ataques a Laurencia son una forma de castigar a Frondoso por haberlo desafiado con la ballesta; la dimensi&oacute;n amorosa de la obra es secundaria</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El contraste entre el amor de Frondoso y el deseo del Comendador es uno de los ejes estructurales de la obra. <B>El amor de Frondoso y Laurencia</B>: desde el principio, Frondoso corteja a Laurencia con respeto y paciencia; ella inicialmente lo rechaza con humor e independencia (dice que no está interesada en el amor), pero él no se rinde sin forzarla; ella libremente elige corresponderle. Su amor es <B>mutuo, libre y culmina en matrimonio</B>. La escena de la boda (Acto II) es festiva, popular y llena de alegría. <B>El deseo del Comendador</B>: desde el inicio, el Comendador trata a Laurencia como un objeto; usa el poder feudal para presionarla; cuando ella lo rechaza, no acepta el rechazo; finalmente la rapta el día de su boda (el máximo insulto: viola el rito más sagrado de la comunidad) y la ultraja. Su "deseo" no es amor sino <B>dominación y posesión</B>. Lope hace de este contraste un argumento moral: no es el amor el que está prohibido entre distintos estamentos, sino la violación de la libertad y el consentimiento. El Comendador no es castigado por amar a una villana sino por no respetar su humanidad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza la funci&oacute;n pol&iacute;tica de los Reyes Cat&oacute;licos en <I>Fuenteovejuna</I>: &iquest;por qu&eacute; Lope los presenta como jueces supremos y qu&eacute; imagen de la monarqu&iacute;a proyecta la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Los Reyes Cat&oacute;licos son presentados negativamente: son c&oacute;mplices del Comendador porque pertenecen al mismo estamento nobiliario; su "perd&oacute;n" al pueblo es en realidad una amenaza velada para que no vuelvan a rebelarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Los Reyes Cat&oacute;licos representan la <B>monarqu&iacute;a justa y leg&iacute;tima</B>: están por encima de la nobleza intermedia (comendadores) y son el &uacute;ltimo garante de justicia para el pueblo; al perdonar a Fuenteovejuna rat&iacute;fican impl&iacute;citamente la justicia de la rebeli&oacute;n y sancionan el orden moral de la obra; Lope proyecta el ideal de la monarquía paternalista que protege al pueblo de los abusos de la nobleza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Los Reyes Cat&oacute;licos son personajes irrelevantes: su aparici&oacute;n en la obra es puramente decorativa para situar hist&oacute;ricamente la acci&oacute;n; su perd&oacute;n es un recurso de desenlace c&oacute;modo sin implicaciones ideol&oacute;gicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Los Reyes Cat&oacute;licos representan el absolutismo opresor que usa al pueblo para eliminar a un noble molesto; la obra critica veladamente la concentraci&oacute;n de poder en la monarquía y defiende los derechos de la nobleza regional</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los Reyes Católicos tienen una función ideológica precisa en <I>Fuenteovejuna</I>. En la época de Lope (reinado de Felipe III), Fernando e Isabel eran ya figuras míticas de la historia española: representaban la unidad nacional, la reconquista de Granada (1492), el descubrimiento de América y el establecimiento de un Estado moderno fuerte. Lope los usa con una intención política clara: <B>la monarquía legítima como garante de la justicia popular frente a los abusos de la nobleza intermedia</B>. El esquema ideológico de la obra es: Pueblo (víctima) ↔ Comendador (opresor nobiliario) ↔ Reyes Católicos (justicia suprema). El Comendador además ha traicionado a los Reyes políticamente (llevando al Maestre a atacar Ciudad Real), lo que lo convierte en doble traidor: a sus vasallos y a su rey. Los Reyes, al perdonar al pueblo, no solo ejercen clemencia: están validando que la acción del pueblo fue justa. El ideal político que proyecta la obra es el de la <B>monarquía paternalista</B>: el buen rey conoce y protege a sus súbditos humildes de los abusos de los intermediarios. Este ideal no es revolucionario sino conservador: no cuestiona la monarquía, sino que la defiende como instancia de justicia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> &iquest;Por qu&eacute; <I>Fuenteovejuna</I> fue interpretada como texto de resistencia pol&iacute;tica en épocas muy posteriores a Lope (siglo XIX y XX) y qu&eacute; dice eso sobre la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Porque Lope escribi&oacute; la obra como texto de propaganda revolucionaria dirigido a los campesinos; sus contempor&aacute;neos la entendieron siempre como un llamado a la revuelta contra la nobleza y la monarquía</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La obra fue reinterpretada como texto de resistencia porque sus temas (rebeli&oacute;n colectiva contra el opresor, solidaridad popular, justicia frente al abuso del poder) son <B>universales y trascienden su contexto hist&oacute;rico</B>; en la Rusia zarista fue censurada; los sovi&eacute;ticos la reestrenaron como s&iacute;mbolo del pueblo; Garc&iacute;a Lorca la llev&oacute; por los pueblos de España (1932); esto demuestra que los grandes textos literarios producen significados que sus autores no siempre buscaron</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) La obra fue solo un &eacute;xito comercial en su &eacute;poca y luego fue olvidada; su reinterpretaci&oacute;n pol&iacute;tica moderna es una deformación ideológica que traiciona la intenci&oacute;n de Lope, que era puramente entretenida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La obra fue censurada en todas las &eacute;pocas posteriores por su contenido subversivo; ningún gobierno europeo la permiti&oacute; representar entre los siglos XVII y XIX</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La historia de la recepción de <I>Fuenteovejuna</I> es un caso extraordinario de <B>polisemia literaria</B>: un texto que su autor escribió con intenciones específicas (exaltar la monarquía católica, el honor villanesco, la justicia real) fue leído en contextos completamente diferentes con significados que Lope no habría reconocido. <B>Rusia zarista</B>: la obra fue censurada porque las autoridades vieron en ella un peligroso manual de rebeldía popular; el pueblo que se alza contra el señor feudal era demasiado sugerente. <B>URSS</B>: los teatros soviéticos la representaron como emblema del levantamiento del proletariado contra la clase explotadora; el Comendador se leía como el burgués o el terrateniente. <B>Segunda República española (1932)</B>: Federico García Lorca y la compañía teatral "La Barraca" (financiada por el gobierno republicano) llevaron la obra a pueblos rurales de España; los campesinos que la veían se identificaban inmediatamente con el pueblo de Fuenteovejuna. Esta historia demuestra un principio fundamental de teoría literaria: los textos viven más allá de sus contextos de producción y producen significados en diálogo con los lectores/espectadores de cada época.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Compara el monólogo de Laurencia (Acto III) con una pieza de oratoria y analiza sus recursos retóricos.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) El monólogo de Laurencia es un poema lírico personal sin funci&oacute;n dram&aacute;tica; expresa el dolor íntimo de la protagonista pero no tiene intenci&oacute;n persuasiva ni produce efectos en los otros personajes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El monólogo funciona como una <B>arenga o discurso oratorio</B> con estructura argumentativa precisa: (1) <B>ex&oacute;rdio</B> que capta la atenci&oacute;n (aparici&oacute;n despeinada y ultrajada); (2) <B>narratio</B> del agravio sufrido; (3) <B>argumentatio</B> que acusa de cobardes a los hombres; (4) <B>peroratio</B> que llama a la acci&oacute;n; usa <B>apóstrofe</B> (interpelaci&oacute;n directa), <B>an&aacute;fora</B> ("¿Vosotros...?"), <B>met&aacute;fora</B> (ovejas, piedras, bronces), <B>hip&eacute;rbole</B> e <B>inversi&oacute;n de roles de g&eacute;nero</B></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) El monólogo es la escena m&aacute;s débil de la obra: es ret&oacute;ricamente simple, sin figuras literarias y en prosa; Lope lo escribi&oacute; apresuradamente y carece de la calidad po&eacute;tica del resto de la obra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) El monólogo es un di&aacute;logo entre Laurencia y los hombres del concejo: ellos le responden en cada momento y ella va modificando su discurso según sus reacciones; es un debate socrático, no una arenga unidireccional</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El monólogo de Laurencia en el Acto III es uno de los textos más analizados del teatro español. Su función dramática es inequívoca: sin ese discurso, no hay rebelión; es el detonador de la acción colectiva. Analizado como pieza retórica: (1) <B>Captatio benevolentiae / exordio dramático</B>: Laurencia aparece físicamente deshecha (despeinada, vestido roto), lo que hace visible el agravio antes de que hable. (2) <B>Apóstrofe</B>: se dirige directamente a los hombres presentes, interpelándolos por su nombre colectivo e individual: "¿Vosotros sois hombres nobles?" La pregunta retórica los acusa sin acusarlos explícitamente. (3) <B>Anáfora</B>: repetición de "¿Vosotros...?" que martilla la acusación. (4) <B>Metáforas de dureza e insensibilidad</B>: "piedras, bronces, jaspes, tigres": los hombres son tan insensibles como los materiales más duros. (5) <B>Metáfora animal</B>: "ovejas" retoma el nombre del pueblo (Fuente-<i>ovejuna</i>) y lo convierte en insulto que pide ser revertido. (6) <B>Inversión de roles de género</B>: es la mujer violada quien llama a los hombres a luchar, lo que invierte el esquema patriarcal habitual. (7) <B>Gradación ascendente</B>: el discurso va escalando en intensidad hasta el llamado a las armas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Desde la perspectiva de la cr&iacute;tica literaria feminista, &iquest;es Laurencia un personaje emancipado o sigue siendo una construcci&oacute;n patriarcal?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Laurencia es completamente emancipada: Lope la present&oacute; como una mujer del siglo XX en un drama del XVII; su psicolog&iacute;a, sus ideas y su conducta no tienen ningún rastro de los condicionamientos patriarcales de su &eacute;poca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Laurencia es un personaje complejo que admite lectura ambivalente: por un lado es <B>activa, valiente y agente de su historia</B> (rechaza al Comendador, ama libremente, desata la rebeli&oacute;n con su discurso); por otro, su acci&oacute;n se desencadena por una violaci&oacute;n (no por iniciativa propia) y culmina con el retorno al orden patriarcal (el matrimonio con Frondoso, ratificado por los reyes); la cr&iacute;tica feminista ve en ella una figura proto-feminista dentro de los l&iacute;mites del sistema ideol&oacute;gico barroco</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Laurencia es puramente una construcci&oacute;n patriarcal sin ning&uacute;n rasgo de emancipaci&oacute;n: toda su conducta está dictada por los hombres (primero por su padre Esteban, luego por Frondoso, finalmente por los reyes); su monólogo es solo el instrumento que usa el padre para organizar la rebeli&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La cr&iacute;tica literaria feminista no se ha interesado en <I>Fuenteovejuna</I> porque Lope de Vega era un autor abiertamente mis&oacute;gino cuyos textos no ofrecen ning&uacute;n material valioso para el an&aacute;lisis de g&eacute;nero</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Laurencia es uno de los personajes femeninos más debatidos del teatro español desde la perspectiva de género. <B>Argumentos a favor de su emancipación</B>: (1) En la primera jornada, Laurencia declara abiertamente que no le interesa el amor y que puede defenderse sola de cualquier hombre, incluido el Comendador. (2) Rechaza activamente los intentos del Comendador. (3) Cuando elige amar a Frondoso, es una elección libre. (4) En el acto III, no espera que los hombres actúen: ella misma toma la iniciativa y les da las órdenes. (5) Organizará a las mujeres del pueblo para que participen en la rebelión. <B>Argumentos que cuestionan su emancipación</B>: (1) El detonante de su acción más poderosa no es una decisión autónoma sino una violación: es la víctima de un crimen quien habla. (2) Su destino final es el matrimonio, institución patriarcal por excelencia. (3) Lope la construye en parte para cumplir la función de "catalizador del honor colectivo" más que como personaje femenino en sí mismo. (4) Las mujeres del pueblo, aunque participan en la rebelión, desaparecen como sujetos en el desenlace judicial. <B>Conclusión</B>: la crítica contemporánea (Melveena McKendrick, entre otros) la considera una figura proto-feminista en el sentido de que desafía las convenciones de su tiempo, pero inscrita en un sistema ideológico que no podía imaginar la emancipación femenina en términos modernos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Analiza la obra dentro del sistema de g&eacute;neros del teatro barroco español: &iquest;en qu&eacute; se diferencia <I>Fuenteovejuna</I> de otros dramas de honor de la &eacute;poca como los de Calder&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) <I>Fuenteovejuna</I> y los dramas de honor calderonianos son idénticos en estructura, temas y soluciones dram&aacute;ticas; la única diferencia es que Lope lo escribe antes y Calder&oacute;n lo imita</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) A diferencia de los dramas de honor calderonianos (como <I>El alcalde de Zalamea</I> o <I>El médico de su honra</I>), donde el honor es un problema <B>individual</B> que se resuelve mediante la muerte privada del ofensor y la ocultaci&oacute;n, en <I>Fuenteovejuna</I> el honor es <B>colectivo</B>, la venganza es <B>p&uacute;blica y colectiva</B> y la soluci&oacute;n es <B>ratificada por la autoridad real</B>; en Calder&oacute;n el honor es una carga privada y angustiosa; en Lope es una afirmaci&oacute;n gozosa de la dignidad comunitaria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La diferencia principal es formal: Calder&oacute;n escribe en prosa y Lope en verso; Calder&oacute;n estructura sus dramas en cinco actos y Lope en tres; Calder&oacute;n usa el gracioso y Lope lo elimina de sus dramas de honor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) <I>Fuenteovejuna</I> no es un drama de honor: el Comendador no ofende el honor del pueblo sino su propiedad econ&oacute;mica (las cosechas, los animales); la obra pertenece al género de la comedia de costumbres rurales, no al drama de honor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparación entre <I>Fuenteovejuna</I> y los dramas de honor calderonianos es uno de los ejercicios de crítica comparada más productivos del Siglo de Oro. En los dramas de honor de Calderón (<I>El médico de su honra</I>, <I>El pintor de su deshonra</I>, <I>La dama duende</I>): (1) El honor es un problema <B>individual y secreto</B>: el marido o padre ofendido actúa solo para restaurar su honor, a menudo matando a la mujer sospechosa aunque sea inocente. (2) La solución es <B>privada y oculta</B>: el rey puede enterarse y aprobarlo, pero la venganza se realiza en silencio. (3) El honor genera angustia y tragedia: es una trampa de la que el protagonista no puede escapar. En <I>El alcalde de Zalamea</I> de Calderón (la obra más cercana a <I>Fuenteovejuna</I>): hay un villano que defiende su honor frente a un noble abusador (Pedro Crespo), y hay un rey (Felipe II) que valida la acción. Pero incluso aquí la acción es del individuo, no del pueblo. En <I>Fuenteovejuna</I>: (1) El honor es <B>colectivo</B>. (2) La acción es <B>pública</B> (todos lo hacen, todos lo dicen). (3) La solución es festiva y reparadora, no secreta y angustiosa. Lope concibe el honor como afirmación de la dignidad comunitaria; Calderón lo concibe como carga privada insoportable.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> &iquest;Qu&eacute; relaci&oacute;n existe entre la subtrama pol&iacute;tica (el Comendador, el Maestre de Calatrava y la toma de Ciudad Real) y la trama principal del pueblo de Fuenteovejuna?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Las dos tramas son completamente independientes: Lope las incluy&oacute; en la misma obra por razones de convenci&oacute;n teatral, pero no tienen ninguna relaci&oacute;n temática ni dramática entre s&iacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Las dos tramas est&aacute;n <B>tem&aacute;ticamente unificadas</B> por la figura del Comendador: el mismo hombre que oprime al pueblo de Fuenteovejuna es el que manipula al joven Maestre para <B>traicionar a los Reyes Cat&oacute;licos</B>; ambas conductas revelan el mismo defecto moral (abuso del poder, deslealtad al orden leg&iacute;timo); la subtrama pol&iacute;tica hace que el castigo del Comendador sea doblemente justo: era opresor de sus vasallos y traidor a su rey</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La subtrama pol&iacute;tica es la trama principal y la historia del pueblo de Fuenteovejuna es la secundaria: el verdadero conflicto de la obra es la lealtad del Maestre a los Reyes Cat&oacute;licos; el pueblo solo aparece como telón de fondo del conflicto político mayor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La subtrama del Maestre y Ciudad Real es una obra distinta que Lope incluy&oacute; erróneamente en <I>Fuenteovejuna</I>; los editores modernos la eliminan como material espurio</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación entre las dos tramas de <I>Fuenteovejuna</I> ha sido debatida por la crítica: algunos ven la subtrama política como un elemento mal integrado; otros la ven como esencial. La lectura más convincente es la de la unidad temática: el Comendador Fernán Gómez es el eje de ambas. En la <B>trama principal</B> (el pueblo), el Comendador abusa de su poder señorial para oprimir a sus vasallos: viola el orden natural entre el señor y quienes deben proteger. En la <B>subtrama política</B>, el mismo Comendador usa su ascendiente sobre el joven e inexperto Maestre Rodrigo Téllez Girón para convencerlo de atacar Ciudad Real, una plaza de los Reyes Católicos: viola el orden político, traicionando a sus reyes legítimos. La equivalencia es perfecta: Fernán Gómez es una figura del <B>abuso del poder en todos sus planos</B>: el local (vs. el pueblo) y el nacional (vs. los reyes). Esta doble traición lo hace doblemente culpable y su muerte doblemente justa. La subtrama además introduce el marco histórico real (la guerra de sucesión entre Isabel de Castilla y Juana la Beltraneja, 1475&ndash;1479) que da autenticidad histórica a la acción.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Eval&uacute;a el valor universal de <I>Fuenteovejuna</I>: &iquest;en qu&eacute; medida sus temas siguen siendo vigentes en el siglo XXI?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) <I>Fuenteovejuna</I> es una obra completamente anacrónica en el siglo XXI: sus temas (el honor, la monarquía, las órdenes militares medievales) no tienen ninguna relevancia en el mundo contemporáneo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Sus temas son plenamente vigentes: el <B>abuso del poder</B> (violencia institucional, acoso sexual, impunidad de los poderosos); la <B>solidaridad colectiva</B> como respuesta ("Fuenteovejuna" como expresión de responsabilidad colectiva difusa); el <B>honor de los humildes</B> (dignidad de las clases trabajadoras); la <B>rebeli&oacute;n justa contra el opresor</B>; la obra se lee hoy como cr&iacute;tica del abuso de poder sin importar el contexto histórico concreto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La obra s&oacute;lo es relevante en contextos de dictadura o represi&oacute;n política extrema; en democracias consolidadas sus temas han perdido toda vigencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La vigencia de <I>Fuenteovejuna</I> en el siglo XXI es puramente académica: se estudia en las universidades como pieza del patrimonio literario, pero no genera ninguna respuesta emocional ni política en el p&uacute;blico contemporáneo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La vigencia de <I>Fuenteovejuna</I> en el siglo XXI es uno de los argumentos más poderosos sobre la universalidad de la gran literatura. Sus temas resuenan en múltiples contextos contemporáneos: (1) <B>El abuso de poder</B>: el Comendador que usa su posición para cometer agresiones sexuales impunemente es un patrón que los movimientos #MeToo han documentado masivamente en el siglo XXI; el nombre y el cargo del agresor como escudo contra la justicia. (2) <B>La solidaridad colectiva</B>: la respuesta "¡Fuenteovejuna, señor!" como estrategia de responsabilidad colectiva difusa ha sido analizada por teóricos de la desobediencia civil; se ha invocado en protestas sindicales y sociales. (3) <B>La violencia institucional</B>: el Comendador no es solo un individuo malo sino una institución (la Orden Militar, el sistema señorial) que ampara el abuso; la crítica institucional es contemporánea. (4) <B>La dignidad de los de abajo</B>: el honor villanesco resuena con los movimientos de dignidad de las clases trabajadoras. (5) <B>La participación femenina en la resistencia</B>: las mujeres de Fuenteovejuna que se arman y participan en la rebelión anticipan debates sobre la participación femenina en la resistencia política. La grandeza de <I>Fuenteovejuna</I> es exactamente esa: creada en 1612 para un público del Siglo de Oro español, habla con igual fuerza a lectores y espectadores del siglo XXI.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Si tuvieras que definir <I>Fuenteovejuna</I> en una sola frase para un examen de alto rendimiento, &iquest;cu&aacute;l de las siguientes captura mejor la esencia de la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) "<I>Fuenteovejuna</I> es una comedia de enredos amorosos ambientada en la España medieval, en la que Lope de Vega celebra el triunfo del amor juvenil sobre los prejuicios de clase"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) "<I>Fuenteovejuna</I> es un drama hist&oacute;rico-social del Barroco español en el que Lope de Vega convierte a un pueblo colectivo en protagonista heroico que se rebela justamente contra el abuso de un tirano, reivindicando el honor villanesco y la legitimidad de la justicia popular avalada por la monarquía"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) "<I>Fuenteovejuna</I> es una tragedia neoclásica que sigue estrictamente las unidades aristotélicas de tiempo, lugar y acción, y cuyo tema central es la inevitable ca&iacute;da del noble orgulloso ante la justicia divina"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) "<I>Fuenteovejuna</I> es una obra religiosa del Barroco español que usa la historia de una revuelta campesina para demostrar la providencia divina sobre los asuntos humanos; su verdadero protagonista es Dios, que guía la mano del pueblo hacia la justicia"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de síntesis evalúa la capacidad del estudiante para integrar todos los elementos estudiados en una definición precisa. Analicemos cada opción: <B>a) Incorrecta:</B> reduce la obra a "comedia de enredos amorosos", lo que ignora sus dimensiones dramáticas, sociales y políticas; el amor es un tema pero no el único ni el más importante. <B>b) Correcta:</B> integra todos los elementos fundamentales: (1) <B>género</B> ("drama histórico-social"); (2) <B>movimiento</B> ("Barroco español"); (3) <B>innovación dramática</B> ("pueblo colectivo como protagonista"); (4) <B>tema central</B> ("rebeli&oacute;n contra el tirano"); (5) <B>concepto clave</B> ("honor villanesco"); (6) <B>ideología política</B> ("justicia popular avalada por la monarquía"). <B>c) Incorrecta:</B> <I>Fuenteovejuna</I> no es neoclásica sino barroca; Lope viola deliberadamente las unidades aristotélicas; tampoco es una "inevitable caída del orgulloso" (el Comendador no cae por hybris sino por ser un tirano injusto). <B>d) Incorrecta:</B> la dimensión religiosa está presente pero no es el tema central; presentar a Dios como "verdadero protagonista" es una sobreinterpretación que ignora el protagonismo explícito del pueblo. Para un examen de alto rendimiento, la opción b) demuestra capacidad de síntesis, precisión conceptual y dominio del vocabulario crítico.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

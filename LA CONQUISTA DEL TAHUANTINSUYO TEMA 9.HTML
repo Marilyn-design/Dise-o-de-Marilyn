@@ -1,0 +1,572 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>La Conquista del Tahuantinsuyo - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA &middot; TEMA 9</DIV>
+<H1>La Conquista del Tahuantinsuyo</H1>
+<DIV CLASS="sub">Contexto &middot; Francisco Pizarro &middot; Cajamarca &middot; Caída del Imperio Inca &middot; Resistencia &middot; Consecuencias</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. ¿Qué fue la Conquista del Tahuantinsuyo y cómo se enmarca históricamente?</H3>
+La <B>Conquista del Tahuantinsuyo</B> (1532&ndash;1572) fue el proceso por el cual el Imperio Inca &mdash;el mayor Estado prehispánico de América&mdash; fue derrotado, sometido y reemplazado por el dominio colonial español. Es uno de los eventos más determinantes de la historia peruana y latinoamericana: en menos de dos décadas, una civilización que gobernaba entre 10 y 12 millones de personas fue desmantelada por un puñado de conquistadores europeos.
+
+<H4>El Tahuantinsuyo en vísperas de la conquista:</H4>
+<UL>
+<LI><B>Extensión:</B> el Imperio Inca abarcaba aproximadamente 2 millones de km², desde el sur de Colombia y Ecuador hasta el centro de Chile y el noroeste de Argentina, pasando por Perú y Bolivia. Era el Estado más extenso de América y el más grande del mundo contemporáneo sin escritura fonética.</LI>
+<LI><B>Población:</B> estimaciones modernas sitúan la población entre 10 y 12 millones de habitantes (algunos historiadores elevan la cifra hasta 15&ndash;16 millones). La capital, <B>Cusco</B>, tenía entre 100.000 y 200.000 habitantes.</LI>
+<LI><B>Organización política:</B> Estado teocrático centralizado. El <B>Sapa Inca</B> era considerado hijo del Sol (Inti) y gobernante absoluto. La administración se organizaba en cuatro <B>suyos</B> (Chinchaysuyo, Antisuyo, Collasuyo, Cuntisuyo), de donde proviene el nombre <I>Tawantinsuyu</I> ("las cuatro regiones").</LI>
+<LI><B>Guerra civil (1527&ndash;1532):</B> la muerte del Sapa Inca <B>Huayna Cápac</B> (c. 1527), posiblemente por la viruela que ya se adelantaba a los españoles, desencadenó una <B>guerra civil</B> entre sus hijos <B>Huáscar</B> (Cusco) y <B>Atahualpa</B> (Quito). Atahualpa venció y en el momento de la llegada de Pizarro era el nuevo Sapa Inca, pero el Imperio estaba exhausto, dividido y con enormes rencores políticos internos.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La guerra civil entre Huáscar y Atahualpa es un factor <B>estructural</B> de la conquista: sin ella, la resistencia inca habría sido incomparablemente mayor. Este dato aparece en preguntas de nivel avanzado. Fecha clave: la muerte de Huayna Cápac c. <B>1527</B> como detonante de la división.</DIV>
+
+<H3>2. Francisco Pizarro: perfil, expediciones previas y alianzas</H3>
+<B>Francisco Pizarro</B> (Trujillo, Extremadura, c. 1478&ndash;Lima, 1541) fue el conquistador extremeño que lideró la conquista del Tahuantinsuyo. Iletrado (no sabía leer ni escribir), bastardo, de origen humilde, llegó al Nuevo Mundo en 1502 y acumuló experiencia en el Caribe y Panamá antes de emprender la empresa peruana.
+
+<H4>Las tres expediciones hacia el sur:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Expedición</TH><TH>Año</TH><TH>Resultado</TH></TR>
+<TR><TD><B>1.ª Expedición</B></TD><TD>1524&ndash;1525</TD><TD>Fracaso: llegaron solo hasta Colombia; hambre, enfermedades y ataques indígenas. Regresaron a Panamá sin tesoros</TD></TR>
+<TR><TD><B>2.ª Expedición</B></TD><TD>1526&ndash;1527</TD><TD>Parcialmente exitosa: contacto con mercaderes incas en la costa; llegaron a Tumbes. El famoso episodio de la <B>"línea de Gallo"</B>: Pizarro traza una raya en la arena y 13 hombres la cruzan (los "Trece de la Fama") para continuar. Regreso a Panamá</TD></TR>
+<TR><TD><B>3.ª Expedición</B></TD><TD>1531&ndash;1532</TD><TD>La conquista propiamente dicha. Sale de Panamá, desembarca en Tumbes, avanza hacia el interior y llega a Cajamarca</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Las Capitulaciones de Toledo (26 de julio de 1529):</H4>
+Pizarro viajó a España para negociar directamente con <B>Carlos I</B> (Carlos V del Sacro Imperio). Las Capitulaciones de Toledo le otorgaron:
+<UL>
+<LI>Título de <B>Gobernador y Capitán General</B> de las tierras que conquistase al sur.</LI>
+<LI>El territorio sería denominado <B>"Nueva Castilla"</B>.</LI>
+<LI>Sus socios <B>Diego de Almagro</B> y el clérigo <B>Hernando de Luque</B> recibieron títulos menores.</LI>
+</UL>
+
+<DIV CLASS="ej">&#128221; <B>Los socios de Pizarro:</B> La empresa conquistadora fue un <B>negocio privado</B> financiado por tres socios: Francisco Pizarro (liderazgo militar), Diego de Almagro (logística y reclutamiento) y Hernando de Luque (financiación, en nombre del gobernador Pedrarias Dávila). Las tensiones entre Pizarro y Almagro por el reparto del botín desencadenarían más tarde las <B>Guerras Civiles del Perú</B> (1537&ndash;1554).</DIV>
+
+<DIV CLASS="cultura-titulo">&#9876; CAJAMARCA, 1532: EL ENCUENTRO DECISIVO<SPAN>La captura de Atahualpa y el fin del Tahuantinsuyo como Estado independiente</SPAN></DIV>
+
+<H3>3. La Batalla (o Encuentro) de Cajamarca (16 de noviembre de 1532)</H3>
+El <B>16 de noviembre de 1532</B> es la fecha más importante de la historia de la conquista del Perú. En la plaza de <B>Cajamarca</B>, Pizarro tendió una emboscada al Sapa Inca Atahualpa y lo capturó, decapitando de un solo golpe la estructura de poder del Tahuantinsuyo.
+
+<H4>El contexto del encuentro:</H4>
+<UL>
+<LI>Pizarro tenía apenas <B>168 hombres</B> (106 infantes, 62 jinetes) y unos 2 cañones. Atahualpa llegó a Cajamarca con un ejército de entre <B>40.000 y 80.000 guerreros</B>.</LI>
+<LI>Atahualpa <B>subestimó</B> a los españoles: los consideraba curiosidades exóticas que no representaban una amenaza real. Había derrotado a Huáscar pocas semanas antes y se sentía en la cúspide de su poder.</LI>
+<LI>Los españoles llevaban caballos (animales desconocidos para los incas, que los llamaban "dioses de cuatro patas") y armas de fuego (arcabuces), cuyo estruendo aterrorizó a los guerreros.</LI>
+</UL>
+
+<H4>El "Requerimiento" y el incidente del libro:</H4>
+El clérigo dominico <B>fray Vicente de Valverde</B> se adelantó y leyó el <B>Requerimiento</B> (documento legal español que exigía al rey o señor indígena reconocer la autoridad del Papa y del rey de España antes de ser atacado). Ofreció a Atahualpa una Biblia. Según las crónicas, Atahualpa cogió el libro, lo acercó a su oído, no escuchó nada, y lo arrojó al suelo. Valverde declaró la guerra justa y lanzó la señal de ataque.
+
+<H4>El desarrollo de la batalla:</H4>
+<UL>
+<LI>Los españoles dispararon los cañones y cargaron con la caballería sobre la multitud inca reunida en la plaza, creando el pánico.</LI>
+<LI>En minutos, Pizarro capturó personalmente a Atahualpa en medio de la refriega.</LI>
+<LI>Muertos incas: entre <B>2.000 y 7.000</B> según las crónicas (ningún español murió en combate; Pizarro resultó herido al proteger a Atahualpa de sus propios soldados).</LI>
+<LI>La captura del Sapa Inca paralizó al ejército inca: sin su dios-rey, los guerreros no sabían actuar.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Las cifras de Cajamarca son frecuentes: <B>168 españoles</B> vs. un ejército inca de decenas de miles. La fecha exacta es <B>16 de noviembre de 1532</B>. El nombre del clérigo que leyó el Requerimiento es <B>fray Vicente de Valverde</B>. Ningún español murió en la batalla.</DIV>
+
+<H3>4. El rescate de Atahualpa y su ejecución</H3>
+Atahualpa, prisionero de los españoles, comprendió rápidamente que el oro era lo que más codiciaban. Hizo una oferta sin precedentes en la historia:
+
+<H4>El cuarto del rescate:</H4>
+<UL>
+<LI>Atahualpa prometió llenar una habitación de <B>22 m² una vez con oro y dos veces con plata</B> a cambio de su libertad.</LI>
+<LI>La habitación medía aproximadamente <B>6,7 m de largo × 5,2 m de ancho</B> y debía llenarse de oro hasta la altura que Atahualpa marcó con su mano (c. 2,45 m).</LI>
+<LI>Durante los <B>8 meses</B> siguientes, llegaron a Cajamarca objetos de oro y plata de todo el Tahuantinsuyo: estatuas, vajillas, revestimientos del Coricancha (Templo del Sol).</LI>
+<LI>El total acumulado fue de aproximadamente <B>6.000 kg de oro</B> y <B>12.000 kg de plata</B>. El quinto real (impuesto del 20% para la Corona) ascendió a una fortuna incalculable.</LI>
+</UL>
+
+<H4>La ejecución de Atahualpa (26 de julio de 1533):</H4>
+A pesar del pago del rescate, Pizarro decidió ejecutar a Atahualpa. Las razones fueron:
+<UL>
+<LI><B>Presiones de los aliados indígenas pro-huascaristas</B> (especialmente del curaca Filipillo, intérprete, que falsificó declaraciones) que acusaron a Atahualpa de planear una fuga.</LI>
+<LI>La llegada del lugarteniente de Pizarro, <B>Diego de Almagro</B>, con refuerzos, cambió el balance de poder interno entre los conquistadores.</LI>
+<LI>El temor a que un Atahualpa libre pudiera coordinar la resistencia.</LI>
+</UL>
+Atahualpa fue acusado de politeísmo, fratricidio (muerte de Huáscar) y conspiración. Fue condenado a morir en la hoguera (como hereje). Al aceptar el bautismo con el nombre cristiano de <B>Juan de Atahualpa</B>, la pena se conmutó por <B>garrote</B> (estrangulamiento). Fue ejecutado el <B>26 de julio de 1533</B>.
+
+<DIV CLASS="mapa-note">&#128221; <B>Debate historiográfico:</B> La ejecución de Atahualpa es uno de los episodios más controvertidos de la conquista. El propio rey Carlos I reprendió a Pizarro al conocer la noticia, pues el Sapa Inca había cumplido el trato del rescate. Hernando de Soto &mdash;que respetaba a Atahualpa&mdash; se encontraba en exploración y, al regresar y encontrarlo muerto, criticó duramente la decisión de Pizarro. El cronista <B>Felipe Guamán Poma de Ayala</B> describió la ejecución como un acto de traición y codicia pura.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127961;&#65039; LA TOMA DEL CUSCO Y LA RESISTENCIA INCA<SPAN>De la caída de la capital a la resistencia de Vilcabamba (1533-1572)</SPAN></DIV>
+
+<H3>5. La toma del Cusco y el establecimiento del dominio español (1533&ndash;1537)</H3>
+Tras la muerte de Atahualpa, Pizarro instaló como Sapa Inca títere a <B>Túpac Huallpa</B> (muerto en septiembre de 1533) y luego a <B>Manco Inca Yupanqui</B>, hermano de Huáscar. Los españoles avanzaron hacia el sur:
+
+<UL>
+<LI><B>15 de noviembre de 1533:</B> entrada española al <B>Cusco</B>. Los conquistadores saquearon sistemáticamente el Coricancha, los palacios reales y los adoratorios. El oro fue fundido en barras.</LI>
+<LI><B>18 de enero de 1535:</B> Pizarro funda la ciudad de <B>Lima</B> (Ciudad de los Reyes) en la costa, como nueva capital del virreinato en construcción, con mejor acceso marítimo que el Cusco.</LI>
+<LI>Los españoles se apoyaron en los pueblos que odiaban el dominio inca (chancas, huancas, cañaris, chachapoyas) como aliados indígenas fundamentales. Sin estos aliados, la conquista habría sido imposible.</LI>
+</UL>
+
+<H4>El gran sitio del Cusco (1536&ndash;1537): la rebelión de Manco Inca</H4>
+Manco Inca, inicialmente aliado de los españoles, fue progresivamente humillado y maltratado. En <B>1536</B> escapó y convocó un ejército de entre <B>100.000 y 200.000 guerreros</B> que sitió el Cusco durante casi un año.
+<UL>
+<LI>Los españoles, con aliados indígenas y jinetes, resistieron en los edificios incas del Cusco.</LI>
+<LI>La batalla más importante fue la toma y reconquista de la <B>fortaleza de Sacsayhuamán</B> (mayo de 1536), donde murió el hermano de Pizarro, Juan Pizarro.</LI>
+<LI>Simultáneamente, Manco Inca sitió Lima, pero los refuerzos de Diego de Almagro (que regresaba de su fallida expedición a Chile) desarticularon el cerco.</LI>
+<LI>El sitio fracasó y Manco Inca se retiró a las montañas selváticas de <B>Vilcabamba</B>, donde estableció el <B>Estado neoinca de Vilcabamba</B>, que resistiría hasta 1572.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> El sitio del Cusco (1536) demuestra que la conquista no fue un proceso rápido ni fácil. Manco Inca movilizó uno de los ejércitos más grandes de la historia de América. Su retirada a Vilcabamba y la fundación del Estado neoinca son datos de nivel avanzado que distinguen al alumno de alto rendimiento.</DIV>
+
+<H3>6. Las Guerras Civiles de los Conquistadores (1537&ndash;1554)</H3>
+La conquista no fue solo un conflicto entre españoles e incas: los propios conquistadores se destruyeron entre sí en una serie de guerras civiles que ensangrentaron el recién creado Virreinato del Perú.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Conflicto</TH><TH>Años</TH><TH>Resultado</TH></TR>
+<TR><TD><B>Guerra Pizarro-Almagro</B></TD><TD>1537&ndash;1538</TD><TD>Batalla de las Salinas (6 abr. 1538): Hernando Pizarro vence a Almagro; Diego de Almagro es capturado y ejecutado por garrote en Cusco (8 jul. 1538)</TD></TR>
+<TR><TD><B>Asesinato de Francisco Pizarro</B></TD><TD>1541</TD><TD>El 26 de junio de 1541, partidarios de "Almagro el Mozo" (Diego de Almagro II) irrumpen en el palacio de Lima y matan a Francisco Pizarro; Almagro el Mozo se proclama gobernador</TD></TR>
+<TR><TD><B>Rebelión de Almagro el Mozo</B></TD><TD>1541&ndash;1542</TD><TD>Cristóbal Vaca de Castro, enviado real, derrota a Almagro el Mozo en Chupas (16 sep. 1542); Almagro el Mozo es ejecutado</TD></TR>
+<TR><TD><B>Rebelión de Gonzalo Pizarro</B></TD><TD>1544&ndash;1548</TD><TD>La promulgación de las Leyes Nuevas (1542) genera una rebelión encabezada por Gonzalo Pizarro; mata al primer virrey Blasco Núñez Vela en la batalla de Añaquito (18 ene. 1546); el pacificador Pedro de la Gasca lo derrota en Jaquijahuana (9 abr. 1548) y es ejecutado</TD></TR>
+<TR><TD><B>Rebelión de Francisco Hernández Girón</B></TD><TD>1553&ndash;1554</TD><TD>Última guerra civil; derrota definitiva en Pucará (oct. 1554). Con su fin, la Corona consolida definitivamente el control del virreinato</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note">&#128221; <B>Importancia de las Guerras Civiles:</B> Las guerras civiles no son un "apéndice" de la conquista: son fundamentales para entender por qué el dominio colonial tardó décadas en consolidarse. También explican por qué la Corona promulgó las <B>Leyes Nuevas</B> (1542): necesitaba limitar el poder de los encomenderos y conquistadores que amenazaban con crear feudos independientes en América.</DIV>
+
+<H3>7. La resistencia inca: Vilcabamba y los últimos Sapa Incas (1537&ndash;1572)</H3>
+El <B>Estado neoinca de Vilcabamba</B> (también llamado Estado inca de Vilcabamba) fue el último reducto de resistencia soberana inca. Establecido por <B>Manco Inca</B> en las montañas selváticas al noreste del Cusco, sobrevivió durante 35 años bajo cuatro gobernantes:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Gobernante</TH><TH>Período</TH><TH>Hechos relevantes</TH></TR>
+<TR><TD><B>Manco Inca Yupanqui</B></TD><TD>1537&ndash;1544</TD><TD>Fundador de Vilcabamba; dirige guerrillas contra los españoles; asesinado por los propios españoles que había acogido como huéspedes (almagristas fugitivos)</TD></TR>
+<TR><TD><B>Sayri Túpac</B></TD><TD>1544&ndash;1560</TD><TD>Negocia con el virrey; en 1558 sale de Vilcabamba y acepta vasallaje español a cambio de tierras y privilegios; muere en 1560 (posiblemente envenenado)</TD></TR>
+<TR><TD><B>Cusi Huallpa (Titu Cusi Yupanqui)</B></TD><TD>1560&ndash;1571</TD><TD>Político hábil; negocia con los españoles mientras fortalece Vilcabamba; permite la entrada de misioneros agustinos; dicta su propia crónica (<I>Relación de la conquista del Perú</I>); muere de enfermedad</TD></TR>
+<TR><TD><B>Túpac Amaru I</B></TD><TD>1571&ndash;1572</TD><TD>Último Sapa Inca; el virrey <B>Francisco de Toledo</B> decide liquidar Vilcabamba; expedición militar conquista la ciudad (junio 1572); Túpac Amaru I es capturado, llevado al Cusco, bautizado y decapitado públicamente el <B>24 de septiembre de 1572</B>. Fin del Estado inca.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La resistencia de Vilcabamba dura <B>35 años</B> (1537&ndash;1572). El último Sapa Inca es <B>Túpac Amaru I</B>, ejecutado el <B>24 de septiembre de 1572</B> bajo el virrey <B>Francisco de Toledo</B>. No confundir con <B>Túpac Amaru II</B> (José Gabriel Condorcanqui, 1780&ndash;1781), líder de la gran rebelión anticolonial del siglo XVIII.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127963; EL VIRREINATO DEL PERÚ<SPAN>Organización colonial, instituciones y explotación del trabajo indígena</SPAN></DIV>
+
+<H3>8. El Virreinato del Perú: instituciones coloniales y el papel del virrey Toledo</H3>
+El <B>Virreinato del Perú</B> fue creado formalmente en <B>1542</B> con la promulgación de las <B>Leyes Nuevas</B> de Carlos I. El primer virrey fue <B>Blasco Núñez Vela</B> (asesinado en la rebelión de Gonzalo Pizarro, 1546). La organización colonial se consolidó bajo el quinto virrey, <B>Francisco de Toledo</B> (1569&ndash;1581), el gran organizador del virreinato.
+
+<H4>Instituciones coloniales fundamentales:</H4>
+<UL>
+<LI><B>El Virrey:</B> representante personal del rey en América. Máxima autoridad civil y militar del virreinato.</LI>
+<LI><B>La Audiencia:</B> tribunal de justicia y consejo de gobierno. La Audiencia de Lima fue creada en 1543.</LI>
+<LI><B>Los corregidores:</B> funcionarios reales que administraban los territorios indígenas (corregimientos) en nombre de la Corona.</LI>
+<LI><B>La encomienda:</B> institución por la cual un conquistador (encomendero) recibía el derecho a cobrar tributo y exigir trabajo de un grupo de indígenas a cambio de evangelizarlos y protegerlos. Fue la base económica de la primera generación de conquistadores.</LI>
+<LI><B>La mita colonial:</B> el virrey Toledo adaptó la antigua <I>mit'a</I> inca: cada comunidad indígena debía enviar el <B>séptimo de sus varones adultos</B> a trabajar durante turnos de varios meses en las minas (especialmente <B>Potosí</B> y <B>Huancavelica</B>). La mita minera fue la institución más letal del virreinato.</LI>
+<LI><B>Las reducciones de Toledo:</B> el virrey Toledo concentró a la dispersa población indígena en <B>pueblos de indios</B> organizados al modo castellano (con plaza central, iglesia, cabildo) para facilitar la evangelización, el cobro del tributo y la recluta de mitayos.</LI>
+</UL>
+
+<DIV CLASS="ej">&#128218; <B>Potosí y la plata americana:</B> El <B>Cerro Rico de Potosí</B> (actual Bolivia, entonces Alto Perú) fue descubierto en <B>1545</B> y se convirtió en la mayor mina de plata del mundo. En su apogeo (siglo XVI&ndash;XVII), Potosí era una de las ciudades más pobladas del mundo (~200.000 habitantes). La plata de Potosí financió la monarquía española durante dos siglos, pero a un coste brutal: se calcula que murieron entre 4 y 8 millones de mitayos entre 1545 y 1825, de agotamiento, intoxicación por mercurio y accidentes.</DIV>
+
+<H3>9. Consecuencias de la Conquista del Tahuantinsuyo</H3>
+
+<H4>Consecuencias demográficas:</H4>
+<UL>
+<LI>La catástrofe demográfica fue la consecuencia más devastadora. La población indígena del Perú cayó de entre 10&ndash;12 millones (1532) a <B>menos de 1 millón</B> (c. 1620): una reducción de más del 90%.</LI>
+<LI>Las causas principales: <B>epidemias</B> (viruela, sarampión, tifus, gripe), violencia de la conquista, explotación laboral en las minas (mita) y colapso de los sistemas alimentarios incas (redistribución, qollqas).</LI>
+<LI>La viruela llegó al Tahuantinsuyo <B>antes que los españoles</B>: ya había matado a Huayna Cápac y a cientos de miles de personas antes de 1532.</LI>
+</UL>
+
+<H4>Consecuencias políticas:</H4>
+<UL>
+<LI>Fin del Estado inca y de sus estructuras de gobierno (suyos, curacas como autoridades soberanas).</LI>
+<LI>Implantación del sistema colonial español con el <B>Virreinato del Perú</B> (1542) como unidad administrativa.</LI>
+<LI>Los curacas fueron integrados como intermediarios del sistema colonial, manteniendo cierta autoridad local a cambio de colaborar con el cobro del tributo y la recluta de mitayos.</LI>
+</UL>
+
+<H4>Consecuencias económicas:</H4>
+<UL>
+<LI>Destrucción del sistema redistributivo inca (los <B>qollqas</B> o almacenes estatales que garantizaban la alimentación de toda la población).</LI>
+<LI>Implantación de la economía colonial centrada en la <B>minería de metales preciosos</B> (plata de Potosí, mercurio de Huancavelica) para exportación a España.</LI>
+<LI>La plata americana causó <B>inflación</B> en Europa (revolución de los precios) y financió las guerras de la monarquía española durante dos siglos.</LI>
+</UL>
+
+<H4>Consecuencias culturales y religiosas:</H4>
+<UL>
+<LI><B>Extirpación de idolatrías:</B> campaña sistemática de destrucción de los cultos andinos, <I>huacas</I> (lugares sagrados), momias de los antepasados (mallquis) y objetos rituales.</LI>
+<LI>Imposición del catolicismo como religión oficial; evangelización masiva por franciscanos, dominicos, jesuitas y agustinos.</LI>
+<LI>Sincretismo cultural: fusión de elementos andinos y europeos en religiosidad, arquitectura, música y gastronomía.</LI>
+<LI>Destrucción de los <I>quipus</I> (sistema de registro andino con cuerdas anudadas) como "instrumentos del demonio"; pérdida irreparable de información histórica y administrativa.</LI>
+<LI>Surgimiento de la <B>sociedad colonial estamental</B>: españoles, criollos, mestizos, indígenas y esclavos africanos en una jerarquía rígida.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1527</DIV><DIV CLASS="dk-label">Muerte de Huayna Cápac: inicio de la guerra civil inca (Huáscar vs. Atahualpa)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1529</DIV><DIV CLASS="dk-label">Capitulaciones de Toledo: Pizarro recibe título de Gobernador de Nueva Castilla</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">16 nov. 1532</DIV><DIV CLASS="dk-label">Batalla de Cajamarca: captura de Atahualpa por 168 españoles</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">26 jul. 1533</DIV><DIV CLASS="dk-label">Ejecución de Atahualpa: fin del Tahuantinsuyo como Estado soberano</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1535</DIV><DIV CLASS="dk-label">Fundación de Lima (Ciudad de los Reyes, 18 de enero) por Francisco Pizarro</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1542</DIV><DIV CLASS="dk-label">Leyes Nuevas y creación del Virreinato del Perú: primer virrey Blasco Núñez Vela</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1545</DIV><DIV CLASS="dk-label">Descubrimiento del Cerro Rico de Potosí: mayor mina de plata del mundo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">24 sep. 1572</DIV><DIV CLASS="dk-label">Ejecución de Túpac Amaru I: fin del Estado neoinca de Vilcabamba</DIV></DIV>
+</DIV>
+
+<H3>10. Cuadro resumen: Fechas y personajes clave de la Conquista</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Año / Fecha</TH><TH>Evento / Personaje</TH><TH>Dato para el examen</TH></TR>
+<TR><TD><B>c. 1527</B></TD><TD>Muerte de Huayna Cápac</TD><TD>Posiblemente por viruela; desencadena la guerra civil Huáscar vs. Atahualpa</TD></TR>
+<TR><TD><B>1529</B></TD><TD>Capitulaciones de Toledo</TD><TD>Carlos I otorga a Pizarro el título de Gobernador; el territorio = "Nueva Castilla"</TD></TR>
+<TR><TD><B>16 nov. 1532</B></TD><TD>Batalla / Encuentro de Cajamarca</TD><TD>168 españoles; captura de Atahualpa; fray Vicente de Valverde y el Requerimiento</TD></TR>
+<TR><TD><B>26 jul. 1533</B></TD><TD>Ejecución de Atahualpa</TD><TD>Garrote tras bautismo cristiano (Juan de Atahualpa); ya había pagado el rescate</TD></TR>
+<TR><TD><B>15 nov. 1533</B></TD><TD>Entrada al Cusco</TD><TD>Saqueo del Coricancha; colapso del poder político inca</TD></TR>
+<TR><TD><B>18 ene. 1535</B></TD><TD>Fundación de Lima</TD><TD>Ciudad de los Reyes; nueva capital colonial; acceso marítimo al Atlántico</TD></TR>
+<TR><TD><B>1536&ndash;1537</B></TD><TD>Gran sitio del Cusco (Manco Inca)</TD><TD>100.000&ndash;200.000 guerreros; toma de Sacsayhuamán; fracasa; Manco Inca → Vilcabamba</TD></TR>
+<TR><TD><B>6 abr. 1538</B></TD><TD>Batalla de las Salinas</TD><TD>Pizarros vencen a Almagro; inicio de las guerras civiles de conquistadores</TD></TR>
+<TR><TD><B>26 jun. 1541</B></TD><TD>Asesinato de Francisco Pizarro</TD><TD>Almagristas lo matan en su palacio de Lima</TD></TR>
+<TR><TD><B>1542</B></TD><TD>Leyes Nuevas + Virreinato del Perú</TD><TD>Protegen a los indígenas (teóricamente); primer virrey Blasco Núñez Vela</TD></TR>
+<TR><TD><B>1545</B></TD><TD>Descubrimiento de Potosí</TD><TD>Mayor mina de plata del mundo; mita minera; 4&ndash;8 millones de muertos hasta 1825</TD></TR>
+<TR><TD><B>1569&ndash;1581</B></TD><TD>Virrey Francisco de Toledo</TD><TD>"Organizador del virreinato"; reducciones, mita sistematizada; ejecuta Túpac Amaru I</TD></TR>
+<TR><TD><B>24 sep. 1572</B></TD><TD>Ejecución de Túpac Amaru I</TD><TD>Fin del Estado neoinca de Vilcabamba; 35 años de resistencia (1537&ndash;1572)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>Datos clave para el examen:</B><BR>
+&bull; <B>Contexto:</B> Guerra civil inca (Huáscar vs. Atahualpa desde c. 1527) &middot; Huayna Cápac muere de viruela &middot; Imperio exhausto y dividido<BR>
+&bull; <B>Pizarro:</B> Capitulaciones de Toledo (1529) &middot; 3 expediciones &middot; "Trece de la Fama" (línea de Gallo, 1527) &middot; Socios: Almagro y Luque<BR>
+&bull; <B>Cajamarca:</B> 16 nov. 1532 &middot; 168 españoles &middot; Fray Vicente de Valverde + Requerimiento &middot; Captura de Atahualpa<BR>
+&bull; <B>Rescate de Atahualpa:</B> sala llena de oro + 2 de plata &middot; 6.000 kg de oro + 12.000 kg de plata &middot; Ejecutado igualmente el 26 jul. 1533 (garrote)<BR>
+&bull; <B>Lima:</B> fundada el 18 ene. 1535 como Ciudad de los Reyes<BR>
+&bull; <B>Resistencia:</B> Manco Inca → sitio del Cusco 1536 → Vilcabamba (35 años) → Túpac Amaru I ejecutado 24 sep. 1572<BR>
+&bull; <B>Guerras civiles:</B> Las Salinas 1538 &middot; Asesinato de Pizarro 1541 &middot; Gonzalo Pizarro vs. virrey 1544&ndash;1548 &middot; Fin 1554<BR>
+&bull; <B>Virreinato:</B> 1542 (Leyes Nuevas) &middot; Toledo (1569&ndash;1581) organiza mita, reducciones, Potosí<BR>
+&bull; <B>Demografía:</B> de 10&ndash;12 millones (1532) a menos de 1 millón (c. 1620): colapso del 90% por epidemias + explotación
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario &mdash; Alto Rendimiento</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Qué fue la "guerra civil inca" previa a la conquista española y por qué facilitó la caída del Tahuantinsuyo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Fue una guerra entre el Tahuantinsuyo y el Imperio azteca por el control de los Andes; los españoles llegaron justo después de la victoria inca y aprovecharon el agotamiento del ejército vencedor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Fue el conflicto sucesorio entre Huáscar (Cusco) y Atahualpa (Quito) tras la muerte de Huayna Cápac (c. 1527); Atahualpa venció pero el Imperio quedó exhausto, con enormes resentimientos internos y una élite militar fracturada, lo que impidió una resistencia coordinada frente a los españoles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Fue un conflicto entre los sacerdotes del Sol (Inti) y los sacerdotes de Viracocha que paralizó el ejército inca; los españoles se aprovecharon de esa crisis religiosa para entrar sin resistencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Fue una rebelión de los pueblos conquistados por los incas (huancas, chancas, cañaris) que derrocaron al Sapa Inca antes de la llegada de Pizarro; los españoles llegaron a un territorio sin Estado organizado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>guerra civil inca</B> es el factor estructural más importante para entender la conquista. A la muerte de <B>Huayna Cápac</B> (c. 1527), posiblemente por viruela llegada antes que los españoles, el Tahuantinsuyo se dividió entre sus herederos. <B>Huáscar</B>, con base en Cusco, y <B>Atahualpa</B>, con base en Quito (donde Huayna Cápac había pasado los últimos años), lucharon en una guerra feroz durante varios años. Atahualpa venció, pero las consecuencias fueron profundas: (1) el ejército estaba exhausto y desmoralizado; (2) enormes sectores de la élite cusqueña odiaban a Atahualpa por haber mandado matar a Huáscar y a gran parte de la panaca real del Cusco; (3) los pueblos sometidos al Tahuantinsuyo que habían apoyado a uno u otro bando estaban resentidos. Esta situación explica por qué muchos grupos indígenas colaboraron con los españoles: los huancas, cañaris, chancas y chachapoyas vieron a Pizarro como un instrumento de liberación del dominio inca, no como un invasor.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cuántos españoles participaron en la Batalla de Cajamarca y cuál fue el resultado inmediato?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) 500 españoles emboscaron a Atahualpa y lo capturaron; el ejército inca de 5.000 guerreros fue completamente destruido en una batalla que duró dos días</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) 168 españoles (106 infantes y 62 jinetes) capturaron a Atahualpa ante un ejército inca de entre 40.000 y 80.000 hombres el 16 de noviembre de 1532; ningún español murió en combate, y la captura del Sapa Inca paralizó la resistencia inca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) 1.000 españoles vencieron al ejército inca de 10.000 hombres; Atahualpa murió en combate y Pizarro instaló a Huáscar como nuevo Sapa Inca aliado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) 168 españoles capturaron a Atahualpa el 12 de octubre de 1532 tras una batalla que duró tres horas; murieron 20 españoles y más de 50.000 guerreros incas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las cifras de Cajamarca son una de las preguntas más frecuentes del preuniversitario. <B>168 hombres:</B> este número exacto debe memorizarse (106 infantes + 62 jinetes). Frente a ellos, el ejército personal de Atahualpa en el campamento de Cajamarca era de decenas de miles (las estimaciones oscilan entre 40.000 y 80.000). La disparidad de fuerzas hace de Cajamarca uno de los episodios aparentemente más inexplicables de la historia militar. Las razones de la victoria española: (1) el <B>efecto sorpresa</B> de la emboscada; (2) los <B>caballos</B> y el ruido de los arcabuces aterrorizaron a guerreros que nunca los habían visto; (3) el <B>marco cultural inca</B>: sin el Sapa Inca, el ejército era incapaz de tomar decisiones autónomas; (4) Atahualpa <B>subestimó</B> radicalmente la amenaza. Resultado: Atahualpa capturado, entre 2.000 y 7.000 incas muertos, ningún español muerto en combate (Pizarro resultó herido al proteger a Atahualpa).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Qué fue el rescate de Atahualpa y por qué fue ejecutado a pesar de haberlo pagado?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Atahualpa ofreció llenar una habitación con plumas de guacamayo y textiles de cumbi; los españoles rechazaron el rescate por considerarlo un insulto y lo ejecutaron de inmediato</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Atahualpa prometió llenar una sala con oro y dos veces con plata (~6.000 kg de oro, 12.000 kg de plata); cumplió el trato, pero Pizarro lo ejecutó de todas formas el 26 de julio de 1533, presionado por aliados huascaristas, el temor a una fuga y el cambio del equilibrio de poder interno entre los conquistadores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El rescate nunca llegó a pagarse porque Manco Inca interceptó los cargamentos de oro; al no cumplirse el trato, Pizarro ejecutó a Atahualpa según lo acordado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El rescate fue pagado, pero la Corona española ordenó la ejecución de Atahualpa mediante una cédula real firmada por Carlos I, quien consideraba que mantenerlo vivo era un peligro político para el virreinato</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El rescate de Atahualpa es uno de los episodios más dramáticos de la conquista. El Sapa Inca, mostrando una comprensión inmediata de la psicología de los conquistadores, ofreció llenar la famosa <B>sala del rescate</B> (approx. 35 m² × 2,45 m de alto) una vez con oro y dos veces con plata. Durante <B>8 meses</B>, llegaron objetos de todo el Tahuantinsuyo: estatuas del Coricancha, vajillas de los palacios, revestimientos de los templos. El total: aproximadamente <B>6.000 kg de oro</B> y <B>12.000 kg de plata</B> (cifras que distintas fuentes varían). La Corona recibió su "quinto real" (20%). A pesar del cumplimiento del trato, Atahualpa fue ejecutado por: (1) presiones de los aliados huascaristas y del intérprete <B>Filipillo</B>, que falsificó acusaciones; (2) llegada de refuerzos de Almagro que reequilibró el poder; (3) temor a una fuga. Carlos I reprendió posteriormente a Pizarro por la ejecución. La pena de hoguera fue conmutada a garrote al bautizarse con el nombre de <B>Juan de Atahualpa</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuándo y por quién fue fundada Lima y cuál fue la razón estratégica de elegir ese emplazamiento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Lima fue fundada por Diego de Almagro el 15 de noviembre de 1533, el mismo día de la entrada al Cusco, para establecer un puerto cercano a la capital inca que facilitara el control administrativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Lima fue fundada por Francisco Pizarro el 18 de enero de 1535 como Ciudad de los Reyes; se eligió la costa porque ofrecía mejor acceso marítimo con España (Atlántico vía Panamá) que el Cusco, a gran altitud y en el interior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Lima fue fundada por el virrey Blasco Núñez Vela en 1542 como sede del recién creado Virreinato del Perú; se eligió la costa por sus tierras fértiles y clima benigno frente al frío andino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Lima fue fundada por Francisco Pizarro el 3 de agosto de 1535 en el lugar donde los nativos costeños le informaron de la existencia de grandes yacimientos de oro cercanos al mar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La fundación de Lima es un dato de alta frecuencia en los exámenes preuniversitarios. <B>Francisco Pizarro</B> fundó la <B>Ciudad de los Reyes</B> (Lima) el <B>18 de enero de 1535</B>, festividad de los Santos Reyes en el calendario litúrgico. La elección de la costa &mdash;frente al Cusco, la capital inca en los Andes a 3.400 m de altitud&mdash; respondió a razones estratégicas claras: (1) <B>Acceso marítimo</B>: Lima se fundó junto al río Rímac, a pocos kilómetros del Callao, que sería el gran puerto colonial; la comunicación con España y Panamá era incomparablemente más fácil desde la costa. (2) <B>Control colonial</B>: una capital costera permitía recibir refuerzos y recursos de España con rapidez, algo crucial en los agitados primeros años de la conquista. (3) <B>Clima</B>: aunque Lima no es cálida (la garúa costera es característica), el clima costeño era más familiar para los europeos que el frío andino. Lima se convirtió en el centro político, económico y cultural del virreinato y de toda América del Sur española.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Qué fue la mita colonial y en qué se diferenciaba de la mit'a inca original?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) La mita colonial fue un impuesto en oro que los indígenas debían pagar a la Corona española; en el sistema inca la mit'a era también un impuesto, pero se pagaba en textiles y alimentos en lugar de metales preciosos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) La mita colonial, sistematizada por el virrey Toledo, obligaba al séptimo de los varones adultos de cada comunidad a trabajar en turnos en las minas (especialmente Potosí); difería de la mit'a inca en que esta era un sistema de trabajo rotativo para obras públicas del Estado, pero dentro de un sistema redistributivo donde el Estado proveía alimentos, herramientas y bienes; la colonial era trabajo forzado sin contrapartida real, en condiciones letales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) La mita colonial fue idéntica a la mit'a inca: el virrey Toledo simplemente conservó la institución inca sin modificarla, porque reconocía su eficiencia organizativa para movilizar mano de obra en grandes proyectos estatales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) La mita colonial fue una institución creada por los jesuitas para organizar el trabajo en las misiones de la selva amazónica; no tenía relación con la mit'a inca andina, que era un sistema voluntario de ayuda mutua comunitaria</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La diferencia entre la <I>mit'a</I> inca y la <B>mita colonial</B> es un tema de análisis comparativo fundamental. <B>Mit'a inca:</B> sistema de trabajo rotativo obligatorio para el Estado en obras de infraestructura (caminos, terrazas, edificios), ejércitos y servicios. Era parte de un <B>sistema redistributivo</B>: el Estado proveía a los mitayos de alimentos de los qollqas, herramientas, ropa y chicha. El mitayo no era un esclavo: cumplía una obligación tributaria y era mantenido durante el tiempo de trabajo. <B>Mita colonial</B> (sistematizada por el virrey <B>Francisco de Toledo</B>, 1570s): cada comunidad debía enviar el <B>séptimo de sus varones adultos</B> para trabajar varios meses (o años) en las minas de <B>Potosí</B> (plata) y <B>Huancavelica</B> (mercurio). Los mitayos recibían un salario nominal, pero debían pagar sus propios gastos de traslado, alimentación y herramientas, resultando en un trabajo de subsistencia o deficitario. Las condiciones en las minas eran letales: polvo de sílice, intoxicación por mercurio, accidentes, frío extremo. La mita colonial destruyó comunidades enteras y fue la institución colonial más mortífera.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Analiza por qué 168 españoles pudieron capturar a Atahualpa ante un ejército de decenas de miles: ¿cuáles fueron las verdaderas razones de la victoria española en Cajamarca?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) La victoria se explica exclusivamente por la superioridad tecnológica: los arcabuces y cañones destruyeron al ejército inca, que no tenía ninguna forma de resistir armas de fuego</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) La victoria fue resultado de una combinación de factores: el efecto psicológico de caballos y armas de fuego (desconocidos para los incas), el elemento sorpresa de la emboscada, la parálisis del mando inca ante la captura del Sapa Inca (el sistema inca no preveía toma de decisiones sin el gobernante), la subestimación de Atahualpa, y el agotamiento del Imperio tras la guerra civil</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) La victoria fue posible porque los guerreros de Atahualpa estaban desarmados: al llegar a la plaza de Cajamarca en actitud ceremonial, no portaban armas de combate, solo ornamentos rituales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) La victoria se explica principalmente por la traición del cacique Challcuchima, el general de Atahualpa, que sobornado por Pizarro ordenó a sus tropas no atacar durante la emboscada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La explicación de Cajamarca requiere análisis multicausal. Ningún factor único la explica. (1) <B>Efecto psicológico de caballos y armas de fuego:</B> los guerreros incas nunca habían visto caballos (extintos en América hacía 10.000 años) ni escuchado el estruendo de los arcabuces; el pánico fue inmenso. (2) <B>Emboscada:</B> Pizarro colocó a sus hombres ocultos en los edificios que rodeaban la plaza y atacó cuando el cortejo de Atahualpa estaba en el centro, desprevenido. (3) <B>Parálisis del mando inca:</B> el Tahuantinsuyo era un Estado teocrático absolutista; todas las decisiones emanaban del Sapa Inca. Capturado el Sapa Inca, el ejército quedó sin capacidad de respuesta autónoma: era literalmente inconcebible actuar sin la orden del dios-rey. Esta debilidad estructural &mdash;que también era la fuente de su enorme fuerza organizativa&mdash; se convirtió en su mayor vulnerabilidad. (4) <B>Subestimación de Atahualpa:</B> creyó que esos pocos extranjeros extravagantes no representaban amenaza. (5) <B>Agotamiento postguerra civil:</B> el ejército, victorioso pero exhausto, no esperaba una agresión de semejante tipo. El historiador Jared Diamond (<I>Armas, gérmenes y acero</I>) destaca estos factores como la combinación que hizo posible lo aparentemente imposible.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Qué papel desempeñaron los aliados indígenas en la conquista del Tahuantinsuyo? ¿Fue la conquista exclusivamente un enfrentamiento entre españoles e incas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Sí, fue exclusivamente un enfrentamiento entre españoles e incas; los pueblos indígenas sometidos al Tahuantinsuyo apoyaron unánimemente a Atahualpa al reconocer que los españoles eran una amenaza mayor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) No: pueblos que odiaban el dominio inca (huancas, cañaris, chancas, chachapoyas) aportaron miles de combatientes aliados a los españoles; sin estos aliados indígenas, la conquista habría sido imposible con 168 hombres; la conquista fue en parte una guerra civil andina en la que los españoles actuaron como catalizadores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Los aliados indígenas tuvieron un papel mínimo y anecdótico; su contribución fue solo logística (transporte de suministros) pero nunca combatieron activamente junto a los españoles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Los aliados indígenas fueron fundamentales solo en la segunda mitad de la conquista (después de 1540); en la primera fase (1532&ndash;1535), Pizarro actuó exclusivamente con soldados españoles</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Este es uno de los temas más importantes de la historiografía reciente sobre la conquista. La visión tradicional presentaba la conquista como un enfrentamiento bilateral (españoles vs. incas). La historiografía actual &mdash;especialmente desde los trabajos de John Hemming, Nathan Wachtel y más recientemente Matthew Restall (<I>Seven Myths of the Spanish Conquest</I>)&mdash; ha subrayado el papel fundamental de los <B>aliados indígenas</B>. Los <B>huancas</B> (Valle del Mantaro) odiaban el dominio inca y aportaron miles de combatientes, bastimentos y cargadores. Los <B>cañaris</B> (Ecuador actual) y los <B>chachapoyas</B> también colaboraron activamente con los españoles. Los <B>chancas</B>, enemigos históricos de los incas, participaron en el derrumbe del poder cusqueño. En el sitio del Cusco (1536), la resistencia española habría sido imposible sin el apoyo de aliados indígenas que también querían defenderse de Manco Inca. Esta perspectiva no "exculpa" a los españoles de los crímenes de la conquista, pero ofrece una imagen más compleja: la caída del Tahuantinsuyo fue también una <B>guerra civil andina</B> en la que múltiples actores indígenas participaron con intereses propios.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Por qué las Guerras Civiles de los Conquistadores (1537&ndash;1554) son históricamente importantes para entender la formación del Virreinato del Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Las Guerras Civiles son históricamente irrelevantes: fueron simples disputas personales entre caudillos codiciosos que no tuvieron ningún efecto en la organización del virreinato ni en las políticas coloniales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Las Guerras Civiles son fundamentales porque: (1) demostraron a la Corona que los conquistadores eran ingobernables si no se les imponía una estructura burocrática fuerte; (2) impulsaron las Leyes Nuevas (1542) y la creación formal del virreinato; (3) la rebelión de Gonzalo Pizarro (que mató al primer virrey) mostró el peligro de una nobleza colonial autónoma; (4) su derrota definitiva (1554) consolidó el control real sobre el territorio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Las Guerras Civiles son importantes solo porque provocaron la muerte de Francisco Pizarro; sin ese hecho puntual, el virreinato se habría organizado exactamente igual y en el mismo tiempo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Las Guerras Civiles retrasaron la conquista del Tahuantinsuyo al desviar recursos hacia conflictos internos; por eso el Tahuantinsuyo mantuvo su independencia hasta 1572 en Vilcabamba</DIV>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las Guerras Civiles son esenciales para entender la construcción del poder colonial. La lógica causal es la siguiente: los conquistadores, que habían financiado y arriesgado su vida en la empresa, consideraban América como su feudo personal. La encomienda, el reparto de tierras y el trabajo indígena eran "el premio" de la conquista. Cuando la Corona intentó limitar este poder con las <B>Leyes Nuevas</B> (1542), que entre otras cosas prohibían la esclavización de nuevos indígenas y limitaban las encomiendas, estalló la rebelión de <B>Gonzalo Pizarro</B>. Gonzalo no solo se rebeló: mató al primer virrey <B>Blasco Núñez Vela</B> en la batalla de Añaquito (1546) y gobernó el Perú como señor soberano durante años. Que un conquistador mataá al representante del rey era una amenaza directa a la soberanía de la Corona. El envío del clérigo <B>Pedro de la Gasca</B> como pacificador (que derrotó a Gonzalo en Jaquijahuana, 1548) y la derrota de la última rebelión (Hernández Girón, 1554) consolidaron definitivamente la autoridad real. Sin las guerras civiles no se entiende por qué la Corona creó una burocracia virreinal tan fuerte bajo Francisco de Toledo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Compara el Estado neoinca de Vilcabamba con el Virreinato del Perú: ¿por qué resistió 35 años y qué factores llevaron a su derrota final en 1572?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" Value="a"> a) Vilcabamba resistió porque era militarmente superior al ejército virreinal; solo fue vencida cuando España envió un ejército de 10.000 soldados profesionales para liquidarla</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Vilcabamba resistió 35 años gracias a su posición geográfica (montañas selváticas inaccesibles), a la habilidad diplomática de sus gobernantes (especialmente Titu Cusi) y a que los virreinatos temían el coste de una expedición de conquista; cayó en 1572 porque el virrey Francisco de Toledo decidió eliminarla sistemáticamente, y Túpac Amaru I, sin la habilidad política de sus predecesores, fue capturado y ejecutado públicamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Vilcabamba resistió solo gracias al apoyo militar secreto que Portugal le proporcionaba para debilitar el Imperio español; cuando España y Portugal se unieron bajo Felipe II (1580), ese apoyo cesó y Vilcabamba colapsó</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Vilcabamba no fue un Estado real: era solo un campamento de refugiados incas sin organización política; resistió porque los virreinatos simplemente olvidaron su existencia hasta 1572</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Estado neoinca de Vilcabamba es un caso fascinante de resistencia colonial. <B>Factores de supervivencia:</B> (1) <B>Geografía:</B> la región de Vilcabamba (actual provincia de La Convención, Cusco) es una zona de montañas cubiertas de selva densa, prácticamente inaccesible y de clima hostil para los europeos. (2) <B>Diplomacia:</B> especialmente bajo <B>Titu Cusi Yupanqui</B> (1560&ndash;1571), Vilcabamba negoció hábilmente con los virreyes, firmando acuerdos de paz que compraban tiempo; incluso permitió la entrada de misioneros agustinos y dictó su propia crónica de la conquista. (3) <B>Coste-beneficio:</B> los virreinatos calculaban que una expedición a Vilcabamba era costosa y peligrosa, y mientras los neoincas no amenazaran directamente el virreinato, era más fácil ignorarlos. <B>Factores de caída:</B> el virrey <B>Francisco de Toledo</B> (1569&ndash;1581) adoptó una visión diferente: Vilcabamba era un foco de legitimidad alternativa que podía inspirar rebeliones. Con la muerte de Titu Cusi (1571), subió <B>Túpac Amaru I</B>, más joven y sin la experiencia diplomática de su predecesor, y la situación escaló. Toledo envió una expedición militar que tomó Vilcabamba, capturó a Túpac Amaru I y lo ejecutó públicamente en el Cusco el <B>24 de septiembre de 1572</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Qué fueron las Leyes Nuevas de 1542 y cuáles fueron las tensiones que generaron entre la Corona y los encomenderos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Las Leyes Nuevas fueron un conjunto de normas que regulaban el comercio de plata entre el Perú y España; su promulgación generó una guerra entre los comerciantes limeños y los funcionarios reales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Las Leyes Nuevas (1542) limitaron y prohibieron la esclavización de nuevos indígenas, regularon las encomiendas (limitando su herencia y reduciendo el poder de los encomenderos) y crearon el Virreinato del Perú; generaron una rebelión violenta de los encomenderos (Gonzalo Pizarro) que temían perder su fuente de riqueza y poder, evidenciando el conflicto entre los intereses coloniales privados y el control de la Corona</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Las Leyes Nuevas fueron impulsadas por Francisco Pizarro para proteger a los indígenas que trabajaban en sus propias encomiendas; los otros encomenderos se rebelaron porque los favorecía frente a la competencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Las Leyes Nuevas abolieron completamente la encomienda y declararon a todos los indígenas ciudadanos libres con plenos derechos; la Corona las retiró rápidamente al ver la reacción de los conquistadores, sin que llegaran a aplicarse en ningún aspecto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las <B>Leyes Nuevas</B> (promulgadas el 20 de noviembre de 1542 por Carlos I) fueron en parte resultado del debate moral desencadenado por figuras como <B>Bartolomé de las Casas</B> y en parte una decisión política de la Corona para controlar a los encomenderos que amenazaban con crear poderes autónomos en América. Sus disposiciones principales: (1) Prohibición de la esclavitud de nuevos indígenas. (2) Los indígenas eran "vasallos libres" de la Corona, no siervos. (3) Las encomiendas <B>no serían hereditarias</B> (morirían con su titular actual). (4) Los funcionarios reales y religiosos debían devolver sus encomiendas. (5) Creación formal del <B>Virreinato del Perú</B> como entidad administrativa. La reacción fue violenta: la prohibición de herencia de las encomiendas significaba que los conquistadores no podían transmitir su riqueza a sus hijos. <B>Gonzalo Pizarro</B> lideró la rebelión, mató al primer virrey Blasco Núñez Vela en Añaquito (1546) y gobernó el Perú hasta su derrota en Jaquijahuana (1548). La Corona moderó algunas disposiciones más polémicas, pero el principio de control real quedó establecido.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Evalúa desde tres perspectivas la afirmación: "La conquista del Tahuantinsuyo fue posible gracias a la superioridad tecnológica europea". ¿Es suficiente esta explicación?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Sí es suficiente: los arcabuces, los cañones y las espadas de acero determinaron el resultado; cualquier civilización que hubiera enfrentado esas armas habría sido conquistada con igual facilidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La tecnología fue un factor, pero insuficiente como explicación única: las armas de fuego eran ruidosas pero lentas y escasas (solo 12 arcabuceros en Cajamarca); más decisivos fueron la guerra civil inca, los aliados indígenas, el impacto epidémico (viruela que llegó antes de 1532), la vulnerabilidad política del Estado teocrático centralizado y la superioridad logística española (comunicación, refuerzos)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) La tecnología no fue un factor en absoluto: lo decisivo fue la astucia personal de Francisco Pizarro, cuya genialidad táctica habría logrado la conquista con cualquier tipo de armamento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) La tecnología fue el único factor relevante; los demás elementos (guerra civil, epidemias, aliados) son añadidos historiográficos modernos que distorsionan lo que realmente ocurrió en el siglo XVI</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige análisis historiográfico crítico de nivel universitario. <B>El argumento tecnológico (Jared Diamond, <I>Guns, Germs and Steel</I>, 1997):</B> las espadas de acero, las armaduras y los caballos daban ventaja en el combate cuerpo a cuerpo. Pero Diamond mismo subraya que las armas de fuego en 1532 eran primitivas: los arcabuces tardaban 2 minutos en recargarse, los españoles solo tenían 12 en Cajamarca, y los cañones dispararon una vez en la batalla. Solucionaron el pánico inicial, no la guerra. <B>Los factores realmente determinantes:</B> (1) <B>Epidemias:</B> la viruela llegó al Tahuantinsuyo al menos cinco años antes que Pizarro; ya había matado a Huayna Cápac, a miles de guerreros y generado la guerra civil. Sin la viruela, no hay caída del Estado inca. (2) <B>Vulnerabilidad política:</B> un Estado teocrático absolutamente centralizado en el Sapa Inca es letal cuando el gobernante es capturado. El ejército inca en Cajamarca no tenía protocolos de decisión sin el dios-rey. (3) <B>Aliados indígenas:</B> los huancas, cañaris y chachapoyas aportaron más guerreros que los propios españoles en la mayoría de las batallas. (4) <B>Logística:</B> la conexión de los españoles con un sistema imperial (España) que les proveía de refuerzos, mientras que los incas eran un sistema cerrado. La explicación tecnológica sola es una simplificación.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Analiza la paradoja de Atahualpa: ¿cómo pudo el gobernante de un Imperio de 10 millones de personas subestimar tan dramáticamente a 168 hombres llegados del mar?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Atahualpa no los subestimó: sabía perfectamente que eran peligrosos, pero sus consejeros religiosos le aseguraron que eran inmortales y que la única forma de tratar con ellos era mediante negociación pacífica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La subestimación de Atahualpa se explica por su marco cognitivo: en la cosmovisión andina, no existía el concepto de "extranjero invasor" con la carga que tenía en Europa; su experiencia con los "viracochas" (seres asociados a lo sobrenatural) era de seres que llegaban, observaban y partían; además, acababa de derrotar un ejército de cientos de miles de guerreros y psicolójicamente era invulnerable; la información sobre el peligro real de los españoles no llegó filtrada por su etnocentrismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Atahualpa no subestimó a Pizarro: tenía un plan detallado para capturarlo esa misma noche tras la reunión de Cajamarca; fue Pizarro quien se adelantó gracias a una traición del intérprete Felipillo, que reveló el plan</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La subestimación se explica porque Atahualpa estaba ebrio de chicha durante el encuentro de Cajamarca, lo que nubló su juicio; las crónicas españolas confirman que no podía mantenerse en pie cuando fue capturado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La "paradoja de Atahualpa" es una de las preguntas más ricas de la historia de la conquista. Atahualpa no era un ingenuo: era un general brillante que acababa de ganar una guerra civil extraordinariamente compleja. La subestimación tiene varias capas. <B>Marco cognitivo:</B> el Tahuantinsuyo era un sistema cerrado; no tenía experiencia de invasión exterior a escala imperial. Los "extranjeros" que llegaban por el mar eran clasificados en la categoría de <I>viracochas</I> (seres sobrenaturales asociados al creador), lo que generaba una respuesta de curiosidad y hospitalidad, no de defensa militar. <B>Confianza posguerra:</B> Atahualpa acababa de destruir a un ejército de Huáscar de cientos de miles de hombres. 168 extranjeros eran, en su escala, una curiosidad trivial. <B>Información distorsionada:</B> los informes que llegaban de los encuentros previos (expediciones de 1526&ndash;1527) describían a los españoles como "seres curiosos" con animales extraños, no como conquistadores. <B>Etnocentrismo del poder:</B> el gobernante del Imperio más poderoso de América tenía razones estructurales para no imaginar que esos visitantes podían derrocarlo. El historiador Nathan Wachtel ha analizado en profundidad cómo la cosmovisión andina generó una "visión de los vencidos" que no incluía el escenario de la derrota total.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Compara la caída del Tahuantinsuyo (1532&ndash;1572) con la caída del Imperio azteca (1519&ndash;1521): ¿qué factores comunes y qué diferencias estructurales encuentras?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) No hay comparación posible: la caída del Tahuantinsuyo fue una conquista militar pura, mientras que la del Imperio azteca fue una rendición pacífica negociada por Moctezuma II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Factores comunes: guerra civil previa (Huáscar vs. Atahualpa / rivalidades entre Tenochtitlan y Tlaxcala), aliados indígenas masivos (huancas y cañaris / tlaxcaltecas), epidemias de viruela, captura del gobernante (Atahualpa / Moctezuma II), superioridad táctica española. Diferencias: el Tahuantinsuyo resistió 40 años más (Vilcabamba hasta 1572 vs. caída azteca en 1521); el Tahuantinsuyo era más extenso geográficamente; la resistencia inca tuvo un carácter de Estado organizado (Vilcabamba), mientras la azteca fue más difusa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La única diferencia fue el conquistador: Cortés era más hábil que Pizarro; por eso el Imperio azteca cayó más rápidamente y con menos conflictos internos entre los conquistadores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Los dos procesos fueron idénticos en todos sus aspectos: mismos plazos, mismos factores, mismas consecuencias; la diferencia es solo geográfica (México vs. Perú)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparación Tahuantinsuyo/Azteca es una pregunta clásica de nivel avanzado. <B>Factores comunes:</B> (1) <B>Conflicto interno previo:</B> México tenía la alianza triple (Tenochtitlan, Texcoco, Tlacopan) y pueblos sometidos que odiaban el dominio mexica (tlaxcaltecas, totonacas); el Tahuantinsuyo tenía la guerra civil Huáscar/Atahualpa. (2) <B>Aliados indígenas masivos:</B> Hernán Cortés movilizó decenas de miles de tlaxcaltecas; Pizarro tuvo huancas, cañaris y chachapoyas. (3) <B>Epidemias:</B> en México, la viruela mató al tlatoani Cuitláhuac durante el sitio de Tenochtitlan (1520). (4) <B>Captura o muerte del gobernante:</B> Moctezuma II muerto durante la <I>Noche Triste</I>, Atahualpa capturado en Cajamarca. <B>Diferencias:</B> (1) <B>Duración de la resistencia:</B> el Imperio azteca cayó completamente en 1521 (dos años); el Tahuantinsuyo tuvo resistencia organizada en Vilcabamba hasta 1572 (40 años). (2) <B>Geografía:</B> la enorme extensión andina y la diversidad de pisos ecológicos hacía la conquista logísticamente más compleja. (3) <B>Tipo de resistencia:</B> Vilcabamba fue un Estado con gobierno, diplomacia y ejército, no una guerrilla dispersa. (4) <B>Guerras civiles:</B> el Perú tuvo guerras civiles de conquistadores incomparablemente más largas y violentas que México.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El cronista indígena Felipe Guamán Poma de Ayala (c. 1534&ndash;c. 1615) escribió la <I>Nueva corónica y buen gobierno</I> (c. 1615). ¿Qué perspectiva ofrece sobre la conquista y por qué es una fuente historiográfica singular?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Guamán Poma era un defensor de la conquista española; su crónica celebra la llegada del cristianismo como la liberación de los andinos de la "tiranía" del Tahuantinsuyo, sin ninguna crítica al sistema colonial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Guamán Poma ofrece la perspectiva indígena andina de la conquista y el período colonial: denuncia sistemáticamente los abusos de los corregidores, encomenderos y curas, describe el colapso demográfico, propone reformas al rey Felipe III y reivindica la legitimidad de las autoridades indígenas; es singular porque es una fuente en quechua y castellano con 400 ilustraciones, escrita desde dentro del mundo conquistado, con conocimiento de primera mano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Guamán Poma fue un fraile español que aprendió quechua para evangelizar; su crónica es una fuente puramente misionera que describe rituales incas desde la perspectiva de un extirpador de idolatrías</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La <I>Nueva corónica</I> es una fuente poco fiable porque Guamán Poma inventó la mayor parte de los datos históricos; los historiadores modernos la usan solo para las ilustraciones, no para el texto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Felipe Guamán Poma de Ayala</B> es uno de los cronistas más importantes de la historia colonial andina. De origen indígena (probablemente de linaje noble chanka), escribió la <I>Nueva corónica y buen gobierno</I> (c. 1615), una obra de casi 1.200 páginas manuscritas con <B>casi 400 ilustraciones</B> (dibujos del autor) dirigida al rey Felipe III de España. La obra es extraordinaria por varias razones: (1) <B>Perspectiva interna:</B> escrita desde el mundo conquistado, no desde afuera; describe la sociedad andina prehispánica con detalle y la sociedad colonial con mirada crítica. (2) <B>Denuncia sistemática:</B> Guamán Poma denuncia con nombre y apellido los abusos de <B>corregidores</B> (que roban el tributo), <B>encomenderos</B> (que explotan el trabajo), <B>curas</B> (que extorsionan, violan y acaparan bienes de los indígenas). (3) <B>Bilingüismo:</B> usa el quechua y el castellano, capturando categorías de pensamiento andino imposibles de expresar en castellano puro. (4) <B>Propuesta política:</B> no solo denuncia; propone reformas concretas al rey. (5) <B>Historia:</B> el manuscrito fue "perdido" en 1615, "redescubierto" en 1908 en la Biblioteca Real de Copenhague y publicado en 1936: fue ignorado durante 300 años. Es hoy una fuente fundamental para la etnohistoria andina.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Analiza la "visión de los vencidos" de Nathan Wachtel (<I>La vision des vaincus</I>, 1971) en el contexto de la conquista del Tahuantinsuyo. ¿Qué aporta esta perspectiva historiográfica y cuáles son sus limitaciones?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Wachtel argumentó que los incas no fueron realmente vencidos: su cultura sobrevivió intacta bajo la colonia en las comunidades andinas rurales, sin ninguna transformación significativa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Wachtel reconstruyó cómo los pueblos andinos <I>vivieron y representaron</I> la conquista desde sus propias categorías culturales; analizó crónicas indígenas, rituales de inversión (como la "danza de la conquista") y cómo el trauma del pachacuti (inversión cósmica) fue incorporado en la memoria colectiva andina; su límite es la escasez de fuentes escritas indígenas contemporáneas y el riesgo de proyectar categorías modernas sobre el mundo andino del siglo XVI</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Wachtel argumentó que la conquista fue en realidad beneficiosa para los pueblos andinos porque les liberó del sometimiento al Estado inca y les integró en el sistema económico mundial; su "visión de los vencidos" era irónica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La obra de Wachtel es un texto literario sin valor historiográfico; su metodología de análisis de rituales y danzas no tiene validez científica para el estudio histórico de la conquista</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Nathan Wachtel</B> (1937&ndash;), historiador y antropólogo francés, publicó <I>La vision des vaincus: les Indiens du Pérou devant la Conquête espagnole</I> (1971), un libro que transformó la historiografía de la conquista. Su pregunta central: ¿cómo <I>vivieron</I> la conquista los pueblos andinos, no solo desde fuera sino desde su propia lógica cultural? <B>Aportaciones:</B> (1) Analizó el concepto andino de <B>pachacuti</B> ("inversión del mundo", "cataclismo cósmico"): la conquista fue percibida no solo como derrota militar sino como un trastorno del orden cósmico. (2) Estudió las <B>"danzas de la conquista"</B> (representaciones rituales andinas que escenifican la captura de Atahualpa), mostrando que la memoria del trauma fue preservada, codificada y transmitida en el ritual popular. (3) Analizó crónicas indígenas (Guamán Poma, Santa Cruz Pachacuti, Titu Cusi) para reconstruir la perspectiva interna. (4) Mostró el concepto de <B>desestructuración</B>: la conquista no solo cambió la estructura política, sino que desintegró el entramado simbólico que daba sentido a la vida andina. <B>Limitaciones:</B> (1) escasez de fuentes escritas <I>contemporáneas</I> a los hechos desde la perspectiva andina (la mayoría son posteriores); (2) riesgo de homogeneizar la respuesta andina, cuando había enorme diversidad de reacciones; (3) algunos críticos señalan el peligro de proyectar conceptos modernos de "trauma" sobre culturas radicalmente diferentes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El historiador John Rowe argumentó que el Tahuantinsuyo era, en el siglo XV, el Estado de más rápido crecimiento en la historia mundial. Si esto es así, ¿qué implicaciones tiene para entender la conquista como un "accidente histórico" o como un proceso estructuralmente determinado?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Si el Tahuantinsuyo crecía tan rápido, eso demuestra que su caída fue completamente accidental: sin la guerra civil y sin la viruela, el Imperio habría conquistado Europa antes de que los españoles llegaran</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) El crecimiento rápido del Tahuantinsuyo contenía sus propias vulnerabilidades estructurales: un Estado de expansión tan acelerada generaba resentimientos en los pueblos recién sometidos (que se convirtieron en aliados de los españoles), dependía excesivamente de la figura del Sapa Inca para su cohesión, y no había tenido tiempo de integrar culturalmente a todos sus pueblos; el "accidente" (guerra civil + viruela + llegada española) activó vulnerabilidades estructurales latentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La tesis de Rowe es irrelevante para entender la conquista; el tamaño o velocidad de crecimiento de un Estado no tiene ninguna relación con su vulnerabilidad frente a invasiones externas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La conquista fue completamente determinada y no pudo haber tenido otro resultado: la superioridad europea en tecnología, religión y organización hacía inevitable la caída de cualquier civilización americana ante los españoles</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta combina la historiografía de John Rowe sobre el Tahuantinsuyo con la teoría histórica sobre contingencia vs. determinismo. <B>La tesis de Rowe:</B> el arqueólogo e historiador <B>John Howland Rowe</B> (1918&ndash;2004) estimó que el Tahuantinsuyo expandió su territorio de forma casi exponencial en los 100 años anteriores a la conquista (de un Estado local cusqueño a un Imperio de 2 millones de km²), lo que lo convierte en el Estado de crecimiento más rápido documentado. <B>Las vulnerabilidades del crecimiento rápido:</B> (1) <B>Resentimientos frescos:</B> los pueblos conquistados en los últimos 50 años (huancas, cañaris, chachapoyas) no habían sido integrados culturalmente; su lealtad era coercitiva, no genuina. Al aparecer una alternativa (los españoles), se alinearon con ella. (2) <B>Dependencia del Sapa Inca:</B> la concentración de poder era adaptativa para la expansión pero catastrófica cuando el gobernante caía. (3) <B>No tiempo para consolidar:</B> el Tahuantinsuyo no había tenido tiempo de crear una identidad cultural compartida entre todos sus pueblos. <B>¿Accidente o determinismo?</B> La historiografía actual rechaza ambos extremos. La conquista no fue "inevitable" (sin la guerra civil y la viruela, Pizarro probablemente habría fracasado), pero tampoco fue un "accidente puro": las vulnerabilidades estructurales del Tahuantinsuyo creaban las condiciones para que un detonante externo pudiera producir un colapso rápido.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Analiza el papel del virrey Francisco de Toledo (1569&ndash;1581) como "organizador del virreinato". ¿En qué sentido sus reformas fueron una conquista "administrativa" que completó la conquista militar?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Toledo fue simplemente un administrador eficiente sin papel histórico relevante; sus reformas no alteraron significativamente la situación de los indígenas ni la organización del virreinato</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Toledo completó la conquista mediante reformas estructurales: las reducciones de indios (que concentraron la población dispersa en pueblos controlables), la sistematización de la mita minera (que organizó la extracción de plata de Potosí), las visitas generales (que censaron la población para maximizar el tributo), la creación de ordenanzas que regularon toda la vida colonial, y la eliminación del Estado neoinca de Vilcabamba (1572); transformó el virreinato de un espacio de conquista informal en un Estado colonial organizado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Toledo fue el primer virrey del Perú; antes de él no existía ninguna estructura administrativa colonial y el territorio era gobernado directamente por los encomenderos sin ninguna supervisión real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Las reformas de Toledo fueron rápidamente anuladas por su sucesor; por eso la organización definitiva del virreinato no se produjo hasta el siglo XVIII con las reformas borbónicas, que sí tuvieron impacto duradero</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Francisco de Toledo</B> (1515&ndash;1582), quinto virrey del Perú (1569&ndash;1581), es considerado el "verdadero organizador del virreinato" y, según algunos historiadores, el "Solón del Perú". Cuando llegó, el virreinato era caótico: guerras civiles recientes, Vilcabamba resistiendo, población indígena dispersa difícil de controlar, producción minera desorganizada. Sus reformas abarcaron todos los ámbitos: (1) <B>Reducciones de indios:</B> concentró a la población andina dispersa en miles de <I>pueblos de indios</I> organizados al modo castellano (600&ndash;1.000 familias por pueblo), con plaza, iglesia, cabildo. Esto facilitó el cobro del tributo, la evangelización y la recluta de mitayos. (2) <B>Mita minera sistematizada:</B> organizó el sistema de trabajo rotativo para Potosí: 16 provincias debían enviar el séptimo de sus varones adultos en turnos regulares. Esta organización triplicó la producción de plata. (3) <B>Visitas generales:</B> mandó hacer un censo exhaustivo de toda la población indígena (los "libros de visita") para establecer la cuota de tributo y mitayos con precisión. (4) <B>Ordenanzas:</B> redactó cientos de ordenanzas que regularon cada aspecto de la vida colonial, desde el gobierno de los pueblos de indios hasta el precio del maíz. (5) <B>Eliminación de Vilcabamba:</B> ejecutó a Túpac Amaru I (1572), eliminando el último foco de legitimidad alternativa inca. Toledo transformó el Perú colonial de un espacio de conquista informal en un Estado organizado para la extracción sistemática de riqueza.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Relaciona el concepto de "sistema-mundo" de Immanuel Wallerstein con la conquista del Tahuantinsuyo: ¿cómo se integró el espacio andino en el capitalismo mercantil del siglo XVI?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Wallerstein argumentó que la conquista del Perú fue un ejemplo de "intercambio justo" entre Europa y América: la plata americana fue compensada con tecnología, religión y organización política de igual valor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Desde la perspectiva del sistema-mundo, el espacio andino fue integrado como periferia extractiva: la mita de Potosí producía plata que fluía hacia la metrópoli española (semiperiférica en el sistema-mundo, dado que no industrializó) y de ahí a los centros manufactureros del norte de Europa (Inglaterra, Holanda, Países Bajos), financiando el capitalismo mercantil europeo; el trabajo andino fue el subsidio oculto de la modernidad capitalista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Wallerstein excluyó América de su análisis del sistema-mundo; consideró que las colonias americanas eran economías autónomas sin conexión con el capitalismo europeo hasta el siglo XIX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El espacio andino se integró en el sistema-mundo como centro (core) económico, dado que producía el metal precioso que controlaba el comercio mundial; España fue la periferia porque dependía de la plata peruana</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta conecta la historia andina con la teoría del sistema-mundo de <B>Immanuel Wallerstein</B> (<I>El moderno sistema mundial</I>, 1974&ndash;2011). La integración del espacio andino sigue el patrón de <B>periferia extractiva</B> que Wallerstein identifica como característica del capitalismo histórico: (1) <B>La plata de Potosí:</B> entre 1545 y 1800 se extrajeron unas 45.000 toneladas de plata del Cerro Rico. Esa plata fluyó hacia España como parte del sistema colonial. (2) <B>España como semiperiferia:</B> Wallerstein señala la paradoja española: España tenía acceso a la mayor fuente de plata del mundo pero no la "convirtió" en capitalismo industrial porque la usó para pagar deudas a banqueros genoveses y flamencos, y para financiar guerras. La plata pasaba por España y se dirigía a los centros manufactureros del norte de Europa (Países Bajos, Inglaterra). (3) <B>El trabajo andino como subsidio:</B> la mita minera era trabajo coercitivo a precio muy inferior al mercado; ese "subsidio laboral" es lo que hacía rentable la extracción a esa escala. Sin la mita (es decir, con trabajo libre a precio de mercado), la explotación de Potosí habría sido mucho menos rentable. (4) <B>El historiador Aníbal Quijano</B> añadió a este análisis el concepto de "colonialidad del poder": la organización racial del trabajo (mestizos, indígenas y africanos en los escalones más bajos) no fue un accidente sino una estructura deliberada del capitalismo colonial.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Qué fue el <I>Pachacuti</I> en la cosmovisión andina y cómo influyó en la interpretación indígena de la conquista española?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Pachacuti era el nombre del noveno Sapa Inca, el mayor conquistador de la historia inca; al ser confundido por los indígenas con Francisco Pizarro, facilitó la aceptación de la conquista española sin resistencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Pachacuti (literalmente "inversión del mundo" o "cataclismo cósmico") era en la cosmovisión andina el concepto que describía un trastorno radical del orden del universo; la conquista española fue interpretada por muchos andinos como un pachacuti: el fin de un ciclo cósmico, la inversión del mundo conocido, lo que generó respuestas que oscilaban entre la parálisis, la búsqueda de un nuevo orden sobrenatural y, más tarde, los movimientos mesiánicos del Taki Onqoy (1564&ndash;1572)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) El concepto de pachacuti no existía antes de la conquista; fue creado por los cronistas andinos del siglo XVII como forma de explicar retrospectivamente la derrota inca ante los españoles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Pachacuti era simplemente el nombre quechua para "terremoto"; los incas interpretaron la llegada de los españoles como un fenómeno geológico natural, no como una invasión, lo que explica su falta de respuesta militar inicial</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El concepto de <B>pachacuti</B> (en quechua: <I>pacha</I> = mundo/tiempo, <I>cuti</I> = inversión/vuelta) es fundamental para comprender la respuesta andina a la conquista. En la cosmovisión andina, la historia se organizaba en ciclos que terminaban en "inversiones cósmicas" (pachacutis), donde el orden existente era trastocado y un nuevo orden emergía. El decimonoveno inca, Pachacuti Inca Yupanqui (siglo XV, el gran conquistador), llevaba ese nombre precisamente porque su llegada al poder representó una inversión del mundo anterior. Para los andinos del siglo XVI, la conquista española fue un pachacuti de escala histórica sin precedentes: el Sol (Inti), dios padre del Imperio, había sido "vencido" por el dios de los barbudos; el Sapa Inca, hijo del Sol, había muerto; el orden cósmico había sido invertido. Esta interpretación cosmológica tuvo consecuencias concretas: (1) la <B>parálisis inicial</B> ante lo que parecía un trastorno sobrenatural; (2) la búsqueda de explicaciones mágico-religiosas antes que políticas; (3) el movimiento del <B>Taki Onqoy</B> (1564&ndash;1572), un movimiento mesiánico que predicaba que las <I>huacas</I> (divinidades andinas) se rebelarían y expulsarían a los españoles: los andinos debían rechazar el bautismo, los nombres cristianos y los alimentos europeos para que las huacas recuperaran su poder. El Taki Onqoy fue suprimido por el clérigo <B>Cristóbal de Albornoz</B> durante la campaña de extirpación de idolatrías.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> ¿En qué sentido puede afirmarse que la conquista del Tahuantinsuyo no terminó en 1572 con la ejecución de Túpac Amaru I, sino que continuó como proceso de dominación cultural, económica y demográfica durante todo el período colonial y más allá?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) No puede afirmarse esto: 1572 es la fecha de finalización oficial de la conquista según todas las fuentes históricas; lo que vino después fue simplemente "colonialismo", un fenómeno completamente diferente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) La conquista como proceso continuó porque: la desestructuración demográfica (colapso del 90% de la población) se prolongó hasta el siglo XVII; la extirpación de idolatrías destruyó sistemáticamente la religiosidad andina durante el siglo XVII; la mita minera siguió matando hasta la independencia (1821); el pensamiento colonial (la "colonialidad del poder" de Quijano) persistió en las estructuras raciales y económicas hasta el presente; movimientos como la rebelión de Túpac Amaru II (1780&ndash;1781) muestran que la resistencia andina nunca desapareció</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) La conquista continuó solo en términos militares: hasta 1780 hubo escaramuzas y batallas entre el ejército virreinal y grupos indígenas rebeldes, pero la conquista cultural y económica se completó definitivamente en 1572</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Esta afirmación es una posición ideológica antiespañola sin fundamento histórico; los historiadores objetivos reconocen que la conquista terminó en 1572 y que el período colonial fue beneficioso para los pueblos andinos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de síntesis evalúa la capacidad de pensar la conquista como proceso de larga duración, no como evento puntual. <B>La conquista como proceso continuo:</B> (1) <B>Colapso demográfico prolongado:</B> la población indígena del Perú cayó de c. 10 millones (1532) a menos de 1 millón (c. 1620) y no comenzó a recuperarse hasta el siglo XVIII. El colapso duró casi 100 años. (2) <B>Extirpación de idolatrías:</B> las campañas sistemáticas de destrucción de la religiosidad andina (huacas, momias, rituales) se desarrollaron principalmente en el siglo XVII, especialmente entre 1610 y 1660, bajo el arzobispo Hernando de Arias de Ugarte y el visitador Francisco de Ávila. La conquista religiosa fue un proceso de siglos. (3) <B>Mita minera:</B> siguió funcionando hasta la independencia (1821), matando trabajadores en Potosí y Huancavelica durante casi 300 años. (4) <B>Colonialidad del poder</B> (concepto del sociólogo peruano <B>Aníbal Quijano</B>): la jerarquía racial establecida en la colonia (con sus consecuencias en el acceso a la tierra, la educación y el poder político) no desapareció con la independencia; persiste en estructuras actuales de desigualdad social y étnica. (5) <B>Resistencia continua:</B> la rebelión de <B>Túpac Amaru II</B> (José Gabriel Condorcanqui, 1780&ndash;1781), la mayor rebelión anticolonial de América, muestra que la resistencia andina nunca se extinguió; y que la memoria de Túpac Amaru I seguía viva 200 años después de su ejecución. La conquista, entendida como proceso de dominación, es un fenómeno de muy larga duración.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>
+

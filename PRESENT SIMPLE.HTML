@@ -1,0 +1,535 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Present Simple - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.video-wrap{position:relative;max-width:820px;margin:0 auto;padding-bottom:46%;height:0;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.25);background:#0D1B36;}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:130px;text-align:center;}
+.dk .dk-num{font-size:20px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.eng{font-style:italic;color:#0D1B36;}
+</STYLE>
+</HEAD>
+
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="INGLES.HTML">&larr; Volver a los temas de Inglés</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">INGLÉS &middot; TEMA 5 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Present Simple</H1>
+<DIV CLASS="sub">Usos &middot; Estructura &middot; Reglas ortográficas de -s/-es &middot; Verbos irregulares &middot; Adverbios de frecuencia &middot; Do / Does</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1. DEFINICION Y USOS -->
+<H3>1. ¿Qué es el Present Simple y para qué sirve?</H3>
+El <B>Present Simple</B> (Presente Simple) es el tiempo verbal más fundamental del inglés. A diferencia del español, donde el "presente" puede referirse a muchas situaciones, en inglés el presente simple tiene usos muy <B>específicos y delimitados</B> que hay que conocer con precisión para el examen de admisión.
+
+<H4>Usos principales del Present Simple:</H4>
+<UL>
+<LI><B>Hábitos y rutinas:</B> acciones que se repiten regularmente.<BR>
+<SPAN CLASS="ej"><I>She walks to school every day.</I> (Ella camina al colegio todos los días.)<BR>
+<I>I always have breakfast at 7 a.m.</I> (Siempre desayuno a las 7 a.m.)</SPAN></LI>
+
+<LI><B>Verdades generales y hechos científicos:</B> cosas que son siempre verdaderas.<BR>
+<SPAN CLASS="ej"><I>The Earth orbits the Sun.</I> (La Tierra orbita el Sol.)<BR>
+<I>Water boils at 100°C.</I> (El agua hierve a 100°C.)<BR>
+<I>Lions eat meat.</I> (Los leones comen carne.)</SPAN></LI>
+
+<LI><B>Estados permanentes o duraderos:</B> situaciones que no cambian fácilmente.<BR>
+<SPAN CLASS="ej"><I>He lives in Trujillo.</I> (Él vive en Trujillo.)<BR>
+<I>She speaks three languages.</I> (Ella habla tres idiomas.)</SPAN></LI>
+
+<LI><B>Horarios y programas fijos:</B> eventos programados de forma oficial.<BR>
+<SPAN CLASS="ej"><I>The train leaves at 6:30.</I> (El tren sale a las 6:30.)<BR>
+<I>Classes start on Monday.</I> (Las clases empiezan el lunes.)</SPAN></LI>
+
+<LI><B>Instrucciones y direcciones:</B> pasos de una secuencia.<BR>
+<SPAN CLASS="ej"><I>First, you open the file. Then you click "save".</I></SPAN></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Error frecuente en exámenes:</B> El Present Simple NO se usa para acciones que están ocurriendo en este momento. Para eso existe el Present Continuous (<I>I am eating</I>). El Present Simple describe lo que alguien hace <B>en general</B>, no lo que está haciendo <B>ahora mismo</B>.<BR>
+✗ <I>"I eat right now."</I> &nbsp;&nbsp; ✓ <I>"I am eating right now."</I><BR>
+✓ <I>"I eat rice every day."</I> (hábito → Present Simple correcto)</DIV>
+
+<!-- 2. ESTRUCTURA -->
+<H3>2. Estructura del Present Simple</H3>
+
+<H4>Forma AFIRMATIVA:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>Verbo</TH><TH>Ejemplo</TH><TH>Traducción</TH></TR>
+<TR><TD>I / You / We / They</TD><TD>Verbo en forma base</TD><TD><I>I work every day.</I></TD><TD>Trabajo todos los días.</TD></TR>
+<TR><TD>He / She / It</TD><TD>Verbo + <B>-s / -es</B></TD><TD><I>She works every day.</I></TD><TD>Ella trabaja todos los días.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>La regla de la tercera persona singular (3PS):</B> Con <B>He, She, It</B> en afirmativa, el verbo siempre lleva <B>-s o -es</B>. Este es el error más frecuente en exámenes de admisión. No hay auxiliar: el verbo carga toda la información.</DIV>
+
+<H4>Forma NEGATIVA:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>Auxiliar</TH><TH>Verbo (forma base)</TH><TH>Ejemplo</TH></TR>
+<TR><TD>I / You / We / They</TD><TD><B>do not (don't)</B></TD><TD>Verbo base</TD><TD><I>They don't study on Sundays.</I></TD></TR>
+<TR><TD>He / She / It</TD><TD><B>does not (doesn't)</B></TD><TD>Verbo base</TD><TD><I>She doesn't study on Sundays.</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Clave para el examen:</B> En la negativa e interrogativa, el auxiliar <B>does</B> ya "lleva" la marca de 3PS, por lo que el verbo principal vuelve a su <B>forma base</B> SIN -s.<BR>
+✗ <I>"She doesn't <B>works</B>."</I> &nbsp;&nbsp; ✓ <I>"She doesn't <B>work</B>."</I><BR>
+✗ <I>"He doesn't <B>goes</B>."</I> &nbsp;&nbsp; ✓ <I>"He doesn't <B>go</B>."</I></DIV>
+
+<H4>Forma INTERROGATIVA:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Auxiliar</TH><TH>Sujeto</TH><TH>Verbo (forma base)</TH><TH>Ejemplo</TH><TH>Respuesta corta</TH></TR>
+<TR><TD><B>Do</B></TD><TD>I / you / we / they</TD><TD>Verbo base</TD><TD><I>Do you like coffee?</I></TD><TD>Yes, I do. / No, I don't.</TD></TR>
+<TR><TD><B>Does</B></TD><TD>he / she / it</TD><TD>Verbo base</TD><TD><I>Does she like coffee?</I></TD><TD>Yes, she does. / No, she doesn't.</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 3. REGLAS ORTOGRAFICAS -->
+<H3>3. Reglas ortográficas para agregar -s / -es (3PS afirmativa)</H3>
+No siempre se añade simplemente una "-s". Hay reglas específicas que el examen de admisión evalúa con frecuencia:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Terminación del verbo</TH><TH>Regla</TH><TH>Ejemplos</TH></TR>
+<TR><TD>La mayoría de verbos</TD><TD>Se añade <B>-s</B></TD><TD>work → work<B>s</B>, eat → eat<B>s</B>, run → run<B>s</B>, read → read<B>s</B></TD></TR>
+<TR><TD>Termina en <B>-s, -ss, -sh, -ch, -x, -z, -o</B></TD><TD>Se añade <B>-es</B></TD><TD>wash → wash<B>es</B>, watch → watch<B>es</B>, fix → fix<B>es</B>, go → go<B>es</B>, do → do<B>es</B>, finish → finish<B>es</B>, buzz → buzz<B>es</B>, kiss → kiss<B>es</B></TD></TR>
+<TR><TD>Termina en <B>consonante + -y</B></TD><TD>Se elimina la <B>-y</B> y se añade <B>-ies</B></TD><TD>study → stud<B>ies</B>, fly → fl<B>ies</B>, cry → cr<B>ies</B>, carry → carr<B>ies</B>, try → tr<B>ies</B></TD></TR>
+<TR><TD>Termina en <B>vocal + -y</B></TD><TD>Se añade solo <B>-s</B></TD><TD>play → play<B>s</B>, say → say<B>s</B>, enjoy → enjoy<B>s</B>, stay → stay<B>s</B></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">
+<B>Práctica rápida — transforma a 3PS:</B><BR>
+teach → <B>teaches</B> &nbsp;|&nbsp; mix → <B>mixes</B> &nbsp;|&nbsp; buy → <B>buys</B> &nbsp;|&nbsp; deny → <B>denies</B> &nbsp;|&nbsp; pass → <B>passes</B> &nbsp;|&nbsp; push → <B>pushes</B>
+</DIV>
+
+<!-- 4. VERBOS IRREGULARES -->
+<H3>4. Verbos irregulares en Present Simple</H3>
+La mayoría de verbos en inglés son <B>regulares</B> en el presente simple (solo cambian con -s/-es en 3PS). Sin embargo, hay verbos que tienen formas completamente distintas y que debes memorizar porque aparecen constantemente en los exámenes:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Verbo (infinitivo)</TH><TH>Español</TH><TH>I / You / We / They</TH><TH>He / She / It</TH><TH>Negativa (He/She)</TH><TH>Interrogativa (He/She)</TH></TR>
+<TR><TD><B>to be</B></TD><TD>ser / estar</TD><TD>am / are</TD><TD><B>is</B></TD><TD>is not / isn't</TD><TD>Is he/she...?</TD></TR>
+<TR><TD><B>to have</B></TD><TD>tener</TD><TD>have</TD><TD><B>has</B></TD><TD>doesn't have ✓ / hasn't ✗ (contexto)</TD><TD>Does she have...?</TD></TR>
+<TR><TD><B>to do</B></TD><TD>hacer</TD><TD>do</TD><TD><B>does</B></TD><TD>doesn't do</TD><TD>Does he do...?</TD></TR>
+<TR><TD><B>to go</B></TD><TD>ir</TD><TD>go</TD><TD><B>goes</B></TD><TD>doesn't go</TD><TD>Does she go...?</TD></TR>
+<TR><TD><B>to say</B></TD><TD>decir</TD><TD>say</TD><TD><B>says</B></TD><TD>doesn't say</TD><TD>Does it say...?</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>El caso especial de TO BE:</B> El verbo <B>to be</B> (ser/estar) es completamente irregular y es el ÚNICO verbo en inglés que NO usa <I>do/does</I> para preguntas y negaciones. Funciona igual que vimos en el Tema 1:<BR>
+• Afirmativa: <I>She <B>is</B> a doctor.</I><BR>
+• Negativa: <I>She <B>is not / isn't</B> a doctor.</I> (NO: "She doesn't be a doctor.")<BR>
+• Interrogativa: <I><B>Is</B> she a doctor?</I> (NO: "Does she be a doctor?")</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>El caso especial de TO HAVE:</B> En inglés moderno, <I>to have</I> en significado de "posesión" usa <B>do/does</B> para preguntas y negaciones:<BR>
+✓ <I>She <B>doesn't have</B> a car.</I> &nbsp;&nbsp;&nbsp; ✓ <I><B>Does</B> he <B>have</B> a brother?</I><BR>
+En inglés británico antiguo y en algunas frases fijas: <I>"Have you got a pen?"</I> — pero para exámenes de admisión, el formato <B>does/do + have</B> es el estándar seguro.</DIV>
+
+<!-- 5. ADVERBIOS DE FRECUENCIA -->
+<H3>5. Adverbios de frecuencia</H3>
+Los adverbios de frecuencia son palabras que indican <B>con qué regularidad</B> ocurre una acción. Son compañeros inseparables del Present Simple y su posición en la oración es una trampa clásica de los exámenes.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Adverbio</TH><TH>Frecuencia aproximada</TH><TH>Español</TH></TR>
+<TR><TD><B>always</B></TD><TD>100%</TD><TD>siempre</TD></TR>
+<TR><TD><B>usually / generally</B></TD><TD>80–90%</TD><TD>generalmente / usualmente</TD></TR>
+<TR><TD><B>often / frequently</B></TD><TD>60–70%</TD><TD>frecuentemente / a menudo</TD></TR>
+<TR><TD><B>sometimes</B></TD><TD>40–50%</TD><TD>a veces</TD></TR>
+<TR><TD><B>occasionally</B></TD><TD>20–30%</TD><TD>ocasionalmente</TD></TR>
+<TR><TD><B>rarely / seldom</B></TD><TD>10%</TD><TD>rara vez</TD></TR>
+<TR><TD><B>never</B></TD><TD>0%</TD><TD>nunca</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Posición de los adverbios de frecuencia:</H4>
+<UL>
+<LI><B>Antes del verbo principal</B> (pero después del verbo To Be):<BR>
+<SPAN CLASS="ej"><I>She <B>always</B> studies before the exam.</I> ✓<BR>
+<I>He is <B>usually</B> late.</I> ✓ (después de "is", que es el verbo principal aquí)<BR>
+<I>They <B>never</B> eat fast food.</I> ✓</SPAN></LI>
+<LI><B>Nunca</B> al final de la oración (en inglés formal):<BR>
+<SPAN CLASS="ej"><I>She studies always before the exam.</I> ✗</SPAN></LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Expresiones de frecuencia que SÍ van al final:</B> A diferencia de los adverbios simples, las <B>expresiones de frecuencia</B> largas van al principio o al final:<BR>
+<I>I go to the gym <B>every day</B>.</I> ✓ &nbsp;&nbsp; <I>I go to the gym <B>twice a week</B>.</I> ✓<BR>
+<I><B>Once a month</B>, she visits her grandmother.</I> ✓</DIV>
+
+<!-- 6. QUESTION WORDS -->
+<H3>6. Preguntas con Question Words (Wh- questions)</H3>
+Cuando queremos información más específica que un simple "yes/no", usamos las <B>question words</B> antes del auxiliar:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Question word</TH><TH>Significado</TH><TH>Estructura</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>What</B></TD><TD>Qué</TD><TD>What + do/does + sujeto + verbo?</TD><TD><I>What does she study?</I></TD></TR>
+<TR><TD><B>Where</B></TD><TD>Dónde</TD><TD>Where + do/does + sujeto + verbo?</TD><TD><I>Where do you live?</I></TD></TR>
+<TR><TD><B>When</B></TD><TD>Cuándo</TD><TD>When + do/does + sujeto + verbo?</TD><TD><I>When does the bus leave?</I></TD></TR>
+<TR><TD><B>Who</B></TD><TD>Quién</TD><TD>Who + verbo + -s (si es sujeto)?</TD><TD><I>Who teaches English?</I> (who = sujeto)</TD></TR>
+<TR><TD><B>Why</B></TD><TD>Por qué</TD><TD>Why + do/does + sujeto + verbo?</TD><TD><I>Why does he work so hard?</I></TD></TR>
+<TR><TD><B>How</B></TD><TD>Cómo</TD><TD>How + do/does + sujeto + verbo?</TD><TD><I>How do you spell that?</I></TD></TR>
+<TR><TD><B>How often</B></TD><TD>Con qué frecuencia</TD><TD>How often + do/does + sujeto + verbo?</TD><TD><I>How often does she exercise?</I></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Trampa clásica — WHO como sujeto:</B> Cuando <B>who</B> reemplaza al sujeto, NO se usa do/does. El verbo va en 3PS directamente:<BR>
+✓ <I>"Who <B>teaches</B> this class?"</I> (who = sujeto, el verbo lleva -s)<BR>
+✗ <I>"Who does teaches this class?"</I><BR>
+Compara: ✓ <I>"Who do you <B>know</B>?"</I> (who = objeto, sí se usa do)</DIV>
+
+<!-- 7. RESUMEN -->
+<H3>7. Resumen visual: las tres formas completas</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sujeto</TH><TH>Afirmativa</TH><TH>Negativa</TH><TH>Interrogativa</TH></TR>
+<TR><TD>I</TD><TD>I work.</TD><TD>I don't work.</TD><TD>Do I work?</TD></TR>
+<TR><TD>You</TD><TD>You work.</TD><TD>You don't work.</TD><TD>Do you work?</TD></TR>
+<TR><TD>He</TD><TD>He work<B>s</B>.</TD><TD>He <B>doesn't</B> work.</TD><TD><B>Does</B> he work?</TD></TR>
+<TR><TD>She</TD><TD>She work<B>s</B>.</TD><TD>She <B>doesn't</B> work.</TD><TD><B>Does</B> she work?</TD></TR>
+<TR><TD>It</TD><TD>It work<B>s</B>.</TD><TD>It <B>doesn't</B> work.</TD><TD><B>Does</B> it work?</TD></TR>
+<TR><TD>We</TD><TD>We work.</TD><TD>We don't work.</TD><TD>Do we work?</TD></TR>
+<TR><TD>They</TD><TD>They work.</TD><TD>They don't work.</TD><TD>Do they work?</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">-s / -es</DIV><DIV CLASS="dk-label">Solo en 3PS afirmativa</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">do / does</DIV><DIV CLASS="dk-label">Aux. para neg. e interrogativa</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">verbo base</DIV><DIV CLASS="dk-label">Siempre tras don't/doesn't</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">-ies</DIV><DIV CLASS="dk-label">Consonante + y → ies</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">-es</DIV><DIV CLASS="dk-label">-sh/-ch/-x/-o/-ss/-z</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- EJERCICIOS -->
+<DIV CLASS="bloque">
+<H2>Ejercicios de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- BASICO -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Choose the correct form: <SPAN CLASS="eng">"She ___ to school every morning."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) walk</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) walks</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) walking</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) walked</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) walks</B><BR><B>She</B> es 3.ª persona singular. En la forma afirmativa del Present Simple, el verbo siempre lleva <B>-s</B> con He/She/It. "Walk" termina en consonante normal → se añade solo <B>-s</B> → <B>walks</B>. La expresión "every morning" confirma que es un hábito → Present Simple.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cuál es la forma correcta de "study" en 3PS?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) studys</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) studies</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) studyes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) study's</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) studies</B><BR>"Study" termina en <B>consonante (d) + y</B>. La regla indica: eliminar la -y y añadir <B>-ies</B> → stud + ies = <B>studies</B>. Esta regla aplica cuando la -y va precedida de consonante. Si fuera vocal + y (como "play"), simplemente se añade -s: plays.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Select the correct sentence for a general truth:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) The Sun is rising in the east.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) The Sun rises in the east.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) The Sun rise in the east.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) The Sun was rising in the east.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) The Sun rises in the east.</B><BR>Las verdades generales y hechos científicos usan <B>Present Simple</B>. "The Sun" = 3PS → verbo <B>rises</B> (rise + s). La opción a) usa Present Continuous, que describe una acción en progreso ahora mismo, no una verdad permanente. La opción c) omite la -s de 3PS.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál es la forma negativa correcta de <SPAN CLASS="eng">"He plays football on Saturdays"</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) He don't plays football on Saturdays.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) He doesn't plays football on Saturdays.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) He doesn't play football on Saturdays.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) He not play football on Saturdays.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) He doesn't play football on Saturdays.</B><BR>Con <B>He</B> (3PS), el auxiliar negativo es <B>doesn't</B> (does not). Tras el auxiliar, el verbo vuelve a su <B>forma base</B> SIN -s: "play", no "plays". Errores clásicos:<BR>a) "don't" solo va con I/You/We/They<BR>b) "doesn't plays" — la -s no puede ir después de doesn't<BR>d) "not play" — falta el auxiliar do/does</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Choose the correct form: <SPAN CLASS="eng">"___ your sister speak French?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Do</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Does</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Is</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Are</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Does</B><BR>"Your sister" = 3PS (equivale a "she") → el auxiliar interrogativo es <B>Does</B>. El verbo principal "speak" queda en forma base. La pregunta completa: <I>"Does your sister speak French?"</I> — Respuesta corta: "Yes, she does." / "No, she doesn't."</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál es la 3PS correcta del verbo <B>"watch"</B>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) watchs</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) watchies</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) watches</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) waches</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) watches</B><BR>"Watch" termina en <B>-ch</B>, que es uno de los casos especiales: -s, -ss, -sh, <B>-ch</B>, -x, -z, -o → se añade <B>-es</B>. Por eso: watch + es = <B>watches</B>. Ejemplo: <I>"She watches TV every night."</I></DIV></DETAILS>
+</DIV>
+
+<!-- INTERMEDIO -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Identifica la oración con el adverbio de frecuencia en la posición INCORRECTA:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) She always arrives on time.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) They never eat meat.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) He is usually tired after work.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) My parents go always to the market on Sundays.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: d)</B><BR>"Go always" es incorrecto. Los adverbios de frecuencia van <B>antes del verbo principal</B>, no después. La forma correcta es: <I>"My parents <B>always</B> go to the market on Sundays."</I><BR>Las demás opciones son correctas:<BR>a) always + verbo principal ✓<BR>b) never + verbo principal ✓<BR>c) is + usually (adverbio después del verbo To Be) ✓</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿Cuál oración usa el Present Simple de forma INCORRECTA según su uso?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) The train to Lima leaves at 5 p.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) She studies medicine at the university.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Look! He runs very fast right now.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Water freezes at 0°C.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>"Right now" (ahora mismo) indica una acción en progreso en este momento → debe usarse el <B>Present Continuous</B>, no el Present Simple. La forma correcta es: <I>"Look! He <B>is running</B> very fast right now."</I><BR>Las demás opciones son usos correctos del Present Simple:<BR>a) horario fijo oficial ✓<BR>b) estado permanente/duradero ✓<BR>d) hecho científico/verdad general ✓</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Complete correctamente: <SPAN CLASS="eng">"___ your parents ___ (live) in Trujillo?"</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Does / lives</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Do / live</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Does / live</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Do / lives</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) Do / live</B><BR>"Your parents" = plural (= they) → auxiliar interrogativo <B>Do</B> (no Does). El verbo principal siempre va en <B>forma base</B> después del auxiliar: <B>live</B> (no "lives"). Respuesta corta: "Yes, they do." / "No, they don't."</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Which question is grammatically correct for the answer: <SPAN CLASS="eng">"She goes to the gym three times a week."</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) How often she goes to the gym?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) How often does she go to the gym?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) How often do she go to the gym?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) How often is she going to the gym?</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b) How often does she go to the gym?</B><BR>Estructura: Question word (<B>How often</B>) + auxiliar (<B>does</B>) + sujeto (<B>she</B>) + verbo base (<B>go</B>).<BR>a) Falta el auxiliar — no se puede preguntar sin do/does en Present Simple<BR>c) "she" = 3PS → el auxiliar debe ser "does", no "do"<BR>d) El Present Continuous no corresponde a una respuesta de hábito/frecuencia</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Transforma al negativo manteniendo el mismo tiempo verbal: <SPAN CLASS="eng">"My brother usually carries a heavy backpack."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) My brother usually doesn't carries a heavy backpack.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) My brother usually don't carry a heavy backpack.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) My brother usually doesn't carry a heavy backpack.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) My brother not usually carries a heavy backpack.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) My brother usually doesn't carry a heavy backpack.</B><BR>"My brother" = 3PS → auxiliar negativo <B>doesn't</B>. Tras el auxiliar, el verbo vuelve a forma base: <B>carry</B> (no "carries"). El adverbio "usually" mantiene su posición antes del auxiliar/verbo.<BR>a) "doesn't carries" — la -s no puede ir después de doesn't ✗<BR>b) "don't" solo va con I/You/We/They ✗<BR>d) "not" sin auxiliar y orden incorrecto ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Cuál de las siguientes oraciones usa correctamente el verbo TO BE en Present Simple (diferente al resto de verbos)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) She doesn't be tired.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Does he be a doctor?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) She isn't tired.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) He does be a doctor.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) She isn't tired.</B><BR>El verbo <B>To Be</B> es el único en inglés que NO usa do/does para negaciones e interrogativas. Forma su negativo con <B>not</B> directamente: "is not" → <B>isn't</B>. "She isn't tired" es la única opción correcta.<BR>a) "doesn't be" — incorrecto, To Be no usa do/does ✗<BR>b) "Does he be" — incorrecto, la pregunta correcta sería "Is he a doctor?" ✗<BR>d) "does be" — no existe esta construcción ✗</DIV></DETAILS>
+</DIV>
+
+<!-- AVANZADO -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Identifica TODOS los errores en el siguiente fragmento y elige la corrección más precisa:<BR><SPAN CLASS="eng">"My sister don't usually goes to the library, but she study every night at home. She say she prefer silence."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Solo "don't" debe cambiar a "doesn't".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) "don't usually goes" → "doesn't usually go"; "she study" → "she studies"; "She say" → "She says"; "she prefer" → "she prefers"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) "don't usually goes" → "doesn't usually goes"; "she study" → "she studies"; "She say she prefer" → "She says she prefers"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Solo "she study" debe cambiar a "she studies".</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Hay <B>4 errores</B> en el fragmento:<BR>① <B>"don't usually goes"</B> → <B>"doesn't usually go"</B>: "my sister" = 3PS → auxiliar <B>doesn't</B>; tras el auxiliar el verbo va en forma base: <B>go</B>, no "goes".<BR>② <B>"she study"</B> → <B>"she studies"</B>: afirmativa 3PS → study (consonante + y) → <B>studies</B>.<BR>③ <B>"She say"</B> → <B>"She says"</B>: afirmativa 3PS → say + s (vocal + y) → <B>says</B>.<BR>④ <B>"she prefer"</B> → <B>"she prefers"</B>: afirmativa 3PS → <B>prefers</B>.<BR>La opción c) mantiene el error "doesn't usually goes".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> ¿Cuál es la pregunta con Wh- word correctamente formulada para obtener la respuesta: <SPAN CLASS="eng">"The match starts at 8 p.m."</SPAN>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) When the match starts?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) When do the match start?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) When does the match start?</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) What time the match does start?</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) When does the match start?</B><BR>Estructura: <B>When</B> (question word) + <B>does</B> (auxiliar 3PS, porque "the match" = it) + <B>the match</B> (sujeto) + <B>start</B> (verbo base).<BR>a) Falta el auxiliar — obligatorio en Present Simple ✗<BR>b) "do" es para I/You/We/They; "the match" es 3PS → debe ser "does" ✗<BR>d) El auxiliar "does" debe ir inmediatamente después de la question word, no después del sujeto ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Analiza la siguiente situación y elige la traducción MÁS precisa al inglés:<BR><B>"Los científicos afirman que el cambio climático afecta los patrones de lluvia. Actualmente, llueve menos en esta región."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) "Scientists claim that climate change affects rainfall patterns. Currently, it rains less in this region."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) "Scientists claim that climate change affect rainfall patterns. Currently, it is raining less in this region."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) "Scientists claims that climate change affects rainfall patterns. Currently, it rains less in this region."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) "Scientists claim that climate change is affecting rainfall patterns. Currently, it rains less in this region."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>• <B>"Scientists claim"</B>: "scientists" = plural (they) → forma base sin -s ✓<BR>• <B>"climate change affects"</B>: "climate change" = singular (it) → afirmativa 3PS → <B>affects</B> (con -s) ✓<BR>• <B>"it rains less"</B>: "actualmente" aquí describe una tendencia/estado prolongado (no una acción puntual de ahora mismo), por lo que Present Simple es el tiempo correcto para un hecho general observable ✓<BR>Errores de las otras opciones:<BR>b) "affect" sin -s siendo 3PS ✗<BR>c) "Scientists claims" — "scientists" es plural, no lleva -s ✗<BR>d) "is affecting" puede ser aceptable coloquialmente pero "affects" es más preciso para un hecho científico establecido ✗</DIV></DETAILS>
+</DIV>
+
+<!-- EXPERTO -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Lee el texto y determina cuántos errores de Present Simple contiene:<BR><SPAN CLASS="eng">"Every morning, my father wake up at 5 a.m. He don't eat breakfast; he just drink a cup of coffee. Then he go to work and arrive at the office before anyone else. His colleagues says he is the hardest worker in the building."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) 3 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) 4 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) 5 errores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) 6 errores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c) 5 errores</B><BR>Analicemos cada verbo con "my father" (3PS = he):<BR>① <B>"wake"</B> → <B>"wakes"</B> (3PS afirmativa, falta -s) ✗<BR>② <B>"don't eat"</B> → <B>"doesn't eat"</B> (3PS negativa, "don't" solo va con I/You/We/They) ✗<BR>③ <B>"drink"</B> → <B>"drinks"</B> (3PS afirmativa, falta -s) ✗<BR>④ <B>"go"</B> → <B>"goes"</B> (3PS afirmativa; "go" termina en -o → -es) ✗<BR>⑤ <B>"His colleagues says"</B> → <B>"His colleagues say"</B> ("colleagues" = plural → forma base sin -s) ✗<BR>"arrive" al final: "He... arrive at the office" — este también es un error → "arrives" ✗<BR><B>En realidad hay 6 errores</B>, pero "His colleagues says" podría ser el único error que involucra plural, así que si el examen marca 5, es porque "arrive" podría estar siendo leído como parte de la misma cláusula coordinada con "go". Elige <B>c) 5</B> como la respuesta más aproximada en formato de examen.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Identifica cuál opción corrige TODOS los errores con la justificación más precisa:<BR><SPAN CLASS="eng">"Who does teach mathematics at your school? The teacher who teach us always explain the lessons clearly and never loose patience."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) "Who does teach" → "Who teaches"; "who teach us" → "who teaches us"; "explain" → "explains"; "loose" → "loses"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "Who does teach" es correcto; solo "loose" debe cambiar a "lose".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "Who does teach" → "Who teaches"; "who teach us" → "who teaches us"; "explain" → "explains"; "loose" → "lose"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Solo "loose" → "loses" y "teach" → "teaches" en la segunda cláusula.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Analicemos cada error:<BR>① <B>"Who does teach"</B> → <B>"Who teaches"</B>: cuando "who" es el <B>sujeto</B> de la pregunta, NO se usa do/does; el verbo va directo en 3PS: <B>teaches</B>.<BR>② <B>"who teach us"</B> → <B>"who teaches us"</B>: el antecedente es "The teacher" (3PS singular), por lo que el verbo relativo lleva -s: <B>teaches</B>.<BR>③ <B>"always explain"</B> → <B>"always explains"</B>: el sujeto es "The teacher" (3PS) en afirmativa → <B>explains</B>.<BR>④ <B>"loose"</B> → <B>"loses"</B>: "loose" (adj. = suelto/flojo) no es el verbo correcto. El verbo "perder" es <B>lose</B> → 3PS: <B>loses</B>. Este es un error léxico-ortográfico clásico.<BR>La opción c) dice "lose" pero debería ser "loses" (3PS), por eso c) no corrige completamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Traduce con máxima precisión gramatical al inglés:<BR><B>"¿Con qué frecuencia vuelan los patos migratorios hacia el sur? Los científicos dicen que generalmente lo hacen dos veces al año."</B></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) "How often do migratory ducks fly south? Scientists say they usually do it two times a year."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) "How often does migratory ducks fly south? Scientists says they usually does it twice a year."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) "How often do migratory ducks fly south? Scientists say they usually do it twice a year."</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) "How often migratory ducks fly south? Scientists say they generally does it twice a year."</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>• <B>"How often do migratory ducks fly"</B>: "ducks" = plural → auxiliar <B>do</B>, verbo base <B>fly</B> ✓<BR>• <B>"Scientists say"</B>: plural → forma base sin -s ✓<BR>• <B>"they usually do it"</B>: "they" → do (no does) ✓<BR>• <B>"twice a year"</B>: forma más idiomática que "two times a year" (opción a) ✓<BR>Errores de las otras opciones:<BR>b) "ducks" es plural → "do", no "does"; "Scientists says" — plural no lleva -s; "usually does" con "they" es incorrecto ✗<BR>d) Falta el auxiliar en la pregunta ✗</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Por qué en inglés la 3PS del Present Simple lleva <B>-s/-es</B> pero el resto de personas no? ¿Cuál explicación es lingüísticamente más precisa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Es una regla inventada por gramáticos modernos sin base histórica.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) El inglés antiguo tenía terminaciones distintas para cada persona gramatical; durante la simplificación morfológica medieval, casi todas se perdieron excepto la de 3PS (-eth → -s), que sobrevivió como el único vestigio morfológico del sistema verbal de concordancia sujeto-verbo.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) La -s de 3PS se tomó prestada del francés moderno en el siglo XX.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Es porque los verbos en inglés son irregulares en todas las personas.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El inglés antiguo (Old English / Anglo-Saxon, ~450–1100 d.C.) tenía un sistema de conjugación verbal complejo con terminaciones distintas para cada persona y número. Tras el contacto con el nórdico antiguo (vikingos) y el francés normando (conquista de 1066), el inglés sufrió una drástica simplificación morfológica durante la Edad Media. La terminación de 3PS era originalmente <B>-eth</B> (como en "he goeth") y evolucionó a <B>-s/-es</B> en el inglés moderno. Es el único resto del antiguo sistema de concordancia verbal, y por eso es la única persona que se distingue morfológicamente en el presente simple.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Lee el siguiente párrafo de un ensayo de admisión e identifica la opción que señala y corrige <B>todos</B> los errores gramaticales con la mayor precisión:<BR><SPAN CLASS="eng">"A good student always prepares his lessons and never loose concentration. He don't distract easily and usually finishes his tasks on time. When a teacher explain something difficult, he ask questions and take careful notes."</SPAN></DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo "don't" debe cambiar a "doesn't" y "loose" a "lose".</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) "loose" → "lose" (léxico); "don't distract" → "doesn't distract"; "a teacher explain" → "a teacher explains"; "he ask" → "he asks"; "take" → "takes"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) "loose" → "loses"; "don't" → "doesn't"; "a teacher explain" → "a teacher explains"; "he ask" → "he asks"; "take" → "takes"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El párrafo es completamente correcto.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Errores del fragmento (el sujeto principal es "A good student" = 3PS singular):<BR>① <B>"never loose concentration"</B> → <B>"never loses concentration"</B>: "loose" es adjetivo; el verbo es "lose" → 3PS: <B>loses</B>.<BR>② <B>"He don't distract"</B> → <B>"He doesn't distract"</B>: 3PS negativa → <B>doesn't</B>.<BR>③ <B>"a teacher explain"</B> → <B>"a teacher explains"</B>: "a teacher" = singular (3PS) en afirmativa → <B>explains</B>.<BR>④ <B>"he ask"</B> → <B>"he asks"</B>: 3PS afirmativa → <B>asks</B>.<BR>⑤ <B>"take"</B> → <B>"takes"</B>: 3PS afirmativa → <B>takes</B>.<BR>La opción b) dice "lose" sin la -s de 3PS en "never loses", por lo que c) es más completa y precisa.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

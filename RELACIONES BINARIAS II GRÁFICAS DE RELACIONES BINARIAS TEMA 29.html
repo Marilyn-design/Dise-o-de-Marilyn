@@ -1,0 +1,433 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Relaciones Binarias II: Gráficas - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:38px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .formula-linea{background:#e8f4f3;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:18px;text-align:center;letter-spacing:0.5px;color:#0D1B36;}
+.figura{text-align:center;margin-top:18px;}
+.figura figcaption{font-size:14px;color:#777;margin-top:8px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.bloque-f{max-width:1000px;margin:55px auto 0;padding:0 40px;}
+.bloque-f h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.formulario{background:#0D1B36;border-radius:20px;padding:30px 36px;box-shadow:0 6px 22px rgba(0,0,0,0.18);color:#fff;}
+.formulario .grupo{margin-bottom:22px;}
+.formulario .grupo:last-child{margin-bottom:0;}
+.formulario .grupo h4{color:#D7B06D;font-size:17px;margin-bottom:10px;letter-spacing:0.5px;border-bottom:1px solid rgba(255,255,255,0.18);padding-bottom:6px;}
+.formulario .f{font-size:18px;line-height:2.2;color:#fff;}
+.formulario .f b{color:#7FD1CE;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="ALGEBRA.HTML">&larr; Volver a los temas de Álgebra</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">ÁLGEBRA &middot; TEMA 29</DIV>
+<H1>Relaciones Binarias II: Gráficas</H1>
+<DIV CLASS="sub">Producto cartesiano &middot; Gráfica de una relación &middot; Curvas y regiones &middot; Dominio y rango</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="repaso">1. Repaso: producto cartesiano y relación</H3>
+El <B>producto cartesiano</B> A &times; B es el conjunto de todos los pares ordenados (a, b) con a en A y b en B.
+<DIV CLASS="formula-linea"><B>A &times; B = { (a, b) / a &isin; A , b &isin; B }</B> &nbsp;;&nbsp; n(A &times; B) = n(A) &middot; n(B)</DIV>
+Una <B>relación binaria</B> de A en B es cualquier <B>subconjunto</B> de A &times; B; es decir, una regla que empareja ciertos elementos. En este tema A = B = R, así que cada par (x, y) es un punto del <B>plano cartesiano</B>.
+
+<H3 ID="grafica">2. ¿Qué es la gráfica de una relación?</H3>
+La <B>gráfica</B> de una relación R es el conjunto de todos los puntos (x, y) del plano que <B>cumplen su condición</B>. Para saber si un punto pertenece a la relación, basta reemplazar sus coordenadas y verificar si la igualdad o desigualdad se cumple.
+<DIV CLASS="ej">📐 ¿(1, 3) pertenece a y = 2x + 1? Reemplazo: 2(1) + 1 = 3 ✓. Sí pertenece. En cambio (1, 5) no, porque 2(1) + 1 = 3 &ne; 5.</DIV>
+
+<H3 ID="curvas">3. Gráficas definidas por ecuaciones (curvas)</H3>
+Cuando la condición es una <B>igualdad</B>, la gráfica suele ser una línea o curva. Conviene reconocer las básicas:
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Relación</TH><TH>Su gráfica es...</TH></TR>
+<TR><TD>y = mx + b</TD><TD>una recta (pendiente m)</TD></TR>
+<TR><TD>x = k</TD><TD>una recta vertical</TD></TR>
+<TR><TD>y = k</TD><TD>una recta horizontal</TD></TR>
+<TR><TD>y = x<SUP>2</SUP></TD><TD>una parábola</TD></TR>
+<TR><TD>x<SUP>2</SUP> + y<SUP>2</SUP> = r<SUP>2</SUP></TD><TD>una circunferencia de centro el origen y radio r</TD></TR>
+</TABLE>
+</DIV>
+
+<H3 ID="regiones">4. Gráficas definidas por inecuaciones (regiones)</H3>
+Cuando la condición es una <B>desigualdad</B>, la gráfica ya no es una línea sino una <B>región</B> del plano (un semiplano o una zona). Primero se traza la frontera (la igualdad) y luego se sombrea el lado que cumple.
+<DIV CLASS="alerta">⚠️ <B>Regla de la frontera:</B> si la desigualdad es estricta (&gt; o &lt;), la frontera va <B>punteada</B> (no se incluye). Si es &ge; o &le;, la frontera va <B>continua</B> (sí se incluye).</DIV>
+
+<DIV CLASS="figura">
+<svg viewBox="0 0 320 280" width="300" height="262" role="img" aria-label="Plano cartesiano con la región y mayor o igual que x sombreada">
+  <!-- region y >= x (semiplano superior-izquierdo) -->
+  <polygon points="20,20 280,20 40,260 20,260" fill="#D7B06D" fill-opacity="0.35"/>
+  <!-- ejes -->
+  <line x1="20" y1="140" x2="304" y2="140" stroke="#0D1B36" stroke-width="2"/>
+  <line x1="160" y1="20" x2="160" y2="266" stroke="#0D1B36" stroke-width="2"/>
+  <polygon points="304,140 296,136 296,144" fill="#0D1B36"/>
+  <polygon points="160,20 156,28 164,28" fill="#0D1B36"/>
+  <!-- recta frontera y = x (continua) -->
+  <line x1="40" y1="260" x2="280" y2="20" stroke="#1F6A67" stroke-width="3"/>
+  <!-- etiquetas -->
+  <text x="300" y="158" font-size="14" fill="#0D1B36">X</text>
+  <text x="166" y="32" font-size="14" fill="#0D1B36">Y</text>
+  <text x="150" y="158" font-size="13" fill="#777">O</text>
+  <text x="232" y="60" font-size="14" fill="#1F6A67">y = x</text>
+  <text x="70" y="90" font-size="15" fill="#8B0000" font-weight="bold">y &#8805; x</text>
+</svg>
+<figcaption>Región de la relación y &ge; x: frontera continua (incluida) y zona sombreada por encima de la recta.</figcaption>
+</DIV>
+
+<H3 ID="dominio-rango">5. Dominio y rango desde la gráfica</H3>
+A partir de la gráfica se leen dos conjuntos importantes:
+<UL>
+<LI><B>Dominio:</B> todos los valores de x que aparecen (la "sombra" de la gráfica sobre el eje X).</LI>
+<LI><B>Rango:</B> todos los valores de y que aparecen (la "sombra" sobre el eje Y).</LI>
+</UL>
+<DIV CLASS="ej">📐 La parábola y = x<SUP>2</SUP> existe para cualquier x (dominio = R), pero sus alturas nunca son negativas (rango = [0 ; +&infin;&#10217;).</DIV>
+
+<H3 ID="discretas">6. Relaciones con conjuntos finitos</H3>
+Si A y B son conjuntos finitos, la relación es un conjunto de <B>puntos sueltos</B> (no una curva continua). Su gráfica son esos puntos aislados en el plano.
+<DIV CLASS="ej">📐 R = { (x, y) / y = x<SUP>2</SUP> , x &isin; {1, 2, 3} } = { (1, 1), (2, 4), (3, 9) }: solo tres puntos.</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque-f">
+<H2>Formulario</H2>
+<DIV CLASS="formulario">
+<DIV CLASS="grupo">
+<H4>CONCEPTOS</H4>
+<DIV CLASS="f">
+A &times; B <B>=</B> { (a,b) / a&isin;A, b&isin;B }<BR>
+n(A &times; B) <B>=</B> n(A) &middot; n(B)<BR>
+Relación &rarr; subconjunto de A &times; B
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>GRÁFICAS BÁSICAS</H4>
+<DIV CLASS="f">
+y = mx + b &rarr; recta<BR>
+y = x<SUP>2</SUP> &rarr; parábola<BR>
+x<SUP>2</SUP> + y<SUP>2</SUP> = r<SUP>2</SUP> &rarr; circunferencia (radio r)
+</DIV>
+</DIV>
+<DIV CLASS="grupo">
+<H4>REGIONES Y LECTURA</H4>
+<DIV CLASS="f">
+&gt; , &lt; &rarr; frontera punteada<BR>
+&ge; , &le; &rarr; frontera continua<BR>
+Dominio = sombra en X &middot; Rango = sombra en Y
+</DIV>
+</DIV>
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Problemas tipo admisión</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Si A = {1, 2} y B = {3, 4}, ¿cuántos elementos tiene A &times; B?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) 4</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) 8</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>n(A &times; B) = n(A) &middot; n(B) = 2 &middot; 2 = <B>4</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> En el par ordenado (2, 5), ¿cuál es la primera componente (abscisa)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) 7</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) 2,5</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La primera componente (la x, abscisa) es <B>2</B>; la segunda (y, ordenada) es 5.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> La gráfica de la relación y = 2x + 1 es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) una recta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) una parábola</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) una circunferencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) un punto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Toda relación de la forma y = mx + b se grafica como <B>una recta</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> La gráfica de x<SUP>2</SUP> + y<SUP>2</SUP> = 9 es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) una circunferencia de radio 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) una recta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) una circunferencia de radio 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) una parábola</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>x<SUP>2</SUP> + y<SUP>2</SUP> = r<SUP>2</SUP> es una circunferencia con centro en el origen y radio r = &radic;9 = <B>3</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Una relación binaria de A en B es un subconjunto de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) A &times; B</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) A &cup; B</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) A &cap; B</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) A &minus; B</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Por definición, una relación binaria es un subconjunto del producto cartesiano <B>A &times; B</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> La gráfica de la relación y = x<SUP>2</SUP> es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) una parábola</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) una recta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) una circunferencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) dos rectas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>y = x<SUP>2</SUP> se grafica como <B>una parábola</B> con vértice en el origen.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿El punto (1, 3) pertenece a la relación y = 2x + 1?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Sí</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) No</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Solo si x = 0</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Faltan datos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Reemplazo x = 1: 2(1) + 1 = 3, que coincide con y = 3. <B>Sí pertenece.</B></DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> ¿El punto (2, 5) pertenece a la relación y = x<SUP>2</SUP>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) No, porque 2<SUP>2</SUP> = 4 &ne; 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Sí</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Sí, porque 2 &lt; 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Solo si y = 4</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Reemplazo x = 2: 2<SUP>2</SUP> = 4, pero el punto tiene y = 5. Como 4 &ne; 5, <B>no pertenece</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Al graficar la relación y &gt; x, la recta frontera y = x se dibuja:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) punteada (no se incluye)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) continua (se incluye)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) doble</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) no se dibuja</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Como la desigualdad es estricta (&gt;), la frontera va <B>punteada</B>: los puntos de la recta no cumplen y &gt; x.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Al graficar y &le; 2x, la recta frontera se dibuja:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) continua (se incluye)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) punteada (no se incluye)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) vertical</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) no se dibuja</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Como la desigualdad incluye la igualdad (&le;), la frontera va <B>continua</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Si A = {1, 2, 3}, ¿cuántos elementos tiene A &times; A?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) 12</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>n(A &times; A) = n(A) &middot; n(A) = 3 &middot; 3 = <B>9</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Cuál es el radio de la circunferencia x<SUP>2</SUP> + y<SUP>2</SUP> = 25?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) 5</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) 25</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) 10</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) 12,5</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>r<SUP>2</SUP> = 25 &rarr; r = &radic;25 = <B>5</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> ¿El punto (0, 0) satisface la relación y &gt; x + 1?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) No</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Sí</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Solo si y = 1</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Faltan datos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Reemplazo: 0 &gt; 0 + 1, es decir 0 &gt; 1, que es falso. <B>No</B> lo satisface.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> La gráfica de la relación x = 4 es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) una recta vertical</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) una recta horizontal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) un punto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) una parábola</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>x = 4 reúne todos los puntos con abscisa 4, sin importar y: es una <B>recta vertical</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Cuál es el dominio de la relación y = 2x (una recta)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Todos los reales (R)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Solo los positivos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) [0 ; +&infin;&#10217;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Solo x = 2</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La recta se extiende infinitamente: x puede ser cualquier número real. Dominio = <B>R</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> ¿El punto (3, 4) pertenece a la circunferencia x<SUP>2</SUP> + y<SUP>2</SUP> = 25?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Sí</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) No</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Solo si y = 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Faltan datos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Reemplazo: 3<SUP>2</SUP> + 4<SUP>2</SUP> = 9 + 16 = 25 ✓. <B>Sí pertenece</B> (es un punto de la circunferencia).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> La gráfica de la relación y &ge; 0 en el plano representa:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) el semiplano superior, incluyendo el eje X</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) el semiplano inferior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) solo el eje Y</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) todo el plano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>y &ge; 0 son todos los puntos con ordenada no negativa: el <B>semiplano superior, incluyendo el eje X</B> (frontera continua).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> ¿Cuántos pares ordenados tiene R = { (x, y) / y = x<SUP>2</SUP> , x &isin; {1, 2, 3} }?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) 3</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) 6</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) 9</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) infinitos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>A cada x de {1, 2, 3} le corresponde un solo y: (1,1), (2,4), (3,9). Son <B>3</B> pares ordenados.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Cuál es el rango de la relación y = x<SUP>2</SUP> (con x real)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) [0 ; +&infin;&#10217;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Todos los reales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) &#10216;&minus;&infin; ; 0]</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) solo y = 0</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Un cuadrado nunca es negativo, así que y = x<SUP>2</SUP> toma todos los valores desde 0 en adelante: rango = <B>[0 ; +&infin;&#10217;</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> La gráfica de la relación x<SUP>2</SUP> + y<SUP>2</SUP> &le; 4 representa:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) una región circular (disco) de radio 2, con su borde</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) solo la circunferencia de radio 2</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) el exterior de la circunferencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) una recta</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>x<SUP>2</SUP> + y<SUP>2</SUP> = 4 es la circunferencia de radio 2; "&le;" agrega todos los puntos interiores. Es el <B>disco de radio 2 incluyendo su borde</B>.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

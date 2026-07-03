@@ -1,0 +1,515 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>La Prosperidad Falaz - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA DEL PER&Uacute; &middot; TEMA 14</DIV>
+<H1>La Prosperidad Falaz</H1>
+<DIV CLASS="sub">El guano &middot; Consolidaci&oacute;n de la deuda &middot; Contrato Grace &middot; Caudillismo &middot; Enriquecimiento y crisis fiscal &middot; 1845&ndash;1872</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. &iquest;Qu&eacute; fue la Prosperidad Falaz?</H3>
+La <B>Prosperidad Falaz</B> es el nombre con el que la historiograf&iacute;a peruana &mdash;especialmente el historiador <B>Jorge Basadre Grohmann</B>&mdash; denomina al per&iacute;odo de la historia republicana del Per&uacute; comprendido aproximadamente entre <B>1845 y 1872</B>, durante el cual el pa&iacute;s experiment&oacute; una enorme afluencia de dinero gracias a la explotaci&oacute;n y exportaci&oacute;n del <B>guano de las islas</B> (excremento de aves marinas acumulado durante siglos en las islas del litoral peruano).
+
+El calificativo <B>"falaz"</B> (es decir, enga&ntilde;osa, falsa, ilusoria) se debe a que, a pesar de los ingentes recursos que el guano gener&oacute;, el Per&uacute; no logr&oacute; desarrollarse econ&oacute;micamente de manera sostenida. El dinero del guano fue mal administrado, se dilapid&oacute; en el pago de deudas, en subsidios a grupos de poder, en obras suntuarias y en guerras civiles, sin generar una industria productiva, una agricultura moderna ni una clase empresarial nacional capaz de sostener la econom&iacute;a una vez agotado el recurso. Cuando el guano se acab&oacute;, el Per&uacute; qued&oacute; en bancarrota.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La expresi&oacute;n "Prosperidad Falaz" fue acu&ntilde;ada por el historiador peruano <B>Jorge Basadre</B> (Tacna, 1903&ndash;Lima, 1980) en su obra monumental <I>Historia de la Rep&uacute;blica del Per&uacute;</I> (1939; ampliada en sucesivas ediciones). Basadre es el historiador m&aacute;s importante del Per&uacute; republicano. El concepto resume perfectamente el per&iacute;odo: mucho dinero, ninguna transformaci&oacute;n estructural real.</DIV>
+
+<H3>2. El guano: el recurso que cambi&oacute; el Per&uacute;</H3>
+El <B>guano</B> (del quechua <I>wanu</I>, "excremento de aves") es el abono natural formado por las deyecciones de aves marinas (pelícanos, piqueros, alcatraces) acumuladas durante siglos en las islas y puntas del litoral peruano, especialmente en las <B>Islas Chincha</B>. Las condiciones clim&aacute;ticas del litoral peruano &mdash;la Corriente de Humboldt que genera aguas fr&iacute;as, ricas en nutrientes y libres de lluvias que disolver&iacute;an el abono&mdash; permitieron la acumulaci&oacute;n de dep&oacute;sitos de hasta <B>50 metros de espesor</B>.
+
+<H4>&iquest;Por qu&eacute; era tan valioso?</H4>
+En la primera mitad del siglo XIX, Europa y Estados Unidos atravesaban una <B>revoluci&oacute;n agr&iacute;cola</B>: la poblaci&oacute;n crecía r&aacute;pidamente y los suelos cultivados se agotaban. Se necesitaba urgentemente un fertilizante potente y natural. El guano peruano era ideal: altamente rico en nitr&oacute;geno, f&oacute;sforo y potasio; duplicaba o triplicaba las cosechas. Antes de los fertilizantes sint&eacute;ticos (inventados por Fritz Haber en 1909), el guano peruano era pr&aacute;cticamente insustituible para la agricultura europea e inglesa.
+
+<H4>Cifras del guano:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Per&iacute;odo</TH><TH>Toneladas exportadas (aprox.)</TH><TH>Destinos principales</TH></TR>
+<TR><TD>1840&ndash;1850</TD><TD>~530.000 toneladas</TD><TD>Gran Breta&ntilde;a, Francia</TD></TR>
+<TR><TD>1850&ndash;1860</TD><TD>~3.000.000 toneladas</TD><TD>Gran Breta&ntilde;a, EE.UU., Alemania</TD></TR>
+<TR><TD>1860&ndash;1870</TD><TD>~4.500.000 toneladas</TD><TD>Gran Breta&ntilde;a, EE.UU., Espa&ntilde;a</TD></TR>
+<TR><TD>1870&ndash;1878</TD><TD>~3.800.000 toneladas (declive)</TD><TD>Gran Breta&ntilde;a, Francia</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note">&#128221; <B>Dato clave:</B> Entre 1845 y 1878, el guano gener&oacute; al Estado peruano ingresos estimados entre <B>700 y 800 millones de soles</B> (algunas estimaciones llegan a 900 millones). Para dimensionar esto: el presupuesto anual del Estado peruano en 1845 era de apenas 3 millones de pesos. El guano multiplic&oacute; por decenas los ingresos fiscales del pa&iacute;s. Sin embargo, toda esta riqueza se evapor&oacute; sin dejar infraestructura productiva.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128201; EL SISTEMA DE CONSIGNACIONES<SPAN>C&oacute;mo se administr&oacute; el negocio del guano — y c&oacute;mo se perdi&oacute;</SPAN></DIV>
+
+<H3>3. El sistema de consignaciones y el monopolio guan&iacute;fero</H3>
+El Estado peruano, carente de una burocracia eficiente y de capital propio para extraer y comercializar el guano, opt&oacute; por un sistema de <B>consignaciones</B>: entregaba el derecho de vender el guano en determinados mercados a empresas privadas (consignatarios), que adelantaban dinero al Estado y luego lo recuperaban con creces de las ventas.
+
+<H4>Etapas del sistema de consignaciones:</H4>
+<OL>
+<LI><B>Primera etapa (1840&ndash;1849) &mdash; Consignatarios extranjeros:</B> El primer gran contrato fue con la casa comercial ingl&eacute;s <B>Gibbs &amp; Sons</B> (1842), que monopoliz&oacute; la venta en Europa por a&ntilde;os. Los peruanos apenas participaban del negocio.</LI>
+<LI><B>Segunda etapa (1849&ndash;1862) &mdash; Intentos de consignatarios nacionales:</B> El gobierno de <B>Ram&oacute;n Castilla</B> (primer gobierno: 1845&ndash;1851) intent&oacute; favorecer a empresarios nacionales. En 1849 se firm&oacute; el <B>contrato Barreda</B> con consignatarios peruanos para el mercado europeo. Sin embargo, los consignatarios nacionales carecían de capital y red comercial suficientes, y los negocios siguieron dependiendo del cr&eacute;dito extranjero.</LI>
+<LI><B>Tercera etapa (1869&ndash;1875) &mdash; Contrato Dreyfus:</B> El gobierno de <B>Jos&eacute; Balta</B> firm&oacute; en <B>1869</B> el famoso <B>Contrato Dreyfus</B> con la casa comercial francesa <B>Dreyfus Hermanos y C&iacute;a.</B>, que se compromet&iacute;a a comprar <B>2 millones de toneladas de guano</B> y adelantar al Estado peruano <B>73 millones de soles</B>. Este contrato elimin&oacute; a los consignatarios peruanos y marc&oacute; el inicio del fin del boom guan&iacute;fero.</LI>
+</OL>
+
+<DIV CLASS="ej">&#128218; <B>El Contrato Dreyfus (1869):</B> Fue negociado por el Ministro de Hacienda <B>Nicol&aacute;s de Pi&eacute;rola</B> (quien ser&iacute;a m&aacute;s tarde dos veces presidente del Per&uacute;) durante el gobierno de Balta. Fue muy controvertido: los consignatarios nacionales lo atacaron furiosamente (perd&iacute;an su negocio); el Congreso lo impugn&oacute; inicialmente; pero el gobierno lo defendi&oacute; argumentando que era la &uacute;nica manera de obtener capital fresco r&aacute;pidamente. Dreyfus financi&oacute; luego el ambicioso &mdash;y desastroso&mdash; programa de construcci&oacute;n de ferrocarriles de Balta.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128198; LOS GOBIERNOS DE LA PROSPERIDAD FALAZ<SPAN>Ram&oacute;n Castilla y los presidentes del auge guan&iacute;fero</SPAN></DIV>
+
+<H3>4. El gobierno de Ram&oacute;n Castilla (1845&ndash;1851 y 1854&ndash;1862)</H3>
+<B>Ram&oacute;n Castilla y Marquesado</B> (Tarapac&aacute;, <B>1797</B> &ndash; Tiviliche, <B>1867</B>) fue el primer gran presidente de la era del guano y el gobernante m&aacute;s importante de la Prosperidad Falaz. Mestizo, militar veterano de las guerras de independencia y de las guerras civiles republicanas, Castilla gobern&oacute; el Per&uacute; en dos per&iacute;odos:
+
+<H4>Primer gobierno (1845&ndash;1851):</H4>
+<UL>
+<LI>Primer gobierno estable y ordenado del Per&uacute; republicano; puso fin al caudillismo de los primeros a&ntilde;os.</LI>
+<LI>Organiz&oacute; las finanzas p&uacute;blicas usando los ingresos del guano.</LI>
+<LI>Aprob&oacute; el primer presupuesto nacional del Per&uacute; (<B>1845</B>).</LI>
+<LI>Inici&oacute; la construcci&oacute;n de ferrocarriles: el primer tren en Sud Am&eacute;rica corri&oacute; en el Per&uacute; entre <B>Lima y Callao</B> (<B>17 de mayo de 1851</B>).</LI>
+<LI>Impuls&oacute; la educaci&oacute;n p&uacute;blica y la organizaci&oacute;n del sistema judicial.</LI>
+</UL>
+
+<H4>Segundo gobierno (1854&ndash;1862) &mdash; El m&aacute;s importante:</H4>
+El segundo gobierno de Castilla fue el m&aacute;s trascendental del siglo XIX peruano por dos medidas hist&oacute;ricas:
+
+<UL>
+<LI><B>Abolici&oacute;n de la esclavitud negra</B> (<B>3 de diciembre de 1854</B>): Castilla decret&oacute; la libertad de todos los esclavos africanos en el Per&uacute;. El Estado peruano indemni&oacute; a sus due&ntilde;os con <B>300 pesos por esclavo</B> (dinero que sali&oacute; de los fondos del guano). En ese momento hab&iacute;a aproximadamente <B>25.000 esclavos</B> en el Per&uacute;.</LI>
+<LI><B>Abolici&oacute;n del tributo ind&iacute;gena</B> (<B>5 de julio de 1854</B>): Castilla elimin&oacute; el tributo que los ind&iacute;genas pagaban al Estado desde la &eacute;poca colonial (y que los primeros gobiernos republicanos hab&iacute;an <I>reestablecido</I> por necesidad fiscal). Esta medida fue posible gracias a los ingresos del guano, que hac&iacute;an prescindible el tributo ind&iacute;gena.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Las dos aboliciones de Castilla son de los datos m&aacute;s frecuentes en ex&aacute;menes preuniversitarios:<BR>
+&bull; <B>Esclavitud negra:</B> abolida el <B>3 de diciembre de 1854</B> (decreto de Huancayo)<BR>
+&bull; <B>Tributo ind&iacute;gena:</B> abolido el <B>5 de julio de 1854</B> (decreto de Ayacucho)<BR>
+&bull; Ambas se financiaron con los ingresos del guano. Sin guano, eran impensables.<BR>
+&bull; El primer ferrocarril de Sudam&eacute;rica: Lima&ndash;Callao, <B>17 de mayo de 1851</B>, durante el gobierno de Echenique (inaugurado), pero proyectado y contratado por Castilla.</DIV>
+
+<H4>La Constituci&oacute;n de 1856 y la de 1860:</H4>
+Durante su segundo gobierno, Castilla promulg&oacute; dos constituciones:
+<UL>
+<LI><B>Constituci&oacute;n liberal de 1856</B>: promulgada por el Congreso Constituyente liberal; establec&iacute;a la libertad de prensa, la soberan&iacute;a popular, la descentralizaci&oacute;n. Castilla la acept&oacute; pero la consider&oacute; demasiado radical.</LI>
+<LI><B>Constituci&oacute;n moderada de 1860</B>: reemplaz&oacute; a la anterior; fue la m&aacute;s duradera de la historia del Per&uacute; (vigente con interrupciones hasta <B>1920</B>). Establec&iacute;a el presidencialismo fuerte, el sufragio restringido a los alfabetos y el catolicismo como religi&oacute;n de Estado.</LI>
+</UL>
+
+<H3>5. La Consolidaci&oacute;n de la Deuda Interna (1850&ndash;1852)</H3>
+Uno de los usos m&aacute;s controvertidos de los ingresos del guano fue la <B>Consolidaci&oacute;n de la Deuda Interna</B>, llevada a cabo durante el gobierno de <B>Jos&eacute; Rufino Echenique</B> (1851&ndash;1854). Consist&iacute;a en reconocer y pagar con bonos del Estado (respaldados por los ingresos del guano) todas las deudas que el Estado peruano ten&iacute;a con particulares desde las guerras de independencia.
+
+<H4>&iquest;Por qu&eacute; fue escandalosa?</H4>
+<UL>
+<LI>El proceso fue masivamente <B>fraudulento</B>: muchos de los cr&eacute;ditos reconocidos eran falsos, inflados o fabricados. Personas influyentes del gobierno y sus allegados presentaron deudas apócrifas y recibieron millones del Estado.</LI>
+<LI>Se estima que el Estado reconoci&oacute; deudas por unos <B>23 millones de pesos</B>, de los cuales una parte significativa era fraudulenta.</LI>
+<LI>El esc&aacute;ndalo de la Consolidaci&oacute;n fue una de las causas directas de la revoluci&oacute;n que llev&oacute; a Castilla al poder por segunda vez (1854): los liberales acusaron a Echenique de corrupci&oacute;n masiva.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>La Consolidaci&oacute;n como patr&oacute;n de conducta:</B> El esc&aacute;ndalo de la Consolidaci&oacute;n estableci&oacute; un patr&oacute;n que se repetir&iacute;a a lo largo de toda la Prosperidad Falaz: los ingresos extraordinarios del guano no se invirtieron en producción sino que fueron apropiados por una oligarqu&iacute;a criolla conectada al poder pol&iacute;tico. Jorge Basadre lo llam&oacute; la evidencia m&aacute;s clara del car&aacute;cter "falaz" de la prosperidad.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128664; LOS FERROCARRILES Y EL ENDEUDAMIENTO<SPAN>El gran sue&ntilde;o de Balta y Pi&eacute;rola que hundi&oacute; al Per&uacute;</SPAN></DIV>
+
+<H3>6. El gobierno de Jos&eacute; Balta (1868&ndash;1872) y los ferrocarriles</H3>
+El gobierno del coronel <B>Jos&eacute; Balta</B> (1868&ndash;1872) represent&oacute; el punto m&aacute;ximo y el inicio del derrumbe de la Prosperidad Falaz. Su ministro de hacienda, <B>Nicol&aacute;s de Pi&eacute;rola</B>, firm&oacute; el <B>Contrato Dreyfus (1869)</B> para obtener capital fresco, que fue utilizado principalmente para financiar el ambicioso <B>programa de construcci&oacute;n de ferrocarriles</B> a cargo del ingeniero estadounidense <B>Henry Meiggs</B>.
+
+<H4>Henry Meiggs y los ferrocarriles:</H4>
+<B>Henry Meiggs</B> (Vermont, EE.UU., 1811&ndash;Lima, 1877) fue un empresario y constructor ferroviario que hab&iacute;a huido de EE.UU. con deudas y lleg&oacute; a Chile (donde construy&oacute; ferrocarriles exitosamente) y luego al Per&uacute;. Fue un maestro del soborno y la relaciones p&uacute;blicas: sobornaba a congresistas, ministros y periodistas para obtener contratos. Con el gobierno de Balta firm&oacute; contratos millonarios para construir:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Ferrocarril</TH><TH>Recorrido</TH><TH>Importancia</TH></TR>
+<TR><TD><B>F.C. del Sur</B></TD><TD>Mollendo &ndash; Arequipa &ndash; Puno</TD><TD>Conectar el sur andino con el Pac&iacute;fico</TD></TR>
+<TR><TD><B>F.C. Central</B></TD><TD>Callao &ndash; Lima &ndash; La Oroya &ndash; Huancayo</TD><TD>El m&aacute;s alto del mundo en su &eacute;poca; acceso a la sierra central</TD></TR>
+<TR><TD><B>F.C. del Norte</B></TD><TD>Pacasmayo &ndash; Cajamarca</TD><TD>Acceso al norte andino</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>&iquest;Por qu&eacute; los ferrocarriles fueron un desastre econ&oacute;mico?</H4>
+<UL>
+<LI><B>Costo excesivo:</B> los contratos de Meiggs eran los m&aacute;s caros del mundo; inclu&iacute;an enormes sobrecostos y comisiones ocultas.</LI>
+<LI><B>Deuda impagable:</B> el Estado peruano se endeud&oacute; masivamente en los mercados financieros europeos (especialmente Londres) para financiar las obras; la deuda externa peruana pas&oacute; de <B>5 millones de libras esterlinas en 1865</B> a m&aacute;s de <B>35 millones en 1872</B>.</LI>
+<LI><B>Los ferrocarriles no generaron riqueza:</B> estaban pensados para <I>exportar</I> materias primas (guano, minerales) pero no para desarrollar mercados internos. Cuando el guano se acab&oacute;, los ferrocarriles no ten&iacute;an carga suficiente para ser rentables.</LI>
+<LI><B>Dependencia del guano:</B> toda la financiaci&oacute;n depend&iacute;a de que el guano siguiera siendo abundante y valioso, lo que no ocurri&oacute;.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> El <B>Contrato Dreyfus (1869)</B> &mdash;gobierno de Balta, ministro Pi&eacute;rola, empresa francesa Dreyfus Hermanos&mdash; y los ferrocarriles de <B>Meiggs</B> son los s&iacute;mbolos del inicio del derrumbe. Recuerda: 2 millones de toneladas de guano + 73 millones de soles adelantados. La deuda subi&oacute; de 5 a 35 millones de libras en solo 7 a&ntilde;os.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128200; EL AGOTAMIENTO DEL GUANO Y LA CRISIS<SPAN>El fin de la ilusin y el camino a la Guerra del Pac&iacute;fico</SPAN></DIV>
+
+<H3>7. El agotamiento del guano y la competencia del salitre</H3>
+Desde <B>1860</B> el boom del guano empezó a declinar por varias razones simult&aacute;neas:
+
+<UL>
+<LI><B>Agotamiento f&iacute;sico:</B> los dep&oacute;sitos de las Islas Chincha (los m&aacute;s ricos) empezaron a agotarse. Despu&eacute;s de 30 a&ntilde;os de explotaci&oacute;n intensiva, los estratos m&aacute;s ricos ya hab&iacute;an sido extra&iacute;dos.</LI>
+<LI><B>Competencia:</B> aparecieron nuevas fuentes de guano (islas del Pac&iacute;fico, costas africanas) y, m&aacute;s decisivamente, el <B>salitre</B> (nitrato de sodio) del desierto de Atacama &mdash;compartido por Per&uacute;, Bolivia y Chile&mdash; como fertilizante alternativo m&aacute;s barato.</LI>
+<LI><B>Superproducci&oacute;n y baja de precios:</B> la sobreoferta de guano en los mercados internacionales hizo caer los precios.</LI>
+<LI><B>Fertilizantes sint&eacute;ticos:</B> aunque la s&iacute;ntesis del amoniaco (proceso Haber-Bosch) se desarrollar&iacute;a en 1909, ya en la d&eacute;cada de 1870 los qu&iacute;micos empezaban a buscar alternativas artificiales.</LI>
+</UL>
+
+<H4>El intento desesperado: el Estanco del Salitre (1873)</H4>
+El gobierno de <B>Manuel Pardo</B> (1872&ndash;1876, primer presidente civil del Per&uacute;) intent&oacute; compensar la ca&iacute;da del guano con el <B>Estanco del Salitre</B>: el Estado se apoder&oacute; del monopolio del salitre en las regiones de <B>Tarapac&aacute;</B>, nacionalizando las salitreras de propietarios privados (muchos de ellos chilenos y brit&aacute;nicos). Esta medida fue una de las causas de la tensi&oacute;n que desemboc&oacute; en la <B>Guerra del Pac&iacute;fico (1879&ndash;1884)</B>.
+
+<H3>8. El Contrato Grace (1889): el desenlace de la Prosperidad Falaz</H3>
+Tras la derrota en la <B>Guerra del Pac&iacute;fico</B> (1879&ndash;1884), el Per&uacute; quedó devastado: hab&iacute;a perdido Tarapac&aacute; (salitre) y Arica para siempre, y Tacna por 50 a&ntilde;os; la deuda externa era impagable; los ferrocarriles estaban destruidos o paralizados. En este contexto, el gobierno de <B>Andr&eacute;s Avelino C&aacute;ceres</B> firm&oacute; en <B>1889</B> el famoso <B>Contrato Grace</B> con el empresario brit&aacute;nico <B>Michael P. Grace</B>:
+
+<H4>T&eacute;rminos del Contrato Grace:</H4>
+<UL>
+<LI>El Per&uacute; <B>cancel&oacute; toda su deuda externa</B> (unos 50 millones de libras esterlinas) con Gran Breta&ntilde;a.</LI>
+<LI>A cambio, entregaba a los acreedores brit&aacute;nicos &mdash;organizados en la <B>Peruvian Corporation</B>&mdash; la administraci&oacute;n de los ferrocarriles por <B>66 a&ntilde;os</B>.</LI>
+<LI>Tambi&eacute;n entregaba las tierras adyacentes a las v&iacute;as f&eacute;rreas, el libre uso de los puertos, y <B>3 millones de toneladas de guano</B> (que apenas quedaba).</LI>
+<LI>La Peruvian Corporation recibir&iacute;a adem&aacute;s una pens&oacute;n anual de <B>80.000 libras esterlinas</B> durante 33 a&ntilde;os.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>Significado del Contrato Grace:</B> Es el s&iacute;mbolo definitivo del fracaso de la Prosperidad Falaz. El Per&uacute; hab&iacute;a recibido entre 700 y 900 millones de soles en ingresos del guano, se hab&iacute;a endeudado en 50 millones de libras esterlinas para construir ferrocarriles, y al final tuvo que ceder los mismos ferrocarriles a sus acreedores para cancelar la deuda. Como dijo Basadre: el guano pas&oacute; por el Per&uacute; sin quedarse en &eacute;l.</DIV>
+
+<H3>9. &iquest;Por qu&eacute; fue "falaz" la prosperidad? Causas estructurales del fracaso</H3>
+El fracaso del periodo guan&iacute;fero no fue accidental sino el resultado de una serie de problemas estructurales del Estado y la sociedad peruana:
+
+<H4>Causas del fracaso:</H4>
+<UL>
+<LI><B>Mentalidad rentista:</B> el Estado peruano se acostumbr&oacute; a vivir de la renta del guano sin necesidad de cobrar impuestos ni de promover la producci&oacute;n. Nunca se construy&oacute; un aparato fiscal moderno.</LI>
+<LI><B>Ausencia de una burgues&iacute;a productiva:</B> los consignatarios peruanos no eran industriales sino intermediarios que no reinvert&iacute;an en producci&oacute;n. El capital nacional no se transform&oacute; en industria sino en lujo y especulaci&oacute;n.</LI>
+<LI><B>Dependencia del mercado externo:</B> toda la econom&iacute;a depend&iacute;a de la demanda europea de guano. Cuando la demanda cay&oacute;, no hab&iacute;a econom&iacute;a interna que sostuviera al pa&iacute;s.</LI>
+<LI><B>Corrupci&oacute;n y clientelismo:</B> la Consolidaci&oacute;n de Echenique, los contratos de Meiggs con sobornos y el Contrato Dreyfus son ejemplos de c&oacute;mo los recursos p&uacute;blicos se distribu&iacute;an entre las &eacute;lites conectadas al poder.</LI>
+<LI><B>Inestabilidad pol&iacute;tica:</B> el caudillismo militar y las guerras civiles consumieron recursos que deber&iacute;an haberse invertido productivamente.</LI>
+<LI><B>Trabajo no libre:</B> la econom&iacute;a del guano se bas&oacute; en trabajo <B>chino coolie</B> (trabajadores contratados en condiciones pr&aacute;cticamente de esclavitud traídos de China entre 1849 y 1874) y en reclusos; nunca se desarroll&oacute; un mercado de trabajo libre y formal.</LI>
+</UL>
+
+<H3>10. Cuadro resumen: los gobiernos de la Prosperidad Falaz</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Presidente</TH><TH>Per&iacute;odo</TH><TH>Hechos clave</TH></TR>
+<TR><TD><B>Ram&oacute;n Castilla</B> (1.&ordm; gob.)</TD><TD>1845&ndash;1851</TD><TD>Primer presupuesto nacional; primer ferrocarril Lima-Callao; inicio explotaci&oacute;n guanera ordenada</TD></TR>
+<TR><TD><B>Jos&eacute; Rufino Echenique</B></TD><TD>1851&ndash;1854</TD><TD>Consolidaci&oacute;n de la deuda interna (fraude masivo); primer tren Lima-Callao inaugurado (1851)</TD></TR>
+<TR><TD><B>Ram&oacute;n Castilla</B> (2.&ordm; gob.)</TD><TD>1854&ndash;1862</TD><TD><B>Abolici&oacute;n esclavitud (3 dic. 1854); abolici&oacute;n tributo ind&iacute;gena (5 jul. 1854)</B>; Constituciones de 1856 y 1860</TD></TR>
+<TR><TD><B>Miguel de San Rom&aacute;n</B></TD><TD>1862&ndash;1863</TD><TD>Muere en el cargo; gobierno breve</TD></TR>
+<TR><TD><B>Juan Antonio Pezet</B></TD><TD>1863&ndash;1865</TD><TD>Guerra con Espa&ntilde;a (Combate del Callao, 2 mayo 1866); Tratado Viv&aacute;nco-Pareja muy impopular</TD></TR>
+<TR><TD><B>Mariano Ignacio Prado</B> (1.&ordm;)</TD><TD>1865&ndash;1868</TD><TD>Combate del Callao (2 mayo 1866); expulsa a Espa&ntilde;a del Pac&iacute;fico</TD></TR>
+<TR><TD><B>Jos&eacute; Balta</B></TD><TD>1868&ndash;1872</TD><TD><B>Contrato Dreyfus (1869)</B>; ferrocarriles de Meiggs; deuda externa se dispara; asesinado en 1872</TD></TR>
+<TR><TD><B>Manuel Pardo</B></TD><TD>1872&ndash;1876</TD><TD>Primer presidente civil; Partido Civil; Estanco del salitre; crisis fiscal</TD></TR>
+<TR><TD><B>Mariano Ignacio Prado</B> (2.&ordm;)</TD><TD>1876&ndash;1879</TD><TD>Bancarrota del Estado (1876); inicio Guerra del Pac&iacute;fico (1879); huye al exterior</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1845</DIV><DIV CLASS="dk-label">Primer gobierno de Castilla: inicio de la Prosperidad Falaz</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1851</DIV><DIV CLASS="dk-label">Primer ferrocarril de Sudam&eacute;rica: Lima &ndash; Callao (17 mayo)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1854</DIV><DIV CLASS="dk-label">Abolici&oacute;n esclavitud (3 dic.) y tributo ind&iacute;gena (5 jul.) por Castilla</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1869</DIV><DIV CLASS="dk-label">Contrato Dreyfus: gobierno Balta, ministro Pi&eacute;rola</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1876</DIV><DIV CLASS="dk-label">Bancarrota del Estado peruano; deuda impagable</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1889</DIV><DIV CLASS="dk-label">Contrato Grace: ferrocarriles entregados a acreedores brit&aacute;nicos por 66 a&ntilde;os</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Concepto:</B> "Prosperidad Falaz" = t&eacute;rmino de <B>Jorge Basadre</B>; 1845&ndash;1872; riqueza del guano que no generó desarrollo real<BR>
+&bull; <B>El guano:</B> <I>wanu</I> quechua &middot; Islas Chincha &middot; fertilizante natural &middot; rico en nitr&oacute;geno &middot; 700&ndash;900 millones de soles en ingresos totales<BR>
+&bull; <B>Sistema consignaciones:</B> Gibbs &amp; Sons (1842) &rarr; consignatarios nacionales &rarr; Contrato Dreyfus (1869)<BR>
+&bull; <B>Castilla 1.&ordm;:</B> 1845&ndash;1851 &middot; primer presupuesto &middot; ferrocarril Lima-Callao<BR>
+&bull; <B>Echenique:</B> 1851&ndash;1854 &middot; Consolidaci&oacute;n de la deuda = fraude masivo<BR>
+&bull; <B>Castilla 2.&ordm;:</B> 1854&ndash;1862 &middot; abolici&oacute;n esclavitud (<B>3 dic. 1854</B>) &middot; abolici&oacute;n tributo ind&iacute;gena (<B>5 jul. 1854</B>) &middot; Constituciones 1856 y 1860<BR>
+&bull; <B>Balta:</B> 1868&ndash;1872 &middot; Contrato Dreyfus (1869) &middot; ferrocarriles de Meiggs &middot; deuda 5&rarr;35 millones libras<BR>
+&bull; <B>Manuel Pardo:</B> 1872&ndash;1876 &middot; primer presidente civil &middot; Partido Civil &middot; Estanco del salitre<BR>
+&bull; <B>Fin:</B> bancarrota 1876 &rarr; Guerra del Pac&iacute;fico 1879 &rarr; Contrato Grace 1889 (ferrocarriles por 66 a&ntilde;os a brit&aacute;nicos)
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;Qu&eacute; es la "Prosperidad Falaz" y qui&eacute;n acu&ntilde;&oacute; este t&eacute;rmino?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Es el nombre del gobierno de Castilla, acu&ntilde;ado por el presidente Manuel Pardo para criticar el despilfarro de los militares en el poder</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Es el per&iacute;odo (aprox. 1845&ndash;1872) de la historia peruana durante el cual los enormes ingresos del guano crearon una apariencia de riqueza que no se tradujo en desarrollo econ&oacute;mico real; el t&eacute;rmino fue acu&ntilde;ado por el historiador Jorge Basadre en su <I>Historia de la Rep&uacute;blica del Per&uacute;</I></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Es el nombre que los historiadores dan al gobierno de Jos&eacute; Balta (1868&ndash;1872), durante el cual el Per&uacute; firm&oacute; el Contrato Dreyfus y se endeud&oacute; masivamente para construir ferrocarriles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Es la expresi&oacute;n con que el economista brit&aacute;nico John Maynard Keynes describi&oacute; el fracaso del modelo econ&oacute;mico peruano del siglo XIX en su obra sobre la deuda externa latinoamericana</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Prosperidad Falaz</B> es el t&eacute;rmino acu&ntilde;ado por el historiador tacne&ntilde;o <B>Jorge Basadre Grohmann</B> (1903&ndash;1980) en su obra <I>Historia de la Rep&uacute;blica del Per&uacute;</I> para designar el per&iacute;odo 1845&ndash;1872 aproximadamente, durante el cual el Per&uacute; obtuvo entre 700 y 900 millones de soles en ingresos del guano sin lograr un desarrollo econ&oacute;mico sostenido. "Falaz" = enga&ntilde;osa, ilusoria. El dinero del guano fue dilapidado en pagos de deudas, obras improductivas, corrupci&oacute;n y guerras civiles, sin generar industria ni agricultura moderna. Basadre es el m&aacute;s importante historiador del Per&uacute; republicano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Por qu&eacute; el guano peruano era tan valioso en el mercado internacional durante el siglo XIX?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Porque el guano era un combustible natural que Europa usaba en sus locomotoras de vapor como alternativa al carb&oacute;n mineral, que escaseaba en Gran Breta&ntilde;a a mediados del siglo XIX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Porque el guano era el fertilizante natural m&aacute;s potente disponible (rico en nitr&oacute;geno, f&oacute;sforo y potasio), imprescindible para la agricultura europea que enfrentaba suelos agotados y poblaci&oacute;n creciente, antes de que existieran fertilizantes sint&eacute;ticos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Porque el guano era utilizado por la industria textil brit&aacute;nica como fijador de tintes para la lana y el algod&oacute;n, siendo insustituible en el proceso de industrializaci&oacute;n de Manchester</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Porque el guano ten&iacute;a propiedades medicinales reconocidas por la medicina europea; era importado principalmente por las industrias farmac&eacute;uticas alemanas y francesas para fabricar medicamentos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>guano</B> (del quechua <I>wanu</I>) era enormemente valioso como <B>fertilizante agr&iacute;cola natural</B>. En la primera mitad del siglo XIX, Europa y Estados Unidos vivían una <B>revoluci&oacute;n agr&iacute;cola</B>: la poblaci&oacute;n crecía exponencialmente (de ~200 millones en 1800 a ~400 millones en 1900) y los suelos tradicionales se agotaban. El guano peruano &mdash;acumulado durante siglos en las Islas Chincha con estratos de hasta 50 metros de espesor&mdash; era excepcionalmente rico en <B>nitr&oacute;geno, f&oacute;sforo y potasio</B>, y duplicaba o triplicaba los rendimientos agr&iacute;colas. Antes de la s&iacute;ntesis del amoniaco (<B>proceso Haber-Bosch</B>, 1909), no exist&iacute;an fertilizantes sint&eacute;ticos eficaces y el guano era pr&aacute;cticamente insustituible.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Cu&aacute;les fueron las dos grandes medidas sociales de Ram&oacute;n Castilla en su segundo gobierno (1854&ndash;1862) y en qu&eacute; fechas se decretaron?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) La abolici&oacute;n de la pena de muerte (15 de julio de 1855) y la creaci&oacute;n de la educaci&oacute;n primaria gratuita y obligatoria (1.&ordm; de enero de 1856)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) La abolici&oacute;n del tributo ind&iacute;gena (5 de julio de 1854, decreto de Ayacucho) y la abolici&oacute;n de la esclavitud negra (3 de diciembre de 1854, decreto de Huancayo), ambas financiadas con los ingresos del guano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) La abolici&oacute;n del trabajo en las minas (conocido como "mita minera", 10 de agosto de 1855) y la creaci&oacute;n del sufragio universal masculino sin restricciones (3 de marzo de 1856)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) La creaci&oacute;n de la primera universidad p&uacute;blica provincial (Universidad de Trujillo, 1854) y la abolici&oacute;n del servicio militar obligatorio (1856), ambas propuestas por el Congreso liberal</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las dos grandes medidas sociales del segundo gobierno de <B>Ram&oacute;n Castilla</B> son de las m&aacute;s importantes del siglo XIX peruano: (1) <B>Abolici&oacute;n del tributo ind&iacute;gena:</B> Decreto de <B>Ayacucho, 5 de julio de 1854</B>; elimin&oacute; el tributo colonial que los ind&iacute;genas pagaban al Estado desde la &eacute;poca virreinal (y que los primeros gobiernos republicanos hab&iacute;an reestablecido por necesidad fiscal). (2) <B>Abolici&oacute;n de la esclavitud negra:</B> Decreto de <B>Huancayo, 3 de diciembre de 1854</B>; liber&oacute; a los aproximadamente 25.000 esclavos africanos en el Per&uacute;; el Estado indemni&oacute; a sus propietarios con 300 pesos por esclavo (con dinero del guano). Ambas medidas fueron posibles &uacute;nicamente gracias a los ingresos del guano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qu&eacute; fue el Contrato Dreyfus (1869) y por qu&eacute; fue tan controvertido?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Fue el tratado de paz firmado entre el Per&uacute; y Francia tras la intervenci&oacute;n francesa en M&eacute;xico, por el cual Francia reconoció la soberan&iacute;a peruana sobre las Islas Chincha a cambio de concesiones comerciales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Fue el contrato firmado en 1869 entre el gobierno peruano de Balta (ministro Pi&eacute;rola) y la casa francesa Dreyfus Hermanos, por el cual Per&uacute; entregaba 2 millones de toneladas de guano a cambio de 73 millones de soles adelantados; fue controvertido porque elimin&oacute; a los consignatarios peruanos y endeud&oacute; al pa&iacute;s masivamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Fue el contrato de construcci&oacute;n del ferrocarril Lima-Callao firmado entre el Estado peruano y el ingeniero franc&eacute;s Alfred Dreyfus, quien construy&oacute; la primera l&iacute;nea f&eacute;rrea de Sudam&eacute;rica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Fue el acuerdo mediante el cual el Per&uacute; y Francia crearon una empresa binacional para explotar conjuntamente el guano de las Islas Chincha, con capitales mitad peruanos y mitad franceses</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Contrato Dreyfus</B> fue firmado en <B>1869</B> durante el gobierno del Coronel <B>Jos&eacute; Balta</B>, negociado por el ministro de Hacienda <B>Nicol&aacute;s de Pi&eacute;rola</B>, con la empresa francesa <B>Dreyfus Hermanos y C&iacute;a.</B>: Per&uacute; entregaba el derecho a comercializar <B>2 millones de toneladas de guano</B>; Dreyfus adelantaba al Estado peruano <B>73 millones de soles</B> y se comprometía a pagar 700.000 soles mensuales para cubrir la deuda externa. Fue controvertido por tres razones: (1) <B>Elimin&oacute;</B> a los consignatarios peruanos que hasta entonces ten&iacute;an el negocio. (2) El Congreso lo consider&oacute; inconstitucional inicialmente. (3) Su dinero se us&oacute; para financiar los ferrocarriles de Meiggs, disparando la deuda externa de 5 a 35 millones de libras esterlinas en solo 7 a&ntilde;os.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qu&eacute; fue el Contrato Grace (1889) y qu&eacute; simboliza en la historia del Per&uacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Fue el tratado de paz que puso fin a la Guerra del Pac&iacute;fico, firmado entre el Per&uacute; y Chile con mediaci&oacute;n del empresario brit&aacute;nico Grace; el Per&uacute; recuperaba Tarapac&aacute; pero cedi&oacute; Arica definitivamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Fue el contrato firmado en 1889 (gobierno C&aacute;ceres) por el cual el Per&uacute; cancel&oacute; toda su deuda externa brit&aacute;nica entregando a la Peruvian Corporation la administraci&oacute;n de los ferrocarriles por 66 a&ntilde;os, m&aacute;s tierras, puertos y 3 millones de toneladas de guano; simboliza el desenlace definitivo del fracaso de la Prosperidad Falaz</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Fue la concesi&oacute;n que el gobierno peruano firm&oacute; con el empresario estadounidense William Grace para construir el Canal de Panam&aacute;, a cambio de una participaci&oacute;n en los peajes futuros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Fue el contrato mediante el cual el Per&uacute; y Gran Breta&ntilde;a crearon la Peruvian Corporation en 1889 para extraer salitre en Tarapac&aacute; y compartir ganancias con el gobierno peruano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Contrato Grace</B> (1889), firmado durante el gobierno de <B>Andr&eacute;s Avelino C&aacute;ceres</B> con el empresario brit&aacute;nico-estadounidense <B>Michael P. Grace</B>, fue la liquidaci&oacute;n final de la era del guano. T&eacute;rminos: Per&uacute; cancel&oacute; ~50 millones de libras esterlinas de deuda externa; a cambio los acreedores brit&aacute;nicos (organizados como <B>Peruvian Corporation</B>) recibieron: (1) Administraci&oacute;n de los ferrocarriles por <B>66 a&ntilde;os</B>. (2) Tierras adyacentes a las v&iacute;as. (3) Uso libre de puertos. (4) <B>3 millones de toneladas de guano</B> residual. (5) Pensi&oacute;n de 80.000 libras anuales por 33 a&ntilde;os. Simboliza el fracaso total: el Per&uacute; hab&iacute;a recibido cientos de millones en guano, se endeud&oacute; para construir ferrocarriles, y al final tuvo que entregar esos mismos ferrocarriles a sus acreedores.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> &iquest;Por qu&eacute; el esc&aacute;ndalo de la Consolidaci&oacute;n de la Deuda Interna (1850&ndash;1852) ilustra perfectamente el concepto de "Prosperidad Falaz"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Porque la Consolidaci&oacute;n fue una pol&iacute;tica econ&oacute;mica exitosa que, aunque criticada por sus enemigos pol&iacute;ticos, logr&oacute; estabilizar las finanzas p&uacute;blicas y sentar las bases del desarrollo econ&oacute;mico peruano del siglo XIX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Porque la Consolidaci&oacute;n, en vez de usar los ingresos del guano para invertir en infraestructura productiva, los distribuy&oacute; entre una elite conectada al poder (muchos cr&eacute;ditos eran falsos o inflados); se reconocieron ~23 millones de pesos en deudas, gran parte fraudulentas, enriqueciendo a las clases dominantes sin beneficio para el pa&iacute;s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Porque la Consolidaci&oacute;n demostr&oacute; que el Estado peruano ten&iacute;a una s&oacute;lida cultura de pago de sus obligaciones hist&oacute;ricas, lo que le permiti&oacute; acceder a cr&eacute;ditos internacionales en mejores condiciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Porque fue la primera vez en la historia republicana que el Per&uacute; reconoci&oacute; sus deudas con los combatientes de la independencia, lo que fue un acto de justicia hist&oacute;rica que Basadre elogia en su obra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Consolidaci&oacute;n de la Deuda Interna</B> (gobierno de <B>Echenique</B>, 1851&ndash;1854) es el ejemplo perfecto del car&aacute;cter "falaz" de la prosperidad. El objetivo oficial era reconocer y pagar todas las deudas del Estado con particulares desde las guerras de independencia. El resultado fue: (1) <B>Fraude masivo:</B> personas conectadas al gobierno presentaron certificados de deuda falsos, inflados o apócrifos, y el Estado los reconoci&oacute; sin verificarlos. (2) <B>Enriquecimiento ilícito:</B> la oligarqu&iacute;a criolla y los allegados al presidente Echenique recibieron millones del Estado. (3) <B>Dinero mal usado:</B> en lugar de invertir en educaci&oacute;n, agricultura o industria, el dinero del guano fue a pagar a quienes ya ten&iacute;an poder. Este esc&aacute;ndalo fue la chispa de la revoluci&oacute;n de Castilla (1854) y es el s&iacute;mbolo del rentismo y la corrupci&oacute;n de la era.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Explica la relaci&oacute;n entre el Estanco del Salitre de Manuel Pardo (1873) y la Guerra del Pac&iacute;fico (1879).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) No existe relaci&oacute;n alguna: la Guerra del Pac&iacute;fico fue causada exclusivamente por la rivalidad militar entre el Ej&eacute;rcito peruano y el chileno, sin ning&uacute;n trasfondo econ&oacute;mico relacionado con el salitre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) El Estanco del Salitre (1873), por el cual el Estado peruano se apoderaba del monopolio del salitre en Tarapac&aacute; afectando a empresarios chilenos y brit&aacute;nicos, fue una de las causas de la tensi&oacute;n con Chile que, combinada con el Tratado secreto Per&uacute;&ndash;Bolivia de 1873, desemboc&oacute; en la Guerra del Pac&iacute;fico (1879)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) El Estanco del Salitre fue una medida exitosa que solucion&oacute; la crisis fiscal peruana; fue Chile quien lo sabot&oacute; militarmente por envidia del &eacute;xito econ&oacute;mico peruano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) El Estanco del Salitre fue una medida de Manuel Pardo que Chile aplaud&oacute; inicialmente, pero que Bolivia rechaz&oacute; por afectar sus intereses en Antofagasta; por esto Bolivia declar&oacute; la guerra al Per&uacute; primero</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La conexi&oacute;n Estanco del Salitre &rarr; Guerra del Pac&iacute;fico es una de las relaciones causales m&aacute;s importantes del siglo XIX peruano. <B>Cadena de causas:</B> (1) El guano se agotaba desde 1860; el <B>salitre</B> de Tarapac&aacute; era el nuevo recurso estrat&eacute;gico. (2) En 1873, el gobierno de <B>Manuel Pardo</B> aprob&oacute; el <B>Estanco del Salitre</B>: el Estado compraba todas las salitreras privadas de Tarapac&aacute; (muchas de propietarios <B>chilenos y brit&aacute;nicos</B>) y se convertía en el &uacute;nico vendedor. (3) Esto afect&oacute; directamente los intereses chilenos y brit&aacute;nicos (la casa Gibbs ten&iacute;a intereses salitreros en Chile y Per&uacute;). (4) El mismo a&ntilde;o (1873), Per&uacute; y Bolivia firmaron un <B>Tratado de Alianza Defensiva secreto</B>. (5) Cuando Chile atac&oacute; a Bolivia en Antofagasta (1879) por un impuesto al salitre, el Per&uacute; entró en guerra en cumplimiento del tratado secreto. El control del salitre fue la causa econ&oacute;mica de fondo de toda la guerra.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;Por qu&eacute; los ferrocarriles de Meiggs, que deber&iacute;an haber sido el s&iacute;mbolo del progreso, se convirtieron en un desastre econ&oacute;mico para el Per&uacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Porque Meiggs construy&oacute; los ferrocarriles en las rutas equivocadas: en vez de conectar ciudades productivas, los construy&oacute; en zonas deshabitadas de la Amazon&iacute;a donde no hab&iacute;a ni poblaci&oacute;n ni recursos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Porque los contratos con Meiggs eran exageradamente caros (con sobrecostos y sobornos incluidos), la deuda contratada para financiarlos fue impagable, los ferrocarriles estaban dise&ntilde;ados para exportar materias primas (no para el mercado interno), y cuando el guano se acab&oacute; no hab&iacute;a carga suficiente para hacerlos rentables</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Porque la tecnolog&iacute;a ferroviaria de vapor ya estaba obsoleta cuando Meiggs la introdujo en el Per&uacute;; Europa ya usaba trenes el&eacute;ctricos, por lo que la inversi&oacute;n fue inútil desde el inicio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Porque los ferrocarriles de Meiggs fueron destruidos por los terremotos de 1868 y 1877 antes de poder ser utilizados, lo que hizo imposible recuperar la inversi&oacute;n</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los ferrocarriles de <B>Henry Meiggs</B> son un caso cl&aacute;sico de obra p&uacute;blica convertida en trampa econ&oacute;mica. Los problemas fueron m&uacute;ltiples: (1) <B>Sobrecostos:</B> los contratos de Meiggs eran los m&aacute;s caros del mundo; inclu&iacute;an generosas comisiones para los pol&iacute;ticos que los aprobaban (Meiggs admiti&oacute; haber sobornado a ministros y congresistas). El ferrocarril Central (Callao&ndash;La Oroya) cost&oacute; m&aacute;s por kil&oacute;metro que cualquier ferrocarril europeo. (2) <B>Endeudamiento desorbitado:</B> la deuda externa pas&oacute; de 5 millones de libras en 1865 a m&aacute;s de 35 millones en 1872 (solo en 7 a&ntilde;os). (3) <B>Modelo exportador, no integrador:</B> los ferrocarriles conectaban regiones productoras de materias primas con los puertos, no las ciudades entre s&iacute;; no generaban mercado interno. (4) <B>Dependencia total del guano:</B> toda la financiaci&oacute;n depend&iacute;a de que el guano siguiera siendo abundante; cuando cay&oacute;, la deuda se volvi&oacute; impagable.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> &iquest;Qu&eacute; importancia tuvo Manuel Pardo y el Partido Civil (1872) en la historia de la Prosperidad Falaz?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Manuel Pardo fue el presidente que puso fin a la Prosperidad Falaz con &eacute;xito: reorganiz&oacute; las finanzas p&uacute;blicas, redujo la deuda a la mitad y dej&oacute; al Per&uacute; en superávit fiscal al terminar su mandato en 1876</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Manuel Pardo fue el primer presidente civil del Per&uacute; (1872&ndash;1876), fundador del Partido Civil; intent&oacute; reformar las finanzas con el Estanco del Salitre y la reorganizaci&oacute;n fiscal, pero hered&oacute; una deuda impagable y dej&oacute; el pa&iacute;s en crisis; su gobierno marca el inicio del fin de la Prosperidad Falaz</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Manuel Pardo fue el creador del sistema de consignaciones del guano y es el verdadero responsable de la Prosperidad Falaz, pues fue él quien entreg&oacute; el monopolio del guano a la casa Gibbs en 1842</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) El Partido Civil fue fundado por Ram&oacute;n Castilla en 1860 como alternativa al caudillismo militar; Manuel Pardo fue solo su segundo l&iacute;der y nunca lleg&oacute; a la presidencia del Per&uacute;</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Manuel Pardo y Lavalle</B> (Lima, 1834&ndash;1878) fue el <B>primer presidente civil del Per&uacute;</B> (1872&ndash;1876), fundador del <B>Partido Civil</B> (o "civilismo") &mdash;el primer partido pol&iacute;tico organizado del Per&uacute;, representante de la oligarqu&iacute;a comercial y financiera que quería reemplazar al caudillismo militar. Su gobierno hered&oacute; una crisis fiscal enorme: la deuda externa disparada por Balta era impagable y el guano declinaba. Intent&oacute; reformas: Estanco del Salitre (1873), reorganizaci&oacute;n fiscal, fomento de la educaci&oacute;n. Pero la deuda era demasiado grande. Su sucesor <B>Mariano Ignacio Prado</B> declar&oacute; la <B>bancarrota del Estado</B> en 1876 &mdash;el Per&uacute; dej&oacute; de pagar su deuda externa&mdash; y poco despu&eacute;s estall&oacute; la Guerra del Pac&iacute;fico (1879). Manuel Pardo fue asesinado en 1878.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Qu&eacute; fue el sistema de trabajo "coolie" en la era del guano y qu&eacute; relaci&oacute;n tiene con la abolici&oacute;n de la esclavitud?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) El sistema "coolie" fue el modelo de trabajo libre asalariado que Castilla implant&oacute; tras abolir la esclavitud en 1854; los trabajadores libres recibían sueldos dignos para extraer el guano de las Islas Chincha</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) El sistema "coolie" consist&iacute;a en traer trabajadores chinos mediante contratos de enganche que en la pr&aacute;ctica equivalían a una nueva forma de esclavitud; llegaron entre 1849 y 1874 para trabajar en las islas guaneras y haciendas; fue la soluci&oacute;n que encontr&oacute; la &eacute;lite peruana para reemplazar la mano de obra esclava tras la abolici&oacute;n, sin pagar salarios justos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) El sistema "coolie" fue creado por el Congreso peruano para organizar el trabajo voluntario de los ind&iacute;genas en las obras ferroviarias de Meiggs; los ind&iacute;genas recib&iacute;an tierras a cambio de trabajar en la construcci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) El sistema "coolie" fue un programa de inmigraci&oacute;n europea promovido por Castilla para traer trabajadores alemanes e italianos que modernizaran la agricultura peruana con nuevas t&eacute;cnicas de cultivo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>sistema coolie</B> (del ingl&eacute;s colonial <I>coolie</I> = trabajador asi&aacute;tico no calificado) fue la soluci&oacute;n que la &eacute;lite peruana encontró ante la necesidad de mano de obra barata para las islas guaneras tras la abolici&oacute;n de la esclavitud (1854). Entre <B>1849 y 1874</B>, llegaron al Per&uacute; aproximadamente <B>100.000 trabajadores chinos</B>, principalmente de la provincia de Cantón. El mecanismo: firmaban contratos de 8 a&ntilde;os en China (muchas veces bajo presi&oacute;n, engaño o violencia) y llegaban al Per&uacute; donde eran asignados a terratenientes o a las islas guaneras. Las condiciones eran brutales: trabajo extenuante, prohibici&oacute;n de abandonar el patr&oacute;n, castigos f&iacute;sicos. En la pr&aacute;ctica era una <B>esclavitud encubierta</B>. La "abolici&oacute;n" de la esclavitud negra fue reemplazada por una nueva forma de trabajo forzado. China presion&oacute; y el tr&aacute;fico de coolies fue prohibido en 1874.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza cr&iacute;ticamente la afirmaci&oacute;n: "La abolici&oacute;n de la esclavitud por Castilla en 1854 fue un acto de justicia social genuino." &iquest;Es completamente correcta esta afirmaci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" Value="a"> a) S&iacute;, es completamente correcta: Castilla fue un humanista genuino que abolió la esclavitud movido exclusivamente por principios morales y en contra de los intereses econ&oacute;micos de los terratenientes, a quienes no indemniz&oacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Es parcialmente correcta: si bien la abolici&oacute;n liber&oacute; a unos 25.000 esclavos, tuvo importantes limitaciones: fue posible solo gracias al guano (sin esa riqueza habr&iacute;a sido impensable), los due&ntilde;os fueron indemnizados con 300 pesos por esclavo, y la libertad formal de los ex esclavos no se tradujo en igualdad real pues siguieron siendo la capa m&aacute;s pobre y discriminada de la sociedad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Es incorrecta: Castilla abol&iacute;a la esclavitud &uacute;nicamente como estrategia electoral para obtener el apoyo de los esclavos en su guerra contra Echenique, sin ninguna convicción moral real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Es incorrecta: la abolici&oacute;n de Castilla no tuvo ning&uacute;n efecto pr&aacute;ctico porque los hacendados ignoraron el decreto y siguieron manteniendo esclavos de facto hasta 1870</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Este es un tema que exige pensamiento cr&iacute;tico. La abolici&oacute;n de Castilla fue un avance hist&oacute;rico real, pero con matices importantes: <B>Lo que fue positivo:</B> (1) Elimin&oacute; legalmente el estatuto de esclavo de ~25.000 personas. (2) Fue una de las primeras aboliciones en Am&eacute;rica del Sur (antes que Brasil, 1888). <B>Los l&iacute;mites y complejidades:</B> (1) <B>Context pol&iacute;tico:</B> Castilla promulg&oacute; el decreto en plena guerra civil contra Echenique; los esclavos eran potenciales aliados militares y civiles; hay un motivo estrat&eacute;gico adem&aacute;s del moral. (2) <B>Indemnizaci&oacute;n:</B> los due&ntilde;os recibieron 300 pesos por esclavo (con dinero del guano), lo que implica que el Estado refrendó el principio de que los seres humanos ten&iacute;an un "precio". (3) <B>Realidad social:</B> los ex esclavos fueron libres legalmente pero siguieron siendo la clase m&aacute;s pobre, sin tierra, sin educaci&oacute;n, sin protecci&oacute;n laboral; muchos siguieron trabajando en las haciendas de sus antiguos due&ntilde;os por salarios m&iacute;seros. (4) <B>Reemplazo:</B> la mano de obra esclava fue inmediatamente reemplazada por los coolies chinos en condiciones igualmente deplorables.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El historiador Pablo Macera afirm&oacute; que el Per&uacute; del guano fue una econom&iacute;a "enclave". &iquest;Qu&eacute; significa este concepto y c&oacute;mo se aplica a la Prosperidad Falaz?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) "Econom&iacute;a enclave" significa que la econom&iacute;a guanera estaba encerrada geogr&aacute;ficamente en las Islas Chincha, sin ning&uacute;n contacto con la econom&iacute;a del resto del pa&iacute;s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) "Econom&iacute;a enclave" designa un sector econ&oacute;mico orientado exclusivamente a la exportaci&oacute;n, controlado por capital extranjero o por una &eacute;lite conectada a &eacute;l, que no genera encadenamientos productivos hacia el resto de la econom&iacute;a nacional; en la era del guano, los ingresos guan&iacute;feros no estimularon la industria, la agricultura ni el mercado interno peruano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) "Econom&iacute;a enclave" es un concepto positivo: significa que la econom&iacute;a guanera estaba perfectamente organizada y aislada de la inestabilidad pol&iacute;tica del pa&iacute;s, lo que le permitió ser muy eficiente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) "Econom&iacute;a enclave" fue un t&eacute;rmino creado por el propio Jorge Basadre para describir el mismo fen&oacute;meno que la "Prosperidad Falaz"; son dos nombres para el mismo concepto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El concepto de <B>"econom&iacute;a enclave"</B> (desarrollado por la econom&iacute;a del desarrollo y la teor&iacute;a de la dependencia en los a&ntilde;os 1960&ndash;70, asociado entre otros a <B>Andr&eacute; Gunder Frank</B> y en el Per&uacute; a <B>Pablo Macera</B>) designa una forma de organizaci&oacute;n econ&oacute;mica en la que: (1) Un sector exportador (guano, miner&iacute;a, azúcar) genera grandes ingresos. (2) Pero esos ingresos <B>no generan eslabonamientos</B> (linkages) hacia el resto de la econom&iacute;a: no se desarrollan proveedores locales, no crece el mercado interno, no surge industria de procesamiento. (3) Los beneficios van principalmente al exterior (pago a consignatarios extranjeros, acreedores) o a una &eacute;lite local que los consume en bienes importados, no en inversi&oacute;n productiva. La econom&iacute;a guanera peruana fue un enclave perfecto: los ingresos salían hacia Gran Breta&ntilde;a (pago de deudas) o se redistribu&iacute;an entre una oligarqu&iacute;a consumidora de productos importados, sin estimular ninguna rama productiva peruana.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Compara el rol del guano en el siglo XIX peruano con el del petr&oacute;leo en los pa&iacute;ses rentistas actuales: &iquest;qu&eacute; patrones comunes encuentras?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) No existe ninguna comparaci&oacute;n posible: el guano era un abono natural agr&iacute;cola y el petr&oacute;leo es un combustible f&oacute;sil industrial; son recursos completamente diferentes en todos sus aspectos econ&oacute;micos y pol&iacute;ticos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Ambos son recursos naturales no renovables que generan enormes rentas para el Estado, crean una "maldici&oacute;n de los recursos" (mentalidad rentista, ausencia de diversificaci&oacute;n econ&oacute;mica, corrupci&oacute;n, dependencia del precio internacional y colapso fiscal cuando el recurso se agota o el precio cae)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La comparaci&oacute;n muestra que el guano fue un &eacute;xito y el petr&oacute;leo un fracaso: el Per&uacute; del guano invirti&oacute; inteligentemente sus recursos (ferrocarriles, abolici&oacute;n de la esclavitud), mientras que los pa&iacute;ses petroleros modernos despilfarran sus ingresos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La comparaci&oacute;n demuestra que el petr&oacute;leo es un recurso superior al guano porque los pa&iacute;ses productores de petr&oacute;leo siempre se han desarrollado exitosamente, a diferencia del Per&uacute; que fracas&oacute; con el guano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparaci&oacute;n guano&ndash;petr&oacute;leo es uno de los ejercicios m&aacute;s iluminadores del pensamiento hist&oacute;rico econ&oacute;mico. Los economistas <B>Richard Auty</B> (1993) y <B>Jeffrey Sachs</B> desarrollaron el concepto de <B>"maldici&oacute;n de los recursos"</B> (<I>resource curse</I>): la paradoja de que los pa&iacute;ses con grandes riquezas naturales tienden a tener peor desarrollo econ&oacute;mico que los que carecen de ellas. Los patrones comunes entre el guano peruano y el petr&oacute;leo en pa&iacute;ses rentistas son: (1) <B>Mentalidad rentista:</B> el Estado no necesita cobrar impuestos, por lo que no desarrolla capacidad fiscal ni rinde cuentas a los ciudadanos. (2) <B>Ausencia de diversificaci&oacute;n:</B> toda la econom&iacute;a depende de un solo recurso. (3) <B>Corrupci&oacute;n y clientelismo:</B> la renta del recurso se distribuye entre &eacute;lites conectadas al poder. (4) <B>Vulnerabilidad:</B> cuando el precio cae o el recurso se agota, la econom&iacute;a colapsa (Per&uacute; en 1876; Venezuela con el petr&oacute;leo a partir de 2014). (5) <B>Endeudamiento:</B> los ingresos futuros del recurso se hipotecan mediante deuda presente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Desde la perspectiva de la teor&iacute;a de la dependencia (Prebisch, Cardoso, Frank), &iquest;c&oacute;mo explica la estructura del negocio del guano la posici&oacute;n perif&eacute;rica del Per&uacute; en el sistema econ&oacute;mico mundial del siglo XIX?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La teor&iacute;a de la dependencia no es aplicable al Per&uacute; del guano porque el Per&uacute; controlaba plenamente la explotaci&oacute;n del recurso y nunca estuvo subordinado a ning&uacute;n pa&iacute;s extranjero en sus decisiones econ&oacute;micas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La estructura del negocio del guano ilustra perfectamente la divisi&oacute;n centro&ndash;periferia: el Per&uacute; (periferia) exportaba materia prima sin procesar a bajo valor agregado; el transporte, la comercializaci&oacute;n y el financiamiento estaban en manos brit&aacute;nicas y francesas (centro); los precios los fijaba el mercado londinense; la deuda peruana era con bancos brit&aacute;nicos; el Pa&iacute;s nunca pudo agregar valor al recurso ni controlar su cadena de comercializaci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Seg&uacute;n la teor&iacute;a de la dependencia, el Per&uacute; fue un caso de desarrollo exitoso porque logr&oacute; acumular capital nacional (los consignatarios peruanos) que eventualmente se convirti&oacute; en industria moderna; el problema fue la Guerra del Pac&iacute;fico, no el modelo econ&oacute;mico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La teor&iacute;a de la dependencia no menciona al Per&uacute; del guano porque fue elaborada exclusivamente para analizar el caso de Brasil y Argentina en el siglo XX</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>teor&iacute;a de la dependencia</B> (desarrollada desde la CEPAL con <B>Ra&uacute;l Prebisch</B> en los a&ntilde;os 1950, y radicalizada por <B>Andr&eacute; Gunder Frank</B> y <B>Fernando Henrique Cardoso</B> en los 1960&ndash;70) argumenta que el subdesarrollo latinoamericano no es una etapa hacia el desarrollo sino la consecuencia estructural de la inserci&oacute;n perif&eacute;rica en el sistema capitalista mundial. Aplicado al guano peruano: (1) <B>Exportaci&oacute;n sin valor agregado:</B> el guano se exportaba en bruto; no hab&iacute;a industria procesadora peruana. (2) <B>Control extranjero de la cadena:</B> el transporte (barcos brit&aacute;nicos), la comercializaci&oacute;n (Gibbs, luego Dreyfus) y el financiamiento (bancos de Londres) estaban en manos de los pa&iacute;ses del "centro". (3) <B>Precios fijados externamente:</B> el precio del guano lo determinaba el mercado de Liverpool, no Lima. (4) <B>Deterioro de los t&eacute;rminos de intercambio (Prebisch):</B> el Per&uacute; vendía guano barato e importaba bienes manufacturados caros; con el tiempo la relaci&oacute;n se hac&iacute;a m&aacute;s desfavorable. (5) <B>Deuda como mecanismo de dependencia:</B> la deuda con bancos brit&aacute;nicos (que termin&oacute; en el Contrato Grace) ató al Per&uacute; financieramente a la metr&oacute;poli econ&oacute;mica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Jorge Basadre distingui&oacute; entre la "promesa de la vida peruana" y la "historia de su frustraci&oacute;n". &iquest;C&oacute;mo se encarna esta distinci&oacute;n en el per&iacute;odo de la Prosperidad Falaz?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Basadre consideraba que la "promesa de la vida peruana" nunca pudo realizarse por culpa de la intervenci&oacute;n extranjera (Gran Breta&ntilde;a, Chile) que impidi&oacute; al Per&uacute; desarrollarse; sin esa interferencia externa, el guano habr&iacute;a generado un desarrollo real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La "promesa" en la Prosperidad Falaz fue la oportunidad &uacute;nica que el guano ofrec&iacute;a para transformar al Per&uacute; en una naci&oacute;n moderna (recursos suficientes para educaci&oacute;n, infraestructura, industrializaci&oacute;n); la "frustraci&oacute;n" fue el desperdicio de esa oportunidad por la corrupci&oacute;n, el rentismo, el caudillismo y la falta de un proyecto nacional de largo plazo; la Prosperidad Falaz es la encarnaci&oacute;n perfecta del ciclo promesa&ndash;frustraci&oacute;n que Basadre identifica en toda la historia republicana peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Basadre consideraba que la "frustraci&oacute;n" fue culpa exclusiva de los presidentes militares (Castilla, Balta); la "promesa" de los presidentes civiles (Pardo) fue traicionada por los golpistas que les sucedieron</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La distinci&oacute;n promesa&ndash;frustraci&oacute;n de Basadre no se aplica a la Prosperidad Falaz porque Basadre consider&oacute; que este per&iacute;odo fue un fracaso total desde el principio, sin ning&uacute;n aspecto positivo ni ninguna "promesa" real</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Jorge Basadre</B> construy&oacute; su interpretaci&oacute;n de la historia peruana en torno a una tensi&oacute;n fundamental: entre la <B>"promesa de la vida peruana"</B> (las condiciones objetivas que el Per&uacute; ten&iacute;a para ser una gran naci&oacute;n: recursos naturales, diversidad geogr&aacute;fica, herencia cultural) y la <B>"historia de su frustraci&oacute;n"</B> (el fracaso recurrente de esa promesa por factores internos). La Prosperidad Falaz es el ejemplo m&aacute;s poderoso de este ciclo: (1) <B>La promesa:</B> nunca en la historia peruana hab&iacute;a habido tantos recursos disponibles como en la era del guano; el Per&uacute; ten&iacute;a la oportunidad de construir un sistema educativo universal, diversificar su econom&iacute;a, abolir definitivamente el trabajo forzado, industrializar. (2) <B>La frustraci&oacute;n:</B> los recursos fueron dilapidados en corrupci&oacute;n (Consolidaci&oacute;n), en obras demasiado caras (ferrocarriles de Meiggs), en subsidios pol&iacute;ticos; no se construy&oacute; un Estado moderno ni una econom&iacute;a productiva. Cuando el guano se acab&oacute;, el Per&uacute; estaba m&aacute;s endeudado que nunca y no ten&iacute;a ning&uacute;n sector productivo que lo sostuviera. Para Basadre, este ciclo &mdash;promesa desaprovechada&mdash; explica el Per&uacute; moderno.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analiza el papel del Partido Civil (civilismo) en el contexto de la Prosperidad Falaz: &iquest;represent&oacute; realmente una alternativa al modelo econ&oacute;mico rentista o fue solo un cambio de &eacute;lite gobernante?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) El civilismo represent&oacute; una ruptura radical con el modelo rentista: Manuel Pardo nacionaliz&oacute; todos los recursos del guano, cre&oacute; una industria nacional de fertilizantes y distribuy&oacute; las ganancias entre los campesinos peruanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) El Partido Civil represent&oacute; principalmente los intereses de la oligarqu&iacute;a agroexportadora y financiera peruana; si bien propuso una gesti&oacute;n m&aacute;s ordenada del Estado (menos caudillismo, m&aacute;s legalidad), no cuestion&oacute; el modelo econ&oacute;mico dependiente y rentista; el Estanco del Salitre fue un intento de mantener la renta estatal, no de diversificar la econom&iacute;a; fue un cambio en la forma de gobernar, no en el modelo econ&oacute;mico de fondo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) El Partido Civil fue un partido progresista de izquierda que represent&oacute; a los sectores populares (obreros, campesinos) contra la oligarqu&iacute;a terrateniente militar; propugnaba la reforma agraria y la industrializaci&oacute;n por sustituci&oacute;n de importaciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) El Partido Civil no fue un partido en sentido moderno sino simplemente el grupo de amigos personales de Manuel Pardo; desapareci&oacute; con su asesinato en 1878 y no tuvo ning&uacute;n impacto duradero en la pol&iacute;tica peruana</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Partido Civil</B> o <B>civilismo</B> es un actor pol&iacute;tico fundamental del siglo XIX peruano que requiere an&aacute;lisis matizado. <B>Lo que represent&oacute;:</B> la oligarqu&iacute;a comercial y financiera limeña (mercaderes, banqueros, grandes hacendados coste&ntilde;os) que hab&iacute;a acumulado capital durante la era del guano y quer&iacute;a gobernar directamente, sin intermediaci&oacute;n de los caudillos militares. Su lema era "el civismo contra el militarismo". <B>Sus propuestas:</B> mayor legalidad institucional, descentralizaci&oacute;n, educaci&oacute;n, tributaci&oacute;n m&aacute;s racional. <B>Sus l&iacute;mites:</B> represent&oacute; a los mismos sectores que se hab&iacute;an beneficiado de la Prosperidad Falaz; no propuso una reforma agraria ni una diversificaci&oacute;n productiva real; el <B>Estanco del Salitre</B> fue solo otro intento de sustituir una renta (guano) por otra (salitre), sin transformar la estructura econ&oacute;mica. La historiograf&iacute;a marxista peruana (Manuel Burga, Alberto Flores Galindo) lo ha caracterizado como el partido de una "<B>clase dominante sin proyecto nacional</B>": querían el poder sin cambiar el sistema que los beneficiaba.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> &iquest;Qu&eacute; lecciones puede extraer el Per&uacute; del siglo XXI de la experiencia de la Prosperidad Falaz, tomando en cuenta el actual ciclo de auge de materias primas (cobre, oro, gas natural)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La principal lecci&oacute;n es que el Per&uacute; debe negarse a exportar materias primas y convertirse en una econom&iacute;a completamente cerrada y autosuficiente, sin ning&uacute;n v&iacute;nculo con el mercado internacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Las lecciones son: diversificar la econom&iacute;a m&aacute;s all&aacute; de la exportaci&oacute;n de recursos primarios; crear fondos soberanos para administrar los ingresos extraordinarios; invertir en educaci&oacute;n, ciencia y tecnolog&iacute;a para agregar valor a los recursos; fortalecer las instituciones p&uacute;blicas para resistir la corrupci&oacute;n; y evitar el endeudamiento excesivo basado en proyecciones optimistas de precios de materias primas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La principal lecci&oacute;n es que el Per&uacute; debe entregar todos sus recursos naturales a empresas extranjeras para que sean ellas quienes los administren, ya que el Estado peruano ha demostrado hist&oacute;ricamente que es incapaz de gestionar correctamente sus recursos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) No hay lecciones aplicables: el siglo XIX es tan diferente al XXI en tecnolog&iacute;a, instituciones y econom&iacute;a global que la experiencia del guano no tiene ninguna relevancia para el Per&uacute; contempor&aacute;neo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta conecta la historia con el presente y eval&uacute;a el pensamiento cr&iacute;tico de largo plazo. El Per&uacute; contempor&aacute;neo vive un <B>nuevo boom de materias primas</B> (cobre, oro, gas, litio en perspectiva) con los mismos riesgos que el guano. Las lecciones de la Prosperidad Falaz para el siglo XXI: (1) <B>Diversificaci&oacute;n:</B> usar los ingresos de las materias primas para desarrollar sectores productivos que no dependan de un solo recurso (manufactura, agroindustria, turismo, tecnolog&iacute;a). (2) <B>Fondos soberanos:</B> pa&iacute;ses como Noruega (petr&oacute;leo) o Chile (cobre, Fondo de Estabilizaci&oacute;n Econ&oacute;mica y Social) han creado mecanismos para ahorrar en los momentos de auge y usar los ahorros en los de crisis. (3) <B>Inversi&oacute;n en capital humano:</B> el fracaso del guano fue no invertir en educaci&oacute;n y ciencia; agregar valor (refinar el cobre, procesar el litio) requiere ingenieros, qu&iacute;micos, t&eacute;cnicos. (4) <B>Fortalecimiento institucional:</B> la corrupci&oacute;n de la era del guano tuvo un costo enorme; instituciones fuertes (contralor&iacute;a, poder judicial independiente, prensa libre) son la primera defensa. (5) <B>Prudencia fiscal:</B> no endeudarse asumiendo que los precios seguir&aacute;n altos para siempre.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Compara la figura de Ram&oacute;n Castilla con la de Manuel Pardo como tipos de liderazgo pol&iacute;tico en la historia del Per&uacute; del siglo XIX: &iquest;qu&eacute; representaban cada uno y cu&aacute;les fueron sus l&iacute;mites respectivos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Castilla y Pardo representaron exactamente lo mismo: ambos eran militares conservadores que defendieron los intereses de la oligarqu&iacute;a terrateniente peruana sin diferencia significativa de proyecto pol&iacute;tico ni de clase social</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Castilla represent&oacute; el liderazgo militar-caudillesco: mestizo, militar de carrera, pragm&aacute;tico, que us&oacute; la fuerza y el carisma personal para gobernar; logr&oacute; estabilidad pero no institucionaliz&oacute; el Estado. Pardo represent&oacute; el liderazgo civil-oligárquico: criollo rico, letrado, que intentó sustituir el caudillismo por instituciones y partidos; logr&oacute; el primer gobierno civil pero no pudo resolver la crisis econ&oacute;mica estructural; ambos fracasaron en transformar la econom&iacute;a dependiente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Castilla fue claramente inferior a Pardo en todos los aspectos: Pardo era m&aacute;s culto, m&aacute;s honesto y m&aacute;s visionario; si hubiera gobernado m&aacute;s tiempo, habr&iacute;a resuelto la crisis del guano sin necesidad de la Guerra del Pac&iacute;fico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Pardo fue claramente inferior a Castilla porque era un civil sin experiencia militar y no pudo mantener la disciplina de las fuerzas armadas; su debilidad fue la causa directa de la derrota en la Guerra del Pac&iacute;fico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparaci&oacute;n Castilla&ndash;Pardo ilustra dos modelos de liderazgo pol&iacute;tico del siglo XIX peruano: <B>Ram&oacute;n Castilla (1797&ndash;1867):</B> mestizo de Tarapac&aacute;, militar desde las guerras de independencia, ascendido por m&eacute;ritos propios. Represent&oacute; el liderazgo caudillesco: gobern&oacute; con poder personal, apoy&oacute;ndose en el ej&eacute;rcito, sin un partido ni una ideolog&iacute;a clara. Sus logros (aboliciones, primer presupuesto, ferrocarril) fueron posibles gracias al guano y a su capacidad de imponer orden. Su l&iacute;mite: no construy&oacute; instituciones durables; su gobierno depend&iacute;a de &eacute;l mismo, no de un sistema. <B>Manuel Pardo (1834&ndash;1878):</B> criollo limeño adinerado, educado en Europa, fundador del primer partido moderno (Civil). Represent&oacute; el liderazgo "moderno": instituciones, legalidad, presupuesto racional, descentralizaci&oacute;n. Sus l&iacute;mites: represent&oacute; a una oligarqu&iacute;a que no quer&iacute;a cambiar el modelo econ&oacute;mico que la beneficiaba; hered&oacute; una deuda impagable y una econom&iacute;a en declive que no pudo resolver. Fue asesinado en el Congreso en 1878, antes de ver el colapso final. Ambos, a su manera, fueron hijos y prisioneros de la Prosperidad Falaz.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

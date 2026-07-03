@@ -1,0 +1,517 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Veinte Poemas de Amor y una Canción Desesperada - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:38px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 13</DIV>
+<H1>Veinte Poemas de Amor y una Canci&oacute;n Desesperada (Pablo Neruda)</H1>
+<DIV CLASS="sub">Pablo Neruda &middot; Poes&iacute;a Lirica &middot; Vanguardismo &middot; Literatura Hispanoamericana</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Contexto hist&oacute;rico y literario</H3>
+<I>Veinte poemas de amor y una canci&oacute;n desesperada</I> fue publicado en <B>1924</B>, en plena efervescencia del <B>Vanguardismo hispanoamericano</B>. Este movimiento (que en Latinoam&eacute;rica agrup&oacute; al Ultraismo, el Creacionismo, el Surrealismo y el Modernismo tard&iacute;o) propon&iacute;a la renovaci&oacute;n total del lenguaje po&eacute;tico: ruptura con la m&eacute;trica cl&aacute;sica, im&aacute;genes audaces, libertad formal y exploraci&oacute;n de la subjetividad.
+
+<H4>El momento literario de Neruda en 1924:</H4>
+Neruda ten&iacute;a apenas <B>19 a&ntilde;os</B> cuando public&oacute; esta obra. Estaba influido por el <B>Modernismo</B> de Rub&eacute;n Dar&iacute;o y el poeta uruguayo <B>Delmira Agustini</B>, pero tambi&eacute;n por los poetas chilenos <B>Gabriela Mistral</B> (quien lo apadrin&oacute; intelectualmente) y <B>Carlos Pezoa V&eacute;liz</B>. La obra rompe con el Modernismo decorativo y propone una po&eacute;tica del deseo y la p&eacute;rdida que la haría universalmente reconocible.
+
+<DIV CLASS="alerta"><B>Para el examen:</B> <I>Veinte poemas de amor y una canci&oacute;n desesperada</I> es el libro de poes&iacute;a en espa&ntilde;ol m&aacute;s vendido de la historia. Publicado en <B>1924</B>, cuando Neruda ten&iacute;a 19 a&ntilde;os, pertenece al <B>Vanguardismo hispanoamericano</B> y al <B>Posmodernismo po&eacute;tico</B>. El g&eacute;nero es <B>poes&iacute;a l&iacute;rica</B>. Su autor, Pablo Neruda, obtuvo el <B>Premio Nobel de Literatura en 1971</B>.</DIV>
+
+<DIV CLASS="cultura-titulo">PABLO NERUDA &mdash; El poeta m&aacute;s le&iacute;do en lengua espa&ntilde;ola<SPAN>Chile, 1904&ndash;1973 &middot; Premio Nobel de Literatura 1971</SPAN></DIV>
+
+<H3>2. Pablo Neruda: vida y obra</H3>
+
+<H4>Biograf&iacute;a esencial:</H4>
+<UL>
+<LI><B>Nombre real:</B> Ricardo Eliecer Neftal&iacute; Reyes Basoalto.</LI>
+<LI><B>Seud&oacute;nimo:</B> Pablo Neruda, adoptado en homenaje al escritor checo <B>Jan Neru da</B> y para ocultar su actividad literaria a su padre, quien se opon&iacute;a a que escribiera poes&iacute;a.</LI>
+<LI><B>Nacimiento:</B> <B>12 de julio de 1904</B>, Parral, Chile.</LI>
+<LI><B>Muerte:</B> <B>23 de septiembre de 1973</B>, Santiago de Chile, doce d&iacute;as despu&eacute;s del golpe de Estado de Pinochet (16 de septiembre de 1973 fue enterrado). Muri&oacute; oficialmente de c&aacute;ncer de pr&oacute;stata, aunque investigaciones posteriores sugieren posible envenenamiento.</LI>
+<LI><B>Formaci&oacute;n:</B> estudi&oacute; en Temuco, donde conoci&oacute; a <B>Gabriela Mistral</B> (directora del liceo), quien lo introdujo en la literatura rusa y europea. Luego estudi&oacute; Pedag&oacute;gica en Santiago.</LI>
+<LI><B>Vida pol&iacute;tica:</B> fue militante del <B>Partido Comunista Chileno</B> desde 1945. Fue senador por Tarapac&aacute; y Antofagasta. Apoy&oacute; activamente a <B>Salvador Allende</B>.</LI>
+<LI><B>Vida diplom&aacute;tica:</B> fue c&oacute;nsul chileno en Rangoon (Birmania), Colombo (Ceiland), Batavia (Indonesia), Buenos Aires, Barcelona y M&eacute;xico. Sus experiencias en Asia marcaron profundamente su visi&oacute;n del mundo.</LI>
+<LI><B>Premio Nobel:</B> <B>1971</B>, en reconocimiento a "una poes&iacute;a que con la acci&oacute;n de una fuerza elemental da vida a un mundo y a una &eacute;poca".</LI>
+</UL>
+
+<H4>Etapas de la obra de Neruda:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Etapa</TH><TH>Obra representativa</TH><TH>Caracter&iacute;stica</TH></TR>
+<TR><TD><B>Poes&iacute;a rom&aacute;ntica y modernista</B></TD><TD><I>Crepusculario</I> (1923)</TD><TD>Influencia modernista; melancol&iacute;a juvenil; primer libro publicado</TD></TR>
+<TR><TD><B>Poes&iacute;a del amor y el deseo</B></TD><TD><I>Veinte poemas de amor...</I> (1924)</TD><TD>Amor er&oacute;tico y elegiaco; naturaleza como lenguaje del cuerpo femenino</TD></TR>
+<TR><TD><B>Poes&iacute;a vanguardista y existencial</B></TD><TD><I>Residencia en la Tierra</I> (1933&ndash;1935)</TD><TD>Surrealismo, angustia existencial, imagen hermética, fragmentaci&oacute;n</TD></TR>
+<TR><TD><B>Poes&iacute;a comprometida</B></TD><TD><I>Canto General</I> (1950)</TD><TD>Poes&iacute;a &eacute;pica e hist&oacute;rica sobre Am&eacute;rica Latina; poema "Alturas de Macchu Picchu"</TD></TR>
+<TR><TD><B>Poes&iacute;a &iacute;ntima y elemental</B></TD><TD><I>Odas Elementales</I> (1954)</TD><TD>Poes&iacute;a de los objetos cotidianos: la cebolla, el tomate, los calcetines</TD></TR>
+<TR><TD><B>Poes&iacute;a autobiogr&aacute;fica</B></TD><TD><I>Confieso que he vivido</I> (1974, p&oacute;stumo)</TD><TD>Memorias; publicadas p&oacute;stumamente</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej"><B>Dato clave:</B> Neruda public&oacute; m&aacute;s de <B>50 libros</B> a lo largo de su vida. Sin embargo, los <I>Veinte poemas de amor y una canci&oacute;n desesperada</I> siguen siendo su obra m&aacute;s le&iacute;da y la que define su imagen popular. El poemario ha sido traducido a m&aacute;s de <B>35 idiomas</B> y ha superado los <B>20 millones de ejemplares vendidos</B>, siendo el libro de poes&iacute;a en lengua espa&ntilde;ola m&aacute;s vendido de la historia.</DIV>
+
+<DIV CLASS="cultura-titulo">LA OBRA &mdash; Estructura y contenido<SPAN>20 poemas + 1 canci&oacute;n &middot; Publicada en 1924 &middot; Santiago de Chile</SPAN></DIV>
+
+<H3>3. Estructura general de la obra</H3>
+
+<H4>Composici&oacute;n:</H4>
+<UL>
+<LI><B>Fecha de publicaci&oacute;n:</B> junio de <B>1924</B>, por la editorial Nascimento de Santiago de Chile.</LI>
+<LI><B>Extensi&oacute;n:</B> <B>20 poemas</B> numerados (sin t&iacute;tulos propios, solo n&uacute;meros) m&aacute;s <B>una canci&oacute;n final</B> titulada "La canci&oacute;n desesperada".</LI>
+<LI><B>Forma:</B> verso libre predominantemente (sin rima ni metro fijo), aunque algunos poemas emplean elementos r&iacute;tmicos. Esta elecci&oacute;n es en s&iacute; misma una declaraci&oacute;n de modernidad.</LI>
+<LI><B>G&eacute;nero y subg&eacute;nero:</B> poes&iacute;a l&iacute;rica de tema amoroso-elegiaco.</LI>
+</UL>
+
+<H4>Las mujeres inspiradoras:</H4>
+La cr&iacute;tica ha identificado dos mujeres reales que inspiran los poemas:
+<UL>
+<LI><B>Marisol</B> (Ter&eacute;sita Urrutia Cerda): el amor de Neruda en Temuco, a quien los poemas de ambiente natural y apacible aluden (los paisajes del sur de Chile).</LI>
+<LI><B>Marisombra</B> (Albertina Rosa Azoc&aacute;r): el amor de Neruda en Santiago, a quien los poemas de ambiente urbano y de deseo insatisfecho hacen referencia.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Importante:</B> Neruda nunca confirm&oacute; oficialmente estas identificaciones, y varios cr&iacute;ticos sostienen que la dualidad Marisol/Marisombra es m&aacute;s una construcci&oacute;n cr&iacute;tica que una intenci&oacute;n declarada del poeta. Lo que s&iacute; es indiscutible es que la obra oscila entre dos experiencias amorosas distintas: un amor rural, luminoso y sereno (naturaleza del sur), y un amor urbano, tormentoso y marcado por la ausencia.</DIV>
+
+<H3>4. Poemas fundamentales: an&aacute;lisis</H3>
+
+<H4>Poema 1: "Cuerpo de mujer, blancas colinas, muslos blancos"</H4>
+El poema inaugural establece el tono er&oacute;tico y la met&aacute;fora central del poemario: el <B>cuerpo femenino como paisaje natural</B>. La mujer amada es descrita en t&eacute;rminos geogr&aacute;ficos (colinas, valles, lagunas). El yo po&eacute;tico se presenta como un ser que desea, que posee y que siente la derrota al mismo tiempo. Establece la tensi&oacute;n b&aacute;sica de toda la obra: el deseo como fuente de vida y como causa de sufrimiento.
+
+<H4>Poema 15: "Me gustas cuando callas porque est&aacute;s como ausente"</H4>
+El m&aacute;s famoso del poemario. Explora la paradoja del amor que se cumple en el silencio y la distancia: el t&uacute; amado es m&aacute;s presente y m&aacute;s puro cuando calla, cuando se convierte en proyecci&oacute;n del deseo del yo po&eacute;tico. La amada silenciosa se convierte en un espejo del interior del hablante. Este poema ha generado debate cr&iacute;tico: algunos lo leen como la expresi&oacute;n del amor l&iacute;rico puro; otros lo leen como una expresi&oacute;n del deseo masculino de poseer y silenciar al otro.
+
+<H4>Poema 20: "Puedo escribir los versos m&aacute;s tristes esta noche"</H4>
+El poema m&aacute;s le&iacute;do de la obra y uno de los m&aacute;s famosos de la literatura hispanoamericana. Expresa la paradoja del amor que ha terminado: se ama todav&iacute;a a quien ya no es de uno. El yo po&eacute;tico oscila entre el recuerdo del amor pasado, la constataci&oacute;n de la p&eacute;rdida y la persistencia del deseo. El famoso verso final: <I>"La quise, y a veces ella tambi&eacute;n me quer&iacute;a"</I> es la s&iacute;ntesis de toda la ambig&uuml;edad del amor nerudiano.
+
+<H4>La Canci&oacute;n Desesperada (poema final):</H4>
+Cierra el poemario con el tono m&aacute;s oscuro y definitivo. El yo po&eacute;tico se dirige a la mujer perdida usando la imagen del <B>estrecho de Magallanes</B> como met&aacute;fora de la desolaci&oacute;n. La despedida es total: no hay posibilidad de reconciliaci&oacute;n ni de olvido. La canci&oacute;n acumula im&aacute;genes mar&iacute;timas y de naufragio que expresan la devastaci&oacute;n del amor terminado.
+
+<DIV CLASS="cultura-titulo">TEMAS CENTRALES DE LA OBRA<SPAN>El amor, el deseo, la naturaleza y la p&eacute;rdida como ejes del poemario</SPAN></DIV>
+
+<H3>5. Temas principales</H3>
+
+<H4>El amor er&oacute;tico:</H4>
+La obra presenta el amor en su dimensi&oacute;n f&iacute;sica y sensorial con una franqueza inusual para la &eacute;poca. Neruda no separa el deseo del cuerpo del amor del alma: la corporalidad femenina es el territorio donde se despliega todo el universo emocional del hablante. Esta dimensi&oacute;n er&oacute;tica fue motivo de escándalo en 1924 y es uno de los elementos que distinguen la obra del amor idealizado modernista.
+
+<H4>La naturaleza como met&aacute;fora:</H4>
+El paisaje chileno (el sur lluvioso, el mar, los campos, los bosques de Temuco) no es decorado: es el lenguaje en que se expresa el amor. La naturaleza y el cuerpo femenino se funden constantemente. Esta identificaci&oacute;n entre mujer y tierra es una de las marcas est&eacute;ticas m&aacute;s reconocibles de Neruda.
+
+<H4>La ausencia y la p&eacute;rdida:</H4>
+El amor en los <I>Veinte poemas</I> no es un amor dichoso y presente: es mayoritariamente un amor recordado, deseado desde la distancia o perdido definitivamente. La figura de la amada es elusiva, casi fantasmal en muchos poemas. Esta tonalidad elegíaca distingue la obra del erotismo celebratorio y la convierte en una meditaci&oacute;n sobre el amor como experiencia necesariamente incompleta.
+
+<H4>El yo po&eacute;tico y la soledad:</H4>
+El hablante l&iacute;rico es un ser que desea intensamente pero que est&aacute; fundamentalmente solo. La presencia de la amada no elimina la soledad; en muchos poemas, la presencia del otro intensifica la conciencia de la propia separaci&oacute;n. Esta soledad esencial del ser humano, que ni siquiera el amor puede vencer del todo, es uno de los temas m&aacute;s profundos del poemario.
+
+<H4>El tiempo y la memoria:</H4>
+Muchos poemas del poemario son poemas de memoria: el yo recupera un amor vivido en el pasado. El tiempo no redime ni cura; en cambio, hace m&aacute;s aguda la conciencia de la p&eacute;rdida. Esta tensi&oacute;n entre el recuerdo vivo y la amada ausente es el motor emocional de gran parte de los poemas.
+
+<DIV CLASS="cultura-titulo">ESTILO Y RECURSOS PO&Eacute;TICOS<SPAN>La nueva po&eacute;tica de Neruda: met&aacute;fora, imagen y verso libre</SPAN></DIV>
+
+<H3>6. Estilo y recursos literarios</H3>
+
+<H4>El verso libre:</H4>
+La mayor&iacute;a de los poemas abandona la rima y el metro fijo del Modernismo. Sin embargo, Neruda mantiene un ritmo interno poderoso, construido mediante la <B>aliteraci&oacute;n</B> (repetici&oacute;n de sonidos), el <B>paralelismo sint&aacute;ctico</B> (estructuras gramaticales que se repiten) y la <B>anáfora</B> (repetici&oacute;n de palabras al inicio de versos). Este ritmo sin metros fijos es una de las innovaciones formales m&aacute;s importantes de la obra.
+
+<H4>La met&aacute;fora y la imagen po&eacute;tica:</H4>
+Las met&aacute;foras nerudioanas son sensoriales, concretas y audaces. No comparan conceptos abstractos sino que funden la realidad corporal con la naturaleza: "Tus caderas son como medialuna" (Poema 3); "Quiero hacer contigo lo que la primavera hace con los cerezos" (fragmento de carta). La <B>imagen visual</B> predomina sobre el concepto intelectual.
+
+<H4>An&aacute;fora:</H4>
+La repetici&oacute;n de estructuras al comienzo de versos crea una musicalidad hipn&oacute;tica. Ejemplo cl&aacute;sico del Poema 20: "La quiero, y a veces ella tambi&eacute;n me quer&iacute;a / A veces... Puedo escribir los versos m&aacute;s tristes esta noche." La an&aacute;fora de "puedo escribir" act&uacute;a como estribillo que organiza el poema.
+
+<H4>La sinestesia:</H4>
+La fusi&oacute;n de sensaciones de distintos sentidos (ver lo que se oye, tocar lo que se ve) es frecuente en Neruda: "el cielo es una red cuajada de peces sombr&iacute;os" (imagen visual con tactilidad y peso). Esta t&eacute;cnica, heredada del Simbolismo franc&eacute;s (Baudelaire, Rimbaud, Verlaine), es uno de los puentes entre Modernismo y Vanguardismo.
+
+<H4>La personificaci&oacute;n de la naturaleza:</H4>
+El viento, el mar, la lluvia y los campos actuan como personajes que participan en el drama amoroso. La naturaleza no es un marco pasivo sino un agente emocional que amplifica o refleja el estado interior del hablante.
+
+<H4>La dualidad presencia/ausencia:</H4>
+Uno de los recursos estructurales m&aacute;s poderosos: en cada poema, la amada es simult&aacute;neamente deseada y esquiva, presente en el recuerdo e inaccesible en la realidad. Esta tensi&oacute;n sem&aacute;ntica produce la melancol&iacute;a caracter&iacute;stica del poemario.
+
+<H3>7. Corriente literaria: Vanguardismo y Posmodernismo po&eacute;tico</H3>
+La obra de Neruda en 1924 se sit&uacute;a en la confluencia de dos corrientes:
+<UL>
+<LI><B>Posmodernismo po&eacute;tico:</B> reacci&oacute;n al Modernismo de Rub&eacute;n Dar&iacute;o. Abandona el ornamento preciosista y la musicalidad formal para una dicción m&aacute;s directa, m&aacute;s personal y más vinculada a la experiencia vivida. Gabriela Mistral y Delmira Agustini son referentes del Posmodernismo hispanoamericano.</LI>
+<LI><B>Vanguardismo:</B> los <I>Veinte poemas</I> incorporan elementos del Vanguardismo en sus im&aacute;genes m&aacute;s audaces, el verso libre y la ruptura de la causalidad l&oacute;gica entre im&aacute;genes. Sin embargo, la obra no llega a la hermeticidad radical del Surrealismo, que Neruda explorar&iacute;a en <I>Residencia en la Tierra</I> (1933).</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Posici&oacute;n en la tradici&oacute;n:</B> Los <I>Veinte poemas</I> se ubican entre el Modernismo (del que toman la musicalidad y la atenci&oacute;n al lenguaje) y el Vanguardismo pleno (al que se acercan en la libertad formal y la audacia imagin&iacute;stica). Por eso muchos manuales los clasifican como Posmodernismo o como Vanguardismo inicial. Para el examen peruano, la clasificaci&oacute;n m&aacute;s frecuente es <B>Vanguardismo hispanoamericano</B>.</DIV>
+
+<H3>8. Importancia e influencia</H3>
+<UL>
+<LI><B>El libro de poes&iacute;a m&aacute;s vendido en espa&ntilde;ol:</B> con m&aacute;s de 20 millones de ejemplares, es la prueba de que la poes&iacute;a de alta calidad puede ser masivamente popular sin concesiones a la banalidad.</LI>
+<LI><B>Influencia en la literatura hispanoamericana:</B> Neruda cambi&oacute; el lenguaje de la poes&iacute;a amorosa en espa&ntilde;ol. Antes de &eacute;l, el amor po&eacute;tico era mayormente idealizado y distante (Modernismo). Despu&eacute;s de &eacute;l, el cuerpo, el deseo y la p&eacute;rdida se convirtieron en el terreno natural de la l&iacute;rica hispanoamericana.</LI>
+<LI><B>Premio Nobel 1971:</B> el discurso de aceptaci&oacute;n de Neruda en Estocolmo es uno de los documentos literarios m&aacute;s importantes del siglo XX en espa&ntilde;ol.</LI>
+<LI><B>Cine y cultura popular:</B> la pel&iacute;cula <I>Il Postino</I> (El cartero de Neruda, 1994) populariz&oacute; su figura mundialmente.</LI>
+</UL>
+
+<H3>9. Cuadro resumen de la obra</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Elemento</TH><TH>Dato clave</TH></TR>
+<TR><TD><B>Autor</B></TD><TD>Pablo Neruda (Ricardo Eliecer Neftal&iacute; Reyes Basoalto), Chile, 1904&ndash;1973</TD></TR>
+<TR><TD><B>Publicaci&oacute;n</B></TD><TD>1924, Editorial Nascimento, Santiago de Chile</TD></TR>
+<TR><TD><B>Edad del autor</B></TD><TD>19 a&ntilde;os</TD></TR>
+<TR><TD><B>G&eacute;nero</B></TD><TD>Poes&iacute;a l&iacute;rica</TD></TR>
+<TR><TD><B>Subg&eacute;nero</B></TD><TD>Poes&iacute;a amorosa-elegiaca</TD></TR>
+<TR><TD><B>Corriente literaria</B></TD><TD>Vanguardismo hispanoamericano / Posmodernismo po&eacute;tico</TD></TR>
+<TR><TD><B>Forma</B></TD><TD>Verso libre predominantemente</TD></TR>
+<TR><TD><B>Estructura</B></TD><TD>20 poemas numerados + "La canci&oacute;n desesperada"</TD></TR>
+<TR><TD><B>Temas</B></TD><TD>Amor er&oacute;tico, ausencia, naturaleza, soledad, memoria, p&eacute;rdida</TD></TR>
+<TR><TD><B>Recurso principal</B></TD><TD>Met&aacute;fora sensorial, an&aacute;fora, verso libre, sinestesia, personificaci&oacute;n</TD></TR>
+<TR><TD><B>Poema m&aacute;s famoso</B></TD><TD>Poema 20: "Puedo escribir los versos m&aacute;s tristes esta noche"</TD></TR>
+<TR><TD><B>Premio Nobel</B></TD><TD>1971</TD></TR>
+<TR><TD><B>R&eacute;cord</B></TD><TD>Libro de poes&iacute;a m&aacute;s vendido en lengua espa&ntilde;ola (+20 millones de ejemplares)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1904</DIV><DIV CLASS="dk-label">Año de nacimiento de Neruda en Parral, Chile</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1924</DIV><DIV CLASS="dk-label">Publicación de los Veinte poemas, con 19 años</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">20 + 1</DIV><DIV CLASS="dk-label">20 poemas numerados más la Canción Desesperada</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">+20 mill.</DIV><DIV CLASS="dk-label">Ejemplares vendidos: el libro de poesía más leído en español</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">+35</DIV><DIV CLASS="dk-label">Idiomas a los que ha sido traducida la obra</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1971</DIV><DIV CLASS="dk-label">Premio Nobel de Literatura otorgado a Neruda</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1973</DIV><DIV CLASS="dk-label">Muerte de Neruda, 12 días después del golpe de Pinochet</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">+50</DIV><DIV CLASS="dk-label">Libros publicados a lo largo de su vida</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+<B>Datos clave para el examen:</B><BR>
+&bull; <B>Autor:</B> Pablo Neruda &middot; nombre real: Ricardo Eliecer Neftal&iacute; Reyes Basoalto &middot; Chile 1904&ndash;1973 &middot; Premio Nobel 1971<BR>
+&bull; <B>Obra:</B> publicada 1924 &middot; 19 a&ntilde;os &middot; Editorial Nascimento, Santiago &middot; el libro de poes&iacute;a en espa&ntilde;ol m&aacute;s vendido<BR>
+&bull; <B>G&eacute;nero:</B> poes&iacute;a l&iacute;rica &middot; corriente: Vanguardismo hispanoamericano / Posmodernismo<BR>
+&bull; <B>Estructura:</B> 20 poemas numerados + "La canci&oacute;n desesperada"<BR>
+&bull; <B>Temas:</B> amor er&oacute;tico &middot; ausencia y p&eacute;rdida &middot; naturaleza como met&aacute;fora del cuerpo &middot; soledad &middot; memoria<BR>
+&bull; <B>Recursos:</B> verso libre &middot; met&aacute;fora sensorial &middot; an&aacute;fora &middot; sinestesia &middot; personificaci&oacute;n &middot; dualidad presencia/ausencia<BR>
+&bull; <B>Poema 15:</B> "Me gustas cuando callas porque est&aacute;s como ausente" &middot; Poema 20: "Puedo escribir los versos m&aacute;s tristes esta noche"<BR>
+&bull; <B>Influencias:</B> Rub&eacute;n Dar&iacute;o (Modernismo) &middot; Gabriela Mistral &middot; Delmira Agustini &middot; Simbolismo franc&eacute;s<BR>
+&bull; <B>Otras obras:</B> Crepusculario (1923) &middot; Residencia en la Tierra (1933&ndash;1935) &middot; Canto General (1950) &middot; Odas Elementales (1954)
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;Cu&aacute;l es el nombre real de Pablo Neruda, por qu&eacute; adopt&oacute; ese seud&oacute;nimo y qu&eacute; importancia tiene en la literatura hispanoamericana?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Su nombre real era Pablo Neruda Reyes; adopt&oacute; el seud&oacute;nimo al recibir el Premio Nobel para proteger su privacidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Su nombre real era Ricardo Eliecer Neftal&iacute; Reyes Basoalto; adopt&oacute; el seud&oacute;nimo Pablo Neruda (en homenaje al escritor checo Jan Neruda) para ocultar su actividad literaria a su padre; es el poeta m&aacute;s le&iacute;do en lengua espa&ntilde;ola y Premio Nobel de Literatura 1971</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Su nombre real era Juan Pablo Reyes; adopt&oacute; "Neruda" como homenaje al poeta franc&eacute;s G&eacute;rard de Nerval</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Su nombre real era Neftal&iacute; Basoalto; adopt&oacute; el seud&oacute;nimo por exigencia de su editorial para publicar su primer libro</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El nombre real de Pablo Neruda era <B>Ricardo Eliecer Neftal&iacute; Reyes Basoalto</B>, nacido el 12 de julio de 1904 en Parral, Chile. Adopt&oacute; el seud&oacute;nimo "Pablo Neruda" cuando era adolescente, tomando el apellido del escritor checo <B>Jan Neruda</B> (1834&ndash;1891), y lo hizo principalmente para <B>ocultar su actividad literaria a su padre</B>, Jos&eacute; del Carmen Reyes, obrero ferroviario que se opon&iacute;a a que su hijo fuera poeta. El nombre "Pablo" lo eligi&oacute; porque le gustaba. Neruda es considerado el poeta m&aacute;s le&iacute;do en lengua espa&ntilde;ola y recibi&oacute; el <B>Premio Nobel de Literatura en 1971</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Cu&aacute;ntos a&ntilde;os ten&iacute;a Neruda cuando public&oacute; <I>Veinte poemas de amor y una canci&oacute;n desesperada</I> y en qu&eacute; ciudad y editorial se public&oacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) 25 a&ntilde;os; publicada en Buenos Aires por la editorial Sur en 1929</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) 19 a&ntilde;os; publicada en Santiago de Chile por la Editorial Nascimento en 1924</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) 15 a&ntilde;os; publicada en Temuco por una imprenta local en 1919</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) 22 a&ntilde;os; publicada en Madrid por la Revista de Occidente en 1926</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Pablo Neruda naci&oacute; el 12 de julio de 1904 y public&oacute; <I>Veinte poemas de amor y una canci&oacute;n desesperada</I> en <B>junio de 1924</B>, cuando ten&iacute;a <B>19 a&ntilde;os</B>. La obra fue publicada por la <B>Editorial Nascimento</B> en <B>Santiago de Chile</B>. Esta precocidad es uno de los datos m&aacute;s relevantes sobre la obra: Neruda escribi&oacute; uno de los poemarios m&aacute;s influyentes de la literatura en espa&ntilde;ol siendo pr&aacute;cticamente un adolescente, mientras estudiaba en la capital chilena. Su primer libro, <I>Crepusculario</I>, hab&iacute;a sido publicado el a&ntilde;o anterior, en 1923, tambi&eacute;n con 19 a&ntilde;os.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;C&oacute;mo est&aacute; estructurada la obra <I>Veinte poemas de amor y una canci&oacute;n desesperada</I>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Veinte sonetos de amor con rima consonante y un poema final en verso libre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Veinte poemas numerados (sin t&iacute;tulos individuales) en verso libre predominantemente, m&aacute;s una canci&oacute;n final titulada "La canci&oacute;n desesperada"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Veinte poemas con t&iacute;tulos propios en rima asonante y una canci&oacute;n prologal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Diecioch o poemas de amor, un poema de desesperaci&oacute;n y una canci&oacute;n de esperanza al final</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La estructura de la obra es sencilla pero significativa: <B>veinte poemas</B> identificados &uacute;nicamente por n&uacute;meros (del 1 al 20), sin t&iacute;tulos individuales, escritos predominantemente en <B>verso libre</B> (sin rima ni metro fijo). A estos se a&ntilde;ade, como cierre, <B>"La canci&oacute;n desesperada"</B>, que s&iacute; tiene t&iacute;tulo propio y funciona como una despedida total. La elecci&oacute;n del verso libre fue en s&iacute; misma una declaraci&oacute;n de modernidad en 1924, cuando el Modernismo rim&aacute;do todav&iacute;a dominaba la poes&iacute;a hispanoamericana. La ausencia de t&iacute;tulos individuales crea una unidad tem&aacute;tica fuerte: los veinte poemas son variaciones sobre un mismo asunto, no piezas independientes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;A qu&eacute; corriente literaria pertenece <I>Veinte poemas de amor y una canci&oacute;n desesperada</I> y qu&eacute; caracter&iacute;sticas la definen?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Al Romanticismo; se caracteriza por el uso del soneto, la exaltaci&oacute;n del paisaje y la idealizaci&oacute;n de la amada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Al Vanguardismo hispanoamericano (o Posmodernismo po&eacute;tico); se caracteriza por el verso libre, la imagen sensorial audaz, la ruptura con la m&eacute;trica cl&aacute;sica, la exploraci&oacute;n de la subjetividad y la dicci&oacute;n directa frente al ornamento modernista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Al Modernismo de Rub&eacute;n Dar&iacute;o; conserva la musicalidad, la rima y el preciosismo formal del Modernismo cl&aacute;sico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Al Realismo; describe con objetividad las relaciones amorosas sin adornos po&eacute;ticos ni figuras literarias</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La obra se clasifica en el <B>Vanguardismo hispanoamericano</B> (o, seg&uacute;n algunos cr&iacute;ticos, en el <B>Posmodernismo po&eacute;tico</B>: una corriente que reacciona al Modernismo de Rub&eacute;n Dar&iacute;o desde adentro, simplificando el lenguaje y vinculando la poes&iacute;a a la experiencia vivida). Sus rasgos vanguardistas son: (1) <B>verso libre</B> sin rima ni metro fijo; (2) <B>im&aacute;genes sensoriales audaces</B> (el cuerpo femenino como paisaje); (3) <B>ruptura con el preciosismo modernista</B>; (4) <B>presencia del yo po&eacute;tico como conciencia subjetiva intensa</B>; (5) fusi&oacute;n de naturaleza y cuerpo que no sigue la causalidad l&oacute;gica. La obra no llega al hermetismo del Surrealismo pleno, que Neruda explorar&iacute;a en <I>Residencia en la Tierra</I>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Cu&aacute;l es el poema m&aacute;s famoso de la obra y cu&aacute;l es la paradoja emocional que expresa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) El Poema 1 ("Cuerpo de mujer"); expresa la paradoja de amar a alguien que nunca correspondi&oacute; el amor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) El Poema 20 ("Puedo escribir los versos m&aacute;s tristes esta noche"); expresa la paradoja de seguir amando a quien ya no es de uno: el amor persiste aun cuando la relaci&oacute;n ha terminado, y la escritura po&eacute;tica es a la vez la expresi&oacute;n del dolor y el &uacute;nico modo de sobrevivir a &eacute;l</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) "La canci&oacute;n desesperada"; expresa la paradoja de odiar a quien se am&oacute; profundamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) El Poema 15 ("Me gustas cuando callas"); expresa la paradoja de preferir la ausencia a la presencia de la amada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Poema 20</B>, que comienza con el verso "Puedo escribir los versos m&aacute;s tristes esta noche", es el m&aacute;s famoso e influyente del poemario y uno de los m&aacute;s citados de la literatura hispanoamericana. Su n&uacute;cleo emocional es una paradoja doble: (1) <B>se ama todav&iacute;a a quien ya no pertenece al yo po&eacute;tico</B> ("La quiero, y a veces ella tambi&eacute;n me quer&iacute;a"); (2) <B>la escritura es el veh&iacute;culo del dolor y al mismo tiempo la &uacute;nica forma de procesarlo</B>: el poeta "puede escribir" los versos tristes, lo que implica que la capacidad po&eacute;tica sobrevive al amor. El famoso verso "La quise, y a veces ella tambi&eacute;n me quer&iacute;a" condensa toda la ambig&uuml;edad del amor nerudiano: la asimetr&iacute;a del sentimiento, la incertidumbre y la irrecuperabilidad del pasado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> &iquest;Cu&aacute;l es la met&aacute;fora central del poemario y c&oacute;mo funciona a lo largo de los veinte poemas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) El mar como s&iacute;mbolo del tiempo que todo lo borra; cada poema describe una ola que avanza y retrocede</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El cuerpo femenino como paisaje natural: la mujer amada es descrita en t&eacute;rminos geogr&aacute;ficos (colinas, valles, ríos), de modo que amor carnal y amor a la naturaleza se funden en una sola experiencia po&eacute;tica; la naturaleza chilena (el sur lluvioso, el mar, los campos) es el idioma con que Neruda habla del amor y del cuerpo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El fuego como s&iacute;mbolo del deseo; cada poema describe una llama que crece hasta consumirlo todo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) La noche como espacio del amor secreto; todos los poemas suceden de noche para proteger la intimidad de los amantes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La met&aacute;fora estructural m&aacute;s importante del poemario es la identificaci&oacute;n del <B>cuerpo femenino con el paisaje natural</B>. Ya en el Poema 1 ("Cuerpo de mujer, blancas colinas, muslos blancos") el cuerpo de la amada se convierte en terreno geogr&aacute;fico: colinas, valles, lagunas. Esta met&aacute;fora se sostiene a lo largo de toda la obra y cumple varias funciones: (1) <B>sensorializa el amor</B>: la experiencia amorosa se vuelve tan concreta y f&iacute;sica como tocar la tierra; (2) <B>universaliza a la amada</B>: al fundir la mujer con el paisaje (el sur de Chile), la figura femenina adquiere una dimensi&oacute;n elemental y casi c&oacute;smica; (3) <B>ancla el poemario en un territorio</B>: el paisaje de Temuco y la costa chilena no son decorado sino el lenguaje mismo del amor. Esta fusi&oacute;n mujer-naturaleza es una de las marcas est&eacute;ticas m&aacute;s identificables de toda la poes&iacute;a de Neruda.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Analiza el Poema 15 ("Me gustas cuando callas porque est&aacute;s como ausente"). &iquest;Qu&eacute; relaci&oacute;n entre el yo po&eacute;tico y la amada propone este poema?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Propone una relaci&oacute;n de igualdad y di&aacute;logo: el silencio de la amada es la respuesta perfecta a las palabras del poeta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Propone una relaci&oacute;n asim&eacute;trica donde la amada silenciosa se convierte en proyecci&oacute;n del deseo e imaginaci&oacute;n del yo po&eacute;tico; al callar, la amada deja de ser un sujeto aut&oacute;nomo y se convierte en el espejo donde el hablante proyecta su mundo interior; el poema explora c&oacute;mo el amor puede ser tambi&eacute;n un acto de apropiaci&oacute;n del otro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Propone una relaci&oacute;n de separaci&oacute;n total: el yo po&eacute;tico prefiere el silencio de la amada porque eso significa que ya se ha ido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Propone una relaci&oacute;n m&iacute;stica: el silencio de la amada es comparado al silencio de Dios, inabarcable y sagrado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Poema 15 es uno de los m&aacute;s analizados de la obra por su complejidad sem&aacute;ntica. Su verso inicial ("Me gustas cuando callas porque est&aacute;s como ausente") establece una paradoja: la amada es m&aacute;s "gustada" cuando est&aacute; menos presente como sujeto. El silencio la hace "<B>ausente y lejana como si hubieras muerto</B>", y en ese estado el yo po&eacute;tico la puede poseer completamente a trav&eacute;s de la imaginaci&oacute;n y el deseo. La amada silenciosa se convierte en <B>pantalla de proyecci&oacute;n</B>: el poeta le atribuye significados, le imagina estados, la habita con su propio universo. La cr&iacute;tica feminista ha se&ntilde;alado que este poema revela una l&oacute;gica de <B>apropiaci&oacute;n del otro</B>: se ama m&aacute;s al ser amado cuando este renuncia a su propia voz. Sea cual sea la lectura, el poema es una exploraci&oacute;n sin&oacute;pticamente honesta de uno de los mecanismos del amor: la tendencia a convertir al otro en imagen de los propios deseos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;Por qu&eacute; es importante que Neruda haya escrito esta obra en verso libre y qu&eacute; efecto produce en el lector?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) No es importante; el verso libre era la forma po&eacute;tica dominante en 1924 y Neruda simplemente sigui&oacute; la moda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Es una declaraci&oacute;n de modernidad: en 1924, el Modernismo rim&aacute;do a&uacute;n dominaba; el verso libre permit&iacute;a a Neruda un ritmo interno propio (basado en an&aacute;fora, paralelismo y aliteraci&oacute;n), una dicción m&aacute;s cercana al habla emocional y una libertad im&aacute;gen&iacute;stica que la rima fija hubiera coartado; produce en el lector la sensaci&oacute;n de escuchar una voz directa y personal, no una construcci&oacute;n artificiosa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El verso libre fue una decisi&oacute;n de la editorial, no del autor; Neruda prefer&iacute;a la rima</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) El verso libre no produce ning&uacute;n efecto particular; solo significa que el poeta no sab&iacute;a rimar con consistencia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La elecci&oacute;n del <B>verso libre</B> en 1924 fue una decisi&oacute;n est&eacute;tica cargada de significado. El Modernismo de Rub&eacute;n Dar&iacute;o, que a&uacute;n era la referencia dominante, se caracterizaba por una musicalidad muy elaborada basada en metros cl&aacute;sicos (alejandrinos, endecas&iacute;labos) y rimas cuidadosas. Al optar por el verso libre, Neruda: (1) se distanciaba del ornamento modernista hacia una <B>dicción m&aacute;s directa</B>; (2) se alineaba con las vanguardias europeas (Whitman, los simbolistas franceses); (3) creaba un <B>ritmo interno propio</B> basado en an&aacute;fora, paralelismo y repetici&oacute;n que no depend&iacute;a de esquemas externos. El efecto sobre el lector es fundamental: los poemas suenan a <B>voz humana real</B>, no a construcci&oacute;n literaria formal, lo que explica en gran medida su alcance masivo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> &iquest;C&oacute;mo funciona la an&aacute;fora en el Poema 20 y qu&eacute; efecto produce?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) No hay an&aacute;fora en el Poema 20; su recurso principal es la aliteraci&oacute;n de sonidos sibilantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) La repetici&oacute;n de "Puedo escribir los versos m&aacute;s tristes esta noche" a lo largo del poema funciona como un estribillo que organiza la estructura y produce un efecto de trance melancólico acumulativo; cada repetici&oacute;n llega con nuevo contenido emocional, profundizando la herida po&eacute;tica en lugar de aliviarla</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) La an&aacute;fora del Poema 20 repite el nombre de la amada al inicio de cada verso para reforzar la presencia de ella en la memoria del poeta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) La an&aacute;fora produce un efecto de distanciamiento emocional: al repetir la misma frase, el poeta logra objetivarse y ver su dolor desde afuera</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>an&aacute;fora</B> del Poema 20 es uno de los ejemplos m&aacute;s logrados del recurso en la poes&iacute;a hispanoamericana. El verso "Puedo escribir los versos m&aacute;s tristes esta noche" se repite varias veces a lo largo del poema, funcionando como un <B>estribillo</B> o ritornello. Pero no es una repetici&oacute;n vac&iacute;a: cada vez que aparece, el contexto em ocional que lo rodea ha cambiado, y el mismo verso adquiere un nuevo peso. La repetici&oacute;n no consuela; <B>acumula dolor</B>. Produce en el lector un efecto de trance melancólico: la consciencia de que el hablante vuelve una y otra vez al mismo punto (el amor perdido) sin poder avanzar. Es, adem&aacute;s, una reflexi&oacute;n metaliter aria: "puedo escribir" implica que la capacidad de hacer poes&iacute;a del dolor es al mismo tiempo la &uacute;nica victoria posible sobre &eacute;l y la prueba de que el dolor no ha cesado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Qu&eacute; diferencia tem&aacute;tica existe entre los poemas identificados por la cr&iacute;tica con "Marisol" y los identificados con "Marisombra"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" Value="a"> a) Los poemas de Marisol son de desamor y los de Marisombra son de amor dichoso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Los poemas asociados a Marisol (Ter&eacute;sita Urrutia, el amor de Temuco) tienen un tono luminoso, apacible y vinculado a la naturaleza del sur de Chile; los asociados a Marisombra (Albertina Azoc&aacute;r, el amor de Santiago) tienen un tono urbano, m&aacute;s oscuro, marcado por el deseo insatisfecho y la distancia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Marisol es una figura puramente simb&oacute;lica (representa el amor ideal) y Marisombra es una figura hist&oacute;rica concreta identificada por Neruda en sus memorias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) La distinci&oacute;n entre Marisol y Marisombra fue establecida por el propio Neruda en el pr&oacute;logo de la segunda edici&oacute;n</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La distinci&oacute;n entre <B>Marisol</B> y <B>Marisombra</B> es una construcci&oacute;n de la cr&iacute;tica literaria (no fue declarada expl&iacute;citamente por Neruda), pero organiza &uacute;tilmente la dualidad tem&aacute;tica del poemario. <B>Marisol</B> (nombre cr&iacute;tico para Ter&eacute;sita Urrutia Cerda, amor de Temuco): los poemas asociados a esta figura tienen paisajes naturales luminosos, agua de r&iacute;os, campos, la serena campi&ntilde;a del sur chileno; el tono es m&aacute;s apacible. <B>Marisombra</B> (nombre cr&iacute;tico para Albertina Rosa Azoc&aacute;r, amor de Santiago): los poemas asociados a esta figura tienen un tono m&aacute;s oscuro, urbano, marcado por el deseo no correspondido, la distancia y la imposibilidad. Esta dualidad crea el arco emocional del poemario: de la luminosidad al abismo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; S&Iacute;NTESIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> &iquest;En qu&eacute; sentido <I>Veinte poemas de amor y una canci&oacute;n desesperada</I> representa una ruptura con el Modernismo de Rub&eacute;n Dar&iacute;o y en qu&eacute; sentido lo contin&uacute;a?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Es una ruptura total: no hay ning&uacute;n elemento modernista en la obra de Neruda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Contin&uacute;a el Modernismo en: la atenci&oacute;n al lenguaje po&eacute;tico, la musicalidad (interna, no formal) y el protagonismo del yo l&iacute;rico. Rompe con &eacute;l en: el abandono del ornamento preciosista, la rima y el metro fijos, la tem&aacute;tica exoticista y el tono aristocrático, sustituidos por la experiencia emocional directa, el cuerpo, el paisaje natal y el verso libre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Neruda nunca ley&oacute; a Rub&eacute;n Dar&iacute;o; no hay relaci&oacute;n entre ambos poetas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Contin&uacute;a el Modernismo en todo excepto en la tem&aacute;tica amorosa, que es completamente original de Neruda</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relaci&oacute;n de Neruda con el <B>Modernismo de Rub&eacute;n Dar&iacute;o</B> es de filiaci&oacute;n cr&iacute;tica: Neruda parti&oacute; del Modernismo y lo super&oacute;. <B>Continuidades:</B> (1) la conciencia del lenguaje po&eacute;tico como materia prima; (2) la musicalidad (aunque interna, no formal); (3) el yo l&iacute;rico como centro de la experiencia po&eacute;tica; (4) la influencia del Simbolismo franc&eacute;s (Verlaine, Baudelaire) que tambi&eacute;n molde&oacute; al Modernismo. <B>Rupturas:</B> (1) abandono del <B>ornamento preciosista</B> y el exotismo (cisnes, princesas, ambientes orientales) a favor de la tierra propia (el sur de Chile); (2) abandono de la <B>rima y el metro</B> fijos; (3) incorporaci&oacute;n del <B>cuerpo y el deseo</B> como tem&aacute;tica central (el Modernismo idealizaba m&aacute;s la figura femenina); (4) tono m&aacute;s directo y personal frente al tono aristocr&aacute;tico modernista. Esta relaci&oacute;n de continuidad-ruptura define al <B>Posmodernismo po&eacute;tico</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> &iquest;C&oacute;mo funciona la "Canci&oacute;n desesperada" como cierre del poemario y qu&eacute; imagen central la organiza?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La canci&oacute;n desesperada funciona como reconciliaci&oacute;n final: el yo po&eacute;tico perdona a la amada y acepta la separaci&oacute;n con paz</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Funciona como una despedida total y devastadora, organizada por im&aacute;genes mar&iacute;timas de naufragio y desolaci&oacute;n; el yo po&eacute;tico se dirige a la mujer perdida desde un estado de ruina interior absoluta; la imagen del mar turbulento (posiblemente el estrecho de Magallanes) es la met&aacute;fora de la devastaci&oacute;n amorosa sin posibilidad de rescate</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) La canci&oacute;n es el &uacute;nico poema optimista del poemario; anuncia un nuevo amor que viene a reemplazar al perdido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Funciona como un poema met apoético: el yo po&eacute;tico reflexiona sobre la imposibilidad de escribir poes&iacute;a cuando se ha perdido el amor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"La canci&oacute;n desesperada" es el poema m&aacute;s oscuro y el que da cierre definitivo al recorrido emocional del poemario. Si los veinte poemas oscilaban entre el deseo, el recuerdo y la melanc ol&iacute;a, la canci&oacute;n instala la <B>devastaci&oacute;n total</B>. Su imagen central son las aguas tormentosas: el mar, el naufragio, las olas que arrasan. El yo po&eacute;tico no pide reconciliaci&oacute;n ni ofrece perd&oacute;n; constata la ruina. El tono es el del sobreviviente de un naufragio que ya no espera ser rescatado. La imagen mar&iacute;tima conecta con la geograf&iacute;a del sur de Chile (la costa del Pac&iacute;fico, los canales del extremo austral) y eleva la experiencia personal del desamor a una dimensi&oacute;n casi c&oacute;smica: el dolor es tan grande como el oc&eacute;ano. Funcionalmente, el poema es el cierre que da sentido a toda la estructura: el poemario narra el arco completo de un amor desde el deseo inicial hasta la devastaci&oacute;n final.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Analiza c&oacute;mo la sinestesia opera en la poes&iacute;a de Neruda en estos poemas y de qu&eacute; tradici&oacute;n literaria proviene ese recurso.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La sinestesia en Neruda es un recurso griego cl&aacute;sico que proviene de la <I>Odisea</I> de Homero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La sinestesia (fusi&oacute;n de sensaciones de distintos sentidos) en Neruda proviene del Simbolismo franc&eacute;s (Baudelaire, Rimbaud, Verlaine); en los Veinte poemas, produce im&aacute;genes que son simult&aacute;neamente visuales, t&aacute;ctiles, auditivas y olfativas, creando una experiencia sensorial total del amor que va m&aacute;s all&aacute; de la descripci&oacute;n racional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La sinestesia es un recurso que Neruda invent&oacute; en estos poemas y que no tiene precedente en la tradici&oacute;n literaria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La sinestesia proviene del Romanticismo alem&aacute;n y Neruda la aprendi&oacute; leyendo a Goethe y Schiller durante su exilio</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>sinestesia</B> (del griego: "percepci&oacute;n simult&aacute;nea") consiste en la fusi&oacute;n de sensaciones pertenecientes a distintos sentidos: ver lo que se oye, tocar lo que se ve, etc. En la literatura moderna, este recurso fue sistematizado por los <B>simbolistas franceses</B>: Charles Baudelaire ("Correspondencias" en <I>Las flores del mal</I>), Arthur Rimbaud ("Vocal" donde las vocales tienen colores) y Paul Verlaine. El Modernismo hispanoamericano (Rub&eacute;n Dar&iacute;o) transmiti&oacute; este recurso a la poes&iacute;a en espa&ntilde;ol. En los <I>Veinte poemas</I>, Neruda usa la sinestesia para crear una experiencia del amor que es <B>totalmente sensorial</B>: el amor no es solo un sentimiento abstracto sino algo que se ve, se toca, se huele y se escucha simult&aacute;neamente. Esta sensorializaci&oacute;n total del amor es una de las razones de la accesibilidad y el impacto emocional inmediato de la obra.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> &iquest;Qu&eacute; relaci&oacute;n existe entre la biograf&iacute;a de Neruda (su vida en Temuco y Santiago) y la estructura temática del poemario?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) No hay relaci&oacute;n; Neruda afirm&oacute; que los poemas son puramente imaginarios y no tienen base autobiogr&aacute;fica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La dualidad temática del poemario (amor rural-luminoso vs. amor urbano-oscuro) refleja la experiencia biogr&aacute;fica de Neruda: su amor adolescente en Temuco (sur lluvioso, naturaleza exuberante) y su amor en Santiago (ciudad, distancia, deseo insatisfecho); la geograf&iacute;a vivida se convierte en el idioma emocional de los poemas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La biograf&iacute;a de Neruda es irrelevante para la obra; lo que importa es el texto po&eacute;tico independientemente de quien lo escribi&oacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Neruda escribi&oacute; los poemas durante su exilio en Asia, por lo que el paisaje del sur de Chile es puramente nostálgico e inventado</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La base autobiogr&aacute;fica de los <I>Veinte poemas</I> es indiscutible, aunque Neruda la elabora po&eacute;ticamente hasta transformarla. La <B>dualidad tem&aacute;tica</B> del poemario refleja dos experiencias vitales: (1) <B>Temuco</B> (sur de Chile, donde Neruda creci&oacute;): paisaje lluvioso, naturaleza exuberante, r&iacute;os, bosques, la tierra mojada del sur; este entorno se convierte en el idioma de los poemas m&aacute;s luminosos y apacibles, los que la cr&iacute;tica asocia a "Marisol". (2) <B>Santiago</B> (donde Neruda fue a estudiar a los 16 a&ntilde;os): ciudad, separaci&oacute;n, deseo que la distancia alimenta pero no puede satisfacer; estos son los poemas m&aacute;s oscuros y urgentes, asociados a "Marisombra". Esta fusi&oacute;n de paisaje vivido y experiencia amorosa es uno de los procedimientos m&aacute;s caracter&iacute;sticos de Neruda: la geograf&iacute;a no es fondo sino <B>lenguaje emocional</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> &iquest;C&oacute;mo se distingue la etapa de <I>Veinte poemas de amor</I> de la etapa de <I>Residencia en la Tierra</I> en la evoluci&oacute;n po&eacute;tica de Neruda?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) No hay diferencia; ambas obras pertenecen al mismo periodo y tienen el mismo estilo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Los Veinte poemas (1924) son accesibles, sensoriales y centrados en el amor y la naturaleza, con un lenguaje que, siendo libre, sigue siendo com prensible; Residencia en la Tierra (1933&ndash;35) es hermética, surrealista, marcada por la angustia existencial y la fragmentaci&oacute;n del yo, producto de los a&ntilde;os de Neruda como c&oacute;nsul en Asia (Birmania, Java, Ceilán), que lo sumieron en una profunda crisis existencial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Residencia en la Tierra es la obra m&aacute;s popular de Neruda y los Veinte poemas la m&aacute;s oscura y hermética</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La diferencia es solo tem&aacute;tica: los Veinte poemas hablan de amor y Residencia en la Tierra habla de pol&iacute;tica; el estilo es id&eacute;ntico en ambas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La evoluci&oacute;n entre las dos obras marca uno de los saltos m&aacute;s radicales en la historia de la poes&iacute;a hispanoamericana. <I>Veinte poemas</I> (1924): lenguaje sensorial y accesible, verso libre pero comprensible, tem&aacute;tica amorosa concreta, naturaleza como idioma, tono mel anc&oacute;lico pero no hermético. <I>Residencia en la Tierra</I> (1933&ndash;1935): producto de los a&ntilde;os de Neruda como c&oacute;nsul en <B>Asia Oriental</B> (Birmania, Java, Ceiland, 1927&ndash;1932), donde vivi&oacute; en soledad, pobreza y desorientaci&oacute;n cultural. La obra resultante es de una <B>angustia existencial radical</B>: el yo se fragmenta, las im&aacute;genes son oníricas e irracionales (influencia surrealista), el lenguaje se vuelve hermético. Es considerada una de las obras cumbres del Surrealismo en lengua espa&ntilde;ola. El contraste con los <I>Veinte poemas</I> muestra la extraordinaria capacidad de Neruda para renovarse formalmente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> &iquest;C&oacute;mo interpreta la cr&iacute;tica feminista contempor&aacute;nea algunos poemas de la obra y qu&eacute; debate te&oacute;rico suscita?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La cr&iacute;tica feminista contempor&aacute;nea avala completamente la obra de Neruda como un ejemplo de respeto a la figura femenina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La cr&iacute;tica feminista (por ejemplo, la chilena Daniela Jadue y otras voces hispanoamericanas) se&ntilde;ala que la obra convierte a la mujer en objeto del deseo masculino (el cuerpo femenino como paisaje que el poeta "posee"), silencia la subjetividad femenina (Poema 15) y reproduce una l&oacute;gica de apropiaci&oacute;n er&oacute;tica; el debate es si esto invalida la calidad est&eacute;tica de la obra o si ambas cosas pueden coexistir</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La cr&iacute;tica feminista no ha prestado atenci&oacute;n a Neruda porque considera que la poes&iacute;a masculina no merece an&aacute;lisis de g&eacute;nero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La cr&iacute;tica feminista ha concluido que Neruda fue el poeta m&aacute;s feminista del siglo XX en lengua espa&ntilde;ola</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La cr&iacute;tica feminista contempor&aacute;nea ha se&ntilde;alado varios problemas en la representaci&oacute;n de la mujer en los <I>Veinte poemas</I>: (1) <B>Objetivaci&oacute;n del cuerpo femenino:</B> la met&aacute;fora del cuerpo-paisaje convierte a la amada en territorio que el yo masculino "explora" y "posee", negándole subjetividad propia. (2) <B>Silenciamiento de la voz femenina:</B> el Poema 15 ("me gustas cuando callas") celebra expl&iacute;citamente el silencio de la amada como condici&oacute;n para el placer del poeta. (3) <B>Amor como apropiaci&oacute;n:</B> en muchos poemas, el yo po&eacute;tico desea poseer a la amada m&aacute;s que relacionarse con ella como igual. El debate te&oacute;rico que esto genera es fundamental: &iquest;puede una obra ser est&eacute;ticamente extraordinaria y al mismo tiempo reproducir relaciones de poder problem&aacute;ticas? La respuesta m&aacute;s s&oacute;lida es que s&iacute;: ambas cosas pueden coexistir, y la lectura cr&iacute;tica no niega la belleza sino que la enriquece.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> &iquest;En qu&eacute; sentido <I>Veinte poemas de amor y una canci&oacute;n desesperada</I> puede considerarse una obra metapo&eacute;tica, es decir, una reflexi&oacute;n sobre la escritura po&eacute;tica misma?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) No es una obra metapo&eacute;tica en ning&uacute;n sentido; es un poemario de amor puro sin ning&uacute;n nivel reflexivo sobre el lenguaje</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La dimensi&oacute;n metapo&eacute;tica aparece especialmente en el Poema 20: "Puedo escribir los versos m&aacute;s tristes esta noche" es una declaraci&oacute;n sobre la capacidad de la poes&iacute;a para procesar el dolor; la escritura no cura pero da forma al sufrimiento; la poes&iacute;a es el territorio donde el amor, aunque perdido en la vida, sobrevive transformado en lenguaje</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La dimensi&oacute;n metapo&eacute;tica est&aacute; solo en "La canci&oacute;n desesperada", donde Neruda explica su teoría del verso libre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Toda la obra es una reflexi&oacute;n sobre las reglas del soneto que Neruda est&aacute; decidido a romper</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La dimensi&oacute;n <B>metapo&eacute;tica</B> (la poes&iacute;a que reflexiona sobre s&iacute; misma como lenguaje y como acto) est&aacute; particularmente presente en el <B>Poema 20</B>. El verso inicial, "Puedo escribir los versos m&aacute;s tristes esta noche", es una afirmaci&oacute;n sobre la <B>capacidad de la escritura</B>: el yo po&eacute;tico no dice que siente tristeza, sino que <B>puede escribirla</B>. Esta distinci&oacute;n es crucial: sugiere que entre el sentimiento y el poema hay una mediaci&oacute;n, un acto creativo consciente. La pregunta impl&iacute;cita que recorre el poema es: &iquest;para qu&eacute; sirve escribir poes&iacute;a cuando el amor ha terminado? La respuesta que el poema sugiere es: la poes&iacute;a no devuelve al ser amado ni borra el dolor, pero da forma al sufrimiento y lo convierte en algo compartible. El amor muere en la vida; <B>sobrevive en el lenguaje po&eacute;tico</B>. Esta es una de las afirmaciones m&aacute;s profundas sobre la funci&oacute;n de la literatura que encontramos en toda la poes&iacute;a hispanoamericana.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> &iquest;Por qu&eacute; <I>Veinte poemas de amor y una canci&oacute;n desesperada</I> logr&oacute; ser simult&aacute;neamente una obra de alta calidad literaria y un &eacute;xito de masas, algo inusual en la poes&iacute;a?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Porque la editorial hizo una campa&ntilde;a publicitaria muy agresiva que la convirti&oacute; en un &eacute;xito comercial independientemente de su calidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Porque Neruda logr&oacute; combinar el rigor est&eacute;tico vanguardista (verso libre, imagen audaz, renovaci&oacute;n del lenguaje) con la accesibilidad emocional (tema universal del amor y la p&eacute;rdida, lenguaje sensorial concreto, ausencia de hermetismo) y una m&uacute;sica interna que el lector siente aunque no pueda explicar; el amor y la p&eacute;rdida son experiencias universales y Neruda las expres&oacute; con la precisi&oacute;n y la belleza que las palabras pocas veces alcanzan</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Porque la obra es deliberadamente simple y superficial; su &eacute;xito de masas demuestra que sacrific&oacute; la calidad literaria por la popularidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Porque Neruda era una figura pol&iacute;tica muy conocida y sus lectores compraban sus libros por razones pol&iacute;ticas m&aacute;s que literarias</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El &eacute;xito masivo de los <I>Veinte poemas</I> es uno de los fen&oacute;menos literarios m&aacute;s notables del siglo XX en lengua espa&ntilde;ola. Se explica por la confluencia de varios factores: (1) <B>Universalidad tem&aacute;tica:</B> el amor, el deseo y la p&eacute;rdida son experiencias que ning&uacute;n ser humano adulto puede ignorar. (2) <B>Accesibilidad sensorial:</B> a diferencia del Surrealismo hermético, las im&aacute;genes de Neruda son concretas y f&iacute;sicas: colinas, agua, piel, lluvia. El lector las puede visualizar y sentir aunque no las pueda analizar. (3) <B>M&uacute;sica interna:</B> a pesar del verso libre, los poemas tienen una musicalidad basada en la an&aacute;fora, el paralelismo y la aliteraci&oacute;n que el lector percibe emotivamente. (4) <B>Rigor est&eacute;tico sin hermetismo:</B> la obra es exigente en sus im&aacute;genes y su estructura, pero no exige conocimientos especializados para conmover. La combinaci&oacute;n de estos factores produce lo que es extremadamente raro en poes&iacute;a: una obra que es al mismo tiempo excelente y popular.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> &iquest;Cu&aacute;l de las siguientes afirmaciones sobre Pablo Neruda y <I>Veinte poemas de amor y una canci&oacute;n desesperada</I> es INCORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) El nombre real de Neruda era Ricardo Eliecer Neftal&iacute; Reyes Basoalto y adopt&oacute; su seud&oacute;nimo en homenaje al escritor checo Jan Neruda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) La obra fue publicada en 1924 por la Editorial Nascimento de Santiago de Chile, cuando Neruda ten&iacute;a 19 a&ntilde;os</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) El libro est&aacute; compuesto por veinte sonetos de rima consonante m&aacute;s una canci&oacute;n final en verso libre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Pablo Neruda recibi&oacute; el Premio Nobel de Literatura en 1971</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>La incorrecta es c)</B><BR>La obra <B>no est&aacute; compuesta por sonetos</B>. El soneto es una forma po&eacute;tica de 14 versos con rima y metro fijo, heredada del Renacimiento italiano. Los <I>Veinte poemas de amor y una canci&oacute;n desesperada</I> est&aacute;n escritos en <B>verso libre predominantemente</B> (sin rima ni metro fijo), lo que es precisamente uno de sus rasgos m&aacute;s modernos y una de sus rupturas con la tradici&oacute;n. Los poemas son de extensi&oacute;n variable y no siguen ning&uacute;n esquema m&eacute;trico fijo. Las dem&aacute;s afirmaciones son correctas: nombre real (a), datos de publicaci&oacute;n (b) y Premio Nobel 1971 (d).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> &iquest;Qu&eacute; significa que los <I>Veinte poemas</I> sean el libro de poes&iacute;a m&aacute;s vendido en lengua espa&ntilde;ola y qu&eacute; dice eso sobre la relaci&oacute;n entre poes&iacute;a y sociedad en el mundo hispanoamericano?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Solo significa que Neruda tuvo una buena editorial; no dice nada sobre la relaci&oacute;n entre poes&iacute;a y sociedad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Significa que la poes&iacute;a de alta calidad puede alcanzar a audiencias masivas cuando toca experiencias humanas universales con un lenguaje a la vez preciso y accesible; en el mundo hispanoamericano, donde la poes&iacute;a ha tenido hist&oacute;ricamente un lugar m&aacute;s central en la cultura que en otras tradiciones, Neruda represent&oacute; la posibilidad de que el rigor est&eacute;tico y la comunicaci&oacute;n masiva no se excluyen mutuamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Significa que la poes&iacute;a es el g&eacute;nero literario m&aacute;s vendido en todos los pa&iacute;ses hispanohablantes, superando a la narrativa y al ensayo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Significa &uacute;nicamente que el tema del amor er&oacute;tico siempre garantiza ventas masivas en cualquier g&eacute;nero literario</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El hecho de que los <I>Veinte poemas</I> hayan superado los <B>20 millones de ejemplares</B> vendidos en m&aacute;s de 35 idiomas tiene un significado que va m&aacute;s all&aacute; de la anécdota comercial. En primer lugar, demuestra que la <B>dicotom&iacute;a entre alta cultura y cultura popular</B> no es inevitable: Neruda escribi&oacute; con rigor est&eacute;tico y sin concesiones a la banalidad, y sin embargo alcanz&oacute; una audiencia que ning&uacute;n poeta en lengua espa&ntilde;ola hab&iacute;a alcanzado antes ni ha alcanzado desde entonces. En segundo lugar, dice algo sobre el lugar de la <B>poes&iacute;a en el mundo hispanoamericano</B>: a diferencia de otras tradiciones literarias donde la poes&iacute;a es un g&eacute;nero marginal, en Am&eacute;rica Latina y Espa&ntilde;a la poes&iacute;a ha tenido hist&oacute;ricamente una presencia cultural central (los poetas son figuras p&uacute;blicas, sus versos se recitan en actos sociales, se imprimen en camisetas). Neruda personific&oacute; este fen&oacute;meno: fue al mismo tiempo el poeta m&aacute;s valorado por la cr&iacute;tica y el m&aacute;s querido por el p&uacute;blico.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

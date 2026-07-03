@@ -1,0 +1,457 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Plan de Redacción - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.proposiciones{margin-top:12px;background:#F6F2EB;border-radius:10px;padding:12px 18px;font-size:16px;line-height:1.95;color:#333;font-weight:normal;}
+.proposiciones b{color:#1F6A67;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="RAZONAMIENTO VERBAL.HTML">← Volver a los temas de Razonamiento Verbal</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">RAZONAMIENTO VERBAL · TEMA 7</DIV>
+<H1>Plan de Redacción</H1>
+<DIV CLASS="sub">Enunciado organizador · Criterios de ordenamiento · Conectores y referencias · Tipos de secuencia: cronológica, causa-efecto, de análisis, comparación</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. La coherencia como propiedad esencial de un texto</H3>
+Todo texto bien construido, ya sea una noticia, un ensayo, un correo o una explicación oral no es una simple suma de oraciones sueltas, sino es un conjunto de ideas que se relacionan entre sí siguiendo un <B>orden interno</B> que permite al lector entender de qué se habla, por qué se habla en ese orden y cómo cada idea se conecta con la anterior y con la siguiente. A esa propiedad se le llama <B>coherencia textual</B>, y el <B>Plan de Redacción</B> es, en el fondo, el estudio de cómo se organiza esa coherencia: qué hace que un conjunto de ideas "tenga sentido" en un orden y no en otro.
+
+Cuando las ideas de un texto están desordenadas, el lector percibe inmediatamente que algo falla, aunque cada oración por separado sea correcta y verdadera. Esto ocurre porque el significado de un texto no depende solo de sus partes, sino de las <B>relaciones lógicas</B> entre esas partes: qué idea presenta el tema, cuál lo explica, cuál presenta una causa, cuál una consecuencia, cuál una comparación o un cierre.
+
+<H3>2. El enunciado organizador: el eje temático del texto</H3>
+Todo texto se construye alrededor de un <B>tema central</B>, que en el Plan de Redacción aparece formulado como <B>enunciado organizador</B> (el título general). Este título no es un simple rótulo decorativo: anuncia el enfoque y los límites del contenido que va a desarrollarse, y toda idea que forme parte del texto debe encajar dentro de ese enfoque. Comprender esto es comprender un principio más amplio de la comunicación escrita: <B>un texto coherente se mantiene fiel a su tema</B>, sin desviarse hacia asuntos que no fueron anunciados ni contradiciendo lo que el título establece.
+
+<H3>3. Las ideas que componen un texto y cómo se relacionan</H3>
+Un texto desarrollado está formado por varias ideas (llamadas proposiciones), cada una con una función distinta dentro del conjunto: unas presentan el tema, otras lo definen, otras narran hechos, otras explican causas, otras señalan consecuencias, otras comparan y otras cierran o sintetizan lo dicho. Reconocer <B>qué función cumple cada idea</B> es la clave para entender por qué un texto se organiza de una manera y no de otra. A continuación se explican los mecanismos lingüísticos que permiten reconocer esas funciones y sus relaciones.
+
+<H4>a) De lo general a lo particular</H4>
+En la mayoría de los textos expositivos, primero se presenta la <B>idea general</B> una definición, una presentación del tema, un contexto amplio y luego se desarrollan los <B>aspectos particulares</B>: ejemplos, características, consecuencias o detalles concretos. Este orden refleja cómo funciona naturalmente la comprensión humana: es más fácil entender un detalle cuando ya se conoce el marco general en el que se ubica, que entender un detalle aislado sin contexto.
+
+<H4>b) Los conectores como señales de relación lógica</H4>
+Palabras como <I>"por ello", "en consecuencia", "sin embargo", "además", "finalmente", "en primer lugar"</I> no son simples adornos del lenguaje: cada una expresa un tipo específico de relación lógica entre una idea y la anterior. Un conector consecutivo ("por ello", "en consecuencia") anuncia un efecto, por lo que la causa que lo produce debe haberse mencionado antes. Un conector adversativo ("sin embargo", "pero") anuncia un contraste, por lo que la idea que se está contrastando también debe existir previamente. Aprender a leer estos conectores es aprender a leer la lógica interna de cualquier texto, no solo de un ejercicio de examen.
+
+<H4>c) Las referencias que retoman información (anáforas)</H4>
+El lenguaje evita repetir constantemente las mismas palabras: en vez de nombrar de nuevo algo ya mencionado, usa pronombres o expresiones como "esto", "dicho fenómeno", "tal medida" o "ambos". Estas expresiones solo funcionan si el lector ya conoce aquello a lo que se refieren; por eso, una idea que empieza retomando información no puede presentarse antes de la idea que introdujo esa información por primera vez. Este mecanismo llamado referencia anafórica es uno de los recursos más importantes que usa cualquier idioma para mantener la cohesión de un texto.
+
+<H4>d) La cronología y la causalidad como ejes organizadores</H4>
+Cuando un texto trata sobre hechos que ocurren en el tiempo, o sobre fenómenos con una causa y un efecto, el orden de las ideas refleja el orden real de esos hechos: lo que ocurrió antes se cuenta antes, y ningún efecto puede explicarse sin haber presentado primero la causa que lo produjo. Este principio no es exclusivo de la lengua escrita: es, sencillamente, cómo funciona la realidad que el texto describe.
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Mecanismo</TH><TH>Qué aporta a la coherencia</TH><TH>Ejemplos de expresión</TH></TR>
+<TR><TD>Jerarquía general-particular</TD><TD>Ubica al lector en el tema antes de entrar en detalles</TD><TD>Definiciones, presentación del tema, contexto amplio</TD></TR>
+<TR><TD>Conectores lógicos</TD><TD>Explicitan la relación entre una idea y la siguiente</TD><TD>"por ello", "sin embargo", "en primer lugar", "finalmente"</TD></TR>
+<TR><TD>Referencias anafóricas</TD><TD>Evitan repeticiones y enlazan una idea con otra ya mencionada</TD><TD>"esto", "dicho proceso", "tal decisión", "ambos"</TD></TR>
+<TR><TD>Cronología / causalidad</TD><TD>Refleja el orden real en que ocurren los hechos</TD><TD>Fechas, "antes de", "como resultado", "posteriormente"</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>4. Los cuatro tipos de secuencia</H3>
+Según lo que un texto se proponga hacer con su tema, ya sea narrar, explicar, describir o contrastar, las ideas tienden a organizarse siguiendo alguno de estos cuatro patrones. Comprender la lógica interna de cada uno permite entender por qué, ante un mismo conjunto de ideas, existe casi siempre un único orden que resulta natural.
+
+<H4>a) Secuencia cronológica</H4>
+Aparece cuando el texto narra <B>hechos, procesos o etapas que se suceden en el tiempo</B>: una biografía, un proceso histórico, las etapas de un fenómeno natural, la evolución de una institución. Su lógica es simple pero estricta: los hechos se cuentan en el mismo orden en que ocurrieron, de lo más antiguo a lo más reciente, porque alterar ese orden rompería la comprensión del proceso mismo.
+<DIV CLASS="ej"><B>Ejemplo de organización cronológica:</B> al contar la historia de una ciudad, primero se explica su fundación, luego su crecimiento, después algún hecho relevante de su historia intermedia y, finalmente, su situación actual. Contar primero la situación actual y después la fundación rompería la lógica temporal que el propio tema exige.</DIV>
+
+<H4>b) Secuencia de causa y efecto</H4>
+Aparece cuando el texto explica <B>por qué ocurre un fenómeno y qué consecuencias trae</B>: un problema ambiental, una enfermedad, una crisis económica, una decisión política. Su lógica reproduce la estructura misma de la explicación causal: primero se identifica el origen del fenómeno, luego se describe cómo se desarrolla o qué mecanismo sigue, y finalmente se exponen sus efectos o consecuencias.
+<DIV CLASS="ej"><B>Ejemplo de organización causal:</B> para explicar la erosión de un suelo, primero se menciona qué la origina (por ejemplo, la deforestación), luego cómo actúa ese proceso sobre la tierra, y finalmente qué consecuencias tiene para la agricultura de la zona.</DIV>
+
+<H4>c) Secuencia de análisis</H4>
+Aparece cuando el texto <B>descompone un objeto, concepto o proceso en sus partes o características</B> para explicarlo con detalle: la estructura de un órgano, los componentes de un sistema, los rasgos de un movimiento artístico. Su lógica va de lo general qué es el objeto a lo particular: cada una de sus partes o rasgos, presentados en un orden que suele seguir un criterio interno (de lo más importante a lo secundario, o el orden en que las partes efectivamente funcionan).
+<DIV CLASS="ej"><B>Ejemplo de organización analítica:</B> para explicar un ecosistema, primero se presenta qué es en general, y después se describen sus componentes: los productores, los consumidores y los descomponedores, en ese orden porque así se relacionan funcionalmente entre sí.</DIV>
+
+<H4>d) Secuencia de comparación</H4>
+Aparece cuando el texto <B>contrasta dos o más elementos</B> posturas, épocas, especies, sistemas señalando sus semejanzas y diferencias. Su lógica presenta primero el marco general de qué se va a comparar, luego desarrolla un término de la comparación, después el otro, y cierra cuando corresponde con una síntesis que reúne ambos términos.
+<DIV CLASS="ej"><B>Ejemplo de organización comparativa:</B> para contrastar dos corrientes artísticas, primero se presentan ambas en conjunto, luego se explica la primera, después la segunda en contraste con la anterior, y finalmente se señala qué comparten o en qué se diferencian de fondo.</DIV>
+
+<DIV CLASS="cultura-titulo">POR QUÉ IMPORTA RECONOCER EL TIPO DE SECUENCIA<SPAN>Cada tipo de texto organiza la información según una lógica distinta, y saber cuál es la que corresponde ayuda a leer y a escribir con mayor claridad</SPAN></DIV>
+
+Reconocer el tipo de secuencia de un texto no es solo útil para reconstruir un orden desordenado: es, sobre todo, una herramienta para <B>leer con más comprensión</B> cualquier texto, y para <B>escribir con más claridad</B> los propios. Un texto que narra una historia sin respetar la cronología, o que explica una causa sin haberla presentado antes de su efecto, resulta confuso sin importar cuán correcta sea cada oración por separado. Por eso, distinguir si un tema pide contar algo en el tiempo, explicar un porqué, describir una estructura o comparar dos elementos es el primer paso para organizar cualquier idea con coherencia, ya sea al leer o al redactar.
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Qué función cumple el enunciado organizador en una pregunta de Plan de Redacción?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Es una proposición más que debe ordenarse junto con las demás</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Es el título temático que delimita el contenido y el enfoque que deben respetar todas las proposiciones al ordenarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Es la respuesta correcta ya resuelta, escrita de forma resumida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Es un conector que debe repetirse en cada proposición</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El enunciado organizador funciona como el "paraguas" temático bajo el cual deben encajar todas las proposiciones: define de qué trata el texto y, muchas veces, incluso permite anticipar el tipo de secuencia (cronológica, causa-efecto, análisis o comparación) antes de leer las proposiciones. No forma parte de las proposiciones que se ordenan (opción a), no es la respuesta ya resuelta (opción c) y no es un conector (opción d): es, específicamente, el marco temático de referencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> En un Plan de Redacción, ¿por qué una proposición que comienza con la palabra "esto" o "dicho proceso" no puede ubicarse como la primera de la secuencia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Porque las proposiciones nunca pueden empezar con pronombres, sin importar su posición</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Porque un pronombre o una referencia anafórica presupone información ya mencionada antes; si va primera, el lector no sabría a qué se refiere</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Porque esas palabras solo pueden usarse en la última proposición del texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Porque el número romano que la acompaña determina su posición obligatoria en el texto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Un pronombre o una expresión anafórica ("esto", "dicho proceso", "tal medida") solo tiene sentido si el lector ya conoce el referente al que apunta, es decir, si esa información ya fue presentada en una proposición anterior. Colocarla primera dejaría al lector sin saber a qué se refiere la expresión, rompiendo la coherencia textual. La opción a) es una generalización excesiva (sí pueden aparecer pronombres, pero no al inicio); c) y d) inventan reglas que no corresponden a los criterios reales de ordenamiento.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Qué tipo de secuencia predomina cuando el enunciado organizador es "EVOLUCIÓN HISTÓRICA DE LA FOTOGRAFÍA"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) De comparación, porque compara distintas cámaras fotográficas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Cronológica, porque el enunciado anuncia una evolución a lo largo del tiempo, lo que exige ordenar los hechos según su fecha de ocurrencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) De análisis, porque describe las partes internas de una cámara</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) De causa y efecto, porque explica por qué se inventó la fotografía</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La palabra "evolución" en el enunciado organizador es una señal explícita de que el texto narra un proceso a lo largo del tiempo, por lo que el criterio dominante para ordenar las proposiciones será la cronología: de los hechos más antiguos (invención, primeros procedimientos) a los más recientes (fotografía digital, actualidad). Las demás opciones proponen tipos de secuencia que no corresponden al enfoque temporal explícitamente anunciado por el título.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál de los siguientes conectores exige, obligatoriamente, que exista una causa mencionada en la proposición inmediatamente anterior?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) "Por ejemplo"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) "En consecuencia"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) "Asimismo"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) "En primer lugar"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"En consecuencia" es un conector consecutivo: introduce el efecto o resultado de algo mencionado previamente, por lo que la proposición que lo contiene nunca puede ser la primera de la secuencia ni puede ir antes que la proposición que presenta la causa. "Por ejemplo" (a) introduce una ilustración, "asimismo" (c) añade información paralela y "en primer lugar" (d) suele marcar, precisamente, el inicio de una enumeración, por lo que no exige una causa previa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> En una secuencia de análisis (por ejemplo, sobre las partes de una célula), ¿qué proposición suele ir primera?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) La que menciona la parte menos importante de la célula</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) La que presenta o define de forma general el objeto que luego será descompuesto en sus partes o características</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) La que menciona una fecha del descubrimiento de la célula</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) La que compara la célula con otro organismo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En las secuencias de análisis, el patrón habitual va de la presentación o definición general del objeto hacia el desglose ordenado de sus partes o rasgos; sin esa presentación inicial, enumerar "partes" carecería de referente claro. La opción a) invierte arbitrariamente un criterio de importancia que no es el que rige este tipo de secuencia; c) correspondería a una secuencia cronológica, no de análisis; d) correspondería a una secuencia de comparación.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> <B>CAUSAS Y CONSECUENCIAS DE LA DESERTIFICACIÓN EN ZONAS ÁRIDAS</B>
+<DIV CLASS="proposiciones">
+<B>I.</B> Como consecuencia, millones de hectáreas pierden su capacidad productiva cada año.<BR>
+<B>II.</B> La desertificación es el proceso de degradación de tierras fértiles hasta convertirse en desiertos.<BR>
+<B>III.</B> Este fenómeno se origina principalmente por la sobreexplotación agrícola y la deforestación.<BR>
+<B>IV.</B> Por ello, distintos organismos internacionales promueven programas de reforestación y manejo sostenible del suelo.
+</DIV>
+¿Cuál es el orden correcto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) I-II-III-IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) II-III-I-IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) III-II-I-IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) IV-I-III-II</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El enunciado organizador anuncia una secuencia de causa-efecto. La proposición II define el fenómeno (idea general, sin conectores dependientes) y debe ir primera. La III explica el origen ("se origina principalmente por..."), lo cual debe seguir a la definición. La I presenta el efecto, marcado por "como consecuencia", que exige que la causa (III) ya haya sido mencionada. Finalmente, IV cierra con "por ello", conector consecutivo que retoma el efecto ya expuesto en I para proponer una respuesta. El orden II-III-I-IV respeta definición → causa → efecto → respuesta a ese efecto. La opción a) coloca el efecto (I) antes que la causa (III), rompiendo la lógica causal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> <B>BIOGRAFÍA DE SANTA ROSA DE LIMA</B>
+<DIV CLASS="proposiciones">
+<B>I.</B> Isabel Flores de Oliva nació en Lima en 1586 y desde niña mostró una intensa vocación religiosa.<BR>
+<B>II.</B> En 1671 fue canonizada por el papa Clemente X, convirtiéndose en la primera santa de América.<BR>
+<B>III.</B> Adoptó el nombre de Rosa y, ya adulta, ingresó a la Orden Tercera de Santo Domingo.<BR>
+<B>IV.</B> Falleció en 1617, tras dedicar su vida a la penitencia y la ayuda a los más necesitados.
+</DIV>
+¿Cuál es el orden correcto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) I-III-IV-II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) II-I-III-IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) I-IV-III-II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) III-I-IV-II</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Se trata de una secuencia cronológica: basta ordenar los hechos según las fechas mencionadas. Nacimiento (1586, proposición I) → adopción del nombre religioso e ingreso a la orden (III, sin fecha explícita, pero descrito como "ya adulta", posterior al nacimiento) → muerte (1617, proposición IV) → canonización (1671, proposición II, necesariamente posterior a la muerte). El orden I-III-IV-II respeta exactamente la línea temporal de los acontecimientos. Cualquier alternativa que ubique la canonización (II) antes que el fallecimiento (IV) es imposible, ya que un proceso de canonización solo puede iniciarse después de la muerte de la persona.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> <B>EL QUIPU: ESTRUCTURA Y COMPONENTES</B>
+<DIV CLASS="proposiciones">
+<B>I.</B> El quipu es un sistema de registro incaico basado en cuerdas anudadas de distintos colores.<BR>
+<B>II.</B> La cuerda principal, llamada cuerda madre, sostiene numerosas cuerdas secundarias colgantes.<BR>
+<B>III.</B> El color, la posición y el tipo de nudo de cada cuerda secundaria codifican información numérica o categórica.<BR>
+<B>IV.</B> Estos tres elementos combinados permitían a los especialistas, los quipucamayoc, registrar censos, tributos y hechos relevantes.
+</DIV>
+¿Cuál es el orden correcto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) I-II-III-IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) IV-I-II-III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) II-III-I-IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) I-III-II-IV</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Es una secuencia de análisis: se presenta el objeto en general (I: definición del quipu) y luego se descomponen sus partes en un orden lógico interno —de lo estructural (II: la cuerda madre y las cuerdas secundarias) a lo funcional (III: cómo codifican información)— para cerrar con la aplicación práctica de esos componentes combinados (IV, que además usa la expresión "estos tres elementos combinados", una referencia anafórica que exige que los tres elementos ya hayan sido mencionados). La opción d) invierte II y III sin justificación: primero debe describirse la existencia física de las cuerdas (II) antes de explicar qué codifican sus atributos (III).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> <B>EL REALISMO MÁGICO Y EL REALISMO FANTÁSTICO: DOS CORRIENTES LITERARIAS</B>
+<DIV CLASS="proposiciones">
+<B>I.</B> Ambas corrientes comparten el interés por incorporar elementos extraordinarios dentro de un marco narrativo aparentemente cotidiano.<BR>
+<B>II.</B> El realismo mágico y el realismo fantástico son dos corrientes narrativas que integran lo extraordinario dentro de un relato realista.<BR>
+<B>III.</B> El realismo mágico presenta lo sobrenatural como parte natural y no cuestionada de la vida cotidiana de sus personajes.<BR>
+<B>IV.</B> El realismo fantástico, en cambio, introduce lo sobrenatural como una ruptura inquietante que genera duda o extrañeza en el lector.
+</DIV>
+¿Cuál es el orden correcto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) I-II-III-IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) II-III-IV-I</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) III-IV-II-I</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) II-I-III-IV</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Es una secuencia de comparación. Primero debe presentarse el marco general de qué se compara (II: definición conjunta de ambas corrientes). Luego se desarrolla cada término por separado: el realismo mágico (III) y, en contraste explícito marcado por "en cambio", el realismo fantástico (IV). Finalmente, la proposición I cierra con una síntesis que usa "ambas corrientes", expresión que solo tiene sentido después de haber presentado individualmente los dos términos comparados (III y IV); por eso I no puede ir antes de III y IV. La opción d) coloca la síntesis (I) inmediatamente después de la definición general, antes de haber desarrollado los dos términos, lo cual es lógicamente prematuro.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Al resolver un Plan de Redacción sobre "Etapas de la fotosíntesis", un estudiante nota que dos proposiciones contienen las expresiones "en la primera fase" y "posteriormente, en la segunda fase". ¿Qué tipo de secuencia es más probable y qué debe verificar el estudiante?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Es una secuencia de comparación; debe verificar cuál fase es más eficiente energéticamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Es una secuencia cronológica o de proceso; debe verificar que la proposición de "primera fase" preceda a la de "segunda fase" y que esa interpretación sea coherente con el orden biológico real del proceso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Es una secuencia de análisis; el orden de las fases es irrelevante porque todas son igual de importantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Es una secuencia de causa-efecto; debe buscar la proposición que mencione "por ello" para ubicarla primera</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Expresiones como "en la primera fase" y "posteriormente, en la segunda fase" son marcadores explícitos de secuencia temporal o procesual, un tipo cercano a la secuencia cronológica: indican un orden de etapas que debe respetarse tal como el propio texto lo declara. El estudiante debe verificar que el orden de las fases coincida con la numeración y con el desarrollo real del proceso biológico. La opción a) propone un criterio (eficiencia energética) ajeno al ordenamiento textual; c) subestima la importancia del orden, que en un proceso por etapas es central; d) busca un conector que no corresponde al tipo de secuencia identificado por las pistas dadas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · RAZONAMIENTO CRÍTICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> <B>EL FENÓMENO DEL NIÑO Y SU IMPACTO EN LA PESCA PERUANA</B>
+<DIV CLASS="proposiciones">
+<B>I.</B> El calentamiento anómalo de las aguas superficiales del Pacífico reduce drásticamente la disponibilidad de nutrientes para el fitoplancton.<BR>
+<B>II.</B> El fenómeno de El Niño es una alteración periódica de las corrientes marinas del Pacífico oriental.<BR>
+<B>III.</B> En consecuencia, especies clave como la anchoveta migran hacia aguas más frías, alejándose de la costa peruana.<BR>
+<B>IV.</B> Esta caída de nutrientes provoca, a su vez, una disminución del fitoplancton, base de la cadena alimentaria marina.<BR>
+<B>V.</B> Como resultado final, la industria pesquera nacional sufre pérdidas económicas significativas durante los años en que el fenómeno se intensifica.
+</DIV>
+¿Cuál es el orden correcto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) II-I-IV-III-V</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) I-II-III-IV-V</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) II-IV-I-III-V</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) V-III-IV-I-II</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Esta es una cadena extensa de causa-efecto que exige seguir con precisión el encadenamiento: II define el fenómeno en general (debe ir primera, sin conectores dependientes). I presenta el primer eslabón causal: el calentamiento reduce nutrientes para el fitoplancton. IV retoma ese resultado ("esta caída de nutrientes", referencia anafórica directa a lo dicho en I) para explicar la disminución del fitoplancton mismo. III, marcada por "en consecuencia", presenta la migración de la anchoveta como efecto de la reducción del fitoplancton (IV). Finalmente, V cierra la cadena con "como resultado final", indicando el efecto económico último, posterior a todos los eslabones anteriores. El orden II-I-IV-III-V respeta la cadena causal completa sin saltos. La opción c) invierte I y IV, rompiendo la referencia anafórica de IV ("esta caída de nutrientes"), que exige que la caída ya haya sido mencionada en I.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> <B>MACHU PICCHU: DEL OLVIDO AL RECONOCIMIENTO MUNDIAL</B>
+<DIV CLASS="proposiciones">
+<B>I.</B> En 1911, el explorador Hiram Bingham llegó al santuario guiado por pobladores locales que conocían el lugar.<BR>
+<B>II.</B> Tras la caída del Tahuantinsuyo, la ciudadela quedó progresivamente abandonada y cubierta por la vegetación andina.<BR>
+<B>III.</B> En 1983, la UNESCO declaró a Machu Picchu Patrimonio Mundial de la Humanidad.<BR>
+<B>IV.</B> La expedición de Bingham difundió internacionalmente la existencia del sitio a través de publicaciones y fotografías.<BR>
+<B>V.</B> Construida en el siglo XV como posible residencia real, la ciudadela de Machu Picchu formó parte del corazón del Imperio incaico.
+</DIV>
+¿Cuál es el orden correcto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) V-II-I-IV-III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) I-IV-V-II-III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) V-I-II-IV-III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) II-V-I-IV-III</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El título "Del olvido al reconocimiento mundial" anticipa una secuencia cronológica con tres momentos clave: construcción, abandono, redescubrimiento y reconocimiento. V presenta el origen: construcción en el siglo XV (fecha más antigua, debe ir primera). II describe el abandono posterior a la caída del Tahuantinsuyo (siglo XVI), siguiente en el tiempo. I marca el redescubrimiento por Bingham en 1911. IV es la consecuencia inmediata de I: la difusión internacional tras la expedición. III cierra con el reconocimiento oficial de la UNESCO en 1983, el hecho más reciente. El orden V-II-I-IV-III respeta rigurosamente la cronología. La opción c) invierte I y II, lo cual es imposible porque el abandono (siglo XVI) ocurrió siglos antes de la llegada de Bingham (1911).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Un estudiante afirma que, en cualquier Plan de Redacción, la proposición marcada como "I" en la lista siempre debe ser la primera de la secuencia correcta, porque "está numerada primero". Evalúa esta afirmación.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Es correcta: el orden de presentación de las proposiciones (I, II, III...) siempre coincide con el orden correcto del texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Es incorrecta: los números romanos son solo etiquetas de identificación para poder referirse a cada proposición en las alternativas; el orden en que aparecen listadas es intencionalmente aleatorio y no anticipa la secuencia correcta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Es correcta solamente en las secuencias cronológicas, pero incorrecta en las demás</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Es incorrecta solo cuando el enunciado organizador contiene la palabra "historia"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Este es uno de los errores más frecuentes y peligrosos en la resolución de Plan de Redacción: los números romanos que acompañan a cada proposición son únicamente etiquetas para poder mencionarlas en las alternativas de respuesta (por ejemplo, "II-IV-I-III"); el orden en que se listan en el enunciado está deliberadamente desordenado para evaluar precisamente la capacidad de reconstruir la secuencia lógica, y no tiene ninguna relación necesaria con la posición correcta de cada proposición en el texto final. Las opciones a), c) y d) asumen, de distintas formas, que existe una relación automática entre la etiqueta numérica y la posición correcta, lo cual es falso en todos los casos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> <B>EL ARTE TEXTIL Y LA CERÁMICA NAZCA: DOS EXPRESIONES DE UNA MISMA COSMOVISIÓN</B>
+<DIV CLASS="proposiciones">
+<B>I.</B> La cultura Nazca, desarrollada en la costa sur del Perú entre los siglos I y VII d.C., expresó su cosmovisión a través de distintas manifestaciones artísticas.<BR>
+<B>II.</B> Su cerámica policromada, en cambio, privilegiaba figuras más estilizadas y una paleta de hasta once colores distintos aplicados antes de la cocción.<BR>
+<B>III.</B> Ambas manifestaciones compartían un repertorio simbólico común centrado en deidades, aves y seres míticos asociados a la fertilidad.<BR>
+<B>IV.</B> Entre ellas destacan el arte textil, con tejidos de gran finura técnica y complejidad iconográfica, y la cerámica, de igual refinamiento.<BR>
+<B>V.</B> El arte textil nazca se caracterizaba por el uso de fibras de algodón y camélidos, tejidas con técnicas que permitían representaciones detalladas.
+</DIV>
+¿Cuál es el orden correcto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) I-IV-V-II-III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) I-III-IV-V-II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) IV-V-II-I-III</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) I-V-II-IV-III</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Es una secuencia mixta de análisis y comparación. I presenta el marco general (la cultura Nazca y sus manifestaciones artísticas) y debe ir primera. IV anuncia específicamente los dos términos que se van a desarrollar y comparar: el arte textil y la cerámica ("entre ellas destacan..."). V desarrolla el primer término (el arte textil), y II desarrolla el segundo, marcado explícitamente por "en cambio", conector que exige que el primer término (V) ya haya sido expuesto. Finalmente, III cierra con la síntesis comparativa, usando "ambas manifestaciones", expresión que solo es coherente después de haber desarrollado individualmente los dos términos (V y II). El orden I-IV-V-II-III sigue: marco general → anuncio de los términos → desarrollo del primero → desarrollo del segundo (en contraste) → síntesis final. La opción d) omite el anuncio explícito de los dos términos (IV) antes de desarrollarlos, lo que deja la transición entre I y V sin la introducción necesaria.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Al resolver un Plan de Redacción, un estudiante descarta correctamente tres de las cinco alternativas por contener errores de causalidad, pero las dos alternativas restantes comienzan ambas con la misma proposición y solo difieren en el orden de las tres proposiciones finales. ¿Qué debe hacer a continuación?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Elegir cualquiera de las dos al azar, ya que ambas comparten la proposición inicial correcta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Analizar con mayor detalle las tres proposiciones finales, aplicando específicamente los criterios de conectores, referencias anafóricas y coherencia temporal o causal entre ellas, para determinar cuál orden interno es el único que resulta plenamente coherente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Volver a leer el enunciado organizador ignorando por completo las proposiciones restantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Elegir la alternativa que tenga los números más bajos al inicio de la secuencia final</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Cuando dos alternativas coinciden en su tramo inicial pero difieren en el orden interno de las proposiciones restantes, la decisión debe basarse en un análisis más fino de esas proposiciones específicas: identificar si alguna de ellas contiene un conector, una referencia anafórica o una relación temporal/causal que obligue a un orden determinado entre ellas. Descartar por azar (a) desaprovecha información disponible; ignorar las proposiciones restantes (c) es precisamente lo contrario de lo que se necesita; y un criterio numérico arbitrario (d) no tiene ninguna relación con la coherencia lógica del texto, que es el único criterio válido para decidir entre las opciones restantes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> <B>LA CRISIS DEL AGUA EN LAS CIUDADES ANDINAS: ORIGEN, DESARROLLO Y RESPUESTAS</B>
+<DIV CLASS="proposiciones">
+<B>I.</B> El retroceso acelerado de los glaciares tropicales reduce la disponibilidad de agua dulce que abastece a numerosas ciudades andinas.<BR>
+<B>II.</B> Ante este panorama, algunos gobiernos locales han comenzado a implementar sistemas de cosecha de agua de lluvia y siembra de agua.<BR>
+<B>III.</B> Este fenómeno se debe, principalmente, al incremento sostenido de la temperatura global durante las últimas décadas.<BR>
+<B>IV.</B> Dicha reducción, sumada al crecimiento demográfico urbano, intensifica la presión sobre las fuentes hídricas disponibles.<BR>
+<B>V.</B> Sin embargo, estas medidas resultan aún insuficientes frente a la magnitud del problema, según diversos estudios especializados.
+</DIV>
+¿Cuál es el orden correcto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) III-I-IV-II-V</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) I-III-IV-II-V</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) III-I-II-IV-V</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) IV-I-III-V-II</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>El título anuncia explícitamente tres momentos: origen, desarrollo y respuestas, lo que orienta una cadena de causa-efecto seguida de una sección de soluciones. III presenta la causa raíz (el incremento de la temperatura global) y, aunque menciona "este fenómeno" (aparente referencia anafórica), en realidad introduce la explicación causal del hecho anunciado en el título, por lo que debe ir primera, ya que ningún otro elemento la antecede lógicamente en el tema. I presenta el efecto directo de III: el retroceso glaciar reduce el agua disponible. IV retoma ese efecto ("dicha reducción", referencia anafórica directa a I) y lo agrava con el crecimiento demográfico. II, marcada por "ante este panorama", presenta la respuesta institucional al problema ya desarrollado. V cierra con "sin embargo", evaluando críticamente esas respuestas. El orden III-I-IV-II-V sigue causa → efecto inicial → efecto agravado → respuesta → evaluación crítica de la respuesta, exactamente lo que el título anticipa como origen, desarrollo y respuestas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> <B>EL DERECHO ROMANO Y EL DERECHO CONSUETUDINARIO ANDINO: DOS SISTEMAS DE ORGANIZACIÓN NORMATIVA</B>
+<DIV CLASS="proposiciones">
+<B>I.</B> A lo largo de la historia, distintas civilizaciones desarrollaron sistemas propios para regular la convivencia social mediante normas.<BR>
+<B>II.</B> El derecho consuetudinario andino, por su parte, se transmitía oralmente y se fundamentaba en la costumbre y el consenso comunitario.<BR>
+<B>III.</B> El derecho romano, sistematizado en códigos escritos, se apoyaba en la autoridad estatal para su aplicación y sanción.<BR>
+<B>IV.</B> Pese a sus diferencias de origen y forma, ambos sistemas compartían el objetivo de mantener el orden y resolver conflictos dentro de su comunidad.<BR>
+<B>V.</B> Entre los sistemas normativos históricos más estudiados se encuentran el derecho romano y el derecho consuetudinario de los pueblos andinos.
+</DIV>
+¿Cuál es el orden correcto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) I-V-III-II-IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) V-I-II-III-IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) I-V-II-III-IV</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) I-III-II-V-IV</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Esta pregunta exige distinguir entre dos niveles de generalidad antes de llegar a los términos específicos de la comparación. I presenta el marco más amplio (sistemas normativos en general, sin nombrar aún los dos términos), por lo que debe ir primera. V, en cambio, ya menciona explícitamente "el derecho romano y el derecho consuetudinario", anunciando los dos términos puntuales que se compararán, y debe seguir a I (de lo general histórico a la delimitación del objeto de comparación). III desarrolla el primer término mencionado en V (derecho romano), y II desarrolla el segundo, marcado por "por su parte", conector que exige que el primer término ya haya sido expuesto. IV cierra con la síntesis comparativa, usando "ambos sistemas" y "pese a sus diferencias", lo cual solo es coherente tras haber desarrollado los dos términos. El orden I-V-III-II-IV es el único que respeta simultáneamente el nivel de generalidad decreciente (I antes que V) y el orden interno de la comparación (III antes que II, siguiendo el orden de mención en V). La opción c) invierte II y III, contradiciendo el orden de mención establecido en V ("el derecho romano y el derecho consuetudinario").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Explica por qué, en un Plan de Redacción, una alternativa puede ser incorrecta incluso si respeta perfectamente el criterio cronológico de las fechas mencionadas en las proposiciones.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Esto nunca ocurre: si el orden cronológico es correcto, la alternativa siempre es la respuesta correcta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Porque, además de la cronología, el texto debe respetar otros criterios simultáneos —como que ninguna proposición con referencia anafórica preceda a la que introduce su referente, y que los conectores lógicos (consecutivos, adversativos) se ubiquen coherentemente—; un orden puede ser cronológicamente correcto y aun así violar alguno de estos otros criterios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Porque las fechas mencionadas en los exámenes de Plan de Redacción suelen ser falsas a propósito</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Porque el orden cronológico solo aplica a textos sobre historia, nunca a otros temas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La cronología es uno de varios criterios que deben cumplirse simultáneamente, no el único. Es posible construir una secuencia falsa que ordene correctamente las fechas mencionadas pero que, por ejemplo, ubique una proposición con referencia anafórica ("dicho proceso", "esta medida") antes de la proposición que introduce ese referente, o que separe un conector consecutivo de la causa que necesita. Por eso la estrategia de resolución exige verificar todos los criterios —jerarquía temática, conectores, referencias anafóricas y cronología/causalidad— de forma conjunta, y no basta con revisar uno solo aunque sea el más visible. La opción a) ignora esta posibilidad; c) inventa un supuesto sin fundamento en la naturaleza del ejercicio; d) es falsa, porque el criterio cronológico también aparece en secuencias que no son estrictamente históricas (procesos naturales, etapas de un fenómeno, por ejemplo).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Un enunciado organizador dice "LA REVOLUCIÓN INDUSTRIAL: TRANSFORMACIONES TECNOLÓGICAS Y CONSECUENCIAS SOCIALES". Dos alternativas de respuesta ordenan correctamente, en su tramo inicial, los avances tecnológicos según su cronología, pero difieren en si el bloque de "consecuencias sociales" aparece intercalado entre los avances tecnológicos o agrupado al final. ¿Qué principio debe aplicarse para decidir?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Es indiferente, porque ambas formas son igualmente válidas en cualquier texto expositivo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) El propio enunciado organizador anuncia dos bloques temáticos diferenciados y en ese orden ("transformaciones tecnológicas" y luego "consecuencias sociales"); salvo que alguna proposición contenga un conector o referencia que exija explícitamente intercalar, el orden más coherente agrupa primero todo el bloque tecnológico y después todo el bloque social, respetando la estructura anunciada por el título</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Siempre debe intercalarse, porque los textos académicos exigen alternar entre tecnología y sociedad en cada proposición</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Debe elegirse la alternativa con menor cantidad de cambios de orden respecto a la numeración original de las proposiciones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El enunciado organizador no es un simple título decorativo: cuando anuncia explícitamente dos bloques temáticos y los menciona en un orden determinado ("transformaciones tecnológicas y consecuencias sociales"), ese orden es una guía estructural fuerte que el texto debe seguir, salvo que existan pistas textuales concretas (conectores o referencias anafóricas) que justifiquen una excepción puntual. Por eso, en ausencia de tales pistas, la opción más coherente agrupa el desarrollo temático siguiendo fielmente la estructura anunciada por el título, en vez de alternar arbitrariamente entre ambos bloques. La opción a) ignora el valor orientador del enunciado organizador; c) inventa una regla de estilo que no corresponde a los criterios lógicos del Plan de Redacción; d) aplica un criterio (menor cantidad de cambios respecto a la numeración original) que, como se explicó en preguntas anteriores, carece de fundamento, ya que la numeración original es intencionalmente desordenada.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE — Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

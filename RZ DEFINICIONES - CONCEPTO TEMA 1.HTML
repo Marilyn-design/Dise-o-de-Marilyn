@@ -1,0 +1,413 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Definiciones - Concepto - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="RAZONAMIENTO VERBAL.HTML">← Volver a los temas de Razonamiento Verbal</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">RAZONAMIENTO VERBAL · TEMA 1</DIV>
+<H1>Definiciones — Concepto</H1>
+<DIV CLASS="sub">Género próximo · Diferencia específica · Rasgos mínimos de significado · Reglas de la buena definición · Tipos de definición</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. ¿Qué es una definición?</H3>
+<B>Definir</B> es la operación lógico-lingüística mediante la cual se establece con precisión el significado de un término, delimitando exactamente qué objetos, seres o conceptos caen bajo ese término y cuáles quedan excluidos. En Razonamiento Verbal, las preguntas de definición evalúan una competencia muy concreta: la capacidad de reconocer la <B>estructura lógica correcta</B> de un enunciado definitorio, distinguiéndolo de enunciados que solo describen, ejemplifican, comparan o enumeran propiedades accesorias del término.
+
+
+<DIV CLASS="alerta"><B>Para el examen:</B> toda pregunta de "definición" en Razonamiento Verbal se resuelve identificando dos piezas: el <B>género próximo</B> (la clase a la que pertenece el término) y la <B>diferencia específica</B> (el rasgo que lo distingue dentro de esa clase). La opción correcta es casi siempre la que contiene ambas piezas de forma precisa, completa y sin redundancia.</DIV>
+
+<H3>2. La estructura clásica: género próximo + diferencia específica</H3>
+Desde Aristóteles, la lógica formal establece que la definición más rigurosa de un término —llamada <B>definición esencial</B> o <B>definición por género y diferencia</B>— se construye combinando dos elementos:
+
+<H4>a) El género próximo</H4>
+El <B>género próximo</B> es la <B>clase inmediatamente superior</B> a la que pertenece el objeto que se define: la categoría más cercana y más específica dentro de la cual el término definido es un caso particular. No es cualquier clase superior, sino la <B>más próxima</B> posible: ni tan amplia que pierda precisión, ni tan estrecha que ya contenga la diferencia específica.
+<DIV CLASS="ej"><B>Ejemplo:</B> al definir "triángulo equilátero", el género próximo correcto es <B>"triángulo"</B> (la clase inmediatamente superior), y no "polígono" (clase demasiado amplia, salta un nivel) ni "figura geométrica" (clase aún más lejana).</DIV>
+
+<H4>b) La diferencia específica</H4>
+La <B>diferencia específica</B> es el rasgo o conjunto de rasgos que distingue al objeto definido de <B>todos los demás miembros</B> de su mismo género próximo. Debe ser una propiedad <B>esencial</B> (que pertenece a la naturaleza misma del objeto) y no <B>accidental</B> (una característica que puede estar o no estar presente sin alterar la identidad del objeto).
+<DIV CLASS="ej"><B>Ejemplo:</B> en "triángulo equilátero", la diferencia específica es <B>"que tiene sus tres lados de igual longitud"</B>. Esa es la propiedad que separa al triángulo equilátero de cualquier otro triángulo (isósceles, escaleno, rectángulo). Decir, en cambio, "que suele dibujarse en los libros de geometría" sería una propiedad accidental, irrelevante para la definición.</DIV>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Término a definir</TH><TH>Género próximo correcto</TH><TH>Diferencia específica correcta</TH></TR>
+<TR><TD>Cuadrado</TD><TD>Rectángulo</TD><TD>Que tiene sus cuatro lados iguales</TD></TR>
+<TR><TD>Viudo</TD><TD>Persona casada</TD><TD>A quien se le ha muerto el cónyuge y no ha vuelto a casarse</TD></TR>
+<TR><TD>Huérfano</TD><TD>Menor de edad</TD><TD>Que ha perdido a uno o ambos padres</TD></TR>
+<TR><TD>Pediatra</TD><TD>Médico</TD><TD>Especializado en el desarrollo y las enfermedades de los niños</TD></TR>
+<TR><TD>Isla</TD><TD>Porción de tierra</TD><TD>Rodeada de agua por todas partes</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">CRITERIO DE PROXIMIDAD<SPAN>Cómo saber si un género está demasiado lejos o demasiado cerca del término definido</SPAN></DIV>
+
+Un error muy frecuente en las preguntas de examen es ofrecer como género próximo una clase <B>remota</B> en lugar de la inmediata. Para detectarlo conviene construir mentalmente la "escalera de clases" del término: por ejemplo, <I>tigre → felino → carnívoro → mamífero → vertebrado → animal → ser vivo</I>. El género próximo de "tigre" es <B>felino</B> (el primer escalón hacia arriba), no "mamífero" ni "ser vivo": estos últimos son géneros <B>remotos</B>, correctos como clasificación pero incorrectos como pieza de una definición rigurosa, porque al ser tan amplios obligan a una diferencia específica desproporcionadamente larga y aun así imprecisa.
+
+<H3>3. Los rasgos mínimos de significado</H3>
+Toda definición correcta debe estar compuesta por el conjunto <B>mínimo y suficiente</B> de rasgos llamados también <B>semas</B> o <B>notas conceptuales</B>que permiten identificar exactamente el referente del término, sin que falte ninguno (lo que generaría una definición demasiado <B>amplia</B>, que incluiría casos que no deberían estar incluidos) ni sobre ninguno (lo que generaría una definición <B>redundante</B> o "cargada" de información irrelevante para distinguir el concepto).
+
+<H4>El principio de economía definitoria</H4>
+<UL>
+<LI><B>Mínimos:</B> no se incluye ningún rasgo que no sea necesario para diferenciar el término de los demás miembros de su género. Añadir información verdadera pero no distintiva (anécdotas, ejemplos, datos históricos) no es definir: es describir.</LI>
+<LI><B>Suficientes:</B> los rasgos incluidos deben bastar, por sí solos, para identificar sin ambigüedad todos los casos que pertenecen al término y excluir todos los que no pertenecen.</LI>
+</UL>
+<DIV CLASS="ej"><B>Ejemplo comparativo —"triángulo equilátero":</B><BR><BR>
+<B>Definición correcta (rasgos mínimos):</B> "Triángulo que tiene sus tres lados de igual longitud."<BR><BR>
+<B>Definición redundante (rasgos excesivos):</B> "Triángulo que tiene sus tres lados de igual longitud, sus tres ángulos también son iguales entre sí (60° cada uno), y suele aparecer en los exámenes de geometría." La igualdad de ángulos es una <I>consecuencia</I> necesaria de la igualdad de lados, no un rasgo independiente que haga falta enunciar; y la mención al examen es completamente accidental.</DIV>
+
+<H3>4. Las reglas clásicas de la buena definición</H3>
+<UL>
+<LI><B>No debe ser circular:</B> el término definido no puede aparecer (ni de forma literal ni mediante un sinónimo encubierto) dentro de su propia definición. <I>"La justicia es lo justo"</I> es una definición circular y, por tanto, inválida.</LI>
+<LI><B>Debe ser proporcional (ni demasiado amplia ni demasiado estrecha):</B> debe abarcar exactamente todos los casos del término definido, ni más ni menos. <I>"El triángulo es una figura geométrica"</I> es demasiado amplia (todos los polígonos también lo son); <I>"El triángulo es una figura de tres lados iguales"</I> es demasiado estrecha (excluye a los triángulos isósceles y escalenos).</LI>
+<LI><B>Debe ser afirmativa siempre que sea posible:</B> debe decir qué es el término, no únicamente qué no es. <I>"La salud es la ausencia de enfermedad"</I> es una definición negativa, poco informativa; resulta preferible una definición que indique positivamente en qué consiste el estado de salud.</LI>
+<LI><B>Debe usar lenguaje claro, literal y no figurado:</B> las metáforas, comparaciones poéticas o frases hechas no cumplen la función lógica de delimitar con precisión un concepto.</LI>
+<LI><B>No debe definirse por ejemplos ni por sinónimos vagos:</B> dar un ejemplo (<I>"un mamífero es, por ejemplo, el perro"</I>) no es definir, porque no delimita la clase completa; y un sinónimo aproximado (<I>"alegría es contento"</I>) traslada el problema de definir a otra palabra sin resolverlo.</LI>
+</UL>
+
+<H3>5. Tipos de definición que aparecen en los exámenes</H3>
+<UL>
+<LI><B>Definición esencial o lógica (género + diferencia):</B> la más exigida en Razonamiento Verbal; responde a "¿qué es x?" señalando su clase y su rasgo distintivo.</LI>
+<LI><B>Definición lexicográfica:</B> la que ofrecen los diccionarios; combina género próximo y diferencia específica pero de forma más breve y a veces incluye varios sentidos (acepciones) del término.</LI>
+<LI><B>Definición ostensiva:</B> señala el objeto directamente ("esto es un triángulo", mostrando uno); no sirve para conceptos abstractos ni para exámenes escritos.</LI>
+<LI><B>Definición operacional:</B> describe el procedimiento o la prueba mediante la cual se reconoce o se mide el objeto (frecuente en ciencias: "la temperatura es lo que mide un termómetro").</LI>
+<LI><B>Definición etimológica:</B> explica el significado a partir del origen de la palabra; es informativa pero no siempre coincide con el significado actual del término (falacia etimológica si se usa como prueba definitiva).</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Estrategia de resolución rápida.</B> Ante una pregunta de definición con cuatro opciones, conviene: (1) localizar en cada opción el género próximo y comprobar si es el inmediato o uno remoto; (2) localizar la diferencia específica y comprobar si es esencial (no accidental) y si delimita exactamente el conjunto correcto, sin dejar fuera ni sumar de más; (3) descartar de inmediato cualquier opción circular, negativa cuando exista alternativa positiva, o construida solo con sinónimos o ejemplos; (4) entre las opciones que sobreviven, elegir la que use el menor número de rasgos necesarios y suficientes —la más "económica" sin perder precisión.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">2</DIV><DIV CLASS="dk-label">Componentes de la definición esencial: género próximo + diferencia específica</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">5</DIV><DIV CLASS="dk-label">Reglas clásicas que toda buena definición debe cumplir</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">0</DIV><DIV CLASS="dk-label">Rasgos accidentales o redundantes permitidos en una definición rigurosa</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Aristóteles</DIV><DIV CLASS="dk-label">Origen histórico del modelo lógico de definición por género y diferencia</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Qué es el género próximo dentro de la estructura de una definición esencial?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Es cualquier característica accidental del objeto definido, como su color o su tamaño habitual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Es la clase inmediatamente superior a la que pertenece el término definido; la categoría más cercana dentro de la cual dicho término es un caso particular</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Es un sinónimo aproximado del término que se quiere definir</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Es un ejemplo concreto que ilustra el término sin delimitar toda la clase a la que pertenece</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El género próximo es, por definición lógica, la clase inmediatamente superior del término que se quiere definir: el primer escalón hacia arriba en la jerarquía de clases a la que ese término pertenece. No es cualquier clase superior (eso sería un género remoto, como "ser vivo" para "tigre"), sino la más próxima y precisa posible. Las opciones a), c) y d) describen, respectivamente, una propiedad accidental, un sinónimo y un ejemplo: ninguno de los tres cumple la función lógica del género próximo, que es ubicar al término dentro de su categoría inmediata.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Qué es la diferencia específica dentro de la estructura de una definición esencial?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Es cualquier dato verdadero sobre el objeto, sin importar si distingue o no al término dentro de su género</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Es el rasgo o conjunto de rasgos esenciales que distinguen al término definido de todos los demás miembros de su mismo género próximo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Es la clase más amplia posible que incluye al término definido junto con otras clases muy distintas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Es una comparación poética o metafórica que evoca el sentido general del término sin precisarlo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La diferencia específica es el complemento necesario del género próximo: una vez ubicado el término dentro de su clase inmediata, la diferencia específica indica qué propiedad esencial lo separa de todos los demás miembros de esa misma clase. Por ejemplo, dentro del género "triángulo", la diferencia específica "tiene sus tres lados iguales" separa al triángulo equilátero de los triángulos isósceles y escalenos. La opción a) describe una propiedad accidental (no necesariamente distintiva); c) describe, al revés, un género remoto; d) describe un recurso retórico, no una herramienta lógica de definición.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> En la definición "El cuadrado es el rectángulo que tiene sus cuatro lados de igual longitud", identifica el género próximo y la diferencia específica.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Género próximo: "figura geométrica"; diferencia específica: "cuadrado"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Género próximo: "rectángulo"; diferencia específica:"tener sus cuatro lados de igual longitud"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Género próximo: "lados"; diferencia específica: "rectángulo"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Género próximo: "igual longitud"; diferencia específica: "cuatro"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El género próximo es la clase inmediatamente superior mencionada en la definición: "rectángulo" (todo cuadrado es, antes que nada, un caso particular de rectángulo: un cuadrilátero con cuatro ángulos rectos). La diferencia específica es el rasgo que separa al cuadrado de los demás rectángulos: "tener sus cuatro lados de igual longitud" (un rectángulo común tiene lados opuestos iguales, pero no necesariamente los cuatro). La opción a) invierte el orden de proximidad ("figura geométrica" es un género remoto, no próximo); c) y d) toman fragmentos sintácticos sin relación lógica con la estructura género-diferencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuáles son los "rasgos mínimos de significado" que debe contener una definición rigurosa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Todos los datos verdaderos que se conozcan sobre el objeto, incluyendo anécdotas, ejemplos y curiosidades, para que la definición sea lo más completa posible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) El conjunto mínimo y suficiente de rasgos necesarios para identificar exactamente el referente del término, sin que falte ninguno indispensable ni se incluya ninguno redundante o accidental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Únicamente el género próximo, sin necesidad de ninguna diferencia específica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Una lista de sinónimos del término que abarque todos sus posibles usos coloquiales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El principio de economía definitoria exige que una definición contenga exactamente los rasgos necesarios (ningún rasgo esencial puede faltar, porque entonces la definición sería demasiado amplia o ambigua) y suficientes (ningún rasgo accidental o redundante puede sobrar, porque entonces la definición dejaría de ser una definición rigurosa y se convertiría en una descripción). La opción a) describe precisamente el error opuesto: acumular información sin criterio de relevancia. La opción c) ignora que el género próximo solo ubica la clase pero no distingue al término dentro de ella; sin diferencia específica la definición sería incompleta. La opción d) confunde definir con dar sinónimos, lo cual traslada el problema sin resolverlo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Por qué se considera incorrecta, desde el punto de vista lógico, la definición "La alegría es estar contento"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Porque es demasiado larga y debería acortarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Porque sustituye el término definido por un sinónimo aproximado en lugar de ofrecer su género próximo y su diferencia específica, trasladando el problema de definir sin resolverlo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Porque usa un lenguaje demasiado técnico para el lector común</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Porque no menciona ningún ejemplo concreto de una persona alegre</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Estar contento" es prácticamente un sinónimo de "alegría": no indica la clase (género próximo, por ejemplo "estado emocional") ni el rasgo distintivo (diferencia específica, por ejemplo "que surge ante algo favorable y se manifiesta como bienestar y satisfacción"). Definir por sinónimo es uno de los errores clásicos señalados en la teoría de la definición, porque no resuelve la pregunta "¿qué es x?": simplemente la reformula con otra palabra de significado equivalente. La longitud (a), el nivel técnico del lenguaje (c) y la ausencia de ejemplos (d) no son, en sí mismos, defectos lógicos de una definición; de hecho, una buena definición no necesita ejemplos para ser válida.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Evalúa la siguiente definición: "La justicia es aquello que es justo." ¿Qué error contiene y por qué la invalida?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) No contiene ningún error: es una definición correcta porque explica con claridad el significado del término</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Es una definición circular: el término definido ("justicia") reaparece, mediante su forma adjetiva ("justo"), dentro de su propia definición, por lo que no aporta ninguna información nueva ni delimita el concepto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Es una definición demasiado estrecha porque excluye casos legítimos de justicia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Es una definición ostensiva porque señala directamente un objeto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La regla de no circularidad exige que el término definido no aparezca, ni literalmente ni mediante una palabra de la misma familia (en este caso "justo", derivado directo de "justicia"), dentro del enunciado que pretende definirlo. Quien no sepa qué es "justicia" tampoco sabrá qué es "justo", de modo que la definición no aporta información nueva: es lógicamente vacía, aunque gramaticalmente esté bien construida. La opción a) ignora justamente este defecto estructural; c) y d) describen errores distintos (amplitud/estrechez y tipo ostensivo) que no corresponden a este caso.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Un estudiante define "ballena" como: "Mamífero acuático de gran tamaño que vive principalmente en los océanos del hemisferio norte." ¿Qué problema lógico tiene esta definición?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Ninguno: el género próximo y la diferencia específica están correctamente identificados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Es demasiado estrecha: incluye un rasgo accidental ("vive principalmente en el hemisferio norte") que excluye sin justificación a las ballenas que habitan el hemisferio sur, dejando fuera casos legítimos del término</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Es demasiado amplia, porque el género "mamífero acuático" incluye también a los delfines y las focas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Es una definición circular, porque usa la palabra "ballena" dentro de su propia definición</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El rasgo "vive principalmente en los océanos del hemisferio norte" es accidental y, además, geográficamente falso como rasgo distintivo: existen ballenas en prácticamente todos los océanos del planeta, incluyendo el hemisferio sur (por ejemplo, las ballenas jorobadas que migran a la Antártida). Al incluir ese rasgo como si fuera parte de la diferencia específica, la definición se vuelve demasiado estrecha: excluiría, en sentido estricto, a millones de ejemplares legítimos del término "ballena". La opción c) señala correctamente que el género "mamífero acuático" no es exclusivo de las ballenas, pero ese no es el error que comete esta definición en particular (el género "mamífero acuático de gran tamaño" sigue siendo razonablemente próximo); el problema real está en el rasgo geográfico injustificado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Para definir el término "triángulo", ¿cuál de las siguientes opciones constituye el género próximo correcto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Figura geométrica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Objeto matemático</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Polígono, porque es la clase inmediatamente superior: el triángulo es, exactamente, el polígono de tres lados; no hay ninguna clase intermedia entre "polígono" y "triángulo"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Cosa que existe en el espacio</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La jerarquía de clases para "triángulo" es: <I>triángulo → polígono → figura geométrica → objeto matemático → ente abstracto</I>. El género próximo debe ser el primer escalón hacia arriba, es decir, la clase inmediatamente superior sin saltos: "polígono" (figura plana cerrada formada por segmentos rectos), del cual el triángulo es el caso particular de tres lados. Las opciones a), b) y d) son géneros remotos: correctos como clasificación general, pero incorrectos como pieza de una definición rigurosa, porque obligarían a una diferencia específica desproporcionadamente larga (tendría que especificar "plana", "cerrada", "de lados rectos" y "de tres lados" para llegar al mismo resultado que ya da "polígono de tres lados").</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Por qué la definición "La salud es la ausencia de enfermedad" se considera, desde el punto de vista lógico, una definición débil?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Porque es falsa: la salud no tiene relación alguna con la enfermedad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Porque es una definición negativa: indica qué no es el término (no es enfermedad) en lugar de indicar positivamente en qué consiste, lo cual aporta menos información de la que aportaría una definición afirmativa cuando esta es posible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Porque utiliza un género próximo equivocado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Porque es una definición circular</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La regla clásica establece que una definición debe ser afirmativa siempre que sea posible, porque decir solamente lo que un término <I>no es</I> no delimita con precisión lo que <I>sí es</I>: hay infinitas formas de "no estar enfermo" (estar dormido, estar muerto, ser una piedra) que no equivalen a "tener salud". Una definición positiva, como "estado de bienestar físico, mental y social en el que el organismo funciona con normalidad", informa mucho más sobre la naturaleza positiva del concepto. La opción a) es incorrecta porque la definición no es falsa, solo es lógicamente pobre; c) y d) describen errores distintos (género equivocado y circularidad) que no son los que comete este enunciado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Entre las siguientes cuatro definiciones de "isla", ¿cuál cumple con el principio de rasgos mínimos y suficientes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) "Lugar bonito y tranquilo donde la gente va de vacaciones a descansar cerca del mar"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) "Porción de tierra rodeada de agua por todas partes": incluye el género próximo ("porción de tierra") y la diferencia específica exacta y suficiente ("rodeada de agua por todas partes"), sin rasgos accesorios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) "Porción de tierra rodeada de agua, generalmente con palmeras, playas de arena blanca y un clima tropical agradable"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) "Lo opuesto a un continente"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La opción b) contiene exactamente el género próximo ("porción de tierra") y la diferencia específica esencial y suficiente ("rodeada de agua por todas partes"), que basta para identificar el conjunto exacto de objetos llamados "isla" sin incluir nada de más ni dejar nada fuera. La opción a) describe una connotación turística accidental, no la esencia geográfica del término (hay islas frías, deshabitadas o industriales que también son islas). La opción c) añade rasgos accesorios falsos como universales (palmeras, arena blanca, clima tropical: no todas las islas los tienen), violando el principio de economía. La opción d) es una definición por oposición, demasiado vaga: "lo opuesto a un continente" no especifica en qué consiste esa oposición ni delimita con precisión el concepto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · RAZONAMIENTO CRÍTICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Explica por qué definir "tigre" como "ser vivo que tiene rayas y vive en la selva" es lógicamente deficiente, incluso si cada dato que contiene es verdadero.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Es deficiente porque "ser vivo" no es verdadero respecto del tigre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Es deficiente porque combina un <B>género remoto</B> ("ser vivo", que salta varios escalones taxonómicos en vez de usar el género próximo "felino") con una diferencia específica imprecisa y no exhaustiva ("tiene rayas y vive en la selva" no distingue al tigre de otros felinos con rayas, ni es válido para los tigres que viven en manglares o pastizales, no solo en la selva)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Es deficiente únicamente porque es demasiado breve; bastaría con añadir más datos sobre la dieta del tigre para que fuera correcta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) No es deficiente: toda la información es verdadera, y la verdad de los datos es el único criterio para evaluar una definición</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta evalúa la diferencia entre verdad y rigor lógico: que cada dato sea verdadero no garantiza que la definición sea correcta. El error tiene dos componentes: (1) el género usado, "ser vivo", es extremadamente remoto en la escalera taxonómica del tigre (<I>tigre → felino → carnívoro → mamífero → vertebrado → animal → ser vivo</I>); el género próximo correcto sería "felino". (2) La diferencia específica "tiene rayas y vive en la selva" no es exhaustiva ni exclusiva: otros felinos también tienen patrones de pelaje (aunque distintos), y existen poblaciones de tigres que habitan manglares (como en Sundarbans) y pastizales, no exclusivamente la selva tropical. La opción a) es falsa, porque el tigre efectivamente es un ser vivo (el dato es verdadero, el problema es de proximidad de clase, no de verdad). La opción c) subestima el problema: no es solo brevedad, es imprecisión estructural. La opción d) confunde el criterio de verdad fáctica con el criterio de rigor lógico-definitorio, que exige además proximidad de género y exhaustividad de la diferencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Compara estas dos definiciones de "metáfora" y determina cuál respeta mejor el principio de economía definitoria: (I) "Figura retórica que consiste en trasladar el sentido de una palabra a otra mediante una relación de semejanza"; (II) "Figura retórica, muy usada por los poetas desde la Antigüedad griega hasta hoy, especialmente bella cuando aparece en la poesía romántica, que consiste en trasladar el sentido de una palabra a otra mediante una relación de semejanza".</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La definición (II) es mejor porque contiene más información histórica y cultural sobre el uso del recurso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La definición (I) es mejor: contiene exactamente el género próximo ("figura retórica") y la diferencia específica esencial ("trasladar el sentido... por semejanza"), sin los <B>rasgos accidentales y valorativos</B> que (II) añade ("muy usada...", "especialmente bella...") y que no aportan nada a la delimitación lógica del concepto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Ambas son igualmente correctas, porque las dos incluyen la frase esencial sobre el traslado de sentido por semejanza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Ninguna de las dos es correcta, porque ninguna menciona ejemplos concretos de metáforas literarias</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aunque ambas definiciones contienen la misma estructura lógica correcta (género próximo "figura retórica" + diferencia específica "trasladar el sentido de una palabra a otra por semejanza"), la definición (II) añade información histórica, de frecuencia de uso y de juicio estético ("muy usada", "especialmente bella en la poesía romántica") que, siendo verdadera, no cumple ninguna función distintiva: no ayuda a separar la metáfora de otras figuras retóricas, solo la describe culturalmente. Esto viola el principio de economía definitoria (rasgos mínimos y suficientes), por lo que (I) es la versión lógicamente superior. La opción a) confunde "más información" con "mejor definición", error frecuente que el examen busca detectar; c) ignora la diferencia de economía entre ambas; d) aplica un criterio (necesidad de ejemplos) que no es exigible a una definición esencial correcta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Un estudiante propone esta definición de "ave": "Animal que vuela." Analiza por qué es simultáneamente demasiado amplia y demasiado estrecha.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) No es ni amplia ni estrecha: es una definición perfectamente correcta y precisa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Es demasiado amplia porque incluye animales no aviares que también vuelan (murciélagos, insectos), y es <B>demasiado estrecha</B> porque excluye aves legítimas que no vuelan (avestruz, pingüino, kiwi); el verdadero rasgo distintivo del ave no es "volar" sino rasgos como tener plumas, pico sin dientes y poner huevos de cáscara dura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Es demasiado amplia únicamente porque "animal" es un género remoto, pero no tiene ningún problema de estrechez</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Es demasiado estrecha únicamente porque excluye a los insectos voladores, pero no tiene ningún problema de amplitud</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Este es un caso clásico de definición fallida en ambas direcciones simultáneamente. <B>Amplitud excesiva</B>: "volar" no es exclusivo de las aves; murciélagos (mamíferos) e insectos (artrópodos) también vuelan, de modo que la diferencia específica propuesta no excluye a otros miembros de géneros distintos, dejando entrar casos que no deberían estar incluidos. <B>Estrechez excesiva</B>: existen aves —biológicamente clasificadas como tales por sus rasgos anatómicos— que no vuelan, como el avestruz, el pingüino (que nada) o el kiwi; la definición las excluiría incorrectamente. El rasgo verdaderamente distintivo del ave no está en la capacidad de volar (un comportamiento, no una esencia anatómica) sino en características esenciales como la presencia de plumas, el pico sin dientes y la reproducción mediante huevos de cáscara calcárea. Las opciones c) y d) señalan solo una de las dos fallas, cuando el enunciado presenta ambas al mismo tiempo; a) ignora por completo el doble error.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Un diccionario define "filántropo" simplemente como "persona generosa." Evalúa por qué esta definición, aunque útil para el lector común, resulta insuficiente desde el rigor de la definición esencial exigido en el examen.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Es insuficiente porque "persona generosa" es falso: los filántropos no son necesariamente generosos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Es insuficiente porque sustituye la estructura género + diferencia específica por un sinónimo aproximado("generoso"), que no precisa el rasgo distintivo real: la filantropía supone, específicamente, el <B>uso de recursos propios para promover el bienestar ajeno de manera organizada o sistemática</B>, mientras que "generoso" podría aplicarse también a quien simplemente comparte un favor puntual sin ese carácter sistemático</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Es insuficiente porque debería mencionarse el origen griego de la palabra ("amor a la humanidad") para que la definición sea válida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) No es insuficiente: cualquier definición que use un adjetivo cercano en significado cumple los requisitos lógicos de una buena definición</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Persona generosa" funciona como una aproximación práctica para el lector de un diccionario común, pero no constituye una definición esencial rigurosa porque sustituye el trabajo de delimitar género y diferencia por un simple sinónimo cercano. La diferencia específica real del filantropismo no es "ser generoso" en sentido amplio (que incluiría actos puntuales o informales de generosidad), sino un rasgo más preciso: la dedicación sistemática u organizada de recursos propios al bienestar de otros (donaciones estructuradas, fundaciones, mecenazgo). Esto demuestra por qué, en preguntas de definición de alto rendimiento, la opción correcta suele ser la más analítica (con género y diferencia explícitos) y no la más parecida a un sinónimo. La opción a) es falsa, ya que la generosidad sí está relacionada, aunque de forma insuficiente, con la filantropía; c) confunde el rigor lógico con la etimología, que es informativa pero no obligatoria; d) ignora exactamente el error que el ejercicio busca evidenciar.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Qué dificultad especial enfrenta la aplicación del esquema "género próximo + diferencia específica" cuando se intenta definir un concepto abstracto como "democracia", en comparación con definir un objeto concreto como "triángulo"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) No existe ninguna dificultad especial: el esquema funciona exactamente igual para conceptos abstractos y concretos, sin ninguna diferencia de complejidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Los conceptos abstractos como "democracia" no admiten ningún tipo de definición, por lo que las preguntas de examen nunca los incluyen</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) En los conceptos concretos, los rasgos esenciales suelen ser observables y poco discutibles (lados, ángulos, materiales); en los conceptos abstractos como "democracia", la identificación misma del género próximo (¿sistema político?, ¿forma de gobierno?, ¿principio organizativo?) y de la diferencia específica (¿soberanía popular?, ¿elecciones?, ¿separación de poderes?) suele ser objeto de debate teórico, porque distintas escuelas de pensamiento priorizan distintos rasgos como esenciales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La única dificultad es que la palabra "democracia" es más larga que la palabra "triángulo", lo cual complica la redacción de la definición</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Esta pregunta evalúa la comprensión crítica de los límites del esquema clásico de definición. En objetos concretos y formales como el triángulo, los rasgos esenciales (número de lados, igualdad de longitudes o ángulos) son verificables de manera directa y no admiten discusión razonable. En conceptos abstractos y normativos como "democracia", en cambio, tanto el género próximo (¿es un sistema político?, ¿una forma de gobierno?, ¿un principio de legitimidad?) como la diferencia específica (¿el rasgo esencial es la soberanía popular?, ¿la celebración de elecciones libres?, ¿la separación de poderes?, ¿la protección de derechos fundamentales?) dependen de marcos teóricos distintos (liberal, deliberativo, participativo, etc.), que no coinciden necesariamente en qué rasgo es "el" esencial. Esto no significa que el esquema sea inaplicable (opción b, falsa), sino que su aplicación exige mayor cuidado argumentativo. La opción a) ignora esta dificultad real; d) confunde un problema de fondo conceptual con un detalle puramente formal de extensión de la palabra.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> De las siguientes cuatro definiciones del término técnico "isótopo", determina cuál cumple simultáneamente con género próximo correcto, diferencia específica esencial y rasgos mínimos sin redundancia.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) "Cosa muy pequeña que forma parte de los átomos y que los científicos estudian en los laboratorios de física nuclear desde el siglo XX"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) "Variante de un mismo elemento químico que tiene igual número de protones pero distinto número de neutrones en su núcleo": el género próximo ("variante de un mismo elemento químico") es preciso e inmediato, y la diferencia específica ("igual número de protones, distinto número de neutrones") es exacta, esencial y suficiente para distinguir un isótopo de cualquier otra variante atómica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) "Átomo radiactivo que se usa en medicina nuclear para tratamientos contra el cáncer y en la datación de fósiles mediante el carbono 14"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) "Lo contrario de un átomo estable"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Análisis de cada opción: <B>a) Incorrecta</B>: usa un género remoto y vago ("cosa muy pequeña") en vez del género próximo preciso, y la diferencia que ofrece ("que los científicos estudian...") es completamente accidental: describe el uso académico del concepto, no su naturaleza. <B>b) Correcta</B>: el género próximo "variante de un mismo elemento químico" ubica con precisión inmediata la clase a la que pertenece un isótopo (es, antes que nada, una variante de un elemento); la diferencia específica "igual número de protones, distinto número de neutrones" es exactamente el rasgo nuclear que define a los isótopos en física y química, sin redundancia ni omisión: basta y es necesario. <B>c) Incorrecta</B>: confunde la definición con una propiedad accidental (la radiactividad no es universal: existen isótopos estables, como el carbono 12) y con sus aplicaciones prácticas (medicina, datación), que son consecuencias de algunos isótopos, no la esencia de todos. <B>d) Incorrecta</B>: es una definición por oposición demasiado vaga e incluso parcialmente falsa, porque existen isótopos estables que no son "lo contrario" de un átomo estable en ningún sentido riguroso. La opción b) demuestra el dominio simultáneo de las tres exigencias evaluadas: proximidad del género, esencialidad de la diferencia y economía de rasgos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Si tuvieras que definir el propio término "definición" aplicando rigurosamente su propia teoría (género próximo + diferencia específica + rasgos mínimos), ¿cuál de las siguientes opciones lo logra mejor?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) "Una definición es una palabra que se busca en el diccionario cuando no se conoce su significado"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) "Una definición es un enunciado lógico-lingüístico que delimita el significado de un término señalando su género próximo y su diferencia específica mediante el conjunto mínimo y suficiente de rasgos esenciale": contiene el género próximo ("enunciado lógico-lingüístico") y la diferencia específica exacta (su función: delimitar significado mediante género, diferencia y economía de rasgos), sin redundancias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) "Una definición es lo opuesto a una descripción vaga o imprecisa de un objeto cualquiera"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) "Una definición es algo que usan los profesores de lenguaje para explicar palabras difíciles a sus estudiantes en los exámenes de admisión"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de síntesis aplica la teoría estudiada al propio concepto que la nombra, evaluando si el estudiante ha integrado el aprendizaje. Análisis: <B>a) Incorrecta</B>: describe una acción del usuario (buscar en el diccionario), no la naturaleza del concepto "definición"; es una definición ostensiva-funcional, no esencial. <B>b) Correcta</B>: identifica con precisión el género próximo ("enunciado lógico-lingüístico", la clase inmediata a la que pertenece toda definición) y la diferencia específica exacta (su función distintiva: delimitar significado mediante género próximo, diferencia específica y economía de rasgos), cumpliendo además el principio de economía al no añadir ningún rasgo accesorio. <B>c) Incorrecta</B>: es una definición negativa ("lo opuesto a..."), que la teoría señala como deficiente cuando existe una alternativa afirmativa, como en este caso. <B>d) Incorrecta</B>: confunde la naturaleza lógica del concepto con su uso pedagógico circunstancial (profesores, exámenes de admisión), un rasgo completamente accidental y no universal (las definiciones existen y se usan fuera de cualquier aula). La opción b) demuestra dominio integral de la estructura, la función y el principio de economía estudiados en el tema.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Un estudiante define "viudo" así: "Persona que ya no tiene esposo o esposa porque se le murió, y que generalmente se viste de luto y vive triste durante mucho tiempo." Identifica TODOS los errores lógicos presentes en esta definición.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La definición no tiene ningún error: describe correctamente la situación de una persona viuda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Tiene dos errores combinados: (1) el género próximo está incompleto/impreciso ("persona" es un género remoto; el género próximo correcto sería "persona casada", ya que solo se es viudo si antes se estuvo casado); (2) se añaden rasgos accidentales no esenciales ("se viste de luto", "vive triste durante mucho tiempo"), que son comportamientos culturales o emocionales frecuentes pero no definitorios: existen viudos que no usan luto y no todos viven tristes por igual de tiempo, y aun así siguen siendo, lógicamente, viudos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El único error es que la definición es demasiado corta y debería tener más ejemplos de personas viudas famosas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El único error es de redacción gramatical, no de estructura lógica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige un diagnóstico múltiple y exhaustivo, la habilidad de mayor exigencia en el tema. <B>Primer error (género próximo impreciso):</B> "persona" es demasiado remoto; el rasgo de haber estado casado es presupuesto necesario para poder ser viudo (no puede ser viudo quien nunca se casó), por lo que el género próximo correcto y más informativo es "persona casada" (que, además, ya contiene implícitamente "que ha perdido a su cónyuge" como diferencia, ahorrando palabras). <B>Segundo error (rasgos accidentales):</B> "se viste de luto" y "vive triste durante mucho tiempo" son comportamientos culturales y emocionales variables, no rasgos esenciales: una persona puede ser viuda sin vestir de luto (costumbre que varía según cultura y época) y sin experimentar tristeza prolongada (por ejemplo, tras una relación ya deteriorada), y sigue siendo lógicamente viuda. Estos rasgos describen una expectativa social común, no la esencia del concepto. La definición correcta y económica sería: "persona casada a quien se le ha muerto el cónyuge y no ha vuelto a casarse." Las opciones c) y d) subestiman gravemente la naturaleza del error, que es estructural y doble, no de extensión ni de redacción.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> En una pregunta de examen, dos opciones presentan el mismo género próximo correcto para el término "huérfano" ("menor de edad"). ¿Qué criterio debe usarse para decidir cuál de las dos es la respuesta correcta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Debe elegirse la opción que use un lenguaje más formal o más extenso, ya que eso demuestra mayor conocimiento del tema</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Cuando el género próximo coincide en ambas opciones, la decisión recae por completo en la diferencia específica</B>: debe elegirse la opción cuya diferencia específica sea más <B>precisa y exhaustiva, que cubra exactamente todos los casos legítimos del término (haber perdido uno o ambos padres) sin ser ni demasiado amplia ni demasiado estrecha, y sin incluir rasgos accidentales (como la situación económica o emocional del menor)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Debe elegirse al azar, porque si el género próximo es el mismo, ambas opciones son automáticamente equivalentes y correctas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Debe elegirse la opción que mencione un ejemplo real de una persona huérfana conocida, porque eso aporta evidencia empírica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es la estrategia clave para resolver los casos más difíciles del examen, donde los distractores están diseñados para compartir un género próximo correcto y diferenciarse solo en la diferencia específica. Por ejemplo, frente a "menor de edad cuyos padres han muerto" (demasiado estrecha: excluye al huérfano de un solo progenitor) versus "menor de edad que ha perdido a uno o ambos de sus padres" (precisa y exhaustiva: cubre los dos casos legítimos sin excederse), la segunda es la correcta porque su diferencia específica delimita con exactitud el conjunto completo de huérfanos sin dejar fuera ni incluir de más. El criterio decisivo nunca es la extensión del lenguaje (a), el azar (c) ni la presencia de ejemplos (d): es la precisión lógica de la diferencia específica, evaluada según las mismas reglas de proporcionalidad y economía estudiadas en todo el tema.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Si tuvieras que resumir en una sola afirmación la competencia central que evalúan las preguntas de "Definición" en un examen de admisión de alto rendimiento, ¿cuál de las siguientes la expresa con mayor exactitud?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Evalúan la memorización exacta de definiciones de diccionario para el mayor número posible de palabras del idioma español</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Evalúan la capacidad de reconocer y aplicar la estructura lógica de género próximo + diferencia específica + rasgos mínimos y suficientes, identificando errores típicos (circularidad, amplitud o estrechez indebidas, rasgos accidentales, definición por sinónimo o por ejemplo) en enunciados sobre conceptos concretos o abstractos, conocidos o desconocidos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Evalúan principalmente la velocidad de lectura del estudiante, ya que las opciones suelen ser muy largas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Evalúan exclusivamente conocimientos de ciencias naturales, ya que la mayoría de ejemplos usan términos biológicos o geométricos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de cierre evalúa si el estudiante ha comprendido el propósito real del tema más allá de cada ejercicio individual. Análisis de cada opción: <B>a) Incorrecta</B>: el examen no busca memorización lexicográfica, sino razonamiento transferible: por eso aparecen términos técnicos, abstractos y cotidianos por igual, incluso algunos que el estudiante puede no haber estudiado antes. <B>b) Correcta</B>: integra los tres pilares trabajados en todo el tema —la estructura (género próximo + diferencia específica), el principio de economía (rasgos mínimos y suficientes) y la capacidad diagnóstica (reconocer los errores clásicos: circularidad, amplitud/estrechez, accidentalidad, sinonimia, definición negativa o por ejemplo)— y subraya que esta competencia se aplica con independencia de si el concepto es concreto (triángulo, ballena), técnico (isótopo) o abstracto (democracia, definición). <B>c) Incorrecta</B>: la longitud de las opciones es consecuencia del rigor exigido, no el objetivo de la evaluación; la velocidad sin razonamiento conduce a errores, no a aciertos. <B>d) Incorrecta</B>: los ejemplos provienen de múltiples campos (geometría, biología, física, ética, política, lenguaje) precisamente para demostrar que la herramienta lógica es universal y no depende de un área de conocimiento específica. La opción b) demuestra la comprensión metacognitiva más alta posible sobre el propio tema estudiado.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE — Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

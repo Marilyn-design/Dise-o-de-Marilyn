@@ -1,0 +1,523 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Prosas Profanas - Rubén Darío - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 11</DIV>
+<H1>Prosas Profanas &mdash; Rub&eacute;n Dar&iacute;o</H1>
+<DIV CLASS="sub">Autor &middot; Contexto hist&oacute;rico &middot; El Modernismo &middot; G&eacute;nero y estructura &middot; Poemas clave &middot; Temas &middot; Estilo &middot; Valor literario</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Rub&eacute;n Dar&iacute;o: el padre del Modernismo hispanoamericano</H3>
+<B>F&eacute;lix Rub&eacute;n Garc&iacute;a Sarmiento</B>, conocido universalmente como <B>Rub&eacute;n Dar&iacute;o</B> (Metapa, Nicaragua, 18 de enero de 1867 &ndash; Le&oacute;n, Nicaragua, 6 de febrero de 1916), es el poeta hispanoamericano m&aacute;s influyente de todos los tiempos y el <B>fundador e indiscutible l&iacute;der del Modernismo literario en lengua española</B>. Su obra revolucion&oacute; radicalmente la poes&iacute;a en español y ejerci&oacute; una influencia que se extendi&oacute; a ambos lados del Atl&aacute;ntico, renovando tambi&eacute;n la literatura peninsular española.
+
+<H4>Datos biogr&aacute;ficos esenciales:</H4>
+<UL>
+<LI><B>Naci&oacute;</B> en Metapa (hoy Ciudad Dar&iacute;o), Nicaragua, en el seno de una familia humilde y desestructurada. Fue un <B>ni&ntilde;o prodigio</B>: public&oacute; sus primeros poemas a los 13 a&ntilde;os y fue apodado "el poeta ni&ntilde;o".</LI>
+<LI>Trabaj&oacute; como periodista y fue enviado a Chile (1886), donde se impregnó de la cultura francesa y public&oacute; <B><I>Azul...</I> (1888)</B>, la obra que marc&oacute; el nacimiento del Modernismo.</LI>
+<LI>Vivi&oacute; en Buenos Aires (1893&ndash;1898), donde public&oacute; <B><I>Prosas Profanas</I> (1896)</B>, la obra cumbre del Modernismo esteticista. En esta ciudad dirigi&oacute; la secci&oacute;n literaria de <I>La Naci&oacute;n</I> y ciment&oacute; su fama continental.</LI>
+<LI>Fue enviado a España como corresponsal (1898&ndash;1900), donde conoci&oacute; a los grandes escritores de la Generaci&oacute;n del 98 y public&oacute; <B><I>Cantos de Vida y Esperanza</I> (1905)</B>, su obra de madurez c&iacute;vica y existencial.</LI>
+<LI>Su vida personal fue turbulenta: dos matrimonios infelices, amores imposibles, alcoholismo crónico y graves problemas económicos a pesar de su fama.</LI>
+<LI>Muri&oacute; en Nicaragua en 1916, a los 49 a&ntilde;os, agotado y enfermo.</LI>
+</UL>
+
+<H4>Su obra principal:</H4>
+<UL>
+<LI><B><I>Azul...</I> (1888)</B>: primer libro modernista; mezcla prosa poética y verso; influencia del Parnasianismo franc&eacute;s.</LI>
+<LI><B><I>Prosas Profanas y otros poemas</I> (1896; ampliada en 1901)</B>: cumbre del Modernismo esteticista y sensorial; el libro que nos ocupa.</LI>
+<LI><B><I>Cantos de Vida y Esperanza</I> (1905)</B>: madurez ideol&oacute;gica; preocupaci&oacute;n hispanoamericana y existencial.</LI>
+<LI><B><I>El canto errante</I> (1907)</B>, <B><I>Poema del oto&ntilde;o y otros poemas</I> (1910)</B>: obras de vejez prematura y meditaci&oacute;n sobre la muerte.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Rub&eacute;n Dar&iacute;o es el <B>"padre del Modernismo"</B> o <B>"iniciador del Modernismo hispanoamericano"</B>. Su nombre real es <B>F&eacute;lix Rub&eacute;n Garc&iacute;a Sarmiento</B>. Naci&oacute; en <B>Nicaragua</B> (1867&ndash;1916). <I>Prosas Profanas</I> fue publicada en <B>1896</B> en Buenos Aires. Es la obra cumbre del <B>Modernismo esteticista o primera etapa modernista</B>.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127981; EL MODERNISMO HISPANOAMERICANO<SPAN>El movimiento literario que revolucion&oacute; la poes&iacute;a en lengua española</SPAN></DIV>
+
+<H3>2. El Modernismo: contexto hist&oacute;rico, cultural y est&eacute;tico</H3>
+El <B>Modernismo</B> es el primer movimiento literario propiamente hispanoamericano (no una imitaci&oacute;n rezagada de corrientes europeas sino una s&iacute;ntesis creativa original) y el que por primera vez en la historia export&oacute; influencias literarias desde Am&eacute;rica hacia España, invirtiendo la direcci&oacute;n tradicional del flujo cultural.
+
+<H4>Contexto hist&oacute;rico y social:</H4>
+El Modernismo surge en las &uacute;ltimas d&eacute;cadas del siglo XIX en el marco de:
+<UL>
+<LI><B>La modernizaci&oacute;n acelerada</B> de las ciudades latinoamericanas (Buenos Aires, M&eacute;xico, Santiago) impulsada por el auge exportador y la inversi&oacute;n extranjera.</LI>
+<LI><B>El positivismo y el materialismo</B> como filosof&iacute;as dominantes en las &eacute;lites intelectuales: el poeta modernista rechaza este mundo prosaico y utilitario, refugi&aacute;ndose en la belleza pura.</LI>
+<LI><B>La crisis del 98</B>: la derrota de España ante EE.UU. y la p&eacute;rdida de Cuba, Puerto Rico y Filipinas genera en el mundo hispano una profunda crisis de identidad.</LI>
+<LI><B>La amenaza del imperialismo norteamericano</B>: Dar&iacute;o y los modernistas son muy conscientes del peligro que representa el expansionismo anglosaj&oacute;n para la cultura hispana (tema que desarrollar&aacute; en <I>Cantos de Vida y Esperanza</I>).</LI>
+</UL>
+
+<H4>Influencias literarias del Modernismo:</H4>
+El Modernismo es una <B>s&iacute;ntesis ecl&eacute;ctica</B> de distintas corrientes europeas contempor&aacute;neas:
+<UL>
+<LI><B>Parnasianismo franc&eacute;s</B> (Th&eacute;ophile Gautier, Leconte de Lisle, Jos&eacute;-Maria de Her&eacute;dia): culto a la belleza formal perfecta, "el arte por el arte" (<I>l&rsquo;art pour l&rsquo;art</I>), la estatuaria greco-latina como modelo de belleza imperecedera, el poema como objeto art&iacute;stico tallado con precisi&oacute;n de orfebre.</LI>
+<LI><B>Simbolismo franc&eacute;s</B> (Paul Verlaine, St&eacute;phane Mallarm&eacute;, Arthur Rimbaud): la m&uacute;sica como ideal supremo del poema ("De la musique avant toute chose", Verlaine), el poder evocador y misterioso de las palabras m&aacute;s all&aacute; de su significado l&oacute;gico, la sinestesia como recurso fundamental.</LI>
+<LI><B>Romanticismo tard&iacute;o</B>: la sensibilidad, el yo l&iacute;rico, la melancol&iacute;a.</LI>
+<LI><B>La literatura española cl&aacute;sica</B> (G&oacute;ngora, Quevedo) y la m&eacute;trica tradicional española renovada.</LI>
+</UL>
+
+<H4>Caracter&iacute;sticas generales del Modernismo:</H4>
+<UL>
+<LI><B>Esteticismo radical</B>: la belleza como valor supremo, por encima de la moral o la utilidad.</LI>
+<LI><B>Exotismo y escapismo</B>: huida del presente prosaico hacia mundos lejanos en el tiempo (Versalles, la Grecia cl&aacute;sica, la Edad Media) o en el espacio (Oriente, los tr&oacute;picos ex&oacute;ticos).</LI>
+<LI><B>El aristocratismo del poeta</B>: el artista como ser superior que no puede ser comprendido por la masa burguesa y materialista.</LI>
+<LI><B>Renovaci&oacute;n m&eacute;trica profunda</B>: introducci&oacute;n de metros nuevos (el alejandrino franc&eacute;s de 14 s&iacute;labas, el eneasílabo), recuperaci&oacute;n de metros medievales, libertad r&iacute;tmica sin precedentes en la poes&iacute;a en español.</LI>
+<LI><B>Riqueza sensorial</B>: apelaci&oacute;n intensa a todos los sentidos; sinestesia (mezcla de sensaciones: "verde viento", "canto dorado").</LI>
+<LI><B>Universo sim&oacute;lico recurrente</B>: cisnes, princesas, ninfas, castillos, rosas, azul, oro, perfumes, marfiles, sedas.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>Las dos etapas del Modernismo en Dar&iacute;o:</B> La cr&iacute;tica distingue dos momentos en la poes&iacute;a de Dar&iacute;o: (1) <B>Primera etapa esteticista</B> (<I>Azul...</I>, <I>Prosas Profanas</I>): predomina el culto a la belleza formal, el escapismo, el erotismo refinado, los mundos ex&oacute;ticos y el arte por el arte. (2) <B>Segunda etapa c&iacute;vica y existencial</B> (<I>Cantos de Vida y Esperanza</I>): el poeta se preocupa por el destino de Hispanoam&eacute;rica, por la identidad cultural frente al imperialismo anglosaj&oacute;n, por la muerte y el tiempo. <I>Prosas Profanas</I> pertenece <B>plenamente a la primera etapa</B>.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128218; G&Eacute;NERO, ESTRUCTURA Y FORMA<SPAN>El libro de poes&iacute;a como obra de arte total: arquitectura, m&eacute;trica y musicalidad</SPAN></DIV>
+
+<H3>3. G&eacute;nero, estructura y forma de <I>Prosas Profanas</I></H3>
+
+<H4>G&eacute;nero literario:</H4>
+<I>Prosas Profanas y otros poemas</I> es un <B>libro de poes&iacute;a l&iacute;rica</B> escrito en verso. El t&iacute;tulo es deliberadamente paradójico: <B>"Prosas"</B> no significa "prosa" sino que remite al t&eacute;rmino liturgico latino (<I>prosa</I> o <I>sequentia</I>: composici&oacute;n po&eacute;tica cantada en la misa medieval), y <B>"Profanas"</B> sugiere lo contrario de lo sagrado. El oxímoron del t&iacute;tulo anuncia el programa est&eacute;tico del libro: una <B>liturgia de la belleza pagana</B>, una religi&oacute;n del arte que sustituye a la religi&oacute;n trascendente. El libro fue publicado en <B>Buenos Aires en 1896</B> y ampliado en <B>Par&iacute;s en 1901</B> con nuevos poemas.
+
+<H4>Estructura del libro (edici&oacute;n de 1896):</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Secci&oacute;n / Poema</TH><TH>Contenido y car&aacute;cter</TH><TH>Significado en el conjunto</TH></TR>
+<TR><TD><B>"Palabras liminares" (pr&oacute;logo en prosa)</B></TD><TD>Manifiesto est&eacute;tico de Dar&iacute;o: declara su independencia, su aristocratismo art&iacute;stico y su rechazo de la mediocridad burguesa</TD><TD>Define el programa po&eacute;tico de todo el libro; es el manifiesto del Modernismo</TD></TR>
+<TR><TD><B>"Era un aire suave..."</B></TD><TD>Escena galante del siglo XVIII franc&eacute;s; la marquesa Eulalia; ambiente versallesco y rococó</TD><TD>Poema de apertura: instaura el universo est&eacute;tico del libro (aristocracia, refinamiento, erotismo)</TD></TR>
+<TR><TD><B>"Sonatina"</B></TD><TD>La princesa que est&aacute; triste en su torre de oro; el hada madrina le anuncia al pr&iacute;ncipe que la despertar&aacute;</TD><TD>El poema m&aacute;s popular del libro; s&iacute;ntesis del imaginario modernista</TD></TR>
+<TR><TD><B>"El cisne"</B></TD><TD>El cisne como s&iacute;mbolo del ideal est&eacute;tico modernista; "Leda y el cisne" (mitolog&iacute;a griega)</TD><TD>Define el s&iacute;mbolo central del Modernismo; "el cisne dariano"</TD></TR>
+<TR><TD><B>"Blasón"</B></TD><TD>El cisne blanco como emblema her&aacute;ldico del ideal modernista</TD><TD>Refuerza el simbolismo del cisne</TD></TR>
+<TR><TD><B>"El a&ntilde;o l&iacute;rico"</B></TD><TD>Cuatro estaciones del a&ntilde;o como estados del alma y la naturaleza</TD><TD>Fusi&oacute;n de naturaleza y sensibilidad interior</TD></TR>
+<TR><TD><B>"Sinfonía en gris mayor"</B></TD><TD>Descripci&oacute;n impresionista de un puerto al mediod&iacute;a gris; sinestesia color&mdash;m&uacute;sica</TD><TD>Modelo de la sinestesia modernista; influencia simbolista (Verlaine)</TD></TR>
+<TR><TD><B>"El reino interior"</B></TD><TD>Las siete virtudes y los siete pecados capitales como procesi&oacute;n de figuras alegoricas que luchan por el alma del poeta</TD><TD>Dimensi&oacute;n espiritual y medieval del libro</TD></TR>
+<TR><TD><B>"Coloquio de los centauros"</B></TD><TD>Di&aacute;logo filosófico entre centauros de la mitolog&iacute;a griega sobre la vida, la muerte, el amor y el arte</TD><TD>El poema filos&oacute;fico y m&aacute;s extenso del libro; s&iacute;ntesis del pensamiento dariano</TD></TR>
+<TR><TD><B>"Ite, missa est"</B></TD><TD>Despedida final del libro con lenguaje liturgico profanado</TD><TD>Cierre que retoma el juego sacro/profano del t&iacute;tulo</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Las innovaciones m&eacute;tricas de Dar&iacute;o en <I>Prosas Profanas</I>:</H4>
+La renovaci&oacute;n m&eacute;trica es uno de los aportes m&aacute;s importantes del libro a la historia de la poes&iacute;a en español:
+<UL>
+<LI><B>El alejandrino modernista</B> (14 s&iacute;labas, 7+7): Dar&iacute;o adapta el alejandrino franc&eacute;s al español, consigui&eacute;ndo un verso de gran musicalidad y amplitud. "Sonatina" est&aacute; escrita en alejandrinos.</LI>
+<LI><B>El eneasílabo</B> (9 s&iacute;labas): metro muy poco usado antes de Dar&iacute;o; "Era un aire suave..." lo emplea con maestr&iacute;a.</LI>
+<LI><B>El dodecas&iacute;labo</B> (12 s&iacute;labas): otro metro renovado por Dar&iacute;o.</LI>
+<LI><B>El verso libre</B>: aunque Dar&iacute;o sigue siendo b&aacute;sicamente rimado y medido, experimenta con nuevas libertades rítmicas.</LI>
+<LI><B>Renovaci&oacute;n de la rima</B>: rimas ricas, esdr&uacute;julas, consonantes perfectas que refuerzan la musicalidad.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#127908; LOS POEMAS CLAVE<SPAN>An&aacute;lisis detallado de los poemas fundamentales del libro</SPAN></DIV>
+
+<H3>4. An&aacute;lisis de los poemas fundamentales</H3>
+
+<H4>"Sonatina": el poema m&aacute;s famoso</H4>
+<B>"Sonatina"</B> es el poema m&aacute;s conocido de <I>Prosas Profanas</I> y uno de los m&aacute;s citados de toda la poes&iacute;a en español. Escrito en <B>alejandrinos</B> (14 s&iacute;labas), narra la melancol&iacute;a de una princesa encerrada en su torre de oro que solo puede ser salvada por el amor de un pr&iacute;ncipe lejano.
+
+<DIV CLASS="ej">&#128221; <B>Versos iniciales de "Sonatina":</B><BR><BR>
+<I>"La princesa est&aacute; triste... &iquest;Qu&eacute; tendr&aacute; la princesa?<BR>
+Los suspiros se escapan de su boca de fresa,<BR>
+que ha perdido la risa, que ha perdido el color.<BR>
+La princesa est&aacute; p&aacute;lida en su silla de oro,<BR>
+est&aacute; mudo el teclado de su clave sonoro,<BR>
+y en un vaso, olvidada, se desmaya una flor."</I><BR><BR>
+<B>An&aacute;lisis:</B> La rima consonante perfecta (princesa/fresa, oro/sonoro) crea la musicalidad caracter&iacute;stica del libro. La imagen de la princesa es el s&iacute;mbolo del alma modernista: bella, refinada, encerrada en un mundo de lujo que sin embargo no la satisface; anhela algo que no tiene. La "boca de fresa" y el "clave sonoro" son im&aacute;genes parnasianas de precisi&oacute;n sensorial. La flor que "se desmaya" en el vaso es una met&aacute;fora de la princesa misma.</DIV>
+
+<H4>"Era un aire suave...": el mundo galante de Versalles</H4>
+<B>"Era un aire suave..."</B> inaugura el libro (tras el pr&oacute;logo) e instaura el universo est&eacute;tico del <B>rococó francés del siglo XVIII</B>: jardines de Versalles, minuetos, marquesas, pastores arcádicos, amor galante y refinado. La protagonista, <B>la marquesa Eulalia</B>, ríe "con su boca de fresa" (imagen que se repite en Sonatina, creando una figura femenina arquetípica). El poema est&aacute; escrito en <B>eneasílabos</B>, metro que le da un ritmo ligero y musical como el de una danza de época.
+
+<H4>"El cisne": el s&iacute;mbolo modernista por excelencia</H4>
+El <B>cisne</B> es el símbolo central del Modernismo dariano y de <I>Prosas Profanas</I>. En el poema "El cisne", Dar&iacute;o lo convierte en emblema del ideal est&eacute;tico: el cisne es blanco (pureza), elegante (belleza formal perfecta), silencioso (misterio), y en la mitolog&iacute;a griega es la forma que adopt&oacute; Zeus para unirse a Leda (erotismo sagrado). El cisne interroga al "negro lago del hastío" con su blanco cuello en forma de signo de interrogación: <B>¿es el arte la respuesta a la angustia existencial?</B> El cisne fue tan asociado al Modernismo que cuando Juan Ram&oacute;n Jim&eacute;nez (influido por Dar&iacute;o) quiso alejarse del Modernismo escribi&oacute;: "No le toques ya m&aacute;s, / que as&iacute; es la rosa." Y cuando Antonio Machado quiso criticar el Modernismo decorativo escribi&oacute; en parodia a Dar&iacute;o: "No era de cisnes el lago, / sino de patos."
+
+<H4>"Sinfonía en gris mayor": la sinestesia como técnica central</H4>
+<B>"Sinfonía en gris mayor"</B> es el modelo más perfecto de la <B>sinestesia modernista</B>: mezcla las impresiones visuales (el gris del puerto, el cielo gris, el mar gris), auditivas (la "sinfonía"), táctiles y emotivas en una sola percepción total. El título mismo es una sinestesia: una sinfonía (sonido) en gris mayor (color + escala musical). La influencia de <B>Paul Verlaine</B> ("De la musique avant toute chose") es directa.
+
+<H4>"Coloquio de los centauros": el poema filosófico</H4>
+El <B>"Coloquio de los centauros"</B> es el poema más extenso y filosófico del libro: en él, los centauros de la mitología griega (Quirón, Reto, Folo, Orneo) dialogan sobre los grandes temas: el amor, la muerte, el misterio del cosmos, la naturaleza del arte. Es la dimensión metafísica de <I>Prosas Profanas</I>: bajo la belleza decorativa del libro hay una angustia auténtica ante el enigma de la existencia.
+
+<DIV CLASS="cultura-titulo">&#9997; LOS TEMAS FUNDAMENTALES<SPAN>Belleza, erotismo, escapismo, el arte como religi&oacute;n y la angustia del poeta</SPAN></DIV>
+
+<H3>5. Los temas de <I>Prosas Profanas</I></H3>
+
+<H4>1. El culto a la Belleza como valor supremo (esteticismo):</H4>
+El tema central de <I>Prosas Profanas</I> es la <B>Belleza con may&uacute;scula</B> como &uacute;nico valor absoluto en un mundo materialista y prosaico. Dar&iacute;o es deudor del lema parnasiano <B><I>"l&rsquo;art pour l&rsquo;art"</I></B> (el arte por el arte): la obra de arte no necesita ser &uacute;til, moral ni did&aacute;ctica; su &uacute;nica raz&oacute;n de ser es la perfección formal y la belleza sensorial. El poeta es un sacerdote de la Belleza: de ah&iacute; el lenguaje liturgico del t&iacute;tulo (<I>Prosas</I> = composiciones religiosas; <I>misa</I>, <I>Ite missa est</I>).
+
+<H4>2. El escapismo y el exotismo:</H4>
+Frente al mundo burgués, materialista y utilitario del siglo XIX, Dar&iacute;o huye hacia <B>mundos de belleza ideal</B>: la corte de Versalles en el siglo XVIII (ambiente rococó), la Grecia mitol&oacute;gica (centauros, ninfas, s&aacute;tiros), los paisajes ex&oacute;ticos de Oriente, la Edad Media caballeresca. Este escapismo no es cobard&iacute;a sino una posici&oacute;n ideol&oacute;gica: <B>el poeta no debe someterse al dictado de la realidad prosaica</B>.
+
+<H4>3. El erotismo refinado y la femineidad como ideal est&eacute;tico:</H4>
+Las figuras femeninas de <I>Prosas Profanas</I> son siempre encarnaciones del ideal est&eacute;tico: la marquesa Eulalia, la princesa de la Sonatina, las ninfas y diosas. Su belleza es sensorial y erótica pero tambi&eacute;n est&eacute;ticamente perfecta. El erotismo en Dar&iacute;o no es vulgar sino refinado, casi mistico: el cuerpo femenino es el templo de la Belleza.
+
+<H4>4. La musicalidad como ideal po&eacute;tico:</H4>
+Siguiendo a Verlaine, Dar&iacute;o aspira a que el poema sea ante todo <B>m&uacute;sica</B>. Los poemas de <I>Prosas Profanas</I> est&aacute;n construidos con una atenci&oacute;n obsesiva al ritmo, la rima, la aliteraci&oacute;n y los efectos fónicos. "Sonatina" toma su nombre de una forma musical; "Sinfonía en gris mayor" fusiona imagen visual y forma musical.
+
+<H4>5. El aristocratismo del artista:</H4>
+Dar&iacute;o desprecia a la masa burguesa e inculta. En las "Palabras liminares" escribe: <B>"Y la primera ley, creador: crear. Bufe el eunuco."</B> El artista genuino crea belleza sin preocuparse por la incomprensi&oacute;n de los mediocres. Esta actitud aristocrática, heredada del dandismo europeo, define la posici&oacute;n del poeta modernista ante la sociedad.
+
+<H4>6. La angustia existencial bajo la superficie:</H4>
+Aunque el libro parece puramente decorativo y hedonista, hay una <B>angustia auténtica</B> subyacente: la princesa está triste sin saber por qué; el "Coloquio de los centauros" debate la muerte y el misterio; el poeta siente que la belleza es un refugio frente a la nada. Esta tensión entre la belleza espl&eacute;ndida y el vacío interior es la dimensión más profunda de <I>Prosas Profanas</I>.
+
+<DIV CLASS="mapa-note">&#128221; <B>El simbolismo del Cisne:</B> El cisne aparece en <I>Prosas Profanas</I> como el símbolo modernista por antonomasia. Sus significados acumulados: (1) <B>Blancura = pureza del ideal artístico</B>. (2) <B>Elegancia formal = belleza perfecta</B>. (3) <B>El cuello en S = signo de interrogación</B> ante el misterio del cosmos. (4) <B>El canto del cisne</B> (el cisne canta al morir): el arte como respuesta a la muerte. (5) <B>Zeus y Leda</B>: el cisne como vehículo del erotismo sagrado. (6) <B>Ser excepcional en un lago vulgar</B>: el artista en medio de la mediocridad burguesa. Dar&iacute;o consagr&oacute; el cisne como emblema del Modernismo hasta el punto de que identificar el símbolo del cisne con el Modernismo dariano es un dato esencial para cualquier examen.</DIV>
+
+<H3>6. Las "Palabras liminares": el manifiesto est&eacute;tico del Modernismo</H3>
+El pr&oacute;logo de <I>Prosas Profanas</I>, titulado <B>"Palabras liminares"</B>, es uno de los textos te&oacute;ricos fundamentales del Modernismo hispanoamericano. En &eacute;l, Dar&iacute;o expone su program&aacute; est&eacute;tico con gran violencia expresiva:
+
+<DIV CLASS="ej">&#128221; <B>Fragmentos clave de las "Palabras liminares":</B><BR><BR>
+<I>"Mi esposa es de mi tierra; mi querida, de Par&iacute;s."</I><BR>
+<B>An&aacute;lisis:</B> La frase sintetiza la posici&oacute;n de Dar&iacute;o: su vida cotidiana pertenece a Hispanoam&eacute;rica, pero su inspiraci&oacute;n art&iacute;stica pertenece a la cultura francesa (Verlaine, Mallarm&eacute;, los parnasianos). Es una declaraci&oacute;n de cosmopolitismo cultural.<BR><BR>
+<I>"¿Qu&eacute; quer&eacute;is vosotros? Pido, clamo, escribo... &iquest;Y d&eacute;bese a mi patria lo que debo solo a mi arte? No: mi arte es un templo, no una plaza p&uacute;blica."</I><BR>
+<B>An&aacute;lisis:</B> El arte no es un espacio cívico (plaza pública) sino un espacio sagrado (templo): el esteticismo como religi&oacute;n del arte.<BR><BR>
+<I>"Y la primera ley, creador: crear. Bufe el eunuco."</I><BR>
+<B>An&aacute;lisis:</B> La ley suprema del artista es la creaci&oacute;n pura. Los que critican sin crear ("el eunuco") no merecen respuesta. Declaraci&oacute;n de aristocratismo artístico.</DIV>
+
+<H3>7. Estilo: recursos y t&eacute;cnicas de <I>Prosas Profanas</I></H3>
+<UL>
+<LI><B>La sinestesia</B>: mezcla de sensaciones de distintos sentidos en una sola imagen ("Sinfonía en gris mayor", "canto de oro", "perfume de noche"). Recurso simbolista fundamental.</LI>
+<LI><B>El cromatismo intenso</B>: el azul (ideal, infinito, el color del cielo y del sueño), el oro (riqueza, esplendor), el blanco (pureza, el cisne), el rojo (pasión, rosas). Los colores no son decorativos sino simbólicos.</LI>
+<LI><B>La musicalidad extrema</B>: aliteraci&oacute;n (repetici&oacute;n de sonidos), rima rica y consonante, metros musicales (el alejandrino, el eneasílabo). "Sonatina" suena como una pieza de piano.</LI>
+<LI><B>El léxico preciosista</B>: Dar&iacute;o usa palabras raras, cultas, latinismos, galicismos y términos de la orfebrería y la joyería: marfil, nácar, ébano, alabastro, clavel, ámbar, crisantemo, rododendro. El vocabulario es en s&iacute; mismo una exhibici&oacute;n de refinamiento.</LI>
+<LI><B>La mitología grecolatina y medieval</B>: centauros, ninfas, s&aacute;tiros, Venus, Apolo, Diana; también princesas, castillos, hadas, pr&iacute;ncipes. El mundo mítico como repertorio de imágenes de belleza ideal.</LI>
+<LI><B>El mundo versallesco (rococó)</B>: la Francia del siglo XVIII como paradigma del refinamiento cultural: minuetos, marquesas, jardines geométricos, pelucas empolvadas, abanicos.</LI>
+<LI><B>La adjetivaci&oacute;n ornamental</B>: los sustantivos llevan adjetivos preciosos que enriquecen la imagen: "boca de fresa", "silla de oro", "torre de marfil", "pájaros de nácar".</LI>
+<LI><B>La pregunta retórica y la interrogación existencial</B>: "La princesa está triste... ¿Qué tendrá la princesa?"; "¿Qué signo haces, oh Cisne, con tu encorvado cuello?" La pregunta no pide respuesta sino que abre el misterio.</LI>
+</UL>
+
+<H3>8. Valor literario e influencia posterior</H3>
+<I>Prosas Profanas</I> es la obra fundacional del Modernismo hispanoamericano en su etapa de mayor esplendor est&eacute;tico y la que ejerci&oacute; mayor influencia tanto en Hispanoam&eacute;rica como en España.
+
+<H4>Su valor e influencia:</H4>
+<UL>
+<LI><B>Renovaci&oacute;n total de la poes&iacute;a en español</B>: los metros, la musicalidad, el léxico y las imágenes de Dar&iacute;o transformaron para siempre el modo de escribir versos en español.</LI>
+<LI><B>Influencia en España</B>: los poetas de la Generaci&oacute;n del 98 y del 27 leyeron a Dar&iacute;o. Juan Ram&oacute;n Jim&eacute;nez, Antonio Machado, Francisco Villaespesa, Manuel Machado fueron influidos directamente por &eacute;l. Es la primera vez en la historia que la poes&iacute;a hispanoamericana influye sobre la española.</LI>
+<LI><B>El Modernismo como escuela</B>: generaciones de poetas hispanoamericanos (Leopoldo Lugones, Amado Nervo, Julio Herrera y Reissig, Jos&eacute; Santos Chocano) aprendieron su oficio leyendo <I>Prosas Profanas</I>.</LI>
+<LI><B>La reacci&oacute;n contra el Modernismo</B>: precisamente porque Dar&iacute;o fue tan influyente, las vanguardias del siglo XX (el Creacionismo de Huidobro, el Ultraísmo) se definieron en parte en oposici&oacute;n a &eacute;l. Pero incluso en esa reacci&oacute;n se reconoce su grandeza.</LI>
+<LI><B>"Sonatina" como poema de la lengua española</B>: junto con "A Roosvelt" (de <I>Cantos de Vida y Esperanza</I>), "Sonatina" es el poema de Dar&iacute;o m&aacute;s memorizado y m&aacute;s estudiado en el mundo hispano.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1867&ndash;1916</DIV><DIV CLASS="dk-label">Vida de Rub&eacute;n Dar&iacute;o, "padre del Modernismo"</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1896</DIV><DIV CLASS="dk-label">Publicaci&oacute;n de <I>Prosas Profanas</I> en Buenos Aires</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Parnasianismo + Simbolismo</DIV><DIV CLASS="dk-label">Las dos corrientes francesas que funden el Modernismo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">El Cisne</DIV><DIV CLASS="dk-label">S&iacute;mbolo central del Modernismo dariano</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Alejandrino</DIV><DIV CLASS="dk-label">Metro modernista de 14 s&iacute;labas (7+7) renovado por Dar&iacute;o</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">"Sonatina"</DIV><DIV CLASS="dk-label">El poema m&aacute;s famoso: "La princesa est&aacute; triste..."</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Autor:</B> Rub&eacute;n Dar&iacute;o (1867&ndash;1916) &middot; Nicaragüense &middot; "Padre del Modernismo hispanoamericano" &middot; Nombre real: F&eacute;lix Rub&eacute;n Garc&iacute;a Sarmiento<BR>
+&bull; <B>Obra:</B> <I>Prosas Profanas y otros poemas</I> (Buenos Aires, 1896; ampliada en 1901) &middot; Libro de poes&iacute;a lírica<BR>
+&bull; <B>Movimiento:</B> Modernismo hispanoamericano &middot; Etapa esteticista o primera etapa &middot; Influencias: Parnasianismo (Leconte de Lisle, Gautier) y Simbolismo (Verlaine, Mallarm&eacute;)<BR>
+&bull; <B>T&iacute;tulo paradójico:</B> "Prosas" = composiciones litúrgicas medievales; "Profanas" = paganas, no sagradas; oxímoron que anuncia la religi&oacute;n del arte<BR>
+&bull; <B>Poemas clave:</B> "Sonatina" (alejandrinos, princesa triste) &middot; "Era un aire suave..." (eneasílabos, marquesa Eulalia, Versalles) &middot; "El cisne" (símbolo modernista) &middot; "Sinfonía en gris mayor" (sinestesia) &middot; "Coloquio de los centauros" (filosófico)<BR>
+&bull; <B>Temas:</B> culto a la Belleza (esteticismo) &middot; escapismo y exotismo &middot; erotismo refinado &middot; musicalidad como ideal &middot; aristocratismo del artista &middot; angustia existencial subyacente<BR>
+&bull; <B>S&iacute;mbolo central:</B> El cisne (blancura, elegancia, misterio, erotismo sagrado, el artista en el lago vulgar)<BR>
+&bull; <B>Estilo:</B> sinestesia &middot; cromatismo (azul, oro, blanco) &middot; musicalidad &middot; léxico preciosista (marfil, nácar, alabastro) &middot; mitología grecolatina y mundo versallesco &middot; adjetivaci&oacute;n ornamental<BR>
+&bull; <B>M&eacute;trica:</B> alejandrino modernista (14 sílabas) &middot; eneasílabo &middot; dodecasílabo &middot; renovaci&oacute;n total de la versificaci&oacute;n española<BR>
+&bull; <B>Manifiesto:</B> "Palabras liminares": "Mi esposa es de mi tierra; mi querida, de París" &middot; "la primera ley, creador: crear. Bufe el eunuco"
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;A qu&eacute; movimiento literario pertenece <I>Prosas Profanas</I>, qui&eacute;n es su autor y cu&aacute;les son los datos esenciales de su publicaci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Pertenece al Romanticismo hispanoamericano; su autor es Jos&eacute; Mart&iacute;, poeta cubano; fue publicada en La Habana en 1882 como parte del movimiento de independencia cultural latinoamericana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Pertenece al <B>Modernismo hispanoamericano</B> (etapa esteticista); su autor es <B>Rub&eacute;n Dar&iacute;o</B> (nicaragüense, 1867&ndash;1916), considerado el "padre del Modernismo"; fue publicada en <B>Buenos Aires en 1896</B> y ampliada en 1901, siendo la obra cumbre del Modernismo sensorial y decorativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Pertenece al Realismo literario hispanoamericano; su autor es Amado Nervo, poeta mexicano; fue publicada en M&eacute;xico en 1910 como manifiesto del movimiento nacionalista posrevolucionario</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Pertenece al Vanguardismo latinoamericano; su autor es Vicente Huidobro, poeta chileno; fue publicada en Par&iacute;s en 1920 como texto fundacional del Creacionismo literario</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><I>Prosas Profanas y otros poemas</I> pertenece al <B>Modernismo hispanoamericano</B>, el primer movimiento literario genuinamente latinoamericano que adem&aacute;s ejerci&oacute; una influencia directa sobre la literatura española, invirtiendo por primera vez la dirección del flujo cultural. Su autor, <B>Rub&eacute;n Dar&iacute;o</B> (cuyo nombre real es Félix Rubén García Sarmiento), nació en Metapa, Nicaragua (hoy Ciudad Darío) en 1867 y murió en León, Nicaragua en 1916. Es universalmente reconocido como el <B>"padre" o "iniciador" del Modernismo hispanoamericano</B>. La obra fue publicada en <B>Buenos Aires en 1896</B>, durante la etapa en que Darío vivía en Argentina trabajando como corresponsal literario, y ampliada con nuevos poemas en una segunda edición parisina de 1901. Representa la cumbre del Modernismo en su fase más esteticista: el culto a la belleza formal pura, el escapismo hacia mundos refinados y el verso como objeto artístico perfecto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Qu&eacute; significa el t&iacute;tulo <I>Prosas Profanas</I> y qu&eacute; programa est&eacute;tico anuncia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) "Prosas" significa que el libro est&aacute; escrito en prosa literaria y "Profanas" indica que trata temas irreverentes y anticlerical; el t&iacute;tulo anuncia un libro de ensayos en prosa que critica a la Iglesia cat&oacute;lica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El t&iacute;tulo es un <B>ox&iacute;moron deliberado</B>: "Prosas" remite al t&eacute;rmino lit&uacute;rgico latino (<I>prosa</I> o <I>sequentia</I>: composici&oacute;n po&eacute;tica cantada en la misa medieval) y "Profanas" significa pagano, no sagrado; el oxímoron anuncia el programa del libro: una <B>liturgia de la belleza pagana</B>, una religi&oacute;n del arte que sustituye a la religi&oacute;n tradicional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) "Prosas" hace referencia a los poemas en prosa al estilo de Baudelaire y "Profanas" indica que el libro fue censurado por las autoridades religiosas; el t&iacute;tulo recuerda el escándalo que provoc&oacute; su publicaci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) El t&iacute;tulo no tiene ning&uacute;n significado especial m&aacute;s all&aacute; del est&eacute;tico: Dar&iacute;o eligi&oacute; las palabras por su sonoridad, sin intenci&oacute;n sem&aacute;ntica precisa; el Modernismo prefer&iacute;a los t&iacute;tulos musicales sobre los conceptuales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El t&iacute;tulo <I>Prosas Profanas</I> es uno de los m&aacute;s estudiados en el Modernismo por su densidad semántica. <B>"Prosas"</B>: no significa "prosa" (el libro est&aacute; escrito en verso, no en prosa). El término remite a la <I>prosa</I> o <I>sequentia</I> latina: una composición poética cantada durante la liturgia de la misa en la Edad Media, especialmente entre los siglos IX y XVI. Fue una de las formas musicales más elaboradas de la música sacra medieval. <B>"Profanas"</B>: del latín <I>profanus</I> (lo que está fuera del templo, lo pagano, lo no sagrado). La oposición entre lo sagrado (<I>prosas</I> litúrgicas) y lo pagano (<I>profanas</I>) crea un <B>oxímoron</B> programático: Darío propone hacer de la belleza pagana una nueva religión, construir un templo del arte que rivalice con el templo de Dios. El lenguaje litúrgico impregna todo el libro: las "Palabras liminares" hablan del arte como "templo", el poema final se titula "Ite, missa est" (las palabras con que el sacerdote concluye la misa). La "liturgia del arte" es el programa central del Modernismo esteticista.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Cu&aacute;les son las dos corrientes literarias francesas que influyeron decisivamente en <I>Prosas Profanas</I> y c&oacute;mo se manifiesta cada una?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) El Naturalismo (Zola) y el Expresionismo (Strindberg): el Naturalismo aporta la descripci&oacute;n cr&uacute;da de la realidad social y el Expresionismo la distorsi&oacute;n emocional de las im&aacute;genes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) El <B>Parnasianismo</B> (Leconte de Lisle, Gautier, Her&eacute;dia) y el <B>Simbolismo</B> (Verlaine, Mallarm&eacute;, Rimbaud): el Parnasianismo aporta el culto a la belleza formal perfecta y el arte por el arte; el Simbolismo aporta la musicalidad como ideal po&eacute;tico supremo, la sinestesia y el poder evocador misterioso de las palabras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El Romanticismo (Victor Hugo, Lamartine) y el Surrealismo (Breton, Apollinaire): el Romanticismo aporta la emotividad desatada y el Surrealismo las im&aacute;genes irracionales del inconsciente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El Existencialismo (Sartre) y el Decadentismo (Huysmans): el Existencialismo aporta la angustia metaf&iacute;sica y el Decadentismo el gusto por los temas m&oacute;rbidos y la perversi&oacute;n est&eacute;tica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las dos corrientes literarias francesas que forjan el Modernismo dariano son el <B>Parnasianismo</B> y el <B>Simbolismo</B>. El <B>Parnasianismo</B> (llamado así por la revista <I>Le Parnasse contemporain</I>, 1866): sus representantes principales son Théophile Gautier ("el arte por el arte"), Leconte de Lisle y José-Maria de Heredia. Su programa: el poema debe ser perfecto formalmente como una estatua griega o una joya tallada; el poeta es un orfebre que trabaja el lenguaje con precisión artesanal; la belleza formal es el único valor. En <I>Prosas Profanas</I>: la perfección métrica, el léxico preciosista (marfil, nácar, alabastro), las imágenes escultóricas grecolatinas. El <B>Simbolismo</B> (Verlaine, Mallarmé, Rimbaud): su programa está definido por el verso de Verlaine: "De la musique avant toute chose" (la música ante todo). El poema debe ser música, no descripción; las palabras deben sugerir, evocar, crear estados anímicos antes que describir objetos; la sinestesia (mezcla de sensaciones) es el recurso central. En <I>Prosas Profanas</I>: "Sinfonía en gris mayor", la musicalidad de "Sonatina", el uso de los colores como estados anímicos. Darío funde ambas escuelas en una síntesis original hispanoamericana.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qu&eacute; es "Sonatina", cu&aacute;l es su argumento y por qu&eacute; es el poema m&aacute;s representativo de <I>Prosas Profanas</I>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) "Sonatina" es un poema en prosa que narra el duelo entre dos caballeros medievales por el amor de una dama; es representativo porque resume el tema del amor cort&eacute;s, el eje principal de todo el libro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) "Sonatina" es el poema m&aacute;s famoso del libro: escrito en <B>alejandrinos</B> (14 s&iacute;labas), narra la melancol&iacute;a de una <B>princesa encerrada en su torre de oro</B> que lo tiene todo (lujos, riquezas, arte) pero est&aacute; triste porque le falta el amor del pr&iacute;ncipe que vendr&aacute; a despertarla; es representativo porque sintetiza el imaginario modernista (princesa, torre, cisne, hada, pr&iacute;ncipe) y la musicalidad alejandr&iacute;na que define el estilo del libro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) "Sonatina" es un poema filosófico en tercetos que debate la inmortalidad del alma; es representativo porque el tema existencial del más allá es el eje de toda la obra de Dar&iacute;o</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) "Sonatina" es una composici&oacute;n musical en tres movimientos que Dar&iacute;o puso letra; es representativa porque el Modernismo buscaba fusionar la literatura con la m&uacute;sica compuesta, no solo imitarla en el ritmo del verso</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Sonatina" es sin duda el poema más conocido de Darío y uno de los más citados de toda la poesía en español. Su argumento: una princesa vive en una torre rodeada de lujos extraordinarios (un palacio, jardines, esclavos, libros, aves exóticas) pero está profundamente triste y no sabe por qué. Lo tiene todo menos lo que le falta: el amor verdadero. La naturaleza entera (flores, aves, el bufón, el paje) intenta consolarla en vano. Finalmente, el hada madrina anuncia que vendrá el príncipe sobre su caballo alado a darle el beso que la despertará. Sus características formales: (1) <B>Alejandrino modernista</B> (14 sílabas, 7+7): "La prin-ce-sa es-tá tris-te... / ¿qué ten-drá la prin-ce-sa?" (2) <B>Rima consonante perfecta</B> en pareados (AABB): princesa/fresa, oro/sonoro. (3) <B>Musicalidad extraordinaria</B>: el poema "suena" como una pieza de piano (de ahí el título: una sonatina es una sonata breve). (4) <B>Léxico preciosista</B>: "boca de fresa", "clave sonoro", "ojos de almendra". Es representativo porque condensa todo el universo modernista: el mundo refinado y lejano, la figura femenina como ideal estético, la musicalidad, la melancolía inexplicable del alma artística.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qu&eacute; es la sinestesia y c&oacute;mo la usa Dar&iacute;o en <I>Prosas Profanas</I>? Da ejemplos concretos del libro.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) La sinestesia es la descripci&oacute;n detallada y realista de los cinco sentidos en un paisaje; Dar&iacute;o la usa en "Sonatina" para describir el palacio de la princesa con precisi&oacute;n fotogr&aacute;fica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) La sinestesia es una figura retórica que <B>mezcla percepciones de distintos sentidos</B> en una sola imagen (un color que "suena", un sonido que "huele", una música que "se ve"); Dar&iacute;o la usa sist&eacute;maticamente: el ejemplo mayor es <B>"Sinfonía en gris mayor"</B> (sinfonía = audici&oacute;n + gris = visi&oacute;n), pero aparece tambi&eacute;n en "canto dorado", "perfume de noche", "voz de cristal" a lo largo del libro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) La sinestesia es el nombre que Dar&iacute;o dio a su t&eacute;cnica de combinar estilos: en cada poema funde el Parnasianismo y el Simbolismo; el t&eacute;rmino no tiene relaci&oacute;n con los sentidos sino con la fusi&oacute;n de movimientos literarios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) La sinestesia es una figura propia de la narrativa modernista pero no de la poes&iacute;a; en <I>Prosas Profanas</I> aparece s&oacute;lo en el pr&oacute;logo en prosa ("Palabras liminares") y no en los poemas en verso</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>sinestesia</B> es una figura retórica (derivada del griego <I>syn</I> = juntos + <I>aisthesis</I> = sensación) que consiste en combinar en una misma imagen percepciones pertenecientes a distintos sentidos: ver un sonido, oír un color, tocar un aroma. Es el recurso más característico del Simbolismo francés, especialmente de Verlaine ("De la musique avant toute chose") y Rimbaud (su famoso soneto de los colores de las vocales: "A noir, E blanc, I rouge..."). Darío la adoptó como técnica central de <I>Prosas Profanas</I>. El ejemplo mayor: <B>"Sinfonía en gris mayor"</B>: el título mismo es una sinestesia triple (sinfonía = sonido + gris = color + mayor = escala musical). En el poema, el paisaje gris del puerto al mediodía es descrito simultáneamente como una imagen visual (todo es gris: el cielo, el mar, el horizonte) y como una composición musical (una sinfonía monótona). Otros ejemplos del libro: "canto de oro" (audición + visión), "perfume de estrellas" (olfato + visión), "voz de cristal" (audición + tacto/visión), "rosa roja de fuego" (visión + temperatura). La sinestesia modernista no es decorativa: expresa la idea de que las sensaciones del mundo son todas manifestaciones de una sola realidad más profunda, que el arte puede capturar fusionando los sentidos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Analiza el s&iacute;mbolo del cisne en <I>Prosas Profanas</I>: &iquest;qu&eacute; significados acumula y por qu&eacute; se convirti&oacute; en el emblema del Modernismo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) El cisne en Dar&iacute;o es simplemente un elemento decorativo tomado de la heráldicamedieval; su &uacute;nico significado es la belleza visual del ave blanca en el lago; no tiene connotaciones simb&oacute;licas profundas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El cisne acumula m&uacute;ltiples significados en <I>Prosas Profanas</I>: (1) <B>blancura = pureza del ideal art&iacute;stico</B>; (2) <B>elegancia formal perfecta</B> = ideal parnasiano; (3) <B>el cuello en forma de S = signo de interrogaci&oacute;n</B> ante el misterio del cosmos y la muerte; (4) <B>Zeus y Leda</B> (mitolog&iacute;a griega): erotismo sagrado; (5) <B>el canto del cisne al morir</B>: el arte como respuesta a la muerte; (6) <B>ser excepcional en el lago vulgar</B>: el artista modernista en medio de la mediocridad burguesa; se convirti&oacute; en emblema porque concentraba en una sola imagen todos los valores del programa modernista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El cisne en Dar&iacute;o simboliza exclusivamente a Francia: el lago donde nada el cisne es el Sena parisino, y la blancura del ave representa la pureza de la cultura francesa frente a la vulgaridad de la cultura hispanoamericana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) El cisne es un símbolo personal de Dar&iacute;o que representa su nostalgia de Nicaragua; el lago donde nada es el lago Xolotl&aacute;n y la tristeza del cisne expresa el deseo del poeta de regresar a su patria</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El cisne es el símbolo más analizado del Modernismo hispanoamericano y Darío lo convirtió en un emblema de tal potencia que identificar "cisne = Modernismo dariano" es un dato indispensable en cualquier examen de literatura hispanoamericana. Los significados que acumula el cisne en <I>Prosas Profanas</I>: (1) <B>Blancura y pureza</B>: el cisne es blanco; el ideal artístico debe ser puro, sin contaminación utilitaria o moral. (2) <B>Elegancia formal perfecta</B>: la forma del cisne, con su cuello grácil y sus plumas perfectamente ordenadas, es una obra maestra de la naturaleza: imagen del poema perfectamente logrado (herencia parnasiana). (3) <B>El cuello en S = interrogación</B>: en el poema "El cisne", Darío dice que el cisne interroga con su cuello curvado al "negro lago del hastío": esa S es un signo de interrogación que pregunta por el sentido de la existencia. Esta imagen convierte al cisne en figura de la angustia metafísica subyacente al esteticismo. (4) <B>Zeus y Leda</B>: en la mitología griega, Zeus adoptó la forma de cisne para unirse a Leda, engendrando a Helena y los Dioscuros. El cisne es vehículo del erotismo sagrado: lo divino se manifiesta en forma de belleza corporal. (5) <B>El canto del cisne</B>: la creencia clásica de que el cisne mudo canta una sola vez al morir convierte al cisne en símbolo del arte como respuesta a la muerte. (6) <B>Ser excepcional en el lago vulgar</B>: el cisne elegante en el lago de patos es el artista modernista entre los burgueses. Tan poderoso fue este símbolo que cuando los poetas de las vanguardias quisieron romper con el Modernismo, atacaron directamente al cisne.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Analiza las "Palabras liminares" de <I>Prosas Profanas</I> como manifiesto est&eacute;tico: &iquest;qu&eacute; posici&oacute;n adopta Dar&iacute;o ante el arte, la sociedad y la tradici&oacute;n literaria española?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) En las "Palabras liminares" Dar&iacute;o declara su fidelidad a la tradici&oacute;n po&eacute;tica española (Garcilaso, Lope de Vega) y su rechazo de toda influencia extranjera; el manifiesto es un acto de americanismo cultural</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Las "Palabras liminares" declaran: (1) <B>el arte como templo</B>, no como plaza p&uacute;blica (rechazo del arte social o did&aacute;ctico); (2) <B>cosmopolitismo cultural</B> ("Mi esposa es de mi tierra; mi querida, de Par&iacute;s": la inspiraci&oacute;n art&iacute;stica viene de Francia, no de España); (3) <B>aristocratismo y desprecio de los mediocres</B> ("la primera ley, creador: crear. Bufe el eunuco"); (4) la <B>libertad total del artista</B> respecto a cualquier norma, tradici&oacute;n o demanda exterior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Las "Palabras liminares" son simplemente una dedicatoria convencional del libro a sus mecenas y patrocinadores; no tienen contenido te&oacute;rico relevante; Dar&iacute;o las escribi&oacute; como cumplido protocolar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) En las "Palabras liminares" Dar&iacute;o se declara cat&oacute;lico devoto y afirma que toda su poes&iacute;a est&aacute; al servicio de la fe cristiana; el "templo" que menciona es el templo de Dios, no una metáfora del arte</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las "Palabras liminares" son el texto teórico más importante del Modernismo hispanoamericano y deben conocerse en detalle para los exámenes de alto rendimiento. Darío las escribe en prosa poética: son un manifiesto literario, no una simple introducción. Sus posiciones fundamentales: (1) <B>Rechazo del arte utilitario o social</B>: "El arte no es un conjunto de reglas sino una armonía de caprichos." El arte no debe servir a la moral, la política o la educación de masas: su única razón de ser es la belleza. "Mi arte es un templo, no una plaza pública": el templo es espacio sagrado y cerrado; la plaza es espacio profano y abierto a todos. El artista elige el templo: la belleza para unos pocos iniciados. (2) <B>Cosmopolitismo</B>: la frase más citada del prólogo, "Mi esposa es de mi tierra; mi querida, de París", sintetiza la posición de Darío: su vida cotidiana (la esposa) pertenece a Hispanoamérica, pero su pasión artística (la querida) pertenece a la cultura francesa. Es una declaración de que el artista hispanoamericano tiene el derecho y el deber de nutrirse de las mejores culturas del mundo, sin encerrarse en el localismo. (3) <B>Rechazo de la tradición española mediocre</B>: Darío dice que la poesía española reciente le aburre (no la clásica de Góngora o Quevedo, que admira). (4) <B>Aristocratismo</B>: "la primera ley, creador: crear. Bufe el eunuco": el artista crea; los que no crean (los críticos, los mediocres, los burgueses) son "eunucos" que solo pueden envidiar y criticar. Frase de una violencia retórica propia del Modernismo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;Qu&eacute; papel desempeña el mundo versallesco y el rococó franc&eacute;s del siglo XVIII en <I>Prosas Profanas</I>? &iquest;Por qu&eacute; Dar&iacute;o huye hacia ese mundo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El mundo de Versalles aparece en <I>Prosas Profanas</I> como cr&iacute;tica pol&iacute;tica: Dar&iacute;o denuncia el despotismo ilustrado de Luis XIV como antecedente del imperialismo contempor&aacute;neo; la marquesa Eulalia representa a la clase opresora</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El mundo versallesco y rococó es el <B>espacio de refugio est&eacute;tico</B> por excelencia en el libro: representa la cima del refinamiento cultural europeo (marquesas, minuetos, jardines geom&eacute;tricos, galanter&iacute;a amorosa); Dar&iacute;o huye hacia &eacute;l porque es el polo opuesto del mundo prosaico, materialista y utilitario del siglo XIX; el escapismo modernista elige el pasado m&aacute;s elegante como alternativa al presente m&aacute;s vulgar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El mundo de Versalles aparece solo en un poema menor del libro y no es un elemento central; la cr&iacute;tica ha exagerado su importancia; el verdadero mundo de refugio de Dar&iacute;o es la mitolog&iacute;a griega, no el rococó franc&eacute;s del XVIII</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Dar&iacute;o usa el mundo versallesco como autobiograf&iacute;a: pas&oacute; varios a&ntilde;os viviendo en el palacio de Versalles como invitado del gobierno franc&eacute;s y los poemas son memorias de esa experiencia real</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El mundo versallesco del siglo XVIII es uno de los principales "mundos de refugio" de <I>Prosas Profanas</I>, junto con la Grecia mitológica y la Edad Media caballeresca. El rococó francés (estilo artístico de la primera mitad del siglo XVIII, caracterizado por la ligereza, la ornamentación delicada, los colores pastel, los temas galantes y pastoriles) es para Darío el paradigma del refinamiento cultural: una sociedad que ha convertido la elegancia en un valor supremo, donde los amores se expresan con minuetos y abanicos, donde los jardines están geométricamente diseñados y cada detalle de la vida cotidiana es una obra de arte. El poema "Era un aire suave..." inaugura el libro precisamente con este mundo: la marquesa Eulalia ríe en un jardín de Versalles mientras los galanes se disputan su amor. El escapismo modernista hacia este mundo tiene una función ideológica precisa: es la negación del mundo presente. El siglo XIX burgués y positivista es el antípoda de Versalles: el XIX es útil, prosaico, industrial, cuantitativo; Versalles es inútil, refinado, artístico, cualitativo. Elegir Versalles es rechazar el XIX: el modernista no puede vivir en su época y la sustituye con un pasado inventado y embellecido. No es nostalgia sino posición política y estética.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> &iquest;En qu&eacute; consiste la renovaci&oacute;n m&eacute;trica que Dar&iacute;o realiz&oacute; en <I>Prosas Profanas</I> y cu&aacute;l fue su impacto en la poes&iacute;a en español?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Dar&iacute;o elimin&oacute; completamente la rima y la medida silábica en <I>Prosas Profanas</I>, inaugurando el verso libre en español; todos los poemas del libro est&aacute;n escritos sin metros fijos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Dar&iacute;o renov&oacute; la m&eacute;trica española adaptando metros poco usados o nuevos: el <B>alejandrino de 14 s&iacute;labas</B> (adaptaci&oacute;n del alejandrino franc&eacute;s, usado en "Sonatina"), el <B>eneasílabo de 9</B> ("Era un aire suave..."), el <B>dodecasílabo de 12</B>; reform&oacute; tambi&eacute;n el modo de contar las s&iacute;labas y la rima; este impacto fue enorme: transform&oacute; la versificaci&oacute;n española y abri&oacute; un camino que los poetas del siglo XX recorrer&iacute;an hacia el verso libre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Dar&iacute;o no hizo ninguna innovaci&oacute;n m&eacute;trica en <I>Prosas Profanas</I>: us&oacute; &uacute;nicamente el endecas&iacute;labo tradicional (11 s&iacute;labas) y el octos&iacute;labo del romancero español, siguiendo fielmente la tradici&oacute;n cl&aacute;sica castellana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) La renovaci&oacute;n m&eacute;trica de Dar&iacute;o fue exclusivamente de la rima: mantuvo los metros tradicionales pero introdujo rimas esdr&uacute;julas y agudas que el verso espa&ntilde;ol cl&aacute;sico no usaba</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La renovación métrica de Darío es uno de sus aportes más concretos y técnicamente demostrables a la historia de la poesía en español. Antes de Darío, la poesía española y hispanoamericana usaba principalmente el endecasílabo (11 sílabas) y el octosílabo (8 sílabas) del romancero, con algunas variantes menores. Darío introduce en <I>Prosas Profanas</I>: (1) <B>El alejandrino modernista</B> (14 sílabas, con cesura central en 7+7): tomado del alejandrino francés clásico (de La Fontaine, Hugo, los parnasianos). En español existía el alejandrino medieval (el verso del <I>Mio Cid</i> y el <I>Libro de Buen Amor</I>) pero Darío lo reintroduce con una cadencia completamente nueva y musicalmente mucho más rica. "Sonatina" está escrita en alejandrinos: "La prin-ce-sa es-tá tris-te… / ¿qué ten-drá la prin-ce-sa?" (7+7=14). (2) <B>El eneasílabo</b> (9 sílabas): metro rarísimo en español antes de Darío; "Era un aire suave..." lo usa con maestría. (3) <B>El dodecasílabo</B> (12 sílabas): también recuperado y modernizado. (4) <B>Renovación de la rima</b>: rimas ricas y esdrújulas que dan una sonoridad nueva. (5) <B>El verso anfibráquico</b> (acentuación ternaria): produce un ritmo de vals, ligero y danzante, muy diferente al ritmo binario del endecasílabo clásico. El impacto fue enorme: generaciones de poetas aprendieron nuevas posibilidades del verso español leyendo a Darío.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Compara la posici&oacute;n del poeta en <I>Prosas Profanas</I> con la que adopta Dar&iacute;o en <I>Cantos de Vida y Esperanza</I> (1905): &iquest;en qu&eacute; se diferencian las dos etapas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Las dos obras son id&eacute;nticas en temas y actitud: Dar&iacute;o nunca cambi&oacute; su posici&oacute;n esteticista; los cr&iacute;ticos que hablan de dos etapas exageran diferencias m&iacute;nimas entre las dos obras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) En <I>Prosas Profanas</I> el poeta adopta una <B>posici&oacute;n esteticista y escapista</B> (belleza formal pura, huida hacia mundos lejanos e ideales, arte por el arte, aristocratismo); en <I>Cantos de Vida y Esperanza</I> el poeta <B>se compromete c&iacute;vica y existencialmente</B>: reflexiona sobre el destino de Hispanoam&eacute;rica frente al imperialismo anglosaj&oacute;n ("A Roosvelt"), sobre la identidad hispana, sobre la muerte, el tiempo y la fe; el "yo" l&iacute;rico se vuelve hist&oacute;rico y mortal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) <I>Prosas Profanas</I> es la obra política y <I>Cantos de Vida y Esperanza</I> es la est&eacute;tica: en la primera Dar&iacute;o defiende la independencia de Hispanoam&eacute;rica y en la segunda se retira al mundo de la belleza pura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) <I>Cantos de Vida y Esperanza</I> es una obra religiosa de conversi&oacute;n: Dar&iacute;o reniega del esteticismo pagano de <I>Prosas Profanas</I> y escribe poemas de devoci&oacute;n cat&oacute;lica y penitencia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La distinción entre las dos etapas de Darío es fundamental en el estudio del Modernismo. <B><I>Prosas Profanas</I> (1896) — primera etapa esteticista</B>: el poeta se refugia en la belleza pura lejos del mundo real; el "yo" lírico es un esteta que no tiene patria ni historia, solo sensibilidad artística; los temas son la belleza, el erotismo refinado, los mundos lejanos; la historia presente no existe en el libro. <B><I>Cantos de Vida y Esperanza</I> (1905) — segunda etapa cívica y existencial</B>: el poeta enfrenta el mundo real con su historia. (1) La dimensión cívica: "A Roosevelt" es el poema más famoso del cambio: Darío interpela directamente al presidente de EE.UU. Theodore Roosevelt para defender la cultura hispanoamericana frente al imperialismo norteamericano. "Eres los Estados Unidos, / eres el futuro invasor / de la América ingenua que tiene sangre indígena..." (2) La dimensión existencial: poemas como "Lo fatal" revelan una angustia ante la muerte que en <I>Prosas Profanas</I> estaba velada: "Dichoso el árbol que es apenas sensitivo / y más la piedra dura porque ésa ya no siente..." El cambio no es una ruptura completa (el estilo sigue siendo modernista) sino una ampliación: Darío incorpora al mundo de la belleza las preocupaciones del hombre histórico que envejece y teme a la muerte.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza la afirmaci&oacute;n de que el Modernismo es el primer movimiento literario propiamente hispanoamericano y el primero que export&oacute; influencias desde Am&eacute;rica hacia España.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) La afirmación es falsa: el Modernismo es solo una copia del Simbolismo y el Parnasianismo franceses; Dar&iacute;o no aport&oacute; nada original sino que imit&oacute; servilmente a los franceses; la literatura española nunca fue influida por Dar&iacute;o</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La afirmaci&oacute;n es correcta: aunque el Modernismo se nutre de fuentes europeas (Parnasianismo, Simbolismo), Dar&iacute;o y los modernistas realizan una <B>síntesis original y creativa</B> que produce algo nuevo en español; y efectivamente, a partir de 1898, los poetas españoles (Juan Ram&oacute;n Jim&eacute;nez, Antonio Machado, Manuel Machado) fueron influidos por Dar&iacute;o, invirtiendo la direcci&oacute;n tradicional del flujo cultural Espa&ntilde;a→Am&eacute;rica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) El Modernismo no fue el primero: el Romanticismo latinoamericano (Bello, Heredia) ya hab&iacute;a influido sobre el Romanticismo español del siglo XIX; la direcci&oacute;n Am&eacute;rica→España estaba bien establecida desde 1820</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) El Modernismo fue exclusivamente español; Dar&iacute;o naci&oacute; en Nicaragua pero su obra es espa&ntilde;ola porque escrib&iacute;a en castellano y vivi&oacute; muchos a&ntilde;os en España; afirmar que el Modernismo es "hispanoamericano" es una reivindicaci&oacute;n pol&iacute;tica sin fundamento literario</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La afirmación sobre la originalidad del Modernismo y su influencia sobre España es uno de los temas más debatidos en la historia literaria hispánica y debe dominarse para los exámenes de alto rendimiento. (1) <B>¿Es el Modernismo solo imitación?</B> No. Es cierto que Darío se nutre del Parnasianismo y el Simbolismo franceses. Pero la síntesis que realiza tiene ingredientes propios: la versificación española que transforma, el español como lengua que tiene ritmos y sonoridades distintas al francés, el universo temático que incluye la mitología griega, el mundo colonial hispanoamericano, la naturaleza del trópico; y sobre todo, una sensibilidad específica del poeta hispanoamericano que vive entre dos mundos (América y Europa) y que no pertenece plenamente a ninguno. El Modernismo no es una copia: es una síntesis creativa que produce algo nuevo. (2) <B>La influencia sobre España</B>: a partir de la llegada de Darío a Madrid (1898-1900), los poetas españoles lo leyeron y aprendieron de él. Juan Ramón Jiménez reconoció explícitamente la influencia de Darío en su primera etapa. Manuel Machado fue el poeta español más directamente modernista. Antonio Machado, aunque buscó un Modernismo más interior y sobrio, reconoció la deuda. Francisco Villaespesa fue el difusor del Modernismo en España. Esta es la primera vez en la historia de la literatura que la influencia viaja de América a España y no al revés, lo que marca un hito en la historia cultural.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> &iquest;C&oacute;mo reaccion&oacute; la vanguardia literaria del siglo XX ante el Modernismo dariano y qu&eacute; dice esa reacci&oacute;n sobre el legado de <I>Prosas Profanas</I>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Las vanguardias del siglo XX (Ultraísmo, Creacionismo, Surrealismo) ignoraron completamente al Modernismo; Dar&iacute;o nunca fue mencionado por los vanguardistas porque pertenec&iacute;a a una tradici&oacute;n literaria irrecuperable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Las vanguardias se definieron en parte <B>en oposici&oacute;n al Modernismo</B>: el Creacionismo de Huidobro, el Ultraísmo (que influye en el joven Borges) y otros movimientos rechazaron el decorativismo y el exotismo modernistas; pero esa reacci&oacute;n reconoce implícitamente la grandeza de Dar&iacute;o: no se reacciona contra lo insignificante; Juan Ram&oacute;n Jim&eacute;nez, que pas&oacute; por el Modernismo, escribi&oacute; "No le toques ya m&aacute;s" como se&ntilde;al de que hab&iacute;a que superar a Dar&iacute;o, no ignorarlo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Las vanguardias continuaron el Modernismo sin modificaciones; el Surrealismo es directamente el Modernismo aplicado a la psicolog&iacute;a del inconsciente; no hay ruptura sino evoluci&oacute;n continua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La reacci&oacute;n vanguardista contra el Modernismo fue tan total que hoy Dar&iacute;o no es le&iacute;do ni estudiado; su obra fue definitivamente superada y no tiene inter&eacute;s para los lectores del siglo XXI</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relación entre el Modernismo y las vanguardias literarias hispanoamericanas es un tema esencial de historia literaria. <B>La reacción vanguardista</B>: en los años 1910-1930 surgen en Hispanoamérica y España varios movimientos de vanguardia que se definen en parte por oposición al Modernismo: el <B>Creacionismo</B> de Vicente Huidobro (Chile) propone que el poema no debe imitar la realidad sino crear una realidad nueva; rechaza el decorativismo modernista y la búsqueda de la belleza sensorial como finalidad. El <B>Ultraísmo</B> (España, difundido por el joven Borges en Argentina) propone la metáfora pura, eliminando todo ornamento superfluo; ataca directamente el léxico modernista (cisnes, princesas, mármoles). El <B>Estridentismo</B> mexicano celebra la modernidad industrial (máquinas, aviones, telégrafos) que el Modernismo despreciaba. <B>La paradoja</B>: precisamente porque el Modernismo de Darío fue tan influyente, tan dominante, tan presente en la poesía en español durante 25 años (1896-1920 aproximadamente), las vanguardias necesitaron atacarlo para definirse. No se reacciona con tanta energía contra lo irrelevante: la violencia de la reacción es la mejor prueba de la importancia de Darío. <B>Juan Ramón Jiménez</B>: el poeta español más influido por Darío en su primera etapa escribió más tarde "No le toques ya más, / que así es la rosa": la rosa perfecta no necesita ser tocada (mejorada); hay que pasar a otra cosa. Pero la rosa es de Darío.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Analiza el tema de la angustia existencial en <I>Prosas Profanas</I>: &iquest;est&aacute; realmente ausente bajo la superficie decorativa del libro?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La angustia existencial est&aacute; completamente ausente de <I>Prosas Profanas</I>: es una obra de pura celebraci&oacute;n de la belleza, sin ning&uacute;n momento de duda, sufrimiento o reflexi&oacute;n metaf&iacute;sica; esos temas s&oacute;lo aparecen en <I>Cantos de Vida y Esperanza</I></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La angustia existencial <B>est&aacute; presente aunque velada</B> en <I>Prosas Profanas</I>: la princesa que tiene todo pero est&aacute; triste sin saber por qu&eacute; ("Sonatina") es la imagen del alma modernista que la belleza no basta para llenar; el cisne que interroga con su cuello curvado al "negro lago del hast&iacute;o" plantea la pregunta metaf&iacute;sica; el "Coloquio de los centauros" debate abiertamente la muerte y el misterio; la belleza es el refugio ante la angustia, no su ausencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La angustia existencial de Dar&iacute;o es puramente biogr&aacute;fica (sus problemas de dinero y sus fracasos matrimoniales) y no tiene dimensi&oacute;n filosófica; los cr&iacute;ticos que hablan de angustia metaf&iacute;sica en <I>Prosas Profanas</I> proyectan temas que no est&aacute;n en el texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La angustia existencial es el tema dominante y explícito de <I>Prosas Profanas</I>: Dar&iacute;o habla abiertamente de la muerte, el tiempo y el miedo en cada poema; la belleza decorativa es s&oacute;lo la superficie que oculta un libro fundamentalmente pesimista</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La tensión entre la superficie de belleza esplendorosa y la angustia subyacente es uno de los aspectos más profundos de <I>Prosas Profanas</I> y distingue a Darío de un simple decorador verbal. <B>Evidencias de la angustia en el libro</B>: (1) <B>"Sonatina"</B>: la princesa está rodeada de una belleza perfecta (el palacio de oro, los jardines, las aves, los libros, los esclavos) pero está profundamente triste. ¿Por qué? Darío no lo explica porque no tiene explicación racional: es la <I>Weltschmerz</I> romántica, el dolor del mundo, el vacío que ninguna belleza exterior puede llenar. La princesa es el alma modernista: la belleza es su mundo pero no su plenitud. (2) <B>"El cisne"</B>: el cisne interroga con su cuello curvo (que forma una S, un signo de interrogación) al "negro lago del hastío" (la existencia rutinaria y sin sentido). La pregunta es: ¿para qué la belleza si hay muerte? ¿Qué responde el Arte al misterio de la existencia? (3) <B>"Coloquio de los centauros"</B>: el poema más filosófico del libro. Los centauros debaten explícitamente la muerte, la naturaleza, el amor y el arte como respuesta al misterio. Quirón, el más sabio, concluye que la vida es un enigma que el arte apenas puede iluminar. (4) <B>El "hastío"</B>: la palabra hastiado, el aburrimiento existencial (el spleen baudelairiano), aparece en varios momentos del libro. La belleza es el antídoto pero no la cura. La opción a) comete el error de leer el libro solo por su superficie; la opción d) invierte la proporción: la angustia está presente pero no es dominante ni explícita.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Desde la perspectiva de la historia de las ideas, &iquest;qu&eacute; posici&oacute;n ideol&oacute;gica implica el esteticismo radical de <I>Prosas Profanas</I> en el contexto del capitalismo y la modernizaci&oacute;n latinoamericana del siglo XIX?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El esteticismo de <I>Prosas Profanas</I> es una posici&oacute;n ideol&oacute;gica de apoyo al capitalismo: Dar&iacute;o celebra la prosperidad material de la belle &eacute;poque latinoamericana y su arte es el ornamento de la clase dominante que lo patrocina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El esteticismo radical implica una <B>crtica velada al materialismo y al positivismo</B> dominantes: en un mundo que mide todo en t&eacute;rminos econ&oacute;micos y &uacute;tiles, afirmar que la belleza in&uacute;til es el valor supremo es un acto de resistencia cultural; pero la cr&iacute;tica modernista no es revolucionaria (no propone cambiar el orden social) sino <B>aristocr&aacute;tica</B>: el artista se retira del mundo vulgar en lugar de transformarlo; es una cr&iacute;tica est&eacute;tica, no pol&iacute;tica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El esteticismo de Dar&iacute;o no tiene ninguna dimensi&oacute;n ideol&oacute;gica: es pura est&eacute;tica sin relaci&oacute;n con el contexto hist&oacute;rico; el arte por el arte significa precisamente que el arte no tiene nada que ver con la sociedad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) <I>Prosas Profanas</I> es un manifiesto del socialismo literario: Dar&iacute;o usa los s&iacute;mbolos de la aristocracia europea (princesas, marquesas, palacios) para criticarlos ir&oacute;nicamente y defender a las clases populares latinoamericanas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La dimensión ideológica del esteticismo modernista es un tema que aparece en los exámenes universitarios de alto rendimiento y requiere análisis matizado. El contexto: en las décadas de 1880-1900, las ciudades latinoamericanas (Buenos Aires, México, Santiago) vivían una modernización acelerada impulsada por el auge exportador (carnes, granos, café, caucho) y la inversión extranjera. El positivismo (Auguste Comte: la ciencia como única fuente de conocimiento válido) y el utilitarismo eran las filosofías dominantes entre las élites intelectuales: todo debía ser útil, medible, productivo. En este contexto, el lema "el arte por el arte" (<I>l'art pour l'art</I>) tiene una dimensión política: afirmar que la belleza no necesita ser útil es un desafío directo a los valores del capitalismo positivista. <B>La posición modernista</B>: Darío y los modernistas no son revolucionarios en el sentido político: no proponen redistribuir la riqueza, no se solidarizan con los obreros, no tienen programa de transformación social. Su resistencia es estética y aristocrática: el artista (el ser más fino y sensible) se niega a someterse a los valores del burgués (el ser más vulgar y calculador) retirándose a un mundo de belleza inaccesible para los mediocres. Esta es una crítica real al materialismo, pero de carácter conservador: el artista no quiere transformar la sociedad, quiere escapar de ella. La opción c) comete el error filosófico clásico: creer que "el arte por el arte" significa que el arte no tiene relación con la sociedad; pero toda posición estética (incluida la del "arte puro") es una posición ideológica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Compara el tratamiento de la figura femenina en <I>Prosas Profanas</I> con el de Laurencia en <I>Fuenteovejuna</I>: &iquest;qu&eacute; diferencias fundamentales revelan sobre los proyectos est&eacute;ticos de ambas obras?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Las figuras femeninas son id&eacute;nticas en ambas obras: tanto Laurencia como la princesa de "Sonatina" son mujeres activas que toman decisiones propias y transforman la realidad a su alrededor; ambas obras tienen una dimensi&oacute;n proto-feminista equivalente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) En <I>Prosas Profanas</I>, las figuras femeninas (la princesa, la marquesa Eulalia, las ninfas) son <B>encarnaciones est&eacute;ticas del ideal de belleza</B>: objetos de contemplaci&oacute;n, no sujetos de acci&oacute;n; su funci&oacute;n es ser bellas. En <I>Fuenteovejuna</I>, Laurencia es un <B>sujeto moral y pol&iacute;tico activo</B> que habla, decide y transforma la realidad. La diferencia refleja los proyectos: Dar&iacute;o construye un universo de <B>belleza pura</B>; Lope construye un <B>drama de honor colectivo</B> donde la mujer es el motor de la acci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) En <I>Fuenteovejuna</I> las mujeres son decorativas y pasivas; en <I>Prosas Profanas</I> son activas y politizadas; las dos obras invierten los roles esperados de la figura femenina en sus respectivos g&eacute;neros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Tanto Dar&iacute;o como Lope usan las figuras femeninas como pretexto para hablar de los hombres; en ambas obras las mujeres son funcionales a la narrativa masculina y no tienen valor propio</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta comparativa es de las más productivas para los exámenes universitarios de alto nivel porque obliga a relacionar dos obras del programa con análisis de género y proyecto estético. <B>Las figuras femeninas en <I>Prosas Profanas</I></B>: la princesa de "Sonatina", la marquesa Eulalia de "Era un aire suave...", las ninfas y diosas del "Coloquio de los centauros". Todas comparten una característica: son seres de belleza cuya función en el poema es ser contempladas, deseadas, admiradas. No hablan (o hablan muy poco); no deciden; no actúan sobre el mundo. Su "tristeza" (la princesa) no es consecuencia de una injusticia sino de un misterio interior: es una tristeza estética, no política. Desde la perspectiva de género: son objetos de la mirada del poeta masculino, encarnaciones de la Belleza que el poeta (sujeto masculino) contempla. El esteticismo modernista tiende a "estetizar" a la mujer: convertirla en objeto artístico perfecto. <B>Laurencia en <I>Fuenteovejuna</I></B>: es el polo opuesto. Laurencia habla, rechaza, ama, sufre, y finalmente actúa de manera que cambia el curso de los hechos. Su monólogo del Acto III no es la exhibición de su belleza sino la demostración de su capacidad argumentativa y moral. Lope la construye como sujeto moral y político: tiene razón, tiene voz, tiene agencia. <B>Lo que revela la comparación</B>: el proyecto estético de Darío (el arte como contemplación de la belleza) tiende a hacer de la mujer un objeto; el proyecto dramático de Lope (el drama de honor como acción colectiva) necesita que la mujer sea un sujeto. Dos visiones radicalmente distintas del papel de lo femenino en la literatura.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analiza el "Coloquio de los centauros" como el poema m&aacute;s filosófico de <I>Prosas Profanas</I>: &iquest;qu&eacute; tesis sobre el arte, la muerte y la naturaleza plantea Dar&iacute;o?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) El "Coloquio de los centauros" plantea que la muerte no existe: los centauros concluyen que el alma es inmortal y que el artista, al crear belleza, alcanza la vida eterna; es el poema m&aacute;s optimista del libro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) El "Coloquio de los centauros" plantea que <B>la naturaleza guarda un misterio insondable que el arte solo puede intuir, no resolver</B>; los centauros debaten la muerte (que nace de la misma naturaleza que la vida), el amor (fuerza c&oacute;smica que supera la moral), la Armon&iacute;a universal (todo est&aacute; unido en el cosmos); Quir&oacute;n concluye que el hombre es parte de una naturaleza que lo supera: el arte es la &uacute;nica forma humana de tocar ese misterio, pero no de resolverlo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) El "Coloquio de los centauros" es un poema alegórico político: los centauros representan a los pa&iacute;ses latinoamericanos y el bosque donde dialogan es el mapa de Hispanoam&eacute;rica; el "misterio" que discuten es el de la identidad latinoamericana postcolonial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) El "Coloquio de los centauros" no tiene contenido filos&oacute;fico real: es un ejercicio de virtuosismo m&eacute;trico en el que Dar&iacute;o usa el di&aacute;logo mitoló gico solo como pretexto para exhibir su dominio del alejandrino; el contenido es ornamental</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El "Coloquio de los centauros" es el poema más extenso y filosóficamente denso de <I>Prosas Profanas</I> y merece análisis detenido en los exámenes de alto rendimiento. <B>El marco mitológico</B>: en la isla de Oro se reúnen los centauros de la mitología griega (Quirón, el más sabio; Reto, Folo, Orneo, Astilo, Neso, Euritión) para un gran coloquio sobre los misterios del mundo. Los centauros son seres híbridos (mitad hombre, mitad caballo) que en Darío representan la unión entre la inteligencia humana y la fuerza natural: son los filósofos de la naturaleza. <B>Las tesis del poema</B>: (1) <B>La Naturaleza como Todo</B>: el cosmos es una unidad donde todo está interconectado; la piedra, la planta, el animal y el hombre son manifestaciones del mismo principio vital. (2) <B>La muerte como parte de la vida</B>: la muerte no es el opuesto de la vida sino su transformación; el cuerpo muerto vuelve a la tierra y genera nueva vida. Esta visión panteísta recuerda a Spinoza y al Romanticismo alemán (Schelling, Hölderlin). (3) <B>El Amor como fuerza cósmica</B>: el amor es la energía que mueve el universo, anterior a toda moral; los centauros celebran el amor erótico como manifestación de la fuerza vital. (4) <B>El misterio insondable</B>: Quirón, el más sabio, concluye que hay un misterio en el cosmos que la razón no puede resolver; la Armonía (la música del universo, la armonía pitagórica de las esferas) es el nombre de ese misterio. El arte —la música, la poesía— es la única forma humana de acercarse a ese misterio. Pero no lo resuelve: el misterio permanece. Esta posición es la más profunda de <I>Prosas Profanas</I>: el arte no es solo decoración, es la respuesta humana al enigma del cosmos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> &iquest;En qu&eacute; sentido <I>Prosas Profanas</I> sigue siendo relevante para el lector del siglo XXI? Eval&uacute;a cr&iacute;ticamente su legado.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) <I>Prosas Profanas</I> no tiene ninguna relevancia en el siglo XXI: sus temas (princesas, cisnes, marquesas, Versalles) pertenecen a un mundo completamente extinguido; su &uacute;nica relevancia es hist&oacute;rica como documento de un per&iacute;odo literario superado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) <I>Prosas Profanas</I> sigue siendo relevante en m&uacute;ltiples dimensiones: (1) como <B>modelo de rigor formal y musicalidad po&eacute;tica</B> sin igual en español; (2) como planteamiento de la <B>tensi&oacute;n entre arte y mercado</B> que sigue vigente; (3) como exploraci&oacute;n de la <B>angustia existencial</B> del artista que no pertenece a su mundo; (4) como <B>defensa de la cultura hispana</B> en un mundo dominado por potencias; (5) como obra que ense&ntilde;a que la <B>forma po&eacute;tica</B> no es ornamento sino pensamiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) <I>Prosas Profanas</I> solo es relevante para los latinos de EE.UU. que luchan por su identidad cultural; los dem&aacute;s lectores no pueden identificarse con la experiencia de un poeta latinoamericano del siglo XIX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La relevancia de <I>Prosas Profanas</I> en el siglo XXI es exclusivamente musical: sus poemas deben escucharse cantados o musicalizados; como texto escrito han perdido todo inter&eacute;s</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La pregunta de relevancia contemporánea de <I>Prosas Profanas</I> obliga a una evaluación crítica madura, propia del nivel universitario. (1) <B>El rigor formal</B>: en una época de poesía frecuentemente descuidada formalmente, <I>Prosas Profanas</I> es un modelo de lo que puede lograrse cuando el poeta trabaja cada sílaba, cada rima, cada imagen con obsesión artesanal. La lectura de Darío enseña que la forma poética no es convención vacía sino vehículo de significado. (2) <B>Arte y mercado</B>: la tensión entre el artista que crea belleza "inútil" y el mercado que demanda arte útil, entretenido y consumible es más aguda en el siglo XXI que en el XIX. La posición de Darío (el arte como templo, no como plaza pública) sigue siendo una posición filosófica legítima que muchos artistas contemporáneos reconocen. (3) <B>El artista que no pertenece</B>: Darío era un hispanoamericano provinciano que soñaba con París, un hombre del siglo XIX que no cabía en su época. Esa sensación de no pertenecer a ningún mundo plenamente es una experiencia contemporánea muy extendida (los inmigrantes, los artistas, los marginales culturales). (4) <B>La defensa de la cultura hispana</B>: aunque Darío lo desarrollará más en <I>Cantos de Vida y Esperanza</I>, la reafirmación de la dignidad y el valor de la cultura en español que el Modernismo representa es vigente en un mundo donde el inglés domina. (5) <B>La forma como pensamiento</B>: la gran lección filosófica de Darío es que la forma poética no es decoración añadida al contenido sino el modo en que ese contenido se piensa. "Sonatina" no sería el mismo poema en prosa: el alejandrino es parte de su significado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Si tuvieras que definir <I>Prosas Profanas</I> en una sola frase para un examen de alto rendimiento, &iquest;cu&aacute;l de las siguientes captura mejor la esencia de la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) "<I>Prosas Profanas</I> es una colecci&oacute;n de cuentos en prosa del poeta nicaragüense Rub&eacute;n Dar&iacute;o que narra historias de princesas y caballeros medievales con un estilo rom&aacute;ntico tardío"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) "<I>Prosas Profanas y otros poemas</I> es el libro de poes&iacute;a l&iacute;rica fundacional del Modernismo hispanoamericano en su etapa esteticista, publicado por Rub&eacute;n Dar&iacute;o en Buenos Aires en 1896, en el que el poeta erige la Belleza pagana como religi&oacute;n suprema, renovando radicalmente la m&eacute;trica y el lenguaje po&eacute;tico en español mediante la s&iacute;ntesis del Parnasianismo y el Simbolismo franceses"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) "<I>Prosas Profanas</I> es un poema narrativo de Rub&eacute;n Dar&iacute;o que narra la vida del poeta desde su infancia en Nicaragua hasta su llegada a Par&iacute;s, usando metros cl&aacute;sicos de la tradici&oacute;n castellana del Siglo de Oro"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) "<I>Prosas Profanas</I> es la obra de madurez de Rub&eacute;n Dar&iacute;o en la que el poeta abandona el esteticismo de su juventud y adopta un compromiso c&iacute;vico con el destino de Hispanoam&eacute;rica frente al imperialismo norteamericano"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de síntesis final evalúa la integración de todos los conocimientos del tema. Analicemos cada opción: <B>a) Incorrecta</B>: comete tres errores graves: (1) dice "cuentos en prosa" cuando es un libro de <B>poesía en verso</B>; (2) dice "romántico tardío" cuando es <B>Modernista</B>; (3) el Romanticismo tardío y el Modernismo son movimientos distintos con diferencias sustanciales. <B>b) Correcta</B>: integra todos los elementos esenciales: (1) <B>Género</B>: "libro de poesía lírica" (correcto: no prosa, no narrativa); (2) <B>Función histórica</B>: "fundacional del Modernismo hispanoamericano"; (3) <B>Etapa</B>: "en su etapa esteticista" (distingue de la etapa cívica de <I>Cantos de Vida y Esperanza</I>); (4) <B>Datos bibliográficos</B>: "Rubén Darío", "Buenos Aires", "1896"; (5) <B>Tema central</B>: "la Belleza pagana como religión suprema" (capta el oxímoron del título); (6) <B>Innovación formal</B>: "renovando radicalmente la métrica y el lenguaje poético en español"; (7) <B>Fuentes</B>: "síntesis del Parnasianismo y el Simbolismo franceses". <B>c) Incorrecta</B>: dice "poema narrativo" (es una <b>colección de poemas líricos</b>) y "metros clásicos de la tradición castellana" (Darío los renovó radicalmente). <B>d) Incorrecta</B>: describe <I>Cantos de Vida y Esperanza</I> (1905), no <I>Prosas Profanas</I> (1896). La opción d) es el error más sofisticado: el estudiante que confunde las dos obras de Darío cometerá este error. La definición b) demuestra dominio conceptual, precisión terminológica y capacidad de síntesis: las tres cualidades exigidas en un examen universitario de alto rendimiento.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

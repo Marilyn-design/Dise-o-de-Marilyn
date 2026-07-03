@@ -1,0 +1,429 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Coherencia y Cohesión Textual - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.parrafo{margin-top:12px;background:#F6F2EB;border-radius:10px;padding:14px 18px;font-size:16px;line-height:1.95;color:#333;font-weight:normal;}
+.parrafo b{color:#1F6A67;}
+.parrafo .hueco{color:#D7B06D;font-weight:bold;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="RAZONAMIENTO VERBAL.HTML">← Volver a los temas de Razonamiento Verbal</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">RAZONAMIENTO VERBAL · TEMA 9</DIV>
+<H1>Coherencia y Cohesión Textual</H1>
+<DIV CLASS="sub">Mecanismos de cohesión: repetición, sustitución, elipsis y enlaces textuales · Relaciones anafóricas y catafóricas</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Dos propiedades distintas de un buen texto</H3>
+Cuando un texto se entiende con claridad y se percibe como una unidad de sentido, suele deberse a la combinación de dos propiedades que, aunque relacionadas, son distintas: la <B>coherencia</B> y la <B>cohesión</B>.
+
+<H4>a) La coherencia</H4>
+Es la propiedad que hace que un texto tenga <B>sentido lógico como conjunto</B>: que sus ideas se relacionen de manera ordenada, que no se contradigan entre sí, que exista un tema central reconocible y que la información se organice siguiendo una progresión comprensible. La coherencia es, en cierto modo, invisible: reside en el significado global del texto, en cómo las ideas encajan unas con otras en la mente del lector.
+
+<H4>b) La cohesión</H4>
+Es la propiedad que hace que esa relación entre ideas quede <B>marcada explícitamente en la superficie del texto</B>, mediante recursos lingüísticos concretos: palabras, pronombres, conectores y otros elementos que enlazan una oración con otra de forma visible. La cohesión es, a diferencia de la coherencia, observable directamente en las palabras que el texto efectivamente usa.
+
+<DIV CLASS="ej"><B>Para entender la diferencia:</B> un texto puede tener buena cohesión (usa muchos conectores y pronombres) y aun así ser incoherente si esos elementos conectan ideas que, en el fondo, no tienen relación lógica entre sí. Y, al revés, un texto puede ser coherente en su contenido pero leerse de forma torpe si no usa los recursos de cohesión adecuados para enlazar sus oraciones. Un texto verdaderamente bien construido necesita ambas propiedades trabajando juntas: coherencia en el fondo y cohesión en la forma.</DIV>
+
+<H3>2. Los mecanismos de cohesión textual</H3>
+La cohesión se logra mediante un conjunto de recursos lingüísticos que permiten que las oraciones de un texto se enlacen entre sí sin perder claridad ni caer en repeticiones innecesarias. Los principales son la repetición, la sustitución, la elipsis y los enlaces textuales.
+
+<H4>a) La repetición</H4>
+Consiste en volver a mencionar un mismo elemento a lo largo del texto para mantener la referencia clara, ya sea repitiendo exactamente la misma palabra o usando una palabra relacionada en significado.
+<UL>
+<LI><B>Repetición literal:</B> se repite exactamente la misma palabra. Es el recurso más directo, aunque su uso excesivo puede volver el texto monótono.</LI>
+<LI><B>Repetición por sinonimia:</B> se usa una palabra de significado equivalente o muy cercano para referirse a lo mismo, evitando la monotonía sin perder claridad (por ejemplo, "el escritor" para retomar a "el novelista").</LI>
+<LI><B>Repetición por hiperonimia/hiponimia:</B> se retoma un elemento mediante una categoría más general (hiperónimo: "el ave" para "el cóndor") o más específica (hipónimo), manteniendo el vínculo semántico sin repetir la palabra original.</LI>
+</UL>
+<DIV CLASS="ej"><B>Ejemplo:</B> "El cóndor andino es una de las aves voladoras más grandes del mundo. Esta rapaz puede alcanzar más de tres metros de envergadura." Aquí "esta rapaz" retoma "el cóndor andino" mediante un hipónimo relacionado con su categoría biológica.</DIV>
+
+<H4>b) La sustitución</H4>
+Consiste en reemplazar un elemento ya mencionado por otra palabra o expresión que cumple la misma función referencial, sin que ambas compartan necesariamente relación de significado (a diferencia de la sinonimia, que sí la comparte).
+<UL>
+<LI><B>Sustitución pronominal:</B> un pronombre reemplaza a un sustantivo o a una idea completa ya mencionada ("él", "ella", "esto", "el cual", "quien").</LI>
+<LI><B>Sustitución léxica:</B> una palabra reemplaza a otra sin ser estrictamente sinónima, apoyándose en el contexto para que la equivalencia se entienda (por ejemplo, usar "el fenómeno" para retomar una descripción extensa mencionada antes).</LI>
+<LI><B>Sustitución adverbial:</B> un adverbio o una locución adverbial reemplaza a una expresión de lugar, tiempo o modo ya mencionada ("allí" en lugar de repetir un lugar citado antes, "entonces" en lugar de repetir un momento ya señalado).</LI>
+</UL>
+<DIV CLASS="ej"><B>Ejemplo:</B> "Los primeros pobladores llegaron a Caral hace más de cinco mil años. <B>Allí</B> construyeron una de las civilizaciones más antiguas de América." El adverbio "allí" sustituye la mención explícita de "Caral", evitando repetirla.</DIV>
+
+<H4>c) La elipsis</H4>
+Consiste en <B>omitir</B> un elemento que ya fue mencionado y que el contexto permite reconstruir sin dificultad, evitando así una repetición innecesaria. A diferencia de la sustitución, en la elipsis no aparece ninguna palabra en el lugar del elemento omitido: simplemente se sobreentiende.
+<DIV CLASS="ej"><B>Ejemplo:</B> "María terminó sus estudios de arquitectura y ___ empezó a trabajar en un estudio reconocido." El sujeto de la segunda oración ("María" o "ella") se omite por completo, porque el contexto deja claro quién realiza la acción, sin que sea necesario repetirlo ni sustituirlo por un pronombre.</DIV>
+
+<H4>d) Los enlaces textuales (conectores)</H4>
+Son palabras o expresiones que <B>explicitan el tipo de relación lógica</B> que existe entre dos ideas, oraciones o párrafos. A diferencia de los tres mecanismos anteriores, que enlazan principalmente referentes (personas, objetos, lugares), los enlaces textuales enlazan directamente el sentido de las ideas.
+<UL>
+<LI><B>Aditivos:</B> suman una idea a otra ("además", "asimismo", "también", "por otro lado").</LI>
+<LI><B>Adversativos:</B> contraponen una idea con otra ("sin embargo", "no obstante", "pero", "en cambio").</LI>
+<LI><B>Consecutivos:</B> presentan una idea como efecto o conclusión de otra ("por lo tanto", "en consecuencia", "por ello", "así pues").</LI>
+<LI><B>Causales:</B> explican el motivo de algo ("porque", "ya que", "debido a que", "puesto que").</LI>
+<LI><B>Temporales:</B> ordenan las ideas en el tiempo ("luego", "posteriormente", "mientras tanto", "finalmente").</LI>
+<LI><B>Explicativos:</B> aclaran o reformulan lo dicho ("es decir", "en otras palabras", "esto es").</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Mecanismo</TH><TH>Qué hace</TH><TH>Ejemplo típico</TH></TR>
+<TR><TD>Repetición</TD><TD>Retoma un elemento mediante la misma palabra o una relacionada en significado</TD><TD>"el poeta" para retomar "César Vallejo"</TD></TR>
+<TR><TD>Sustitución</TD><TD>Reemplaza un elemento por otra palabra o expresión con la misma función referencial</TD><TD>"allí", "esto", "el cual"</TD></TR>
+<TR><TD>Elipsis</TD><TD>Omite un elemento que el contexto permite reconstruir</TD><TD>"Llegó temprano. ___ Saludó a todos."</TD></TR>
+<TR><TD>Enlaces textuales</TD><TD>Explicitan la relación lógica entre ideas</TD><TD>"sin embargo", "por lo tanto", "es decir"</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>3. Relaciones anafóricas y catafóricas</H3>
+Tanto la sustitución como la elipsis dependen de un mecanismo más general llamado <B>referencia</B>: la capacidad de una palabra o expresión de "apuntar" hacia otro elemento del texto para obtener su significado completo. Según la dirección en la que apunta esa referencia, se distinguen dos tipos:
+
+<H4>a) La anáfora</H4>
+Ocurre cuando un elemento del texto (generalmente un pronombre u otra expresión referencial) remite a algo <B>mencionado antes</B>. Es, con diferencia, el tipo de referencia más frecuente en cualquier texto, porque refleja el modo natural en que avanza la información: primero se presenta algo y después se retoma.
+<DIV CLASS="ej"><B>Ejemplo de anáfora:</B> "Túpac Amaru II lideró una de las más importantes rebeliones indígenas del virreinato. <B>Él</B> fue finalmente capturado y ejecutado en el Cuzco." El pronombre "él" es anafórico: remite hacia atrás, a "Túpac Amaru II", ya mencionado.</DIV>
+
+<H4>b) La catáfora</H4>
+Ocurre cuando un elemento del texto remite a algo que se menciona <B>después</B>, todavía no presentado en el momento en que aparece la referencia. Es un recurso menos frecuente que la anáfora, y suele usarse con una intención expresiva: generar expectativa en el lector antes de revelar de qué o de quién se está hablando.
+<DIV CLASS="ej"><B>Ejemplo de catáfora:</B> "Escucha bien <B>esto</B>: el examen se ha adelantado una semana." La palabra "esto" no retoma nada dicho antes; anuncia una información que todavía no se ha presentado y que aparecerá inmediatamente después, por lo que la referencia apunta hacia adelante.</DIV>
+
+<DIV CLASS="cultura-titulo">CÓMO DISTINGUIR ANÁFORA DE CATÁFORA EN LA PRÁCTICA<SPAN>La pregunta clave es siempre: ¿el referente ya apareció en el texto, o todavía no?</SPAN></DIV>
+
+Para identificar si una referencia es anafórica o catafórica, basta con localizar el <B>referente</B> el elemento del texto al que la palabra en cuestión remite y comprobar su posición: si el referente aparece <B>antes</B> de la palabra que lo retoma, la relación es anafórica; si aparece <B>después</B>, es catafórica. La gran mayoría de los pronombres, sustituciones y elipsis que aparecen en un texto son anafóricos, porque el orden natural de la comunicación es presentar primero la información y remitir a ella después; la catáfora, al invertir ese orden, suele reservarse para efectos particulares de énfasis, suspenso o estructuración explícita de una lista o explicación que está por venir.
+
+<H3>4. Cómo estos mecanismos sostienen la cohesión de un texto completo</H3>
+Ningún texto usa un solo mecanismo de cohesión de forma aislada: la repetición, la sustitución, la elipsis y los enlaces textuales suelen combinarse constantemente, incluso dentro de un mismo párrafo, para evitar tanto la monotonía de repetir siempre las mismas palabras como la ambigüedad de no dejar claro a qué se refiere cada expresión. Reconocer estos mecanismos permite entender, oración por oración, cómo un texto logra mantenerse unido sin perder claridad ni caer en redundancias innecesarias.
+
+<DIV CLASS="mapa-note"><B>En síntesis.</B> La coherencia es la propiedad de fondo que hace que un texto tenga sentido como conjunto; la cohesión es el conjunto de recursos visibles como repetición, sustitución, elipsis y enlaces textuales que hacen explícitas las relaciones entre sus partes. Dentro de esos recursos, la referencia anafórica (hacia atrás) y la catafórica (hacia adelante) explican en qué dirección apunta cada pronombre o expresión referencial dentro del texto.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">2</DIV><DIV CLASS="dk-label">Propiedades textuales relacionadas: coherencia (de fondo) y cohesión (de forma)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">4</DIV><DIV CLASS="dk-label">Mecanismos de cohesión: repetición, sustitución, elipsis, enlaces textuales</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">2</DIV><DIV CLASS="dk-label">Direcciones de la referencia: anáfora (hacia atrás) y catáfora (hacia adelante)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">6</DIV><DIV CLASS="dk-label">Tipos de enlaces textuales: aditivos, adversativos, consecutivos, causales, temporales, explicativos</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál es la diferencia esencial entre coherencia y cohesión?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) No existe ninguna diferencia: son dos nombres distintos para el mismo fenómeno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) La coherencia es la propiedad de fondo que hace que un texto tenga sentido lógico como conjunto; la cohesión es el conjunto de recursos lingüísticos visibles que enlazan explícitamente las oraciones entre sí</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) La coherencia se refiere solo a la ortografía, y la cohesión solo a la puntuación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) La cohesión existe únicamente en textos orales, y la coherencia únicamente en textos escritos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La coherencia reside en el significado global del texto: que sus ideas se relacionen lógicamente y formen una unidad de sentido. La cohesión, en cambio, es observable directamente en la superficie del texto, mediante recursos concretos como pronombres, sinónimos o conectores que enlazan visiblemente unas oraciones con otras. La opción a) ignora esta distinción fundamental; c) y d) inventan criterios (ortografía, puntuación, oralidad/escritura) que no corresponden a ninguna de las dos propiedades reales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Qué mecanismo de cohesión se usa en la siguiente oración: "El escritor arequipeño publicó su primera novela a los veinticinco años", cuando se usa para retomar una mención previa de "Mario Vargas Llosa"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Elipsis, porque se omite el nombre del autor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Repetición por sinonimia o expresión equivalente, ya que "el escritor arequipeño" designa al mismo referente ya mencionado sin repetir literalmente su nombre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Sustitución pronominal, porque se usa un pronombre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Un enlace textual adversativo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"El escritor arequipeño" no repite literalmente el nombre "Mario Vargas Llosa", pero sí retoma al mismo referente mediante una expresión equivalente relacionada con su oficio y su origen, lo cual es un caso de repetición mediante expresión equivalente (cercana a la sinonimia referencial). No hay elipsis (a), porque el sujeto no se omite: aparece explícito como "el escritor arequipeño"; no hay pronombre (c), ya que la expresión es una frase nominal completa, no un pronombre; y no hay ningún conector adversativo en la oración (d).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Qué caracteriza a la elipsis como mecanismo de cohesión?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Reemplaza un elemento ya mencionado por un pronombre visible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Omite por completo un elemento ya mencionado, sin sustituirlo por ninguna palabra, porque el contexto permite reconstruirlo sin dificultad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Repite exactamente la misma palabra varias veces seguidas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Introduce siempre información completamente nueva en el texto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La elipsis se distingue precisamente porque no deja ninguna palabra en el lugar del elemento omitido: el elemento simplemente desaparece de la superficie del texto, y el lector lo reconstruye mentalmente a partir del contexto. La opción a) describe, en cambio, la sustitución pronominal, que sí deja una palabra visible (el pronombre) en el lugar del elemento; c) describe la repetición literal; d) es falsa, porque la elipsis, al igual que los demás mecanismos de cohesión, retoma información ya conocida, no introduce información nueva.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuándo se dice que una referencia es "anafórica"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Cuando remite a un elemento que se menciona después en el texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Cuando remite a un elemento ya mencionado antes en el texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Cuando no remite a ningún elemento del texto, sino a algo externo desconocido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Cuando aparece únicamente al final de un párrafo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La anáfora es el tipo de referencia que remite "hacia atrás", a un elemento que el texto ya mencionó antes de la palabra o expresión que lo retoma. Es el tipo de referencia más frecuente en cualquier texto. La opción a) describe, en cambio, a la catáfora (remisión hacia adelante); c) es falsa, porque toda referencia anafórica o catafórica remite a un elemento presente en el propio texto, no a algo externo; d) inventa una condición de posición que no corresponde a la definición real del concepto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿A qué tipo de enlace textual pertenece la palabra "sin embargo"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Aditivo, porque suma una idea a otra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Adversativo, porque contrapone una idea con otra anterior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Temporal, porque ordena hechos en el tiempo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Explicativo, porque reformula lo dicho antes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Sin embargo" es el ejemplo clásico de conector adversativo: introduce una idea que contrasta o se opone, al menos parcialmente, con lo que se acaba de decir. No suma información sin contraste (a), no organiza hechos en el tiempo (c) y no reformula con otras palabras lo ya dicho (d): su función específica es señalar una oposición.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Identifica el mecanismo de cohesión predominante en el siguiente fragmento: "Los tejidos paracas destacan por la complejidad de sus bordados y la variedad de su paleta cromática. Estos textiles fueron hallados principalmente en fardos funerarios de la península de Paracas."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Elipsis del sujeto en la segunda oración</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Sustitución mediante la expresión "estos textiles", que retoma a "los tejidos paracas" sin repetir literalmente la frase</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Un enlace textual causal entre ambas oraciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Catáfora, porque "estos textiles" remite a información que aparece después</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Estos textiles" es una expresión que sustituye a "los tejidos paracas", ya mencionados en la primera oración, evitando la repetición literal mientras mantiene con claridad la referencia. No hay elipsis (a), porque el sujeto de la segunda oración está explícito ("estos textiles"), no omitido; no hay ningún conector causal explícito entre las oraciones (c); y la referencia es anafórica, no catafórica (d), ya que "estos textiles" remite hacia atrás, a lo ya mencionado en la primera oración, y no hacia algo que se presenta después.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> En la oración "Juan estudió toda la noche y aprobó el examen con la nota más alta del salón", ¿qué mecanismo de cohesión conecta ambas acciones dentro de la misma oración?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Repetición literal del sujeto "Juan" en la segunda parte de la oración</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Elipsis del sujeto en la segunda parte de la oración ("y ___ aprobó"), que se sobreentiende como "Juan" gracias al contexto inmediato</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Sustitución pronominal mediante un pronombre explícito</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Catáfora, porque "Juan" se menciona después de la acción de aprobar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Entre "estudió" y "aprobó" no aparece ningún sujeto explícito para la segunda acción; se omite por completo porque el contexto deja claro que sigue siendo Juan quien realiza la acción, sin necesidad de repetir el nombre ni de usar un pronombre. No hay repetición literal (a), ya que "Juan" no vuelve a aparecer; no hay pronombre visible (c); y no hay catáfora (d), porque "Juan" se menciona al inicio, antes de ambas acciones, no después.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Identifica si la siguiente referencia es anafórica o catafórica: "Quiero que sepas <B>esto</B>: el proyecto ha sido aprobado por el comité."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Es anafórica, porque "esto" remite a información mencionada antes en la oración</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Es catafórica, porque "esto" anuncia una información —la aprobación del proyecto— que se presenta inmediatamente después</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) No es ni anafórica ni catafórica, porque "esto" no tiene ningún referente en la oración</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Es un caso de elipsis, no de referencia anafórica ni catafórica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En este caso, "esto" no retoma ninguna información previa (no hay nada mencionado antes en la oración a lo que pueda referirse), sino que anuncia y apunta hacia la información que viene inmediatamente después de los dos puntos: la aprobación del proyecto. Por eso la referencia es catafórica: apunta hacia adelante. La opción a) invierte la dirección real de la referencia; c) es falsa, ya que "esto" sí tiene un referente claro, solo que aparece después; d) confunde el fenómeno, ya que aquí no se omite ningún elemento, sino que se usa explícitamente el pronombre "esto".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> ¿Qué tipo de enlace textual falta en el espacio en blanco para que la relación lógica entre ambas ideas quede correctamente expresada? "El estudio contó con una muestra reducida de participantes. ___, sus resultados no pueden generalizarse a toda la población."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Además</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Por lo tanto (consecutivo), ya que la segunda idea es una consecuencia lógica directa de la limitación mencionada en la primera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Anteriormente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Es decir</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La segunda idea (que los resultados no pueden generalizarse) es una consecuencia lógica de la primera (una muestra reducida), por lo que el conector adecuado debe ser consecutivo, como "por lo tanto" o "en consecuencia". "Además" (a) sumaría una idea sin marcar esa relación causal; "anteriormente" (c) es un conector temporal que no aplica aquí; "es decir" (d) introduce una reformulación de lo ya dicho, no una consecuencia nueva.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> En el siguiente fragmento, ¿qué combinación de mecanismos de cohesión se identifica? "El Manu es una de las reservas naturales más biodiversas del planeta. En ___ habitan miles de especies de aves, mamíferos e insectos que los científicos continúan catalogando."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Solo repetición literal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Sustitución adverbial (un adverbio de lugar como "él" o una expresión equivalente que retoma "el Manu" como lugar) combinada con enumeración de elementos particulares como comentario nuevo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Solo elipsis del sujeto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Un enlace textual adversativo únicamente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El espacio en blanco puede completarse con una expresión de lugar (como "él", referido al Manu como espacio geográfico) que sustituye la mención explícita de "el Manu", mientras la oración aporta comentario nuevo mediante la enumeración de especies. Esto combina sustitución (de tipo adverbial o pronominal referida a un lugar) con el avance normal de información nueva propio de cualquier oración. La opción a) simplifica en exceso, ignorando que no hay repetición literal de "el Manu"; c) es incorrecta porque no se omite ningún elemento, sino que se sustituye; d) no corresponde, ya que no existe ningún conector adversativo en el fragmento.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · RAZONAMIENTO CRÍTICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza el siguiente texto e identifica todos los mecanismos de cohesión presentes: "El huaco retrato mochica constituye una de las expresiones cerámicas más notables del antiguo Perú. Estas piezas representaban con extraordinario realismo los rasgos individuales de personajes de la sociedad mochica. Sin embargo, su función no era meramente decorativa: ___ cumplían también un papel ritual vinculado al culto a los ancestros."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Solo se identifica un enlace adversativo, sin ningún otro mecanismo de cohesión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Se identifican tres mecanismos combinados: sustitución ("estas piezas" retoma "el huaco retrato mochica"), un enlace adversativo ("sin embargo") que contrasta la función decorativa con la ritual, y elipsis del sujeto en la última oración ("___ cumplían"), que se sobreentiende como "estas piezas"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Se identifica únicamente repetición literal de la palabra "huaco" en todo el fragmento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Se identifica solo una relación catafórica entre la primera y la segunda oración</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El fragmento combina varios mecanismos: "estas piezas" sustituye a "el huaco retrato mochica" (sustitución), "sin embargo" marca explícitamente el contraste lógico entre la función decorativa esperada y la función ritual real (enlace adversativo), y el espacio en blanco de la última oración se completa con la omisión del sujeto ("___ cumplían"), que el contexto permite reconstruir como "estas piezas" sin necesidad de repetirlo (elipsis). La opción a) ignora la sustitución y la elipsis presentes; c) es falsa, porque la palabra "huaco" no se repite literalmente en el resto del fragmento; d) es incorrecta porque la relación entre "el huaco retrato mochica" y "estas piezas" es anafórica (hacia atrás), no catafórica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Explica por qué el uso excesivo de repetición literal, aunque no sea gramaticalmente incorrecto, puede afectar negativamente la calidad de un texto.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Porque la repetición literal está prohibida por las reglas gramaticales del español</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Porque, aunque mantiene la claridad referencial, un uso excesivo produce un estilo monótono y redundante; por eso los buenos textos alternan la repetición con sustitución, sinonimia, hiperonimia y elipsis para mantener la cohesión sin sacrificar la variedad expresiva</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Porque cada vez que se repite una palabra, el texto deja automáticamente de ser coherente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Porque la repetición literal solo puede usarse en textos científicos, nunca en textos narrativos o descriptivos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La repetición literal es un mecanismo de cohesión válido y necesario en ciertos contextos (por ejemplo, cuando la precisión terminológica es más importante que la variedad estilística, como en textos técnicos o legales), pero su uso excesivo en textos generales produce un estilo repetitivo y poco fluido. Por eso los textos bien escritos suelen alternar distintos mecanismos —sustitución, sinonimia, hiperonimia, elipsis— según el contexto, logrando cohesión sin sacrificar la variedad. La opción a) es falsa: no existe tal prohibición gramatical; c) confunde un problema de estilo con la coherencia, que es una propiedad de fondo del significado, no de la elección léxica; d) restringe arbitrariamente el uso de la repetición a un solo tipo de texto, cuando en realidad puede aparecer en cualquier género con distinta frecuencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> En el siguiente texto, determina si la palabra subrayada funciona como anáfora o como catáfora: "Los siguientes tres factores explican el declive del imperio: la fragmentación política interna, las invasiones externas sostenidas y la crisis económica prolongada."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Es anafórica, porque "los siguientes tres factores" remite a información ya mencionada antes en el texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Es catafórica, porque la expresión "los siguientes tres factores" anuncia y remite hacia la enumeración que se presenta inmediatamente después en la misma oración</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) No es una referencia, sino un caso de elipsis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Es un enlace textual de tipo consecutivo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La expresión "los siguientes tres factores" no retoma nada mencionado previamente; al contrario, anticipa y anuncia la enumeración que aparece justo después (fragmentación política, invasiones externas, crisis económica), por lo que la referencia apunta hacia adelante: es un caso claro de catáfora, además reforzado explícitamente por la palabra "siguientes". La opción a) invierte la dirección real de la referencia; c) confunde el fenómeno, ya que aquí no se omite ningún elemento, sino que se usa una expresión explícita que remite a información posterior; d) no corresponde, porque no hay ninguna relación de consecuencia lógica marcada en la oración, sino una relación de referencia catafórica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Un estudiante afirma que "toda sustitución pronominal es, por definición, un caso de anáfora". Evalúa esta afirmación.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Es correcta sin excepciones: los pronombres solo pueden remitir hacia atrás</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Es incorrecta: aunque la mayoría de los pronombres funcionan de manera anafórica, un pronombre también puede usarse de forma catafórica cuando remite a información que se presenta después en el texto, como ocurre en "esto: el examen se adelanta una semana"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Es incorrecta, porque los pronombres nunca tienen función referencial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Es correcta, porque la catáfora nunca se realiza mediante pronombres, solo mediante sustantivos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Si bien es cierto que la mayoría de los pronombres en un texto cumplen función anafórica (remiten hacia atrás), no es una regla absoluta: los mismos pronombres —"esto", "esta", "lo siguiente"— pueden usarse catafóricamente cuando anuncian información que aparece después, como en el ejemplo "esto: el examen se adelanta una semana", donde "esto" no tiene ningún referente previo y apunta hacia la información que sigue. La opción a) generaliza incorrectamente a partir del caso más frecuente; c) es falsa, ya que la función referencial es precisamente la razón de ser de los pronombres; d) contradice el ejemplo mismo del texto, donde la catáfora sí se realiza mediante un pronombre.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Por qué se afirma que un texto puede tener buena cohesión y, sin embargo, no ser coherente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Esto es imposible: si un texto usa correctamente pronombres y conectores, siempre es automáticamente coherente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Porque la cohesión es un fenómeno de superficie (el uso correcto de pronombres, conectores y otros enlaces visibles), mientras que la coherencia depende del sentido lógico global del texto; es posible enlazar correctamente, mediante recursos formales, ideas que en el fondo no guardan una relación lógica real entre sí</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Porque la cohesión solo existe en textos orales y la coherencia solo en textos escritos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Porque la coherencia depende exclusivamente de la cantidad de conectores usados en el texto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Un texto puede usar de manera técnicamente correcta pronombres, conectores y sustituciones (buena cohesión formal) y aun así presentar ideas que, examinadas en su contenido, no mantienen una relación lógica real entre sí (falta de coherencia). Por ejemplo, un párrafo puede usar "sin embargo" para conectar dos oraciones que en realidad no se contraponen de ninguna manera lógica, generando una falsa sensación de conexión. La opción a) asume una relación automática entre ambas propiedades que no existe; c) y d) inventan criterios (modalidad oral/escrita, cantidad de conectores) que no corresponden a la naturaleza real de ninguna de las dos propiedades.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analiza el siguiente texto y determina la combinación completa y correcta de mecanismos de cohesión que contiene: "La ciudadela de Chan Chan, capital del reino Chimú, fue construida enteramente en adobe. Sus muros, decorados con relieves geométricos y zoomorfos, delimitaban nueve grandes recintos amurallados conocidos como ciudadelas reales. Cada uno de estos recintos ___ funcionaba como residencia y, tras la muerte del gobernante que lo habitaba, como su propio mausoleo."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Solo se usa repetición literal de la palabra "ciudadela" a lo largo de todo el texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Se combinan: sustitución posesiva ("sus muros" remite a Chan Chan), sustitución mediante expresión equivalente ("nueve grandes recintos amurallados" para los espacios internos), y elipsis del sujeto en la última oración (donde "cada uno de estos recintos" ya funciona como sujeto explícito, sin elemento omitido adicional en ese punto salvo el verbo compartido en la estructura coordinada final)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Se usa exclusivamente un enlace textual causal entre la primera y la segunda oración</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Todo el texto es un único caso de catáfora generalizada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El texto combina varios mecanismos con precisión: el posesivo "sus" en "sus muros" remite anafóricamente a Chan Chan, mencionada en la primera oración; "nueve grandes recintos amurallados conocidos como ciudadelas reales" es una expresión equivalente que retoma y a la vez desarrolla la idea de los espacios internos delimitados por esos muros; y en la última oración, la estructura coordinada "funcionaba como... y, tras la muerte del gobernante..., como su propio mausoleo" comparte el mismo sujeto y verbo principal sin necesidad de repetirlos en la segunda parte, un caso de elipsis dentro de la coordinación. La opción a) simplifica en exceso, ignorando la variedad real de mecanismos; c) es incorrecta porque no existe un conector causal explícito entre la primera y la segunda oración (la relación es de continuidad descriptiva, marcada por sustitución, no por causalidad); d) es una generalización injustificada, ya que el texto contiene predominantemente relaciones anafóricas, no catafóricas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Compara estos dos fragmentos y determina cuál logra mejor cohesión sin sacrificar la variedad estilística: (I) "El Titicaca es el lago navegable más alto del mundo. El Titicaca alberga a las comunidades uros, que construyen islas artificiales de totora. El Titicaca es también un espacio sagrado para la cosmovisión andina." (II) "El Titicaca es el lago navegable más alto del mundo. En sus aguas habitan las comunidades uros, que construyen islas artificiales de totora. Este espacio, además, ocupa un lugar sagrado dentro de la cosmovisión andina."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) El fragmento (I) es mejor porque repetir el nombre "El Titicaca" en cada oración garantiza mayor claridad referencial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) El fragmento (II) logra mejor cohesión: mantiene la claridad referencial mediante sustitución ("en sus aguas", "este espacio") en vez de repetir literalmente el nombre en cada oración, evitando la monotonía del fragmento (I) sin perder en ningún momento la identificación clara del referente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Ambos fragmentos son igualmente correctos y no existe ninguna diferencia relevante entre ellos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) El fragmento (I) es mejor porque la repetición literal es, en cualquier contexto, el mecanismo de cohesión más recomendable</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El fragmento (I) repite literalmente "El Titicaca" en las tres oraciones, lo cual, aunque no es gramaticalmente incorrecto, produce un estilo monótono y poco fluido. El fragmento (II) mantiene la misma claridad referencial recurriendo a distintos mecanismos de sustitución ("en sus aguas" y "este espacio" retoman claramente al lago sin repetir su nombre), lo que demuestra un manejo más variado y natural de la cohesión textual. La opción a) sobrevalora la repetición literal como única garantía de claridad, ignorando que la sustitución cumple la misma función referencial sin el costo estilístico de la monotonía; c) ignora una diferencia real y relevante entre ambos fragmentos; d) generaliza incorrectamente que la repetición literal sea siempre preferible, cuando en realidad su conveniencia depende del contexto y del género textual.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> En el siguiente texto, explica por qué la palabra subrayada constituye un caso de catáfora y no de anáfora, a pesar de aparecer relativamente al inicio del párrafo: "Baste decir <B>lo siguiente</B> sobre la papa: fue domesticada en los Andes centrales, se convirtió en alimento base de numerosas culturas prehispánicas y hoy es cultivada en más de cien países del mundo."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Es catáfora porque toda referencia que aparece antes del punto final del párrafo es, por definición, catafórica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Es catáfora porque, independientemente de su posición dentro del párrafo, "lo siguiente" no remite a ninguna información mencionada previamente en el texto, sino que anuncia explícitamente la enumeración de datos sobre la papa que se presenta inmediatamente después; lo decisivo para clasificar una referencia es la posición del referente respecto de la expresión que remite a él, no la posición de esta última respecto del párrafo completo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Es catáfora porque la palabra "papa" aparece mencionada justo después</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) En realidad es anáfora, porque "la papa" ya se menciona en la misma oración, antes del punto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El criterio decisivo para clasificar una referencia como anafórica o catafórica no es su posición absoluta dentro del párrafo, sino la posición de su <B>referente</B> específico respecto de la propia expresión: "lo siguiente" remite concretamente a los tres datos que se enumeran después de los dos puntos (domesticación, alimento base, cultivo actual), y esos datos no han sido mencionados antes en ningún momento del texto, por lo que la referencia apunta necesariamente hacia adelante. La opción a) propone una regla falsa basada solo en la posición dentro del párrafo, sin considerar el referente real; c) confunde el referente de "lo siguiente" (la enumeración de datos) con la mención de la palabra "papa", que cumple una función distinta (nombrar el tema, no el contenido enumerado); d) comete el mismo error de confundir el tema general mencionado ("la papa") con el referente específico de "lo siguiente" (los tres datos enumerados después).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Un párrafo académico presenta el siguiente problema: usa la palabra "esto" tres veces en tres oraciones consecutivas, cada vez remitiendo a una idea distinta de las oraciones anteriores. ¿Qué consecuencia tiene este uso para la cohesión del texto, y por qué?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Ninguna consecuencia negativa: usar el mismo pronombre varias veces siempre refuerza la cohesión del texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Genera ambigüedad referencial: al no distinguirse claramente a qué idea remite cada "esto", el lector puede confundir los referentes entre sí, debilitando la cohesión en vez de reforzarla; por eso conviene alternar el pronombre con expresiones más específicas cuando existe riesgo de confusión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Convierte automáticamente todas las referencias en catafóricas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Elimina por completo la coherencia del texto, sin importar el contenido de las ideas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Aunque la sustitución pronominal es un mecanismo de cohesión válido, su uso repetido con referentes distintos y poco diferenciados entre sí puede generar ambigüedad: el lector no siempre puede determinar con precisión a cuál de las ideas anteriores remite cada "esto". En esos casos, conviene reemplazar el pronombre por una expresión más específica (una repetición mediante sinónimo, un hiperónimo o una frase que identifique con claridad la idea retomada), precisamente para preservar la claridad referencial que la cohesión busca garantizar. La opción a) ignora este riesgo real; c) confunde un problema de ambigüedad con la dirección de la referencia, que no cambia por el simple hecho de repetir un pronombre; d) exagera la consecuencia, ya que un problema puntual de cohesión no necesariamente destruye por completo la coherencia global de un texto, aunque sí puede dificultar su comprensión.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Si tuvieras que resumir en una sola afirmación cómo se relacionan entre sí la coherencia, la cohesión y los mecanismos de referencia (anáfora y catáfora), ¿cuál de las siguientes lo expresa con mayor exactitud?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Son tres conceptos completamente independientes, sin ninguna relación entre sí</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) La coherencia es la propiedad de fondo que da sentido global a un texto; la cohesión es el conjunto de recursos formales (repetición, sustitución, elipsis, enlaces textuales) que hacen visible esa relación entre las ideas; y la anáfora y la catáfora son, específicamente, las dos direcciones posibles en que pueden orientarse los mecanismos de referencia dentro de la cohesión, según si el elemento retomado ya apareció en el texto o aparecerá después</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) La cohesión depende exclusivamente de la anáfora, y la catáfora no tiene ninguna relación con la cohesión textual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) La coherencia y la cohesión son sinónimos exactos, y la anáfora y la catáfora son, a su vez, sinónimos entre sí</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de cierre integra los tres niveles trabajados en el tema: la coherencia como propiedad global de sentido, la cohesión como el conjunto de recursos formales que la hacen visible en la superficie del texto, y la anáfora/catáfora como la clasificación específica de la dirección en que operan los mecanismos de referencia (sustitución y elipsis, principalmente) dentro de esa cohesión. Comprender esta jerarquía de conceptos —uno de significado global, otro de recursos formales, y un tercero que clasifica un aspecto específico de esos recursos— es lo que permite analizar con precisión cómo se construye la unidad de cualquier texto. La opción a) niega toda relación entre los tres niveles, cuando en realidad se necesitan mutuamente para explicar cómo funciona un texto; c) es falsa, ya que la catáfora es tan parte de la cohesión como la anáfora; d) confunde niveles conceptuales distintos, tratando como sinónimos términos que designan fenómenos diferentes.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE — Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

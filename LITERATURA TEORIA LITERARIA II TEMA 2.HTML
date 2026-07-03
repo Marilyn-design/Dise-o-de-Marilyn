@@ -1,0 +1,500 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Teoría Literaria II: Géneros y Especies - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 2</DIV>
+<H1>Teor&iacute;a Literaria II</H1>
+<DIV CLASS="sub">G&eacute;nero &Eacute;pico &middot; G&eacute;nero L&iacute;rico &middot; G&eacute;nero Dram&aacute;tico &middot; G&eacute;nero Narrativo &middot; G&eacute;nero Did&aacute;ctico &middot; Especies Literarias &middot; Recursos Est&eacute;ticos</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. ¿Qué son los géneros literarios?</H3>
+Los <B>géneros literarios</B> son categorías o clases en que se agrupan las obras literarias según criterios de forma, contenido, tono y finalidad. La clasificación de los géneros literarios tiene su origen en la <B>Poética de Aristóteles</B> (siglo IV a.C.), quien distinguió tres géneros fundamentales: la <B>épica</B> (narración de hechos heroicos), la <B>lírica</B> (expresión del yo interior) y la <B>dramática</B> (representación teatral de acciones humanas). A lo largo de la historia, los teóricos han ampliado y revisado esta clasificación: hoy se reconocen también el <B>género narrativo</B> (en prosa) y el <B>género didáctico</B> (ensayo, fábula, epístola).
+
+<DIV CLASS="alerta"><B>Para el examen:</B> La distinción entre <B>género</B> y <B>especie</B> es fundamental. El <B>género</B> es la categoría amplia (p. ej. épico); la <B>especie</B> es la forma concreta dentro del género (p. ej. epopeya, fábula, oda). Los exámenes de alto rendimiento (UNI, UNMSM, Villarreal) preguntan especialmente: (1) la clasificación aristotélica y sus géneros; (2) las especies del género lírico (oda, elegía, epigrama, epitalamio); (3) las especies del género dramático (tragedia, comedia, tragicomedia, auto sacramental); (4) la diferencia entre <B>cuento</B> y <B>novela</B>; y (5) los recursos estéticos del lenguaje (figuras literarias).</DIV>
+
+<H3>2. El G&eacute;nero &Eacute;pico</H3>
+El <B>género épico</B> es la forma literaria más antigua de la humanidad. Narra, en verso, las hazañas de héroes y pueblos, con participación de fuerzas sobrenaturales. Su tono es <B>objetivo y grandioso</B>: el poeta narra desde fuera, como testigo de hechos que superan lo individual. El origen del género épico está en la <B>tradición oral</B> de los pueblos: los aedos y rapsodas griegos recitaban estos poemas antes de que existiera la escritura.
+
+<H4>Características del género épico:</H4>
+<UL>
+<LI><B>Narración en verso:</B> las grandes epopeyas están escritas en verso (hexámetro dáctico en griego; endecasílabo en italiano y español; alejandrino en francés). El verso facilita la memorización oral.</LI>
+<LI><B>Héroe colectivo o semidivino:</B> el protagonista de la épica representa a un pueblo o a la humanidad; sus virtudes son las del ideal comunitario. Aquiles representa la valentía griega; Eneas, la piedad y la fundación de Roma; el Cid, la lealtad castellana.</LI>
+<LI><B>Intervención de lo sobrenatural:</B> los dioses, las fuerzas del destino (moira) o la providencia divina intervienen en la acción épica. Es el elemento que distingue la épica de la simple crónica histórica.</LI>
+<LI><B>Tono elevado y lenguaje solemne:</B> el estilo épico usa epítetos fijos (\"Aquiles, el de los pies ligeros\"; \"Aurora, la de los dedos rosados\"), comparaciones extensas (símiles homéricos), discursos, catálogos y escenas de batalla.</LI>
+<LI><B>In medias res:</B> las epopeyas comienzan en el medio de la acción, no desde el inicio cronológico. La <I>Ilíada</I> comienza en el año 10 de la guerra; la <I>Odisea</I>, cuando Ulises ya ha naufragado.</LI>
+</UL>
+
+<H4>Especies del g&eacute;nero &eacute;pico:</H4>
+<UL>
+<LI><B>Epopeya:</B> la forma más elevada y extensa. Narra en verso los orígenes o hazañas fundacionales de un pueblo. Ejemplos: <B>Ilíada y Odisea</B> (Homero, siglo VIII a.C.); <B>Eneida</B> (Virgilio, siglo I a.C.); <B>La Divina Comedia</B> (Dante, 1307-1321); <B>La Araucana</B> (Ercilla, 1569).</LI>
+<LI><B>Cantar de gesta:</B> epopeya medieval en lengua vernácula que narra hazañas de guerreros históricos o legendarios. Ejemplo: <B>Cantar de Mio Cid</B> (anónimo, siglo XII, primera gran obra de la literatura castellana).</LI>
+<LI><B>Poema épico culto:</B> escrito por un autor individual identificado, en la Edad Moderna. Ejemplo: <B>Os Lusíadas</B> (Camões, 1572); <B>La Araucana</B> (Ercilla); <B>Paraíso perdido</B> (Milton, 1667).</LI>
+<LI><B>Fábula (épica):</B> narración breve con animales como personajes, que enseña una moraleja. Autores clave: <B>Esopo</B> (Grecia), <B>Fedro</B> (Roma), <B>La Fontaine</B> (Francia, siglo XVII), <B>Samaniego e Iriarte</B> (España, siglo XVIII).</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">3</DIV><DIV class="dk-label">Géneros clásicos de Aristóteles: épico, lírico y dramático</DIV></DIV>
+<DIV CLASS="dk"><DIV class="dk-num">s. VIII a.C.</DIV><DIV class="dk-label">Fecha estimada de la Ilíada y Odisea (Homero)</DIV></DIV>
+<DIV CLASS="dk"><DIV class="dk-num">1140</DIV><DIV class="dk-label">Año aprox. del Cantar de Mio Cid (ms. más antiguo: 1207)</DIV></DIV>
+<DIV CLASS="dk"><DIV class="dk-num">24</DIV><DIV class="dk-label">Cantos (rapsodias) de la Ilíada y de la Odisea respectivamente</DIV></DIV>
+</DIV>
+
+<DIV CLASS="cultura-titulo">EL G&Eacute;NERO L&Iacute;RICO<SPAN>La expresión del yo: emoción, musicalidad y subjetividad</SPAN></DIV>
+
+<H3>3. El G&eacute;nero L&iacute;rico</H3>
+El <B>género lírico</B> es aquel en que el poeta expresa sus sentimientos, emociones, pensamientos e impresiones del mundo exterior de manera <B>subjetiva</B>. A diferencia de la épica (que narra hechos externos) o el drama (que los representa mediante personajes), la lírica es la voz del <B>yo poético</B> en primera persona. El nombre proviene de la <B>lira</B>, instrumento musical con el que los griegos acompañaban estos poemas: la lírica nació como música y poesía unidas.
+
+<H4>Características del género lírico:</H4>
+<UL>
+<LI><B>Subjetividad:</B> el poema expresa la visión interior del poeta (o del hablante lírico); no narra eventos externos sino estados emocionales o reflexiones.</LI>
+<LI><B>Brevedad:</B> a diferencia de la épica, el poema lírico tiende a la concentración: dice mucho en poco espacio.</LI>
+<LI><B>Musicalidad:</B> el ritmo, la métrica, la rima y los recursos sonoros (aliteración, asonancia) son esenciales en la lírica.</LI>
+<LI><B>El hablante lírico:</B> no debe confundirse con el autor real. El poeta puede crear un hablante lírico que no coincide con su propia persona (un poema de amor no implica que el poeta esté enamorado).</LI>
+<LI><B>Actitud lírica:</B> los teóricos identifican tres actitudes líricas: <B>enunciativa</B> (el yo describe el mundo exterior), <B>apostrófica</B> (el yo se dirige a alguien o algo: \"¡Oh noche que guiaste!\"), y <B>carmínica</B> o de canción (el yo expresa directamente sus sentimientos: \"¡Cuánto te amé!\").</LI>
+</UL>
+
+<H4>Especies del g&eacute;nero l&iacute;rico:</H4>
+<UL>
+<LI><B>Oda:</B> poema lírico de tono elevado que canta a personas, objetos, ideas o fenómenos. Ejemplos: <B>Odas de Horacio</B> (Roma); <B>Odas elementales</B> de Pablo Neruda (\"Oda a la cebolla\", \"Oda al tomate\").</LI>
+<LI><B>Elegía:</B> poema de lamentación por la muerte de alguien o por una pérdida. Ejemplo: <B>Coplas a la muerte de su padre</B> de Jorge Manrique (España, siglo XV); <B>Llanto por Ignacio Sánchez Mejías</B> de Federico García Lorca.</LI>
+<LI><B>Soneto:</B> poema de 14 versos (dos cuartetos y dos tercetos), de estructura fija. Es la forma lírica más estudiada en los exámenes. Ejemplos: <B>Garcilaso de la Vega</B>, <B>Lope de Vega</B>, <B>Francisco de Quevedo</B>, <B>Shakespeare</B>. Métrica: endecasílabo (11 sílabas).</LI>
+<LI><B>Epigrama:</B> poema breve, agudo e ingenioso, frecuentemente satírico. Cultivado por <B>Marcial</B> (Roma, siglo I d.C.).</LI>
+<LI><B>Epitalamio:</B> poema nupcial que celebra una boda. Ejemplo clásico: <B>Catulo</B> en Roma.</LI>
+<LI><B>Himno:</B> poema de alabanza a dioses, héroes o naciones. Los <B>Himnos homéricos</B> son el ejemplo más antiguo.</LI>
+<LI><B>Anacreóntica:</B> poema breve y festivo que celebra el amor, el vino y los placeres de la vida. Modelo: <B>Anacreonte</B> (Grecia, siglo VI a.C.).</LI>
+<LI><B>Égloga:</B> poema pastoril donde pastores dialogan sobre el amor en un entorno natural idealizado. Ejemplo: <B>Églogas</B> de Garcilaso de la Vega (siglo XVI, Renacimiento español).</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>El Soneto: estructura para el examen:</B> El soneto consta de <B>14 versos endecasílabos</B> distribuidos en <B>2 cuartetos</B> (ABBA ABBA) y <B>2 tercetos</B> (CDC DCD o variantes). El cuarteto plantea el tema; el segundo cuarteto lo desarrolla; los tercetos presentan el giro o <I>volta</I> y la conclusión. Quevedo, Góngora y Lope son los grandes sonetistas del Barroco español. No confundir con el <B>verso libre</B> (sin rima ni métrica fija), característico de la poesía moderna y contemporánea (Neruda, Vallejo, Whitman).</DIV>
+
+<DIV CLASS="cultura-titulo">EL G&Eacute;NERO DRAM&Aacute;TICO<SPAN>Teatro: representación de la acción humana ante un público</SPAN></DIV>
+
+<H3>4. El G&eacute;nero Dram&aacute;tico</H3>
+El <B>género dramático</B> comprende las obras escritas para ser <B>representadas en escena</B> por actores ante un público. Su nombre proviene del griego <I>drama</I> (acción). A diferencia de la épica y la lírica, el drama no tiene narrador: la historia se desarrolla directamente a través de los <B>diálogos</B> y <B>acotaciones</B>. El teatro griego nació en las <B>fiestas dionisíacas</B> (en honor a Dioniso, dios del vino y la fertilidad) en Atenas, siglos VI-V a.C.
+
+<H4>Características del género dramático:</H4>
+<UL>
+<LI><B>Diálogo como forma predominante:</B> el texto dramático está escrito en diálogos entre personajes; las acotaciones indican movimientos, escenografía y estados de ánimo.</LI>
+<LI><B>Conflicto dramático:</B> toda obra de teatro gira en torno a un conflicto (entre personajes, entre el individuo y la sociedad, entre el hombre y el destino).</LI>
+<LI><B>Las tres unidades clásicas</B> (Aristóteles/neoclasicismo): unidad de <B>acción</B> (un solo argumento principal), unidad de <B>tiempo</B> (la acción ocurre en 24 horas), unidad de <B>lugar</B> (un solo espacio). Shakespeare y el teatro barroco las rompieron.</LI>
+<LI><B>Estructura dramática:</B> planteamiento (presentación del conflicto) → nudo (desarrollo y complicación) → desenlace (resolución). En la tragedia griega: prólogo, párodos, episodios, estásimos y éxodo.</LI>
+</UL>
+
+<H4>Especies del g&eacute;nero dram&aacute;tico:</H4>
+<UL>
+<LI><B>Tragedia:</B> obra en que el protagonista (héroe trágico) enfrenta un destino inevitable que lo lleva a la destrucción, generalmente por una falta moral (<I>hamartía</I>) o por las fuerzas del destino (<I>moira</I>). Produce en el espectador <B>catarsis</B> (purificación de las pasiones mediante la compasión y el terror). Grandes trágicos: <B>Esquilo</B> (<I>Prometeo encadenado</I>, <I>Orestíada</I>), <B>Sófocles</B> (<I>Edipo Rey</I>, <I>Antígona</I>), <B>Eurípides</B> (<I>Medea</I>, <I>Las Bacantes</I>); en el Renacimiento y Barroco: <B>Shakespeare</B> (<I>Hamlet</I>, <I>Macbeth</I>, <I>Rey Lear</I>, <I>Otelo</I>).</LI>
+<LI><B>Comedia:</B> obra de tono ligero que representa situaciones y personajes del ámbito cotidiano con el fin de divertir y corregir vicios sociales. Termina con un desenlace feliz. Grandes comediógrafos: <B>Aristófanes</B> (comedia antigua griega: <I>Las nubes</I>, <I>Lisístrata</I>); <B>Menandro</B> (comedia nueva griega); <B>Plauto y Terencio</B> (Roma); <B>Molière</B> (Francia, siglo XVII: <I>El avaro</I>, <I>El misántropo</I>); <B>Lope de Vega</B> (comedia española del Siglo de Oro).</LI>
+<LI><B>Tragicomedia:</B> obra que mezcla elementos trágicos y cómicos; termina felizmente pero incluye situaciones graves. El ejemplo más importante en la literatura española es <B>La Celestina</B> (Fernando de Rojas, 1499), que su autor llamó \"Tragicomedia de Calisto y Melibea\".</LI>
+<LI><B>Auto sacramental:</B> obra dramática alegórica de tema religioso (eucarístico), en un solo acto. Máximo exponente: <B>Calderón de la Barca</B> (España, siglo XVII). Ejemplo: <I>El gran teatro del mundo</I>.</LI>
+<LI><B>Drama:</B> término genérico para obras teatrales que no son ni tragedia pura ni comedia pura; mezcla lo serio con lo cotidiano. El teatro moderno (Ibsen, Chéjov, Brecht, García Lorca) se clasifica generalmente como drama.</LI>
+<LI><B>Entremés:</B> pieza cómica breve que se representaba entre los actos de las comedias. <B>Cervantes</B> es el gran autor de entremeses en español (<I>El retablo de las maravillas</I>).</LI>
+<LI><B>Farsa:</B> obra cómica breve de carácter burlesco y exagerado, con personajes-tipo (caricaturas).</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV class="dk-num">Hamartía</DIV><DIV class="dk-label">Falta o error trágico del héroe en la tragedia griega</DIV></DIV>
+<DIV CLASS="dk"><DIV class="dk-num">Catarsis</DIV><DIV class="dk-label">Purificación del espectador mediante compasión y terror (Aristóteles)</DIV></DIV>
+<DIV CLASS="dk"><DIV class="dk-num">1499</DIV><DIV class="dk-label">La Celestina de Rojas: primera tragicomedia en español</DIV></DIV>
+<DIV CLASS="dk"><DIV class="dk-num">3</DIV><DIV class="dk-label">Grandes trágicos griegos: Esquilo, Sófocles, Eurípides</DIV></DIV>
+</DIV>
+
+<DIV CLASS="cultura-titulo">EL G&Eacute;NERO NARRATIVO<SPAN>Novela, cuento, crónica: la prosa como vehículo de la ficción</SPAN></DIV>
+
+<H3>5. El G&eacute;nero Narrativo</H3>
+El <B>género narrativo</B> comprende las obras en prosa (o verso) en que un <B>narrador</B> cuenta hechos reales o ficticios. A diferencia de la épica (verso, héroe colectivo, dioses), el género narrativo moderno usa la prosa, se centra en personajes individuales y trata temas de la vida cotidiana, psicológica y social. La novela moderna tiene su origen en el <B>Quijote</B> de Cervantes (1605-1615).
+
+<H4>El narrador y sus tipos:</H4>
+<UL>
+<LI><B>Narrador omnisciente:</B> lo sabe todo; conoce los pensamientos de todos los personajes. Escribe en tercera persona. Es el más frecuente en la novela del siglo XIX (Tolstói, Balzac, Dickens).</LI>
+<LI><B>Narrador protagonista:</B> el personaje principal cuenta su propia historia en primera persona. Ejemplo: <I>Lazarillo de Tormes</I> (anónimo, 1554); <I>El guardián entre el centeno</I> de Salinger.</LI>
+<LI><B>Narrador testigo:</B> un personaje secundario cuenta la historia de otro. Ejemplo: Watson narrando a Sherlock Holmes.</LI>
+<LI><B>Narrador en segunda persona:</B> poco frecuente; crea una sensación de implicación del lector. Ejemplo: algunas novelas de Carlos Fuentes.</LI>
+</UL>
+
+<H4>Especies del g&eacute;nero narrativo:</H4>
+<UL>
+<LI><B>Novela:</B> narración extensa en prosa con argumento complejo, múltiples personajes, desarrollo psicológico y social profundo, y pluralidad de temas. La novela puede ser: de caballerías (<I>Amadís de Gaula</I>), picaresca (<I>Lazarillo de Tormes</I>), pastoril (<I>La Galatea</I> de Cervantes), realista (<I>Ana Karenina</I> de Tolstói), modernista (<I>La vorágine</I> de Rivera), de la corriente de consciencia (<I>Ulises</I> de Joyce), mágicorrealista (<I>Cien años de soledad</I> de García Márquez).</LI>
+<LI><B>Cuento:</B> narración breve en prosa con unidad de efecto, un solo conflicto central, pocos personajes y final sorpresivo o significativo. El cuento moderno tiene sus maestros en <B>Edgar Allan Poe</B> (teoría de la unidad de efecto), <B>Chéjov</B>, <B>Maupassant</B>, <B>Borges</B>, <B>Cortázar</B>, <B>Quiroga</B>.</LI>
+<LI><B>Novela corta (novella):</B> extensión intermedia entre cuento y novela. Ejemplo: <I>El corazón de las tinieblas</I> de Conrad; <I>Metamorfosis</I> de Kafka.</LI>
+<LI><B>Leyenda:</B> narración de tradición oral que mezcla hechos históricos con elementos fantásticos o sobrenaturales. <B>Bécquer</B> (España) y <B>Ricardo Palma</B> (Perú, <I>Tradiciones peruanas</I>) son sus representantes más destacados.</LI>
+<LI><B>Crónica:</B> narración de hechos históricos o actuales en orden cronológico, escrita con voluntad literaria. La <B>Crónica de Indias</B> (Inca Garcilaso, Bernal Díaz del Castillo, Guamán Poma de Ayala) es el primer gran género narrativo del continente americano.</LI>
+<LI><B>Epístola (carta):</B> forma narrativa en que la historia se cuenta mediante cartas. <I>Las amistades peligrosas</I> de Laclos y el <I>Werther</I> de Goethe son ejemplos del género epistolar.</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Diferencia clave: Cuento vs. Novela:</B> El cuento tiene <B>unidad de efecto</B> (todo apunta a un impacto final), pocos personajes, una sola acción central, y brevedad. La novela tiene <B>multiplicidad</B>: varias tramas, personajes numerosos, tiempo largo, y permite la digresión y el desarrollo psicológico profundo. En el examen, pueden darte un fragmento y pedir que determines el género: la presencia de narrador, la extensión del tiempo narrado y la complejidad de la trama son las claves.</DIV>
+
+<DIV CLASS="cultura-titulo">EL G&Eacute;NERO DID&Aacute;CTICO<SPAN>Ensayo, fábula y epístola: literatura que instruye y argumenta</SPAN></DIV>
+
+<H3>6. El G&eacute;nero Did&aacute;ctico</H3>
+El <B>género didáctico</B> agrupa las obras literarias cuya finalidad principal es <B>enseñar, instruir o persuadir</B>, sin dejar de ser literatura. A diferencia de los otros géneros, el didáctico no se define por su forma sino por su intención. Incluye el <B>ensayo</B>, la <B>fábula</B>, la <B>epístola</B>, la <B>oratoria</B> y la <B>sátira</B>.
+
+<H4>Especies del g&eacute;nero did&aacute;ctico:</H4>
+<UL>
+<LI><B>Ensayo:</B> composición en prosa de extensión variable que desarrolla una tesis o reflexión personal sobre un tema (literario, filosófico, científico, político) con rigor intelectual y voluntad de estilo. El ensayo fue inventado por <B>Michel de Montaigne</B> (<I>Essais</I>, 1580, Francia). En Hispanoamérica: <B>José Martí</B>, <B>José Carlos Mariátegui</B> (<I>7 Ensayos</I>, 1928), <B>Alfonso Reyes</B>, <B>Octavio Paz</B>.</LI>
+<LI><B>Fábula:</B> narración breve (en verso o prosa) con personajes animales o inanimados que actúan como humanos, con una moraleja explícita al final. Origen: <B>Esopo</B> (Grecia, siglos VII-VI a.C.); luego <B>Fedro</B> (Roma, siglo I d.C.); en el Barroco: <B>La Fontaine</B>; en el Neoclasicismo español: <B>Tomás de Iriarte</B> (<I>Fábulas literarias</I>) y <B>Félix María Samaniego</B>.</LI>
+<LI><B>Epístola:</B> carta en prosa o verso con intención literaria o moral. <B>Horacio</B> fue el gran cultivador de la epístola en verso en Roma (<I>Epístola a los Pisones</I> = <I>Arte poética</I>). En España: <B>«Epístola moral a Fabio»</B> (anónimo, siglo XVII), uno de los poemas más celebrados del Siglo de Oro.</LI>
+<LI><B>Sátira:</B> composición en verso o prosa que ridiculiza vicios, costumbres o personajes con finalidad moral o crítica. <B>Quevedo</B> es el gran satírico del Barroco español (<I>El Buscón</I>, los sonetos satíricos, los <I>Sueños</I>).</LI>
+<LI><B>Apólogo:</B> narración breve de carácter didáctico con moraleja, similar a la fábula pero con personajes humanos o situaciones más realistas.</LI>
+<LI><B>Oratoria:</B> discurso público con intención persuasiva, considerado arte literario desde la Antigüedad. <B>Cicerón</B> es el orador más influyente de la historia occidental.</LI>
+</UL>
+
+<DIV CLASS="alerta"><B>Para el examen — Géneros y sus claves:</B> Memoriza esta tabla mental: <B>Épico</B> = verso + héroe colectivo + narración de hazañas (Ilíada, Cantar de Mio Cid). <B>Lírico</B> = subjetividad + yo poético + musicalidad (oda, elegía, soneto). <B>Dramático</B> = diálogo + escena + conflicto (tragedia, comedia, tragicomedia). <B>Narrativo</B> = prosa + narrador + ficción (novela, cuento, crónica). <B>Didáctico</B> = enseñanza + argumentación (ensayo, fábula, sátira). Las preguntas de nivel avanzado piden relacionar obras concretas con géneros y justificar la clasificación.</DIV>
+
+<H3>7. Recursos est&eacute;ticos del lenguaje literario (figuras literarias)</H3>
+Las <B>figuras literarias</B> (o recursos retóricos) son procedimientos del lenguaje que el escritor utiliza para intensificar la expresividad, belleza o significado del texto. Se clasifican en <B>figuras de dicción</B> (alteran la forma de las palabras) y <B>figuras de pensamiento</B> (modifican el sentido).
+
+<H4>Figuras de dicción (nivel fónico-morfológico):</H4>
+<UL>
+<LI><B>Aliteración:</B> repetición de sonidos iguales o similares en palabras próximas. Ejemplo: «En el silencio solo se escuchaba / un susurro de abejas que sonaba» (Garcilaso). Efecto: musicalidad.</LI>
+<LI><B>Anáfora:</B> repetición de una palabra o grupo de palabras al inicio de varios versos o frases. Ejemplo: «Verde que te quiero verde. / Verde viento. Verdes ramas» (Lorca).</LI>
+<LI><B>Hipérbaton:</B> alteración del orden gramatical normal de la frase por razones estéticas o de énfasis. Uso extremo en Góngora (culteranismo). Ejemplo: «Del monte en la ladera» (= En la ladera del monte).</LI>
+<LI><B>Elipsis:</B> omisión de palabras que se sobrentienden. Ejemplo: «A enemigos que huyen, puente de plata» (se sobrentiende: «haz»).</LI>
+<LI><B>Asíndeton:</B> supresión de conjunciones entre elementos coordinados para dar rapidez. «Llegué, vi, vencí» (César).</LI>
+<LI><B>Polisíndeton:</B> repetición de conjunciones para dar ritmo lento y solemne. «Ni quiero, ni puedo, ni debo».</LI>
+</UL>
+
+<H4>Figuras de pensamiento (nivel semántico):</H4>
+<UL>
+<LI><B>Metáfora:</B> identificación de dos realidades distintas por semejanza. Es la figura más importante de la literatura. Ejemplo: «Tus ojos son dos luceros» (ojos = luceros). La metáfora <B>impura</B> o comparación mantiene el «como»; la metáfora <B>pura</B> elimina el término real y solo da el metafórico: «Dos luceros de tu cara».</LI>
+<LI><B>Símil o comparación:</B> relación de semejanza explícita con «como», «cual», «semejante a». Ejemplo: «Sus cabellos son como hebras de oro».</LI>
+<LI><B>Hipérbole:</B> exageración con finalidad expresiva. Ejemplo: «Te he dicho esto mil veces»; «Lloraba ríos de lágrimas».</LI>
+<LI><B>Personificación (prosopopeya):</B> atribución de cualidades humanas a seres inanimados o abstractos. Ejemplo: «La luna me miraba con envidia».</LI>
+<LI><B>Sinestesia:</B> mezcla de sensaciones de distintos sentidos. Ejemplo: «Colores chillones» (color + sonido); «Un frío azul» (temperatura + color). Muy usada en el <B>Modernismo</B> (Rubén Darío).</LI>
+<LI><B>Antítesis:</B> contraste entre dos ideas opuestas. Ejemplo: «Es tan corto el amor y tan largo el olvido» (Neruda).</LI>
+<LI><B>Paradoja:</B> afirmación aparentemente contradictoria que encierra una verdad profunda. Ejemplo: «Vivo sin vivir en mí» (Santa Teresa de Jesús).</LI>
+<LI><B>Ironía:</B> expresión de lo contrario de lo que se piensa, con intención burlesca o crítica. Recurso central de la sátira y la comedia.</LI>
+<LI><B>Oxímoron:</B> unión de dos términos contrarios en una sola expresión. Ejemplo: «silencio ensordecedor»; «oscura claridad» (Calderón).</LI>
+<LI><B>Metonimia:</B> sustitución de una palabra por otra con la que tiene relación de contigüidad (causa-efecto, contenedor-contenido, parte-todo). Ejemplo: «Bebió tres copas» (copas = su contenido); «Vive de su pluma» (pluma = escritura).</LI>
+<LI><B>Sinécdoque:</B> variante de la metonimia donde la parte representa al todo o viceversa. Ejemplo: «Veinte velas» (= veinte barcos); «el pan de cada día» (pan = alimento en general).</LI>
+<LI><B>Eufemismo:</B> sustitución de una expresión dura o tabú por otra más suave. Ejemplo: «Pasó a mejor vida» (murió); «personas en situación de calle» (indigentes).</LI>
+</UL>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Figura</TH><TH>Definición breve</TH><TH>Ejemplo</TH></TR>
+<TR><TD><B>Metáfora</B></TD><TD>Identificación A = B por semejanza</TD><TD>«Tus labios son rubíes»</TD></TR>
+<TR><TD><B>Símil</B></TD><TD>Comparación con «como» o «cual»</TD><TD>«Blanca como la nieve»</TD></TR>
+<TR><TD><B>Hipérbole</B></TD><TD>Exageración expresiva</TD><TD>«Te lo dije un millón de veces»</TD></TR>
+<TR><TD><B>Anáfora</B></TD><TD>Repetición al inicio de versos</TD><TD>«Verde que te quiero verde»</TD></TR>
+<TR><TD><B>Aliteración</B></TD><TD>Repetición de sonidos</TD><TD>«El susurro suave del sauce»</TD></TR>
+<TR><TD><B>Personificación</B></TD><TD>Atributos humanos a lo inanimado</TD><TD>«El viento gemía»</TD></TR>
+<TR><TD><B>Oxímoron</B></TD><TD>Unión de contrarios</TD><TD>«Silencio ensordecedor»</TD></TR>
+<TR><TD><B>Paradoja</B></TD><TD>Contradicción aparente con verdad profunda</TD><TD>«Vivo sin vivir en mí»</TD></TR>
+<TR><TD><B>Sinestesia</B></TD><TD>Mezcla de sentidos</TD><TD>«Un grito amarillo»</TD></TR>
+<TR><TD><B>Antítesis</B></TD><TD>Contraste entre ideas opuestas</TD><TD>«Amor es querer sin ser querido»</TD></TR>
+</TABLE>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== BANCO DE PREGUNTAS ===================== -->
+<DIV CLASS="bloque" STYLE="margin-top:50px;">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BASICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Según la clasificación aristotélica, ¿cuáles son los tres géneros literarios fundamentales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Narrativo, lírico y didáctico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Épico, lírico y dramático</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Épico, narrativo y periodístico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Cómico, trágico y satírico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La clasificación clásica de los géneros literarios proviene de la <B>Poética de Aristóteles</B> (siglo IV a.C.) y distingue tres géneros: <B>épico</B> (narración de hazañas heroicas en verso), <B>lírico</B> (expresión subjetiva del yo poético, acompañada de música) y <B>dramático</B> (representación teatral de acciones mediante personajes). El género <B>narrativo</B> (en prosa) y el <B>didáctico</B> (ensayo, fábula) son ampliaciones modernas de esa clasificación. La a) es una clasificación moderna; la c) mezcla géneros literarios con periodísticos; la d) corresponde a subcategorías del drama, no a géneros propiamente dichos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> La <I>Ilíada</I> y la <I>Odisea</I>, atribuidas a Homero, pertenecen a la especie literaria denominada:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Leyenda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Cantar de gesta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Epopeya</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Novela histórica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>Ilíada</B> (canta la cólera de Aquiles y la guerra de Troya) y la <B>Odisea</B> (narra el regreso de Ulises tras la guerra) son las grandes <B>epopeyas</B> de la literatura occidental, escritas en hexámetros dácticos griegos y atribuidas a <B>Homero</B> (siglo VIII a.C.). La epopeya es la especie más elevada del género épico: narra en verso las hazañas fundacionales de un pueblo, con intervención de dioses y héroes semidivinos. El <B>cantar de gesta</B> es una epopeya medieval en lengua vernácula (ej: <I>Cantar de Mio Cid</I>). La <B>leyenda</B> pertenece al género narrativo. La <B>novela histórica</B> es una forma de la prosa moderna.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> La <B>catarsis</B> aristotélica, producida por la tragedia en el espectador, consiste en:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) La admiración y el entretenimiento que produce el final feliz de la obra teatral</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) La purificación o liberación emocional del espectador mediante la compasión (eleos) y el terror (phobos) provocados por la tragedia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) La identificación total del espectador con el héroe trágico, hasta el punto de imitar sus acciones en la vida real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El aprendizaje moral explícito que la obra imparte al final mediante un personaje didáctico que resume la lección</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Según Aristóteles (<I>Poética</I>, capítulo VI), la tragedia logra «mediante la compasión (<B>eleos</B>) y el terror (<B>phobos</B>), la purificación (<B>catarsis</B>) de esas mismas pasiones». La catarsis no es aprendizaje intelectual ni simple entretenimiento: es una experiencia emocional intensa que «purga» o libera al espectador de esas mismas emociones. El espectador siente miedo y pena ante el destino del héroe trágico, y esa experiencia estética lo libera emocionalmente. La función de la tragedia es, según Aristóteles, precisamente esa: no la enseñanza moral directa (que sería la función del didáctico), sino la experiencia catártica. Este concepto es central para los exámenes de alto rendimiento.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> El <B>soneto</B> es una especie del género lírico compuesta por:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) 16 versos octosílabos distribuidos en cuatro estrofas de cuatro versos cada una</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 14 versos endecasílabos: dos cuartetos (ABBA ABBA) y dos tercetos (con rima variable)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) 10 versos de arte mayor organizados libremente según el criterio del poeta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Un número variable de versos, sin métrica fija, cuya única condición es el tono elevado y la temática amorosa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>soneto</B> es la forma fija más importante de la lírica occidental. Su estructura es invariable: <B>14 versos endecasílabos</B> (11 sílabas) divididos en: (1) dos <B>cuartetos</B> con rima consonante ABBA ABBA; (2) dos <B>tercetos</B> con rima variable (CDC DCD es la más común). El cuarteto plantea el tema; el segundo lo desarrolla; los tercetos presentan la <I>volta</I> o giro y la conclusión. Fue introducido en Italia por <B>Petrarca</B> (siglo XIV) y en España por <B>Boscán y Garcilaso de la Vega</B> (siglo XVI). Los grandes sonetistas en español son <B>Lope de Vega</B>, <B>Quevedo</B> y <B>Góngora</B>. No confundir con el <B>verso libre</B> (sin métrica ni rima fija) ni con la <B>oda</B> (de extensión y estructura variables).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> La <B>fábula</B>, especie del género épico o didáctico, se caracteriza por:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Ser una narración larga en verso que relata las hazañas de un pueblo, con personajes históricos y participación de dioses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Ser una narración breve (en verso o prosa) con personajes generalmente animales que actúan como humanos, y concluye con una moraleja explícita</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Ser un poema lírico breve de tono burlesco que satiriza a personajes públicos mediante el uso de la ironía</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Ser una obra dramática alegórica de tema religioso representada en las festividades del Corpus Christi</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>fábula</B> es una narración breve (puede ser en verso o prosa) cuyos personajes son generalmente <B>animales</B> (o seres inanimados) que representan vicios y virtudes humanas, y que concluye con una <B>moraleja</B> explícita de valor universal. Sus grandes cultores son: <B>Esopo</B> (Grecia, siglos VII-VI a.C.), <B>Fedro</B> (Roma, siglo I d.C.), <B>La Fontaine</B> (Francia, siglo XVII), y en el Neoclasicismo español: <B>Tomás de Iriarte</B> (<I>Fábulas literarias</I>, 1782) y <B>Félix María Samaniego</B> (<I>Fábulas morales</I>, 1781). La d) corresponde al <B>auto sacramental</B> (Calderón de la Barca). La a) describe la epopeya. La c) corresponde al epigrama o la sátira.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> La obra <I>La Celestina</I> (Fernando de Rojas, 1499) ocupa un lugar especial en la historia de los géneros literarios porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Es la primera novela moderna de la literatura española, con un narrador omnisciente y una estructura de múltiples capítulos en prosa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El propio autor la denominó «Tragicomedia de Calisto y Melibea»: mezcla un desenlace trágico (muerte de ambos protagonistas) con personajes y situaciones cómicos y de baja esfera social, inaugurando la tragicomedia en español</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Es una epopeya en prosa que narra la fundación de Salamanca durante la Reconquista española, con intervención de fuerzas sobrenaturales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Es el primer ensayo crítico de la historia española, donde Rojas analiza la decadencia moral de la sociedad medieval mediante personajes alegóricos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><I>La Celestina</I> (1499, edición ampliada 1502) es una obra crucial porque <B>mezcla deliberadamente</B> los registros trágico y cómico: los protagonistas (Calisto y Melibea) mueren trágicamente, pero los personajes secundarios (Celestina, Sempronio, Pármeno) pertenecen a la esfera cómica de los bajos fondos sociales. Rojas mismo llamó a la obra <B>«Tragicomedia»</B>, creando un género nuevo. Además, la obra tiene una función <B>didáctico-moral</B>: muestra las consecuencias del amor desordenado y la avaricia. Para los exámenes de admisión: no es una novela (no tiene narrador; está escrita en diálogos), no es una comedia (termina con muertes), no es una tragedia pura (los personajes de baja condición social son impropio de la tragedia clásica). La <I>Celestina</I> es un texto de génesis genérica mixta que anuncia el Renacimiento español.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> La figura literaria que consiste en <B>atribuir cualidades humanas a seres inanimados, abstractos o animales</B> se denomina:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Metáfora impura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Personificación o prosopopeya</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Sinestesia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Hipérbaton</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>personificación</B> (también llamada <B>prosopopeya</B>) consiste en atribuir cualidades, sentimientos o comportamientos humanos a seres inanimados, abstractos, animales o fenómenos de la naturaleza. Ejemplo: «El viento gemía entre los árboles»; «La muerte me miraba desde la esquina»; «El mar, furioso, reclamaba sus víctimas». Es una de las figuras más frecuentes en la literatura y en el lenguaje cotidiano. No confundir con: <B>metáfora</B> (identificación por semejanza: A = B, sin necesariamente humanizar); <B>sinestesia</B> (mezcla de sensaciones de diferentes sentidos: «un grito amarillo»); <B>hipérbaton</B> (alteración del orden gramatical normal). La personificación puede considerarse una variante de la metáfora (A = ser humano) pero tiene suficiente especificidad como para tratarse aparte.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> La diferencia fundamental entre la <B>metáfora</B> y el <B>símil</B> (o comparación) reside en que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) La metáfora se usa solo en poesía y el símil solo en prosa; ambas identifican realidades distintas pero en géneros diferentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El símil establece la semejanza de manera explícita mediante nexos comparativos («como», «cual», «semejante a»); la metáfora identifica directamente las dos realidades sin nexo, sustituyendo una por la otra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) La metáfora es siempre más breve que el símil; este último siempre ocupa varias oraciones, mientras que la metáfora se limita a una palabra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) No hay diferencia sustancial: ambas figuras son sinónimas y se usan de manera intercambiable en los estudios de retórica clásica y moderna</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta distinción es fundamental en los exámenes de literatura. El <B>símil o comparación</B> establece la semejanza de forma <B>explícita</B>, con un nexo comparativo: «Sus cabellos son <B>como</B> hebras de oro»; «El guerrero, <B>cual</B> un león enfurecido, atacó». La <B>metáfora</B> es la identificación directa sin nexo: suprime el término real (o lo mantiene junto al imaginario) e identifica: «Sus cabellos son hebras de oro» (metáfora impura, el término real permanece) / «Las hebras de oro de su cabeza» (metáfora pura, solo el término imaginario). La metáfora es el tropo más estudiado porque es el mecanismo central del lenguaje poético: crea nuevos significados transfiriendo características de un ámbito de experiencia a otro. Aristóteles ya la definió como «la aplicación a una cosa del nombre que corresponde a otra» (<I>Poética</I>, 21).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> En la narración literaria, el <B>narrador omnisciente</B> se distingue de los demás tipos de narrador en que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Es el único tipo de narrador que puede usar la primera persona gramatical; todos los demás solo usan la tercera persona</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Conoce la totalidad de los hechos, incluyendo los pensamientos y sentimientos más íntimos de todos los personajes, y puede narrar eventos simultáneos en distintos lugares</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El narrador omnisciente es siempre el propio autor real del texto; es imposible que sea una voz ficticia diferente a quien escribió la obra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Solo puede aparecer en obras del género épico clásico; en la novela moderna ha sido completamente sustituido por el narrador en segunda persona</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>narrador omnisciente</B> (del latín <I>omnis</I> = todo + <I>sciens</I> = que sabe) es un narrador extradiegético que lo <B>conoce todo</B>: los pensamientos de cada personaje, sus motivaciones inconscientes, los eventos que ocurren simultáneamente en distintos lugares, y el pasado y futuro de la historia. Generalmente narra en <B>tercera persona</B>. Es el tipo de narrador dominante en la novela realista del siglo XIX (Tolstói en <I>Ana Karenina</I>; Balzac; Dickens; Galdós). No confundir con: <B>narrador protagonista</B> (primera persona; sabe solo lo que él mismo vive: <I>Lazarillo de Tormes</I>); <B>narrador testigo</B> (segunda voz que observa a otro personaje: Watson narrando sobre Holmes). La a) es falsa: el narrador protagonista usa primera persona. La c) confunde autor real con narrador (son entidades distintas: el narrador es una construcción textual). La d) es falsa: el omnisciente sigue siendo el más frecuente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> La figura retórica que consiste en la <B>mezcla de sensaciones de diferentes sentidos</B> (oír colores, ver sonidos, sentir sabores en formas, etc.) se denomina:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Oxímoron</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Antítesis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Sinestesia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Eufemismo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>sinestesia</B> es la figura que une sensaciones de distintos sentidos en una misma expresión: «colores chillones» (color + sonido), «un frío azul» (temperatura + color), «perfume cálido» (olfato + temperatura), «voces verdes» (sonido + color). Es característica de la poesía <B>simbolista</B> francesa (Baudelaire, Rimbaud, Verlaine) y del <B>Modernismo</B> hispanoamericano (Rubén Darío). No confundir: <B>oxímoron</B> (unión de contrarios en una expresión: «silencio ensordecedor»); <B>antítesis</B> (contraste entre ideas opuestas en frases paralelas: «era tan corto el amor y tan largo el olvido»); <B>eufemismo</B> (sustitución de una expresión dura por otra más suave: «pasó a mejor vida» en lugar de «murió»). La sinestesia es semánticamente diferente del oxímoron: este une contrarios del mismo tipo sensorial; aquella mezcla tipos sensoriales distintos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> El teórico literario M. M. Bajtín sostuvo que la novela es el género literario más <B>polifónico</B> y <B>dialógico</B> de todos. ¿Qué significa esta caracterización y cuál es su implicación para entender la diferencia entre novela y épica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Bajtín afirma que la novela es superior a la épica porque usa más personajes y tiene tramas más complejas; la épica es inferior por su menor diversidad de personajes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La «polifonía» en Bajtín significa que la novela da voz autónoma a múltiples conciencias y perspectivas sin reducirlas a la voz del autor; el «dialogismo» implica que todo discurso en la novela responde a otros discursos. La épica, en cambio, tiene una sola voz (la del poeta-narrador) que domina y unifica el relato</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Bajtín usa «polifonía» solo en sentido musical: afirma que la novela debe acompañarse de música para ser comprendida plenamente, como la épica se acompañaba de la lira en la Antigüedad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) La teoría de Bajtín se refiere exclusivamente a la novela rusa del siglo XIX y no tiene aplicación para la literatura hispanoamericana ni para la comparación con los géneros clásicos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Mijaíl Bajtín</B> (1895-1975), en <I>Problemas de la poética de Dostoievski</I> (1929) y <I>Teoría y estética de la novela</I>, desarrolló los conceptos de <B>polifonía</B> y <B>dialogismo</B>. La <B>polifonía novelística</B> (análisis de Dostoievski): en la gran novela, los personajes no son marionetas del autor sino «conciencias plenas» que debaten entre sí desde posiciones ideológicas autónomas; el autor no resuelve el debate imponiendo su voz. En <I>Los hermanos Karamázov</I>, Iván Karamázov defiende el ateísmo con tal fuerza que el propio Dostoievski parece estar debatiendo contra sus propias creencias. El <B>dialogismo</B> implica que todo enunciado en la novela «responde» a discursos anteriores y «anticipa» respuestas futuras: el lenguaje es esencialmente social e interactivo. La <B>épica</B>, en contraste, tiene una voz única y solemne (el aedo, el poeta), que recita desde una posición de autoridad indiscutida: no hay polifonía porque no hay voces que desafíen al narrador. Para los exámenes avanzados: la distinción Bajtín entre monologismo (épica, poesía lírica) y dialogismo (novela) es fundamental.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El «Realismo mágico» de García Márquez en <I>Cien años de soledad</I> supone un desafío para la clasificación de géneros literarios porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La obra no tiene narrador identificable, lo que la excluye del género narrativo y la acerca a la épica oral</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La novela integra elementos propios de la épica (dimensión mítica y fundacional, saga familiar como historia de un pueblo), del realismo (crítica social latinoamericana) y de lo maravilloso natural (lo sobrenatural tratado como normal), problematizando la división estricta entre géneros y modos narrativos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) García Márquez reconoció abiertamente que <I>Cien años de soledad</I> es una comedia dramática, no una novela; el error de clasificarla como narrativa proviene de una lectura superficial de la crítica anglosajona</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La obra pertenece al género didáctico porque García Márquez escribió el libro con la intención explícita de enseñar la historia de Colombia al lector latinoamericano de manera entretenida</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><I>Cien años de soledad</I> (García Márquez, 1967) es el texto fundacional del <B>realismo mágico</B> latinoamericano, aunque sus raíces están en <B>Borges</B>, <B>Carpentier</B> (lo «real maravilloso») y <B>Rulfo</B> (<I>Pedro Páramo</I>). La obra desafía la clasificación porque: (1) tiene una estructura <B>épica</B>: narra la saga de los Buendía como si fuera la historia mítica y cíclica de toda América Latina; el tiempo no es lineal sino circular (como el tiempo mítico de la épica); (2) el <B>narrador omnisciente</B> adopta una perspectiva «mágica»: los prodigios (los muertos que hablan, la ascensión de Remedios la Bella) se narran con el mismo tono factual que los hechos reales; (3) funciona como <B>alegoría histórica</B>: los cien años de la familia Buendía representan los cien años de solitud de Latinoamérica frente al imperialismo y la modernidad. La crítica literaria habla de «novela total» (término de Vargas Llosa sobre García Márquez): la que aspira a abarcar la totalidad de lo real desde una perspectiva particular.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Compara la función de la <B>hamartía</B> (falta trágica) en <I>Edipo Rey</I> de Sófocles y en <I>Hamlet</I> de Shakespeare. ¿En qué difieren sus concepciones del destino y la responsabilidad del héroe trágico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) No hay diferencia: ambas obras presentan héroes determinados completamente por el destino externo; la responsabilidad personal del personaje es idéntica en ambas tragedias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) En Edipo, la hamartía está inscrita en el destino divino (el oráculo): Edipo no puede evitar su falla aunque actúe con la mejor intención; su tragedia es la del conocimiento como destrucción. Hamlet, en cambio, tiene voluntad libre pero la parálisis («ser o no ser») lo destruye: su hamartía es la indecisión, una falla interna y psicológica, no dictada por los dioses</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Edipo es un héroe moderno y psicológicamente complejo; Hamlet es un héroe griego primitivo sin vida interior; Shakespeare tomó el esquema mítico griego y lo simplificó para el teatro popular inglés</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Ambas tragedias presentan héroes sin ninguna responsabilidad: son víctimas puras de fuerzas externas (dioses, fantasmas) que actúan sobre ellos sin que sus decisiones importen</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige pensar la evolución histórica del concepto de <B>tragedia</B>. En <B>Edipo Rey</B> de Sófocles (siglo V a.C.), la <B>hamartía</B> es la tensión entre el destino divino (el oráculo predijo que Edipo mataría a su padre y se casaría con su madre) y la agencia humana: Edipo toma decisiones libres (huye de Corinto, mata al desconocido, resuelve el enigma), pero todas esas decisiones justas lo acercan a cumplir el oráculo. Su «falla» no es moral (no actúa con maldad) sino epistémica: la tragedia del conocimiento: saber la verdad lo destruye. En <B>Hamlet</B> de Shakespeare (1603), la hamartía es la <B>parálisis de la voluntad</B>: Hamlet sabe lo que debe hacer (vengar al padre) pero no puede actuar; su vida interior, su hiperconsciencia filosófica, lo inmoviliza. «Ser o no ser» es la pregunta de alguien que sabe la respuesta pero no puede ejecutarla. La diferencia refleja el paso de una concepción <B>cosmológica</B> del destino (el mundo griego: los dioses determinan) a una concepción <B>psicológica</B> (el mundo renacentista: el individuo se destruye desde adentro). Para los exámenes: esta transición del fatalismo griego a la interioridad renacentista-barroca es un eje del estudio de los géneros literarios.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El ensayo, como género del área didáctica, se distingue de otros géneros argumentativos (como el tratado científico o el artículo académico) por:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El ensayo es superior al tratado científico en rigor metodológico; cita más fuentes y sigue un método hipotético-deductivo más estricto que el artículo académico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El ensayo es una forma literaria donde la subjetividad del pensador, la voluntad de estilo y la perspectiva personal son parte esencial del texto; no pretende ser exhaustivo ni definitivo; su rigor es intelectual pero su tono es personal y su forma, literaria. El tratado o artículo académico aspira a la objetividad, la exhaustividad y la impersonalidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La única diferencia es la extensión: el ensayo siempre es más breve que el tratado; cuando un ensayo supera las 50 páginas, se convierte automáticamente en un tratado científico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El ensayo se distingue del tratado en que está escrito siempre en verso; el tratado y el artículo académico usan la prosa; es esa diferencia formal la que define al ensayo como género literario</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>ensayo</B> fue inventado por <B>Michel de Montaigne</B> (<I>Essais</I>, 1580) como un género radicalmente nuevo: la exploración intelectual desde el «yo» del pensador, con libertad de tono, sin pretensión de exhaustividad ni de verdad absoluta. El propio Montaigne decía: «Escribo sobre mí mismo». Sus características esenciales son: (1) <B>subjetividad</B>: la voz del ensayista es el centro del texto; su perspectiva personal, su duda, su cambio de opinión son parte del argumento; (2) <B>voluntad de estilo</B>: el ensayo es literatura; no es neutral ni impersonal; (3) <B>libertad temática</B>: puede tratar cualquier tema (el aburrimiento, la guerra, la muerte, la naturaleza humana); (4) <B>provisionalidad</B>: el ensayo <I>ensaya</I> ideas, no las cierra definitivamente. El <B>tratado científico</B> o académico, en cambio, aspira a la objetividad, cita fuentes sistemáticamente, sigue métodos verificables y pretende conclusiones universalmente válidas. En la literatura hispanoamericana, los grandes ensayistas son: <B>Mariátegui</B> (<I>7 Ensayos</I>), <B>Martí</B>, <B>Rodó</B> (<I>Ariel</I>), <B>Paz</B> (<I>El laberinto de la soledad</I>), <B>Cortázar</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> El crítico Northrop Frye, en su <I>Anatomía de la crítica</I> (1957), propuso que los géneros literarios no son categorías históricas sino <B>modos retóricos arquetípicos</B> basados en la relación entre el autor, el texto y el lector. ¿Qué implicación tiene esta perspectiva para la clasificación tradicional aristotélica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La perspectiva de Frye confirma plenamente la clasificación aristotélica, demostrando que épica, lírica y dramática son categorías naturales e inmutables que no dependen de factores históricos ni culturales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Frye propone que los géneros son modos de relación entre texto y audiencia: la épica/narrativa construye un mundo frente al oyente; la lírica expresa hacia adentro; el drama muestra ante el espectador. Esta perspectiva revela que las fronteras genéricas no son absolutas sino relacionales y dinámicas: una misma obra puede participar de varios modos, y la clasificación aristotélica, siendo histórica, no capta la profundidad de estas relaciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Frye rechaza completamente la existencia de géneros literarios; argumenta que la clasificación genérica es una imposición autoritaria de la academia sobre la libertad creativa del autor y debe ser eliminada de los estudios literarios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La propuesta de Frye es irrelevante para los estudios literarios latinoamericanos porque fue formulada en el contexto anglosajón y no tiene aplicación fuera de la literatura en lengua inglesa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Northrop Frye</B> (1912-1991) es uno de los grandes teóricos literarios del siglo XX. En su <I>Anatomía de la crítica</I> propuso que los géneros corresponden a modos de «presentación» del texto: (1) <B>modo epos</B> (el autor/rapsoda habla hacia la audiencia: narración); (2) <B>modo lírico</B> (el poeta habla hacia adentro; el lector «escucha» sin ser interpelado directamente); (3) <B>modo dramático</B> (los personajes actúan entre sí; el autor desaparece). Su contribución fue mostrar que estos modos son arquetipos de la relación comunicativa literaria, no simplemente géneros históricos. Implicaciones para la clasificación aristotélica: (1) los géneros aristotélicos son una codificación histórica de esos modos en la Grecia del siglo IV; (2) una novela puede tener momentos líricos (monólogos interiores), épicos (narraciones en tercera persona) y dramáticos (diálogos); (3) los géneros «puros» son una abstracción teórica; las obras reales siempre mezclan modos. Para los exámenes de máximo nivel: la teoría de Frye junto con la de Bajtín y la de Todorov (géneros como instituciones discursivas históricas) son los tres grandes marcos teóricos para pensar los géneros literarios más allá del esquema tripartito de Aristóteles.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> César Vallejo, en <I>Trilce</I> (1922), y Pablo Neruda, en <I>Residencia en la tierra</I> (1935), radicalizaron la ruptura con las convenciones del género lírico iniciada por el Modernismo de Rubén Darío. ¿En qué consistió exactamente esa radicalización y qué recursos la caracterizan?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Vallejo y Neruda retornaron a la métrica clásica del Siglo de Oro (soneto, oda horaciana), rechazando los experimentos modernistas de Darío como superficiales y carentes de profundidad filosófica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Vallejo en <I>Trilce</I> fragmentó el lenguaje mismo: neologismos, sintaxis dislocada, palabras inventadas, puntuación arbitraria, para reproducir la experiencia corporal del dolor y la cárcel. Neruda en <I>Residencia</I> usó el versículo largo (verso libre de gran extensión) con imágenes surrealistas de desintegración para expresar la angustia existencial. Ambos rompieron con la musicalidad y el cosmopolitismo esteticista del Modernismo para llegar a lo más oscuro del ser</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La radicalización consistió únicamente en el uso del español de América como lengua literaria en lugar del español peninsular; sus innovaciones fueron exclusivamente léxicas, no estructurales ni semánticas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Vallejo y Neruda son poetas del Modernismo tardío; no representan una ruptura sino una continuación refinada de las técnicas estéticas de Darío aplicadas a temáticas latinoamericanas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La poesía de <B>César Vallejo</B> y <B>Pablo Neruda</B> representa la entrada de la vanguardia (expresionismo, surrealismo, ultraísmo) en la poesía hispanoamericana, superando el <B>Modernismo</B> de Darío (que, pese a sus innovaciones métricas, mantuvo el ideal de belleza formal, el cosmopolitismo parisino y la armonía musical). <B>Vallejo en <I>Trilce</I></B> (1922, escrito en la cárcel de Trujillo): rompe con la sintaxis lógica; inventa palabras (<I>trilce</I>, título sin significado léxico establecido); usa los números como poemas (LXI, LXXIV); la fragmentación del lenguaje reproduce la fragmentación del cuerpo, el dolor, la orfandad. <B>Neruda en <I>Residencia en la tierra</I></B> (1935): usa el <B>versículo</B> (verso libre larguísimo, heredado de Whitman y los profetas bíblicos); imágenes de desintegración, muerte, materia que se pudre; el «yo» se disuelve en la materia cósmica; la angustia existencial es física, no metafísica. Ambos radicalizan la experiencia de la escritura: el lenguaje poético ya no «canta» bellezas sino que «hace» la experiencia del dolor, la angustia y la desintegración. Para los exámenes: conocer la obra, el contexto y la ruptura de ambos poetas con el Modernismo es fundamental en los exámenes de Literatura del Perú (Vallejo es limeño-trujillano) y de Literatura Universal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> ¿Por qué el <I>Quijote</I> de Cervantes (1605-1615) es considerado la primera novela moderna de la literatura occidental, y qué características la distinguen de las formas narrativas anteriores (épica, novela de caballerías)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) El <I>Quijote</I> es la primera obra en prosa extensa de la historia literaria; antes de Cervantes no existían narraciones en prosa en ninguna lengua; su novedad radica exclusivamente en la extensión del texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) El <I>Quijote</I> inaugura la novela moderna porque: (1) introduce la autoconciencia genérica (la novela habla de sí misma como libro, parodiando las novelas de caballerías); (2) crea personajes con psicología compleja y cambiante; (3) introduce la perspectiva múltiple y la duda sobre la realidad; (4) usa la ironía y la ambigüedad como principios constructivos; y (5) presenta un protagonista que falla y aprende, no un héroe ideal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La modernidad del <I>Quijote</I> radica solo en que Cervantes escogió un protagonista de clase social baja (un hidalgo pobre de La Mancha) en lugar de un rey o un caballero de linaje aristocrático, lo que ningún autor anterior había hecho</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Cervantes inaugura la novela moderna porque introdujo el uso del castellano como lengua literaria en lugar del latín; antes del <I>Quijote</I>, toda la literatura española estaba escrita en latín clásico</DIV>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El debate sobre por qué el <I>Don Quijote</I> (1605, Primera Parte; 1615, Segunda Parte) es la «primera novela moderna» es uno de los centrales de la teoría literaria. Sus rasgos de modernidad incluyen: (1) <B>Metaficción</B>: el <I>Quijote</I> es consciente de ser un libro; en la Segunda Parte, los personajes han leído la Primera Parte; el narrador finge ser un traductor de un manuscrito árabe de Cide Hamete Benengeli. Esta autoconciencia del artefacto literario es radicalmente nueva. (2) <B>Psicología compleja y evolutiva</B>: Don Quijote cambia; su locura tiene momentos de lucidez; al final recupera la razón y muere. Sancho también evoluciona: al inicio es pragmático y escéptico; al final defiende la visión caballeresca de su amo. Los héroes épicos (Aquiles, Eneas) no «crecen» psicológicamente. (3) <B>Perspectivismo</B>: la realidad del texto es siempre ambigua: ¿los molinos son molinos o gigantes? La respuesta depende del punto de vista. (4) <B>Parodia e ironía</B>: el <I>Quijote</I> nació como parodia de las novelas de caballerías (<I>Amadís de Gaula</I>), pero superó ese propósito; la ironía es el principio de toda la obra. (5) <B>El protagonista que fracasa</B>: en la épica el héroe triunfa (o cae gloriosamente). Don Quijote fracasa constantemente, y ese fracaso es la fuente de la compasión y la identificación del lector.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Evalúa la siguiente afirmación del teórico Tzvetan Todorov: «Los géneros literarios son instituciones sociales: son a la vez los <B>horizontes de expectativa</B> del lector y los <B>modelos de escritura</B> del autor; no existen antes de los textos, sino que se constituyen en y mediante los textos mismos.» ¿Cuáles son las implicaciones de esta afirmación para el estudio de la literatura?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La afirmación de Todorov es falsa porque los géneros literarios fueron definidos de una vez para siempre por Aristóteles en el siglo IV a.C.; su clasificación es eterna y no puede ser ni constituida ni modificada por textos individuales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La afirmación implica que los géneros son convenciones históricas y culturales en permanente transformación: cada texto nuevo confirma, modifica o subvierte las expectativas del género; el lector lee desde un horizonte genérico que el texto puede respetar o romper creativamente. Esto explica por qué géneros como el «realismo mágico» o la «autoficción» surgen como innovaciones que luego se institucionalizan, y por qué las categorías aristotélicas son un punto de partida, no un sistema cerrado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Todorov afirma que el lector no tiene ningún papel en la definición de los géneros; estos son impuestos unilateralmente por los autores y las editoriales sin ninguna relación con las expectativas de la audiencia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La posición de Todorov implica que no tiene ningún sentido estudiar ni clasificar géneros literarios; su teoría lleva a la conclusión de que la crítica literaria debe abandonar el análisis genérico y concentrarse solo en el texto individual aislado de toda tradición</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Tzvetan Todorov</B> (1939-2017), semiólogo búlgaro-francés, desarrolló una teoría histórica de los géneros en <I>Introducción a la literatura fantástica</I> (1970) y otros trabajos. Su concepto de los géneros como <B>«instituciones sociales»</B> y como <B>«horizontes de expectativa»</B> (tomando este último término de <B>Hans Robert Jauss</B>, teoría de la estética de la recepción) tiene varias implicaciones: (1) Los géneros no son esencias platónicas preexistentes sino <B>acuerdos culturales</B>: la «tragedia» es una convención que los griegos codificaron, que el teatro renacentista transformó y que el teatro absurdo de Beckett subvirtió. (2) El <B>lector participa</B> activamente en la constitución del género: cuando leemos una novela policial, tenemos expectativas (un crimen, un detective, una solución) que el texto puede confirmar o subvertir. Esas expectativas forman el «horizonte»; el texto puede expandirlo o romperlo. (3) Los géneros son <B>dinámicos</B>: nuevos textos crean nuevas convenciones. El «realismo mágico» no existía como género antes de que obras como <I>Cien años de soledad</I> o <I>Pedro Páramo</I> lo instituyeran como tal; hoy es una categoría genérica reconocible con sus propias convenciones. Para los exámenes de más alto nivel: la perspectiva institucional-histórica de Todorov supera el esencialismo aristotélico sin rechazarlo; la clasificación aristotélica sigue siendo útil como punto de partida, pero debe entenderse como el inicio de una historia de convenciones en permanente transformación.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,545 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Geopolítica - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA &middot; TEMA 18 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Geopolítica</H1>
+<DIV CLASS="sub">Concepto &middot; Teorías clásicas &middot; Estado y territorio &middot; Fronteras &middot; Geopolítica del Perú &middot; Organizaciones internacionales &middot; Poder mundial</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1 -->
+<H3 ID="concepto">1. Concepto y origen de la Geopolítica</H3>
+
+La <B>Geopolítica</B> es la disciplina que estudia la influencia de los factores geográficos (posición, territorio, recursos naturales, relieve, clima, acceso al mar) sobre la política, el poder y las relaciones entre los Estados. Es la intersección entre la Geografía y las Ciencias Políticas.
+
+<H4>Etimología y origen del término:</H4>
+El término <B>"Geopolítica"</B> fue acuñado por el geógrafo y político sueco <B>Rudolf Kjellén</B> en 1899, quien la definió como el estudio del Estado como organismo geográfico. Sin embargo, sus raíces intelectuales son más antiguas y sus principales teóricos clásicos son:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Autor</TH><TH>Nacionalidad / Época</TH><TH>Aporte principal</TH></TR>
+<TR><TD><B>Friedrich Ratzel</B></TD><TD>Alemán (1844–1904)</TD><TD>Padre de la Geografía Política. Concepto de <B>Lebensraum</B> ("espacio vital"): los Estados, como organismos vivos, necesitan expandir su territorio para sobrevivir y crecer. Luego fue distorsionado por el nazismo.</TD></TR>
+<TR><TD><B>Rudolf Kjellén</B></TD><TD>Sueco (1864–1922)</TD><TD>Acuñó el término "Geopolítica". El Estado es un organismo geográfico con voluntad de poder. Identificó cinco factores del poder estatal: territorio, pueblo, economía, sociedad y gobierno.</TD></TR>
+<TR><TD><B>Halford Mackinder</B></TD><TD>Británico (1861–1947)</TD><TD>Teoría del <B>Heartland</B> ("corazón continental"): quien domine el corazón de Eurasia domina la "isla mundial" (Eurasia+África) y quien domine la isla mundial dominará el mundo. El Heartland = Asia Central/Rusia.</TD></TR>
+<TR><TD><B>Alfred Thayer Mahan</B></TD><TD>Estadounidense (1840–1914)</TD><TD>Teoría del <B>Poder Marítimo</B>: el dominio de los mares es la clave del poder mundial. La nación que controle las rutas marítimas y tenga una armada poderosa dominará el comercio y la geopolítica global.</TD></TR>
+<TR><TD><B>Nicholas Spykman</B></TD><TD>Holandés-estadounidense (1893–1943)</TD><TD>Teoría del <B>Rimland</B> ("tierra del borde"): contra Mackinder, argumentó que la franja costera de Eurasia (Europa Occidental, Oriente Medio, India, Asia Oriental) es más importante que el Heartland interior. Base teórica de la política de "contención" de EE.UU. durante la Guerra Fría.</TD></TR>
+<TR><TD><B>Karl Haushofer</B></TD><TD>Alemán (1869–1946)</TD><TD>Desarrolló la geopolítica alemana (Geopolitik). Sus ideas fueron adaptadas (y distorsionadas) por el régimen nazi. Concepto de Lebensraum aplicado a la expansión alemana en Europa.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> Las tres teorías más preguntadas son: <B>Heartland</B> de Mackinder (dominar Asia Central = dominar el mundo), <B>Rimland</B> de Spykman (la periferia costera de Eurasia es la clave) y <B>Poder Marítimo</B> de Mahan (dominar los mares = dominar el mundo). Memoriza autor y nombre de teoría.</DIV>
+
+<!-- 2 -->
+<H3 ID="estado">2. El Estado: elementos y formas</H3>
+
+El <B>Estado</B> es la organización política soberana de una comunidad humana establecida en un territorio definido. Es la unidad básica de la geopolítica internacional.
+
+<H4>Elementos constitutivos del Estado (Teoría clásica):</H4>
+<UL>
+<LI><B>Territorio:</B> el espacio físico sobre el que el Estado ejerce su soberanía. Incluye tierra firme, aguas interiores, mar territorial, espacio aéreo y, en algunos casos, el suelo y subsuelo del mar contiguo. Es el elemento geográfico fundamental.</LI>
+<LI><B>Población:</B> el conjunto de personas que viven permanentemente en el territorio del Estado y están sujetas a su autoridad. Incluye nacionales y extranjeros residentes.</LI>
+<LI><B>Gobierno (o poder público):</B> la organización que ejerce la autoridad política soberana sobre el territorio y la población. Es el aparato institucional del Estado (Ejecutivo, Legislativo, Judicial).</LI>
+<LI><B>Soberanía:</B> el poder supremo e independiente del Estado para gobernarse a sí mismo sin interferencia externa. La soberanía tiene dos dimensiones: interna (autoridad dentro del territorio) y externa (independencia frente a otros Estados).</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Distinción importante:</B> No confundir <b>Estado</b>, <b>Nación</b> y <b>País</b>. El <b>Estado</b> es la entidad jurídico-política (gobierno + territorio + soberanía). La <b>Nación</b> es una comunidad humana unida por historia, lengua, cultura y sentido de identidad común (puede no tener Estado propio: los kurdos son una nación sin Estado). El <b>País</b> es el término geográfico informal que equivale aproximadamente al Estado. Un <b>Estado-nación</b> es el caso ideal donde los límites del Estado coinciden con los de la nación.</DIV>
+
+<H4>Clasificación de los Estados según su organización territorial:</H4>
+<UL>
+<LI><B>Estado unitario:</B> el poder político está centralizado en un gobierno nacional único. Las regiones o departamentos tienen autonomía limitada delegada por el gobierno central. <B>Ejemplo: Perú, Francia, Chile, Bolivia.</B></LI>
+<LI><B>Estado federal:</B> el poder se distribuye entre un gobierno federal (central) y gobiernos estatales o provinciales con amplias competencias propias establecidas en la constitución. <B>Ejemplo: EE.UU., Brasil, Alemania, México, Argentina.</B></LI>
+<LI><B>Estado confederal:</B> asociación de Estados soberanos que delegan algunas competencias a un organismo común pero conservan su soberanía plena. Hoy prácticamente no existen; la UE tiene elementos confederales pero también supranacionales.</LI>
+</UL>
+
+<H4>Clasificación según el régimen político:</H4>
+<UL>
+<LI><B>Democracia:</B> el poder emana del pueblo mediante elecciones libres. Puede ser directa (el pueblo vota directamente las leyes) o representativa (elige representantes que legislan). La mayoría de países del mundo son democracias formales.</LI>
+<LI><B>Autocracia / Dictadura:</B> el poder está concentrado en una persona o grupo sin controles democráticos. Puede ser militar (junta militar), personal (dictador) o de partido único (régimen totalitario).</LI>
+<LI><B>Teocracia:</B> el poder político es ejercido en nombre de una autoridad divina o religiosa. <B>Ejemplos:</B> Vaticano, Irán (República Islámica).</LI>
+<LI><B>Monarquía:</B> el jefe de Estado es un monarca (rey, reina, emperador) que accede al cargo por herencia. Puede ser <b>absoluta</b> (el monarca tiene poder real: Arabia Saudita) o <b>constitucional</b> (el monarca tiene funciones ceremoniales: España, Reino Unido, Japón).</LI>
+</UL>
+
+<!-- 3 -->
+<H3 ID="territorio">3. El territorio del Estado: componentes y dimensiones</H3>
+
+El territorio de un Estado tiene múltiples dimensiones jurídicas y geográficas:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Componente</TH><TH>Definición</TH><TH>Ejemplo para el Perú</TH></TR>
+<TR><TD><B>Territorio continental</B></TD><TD>La tierra firme del país, incluyendo islas, lagos y ríos interiores.</TD><TD>Los 1 285 216 km² de superficie terrestre del Perú (9° país más extenso de América)</TD></TR>
+<TR><TD><B>Mar territorial</B></TD><TD>Franja marítima de <B>12 millas náuticas</B> (22,2 km) desde la línea de base costera. El Estado tiene soberanía plena.</TD><TD>12 mn desde la costa peruana en el Pacífico</TD></TR>
+<TR><TD><B>Zona Contigua</B></TD><TD>Franja de <B>12 a 24 millas náuticas</B> adicionales. El Estado puede aplicar normas aduaneras, fiscales y sanitarias pero no tiene soberanía plena.</TD><TD>Control aduanero y sanitario peruano hasta 24 mn</TD></TR>
+<TR><TD><B>Zona Económica Exclusiva (ZEE)</B></TD><TD>Franja de <B>200 millas náuticas</B> (370 km) desde la línea de base. El Estado tiene derechos soberanos de exploración y explotación de recursos (pesca, petróleo, minerales del fondo marino), pero no soberanía territorial plena.</TD><TD>El Perú tiene derecho exclusivo a la anchoveta y los recursos del mar hasta 200 mn de la costa</TD></TR>
+<TR><TD><B>Plataforma Continental</B></TD><TD>Extensión del territorio continental bajo el mar hasta los 200 m de profundidad (o hasta 350 mn en casos especiales). El Estado tiene derechos sobre los recursos del subsuelo.</TD><TD>La plataforma continental peruana es relativamente estrecha por las profundidades del Pacífico</TD></TR>
+<TR><TD><B>Espacio aéreo</B></TD><TD>El espacio atmosférico sobre el territorio continental y el mar territorial. El Estado tiene soberanía plena sobre él (requiere permiso para vuelos).</TD><TD>El espacio aéreo peruano está gestionado por CORPAC</TD></TR>
+<TR><TD><B>Espacio ultraterrestre</B></TD><TD>El espacio exterior más allá de la atmósfera. <B>No pertenece a ningún Estado</B> (Tratado del Espacio Exterior, 1967): es patrimonio común de la humanidad.</TD><TD>Los satélites peruanos (PerúSAT-1) operan en espacio ultraterrestre compartido</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>El "Mar de Grau" y las 200 millas:</B> El Perú históricamente proclamó soberanía sobre las 200 millas marítimas (Decreto Supremo 781 de 1947, durante el gobierno de Bustamante y Rivero). Esta declaración unilateral fue luego respaldada por la CONVEMAR (Convención de la ONU sobre el Derecho del Mar, 1982) que estableció la ZEE de 200 millas. El término <b>"Mar de Grau"</b> es el nombre oficial peruano del dominio marítimo, en honor al almirante Miguel Grau Seminara, héroe de la Guerra del Pacífico.</DIV>
+
+<!-- 4 -->
+<H3 ID="fronteras">4. Fronteras: tipos y conflictos limítrofes</H3>
+
+Las <B>fronteras</B> son las líneas que delimitan el territorio de un Estado, separándolo del territorio de los Estados vecinos o de los espacios internacionales. Son el elemento más visible de la soberanía territorial.
+
+<H4>Tipos de fronteras:</H4>
+<UL>
+<LI><B>Fronteras naturales:</B> siguen accidentes geográficos preexistentes: ríos, cadenas montañosas, lagos, costas. <B>Ejemplos:</B> el río Putumayo como frontera Perú-Colombia; la Cordillera de los Andes como frontera Perú-Chile en algunos tramos.</LI>
+<LI><B>Fronteras artificiales (convencionales):</B> líneas trazadas por acuerdos políticos que no siguen rasgos geográficos naturales. <B>Ejemplos:</B> la mayor parte de las fronteras de África (trazadas por las potencias coloniales europeas en la Conferencia de Berlín, 1884-85).</LI>
+<LI><B>Fronteras geodésicas:</B> líneas trazadas a lo largo de paralelos o meridianos. <B>Ejemplo:</B> la frontera EE.UU.-Canadá sigue el paralelo 49°N durante gran parte de su extensión.</LI>
+<LI><B>Fronteras históricas:</B> resultado de guerras, tratados y cambios históricos. La mayoría de fronteras son una combinación de factores naturales, artificiales e históricos.</LI>
+</UL>
+
+<H4>Las fronteras del Perú:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>País vecino</TH><TH>Longitud aprox.</TH><TH>Instrumento limítrofe principal</TH><TH>Característica</TH></TR>
+<TR><TD><B>Ecuador</B></TD><TD>~1 529 km</TD><TD>Acta de Brasilia (1998) y Tratado de Paz de Itamaraty (1998)</TD><TD>Conflicto resuelto en 1998 tras décadas de disputas (Guerra del Cenepa, 1995). Garantes: Argentina, Brasil, Chile y EE.UU.</TD></TR>
+<TR><TD><B>Colombia</B></TD><TD>~1 506 km</TD><TD>Tratado Salomón-Lozano (1922)</TD><TD>Frontera fluvial en gran parte (ríos Putumayo y Napo). Corredor de Leticia permite a Colombia acceso al Amazonas.</TD></TR>
+<TR><TD><B>Brasil</B></TD><TD>~2 822 km</TD><TD>Tratado de Petrópolis (1903) y Tratado de Río de Janeiro (1909)</TD><TD>La frontera más larga del Perú. Selva amazónica. La Piedra del Cunhambebe marca el punto tripartito Perú-Brasil-Colombia.</TD></TR>
+<TR><TD><B>Bolivia</B></TD><TD>~1 047 km</TD><TD>Tratado de Rectificación de Fronteras (1909)</TD><TD>Incluye el lago Titicaca compartido. Hito Cuatro Mojones marca el punto tripartito Perú-Bolivia-Chile.</TD></TR>
+<TR><TD><B>Chile</B></TD><TD>~169 km</TD><TD>Tratado de Lima (1929)</TD><TD>La frontera terrestre más corta del Perú. La ciudad de Tacna fue devuelta al Perú en 1929. Fallo de La Haya (2014) delimitó la frontera marítima.</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Conflictos limítrofes históricos y actuales del Perú:</H4>
+<UL>
+<LI><B>Con Chile — La Haya 2014:</B> El Perú demandó a Chile ante la Corte Internacional de Justicia (CIJ) de La Haya por la delimitación de la frontera marítima. El fallo de enero de 2014 estableció una línea divisoria que amplió el dominio marítimo peruano en ~50 000 km², aunque también reconoció los derechos chilenos en una zona cercana a la costa de Arica. El fallo es vinculante para ambos países.</LI>
+<LI><B>Con Ecuador — Guerra del Cenepa (1995):</B> El último conflicto armado entre Perú y Ecuador en la zona del Cenepa (selva de Amazonas). El conflicto fue resuelto definitivamente por los Acuerdos de Paz de Brasilia (1998), que fijaron definitivamente la frontera.</LI>
+<LI><B>Tacna y Arica:</B> Tras la Guerra del Pacífico (1879-1884), Chile ocupó Tacna y Arica. El Tratado de Lima de 1929 devolvió Tacna al Perú y Chile conservó Arica definitivamente.</LI>
+</UL>
+
+<!-- 5 -->
+<H3 ID="geopolitica-peru">5. Geopolítica del Perú: posición estratégica</H3>
+
+El Perú ocupa una posición geopolítica estratégica en América del Sur por varias razones:
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1 285 216 km²</DIV><DIV CLASS="dk-label">Superficie terrestre (9° en América)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">5</DIV><DIV CLASS="dk-label">Países con los que limita</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~3 080 km</DIV><DIV CLASS="dk-label">Extensión del litoral del Pacífico</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">200 mn</DIV><DIV CLASS="dk-label">Dominio marítimo (ZEE) en el Pacífico</DIV></DIV>
+</DIV>
+
+<H4>Factores de la posición geopolítica del Perú:</H4>
+<UL>
+<LI><B>País andino-amazónico-pacífico:</B> el Perú tiene acceso simultáneo a los Andes (corredor bioceánico), la Amazonia (cuenca más grande del mundo) y el Pacífico (el océano más grande). Esta triple condición lo hace pivote de la conectividad sudamericana.</LI>
+<LI><B>Eje Pacífico-Atlántico:</B> los proyectos de integración de infraestructura (IIRSA/COSIPLAN) buscan convertir al Perú en el corredor terrestre entre el Atlántico (Brasil) y el Pacífico, mediante carreteras bioceánicas como la Interoceánica Sur (que une Madre de Dios e Ilo con Porto Velho, Brasil).</LI>
+<LI><B>Posición en la Cuenca del Pacífico:</B> el Perú forma parte de la APEC (Cooperación Económica Asia-Pacífico) y tiene TLC con China, Japón, Corea y otros países asiáticos. La Cuenca del Pacífico es el centro dinámico de la economía global del siglo XXI.</LI>
+<LI><B>Acceso al Amazonas:</B> el Perú controla la cuenca alta del Amazonas y tiene acceso fluvial al Atlántico a través del río Amazonas-Ucayali-Marañón.</LI>
+<LI><B>Vecindad con Bolivia:</B> el Perú es el único país sudamericano que puede ofrecer salida al mar a Bolivia (mediterránea desde 1879) a través del Puerto de Ilo y el Convenio Ilo-Desaguadero. Este es un factor geopolítico importante en las relaciones bilaterales.</LI>
+</UL>
+
+<H4>La Antártida y el Perú:</H4>
+El Perú estableció la <B>Base Científica Machu Picchu</B> en la Antártida (isla Rey Jorge) en <B>1988</B>, adhiriéndose al <B>Tratado Antártico de 1959</B>. El Tratado Antártico establece que la Antártida es una zona de paz, ciencia y cooperación internacional, sin soberanía territorial. Congeló las reclamaciones territoriales existentes. El interés peruano en la Antártida se relaciona con su influencia en el clima del Pacífico Sur, los recursos pesqueros y los recursos potenciales de minerales e hidrocarburos (actualmente prohibida su explotación por el Protocolo de Madrid de 1991).
+
+<!-- 6 -->
+<H3 ID="organizaciones">6. Organizaciones internacionales y regionales</H3>
+
+Las <B>organizaciones internacionales</B> son entidades creadas por tratados entre Estados para cooperar en áreas específicas. Pueden ser de carácter universal o regional.
+
+<H4>A) Organizaciones de carácter universal:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Organización</TH><TH>Sede</TH><TH>Fundación</TH><TH>Función principal</TH></TR>
+<TR><TD><B>ONU</B> (Organización de las Naciones Unidas)</TD><TD>Nueva York</TD><TD>1945 (Carta de San Francisco)</TD><TD>Mantenimiento de la paz y seguridad internacional, desarrollo, derechos humanos. Tiene 193 miembros. El Perú es miembro fundador.</TD></TR>
+<TR><TD><B>FMI</B> (Fondo Monetario Internacional)</TD><TD>Washington D.C.</TD><TD>1944 (Bretton Woods)</TD><TD>Estabilidad monetaria y financiera internacional. Préstamos a países con dificultades de balanza de pagos.</TD></TR>
+<TR><TD><B>Banco Mundial</B></TD><TD>Washington D.C.</TD><TD>1944</TD><TD>Financiamiento de proyectos de desarrollo y reducción de la pobreza en países en desarrollo.</TD></TR>
+<TR><TD><B>OMC</B> (Organización Mundial del Comercio)</TD><TD>Ginebra</TD><TD>1995 (sucesora del GATT)</TD><TD>Regular y liberalizar el comercio internacional. Resolver disputas comerciales entre países.</TD></TR>
+<TR><TD><B>CIJ</B> (Corte Internacional de Justicia)</TD><TD>La Haya</TD><TD>1945</TD><TD>Órgano judicial principal de la ONU. Resuelve controversias entre Estados. El Perú usó la CIJ contra Chile (2008-2014).</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Órganos principales de la ONU:</H4>
+<UL>
+<LI><B>Asamblea General:</B> todos los 193 miembros tienen un voto igual. Debate y recomienda, pero no tiene poder vinculante en temas de paz y seguridad.</LI>
+<LI><B>Consejo de Seguridad:</B> 15 miembros: 5 permanentes con <B>derecho a veto</B> (EE.UU., Rusia, China, Francia, Reino Unido) y 10 rotativos elegidos por 2 años. Tiene poder vinculante para mantener la paz (puede autorizar uso de la fuerza).</LI>
+<LI><B>Secretaría General:</B> el Secretario General es el máximo funcionario administrativo de la ONU.</LI>
+<LI><B>Consejo Económico y Social (ECOSOC):</B> coordina el trabajo económico y social de la ONU y sus agencias especializadas.</LI>
+<LI><B>Corte Internacional de Justicia (CIJ):</B> sede en La Haya. Resuelve disputas jurídicas entre Estados.</LI>
+</UL>
+
+<H4>B) Organizaciones regionales en las que participa el Perú:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Organización</TH><TH>Sigla</TH><TH>Miembros</TH><TH>Función</TH></TR>
+<TR><TD><B>Comunidad Andina de Naciones</B></TD><TD>CAN</TD><TD>Perú, Colombia, Ecuador, Bolivia</TD><TD>Integración económica, comercial y política andina. Arancel externo común, libre circulación de personas. Sede: Lima.</TD></TR>
+<TR><TD><B>Alianza del Pacífico</B></TD><TD>AP</TD><TD>Perú, Colombia, Chile, México</TD><TD>Integración económica orientada al Pacífico y Asia. Libre circulación de bienes, servicios, capitales y personas.</TD></TR>
+<TR><TD><B>MERCOSUR</B> (Estado asociado)</TD><TD>MERCOSUR</TD><TD>Brasil, Argentina, Uruguay, Paraguay (Venezuela suspendida). Perú como asociado.</TD><TD>Mercado común del Cono Sur. El Perú tiene status de Estado asociado, no pleno.</TD></TR>
+<TR><TD><B>UNASUR</B></TD><TD>UNASUR</TD><TD>12 países de América del Sur (en crisis institucional)</TD><TD>Integración política y económica sudamericana. Sede: Quito. Varios países la abandonaron en 2018-2019.</TD></TR>
+<TR><TD><B>CELAC</B></TD><TD>CELAC</TD><TD>33 países de América Latina y el Caribe</TD><TD>Foro político latinoamericano sin EE.UU. ni Canadá.</TD></TR>
+<TR><TD><B>APEC</B></TD><TD>APEC</TD><TD>21 economías del Pacífico</TD><TD>Cooperación económica en la Cuenca del Pacífico. El Perú fue sede en 2008 y 2016.</TD></TR>
+<TR><TD><B>OEA</B></TD><TD>OEA</TD><TD>35 Estados americanos</TD><TD>Democracia, derechos humanos y seguridad en el hemisferio occidental. Sede: Washington D.C.</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 7 -->
+<H3 ID="poder-mundial">7. La distribución del poder mundial: geopolítica contemporánea</H3>
+
+<H4>Evolución del orden mundial:</H4>
+<UL>
+<LI><B>Sistema multipolar (hasta 1914):</B> varias grandes potencias (Gran Bretaña, Francia, Alemania, Austria-Hungría, Rusia, Japón, EE.UU.) competían por el poder mundial en un sistema de alianzas cambiantes.</LI>
+<LI><B>Sistema bipolar (1945–1991):</B> la Guerra Fría dividió el mundo en dos bloques: el <B>bloque occidental</B> liderado por EE.UU. (capitalismo, OTAN, Plan Marshall) y el <B>bloque oriental</B> liderado por la URSS (comunismo, Pacto de Varsovia, COMECON). América Latina fue escenario de la disputa ideológica (Revolución Cubana, intervenciones de la CIA, dictaduras militares).</LI>
+<LI><B>Sistema unipolar (1991–2000s):</B> tras la caída de la URSS (1991), EE.UU. emergió como única superpotencia mundial en lo militar, económico y cultural ("momento unipolar" de Charles Krauthammer).</LI>
+<LI><B>Sistema multipolar emergente (2000s–actualidad):</B> el auge de China (segunda economía mundial), la reafirmación de Rusia (intervenciones en Georgia, Ucrania), el ascenso de India y Brasil (BRICS) y la creciente influencia de potencias regionales apuntan a un mundo multipolar en construcción.</LI>
+</UL>
+
+<H4>Los BRICS:</H4>
+El acrónimo <B>BRICS</B> fue acuñado por Jim O'Neill (Goldman Sachs, 2001) para referirse a las economías emergentes de mayor potencial: <B>B</B>rasil, <B>R</B>usia, <B>I</B>ndia, <B>C</B>hina y <B>S</B>udáfrica. En 2024 se ampliaron a BRICS+ incorporando a Irán, Egipto, Etiopía, Arabia Saudita y Emiratos Árabes Unidos. Representan ~40% de la población mundial y ~26% del PBI global.
+
+<H4>Conceptos geopolíticos contemporáneos:</H4>
+<UL>
+<LI><B>Soft Power (Poder Blando):</B> concepto de Joseph Nye. La capacidad de un país para influir en otros a través de la atracción cultural, diplomática e ideológica, sin coerción. <B>Ejemplos:</B> la cultura popular estadounidense (Hollywood, música, moda), el modelo democrático europeo, el "poder blando" chino en África (inversión en infraestructura).</LI>
+<LI><B>Hard Power (Poder Duro):</B> la capacidad de influir usando la fuerza militar o la coerción económica (sanciones). <B>Ejemplo:</B> las intervenciones militares de EE.UU. en Irak y Afganistán.</LI>
+<LI><B>Smart Power (Poder Inteligente):</B> la combinación estratégica de Soft y Hard Power. Concepto también de Joseph Nye, adoptado por la política exterior de EE.UU. bajo Hillary Clinton.</LI>
+<LI><B>Geopolítica del petróleo:</B> el control de las reservas y rutas de petróleo y gas natural ha sido determinante en las relaciones internacionales del siglo XX y XXI (Golfo Pérsico, Venezuela, Rusia-Europa, conflictos en Oriente Medio).</LI>
+<LI><B>Geopolítica del agua:</B> la escasez de agua dulce en diversas regiones (Oriente Medio, Norte de África, Asia Central) está generando tensiones y conflictos emergentes ("guerras del agua").</LI>
+<LI><B>Geopolítica digital:</B> el control de internet, los datos masivos (Big Data), la inteligencia artificial y las redes sociales como nuevos vectores de poder e influencia geopolítica (cyberguerra, desinformación).</LI>
+</UL>
+
+<H4>La OTAN y la seguridad internacional:</H4>
+La <B>OTAN</B> (Organización del Tratado del Atlántico Norte) es la alianza militar más poderosa del mundo, fundada en 1949. Su principio central es el Artículo 5: un ataque contra un miembro es considerado un ataque contra todos. Actualmente tiene 32 miembros (tras la adhesión de Finlandia en 2023 y Suecia en 2024). La expansión de la OTAN hacia el Este de Europa (exrepúblicas soviéticas) fue uno de los factores que generó tensión con Rusia, culminando en la invasión rusa a Ucrania (2022).
+
+<H4>Geopolítica latinoamericana:</H4>
+<UL>
+<LI><B>Doctrina Monroe (1823):</B> "América para los americanos." EE.UU. declaró que cualquier intervención europea en América sería vista como una amenaza. Justificó intervenciones estadounidenses en América Latina durante el siglo XX.</LI>
+<LI><B>Tratado Interamericano de Asistencia Recíproca - TIAR (1947):</B> sistema de defensa colectiva hemisférica. El Perú es signatario.</LI>
+<LI><B>Zona de Paz de América del Sur:</B> declarada en 2002, establece que el continente es zona libre de armas de destrucción masiva y de conflictos armados entre sus países.</LI>
+</UL>
+
+<DIV CLASS="ej">🌐 <B>La geopolítica del litio:</B> El "triángulo del litio" (Bolivia, Argentina, Chile) concentra más del 60% de las reservas mundiales de litio, mineral indispensable para las baterías de vehículos eléctricos y el almacenamiento de energía renovable. El control del litio está convirtiéndose en un factor geopolítico central del siglo XXI, comparable al petróleo en el siglo XX. Bolivia, que no tiene litio aún desarrollado a gran escala, busca convertirse en actor clave de la transición energética global.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Quién acuñó el término "Geopolítica" y en qué año?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Friedrich Ratzel, en 1882</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Rudolf Kjellén, en 1899</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Halford Mackinder, en 1904</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Karl Haushofer, en 1924</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El término <B>Geopolítica</B> fue acuñado por el geógrafo y político sueco <B>Rudolf Kjellén</B> en <B>1899</B>. La definió como el estudio del Estado como organismo geográfico. Aunque Friedrich Ratzel fue el padre de la Geografía Política y desarrolló el concepto de Lebensraum (espacio vital), no acuñó el término "Geopolítica". Mackinder publicó su teoría del Heartland en 1904, y Haushofer desarrolló la Geopolitik alemana en los años 20.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Según la teoría del Heartland de Mackinder, quien controle el "corazón continental" de Eurasia dominará el mundo. ¿Qué región geográfica corresponde al Heartland?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La Europa Occidental (Francia, Alemania, Benelux)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) La costa del Pacífico asiático (China, Japón, Corea)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) El interior de Eurasia: Asia Central y Rusia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) El subcontinente indio (India, Pakistán, Bangladesh)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Heartland</B> ("tierra del corazón") de Mackinder corresponde al interior de <B>Eurasia: Rusia y Asia Central</B>, la vasta región inaccesible desde el mar por su lejanía costera. En su artículo de 1904 ("El pivote geográfico de la historia") argumentó que esta región era inexpugnable al poder marítimo y que quien la controlara tendría ventaja estratégica sobre el "arco interior" y luego el mundo. Esta teoría influyó enormemente en la estrategia de la URSS y en la política de "contención" de EE.UU. durante la Guerra Fría.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Los tres elementos constitutivos clásicos del Estado son:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Ejército, bandera e himno nacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Territorio, población y gobierno (soberanía)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Idioma, religión y moneda propia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Constitución, capital y fronteras definidas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los tres elementos constitutivos clásicos del Estado (según la teoría jurídica del Estado de Georg Jellinek y la doctrina del Derecho Internacional) son: <B>Territorio</B> (el espacio físico sobre el que se ejerce soberanía), <B>Población</B> (el conjunto de personas que habitan ese territorio) y <B>Gobierno soberano</B> (la organización política que ejerce autoridad suprema). La <b>soberanía</b> es a veces listada como cuarto elemento, pero generalmente se considera parte del elemento gobierno. El ejército, bandera e himno son símbolos, no elementos constitutivos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> La Zona Económica Exclusiva (ZEE) de un Estado se extiende hasta:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) 12 millas náuticas desde la costa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 24 millas náuticas desde la costa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) 200 millas náuticas desde la línea de base costera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) 500 millas náuticas desde la costa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>Zona Económica Exclusiva (ZEE)</B> se extiende hasta <B>200 millas náuticas</B> (≈370 km) desde la línea de base costera, según la CONVEMAR (1982). Dentro de ella, el Estado ribereño tiene derechos soberanos de exploración y explotación de los recursos naturales (peces, petróleo, minerales del fondo marino), pero no soberanía territorial plena: los barcos y aviones extranjeros pueden pasar libremente. Las 12 mn son el mar territorial (soberanía plena) y las 12-24 mn la zona contigua.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Cuántos miembros permanentes con derecho a veto tiene el Consejo de Seguridad de la ONU?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) 3 (EE.UU., Rusia y China)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) 5 (EE.UU., Rusia, China, Francia y Reino Unido)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) 7 (el G7 completo)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) 15 (todos los miembros del Consejo tienen veto)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Consejo de Seguridad de la ONU tiene <B>15 miembros</B>: <b>5 permanentes</b> con derecho a veto (<B>EE.UU., Rusia, China, Francia y Reino Unido</B>, las potencias vencedoras de la Segunda Guerra Mundial) y <b>10 miembros no permanentes</b> elegidos por la Asamblea General por períodos de 2 años. El derecho a veto significa que si cualquiera de los 5 permanentes vota en contra de una resolución, esta no puede aprobarse. Esto ha bloqueado históricamente muchas acciones de la ONU.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál es la diferencia fundamental entre la teoría del Heartland (Mackinder) y la teoría del Rimland (Spykman)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Mackinder estudia la geopolítica europea y Spykman la geopolítica americana; no son comparables</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Mackinder sostiene que el poder reside en el interior continental de Eurasia; Spykman argumenta que la franja costera periférica (Rimland) es más decisiva, pues controla el acceso al Heartland y al comercio marítimo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Mackinder estudia el poder terrestre y Spykman el poder marítimo; ambos llegan a las mismas conclusiones estratégicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Son teorías idénticas con nombres distintos, desarrolladas en épocas diferentes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Mackinder</B> (Heartland, 1904): el poder geopolítico supremo reside en el <b>interior continental</b> de Eurasia, inaccesible al poder naval, donde puede acumular recursos y proyectar poder continental. <B>Spykman</B> (Rimland, 1942): en su libro "The Geography of the Peace" refutó a Mackinder argumentando que la zona decisiva es el <b>Rimland</b> (el arco costero periférico de Eurasia: Europa Occidental, Oriente Medio, India, Asia del Pacífico), porque quien controle el Rimland controla el comercio marítimo, puede bloquear al Heartland y conectar los oceanos. El Rimland fue la base teórica de la política de <b>contención</b> de EE.UU. durante la Guerra Fría (rodear a la URSS de alianzas: OTAN en Europa, SEATO en Asia).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> El fallo de la Corte Internacional de Justicia de La Haya (enero 2014) sobre la delimitación marítima Perú-Chile tuvo un resultado que puede describirse como:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Una victoria total del Perú: Chile perdió todas las zonas en disputa y debió retirarse de toda la zona marítima disputada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Un resultado mixto: el Perú amplió su dominio marítimo en ~50 000 km² en la zona norte de la disputa, pero la CIJ también reconoció derechos chilenos en una zona cercana al litoral chileno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Una victoria total de Chile: el Perú no obtuvo ninguna ampliación de su dominio marítimo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) El fallo fue declarado nulo porque Chile no aceptó la jurisdicción de la CIJ</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El fallo de la CIJ del 27 de enero de 2014 fue un resultado <b>mixto</b>: (1) <b>El Perú ganó</b> la zona de mayor extensión al norte de la línea en disputa: se le reconocieron ~50 000 km² adicionales de dominio marítimo, incluyendo zonas ricas en pesca donde antes operaban barcos chilenos. (2) <b>Chile ganó</b> el reconocimiento de su soberanía sobre una franja triangular cercana a su costa (el llamado "triángulo exterior"), donde la CIJ trazó una línea que se alejó de la costa peruana en los últimos tramos. Ambos países aceptaron y cumplieron el fallo, demostrando el funcionamiento del sistema de solución pacífica de controversias internacionales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> La diferencia entre un Estado unitario (como el Perú) y un Estado federal (como Brasil) radica en:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El tamaño del territorio: los Estados unitarios son siempre más pequeños que los federales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) La distribución del poder político: en el unitario el poder está centralizado en el gobierno nacional; en el federal las unidades subnacionales (estados, provincias) tienen competencias propias garantizadas constitucionalmente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El sistema económico: los federales son capitalistas y los unitarios son socialistas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) El número de partidos políticos permitidos: los federales tienen multipartidismo y los unitarios bipartidismo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La diferencia es de organización del <b>poder político territorial</b>: en el <B>Estado unitario</B> (Perú, Francia, Chile) el poder emana del gobierno central y las regiones o departamentos tienen autonomías delegadas que el gobierno central puede modificar. En el <B>Estado federal</B> (EE.UU., Brasil, Alemania, Argentina) los estados o provincias tienen poderes propios <b>garantizados constitucionalmente</b> que el gobierno federal no puede suprimir: tienen sus propias constituciones, poderes judiciales, cuerpos legislativos y competencias exclusivas. El tamaño del territorio no determina la forma de Estado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> El Perú es miembro de la Comunidad Andina (CAN) y también de la Alianza del Pacífico. ¿En qué se diferencian estos dos bloques en cuanto a su orientación geopolítica y económica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) La CAN es un bloque militar y la Alianza del Pacífico es exclusivamente un foro cultural</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) La CAN tiene orientación integradora regional andina con componentes políticos y sociales; la Alianza del Pacífico tiene orientación aperturista hacia los mercados de Asia-Pacífico, con énfasis en liberalización comercial y financiera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Son bloques idénticos con los mismos miembros y los mismos objetivos, solo con nombres distintos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) La CAN incluye a Brasil y Argentina mientras la Alianza del Pacífico excluye a todos los países sudamericanos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Son bloques con orientaciones distintas: la <B>CAN</B> (Perú, Colombia, Ecuador, Bolivia, fundada en 1969 como Pacto Andino) tiene una visión de integración <b>regional más profunda</b>, con arancel externo común, normas comunitarias supranacionales y componentes de integración social y política. La <B>Alianza del Pacífico</B> (Perú, Colombia, Chile, México, fundada en 2011) tiene una orientación más <b>aperturista y comercial</b>: busca liberalizar completamente el comercio entre sus miembros y posicionarse colectivamente ante los mercados de <b>Asia-Pacífico</b> (China, Japón, Corea). La Alianza se considera más "pro-mercado" y ha atraído a más de 50 países como observadores.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> El concepto de "Soft Power" (poder blando) de Joseph Nye se refiere a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) La capacidad militar de un país para atacar objetivos blandos (civiles) del enemigo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) La capacidad de un país para influir en otros a través de la atracción cultural, diplomática e ideológica, sin usar la fuerza o la coerción</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) La estrategia de negociación suave que evita los conflictos armados mediante el diálogo diplomático</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) El poder económico de un país medido exclusivamente por su PBI y reservas monetarias</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Soft Power</B> fue conceptualizado por el politólogo estadounidense <b>Joseph Nye</b> (Harvard) en 1990. Se refiere a la capacidad de un actor internacional para <b>atraer y persuadir</b> (en vez de coaccionar o pagar) a otros Estados para que adopten sus preferencias. Sus fuentes son: (1) <b>Cultura</b> (cuando es atractiva para otros): Hollywood, música pop, gastronomía, deportes. (2) <b>Valores políticos</b>: democracia, derechos humanos, libertad de prensa. (3) <b>Política exterior</b>: cuando es vista como legítima y moral. El contraste es el <b>Hard Power</b> (fuerza militar y sanciones económicas). EE.UU. es el mayor poseedor de Soft Power; China invierte enormemente para desarrollarlo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> La teoría del Lebensraum ("espacio vital") de Friedrich Ratzel planteaba que los Estados, como organismos vivos, necesitan expandir su territorio. ¿Por qué esta teoría fue peligrosa y cómo fue usada históricamente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Fue usada por EE.UU. para justificar la doctrina Monroe y el control de América Latina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Fue distorsionada y adoptada por el régimen nazi alemán para justificar la expansión territorial de Alemania hacia el este de Europa, la conquista de "espacio vital" para la "raza aria" y el genocidio del pueblo judío</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Fue usada por la URSS para justificar la expansión del comunismo en Europa Oriental tras la Segunda Guerra Mundial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Fue una teoría puramente académica sin ninguna aplicación política real en la historia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Ratzel (1844-1904) desarrolló su teoría del <B>Lebensraum</B> en un contexto académico darwinista social, argumentando que los Estados fuertes naturalmente absorben a los débiles. Aunque Ratzel no era racista, sus ideas fueron radicalmente distorsionadas por <b>Karl Haushofer</b> y adoptadas por el régimen <b>nazi</b>: Hitler en su "Mein Kampf" (1925) usó el concepto para justificar la expansión hacia el este (Polonia, URSS) argumentando que Alemania necesitaba "espacio vital" para su población. Esto se convirtió en la justificación ideológica de la <b>invasión a Polonia</b> (1939), la <b>Operación Barbarroja</b> (invasión a la URSS, 1941) y el <b>Holocausto</b>. Esta historia explica por qué la Geopolítica tuvo mala reputación académica durante décadas después de la Segunda Guerra Mundial.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El Perú, como país andino-amazónico-pacífico, tiene una posición geopolítica que lo convierte en potencial corredor bioceánico. ¿Qué significa esto y por qué es estratégicamente importante?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Que el Perú tiene costas en el Atlántico y el Pacífico simultáneamente, siendo el único país de doble costa en América del Sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Que el territorio peruano puede servir como ruta terrestre y fluvial de conexión entre el océano Pacífico y el océano Atlántico (vía Brasil), reduciendo distancias y costos para el comercio de Asia-Pacífico con el centro de América del Sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Que el Perú tiene jurisdicción sobre los dos océanos que lo rodean y puede cobrar peaje a los barcos que pasen por sus aguas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Que los ríos peruanos conectan directamente con los dos océanos sin necesidad de infraestructura adicional</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El concepto de <b>corredor bioceánico</b> se refiere a ejes de infraestructura terrestre (carreteras, ferrocarriles) y fluvial que conectan los dos oceanos a través del continente sudamericano. Para el Perú, esto significa que mercancías producidas en Brasil (que solo tiene costa atlántica) pueden transportarse por tierra a través de la Carretera Interoceánica Sur (Iñapari-Puerto Maldonado-Cusco-Ilo/Matarani) y embarcarse en el Pacífico hacia Asia, ahorrando el largo viaje por el Canal de Panamá o el Estrecho de Magallanes. Esto beneficia enormemente a Brasil (su mayor socio comercial es China, en el Pacífico) y posiciona a puertos peruanos como Ilo, Matarani y el futuro Puerto de Chancay como hubs logísticos regionales estratégicos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> El Tratado Antártico (1959) estableció que la Antártida es una "zona de paz y ciencia". Sin embargo, varios países mantienen "reclamaciones territoriales congeladas". ¿Qué significa que estén "congeladas" y por qué el Perú tiene interés en la Antártida?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Las reclamaciones están literalmente congeladas en el hielo antártico y son inaccesibles para los países reclamantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) El Tratado suspendió (congeló) tanto el reconocimiento como el rechazo de las reclamaciones existentes: los países reclamantes no renuncian a sus derechos, pero no pueden ejercerlos ni ampliarlos mientras el Tratado esté vigente. El Perú tiene interés por el clima del Pacífico Sur, la pesca y los recursos potenciales futuros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Las reclamaciones fueron definitivamente anuladas por el Tratado, que declaró a la Antártida territorio de la ONU</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Solo los países con costa antártica pueden tener reclamaciones; el Perú no tiene ningún interés jurídico en la Antártida</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El artículo IV del Tratado Antártico (1959) es un ingenioso mecanismo de <b>"congelamiento"</b>: establece que nada de lo establecido en el Tratado implica renuncia a reclamaciones territoriales previas (7 países reclaman sectores: Argentina, Chile, Gran Bretaña, Australia, Nueva Zelanda, Francia y Noruega) ni reconocimiento de dichas reclamaciones por otros. Las reclamaciones quedan en suspenso mientras el Tratado esté en vigor. El <b>interés del Perú</b> en la Antártida es múltiple: (1) La Antártida regula la <b>Corriente de Humboldt</b> y el clima del Pacífico Sur, vital para la pesca peruana. (2) Potenciales <b>recursos minerales</b> (actualmente prohibidos por el Protocolo de Madrid de 1991). (3) <b>Presencia científica</b> y poder de negociación en el sistema del Tratado Antártico. La Base Machu Picchu opera desde 1988.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> La invasión rusa a Ucrania (febrero 2022) tiene fundamentos geopolíticos que invocan conceptos de Mackinder y Haushofer. ¿Cuál es el argumento geopolítico central que Rusia ha esgrimido para justificar su acción?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Rusia argumenta que Ucrania tiene reservas de gas natural que son propiedad histórica del pueblo ruso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Rusia argumenta que la expansión de la OTAN hacia Ucrania (en sus fronteras) representa una amenaza existencial a su seguridad, aplicando una lógica de "zona de influencia" y "espacio vital" heredera de la geopolítica clásica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Rusia invadió Ucrania exclusivamente por razones económicas para controlar el mercado europeo del trigo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Rusia invocó el derecho de autodeterminación de los pueblos reconocido por la ONU para annexar el Donbas y Crimea</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El argumento geopolítico central de Rusia (presentado en documentos oficiales del Kremlin y declaraciones de Putin) es la oposición a la <b>expansión de la OTAN</b> hacia sus fronteras. Desde la perspectiva geopolítica rusa (heredera de Mackinder y del concepto de "zona de influencia"): (1) Ucrania forma parte del espacio postsoviético que Rusia considera su <b>"esfera de influencia natural"</b>. (2) La adhesión de Ucrania a la OTAN pondría tropas y misiles occidentales a menos de 500 km de Moscú, lo que Rusia considera inaceptable (similar a cómo EE.UU. reaccionó ante los misiles soviéticos en Cuba en 1962). (3) Putin ha argumentado que Ucrania es parte del "mundo ruso" (Russkiy mir) y no una nación separada. La comunidad internacional rechaza estas justificaciones como violatorias del Derecho Internacional y la Carta de la ONU.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> El Puerto de Chancay (Lima), construido por la empresa china COSCO Shipping, representa una apuesta geopolítica de China en América del Sur. ¿Cuál es su importancia estratégica desde una perspectiva geopolítica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Es solo un proyecto comercial sin implicancias geopolíticas, pues los puertos nunca tienen significado estratégico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Representa la proyección del poder económico y logístico chino en el Pacífico Sur, convirtiendo al Perú en el principal hub de entrada de mercancías chinas a América del Sur y de exportación de materias primas sudamericanas a China</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Es un proyecto peruano financiado con fondos del BID sin participación china relevante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Solo beneficia al Perú: China no obtiene ninguna ventaja estratégica del puerto de Chancay</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <b>Puerto de Chancay</b> (inaugurado en 2024, inversión de ~3 500 millones USD, operado por COSCO Shipping de China al 60%) es uno de los proyectos de infraestructura más significativos de la política exterior china en América Latina, en el marco de la <b>Iniciativa de la Franja y la Ruta</b> (la "Nueva Ruta de la Seda" del siglo XXI). Sus implicancias geopolíticas incluyen: (1) <b>Logística</b>: el puerto podrá recibir los buques portacontenedores más grandes del mundo, reduciendo costos de transporte Perú-China. (2) <b>Posición china</b>: COSCO controla un puerto estratégico en el Pacífico Sur, lo que preocupa a EE.UU. por potencial uso dual (civil y militar). (3) <b>Corredor bioceánico</b>: Chancay podría convertirse en la puerta del Pacífico para el centro de América del Sur. (4) <b>Dependencia económica</b>: China ya es el principal socio comercial del Perú; el control de infraestructura portuaria amplía esa influencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El "dilema de seguridad" (security dilemma) es un concepto central de las Relaciones Internacionales. ¿En qué consiste y cómo se aplica a la geopolítica contemporánea?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Es el dilema que enfrentan los países pobres entre gastar en seguridad interna o en desarrollo económico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Es la situación en que las acciones de un Estado para aumentar su propia seguridad (armarse, formar alianzas) son percibidas como amenaza por otros Estados, que responden armándose también, generando una espiral de inseguridad mutua aunque ninguno quisiera conflicto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Es el dilema de los líderes políticos entre mantener la seguridad nacional y respetar los derechos humanos internos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Es el problema de los países sin ejército que deben decidir si crear fuerzas armadas o confiar en la protección de aliados</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <b>dilema de seguridad</b> (acuñado por John H. Herz en 1950 y desarrollado por Robert Jervis) es uno de los conceptos más importantes del realismo en Relaciones Internacionales. Describe la <b>trampa estructural</b> del sistema internacional anárquico: ningún Estado puede estar seguro de las intenciones de los demás, por lo que cada uno busca aumentar su seguridad (más armas, más alianzas). Pero esto es percibido como amenaza por los vecinos, que a su vez se arman más, creando una <b>espiral de rearme</b> que deja a todos menos seguros que antes. Ejemplos contemporáneos: la OTAN se amplía para mayor seguridad de sus miembros → Rusia se siente amenazada → Russia invierte en misiles → Europa se siente amenazada → más OTAN. O: China construye islas artificiales en el Mar de China del Sur → EE.UU. aumenta patrullas navales → China construye más bases. El dilema no tiene solución perfecta; se mitiga con transparencia, arms control y confianza mutua.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> La "trampa de Tucídides" es un concepto usado para analizar la relación EE.UU.-China. ¿En qué consiste y cuál es su relevancia geopolítica actual?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Es un acuerdo diplomático secreto entre EE.UU. y China para dividirse las zonas de influencia en el mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Es la tendencia histórica documentada por Graham Allison (Harvard) según la cual cuando una potencia emergente amenaza desplazar a la potencia dominante, el conflicto violento entre ellas es probable, basado en la observación del historiador griego Tucídides sobre Atenas y Esparta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Es el nombre del estrecho marítimo que separa Taiwan de China continental, zona de máxima tensión geopolítica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Es la teoría que explica por qué las democracias no se hacen la guerra entre sí, aplicada al caso EE.UU.-China</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El politólogo Graham Allison (Harvard) acuñó la <b>"trampa de Tucídides"</b> en su libro "Destined for War" (2017), inspirado en el historiador griego <b>Tucídides</b>, quien escribió en el siglo V a.C. que "fue el crecimiento del poder de Atenas y el miedo que esto inspiró en Esparta lo que hizo inevitable la guerra" (Guerra del Peloponeso). Allison estudió 16 casos históricos de potencia emergente vs. potencia dominante: en <b>12 de los 16 casos</b>, la rivalidad terminó en guerra. Aplicado a EE.UU.-China: EE.UU. es la potencia dominante desde 1945; China es la potencia emergente que puede superar la economía estadounidense en las próximas décadas. La pregunta geopolítica central del siglo XXI es si EE.UU. y China caerán en la trampa de Tucídides (guerra) o lograrán una transición pacífica del poder. Las tensiones actuales (Taiwan, Mar de China, tecnología, comercio) son síntomas de esta rivalidad estructural.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> El derecho a la "libre determinación de los pueblos" (consagrado en la Carta de la ONU y en los Pactos Internacionales de Derechos) puede entrar en conflicto directo con el principio de "integridad territorial" de los Estados. ¿Cómo resuelve el Derecho Internacional esta tensión y qué casos concretos la ilustran?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) El Derecho Internacional resuelve la tensión dando siempre prioridad a la autodeterminación: todo pueblo que quiera independizarse tiene derecho automático a hacerlo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) El Derecho Internacional no ha resuelto esta tensión de forma definitiva: la autodeterminación se aplica principalmente en contextos coloniales (descolonización), pero la secesión unilateral dentro de Estados existentes es generalmente rechazada. Los casos de Kosovo, Crimea y Cataluña muestran la ambigüedad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El principio de integridad territorial siempre prevalece sobre la autodeterminación: ningún pueblo puede separarse de un Estado sin importar las circunstancias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La ONU tiene un tribunal específico para resolver todos los conflictos de secesión en un plazo de 6 meses</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una de las tensiones más difíciles del Derecho Internacional contemporáneo. La doctrina dominante es que la <b>autodeterminación</b> se aplica principalmente en el contexto de la <b>descolonización</b> (territorios coloniales que buscan independencia de la metrópoli colonial). Fuera de ese contexto, la <b>integridad territorial</b> de los Estados soberanos generalmente prevalece. Sin embargo, la práctica internacional es inconsistente: (1) <b>Kosovo</b> (2008): se independizó de Serbia unilateralmente; la CIJ dictaminó en 2010 que su declaración de independencia no violó el DI, aunque muchos países (incluyendo Rusia y China) no la reconocen. (2) <b>Crimea</b> (2014): Rusia justificó la anexión con la autodeterminación del pueblo de Crimea; la ONU la rechazó como violación de la integridad territorial ucraniana. (3) <b>Cataluña</b> (2017): la CIJ y la UE apoyaron a España. La ambigüedad es estructural y los casos se resuelven más por poder político que por derecho puro.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> La "geopolítica del agua" se perfila como uno de los grandes conflictos del siglo XXI. El Perú, siendo el 8° país con mayor disponibilidad de agua dulce, ¿qué rol geopolítico podría jugar en este contexto global?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) El Perú debería privatizar toda su agua y venderla a países áridos del Medio Oriente para maximizar sus ingresos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) El Perú podría convertirse en un actor de liderazgo en la gobernanza global del agua, usando su abundancia hídrica como palanca diplomática, exportando know-how en gestión de cuencas y posicionándose en negociaciones climáticas como guardián de la Amazonía, el mayor reservorio de agua dulce continental del mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) La abundancia de agua peruana no tiene ninguna relevancia geopolítica porque el agua no puede exportarse como el petróleo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El Perú debe ceder la gestión de su agua a organismos internacionales como la ONU para que se distribuya equitativamente entre todos los países del mundo</DIV>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En el siglo XXI, el agua dulce se está convirtiendo en un recurso geopolítico estratégico: 2 000 millones de personas ya viven en países con estrés hídrico y el cambio climático agravará la situación. El Perú, como custodio del <b>71% de los glaciares tropicales del mundo</b> y de la cuenca alta del Amazonas (el mayor sistema fluvial del planeta), tiene una posición geopolítica potencialmente privilegiada: (1) <b>Agua "virtual"</b>: los productos agrícolas exportados contienen "agua embebida" (el espárrago exportado es agua transformada); el Perú ya exporta agua en forma de alimentos. (2) <b>Diplomacia hídrica</b>: el Perú puede liderar iniciativas de gobernanza de cuencas transfronterizas (Amazonas, Titicaca). (3) <b>Negociaciones climáticas</b>: la defensa de la Amazonia como regulador del ciclo del agua continental es un argumento de peso en la COP y el G20. (4) <b>Experiencia en gestión de glaciares tropicales</b>: el conocimiento peruano sobre glaciares en retroceso es valioso globalmente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Desde una perspectiva integral de la Geografía y la Geopolítica, ¿cuáles son los tres factores geográficos que más condicionan el poder y el desarrollo del Perú como Estado en el siglo XXI?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) La bandera, el escudo de armas y el himno nacional, que son los símbolos de identidad nacional que cohesionan al Estado peruano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) La posición en la Cuenca del Pacífico (acceso a los mercados asiáticos), la megadiversidad biológica y de recursos naturales (minería, pesca, agro, gas), y la fragmentación geográfica interna (costa, sierra, selva) que dificulta la integración nacional y el desarrollo equitativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) El tamaño de su ejército, la extensión de sus fronteras y el número de tratados internacionales firmados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) La densidad de población, el nivel educativo promedio y la tasa de natalidad, que son los factores demográficos dominantes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Un análisis geopolítico integral del Perú en el siglo XXI identifica tres factores geográficos estructurales: (1) <b>Posición en la Cuenca del Pacífico</b>: el Perú mira hacia los mercados más dinámicos del mundo (China, Japón, Corea del Sur, ASEAN). La Alianza del Pacífico, los TLC con Asia y proyectos como el Puerto de Chancay reflejan esta oportunidad. La posición de "puerta del Pacífico" para Brasil y Bolivia amplifica este potencial. (2) <b>Megadiversidad de recursos</b>: el Perú es uno de los países megadiversos del mundo (biodiversidad + variedad de recursos minerales + energéticos + hídricos + agrícolas). Esta riqueza es simultáneamente su mayor oportunidad de desarrollo y su principal vulnerabilidad (conflictos socioambientales, maldición de los recursos, volatilidad de commodities). (3) <b>Fragmentación geográfica interna</b>: los Andes como barrera física entre costa, sierra y selva han generado históricamente tres "países" paralelos con economías, culturas y niveles de desarrollo muy distintos. La brecha entre Lima cosmopolita y la sierra/selva andino-amazónica sigue siendo el principal desafío de cohesión nacional, equidad territorial y gobernabilidad del Perú.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

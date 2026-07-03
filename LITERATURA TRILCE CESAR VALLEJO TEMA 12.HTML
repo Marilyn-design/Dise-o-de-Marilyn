@@ -1,0 +1,536 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Trilce - César Vallejo - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 12</DIV>
+<H1>Trilce &mdash; C&eacute;sar Vallejo</H1>
+<DIV CLASS="sub">Autor &middot; Contexto hist&oacute;rico &middot; El Vanguardismo &middot; G&eacute;nero y estructura &middot; Poemas clave &middot; Temas &middot; Estilo &middot; Valor literario</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. C&eacute;sar Vallejo: el poeta m&aacute;s importante del Per&uacute; y uno de los grandes de la lengua espa&ntilde;ola</H3>
+<B>C&eacute;sar Abraham Vallejo Mendoza</B> (Santiago de Chuco, La Libertad, Per&uacute;, 16 de marzo de 1892 &ndash; Par&iacute;s, Francia, 15 de abril de 1938) es el poeta peruano m&aacute;s importante de todos los tiempos y uno de los tres o cuatro poetas fundamentales de la lengua espa&ntilde;ola del siglo XX, junto a Federico Garc&iacute;a Lorca, Pablo Neruda y Antonio Machado. Su obra representa la ruptura m&aacute;s radical con la tradici&oacute;n po&eacute;tica hispana y la creaci&oacute;n de un lenguaje po&eacute;tico absolutamente original, inconfundible e irrepetible.
+
+<H4>Datos biogr&aacute;ficos esenciales:</H4>
+<UL>
+<LI><B>Naci&oacute;</B> en Santiago de Chuco, sierra norte del Per&uacute; (La Libertad), en el seno de una familia mestiza de origen andino e hispano. Era el menor de once hijos. Sus abuelas eran sacerdotisas chimu (cultura preincaica) y sus abuelos, sacerdotes cat&oacute;licos: esta doble ra&iacute;z cultural marcar&aacute; profundamente su obra.</LI>
+<LI>Estudi&oacute; en la Universidad de La Libertad (Trujillo) y en la Universidad Nacional Mayor de San Marcos (Lima). En Trujillo perteneci&oacute; al <B>Grupo Norte</B>, c&iacute;rculo intelectual que incluy&oacute; a Antenor Orrego y otros escritores progresistas.</LI>
+<LI>Public&oacute; su primer libro, <B><I>Los heraldos negros</I> (1918)</B>, a&uacute;n influido por el Modernismo y el Simbolismo, pero ya con rasgos originales.</LI>
+<LI>En 1920 fue encarcelado injustamente durante <B>105 d&iacute;as</B> en la c&aacute;rcel de Trujillo, acusado de participar en un disturbio en Santiago de Chuco. Esta experiencia traumática marc&oacute; su vida y fue decisiva para la escritura de <I>Trilce</I>: varios poemas del libro fueron escritos en prisi&oacute;n.</LI>
+<LI>Public&oacute; <B><I>Trilce</I> (1922)</B> en Lima, a sus expensas, con escas&iacute;sima recepci&oacute;n inicial.</LI>
+<LI>Viaj&oacute; a <B>Europa en 1923</B> y se instal&oacute; definitivamente en Par&iacute;s, donde vivi&oacute; en extrema pobreza, ejerci&oacute; el periodismo y se adhiri&oacute; al comunismo. Visit&oacute; la Uni&oacute;n Sovi&eacute;tica en tres ocasiones (1928, 1929, 1931).</LI>
+<LI>Apoy&oacute; activamente la <B>Rep&uacute;blica espa&ntilde;ola</B> durante la Guerra Civil (1936&ndash;1939) y escribi&oacute; <I>Espa&ntilde;a, aparta de m&iacute; este c&aacute;liz</I> (p&oacute;stumo, 1939).</LI>
+<LI>Muri&oacute; en Par&iacute;s el <B>15 de abril de 1938</B>, en la miseria, en circunstancias a&uacute;n no del todo esclarecidas (probablemente paludismo agravado por su precaria salud). Su &uacute;ltima frase leg&iacute;tima registrada fue: <B>"Me voy a Espa&ntilde;a."</B></LI>
+</UL>
+
+<H4>Su obra po&eacute;tica principal:</H4>
+<UL>
+<LI><B><I>Los heraldos negros</I> (1918)</B>: primer libro; modernismo tardío con angustia existencial y ra&iacute;z andina; el poema "Los heraldos negros" es su texto m&aacute;s citado de esta etapa.</LI>
+<LI><B><I>Trilce</I> (1922)</B>: la ruptura vanguardista absoluta; la obra que nos ocupa; considerada una de las obras m&aacute;s audaces de la poes&iacute;a en lengua espa&ntilde;ola del siglo XX.</LI>
+<LI><B><I>Poemas humanos</I> (p&oacute;stumo, 1939)</B>: escritos entre 1923 y 1938; poes&iacute;a de madurez existencial, solidaria y social; algunos de los mejores poemas de Vallejo.</LI>
+<LI><B><I>Espa&ntilde;a, aparta de m&iacute; este c&aacute;liz</I> (p&oacute;stumo, 1939)</B>: poes&iacute;a de combate sobre la Guerra Civil espa&ntilde;ola; uno de los libros po&eacute;ticos m&aacute;s poderosos sobre una guerra en la historia de la literatura.</LI>
+</UL>
+
+<DIV CLASS="alerta"><B>Para el examen:</B> C&eacute;sar Vallejo naci&oacute; en <B>Santiago de Chuco, La Libertad, Per&uacute;</B> (1892&ndash;1938). <I>Trilce</I> fue publicado en <B>Lima en 1922</B>. El libro tiene <B>77 poemas</B> numerados en romanos (I a LXXVII), sin t&iacute;tulos individuales. Vallejo escribi&oacute; parte de <I>Trilce</I> durante sus <B>105 d&iacute;as de c&aacute;rcel en Trujillo (1920&ndash;1921)</B>. Es considerado el libro fundacional del <B>vanguardismo peruano</B> y uno de los m&aacute;s importantes del vanguardismo hispanoamericano.</DIV>
+
+<DIV CLASS="cultura-titulo">EL VANGUARDISMO HISPANOAMERICANO<SPAN>El movimiento que rompi&oacute; con toda tradici&oacute;n po&eacute;tica anterior y reinvent&oacute; el lenguaje</SPAN></DIV>
+
+<H3>2. El Vanguardismo: contexto hist&oacute;rico, est&eacute;tico y literario</H3>
+El <B>Vanguardismo</B> (o <B>Vanguardia</B>) es el conjunto de movimientos art&iacute;sticos y literarios que entre 1910 y 1940 aproximadamente rompieron de manera radical con todas las convenciones art&iacute;sticas heredadas del siglo XIX (Romanticismo, Modernismo, Realismo) y propusieron nuevas formas de crear. El t&eacute;rmino "vanguardia" viene del lenguaje militar (la tropa que va al frente): los artistas se ven a s&iacute; mismos como los adelantados del futuro.
+
+<H4>Contexto hist&oacute;rico de las vanguardias:</H4>
+<UL>
+<LI><B>La Primera Guerra Mundial (1914&ndash;1918)</B>: la carnicería m&aacute;s brutal de la historia hasta entonces destruy&oacute; la fe en el progreso, la raz&oacute;n y la civilizaci&oacute;n occidental que el siglo XIX hab&iacute;a prometido. Los artistas responden con una destrucci&oacute;n paralela: si el mundo "racional" produce ese horror, hay que destruir toda esa racionalidad en el arte.</LI>
+<LI><B>La Revoluci&oacute;n Rusa (1917)</B>: la primera revoluci&oacute;n comunista triunfante genera en muchos intelectuales una enorme esperanza de transformaci&oacute;n social. Vallejo ser&aacute; muy influido por el marxismo y el comunismo sovi&eacute;tico.</LI>
+<LI><B>La modernizaci&oacute;n tecnol&oacute;gica</B>: el autom&oacute;vil, el avi&oacute;n, el cine, la radio, la electricidad crean un mundo radicalmente nuevo que exige un arte radicalmente nuevo.</LI>
+<LI><B>El Psicoan&aacute;lisis freudiano</B>: Freud descubre el inconsciente (1900) y revela que bajo la raz&oacute;n consciente hay un mundo de pulsiones, sue&ntilde;os y deseos irracionales que son la verdad profunda del ser humano. Los surrealistas explotar&aacute;n esto directamente.</LI>
+</UL>
+
+<H4>Los principales movimientos de vanguardia y su relaci&oacute;n con Vallejo:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Movimiento</TH><TH>Or&iacute;gen y representantes</TH><TH>Caracter&iacute;sticas principales</TH><TH>Relaci&oacute;n con Vallejo</TH></TR>
+<TR><TD><B>Cubismo</B></TD><TD>Francia (Apollinaire, Max Jacob); artes pl&aacute;sticas: Picasso, Braque</TD><TD>Fragmentaci&oacute;n del objeto; perspectivas m&uacute;ltiples simult&aacute;neas; destrucci&oacute;n de la perspectiva &uacute;nica</TD><TD>Influye en la fragmentaci&oacute;n del lenguaje en <I>Trilce</I></TD></TR>
+<TR><TD><B>Dadaísmo</B></TD><TD>Suiza/Francia (Tristan Tzara, Marcel Duchamp, 1916)</TD><TD>Destrucci&oacute;n total del sentido; antiarte; azar; provocaci&oacute;n; sinsentido como protesta</TD><TD>Influye en la ruptura del sentido l&oacute;gico en algunos poemas de <I>Trilce</I></TD></TR>
+<TR><TD><B>Surrealismo</B></TD><TD>Francia (Andr&eacute; Breton, 1924; Neruda, Lorca)</TD><TD>Exploraci&oacute;n del inconsciente; escritura autom&aacute;tica; im&aacute;genes oníricas; fusi&oacute;n sue&ntilde;o-realidad</TD><TD>Vallejo no es surrealista pero comparte la liberaci&oacute;n de la imagen racional</TD></TR>
+<TR><TD><B>Creacionismo</B></TD><TD>Chile/España (Vicente Huidobro)</TD><TD>El poema crea su propia realidad; "el poeta es un pequeño Dios"; im&aacute;genes sin referente real</TD><TD>Contempor&aacute;neo de Vallejo; coinciden en rechazar el Modernismo</TD></TR>
+<TR><TD><B>Ultraísmo</B></TD><TD>España (Borges, Cansinos-Ass&eacute;ns)</TD><TD>La met&aacute;fora pura como &uacute;nico elemento po&eacute;tico; eliminaci&oacute;n de la rima y el metro</TD><TD>Paralelo al vanguardismo de Vallejo; Borges lo reconoci&oacute; como adelantado</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Vallejo y las vanguardias: una posici&oacute;n singular.</B> A diferencia de muchos vanguardistas, Vallejo <B>no perteneci&oacute; formalmente a ning&uacute;n movimiento de vanguardia</B>. No fue surrealista, ni dadaísta, ni ultraísta. <I>Trilce</I> aparece en 1922, antes del Manifiesto Surrealista de Breton (1924). Vallejo llega a la ruptura vanguardista desde su propia experiencia vital (el dolor, la c&aacute;rcel, la pobreza, la angustia existencial), no desde una teor&iacute;a est&eacute;tica previa. Esto hace de <I>Trilce</I> una obra absolutamente original: no es la aplicaci&oacute;n de ninguna escuela sino la creaci&oacute;n de un lenguaje po&eacute;tico completamente personal.</DIV>
+
+<DIV CLASS="cultura-titulo">GENERO, ESTRUCTURA Y FORMA<SPAN>El libro que rompi&oacute; todos los moldes: los 77 poemas sin t&iacute;tulo</SPAN></DIV>
+
+<H3>3. G&eacute;nero, estructura y forma de <I>Trilce</I></H3>
+
+<H4>G&eacute;nero literario:</H4>
+<I>Trilce</I> es un <B>libro de poes&iacute;a l&iacute;rica</B> escrito en verso (con algunos poemas que rozan la prosa po&eacute;tica). Consta de <B>77 poemas numerados con cifras romanas</B> (del I al LXXVII) <B>sin t&iacute;tulos individuales</B>. La ausencia de t&iacute;tulos es ya un gesto vanguardista: el poema se niega a ser reducido a un r&oacute;tulo que lo explique previamente. Cada poema debe leerse en su propia oscuridad y complejidad.
+
+<H4>El t&iacute;tulo: &iquest;qu&eacute; significa "Trilce"?</H4>
+El significado del t&iacute;tulo <I>Trilce</I> es uno de los problemas m&aacute;s debatidos de la literatura hispanoamericana. Las interpretaciones principales:
+<UL>
+<LI><B>Palabra inventada por Vallejo</B>: la explicaci&oacute;n m&aacute;s aceptada es que "Trilce" es una <B>palabra nueva sin significado previo</B>, un <B>neologismo absoluto</B> que Vallejo crea para nombrar algo para lo que no existe nombre en la lengua convencional. La novedad del t&iacute;tulo anuncia la novedad radical del libro.</LI>
+<LI><B>Contaminaci&oacute;n de "triste" y "dulce"</B>: algunos cr&iacute;ticos ven en "Trilce" la fusi&oacute;n fon&eacute;tica de las palabras "triste" y "dulce", que describir&iacute;an la tonalidad afectiva del libro (algo tristemente dulce o dulcemente triste).</LI>
+<LI><B>Tres + leche</B>: otra interpretaci&oacute;n ve en el t&iacute;tulo "tres" (el n&uacute;mero 3, que aparece obsesivamente en el libro) m&aacute;s "leche" (s&iacute;mbolo de la nutrici&oacute;n materna, uno de los temas centrales): "trilce" = tres + leche.</LI>
+<LI>El propio Vallejo no ofreci&oacute; ninguna explicaci&oacute;n del t&iacute;tulo, lo cual forma parte de su estrategia po&eacute;tica: el poema no debe ser explicado sino vivido.</LI>
+</UL>
+
+<H4>Contexto de escritura:</H4>
+<I>Trilce</I> fue escrito entre <B>1919 y 1922</B>, en un per&iacute;odo extremadamente doloroso para Vallejo: la muerte de su madre (1918), el encarcelamiento en Trujillo (noviembre de 1920 a febrero de 1921) y su posterior exilio voluntario en Lima. El libro fue publicado a expensas del propio Vallejo con la ayuda del coronel Cesar Godoy y del Regimiento de Trujillo. La recepci&oacute;n inicial fue casi nula: la cr&iacute;tica no entendi&oacute; el libro y el p&uacute;blico lo ignor&oacute;.
+
+<H4>Estructura interna:</H4>
+Aunque los 77 poemas no tienen t&iacute;tulos, la cr&iacute;tica ha identificado n&uacute;cleos tem&aacute;ticos recurrentes a lo largo del libro:
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>N&uacute;cleo tem&aacute;tico</TH><TH>Poemas representativos</TH><TH>Contenido central</TH></TR>
+<TR><TD><B>La c&aacute;rcel y el encierro</B></TD><TD>Trilce I, Trilce XVIII, Trilce XVI</TD><TD>El tiempo detenido, el espacio opresivo, la privaci&oacute;n de libertad como experiencia f&iacute;sica y metaf&iacute;sica</TD></TR>
+<TR><TD><B>La madre y la infancia</B></TD><TD>Trilce XXIII, Trilce LXV, Trilce III</TD><TD>La nostalgia del hogar materno, el calor del &uacute;tero y de la casa familiar, la p&eacute;rdida irreparable de la madre</TD></TR>
+<TR><TD><B>El amor er&oacute;tico y la mujer</B></TD><TD>Trilce II, Trilce XXVIII, Trilce L</TD><TD>El deseo frustrado, el cuerpo femenino como totalidad y como fragmento, el amor como imposibilidad</TD></TR>
+<TR><TD><B>El tiempo y la muerte</B></TD><TD>Trilce XIV, Trilce XXXV, Trilce XLIX</TD><TD>La temporalidad imposible, los relojes rotos, el tiempo que no avanza ni retrocede, la orfandad ontol&oacute;gica</TD></TR>
+<TR><TD><B>El lenguaje y la creaci&oacute;n</B></TD><TD>Trilce XXXVI, Trilce LXXVI, Trilce LXXVII</TD><TD>La insuficiencia del lenguaje convencional, la b&uacute;squeda de nuevas formas expresivas, el poema como acto desesperado de comunicaci&oacute;n</TD></TR>
+<TR><TD><B>La angustia social y el cuerpo</B></TD><TD>Trilce IV, Trilce V, Trilce LVII</TD><TD>La pobreza material, el hambre, el cuerpo como territorio del sufrimiento social e individual</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">LOS POEMAS CLAVE<SPAN>An&aacute;lisis de los poemas m&aacute;s importantes y representativos de <I>Trilce</I></SPAN></DIV>
+
+<H3>4. An&aacute;lisis de los poemas fundamentales</H3>
+
+<H4>Trilce I: el poema de apertura</H4>
+El primer poema del libro es uno de los m&aacute;s estudiados y desconcertantes. Comienza con el verso <B>"Qui&eacute;n hace tanta bulla, y ni deja / testar las islas que van quedando."</B> Es un poema que evoca el espacio opresor de la c&aacute;rcel o el encierro, el ruido sin sentido, la imposibilidad de dejar huella ("testar las islas"). El tono es de extravío y perplejidad: el yo po&eacute;tico no sabe d&oacute;nde est&aacute; ni qu&eacute; le ocurre. Los versos rotos, la puntuaci&oacute;n arbitraria y los saltos l&oacute;gicos bruscos son rasgos formales que reproducen la desorientaci&oacute;n interior.
+
+<H4>Trilce III: el poema de los cuervos</H4>
+<DIV CLASS="ej"><B>Trilce III (fragmento):</B><BR><BR>
+<I>"Las personas mayores<BR>
+&iquest;a qu&eacute; hora volver&aacute;n?<BR>
+Da las seis el ciego Santiago,<BR>
+y ya est&aacute; muy oscuro.<BR><BR>
+Madre dijo que no demorara.<BR><BR>
+Aqu&eacute;lla Aguedita, Nativa, Miguel,<BR>
+cuidado con ir por ah&iacute;, por donde<BR>
+acaban de pasar gangueando sus memorias<BR>
+doloras&iacute;simas penas,<BR>
+hacia el silencioso corral, y por donde<BR>
+las gallinas que se est&aacute;n acostando todav&iacute;a,<BR>
+se han espantado tanto.<BR>
+Mejor est&eacute;monos aqu&iacute;.<BR>
+Madre dijo que no demorara."</I><BR><BR>
+<B>An&aacute;lisis:</B> Este poema es el m&aacute;s accesible del libro por su lenguaje relativamente simple. Evoca la infancia en Santiago de Chuco: los hermanos (Aguedita, Nativa, Miguel son nombres reales de hermanos de Vallejo) esperando a los padres que no regresan. La voz po&eacute;tica es la de un ni&ntilde;o asustado. El neologismo <B>"dolorasísimas"</B> (superlativo intensificado con sufijo afectivo) es t&iacute;pico del estilo de Vallejo: deforma el adjetivo para intensificar la emoci&oacute;n hasta el l&iacute;mite. La repetici&oacute;n de "Madre dijo que no demorara" crea el ritmo de una espera que nunca termina.</DIV>
+
+<H4>Trilce XVIII: el poema de la c&aacute;rcel</H4>
+<DIV CLASS="ej"><B>Trilce XVIII (fragmento):</B><BR><BR>
+<I>"Oh las cuatro paredes de la celda.<BR>
+Ah las cuatro paredes albicantes<BR>
+que sin remedio dan al mismo n&uacute;mero.<BR><BR>
+Criadero de nervios, mala brecha,<BR>
+por sus cuatro rincones c&oacute;mo arranca<BR>
+las diarias aherrojadas extremidades.<BR><BR>
+Amorosa llavera de innumerables llaves,<BR>
+si estuvieras aqu&iacute;, si vieras hasta<BR>
+qu&eacute; hora son cuatro estas paredes.<BR>
+Contra ellas ser&iacute;amos contigo, los dos,<BR>
+m&aacute;s dos que nunca."</I><BR><BR>
+<B>An&aacute;lisis:</B> Este es el poema de la c&aacute;rcel por excelencia en <I>Trilce</I>. Las <B>"cuatro paredes"</B> son la obsesi&oacute;n espacial del prisionero: el espacio reducido a cuatro muros. La expresi&oacute;n <B>"dan al mismo n&uacute;mero"</B> significa que las cuatro paredes siempre son cuatro, nunca cambian, no hay salida. <B>"Albicantes"</B> (neologismo de <I>albo</I>, blanco) describe las paredes blancas de la celda. La <B>"amorosa llavera"</B> es la amada imaginada: la mujer que tiene las llaves de la prisi&oacute;n interior y exterior. El verso final <B>"m&aacute;s dos que nunca"</B> es mat&eacute;maticamente paradójico y emocionalmente poderoso: solos juntos, serían m&aacute;s que la suma de dos soledades.</DIV>
+
+<H4>Trilce XXIII: el poema de la madre</H4>
+<DIV CLASS="ej"><B>Trilce XXIII (fragmento):</B><BR><BR>
+<I>"Tahona estuosa de aquellos mis bizcochos<BR>
+pura yema infantil innumerada,<BR>
+sobre la madre mesa doblada al trigo,<BR>
+y en el canal de bucles, aslada<BR>
+en la inacci&oacute;n, pupilas<BR>
+aterecidas, alzan sus propios ojos<BR>
+un asa desde la cual la mano que alcanza<BR>
+todo cuanto se le da.<BR>
+Y no me den en fin de quien yo trueco,<BR>
+get&uacute;n de bol&iacute;var,<BR>
+aquello que no se puede dar sino<BR>
+en la vida."</I><BR><BR>
+<B>An&aacute;lisis:</B> Uno de los poemas de la madre m&aacute;s estudiados. <B>"Tahona estuosa"</B> (horno caliente) evoca el calor del hogar materno, el horno donde la madre hac&iacute;a pan. <B>"Pura yema infantil innumerada"</B>: los hijos (yemas = hijos, como en la yema del huevo) innumerables que la madre alimenta. La <B>"madre mesa"</B> (mesa = altar familiar + madre nutricia) muestra la fusi&oacute;n de im&aacute;genes que Vallejo opera: la mesa donde se come y la madre que da de comer son la misma cosa. El poema expresa la nostalgia del calor materno perdido para siempre.</DIV>
+
+<DIV CLASS="cultura-titulo">LOS TEMAS FUNDAMENTALES<SPAN>Dolor, encierro, madre, tiempo roto y la insuficiencia del lenguaje</SPAN></DIV>
+
+<H3>5. Los temas de <I>Trilce</I></H3>
+
+<H4>1. El dolor como experiencia fundamental:</H4>
+El <B>dolor</B> es el tema que vertebra toda la obra de Vallejo y <I>Trilce</I> es su expresi&oacute;n m&aacute;s desgarrada. No es el dolor rom&aacute;ntico ni el sufrimiento esteticista modernista: es un dolor <B>f&iacute;sico, concreto, material</B>, que tiene hambre, que tiene fr&iacute;o, que sufre la humillaci&oacute;n de la c&aacute;rcel, que llora la muerte de la madre. Ya en <I>Los heraldos negros</I> Vallejo hab&iacute;a escrito: <B>"Hay golpes en la vida, tan fuertes... Yo no s&eacute;. / Golpes como del odio de Dios."</B> En <I>Trilce</I>, ese dolor se vuelve in-expresable en el lenguaje convencional, y por eso Vallejo destruye y reinventa el lenguaje.
+
+<H4>2. El encierro y la libertad:</H4>
+La experiencia de la <B>c&aacute;rcel</B> impregna el libro. El encierro no es solo f&iacute;sico (las cuatro paredes de la celda) sino metaf&iacute;sico: el ser humano est&aacute; preso en su propio cuerpo, en el tiempo, en el lenguaje, en la condici&oacute;n humana. Los poemas escritos en la c&aacute;rcel de Trujillo (Trilce I, XVI, XVIII, entre otros) elaboran esta experiencia con una radicalidad formal que reproduce el agobio espacial: versos rotos, l&oacute;gica fragmentada, palabras que no terminan de decir.
+
+<H4>3. La madre y la infancia perdidas:</H4>
+La figura de la <B>madre</B> es el gran centro afectivo de <I>Trilce</I>. Vallejo perdi&oacute; a su madre, Mar&iacute;a de los Santos Mendoza, en 1918, poco antes de escribir el libro. La madre es el origen, el calor, la nutrici&oacute;n (el seno materno, el horno, la mesa, la leche); su ausencia crea una <B>orfandad ontol&oacute;gica</B>: el poeta no es solo hu&eacute;rfano de madre sino hu&eacute;rfano del cosmos, del sentido, de Dios. La infancia en Santiago de Chuco (los hermanos, la casa, el patio, las gallinas) aparece como un para&iacute;so perdido al que el poema intenta regresar sin &eacute;xito.
+
+<H4>4. El tiempo imposible:</H4>
+El <B>tiempo</B> en <I>Trilce</I> no funciona de manera lineal ni l&oacute;gica. El poeta vive una temporalidad fragmentada: el pasado no pasa, el futuro no llega, el presente est&aacute; roto. Los relojes del libro no marcan la hora correcta; los n&uacute;meros no suman correctamente; el calendario est&aacute; desarticulado. Esta experiencia del tiempo roto es tanto una experiencia de la c&aacute;rcel (donde el tiempo se detiene) como una experiencia existencial general del ser humano en el siglo XX.
+
+<H4>5. El amor er&oacute;tico y el cuerpo:</H4>
+El <B>amor</B> en <I>Trilce</I> es inseparable del <B>cuerpo</B>: la sexualidad, el deseo, la frustraci&oacute;n er&oacute;tica son temas que Vallejo trata con una franqueza que rompía todos los tab&uacute;es de la &eacute;poca. El cuerpo femenino es evocado en sus detalles concretos (el seno, el vientre, los muslos) pero siempre en el contexto de la p&eacute;rdida o la imposibilidad: el amor deseado que no llega, el cuerpo amado que se va.
+
+<H4>6. La insuficiencia del lenguaje y la creaci&oacute;n de un nuevo idioma po&eacute;tico:</H4>
+El tema m&aacute;s radical de <I>Trilce</I> es la <B>crisis del lenguaje</B>: Vallejo parte de la constataci&oacute;n de que el lenguaje heredado (gram&aacute;tica, sintaxis, l&eacute;xico convencional) es incapaz de expresar la verdad de la experiencia humana del dolor. Por eso destruye el lenguaje y lo reconstruye desde cero: neologismos, palabras fragmentadas, n&uacute;meros mezclados con letras, verbos que se usan como sustantivos, adjetivos en posiciones sint&aacute;cticas imposibles. El poema es el campo de batalla donde el lenguaje lucha consigo mismo.
+
+<H4>7. La orfandad metaf&iacute;sica y la ausencia de Dios:</H4>
+En <I>Trilce</I>, Dios ha desaparecido o se ha vuelto inaccesible. La experiencia de la c&aacute;rcel, de la pobreza y de la muerte materna generan en el poeta una sensaci&oacute;n de abandono c&oacute;smico: no hay providencia, no hay sentido, el ser humano est&aacute; solo en un universo indiferente. Esta <B>orfandad metaf&iacute;sica</B> es diferente del ateísmo militante: no es que Dios no exista, sino que existe pero ha abandonado al hombre, o que no puede ser comprendido ni invocado.
+
+<DIV CLASS="mapa-note"><B>Vallejo y el Per&uacute; andino.</B> Una dimensi&oacute;n que distingue a Vallejo de todos los dem&aacute;s vanguardistas es su ra&iacute;z andina. Nacido en la sierra norte del Per&uacute;, de familia mestiza con fuerte componente indígena, Vallejo lleva en su lenguaje y en su sensibilidad elementos de la cosmovisi&oacute;n andina que los cr&iacute;ticos han identificado en su obra: la concepci&oacute;n no lineal del tiempo (el tiempo andino es c&iacute;clico, no rectil&iacute;neo), la fusi&oacute;n entre el yo individual y la colectividad, la relaci&oacute;n con la tierra como madre. Esto hace de <I>Trilce</I> una obra que no puede entenderse plenamente sin su ra&iacute;z geogr&aacute;fica y cultural: es una obra peruana en el sentido m&aacute;s profundo.</DIV>
+
+<H3>6. El estilo: recursos y t&eacute;cnicas de <I>Trilce</I></H3>
+
+<H4>Las innovaciones formales fundamentales:</H4>
+<UL>
+<LI><B>Los neologismos valianos</B>: Vallejo inventa palabras nuevas cuando las existentes no bastan: "albicante" (que blanquea), "dolorasísima" (superlativo afectivo de dolorosa), "aherrojar" (encadenar, de hierro), "tahona estuosa" (horno caliente). Cada neologismo es un intento de nombrar lo que no tiene nombre.</LI>
+<LI><B>La ruptura sint&aacute;ctica</B>: la sintaxis convencional (sujeto-verbo-predicado) es violada sistem&aacute;ticamente. Las oraciones quedan incompletas, los verbos se usan sin sujeto, los sustantivos se acumulan sin verbo rector. Esta ruptura reproduce la fragmentaci&oacute;n de la conciencia bajo el dolor.</LI>
+<LI><B>Los n&uacute;meros como elementos po&eacute;ticos</B>: n&uacute;meros ar&aacute;bigos y romanos aparecen dentro de los poemas como elementos de significado: el 4 (las cuatro paredes de la celda), el 3 (el tres como figura de la imposibilidad: el tres no puede ser par ni tiene el equilibrio del dos ni la totalidad del cuatro), el 0 (la nada, el vac&iacute;o). Los n&uacute;meros en Vallejo no son matem&aacute;ticos sino simb&oacute;licos y afectivos.</LI>
+<LI><B>La puntuaci&oacute;n arbitraria</B>: las comas, los puntos, los guiones y los signos de admiraci&oacute;n no siguen las reglas gramaticales convencionales sino el ritmo respiratorio del poema, las pausas del dolor, los saltos de la conciencia.</LI>
+<LI><B>El versol&iacute;brismo radical</B>: <I>Trilce</I> abandona completamente la m&eacute;trica y la rima regulares del Modernismo. Los versos pueden tener desde dos hasta veinte s&iacute;labas; la unidad rítmica es la unidad de aliento, no la unidad silábica.</LI>
+<LI><B>La coloquialidad y el quechuismo</B>: Vallejo mezcla el habla coloquial andina, el vocabulario quechua (o hispanizado del quechua), el habla infantil y el lenguaje culto en un mismo poema. Esta mezcla crea una polifon&iacute;a sin precedentes en la poes&iacute;a hispana.</LI>
+<LI><B>El uso de los tiempos verbales distorsionados</B>: Vallejo usa tiempos verbales imposibles, mezcla el pasado con el presente y el futuro en una misma oraci&oacute;n, creando una temporalidad po&eacute;tica que corresponde a la experiencia vivida del tiempo roto.</LI>
+<LI><B>La imagen irracional</B>: las im&aacute;genes de Vallejo no siguen la l&oacute;gica de la comparaci&oacute;n o la met&aacute;fora tradicional. Son asociaciones inesperadas que no explican sino que crean una experiencia: "tahona estuosa de aquellos mis bizcochos / pura yema infantil innumerada" es una imagen que no se entiende anal&iacute;ticamente sino que se siente.</LI>
+</UL>
+
+<H3>7. La recepci&oacute;n cr&iacute;tica de <I>Trilce</I>: de la incomprensi&oacute;n al reconocimiento mundial</H3>
+La historia de la recepci&oacute;n de <I>Trilce</I> es un caso ejemplar de la incomprensi&oacute;n inicial de las obras maestras. Cuando fue publicado en Lima en 1922, el libro fue pr&aacute;cticamente ignorado. La cr&iacute;tica peruana de la &eacute;poca no entendi&oacute; nada: "lenguaje incomprensible", "poes&iacute;a sin sentido", "caos sin forma" fueron algunos de los calificativos. El propio Vallejo escribi&oacute; en el pr&oacute;logo del libro que lo dedicaba "al que haya leído el libro." La situaci&oacute;n cambi&oacute; en los a&ntilde;os 1930&ndash;1940: Jos&eacute; Mar&iacute;a Eguren, Xavier Abril y especialmente Antenor Orrego &mdash;que escribi&oacute; el pr&oacute;logo de la primera edici&oacute;n&mdash; defendieron el libro. La edici&oacute;n espa&ntilde;ola de 1930 (Madrid, Compañía Ib&eacute;ro-Americana de Publicaciones) fue decisiva para su difusi&oacute;n en España y Am&eacute;rica. Hoy, <I>Trilce</I> es reconocido universalmente como una de las obras m&aacute;s importantes de la poes&iacute;a en lengua espa&ntilde;ola del siglo XX.
+
+<H3>8. Valor literario e influencia posterior de <I>Trilce</I></H3>
+<UL>
+<LI><B>La ruptura m&aacute;s radical en la poes&iacute;a en espa&ntilde;ol</B>: ning&uacute;n libro de poes&iacute;a en español antes de <I>Trilce</I> hab&iacute;a ido tan lejos en la destrucci&oacute;n y reinvenci&oacute;n del lenguaje po&eacute;tico.</LI>
+<LI><B>Influencia en la poes&iacute;a hispanoamericana posterior</B>: Octavio Paz, Pablo Neruda, Enrique Lihn, Antonio Cisneros y muchos otros poetas hispanoamericanos reconocieron la influencia de Vallejo. Neruda lo consider&oacute; el mayor poeta en lengua espa&ntilde;ola del siglo XX.</LI>
+<LI><B>Reconocimiento internacional</B>: <I>Trilce</I> ha sido traducido al ingl&eacute;s, franc&eacute;s, alem&aacute;n, italiano y otras lenguas. Los poetas anglosajones que lo han le&iacute;do (Robert Bly, Thomas Merton) han señalado su absoluta originalidad.</LI>
+<LI><B>La singularidad inimitable</B>: a diferencia del Modernismo (que creó una escuela con muchos imitadores), el estilo de <I>Trilce</I> es inimitable: nadie ha podido escribir como Vallejo sin caer en la imitaci&oacute;n grotesca. Esto es a la vez la medida de su grandeza y de su soledad.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1892&ndash;1938</DIV><DIV CLASS="dk-label">Vida de C&eacute;sar Vallejo, Santiago de Chuco &mdash; Par&iacute;s</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1922</DIV><DIV CLASS="dk-label">Publicaci&oacute;n de <I>Trilce</I> en Lima</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">77</DIV><DIV CLASS="dk-label">Poemas numerados en romano, sin t&iacute;tulos individuales</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">105 d&iacute;as</DIV><DIV CLASS="dk-label">C&aacute;rcel de Trujillo (1920&ndash;1921): experiencia decisiva para el libro</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Vanguardismo</DIV><DIV CLASS="dk-label">Movimiento literario: ruptura total con la tradici&oacute;n po&eacute;tica anterior</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">"Trilce"</DIV><DIV CLASS="dk-label">Neologismo sin significado previo: la palabra nueva para la experiencia nueva</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+<B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Autor:</B> C&eacute;sar Vallejo (1892&ndash;1938) &middot; Santiago de Chuco, La Libertad, Per&uacute; &middot; el poeta peruano m&aacute;s importante &middot; nombre completo: C&eacute;sar Abraham Vallejo Mendoza<BR>
+&bull; <B>Obra:</B> <I>Trilce</I> (Lima, 1922) &middot; 77 poemas numerados en romano sin t&iacute;tulos &middot; libro de poes&iacute;a l&iacute;rica<BR>
+&bull; <B>Movimiento:</B> Vanguardismo hispanoamericano &middot; sin adscripci&oacute;n formal a ninguna escuela &middot; ruptura radical con el Modernismo<BR>
+&bull; <B>T&iacute;tulo:</B> neologismo sin significado previo; posibles lecturas: "triste + dulce", "tres + leche", palabra absolutamente nueva<BR>
+&bull; <B>Contexto de escritura:</B> 105 d&iacute;as en la c&aacute;rcel de Trujillo (1920&ndash;1921) &middot; muerte de la madre (1918) &middot; pobreza y exilio interior en Lima<BR>
+&bull; <B>Temas:</B> el dolor f&iacute;sico y metaf&iacute;sico &middot; el encierro y la c&aacute;rcel &middot; la madre y la infancia perdidas &middot; el tiempo roto &middot; el amor er&oacute;tico &middot; la orfandad metaf&iacute;sica &middot; la insuficiencia del lenguaje<BR>
+&bull; <B>Poemas clave:</B> Trilce I (apertura, extrav&iacute;o) &middot; Trilce III (infancia, hermanos, espera de la madre) &middot; Trilce XVIII (las cuatro paredes de la celda) &middot; Trilce XXIII (la madre, el horno, el calor perdido)<BR>
+&bull; <B>Estilo:</B> neologismos &middot; ruptura sint&aacute;ctica &middot; n&uacute;meros como elementos po&eacute;ticos &middot; versolibrismo radical &middot; coloquialidad andina &middot; imagen irracional &middot; puntuaci&oacute;n arbitraria<BR>
+&bull; <B>Innovaci&oacute;n:</B> la ruptura m&aacute;s radical del lenguaje po&eacute;tico en espa&ntilde;ol &middot; anticipaci&oacute;n del vanguardismo europeo (anterior al Manifiesto Surrealista de 1924) &middot; estilo absolutamente personal e inimitable
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;A qu&eacute; movimiento literario pertenece <I>Trilce</I>, qui&eacute;n es su autor y cu&aacute;les son los datos esenciales de su publicaci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Pertenece al Modernismo hispanoamericano; su autor es Rub&eacute;n Dar&iacute;o, poeta nicaragüense; fue publicada en Buenos Aires en 1896 como continuaci&oacute;n est&eacute;tica de <I>Azul...</I></LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Pertenece al <B>Vanguardismo hispanoamericano</B>; su autor es <B>C&eacute;sar Vallejo</B> (peruano, 1892&ndash;1938), el poeta m&aacute;s importante del Per&uacute;; fue publicado en <B>Lima en 1922</B> y consta de <B>77 poemas numerados en romano</B> sin t&iacute;tulos individuales; es considerado el libro fundacional del vanguardismo peruano y uno de los m&aacute;s audaces de la poes&iacute;a en lengua espa&ntilde;ola</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Pertenece al Romanticismo latinoamericano; su autor es Jos&eacute; Mar&iacute;a Eguren, poeta peruano; fue publicado en Lima en 1911 como primer libro de poes&iacute;a simb&oacute;lica peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Pertenece al Realismo social; su autor es Jos&eacute; Carlos Mari&aacute;tegui, ensayista peruano; fue publicado en Lima en 1928 como parte de su programa cultural marxista</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><I>Trilce</I> pertenece al <B>Vanguardismo hispanoamericano</B>, el conjunto de movimientos art&iacute;sticos que entre 1910 y 1940 rompieron radicalmente con todas las convenciones est&eacute;ticas del siglo XIX. Su autor es <B>César Abraham Vallejo Mendoza</B>, nacido el 16 de marzo de 1892 en Santiago de Chuco, La Libertad, Perú, y muerto en París el 15 de abril de 1938. Es el poeta peruano más importante de la historia y uno de los tres o cuatro poetas fundamentales de la lengua española del siglo XX. <I>Trilce</I> fue publicado en <B>Lima en 1922</B>, a expensas del propio Vallejo, con muy escasa recepción inicial. El libro tiene <B>77 poemas numerados con cifras romanas</B> (I a LXXVII) <B>sin títulos individuales</B>, lo cual es ya un gesto vanguardista: el poema no puede ser resumido en un título previo. Dato clave adicional: Vallejo escribió parte del libro durante sus <b>105 días de encarcelamiento</b> en la cárcel de Trujillo (noviembre de 1920 a febrero de 1921).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Qu&eacute; significa o qu&eacute; puede significar el t&iacute;tulo <I>Trilce</I> y por qu&eacute; es significativo para comprender el libro?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) "Trilce" es el apodo de una mujer amada por Vallejo cuyo nombre real era Trinidad Luces; el libro le est&aacute; dedicado &iacute;ntegramente y todos los poemas son cartas de amor a esa mujer</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) "Trilce" es un <B>neologismo absoluto</B> (palabra nueva sin significado previo en la lengua) inventado por Vallejo; las interpretaciones m&aacute;s aceptadas son: fusi&oacute;n de "triste" y "dulce" (tonalidad del libro), o bien "tres" m&aacute;s "leche" (el n&uacute;mero obsesivo del libro m&aacute;s el alimento materno); el hecho de que el propio Vallejo no explicara el t&iacute;tulo es parte de su programa po&eacute;tico: nombrar lo que no tiene nombre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) "Trilce" es una palabra quechua que significa "tres colores" y hace referencia a la bandera peruana; Vallejo usa el t&iacute;tulo para reivindicar la identidad nacional peruana frente al imperialismo cultural europeo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) "Trilce" es el nombre de la prisi&oacute;n de Trujillo donde Vallejo estuvo encarcelado; el libro toma su nombre del lugar donde fue escrito, como Machado tom&oacute; el nombre "Campos de Castilla" del paisaje que le inspiraba</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El título <I>Trilce</I> es uno de los más debatidos de la poesía hispanoamericana precisamente porque su significado es irresoluble, lo cual forma parte de su significado. Lo que sabemos con certeza: (1) Es una <B>palabra que no existía en español antes de que Vallejo la inventara</B>: un neologismo absoluto. (2) El propio Vallejo <b>nunca explicó el título</b>, lo cual es una posición programática: el poeta vanguardista no debe explicar su obra. Las hipótesis más sólidas que la crítica ha formulado: (a) <B>Fusión de "triste" y "dulce"</B>: describe la tonalidad afectiva dominante del libro, que es a la vez dolorosísimamente triste y tiernamente dulce (especialmente en los poemas de la madre y la infancia). Esta fusión de opuestos en una sola palabra es característica del estilo vallejiano. (b) <B>"Tres" + "leche"</B>: el número 3 (trilce = tri + lce de leche) aparece obsesivamente en el libro como figura de la imposibilidad (el tres no puede ser par, no tiene el equilibrio del dos, no alcanza la perfección del cuatro); y la leche es el alimento materno, el origen nutritivo. (c) <B>Pura invención fónica</B>: una palabra que suena bien, que tiene el sonido exacto que el libro necesita, independientemente de cualquier significado. La lección del título es: en poesía, el nombre no tiene que significar; puede crear.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Cu&aacute;l fue la experiencia vital que m&aacute;s influy&oacute; en la escritura de <I>Trilce</I> y c&oacute;mo se refleja en el libro?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) El viaje de Vallejo a Par&iacute;s (1923) fue la experiencia decisiva: el impacto del Surrealismo y el Cubismo franc&eacute;s le dio los instrumentos te&oacute;ricos para destruir el lenguaje convencional; todos los poemas de <I>Trilce</I> fueron escritos en Par&iacute;s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Las experiencias decisivas fueron: (1) la <B>muerte de su madre</B> (1918); (2) el <B>encarcelamiento injusto en Trujillo durante 105 d&iacute;as</B> (noviembre 1920 &ndash; febrero 1921); ambas experiences generan los dos grandes n&uacute;cleos tem&aacute;ticos del libro: la orfandad materna y el encierro; los poemas sobre las cuatro paredes de la celda y los poemas sobre el calor materno perdido son directamente autobiogr&aacute;ficos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El amor no correspondido por una mujer llamada Mirtho fue la experiencia decisiva: <I>Trilce</I> es un cancionero amoroso al modo petrarquista donde cada poema corresponde a una etapa de la relaci&oacute;n; los cr&iacute;ticos han identificado a la amada con Mirtho de Dobbel, una joven limeña de familia aristocr&aacute;tica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) La lectura del Ulises de James Joyce (publicado en 1922, el mismo a&ntilde;o que <I>Trilce</I>) fue la experiencia literaria decisiva: Vallejo adapt&oacute; al verso la t&eacute;cnica del flujo de conciencia joyceano; los dos libros son paralelos y se influyeron mutuamente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las dos experiencias biográficas que más directamente forjaron <I>Trilce</I> son: (1) <B>La muerte de María de los Santos Mendoza</B>, madre de Vallejo, en 1918. Vallejo adoraba a su madre y su muerte fue una pérdida devastadora. La madre es el gran centro afectivo de <I>Trilce</I>: aparece en múltiples poemas como el origen del calor, la nutrición, el hogar y el sentido. Su ausencia crea lo que la crítica llama la "orfandad ontológica" del poeta: no solo ha perdido a su madre sino el centro del cosmos. Los poemas III, XXIII, LXV, entre otros, son directamente sobre la madre y la infancia en Santiago de Chuco. (2) <B>El encarcelamiento en Trujillo</B> (noviembre de 1920 a febrero de 1921, 105 días). Vallejo fue acusado injustamente de participar en un incendio y saqueo en Santiago de Chuco durante un disturbio político. El encarcelamiento fue una experiencia de humillación, injusticia y angustia espacial que impregna todo el libro: las "cuatro paredes de la celda" del Trilce XVIII, el tiempo detenido, la imposibilidad de la libertad. Varios poemas del libro fueron escritos literalmente dentro de la cárcel. La opción a) comete el error cronológico grave: Vallejo viajó a París en 1923, <b>después</b> de publicar <I>Trilce</I> en 1922. El vanguardismo de Vallejo no viene de París sino de su propia experiencia vital.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qu&eacute; es el Vanguardismo literario y en qu&eacute; se diferencia del Modernismo que le precede?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) El Vanguardismo es una continuaci&oacute;n del Modernismo que mantiene el mismo culto a la belleza formal, los mismos temas (princesas, cisnes, mundos ex&oacute;ticos) y la misma m&eacute;trica; la &uacute;nica diferencia es que los vanguardistas son m&aacute;s comprometidos pol&iacute;ticamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) El Vanguardismo es un <B>conjunto de movimientos (Cubismo, Dadaísmo, Surrealismo, Creacionismo, Ultraísmo) que rompen radicalmente con el Modernismo</B>: rechazan el esteticismo decorativo, el escapismo hacia mundos lejanos y la m&eacute;trica regular; proponen el verso libre, la imagen irracional, la destrucci&oacute;n del lenguaje convencional y el arte comprometido con la realidad hist&oacute;rica; surge en el contexto de la Primera Guerra Mundial (1914&ndash;1918)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) El Vanguardismo es una etiqueta cr&iacute;tica sin contenido real: no hay diferencias significativas entre el Modernismo tard&iacute;o y la primera vanguardia; la ruptura fue exagerada retrospectivamente por los historiadores de la literatura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) El Vanguardismo s&oacute;lo exist&oacute; en Europa (Francia, Alemania, Italia); en Hispanoam&eacute;rica no hubo verdadero vanguardismo sino imitaci&oacute;n retrasada de modelos europeos; Vallejo es el &uacute;nico caso de vanguardismo genuino en lengua espa&ntilde;ola</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Vanguardismo (o "las vanguardias") es el conjunto de movimientos artísticos y literarios que entre aproximadamente 1910 y 1940 propusieron una ruptura total con las convenciones artísticas heredadas. Las diferencias con el Modernismo son radicales: (1) <B>El Modernismo</B> (Darío, <I>Prosas Profanas</I>, 1896): culto a la belleza formal perfecta; escapismo hacia mundos lejanos (Versalles, Grecia, la Edad Media); metros renovados pero regulares; lenguaje rico y preciosista; el artista como esteta que huye del mundo real. (2) <B>El Vanguardismo</B>: rechazo de la belleza como valor supremo; presencia brutal de la realidad histórica (guerra, revolución, pobreza); verso libre sin metro ni rima regular; lenguaje destruido y reconstruido; la imagen irracional (asociaciones inesperadas que no buscan la belleza sino la verdad); el arte como arma política o como grito existencial. El Vanguardismo surge históricamente en el contexto de la <B>Primera Guerra Mundial (1914-1918)</B>, que destruye la fe en la civilización y el progreso que el Modernismo aún compartía. Sus movimientos principales: Futurismo (Italia, 1909), Cubismo (Francia, 1913), Dadaísmo (Suiza, 1916), Surrealismo (Francia, 1924), Creacionismo (Huidobro), Ultraísmo (España). <I>Trilce</I> (1922) es anterior al Manifiesto Surrealista (1924), lo cual significa que Vallejo llega al vanguardismo por su cuenta, sin depender de ninguna escuela europea.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Describe los recursos formales m&aacute;s caracter&iacute;sticos del estilo de <I>Trilce</I> que lo distinguen de toda la poes&iacute;a anterior.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) <I>Trilce</I> usa el metro y la rima regulares del Modernismo pero los aplica a temas contempor&aacute;neos; la innovaci&oacute;n es tem&aacute;tica, no formal; el soneto y el alejandrino dominan el libro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Los recursos formales de <I>Trilce</I> incluyen: <B>neologismos valianos</B> (palabras inventadas), <B>ruptura sint&aacute;ctica</B> (oraciones incompletas, verbos sin sujeto), <B>n&uacute;meros como elementos po&eacute;ticos</B>, <B>puntuaci&oacute;n arbitraria</B>, <B>versolibrismo radical</B> (sin metro ni rima regulares), <B>coloquialidad andina</B> mezclada con lenguaje culto, e <B>im&aacute;genes irracionales</B> que no siguen la l&oacute;gica comparativa convencional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) <I>Trilce</I> usa exclusivamente el verso libre pero sin ning&uacute;n otro recurso formal innovador; su revoluci&oacute;n se limita a eliminar la rima; la sintaxis, el l&eacute;xico y la puntuaci&oacute;n son completamente convencionales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) El recurso formal central de <I>Trilce</I> es la aliteraci&oacute;n extrema (repetici&oacute;n de sonidos) que Vallejo aprendio del Simbolismo franc&eacute;s de Verlaine; todos los dem&aacute;s recursos son secundarios respecto a la musicalidad fon&eacute;tica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los recursos formales de <I>Trilce</I> son múltiples, heterogéneos y operan simultáneamente en cada poema. Son lo que hace del libro algo formalmente único en la historia de la poesía en español: (1) <B>Neologismos</B>: Vallejo inventa palabras cuando las existentes no bastan: "albicante" (que blanquea), "dolorasísima" (superlativo afectivo), "tahona estuosa" (horno caliente), "aherrojadas" (encadenadas). (2) <B>Ruptura sintáctica</B>: oraciones que quedan a medias, verbos sin sujeto claro, acumulaciones de sustantivos sin verbo rector. Reproduce la fragmentación de la conciencia bajo el dolor o el shock. (3) <B>Números como poesía</B>: cifras arábicas y romanas dentro del verso con función simbólica y afectiva, no matemática. El 4 (las cuatro paredes), el 3 (la imposibilidad), el 0 (la nada). (4) <B>Puntuación arbitraria</B>: no sigue las reglas gramaticales sino el ritmo respiratorio del poema, las pausas del dolor. (5) <B>Versolibrismo radical</B>: abandono total de la métrica y la rima regulares; los versos pueden tener cualquier longitud. (6) <B>Coloquialidad andina</B>: habla popular de la sierra peruana, nombres propios de hermanos, alusiones al patio de la casa familiar. (7) <B>Imagen irracional</B>: asociaciones inesperadas que crean una experiencia emocional directa antes que una comprensión analítica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Analiza el tema de la madre en <I>Trilce</I>: &iquest;qu&eacute; representa la figura materna en el libro y c&oacute;mo la elabora Vallejo po&eacute;ticamente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) La madre en <I>Trilce</I> es una figura cr&iacute;tica: Vallejo proyecta en ella su rechazo de la religi&oacute;n cat&oacute;lica y del conservadurismo andino; los poemas sobre la madre son en realidad una cr&iacute;tica de la sociedad tradicional peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) La madre es el gran centro afectivo de <I>Trilce</I>: representa el <B>origen, el calor, la nutrici&oacute;n y el sentido</B> (el horno/tahona, la mesa, la leche, el hogar en Santiago de Chuco); su muerte crea una <B>orfandad ontol&oacute;gica</B> que va m&aacute;s all&aacute; de la p&eacute;rdida personal: el poeta queda hu&eacute;rfano del cosmos, sin centro; po&eacute;ticamente, Vallejo la evoca a trav&eacute;s de im&aacute;genes de calor dom&eacute;stico y de nombres propios de los hermanos, creando una memoria afectiva concreta que el poema intenta recuperar sin lograrlo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) La madre en <I>Trilce</I> es un pretexto para explorar el tema del inconsciente freudiano: Vallejo usa la figura materna en sentido psicoanalítico para analizar el complejo de Edipo en la cultura andina; el libro es una aplicaci&oacute;n literaria del psicoan&aacute;lisis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) La madre aparece solo en dos o tres poemas de <I>Trilce</I> y no es un tema central; los cr&iacute;ticos han exagerado su importancia porque la biograf&iacute;a de Vallejo les interesa m&aacute;s que el texto mismo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La figura de la madre es, junto con la experiencia del encierro, el gran centro afectivo y simbólico de <I>Trilce</I>. Su análisis detallado: (1) <B>La madre como origen del calor</B>: el campo semántico más recurrente asociado a la madre es el calor: el horno (la "tahona estuosa" del Trilce XXIII), el fuego del hogar, el cuerpo materno caliente, la leche. La madre es el principio nutricio del cosmos: quien da de comer, de beber, de calor. (2) <B>La "madre mesa"</B> (Trilce XXIII): la fusión de "madre" y "mesa" en una sola imagen compuesta es característica del estilo vallejiano: la madre que pone la mesa y la mesa que alimenta son la misma cosa; la mesa es un altar familiar, la madre es la sacerdotisa. (3) <B>La orfandad ontológica</B>: cuando la madre muere (1918), Vallejo no pierde solo a su madre sino el centro del sentido. La crítica usa el término "orfandad ontológica" para describir esta pérdida que es a la vez personal, cósmica y metafísica: el poeta queda solo en un universo sin centro. (4) <B>La infancia y los hermanos</B>: la madre aparece siempre en el contexto de la casa familiar en Santiago de Chuco, con los nombres reales de los hermanos de Vallejo (Aguedita, Nativa, Miguel en el Trilce III): esto ancla la emoción en lo concreto, lo biográfico y lo específicamente andino. (5) <B>El regreso imposible</B>: el poema intenta volver al calor materno pero no puede: la madre ha muerto, la infancia ha pasado, el hogar está lejos. El poema es el duelo de un retorno imposible.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Analiza el Trilce XVIII ("Oh las cuatro paredes de la celda..."): &iquest;c&oacute;mo elabora Vallejo la experiencia del encierro y qu&eacute; recursos formales usa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) El Trilce XVIII describe el encierro de manera realista y objetiva, como una cr&oacute;nica periosdística de las condiciones de vida en la c&aacute;rcel de Trujillo; Vallejo usa un lenguaje directo y transparente para denunciar las injusticias del sistema penitenciario peruano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) El Trilce XVIII elabora el encierro en dos dimensiones: (1) la <B>experiencia espacial concreta</B>: las cuatro paredes que "dan al mismo n&uacute;mero" (siempre cuatro, sin salida), las paredes "albicantes" (blancas, neologismo), el espacio reducido; (2) la <B>experiencia afectiva</B>: la "amorosa llavera" (la amada imaginada que tiene las llaves) como contraste entre el encierro real y la libertad del amor; el verso final "m&aacute;s dos que nunca" expresa paradójicamente que la uni&oacute;n amorosa ser&iacute;a una suma mayor que la suma de dos soledades</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) El Trilce XVIII es un poema religioso sobre el encierro espiritual del alma en el cuerpo pecador; las "cuatro paredes" son los cuatro elementos (tierra, agua, aire, fuego) que aprisionan el alma; la "amorosa llavera" es la Virgen Mar&iacute;a como intercesora divina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) El Trilce XVIII es el menos vallejiano del libro: su lenguaje es convencional, su m&eacute;trica es regular (soneto) y sus im&aacute;genes son cl&aacute;sicas; algunos cr&iacute;ticos dudan de que sea de Vallejo y lo atribuyen a otro poeta carcelario</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Trilce XVIII es uno de los poemas más analizados del libro y el más directamente relacionado con la experiencia carcelaria. Análisis detallado: (1) <B>Las cuatro paredes como obsesión espacial</B>: el número cuatro se repite insistentemente en el poema. Las paredes "dan al mismo número": siempre son cuatro, nunca cambian, no hay forma de que sean menos ni de que permitan una salida. El número 4 aquí no es matemático sino existencial: la geometría de la prisión como geometría del destino. (2) <B>"Albicantes"</B>: neologismo vallejiano de <i>albo</i> (blanco); las paredes blancas de la celda son descritas con un adjetivo inventado que les da una cualidad dinámica ("que blanquean") en lugar de estática ("blancas"). (3) <B>"Criadero de nervios"</B>: imagen irracional que describe la celda como un espacio donde los nervios crecen y se multiplican (la ansiedad se intensifica en el encierro). (4) <B>"Amorosa llavera de innumerables llaves"</B>: la amada imaginada, la mujer que posee todas las llaves de la libertad. Es una imagen que no sigue la lógica de la comparación sino la del deseo: la mujer amada tiene las llaves que el carcelero real no le daría. (5) <B>"Más dos que nunca"</B>: paradoja matemática y afectiva. Dos solos son dos soledades sumadas; dos juntos son algo más que dos: "más dos que nunca". Esta lógica imposible es vallejiana pura.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;En qu&eacute; sentido la posici&oacute;n de Vallejo dentro del Vanguardismo es &uacute;nica y c&oacute;mo se diferencia de los vanguardistas europeos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Vallejo es un vanguardista europeo trasplantado a Am&eacute;rica: su formaci&oacute;n en Par&iacute;s (donde vivi&oacute; antes de escribir <I>Trilce</I>) le dio acceso a las vanguardias europeas y fue un fiel seguidor del programa surrealista de Andr&eacute; Breton</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Vallejo llega al vanguardismo <B>desde su propia experiencia vital</B>, no desde una teor&iacute;a est&eacute;tica importada: <I>Trilce</I> (1922) aparece antes del Manifiesto Surrealista (1924) y sin que Vallejo hubiera vivido a&uacute;n en Europa; su ruptura no es programática sino existencial (el dolor, la c&aacute;rcel, la pobreza, la muerte materna); adem&aacute;s, su ra&iacute;z <B>andina y mestiza</B> le da una dimensi&oacute;n cultural que ning&uacute;n vanguardista europeo tiene</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Vallejo rechaz&oacute; explícitamente ser llamado vanguardista: en sus ensayos critica duramente el Surrealismo, el Dadaísmo y el Creacionismo como modas superficiales; prefiri&oacute; definirse como "poeta del dolor humano" sin adscripci&oacute;n a ning&uacute;n movimiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La posici&oacute;n de Vallejo es id&eacute;ntica a la del chileno Vicente Huidobro: ambos son vanguardistas que imitaron el Creacionismo europeo y lo aplicaron a temas latinoamericanos; la diferencia entre ellos es solo de biograf&iacute;a personal, no de proyecto est&eacute;tico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La singularidad de la posición de Vallejo dentro del Vanguardismo es uno de los temas más importantes para comprender <I>Trilce</I>. Los argumentos centrales: (1) <B>Cronología decisiva</B>: <I>Trilce</I> fue publicado en 1922. El Manifiesto Surrealista de André Breton, que define teóricamente el movimiento más importante de la vanguardia europea, fue publicado en 1924. Por lo tanto, Vallejo llega a una escritura tan o más radical que el Surrealismo <b>sin conocer el Surrealismo</b>. Esto significa que su vanguardismo no es imitación sino creación independiente. (2) <B>Sin formación europea previa</B>: cuando escribe <I>Trilce</I>, Vallejo no ha vivido en Europa. Es un poeta provincial de la sierra norte del Perú que ha estudiado en Trujillo y Lima. Sus referentes son la poesía española clásica (González Prada, Eguren, el Simbolismo de Los heraldos negros) y su propia vida. (3) <B>Origen existencial, no estético</B>: los vanguardistas europeos (Breton, Tzara, Huidobro) parten de una posición estética: "el arte debe ser así". Vallejo parte de una posición existencial: "mi experiencia del dolor no cabe en el lenguaje que existe; debo inventar otro lenguaje". (4) <B>La raíz andina y mestiza</B>: Vallejo lleva en su sensibilidad y en su lenguaje elementos de la cosmovisión andina (el tiempo cíclico, la colectividad, la relación con la tierra) que ningún vanguardista europeo tiene y que hacen de <I>Trilce</I> una obra única.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Analiza el Trilce III ("Las personas mayores / &iquest;a qu&eacute; hora volver&aacute;n?"): &iquest;por qu&eacute; este poema es una puerta de entrada accesible a <I>Trilce</I> y qu&eacute; revela de la t&eacute;cnica vallejiana?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El Trilce III es el m&aacute;s hermético del libro: su lenguaje absolutamente abstracto no remite a ninguna experiencia real; la pregunta "las personas mayores &iquest;a qu&eacute; hora volver&aacute;n?" es una pregunta filos&oacute;fica sin referente concreto sobre la temporalidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El Trilce III es el m&aacute;s accesible del libro porque usa un <B>lenguaje relativamente simple y una voz de ni&ntilde;o reconocible</B>: evoca la infancia en Santiago de Chuco (nombres reales de los hermanos: Aguedita, Nativa, Miguel), la espera angustiada de los padres que no regresan, el miedo a la oscuridad; la t&eacute;cnica vallejiana se revela en el neologismo <B>"dolorasísimas"</B> y en la repetici&oacute;n de "Madre dijo que no demorara" como mantra de la espera interminable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El Trilce III es un poema pol&iacute;tico que usa el lenguaje infantil como cobertura: "las personas mayores" son las autoridades pol&iacute;ticas peruanas; "volver&aacute;n" expresa la esperanza de que los l&iacute;deres exiliados regresen; Aguedita, Nativa y Miguel son nombres en clave de pol&iacute;ticos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) El Trilce III es el &uacute;nico poema del libro escrito en forma de di&aacute;logo dram&aacute;tico entre varios personajes; los nombres Aguedita, Nativa y Miguel son los de tres personajes ficticios creados por Vallejo sin correspondencia biogr&aacute;fica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Trilce III es estratégicamente el poema más recomendado para iniciar la lectura de <I>Trilce</I> porque ofrece una vía de entrada emocional directa antes de enfrentar los poemas más herméticos. (1) <B>La voz infantil</B>: el poema adopta la perspectiva de un niño que espera a sus padres. La pregunta inicial ("Las personas mayores / ¿a qué hora volverán?") reproduce exactamente el pensamiento de un niño asustado al anochecer, esperando que los adultos regresen. (2) <B>Los hermanos reales</B>: Aguedita (Agustina), Nativa y Miguel son nombres reales de los hermanos de Vallejo en Santiago de Chuco. Introducir nombres propios reales en el poema es un recurso de concreción biográfica que Vallejo usa para anclar la emoción en lo específico, no en lo genérico. (3) <B>"Dolorasísimas penas"</B>: el neologismo "dolorasísimas" (superlativo de "dolorosa" con el sufijo afectivo andino "-ísima" redoblado) no existe en el español estándar. Vallejo lo inventa porque "dolorosísimas" no basta: necesita un superlativo aún más intenso, que lleva el sufijo del habla coloquial andina. (4) <B>La repetición como mantra</B>: "Madre dijo que no demorara" aparece dos veces en el poema, enmarcándolo. La repetición no es redundancia: es el ritmo de la espera, la frase que el niño repite mentalmente mientras espera, el tic del miedo. (5) <B>El miedo concreto</B>: las gallinas espantadas, el corral oscuro, el sonido del ciego Santiago dan las seis: el miedo del niño se ancla en sensaciones físicas y sonidos reales del pueblo andino.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;C&oacute;mo funciona el tiempo en <I>Trilce</I> y en qu&eacute; sentido Vallejo crea una "temporalidad imposible"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) El tiempo en <I>Trilce</I> es completamente lineal y cronol&oacute;gico: los 77 poemas est&aacute;n ordenados desde los m&aacute;s antiguos (los de la infancia) hasta los m&aacute;s recientes (los escritos en Lima); el libro es una autobiograf&iacute;a cronol&oacute;gica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) El tiempo en <I>Trilce</I> es <B>fragmentado, no lineal y contradictorio</B>: el pasado no pasa (la infancia y la madre muerta siguen presentes en el poema como si fueran ahora), el futuro no llega (la libertad se anuncia pero no ocurre), el presente est&aacute; roto; los relojes del libro no marcan la hora correcta; esto refleja tanto la experiencia carcelaria (donde el tiempo se detiene) como la experiencia andina del tiempo (que no es lineal sino c&iacute;clico) y la experiencia existencial del duelo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) El tiempo en <I>Trilce</I> no existe como tema: Vallejo solo se interesa por el espacio (la celda, la casa materna, el cuerpo) y no por el tiempo; la cr&iacute;tica que habla del tiempo en el libro proyecta categor&iacute;as filos&oacute;ficas ajenas al texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) El tiempo en <I>Trilce</I> sigue el modelo bergsoniano de la "duraci&oacute;n": Vallejo aplicó directamente la filosof&iacute;a de Henri Bergson a la poes&iacute;a; se sabe que Vallejo ley&oacute; a Bergson en la universidad y que <I>Trilce</I> es una ilustraci&oacute;n po&eacute;tica del <I>Essay sur les donn&eacute;es imm&eacute;diates de la conscience</I></LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La temporalidad es uno de los temas filosóficos más complejos de <I>Trilce</I> y uno de los más estudiados por la crítica. (1) <B>El tiempo de la cárcel</B>: en la celda, el tiempo deja de avanzar. Las horas son iguales, los días son iguales, el calendario pierde sentido. Varios poemas de Trilce reproducen esta experiencia: el tiempo no transcurre sino que se repite, se detiene, se niega a pasar. (2) <B>El tiempo del duelo</B>: cuando se pierde a alguien amado (la madre), el tiempo normal se rompe. El pasado (la madre viva, la infancia en Santiago de Chuco) está más presente que el presente. Vallejo escribe como si la madre estuviera ahora, como si la infancia fuera ahora: el pasado no pasa. (3) <B>Los números temporales que no suman</B>: en varios poemas de <I>Trilce</I>, Vallejo usa números que deberían ser temporales (horas, días) pero que dan resultados imposibles. El tiempo no funciona matemáticamente en el libro: 2+2 no siempre es 4; la hora que marca el reloj no es la hora que el poeta vive. (4) <B>La dimensión andina</B>: la cosmovisión andina del tiempo (el <i>pacha</i> quechua) no es lineal sino cíclica: el pasado no desaparece sino que coexiste con el presente. Esta concepción no lineal del tiempo, que Vallejo lleva en su sensibilidad cultural, coincide con la experiencia poética de <I>Trilce</I>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza la orfandad metaf&iacute;sica en <I>Trilce</I>: &iquest;en qu&eacute; sentido la p&eacute;rdida de la madre produce en Vallejo algo m&aacute;s que un duelo personal?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) La orfandad en <I>Trilce</I> es exclusivamente biogr&aacute;fica y personal: Vallejo sufre la muerte de su madre como un hijo, no como un fil&oacute;sofo o un poeta que la conceptualice m&aacute;s all&aacute; del duelo individual; los poemas sobre la madre son poemas de duelo convencional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La p&eacute;rdida de la madre produce en <I>Trilce</I> una <B>orfandad ontol&oacute;gica</B>: no solo se pierde a la madre como persona sino el <B>centro del sentido del cosmos</B>; la madre era el origen (el hogar, el calor, la nutrici&oacute;n, el principio organizador del mundo familiar); sin ella, el poeta queda hu&eacute;rfano del sentido mismo, de la posibilidad de que el mundo tenga un orden, de que haya un "centro" en el universo; esto conecta con la ausencia de Dios y la crisis metaf&iacute;sica del siglo XX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) La p&eacute;rdida de la madre en <I>Trilce</I> produce una conversi&oacute;n religiosa: Vallejo ve la muerte materna como un llamado de Dios y los poemas sobre la madre son una elaboraci&oacute;n de la fe cat&oacute;lica que el poeta reafirma en el dolor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) La "orfandad ontol&oacute;gica" es un concepto inventado por la cr&iacute;tica acad&eacute;mica que no corresponde a ninguna intenci&oacute;n de Vallejo; el poeta no te&oacute;riza su dolor sino que simplemente lo expresa; proyectar conceptos filos&oacute;ficos en sus poemas es una deformaci&oacute;n interpretativa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El concepto de "orfandad ontológica" es uno de los aportes más iluminadores de la crítica vallejiana (desarrollado principalmente por el crítico peruano Alberto Escobar y ampliado por muchos otros) para comprender la dimensión filosófica de <I>Trilce</I>. El razonamiento: (1) <B>La madre como centro organizador del cosmos</B>: en la visión infantil y en la visión andina, la madre no es solo una persona sino un principio ordenador del mundo: el hogar (el lugar seguro), el fuego (el calor), la mesa (el alimento), la voz (el lenguaje aprendido), el tiempo (la madre organiza los ritmos diarios). La madre es el centro del pequeño cosmos familiar, como Dios es el centro del cosmos universal. (2) <B>La pérdida de la madre = pérdida del centro</B>: cuando la madre muere, no solo desaparece una persona sino ese principio organizador. El mundo deja de tener centro, deja de tener sentido en el sentido más literal: deja de tener dirección (en latín <i>sensus</i> significa dirección). El poeta queda desorientado no solo afectiva sino ontológicamente: no sabe qué es el ser sin ese centro. (3) <B>La conexión con la ausencia de Dios</B>: en el siglo XX, después de Nietzsche ("Dios ha muerto", 1882), la crisis del sentido es también la crisis de la fe. La orfandad de Vallejo conecta la pérdida personal de la madre con la pérdida cultural y filosófica de Dios como principio de sentido. No es una ecuación mecánica (madre = Dios) sino una resonancia: ambas pérdidas producen el mismo vacío. (4) <B>La opción d) comete un error metodológico importante</B>: la intención del autor no agota el significado del texto; la crítica tiene el derecho y el deber de encontrar en los textos dimensiones que el autor no formuló explícitamente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> &iquest;En qu&eacute; sentido <I>Trilce</I> representa la crisis del lenguaje y c&oacute;mo responde Vallejo a esa crisis?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Vallejo responde a la crisis del lenguaje con el silencio: <I>Trilce</I> tiene muchas p&aacute;ginas en blanco donde Vallejo admite que no puede decir nada; el libro es fundamentalmente una celebraci&oacute;n del mutismo po&eacute;tico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Vallejo parte de la constataci&oacute;n de que el <B>lenguaje heredado es insuficiente para expresar la verdad del dolor extremo</B>; responde no con el silencio sino con la <B>destrucci&oacute;n y reinvenci&oacute;n del lenguaje</B>: inventa palabras nuevas, rompe la sintaxis, usa n&uacute;meros dentro del verso, mezcla registros imposibles; el poema es el campo de batalla donde el lenguaje lucha consigo mismo para decir lo que el lenguaje convencional no puede decir</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Vallejo no experimenta ning&uacute;n problema con el lenguaje: su innovaci&oacute;n es puramente form&aacute;l, est&eacute;tica; no hay una crisis de expresabilidad sino una elecci&oacute;n est&eacute;tica de escribir de modo innovador; la crisis del lenguaje es un concepto que la cr&iacute;tica ha importado de Wittgenstein y aplicado erroneamente a Vallejo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Vallejo responde a la crisis del lenguaje adoptando el quechua como lengua po&eacute;tica: <I>Trilce</I> est&aacute; mayoritariamente escrito en quechua o en una mezcla quechua-español conocida como "runa simi po&eacute;tico"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La crisis del lenguaje en <I>Trilce</I> es uno de los temas más filosóficamente ricos del libro y requiere análisis cuidadoso. (1) <B>El diagnóstico de Vallejo</B>: el lenguaje heredado (la gramática española convencional, el léxico disponible, las formas métricas del Modernismo) es incapaz de decir la verdad de la experiencia del dolor extremo: el dolor de la cárcel, el dolor de la muerte materna, el dolor de la pobreza, el dolor de la injusticia. Cuando el lenguaje dice "dolor" o "sufrimiento" con las palabras convencionales, no dice nada: esas palabras están gastadas, son abstractas, no producen ninguna experiencia en el lector. (2) <B>La respuesta: no el silencio sino la violencia sobre el lenguaje</B>: Vallejo no elige el silencio (que sería la opción de Wittgenstein: "de lo que no se puede hablar, hay que callar"). Vallejo elige la violencia: si el lenguaje convencional no puede decir la verdad, hay que destruirlo y reinventarlo. Esto produce: neologismos (palabras nuevas para experiencias sin nombre), ruptura sintáctica (oraciones imposibles para experiencias que violan la lógica), números dentro del verso (elementos no lingüísticos en el poema), imágenes irracionales (que no explican sino que producen una experiencia directa). (3) <B>El poema como acto desesperado</B>: cada poema de <I>Trilce</I> es un intento de decir lo indecible. El poema sabe que fracasa (el lenguaje nunca puede decir completamente la verdad de la experiencia) pero sigue intentándolo. Esta tensión entre la necesidad de decir y la imposibilidad de decir es la energía que mueve todo el libro.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Compara <I>Trilce</I> con <I>Los heraldos negros</I>: &iquest;en qu&eacute; consiste la ruptura entre las dos obras y qu&eacute; permanece de una a la otra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) <I>Los heraldos negros</I> y <I>Trilce</I> son id&eacute;nticos en estilo y temas: no hay ruptura sino evoluci&oacute;n continua y gradual; los cr&iacute;ticos exageran la diferencia para justificar la clasificaci&oacute;n de Vallejo como "vanguardista"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) <I>Los heraldos negros</I> (1918) a&uacute;n usa formas <B>relativamente convencionales</B> (soneto, rima, m&eacute;trica modernista) aunque con una voz personal y angustiada muy original; <I>Trilce</I> (1922) representa una <B>ruptura formal radical</B>: abandono completo de la m&eacute;trica y la rima, destrucci&oacute;n de la sintaxis, neologismos; lo que permanece entre ambas obras es el <B>tema del dolor existencial</B>, la presencia de la ra&iacute;z andina y la misma voz humana incomparable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) <I>Los heraldos negros</I> es la obra maestra de Vallejo y <I>Trilce</I> es un experimento fallido; la cr&iacute;tica del siglo XX prefiri&oacute; <I>Los heraldos negros</I> por su mayor accesibilidad y rigor formal; <I>Trilce</I> es el libro m&aacute;s valorado solo por los acad&eacute;micos que prefieren la dificultad a la belleza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La diferencia entre los dos libros es exclusivamente tem&aacute;tica: <I>Los heraldos negros</I> trata del amor y <I>Trilce</I> trata de la muerte; ambos usan el mismo estilo formal</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparación entre <I>Los heraldos negros</I> y <I>Trilce</I> es fundamental para entender el desarrollo de Vallejo como poeta. <B><I>Los heraldos negros</I> (1918)</B>: el primer libro de Vallejo muestra la influencia del Modernismo (Darío, el Simbolismo) pero ya con una voz absolutamente personal. El poema "Los heraldos negros" que abre el libro ("Hay golpes en la vida, tan fuertes... Yo no sé") tiene la angustia existencial característica de Vallejo pero la expresa en formas relativamente convencionales: el soneto, la rima consonante, los cuartetos y tercetos. El lenguaje es rico y a veces preciosista (herencia modernista) pero la emoción que expresa es ya vallejo puro. <B><I>Trilce</I> (1922)</B>: cuatro años después, en un contexto biográfico radicalmente diferente (la cárcel, la muerte de la madre, la pobreza extrema en Lima), Vallejo rompe con todas las formas heredadas. La ruptura es formal: nada de sonetos, nada de rima regular, nada de metro fijo, nada de léxico modernista. <B>Lo que permanece</B>: el dolor como tema central (en <I>Los heraldos negros</I> es ya el tema dominante); la raíz andina y la presencia de la vida concreta (la sierra, los hermanos, el hogar); la voz única e inconfundible que hace que cualquier verso de Vallejo sea inmediatamente reconocible. La ruptura entre los dos libros es comparable a la que hay entre el Darío de <I>Azul...</I> y el Darío de <I>Prosas Profanas</I>, pero mucho más radical.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Analiza la dimensi&oacute;n social y pol&iacute;tica de <I>Trilce</I>: &iquest;en qu&eacute; medida el libro es tambi&eacute;n una cr&iacute;tica de las estructuras de poder que oprimen al individuo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) <I>Trilce</I> no tiene ninguna dimensi&oacute;n pol&iacute;tica: es un libro exclusivamente &iacute;ntimo y personal; Vallejo no desarrolla su compromiso pol&iacute;tico marxista hasta <I>Poemas humanos</I> y <I>Espa&ntilde;a, aparta de m&iacute; este c&aacute;liz</I>; leer pol&iacute;tica en <I>Trilce</I> es anacronismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) <I>Trilce</I> tiene una dimensi&oacute;n pol&iacute;tica <B>implícita pero real</B>: la experiencia del encarcelamiento injusto critica el sistema judicial peruano; la pobreza material que atraviesa todo el libro (el hambre, el fr&iacute;o, la indefensi&oacute;n) tiene una causa estructural, no individual; la figura del preso, del hu&eacute;rfano y del marginado son figuras de la exclusi&oacute;n social; aunque Vallejo a&uacute;n no usa el vocabulario marxista de sus obras posteriores, <I>Trilce</I> expresa desde adentro la experiencia del que el sistema oprime</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) <I>Trilce</I> es un libro explícitamente pol&iacute;tico y marxista: cada poema contiene una cr&iacute;tica directa del capitalismo peruano; Vallejo usa el lenguaje oscuro como t&eacute;cnica de propaganda subversiva para esquivar la censura del gobierno de Augusto B. Legu&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La dimensi&oacute;n pol&iacute;tica de <I>Trilce</I> es exclusivamente indigenista: Vallejo defiende los derechos de la poblaci&oacute;n ind&iacute;gena peruana y cada poema corresponde a una violaci&oacute;n de esos derechos documentada por el autor durante su estancia en Trujillo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La dimensión política de <I>Trilce</I> es sutil pero real, y su análisis requiere distinguir entre política explícita (el Vallejo de <I>España, aparta de mí este cáliz</I>) y política implícita (el Vallejo de <I>Trilce</I>). <B>La política implícita de <I>Trilce</I></B>: (1) <B>El encarcelamiento injusto</B>: Vallejo fue encarcelado por un sistema judicial que lo culpó sin pruebas suficientes de participar en un disturbio político local. Este hecho concreto es una crítica al sistema judicial peruano de la época (el gobierno de Augusto B. Leguía, 1919-1930, que era autoritario). El poema que elabora la experiencia carcelaria no puede separarse completamente de su causa: una injusticia del poder. (2) <B>La pobreza material</B>: <I>Trilce</I> está atravesado por referencias al hambre, al frío, a la indefensión material. Estas no son metáforas sino experiencias reales de un poeta que vivió en la extrema pobreza. La pobreza no es accidental sino estructural: Vallejo es pobre porque es mestizo de la sierra, sin redes de poder, sin capital social. (3) <B>Las figuras del excluido</B>: el preso, el huérfano, el hambriento, el que no tiene hogar: son figuras recurrentes de <I>Trilce</I> que son también figuras de la exclusión social en el Perú de la época. (4) <B>La diferencia con las obras posteriores</B>: en <I>Poemas humanos</I> y <I>España, aparta de mí este cáliz</I>, Vallejo usa explícitamente el vocabulario marxista (proletariado, lucha de clases, solidaridad obrera). En <I>Trilce</I>, esa dimensión está presente pero no formulada en términos políticos: es experiencia vivida, no análisis teórico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Compara el tratamiento del dolor en <I>Trilce</I> con el del honor en <I>Fuenteovejuna</I> y el de la belleza en <I>Prosas Profanas</I>: &iquest;qu&eacute; revela esa comparaci&oacute;n sobre los distintos proyectos est&eacute;ticos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Las tres obras son equivalentes en su tratamiento del tema central: todas usan el mismo lenguaje po&eacute;tico y las mismas t&eacute;cnicas formales; las diferencias son solo de contenido tem&aacute;tico, no de forma o proyecto est&eacute;tico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) En <I>Fuenteovejuna</I>, el honor es un <B>valor colectivo y social</B> que se defiende p&uacute;blicamente; en <I>Prosas Profanas</I>, la belleza es un <B>valor est&eacute;tico absoluto</B> que el poeta contempla y celebra; en <I>Trilce</I>, el dolor es una <B>experiencia individual e intransferible</B> que destruye todo valor est&eacute;tico y social para revelarse como la verdad m&aacute;s desnuda del ser humano; los tres valores centrales revelan tres proyectos totalmente distintos: el drama colectivo barroco, el esteticismo modernista y el existencialismo vanguardista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Las tres obras tienen el mismo proyecto: defender la dignidad humana frente a la opresin; el honor de Laurencia, la belleza de Dar&iacute;o y el dolor de Vallejo son tres formas de decir lo mismo con lenguajes diferentes de tres siglos distintos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La comparaci&oacute;n es imposible porque las tres obras pertenecen a tradiciones literarias completamente incomunicadas: la española del Siglo de Oro, la hispanoamericana modernista y la peruana vanguardista; ning&uacute;n eje comparativo puede ser v&aacute;lido para las tres</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de síntesis comparativa exige relacionar las tres obras del programa con análisis de los valores centrales de cada una. <B>El honor en <I>Fuenteovejuna</I></B> (Lope de Vega, Barroco español, siglo XVII): el honor es un valor social e intersubjetivo; existe porque otros lo reconocen; se defiende públicamente (en el concejo, ante el rey); su violación (por el Comendador) afecta al colectivo, no solo al individuo; la respuesta es colectiva (todo el pueblo) y tiene sanción pública (el perdón real). El honor es, en último término, un valor que une al individuo con la comunidad. <B>La belleza en <I>Prosas Profanas</I></B> (Darío, Modernismo hispanoamericano, 1896): la belleza es un valor estético absoluto e intransitivo; no necesita ser útil ni moral ni social; el poeta la contempla, la crea y la celebra en su soledad aristocrática; el "l'art pour l'art" parnasiano significa que la belleza no debe rendir cuentas a nadie (no al moral, no al político, no al burgués); la belleza une al artista con el ideal, no con la comunidad. <B>El dolor en <I>Trilce</I></B> (Vallejo, Vanguardismo, 1922): el dolor es radicalmente individual e intransferible; nadie puede sentir el dolor de otro; pero en Vallejo el dolor individual tiene resonancia universal: el dolor concreto (esta celda, esta madre muerta, este hambre) se convierte en la experiencia más profunda del ser humano en general; el dolor destruye todo valor (la belleza no sirve de nada, el honor no sirve de nada) para revelar la verdad más desnuda de la condición humana. Los tres proyectos revelan tres épocas: el Barroco (el individuo en la comunidad), el Modernismo (el individuo en el arte) y el Vanguardismo (el individuo en el dolor).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analiza la recepci&oacute;n cr&iacute;tica de <I>Trilce</I> desde su publicaci&oacute;n en 1922 hasta su reconocimiento como obra maestra: &iquest;qu&eacute; dice ese proceso sobre la naturaleza de la obra de arte radicalmente nueva?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) <I>Trilce</I> fue inmediatamente reconocido como obra maestra en 1922: la cr&iacute;tica peruana, española e hispanoamericana lo celebr&oacute; desde el primer d&iacute;a; el &eacute;xito fue tan grande que llev&oacute; a Vallejo a ser nombrado poeta nacional del Per&uacute; por el gobierno de Legu&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) <I>Trilce</I> fue <B>inicialmente ignorado o incomprendido</B> (la cr&iacute;tica peruana de 1922 lo llam&oacute; "caos sin forma"); su reconocimiento fue gradual: la edici&oacute;n espa&ntilde;ola de 1930 abri&oacute; el libro a nuevos lectores; hoy es reconocido universalmente como obra maestra; este proceso ilustra el principio de que las obras radicalmente nuevas requieren tiempo para que la cultura forme los instrumentos de lectura necesarios para comprenderlas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) <I>Trilce</I> sigue siendo incomprendido en el siglo XXI: ning&uacute;n cr&iacute;tico ha podido interpretarlo de manera satisfactoria; su oscuridad es tan total que hace imposible cualquier an&aacute;lisis riguroso; s&oacute;lo puede "sentirse" pero no analizarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La recepci&oacute;n de <I>Trilce</I> fue siempre positiva en Per&uacute; pero negativa en España y Am&eacute;rica Latina; el libro fue un &eacute;xito local que solo tard&iacute;amente tuvo reconocimiento internacional</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La historia de la recepción de <I>Trilce</I> es un caso canónico de incomprensión inicial seguida de reconocimiento tardío, y como tal tiene un valor pedagógico importante para comprender qué significa la obra de arte radicalmente nueva. (1) <B>La recepción inicial (1922)</B>: el libro fue publicado en Lima a expensas del propio Vallejo. La crítica peruana de la época lo ignoró casi completamente o lo consideró incomprensible. Los términos usados fueron "caos", "lenguaje sin sentido", "experimento fallido". El propio Vallejo, en el breve prólogo del libro, expresó su amargura: la obra estaba dirigida "al que haya leído el libro", es decir, a los poquísimos que serían capaces de hacerlo. (2) <B>El prólogo de Antenor Orrego</B>: el intelectual trujillano y amigo de Vallejo escribió el prólogo de la primera edición, en el que defendía el libro con argumentos visionarios que la crítica no supo leer en su momento. (3) <B>La edición española (Madrid, 1930)</B>: publicada por la Compañía Ibero-Americana de Publicaciones, con un nuevo prólogo de Orrego y la inclusión de una presentación española, fue decisiva para la difusión del libro en España y América Latina. (4) <B>El reconocimiento posterior a la muerte de Vallejo (1938)</B>: paradójicamente, la muerte de Vallejo relanzó el interés por su obra. Las ediciones de sus obras completas (Paris, 1939) incluyendo <I>Poemas humanos</I> y <I>España, aparta de mí este cáliz</I> atrajeron lectores hacia <I>Trilce</I>. (5) <B>La lección general</B>: las obras radicalmente nuevas no tienen lectores preparados en el momento de su aparición porque el horizonte de expectativas de los lectores no ha sido formado para recibirlas. Es el libro el que crea los lectores que necesita, pero ese proceso lleva tiempo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Eval&uacute;a la vigencia de <I>Trilce</I> en el siglo XXI: &iquest;por qu&eacute; sigue siendo un libro vivo y no solo un documento hist&oacute;rico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) <I>Trilce</I> solo tiene vigencia acad&eacute;mica: se estudia en universidades como documento del vanguardismo peruano pero no produce ninguna experiencia de lectura significativa en el lector contempor&aacute;neo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) <I>Trilce</I> sigue siendo un libro vivo porque: (1) sus temas son <B>universales y atemporales</B> (el dolor, la p&eacute;rdida, el encierro, el amor imposible, la orfandad); (2) su <B>crisis del lenguaje</B> es aun m&aacute;s vigente en la era digital, donde el lenguaje es sometido a presiones de simplificaci&oacute;n extrema; (3) su modelo de <B>resistencia est&eacute;tica</B> (la obra inimitable que no cede a los gustos del mercado) es un referente para los artistas contempor&aacute;neos; (4) su <B>ra&iacute;z andina</B> conecta con las reflexiones contempor&aacute;neas sobre identidad cultural, colonialismo y descolonizaci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) <I>Trilce</I> solo es vigente en Per&uacute;: el libro tiene un car&aacute;cter tan local y biogr&aacute;fico que los lectores de otros pa&iacute;ses no pueden identificarse con sus experiencias; su vigencia fuera del Per&uacute; es una construcci&oacute;n acad&eacute;mica sin base en la experiencia de lectura real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) <I>Trilce</I> ha perdido vigencia porque el lenguaje po&eacute;tico ha evolucionado tanto desde 1922 que sus innovaciones formales ya no sorprenden a nadie; lo que en 1922 era radical hoy es convencional; su &uacute;nico inter&eacute;s es arqueol&oacute;gico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La vigencia de <I>Trilce</I> en el siglo XXI se fundamenta en varias dimensiones que el análisis cuidadoso revela: (1) <B>La universalidad de sus temas</B>: el dolor (físico, afectivo, existencial), la pérdida de los seres queridos, el encierro (físico o metafórico), el amor imposible, la orfandad: son experiencias que no tienen fecha de vencimiento. Cada lector que ha sufrido una pérdida irreparable reconocerá en los poemas de la madre de <I>Trilce</I> algo de su propio duelo, aunque su experiencia sea completamente distinta a la de Vallejo. (2) <B>La vigencia de la crisis del lenguaje</B>: en la era de las redes sociales y la comunicación digital, el lenguaje está siendo sometido a presiones de simplificación (el tweet de 280 caracteres, el meme como unidad de sentido) que hacen más urgente que nunca la pregunta que Vallejo se hace en <I>Trilce</I>: ¿puede el lenguaje decir la verdad de la experiencia humana? La respuesta de Vallejo (destruir el lenguaje y reinventarlo) es una respuesta que los artistas contemporáneos siguen dando con sus propias herramientas. (3) <B>El modelo de resistencia estética</B>: <I>Trilce</I> es el ejemplo más poderoso en la literatura en español de una obra que no cede a las demandas del mercado, del gusto fácil o de la comprensión inmediata. En un mercado cultural dominado por lo "viral" y lo "consumible", <I>Trilce</I> sigue siendo un referente de la obra que exige todo del lector. (4) <B>La dimensión poscolonial</B>: la raíz andina de Vallejo, su mestizaje cultural, su posición en el margen del sistema cultural hispano (provinciano de la sierra norte del Perú que conquista el centro) son temas que conectan directamente con los debates contemporáneos sobre descolonización, identidad cultural y literaturas periféricas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Si tuvieras que definir <I>Trilce</I> en una sola frase para un examen de alto rendimiento, &iquest;cu&aacute;l de las siguientes captura mejor la esencia de la obra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) "<I>Trilce</I> es un libro de poemas de amor del poeta peruano C&eacute;sar Vallejo, escrito en Buenos Aires en 1896, que inaugura el Modernismo hispanoamericano con versos de gran musicalidad y belleza formal"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) "<I>Trilce</I> es el libro de poes&iacute;a l&iacute;rica m&aacute;s radical del Vanguardismo hispanoamericano, publicado por C&eacute;sar Vallejo en Lima en 1922, que a trav&eacute;s de 77 poemas sin t&iacute;tulo y un lenguaje destruido y reinventado desde el dolor, el encierro y la orfandad, crea un idioma po&eacute;tico absolutamente original e inimitable en la historia de la literatura en espa&ntilde;ol"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) "<I>Trilce</I> es la autobiograf&iacute;a en verso del poeta peruano C&eacute;sar Vallejo, escrita en Par&iacute;s entre 1923 y 1938, que narra su vida desde la infancia en Santiago de Chuco hasta su muerte, usando el verso libre al modo del Surrealismo de Andr&eacute; Breton"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) "<I>Trilce</I> es el &uacute;ltimo libro de poes&iacute;a de C&eacute;sar Vallejo, publicado p&oacute;stumamente en Par&iacute;s en 1939 junto con <I>Poemas humanos</I> y <I>Espa&ntilde;a, aparta de m&iacute; este c&aacute;liz</I>, y constituye su obra de madurez pol&iacute;tica y existencial"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de síntesis final evalúa si el estudiante ha integrado todos los conocimientos fundamentales del tema. Análisis de cada opción: <B>a) Incorrecta</B>: comete cuatro errores graves: (1) "libro de poemas de amor" (es mucho más que eso); (2) "Buenos Aires en 1896" (<I>Trilce</I> fue publicado en Lima en 1922; Buenos Aires-1896 corresponde a <I>Prosas Profanas</I> de Darío); (3) "inaugura el Modernismo" (inaugura el Vanguardismo, no el Modernismo); (4) "musicalidad y belleza formal" (son características del Modernismo, exactamente lo que <I>Trilce</I> rechaza). <B>b) Correcta</B>: integra todos los elementos esenciales: (1) <B>Género</B>: "libro de poesía lírica"; (2) <B>Posición histórica</B>: "más radical del Vanguardismo hispanoamericano"; (3) <B>Datos bibliográficos</B>: "César Vallejo", "Lima", "1922"; (4) <B>Estructura</B>: "77 poemas sin título"; (5) <B>Recurso central</B>: "lenguaje destruido y reinventado"; (6) <B>Temas</B>: "dolor, encierro y orfandad"; (7) <B>Valor literario</B>: "idioma poético absolutamente original e inimitable". <B>c) Incorrecta</B>: comete tres errores: (1) "autobiografía en verso" (es poesía lírica, no autobiografía narrativa); (2) "escrita en París entre 1923 y 1938" (<I>Trilce</I> fue escrito en Perú, publicado en 1922, antes del viaje a París); (3) "al modo del Surrealismo de Breton" (Vallejo no es surrealista y <I>Trilce</I> es anterior al Manifiesto Surrealista de 1924). <B>d) Incorrecta</B>: confunde <I>Trilce</I> con <I>Poemas humanos</I> (que sí es póstumo, de 1939). <I>Trilce</I> fue publicado en vida de Vallejo, en 1922, y no es el "último" libro sino el segundo. La opción b) demuestra precisión factual, comprensión conceptual y capacidad de síntesis, las tres competencias fundamentales del examen preuniversitario de alto rendimiento.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

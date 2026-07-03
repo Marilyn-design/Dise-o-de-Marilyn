@@ -1,0 +1,681 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>La Prehistoria - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:26px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA &middot; TEMA 1</DIV>
+<H1>La Prehistoria</H1>
+<DIV CLASS="sub">Hominización &middot; Paleolítico &middot; Mesolítico &middot; Neolítico &middot; Edad de los Metales &middot; Arte &middot; Megalitismo</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+
+
+
+<!-- EXPLICACION -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<!-- 1 -->
+<H3 ID="def">1. ¿Qué es la Prehistoria? Concepto y fuentes</H3>
+La <B>Prehistoria</B> es el periodo más extenso de la existencia humana: abarca desde la aparición de los primeros homínidos bípedos (hace unos 4 millones de años) hasta la invención de la <B>escritura</B> (~3 500 a.C. en Mesopotamia). La palabra viene del griego <I>prae</I> (antes) e <I>historia</I> (relato escrito): literalmente, "antes del relato escrito".
+
+Su estudio depende exclusivamente de <B>fuentes materiales</B>, porque no existe ningún documento escrito:
+<UL>
+<LI><B>Fósiles:</B> restos óseos, dientes y huellas petrificadas de homínidos y animales. La paleontología y la paleoantropología los estudian.</LI>
+<LI><B>Herramientas líticas:</B> instrumentos de piedra tallada o pulida. Son el "fósil guía" más fiable porque la piedra es casi indestructible. Permiten identificar culturas y periodos.</LI>
+<LI><B>Arte rupestre:</B> pinturas y grabados en cuevas. Revelan capacidad simbólica, creencias y fauna del entorno.</LI>
+<LI><B>Yacimientos arqueológicos:</B> lugares donde se excava para recuperar restos humanos, herramientas, semillas, huesos de animales consumidos, cenizas de hogares y estructuras de habitación.</LI>
+<LI><B>ADN antiguo:</B> desde los años 2000, la paleogenómica extrae y secuencia ADN de huesos prehistóricos, revolucionando el conocimiento de las migraciones y los cruces entre especies.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Error frecuente en exámenes:</B> La Prehistoria NO termina con la aparición del Homo sapiens, ni con la agricultura, ni con los metales. Termina exactamente con la <B>invención de la escritura</B> (~3 500 a.C.). Todo lo anterior, por antiguo o avanzado que sea, es Prehistoria.</DIV>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Gran etapa</TH><TH>Subdivisión</TH><TH>Cronología aprox.</TH><TH>Rasgo definitorio</TH></TR>
+<TR><TD rowspan="3"><B>Edad de Piedra</B></TD><TD>Paleolítico</TD><TD>2,5 M – 10 000 a.C.</TD><TD>Caza, recolección, nomadismo, piedra tallada</TD></TR>
+<TR><TD>Mesolítico</TD><TD>10 000 – 7 000 a.C.</TD><TD>Transición climática, microlitos, pesca intensiva</TD></TR>
+<TR><TD>Neolítico</TD><TD>7 000 – 3 500 a.C.</TD><TD>Agricultura, ganadería, sedentarismo, cerámica</TD></TR>
+<TR><TD rowspan="3"><B>Edad de los Metales</B></TD><TD>Calcolítico (Cobre)</TD><TD>4 000 – 2 500 a.C.</TD><TD>Primer metal trabajado</TD></TR>
+<TR><TD>Edad del Bronce</TD><TD>2 500 – 1 200 a.C.</TD><TD>Aleación cobre+estaño; primeras civilizaciones</TD></TR>
+<TR><TD>Edad del Hierro</TD><TD>1 200 – 800 a.C.</TD><TD>Hierro abundante; inicio civilizaciones clásicas</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 2 -->
+<H3 ID="hominizacion">2. La Hominización: proceso y especies</H3>
+La <B>hominización</B> es el largo proceso evolutivo —de millones de años— por el que la línea de primates que comparte antepasados con los chimpancés fue adquiriendo gradualmente las características que definen al ser humano: <B>bipedestación, manos libres, cerebro voluminoso, lenguaje articulado y comportamiento simbólico</B>.
+
+<DIV CLASS="alerta">⚠️ <B>Concepto clave:</B> La bipedestación apareció ANTES que el gran cerebro. Lucy (Australopithecus, ~3,2 M a.C.) ya caminaba erguida con un cerebro de solo 430 cc. El aumento del cerebro fue consecuencia posterior, favorecido en parte por la cocción de alimentos.</DIV>
+
+<H4>Árbol cronológico de las especies homínidas más importantes:</H4>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Especie</TH><TH>Cuándo</TH><TH>Dónde</TH><TH>Cerebro</TH><TH>Aportación clave</TH></TR>
+<TR><TD><B>Sahelanthropus tchadensis</B></TD><TD>~7 M a.C.</TD><TD>Chad (África central)</TD><TD>~350 cc</TD><TD>Posible primer homínido bípedo. "Toumaï". Muy debatido.</TD></TR>
+<TR><TD><B>Australopithecus afarensis</B></TD><TD>3,9 – 2,9 M a.C.</TD><TD>África oriental</TD><TD>~430 cc</TD><TD>Bípedo confirmado. "Lucy" (Etiopía, 1974). Cara simiesca.</TD></TR>
+<TR><TD><B>Australopithecus africanus</B></TD><TD>3 – 2 M a.C.</TD><TD>África del Sur</TD><TD>~450 cc</TD><TD>Dieta más omnívora. "Niño de Taung" (Dart, 1924).</TD></TR>
+<TR><TD><B>Homo habilis</B></TD><TD>2,5 – 1,5 M a.C.</TD><TD>África</TD><TD>~600 cc</TD><TD>Primeras herramientas intencionales. Cultura Olduvayense.</TD></TR>
+<TR><TD><B>Homo ergaster</B></TD><TD>1,9 – 1,4 M a.C.</TD><TD>África</TD><TD>~850 cc</TD><TD>Cuerpo ya muy similar al moderno. Antepasado del erectus.</TD></TR>
+<TR><TD><B>Homo erectus</B></TD><TD>1,8 M – 100 000 a.C.</TD><TD>África, Asia, Europa</TD><TD>~900 cc</TD><TD>Primera salida de África. Dominio del fuego. Bifaces achelenses.</TD></TR>
+<TR><TD><B>Homo heidelbergensis</B></TD><TD>600 000 – 200 000 a.C.</TD><TD>Europa y África</TD><TD>~1 200 cc</TD><TD>Antepasado común de neandertales y sapiens. Caza grande.</TD></TR>
+<TR><TD><B>Homo neanderthalensis</B></TD><TD>250 000 – 28 000 a.C.</TD><TD>Europa y Asia occidental</TD><TD>~1 450 cc</TD><TD>Rituales funerarios. Adaptado al frío. Se mezcló con sapiens.</TD></TR>
+<TR><TD><B>Homo sapiens sapiens</B></TD><TD>~300 000 a.C. – presente</TD><TD>Origen en África</TD><TD>~1 350 cc</TD><TD>Lenguaje, arte, escritura, ciencia. Única especie viva del género.</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Características físicas de la bipedestación (muy preguntado en examen):</H4>
+<UL>
+<LI><B>Foramen magnum</B> (orificio occipital) situado en la base del cráneo, no en la parte posterior como en los cuadrúpedos, para que la columna vertebral suba verticalmente.</LI>
+<LI><B>Columna vertebral en S</B>: cuatro curvaturas que amortiguan el impacto de caminar erguido.</LI>
+<LI><B>Pelvis ancha y corta</B> (ilíaca), orientada para soportar el peso del torso.</LI>
+<LI><B>Fémur angulado</B> hacia adentro (valgo), colocando los pies bajo el centro de gravedad.</LI>
+<LI><B>Pie con arco plantar</B> y dedo gordo alineado (no oponible como en los simios).</LI>
+<LI><B>Manos libres</B>: al no usarse para caminar, pudieron especializarse en sujetar, fabricar y lanzar.</LI>
+</UL>
+
+<H4>El Homo neanderthalensis en detalle:</H4>
+<UL>
+<LI>Físicamente adaptado al frío glacial de Europa: cuerpo robusto y ancho para retener calor, nariz grande para calentar el aire frío antes de llegar a los pulmones.</LI>
+<LI>Cultura <B>Musteriense</B>: herramientas muy especializadas (raspadores, puntas de lanza, cuchillos) fabricadas con la técnica Levallois.</LI>
+<LI>Primer homínido con <B>enterramientos rituales deliberados</B>: posición fetal, ocre rojo, flores, herramientas. Implica creencia en algún tipo de vida tras la muerte.</LI>
+<LI>Coexistió con el <I>Homo sapiens</I> en Europa durante ~5 000–10 000 años y se cruzó con él.</LI>
+<LI>El <B>Premio Nobel de Medicina 2022</B> fue para <B>Svante Pääbo</B> por secuenciar su ADN: los humanos no africanos llevamos entre 1% y 4% de ADN neandertal.</LI>
+</UL>
+
+<DIV CLASS="ej">🧬 <B>Paleogenómica:</B> También se ha secuenciado el ADN de los <B>Denisovanos</B>, una especie descubierta en 2010 gracias a un fragmento de hueso de dedo encontrado en una cueva de Siberia. Los denisovanos son parientes cercanos de los neandertales y también se cruzaron con el Homo sapiens: los habitantes actuales de Melanesia (Papua Nueva Guinea, islas del Pacífico) llevan hasta un 5% de ADN denisovano.</DIV>
+
+<!-- 3 -->
+<H3 ID="paleolitico">3. El Paleolítico: etapas, economía y sociedad</H3>
+El Paleolítico ("piedra antigua") abarca desde ~2,5 millones de años hasta ~10 000 a.C. Es con diferencia la etapa más larga de la Prehistoria: representa el 99% del tiempo que los humanos llevamos sobre la Tierra.
+
+<H4>Economía depredadora:</H4>
+<UL>
+<LI>Los grupos paleolíticos <B>no producían</B> su alimento: tomaban lo que la naturaleza ofrecía sin modificarla.</LI>
+<LI><B>Caza:</B> mamuts, bisontes, renos, caballos, ciervos, rinocerontes lanudos. Usaban lanzas, trampas de foso y acorralaban animales en precipicios (método del "battue").</LI>
+<LI><B>Recolección:</B> bayas, nueces, hongos, raíces, miel, huevos, insectos. Probablemente la recolección aportaba más calorías diarias que la caza.</LI>
+<LI><B>Pesca:</B> principalmente en el Paleolítico Superior, con anzuelos y arpones de hueso.</LI>
+</UL>
+
+<H4>Organización social:</H4>
+<UL>
+<LI>Grupos de <B>20 a 50 individuos</B> (la "banda"), tamaño óptimo para moverse rápido y cooperar en la caza.</LI>
+<LI>Sociedad <B>igualitaria</B>: no había jefes permanentes ni clases sociales. El liderazgo era situacional (el mejor cazador dirigía la caza; el más anciano aconsejaba).</LI>
+<LI><B>División sexual del trabajo</B> probable: hombres principalmente cazadores, mujeres principalmente recolectoras (aunque hay debate sobre esto).</LI>
+<LI>Vida media muy baja (~30–35 años), aunque algunos individuos llegaban a los 50–60.</LI>
+<LI>Hábitat: cuevas cuando las encontraban, y refugios temporales de ramas, pieles y huesos de mamut.</LI>
+</UL>
+
+<H4>Las tres fases del Paleolítico:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fase</TH><TH>Cronología</TH><TH>Especie dominante</TH><TH>Herramientas</TH><TH>Hitos</TH></TR>
+<TR><TD><B>Paleolítico Inferior</B></TD><TD>2,5 M – 200 000 a.C.</TD><TD>H. habilis, H. erectus</TD><TD>Olduvayense → Achelense</TD><TD>Primeras herramientas; dominio del fuego (~800 000 a.C.); salida de África</TD></TR>
+<TR><TD><B>Paleolítico Medio</B></TD><TD>200 000 – 40 000 a.C.</TD><TD>H. neanderthalensis</TD><TD>Musteriense (Levallois)</TD><TD>Rituales funerarios; herramientas especializadas; uso del ocre</TD></TR>
+<TR><TD><B>Paleolítico Superior</B></TD><TD>40 000 – 10 000 a.C.</TD><TD>H. sapiens sapiens</TD><TD>Auriñaciense, Gravetiense, Solutrense, Magdaleniense</TD><TD>Arte rupestre; agujas de hueso; arpones; figurillas; comercio de larga distancia</TD></TR>
+</TABLE>
+</DIV>
+
+<!-- 4 -->
+<H3 ID="herramientas">4. Las culturas líticas: herramientas de piedra</H3>
+La tecnología de la piedra tallada evolucionó durante 2,5 millones de años. Los arqueólogos la organizan en <B>modos tecnológicos</B>:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Modo</TH><TH>Cultura</TH><TH>Cronología</TH><TH>Especie</TH><TH>Técnica y herramientas</TH></TR>
+<TR><TD>Modo 1</TD><TD><B>Olduvayense</B></TD><TD>~2,5 M – 1,7 M a.C.</TD><TD>H. habilis</TD><TD>Cantos rodados con pocas lascas extraídas. "Chopper" (cortador) y "chopping tool". Bordes toscas pero funcionales para cortar carne y romper huesos.</TD></TR>
+<TR><TD>Modo 2</TD><TD><B>Achelense</B></TD><TD>~1,7 M – 200 000 a.C.</TD><TD>H. erectus</TD><TD>Bifaz: tallado por ambas caras, forma de almendra o gota simétrica. Un solo objeto sirve para cortar, raspar, perforar y golpear. Duró más de 1 millón de años con pocas variaciones.</TD></TR>
+<TR><TD>Modo 3</TD><TD><B>Musteriense</B></TD><TD>~200 000 – 40 000 a.C.</TD><TD>H. neanderthalensis</TD><TD>Técnica Levallois: preparación del núcleo para extraer lascas de forma predeterminada. Herramientas especializadas: raspadores, puntas de lanza triangulares, cuchillos con dorso.</TD></TR>
+<TR><TD>Modo 4</TD><TD><B>Auriñaciense / Gravetiense / Solutrense</B></TD><TD>~40 000 – 20 000 a.C.</TD><TD>H. sapiens</TD><TD>Láminas largas y estrechas. Agujas de hueso con ojo para coser ropa ajustada. Propulsores de lanza (aumentan el alcance hasta 80 m). Puntas en hoja de laurel (Solutrense: las más refinadas).</TD></TR>
+<TR><TD>Modo 5</TD><TD><B>Magdaleniense / Microlítico</B></TD><TD>~20 000 – 8 000 a.C.</TD><TD>H. sapiens</TD><TD>Microlitos (1–3 cm) ensamblados en mangos de madera. Arpones de hueso con dientes. Anzuelos. Arpones para pesca. Máxima miniaturización y especialización.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">💡 <B>¿Por qué la piedra y no la madera?</B> La madera, el cuero y el hueso se descomponen en miles de años. La piedra puede durar millones. Por eso el registro arqueológico del Paleolítico está dominado por herramientas líticas, aunque los grupos prehistóricos usaban también lanzas de madera, cestas, cuerdas y pieles que no se conservan.</DIV>
+
+<!-- 5 -->
+<H3 ID="fuego">5. El dominio del fuego y sus consecuencias</H3>
+El control del fuego es uno de los hitos más transformadores de la historia humana. Las evidencias más antiguas se sitúan en <B>Wonderwerk Cave</B> (Sudáfrica, ~1 M a.C.) y en <B>Gesher Benot Ya'aqov</B> (Israel, ~790 000 a.C.). El <I>Homo erectus</I> fue la primera especie en controlarlo sistemáticamente.
+
+<H4>Consecuencias del dominio del fuego:</H4>
+<UL>
+<LI><B>Cocción de alimentos:</B> el calor rompe las proteínas y los almidones, haciéndolos más digeribles. El cerebro obtiene más glucosa con menos esfuerzo digestivo. Richard Wrangham (Harvard) propone que cocinar fue el motor principal del aumento cerebral en el género Homo.</LI>
+<LI><B>Eliminación de parásitos:</B> cocinar carne mata bacterias, parásitos y huevos de helmintos. Redujo la mortalidad y la enfermedad.</LI>
+<LI><B>Calor:</B> permitió colonizar regiones frías (Europa, Asia central) que antes eran inhabitables para homínidos tropicales.</LI>
+<LI><B>Iluminación y extensión del día social:</B> la hoguera nocturna permitió actividad social, narración de historias, transmisión de conocimientos y refuerzo de lazos comunitarios después del anochecer.</LI>
+<LI><B>Protección:</B> ahuyentó depredadores nocturnos (leones, osos de las cavernas, hienas gigantes).</LI>
+<LI><B>Endurección de la madera:</B> calentar las puntas de las lanzas de madera las endurecía considerablemente.</LI>
+<LI><B>Señalización:</B> el humo podía usarse para comunicar la posición del grupo a distancia.</LI>
+</UL>
+
+<!-- 6 -->
+<H3 ID="arte">6. El Arte Prehistórico: rupestre y mobiliar</H3>
+El arte aparece exclusivamente con el <I>Homo sapiens</I> en el <B>Paleolítico Superior</B> (~40 000 a.C.) y es la evidencia más clara de <B>pensamiento abstracto y simbólico</B>: la capacidad de representar la realidad, planificar a futuro e imaginar lo que no está presente.
+
+<H4>Tipos de arte prehistórico:</H4>
+<UL>
+<LI><B>Arte rupestre o parietal:</B> pinturas y grabados en paredes y techos de cuevas. Pigmentos: <B>ocre</B> (óxido de hierro: rojo, naranja, amarillo) y <B>carbón vegetal</B> (negro). Se aplicaban con dedos, palitos, musgos como esponja, y huesos huecos usados como "aerógrafo" para soplar el pigmento en polvo. Se representaban principalmente <B>animales de caza</B> (bisontes, caballos, mamuts, rinocerontes, ciervos) y en menor medida manos en negativo (se ponía la mano sobre la pared y se soplaba pigmento) y signos geométricos.</LI>
+<LI><B>Arte mobiliar:</B> objetos portátiles. Incluye figurillas de arcilla o marfil, huesos y astas grabadas con patrones geométricos o animales, cuentas de conchas o dientes de animales para hacer collares y brazaletes.</LI>
+</UL>
+
+<H4>Los yacimientos más importantes:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Yacimiento</TH><TH>Lugar</TH><TH>Antigüedad</TH><TH>Lo más relevante</TH></TR>
+<TR><TD><B>Cueva de Chauvet</B></TD><TD>Ardèche, Francia</TD><TD>~36 000 a.C.</TD><TD>Pinturas más antiguas del mundo. 13 especies: leones, rinocerontes lanudos, osos. Descubierta en 1994 por Jean-Marie Chauvet. Cerrada al público.</TD></TR>
+<TR><TD><B>Lascaux</B></TD><TD>Dordoña, Francia</TD><TD>~17 000 a.C.</TD><TD>Más de 2 000 figuras. Descubierta en 1940 por cuatro jóvenes y su perro. Cerrada desde 1963 (el CO₂ generaba hongos). Existe réplica exacta (Lascaux IV).</TD></TR>
+<TR><TD><B>Altamira</B></TD><TD>Cantabria, España</TD><TD>~14 000 a.C.</TD><TD>Bisontes del techo pintados sobre relieves naturales para dar volumen (perspectiva). Descubierta en 1879 por Sautuola y su hija María de 8 años. La ciencia la rechazó hasta 1902. UNESCO Patrimonio de la Humanidad.</TD></TR>
+<TR><TD><B>El Castillo</B></TD><TD>Cantabria, España</TD><TD>~40 800 a.C.</TD><TD>Un disco rojo fechado en ~40 800 a.C. es la imagen datada más antigua de Europa. Manos en negativo.</TD></TR>
+<TR><TD><B>Venus de Willendorf</B></TD><TD>Austria</TD><TD>~28 000 a.C.</TD><TD>Estatuilla de 11 cm. Rasgos reproductivos exagerados. Interpretada como símbolo de fertilidad o amuleto de parto.</TD></TR>
+<TR><TD><B>Venus de Hohle Fels</B></TD><TD>Alemania</TD><TD>~35 000 a.C.</TD><TD>La figurilla femenina más antigua conocida, tallada en marfil de mamut.</TD></TR>
+<TR><TD><B>Flauta de Geissenklösterle</B></TD><TD>Alemania</TD><TD>~43 000 a.C.</TD><TD>El instrumento musical más antiguo conocido, tallado en hueso de buitre. Prueba que el Homo sapiens ya hacía música al llegar a Europa.</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Teorías sobre la función del arte rupestre:</H4>
+<UL>
+<LI><B>Magia simpática propiciatoria (teoría dominante):</B> pintar al animal antes de la caza para "capturarlo" ritualmente y asegurar el éxito. Las heridas pintadas sobre los animales refuerzan esta idea.</LI>
+<LI><B>Chamanismo:</B> el chamán entraba en trance en las profundidades oscuras de la cueva y plasmaba sus visiones. Las cuevas eran el "mundo de los espíritus".</LI>
+<LI><B>Comunicación intergrupal:</B> los signos geométricos podían transmitir información entre grupos sobre rutas de migración de animales o territorios.</LI>
+<LI><B>Marcadores territoriales:</B> las cuevas decoradas podrían ser lugares sagrados de un grupo específico.</LI>
+<LI><B>Enseñanza:</B> representar animales para instruir a los jóvenes cazadores sobre el comportamiento de las presas.</LI>
+</UL>
+
+<!-- 7 -->
+<H3 ID="mesolitico">7. El Mesolítico: la gran transición</H3>
+El <B>Mesolítico</B> (~10 000 – 7 000 a.C.) es la etapa menos espectacular pero más crucial desde el punto de vista climático y ecológico. Coincide con el fin de la <B>última glaciación</B> (Pleistoceno tardío → Holoceno).
+
+<H4>Cambios ambientales radicales:</H4>
+<UL>
+<LI>La temperatura global subió varios grados en pocos milenios. Los glaciares retrocedieron hacia los polos árticos.</LI>
+<LI>El nivel del mar subió ~130 metros, inundando enormes llanuras costeras: el Mar del Norte (antes tierra firme habitada), el Canal de la Mancha, el estrecho de Bering (que unía Asia y América), y el Mar de Japón.</LI>
+<LI>Los bosques templados y las praderas sustituyeron a las tundras abiertas que habían favorecido la megafauna.</LI>
+</UL>
+
+<H4>Extinción de la megafauna:</H4>
+<UL>
+<LI>Se extinguieron el <B>mamut lanudo</B>, el <B>rinoceronte lanudo</B>, el <B>uro</B> (vaca salvaje gigante), el <B>megaloceros</B> (ciervo gigante de 3,7 m de altura con cornamenta de 3,7 m), el <B>gliptodonte</B> y el <B>megaterio</B> en América.</LI>
+<LI>El debate científico sobre si fue el <B>cambio climático</B> o la <B>caza humana excesiva</B> ("overkill" de Paul Martin) o ambos factores combinados sigue abierto.</LI>
+</UL>
+
+<H4>Adaptaciones mesolíticas:</H4>
+<UL>
+<LI>Caza de animales más pequeños y ágiles (jabalíes, ciervos, castores, aves) con arcos y flechas equipadas con <B>microlitos</B>.</LI>
+<LI>Intensificación de la <B>pesca</B> en ríos, lagos y costas: redes de fibras vegetales, arpones de hueso, trampas de pesca en madera.</LI>
+<LI>Los <B>concheros</B> (montones de conchas de mariscos) son el yacimiento típico mesolítico. El más grande de Europa es el de <B>Muge</B> (Portugal), con restos de miles de personas enterradas.</LI>
+<LI>Aparece el <B>arco y la flecha</B> como arma estándar: mayor precisión y alcance que la lanza, ideal para cazar animales esquivos en bosques cerrados.</LI>
+<LI><B>Semisedentarismo:</B> algunos grupos comenzaron a quedarse meses en el mismo lugar rico en recursos (riberas de ríos, costas) antes de trasladarse. Esto prefigura el sedentarismo del Neolítico.</LI>
+<LI>Primera domesticación documentada: el <B>perro</B>, domesticado a partir del lobo gris hace ~15 000 – 12 000 años, fue el primer animal domesticado y ayudaba en la caza.</LI>
+</UL>
+
+<!-- 8 -->
+<H3 ID="neolitico">8. La Revolución Neolítica</H3>
+El término <B>"Revolución Neolítica"</B> fue acuñado en 1936 por el arqueólogo australiano <B>Vere Gordon Childe</B> en su obra <I>"Man Makes Himself"</I>. Describe el paso de una <B>economía depredadora</B> (cazar y recoger lo que existe) a una <B>economía productora</B> (cultivar y criar animales para crear alimentos).
+
+<H4>¿Por qué ocurrió?</H4>
+<UL>
+<LI>El calentamiento postglacial (~10 000 a.C.) favoreció la expansión de gramíneas silvestres (trigo, cebada, mijo) en el Creciente Fértil y otras regiones.</LI>
+<LI>La extinción de la megafauna eliminó las presas principales. Los grupos humanos debieron diversificar sus fuentes de alimento.</LI>
+<LI>El aumento de la población humana generó mayor presión sobre los recursos silvestres, estimulando la producción propia.</LI>
+<LI>La experimentación acumulada de milenios con plantas silvestres (qué semillas germinan mejor, qué plantas son más nutritivas) llevó gradualmente a la selección artificial y el cultivo deliberado.</LI>
+</UL>
+
+<H4>La domesticación de plantas y animales:</H4>
+<UL>
+<LI><B>Domesticación de plantas:</B> proceso de selección artificial de individuos con rasgos útiles (semillas más grandes, frutos más dulces, plantas que no dejan caer las semillas al madurar). Tardó miles de años.</LI>
+<LI><B>Animales domesticados en el Neolítico:</B> cabra (~10 000 a.C., Zagros, Irán), oveja (~9 000 a.C., Anatolia), cerdo (~8 500 a.C., Oriente Próximo y China independientemente), vaca-bovino (~8 000 a.C., Anatolia y Sahara), gato (~7 500 a.C., Chipre, atraído por los ratones de los graneros).</LI>
+</UL>
+
+<H4>Las primeras ciudades neolíticas:</H4>
+<UL>
+<LI><B>Jericó</B> (Palestina, ~9 000 a.C.): considerada la ciudad más antigua del mundo. Tenía muros de piedra de hasta 4 metros de alto y una torre circular de 9 metros. Prueba organización colectiva avanzada.</LI>
+<LI><B>Çatalhöyük</B> (Turquía, ~7 500 – 5 700 a.C.): hasta 8 000 habitantes. Las casas no tenían puertas: se entraba por el techo con escaleras. Los muertos se enterraban bajo el suelo de las casas. Pinturas murales en el interior. Dieta mixta de ganado bovino y cereales.</LI>
+<LI><B>Ain Ghazal</B> (Jordania, ~7 200 a.C.): famosa por sus estatuillas de yeso de tamaño casi natural, algunas de las esculturas más antiguas del mundo.</LI>
+</UL>
+
+<!-- 9 -->
+<H3 ID="agricultura">9. La agricultura: focos y consecuencias</H3>
+
+<H4>Focos independientes de la agricultura en el mundo:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Región</TH><TH>Fecha aprox.</TH><TH>Cultivos principales</TH><TH>Animales domesticados</TH></TR>
+<TR><TD><B>Creciente Fértil</B> (Israel, Palestina, Siria, Irak, Irán)</TD><TD>~9 500 a.C.</TD><TD>Trigo emmer, trigo einkorn, cebada, lentejas, guisantes, lino</TD><TD>Cabra, oveja, cerdo, vaca</TD></TR>
+<TR><TD><B>China</B> (ríos Yangtze y Amarillo)</TD><TD>~7 000 a.C.</TD><TD>Arroz (Yangtze), mijo (Amarillo)</TD><TD>Cerdo, perro, gusano de seda</TD></TR>
+<TR><TD><B>Mesoamérica</B> (México, Guatemala)</TD><TD>~7 000 a.C.</TD><TD>Maíz (teosinte domesticado), frijol, calabaza, chile, aguacate</TD><TD>Pavo, perro</TD></TR>
+<TR><TD><B>Nueva Guinea</B></TD><TD>~7 000 a.C.</TD><TD>Taro, ñame, plátano, caña de azúcar</TD><TD>Cerdo</TD></TR>
+<TR><TD><B>África subsahariana</B> (Sahel)</TD><TD>~5 000 a.C.</TD><TD>Sorgo, mijo africano, café</TD><TD>Asno, ganado cebú</TD></TR>
+<TR><TD><B>Andes</B> (Perú, Bolivia, Ecuador)</TD><TD>~5 000 a.C.</TD><TD>Papa, quinua, maíz, oca, mashua, yuca</TD><TD>Llama, alpaca, cobayo, pato criollo</TD></TR>
+<TR><TD><B>Norteamérica oriental</B> (Mississippi)</TD><TD>~4 000 a.C.</TD><TD>Girasol, arrurruz, quinuapié</TD><TD>Pavo (tardío)</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Consecuencias de la Revolución Neolítica (las más preguntadas en exámenes):</H4>
+<UL>
+<LI><B>Sedentarismo:</B> al cultivar la tierra, no conviene alejarse. Aparecen aldeas permanentes con casas de adobe, madera o piedra.</LI>
+<LI><B>Excedentes alimentarios:</B> por primera vez la producción supera el consumo inmediato. Se almacena en silos y ánforas.</LI>
+<LI><B>Propiedad privada:</B> la tierra cultivada, el granero, el ganado criado son de quien los trabaja. Emerge la noción de posesión personal y herencia.</LI>
+<LI><B>División del trabajo:</B> con excedentes, no todos necesitan producir alimento. Surgen: alfareros, tejedores, carpinteros, metalúrgicos, sacerdotes, guerreros, comerciantes.</LI>
+<LI><B>Estratificación social:</B> quien controla los excedentes tiene poder. Aparecen jefes, nobles y sacerdotes. La igualdad del Paleolítico desaparece.</LI>
+<LI><B>Comercio:</B> los excedentes se intercambian entre aldeas. Nacen las primeras rutas comerciales.</LI>
+<LI><B>Nuevas tecnologías:</B> cerámica para almacenar y cocinar, telar para tejer lino y lana, arado de madera, rueda (~3 500 a.C., Mesopotamia).</LI>
+<LI><B>Crecimiento demográfico:</B> más y mejor alimento → más hijos sobreviven → la población mundial pasó de ~5 millones (Paleolítico) a ~50 millones (Neolítico tardío).</LI>
+<LI><B>Enfermedades infecciosas:</B> vivir en asentamientos densos junto a animales domésticos facilitó el salto de enfermedades zoonóticas al ser humano: viruela (de las vacas), gripe (de las aves y cerdos), sarampión. Paradójicamente, la salud individual empeoró con la agricultura (dieta menos variada, trabajos físicos repetitivos que generan artrosis).</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La escritura cuneiforme (~3 500 a.C.) NO es una consecuencia directa de la Revolución Neolítica. Es una consecuencia posterior de la complejidad administrativa de las ciudades. Entre el inicio del Neolítico (~9 500 a.C.) y la escritura median 6 000 años.</DIV>
+
+<!-- 10 -->
+<H3 ID="metales">10. La Edad de los Metales</H3>
+La Edad de los Metales no reemplazó al Neolítico de golpe: durante siglos coexistieron aldeas que usaban piedra y bronce simultáneamente. Lo que la define es el uso progresivo de metales en las herramientas y armas, lo que aceleró la diferenciación social, el comercio y la guerra.
+
+<H4>Calcolítico o Edad del Cobre (~4 000 – 2 500 a.C.):</H4>
+<UL>
+<LI>El cobre (Cu) fue el primer metal trabajado. A veces se encontraba en estado nativo (cobre puro en la naturaleza) y podía martillearse en frío sin fundir.</LI>
+<LI>Temperatura de fusión: 1 085°C, alcanzable con hornos de arcilla y fuelle de cuero.</LI>
+<LI>Usos: hachas, punzones, anzuelos, agujas, adornos. El cobre puro es blando y se dobla; no reemplazó a la piedra en herramientas cortantes, pero sí permitió nuevas formas imposibles con piedra (como hilos y láminas).</LI>
+<LI>Focos principales: los Balcanes (Bulgaria, ~5 000 a.C., las minas de Ai Bunar son las más antiguas conocidas), el Creciente Fértil e Iberia.</LI>
+<LI>Consecuencias sociales: la metalurgia requiere especialistas y acceso a mineral, lo que impulsa el comercio de larga distancia y refuerza las élites.</LI>
+</UL>
+
+<H4>Edad del Bronce (~2 500 – 1 200 a.C.):</H4>
+<UL>
+<LI>El bronce es una <B>aleación</B> de cobre (~90%) y estaño (~10%). Es considerablemente más duro que el cobre puro, mantiene mejor el filo y es más fácil de moldear en formas complejas.</LI>
+<LI>Temperatura de fusión del bronce: ~900°C, más baja que el cobre puro, facilitando su fundición.</LI>
+<LI>El problema del estaño: es muy escaso en el Mediterráneo y Oriente Próximo. Había que traerlo de <B>Cornualles</B> (Gran Bretaña), <B>Bohemia</B> (República Checa), <B>Afganistán</B> y el sureste de Asia. Esto generó rutas comerciales de miles de kilómetros y fue motor del comercio internacional antiguo.</LI>
+<LI>Aplicaciones: espadas largas, escudos, corazas, cascos, puntas de flecha, hoces agrícolas, recipientes, estatuillas votivas.</LI>
+<LI>Civilizaciones del Bronce: <B>Sumerios</B> (escritura cuneiforme, rueda), <B>Egipto</B> (pirámides, faraones), <B>Civilización del Indo</B> (Mohenjo-Daro, alcantarillado urbano), <B>China Shang</B> (bronces ceremoniales, escritura sobre huesos oraculares), <B>Micenas</B> (Grecia pre-homérica).</LI>
+<LI>El "Colapso del Bronce" (~1 200 a.C.): en solo 50 años colapsaron casi todas las civilizaciones del Mediterráneo oriental. Causas debatidas: invasiones de los "Pueblos del Mar", sequías, terremotos, revueltas internas. Abrió paso a la Edad del Hierro.</LI>
+</UL>
+
+<H4>Edad del Hierro (~1 200 – 800 a.C.):</H4>
+<UL>
+<LI>El hierro (Fe) es el metal más abundante en la corteza terrestre (~5%), pero requiere ~1 538°C para fundirse. Solo cuando se dominó el horno de carbón y el fuelle doble se pudo trabajar.</LI>
+<LI>Origen: los <B>hititas</B> (Anatolia, actual Turquía) fueron los primeros en trabajar el hierro de forma sistemática (~1 400 a.C.), guardando el secreto celosamente. Al colapsar su imperio (~1 200 a.C.), la tecnología se difundió por todo el mundo conocido.</LI>
+<LI>Ventajas sobre el bronce: más duro una vez forjado y templado; mucho más abundante y barato (no dependía de rutas de estaño escaso); sus arados podían trabajar suelos duros y arcillosos que antes eran improductivos.</LI>
+<LI>Consecuencias: democratización de las herramientas y armas (ya no solo las élites podían tener metal), aumento de la productividad agrícola, formación de grandes ejércitos de infantería.</LI>
+<LI>Civilizaciones de la Edad del Hierro: <B>Grecia arcaica y clásica, Roma, Persia aqueménida, Cartago, los celtas en Europa, los fenicios</B> (grandes comerciantes mediterráneos que difundieron el alfabeto).</LI>
+</UL>
+
+<!-- 11 -->
+<H3 ID="megalitismo">11. El Megalitismo</H3>
+El <B>megalitismo</B> (del griego <I>megas</I>: grande, <I>lithos</I>: piedra) es el conjunto de construcciones monumentales de bloques pétreos masivos erigidas durante el Neolítico y el Calcolítico (~5 000 – 2 000 a.C.) en Europa occidental, especialmente en la fachada atlántica (Portugal, España, Francia, Irlanda, Gran Bretaña, Dinamarca, Malta).
+
+<H4>Los tres tipos fundamentales:</H4>
+<UL>
+<LI><B>Menhir:</B> bloque único de piedra clavado verticalmente en el suelo. Pueden medir desde 1 metro hasta más de 20 m. Función debatida: marcadores territoriales, objetos de culto, indicadores astronómicos, puntos de reunión. El más famoso es el <B>Gran Menhir Brisé</B> de Locmariaquer (Bretaña, Francia): 20 m de altura original, hoy caído y partido en 4 fragmentos. Pesaba ~280 toneladas. En <B>Carnac</B> (Bretaña) se alinean más de 3 000 menhires en filas paralelas de kilómetros, cuya función astronómica o ritual sigue siendo debatida.</LI>
+<LI><B>Dolmen:</B> cámara funeraria formada por losas verticales de piedra que sostienen una o más losas horizontales a modo de techo. Originalmente cubiertos de tierra formando un <B>túmulo</B> (montículo). Eran tumbas colectivas donde se enterraban los restos de generaciones sucesivas de la misma comunidad. Los huesos se depositaban uno sobre otro durante siglos. Hay decenas de miles en Europa, desde Portugal hasta Escandinavia y desde Irlanda hasta Israel. El dolmen de <B>Menga</B> (Antequera, España) tiene una losa de techo de 180 toneladas.</LI>
+<LI><B>Crómlech:</B> disposición circular (o en herradura) de menhires, a veces con trilitos (dos piedras verticales con una horizontal encima) y dólmenes en el interior. El más famoso del mundo es <B>Stonehenge</B>.</LI>
+</UL>
+
+<H4>Stonehenge en detalle (muy preguntado):</H4>
+<UL>
+<LI>Ubicación: llanura de Salisbury, Wiltshire, Inglaterra.</LI>
+<LI>Construcción: ~3 000 – 1 500 a.C., en varias fases durante 1 500 años.</LI>
+<LI>Materiales: las piedras exteriores (<I>sarsens</I>) pesan hasta 25 toneladas y proceden de <B>Marlborough Downs</B>, a 32 km. Las piedras azules interiores (<I>bluestones</I>) pesan hasta 4 toneladas y vienen de las <B>montañas Preseli</B> en Gales del sur, a ~250 km de distancia. Fueron transportadas en balsas por mar y luego arrastradas sobre troncos-rodillo.</LI>
+<LI>Orientación astronómica: el eje principal apunta exactamente hacia el <B>amanecer del solsticio de verano</B> (21 de junio) y hacia el <B>atardecer del solsticio de invierno</B> (21 de diciembre). Esto requirió conocimientos astronómicos sofisticados.</LI>
+<LI>Función probable: santuario solar, lugar de reunión comunitaria estacional, cementerio (se han encontrado restos de ~240 personas incineradas), lugar de curación (muchos esqueletos muestran enfermedades o traumas que parecen haber buscado curación allí).</LI>
+<LI>El movimiento de las piedras mayores habría requerido la coordinación de <B>más de 200 personas durante semanas</B> para cada piedra. Esto implica una sociedad con autoridad centralizada, planificación a largo plazo y movilización colectiva a gran escala.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">🗿 <B>Otros megalitos importantes:</B><BR>
+• <B>Newgrange</B> (Irlanda, ~3 200 a.C.): túmulo con corredor que ilumina solo el amanecer del solsticio de invierno. Más antiguo que Stonehenge y las pirámides de Giza.<BR>
+• <B>Ggantija</B> (Malta, ~3 600 a.C.): los templos de piedra más antiguos del mundo, anteriores a Stonehenge y las pirámides.<BR>
+• <B>Dolmen de Menga</B> (Antequera, España): losa de techo de 180 toneladas, el mayor peso manipulado por humanos prehistóricos en Europa.<BR>
+• <B>Callanish</B> (Escocia): alineaciones de menhires orientadas hacia la luna en su ciclo de 18,6 años.</DIV>
+
+<!-- DATOS CLAVE -->
+<H3 ID="datos">★ Datos clave para memorizar de cara al examen</H3>
+<DIV CLASS="alerta">
+📌 <B>Fechas de transición que SIEMPRE caen en examen:</B><BR>
+• <B>~4 M a.C.</B> → Primer homínido bípedo (Australopithecus)<BR>
+• <B>~2,5 M a.C.</B> → Primeras herramientas (Homo habilis, Olduvayense)<BR>
+• <B>~1,8 M a.C.</B> → Primera salida de África (Homo erectus)<BR>
+• <B>~800 000 a.C.</B> → Dominio del fuego (Homo erectus)<BR>
+• <B>~40 000 a.C.</B> → Arte rupestre (Homo sapiens llega a Europa)<BR>
+• <B>~10 000 a.C.</B> → Fin de la última glaciación; inicio del Mesolítico<BR>
+• <B>~9 500 a.C.</B> → Primera agricultura (Creciente Fértil)<BR>
+• <B>~4 000 a.C.</B> → Primer metal: cobre (Calcolítico)<BR>
+• <B>~3 500 a.C.</B> → Escritura cuneiforme (sumerios): FIN DE LA PREHISTORIA<BR>
+• <B>~2 500 a.C.</B> → Edad del Bronce<BR>
+• <B>~1 200 a.C.</B> → Edad del Hierro
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV class="dk-num">~4 M a.C.</DIV><DIV CLASS="dk-label">Australopithecus: primer bípedo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~2,5 M a.C.</DIV><DIV CLASS="dk-label">Homo habilis: primeras herramientas</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~800 000 a.C.</DIV><DIV CLASS="dk-label">Homo erectus: dominio del fuego</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~40 000 a.C.</DIV><DIV CLASS="dk-label">Arte rupestre: pensamiento simbólico</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~9 500 a.C.</DIV><DIV CLASS="dk-label">Primera agricultura (Creciente Fértil)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~3 500 a.C.</DIV><DIV CLASS="dk-label">Escritura: fin de la Prehistoria</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO &middot; COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Cuál es el criterio principal que separa la Prehistoria de la Historia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) El descubrimiento del fuego</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) La invención de la escritura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) El inicio de la agricultura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) La aparición del Homo sapiens</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La frontera es la <B>invención de la escritura</B> (~3 500 a.C., sumerios de Mesopotamia). Sin escritura no hay fuentes directas y todo pertenece a la Prehistoria, independientemente del nivel cultural.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> El periodo prehistórico en que el ser humano adoptó la agricultura y el sedentarismo se llama:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Paleolítico Inferior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Mesolítico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Neolítico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Calcolítico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Neolítico</B> (~7 000 – 3 500 a.C.) es la etapa de la Revolución Agrícola: sedentarismo, aldeas, domesticación de animales y plantas, cerámica y tejido.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿Qué especie fabricó las primeras herramientas de piedra (cultura Olduvayense)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Homo sapiens</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Homo erectus</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Homo habilis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Homo neanderthalensis</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Homo habilis</B> ("hombre habilidoso", ~2,5 M a.C.) fabricó las primeras herramientas de piedra intencionales: la cultura Olduvayense, del yacimiento de Olduvai (Tanzania).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> El fósil conocido como "Lucy" pertenece a la especie:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Homo habilis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Australopithecus afarensis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Homo erectus</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Homo heidelbergensis</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Lucy" es un esqueleto de <B>Australopithecus afarensis</B> descubierto en Etiopía en 1974 por Donald Johanson. Vivió hace ~3,2 M a.C. y ya caminaba bípeda pese a tener un cerebro pequeño (~430 cc).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> La primera especie del género Homo en salir de África fue:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Homo habilis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Homo neanderthalensis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Homo erectus</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Homo sapiens</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Homo erectus</B> (~1,8 M a.C.) fue el primer homínido en abandonar África, colonizando Asia (China, Java) y luego Europa. También fue el primero en dominar el fuego y fabricó los bifaces achelenses.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> El orden cronológico correcto de los metales en la Prehistoria fue:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Hierro → Bronce → Cobre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Bronce → Cobre → Hierro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Cobre → Bronce → Hierro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Cobre → Hierro → Bronce</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR><B>Cobre</B> (~4 000 a.C.) → <B>Bronce</B> (~2 500 a.C.) → <B>Hierro</B> (~1 200 a.C.). El orden está determinado por las temperaturas de fusión crecientes que requería cada metal y el dominio tecnológico disponible en cada época.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Las pinturas de Altamira y Lascaux representan principalmente animales con probable función:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Registro histórico de migraciones humanas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Mágico-religiosa propiciatoria de la caza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Registro contable de intercambios comerciales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Representación de divinidades solares</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La teoría dominante es la de la <B>magia simpática propiciatoria</B>: pintar al animal antes de cazarlo para asegurar el éxito. No había escritura ni comercio en el Paleolítico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> La principal causa del paso del Paleolítico al Neolítico fue:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El desarrollo de la metalurgia, que mejoró las herramientas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El cambio climático al final de la última glaciación (~10 000 a.C.) que modificó fauna y flora</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) La superpoblación que obligó a producir alimento propio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La invención de la rueda que facilitó el transporte</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El calentamiento postglacial extinguió la megafauna y expandió los cereales silvestres. Los grupos humanos, sin sus presas principales, experimentaron con plantas hasta llegar a la agricultura. La metalurgia y la rueda son posteriores al inicio del Neolítico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> La propiedad privada surgió en el Neolítico porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) La escritura permitió registrar bienes legalmente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El sedentarismo y los excedentes agrícolas generaron la noción de "lo mío"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Las armas de metal permitieron defender territorios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Los sacerdotes impusieron leyes de herencia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Al instalarse en un lugar fijo y acumular producción (tierra, granero, ganado), el agricultor neolítico desarrolló inevitablemente la noción de posesión. La escritura y las armas de metal son fenómenos posteriores.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> El Mesolítico se caracteriza principalmente por:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) El inicio de la agricultura y la ganadería</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) El uso de bifaces achelenses y el dominio del fuego</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) La adaptación al fin de la glaciación, la pesca intensiva y los microlitos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) La construcción de megalitos y dólmenes funerarios</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El Mesolítico es la etapa de transición tras el fin de la glaciación: la megafauna se extingue, los grupos humanos se adaptan cazando animales pequeños, intensificando la pesca (con arpones y redes) y fabricando microlitos. La agricultura es del Neolítico; los bifaces son del Paleolítico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> ¿Cuál de las siguientes afirmaciones sobre la evolución humana es INCORRECTA?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) El Australopithecus afarensis ya era bípedo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) El Homo erectus fue el primero en salir de África</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) El Homo neanderthalensis y el Homo sapiens nunca se mezclaron genéticamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) El Homo habilis fabricó las primeras herramientas Olduvayenses</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>La incorrecta es c)</B><BR>Svante Pääbo (Nobel 2022) demostró que <B>sí se mezclaron</B>: entre 1% y 4% del ADN de personas no africanas proviene de neandertales. Las otras afirmaciones son correctas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El bronce es una aleación de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Hierro y cobre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Cobre y estaño</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Hierro y estaño</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Cobre y plomo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El bronce es la aleación de <B>cobre (~90%) y estaño (~10%)</B>. Es más duro que el cobre puro, mantiene mejor el filo y fue el metal dominante entre ~2 500 y ~1 200 a.C. La escasez del estaño impulsó el comercio internacional de la Antigüedad.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Stonehenge es un ejemplo de crómlech. ¿Cuál es la evidencia de sus conocimientos astronómicos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Contiene pinturas rupestres del sol y la luna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Está orientado hacia el amanecer del solsticio de verano y el atardecer del solsticio de invierno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Fue construido en la fecha exacta del equinoccio de primavera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Las piedras representan las constelaciones del zodíaco</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El eje principal de Stonehenge apunta exactamente hacia el <B>amanecer del solsticio de verano (21 de junio)</B> y hacia el <B>atardecer del solsticio de invierno (21 de diciembre)</B>. Esta orientación precisa, lograda hace ~5 000 años sin instrumentos modernos, prueba un conocimiento astronómico avanzado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> La primera región del mundo en desarrollar la agricultura fue:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Los Andes peruanos (~5 000 a.C.)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El valle del río Nilo en Egipto (~6 000 a.C.)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El Creciente Fértil (Israel, Siria, Irak) (~9 500 a.C.)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) China (ríos Yangtze y Amarillo) (~7 000 a.C.)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Creciente Fértil</B> (~9 500 a.C.) fue el primer foco de agricultura conocido: trigo emmer, cebada, lentejas y lino. China (~7 000 a.C.) y los Andes (~5 000 a.C.) son focos independientes posteriores.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> ¿Cuál es la diferencia entre un menhir, un dolmen y un crómlech?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Menhir: tumba colectiva. Dolmen: piedra solitaria. Crómlech: pintura rupestre.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Menhir: piedra vertical solitaria. Dolmen: cámara funeraria de losas. Crómlech: círculo de menhires.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Menhir: círculo de piedras. Dolmen: piedra vertical. Crómlech: túmulo de tierra.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Los tres son tipos de pintura rupestre del Neolítico.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Menhir:</B> una sola piedra vertical (Carnac, Francia). <B>Dolmen:</B> cámara funeraria colectiva formada por losas verticales con techo horizontal. <B>Crómlech:</B> disposición circular de menhires; Stonehenge es el más famoso.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El historiador Gordon Childe acuñó el término "Revolución Neolítica". ¿Cuál de las siguientes consecuencias NO es directamente atribuible a esta revolución?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) El surgimiento de la estratificación social y las élites</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La aparición de la propiedad privada y los excedentes agrícolas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La invención de la escritura cuneiforme en Mesopotamia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) El crecimiento demográfico por mayor disponibilidad de alimento</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La escritura cuneiforme (~3 500 a.C.) surgió de la complejidad administrativa de las ciudades mesopotámicas, pero entre el inicio del Neolítico (~9 500 a.C.) y la escritura median 6 000 años. Es una consecuencia indirecta mediata, no directa. La estratificación social, la propiedad privada y el crecimiento demográfico sí son consecuencias directas del Neolítico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Según la teoría "Out of Africa", ¿cuál es el orden correcto de los movimientos migratorios fuera del continente africano?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Homo sapiens → Homo erectus → Homo heidelbergensis</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Homo habilis → Homo sapiens → Homo erectus</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Homo erectus (~1,8 M a.C.) → Homo sapiens (~70 000 a.C.)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Homo neanderthalensis → Homo erectus → Homo sapiens</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Primera salida: <B>Homo erectus</B> (~1,8 M a.C.) hacia Asia y Europa. Segunda salida: <B>Homo sapiens</B> (~70 000 – 60 000 a.C.), colonizando todos los continentes y reemplazando (con cierto mestizaje) a las especies locales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Al estudiar "Lucy" (Australopithecus afarensis), ¿qué rasgos anatómicos confirmaron su bipedestación?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Gran tamaño del cráneo y desarrollo de los lóbulos frontales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Foramen magnum en la base del cráneo, pelvis ancha y fémur angulado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Dientes pequeños adaptados al consumo de carne cocida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Marcas de herramientas de piedra halladas junto al esqueleto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los tres indicadores anatómicos de bipedestación son: el <B>foramen magnum</B> centrado en la base del cráneo (para que la columna suba vertical), la <B>pelvis ancha y corta</B> (para soportar el torso erguido) y el <B>fémur angulado</B> hacia la rodilla (para colocar los pies bajo el centro de gravedad). Lucy los tenía todos con un cerebro de solo 430 cc, probando que la bipedestación precede al aumento cerebral.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> ¿Cuál de las siguientes afirmaciones sobre el Homo neanderthalensis es CORRECTA según la investigación actual?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Era intelectualmente inferior al Homo sapiens: no tenía rituales ni arte</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Su extinción fue exclusivamente por la competencia directa del Homo sapiens</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Tenía rituales funerarios, se mezcló con el Homo sapiens y su ADN persiste en humanos actuales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Vivió en África y nunca llegó a Europa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La investigación actual (especialmente el trabajo Nobel de Pääbo) confirma que el neandertal: (1) tenía <B>rituales funerarios</B> (enterraba a sus muertos con ocre, flores y herramientas); (2) <B>se mezcló con el Homo sapiens</B>; (3) su <B>ADN vive en el 1–4% de los humanos no africanos actuales</B>. Vivió principalmente en Europa y Asia occidental, no en África.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> El "Colapso del Bronce" (~1 200 a.C.) fue un evento histórico en que:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Los hititas conquistaron Egipto y extendieron el uso del bronce</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Casi todas las civilizaciones del Mediterráneo oriental colapsaron en ~50 años, abriendo paso a la Edad del Hierro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) El agotamiento de las minas de cobre obligó a usar hierro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) El Homo sapiens descubrió que el hierro era superior al bronce y lo adoptó voluntariamente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El "Colapso del Bronce" (~1 200 a.C.) fue la caída simultánea en ~50 años de casi todas las grandes civilizaciones mediterráneas (micénicos, hititas, ugaríticos, etc.). Las causas debatidas incluyen invasiones de los "Pueblos del Mar", sequías prolongadas, terremotos y revueltas internas. Este colapso permitió la difusión de la tecnología del hierro, antes monopolio hitita, iniciando la Edad del Hierro.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

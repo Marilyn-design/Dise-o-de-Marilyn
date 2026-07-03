@@ -1,0 +1,599 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>La Edad Media - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA &middot; TEMA 7</DIV>
+<H1>La Edad Media &mdash; Europa (476&ndash;1453)</H1>
+<DIV CLASS="sub">Feudalismo &middot; Iglesia &middot; Cruzadas &middot; Sociedad estamental &middot; Crisis del siglo XIV &middot; Bizancio</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. &iquest;Qu&eacute; es la Edad Media y c&oacute;mo se periodiza?</H3>
+La <B>Edad Media</B> es el per&iacute;odo hist&oacute;rico de la historia de Europa que transcurre aproximadamente entre la ca&iacute;da del Imperio Romano de Occidente (<B>476 d.C.</B>) y la ca&iacute;da del Imperio Romano de Oriente o Bizancio (<B>1453 d.C.</B>), aunque algunos historiadores prefieren como fecha de cierre el descubrimiento de Am&eacute;rica (<B>1492</B>) o la invenci&oacute;n de la imprenta (<B>c. 1450</B>). Abarca casi <B>mil a&ntilde;os</B> de historia y es el per&iacute;odo m&aacute;s largo de la historia occidental.
+
+<H4>Periodizaci&oacute;n interna:</H4>
+<UL>
+<LI><B>Alta Edad Media</B> (476&ndash;1000 d.C.): desintegraci&oacute;n de Roma, invasiones b&aacute;rbaras, formaci&oacute;n de los reinos germanos, consolidaci&oacute;n del feudalismo y el poder de la Iglesia, Imperio Carolingio.</LI>
+<LI><B>Plena o Alta Edad Media</B> (1000&ndash;1300 d.C.): auge del feudalismo, florecimiento de las ciudades, las Cruzadas, el arte rom&aacute;nico y g&oacute;tico, las universidades medievales.</LI>
+<LI><B>Baja Edad Media</B> (1300&ndash;1453/1492 d.C.): crisis del feudalismo, la Peste Negra, la Guerra de los Cien A&ntilde;os, crisis de la Iglesia, fin del Imperio Bizantino.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Las fechas l&iacute;mite de la Edad Media son fundamentales: <B>476 d.C.</B> (ca&iacute;da de Roma de Occidente, dep&oacute;sito de R&oacute;mulo Aug&uacute;stulo por Od&oacute;acro) y <B>1453 d.C.</B> (ca&iacute;da de Constantinopla ante los turcos otomanos de Mahoma II). El t&eacute;rmino "Edad Media" fue acu&ntilde;ado por humanistas renacentistas que la consideraban un per&iacute;odo de decadencia entre la grandeza clásica y su propio renacimiento cultural.</DIV>
+
+<H3>2. El contexto: la ca&iacute;da de Roma y las invasiones b&aacute;rbaras</H3>
+El <B>Imperio Romano de Occidente</B> fue cayendo progresivamente por una combinaci&oacute;n de factores internos (crisis econ&oacute;mica, guerras civiles, corrupci&oacute;n, crisis del siglo III) y externos (las invasiones de los pueblos germ&aacute;nicos). En el <B>siglo IV y V</B> se produjo la <B>gran migraci&oacute;n de los pueblos</B> (<I>V&ouml;lkerwanderung</I> en alem&aacute;n): grupos &eacute;tnicos como los visigodos, ostrogodos, francos, v&aacute;ndalos, hunos y sajones penetraron en el territorio romano, estableciendo sus propios reinos.
+
+<H4>Reinos germ&aacute;nicos principales:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Reino</TH><TH>Pueblo</TH><TH>Territorio principal</TH></TR>
+<TR><TD><B>Reino Franco</B></TD><TD>Francos</TD><TD>Galia (actual Francia y Alemania occidental)</TD></TR>
+<TR><TD><B>Reino Visigodo</B></TD><TD>Visigodos</TD><TD>Hispania (actual Espa&ntilde;a y Portugal)</TD></TR>
+<TR><TD><B>Reino Ostrogodo</B></TD><TD>Ostrogodos</TD><TD>Italia (hasta la reconquista bizantina)</TD></TR>
+<TR><TD><B>Reinos Anglosajones</B></TD><TD>Anglos, Sajones, Jutos</TD><TD>Britannia (actual Inglaterra)</TD></TR>
+<TR><TD><B>Reino V&aacute;ndalo</B></TD><TD>V&aacute;ndalos</TD><TD>&Aacute;frica del Norte (Cartago, actual T&uacute;nez)</TD></TR>
+<TR><TD><B>Reino Lombardo</B></TD><TD>Lombardos</TD><TD>Norte de Italia (Lombard&iacute;a)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">&#128218; <B>Nota hist&oacute;rica:</B> La ca&iacute;da de Roma no fue un colapso repentino sino un largo proceso. El historiador Edward Gibbon (<I>Historia de la decadencia y ruina del Imperio Romano</I>, 1776) propuso que Roma "cay&oacute;" por causas internas como la corrupci&oacute;n moral y el avance del cristianismo. Historiadores modernos como Peter Heather o Bryan Ward-Perkins enfatizan m&aacute;s la presi&oacute;n externa de las migraciones. En todo caso, muchas instituciones romanas (el derecho, el lat&iacute;n, la Iglesia) sobrevivieron y moldearon la Edad Media.</DIV>
+
+<DIV CLASS="cultura-titulo">&#9962; EL FEUDALISMO<SPAN>El sistema pol&iacute;tico, econ&oacute;mico y social dominante de la Edad Media</SPAN></DIV>
+
+<H3>3. El Feudalismo: definici&oacute;n y estructura</H3>
+El <B>feudalismo</B> fue el sistema de organizaci&oacute;n pol&iacute;tica, econ&oacute;mica y social que domin&oacute; Europa occidental entre los siglos IX y XIII aproximadamente. Se bas&oacute; en relaciones de dependencia personal, la descentralizaci&oacute;n del poder y la econom&iacute;a agraria. Su origen est&aacute; en la fragmentaci&oacute;n del poder tras la desintegraci&oacute;n del Imperio Carolingio (siglo IX) y la necesidad de protecci&oacute;n ante las nuevas invasiones (vikingos, magiares, sarracenos).
+
+<H4>Conceptos clave del feudalismo:</H4>
+<UL>
+<LI><B>Feudo</B>: extensi&oacute;n de tierra concedida por un se&ntilde;or a un vasallo a cambio de lealtad y servicios (principalmente militares). El feudo era la unidad econ&oacute;mica y pol&iacute;tica fundamental.</LI>
+<LI><B>Vasallaje</B>: relaci&oacute;n de dependencia personal entre un <I>se&ntilde;or</I> (<I>senior</I>) y un <I>vasallo</I> (<I>vassus</I>). Se formalizaba mediante la <B>ceremonia del homenaje</B> (el vasallo arrodillado pon&iacute;a sus manos entre las del se&ntilde;or) y la <B>investidura</B> (el se&ntilde;or entregaba un objeto simb&oacute;lico: un trozo de tierra, un guante, una rama).</LI>
+<LI><B>Beneficio</B>: nombre t&eacute;cnico inicial para el feudo; tierra o cargo concedido en usufructo (no en propiedad plena) a cambio de servicios.</LI>
+<LI><B>Homenaje</B>: juramento de fidelidad del vasallo al se&ntilde;or, con car&aacute;cter p&uacute;blico y sagrado.</LI>
+</UL>
+
+<H4>Obligaciones rec&iacute;procas:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>El se&ntilde;or deb&iacute;a...</TH><TH>El vasallo deb&iacute;a...</TH></TR>
+<TR><TD>Proteger militarmente al vasallo</TD><TD>Servicio militar (<I>auxilium</I>): acudir a la guerra del se&ntilde;or un n&uacute;mero de d&iacute;as al a&ntilde;o (usualmente 40)</TD></TR>
+<TR><TD>Hacer justicia al vasallo</TD><TD>Consejo (<I>consilium</I>): asesorar al se&ntilde;or en su corte feudal</TD></TR>
+<TR><TD>Mantener al vasallo en el feudo</TD><TD>Ayuda econ&oacute;mica en ocasiones especiales (rescate, boda de la hija mayor, caballero al primog&eacute;nito)</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>La jerarqu&iacute;a feudal (la pir&aacute;mide feudal):</H4>
+<OL>
+<LI><B>Rey</B>: te&oacute;ricamente en la cima, pero con poder real muy limitado; era un se&ntilde;or entre se&ntilde;ores.</LI>
+<LI><B>Grandes nobles</B> (duques, condes, marqueses): vasallos directos del rey; poseían enormes feudos y subasallos.</LI>
+<LI><B>Nobles medianos</B> (vizcondes, barones): vasallos de los grandes nobles.</LI>
+<LI><B>Caballeros</B>: el nivel m&iacute;nimo de la nobleza feudal; recib&iacute;an un peque&ntilde;o feudo a cambio de servicio militar a caballo.</LI>
+<LI><B>Siervos</B>: campesinos no libres atados a la tierra del se&ntilde;or; la gran mayor&iacute;a de la poblaci&oacute;n.</LI>
+</OL>
+
+<DIV CLASS="mapa-note">&#128221; <B>Importante:</B> Un mismo noble pod&iacute;a ser simult&aacute;neamente se&ntilde;or de sus propios vasallos y vasallo del rey o de un noble superior. Esto creaba conflictos cuando los se&ntilde;ores superiores de un mismo vasallo entraban en guerra entre s&iacute;. La <B>homenaje ligio</B> fue la soluci&oacute;n: un homenaje especial que primaba sobre todos los dem&aacute;s y obligaba al vasallo a defender a ese se&ntilde;or principal ante cualquier otro.</DIV>
+
+<H3>4. El Se&ntilde;or&iacute;o y los Siervos</H3>
+La unidad econ&oacute;mica b&aacute;sica del feudalismo era el <B>se&ntilde;or&iacute;o</B> (o <I>manor</I> en ingl&eacute;s): las tierras de un se&ntilde;or, que inclu&iacute;an la <B>reserva se&ntilde;orial</B> (tierras que el se&ntilde;or explotaba directamente con trabajo servil) y los <B>mansos</B> (parcelas cedidas a los siervos para su subsistencia).
+
+<H4>Condici&oacute;n de los siervos (<I>servi</I>):</H4>
+<UL>
+<LI>Los siervos <B>no eran esclavos</B> (no pod&iacute;an ser vendidos separados de la tierra) pero <B>tampoco eran libres</B>: estaban <I>adscritos</I> a la tierra (<I>servi glebae</I>).</LI>
+<LI>Deb&iacute;an pagar al se&ntilde;or: la <B>corvea</B> (trabajo gratuito en la reserva se&ntilde;orial, 3 d&iacute;as por semana), el <B>censo</B> (pago en especie por el manso), la <B>talla</B> (impuesto directo arbitrario) y derechos ban&aacute;les (por usar el molino, el horno o el lagar del se&ntilde;or).</LI>
+<LI>No pod&iacute;an casarse fuera del se&ntilde;or&iacute;o sin permiso, ni abandonar la tierra, ni ser juzgados por una corte ajena.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#9961;&#65039; LA IGLESIA MEDIEVAL<SPAN>El poder espiritual y temporal m&aacute;s influyente de Europa</SPAN></DIV>
+
+<H3>5. El papel de la Iglesia Cat&oacute;lica en la Edad Media</H3>
+La <B>Iglesia Cat&oacute;lica</B> fue la instituci&oacute;n m&aacute;s poderosa e influyente de la Edad Media occidental. Actu&oacute; simult&aacute;neamente como:
+<UL>
+<LI><B>Poder espiritual</B>: &uacute;nica gu&iacute;a hacia la salvaci&oacute;n eterna; administraba los sacramentos sin los cuales (seg&uacute;n la teolog&iacute;a medieval) era imposible salvarse.</LI>
+<LI><B>Poder temporal</B>: los obispos y abades eran grandes se&ntilde;ores feudales que poseían enormes extensiones de tierra, ej&eacute;rcitos y tribunales.</LI>
+<LI><B>Centro cultural</B>: los monasterios eran los &uacute;nicos centros de cultura, educaci&oacute;n y conservaci&oacute;n del saber escrito. Los monjes cop&iacute;an los manuscritos cl&aacute;sicos.</LI>
+<LI><B>Red asistencial</B>: hospitales, casas de pobres, auxilio a viudas y hu&eacute;rfanos.</LI>
+</UL>
+
+<H4>La jerarqu&iacute;a eclesi&aacute;stica:</H4>
+<OL>
+<LI><B>Papa</B> (Pont&iacute;fice Romano): jefe supremo de la Iglesia occidental; resid&iacute;a en Roma; reclamaba autoridad sobre todos los reyes cristianos.</LI>
+<LI><B>Cardenales</B>: electores del Papa y sus principales consejeros.</LI>
+<LI><B>Arzobispos / Patriarcas</B>: directores de amplias provincias eclesi&aacute;sticas.</LI>
+<LI><B>Obispos</B>: gobernaban las di&oacute;cesis; muchos eran grandes se&ntilde;ores feudales (<I>obispos-guerreros</I>).</LI>
+<LI><B>P&aacute;rrocos</B>: sacerdotes locales; el &uacute;nico contacto real de los campesinos con la Iglesia.</LI>
+<LI><B>Monjes y monjas</B>: comunidades religiosas en monasterios; principales centros de cultura medieval.</LI>
+</OL>
+
+<H4>La Querella de las Investiduras (1076&ndash;1122):</H4>
+El conflicto m&aacute;s grave entre el poder papal y el imperial fue la <B>Querella de las Investiduras</B>: la disputa por qui&eacute;n ten&iacute;a el derecho de nombrar (investir) a los obispos y abades. El Papa <B>Gregorio VII</B> excomulg&oacute; al Emperador <B>Enrique IV</B> en 1076; &eacute;ste, para salvar su trono, debi&oacute; presentarse descalzo en la nieve ante el castillo de <B>Canossa</B> (1077) a pedir perd&oacute;n al Papa. Fue el mayor triunfo del poder papal sobre el temporal en la Edad Media. El conflicto se resolvi&oacute; con el <B>Concordato de Worms</B> (1122): los obispos recibir&iacute;an su investidura espiritual del Papa y la temporal del rey.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La humillaci&oacute;n de Canossa (1077) es uno de los episodios m&aacute;s citados para ilustrar el poder de la Iglesia sobre los monarcas medievales. <B>Gregorio VII</B> es el papa m&aacute;s importante de la Alta Edad Media por su reforma eclesi&aacute;stica y por la Querella de las Investiduras. El <B>Concordato de Worms</B> (1122) es la fecha que cierra el conflicto.</DIV>
+
+<H4>El Cisma de Oriente (1054):</H4>
+En <B>1054</B> se produjo el <B>Gran Cisma</B> que dividi&oacute; al cristianismo en dos ramas: la <B>Iglesia Cat&oacute;lica Romana</B> (con sede en Roma, liderada por el Papa) y la <B>Iglesia Ortodoxa</B> (con sede en Constantinopla, liderada por el Patriarca Ecum&eacute;nico). Las causas fueron teol&oacute;gicas (la pol&eacute;mica del <I>filioque</I>), litúrgicas (uso del lat&iacute;n vs. griego) y pol&iacute;ticas (primac&iacute;a de Roma). El papa <B>Le&oacute;n IX</B> y el patriarca <B>Miguel Cerulario</B> se excomulgaron mutuamente.
+
+<DIV CLASS="cultura-titulo">&#9876; LAS CRUZADAS<SPAN>Las expediciones militares en nombre de la fe cristiana (1096&ndash;1291)</SPAN></DIV>
+
+<H3>6. Las Cruzadas: causas, desarrollo y consecuencias</H3>
+Las <B>Cruzadas</B> fueron expediciones militares organizadas por la Iglesia Cat&oacute;lica y los reinos europeos con el objetivo oficial de reconquistar los <B>Santos Lugares</B> (Jerusal&eacute;n y Tierra Santa) de manos de los musulmanes. Se desarrollaron entre <B>1096 y 1291</B> en ocho grandes oleadas principales.
+
+<H4>Causas de las Cruzadas:</H4>
+<UL>
+<LI><B>Religiosas</B>: Jerusal&eacute;n era la ciudad santa del cristianismo; el control turco selyúcida sobre los Santos Lugares dificultaba las peregrinaciones europeas.</LI>
+<LI><B>Pol&iacute;ticas</B>: el Imperio Bizantino solicit&oacute; ayuda al Papa <B>Urbano II</B> ante el avance turco. El Papa vio la oportunidad de unificar la cristiandad bajo su direcci&oacute;n y tender puentes con la Iglesia Ortodoxa.</LI>
+<LI><B>Econ&oacute;micas</B>: las ciudades italianas (Venecia, G&eacute;nova, Pisa) deseaban privilegios comerciales en el Mediterr&aacute;neo oriental. Los nobles codiciaban tierras en Oriente. Los hijos menores sin herencia buscaban fortuna.</LI>
+<LI><B>Sociales</B>: el Papa ofreci&oacute; la <B>indulgencia plenaria</B> (perd&oacute;n total de los pecados) a quienes participaran; muchos campesinos y caballeros pobres vieron la cruzada como una salida a su situaci&oacute;n.</LI>
+</UL>
+
+<H4>Las principales Cruzadas:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Cruzada</TH><TH>A&ntilde;os</TH><TH>Resultado</TH></TR>
+<TR><TD><B>1.&ordf; Cruzada</B></TD><TD>1096&ndash;1099</TD><TD><B>La &uacute;nica exitosa</B>: conquista de Jerusal&eacute;n (julio 1099); creaci&oacute;n de los 4 Estados Latinos de Oriente (Reino de Jerusal&eacute;n, Principado de Antioqu&iacute;a, Condado de Edesa, Condado de Tr&iacute;poli)</TD></TR>
+<TR><TD><B>2.&ordf; Cruzada</B></TD><TD>1147&ndash;1149</TD><TD>Fracaso total; p&eacute;rdida del Condado de Edesa ante Zengi</TD></TR>
+<TR><TD><B>3.&ordf; Cruzada</B></TD><TD>1189&ndash;1192</TD><TD>Desencadenada por la toma de Jerusal&eacute;n por <B>Saladino</B> (1187). Participan <B>Ricardo Coraz&oacute;n de Le&oacute;n</B>, Felipe II de Francia y Federico I Barbarroja. Acuerdo con Saladino: los cruzados conservan la costa; los peregrinos pueden acceder a Jerusal&eacute;n</TD></TR>
+<TR><TD><B>4.&ordf; Cruzada</B></TD><TD>1202&ndash;1204</TD><TD>Desviada por Venecia; saqueo de <B>Constantinopla cristiana</B> (1204); creaci&oacute;n del Imperio Latino de Constantinopla. Causa profunda del resentimiento ortodoxo hacia Roma</TD></TR>
+<TR><TD><B>Cruzada de los Ni&ntilde;os</B></TD><TD>1212</TD><TD>Movimiento popular (principalmente de j&oacute;venes) que intent&oacute; llegar a Tierra Santa; termin&oacute; en tragedia: muchos murieron o fueron esclavizados</TD></TR>
+<TR><TD><B>5.&ordf;&ndash;8.&ordf; Cruzadas</B></TD><TD>1217&ndash;1270</TD><TD>Fracasos sucesivos. La 8.&ordf; liderada por Luis IX de Francia (San Luis), quien muri&oacute; de peste en T&uacute;nez (1270)</TD></TR>
+<TR><TD><B>Ca&iacute;da de Acre</B></TD><TD>1291</TD><TD>P&eacute;rdida del &uacute;ltimo enclave cruzado en Tierra Santa; fin formal de las Cruzadas</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Consecuencias de las Cruzadas:</H4>
+<UL>
+<LI><B>Pol&iacute;ticas</B>: debilitamiento del poder feudal (nobles arruinados por el costo de las expediciones); fortalecimiento de la autoridad real.</LI>
+<LI><B>Econ&oacute;micas</B>: revitalizaci&oacute;n del comercio mediterr&aacute;neo; enriquecimiento de las ciudades italianas; reintroducci&oacute;n de productos orientales en Europa (especias, seda, papel, n&uacute;meros &aacute;rabes).</LI>
+<LI><B>Culturales</B>: contacto con la ciencia y filosof&iacute;a &aacute;rabe (que hab&iacute;a preservado a Arist&oacute;teles); transmisi&oacute;n de conocimientos que impulsaron el renacimiento intelectual del siglo XII.</LI>
+<LI><B>Religiosas</B>: agravamiento del Cisma con Oriente (saqueo de 1204); persecuciones internas (Cruzada contra los albigenses, 1209).</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#127963; LA SOCIEDAD MEDIEVAL<SPAN>La sociedad estamental: los tres &oacute;rdenes</SPAN></DIV>
+
+<H3>7. La sociedad estamental medieval: los tres &oacute;rdenes</H3>
+La sociedad medieval se conceptualizaba a s&iacute; misma como dividida en <B>tres &oacute;rdenes o estamentos</B>, cada uno con una funci&oacute;n providencial asignada por Dios:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Estamento</TH><TH>Funci&oacute;n</TH><TH>Componentes</TH><TH>% poblaci&oacute;n aprox.</TH></TR>
+<TR><TD><B>Los que rezan</B> (<I>oratores</I>)</TD><TD>Asegurar la salvaci&oacute;n del conjunto</TD><TD>Clero secular (obispos, p&aacute;rrocos) y regular (monjes, frailes)</TD><TD>~2-3%</TD></TR>
+<TR><TD><B>Los que luchan</B> (<I>bellatores</I>)</TD><TD>Defender militarmente a la sociedad</TD><TD>Nobleza (reyes, duques, condes, caballeros)</TD><TD>~3-5%</TD></TR>
+<TR><TD><B>Los que trabajan</B> (<I>laboratores</I>)</TD><TD>Producir los alimentos y bienes para los otros dos</TD><TD>Campesinado (libres y siervos), artesanos, mercaderes</TD><TD>~90-95%</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="ej">&#128221; <B>Adalberon de Laon y Gerard de Cambrai</B> formularon el esquema de los tres &oacute;rdenes a principios del siglo XI. Esta ideolog&iacute;a presentaba el orden social como querido por Dios, haciendo que el sistema fuera autojustificado y resistente al cambio. Sin embargo, en la Baja Edad Media, el auge de la burgues&iacute;a mercantil resquebraj&oacute; este esquema tripartito.</DIV>
+
+<H4>El ideal de la caballer&iacute;a:</H4>
+La <B>caballer&iacute;a</B> fue el c&oacute;digo de conducta de la nobleza guerrera medieval: combinaba valores militares (valor, lealtad, destreza en armas) con valores religiosos (protecci&oacute;n de la Iglesia, lucha contra los infieles) y corteses (respeto a las damas, generosidad, honor). Las &oacute;rdenes militares (Templarios, Hospitalarios, Teutones) representaron la fusi&oacute;n perfecta del ideal militar y el religioso.
+
+<DIV CLASS="cultura-titulo">&#127956;&#65039; EL IMPERIO CAROLINGIO<SPAN>El primer intento de unificaci&oacute;n europea bajo Carlomagno</SPAN></DIV>
+
+<H3>8. El Imperio Carolingio y Carlomagno</H3>
+<B>Carlomagno</B> (Carlos I el Grande, 742&ndash;814) fue el rey de los francos que conquist&oacute; la mayor parte de Europa occidental y fue coronado <B>Emperador de Occidente</B> el <B>25 de diciembre del a&ntilde;o 800</B> por el Papa Le&oacute;n III en Roma. Este acontecimiento es fundamental por varias razones:
+<UL>
+<LI>Restauraba formalmente el <B>Imperio Romano de Occidente</B> desaparecido en 476.</LI>
+<LI>Afirmaba la alianza entre el papado y el poder franco.</LI>
+<LI>Legitimaba el poder imperial a trav&eacute;s de la sanci&oacute;n religiosa.</LI>
+<LI>Fue el origen de la futura controversia entre el Sacro Imperio y el papado.</LI>
+</UL>
+
+<H4>Aportes de Carlomagno:</H4>
+<UL>
+<LI><B>Administrativos</B>: cre&oacute; los <B>condes</B> (gobernadores provinciales) y los <B>missi dominici</B> (inspectores imperiales que supervisaban a los condes en nombre del emperador).</LI>
+<LI><B>Culturales (Renacimiento Carolingio)</B>: fund&oacute; escuelas en las catedrales y monasterios; atrajo intelectuales a su corte de Aquisgr&aacute;n (<B>Alcuino de York</B>); impuls&oacute; la reforma de la escritura (<B>min&uacute;scula carolina</B>); mand&oacute; copiar manuscritos cl&aacute;sicos.</LI>
+<LI><B>Religiosos</B>: evangelizaci&oacute;n forzosa de los sajones y otros pueblos germ&aacute;nicos.</LI>
+</UL>
+
+<H4>El Tratado de Verd&uacute;n (843) y la divisi&oacute;n del Imperio:</H4>
+Tras la muerte de Carlomagno, su hijo Luis el Piadoso mantuvo la unidad, pero sus tres nietos se repartieron el Imperio con el <B>Tratado de Verd&uacute;n (843)</B>, dando origen a las naciones que eventualmente ser&iacute;an <B>Francia</B> (Carlos el Calvo), <B>Alemania</B> (Luis el Germ&aacute;nico) e <B>Italia</B> (Lotario, con el t&iacute;tulo imperial). Este tratado es considerado el <B>acta de nacimiento de Europa occidental</B>.
+
+<DIV CLASS="cultura-titulo">&#127981; LA BAJA EDAD MEDIA: CRISIS Y TRANSFORMACI&Oacute;N<SPAN>El siglo XIV como punto de quiebre de la civilizaci&oacute;n medieval</SPAN></DIV>
+
+<H3>9. La Crisis del siglo XIV: la Peste Negra</H3>
+El siglo XIV fue el siglo de las crisis m&uacute;ltiples que sacudieron los cimientos de la Europa medieval. La m&aacute;s devastadora fue la <B>Peste Negra</B> (1347&ndash;1353): la pandemia de <B>peste bubb&oacute;nica</B> (causada por la bacteria <I>Yersinia pestis</I>, transmitida por pulgas de ratas) que arras&oacute; Europa desde que lleg&oacute; al puerto de Mesina (Sicilia) en octubre de 1347, proveniente de los barcos genoveses del Mar Negro.
+
+<H4>Consecuencias de la Peste Negra:</H4>
+<UL>
+<LI><B>Demogr&aacute;ficas</B>: muri&oacute; entre el <B>30% y el 50%</B> de la poblaci&oacute;n europea (aproximadamente 25 millones de personas sobre ~75 millones). Algunas ciudades perdieron el 60-70% de sus habitantes.</LI>
+<LI><B>Econ&oacute;micas</B>: escasez de mano de obra → aumento de salarios → cuestionamiento del trabajo servil gratuito → aceleraci&oacute;n de la desintegraci&oacute;n del feudalismo.</LI>
+<LI><B>Sociales</B>: revueltas campesinas (Jacquerie en Francia, 1358; Rebeli&oacute;n de Wat Tyler en Inglaterra, 1381).</LI>
+<LI><B>Culturales y religiosas</B>: crisis de fe (¿d&oacute;nde estaba Dios?); flagelantes; persecuciones de jud&iacute;os (acusados de envenenar los pozos); obsesi&oacute;n con la muerte (la <I>Danza de la Muerte</I>); cuestionamiento de la autoridad eclesi&aacute;stica.</LI>
+</UL>
+
+<H3>10. La Guerra de los Cien A&ntilde;os (1337&ndash;1453)</H3>
+La <B>Guerra de los Cien A&ntilde;os</B> fue el conflicto din&aacute;stico, territorial y nacional entre <B>Inglaterra</B> y <B>Francia</B> que se prolong&oacute; (con interrupciones) durante 116 a&ntilde;os. Su origen fue la reclamaci&oacute;n del rey ingl&eacute;s <B>Eduardo III</B> al trono franc&eacute;s tras la extinci&oacute;n de la din&aacute;stia Capeta directa.
+
+<H4>Fases y personajes clave:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fase</TH><TH>A&ntilde;os</TH><TH>Hechos destacados</TH></TR>
+<TR><TD><B>1.&ordf; Fase inglesa</B></TD><TD>1337&ndash;1380</TD><TD>Victorias inglesas en Cr&eacute;cy (1346) y Poitiers (1356); captura del rey Juan II de Francia; la longbow (arco largo) destruye a la caballer&iacute;a francesa</TD></TR>
+<TR><TD><B>2.&ordf; Fase</B></TD><TD>1380&ndash;1415</TD><TD>Francia recupera terreno bajo Carlos V; pero locura de Carlos VI y guerra civil entre Arm&auml;&ntilde;acos y Borgo&ntilde;ones</TD></TR>
+<TR><TD><B>3.&ordf; Fase inglesa</B></TD><TD>1415&ndash;1429</TD><TD>Victoria inglesa en Azincourt (1415); Tratado de Troyes (1420): Enrique V de Inglaterra reconocido heredero de Francia</TD></TR>
+<TR><TD><B>4.&ordf; Fase francesa</B></TD><TD>1429&ndash;1453</TD><TD><B>Juana de Arco</B> levanta el sitio de Orl&eacute;ans (1429); coronaci&oacute;n de Carlos VII en Reims; Juana capturada y quemada (1431); Francia recupera todo el territorio; fin en Castillon (1453)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> <B>Juana de Arco</B> (1412&ndash;1431) es el personaje m&aacute;s importante de la Guerra de los Cien A&ntilde;os para las pruebas universitarias. Campesina lorena que afirmaba recibir voces divinas (san Miguel, santa Catalina, santa Margarita); convenci&oacute; al Delf&iacute;n de dejarla comandar el ej&eacute;rcito; levant&oacute; el sitio de Orl&eacute;ans en 9 d&iacute;as (mayo 1429). Capturada por los Borgo&ntilde;ones, vendida a los ingleses y quemada como hereje en Ru&aacute;n el <B>30 de mayo de 1431</B>. Fue canonizada por la Iglesia Cat&oacute;lica en <B>1920</B>.</DIV>
+
+<H3>11. El Imperio Bizantino y su ca&iacute;da (1453)</H3>
+El <B>Imperio Romano de Oriente</B> (llamado <B>Imperio Bizantino</B> por los historiadores modernos) sobrevivi&oacute; a la ca&iacute;da de Roma de Occidente casi <B>1000 a&ntilde;os m&aacute;s</B>, hasta que la capital <B>Constantinopla</B> (actual Estambul) cay&oacute; ante el sult&aacute;n otomano <B>Mahoma II</B> el <B>29 de mayo de 1453</B>, poniendo fin formalmente a la Edad Media.
+
+<H4>Aportes del Imperio Bizantino:</H4>
+<UL>
+<LI><B>Jur&iacute;dico</B>: el <B>Corpus Iuris Civilis</B> del emperador Justiniano I (534 d.C.) codific&oacute; el derecho romano; es la base del derecho civil continental europeo hasta hoy.</LI>
+<LI><B>Art&iacute;stico</B>: el arte biz&aacute;ntino (mosaicos, iconos, arquitectura de c&uacute;pulas como la <B>Hagia Sophia</B>, 537 d.C.) influy&oacute; profundamente en el arte ortodoxo y en el renacentista italiano.</LI>
+<LI><B>Cultural</B>: los sabios byzantinos que huyeron a Italia tras 1453 llevaron consigo manuscritos griegos cl&aacute;sicos, contribuyendo al desencadenamiento del Renacimiento.</LI>
+<LI><B>Religioso</B>: el Imperio Bizantino difundi&oacute; el cristianismo ortodoxo a los pueblos eslavos (Bulgaria, Rusia, Serbia); los hermanos <B>Cirilo y Metodio</B> crearon el alfabeto cir&iacute;lico (siglo IX).</LI>
+</UL>
+
+<H3>12. Cuadro resumen: Conceptos clave de la Edad Media</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Aspecto</TH><TH>Concepto clave</TH><TH>Dato para el examen</TH></TR>
+<TR><TD><B>Cronolog&iacute;a</B></TD><TD>476&ndash;1453 d.C.</TD><TD>Inicio: ca&iacute;da de Roma de Occidente; fin: ca&iacute;da de Constantinopla</TD></TR>
+<TR><TD><B>Sistema pol&iacute;tico-econ&oacute;mico</B></TD><TD>Feudalismo</TD><TD>Feudo + vasallaje + se&ntilde;or&iacute;o + siervos; pir&aacute;mide feudal; Canossa 1077</TD></TR>
+<TR><TD><B>Poder religioso</B></TD><TD>Iglesia Cat&oacute;lica</TD><TD>Papa vs. Emperador; Querella Investiduras (1076-1122); Cisma 1054</TD></TR>
+<TR><TD><B>Cruzadas</B></TD><TD>1096&ndash;1291</TD><TD>1.&ordf; exitosa; 3.&ordf; = Ricardo y Saladino; 4.&ordf; = saqueo Constantinopla; fin en Acre 1291</TD></TR>
+<TR><TD><B>Sociedad</B></TD><TD>Tres &oacute;rdenes estamentales</TD><TD>Oratores + bellatores + laboratores; 90-95% campesinos</TD></TR>
+<TR><TD><B>Carlomagno</B></TD><TD>Coronado 25 dic. 800</TD><TD>Renacimiento carolingio; missi dominici; Tratado de Verd&uacute;n 843</TD></TR>
+<TR><TD><B>Crisis s. XIV</B></TD><TD>Peste Negra (1347-53)</TD><TD>30-50% de muertos; origen: Mesina 1347; consecuencia: fin del feudalismo</TD></TR>
+<TR><TD><B>Guerra 100 A&ntilde;os</B></TD><TD>1337&ndash;1453</TD><TD>Inglaterra vs. Francia; Juana de Arco; Orl&eacute;ans 1429; quemada 1431</TD></TR>
+<TR><TD><B>Fin Edad Media</B></TD><TD>Ca&iacute;da de Constantinopla</TD><TD>29 mayo 1453; Mahoma II otomano; Imperio Bizantino desaparece</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">476 d.C.</DIV><DIV CLASS="dk-label">Ca&iacute;da de Roma de Occidente: inicio de la Edad Media</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">800 d.C.</DIV><DIV CLASS="dk-label">Coronaci&oacute;n de Carlomagno como Emperador de Occidente</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1054</DIV><DIV CLASS="dk-label">Gran Cisma: separaci&oacute;n Cat&oacute;licos y Ortodoxos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1077</DIV><DIV CLASS="dk-label">Humillaci&oacute;n de Canossa: triunfo del Papa sobre el Emperador</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1096</DIV><DIV CLASS="dk-label">Inicio de la 1.&ordf; Cruzada (la &uacute;nica exitosa)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1347</DIV><DIV CLASS="dk-label">Llegada de la Peste Negra a Europa: mata al 30-50% de la poblaci&oacute;n</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1431</DIV><DIV CLASS="dk-label">Ejecuci&oacute;n de Juana de Arco en Ru&aacute;n (30 de mayo)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1453</DIV><DIV CLASS="dk-label">Ca&iacute;da de Constantinopla: fin de la Edad Media</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>Datos clave para el examen:</B><BR>
+&bull; <B>Fechas l&iacute;mite:</B> 476 (ca&iacute;da Roma Occidental) &middot; 1453 (ca&iacute;da Constantinopla / Mahoma II)<BR>
+&bull; <B>Feudalismo:</B> feudo + vasallaje + corvea + talla + ban&aacute;les &middot; 3 estamentos (oratores, bellatores, laboratores)<BR>
+&bull; <B>Iglesia:</B> Gregorio VII vs. Enrique IV &middot; Canossa 1077 &middot; Concordato de Worms 1122 &middot; Cisma 1054<BR>
+&bull; <B>Carlomagno:</B> coronado 25 dic. 800 &middot; Renacimiento carolingio &middot; Tratado de Verd&uacute;n 843 = origen de Francia, Alemania, Italia<BR>
+&bull; <B>Cruzadas:</B> 1096&ndash;1291 &middot; 1.&ordf; exitosa (Jerusal&eacute;n 1099) &middot; 3.&ordf; = Ricardo + Saladino &middot; 4.&ordf; = saqueo Constantinopla 1204 &middot; fin en Acre 1291<BR>
+&bull; <B>Peste Negra:</B> 1347&ndash;1353 &middot; Mesina &middot; 30-50% muertos &middot; <I>Yersinia pestis</I> &middot; aceler&oacute; fin del feudalismo<BR>
+&bull; <B>Guerra 100 A&ntilde;os:</B> 1337&ndash;1453 &middot; Juana de Arco &middot; Orl&eacute;ans 1429 &middot; quemada Ru&aacute;n 30 mayo 1431 &middot; canonizada 1920<BR>
+&bull; <B>Bizancio:</B> Justiniano + Corpus Iuris Civilis + Hagia Sophia &middot; Cirilo y Metodio &middot; ca&iacute;da 29 mayo 1453
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;Cu&aacute;les son las fechas l&iacute;mite convencionales de la Edad Media y qu&eacute; eventos las justifican?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) 410 d.C. (saqueo visigodo de Roma) y 1492 d.C. (descubrimiento de Am&eacute;rica por Col&oacute;n)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) 476 d.C. (dep&oacute;sito del &uacute;ltimo emperador romano de Occidente R&oacute;mulo Aug&uacute;stulo por Od&oacute;acro) y 1453 d.C. (ca&iacute;da de Constantinopla ante los turcos otomanos de Mahoma II)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) 313 d.C. (Edicto de Mil&aacute;n que legaliza el cristianismo) y 1348 d.C. (inicio de la Peste Negra en Europa)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) 500 d.C. (redondeo del colapso romano) y 1400 d.C. (inicio del Humanismo italiano)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Las fechas convencionales son <B>476 d.C.</B> y <B>1453 d.C.</B>. En 476, el jefe b&aacute;rbaro germano <B>Od&oacute;acro</B> depuso al &uacute;ltimo emperador romano de Occidente, el adolescente <B>R&oacute;mulo Aug&uacute;stulo</B>, sin nombrar sucesor occidental, transfiriendo las insignias imperiales a Constantinopla. En 1453, el sult&aacute;n otomano <B>Mahoma II</B> conquist&oacute; Constantinopla el 29 de mayo, poniendo fin al Imperio Romano de Oriente (Bizancio) que hab&iacute;a sobrevivido mil a&ntilde;os m&aacute;s. Algunos historiadores prefieren <B>1492</B> (descubrimiento de Am&eacute;rica) o la invenci&oacute;n de la imprenta (<B>c. 1450</B>), pero para examen preuniversitario la respuesta est&aacute;ndar es <B>476&ndash;1453</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Qu&eacute; es el feudalismo y cu&aacute;les son sus elementos fundamentales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Un sistema econ&oacute;mico basado en el comercio mar&iacute;timo entre ciudades-estado italianas y el oriente musulm&aacute;n durante los siglos X al XIII</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Un sistema pol&iacute;tico, econ&oacute;mico y social basado en relaciones personales de dependencia (vasallaje), la concesi&oacute;n de tierras (feudo) a cambio de servicios militares, y la econom&iacute;a agraria con trabajo campesino servil (siervo de la gleba)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Un sistema de gobierno centralizado encabezado por el Papa de Roma, qui&eacute;n distribu&iacute;a territorios entre los obispos a cambio de su lealtad al Vaticano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) El r&eacute;gimen econ&oacute;mico basado en la producci&oacute;n manufacturera artesanal en los talleres urbanos de las ciudades medievales, controlado por los gremios</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>feudalismo</B> es el sistema que organiz&oacute; la sociedad medieval occidental entre los siglos IX y XIII aproximadamente. Sus tres elementos fundamentales son: (1) el <B>feudo</B> (tierra concedida en usufructo), (2) el <B>vasallaje</B> (relaci&oacute;n personal de lealtad mutua entre se&ntilde;or y vasallo, sellada con el homenaje y la investidura), y (3) el <B>se&ntilde;or&iacute;o</B> (unidad econ&oacute;mica con siervos que trabajan la tierra y pagan obligaciones: corvea, censo, talla, derechos ban&aacute;les). El feudalismo surgi&oacute; de la necesidad de protecci&oacute;n ante el colapso del Estado romano y las nuevas invasiones (vikingos, magiares, sarracenos).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Por qu&eacute; es famosa la "Humillaci&oacute;n de Canossa" (1077) y qu&eacute; simboliza?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Porque en el castillo de Canossa, el Papa Gregorio VII firm&oacute; la paz con los turcos selyúcidas despu&eacute;s de la 1.&ordf; Cruzada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Porque el Emperador Enrique IV, excomulgado por el Papa Gregorio VII, deb&iacute;a presentarse descalzo en la nieve durante tres d&iacute;as ante el castillo de Canossa a pedir perd&oacute;n al Papa; simboliza la supremac&iacute;a del poder espiritual papal sobre el poder temporal de los reyes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Porque en Canossa el rey franc&eacute;s Carlos el Calvo derrot&oacute; militarmente al Papa, lo que puso fin a la injerencia vaticana en los asuntos de los reinos europeos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Porque Canossa fue el primer concilio eclesi&aacute;stico que conden&oacute; la simonia y el nicolaismo dentro de la Iglesia medieval</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Humillaci&oacute;n de Canossa</B> fue el clímax de la <B>Querella de las Investiduras</B>. En 1076, el Papa <B>Gregorio VII</B> excomulg&oacute; al Emperador <B>Enrique IV</B> por nombrar obispos sin aprobaci&oacute;n papal (simonia e investidura laica). La excomunión liberaba a los vasallos de su juramento de fidelidad al soberano, lo que amenazaba el trono de Enrique. Para recuperar el apoyo de sus nobles, el Emperador fue al castillo de <B>Canossa</B> (enero 1077) donde estaba el Papa, y esper&oacute; tres d&iacute;as descalzo en la nieve pidiendo perd&oacute;n. Gregorio lo absolvió. El episodio se convirtió en el s&iacute;mbolo m&aacute;s poderoso del triunfo del poder papal sobre el imperial en la historia medieval. El conflicto se cerr&oacute; definitivamente con el <B>Concordato de Worms</B> (1122).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Cu&aacute;l fue el resultado de la Primera Cruzada (1096&ndash;1099) y por qu&eacute; fue &uacute;nica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Fue un fracaso total: el ej&eacute;rcito cruzado fue derrotado por Saladino en los campos de Hattin antes de llegar a Jerusal&eacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Fue la &uacute;nica Cruzada exitosa: los cruzados conquistaron Jerusal&eacute;n en julio de 1099 y establecieron cuatro Estados Latinos de Oriente (Reino de Jerusal&eacute;n, Principado de Antioqu&iacute;a, Condado de Edesa, Condado de Tr&iacute;poli)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Fue la m&aacute;s exitosa de todas las Cruzadas: conquist&oacute; Jerusal&eacute;n, Egipto, Siria y Bagdad para la cristiandad y los mantuvo bajo dominio cristiano hasta 1500</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) No lleg&oacute; a Tierra Santa; fue desviada por Venecia hacia Egipto, saqueando Alejandría en su camino</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Primera Cruzada</B> (1096&ndash;1099) fue la &uacute;nica que logr&oacute; su objetivo: la toma de <B>Jerusal&eacute;n</B> el <B>15 de julio de 1099</B>, con una masacre brutal de la poblaci&oacute;n musulmana y jud&iacute;a. Como resultado se crearon los <B>cuatro Estados Latinos de Oriente</B>: el <B>Reino de Jerusal&eacute;n</B> (el m&aacute;s importante), el <B>Principado de Antioqu&iacute;a</B>, el <B>Condado de Edesa</B> y el <B>Condado de Tr&iacute;poli</B>. La ca&iacute;da del Condado de Edesa (1144) provoc&oacute; la 2.&ordf; Cruzada; la ca&iacute;da de Jerusal&eacute;n ante <B>Saladino</B> (1187) provoc&oacute; la 3.&ordf;. La <B>4.&ordf; Cruzada</B> (no la 1.&ordf;) fue desviada hacia Constantinopla.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Cu&aacute;nto mat&oacute; la Peste Negra (1347&ndash;1353) y por qu&eacute; aceler&oacute; la crisis del feudalismo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Mat&oacute; al 5-10% de la poblaci&oacute;n; su impacto fue fundamentalmente psicol&oacute;gico pero no afect&oacute; a las estructuras econ&oacute;micas del feudalismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Mat&oacute; entre el 30 y el 50% de la poblaci&oacute;n europea (unos 25 millones); la escasez de mano de obra result&oacute; en aumento de salarios, revueltas campesinas y cuestionamiento del trabajo servil gratuito, debilitando las bases econ&oacute;micas del feudalismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Mat&oacute; al 80% de la poblaci&oacute;n europea; fue tan devastadora que Europa tard&oacute; 500 a&ntilde;os en recuperar su poblaci&oacute;n previa a la epidemia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Mat&oacute; solo a la poblaci&oacute;n campesina y no afect&oacute; a los nobles ni al clero, quienes estaban protegidos en sus castillos y monasterios</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Peste Negra</B> de 1347&ndash;1353 (causada por la bacteria <I>Yersinia pestis</I>, transmitida por las pulgas de las ratas a los humanos) mat&oacute; entre el <B>30% y el 50%</B> de la poblaci&oacute;n europea, aproximadamente <B>25 millones de personas</B>. Su conexi&oacute;n con el fin del feudalismo es directa: al morir tantos campesinos, la <B>mano de obra</B> se volvi&oacute; escasa y, por tanto, valiosa. Los campesinos supervivientes pod&iacute;an ahora exigir mejores condiciones o abandonar la tierra del se&ntilde;or. Los se&ntilde;ores que no cedi&oacute;n enfrentaron las grandes <B>revueltas campesinas</B> del siglo XIV: la <B>Jacquerie</B> (Francia, 1358) y la <B>Rebeli&oacute;n de Wat Tyler</B> (Inglaterra, 1381). La epidemia comenz&oacute; en el puerto de <B>Mesina</B> (Sicilia) en octubre de 1347.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> &iquest;Por qu&eacute; la 4.&ordf; Cruzada (1202&ndash;1204) fue particularmente da&ntilde;ina para la unidad cristiana y qu&eacute; ciudad saque&oacute; en lugar de combatir a los musulmanes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) La 4.&ordf; Cruzada saque&oacute; Jerusal&eacute;n bajo la influencia del Papa Inocencio III, quien orden&oacute; que los Santos Lugares fueran desvalijados de sus reliquias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) La 4.&ordf; Cruzada fue desviada por los intereses comerciales de Venecia y saque&oacute; <B>Constantinopla</B> (capital cristiana ortodoxa) en 1204, instaurando el Imperio Latino y profundizando de forma irreversible el cisma entre Roma y la Iglesia Ortodoxa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) La 4.&ordf; Cruzada nunca lleg&oacute; a Europa Oriental porque fue destruida en el Mediterr&aacute;neo por la flota naval del Imperio Saraceno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) La 4.&ordf; Cruzada saque&oacute; Alejandría (Egipto) porque los cruzados confundieron la ciudad con Jerusal&eacute;n debido a errores en los mapas medievales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Cuarta Cruzada</B> es uno de los episodios m&aacute;s vergonzosos de la historia medieval. Los cruzados, sin fondos para pagar a la flota veneciana que deb&iacute;a transportarlos a Tierra Santa, aceptaron a cambio atacar primero las ciudades que interesaban a Venecia. Finalmente, empujados por los intereses pol&iacute;ticos venecianos y por un pr&iacute;ncipe biz&aacute;ntino que prometi&oacute; pagar su deuda si le ayudaban a recuperar el trono, los cruzados atacaron y saquearon <B>Constantinopla</B> en <B>1204</B>: la mayor ciudad cristiana de Europa, capital del Imperio Biz&aacute;ntino Ortodoxo. Saquearon iglesias, robaron reliquias e instauraron el <B>Imperio Latino de Constantinopla</B> (1204&ndash;1261). El Papa <B>Inocencio III</B> conden&oacute; el saqueo pero se benefici&oacute; de &eacute;l. Este episodio hizo pr&aacute;cticamente imposible la reconciliaci&oacute;n entre cat&oacute;licos y ortodoxos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Compara el papel de Carlomagno con el de Augusto en Roma: &iquest;en qu&eacute; sentido represent&oacute; Carlomagno una "restauraci&oacute;n" del Imperio Romano?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Carlomagno "restaur&oacute;" Roma construyendo c&oacute;pias exactas del Foro Romano y el Coliseo en su capital Aquisgr&aacute;n; adopt&oacute; el lat&iacute;n cl&aacute;sico ciceroniano como lengua oficial y reimplant&oacute; el sistema de legiones romanas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Carlomagno "restaur&oacute;" el Imperio Romano en un sentido formal (t&iacute;tulo de Emperador, legitimaci&oacute;n por la Iglesia, unificaci&oacute;n de Europa occidental bajo un solo poder) pero con base germ&aacute;nica y cristiana, no pagana; su modelo era un "Imperio Romano Cristiano" que combinaba la herencia romana con la germ&aacute;nica y la cristiana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) La comparaci&oacute;n con Augusto es incorrecta: Carlomagno fue solo un rey b&aacute;rbaro analfabeto que nunca entendi&oacute; la herencia romana; su coronaci&oacute;n fue una invenci&oacute;n papal sin contenido real</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Carlomagno restaur&oacute; Roma expulsando a los &aacute;rabes de Italia, reconquistando el norte de &Aacute;frica y reestableciendo el control romano sobre el Mediterr&aacute;neo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparaci&oacute;n Carlomagno-Augusto es frecuente en los ex&aacute;menes universitarios. <B>Augusto</B> fund&oacute; el Principado romano (27 a.C.); <B>Carlomagno</B>, coronado el 25 de diciembre de <B>800 d.C.</B>, "restaur&oacute;" el Imperio de Occidente ca&iacute;do en 476. Pero la restauraci&oacute;n fue <I>formal</I>, no una continuidad real: (1) La base &eacute;tnica era germ&aacute;nica (francos), no latina. (2) La legitimaci&oacute;n era cristiana (el Papa corona al Emperador), no pagana. (3) El sistema administrativo era feudal, no romano. (4) Carlomagno impuls&oacute; el <B>Renacimiento Carolingio</B> (recuperaci&oacute;n del saber cl&aacute;sico, min&uacute;scula carolina, escuelas) con inspiraci&oacute;n romana. Su coronaci&oacute;n gener&oacute; el modelo de "Sacro Imperio Romano Germ&aacute;nico" que durar&iacute;a hasta 1806: la idea de que el emperador cristiano y el papa compartían el gobierno del mundo cristiano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;Qu&eacute; fue el Gran Cisma de 1054 y cu&aacute;les fueron sus causas principales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) El Gran Cisma de 1054 fue la divisi&oacute;n dentro de la Iglesia Cat&oacute;lica Romana entre quienes apoyaban al Papa y quienes apoyaban al Emperador; fue resuelto con el Concordato de Worms en 1122</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El Gran Cisma de 1054 dividi&oacute; al cristianismo en Iglesia Cat&oacute;lica Romana (Roma) e Iglesia Ortodoxa (Constantinopla) por causas teol&oacute;gicas (pol&eacute;mica del <I>filioque</I>), litúrgicas (lat&iacute;n vs. griego) y pol&iacute;ticas (primac&iacute;a del Papa sobre el Patriarca); el Papa Le&oacute;n IX y el Patriarca Miguel Cerulario se excomulgaron mutuamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El Gran Cisma de 1054 fue la separaci&oacute;n entre la Iglesia Cat&oacute;lica y las primeras iglesias protestantes, lideradas por John Wycliffe en Inglaterra, que rechazaban la autoridad del Papa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) El Gran Cisma fue la ruptura interna del papado que llev&oacute; a tener dos papas simult&aacute;neos (uno en Roma y otro en &Aacute;vignon, Francia), confundiendo a los fieles cat&oacute;licos sobre cu&aacute;l era el leg&iacute;timo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Gran Cisma de Oriente (1054)</B> separ&oacute; definitivamente al cristianismo en dos grandes tradiciones: la <B>Iglesia Cat&oacute;lica Romana</B> (Occidente, liderada por el Papa de Roma) y la <B>Iglesia Ortodoxa Oriental</B> (Oriente, liderada por el Patriarca Ecum&eacute;nico de Constantinopla). Sus causas fueron: (1) <B>Teol&oacute;gica:</B> el <I>filioque</I> ("y del Hijo") &mdash;Occidente a&ntilde;adi&oacute; al Credo que el Esp&iacute;ritu Santo procede "del Padre <B>y del Hijo</B>"; Oriente solo aceptaba "del Padre". (2) <B>Lit&uacute;rgica:</B> el uso del &aacute;cimo (pan sin levadura) vs. pan con levadura en la eucarist&iacute;a. (3) <B>Pol&iacute;tica:</B> el Papa reclamaba primac&iacute;a universal; Constantinopla s&oacute;lo le reconoc&iacute;a la honorífica. La d) describe el <B>Cisma de Occidente</B> (1378&ndash;1417), que es diferente.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> &iquest;Por qu&eacute; el Tratado de Verd&uacute;n (843) es considerado el "acta de nacimiento de Europa"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Porque en Verd&uacute;n se firmaron los primeros tratados de libre comercio entre los reinos medievales, estableciendo el mercado &uacute;nico europeo medieval</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Porque el Tratado de Verd&uacute;n (843), al dividir el Imperio Carolingio entre los tres nietos de Carlomagno, origin&oacute; las entidades pol&iacute;ticas que dar&iacute;an lugar a <B>Francia</B> (Carlos el Calvo), <B>Alemania</B> (Luis el Germ&aacute;nico) e <B>Italia</B> (Lotario), es decir, los embriones de las principales naciones de Europa occidental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Porque en Verd&uacute;n el Papa y el Emperador firmaron el primer acuerdo de paz permanente entre la Iglesia y el Estado, estableciendo la separaci&oacute;n definitiva de poderes en Europa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Porque el Tratado de Verd&uacute;n estableci&oacute; la primera Constituci&oacute;n europea com&uacute;n, reconociendo los derechos fundamentales de los campesinos medievales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Tratado de Verd&uacute;n (843)</B> fue el pacto entre los tres nietos de Carlomagno &mdash;hijos de Luis el Piadoso&mdash; para repartirse el Imperio Carolingio: <B>Carlos el Calvo</B> recibió la <B>Francia Occidental</B> (futuro reino de Francia); <B>Luis el Germ&aacute;nico</B> recibió la <B>Francia Oriental</B> (futuro reino de Alemania); y <B>Lotario I</B>, con el t&iacute;tulo imperial, la <B>Francia Media</B> (futuro Lorena e Italia). Este reparto consolid&oacute; identidades pol&iacute;ticas y ling&uuml;&iacute;sticas distintas: en la Francia Occidental se hablaba la lengua de o&iuml;l (futuro franc&eacute;s); en la Oriental, el germ&aacute;nico. Por eso el historiador <B>Jacques Le Goff</B> lo llam&oacute; "el acta de nacimiento de Europa".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Qui&eacute;n fue Juana de Arco, qu&eacute; logr&oacute; y c&oacute;mo muri&oacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Juana de Arco fue una noble francesa que organiz&oacute; la resistencia de Par&iacute;s contra los ingleses; fue envenenada por agentes ingleses en 1431 y reconocida como h&eacute;roe nacional por Carlos VII</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Juana de Arco fue una campesina lorena que afirmando recibir voces divinas convenci&oacute; al Delf&iacute;n Carlos de dejarla comandar el ej&eacute;rcito franc&eacute;s; levant&oacute; el sitio de Orl&eacute;ans (1429), permitiendo la coronaci&oacute;n de Carlos VII; capturada por los Borgo&ntilde;ones, fue vendida a los ingleses y quemada como hereje en Ru&aacute;n el 30 de mayo de 1431; canonizada en 1920</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Juana de Arco fue una monja benedictina inglesa que lider&oacute; las negociaciones de paz entre Francia e Inglaterra al final de la Guerra de los Cien A&ntilde;os, siendo nombrada santa en vida por el Papa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Juana de Arco fue una reina francesa que asumi&oacute; el trono tras la muerte de su marido el rey Carlos VII; su reinado marc&oacute; el inicio de la Monarqu&iacute;a Absoluta en Francia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Juana de Arco</B> (1412&ndash;1431) naci&oacute; en Domr&eacute;my, una aldea lorena, hija de campesinos. Afirmaba escuchar las voces de <B>san Miguel Arc&aacute;ngel, santa Catalina y santa Margarita</B> que le ordenaban expulsar a los ingleses y coronar al Delf&iacute;n. Convenci&oacute; al futuro Carlos VII y recibi&oacute; el mando del ej&eacute;rcito. En s&oacute;lo <B>9 d&iacute;as</B> (mayo 1429) levant&oacute; el sitio de <B>Orl&eacute;ans</B>, que los ingleses man ten&iacute;an desde varios meses. Esto permiti&oacute; la coronaci&oacute;n de <B>Carlos VII</B> en Reims. Capturada en Compi&egrave;gne por los <B>Borgo&ntilde;ones</B> (aliados ingleses), fue vendida a Inglaterra, juzgada por un tribunal eclesi&aacute;stico liderado por el obispo <B>Cauch&oacute;n</B> y condenada por here&iacute;a. Fue quemada viva en la plaza del mercado de <B>Ru&aacute;n el 30 de mayo de 1431</B>, a los 19 a&ntilde;os. En 1456 fue rehabilitada p&oacute;stumamente; en 1920 la Papa <B>Benedicto XV</B> la canoniz&oacute;.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Un estudiante afirma: "El feudalismo y el esclavismo son el mismo sistema porque en ambos los trabajadores no son libres". Eval&uacute;a esta afirmaci&oacute;n y corr&iacute;gela.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) El estudiante tiene raz&oacute;n: los siervos medievales y los esclavos romanos ten&iacute;an exactamente las mismas condiciones jur&iacute;dicas y econ&oacute;micas; la diferencia es solo terminol&oacute;gica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) El estudiante est&aacute; equivocado: aunque ambos sistemas implican ausencia de plena libertad, el siervo medieval no pod&iacute;a ser vendido separado de la tierra (ten&iacute;a derechos consuetudinarios sobre su parcela, pod&iacute;a tener familia y poseer bienes), mientras el esclavo antiguo era propiedad absoluta de su due&ntilde;o, que pod&iacute;a venderlo, separarlo de su familia o matarlo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) El estudiante tiene raz&oacute;n solo para los siervos del siglo IX al XI; en la Baja Edad Media los siervos se convirtieron en esclavos plenos a raiz de la Peste Negra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) El estudiante est&aacute; equivocado pero por la raz&oacute;n opuesta: los siervos medievales eran m&aacute;s libres que los trabajadores modernos, pues la Iglesia les garantizaba derechos inalienables superiores a los actuales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta distincion es crucial en historia social. El <B>esclavo</B> (<I>servus</I> en Roma) era <B>res</B> (cosa), no persona jur&iacute;dica: su due&ntilde;o pod&iacute;a venderlo, separarlo de su familia, mutilarlo o matarlo. El <B>siervo medieval</B> (<I>servus glebae</I>: siervo de la gleba) ten&iacute;a restricciones severas pero era una persona jur&iacute;dica: (1) No pod&iacute;a ser vendido <B>separado de la tierra</B>; el se&ntilde;or vendía la tierra y el siervo venía con ella, no al rev&eacute;s. (2) Ten&iacute;a derechos consuetudinarios sobre su <B>manso</B> (parcela hereditaria). (3) Pod&iacute;a tener <B>familia</B> y que la Iglesia reconociera su matrimonio. (4) Pod&iacute;a poseer bienes muebles. Sus restricciones eran: no pod&iacute;a salir del se&ntilde;or&iacute;o sin permiso, deb&iacute;a pagar la <B>corvea</B>, la <B>talla</B> y los derechos ban&aacute;les. La Peste Negra (1347) no los convirti&oacute; en esclavos, sino todo lo contrario: aument&oacute; su poder de negociaci&oacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> &iquest;Por qu&eacute; la ca&iacute;da de Constantinopla en 1453 aceler&oacute; el Renacimiento italiano, siendo que era una cat&aacute;strofe para la cristiandad?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Porque los turcos otomanos, tras tomar Constantinopla, enviaron voluntariamente a Italia los mejores manuscritos griegos como regalo al Papa para mejorar las relaciones diplom&aacute;ticas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Porque la ca&iacute;da de Constantinopla provoc&oacute; la huida de numerosos intelectuales griegos biz&aacute;ntinos hacia Italia (especialmente Florencia y Venecia), llevando consigo manuscritos griegos originales de Plat&oacute;n, Arist&oacute;teles y otros autores cl&aacute;sicos, lo que enriqueci&oacute; enormemente el ambiente humanista italiano y aceler&oacute; la recuperaci&oacute;n del pensamiento cl&aacute;sico greco-latino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Porque tras la ca&iacute;da de Constantinopla, los turcos cerraron las rutas comerciales terrestres con Asia, obligando a los europeos a invertir en arte y cultura en vez de comercio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Porque la derrota cristiana en Constantinopla provoc&oacute; una reacci&oacute;n cultural: los intelectuales europeos decidieron demostrar la superioridad de la civilizaci&oacute;n cristiana desarrollando el arte y la literatura del Renacimiento</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Este es un ejemplo cl&aacute;sico de consecuencias inesperadas en la historia. La ca&iacute;da de <B>Constantinopla</B> el 29 de mayo de 1453 ante <B>Mahoma II</B> provoc&oacute; la huida masiva de intelectuales, fil&oacute;sofos, m&eacute;dicos y artistas griegos biz&aacute;ntinos hacia las ciudades italianas, especialmente <B>Florencia</B> (bajo los M&eacute;dici) y <B>Venecia</B>. Estos eruditos llevaron consigo <B>manuscritos griegos originales</B> de Plat&oacute;n (que en Occidente s&oacute;lo se conoc&iacute;a parcialmente a trav&eacute;s de traducciones latinas mediocres), de matem&aacute;ticos, m&eacute;dicos y fil&oacute;sofos. La llegada de estas obras y de personas capaces de leerlas en el griego original enriqueci&oacute; enormemente el <B>humanismo florentino</B>. La c) es parcialmente cierta (el cierre de las rutas terr&iacute;a oriental s&iacute; estimul&oacute; las exploraciones mar&iacute;timas), pero no explica la relaci&oacute;n con el Renacimiento cultural.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Analiza la contradicci&oacute;n entre el ideal cristiano de pobreza y el enorme poder econ&oacute;mico de la Iglesia medieval. &iquest;C&oacute;mo explic&oacute; la propia Iglesia esta contradicci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La Iglesia reconoci&oacute; abiertamente la contradicci&oacute;n y la resolvi&oacute; declarando que el Papa estaba eximido del voto de pobreza personal al ser vicario de Cristo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La Iglesia justific&oacute; sus riquezas argumentando que no eran propiedad personal sino "bienes de Cristo y los pobres" administrados en fideicomiso; que la riqueza institucional permit&iacute;a financiar hospitales, escuelas y la misi&oacute;n evangelizadora; y que la pobreza evangélica obligatoria era para los religiosos (monjes), no para el clero secular. Las &oacute;rdenes mendicantes (franciscanos, dominicos) respondieron radicalizando el ideal de pobreza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) La Iglesia no reconoci&oacute; ninguna contradicci&oacute;n: el ideal cristiano de pobreza nunca aplic&oacute; a las instituciones, sino solo a los individuos laicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La contradicci&oacute;n fue irresoluble y llev&oacute; directamente al surgimiento del protestantismo en el siglo XI, como respuesta a la corrupci&oacute;n econ&oacute;mica de la Iglesia medieval</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta eval&uacute;a la comprensi&oacute;n de las tensiones internas del pensamiento medieval. El ideal evang&eacute;lico (los consejos de pobreza de Jes&uacute;s) chocaba con la realidad de una Iglesia que era el mayor terrateniente de Europa. La Iglesia justific&oacute; esto con varios argumentos: (1) Los bienes eclesi&aacute;sticos no pertenec&iacute;an a persona alguna sino a "Dios y los pobres" (teor&iacute;a del fideicomiso). (2) La riqueza permitía financiar <B>hospitales, escuelas y catedrales</B> que beneficiaban al conjunto. (3) El voto de pobreza era para los <B>religiosos</B> (monjes, frailes), no para los sacerdotes seculares. Sin embargo, las cr&iacute;ticas a la riqueza eclesi&aacute;stica fueron permanentes: los <B>franciscanos</B> (1209) y los <B>dominicos</B> (1216) respondieron con el ideal de la <B>pobreza absoluta</B> ("las &oacute;rdenes mendicantes"). Voces cr&iacute;ticas como <B>John Wycliffe</B> (siglo XIV) y <B>Jan Hus</B> (siglo XV) anticiparon la Reforma protestante del siglo XVI (no XI, como dice la d)).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El historiador Marc Bloch en su obra <I>La sociedad feudal</I> (1939) argument&oacute; que el feudalismo fue una respuesta adaptativa al colapso del Estado. &iquest;Qu&eacute; quiso decir y c&oacute;mo se manifiesta esto en las estructuras feudales concretas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Bloch argument&oacute; que el feudalismo fue una invenci&oacute;n deliberada de los nobles europeos para explotar sistem&aacute;ticamente a los campesinos, siguiendo los modelos que encontraron en los textos jur&iacute;dicos romanos sobre la esclavitud</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Bloch argument&oacute; que ante el colapso del Estado romano (que garantizaba seguridad, justicia, moneda y comercio), las sociedades medievales generaron estructuras alternativas funcionales: el se&ntilde;or feudal reemplaz&oacute; al Estado en la funci&oacute;n de protecci&oacute;n; el feudo reemplaz&oacute; al salario monetario; el vasallaje reemplaz&oacute; a la burocracia; el se&ntilde;or&iacute;o reemplaz&oacute; al mercado con autarqu&iacute;a local</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Bloch argument&oacute; que el feudalismo fue importado del mundo &aacute;rabe a Europa mediante las Cruzadas, y que sin el contacto isl&aacute;mico nunca habr&iacute;a surgido la organizaci&oacute;n feudal en Occidente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Bloch argument&oacute; que el feudalismo fue una fase necesaria e inevitable del desarrollo hist&oacute;rico en todas las sociedades del mundo, siguiendo la ley marxista del materialismo hist&oacute;rico: esclavismo → feudalismo → capitalismo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Marc Bloch</B> (1886&ndash;1944), cofundador de la escuela hist&oacute;rica de los <I>Annales</I> y autor de la obra fundacional sobre el feudalismo, argumentó que el sistema feudal no fue un caos o una decadencia, sino una <B>respuesta org&aacute;nica y funcional</B> al colapso de las estructuras estatales romanas. El Estado romano hab&iacute;a garantizado: (1) <B>Seguridad</B> (legiones en las fronteras) → reemplazada por el castillo del se&ntilde;or y el vasallaje militar. (2) <B>Moneda y comercio</B> (mercado imperial) → reemplazados por la <B>autarqu&iacute;a del se&ntilde;or&iacute;o</B> (producci&oacute;n local de todo lo necesario). (3) <B>Burocracia</B> (funcionarios p&uacute;blicos) → reemplazada por los lazos <B>personales de vasallaje</B>. (4) <B>Justicia</B> (derecho romano) → reemplazada por los <B>tribunales se&ntilde;oriales</B>. Bloch rechazaba tanto la idea del feudalismo como mera decadencia (visi&oacute;n iluminista) como la teor&iacute;a marxista r&iacute;gida de la d) &mdash;aunque el marxismo usa el t&eacute;rmino "modo de producci&oacute;n feudal", Bloch era m&aacute;s matizado.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Compara las Cruzadas medievales con la <I>Reconquista</I> hispana (711&ndash;1492): &iquest;qu&eacute; tienen en com&uacute;n y en qu&eacute; se diferencian fundamentalmente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Son id&eacute;nticas: ambas fueron guerras santas ordenadas por el Papa de Roma contra el Islam con el objetivo de arrebatarles la pen&iacute;nsula ib&eacute;rica y Tierra Santa respectivamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Comparten la dimensi&oacute;n de guerra religiosa con idea de cruzada y el antagonismo contra el Islam; se diferencian en que la Reconquista fue un proceso de siglos (711&ndash;1492) protagonizado por los propios reinos hispanos para recuperar territorio <B>propio</B>, mientras que las Cruzadas fueron expediciones internacionales (con liderazgo papal) para conquistar un territorio extranjero (Tierra Santa) que jam&aacute;s hab&iacute;a pertenecido a los cruzados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) No tienen nada en com&uacute;n: la Reconquista fue una guerra territorial puramente pol&iacute;tica sin ning&uacute;n componente religioso, mientras que las Cruzadas fueron peregrinaciones paci&iacute;ficas que solo ocasionalmente derivaron en conflicto armado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Las Cruzadas fueron organizadas por los reinos hispanos como continuaci&oacute;n de la Reconquista en territorio oriental; de hecho, el t&eacute;rmino "cruzada" fue acu&ntilde;ado originalmente en espa&ntilde;ol para describir la guerra santa ib&eacute;rica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta comparativa es frecuente en pruebas de alto rendimiento. <B>Similitudes</B>: (1) Ambas fueron "guerras santas" con justificaci&oacute;n religiosa: luchar contra el Islam era presentado como servicio a Dios con recompensas espirituales (indulgencias, m&aacute;rtires). (2) Ambas contaron con la bendici&oacute;n papal (de hecho, Urbano II consider&oacute; a la Reconquista un modelo para las Cruzadas). (3) Ambas combinaban motivos religiosos y temporales (tierras, botin, poder). <B>Diferencias fundamentales</B>: (1) <B>Territorio:</B> los hispanos luchaban por recuperar su propia pen&iacute;nsula, donde hab&iacute;an vivido antes de 711; los cruzados luchaban en Oriente Pr&oacute;ximo, una tierra que nunca les hab&iacute;a pertenecido. (2) <B>Protagonistas:</B> la Reconquista fue protagonizada por los propios reinos de Castilla, Le&oacute;n, Arag&oacute;n, Navarra y Portugal; las Cruzadas eran expediciones multinacionales con liderazgo franc&eacute;s, normando, alem&aacute;n e italiano. (3) <B>Duraci&oacute;n:</B> la Reconquista dur&oacute; casi 800 a&ntilde;os (711&ndash;1492); las Cruzadas orientales, 195 a&ntilde;os (1096&ndash;1291). (4) <B>Resultado:</B> la Reconquista concluy&oacute; con &eacute;xito en 1492 (ca&iacute;da del emirato nazar&iacute; de Granada); las Cruzadas terminaron en fracaso.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El te&oacute;logo Tom&aacute;s de Aquino (1225&ndash;1274) sintetiz&oacute; el pensamiento aristot&eacute;lico con la fe cristiana en la llamada <I>S&iacute;ntesis Tomista</I>. &iquest;Qu&eacute; problema intelectual medieval resolv&iacute;a esta s&iacute;ntesis y cu&aacute;l fue su importancia?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Tom&aacute;s de Aquino resolvi&oacute; el problema del gobierno de la Iglesia proponiendo que los cardenales, y no el Papa, deb&iacute;an ser los l&iacute;deres de la cristiandad; su doctrina fue adoptada por el Concilio de Constanza en 1415</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Tom&aacute;s de Aquino resolvi&oacute; la aparente contradicci&oacute;n entre raz&oacute;n (Arist&oacute;teles) y fe (revelaci&oacute;n cristiana) argumentando que ambas son caminos complementarios hacia la verdad: la raz&oacute;n puede alcanzar verdades naturales por s&iacute; sola (existencia de Dios, ley natural); la fe va m&aacute;s all&aacute; y revela verdades sobrenaturales (Trinidad, Encarnaci&oacute;n). La <I>Summa Theologiae</I> sigue siendo la obra filos&oacute;fico-teol&oacute;gica m&aacute;s influyente del medioevo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Tom&aacute;s de Aquino resolvi&oacute; el debate entre el Papa y el Emperador demostrando matem&aacute;ticamente que el poder pol&iacute;tico era superior al espiritual, sentando las bases del Estado laico moderno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Tom&aacute;s de Aquino fue el primer pensador en rechazar la filosof&iacute;a aristot&eacute;lica por considerarla incompatible con el dogma cristiano; su principal aporte fue depurar la teolog&iacute;a medieval de toda influencia pagana griega</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Tom&aacute;s de Aquino</B> (dominico, alumno de <B>Alberto Magno</B> en Col&oacute;nia) fue el mayor intelectual de la <B>Escol&aacute;stica</B> &mdash;el movimiento intelectual de las universidades medievales que integraba raz&oacute;n y fe. El problema era que en el siglo XIII llegaron a Occidente, v&iacute;a las traducciones &aacute;rabes (Averroes, Avicena), las obras completas de <B>Arist&oacute;teles</B>, que hab&iacute;an sido olvidadas en Europa. Arist&oacute;teles era el m&aacute;s prestigioso fil&oacute;sofo antiguo, pero sus conclusiones (eternidad del mundo, determinismo) chocaban con el dogma cristiano. Tom&aacute;s propuso en su monumental <B>Summa Theologiae</B> que: (1) La <B>raz&oacute;n natural</B> (Arist&oacute;teles) puede demostrar la existencia de Dios (las "5 v&iacute;as") y la ley moral natural, pero no puede llegar a las verdades sobrenaturales (la Trinidad, la Encarnaci&oacute;n). (2) La <B>fe</B> (revelaci&oacute;n divina, Biblia, Tradici&oacute;n) va m&aacute;s all&aacute; de la raz&oacute;n pero nunca la contradice: "la gracia no destruye la naturaleza sino que la perfecciona". Esta s&iacute;ntesis salv&oacute; a Arist&oacute;teles para la cultura cristiana y defini&oacute; el catolicismo intelectual hasta hoy.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> La Edad Media ha sido llamada "oscura" por los humanistas del Renacimiento. Los historiadores modernos rechazan este calificativo. &iquest;Por qu&eacute; y cu&aacute;les son los argumentos que demuestran la vitalidad intelectual medieval?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Los historiadores modernos mantienen que la Edad Media s&iacute; fue una &eacute;poca oscura, pero menos que antes se cre&iacute;a; simplemente ocurrieron pocas cosas importantes entre 476 y 1453 en Europa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Los historiadores modernos rechazan el t&eacute;rmino "Edad Oscura" porque fue creado por los humanistas renacentistas como propaganda para glorificar su propia &eacute;poca, despreciando la medieval. La Edad Media produjo las catedrales g&oacute;ticas, las universidades europeas, la filosof&iacute;a escol&aacute;stica, la literatura en lenguas vern&aacute;culas (Dante, Chaucer), el derecho can&oacute;nico y romano, la polif&oacute;n&iacute;a musical y transform&oacute; radicalmente la tecnolog&iacute;a agr&iacute;cola</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Los historiadores modernos rechazan el t&eacute;rmino "Edad Oscura" &uacute;nicamente porque es un anglicismo ("Dark Ages") que no se aplica a Europa continental, donde s&iacute; hubo progreso continuo, a diferencia de las Islas Brit&aacute;nicas donde hubo una verdadera regresi&oacute;n cultural</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La revisi&oacute;n del concepto de "Edad Oscura" es relativamente reciente (iniciada en 2010) y todav&iacute;a no tiene consenso entre los historiadores medievalistas europeos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El t&eacute;rmino "Edad Oscura" (<I>Dark Ages</I> / <I>Medio Evo</I>) fue acuñado por los <B>humanistas del Renacimiento</B> (Petrarca, Flavio Biondo) para caracterizar el per&iacute;odo entre la ca&iacute;da de Roma y su propio tiempo como un intervalo de ignorancia y barbarismo. Los medievalistas modernos (Le Goff, Bloch, Southern) rechazan esta etiqueta por varias razones: (1) <B>Universidades:</B> Bolonia (1088), Par&iacute;s (c.1150), Oxford (1167) son invenciones medievales, no renacentistas; son el modelo de la universidad moderna. (2) <B>Catedrales g&oacute;ticas:</B> Notre-Dame, Chartres, Reims son prodigios de ingenier&iacute;a y arte. (3) <B>Filosof&iacute;a escol&aacute;stica:</B> Anselmo, Abelardo, Tom&aacute;s de Aquino desarrollaron la l&oacute;gica y metaf&iacute;sica occidentales. (4) <B>Literatura vern&aacute;cula:</B> <I>La Divina Comedia</I> de Dante (1320), <I>Los Cuentos de Canterbury</I> de Chaucer, el <I>Poema del Cid</I>. (5) <B>Tecnolog&iacute;a:</B> collar de collera (revolucion&oacute; el uso del caballo en la agricultura), molinos de agua y viento, el &aacute;rabe, el sistema num&eacute;rico decimal (transmitido v&iacute;a el Islam). Lo que s&iacute; puede llamarse "oscuro" es el per&iacute;odo concreto de los siglos VII-VIII, de poca producci&oacute;n escrita, pero no la Edad Media en su conjunto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> &iquest;C&oacute;mo explica la historiograf&iacute;a moderna la lenta aparici&oacute;n de las ciudades y el surgimiento de la burgues&iacute;a en la Europa medieval del siglo XI al XIII, y qu&eacute; relaci&oacute;n tiene esto con el declive del feudalismo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Las ciudades medievales surgieron por decisi&oacute;n de los reyes, que fundaron urbes planificadas para controlar mejor a la poblaci&oacute;n y recaudar impuestos; la burgues&iacute;a fue creada artificialmente por los monarcas para debilitar a la nobleza feudal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La revitalizaci&oacute;n urbana (siglos X-XIII) se explic&oacute; por el aumento de la producci&oacute;n agr&iacute;cola (nuevas tecnolog&iacute;as, tres campos, collar de collera), la recuperaci&oacute;n demogr&aacute;fica y la reactivaci&oacute;n del comercio (impulsada por las Cruzadas y las ferias). La burgues&iacute;a (habitantes de los burgos o ciudades) acumul&oacute; riqueza fuera del sistema feudal, cuestion&oacute; la nobleza hereditaria y demand&oacute; libertades (fueros, cartas comunales), erosionando las estructuras feudales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La burgues&iacute;a medieval fue principalmente rural: eran campesinos que hab&iacute;an acumulado tierra y se convirtieron en pe-que&ntilde;os nobles locales; su poder provino de los se&ntilde;or&iacute;os, no del comercio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El feudalismo decay&oacute; en el siglo XI por causas exclusivamente militares: la introducci&oacute;n de la p&oacute;lvora hizo obsoleta a la caballer&iacute;a feudal como fuerza de combate, lo que elimin&oacute; la raz&oacute;n de ser del vasallaje</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>renacimiento urbano</B> del siglo XI es uno de los procesos m&aacute;s importantes de la historia medieval. Sus causas encadenadas fueron: (1) <B>Revoluci&oacute;n agr&iacute;cola:</B> el <B>collar de collera</B> (permite usar el caballo en lugar del buey), el <B>arado de vertedera</B>, la <B>rotaci&oacute;n trienal de campos</B> (tres hojas: sembrado de invierno, sembrado de primavera, barbecho) aumentaron los excedentes agr&iacute;colas. (2) <B>Crecimiento demogr&aacute;fico:</B> los excedentes alimentan m&aacute;s bocas. (3) <B>Reactivaci&oacute;n comercial:</B> ferias de Champa&ntilde;a, comercio mediterr&aacute;neo (italianos), rutas del &Aacute;ltico (hansa). (4) <B>Ciudades y burgues&iacute;a:</B> los <I>burgueses</I> (habitantes de los <I>burgos</I> o ciudades) acumularon riqueza a trav&eacute;s del <B>comercio</B>, no de la tierra hereditaria. Exigieron <B>cartas comunales</B> (fueros) que les daban autogobierno, libertad personal y protecci&oacute;n jur&iacute;dica. El lema era: "El aire de la ciudad hace libre" (<I>Stadtluft macht frei</I>). Esta clase nueva no encajaba en el esquema feudal de los tres &oacute;rdenes (ni rezaba, ni luchaba, ni trabajaba la tierra) y fu&eacute; el germen de la sociedad moderna.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> &iquest;Cu&aacute;l es la diferencia entre un <I>rey</I> y un <I>emperador</I> en el contexto medieval, y qu&eacute; significaba el t&iacute;tulo de "Sacro Emperador Romano Germ&aacute;nico"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) En la Edad Media no hab&iacute;a diferencia jur&iacute;dica entre rey y emperador; eran t&iacute;tulos intercambiables que depend&iacute;an de qu&eacute; n&uacute;mero de provincias gobernaba el monarca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Un rey gobernaba un solo reino y deb&iacute;a ser vasallo del Emperador; el Emperador (en teor&iacute;a) ten&iacute;a autoridad universal sobre todos los reyes cristianos. El "Sacro Imperio Romano Germ&aacute;nico" (fundado por Carlomagno en 800, y formalmente en 962) pretend&iacute;a ser la continuaci&oacute;n del Imperio Romano bajo legitimaci&oacute;n cristiana (Sacro = bendecido por el Papa), con base germ&aacute;nica, pero nunca alcanz&oacute; el poder universal que reclamaba</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) El rey era elegido democr&aacute;ticamente por los nobles de su reino, mientras que el Emperador era nombrado directamente por el Papa de Roma sin ning&uacute;n proceso electoral</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) El Sacro Imperio Romano Germ&aacute;nico fue fundado por Federico II Barbarroja en 1250, quien combini&oacute; los t&iacute;tulos de rey de Alemania, rey de Italia y Papa de Roma en una sola persona</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La distinci&oacute;n medieval entre <B>rey</B> y <B>emperador</B> era te&oacute;rica pero decisiva: (1) El <B>rey</B> (<I>rex</I>) gobernaba un solo pueblo o reino; era soberano en su territorio pero, en la teor&iacute;a medieval, pod&iacute;a ser vasallo del Emperador. (2) El <B>Emperador</B> (<I>imperator</I>) pretend&iacute;a tener una <B>autoridad universal</B> sobre toda la cristiandad, comparable a la del antiguo Imperio Romano. El <B>Sacro Imperio Romano Germ&aacute;nico</B> (<I>Heiliges R&ouml;misches Reich</I>) fue: "<B>Sacro</B>" = coronado y legitimado por el Papa (poder espiritual); "<B>Romano</B>" = heredero del Imperio Romano (continuidad con la Antig&uuml;edad); "<B>Germ&aacute;nico</B>" = con base &eacute;tnica y territorial en Alemania. Se considera que su fundaci&oacute;n formal fue en <B>962</B> con la coronaci&oacute;n de <B>Ot&oacute;n I</B> (aunque Carlomagno en 800 fue el precedente). Voltaire dir&iacute;a siglos despu&eacute;s que "no era ni Sacro, ni Romano, ni Imperio", reflejo de la distancia entre la pretensi&oacute;n universal y la realidad fragmentada. Dur&oacute; hasta <B>1806</B> (Napole&oacute;n).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Proporciona un an&aacute;lisis comparativo entre la organizaci&oacute;n econ&oacute;mica del Tawantinsuyu inca y la econom&iacute;a feudal europea: &iquest;qu&eacute; tienen en com&uacute;n y en qu&eacute; se diferencian fundamentalmente como sistemas pre-capitalistas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Son pr&aacute;cticamente id&eacute;nticos: ambos se basaban en el trabajo servil, la propiedad se&ntilde;orial de la tierra y la reli-gi&oacute;n como instrumento de dominaci&oacute;n; sus diferencias son solo geogr&aacute;ficas y cronol&oacute;gicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Comparten ser econom&iacute;as pre-capitalistas sin moneda como unidad universal de intercambio, con agricultura como base y trabajo obligatorio no asalariado (mita inca / corvea feudal). Se diferencian en que el sistema inca fue <B>estatal redistributivo</B> (el estado acumulaba y redistribu&iacute;a sin mercado), mientras el feudalismo fue <B>descentralizado</B> (el poder econ&oacute;mico estaba en el se&ntilde;or local, no en el estado); el inca carec&iacute;a de jerarqu&iacute;a vasall&aacute;tica personal, y la econom&iacute;a feudal carec&iacute;a de la planificaci&oacute;n estatal de los qollqas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) No tienen nada en com&uacute;n: el Tawantinsuyu era una econom&iacute;a de libre mercado avanzada con proto-capitalismo, mientras que el feudalismo era una econom&iacute;a de subsistencia totalmente cerrada sin ning&uacute;n intercambio comercial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) La &uacute;nica similitud es que en ambos sistemas los sacerdotes controlaban el 100% de la producci&oacute;n econ&oacute;mica; la diferencia es que en el feudalismo el clero laico dominaba la econom&iacute;a, mientras que en el Tawantinsuyu era el clero solar (los <I>villac umu</I>)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta comparativa de alto nivel contrasta dos sistemas econ&oacute;micos pre-capitalistas de distintos continentes y &eacute;pocas. <B>Similitudes</B>: (1) Ambos se basaban en la <B>agricultura</B> como actividad econ&oacute;mica fundamental. (2) Ambos implicaban <B>trabajo obligatorio no asalariado</B>: la <B>mita</B> inca y la <B>corvea</B> feudal eran cargas de trabajo debidas al poder superior. (3) Ambos carecían de <B>mercado libre</B> desarrollado como mecanismo principal de asignaci&oacute;n de recursos. (4) Ambos ten&iacute;an la <B>religi&oacute;n</B> imbricada en la organizaci&oacute;n econ&oacute;mica (tierras del Sol / tierras de la Iglesia). <B>Diferencias fundamentales</B>: (1) <B>Centralizaci&oacute;n vs. descentralizaci&oacute;n:</B> el Tawantinsuyu era un sistema <B>estatal redistributivo</B> con enorme planificaci&oacute;n central (qollqas, mita organizada, Qhapaq &Ntilde;an); el feudalismo era profundamente <B>descentralizado</B> (el poder econ&oacute;mico residía en el se&ntilde;or local). (2) <B>Lazos personales:</B> el feudalismo se organizaba mediante <B>v&iacute;nculos personales</B> de vasallaje; el Tawantinsuyu a trav&eacute;s del <B>sistema decimal y la identidad del ayllu</B>. (3) <B>Mercado:</B> en el feudalismo exist&iacute;an ferias y mercados locales; el Tawantinsuyu carec&iacute;a de mercados y moneda casi completamente. Ambos son casos de lo que Karl Polanyi llam&oacute; "econom&iacute;as incrustadas" en relaciones sociales no econ&oacute;micas.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

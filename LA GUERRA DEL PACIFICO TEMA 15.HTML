@@ -1,0 +1,550 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>La Guerra del Pac&iacute;fico - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="HISTORIA.HTML">&larr; Volver a los temas de Historia</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">HISTORIA DEL PER&Uacute; &middot; TEMA 15</DIV>
+<H1>La Guerra del Pac&iacute;fico (1879&ndash;1884)</H1>
+<DIV CLASS="sub">Causas &middot; Fases militares &middot; H&eacute;roes navales &middot; Campa&ntilde;a terrestre &middot; Ocupaci&oacute;n de Lima &middot; Tratado de Aric&oacute;n &middot; Consecuencias</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. &iquest;Qu&eacute; fue la Guerra del Pac&iacute;fico?</H3>
+La <B>Guerra del Pac&iacute;fico</B> (tambi&eacute;n llamada <B>Guerra del Salitre</B> o, en Per&uacute;, <B>Guerra con Chile</B>) fue el conflicto armado que enfrent&oacute; a <B>Chile</B> contra la alianza de <B>Per&uacute; y Bolivia</B> entre <B>1879 y 1884</B>. Fue la guerra m&aacute;s devastadora de la historia sudamericana del siglo XIX y una de las m&aacute;s importantes del continente americano. Sus consecuencias fueron catastr&oacute;ficas para el Per&uacute;: perdi&oacute; el departamento de <B>Tarapac&aacute;</B> para siempre, las provincias de <B>Tacna y Arica</B> por d&eacute;cadas (Tacna recuperada en 1929; Arica cedida definitivamente a Chile), y qued&oacute; en una bancarrota tan profunda que termin&oacute; cediendo sus ferrocarriles a acreedores brit&aacute;nicos (Contrato Grace, 1889). Bolivia, por su parte, perdi&oacute; su &uacute;nico acceso al mar y sigue siendo un pa&iacute;s mediterr&aacute;neo hasta hoy.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La Guerra del Pac&iacute;fico dura oficialmente de <B>1879 a 1884</B>. El Tratado de Anc&oacute;n (con Per&uacute;) se firm&oacute; el <B>20 de octubre de 1883</B>; la guerra concluy&oacute; formalmente con el Tratado de Valparaíso con Bolivia en <B>1884</B>. Chile y Bolivia no firmaron un tratado de paz definitivo hasta <B>1904</B>. No confundir el Combate de Angamos (8 oct. 1879, captura del Hu&aacute;scar) con el Combate de Iquique (21 may. 1879, muerte de Grau &mdash; esta &uacute;ltima fue una victoria chilena que cost&oacute; a Per&uacute; dos comandantes navales her&oacute;icos).</DIV>
+
+<H3>2. Antecedentes y causas de la guerra</H3>
+La Guerra del Pac&iacute;fico no fue un conflicto repentino sino el desenlace de tensiones acumuladas durante d&eacute;cadas en torno al control del <B>salitre</B> (nitrato de sodio, fertilizante industrial) del desierto de <B>Atacama</B>, cuyas fronteras entre Per&uacute;, Bolivia y Chile eran imprecisas e impugnadas.
+
+<H4>Causas estructurales:</H4>
+<UL>
+<LI><B>El salitre como nuevo recurso estrat&eacute;gico:</B> desde mediados del siglo XIX, el salitre del desierto de Atacama se convirti&oacute; en el fertilizante m&aacute;s demandado del mundo (alternativa al guano agotado). Los dep&oacute;sitos m&aacute;s ricos estaban en <B>Tarapac&aacute;</B> (Per&uacute;), <B>Antofagasta</B> (Bolivia) y <B>Atacama</B> (Chile). Capital brit&aacute;nico y chileno invertido en estas regiones creaba intereses econ&oacute;micos poderosos.</LI>
+<LI><B>Fronteras imprecisas:</B> los tratados de l&iacute;mites entre Chile, Bolivia y Per&uacute; eran confusos y disputados. El <B>Tratado Chile&ndash;Bolivia de 1866</B> establec&iacute;a el paralelo 24&deg; como frontera y una zona compartida de beneficios salitreros, pero no resolvi&oacute; el problema de fondo.</LI>
+<LI><B>Rivalidad por la hegemon&iacute;a sudamericana:</B> Chile hab&iacute;a construido un ej&eacute;rcito moderno (con asesor&iacute;a alemana de Emilio K&ouml;rner) y una marina de guerra superior. Per&uacute; y Bolivia, debilitados por sus crisis internas, no pod&iacute;an competir militarmente.</LI>
+<LI><B>El Estanco del Salitre peruano (1873):</B> el gobierno de Manuel Pardo nacionaliz&oacute; las salitreras de Tarapac&aacute;, afectando intereses chilenos y brit&aacute;nicos, y generando tensi&oacute;n diplom&aacute;tica.</LI>
+<LI><B>El Tratado Secreto Per&uacute;&ndash;Bolivia (6 de febrero de 1873):</B> ante la creciente amenaza chilena, Per&uacute; y Bolivia firmaron un <B>Tratado de Alianza Defensiva</B> secreto: si alguno era atacado por Chile, el otro deb&iacute;a auxiliarlo militarmente. Chile se enter&oacute; de la existencia del tratado y lo consider&oacute; una provocaci&oacute;n.</LI>
+</UL>
+
+<H4>La chispa inmediata: el impuesto boliviano (1878):</H4>
+El gobierno boliviano de <B>Hilarion Daza</B> incumpli&oacute; el Tratado de 1866 al imponer un impuesto de <B>10 centavos por quintal</B> de salitre exportado a la Compa&ntilde;&iacute;a de Salitre y Ferrocarril de Antofagasta (empresa con mayoritario capital chileno). Chile exigi&oacute; la anulaci&oacute;n del impuesto. Bolivia se neg&oacute;. El <B>14 de febrero de 1879</B>, tropas chilenas desembarcaron en Antofagasta (puerto boliviano en esa &eacute;poca) sin declaraci&oacute;n de guerra, ocupando la ciudad. Bolivia invoc&oacute; el Tratado Secreto de 1873 y Per&uacute; se vio obligado a entrar en la guerra.
+
+<DIV CLASS="mapa-note">&#128221; <B>El papel de Gran Breta&ntilde;a:</B> El capital brit&aacute;nico era el gran beneficiado del salitre y ten&iacute;a intereses en los tres pa&iacute;ses. La historiograf&iacute;a marxista peruana (Heraclio Bonilla) ha argumentado que el capital brit&aacute;nico favoreci&oacute; a Chile porque este pa&iacute;s ofrec&iacute;a mejores garant&iacute;as para sus inversiones que el Per&uacute; (que hab&iacute;a nacionalizado las salitreras) o Bolivia. Sin embargo, la tesis del "imperialismo brit&aacute;nico" como causa directa de la guerra sigue siendo debatida: no hay evidencia de que el gobierno brit&aacute;nico ordenara o planificara la guerra.</DIV>
+
+<DIV CLASS="cultura-titulo">&#9875; LA CAMPA&Ntilde;A NAVAL (1879)<SPAN>Miguel Grau y la lucha por el dominio del mar</SPAN></DIV>
+
+<H3>3. La Campa&ntilde;a Naval (abril &ndash; octubre 1879)</H3>
+El control del mar era decisivo: quien dominara el Pac&iacute;fico podr&iacute;a transportar tropas y abastecer su ej&eacute;rcito con rapidez. Chile ten&iacute;a una armada superior en n&uacute;mero y tecnolog&iacute;a. Per&uacute; contaba con dos buques blindados modernos: el <B>Hu&aacute;scar</B> (monitor de torre) y la <B>Independencia</B> (fragata acorazada), y varias corbetas de madera.
+
+<H4>Las fuerzas navales al inicio de la guerra:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Naci&oacute;n</TH><TH>Buques principales</TH><TH>Caracter&iacute;sticas</TH></TR>
+<TR><TD><B>Per&uacute;</B></TD><TD>Hu&aacute;scar, Independencia, Uni&oacute;n, Pilcomayo</TD><TD>Hu&aacute;scar: monitor blindado de 1.130 ton.; Independencia: fragata acorazada de 3.560 ton.</TD></TR>
+<TR><TD><B>Chile</B></TD><TD>Blanco Encalada, Cochrane, Esmeralda, Covadonga, O'Higgins</TD><TD>Blanco Encalada y Cochrane: corbetas acorazadas modernas; superioridad de fuego y velocidad</TD></TR>
+<TR><TD><B>Bolivia</B></TD><TD>Sin marina de guerra significativa</TD><TD>El Amazonas (vapor fluvial); irrelevante en el conflicto naval</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>El Combate de Iquique (21 de mayo de 1879):</H4>
+El 21 de mayo de 1879, dos corvetas chilenas &mdash;la <B>Esmeralda</B> y la <B>Covadonga</B>&mdash; bloqueaban el puerto de Iquique (en ese momento peruano). El gobierno peruano envi&oacute; al <B>Hu&aacute;scar</B> (al mando del Contralmirante <B>Miguel Grau Seminario</B>) y a la <B>Independencia</B> (al mando del Contralmirante <B>Juan Guillermo Moore</B>) para levantar el bloqueo.
+
+<UL>
+<LI>El <B>Hu&aacute;scar</B> se enfrent&oacute; a la <B>Esmeralda</B>: tras un combate encarnizado, Grau hundi&oacute; a la Esmeralda usando el espolón del Hu&aacute;scar. Muri&oacute; el comandante chileno <B>Arturo Prat Chacón</B>, quien al ser abordado salt&oacute; heroicamente a cubierta del Hu&aacute;scar y fue abatido.</LI>
+<LI>La <B>Independencia</B>, persiguiendo a la <B>Covadonga</B> (buque m&aacute;s peque&ntilde;o), encall&oacute; en los arrecifes de <B>Punta Gruesa</B> y fue destruida. La p&eacute;rdida de la Independencia fue catastrófica: Per&uacute; quedaba con el Hu&aacute;scar como su &uacute;nico gran buque.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> El <B>21 de mayo</B> es una fecha crucial para ambos pa&iacute;ses: Chile lo celebra como el d&iacute;a de la <B>Gloria Naval</B> (Prat es su h&eacute;roe m&aacute;ximo); Per&uacute; recuerda la heroica defensa de Grau y la tragedia de la Independencia. Resultado del Combate de Iquique: Per&uacute; hundi&oacute; a la Esmeralda pero perdi&oacute; la Independencia &mdash;una derrota estratégica disfrazada de victoria t&aacute;ctica parcial.</DIV>
+
+<H4>La campa&ntilde;a del Hu&aacute;scar (mayo &ndash; octubre 1879):</H4>
+Tras Iquique, el <B>Hu&aacute;scar</B> bajo el mando de <B>Miguel Grau</B> protagoniz&oacute; una de las campa&ntilde;as navales m&aacute;s brillantes de la historia latinoamericana. Durante cinco meses, el Hu&aacute;scar &mdash;solo, sin apoyo&mdash; mantuvo en jaque a la escuadra chilena entera:
+<UL>
+<LI>Captur&oacute; el transporte chileno <B>Rim&aacute;c</B> (9 de julio de 1879), con 260 soldados y su caballerías a bordo: el mayor golpe peruano de la guerra.</LI>
+<LI>Hostig&oacute; puertos chilenos (Antofagasta, Iquique, Tocopilla), destruy&oacute; abastecimientos y sembr&oacute; el p&aacute;nico en las costas del norte de Chile.</LI>
+<LI>Grau se gan&oacute; la admiraci&oacute;n de amigos y enemigos por su caballerosidad: envi&oacute; el sable y las pertenencias del comandante Prat a su viuda en Chile.</LI>
+</UL>
+
+<H4>El Combate de Angamos (8 de octubre de 1879) &mdash; La muerte de Grau:</H4>
+Chile envi&oacute; casi toda su escuadra &mdash;seis buques, entre ellos los acorazados <B>Cochrane</B> y <B>Blanco Encalada</B>&mdash; a cazar al Hu&aacute;scar. El <B>8 de octubre de 1879</B>, frente al Cabo de Angamos (costa de Atacama), el Hu&aacute;scar fue interceptado y rodeado. Tras resistir encarnizadamente, un proyectil chileno destruy&oacute; la torre de mando: el <B>Contralmirante Miguel Grau Seminario</B> muri&oacute; en el acto. El <B>Hu&aacute;scar</B> fue capturado por Chile. Con su p&eacute;rdida, Per&uacute; perdi&oacute; el control del mar y la guerra se decidi&oacute; en tierra.
+
+<DIV CLASS="ej">&#127932; <B>Miguel Grau Seminario (1834&ndash;1879):</B> Nacido en Piura el 27 de julio de 1834. Marino desde los 9 a&ntilde;os. Contralmirante de la Armada del Per&uacute;. Considerado el <B>"Caballero de los Mares"</B> por su lealtad, valor y humanidad en el combate. El Congreso peruano lo declar&oacute; <B>"H&eacute;roe Nacional"</B> en 1958. Su imagen aparece en el billete de <B>200 soles</B>. El <B>8 de octubre</B> se celebra en Per&uacute; como el <B>D&iacute;a de la Marina de Guerra del Per&uacute;</B> en su honor.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128481; LA CAMPA&Ntilde;A TERRESTRE (1879&ndash;1881)<SPAN>Tarapac&aacute;, Tacna y Arica: la p&eacute;rdida del sur</SPAN></DIV>
+
+<H3>4. La Campa&ntilde;a Terrestre del Sur (noviembre 1879 &ndash; junio 1880)</H3>
+Con el dominio del mar asegurado tras Angamos, Chile trasladó sus tropas por mar al norte para la campa&ntilde;a terrestre. El ej&eacute;rcito chileno era profesional, bien equipado y con una cadena de mando unificada. El ej&eacute;rcito aliado peruano-boliviano estaba desorganizado, mal armado y con rivalidades entre sus mandos.
+
+<H4>Batalla de San Francisco (19 de noviembre de 1879):</H4>
+Primera gran batalla terrestre de la guerra, en la provincia de Tarapac&aacute;. El ej&eacute;rcito aliado, al mando del general boliviano <B>Hilarion Daza</B> y el peruano <B>Juan Buend&iacute;a</B>, no pudo coordinar sus fuerzas. Daza abandon&oacute; a las tropas peruanas en Camarones y se retir&oacute; (lo que le costar&iacute;a el poder en Bolivia). Los peruanos, solos, fueron derrotados en San Francisco. <B>Chile ocup&oacute; Iquique</B> el 19 de noviembre de 1879.
+
+<H4>Batalla de Tarapac&aacute; (27 de noviembre de 1879) &mdash; Victoria p&iacute;rrica peruana:</H4>
+Tras la derrota de San Francisco, las tropas peruanas bajo el coronel <B>Andr&eacute;s Avelino C&aacute;ceres</B> y el coronel <B>Belisario Suárez</B> atacaron y derrotaron a una columna chilena en <B>Tarapac&aacute;</B>. Fue la mayor victoria militar peruana de la guerra. Pero fue estratégicamente in&uacute;til: el ej&eacute;rcito peruano estaba aislado sin abastecimiento y tuvo que retirarse. Chile mantuvo el control de Tarapac&aacute;.
+
+<DIV CLASS="mapa-note">&#128221; <B>La traici&oacute;n de Daza:</B> El abandono del presidente boliviano <B>Hilarion Daza</B> en Camarones &mdash;cuando retrocedi&oacute; con 5.000 soldados bolivianos sin combatir mientras los peruanos luchaban solos en San Francisco&mdash; es uno de los momentos m&aacute;s controversiales de la guerra. Daza fue depuesto por una junta militar boliviana poco despu&eacute;s y exili&oacute; a Europa. Para muchos historiadores, la falta de coordinaci&oacute;n y confianza entre Per&uacute; y Bolivia fue una de las causas m&aacute;s importantes de la derrota aliada.</DIV>
+
+<H4>Campa&ntilde;a de Tacna y Arica (marzo &ndash; junio 1880):</H4>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Batalla</TH><TH>Fecha</TH><TH>Resultado</TH></TR>
+<TR><TD><B>Batalla del Campo de la Alianza</B> (Tacna)</TD><TD>26 de mayo de 1880</TD><TD>Derrota aliada; Bolivia abandona definitivamente la guerra; <B>Chile ocupa Tacna</B></TD></TR>
+<TR><TD><B>Batalla del Morro de Arica</B></TD><TD>7 de junio de 1880</TD><TD>El coronel <B>Francisco Bolognesi</B> defiende Arica hasta morir; "Tengo deberes sagrados que cumplir y los cumplir&eacute; hasta quemar el &uacute;ltimo cartucho"; Arica cae; <B>Chile ocupa Arica</B></TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> El <B>7 de junio</B> se celebra en Per&uacute; como el <B>D&iacute;a de la Bandera</B> en conmemoración de Arica. <B>Francisco Bolognesi Cervantes</B> (Lima, 1816 &ndash; Arica, 1880) es el otro gran h&eacute;roe de la guerra. Su frase <B>"Tengo deberes sagrados que cumplir y los cumplir&eacute; hasta quemar el &uacute;ltimo cartucho"</B> (respuesta al parlamentario chileno que le pidi&oacute; la rendici&oacute;n) es la m&aacute;s famosa de la guerra. Aparece en el billete de <B>50 soles</B>.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127981; LA CAMPA&Ntilde;A DE LIMA (1881)<SPAN>La ca&iacute;da de la capital peruana</SPAN></DIV>
+
+<H3>5. La Campa&ntilde;a de Lima (enero 1881)</H3>
+Tras la ca&iacute;da de Tacna y Arica, el presidente peruano <B>Mariano Ignacio Prado</B> abandon&oacute; el per&uacute; "en busca de armas" (en realidad huy&oacute; a Europa) y el poder qued&oacute; en manos de <B>Nicol&aacute;s de Pi&eacute;rola</B>, quien se autoproclam&oacute; <B>Jefe Supremo</B>. Pi&eacute;rola organiz&oacute; la defensa de Lima con tropas improvisadas y reservistas, sin tiempo ni recursos suficientes.
+
+<H4>Batallas de San Juan y Miraflores (13 y 15 de enero de 1881):</H4>
+Chile desembarc&oacute; en Paracas (dic. 1880) y avanz&oacute; hacia Lima. Las &uacute;ltimas l&iacute;neas defensivas de la capital fueron:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Batalla</TH><TH>Fecha</TH><TH>Lugar</TH><TH>Resultado</TH></TR>
+<TR><TD><B>Batalla de San Juan</B> (tambi&eacute;n llamada Chorrillos)</TD><TD>13 de enero de 1881</TD><TD>Chorrillos, al sur de Lima</TD><TD>Derrota peruana; miles de bajas; el ej&eacute;rcito regular peruano es destruido</TD></TR>
+<TR><TD><B>Batalla de Miraflores</B></TD><TD>15 de enero de 1881</TD><TD>Miraflores, al sur de Lima</TD><TD>Derrota peruana; civiles limeños combaten junto a los soldados; derrota definitiva</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>La ocupaci&oacute;n de Lima (17 de enero de 1881):</H4>
+El <B>17 de enero de 1881</B>, el ej&eacute;rcito chileno al mando del general <B>Manuel Baquedano</B> entr&oacute; en Lima. Los soldados chilenos saquearon <B>Chorrillos</B> y <B>Barranco</B>. Pi&eacute;rola y el gobierno peruano huyeron a la sierra. Lima permaneci&oacute; bajo <B>ocupaci&oacute;n militar chilena</B> hasta 1883. Chile saque&oacute; la <B>Biblioteca Nacional</B> (cuya direcci&oacute;n era de Ricardo Palma, quien luego la reconstruy&oacute;), el <B>Museo de Historia Natural</B> y diversas instituciones culturales, llevando los bienes a Valpara&iacute;so y Santiago.
+
+<DIV CLASS="ej">&#128218; <B>El saqueo cultural:</B> Entre los bienes que Chile llev&oacute; de Lima se encontraban colecciones enteras de la Biblioteca Nacional fundada por San Mart&iacute;n, instrumentos cient&iacute;ficos del Observatorio Astron&oacute;mico, piezas de museos y archivos hist&oacute;ricos. <B>Ricardo Palma</B>, nombrado director de la Biblioteca Nacional en 1883 tras la ocupaci&oacute;n, lanz&oacute; una campa&ntilde;a internacional de donaciones para reconstruirla, ganándose el apodo de <B>"Bibliotequ&eacute;ramo"</B>. El debate sobre la devoluci&oacute;n de estos bienes culturales contin&uacute;a hasta hoy.</DIV>
+
+<DIV CLASS="cultura-titulo">&#128481; LA RESISTENCIA DE C&Aacute;CERES<SPAN>La Campa&ntilde;a de la Brea&ntilde;a y la guerra de guerrillas en la sierra</SPAN></DIV>
+
+<H3>6. La Resistencia en la Sierra: Andr&eacute;s Avelino C&aacute;ceres y la Campa&ntilde;a de la Brea&ntilde;a (1881&ndash;1883)</H3>
+Mientras Lima estaba ocupada y una faccion peruana negociaba la paz, el general <B>Andr&eacute;s Avelino C&aacute;ceres</B> (Ayacucho, 1836&ndash;1923) organiz&oacute; la resistencia armada desde la sierra central. C&aacute;ceres, apodado el <B>"Brujo de los Andes"</B>, reclut&oacute; a campesinos ind&iacute;genas (<I>montoneros</I>) y libr&oacute; una brillante guerra de guerrillas contra las columnas chilenas en terreno andino, aprovechando su conocimiento del territorio.
+
+<H4>Principales acciones de la Campa&ntilde;a de la Brea&ntilde;a:</H4>
+<UL>
+<LI><B>Batalla de Sangrar (10 de julio de 1882):</B> C&aacute;ceres derrota a una columna chilena en Ju&iacute;n. Los montoneros utilizaban el terreno accidentado para emboscadas.</LI>
+<LI><B>Batalla de La Concepci&oacute;n (9 de julio de 1882):</B> Un peque&ntilde;o destacamento chileno de 77 soldados del Batallon C&oacute;quimbo fue aniquilado por fuerzas peruanas en La Concepci&oacute;n (Ju&iacute;n). Los chilenos combatieron hasta morir; Chile lo considera el episodio m&aacute;s her&oacute;ico de la guerra.</LI>
+<LI><B>Batalla de Hu&aacute;machi (11 de julio de 1882):</B> Victoria de C&aacute;ceres en Hu&aacute;nuco.</LI>
+<LI><B>Expedici&oacute;n Lynch:</B> Chile envi&oacute; la brutal expedici&oacute;n del coronel <B>Patricio Lynch</B> para destruir haciendas y saquear la sierra central, buscando quebrar la resistencia logr&iacute;stica de C&aacute;ceres. Lynch cob&oacute; contribuciones forzosas a terratenientes y quem&oacute; pueblos.</LI>
+</UL>
+
+<H4>El dilema: &iquest;negociar o resistir?</H4>
+Mientras C&aacute;ceres resistía en la sierra, una facción de la elite peruana &mdash;liderada por <B>Miguel Iglesias</B>, terrateniente del norte&mdash; consideraba que la resistencia prolongaba el sufrimiento del pa&iacute;s sin esperanza de victoria. Iglesias firm&oacute; el <B>Grito de Monter&eacute;n</B> (agosto 1882) en el que declaraba necesaria la paz con Chile aunque implicara cesiones territoriales. Chile apoy&oacute; a Iglesias y lo reconoci&oacute; como interlocutor.
+
+<DIV CLASS="cultura-titulo">&#128203; LOS TRATADOS DE PAZ<SPAN>El Tratado de Anc&oacute;n (1883) y el fin de la guerra</SPAN></DIV>
+
+<H3>7. El Tratado de Anc&oacute;n (20 de octubre de 1883)</H3>
+El <B>Tratado de Paz y Amistad entre Per&uacute; y Chile</B>, conocido como <B>Tratado de Anc&oacute;n</B>, fue firmado el <B>20 de octubre de 1883</B> entre el representante del gobierno de Iglesias, <B>Jos&eacute; Antonio de Lavalle</B>, y el plenipotenciario chileno <B>Jovino Novoa</B>, en el balneario de <B>Anc&oacute;n</B> (al norte de Lima).
+
+<H4>Principales disposiciones del Tratado de Anc&oacute;n:</H4>
+<UL>
+<LI><B>Tarapac&aacute;:</B> Per&uacute; cedi&oacute; el departamento de <B>Tarapac&aacute;</B> a Chile en forma <B>definitiva y perpetua</B>. Era el departamento m&aacute;s rico en salitre del Per&uacute;. Esta cesi&oacute;n fue irrevocable.</LI>
+<LI><B>Tacna y Arica:</B> Las provincias de <B>Tacna y Arica</B> quedar&iacute;an bajo <B>administraci&oacute;n chilena por 10 a&ntilde;os</B>, tras los cuales un plebiscito decidiría su soberan&iacute;a definitiva. <I>Ese plebiscito nunca se realiz&oacute;</I> durante d&eacute;cadas.</LI>
+<LI><B>Pago de indemnizaci&oacute;n:</B> el pa&iacute;s que se quedara con Tacna y Arica pagar&iacute;a al otro 10 millones de pesos.</LI>
+</UL>
+
+<DIV CLASS="mapa-note">&#128221; <B>La suerte de Tacna y Arica:</B> El plebiscito pactado en el Tratado de Anc&oacute;n nunca se realiz&oacute; por falta de acuerdo en las condiciones. Chile ejerci&oacute; una pol&iacute;tica de <B>chilenizaci&oacute;n</B> forzosa en Tacna y Arica (cierre de escuelas peruanas, expulsi&oacute;n de sacerdotes, prohibici&oacute;n del idioma espa&ntilde;ol con acento peruano). El litigio dur&oacute; hasta el <B>Tratado de Lima (3 de junio de 1929)</B>, mediado por el presidente estadounidense <B>Herbert Hoover</B>: <B>Tacna</B> regres&oacute; al Per&uacute; y <B>Arica</B> qued&oacute; definitivamente en Chile. La fecha de retorno de Tacna &mdash;<B>28 de agosto de 1929</B>&mdash; se celebra anualmente.</DIV>
+
+<H4>El Tratado de Valparaíso (1884) con Bolivia:</H4>
+Bolivia firm&oacute; un <B>Tratado de Tregua</B> con Chile el <B>4 de abril de 1884</B> (Tratado de Valpara&iacute;so), perdiendo definitivamente el departamento de <B>Antofagasta</B> y su &uacute;nico acceso al mar Pac&iacute;fico. Bolivia sigue siendo un pa&iacute;s mediterr&aacute;neo y ha reclamado salida al mar durante todo el siglo XX y XXI. El Tratado de Paz definitivo Chile&ndash;Bolivia se firm&oacute; recién en <B>1904</B>.
+
+<DIV CLASS="cultura-titulo">&#128200; CONSECUENCIAS DE LA GUERRA<SPAN>El per&uacute; despu&eacute;s de la derrota: p&eacute;rdidas, reconstrucci&oacute;n y trauma</SPAN></DIV>
+
+<H3>8. Consecuencias de la Guerra del Pac&iacute;fico para el Per&uacute;</H3>
+
+<H4>Consecuencias territoriales:</H4>
+<UL>
+<LI><B>P&eacute;rdida definitiva de Tarapac&aacute;:</B> el departamento m&aacute;s rico en salitre del Per&uacute;, con ciudades como Iquique. Per&uacute; perdi&oacute; as&iacute; el recurso que hubiera podido reemplazar al guano.</LI>
+<LI><B>P&eacute;rdida temporal de Tacna (recuperada en 1929) y definitiva de Arica.</B></LI>
+<LI><B>La "herida abierta":</B> la p&eacute;rdida territorial gener&oacute; un trauma nacional que marc&oacute; la identidad peruana del siglo XX.</LI>
+</UL>
+
+<H4>Consecuencias econ&oacute;micas:</H4>
+<UL>
+<LI><B>Bancarrota total:</B> el Estado peruano no pod&iacute;a pagar ninguna de sus deudas. La deuda externa era impagable.</LI>
+<LI><B>Contrato Grace (1889):</B> el desenlace financiero de la guerra: los ferrocarriles entregados a la Peruvian Corporation brit&aacute;nica por 66 a&ntilde;os a cambio de cancelar la deuda externa.</LI>
+<LI><B>Destrucci&oacute;n de infraestructura:</B> haciendas, f&aacute;bricas, v&iacute;as f&eacute;rreas y edificios p&uacute;blicos fueron saqueados o destruidos.</LI>
+<LI><B>Saqueo cultural:</B> la Biblioteca Nacional, el Observatorio y museos fueron vaciados.</LI>
+</UL>
+
+<H4>Consecuencias pol&iacute;ticas:</H4>
+<UL>
+<LI><B>Crisis del Estado:</B> el Estado peruano colaps&oacute; durante la guerra; varios "presidentes" coexistieron: Prado (que huy&oacute;), Pi&eacute;rola (en Lima), Iglesias (reconocido por Chile), C&aacute;ceres (en la sierra).</LI>
+<LI><B>La guerra civil peruana (1884&ndash;1885):</B> tras la firma de Anc&oacute;n, C&aacute;ceres se neg&oacute; a reconocer a Iglesias y lo enfrent&oacute; militarmente; C&aacute;ceres gan&oacute; y gobern&oacute; el Per&uacute; en dos periodos (1886&ndash;1890 y 1894&ndash;1895).</LI>
+<LI><B>Surgimiento del <I>cacerismo</I>:</B> C&aacute;ceres, el h&eacute;roe de la sierra, fue el gran caudillo de la posguerra.</LI>
+</UL>
+
+<H4>Consecuencias sociales y culturales:</H4>
+<UL>
+<LI><B>Papel de los ind&iacute;genas:</B> Los campesinos andinos que combatieron con C&aacute;ceres (los "montoneros") no recibieron ninguna recompensa o reconocimiento social tras la guerra. Algunos, decepcionados, atacaron haciendas de la elite criolla que hab&iacute;a colaborado con Chile. El episodio mostr&oacute; la profunda fractura social del Per&uacute;.</LI>
+<LI><B>Debate sobre las causas de la derrota:</B> la derrota gener&oacute; un intenso debate intelectual sobre la identidad nacional peruana, la corrupci&oacute;n de la clase dirigente y el fracaso del modelo liberal. Manuel Gonz&aacute;lez Prada ("somos los vencidos de ayer y seremos los esclavos de ma&ntilde;ana") fue la voz m&aacute;s radical de esta generaci&oacute;n de la derrota.</LI>
+<LI><B>La Generaci&oacute;n del 79:</B> grupo de intelectuales que reflexionaron sobre el Per&uacute; a partir de la derrota: Gonz&aacute;lez Prada, Ricardo Palma, Juana Alarco de Dammert.</LI>
+</UL>
+
+<H3>9. Los h&eacute;roes de la guerra: perfil completo</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>H&eacute;roe</TH><TH>Cargo / Unidad</TH><TH>Acci&oacute;n her&oacute;ica</TH><TH>Fecha de muerte</TH><TH>Legado</TH></TR>
+<TR><TD><B>Miguel Grau Seminario</B></TD><TD>Contralmirante, Comandante del Hu&aacute;scar</TD><TD>Combate de Iquique (21 may.); Campa&ntilde;a del Hu&aacute;scar; muere en Angamos</TD><TD>8 de octubre de 1879</TD><TD>H&eacute;roe Nacional; billete de 200 soles; D&iacute;a de la Marina (8 oct.)</TD></TR>
+<TR><TD><B>Francisco Bolognesi Cervantes</B></TD><TD>Coronel, Comandante de la plaza de Arica</TD><TD>Defensa del Morro de Arica hasta el &uacute;ltimo cartucho</TD><TD>7 de junio de 1880</TD><TD>H&eacute;roe Nacional; billete de 50 soles; D&iacute;a de la Bandera (7 jun.)</TD></TR>
+<TR><TD><B>Andr&eacute;s Avelino C&aacute;ceres</B></TD><TD>General, "El Brujo de los Andes"</TD><TD>Campa&ntilde;a de la Brea&ntilde;a; guerra de guerrillas con montoneros</TD><TD>Sobrevive; muere en 1923</TD><TD>H&eacute;roe Nacional; presidente del Per&uacute; en dos periodos</TD></TR>
+<TR><TD><B>Alfonso Ugarte</B></TD><TD>Coronel, Ayudante de Bolognesi en Arica</TD><TD>En la ca&iacute;da del Morro de Arica lanz&oacute; su caballo al mar envuelto en la bandera peruana para evitar que cayera en manos chilenas</TD><TD>7 de junio de 1880</TD><TD>H&eacute;roe de Arica; su acto es uno de los m&aacute;s ic&oacute;nicos de la guerra</TD></TR>
+<TR><TD><B>Pedro Ruiz Gallo</B></TD><TD>Coronel Ingeniero</TD><TD>Invent&oacute; el <I>Toro Submarino</I> (torpedero) para defender el Callao</TD><TD>Muere en accidente de prueba, 1880</TD><TD>Pionero de la tecnolog&iacute;a bélica peruana; base militar lleva su nombre</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>10. Cuadro cronol&oacute;gico completo de la guerra</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fecha</TH><TH>Evento</TH><TH>Resultado / Importancia</TH></TR>
+<TR><TD><B>14 feb. 1879</B></TD><TD>Chile desembarca en Antofagasta</TD><TD>Inicio de facto de la guerra; Bolivia invoca el Tratado Secreto</TD></TR>
+<TR><TD><B>5 abr. 1879</B></TD><TD>Chile declara la guerra a Per&uacute; y Bolivia</TD><TD>Inicio oficial de la guerra</TD></TR>
+<TR><TD><B>21 may. 1879</B></TD><TD>Combate de Iquique</TD><TD>Mueren Grau (no) y Prat (s&iacute;); se hunde la Esmeralda; se pierde la Independencia; fecha celebrada por Chile y Per&uacute;</TD></TR>
+<TR><TD><B>8 oct. 1879</B></TD><TD>Combate de Angamos</TD><TD>Muerte de Grau; captura del Hu&aacute;scar; Chile domina el mar</TD></TR>
+<TR><TD><B>19 nov. 1879</B></TD><TD>Batalla de San Francisco</TD><TD>Daza abandona; derrota aliada; Chile ocupa Iquique</TD></TR>
+<TR><TD><B>27 nov. 1879</B></TD><TD>Batalla de Tarapac&aacute;</TD><TD>&Uacute;nica victoria peruana importante; pero estrat&eacute;gicamente in&uacute;til</TD></TR>
+<TR><TD><B>26 may. 1880</B></TD><TD>Batalla del Campo de la Alianza (Tacna)</TD><TD>Derrota aliada; Chile ocupa Tacna; Bolivia sale de la guerra</TD></TR>
+<TR><TD><B>7 jun. 1880</B></TD><TD>Batalla del Morro de Arica</TD><TD>Mueren Bolognesi y Ugarte; Chile ocupa Arica; D&iacute;a de la Bandera</TD></TR>
+<TR><TD><B>13 ene. 1881</B></TD><TD>Batalla de San Juan (Chorrillos)</TD><TD>Derrota peruana; ej&eacute;rcito regular destruido</TD></TR>
+<TR><TD><B>15 ene. 1881</B></TD><TD>Batalla de Miraflores</TD><TD>Derrota peruana definitiva; Lima indefensa</TD></TR>
+<TR><TD><B>17 ene. 1881</B></TD><TD>Ocupaci&oacute;n de Lima por Chile</TD><TD>Saqueo de la ciudad; Pi&eacute;rola huye a la sierra</TD></TR>
+<TR><TD><B>1881&ndash;1883</B></TD><TD>Campa&ntilde;a de la Brea&ntilde;a (C&aacute;ceres)</TD><TD>Guerra de guerrillas en la sierra central; resistencia her&oacute;ica sin respaldo suficiente</TD></TR>
+<TR><TD><B>20 oct. 1883</B></TD><TD>Tratado de Anc&oacute;n</TD><TD>Per&uacute; cede Tarapac&aacute; a perpetuidad; Tacna y Arica por 10 a&ntilde;os (sin plebiscito)</TD></TR>
+<TR><TD><B>4 abr. 1884</B></TD><TD>Tratado de Valpara&iacute;so (Bolivia&ndash;Chile)</TD><TD>Bolivia pierde Antofagasta y su salida al mar; fin oficial de la guerra</TD></TR>
+<TR><TD><B>3 jun. 1929</B></TD><TD>Tratado de Lima (Tacna&ndash;Arica)</TD><TD>Tacna regresa al Per&uacute;; Arica queda en Chile definitivamente</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">5 abr. 1879</DIV><DIV CLASS="dk-label">Chile declara guerra a Per&uacute; y Bolivia; inicio oficial</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">21 may. 1879</DIV><DIV CLASS="dk-label">Combate de Iquique: Grau hunde la Esmeralda; se pierde la Independencia</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">8 oct. 1879</DIV><DIV CLASS="dk-label">Angamos: muerte de Grau; captura del Hu&aacute;scar; D&iacute;a de la Marina</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">7 jun. 1880</DIV><DIV CLASS="dk-label">Morro de Arica: muerte de Bolognesi; D&iacute;a de la Bandera</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">17 ene. 1881</DIV><DIV CLASS="dk-label">Ocupaci&oacute;n de Lima; saqueo de la Biblioteca Nacional</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">20 oct. 1883</DIV><DIV CLASS="dk-label">Tratado de Anc&oacute;n: Tarapac&aacute; cedida a perpetuidad</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">3 jun. 1929</DIV><DIV CLASS="dk-label">Tratado de Lima: Tacna regresa al Per&uacute;; Arica definitivamente en Chile</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Causas:</B> salitre del Atacama &middot; fronteras imprecisas &middot; Estanco del Salitre (1873) &middot; Tratado Secreto Per&uacute;&ndash;Bolivia (6 feb. 1873) &middot; impuesto boliviano a empresa chilena (1878) &middot; desembarco en Antofagasta (14 feb. 1879)<BR>
+&bull; <B>Fase naval:</B> Iquique (21 may. 1879): Grau hunde la Esmeralda; per&iacute;odo del Hu&aacute;scar &middot; Angamos (8 oct. 1879): muerte de Grau + captura del Hu&aacute;scar = Chile domina el mar<BR>
+&bull; <B>Fase terrestre sur:</B> San Francisco (19 nov.) &middot; Tarapac&aacute; (27 nov. 1879, victoria p&iacute;rrica) &middot; Campo de la Alianza / Tacna (26 may. 1880) &middot; Morro de Arica / Bolognesi (7 jun. 1880)<BR>
+&bull; <B>Campa&ntilde;a de Lima:</B> San Juan (13 ene. 1881) &middot; Miraflores (15 ene. 1881) &middot; Ocupaci&oacute;n de Lima (17 ene. 1881)<BR>
+&bull; <B>Resistencia:</B> C&aacute;ceres + Campa&ntilde;a de la Brea&ntilde;a (1881&ndash;1883) &middot; montoneros andinos<BR>
+&bull; <B>Paz:</B> Tratado de Anc&oacute;n (20 oct. 1883): Tarapac&aacute; a Chile para siempre; Tacna&ndash;Arica por 10 a&ntilde;os &middot; Tratado de Valpara&iacute;so (4 abr. 1884): Bolivia pierde el mar &middot; Tratado de Lima (3 jun. 1929): Tacna regresa al Per&uacute;<BR>
+&bull; <B>H&eacute;roes:</B> Grau = "Caballero de los Mares" (8 oct. 1879) &middot; Bolognesi = Morro de Arica (7 jun. 1880) &middot; C&aacute;ceres = "Brujo de los Andes" &middot; Ugarte = lanza el caballo al mar en Arica<BR>
+&bull; <B>Consecuencias:</B> Contrato Grace (1889) &middot; guerra civil C&aacute;ceres vs. Iglesias &middot; saqueo cultural &middot; trauma nacional &middot; Gonz&aacute;lez Prada y la Generaci&oacute;n del 79
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;Cu&aacute;les son las fechas de inicio y fin oficiales de la Guerra del Pac&iacute;fico y qu&eacute; tratado puso fin al conflicto con el Per&uacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Inici&oacute; el 14 de febrero de 1879 (desembarco en Antofagasta) y termin&oacute; con el Tratado de Lima el 3 de junio de 1884</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Inici&oacute; oficialmente el 5 de abril de 1879 (declaraci&oacute;n de guerra de Chile a Per&uacute; y Bolivia) y termin&oacute; para el Per&uacute; con el Tratado de Anc&oacute;n el 20 de octubre de 1883; Bolivia firm&oacute; el Tratado de Valpara&iacute;so el 4 de abril de 1884</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Inici&oacute; el 21 de mayo de 1879 (Combate de Iquique) y termin&oacute; con el Tratado de Anc&oacute;n el 20 de octubre de 1883, que devolvi&oacute; Tarapac&aacute; al Per&uacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Inici&oacute; el 5 de abril de 1879 y termin&oacute; con el Tratado de Santiago el 15 de enero de 1882, que establec&iacute;a un armisticio permanente entre los tres pa&iacute;ses</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La cronolog&iacute;a exacta es esencial para el examen. El inicio <I>de facto</I> fue el <B>14 de febrero de 1879</B> (tropas chilenas desembarcan en Antofagasta sin declaraci&oacute;n de guerra). El inicio <I>oficial</I> fue el <B>5 de abril de 1879</B>, cuando Chile declar&oacute; formalmente la guerra a Per&uacute; y Bolivia. El Tratado de <B>Anc&oacute;n</B> (<B>20 de octubre de 1883</B>) puso fin a la guerra con el Per&uacute;: cedi&oacute; Tarapac&aacute; a perpetuidad y Tacna&ndash;Arica por 10 a&ntilde;os. El Tratado de <B>Valpara&iacute;so</B> (<B>4 de abril de 1884</B>) puso fin a la guerra con Bolivia: Antofagasta qued&oacute; en Chile y Bolivia perdi&oacute; su salida al mar. El <B>Tratado de Lima (3 de junio de 1929)</B> resolvi&oacute; el litigio por Tacna&ndash;Arica.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Qu&eacute; ocurri&oacute; en el Combate de Iquique (21 de mayo de 1879) y cu&aacute;l fue su resultado estratégico para el Per&uacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) El Hu&aacute;scar y la Independencia hundieron a los dos buques chilenos Esmeralda y Covadonga, obteniendo el Per&uacute; el dominio del mar y pudiendo abastecer libremente sus costas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El Hu&aacute;scar (Grau) hundi&oacute; a la Esmeralda chilena usando el espolón; pero la Independencia (Moore) encall&oacute; en Punta Gruesa persiguiendo a la Covadonga y fue destruida; resultado: victoria táctica parcial pero derrota estratégica grave al perder la Independencia, el mayor buque peruano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Miguel Grau muri&oacute; en el Combate de Iquique al hundir la Esmeralda; el Per&uacute; perdi&oacute; al Hu&aacute;scar y a la Independencia en el mismo combate, quedando sin marina de guerra desde ese d&iacute;a</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) El Combate de Iquique fue una aplastante victoria chilena: hundieron al Hu&aacute;scar y a la Independencia en pocas horas; Grau muri&oacute; y Per&uacute; qued&oacute; sin marina desde el 21 de mayo de 1879</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Combate de Iquique del <B>21 de mayo de 1879</B> tuvo dos combates simult&aacute;neos: (1) El <B>Hu&aacute;scar</B> (Grau) vs. la <B>Esmeralda</B> (Prat): tr&aacute;s un duelo artillero, Grau orden&oacute; el espolonazo y hundi&oacute; a la Esmeralda. El comandante chileno <B>Arturo Prat</b> salt&oacute; heroicamente al Hu&aacute;scar y fue abatido. (2) La <B>Independencia</B> (Moore) persiguiendo a la <B>Covadonga</B> (más pequeña y rápida): la Independencia encall&oacute; en los arrecifes de <B>Punta Gruesa</B> y fue destruida. Este fue el desenlace decisivo: Per&uacute; perd&iacute;a su mayor buque. Grau <B>no muri&oacute; en Iquique</B> (muere meses despu&eacute;s en Angamos). El resultado fue ambiguo: victoria t&aacute;ctica al hundir la Esmeralda, pero derrota estratégica grave al perder la Independencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;C&oacute;mo muri&oacute; Miguel Grau y cu&aacute;l es su importancia para el Per&uacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Grau muri&oacute; en el Combate de Iquique el 21 de mayo de 1879 al hundir la Esmeralda; el Congreso lo declar&oacute; H&eacute;roe Nacional en 1879</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Grau muri&oacute; en el Combate de Angamos el 8 de octubre de 1879, cuando un proyectil chileno destruy&oacute; la torre de mando del Hu&aacute;scar; es el m&aacute;ximo h&eacute;roe naval del Per&uacute;, llamado "Caballero de los Mares"; el 8 de octubre se celebra el D&iacute;a de la Marina de Guerra; su imagen aparece en el billete de 200 soles</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Grau sobrevivi&oacute; a la guerra pero muri&oacute; exiliado en Chile despu&eacute;s del Tratado de Anc&oacute;n; es recordado como h&eacute;roe por su campa&ntilde;a de guerrillas en la sierra junto a C&aacute;ceres</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Grau muri&oacute; en la Batalla de Miraflores el 15 de enero de 1881 defendiendo Lima; el Hu&aacute;scar fue hundido por los propios peruanos para que no cayera en manos chilenas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Miguel Grau Seminario</B> (Piura, 27 de julio de 1834) muri&oacute; en el <B>Combate de Angamos</B> el <B>8 de octubre de 1879</B>. Chile hab&iacute;a enviado su escuadra casi completa (seis buques liderados por los acorazados <B>Cochrane</B> y <B>Blanco Encalada</B>) a interceptar al Hu&aacute;scar frente al Cabo de Angamos. Superado por fuerzas muy superiores, Grau combati&oacute; hasta que un proyectil del Cochrane destruy&oacute; la <B>torre de mando</B> del Hu&aacute;scar, mat&aacute;ndolo instant&aacute;neamente. El Hu&aacute;scar fue capturado por Chile (y a&uacute;n hoy lo conserva en Talcahuano). Grau es venerado como el <B>"Gran Almirante"</B> y <B>"Caballero de los Mares"</B> por su valor y su trato humanitario a los vencidos (envi&oacute; las pertenencias de Prat a su viuda). Fue declarado <B>H&eacute;roe Nacional</B> en 1958. El <B>8 de octubre</B> se celebra el <B>D&iacute;a de la Marina de Guerra del Per&uacute;</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qu&eacute; estableci&oacute; el Tratado de Anc&oacute;n (1883) respecto a los territorios peruanos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Per&uacute; cedi&oacute; a Chile los departamentos de Tarapac&aacute;, Tacna y Arica en forma definitiva y perpetua; a cambio Chile pag&oacute; 20 millones de pesos de indemnizaci&oacute;n de guerra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Per&uacute; cedi&oacute; el departamento de Tarapac&aacute; a Chile en forma definitiva y perpetua; Tacna y Arica quedar&iacute;an bajo administraci&oacute;n chilena por 10 a&ntilde;os, tras los cuales un plebiscito (que nunca se realiz&oacute;) determinar&iacute;a su soberan&iacute;a; Tacna retorn&oacute; al Per&uacute; recién en 1929 y Arica qued&oacute; en Chile</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Per&uacute; no cedi&oacute; ning&uacute;n territorio: el Tratado de Anc&oacute;n estableci&oacute; solo un armisticio temporal; las cuestiones territoriales se resolvieron en el Tratado de Lima de 1929</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Per&uacute; cedi&oacute; Tarapac&aacute; temporalmente por 50 a&ntilde;os y Tacna y Arica en forma definitiva; Tarapac&aacute; deb&iacute;a ser devuelta en 1933, pero Chile no lo hizo y el Per&uacute; renunci&oacute; a reclamarla</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Tratado de Anc&oacute;n</B> (firmado el <B>20 de octubre de 1883</B> en el balneario de Anc&oacute;n, al norte de Lima) estableci&oacute;: (1) <B>Tarapac&aacute;:</B> cedida a Chile "en dominio y soberan&iacute;a perpetua". Esta cesi&oacute;n fue irrevocable e irreversible. El Per&uacute; perdi&oacute; su departamento m&aacute;s rico en salitre para siempre. (2) <B>Tacna y Arica:</B> quedar&iacute;an bajo posesi&oacute;n chilena por <B>10 a&ntilde;os</B>, tras los cuales un <B>plebiscito</B> decidir&iacute;a si pasaban a Chile o al Per&uacute;. Ese plebiscito nunca se realiz&oacute; durante d&eacute;cadas (no hab&iacute;a acuerdo en las condiciones). El problema de Tacna&ndash;Arica se resolvi&oacute; con el <B>Tratado de Lima</B> (<B>3 de junio de 1929</B>), mediado por EE.UU.: <B>Tacna</B> regres&oacute; al Per&uacute; (el <B>28 de agosto de 1929</B> se celebra el retorno) y <B>Arica</B> qued&oacute; definitivamente en Chile.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qui&eacute;n fue Francisco Bolognesi, qu&eacute; hizo y qu&eacute; frase lo inmortalizó?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Bolognesi fue el almirante del Hu&aacute;scar que sucedi&oacute; a Grau tras su muerte en Angamos; su frase inmortal fue "El Per&uacute; no negocia su honor" cuando los chilenos le exigieron la rendición del buque</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Bolognesi fue el coronel que comand&oacute; la defensa del Morro de Arica hasta el 7 de junio de 1880; cuando los chilenos le pidieron que se rindiera, respondi&oacute;: "Tengo deberes sagrados que cumplir y los cumplir&eacute; hasta quemar el &uacute;ltimo cartucho"; muri&oacute; en la batalla; su imagen est&aacute; en el billete de 50 soles y el 7 de junio es el D&iacute;a de la Bandera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Bolognesi fue el general que comand&oacute; la defensa de Lima en las batallas de San Juan y Miraflores en enero de 1881; su frase famosa fue "Aqu&iacute; no se rinde nadie" antes de caer muerto ante las puertas de Lima</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Bolognesi fue el oficial que acompa&ntilde;&oacute; a C&aacute;ceres en la Campa&ntilde;a de la Brea&ntilde;a; su frase "Resistir&eacute; hasta el final" fue pronunciada en la Batalla de Hu&aacute;machi en 1882</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Francisco Bolognesi Cervantes</B> (Lima, 4 de noviembre de 1816 &ndash; Arica, 7 de junio de 1880) fue el coronel que comand&oacute; la plaza de <B>Arica</B>. El <B>7 de junio de 1880</B>, el ej&eacute;rcito chileno, muy superior en hombres y armamento, rode&oacute; el <B>Morro de Arica</B>. Un parlamentario chileno, el abogado <B>Juan de la Cruz Salvo</B>, pidi&oacute; a Bolognesi que se rindiera para evitar derramamiento de sangre. Bolognesi respondi&oacute;: <B>"Tengo deberes sagrados que cumplir y los cumplir&eacute; hasta quemar el &uacute;ltimo cartucho"</B>. Y así lo hizo: los defensores combatieron hasta el final. El coronel <B>Alfonso Ugarte</B> lan&oacute; su caballo al mar envuelto en la bandera peruana para que no cayera en manos chilenas. Bolognesi muri&oacute; en el combate. Es <B>H&eacute;roe Nacional</B>; su imagen aparece en el billete de <B>50 soles</B>. El <B>7 de junio</B> es el <B>D&iacute;a de la Bandera</B> en el Per&uacute;.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Explica la importancia estratégica del Tratado Secreto Per&uacute;&ndash;Bolivia de 1873 en el contexto de la Guerra del Pac&iacute;fico.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) El Tratado Secreto fue irrelevante: Per&uacute; entró en la guerra no por el tratado sino por razones econ&oacute;micas propias; quer&iacute;a recuperar el salitre de Atacama para reemplazar el guano agotado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El Tratado Secreto (6 de febrero de 1873) oblig&oacute; al Per&uacute; a entrar en una guerra para la que no estaba preparado: cuando Bolivia invoc&oacute; la alianza (tras el desembarco chileno en Antofagasta), el Per&uacute; deb&iacute;a optar entre incumplir el tratado (perder credibilidad) o entrar en una guerra desventajosa; opt&oacute; por lo segundo con consecuencias devastadoras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El Tratado Secreto fue favorable para el Per&uacute;: al ser tres contra uno (Per&uacute; + Bolivia + Argentina), Chile no pod&iacute;a ganar la guerra; el problema fue que Argentina se neg&oacute; a sumarse y la alianza qued&oacute; debilitada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) El Tratado Secreto era conocido por todos: no fue secreto en absoluto; fue un pacto p&uacute;blico ratificado por los congresos de Per&uacute; y Bolivia que Chile acept&oacute; como parte de las relaciones diplom&aacute;ticas normales entre vecinos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Tratado de Alianza Defensiva secreto</B> entre Per&uacute; y Bolivia (firmado el <B>6 de febrero de 1873</B>) fue un factor determinante de la entrada del Per&uacute; en la guerra y un factor de su derrota. El tratado establec&iacute;a que si alguno de los firmantes era agredido por un tercer pa&iacute;s (no nombrado, pero claramente Chile), el otro deb&iacute;a auxiliarlo militarmente. El tratado fue firmado porque ambos pa&iacute;ses ten&iacute;an intereses comunes en el salitre y tem&iacute;an la creciente potencia militar chilena. <B>El dilema peruano en 1879:</B> cuando Bolivia invoc&oacute; la alianza tras el desembarco chileno en Antofagasta, el Per&uacute; trat&oacute; de mediar primero (missi&oacute;n de Jos&eacute; Antonio de Lavalle a Chile). Chile ofreci&oacute; respetar la neutralidad peruana si Per&uacute; rompía el tratado con Bolivia. El Per&uacute; rechaz&oacute; la oferta y entr&oacute; en guerra. Para el historiador <B>Jorge Basadre</B>, fue un error estratégico fatal: Per&uacute; estaba en bancarrota, su ej&eacute;rcito era inferior al chileno, y no deb&iacute;a haber entrado en una guerra en esas condiciones.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> &iquest;Por qu&eacute; la Campa&ntilde;a de la Brea&ntilde;a de C&aacute;ceres fue militarmente brillante pero pol&iacute;ticamente insuficiente para cambiar el resultado de la guerra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Porque C&aacute;ceres fue derrotado militarmente por Chile en todas las batallas de la sierra; su fama de "Brujo de los Andes" es un mito creado por la historiograf&iacute;a peruana nacionalista del siglo XX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Porque aunque C&aacute;ceres logr&oacute; mantener la resistencia en la sierra (hostigando a las columnas chilenas con montoneros ind&iacute;genas), no contaba con armas modernas, apoyo log&iacute;stico ni reconocimiento diplom&aacute;tico internacional; Chile controlaba el mar y Lima, por lo que la guerra estaba econ&oacute;mica y pol&iacute;ticamente perdida aunque la resistencia continuara</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Porque C&aacute;ceres traicion&oacute; a sus propios montoneros cuando negoci&oacute; secretamente con Chile el fin de la resistencia a cambio de ser nombrado presidente del Per&uacute;</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Porque la resistencia de C&aacute;ceres fue abandonada por los ind&iacute;genas que la componían cuando Chile les ofreci&oacute; tierras y libertad a cambio de dejar de combatir</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Campa&ntilde;a de la Brea&ntilde;a</B> (1881&ndash;1883) fue una de las guerrillas m&aacute;s brillantes de la historia latinoamericana del siglo XIX. <B>C&aacute;ceres</B> logr&oacute;: hostigar y destruir columnas chilenas en terreno andino; mantener viva la resistencia por dos a&ntilde;os; derrotar a fuerzas superiores en Sangrar y Hu&aacute;machi. Pero sus l&iacute;mites estructurales eran insuperables: (1) <B>Sin mar:</B> Chile controlaba el Pac&iacute;fico; ning&uacute;n arma, muni&oacute;n ni apoyo pod&iacute;a llegar al Per&uacute; desde el exterior. (2) <B>Sin capital:</B> el Estado peruano estaba en bancarrota; no pod&iacute;a comprar armas modernas ni pagar tropas. (3) <B>Sin reconocimiento:</B> ning&uacute;n pa&iacute;s extranjero reconoci&oacute; el gobierno de resistencia ni le provey&oacute; apoyo. (4) <B>Sin unidad:</B> la facción de Iglesias negociaba la paz con Chile, dividiendo al Per&uacute;. La guerrilla pod&iacute;a prolongar la agon&iacute;a pero no cambiar el resultado militar. Para Basadre, C&aacute;ceres represent&oacute; la "dignidad nacional" frente a la rendici&oacute;n de Iglesias.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;Por qu&eacute; la ocupaci&oacute;n de Lima (17 de enero de 1881) y el saqueo de la Biblioteca Nacional son especialmente significativos desde un punto de vista cultural e hist&oacute;rico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Porque la Biblioteca Nacional conten&iacute;a los &uacute;nicos mapas que mostraban que Tarapac&aacute; era peruano; al saquearla, Chile destruy&oacute; la evidencia documental que el Per&uacute; necesitaba para reclamar el territorio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Porque el saqueo de la Biblioteca Nacional (fundada por San Mart&iacute;n), museos y archivos represent&oacute; la destrucci&oacute;n intencional de la memoria hist&oacute;rica y cultural del Per&uacute;; la reconstrucci&oacute;n por Ricardo Palma fue una respuesta civil de resistencia cultural; el debate sobre la devoluci&oacute;n de los bienes contin&uacute;a hasta hoy</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El saqueo de la Biblioteca Nacional fue un acto accidental durante el desorden del ingreso del ej&eacute;rcito a Lima; el gobierno chileno se disculp&oacute; oficialmente y restituy&oacute; todos los bienes sustraídos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La ocupaci&oacute;n de Lima fue pacífica: el ej&eacute;rcito chileno respet&oacute; plenamente la ciudad y sus instituciones; el "saqueo" es un mito creado por la historiografia peruana nacionalista</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El saqueo de Lima (enero 1881) fue un episodio que va m&aacute;s all&aacute; de la guerra militar para convertirse en una guerra cultural. <B>Lo que se llev&oacute; Chile:</B> la <B>Biblioteca Nacional</B> (fundada por San Mart&iacute;n en 1821, con miles de vol&uacute;menes, manuscritos coloniales y documentos hist&oacute;ricos &uacute;nicos); colecciones del <B>Museo de Historia Natural</B>; instrumentos del <B>Observatorio Astron&oacute;mico</B>; maquinaria de imprentas. Los bienes fueron llevados a Valparaíso y Santiago. <B>La respuesta cultural peruana:</B> <B>Ricardo Palma</B>, el gran escritor peruano de las <I>Tradiciones Peruanas</I>, fue nombrado director de la Biblioteca Nacional en 1883. Sin fondos del Estado, lanz&oacute; una <B>campa&ntilde;a de donaciones internacionales</B> ("apelaci&oacute;n a los literatos y hombres de ciencia de Am&eacute;rica") que recibi&oacute; libros de toda Am&eacute;rica Latina, Espa&ntilde;a y Europa. Palma reconstruy&oacute; la Biblioteca con libros donados durante dos d&eacute;cadas. El debate sobre la repatriaci&oacute;n de los bienes culturales saqueados es un tema pendiente en las relaciones Per&uacute;&ndash;Chile hasta hoy.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Compara los roles de Miguel Iglesias y Andr&eacute;s Avelino C&aacute;ceres en el desenlace de la guerra: &iquest;qui&eacute;n ten&iacute;a raz&oacute;n hist&oacute;rica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Iglesias ten&iacute;a raz&oacute;n completamente: la resistencia de C&aacute;ceres era irresponsable y prolongaba el sufrimiento in&uacute;tilmente; cualquier analista objetivo reconoce que la paz era la &uacute;nica opci&oacute;n posible desde 1880</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Es un debate genuino: Iglesias represent&oacute; el realismo pol&iacute;tico (la guerra estaba perdida; prolongarla solo aumentaba el sufrimiento; era mejor negociar con las mejores condiciones posibles) mientras C&aacute;ceres represent&oacute; el honor nacional (rendirse era traicionar a los ca&iacute;dos; la resistencia podr&iacute;a cambiar las condiciones; era inaceptable ceder soberan&iacute;a). Ambas posiciones ten&iacute;an fundamentos v&aacute;lidos; el juicio hist&oacute;rico depende del criterio que se priorice</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) C&aacute;ceres ten&iacute;a raz&oacute;n completamente: si hubiera continuado la resistencia otros dos a&ntilde;os, Chile se habr&iacute;a cansado de la guerra y habr&iacute;a devuelto Tarapac&aacute; al Per&uacute; en una negociaci&oacute;n m&aacute;s favorable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Ni Iglesias ni C&aacute;ceres representaban a Per&uacute;; ambos eran agentes de potencias extranjeras: Iglesias trabajaba para Chile y C&aacute;ceres para Gran Breta&ntilde;a</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El debate Iglesias&ndash;C&aacute;ceres es uno de los m&aacute;s apasionantes de la historia peruana. <B>Miguel Iglesias</B> (terrateniente caj&middot;amarquino, general) firm&oacute; el <B>Grito de Monter&eacute;n</B> (agosto 1882) declarando que el Per&uacute; deb&iacute;a hacer la paz aunque implicara sacrificios territoriales. Chile lo reconoci&oacute; como presidente y negoci&oacute; con &eacute;l el Tratado de Anc&oacute;n. Para sus cr&iacute;ticos, fue un traidor que capitulé vendiendo Tarapac&aacute;; para sus defensores, fue un estadista que reconoci&oacute; la realidad y detuvo el sangrado. <B>Andr&eacute;s Avelino C&aacute;ceres</B> considera que la resistencia deb&iacute;a continuar mientras hubiera posibilidades de obtener mejores condiciones, y que ceder soberan&iacute;a era traicionar a los muertos. Para sus cr&iacute;ticos, prolong&oacute; in&uacute;tilmente el sufrimiento del pa&iacute;s. El historiador <B>Basadre</B> reconoce el heroísmo de ambos y evita el juicio moral simplista: Iglesias fue el del realismo, C&aacute;ceres el del honor; el Per&uacute; necesitaba a ambos y sus visiones eran irreconciliables.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Cu&aacute;l fue el papel de los campesinos ind&iacute;genas ("montoneros") en la Campa&ntilde;a de la Brea&ntilde;a y qu&eacute; revel&oacute; sobre la sociedad peruana de la &eacute;poca?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Los montoneros eran mercenarios contratados por C&aacute;ceres con dinero brit&aacute;nico; no ten&iacute;an ning&uacute;n sentido de identidad nacional peruana y solo peleaban por dinero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Los montoneros (campesinos ind&iacute;genas de la sierra central) combatieron valientemente junto a C&aacute;ceres; su participaci&oacute;n revel&oacute; la brecha entre la elite criolla (que muchas veces colabor&oacute; con el ocupante o huy&oacute;) y las masas ind&iacute;genas (que resistieron sin recompensa ni reconocimiento posterior); al final de la guerra, algunos montoneros decepcionados atacaron haciendas criollas, revelando tensiones sociales profundas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Los montoneros ind&iacute;genas se negaron a combatir porque consideraban que la guerra era un asunto de la elite criolla que no les afectaba; C&aacute;ceres tuvo que reclutar forzosamente a los pocos que participaron</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Los montoneros fueron el &uacute;nico grupo peruano que obtuvo beneficios de la guerra: la Constituci&oacute;n de 1884 les reconoci&oacute; el derecho a la propiedad de la tierra y sufragio universal a cambio de su participaci&oacute;n en la resistencia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El papel de los <B>montoneros</B> en la Campa&ntilde;a de la Brea&ntilde;a es uno de los temas m&aacute;s reveladores de la historia social peruana. Los campesinos e ind&iacute;genas de la sierra central (Ju&iacute;n, Huancayo, Cerro de Pasco, Ayacucho) combatieron al lado de C&aacute;ceres con un patriotismo genuino, usando conocimiento del terreno, emboscadas y t&aacute;cticas guerrilleras. Pero el episodio revel&oacute; la <B>profunda fractura social del Per&uacute;</B>: (1) Muchos terratenientes criollos de Lima y la costa colaboraron con las autoridades chilenas de ocupaci&oacute;n o simplemente se sometieron para proteger sus propiedades. (2) Los ind&iacute;genas pelearon sin recibir armas modernas, sin pago regular, sin reconocimiento oficial. (3) Al terminar la guerra, no recibieron ning&uacute;n beneficio: las tierras siguieron en manos de los mismos hacendados. (4) Algunos grupos de montoneros, frustrados, atacaron haciendas de criollos que hab&iacute;an colaborado con Chile. El historiador <B>Nelson Manrique</B> ha estudiado c&oacute;mo el campesinado andino vivi&oacute; la guerra no solo como un conflicto nacional sino como una oportunidad para resolver sus propias disputas locales de tierras y poder.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza cr&iacute;ticamente la tesis de que el capital brit&aacute;nico fue la causa real de la Guerra del Pac&iacute;fico, tal como sostiene la historiograf&iacute;a marxista peruana (Heraclio Bonilla).</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) La tesis de Bonilla es completamente correcta y est&aacute; probada por documentos brit&aacute;nicos secretos que muestran que el gobierno de Londres orden&oacute; al gobierno chileno atacar al Per&uacute; para recuperar sus inversiones salitreras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La tesis del imperialismo brit&aacute;nico captura una verdad parcial (el capital brit&aacute;nico s&iacute; ten&iacute;a intereses en el salitre y pref&eacute;r&iacute;a la estabilidad chilena al intervencionismo estatal peruano) pero sobreestima la capacidad de los capitales brit&aacute;nicos para "causar" guerras; la guerra tuvo m&uacute;ltiples causas soberanas (rivalidad regional, fronteras imprecisas, pol&iacute;ticas nacionales) que no se reducen a la manipulaci&oacute;n brit&aacute;nica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) La tesis de Bonilla es completamente falsa: Gran Breta&ntilde;a era neutral y no tuvo ninguna influencia en la guerra; el conflicto fue estrictamente bilateral entre Chile, Per&uacute; y Bolivia por razones territoriales sin intervenci&oacute;n de potencias externas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) La tesis de Bonilla no es marxista sino liberal: argumenta que la guerra fue causada por el libre comercio y la globalizaci&oacute;n del siglo XIX, no por el imperialismo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La tesis del <B>imperialismo brit&aacute;nico</B> como causa de la Guerra del Pac&iacute;fico fue desarrollada principalmente por el historiador peruano <B>Heraclio Bonilla</B> en los a&ntilde;os 1970&ndash;80, dentro de la corriente de la teor&iacute;a de la dependencia. Sus argumentos: (1) El capital brit&aacute;nico (casas Gibbs, Antony Gibbs) ten&iacute;a enormes inversiones en el salitre chileno. (2) El <B>Estanco del Salitre</B> peruano (1873) amenazaba esos intereses al crear un monopolio estatal competidor. (3) Un Chile victorioso ofrec&iacute;a mejor ambiente para la inversi&oacute;n brit&aacute;nica. <B>Cr&iacute;ticas a esta tesis:</B> (1) No hay documentos que prueben que el gobierno brit&aacute;nico orden&oacute; o planifico la guerra. (2) Gran Breta&ntilde;a tambi&eacute;n ten&iacute;a inversiones en el Per&uacute; (ferrocarriles, deuda p&uacute;blica). (3) Chile ten&iacute;a motivaciones propias suficientes (territoriales, hegem&oacute;nicas). (4) La historia f&aacute;ctica (l&iacute;mites imprecisos, impuesto boliviano, tratado secreto) explica la guerra sin necesidad de un "agente externo". La historiograf&iacute;a actual (Juan Luis Ossa, Jorge Ortiz) mantiene una posici&oacute;n multicausal que incluye los intereses brit&aacute;nicos como un factor entre varios, no como la causa &uacute;nica ni la principal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> La derrota en la Guerra del Pac&iacute;fico desencaden&oacute; una profunda crisis de identidad nacional peruana. &iquest;C&oacute;mo respondi&oacute; la intelectualidad peruana de la "Generaci&oacute;n del 79" y qu&eacute; propuestas hizo para refundar el pa&iacute;s?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La Generaci&oacute;n del 79 fue un grupo de militares que propusieron reformar el ej&eacute;rcito con asesores alemanes para revanchar militarmente a Chile; su propuesta m&aacute;s famosa fue el "Plan de Reconquista de Tarapac&aacute;" elaborado por Piérola</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La Generaci&oacute;n del 79 (Gonz&aacute;lez Prada, Palma, entre otros) respondi&oacute; con una cr&iacute;tica radical a la elite criolla que hab&iacute;a llevado al pa&iacute;s a la derrota; Gonz&aacute;lez Prada propuso integrar al ind&iacute;gena a la naci&oacute;n como condici&oacute;n para su regeneraci&oacute;n; fue el precursor del indigenismo peruano del siglo XX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) La Generaci&oacute;n del 79 se limit&oacute; a escribir poes&iacute;a del&iacute;as lamentando la derrota sin ninguna propuesta pol&iacute;tica concreta; fue una generaci&oacute;n est&eacute;ricamente valiosa pero pol&iacute;ticamente irrelevante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La Generaci&oacute;n del 79 no existi&oacute; como grupo coherente; es una categor&iacute;a inventada por Basadre en el siglo XX para dar coherencia a escritores que no ten&iacute;an nada en com&uacute;n entre s&iacute;</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La derrota en la Guerra del Pac&iacute;fico fue para la intelectualidad peruana lo que la crisis del 98 fue para Espa&ntilde;a: un momento de dolorosa autocrtica que produjo una generaci&oacute;n de renovaci&oacute;n intelectual. <B>Manuel Gonz&aacute;lez Prada</B> (Lima, 1844&ndash;1918) fue su voz m&aacute;s radical. En su famoso <B>Discurso del Politeama</B> (1888) declar&oacute;: "Los viejos a la tumba, los j&oacute;venes a la obra". Lanz&oacute; una cr&iacute;tica feroz a la elite criolla (militares, clero, clase pol&iacute;tica) que hab&iacute;a demostrado ser incapaz de defender al pa&iacute;s. Su propuesta central: la regeneraci&oacute;n del Per&uacute; pasaba por la <B>integraci&oacute;n del ind&iacute;gena</B> a la naci&oacute;n; el Per&uacute; real era el Per&uacute; ind&iacute;gena excluido y explotado, no el criollismo costeno. Esta tesis fue el germen del <B>indigenismo</B> del siglo XX (Mariátegui, Valcarcel, Uriel Garc&iacute;a). <B>Ricardo Palma</B>, desde la Biblioteca Nacional que reconstruy&oacute;, represent&oacute; una respuesta m&aacute;s conciliadora: reconstruir la identidad peruana desde su tradici&oacute;n cultural hispano-americana.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> &iquest;Por qu&eacute; Bolivia pierde su salida al mar y sigue siendo un pa&iacute;s mediterr&aacute;neo hasta hoy? Analiza las consecuencias geopolíticas de largo plazo para Bolivia y Am&eacute;rica del Sur.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Bolivia perdi&oacute; el mar porque firm&oacute; el Tratado de Anc&oacute;n junto al Per&uacute;; en ese mismo tratado cedi&oacute; Antofagasta a Chile; desde 1883 ha tenido acceso al mar a trav&eacute;s de Per&uacute; por el Puerto de Ilo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Bolivia perdi&oacute; Antofagasta y su &uacute;nico acceso al Pac&iacute;fico en el Tratado de Valpara&iacute;so (1884); el Tratado de Paz definitivo de 1904 consolid&oacute; la p&eacute;rdida; Bolivia ha reclamado salida al mar durante todo el siglo XX y XXI, llegando incluso a la Corte Internacional de Justicia (2018, fallo desfavorable a Bolivia); la mediterraneidad afecta su comercio exterior, desarrollo econ&oacute;mico y sentido de identidad nacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Bolivia no perdi&oacute; completamente el mar: el Tratado de 1904 le garantiz&oacute; acceso libre y soberano al Puerto de Antofagasta bajo administraci&oacute;n compartida Bolivia&ndash;Chile hasta hoy</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Bolivia recuper&oacute; su acceso al mar en 1975 cuando los presidentes Hugo Banzer (Bolivia) y Augusto Pinochet (Chile) firmaron el Abrazo de Charaña, que cedi&oacute; un corredor costero a Bolivia a cambio de territorio boliviano interior</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>p&eacute;rdida del litoral boliviano</B> es una de las consecuencias m&aacute;s duraderas de la Guerra del Pac&iacute;fico. Bolivia hab&iacute;a tenido su &uacute;nico puerto en <B>Antofagasta</B> (hoy chileno). El <B>Tratado de Tregua de Valpara&iacute;so</B> (1884) le quit&oacute; formalmente ese acceso; el <B>Tratado de Paz</B> definitivo (<B>1904</B>) confirm&oacute; la cesi&oacute;n. A cambio, Chile concedi&oacute; a Bolivia libre tr&aacute;nsito comercial por sus puertos y construy&oacute; el ferrocarril Arica&ndash;La Paz. Bolivia nunca acept&oacute; la p&eacute;rdida como definitiva. <B>Consecuencias de largo plazo:</B> (1) Bolivia es uno de los dos &uacute;nicos pa&iacute;ses mediterr&aacute;neos de Am&eacute;rica (con Paraguay). (2) El costo de su comercio exterior es mayor al depender de puertos extranjeros. (3) La demanda mar&iacute;tima es el principal elemento de la pol&iacute;tica exterior boliviana: desde Choqueyapu hasta la OEA y la CIJ. En <B>2018</B>, la <B>Corte Internacional de Justicia (CIJ)</B> fall&oacute; que Chile no ten&iacute;a obligaci&oacute;n legal de negociar una salida al mar para Bolivia. El "Abrazo de Chara&ntilde;a" (1975, d) fue real pero no cristaliz&oacute; en un acuerdo definitivo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Compara la figura del "H&eacute;roe" en la memoria hist&oacute;rica peruana y chilena de la Guerra del Pac&iacute;fico: &iquest;c&oacute;mo cada pa&iacute;s construy&oacute; su narrativa nacional a partir del mismo conflicto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) Solo el Per&uacute; construy&oacute; una narrativa her&oacute;ica de la guerra; Chile no necesit&oacute; hacerlo porque gan&oacute; y sus ciudadanos no le dieron importancia cultural al conflicto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Ambos pa&iacute;ses construyeron narrativas nacionales de la guerra centradas en h&eacute;roes: Per&uacute; en Grau (caballerosidad en la derrota), Bolognesi (sacrificio hasta el final) y C&aacute;ceres (resistencia); Chile en Prat (muerte her&oacute;ica en Iquique) y Baquedano (victoria militar); estas narrativas sirvieron para forjar identidades nacionales, pero tambi&eacute;n para perpetuar rivalidades que dificultaron las relaciones diplom&aacute;ticas durante el siglo XX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Las narrativas her&oacute;icas de la guerra son inventos recientes (siglo XXI) de los gobiernos militares para desviar la atenci&oacute;n de problemas internos; en el siglo XIX, ni Per&uacute; ni Chile le dieron importancia cultural al conflicto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La narrativa her&oacute;ica chilena reconoce a los h&eacute;roes peruanos (Grau y Bolognesi) como sus propios h&eacute;roes nacionales, en un gesto de reconciliaci&oacute;n; la narrativa peruana, en cambio, no reconoce ning&uacute;n m&eacute;rito en ning&uacute;n soldado chileno</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La construcci&oacute;n de narrativas her&oacute;icas nacionales es uno de los fen&oacute;menos m&aacute;s fascinantes de la historiograf&iacute;a de la Guerra del Pac&iacute;fico. <B>Chile</B> construy&oacute; su narrativa en torno a: (1) <B>Arturo Prat Chac&oacute;n</B>: su muerte al saltar al Hu&aacute;scar en Iquique (21 de mayo) fue convertida en el acto fundacional del civismo militar chileno; el 21 de mayo es feriado nacional en Chile ("D&iacute;a de las Glorias Navales"). (2) <B>Manuel Baquedano</B>: general de la campa&ntilde;a terrestre y ocupador de Lima; figura de la victoria militar. <B>Per&uacute;</B> construy&oacute; su narrativa en h&eacute;roes de la derrota digna: (1) <B>Grau</B>: la caballerosidad en circunstancias desesperadas (envi&oacute; el sable de Prat a su viuda). (2) <B>Bolognesi</B>: el sacrificio hasta el &uacute;ltimo cartucho. (3) <B>C&aacute;ceres</B>: la resistencia que no se rinde. Curioso: ambas narrativas exaltan al otro como digno rival: el Museo Naval de Talcahuano (donde est&aacute; el Hu&aacute;scar) trata a Grau con respeto; el Per&uacute; reconoce el valor de Prat. Pero estas narrativas tambi&eacute;n perpetuaron el resentimieto: la chilenizaci&oacute;n de Tacna&ndash;Arica fue desmentida por la narrativa oficial chilena durante d&eacute;cadas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Desde la perspectiva de la teor&iacute;a de las relaciones internacionales, analiza c&oacute;mo la Guerra del Pac&iacute;fico transform&oacute; el sistema de poder regional sudamericano y estableci&oacute; a Chile como hegemon&iacute;a del Pac&iacute;fico Sur.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) La guerra no alter&oacute; el sistema de poder regional: Per&uacute;, Bolivia y Chile mantuvieron sus posiciones relativas tras el conflicto; ning&uacute;n pa&iacute;s emergi&oacute; claramente dominante en la regi&oacute;n andina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La guerra estableci&oacute; a Chile como hegemon&iacute;a militar y econ&oacute;mica del Pac&iacute;fico Sur: obtuvo el monopolio del salitre (que financi&oacute; su desarrollo durante 30 a&ntilde;os), elimin&oacute; a Bolivia como actor mar&iacute;timo, debillit&oacute; estructuralmente a Per&uacute; por d&eacute;cadas, y estableci&oacute; un nuevo equilibrio de poder en el que Chile dictaba t&eacute;rminos a sus vecinos; Argentina emergi&oacute; como &uacute;nico contrapeso real al poder chileno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La guerra estableci&oacute; a Argentina, no a Chile, como la potencia dominante de Am&eacute;rica del Sur; Argentina aprovech&oacute; el debilitamiento de todos los beligerantes para expandir su influencia en el Pac&iacute;fico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La hegemon&iacute;a chilena dur&oacute; solo hasta 1884: tras el Tratado de Valpara&iacute;so, Per&uacute; se rearma r&aacute;pidamente con apoyo brit&aacute;nico y recupera la paridad militar con Chile antes de 1890</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La Guerra del Pac&iacute;fico fue uno de los eventos constitutivos del sistema de poder regional sudamericano y su impacto geopolítico es de largo plazo. <B>Chile como nueva hegemon&iacute;a:</B> (1) <B>Econom&iacute;a:</B> el monopolio del salitre de Tarapac&aacute; y Antofagasta transform&oacute; a Chile en la econom&iacute;a m&aacute;s din&aacute;mica de Am&eacute;rica del Sur en el per&iacute;odo 1880&ndash;1910; los ingresos del salitre financiaron la modernizaci&oacute;n del Estado chileno (educaci&oacute;n, infraestructura, ej&eacute;rcito). (2) <B>Geopolítica:</B> eliminaci&oacute;n de Bolivia como actor del Pac&iacute;fico; debilitamiento estructural del Per&uacute; por al menos dos generaciones; dominaci&oacute;n del Estrecho de Magallanes. (3) <B>Militar:</B> el ej&eacute;rcito chileno (modernizado con asesores prusianos, en particular <B>Emilio K&ouml;rner</B>) se convirti&oacute; en el referente militar de Am&eacute;rica del Sur. <B>Argentina</B> como &uacute;nico contrapeso: el &uacute;nico pa&iacute;s que no fue debilitado por la guerra fue Argentina, que aprovech&oacute; el per&iacute;odo para su propia expansi&oacute;n econ&oacute;mica (exportaciones agropecuarias). Las tensiones Chile&ndash;Argentina por la Patago&iacute;a y el Canal de Beagle marcaron la siguiente &eacute;poca. Desde la perspectiva del realismo en relaciones internacionales, la guerra redistribuy&oacute; el poder regional de forma duradera.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analiza la relaci&oacute;n entre la Prosperidad Falaz (Tema 14) y la derrota en la Guerra del Pac&iacute;fico: &iquest;en qu&eacute; medida el per&iacute;odo del guano caus&oacute; estructuralmente la derrota peruana?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) No existe relaci&oacute;n causal entre el guano y la derrota: la guerra se perdi&oacute; exclusivamente por la superioridad militar chilena; si el Per&uacute; hubiera tenido mejores generales, habr&iacute;a ganado independientemente de su situaci&oacute;n econ&oacute;mica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La Prosperidad Falaz caus&oacute; estructuralmente la derrota: los ingresos del guano no se invirtieron en modernizar el ej&eacute;rcito ni la marina; la bancarrota estatal (1876) impidi&oacute; comprar armas antes de la guerra; la mentalidad rentista cre&oacute; un Estado incapaz de movilizar recursos en tiempo de guerra; la corrupci&oacute;n y el clientelismo habían minado las instituciones que debían defender al pa&iacute;s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La relaci&oacute;n es inversa: la Prosperidad Falaz fortaleci&oacute; al Per&uacute;; fue la guerra civil de 1884 (C&aacute;ceres vs. Iglesias) la que destruy&oacute; las capacidades del Estado peruano, no el period del guano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) El guano s&iacute; permiti&oacute; que el Per&uacute; modernizara su ej&eacute;rcito y marina; los ferrocarriles de Meiggs (que eran rutas militares en el fondo) sirvieron perfectamente en la guerra; el problema fue solo que Bolivia abandon&oacute; al Per&uacute; en el campo de batalla</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La conexi&oacute;n Prosperidad Falaz &rarr; derrota en la Guerra del Pac&iacute;fico es uno de los an&aacute;lisis hist&oacute;ricos m&aacute;s iluminadores del siglo XIX peruano y es la pregunta central de la historiograf&iacute;a basadriana. <B>Mecanismos causales:</B> (1) <B>Bancarrota previa a la guerra:</B> el Estado peruano declar&oacute; la insolvencia en <B>1876</B>, tres a&ntilde;os antes del estallido. Sin cr&eacute;dito ni fondos, no pudo comprar armas modernas ni contratar asesores militares cuando la situaci&oacute;n con Chile se deterioraba. Chile, con los ingresos del salitre chileno y acceso al cr&eacute;dito internacional, s&iacute; lo hizo (contrat&oacute; a Emilio K&ouml;rner). (2) <B>Marina negleccionada:</B> el Hu&aacute;scar ten&iacute;a 10 a&ntilde;os cuando empez&oacute; la guerra; Chile hab&iacute;a modernizado su flota. Los ferrocarriles de Meiggs se financiaron con dinero que podr&iacute;a haber modernizado la armada. (3) <B>Ej&eacute;rcito precario:</B> sin fondos, el ej&eacute;rcito peruano no hab&iacute;a realizado reformas profesionales: sin sistema de reservas, sin armamento moderno (m&uacute;ltiples problemas de calibres incompatibles en los rifles), sin artiller&iacute;a suficiente. (4) <B>Estado disfuncional:</B> la corrupci&oacute;n, el caudillismo y la falta de instituciones fuertes se manifestaron en la incapacidad de movilizar y sostener un esfuerzo de guerra nacional. La Prosperidad Falaz no caus&oacute; la guerra, pero s&iacute; caus&oacute; las condiciones de su derrota.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El general Andr&eacute;s Avelino C&aacute;ceres afirm&oacute; que los montoneros ind&iacute;genas "combatieron por su patria". El historiador Nelson Manrique argumenta que combatieron tambi&eacute;n por sus propias reivindicaciones agrarias. &iquest;Cu&aacute;l de estas interpretaciones es m&aacute;s v&aacute;lida hist&oacute;ricamente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La interpretaci&oacute;n de C&aacute;ceres es la correcta: los campesinos andinos ten&iacute;an una identidad nacional peruana muy desarrollada y solo combatieron por amor a la patria; sus motivaciones fueron exclusivamente patrióticas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Ambas interpretaciones son parcialmente correctas y complementarias: los campesinos andinos s&iacute; defendi&iacute;an lo que consideraban "su" territorio (identificado con la comunidad, las tierras comunales y el mundo andino local, no necesariamente la naci&oacute;n abstracta); tambi&eacute;n aprovecharon la coyuntura para resistir al gamonal (hacendado explotador); la guerra fue para ellos simult&aacute;neamente una guerra de resistencia externa y de conflicto social interno</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La interpretaci&oacute;n de Manrique es la correcta y anula a la de C&aacute;ceres: los campesinos andinos no ten&iacute;an ning&uacute;n sentido de identidad peruana; solo pelearon para atacar a los terratenientes criollos y apropiarse de sus tierras; su participaci&oacute;n en la guerrilla fue puramente instrumental</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Ninguna de las dos interpretaciones es v&aacute;lida: los campesinos andinos no participaron voluntariamente en ninguna guerrilla; fueron reclutados forzosamente por C&aacute;ceres mediante la leva y no ten&iacute;an motivaci&oacute;n propia para combatir</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta ilustra el debate entre la historia "desde arriba" (la perspectiva de los l&iacute;deres) y la historia "desde abajo" (la perspectiva de los sectores populares), uno de los aportes m&aacute;s importantes de la nueva historia social. <B>Posici&oacute;n de C&aacute;ceres:</B> en sus memorias y partes militares, C&aacute;ceres presenta a los montoneros como patriotas peruanos que defend&iacute;an la naci&oacute;n. Esta narrativa es parte de la construcci&oacute;n de la identidad nacional peruana posguerra. <B>Posici&oacute;n de Manrique</B> (en <I>Campesinado y naci&oacute;n: la guerrilla de C&aacute;ceres</I>, 1981): los campesinos de la sierra central defend&iacute;an primero su espacio local (la comunidad, las tierras comunales) que identificaban con "lo suyo"; pero adem&aacute;s, la guerra cre&oacute; una oportunidad para resolver conflictos agrarios de larga data: algunos grupos atacaron haciendas de terratenientes colaboracionistas con Chile, lo que muestra que sus motivaciones eran tambi&eacute;n socioecon&oacute;micas. <B>Interpretaci&oacute;n sint&eacute;tica:</B> la identidad nacional y el conflicto agrario no se excluyen; los campesinos ten&iacute;an sentidos m&uacute;ltiples y simult&aacute;neos de lealtad y resentimiento. El m&eacute;rito de Manrique es mostrar que la historiograf&iacute;a "heroica" de C&aacute;ceres simplifica la complejidad de la experiencia campesina de la guerra.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Analiza c&oacute;mo la Guerra del Pac&iacute;fico transform&oacute; la relaci&oacute;n entre el Estado y la sociedad civil en el Per&uacute; posguerra: &iquest;qu&eacute; lecciones institucionales extrajo el Per&uacute; de su derrota?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) El Per&uacute; no extrajo ninguna leci&oacute;n de la guerra: repiti&oacute; exactamente los mismos errores del per&iacute;odo del guano en el per&iacute;odo del salitre y el caucho, con los mismos resultados catastróficos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La derrota impuls&oacute; un debate profundo sobre las causas institucionales del fracaso: surgieron propuestas de reforma educativa (Gonz&aacute;lez Prada, Manuel Vicente Villaran), modernizaci&oacute;n del ej&eacute;rcito, construcci&oacute;n de un Estado civil m&aacute;s s&oacute;lido; el civilismo de segunda generaci&oacute;n ("Rep&uacute;blica Aristocr&aacute;tica", 1895&ndash;1919) intent&oacute; aplicar algunas lecciones, aunque reprodujo las exclusiones de clase y raza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El Per&uacute; aplic&oacute; completamente las lecciones de la guerra: reform&oacute; radicalmente su sistema pol&iacute;tico, cre&oacute; un ej&eacute;rcito profesional moderno, universaliz&oacute; la educaci&oacute;n, incluy&oacute; a los ind&iacute;genas como ciudadanos plenos y se convirti&oacute; en la econom&iacute;a m&aacute;s din&aacute;mica de Am&eacute;rica del Sur antes de 1900</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Las lecciones institucionales de la guerra fueron absorbidas por C&aacute;ceres en sus dos gobiernos (1886&ndash;1890, 1894&ndash;1895): cre&oacute; el primer Estado moderno del Per&uacute;, elimin&oacute; el analfabetismo y resolv&oacute; la cuesti&oacute;n ind&iacute;gena mediante la reforma agraria</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La posguerra del Pac&iacute;fico fue un momento de reflexi&oacute;n institucional intensa, aunque las reformas fueron parciales e incompletas. <B>El debate intelectual:</B> <B>Gonz&aacute;lez Prada</B> propus&oacute; que la causa de la derrota fue la exclusi&oacute;n del ind&iacute;gena de la naci&oacute;n; sin integraci&oacute;n de las mayor&iacute;as, el Per&uacute; siempre ser&iacute;a un pa&iacute;s fr&aacute;gil. <B>Manuel Vicente Vill&aacute;ran</B> y otros educadores propusieron una reforma educativa profunda que preparara ciudadanos t&eacute;cnicamente capaces. <B>La "Rep&uacute;blica Aristocr&aacute;tica" (1895&ndash;1919):</B> gobernada por el Partido Civil de segunda generaci&oacute;n, intent&oacute; aplicar algunas lecciones: modernizaci&oacute;n del ej&eacute;rcito (misi&oacute;n militar francesa), expansi&oacute;n educativa, construcci&oacute;n de infraestructura, ordenamiento fiscal. Logr&oacute; estabilidad y crecimiento econ&oacute;mico (azúcar, algod&oacute;n, minerales). <B>Sus l&iacute;mites:</B> sigui&oacute; siendo un r&eacute;gimen oligárquico que exclu&iacute;a a los ind&iacute;genas, obreros y analfabetos del sistema pol&iacute;tico; reprodujo el modelo exportador de materias primas; no resolvi&oacute; la cuesti&oacute;n ind&iacute;gena. El Per&uacute; aprendi&oacute; lecciones parciales de su derrota: suficientes para estabilizarse, insuficientes para transformarse.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

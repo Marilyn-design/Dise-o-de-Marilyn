@@ -1,0 +1,501 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Relieve del Perú II - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA &middot; TEMA 9 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Relieve del Perú II</H1>
+<DIV CLASS="sub">Región Andina · Cordillera de los Andes · Nudos · Cadenas · Valles interandinos · Región Amazónica · Relieve de la Selva</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="andes">1. La Región Andina: generalidades</H3>
+
+La <B>región andina</B> ocupa aproximadamente el <B>30% del territorio peruano</B> y constituye la columna vertebral geográfica del país. Los Andes peruanos forman parte de la gran Cordillera de los Andes sudamericana, la cadena montañosa más larga del mundo (~7 000 km desde Venezuela hasta Tierra del Fuego) y la segunda más alta tras el Himalaya.
+
+En el Perú, los Andes presentan una característica única: <B>se dividen en tres cadenas paralelas</B> (Cordillera Occidental, Central y Oriental) separadas por profundos valles y cuencas, a diferencia de otros países donde solo hay dos cordilleras. Esta complejidad hace que el relieve andino peruano sea uno de los más accidentados del planeta.
+
+<H4>Características generales del relieve andino peruano:</H4>
+<UL>
+<LI><B>Ancho máximo:</B> ~400 km en el sur del Perú (a la altura de Puno y Cusco).</LI>
+<LI><B>Ancho mínimo:</B> ~100 km en el norte (a la altura de Cajamarca y Amazonas).</LI>
+<LI><B>Altitud media:</B> entre 3 000 y 4 500 m.s.n.m.</LI>
+<LI><B>Punto más alto del Perú:</B> Nevado <B>Huascarán</B> (6 768 m.s.n.m.), ubicado en la Cordillera Blanca, en la región Áncash. Es también el punto más alto de la zona intertropical del mundo.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">6 768 m</DIV><DIV CLASS="dk-label">Nevado Huascarán<br>Punto más alto del Perú</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">30%</DIV><DIV CLASS="dk-label">Del territorio peruano ocupa la región andina</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~400 km</DIV><DIV CLASS="dk-label">Ancho máximo de los Andes en el sur</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">3</DIV><DIV CLASS="dk-label">Cordilleras paralelas que forman los Andes peruanos</DIV></DIV>
+</DIV>
+
+<H3 ID="cordilleras">2. Las tres cordilleras de los Andes peruanos</H3>
+
+<H4>A) Cordillera Occidental (o Cordillera Negra en el norte):</H4>
+<UL>
+<LI>Es la cadena más <B>occidental</B>, la que divide la costa de la sierra.</LI>
+<LI>Sus cumbres reciben menos precipitaciones que las otras cordilleras (por la influencia del anticiclón del Pacífico), por lo que en el norte sus cimas no tienen glaciares permanentes y recibe el nombre de <B>Cordillera Negra</B> (sin nieve).</LI>
+<LI>Culmina en el <B>Nevado Coropuna</B> (6 377 m) en el sur y alberga importantes volcanes en la zona sur: Misti (5 822 m), Chachani (6 057 m), Ubinas (5 672 m), Ampato (6 288 m).</LI>
+<LI>Separa la vertiente del Pacífico (costa seca) de los valles interandinos.</LI>
+</UL>
+
+<H4>B) Cordillera Central:</H4>
+<UL>
+<LI>Corre paralela a las otras dos por el centro del sistema andino peruano.</LI>
+<LI>Está presente principalmente en el <B>centro y sur del Perú</B>.</LI>
+<LI>Incluye la <B>Cordillera Blanca</B> (en Áncash), donde se encuentra el Huascarán (6 768 m), la <B>Cordillera Huayhuash</B> (con el Yerupajá, 6 635 m, segunda cima del Perú) y la <B>Cordillera Vilcabamba</B> (en Cusco).</LI>
+<LI>En el sur, forma parte de la Cordillera del Vilcanota, que incluye el nevado <B>Ausangate</B> (6 384 m).</LI>
+</UL>
+
+<H4>C) Cordillera Oriental (o Cordillera de Carabaya en el sur):</H4>
+<UL>
+<LI>Es la cadena más <B>oriental</B>, que separa la sierra de la selva amazónica.</LI>
+<LI>Recibe mayor precipitación por las masas de aire húmedo amazónicas, por lo que sus laderas orientales tienen densa vegetación (ceja de selva y selva alta).</LI>
+<LI>Incluye el nevado <B>Salcantay</B> (6 271 m) en Cusco y la <B>Cordillera de Carabaya</B> en Puno.</LI>
+<LI>Sus contrafuertes orientales forman la llamada <B>ceja de selva</B> o <B>selva alta</B>.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La <B>Cordillera Blanca</B> (con el Huascarán) forma parte de la Cordillera Central, NO de la Occidental. Además, distingue: <B>Cordillera Negra</B> = sin glaciares (seca, al oeste); <B>Cordillera Blanca</B> = con glaciares (húmeda, al este de la Negra, separadas por el río Santa que forma el <B>Callejón de Huaylas</B>).</DIV>
+
+<H3 ID="nudos">3. Los Nudos Andinos del Perú</H3>
+
+Los <B>nudos</B> son macizos montañosos transversales donde se unen las distintas cordilleras, actuando como "articulaciones" del sistema andino. En el Perú se reconocen cuatro nudos principales que dividen los Andes en <B>cuatro secciones</B>:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Nudo</TH><TH>Ubicación</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Nudo de Pasco</B></TD><TD>Cerro de Pasco, Pasco (~4 300 m)</TD><TD>Divide los Andes del norte (Andes septentrionales) de los Andes del centro. Es el nudo más importante porque en él nacen ríos de tres vertientes: el Marañón (hacia el Atlántico), el Mantaro (hacia el Atlántico) y tributarios del Pacífico.</TD></TR>
+<TR><TD><B>Nudo de Vilcanota</B></TD><TD>Región de Cusco y Puno</TD><TD>Divide los Andes del centro de los Andes del sur. En él nace el río Vilcanota-Urubamba. Incluye el nevado Ausangate (6 384 m).</TD></TR>
+<TR><TD><B>Nudo de Huanzo</B></TD><TD>Entre Arequipa y Apurímac</TD><TD>Conecta la Cordillera Occidental con la Central en el sur. Separa la cuenca del río Apurímac de la del Colca.</TD></TR>
+<TR><TD><B>Nudo de Loja</B></TD><TD>Límite Perú-Ecuador</TD><TD>Nudo fronterizo donde los Andes peruanos se unen con los ecuatorianos. De aquí parte la divisoria de aguas entre el Pacífico y el Atlántico en el extremo norte peruano.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Secciones andinas del Perú según los nudos:</B><BR>
+• <B>Andes del Norte:</B> entre el Nudo de Loja y el Nudo de Pasco. Relieve más disectado, cordilleras más estrechas.<BR>
+• <B>Andes del Centro:</B> entre el Nudo de Pasco y el Nudo de Huanzo. Incluye la Cordillera Blanca y el Callejón de Huaylas.<BR>
+• <B>Andes del Sur:</B> entre el Nudo de Huanzo y el Nudo de Vilcanota. Incluye el Altiplano y los grandes volcanes del sur.<BR>
+• <B>Andes del Extremo Sur:</B> al sur del Nudo de Vilcanota. Incluye la Cordillera de Carabaya y la zona del lago Titicaca.</DIV>
+
+<H3 ID="accidentes">4. Principales accidentes geográficos andinos</H3>
+
+<H4>A) Valles Interandinos:</H4>
+Los valles son depresiones alargadas excavadas por la erosión fluvial entre las cordilleras. Son fundamentales porque en ellos se concentra la mayor parte de la población andina y la agricultura de sierra.
+
+<UL>
+<LI><B>Callejón de Huaylas:</B> valle del río <B>Santa</B>, ubicado entre la Cordillera Negra (oeste) y la Cordillera Blanca (este), en la región Áncash. Es el valle interandino más famoso del Perú. Alberga ciudades como Huaraz (capital regional) y Caraz.</LI>
+<LI><B>Callejón de Conchucos:</B> valle al este de la Cordillera Blanca, paralelo al Callejón de Huaylas.</LI>
+<LI><B>Valle del Mantaro:</B> en Junín, uno de los valles más amplios y fértiles de los Andes peruanos. El río Mantaro lo recorre y en él se ubica Huancayo.</LI>
+<LI><B>Valle del Vilcanota-Urubamba:</B> en Cusco, llamado "Valle Sagrado de los Incas". Fue el corazón agrícola del Tahuantinsuyo.</LI>
+<LI><B>Valle del Colca:</B> en Arequipa. Con más de 3 400 m de profundidad, es uno de los cañones más profundos del mundo (más profundo que el Grand Canyon del Colorado).</LI>
+<LI><B>Cañón del Cotahuasi:</B> también en Arequipa, con ~3 535 m de profundidad, considerado el <B>cañón más profundo del mundo</B>.</LI>
+</UL>
+
+<H4>B) Mesetas y Altiplanos:</H4>
+<UL>
+<LI><B>Altiplano del Collao:</B> meseta ubicada al sur del Perú (Puno) y norte de Bolivia, a una altitud media de <B>3 800 m.s.n.m.</B> Es la meseta más alta y extensa del mundo después del Tíbet. En ella se ubica el <B>lago Titicaca</B> (3 812 m.s.n.m.), el lago navegable más alto del mundo.</LI>
+<LI><B>Meseta del Bombon (o de Junín):</B> en Junín (~4 000–4 200 m). En ella se ubica el <B>lago Junín</B> (o lago Chinchaycocha), el segundo lago más grande del Perú.</LI>
+</UL>
+
+<H4>C) Puertos o Abras:</H4>
+Son pasos de montaña (puntos bajos en las crestas de las cordilleras) que permiten el cruce entre valles. Ejemplos: <B>Abra de Anticona</B> (~4 818 m, en la carretera central Lima-Huancayo), uno de los pasos de carretera más altos del Perú.
+
+<H4>D) Nevados y Volcanes principales del Perú:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Nevado / Volcán</TH><TH>Altitud</TH><TH>Región</TH><TH>Observación</TH></TR>
+<TR><TD><B>Huascarán</B></TD><TD>6 768 m</TD><TD>Áncash</TD><TD>Punto más alto del Perú y de la zona intertropical mundial</TD></TR>
+<TR><TD><B>Yerupajá</B></TD><TD>6 635 m</TD><TD>Huánuco/Lima</TD><TD>Segunda cumbre del Perú; Cordillera Huayhuash</TD></TR>
+<TR><TD><B>Coropuna</B></TD><TD>6 377 m</TD><TD>Arequipa</TD><TD>Volcán más alto del Perú</TD></TR>
+<TR><TD><B>Ampato</B></TD><TD>6 288 m</TD><TD>Arequipa</TD><TD>Volcán; hallazgo de la "Momia Juanita" (1995)</TD></TR>
+<TR><TD><B>Ausangate</B></TD><TD>6 384 m</TD><TD>Cusco</TD><TD>Nevado sagrado andino; Cordillera del Vilcanota</TD></TR>
+<TR><TD><B>Salcantay</B></TD><TD>6 271 m</TD><TD>Cusco</TD><TD>Cerca del Machu Picchu; ruta de trekking famosa</TD></TR>
+<TR><TD><B>Chachani</B></TD><TD>6 057 m</TD><TD>Arequipa</TD><TD>Volcán inactivo sobre Arequipa</TD></TR>
+<TR><TD><B>El Misti</B></TD><TD>5 822 m</TD><TD>Arequipa</TD><TD>Volcán activo; símbolo de Arequipa</TD></TR>
+<TR><TD><B>Ubinas</B></TD><TD>5 672 m</TD><TD>Moquegua</TD><TD>Volcán más activo del Perú</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Dato crucial:</B> El volcán más alto del Perú es el <B>Coropuna</B> (6 377 m), pero el punto más alto del Perú es el <B>Huascarán</B> (6 768 m), que es un nevado (no volcán). El volcán más <b>activo</b> es el <B>Ubinas</B>. Distinguir estas tres categorías es frecuente en exámenes.</DIV>
+
+<H3 ID="selva-relieve">5. Relieve de la Región Amazónica (Selva)</H3>
+
+La región amazónica ocupa aproximadamente el <B>60% del territorio peruano</B> y se subdivide en dos subregiones con relieves distintos:
+
+<H4>A) Selva Alta (Rupa Rupa / Ceja de Selva):</H4>
+<UL>
+<LI>Ubicada entre los <B>400 y 1 500 m.s.n.m.</B> (algunos autores hasta 2 500 m), en las laderas orientales de los Andes.</LI>
+<LI>Relieve muy <B>accidentado y quebrado</B>: montañas, valles profundos (pongos), laderas con fuerte pendiente cubiertas de vegetación densa.</LI>
+<LI><B>Los Pongos:</B> son angosturas o gargantas estrechas que forman los ríos al atravesar las últimas estribaciones andinas. Son tramos de aguas turbulentas e impenetrables. Ejemplos:
+<UL>
+<LI><B>Pongo de Manseriche:</B> en el río Marañón (Loreto/Amazonas); el más importante del Perú.</LI>
+<LI><B>Pongo de Mainique:</B> en el río Urubamba (Cusco).</LI>
+<LI><B>Pongo de Rentema:</B> en el río Marañón (Amazonas).</LI>
+</UL>
+</LI>
+<LI>Es la zona de mayor <B>biodiversidad y precipitación</B> del Perú (lluvias que superan los 3 000 mm/año en muchas zonas).</LI>
+<LI>Incluye valles productivos como el <B>Valle del Huallaga</B> (Huánuco-San Martín), el <B>Valle del Apurímac-Ene</B> (VRAEM) y el <B>Valle del Urubamba</B>.</LI>
+</UL>
+
+<H4>B) Selva Baja (Omagua / Llano Amazónico):</H4>
+<UL>
+<LI>Ubicada por debajo de los <B>400 m.s.n.m.</B>, constituye la gran llanura amazónica peruana.</LI>
+<LI>Relieve prácticamente <B>plano</B>, con pendientes muy suaves (el río Amazonas en Iquitos tiene apenas 80 m.s.n.m.).</LI>
+<LI><B>Tipos de terrenos en la selva baja:</B>
+<UL>
+<LI><B>Aguajales:</B> zonas bajas inundadas permanentemente, cubiertas de palmeras de aguaje (<I>Mauritia flexuosa</I>).</LI>
+<LI><B>Restingas:</B> franjas de terreno elevado (no inundable) dentro de la selva baja, con suelos fértiles usados para agricultura.</LI>
+<LI><B>Tahuampas (o bajiales):</B> zonas que se inundan estacionalmente durante las crecidas de los ríos (épocas de "vaciante" y "creciente").</LI>
+</UL>
+</LI>
+<LI>Los ríos amazónicos tienen un comportamiento meandriforme: forman amplias curvas sinuosas. Cuando un meandro se cierra, forma una <B>cochas</B> o <B>lagos de meandro (lagos en herradura)</B>.</LI>
+<LI>Ciudad más importante: <B>Iquitos</B> (Loreto), la ciudad más grande del mundo inaccesible por carretera (solo por río o avión).</LI>
+</UL>
+
+<DIV CLASS="ej">🌿 <B>Dato importante:</B> Los <B>pongos</B> representan la transición entre la selva alta y la selva baja. Son puntos donde el río atraviesa la última barrera andina con gran fuerza erosiva. El <B>Pongo de Manseriche</B>, en el río Marañón, es una garganta de ~4 km de longitud donde el río se comprime a apenas 50 m de ancho, formando rápidos peligrosos.</DIV>
+
+<H3 ID="comparacion">6. Comparación del relieve entre las tres regiones naturales</H3>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Característica</TH><TH>Costa</TH><TH>Sierra (Andes)</TH><TH>Selva</TH></TR>
+<TR><TD><B>% del territorio</B></TD><TD>~11%</TD><TD>~30%</TD><TD>~60%</TD></TR>
+<TR><TD><B>Altitud</B></TD><TD>0 – 500 m</TD><TD>500 – 6 768 m</TD><TD>80 – 2 500 m</TD></TR>
+<TR><TD><B>Tipo de relieve</B></TD><TD>Planicies, desiertos, tablazos</TD><TD>Montañas, valles, mesetas, volcanes</TD><TD>Llanuras (selva baja), quebradas (selva alta)</TD></TR>
+<TR><TD><B>% de la población</B></TD><TD>~55%</TD><TD>~30%</TD><TD>~15%</TD></TR>
+<TR><TD><B>Ciudad principal</B></TD><TD>Lima</TD><TD>Cusco / Arequipa</TD><TD>Iquitos</TD></TR>
+<TR><TD><B>Accidentes destacados</B></TD><TD>Tablazos, pampas, manglares</TD><TD>Callejón de Huaylas, Altiplano, pongos</TD><TD>Pongos, cochas, aguajales, restingas</TD></TR>
+</TABLE>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> El punto más alto del Perú es el nevado:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Coropuna (6 377 m) en Arequipa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Yerupajá (6 635 m) en Huánuco</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Huascarán (6 768 m) en Áncash</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Ausangate (6 384 m) en Cusco</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Huascarán</B> (6 768 m.s.n.m.), ubicado en la <B>Cordillera Blanca</B>, región Áncash, es el punto más alto del Perú y también el más alto de la zona intertropical del mundo. El Yerupajá (6 635 m) es la segunda cumbre del Perú. El Coropuna (6 377 m) es el volcán más alto del Perú, pero no el punto más alto en términos generales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> El Callejón de Huaylas es un valle formado por el río Santa, ubicado entre:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La Cordillera Blanca (oeste) y la Cordillera Oriental (este)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) La Cordillera Negra (oeste) y la Cordillera Blanca (este)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) La Cordillera Central (oeste) y la Cordillera de Carabaya (este)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) El Altiplano (sur) y la Cordillera Negra (norte)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Callejón de Huaylas</B> es el famoso valle del río <B>Santa</B> en Áncash, delimitado al oeste por la <B>Cordillera Negra</B> (sin glaciares, árida) y al este por la <B>Cordillera Blanca</B> (con glaciares, donde está el Huascarán). Es el valle interandino más conocido del Perú y una zona de gran atractivo turístico y riesgo sísmico (el terremoto de 1970 destruyó Yungay).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Los "pongos" son accidentes geográficos propios de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) La costa peruana, donde los ríos forman deltas al llegar al Pacífico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" Value="b"> b) El altiplano, donde los ríos forman meandros amplios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) La selva alta, donde los ríos atraviesan las últimas estribaciones andinas formando angosturas o gargantas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) La cordillera occidental, donde las quebradas secas cruzan la barrera andina</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Los <B>pongos</B> son angosturas o gargantas estrechas y de aguas turbulentas que se forman cuando los ríos atraviesan las últimas estribaciones andinas al pasar de la sierra a la selva. Son la transición entre la <b>selva alta</b> y la <b>selva baja</b>. El más importante es el <B>Pongo de Manseriche</B> en el río Marañón.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> El Altiplano del Collao, donde se ubica el lago Titicaca, tiene una altitud media de aproximadamente:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) 2 000 m.s.n.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 5 000 m.s.n.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) 3 800 m.s.n.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) 1 200 m.s.n.m.</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Altiplano del Collao</B> (también llamado Meseta del Collao o Puna del Sur) tiene una altitud media de <B>~3 800 m.s.n.m.</B>, lo que lo convierte en la meseta más alta y extensa del mundo después del Tíbet. El lago Titicaca se ubica a <B>3 812 m.s.n.m.</B>, siendo el lago navegable más alto del mundo. Abarca el sur del Perú (Puno) y el norte de Bolivia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> La región amazónica peruana ocupa aproximadamente qué porcentaje del territorio nacional:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) 11%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) 30%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) 60%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) 45%</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La distribución del territorio peruano por regiones naturales es: <b>Costa ~11%</b>, <b>Sierra ~30%</b>, <b>Selva ~60%</b>. La selva (Amazonía) es la región más extensa del Perú a pesar de albergar solo ~15% de la población. Perú es el segundo país con mayor extensión de bosque amazónico después de Brasil.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> El Nudo de Pasco es considerado el más importante del Perú porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Es el punto más alto de los Andes peruanos, superando los 7 000 m.s.n.m.</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Desde él nacen ríos que desembocan en tres vertientes distintas: el Pacífico y el Atlántico por el norte y el sur</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Divide los Andes del norte de los del centro y en él nacen ríos de múltiples cuencas, siendo la gran divisoria hidrográfica central del Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Es donde se unen los Andes peruanos con los ecuatorianos, marcando la frontera norte del país</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Nudo de Pasco</B> (~4 300 m, en Cerro de Pasco) divide los <b>Andes septentrionales</b> (norte) de los <b>Andes centrales</b>. Su importancia radica en ser la gran <b>divisoria hidrográfica</b> del Perú: de él nacen el río <b>Marañón</b> (hacia el norte), el río <b>Mantaro</b> (hacia el este) y tributarios de la vertiente del Pacífico. El Nudo de Loja sí es el fronterizo con Ecuador.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> ¿Por qué la Cordillera Negra (en Áncash) carece de glaciares permanentes, a diferencia de la Cordillera Blanca que está justo al este?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Porque la Cordillera Negra es más antigua y ya perdió sus glaciares por erosión geológica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Porque la Cordillera Negra está en posición de sotavento respecto a los vientos del Pacífico, recibiendo pocas precipitaciones, mientras la Cordillera Blanca recibe humedad amazónica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Porque la Cordillera Negra es más baja que el límite de las nieves perpetuas, siendo sus cimas inferiores a 4 000 m</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Porque la actividad volcánica de la Cordillera Negra genera calor que impide la acumulación de nieve</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La diferencia es climática: la <B>Cordillera Negra</B> está al <b>oeste</b> y queda en posición de <b>sotavento</b> respecto a los vientos del Pacífico (que llegan secos por el anticiclón del Pacífico Sur y la corriente de Humboldt). Recibe muy poca precipitación. La <B>Cordillera Blanca</B> está al <b>este</b> y recibe masas de aire húmedo provenientes de la Amazonía, lo que genera nevadas abundantes y mantiene sus glaciares. Ambas cordilleras tienen cimas por encima de los 5 000 m, pero la disponibilidad de humedad es la diferencia clave.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> En la selva baja peruana, las "restingas" son:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Lagos formados por el cierre de meandros abandonados por los ríos amazónicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Zonas permanentemente inundadas cubiertas de palmeras de aguaje</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Franjas de terreno elevado dentro de la llanura amazónica que no se inundan, con suelos fértiles usados para cultivos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Angosturas que forman los ríos al atravesar las estribaciones andinas orientales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Las <B>restingas</B> son elevaciones del terreno dentro de la llanura amazónica que no se inundan estacionalmente. Por su posición elevada y suelos más fértiles, son los terrenos preferidos para los asentamientos humanos y la agricultura en la selva baja. Se distinguen de las <b>tahuampas</b> (zonas de inundación estacional) y los <b>aguajales</b> (zonas permanentemente inundadas). Las cochas son los lagos de meandro.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> El cañón más profundo del mundo se ubica en el Perú. ¿Cuál es?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El Cañón del Colca (Arequipa), con ~3 400 m de profundidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El Cañón del Cotahuasi (Arequipa), con ~3 535 m de profundidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El Callejón de Huaylas (Áncash), con ~3 000 m de profundidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) El Pongo de Manseriche (Loreto), con ~4 000 m de profundidad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Cañón del Cotahuasi</B> (río Cotahuasi, región Arequipa), con ~3 535 m de profundidad, es considerado el <b>cañón más profundo del mundo</b>, superando al Cañón del Colca (~3 400 m) y al Grand Canyon del Colorado (~1 600 m). Ambos cañones peruanos (Cotahuasi y Colca) son más profundos que el Grand Canyon. Es una pregunta muy frecuente en exámenes preuniversitarios.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> El volcán más activo del Perú es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) El Misti (Arequipa)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) El Coropuna (Arequipa)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) El Ubinas (Moquegua)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) El Chachani (Arequipa)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>Ubinas</B> (5 672 m, Moquegua) es el volcán más <b>activo</b> del Perú, con erupciones frecuentes en los siglos XX y XXI. El <b>Misti</b> (5 822 m) es el volcán más conocido y símbolo de Arequipa, pero se encuentra en estado de baja actividad. El <b>Coropuna</b> (6 377 m) es el volcán más <b>alto</b> del Perú pero está inactivo. El <b>Chachani</b> también es inactivo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> El nevado Huascarán es considerado el punto más alto de la "zona intertropical del mundo". ¿Qué significa esta afirmación y por qué es significativa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Que es el nevado más alto del mundo, superando al Everest en altura absoluta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Que es la cumbre más alta ubicada entre los trópicos de Cáncer y Capricornio (zona tropical, entre 23°27'N y 23°27'S), pues el Everest y otras cumbres mayores están en latitudes templadas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Que es el nevado con mayor número de glaciares tropicales por metro cuadrado en todo el planeta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Que es el más alto de América del Sur, superando al Aconcagua argentino</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Huascarán</B> (6 768 m) se ubica a ~9°07'S de latitud, dentro de la <b>zona intertropical</b> (entre los trópicos de Cáncer 23°27'N y Capricornio 23°27'S). Es la cumbre más alta ubicada en esta banda tropical del planeta. El monte <b>Everest</b> (8 849 m) está a 28°N, en zona subtropical/templada. El <b>Aconcagua</b> (6 961 m, Argentina) es la cumbre más alta del hemisferio occidental y de América del Sur, siendo ~193 m más alto que el Huascarán, pero está a 32°S (zona templada, fuera de los trópicos).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> ¿Cuál es la razón geológica por la que los Andes peruanos presentan TRES cordilleras paralelas en el centro y sur, mientras que en el norte solo se aprecian claramente dos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) En el norte hay menos subducción de la placa de Nazca, lo que genera menos presión y por ende menos cordilleras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) La mayor anchura y complejidad de los Andes en el centro-sur se debe a múltiples fases de subducción y compresión tectónica acumuladas, además de la subducción subhorizontal de la placa de Nazca que amplió el frente de deformación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) En el norte los Andes son más jóvenes y aún no han tenido tiempo de dividirse en tres cordilleras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La diferencia se debe exclusivamente a la erosión fluvial: en el norte los ríos han destruido la tercera cordillera</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La triple estructura andina en el centro-sur peruano responde a la historia geológica de la <b>subducción de la placa de Nazca</b> bajo la placa Sudamericana. En el centro-sur, la placa de Nazca subduce de forma más <b>subhorizontal</b> (flat slab subduction), lo que transmite la compresión tectónica más lejos hacia el interior continental, generando múltiples frentes de deformación y por ende tres cadenas paralelas. En el norte, el ángulo de subducción es más empinado y la deformación es más localizada, resultando en cordilleras más estrechas y menos diferenciadas. Además, múltiples ciclos orogénicos han apilado capas de deformación especialmente en el sur.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> El lago Titicaca (3 812 m.s.n.m.) es el lago navegable más alto del mundo. Sin embargo, su altitud plantea un fenómeno térmico peculiar: ¿cómo puede este lago tener temperaturas del agua relativamente estables y nunca congelarse completamente a pesar de las heladas nocturnas del Altiplano?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Porque el volcán submarino en el fondo del lago genera calor geotérmico que mantiene el agua templada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Porque su enorme volumen de agua (~932 km³) acumula calor solar durante el día y lo libera lentamente durante la noche, actuando como regulador térmico del Altiplano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Porque las corrientes subterráneas que lo alimentan provienen de zonas más bajas y cálidas de la Amazonía</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Porque la salinidad del lago (similar al agua de mar) baja su punto de congelación impidiendo que se congele</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El lago Titicaca actúa como un <b>termorregulador</b> del Altiplano gracias a su <b>enorme volumen de agua dulce</b> (~932 km³). El agua tiene una capacidad calorífica muy alta: absorbe mucho calor durante el día bajo la intensa radiación solar de altura (la atmósfera delgada a 3 812 m filtra menos radiación) y lo libera lentamente durante la noche, evitando que la temperatura baje lo suficiente como para congelar el lago. Las temperaturas del agua del Titicaca se mantienen entre 10°C y 14°C en superficie. Esta propiedad térmica hace que las orillas del lago tengan climas más benignos que el resto del Altiplano, lo que históricamente favoreció el desarrollo de civilizaciones como Tiahuanaco y los Uros.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El "Allin Capac" o "Apu Ausangate" (6 384 m, Cusco) es el nevado más venerado en la cosmovisión andina del sur del Perú. Geológicamente, pertenece a:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La Cordillera Negra, por su ubicación al oeste del valle del Vilcanota</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La Cordillera del Vilcanota, parte de la Cordillera Oriental, al sureste de Cusco</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La Cordillera Huayhuash, en el límite de Huánuco y Lima</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La Cordillera Occidental, en el límite entre Cusco y Arequipa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El nevado <B>Ausangate</B> (6 384 m) pertenece a la <B>Cordillera del Vilcanota</B>, que es parte de la <b>Cordillera Oriental</b> de los Andes peruanos, ubicada al sureste de la ciudad del Cusco, en las provincias de Quispicanchi y Canchis. Es el nevado más alto de la región Cusco. La Cordillera Huayhuash (donde está el Yerupajá) está en Huánuco/Lima, y la Cordillera Negra es la cadena sin glaciares al oeste del Callejón de Huaylas (Áncash).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> La ciudad de Iquitos (Loreto) es la ciudad más grande del mundo inaccesible por carretera. ¿Cuál es la razón geográfica de esta situación?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) El gobierno peruano nunca ha invertido en construir una carretera por razones políticas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La densa selva amazónica y la presencia de grandes ríos, zonas pantanosas y terreno inundable hacen técnicamente muy difícil y costoso construir carreteras permanentes que lleguen a Iquitos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Los pongos del río Amazonas impiden el paso de vehículos terrestres desde los Andes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Iquitos está ubicado en una isla rodeada por los ríos Amazonas, Nanay y Marañón, lo que la hace físicamente inaccesible por tierra</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La falta de carretera a Iquitos se debe a la naturaleza del <b>relieve y la hidrografía amazónica</b>: la llanura de la selva baja está atravesada por centenares de ríos caudalosos, zonas permanentemente inundadas, pantanos, aguajales y terrenos que se inundan estacionalmente. Construir y mantener una carretera permanente en ese entorno requeriría puentes enormes y costosísimos y tramos que quedarían bajo agua en época de crecidas. Técnica y económicamente ha resultado inviable hasta ahora. Iquitos (población ~500 000 hab.) solo se accede por <b>vía fluvial</b> (días de viaje por el Amazonas) o <b>aérea</b>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> En geomorfología, la formación del Altiplano del Collao a ~3 800 m.s.n.m. se explica principalmente por:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La acumulación de sedimentos volcánicos de los volcanes del sur del Perú que rellenaron una depresión andina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Un proceso de compresión tectónica que elevó en bloque toda esa zona sin plegarla significativamente, combinado con sedimentación lacustre y relleno de una cuenca de antepaís elevada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La erosión glacial que aplanó las cumbres andinas durante el último período glacial (Pleistoceno)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La deposición de sedimentos marinos durante el período en que el mar cubrió esa región en el Mesozoico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Altiplano</B> se formó por una combinación de procesos tectónicos y sedimentarios. La <b>subducción de la placa de Nazca</b> generó compresión que elevó en bloque la meseta sin plegarla drásticamente, creando una <b>cuenca de antepaís elevada</b> (foreland basin) entre las cordilleras Occidental y Oriental. Esta cuenca fue rellenada por <b>sedimentos fluviales, lacustres y volcánicos</b> a lo largo del Cenozoico (especialmente en el Mioceno-Plioceno), resultando en la superficie plana y elevada que hoy conocemos. La erosión glacial del Cuaternario contribuyó a suavizar el relieve pero no es el proceso formador principal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El terremoto de 1970 en Áncash (Mw 7,9) causó el aluvión que destruyó la ciudad de Yungay en el Callejón de Huaylas, matando a ~70 000 personas en esa localidad. ¿Qué proceso geomorfológico específico ocurrió?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Una avalancha de lava volcánica desde el Huascarán</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Un aluvión o flujo de detritos (mezcla de hielo, roca y agua) desencadenado por el desprendimiento del glaciar del Huascarán Norte que descendió a gran velocidad por el Callejón de Huaylas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Una inundación del río Santa por el colapso de una represa natural</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Un deslizamiento de tierra seco que sepultó la ciudad sin componente de agua o hielo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El terremoto de 1970 desencadenó el <b>aluvión más mortífero del siglo XX</b>. La sacudida sísmica desprendió ~50 millones de m³ de hielo, roca y nieve del <b>Huascarán Norte</b>. Esta masa viajó a ~280 km/h por el valle, alcanzando la ciudad de <b>Ranrahirca</b> primero y luego <b>Yungay</b>, sepultándola completamente bajo metros de barro, hielo y roca. Solo sobrevivieron quienes estaban en el cementerio (en una colina elevada) o el estadio. El proceso fue un <b>aluvión o lahár sísmico</b> (flujo de detritos con componente de hielo y agua), no una erupción volcánica. Este evento es estudia en geomorfología de riesgos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Los glaciares tropicales del Perú (como los de la Cordillera Blanca) son altamente sensibles al cambio climático. Estudios científicos muestran que han retrocedido más del 30% en las últimas décadas. ¿Cuál es la consecuencia más grave de este retroceso para la población andina a mediano y largo plazo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) El aumento de la actividad volcánica al reducirse el peso del hielo sobre los volcanes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La pérdida irreversible de la reserva de agua dulce que regula el caudal de los ríos en época seca, generando escasez hídrica para millones de personas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El aumento de las lluvias en la costa por mayor evaporación de los glaciares derretidos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El hundimiento de las ciudades andinas al reducirse el peso del hielo que sostenía la corteza</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <b>glaciares tropicales</b> del Perú funcionan como <b>"torres de agua"</b>: liberan agua de deshielo gradualmente durante la época seca (mayo-noviembre), manteniendo el caudal de ríos como el Santa, el Mantaro y el Rimac, que abastecen a millones de personas en Lima y las ciudades andinas. Al retroceder los glaciares, <b>inicialmente aumenta el caudal</b> (deshielo acelerado) pero luego, cuando los glaciares desaparezcan, el caudal en época seca <b>colapsará</b>. El Perú concentra el 71% de los glaciares tropicales del mundo y es el país más vulnerable del planeta a este proceso. Lima depende parcialmente del deshielo del nevado Ticlio.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> El "Pongo de Mainique", en el río Urubamba (Cusco), tiene una importancia especial no solo geomorfológica sino también cultural y energética. ¿Por qué?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Porque en sus orillas se encontraron los restos de la ciudad inca de Machu Picchu</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Porque representa la entrada al territorio ancestral del pueblo indígena Matsigenka y es el acceso al yacimiento de gas de Camisea, el mayor reservorio de gas natural del Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Porque es el pongo más profundo y peligroso del Perú, siendo la barrera geográfica que impide la expansión de Cusco hacia el oriente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Porque en el Pongo de Mainique se construyó la central hidroeléctrica más importante del Perú</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>Pongo de Mainique</B> es la garganta que forma el río Urubamba al atravesar la Cordillera Oriental en la provincia de La Convención (Cusco). Tiene una importancia triple: (1) <b>Geomorfológica:</b> es el paso natural del río desde los Andes hacia la Amazonía. (2) <b>Cultural:</b> es considerado sagrado por el pueblo indígena <b>Matsigenka</b> y representa la puerta a su territorio ancestral. (3) <b>Energética:</b> aguas abajo del pongo se ubica el <b>yacimiento de gas natural de Camisea</b>, el más grande del Perú (~8 veces la demanda nacional), cuya explotación desde 2004 transformó la matriz energética del país.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Desde una perspectiva de geografía física integrada, ¿cuál es el vínculo causal más directo entre los "nudos andinos" y la distribución de las cuencas hidrográficas del Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Los nudos generan microclimas que determinan dónde llueve más, controlando así qué cuencas tienen mayor caudal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Los nudos son las principales divisorias de aguas transversales: al unir las cordilleras, establecen los límites entre cuencas hidrográficas y determinan hacia qué vertiente (Pacífico, Atlántico o Titicaca) drenan las aguas de cada sector andino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Los nudos bloquean el paso de los ríos, obligándolos a formar lagos y lagunas en sus inmediaciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Los nudos son zonas de mayor actividad volcánica, y el calor geotérmico que generan acelera el deshielo de los glaciares cercanos, aumentando el caudal de los ríos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los <B>nudos andinos</B> son las grandes <b>divisorias de aguas transversales</b> del Perú. Al constituir macizos montañosos que unen las cordilleras Occidental, Central y Oriental perpendicularmente, establecen los límites entre qué aguas fluyen hacia el norte (cuencas del Marañón, Amazonas), el sur (cuencas del Altiplano) o el oeste (vertiente del Pacífico). El <b>Nudo de Pasco</b>, por ejemplo, separa las aguas que van al Marañón (norte) de las que van al Mantaro (centro-sur) y de las que alimentan el Pacífico. Sin los nudos, las aguas de los Andes drenarían de forma continua sin estas divisorias transversales. Los nudos también determinan dónde se forman los valles interandinos al canalizar los ríos entre ellos.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

@@ -1,0 +1,540 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>El mundo es ancho y ajeno - Ciro Alegr&iacute;a - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 14</DIV>
+<H1>El mundo es ancho y ajeno</H1>
+<DIV CLASS="sub">Ciro Alegr&iacute;a &middot; Indigenismo peruano &middot; Comunidad de Rumi &middot; Rosendo Maqui &middot; Colonialismo interno &middot; Premio latinoamericano 1941</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ==================== EXPLICACI&Oacute;N ==================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Ciro Alegr&iacute;a: vida, contexto y compromiso literario</H3>
+<B>Ciro Alegr&iacute;a Baz&aacute;n</B> naci&oacute; el <B>4 de noviembre de 1909</B> en el fundo <B>Quilca</B>, distrito de Huamachuco, provincia de Santiago de Chuco, <B>La Libertad</B> (Per&uacute;), y muri&oacute; en <B>Lima</B> el <B>17 de febrero de 1967</B>. Es el narrador m&aacute;s importante del <B>indigenismo peruano</B> y uno de los novelistas fundamentales de Am&eacute;rica Latina del siglo XX.
+
+<H4>Datos biogr&aacute;ficos esenciales:</H4>
+<UL>
+<LI><B>Infancia en la sierra:</B> creci&oacute; en la hacienda de su familia paterna en la sierra liberteña, en contacto directo con los campesinos e ind&iacute;genas quechuas de la zona. Esta convivencia temprana forj&oacute; su sensibilidad social y proporcion&oacute; el material humano de toda su obra.</LI>
+<LI><B>Maestro: C&eacute;sar Vallejo:</B> estudi&oacute; en el Colegio Nacional de San Juan de Trujillo, donde fue alumno del poeta <B>C&eacute;sar Vallejo</B> (1892&ndash;1938), quien ejerci&oacute; una influencia decisiva en su formaci&oacute;n literaria y social.</LI>
+<LI><B>Militancia pol&iacute;tica:</B> se afilió al <B>Partido Aprista Peruano (APRA)</B> de V&iacute;ctor Ra&uacute;l Haya de la Torre en la d&eacute;cada de 1920. Particip&oacute; activamente en la lucha pol&iacute;tica; fue preso en varias ocasiones (1931, 1933) y <B>deportado a Chile en 1934</B>.</LI>
+<LI><B>Exilio en Chile (1934&ndash;1941):</B> en el exilio chileno escribi&oacute; sus tres grandes novelas. La penuría econ&oacute;mica era extrema; escribió <I>El mundo es ancho y ajeno</I> con enormes dificultades materiales.</LI>
+<LI><B>Premio continental (1941):</B> la novela gan&oacute; el <B>Premio Latinoamericano de Novela</B> convocado por la editorial Farrar &amp; Rinehart de Nueva York, compitiendo con obras de toda Am&eacute;rica Latina. Fue un &eacute;xito internacional inmediato; se tradujo a m&aacute;s de <B>20 idiomas</B>.</LI>
+<LI><B>Regreso al Per&uacute; (1960):</B> vuelve tras el fin de la dictadura de Odría; fue elegido diputado por Lima. Muri&oacute; en 1967 sin haber terminado varias obras proyectadas.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Datos clave de Ciro Alegr&iacute;a: naci&oacute; en <B>Quilca, La Libertad, 1909</B> &middot; alumno de <B>C&eacute;sar Vallejo</B> &middot; militante <B>aprista</B> &middot; exilio en <B>Chile 1934</B> &middot; <I>El mundo es ancho y ajeno</I> = <B>1941</B> &middot; Premio Latinoamericano de Novela &middot; traducida a <B>m&aacute;s de 20 idiomas</B> &middot; muri&oacute; en Lima <B>1967</B>.</DIV>
+
+<H3>2. El indigenismo peruano: corriente literaria y contexto</H3>
+<B>El indigenismo</B> es la corriente literaria y cultural hispanoamericana que pone en el centro de su atenci&oacute;n la realidad, la cultura y la problemática del indio americano, especialmente su situaci&oacute;n de explotaci&oacute;n, despojo y marginaci&oacute;n por parte de las &eacute;lites criollas y los gamonales (terratenientes).
+
+<H4>Precursores y etapas del indigenismo en el Per&uacute;:</H4>
+<UL>
+<LI><B>Indigenismo rom&aacute;ntico o indianismo (s. XIX):</B> idealiza al indio como figura ex&oacute;tica y pasada; no lo representa desde dentro. Ejemplo: <B>Cl&oacute;rinda Matto de Turner</B> (<I>Aves sin nido</I>, 1889), primera novela indigenista peruana, que denuncia la explotaci&oacute;n clerical y gamonal del indio.</LI>
+<LI><B>Indigenismo social o de denuncia (1920&ndash;1940):</B> el que practica Ciro Alegr&iacute;a; representa al indio desde adentro, con su cosmovisión propia, como sujeto hist&oacute;rico capaz de resistencia. Contexto ideol&oacute;gico: el pensamiento de <B>Jos&eacute; Carlos Mari&aacute;tegui</B> (<I>7 ensayos de interpretaci&oacute;n de la realidad peruana</I>, 1928) que planteaba que el "problema del indio" era esencialmente un problema de tierra.</LI>
+<LI><B>Neoindigenismo (1960&ndash;70):</B> <B>Jos&eacute; Mar&iacute;a Arguedas</B> (<I>Los r&iacute;os profundos</I>, 1958; <I>Todas las sangres</I>, 1964) supera al indigenismo cl&aacute;sico con una representaci&oacute;n de la cultura andina desde el bilingüismo (espa&ntilde;ol-quechua) y la complejidad psicol&oacute;gica.</LI>
+</UL>
+
+<H4>Otros representantes del indigenismo literario latinoamericano:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Autor</TH><TH>Pa&iacute;s</TH><TH>Obra</TH><TH>Característica</TH></TR>
+<TR><TD><B>Cl&oacute;rinda Matto de Turner</B></TD><TD>Per&uacute;</TD><TD><I>Aves sin nido</I> (1889)</TD><TD>Primera novela indigenista peruana</TD></TR>
+<TR><TD><B>Jos&eacute; Carlos Mari&aacute;tegui</B></TD><TD>Per&uacute;</TD><TD><I>7 ensayos</I> (1928)</TD><TD>Base ideol&oacute;gica del indigenismo social</TD></TR>
+<TR><TD><B>Ciro Alegr&iacute;a</B></TD><TD>Per&uacute;</TD><TD><I>El mundo es ancho y ajeno</I> (1941)</TD><TD>Cumbre del indigenismo cl&aacute;sico</TD></TR>
+<TR><TD><B>Jos&eacute; Mar&iacute;a Arguedas</B></TD><TD>Per&uacute;</TD><TD><I>Los r&iacute;os profundos</I> (1958)</TD><TD>Neoindigenismo; bilingüismo</TD></TR>
+<TR><TD><B>Jorge Icaza</B></TD><TD>Ecuador</TD><TD><I>Huasipungo</I> (1934)</TD><TD>Indigenismo ecuatoriano, violencia brutal</TD></TR>
+<TR><TD><B>Alcides Arguedas</B></TD><TD>Bolivia</TD><TD><I>Raza de bronce</I> (1919)</TD><TD>Indigenismo boliviano</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note">&#128221; <B>La tesis de Mari&aacute;tegui y Ciro Alegr&iacute;a:</B> <B>Jos&eacute; Carlos Mari&aacute;tegui</B> (1894&ndash;1930), el pensador marxista m&aacute;s importante del Per&uacute;, argumentó en sus <I>7 ensayos</I> que "el problema del indio" no era racial ni cultural sino fundamentalmente <B>econ&oacute;mico</B>: el indio era pobre porque le hab&iacute;an quitado la tierra. Esta tesis es la base ideol&oacute;gica de <I>El mundo es ancho y ajeno</I>: el conflicto central de la novela es el despojo de la tierra de la comunidad de Rumi.</DIV>
+
+<H3>3. La obra completa de Ciro Alegr&iacute;a</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Obra</TH><TH>A&ntilde;o</TH><TH>G&eacute;nero</TH><TH>Importancia</TH></TR>
+<TR><TD><B><I>La serpiente de oro</I></B></TD><TD>1935</TD><TD>Novela</TD><TD>Primera novela; narra la vida de los ch&oacute;lones riberéños del r&iacute;o Marañ&oacute;n; Premio de Novela de la editorial Nascimento (Chile)</TD></TR>
+<TR><TD><B><I>Los perros hambrientos</I></B></TD><TD>1939</TD><TD>Novela</TD><TD>La sequía, los perros y los campesinos serranos; antecede tem&aacute;ticamente a <I>El mundo es ancho y ajeno</I></TD></TR>
+<TR><TD><B><I>El mundo es ancho y ajeno</I></B></TD><TD>1941</TD><TD>Novela</TD><TD>Su obra maestra; Premio Latinoamericano de Novela; novela del indigenismo peruano m&aacute;s importante</TD></TR>
+<TR><TD><B><I>Duelo de caballeros</I></B></TD><TD>1963</TD><TD>Cuentos</TD><TD>Colecci&oacute;n de cuentos; publicado tras su regreso al Per&uacute;</TD></TR>
+<TR><TD><B><I>La ofrenda de piedra</I></B></TD><TD>1969 (p&oacute;st.)</TD><TD>Cuentos</TD><TD>Publicada p&oacute;stumamente</TD></TR>
+<TR><TD><B><I>El dilema de Krause</I></B></TD><TD>1969 (p&oacute;st.)</TD><TD>Novela incompleta</TD><TD>Obra inacabada; publicada p&oacute;stumamente</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#127963; EL MUNDO ES ANCHO Y AJENO (1941)<SPAN>Argumento, estructura, personajes y episodios fundamentales</SPAN></DIV>
+
+<H3>4. T&iacute;tulo, g&eacute;nero y publicaci&oacute;n</H3>
+<UL>
+<LI><B>T&iacute;tulo:</B> proviene de la cosmovisión ind&iacute;gena andina que aparece en la propia novela: el mundo es "ancho" (grande, vasto) pero "ajeno" (no les pertenece a los ind&iacute;genas) porque les ha sido arrebatado por los poderosos. Es una met&aacute;fora perfecta del colonialismo interno.</LI>
+<LI><B>G&eacute;nero:</B> novela social o de denuncia; indigenista; epopeya colectiva de una comunidad.</LI>
+<LI><B>Narraci&oacute;n:</B> narrador omnisciente en tercera persona; estructura ep&iacute;sódica (cap&iacute;tulos semi-independientes que retratan a distintos personajes y momentos).</LI>
+<LI><B>Espacio:</B> la comunidad campesina e ind&iacute;gena de <B>Rumi</B> (que significa "piedra" en quechua), ubicada ficticiamente en la sierra norte del Per&uacute; (La Libertad / Ancash), trasunto literario de las comunidades reales que Alegr&iacute;a conoci&oacute; en su infancia.</LI>
+<LI><B>Tiempo:</B> las primeras d&eacute;cadas del siglo XX, durante el apogeo del gamonalismo serrano en el Per&uacute;.</LI>
+</UL>
+
+<H3>5. Argumento general</H3>
+La novela narra el despojo, la resistencia y la destrucci&oacute;n de la <B>comunidad ind&iacute;gena de Rumi</B> a manos del gamonal <B>&Aacute;lvaro Amenab&aacute;r y Rold&aacute;n</B>, hacendado poderoso que codicia las tierras de la comunidad. La historia se desarrolla en dos grandes etapas:
+
+<H4>Primera parte &mdash; El gobierno de Rosendo Maqui:</H4>
+El alcalde de Rumi es el anciano <B>Rosendo Maqui</B>, hombre justo, sabio y profundamente ligado a la tierra y la tradici&oacute;n. Amenab&aacute;r inicia un juicio de tierras, apoyado por su poder econ&oacute;mico, el juez venal y el sistema legal corrupto. A pesar de que la comunidad tiene t&iacute;tulos coloniales de la tierra, el sistema judicial los condena. Rosendo Maqui es acusado falsamente de haber asesinado a un cuatrero (Mardoqueo) y es enviado a la c&aacute;rcel, donde muere de vejez, maltrato y desolaci&oacute;n.
+
+<H4>Segunda parte &mdash; El desplazamiento a Yanañahui y el gobierno de Benito Castro:</H4>
+La comunidad, desalojada de Rumi, se desplaza a las inhóspitas tierras de <B>Yanañahui</B> ("ojo negro" en quechua), en las alturas, donde intenta reconstruirse con enormes dificultades (fr&iacute;o, pobreza, enfermedades). El nuevo l&iacute;der es <B>Benito Castro</B>, joven que ha salido al mundo exterior, ha visto el ej&eacute;rcito, las minas y las ciudades, y ha tomado conciencia pol&iacute;tica. Bajo su liderazgo la comunidad intenta resistir, pero Amenab&aacute;r logra que el gobierno env&iacute;e soldados. La novela termina con la destrucci&oacute;n de la comunidad: los soldados atacan Yanañahui, Benito Castro muere fusilado, y la comunidad es dispersada.
+
+<H4>Estructura ep&iacute;s&oacute;dica &mdash; los cap&iacute;tulos "sueltos":</H4>
+Uno de los rasgos formales m&aacute;s originales de la novela es su estructura ep&iacute;s&oacute;dica: varios cap&iacute;tulos funcionan como novelas cortas independientes que narran la aventura o destino de distintos personajes que han salido de Rumi al mundo exterior. Estos episodios son "ventanas" al mundo hostil que rodea la comunidad.
+
+<DIV CLASS="cultura-titulo">&#128100; PERSONAJES PRINCIPALES<SPAN>El universo humano de la comunidad de Rumi</SPAN></DIV>
+
+<H3>6. Personajes principales y su funci&oacute;n narrativa</H3>
+
+<H4>Rosendo Maqui &mdash; el alcalde patriarca:</H4>
+<UL>
+<LI>Alcalde (personero) de la comunidad de Rumi; anciano de pelo blanco.</LI>
+<LI>Representa la <B>sabidur&iacute;a ancestral</B>, la vinculaci&oacute;n con la tierra y los valores comunitarios andinos.</LI>
+<LI>Es un hombre justo, conciliador, que cr&eacute;e en la ley y en la justicia; su tragedia es que el sistema legal es corrupto y no protege a quien tiene raz&oacute;n.</LI>
+<LI>Es acusado falsamente de haber asesinado a Mardoqueo (el cuatrero); encarcelado en la c&aacute;rcel de Cajabamba, muere all&iacute; sin haber cometido ning&uacute;n crimen.</LI>
+<LI>Simboliza la <B>primera derrota</B> de la comunidad: la derrota del camino legal y pac&iacute;fico.</LI>
+</UL>
+
+<H4>Benito Castro &mdash; el l&iacute;der moderno:</H4>
+<UL>
+<LI>Joven de la comunidad que sali&oacute; al mundo exterior: trabaj&oacute; en las minas de <B>Quiruvilca</B>, sirvi&oacute; en el ej&eacute;rcito, recorri&oacute; ciudades, conoci&oacute; la explotaci&oacute;n y tom&oacute; conciencia de la injusticia.</LI>
+<LI>Regresa a Rumi convertido en l&iacute;der capaz de articular la resistencia organizada.</LI>
+<LI>Contrapunto generacional de Rosendo Maqui: mientras &eacute;ste cre&iacute;a en la ley colonial y la tradici&oacute;n, Benito Castro conoce el mundo moderno y sus mecanismos de poder.</LI>
+<LI>Muere fusilado por los soldados del gobierno enviados por Amenab&aacute;r. Simboliza la <B>segunda derrota</B>: la derrota de la resistencia armada.</LI>
+<LI>Su figura anticipa la del dirigente social y pol&iacute;tico comprometido del siglo XX.</LI>
+</UL>
+
+<H4>&Aacute;lvaro Amenab&aacute;r y Rold&aacute;n &mdash; el gamonal:</H4>
+<UL>
+<LI>Terrateniente poderoso, representante del gamonalismo serrano peruano.</LI>
+<LI>Codicioso, despiadado, usa todos los medios a su alcance (soborno de jueces, falsas acusaciones, milicias privadas, influencia en Lima) para despojar a la comunidad de sus tierras.</LI>
+<LI>No es un personaje bidimensional: Alegr&iacute;a lo muestra como producto de un sistema, no como un villano individual; el problema no es &Aacute;lvaro sino el gamonalismo como estructura de poder.</LI>
+<LI>Representa al terrateniente t&iacute;pico del latifundio serrano: racista, paternalista con sus empleados, capaz de manipular a la justicia y al Estado a su favor.</LI>
+</UL>
+
+<H4>Otros personajes importantes:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Personaje</TH><TH>Rol</TH><TH>Significado</TH></TR>
+<TR><TD><B>Nasha Suro</B></TD><TD>Curandera / bruja de la comunidad</TD><TD>La tradici&oacute;n m&iacute;tico-espiritual andina; el nexo con la tierra y los apus</TD></TR>
+<TR><TD><B>Fiero Vasquez</B></TD><TD>Bandolero / forajido</TD><TD>El que escogi&oacute; la rebeldi&oacute;a individual fuera de la comunidad; epis&oacute;dico pero muy rico</TD></TR>
+<TR><TD><B>Mardoqueo</B></TD><TD>Cuatrero (ladr&oacute;n de ganado)</TD><TD>Instrumento del gamonal; su asesinato (real) se usa para inculpar a Rosendo Maqui</TD></TR>
+<TR><TD><B>El juez</B></TD><TD>Funcionario corrompido</TD><TD>La instituci&oacute;n legal al servicio del poder; s&iacute;mbolo del Estado oligárquico</TD></TR>
+<TR><TD><B>Bismark Ruiz</B></TD><TD>Bandolero/m&aacute;rtir</TD><TD>Joven que muere luchando; episodio de la resistencia individual</TD></TR>
+<TR><TD><B>Augusto Maqui</B></TD><TD>Hijo de Rosendo</TD><TD>La juventud de la comunidad que intenta adaptarse al mundo exterior</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="cultura-titulo">&#128218; EPISODIOS CLAVE<SPAN>Los cap&iacute;tulos fundamentales que todo preuniversitario debe dominar</SPAN></DIV>
+
+<H3>7. Episodios y cap&iacute;tulos fundamentales</H3>
+
+<H4>El juicio de tierras (Parte I):</H4>
+Amenab&aacute;r inicia un juicio argumentando que las tierras de Rumi le pertenecen por antiguas mercedes. La comunidad presenta sus t&iacute;tulos coloniales ante el juez de Cajabamba. Pero el juez est&aacute; comprado por el gamonal. El proceso demuestra que el sistema legal formal es inaplicable cuando el poder econ&oacute;mico interviene. La comunidad pierde el juicio a pesar de tener raz&oacute;n legal y moral. Este episodio es la demostraci&oacute;n de la tesis central: el estado oligárquico no protege al indio.
+
+<H4>La muerte de Rosendo Maqui en la c&aacute;rcel:</H4>
+Falsamente acusado de asesinar al cuatrero Mardoqueo (que en realidad fue muerto por el propio Amenab&aacute;r o sus hombres), Rosendo es detenido y llevado a la c&aacute;rcel de Cajabamba. All&iacute; sufre el encierro, el maltrato y la incomprensi&oacute;n. Muere de pena y vejez. Es el momento m&aacute;s patético de la primera parte: la figura paternal de la comunidad destruida por la injusticia. El cap&iacute;tulo de la c&aacute;rcel es uno de los m&aacute;s logrados de la novela y ha sido antologado separadamente.
+
+<H4>El desplazamiento a Yanañahui:</H4>
+Obligada a abandonar Rumi por la fuerza, la comunidad debe ascender a las tierras altas y est&eacute;riles de Yanañahui, donde las condiciones de vida son durísimas: fr&iacute;o extremo, suelo pobre, falta de agua. Esta marcha es el inicio de la segunda etapa de destrucci&oacute;n. El contraste entre la fertilidad de Rumi y la esterilidad de Yanañahui simboliza el despojo no solo de la tierra sino de la vida misma.
+
+<H4>Fiero V&aacute;squez &mdash; el bandolero (cap&iacute;tulo epis&oacute;dico):</H4>
+<B>Fiero V&aacute;squez</B> es un forajido bandolero que vive fuera de la ley pero que proviene de la misma clase explotada. Su historia es una de las m&aacute;s memorables de la novela: hombre que rechaz&oacute; la sumisi&oacute;n pero no encontr&oacute; otro camino que la violencia individual. Muere perseguido. Este episodio plantea la alternativa a la sumisi&oacute;n comunitaria: la rebeli&oacute;n individual, igualmente condenada al fracaso.
+
+<H4>Las minas de Quiruvilca &mdash; el viaje de Benito Castro:</H4>
+El episodio del viaje de Benito Castro a las minas de Quiruvilca es fundamental: all&iacute; conoce las condiciones brutales del trabajo minero (silicosis, accidentes, salarios m&iacute;seros, ninguna protecci&oacute;n legal) y la solidaridad de los trabajadores. Esta experiencia lo forma como l&iacute;der consciente. El episodio denuncia tambi&eacute;n el imperialismo minero (las minas son propiedad extranjera que extrae la riqueza nacional sin beneficiar a los peruanos).
+
+<H4>El final: ataque a Yanañahui y muerte de Benito Castro:</H4>
+La novela concluye con el ataque del ej&eacute;rcito a la comunidad de Yanañahui. Los soldados, enviados por el gobierno a instancias de Amenab&aacute;r, atacan la comunidad de noche. Benito Castro muere fusilado. Los sobrevivientes se dispersan por el mundo, convertidos en peones, trabajadores migrantes, mendigos. La comunidad de Rumi ha sido definitivamente destruida. El final es deliberadamente sin esperanza: la derrota es total, y Alegr&iacute;a no ofrece ning&uacute;n consuelo fácil.
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Esquema de la trama: Rumi (comunidad feliz) &rarr; Juicio de tierras (Amenab&aacute;r / juez corrupto) &rarr; Rosendo Maqui preso y muerto &rarr; Desplazamiento a Yanañahui &rarr; Resistencia de Benito Castro &rarr; Ataque del ej&eacute;rcito &rarr; Benito Castro fusilado &rarr; Destrucci&oacute;n total de la comunidad.</DIV>
+
+<DIV CLASS="cultura-titulo">&#127775; TEMAS, T&Eacute;CNICAS NARRATIVAS Y VALORES LITERARIOS<SPAN>Por qu&eacute; es la novela indigenista m&aacute;s importante del Per&uacute;</SPAN></DIV>
+
+<H3>8. Temas fundamentales de la novela</H3>
+
+<H4>1. La tierra como elemento vital y sagrado:</H4>
+Para la comunidad andina de Rumi, la tierra no es solo un medio de producci&oacute;n sino el fundamento de la identidad, la cultura y la vida espiritual. La cosmovisión andina representa la tierra como <B>Pachamama</B> (madre tierra), ser viviente con quien el comunero mantiene una relaci&oacute;n de reciprocidad sagrada. El despojo de la tierra no es solo econ&oacute;mico: es una destrucci&oacute;n ontol&oacute;gica, una amputaci&oacute;n del ser.
+
+<H4>2. El gamonalismo como sistema opresor:</H4>
+El gamonalismo (del quechua <I>gamonales</I> = poder regional) es el sistema de dominio del latifundista serrano sobre los campesinos ind&iacute;genas, que controla no solo la tierra sino la justicia, la polic&iacute;a, los curas y los funcionarios locales. Alegr&iacute;a muestra que Amenab&aacute;r no act&uacute;a solo: est&aacute; apoyado por toda una estructura institucional (el juez, el gobernador, el cura, el Estado central) que hace sistema con su poder local.
+
+<H4>3. La justicia y la ley versus el poder:</H4>
+Uno de los temas m&aacute;s amargos de la novela es la demostraci&oacute;n de que el sistema legal formal es inaplicable para el ind&iacute;gena. Rosendo Maqui cree en la ley; intenta usarla; pierde. La novela demuestra que el Estado peruano de las primeras d&eacute;cadas del siglo XX era un Estado oligárquico al servicio de los terratenientes, no del pueblo.
+
+<H4>4. La comunidad como organismo vivo:</H4>
+La comunidad de Rumi funciona como el verdadero protagonista de la novela, no un individuo. Alegr&iacute;a la describe con amor y detalle: sus ritos, sus fiestas, su forma de tomar decisiones (el cabildo abierto), su sistema de ayuda mutua (la minka), sus creencias. La destrucci&oacute;n de la comunidad es la muerte de un mundo, no solo de personas individuales.
+
+<H4>5. El dualismo campo / ciudad &mdash; tradici&oacute;n / modernidad:</H4>
+Los personajes que salen al mundo exterior (Benito Castro, Augusto Maqui, los mineros) encuentran otro tipo de explotaci&oacute;n: el capitalismo minero, la miseria urbana, el ej&eacute;rcito como instrumento de represi&oacute;n de clase. El mundo externo no ofrece liberaci&oacute;n sino nuevas formas de dominaci&oacute;n.
+
+<H4>6. La solidaridad y la resistencia:</H4>
+A pesar del final tr&aacute;gico, la novela celebra la <B>dignidad</B> y la <B>resistencia</B> de la comunidad. Rosendo Maqui y Benito Castro son figuras que prefieren la muerte a la humillaci&oacute;n. La comunidad de Rumi no es presentada como v&iacute;ctima pasiva sino como sujeto hist&oacute;rico que lucha con los medios a su alcance.
+
+<H3>9. T&eacute;cnicas narrativas e innovaciones literarias</H3>
+<UL>
+<LI><B>Narrador omnisciente:</B> el narrador accede a la interioridad de todos los personajes y conoce la tradici&oacute;n oral, los mitos y los sue&ntilde;os de la comunidad. Esta omnisciencia permite retratar la cosmovisión andina desde adentro.</LI>
+<LI><B>Estructura ep&iacute;s&oacute;dica o "coral":</B> la novela no sigue a un solo protagonista sino a la comunidad y a m&uacute;ltiples individuos; los cap&iacute;tulos son relativamente autónomos y pueden leerse como novellas cortas. Esta estructura refleja la naturaleza colectiva del protagonista (la comunidad).</LI>
+<LI><B>Quechuismos y lenguaje andino:</B> Alegr&iacute;a incorpora vocablos quechuas (<I>Pachamama</I>, <I>minka</I>, <I>apu</I>, <I>huayno</I>, <I>soroche</I>) y expresiones del castellano regional andino sin glosario: el lector debe hacer el esfuerzo de entrar en el mundo cultural de la novela.</LI>
+<LI><B>Lo m&iacute;tico y lo real:</B> los elementos m&iacute;ticos (la bruja Nasha Suro, los presagios, la relaci&oacute;n con los apus y la Pachamama) conviven naturalmente con los elementos sociales y pol&iacute;ticos. Esta convivencia prefigura el <B>realismo m&aacute;gico</B> latinoamericano posterior.</LI>
+<LI><B>El paisaje como personaje:</B> la descripci&oacute;n del paisaje andino (la sierra, el cielo, la lluvia, la puna) tiene una funci&oacute;n narrativa activa: no es simple decorado sino un elemento que actúa sobre los personajes y refleja su estado interior.</LI>
+<LI><B>Denuncia social sin panfleto:</B> Alegr&iacute;a evita el panfleto pol&iacute;tico directo gracias a la riqueza de la caracterizaci&oacute;n de los personajes y la belleza del lenguaje; la denuncia emerge de la narraci&oacute;n misma, no de discursos ideol&oacute;gicos.</LI>
+</UL>
+
+<H3>10. El indigenismo de Alegr&iacute;a frente al de Arguedas: diferencias fundamentales</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Aspecto</TH><TH>Ciro Alegr&iacute;a</TH><TH>Jos&eacute; Mar&iacute;a Arguedas</TH></TR>
+<TR><TD><B>Posici&oacute;n del narrador</B></TD><TD>Externo a la cultura andina (criollo que la mira con simpat&iacute;a)</TD><TD>Interno (bilingüe quechua-espa&ntilde;ol, criado entre ind&iacute;genas)</TD></TR>
+<TR><TD><B>Lenguaje</B></TD><TD>Espa&ntilde;ol literario con quechuismos l&eacute;xicos</TD><TD>Inventa un "castellano quechuizado" que reproduce la sintaxis andina</TD></TR>
+<TR><TD><B>Protagonista</B></TD><TD>La comunidad colectiva; el l&iacute;der social</TD><TD>El individuo desgarrado entre dos mundos</TD></TR>
+<TR><TD><B>Tono</B></TD><TD>&Eacute;pico, colectivo, de denuncia social</TD><TD>L&iacute;rico, &iacute;ntimo, de desgarro cultural</TD></TR>
+<TR><TD><B>Visi&oacute;n</B></TD><TD>El ind&iacute;gena como sujeto colectivo capaz de resistencia</TD><TD>El individuo mestizo o "cholo" entre la cultura andina y la occidental</TD></TR>
+<TR><TD><B>G&eacute;nero</B></TD><TD>Novela social / epopeya colectiva</TD><TD>Novela l&iacute;rica / Bildungsroman andino</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>11. Importancia y legado de la novela</H3>
+<UL>
+<LI><B>Premio Latinoamericano de Novela (1941):</B> el reconocimiento continental de la novela proyect&oacute; a Ciro Alegr&iacute;a como el principal narrador peruano de su generaci&oacute;n y la novela como el texto m&aacute;s importante del indigenismo.</LI>
+<LI><B>Traducci&oacute;n a m&aacute;s de 20 idiomas:</B> la novela fue r&aacute;pidamente traducida al ingl&eacute;s, franc&eacute;s, alem&aacute;n, ruso, chino y otras lenguas; es la primera novela peruana de proyecci&oacute;n verdaderamente mundial.</LI>
+<LI><B>Denuncia hist&oacute;rica:</B> la novela document&oacute; literariamente la realidad del gamonalismo serrano peruano con tal precisi&oacute;n que sigue siendo una fuente b&aacute;sica para historiadores y soci&oacute;logos del Per&uacute; andino.</LI>
+<LI><B>Influencia en la literatura latinoamericana:</B> su t&eacute;cnica de integrar lo m&iacute;tico con lo real, la estructura episódica y el protagonista colectivo influyeron en escritores como Gabriel Garc&iacute;a M&aacute;rquez (el protagonista colectivo de <I>Cien a&ntilde;os de soledad</I> debe algo a la comunidad de Rumi).</LI>
+<LI><B>Texto escolar y universitario:</B> es obra obligatoria en el curr&iacute;culo de educaci&oacute;n secundaria y universitaria peruano, y una de las novelas m&aacute;s examinadas en las pruebas de admisi&oacute;n.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1909</DIV><DIV CLASS="dk-label">Nacimiento de Ciro Alegr&iacute;a en Quilca, La Libertad (4 noviembre)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1934</DIV><DIV CLASS="dk-label">Exilio en Chile; all&iacute; escribe sus tres grandes novelas</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1941</DIV><DIV CLASS="dk-label"><I>El mundo es ancho y ajeno</I> &middot; Premio Latinoamericano de Novela</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">+20</DIV><DIV CLASS="dk-label">Idiomas a los que fue traducida la novela</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Rumi</DIV><DIV CLASS="dk-label">"Piedra" en quechua: nombre de la comunidad protagonista</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1967</DIV><DIV CLASS="dk-label">Muerte de Ciro Alegr&iacute;a en Lima (17 febrero)</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Autor:</B> Ciro Alegr&iacute;a Baz&aacute;n &middot; Quilca, La Libertad, 1909 &middot; alumno de C&eacute;sar Vallejo &middot; militante aprista &middot; exilio en Chile 1934 &middot; muere Lima 1967<BR>
+&bull; <B>Obra:</B> 1941 &middot; Premio Latinoamericano de Novela &middot; &gt;20 idiomas &middot; cumbre del indigenismo peruano<BR>
+&bull; <B>Corriente:</B> indigenismo social &middot; base ideol&oacute;gica = Mari&aacute;tegui (<I>7 ensayos</I>) &middot; precursora Cl&oacute;rinda Matto de Turner<BR>
+&bull; <B>Personajes:</B> <B>Rosendo Maqui</B> (alcalde-patriarca, muere en c&aacute;rcel) &middot; <B>Benito Castro</B> (l&iacute;der joven, muere fusilado) &middot; <B>Amenab&aacute;r</B> (gamonal) &middot; Nasha Suro (curandera) &middot; Fiero V&aacute;squez (bandolero)<BR>
+&bull; <B>Trama:</B> Comunidad Rumi &rarr; juicio tierras (corrupto) &rarr; Rosendo preso / muere &rarr; desplazamiento Yanañahui &rarr; Benito Castro fusilado &rarr; destrucci&oacute;n total<BR>
+&bull; <B>Temas:</B> tierra como bien sagrado &middot; gamonalismo &middot; Estado oligárquico &middot; comunidad como organismo &middot; resistencia y dignidad<BR>
+&bull; <B>T&eacute;cnica:</B> narrador omnisciente &middot; estructura ep&iacute;s&oacute;dica / coral &middot; quechuismos &middot; lo m&iacute;tico + lo real &middot; paisaje como personaje<BR>
+&bull; <B>Rumi</B> = "piedra" en quechua &middot; <B>Yanañahui</B> = "ojo negro" &middot; <B>Minka</B> = ayuda mutua andina &middot; <B>Gamonal</B> = terrateniente serrano
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ==================== PREGUNTAS ==================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;D&oacute;nde y cu&aacute;ndo naci&oacute; Ciro Alegr&iacute;a, y cu&aacute;l fue su relaci&oacute;n con C&eacute;sar Vallejo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Naci&oacute; en Lima en 1920 y fue compa&ntilde;ero de aula de C&eacute;sar Vallejo en la Universidad Mayor de San Marcos, donde ambos estudiaron Letras juntos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Naci&oacute; en el fundo Quilca, La Libertad, el 4 de noviembre de 1909; fue alumno de C&eacute;sar Vallejo en el Colegio Nacional de San Juan de Trujillo, relaci&oacute;n que marc&oacute; decisivamente su formaci&oacute;n literaria y social</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Naci&oacute; en Cajamarca en 1905 y conoci&oacute; a C&eacute;sar Vallejo en el exilio en Par&iacute;s, donde ambos participaron en las tertulias del surrealismo franc&eacute;s</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Naci&oacute; en Santiago de Chuco en 1910 y C&eacute;sar Vallejo fue su compa&ntilde;ero de militancia en el Partido Comunista Peruano durante la d&eacute;cada de 1930</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Ciro Alegr&iacute;a Baz&aacute;n</B> naci&oacute; el <B>4 de noviembre de 1909</B> en el fundo <B>Quilca</B>, distrito de Huamachuco, provincia de Santiago de Chuco, departamento de <B>La Libertad</B> (Per&uacute;). Su familia paterna ten&iacute;a haciendas en la sierra liberteña y Ciro creci&oacute; en contacto directo con los comuneros andinos. Estudi&oacute; en el <B>Colegio Nacional de San Juan</B> de Trujillo, donde fue alumno del poeta <B>C&eacute;sar Vallejo</B> (1892&ndash;1938), considerado el mayor poeta peruano y uno de los m&aacute;s importantes en lengua espa&ntilde;ola. La influencia de Vallejo fue decisiva en su sensibilidad social y en su comprensi&oacute;n de la problem&aacute;tica del indio peruano. Alegr&iacute;a militó en el <B>APRA</B> (Partido Aprista Peruano), no en el Partido Comunista.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Qu&eacute; es el gamonalismo y c&oacute;mo lo representa la figura de &Aacute;lvaro Amenab&aacute;r en la novela?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) El gamonalismo es el sistema econ&oacute;mico basado en la extracci&oacute;n minera en la sierra peruana; Amenab&aacute;r representa al empresario minero que explota a los trabajadores ind&iacute;genas en sus minas de plata</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) El gamonalismo es el sistema de dominio del terrateniente serrano (gamonal) sobre los campesinos ind&iacute;genas, que controla la tierra, la justicia, la polic&iacute;a y los funcionarios locales; Amenab&aacute;r encarna este poder: codicia las tierras de Rumi y usa el soborno judicial, las falsas acusaciones y finalmente la violencia militar para despojar a la comunidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) El gamonalismo es un movimiento pol&iacute;tico ind&iacute;gena del siglo XIX que defend&iacute;a los derechos de las comunidades; Amenab&aacute;r es el l&iacute;der pol&iacute;tico de este movimiento que intenta modernizar las haciendas de la sierra peruana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Amenab&aacute;r es un personaje positivo de la novela: un hacendado ilustrado que intenta civilizar e integrar a la comunidad de Rumi a la modernidad; el conflicto surge porque los ind&iacute;genas rechazan el progreso</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>gamonalismo</B> (t&eacute;rmino an&aacute;lisis por Jos&eacute; Carlos Mari&aacute;tegui en sus <I>7 ensayos</I>) es el sistema de dominaci&oacute;n regional basado en el <B>latifundio</B>: el gamonal (gran terrateniente serrano) no solo posee la tierra sino que controla todo el aparato de poder local: la justicia (jueces comprados), la polic&iacute;a (guardias a su servicio), el clero (curas dependientes), los funcionarios y hasta los representantes en Lima. <B>&Aacute;lvaro Amenab&aacute;r y Rold&aacute;n</B> es la encarnaci&oacute;n literaria de este sistema: codicioso de las tierras de Rumi, usa el juicio de tierras con un juez sobornado, manda falsamente acusar a Rosendo Maqui del crimen de Mardoqueo, y finalmente consigue que el gobierno env&iacute;e soldados para destruir la comunidad. Alegr&iacute;a lo muestra no como un villano individual sino como producto de un <B>sistema estructural</B> de dominaci&oacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Qu&eacute; significa el t&iacute;tulo "El mundo es ancho y ajeno" y c&oacute;mo se relaciona con el tema central de la novela?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) El t&iacute;tulo es una referencia geogr&aacute;fica: el Per&uacute; es un pa&iacute;s muy extenso ("ancho") pero sus territorios andinos le son culturalmente "ajenos" al Estado costeno; expresa la brecha entre Lima y la sierra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) El t&iacute;tulo expresa la visi&oacute;n del mundo de la comunidad ind&iacute;gena: el mundo es "ancho" (vasto, inmenso) pero "ajeno" (no les pertenece, les ha sido arrebatado); resume el despojo territorial y cultural del ind&iacute;gena; el mundo debería ser suyo pero el gamonalismo lo ha convertido en tierra extraña para sus propios hijos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) El t&iacute;tulo es una cita textual de un canto quechua tradicional que Ciro Alegr&iacute;a escuch&oacute; en su infancia; simplemente evoca la belleza del paisaje andino sin connotaci&oacute;n pol&iacute;tica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) "Ancho y ajeno" son los dos apellidos del gamonal Amenab&aacute;r; el t&iacute;tulo es una denuncia directa de la familia que explot&oacute; a los comuneros que Alegr&iacute;a conoci&oacute; en su infancia en La Libertad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El t&iacute;tulo <I>El mundo es ancho y ajeno</I> es una de las frases m&aacute;s evocadoras de la literatura peruana. La expresi&oacute;n aparece en la propia novela y resume su tema central: para la comunidad de Rumi, el mundo es vastísimo (<B>"ancho"</B>) &mdash;la sierra, los valles, los llanos, las ciudades&mdash; pero todo ese mundo es <B>"ajeno"</B>: no les pertenece, no est&aacute;n en &eacute;l como propietarios sino como desposeídos. La tierra que deberían poseer por derecho ancestral y moral les ha sido arrebatada. Cuando son expulsados de Rumi y se dispersan por el Per&uacute;, los comuneros comprueban que en ningún lugar son bienvenidos ni libres: son peones en las haciendas, esclavos en las minas, marginados en las ciudades. El mundo es grande pero no tienen lugar en &eacute;l. Es una met&aacute;fora perfecta del <B>colonialismo interno</B>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qui&eacute;n es Rosendo Maqui, qu&eacute; cargo ocupa y cu&aacute;l es su destino en la novela?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Rosendo Maqui es el gamonal rival de Amenab&aacute;r; es un hacendado rico que defiende a la comunidad de Rumi porque compite con Amenab&aacute;r por el control de la regi&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Rosendo Maqui es el alcalde (personero) de la comunidad de Rumi; anciano sabio y justo que cr&eacute;e en la ley y en la justicia; es falsamente acusado de asesinar al cuatrero Mardoqueo por maquinaciones de Amenab&aacute;r; encarcelado en Cajabamba, muere all&iacute; de vejez y tristeza sin haber cometido ning&uacute;n crimen</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Rosendo Maqui es el hijo joven de la comunidad que, tras vivir en las minas de Quiruvilca, regresa con conciencia pol&iacute;tica y lidera la resistencia armada contra Amenab&aacute;r; muere fusilado por el ej&eacute;rcito</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Rosendo Maqui es el cura de Rumi, que intenta proteger a la comunidad usando su autoridad religiosa; fracasa porque Amenab&aacute;r tiene m&aacute;s influencia que &eacute;l sobre el obispado regional</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Rosendo Maqui</B> es el <B>alcalde</B> (tambi&eacute;n llamado personero o autoridad comunal) de la comunidad ind&iacute;gena de <B>Rumi</B>. Es el personaje central de la primera parte de la novela: anciano sabio, de pelo blanco, profundamente unido a la tierra y la tradici&oacute;n andina, hombre de gran dignidad moral. Cr&eacute;e en los t&iacute;tulos coloniales que acreditan la propiedad de Rumi y confía en que el sistema legal proteger&aacute; a quien tiene raz&oacute;n. Intenta defender a la comunidad ante el juicio de tierras iniciado por Amenab&aacute;r. Sin embargo, el juez est&aacute; sobornado y la comunidad pierde. Luego, Amenab&aacute;r orquesta la acusaci&oacute;n de que Rosendo mat&oacute; al cuatrero <B>Mardoqueo</B>. Rosendo es apresado y llevado a la c&aacute;rcel de Cajabamba, donde muere de vejez, pena y maltrato. Su destino es el de la <B>derrota de la v&iacute;a legal y pac&iacute;fica</B>. El personaje que describe la b) (joven, minas, resistencia armada) es <B>Benito Castro</B>, no Rosendo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qu&eacute; premio gan&oacute; <I>El mundo es ancho y ajeno</I> en 1941 y qu&eacute; significado tuvo este reconocimiento?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Gan&oacute; el Premio Nobel de Literatura de 1941, convirti&eacute;ndose en el primer latinoamericano en recibir este galard&oacute;n; el reconocimiento proyect&oacute; al indigenismo peruano ante el mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Gan&oacute; el Premio Latinoamericano de Novela convocado por la editorial estadounidense Farrar &amp; Rinehart, compitiendo con obras de toda Am&eacute;rica Latina; el reconocimiento hizo de la novela un &eacute;xito internacional inmediato, traducida a m&aacute;s de 20 idiomas, y convirti&oacute; a Alegr&iacute;a en el narrador peruano m&aacute;s importante de su generaci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Gan&oacute; el Premio Nacional de Literatura del Per&uacute; de 1941, el primer a&ntilde;o en que se otorg&oacute; dicho premio; fue una vindicaci&oacute;n de Alegr&iacute;a frente al gobierno de Prado, que lo hab&iacute;a deportado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) No gan&oacute; ning&uacute;n premio en 1941; el reconocimiento internacional lleg&oacute; solo en 1960 cuando Ciro Alegr&iacute;a fue nominado al Premio Nobel de Literatura por el gobierno peruano</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En <B>1941</B>, <I>El mundo es ancho y ajeno</I> gan&oacute; el <B>Premio Latinoamericano de Novela</B> convocado por la editorial neoyorquina <B>Farrar &amp; Rinehart</B>. Este concurso reun&iacute;a novelas de todos los pa&iacute;ses de Am&eacute;rica Latina y era el reconocimiento literario m&aacute;s importante del continente en ese momento. La victoria fue decisiva: proyect&oacute; la novela al mercado editorial internacional y propici&oacute; su traducci&oacute;n a m&aacute;s de <B>20 idiomas</B> (ingl&eacute;s, franc&eacute;s, alem&aacute;n, ruso, chino, italiano, portugu&eacute;s, etc.). Fue la primera novela peruana de verdadera difusi&oacute;n mundial. El Nobel de Literatura no fue recibido por ning&uacute;n escritor peruano en esa &eacute;poca (el primer peruano en recibirlo fue <B>Mario Vargas Llosa</B> en <B>2010</B>).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Compara los personajes de Rosendo Maqui y Benito Castro como dos modelos de liderazgo ind&iacute;gena ante la opresi&oacute;n. &iquest;Qu&eacute; representa cada uno?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Rosendo Maqui y Benito Castro son esencialmente el mismo tipo de l&iacute;der; la diferencia es puramente generacional (uno es viejo y el otro joven) pero comparten la misma estrategia pol&iacute;tica de resistencia pac&iacute;fica ante Amenab&aacute;r</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Rosendo Maqui representa la sabidur&iacute;a ancestral y la fe en las instituciones legales (la ley, los t&iacute;tulos coloniales); su derrota demuestra que la v&iacute;a legal es inútil cuando el poder econ&oacute;mico corrompe la justicia. Benito Castro representa al l&iacute;der que conoce el mundo moderno (minas, ej&eacute;rcito) y opta por la resistencia organizada; su derrota demuestra que tampoco la resistencia armada puede vencer al Estado oligárquico. Juntos, las dos derrotas muestran que no hay salida dentro del sistema vigente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Rosendo Maqui es el h&eacute;roe positivo y Benito Castro el villano: Maqui defiende los valores andinos tradicionales mientras Castro los traiciona al intentar modernizar a la comunidad con ideas foréneas aprendidas en las minas y el ej&eacute;rcito</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Benito Castro es superior a Rosendo Maqui en todos los aspectos: m&aacute;s joven, m&aacute;s inteligente y m&aacute;s moderno; si hubiera sido alcalde desde el principio, la comunidad de Rumi habr&iacute;a sobrevivido sin necesidad de resistencia armada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>contraposici&oacute;n Rosendo Maqui &ndash; Benito Castro</B> es uno de los ejes estructurales m&aacute;s importantes de la novela. <B>Rosendo Maqui:</B> encarna la sabidur&iacute;a ancestral, la conexi&oacute;n con la tierra y los valores comunitarios andinos. Su estrategia es legal: presentar los t&iacute;tulos coloniales ante el juez, confiar en que el sistema reconocer&aacute; la raz&oacute;n. Su <B>derrota</B> demuestra la primera gran tesis de la novela: el sistema judicial es parte del aparato de dominaci&oacute;n; la justicia formal no existe para el ind&iacute;gena. <B>Benito Castro:</B> encarna al "indio moderno" que ha salido al mundo externo (minas, ej&eacute;rcito, ciudades), conoce los mecanismos del poder y propone la resistencia organizada. Su <B>derrota</B> demuestra la segunda gran tesis: el Estado oligárquico aplasta la resistencia con el ej&eacute;rcito. Las dos derrotas sucesivas plantean una pregunta sin respuesta dentro de la novela: &iquest;c&oacute;mo puede librarse el ind&iacute;gena si ni la ley ni la resistencia lo salvan? Esta pregunta sin respuesta da a la novela su dimensi&oacute;n tr&aacute;gica profunda.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Explica c&oacute;mo se relaciona la ideolog&iacute;a de Mari&aacute;tegui (<I>7 ensayos de interpretaci&oacute;n de la realidad peruana</I>) con el planteamiento de <I>El mundo es ancho y ajeno</I>.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Mari&aacute;tegui y Alegr&iacute;a eran rivales ideol&oacute;gicos: Mari&aacute;tegui era comunista y Alegr&iacute;a aprista; sus obras se contradicen mutuamente en su an&aacute;lisis del "problema del indio"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Mari&aacute;tegui argument&oacute; en 1928 que el "problema del indio" era esencialmente econ&oacute;mico: el indio era explotado porque le hab&iacute;an quitado la tierra; la soluci&oacute;n era la reforma agraria. La novela de Alegr&iacute;a (1941) <B>ilustra narrativamente</B> esta tesis: el conflicto central es exactamente el despojo de la tierra de Rumi, y la cadena de corrupciones (juez, gamonal, ej&eacute;rcito) que lo hace posible es la demostraci&oacute;n literaria del "colonialismo interno" que Mari&aacute;tegui analizó te&oacute;ricamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Mari&aacute;tegui es citado expl&iacute;citamente en la novela: Benito Castro lee los <I>7 ensayos</I> en las minas de Quiruvilca y eso es lo que despierta su conciencia pol&iacute;tica; sin la influencia directa de Mari&aacute;tegui, Benito no habr&iacute;a liderado la resistencia de Yanañahui</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) La relaci&oacute;n es solo temporal: ambos son peruanos del mismo per&iacute;odo hist&oacute;rico; pero no hay ninguna conexi&oacute;n ideol&oacute;gica entre el marxismo de Mari&aacute;tegui y el indigenismo literario de Alegr&iacute;a</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Jos&eacute; Carlos Mari&aacute;tegui</B> (1894&ndash;1930) en sus <I>7 ensayos de interpretaci&oacute;n de la realidad peruana</I> (1928) formul&oacute; la tesis fundamental del indigenismo social: el "problema del indio" no era de raza, ni de cultura, ni de educaci&oacute;n, sino de <B>tierra</B>. El indio era explotado porque le hab&iacute;an quitado la tierra; la soluci&oacute;n era la reforma agraria y la restituci&oacute;n de las comunidades. La novela de Alegr&iacute;a (1941) puede leerse como la <B>ilustraci&oacute;n narrativa</B> de esta tesis: (1) El conflicto central es el despojo de las tierras de Rumi &rarr; confirm a la tesis de Mari&aacute;tegui. (2) La corrupci&oacute;n del sistema judicial &rarr; ilustra el "colonialismo interno" analizado en los <I>7 ensayos</I>. (3) La miseria de los mineros en Quiruvilca &rarr; la otra cara del capitalismo dependiente que Mari&aacute;tegui analiz&oacute;. Aunque Mari&aacute;tegui era marxista y Alegr&iacute;a aprista (ideologías rivales en el Per&uacute; de los a&ntilde;os 30), coincid&iacute;an en el diagn&oacute;stico fundamental: el indio era una v&iacute;ctima del sistema econ&oacute;mico, no de su propia inferioridad racial o cultural.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> &iquest;Qu&eacute; funci&oacute;n narrativa cumple el episodio de Fiero V&aacute;squez en la estructura de la novela?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Fiero V&aacute;squez es el narrador principal de la segunda parte de la novela; es quien cuenta el desplazamiento de la comunidad a Yanañahui desde el punto de vista de un testigo externo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) El episodio de Fiero V&aacute;squez plantea la alternativa de la rebeli&oacute;n individual al margen de la ley: un hombre del pueblo que rechaz&oacute; la sumisi&oacute;n convirti&eacute;ndose en bandolero; su muerte demuestra que la rebeli&oacute;n individual tampoco es una salida viable; el episodio completa el cuadro de opciones cerradas que la novela presenta al ind&iacute;gena</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Fiero V&aacute;squez es el asesino real de Mardoqueo; su episodio revela la verdad sobre el crimen que se us&oacute; para inculpar a Rosendo Maqui; el juicio se resuelve cuando Fiero confiesa su culpa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) El episodio de Fiero V&aacute;squez es un mero episodio de color local sin funci&oacute;n estructural en la novela; Alegr&iacute;a lo incluye solo para mostrar la peligrosidad de los caminos andinos y a&ntilde;adir variedad a la trama</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Fiero V&aacute;squez</B> es uno de los personajes ep&iacute;s&oacute;dicos m&aacute;s memorables de la novela. Es un forajido, un hombre del pueblo que no acept&oacute; la explotaci&oacute;n y se rebel&oacute; &mdash;no colectivamente como Benito Castro, sino individualmente, convirti&eacute;ndose en bandolero fuera de la ley. Su figura evoca la del <B>bandolero social</B> que Eric Hobsbawm analizó en su obra <I>Bandits</I>: el marginado que resiste individualmente donde la resistencia colectiva no existe o falla. La funci&oacute;n narrativa del episodio es completar el cuadro de opciones que Alegr&iacute;a presenta al ind&iacute;gena: (1) La v&iacute;a legal y pac&iacute;fica (Rosendo Maqui) &rarr; derrota. (2) La resistencia colectiva organizada (Benito Castro) &rarr; derrota. (3) La rebeli&oacute;n individual fuera de la ley (Fiero V&aacute;squez) &rarr; muerte. Las tres opciones acaban en derrota: el sistema es hermético, no hay salida dentro de &eacute;l. Esta estructura triple de la derrota da a la novela su dimensi&oacute;n tr&aacute;gica y su fuerza de denuncia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Analiza la funci&oacute;n del paisaje andino en la novela: &iquest;es meramente decorativo o cumple una funci&oacute;n narrativa activa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El paisaje andino en la novela es puramente decorativo: Alegr&iacute;a lo describe con bellas im&aacute;genes para ambientar la acci&oacute;n, pero no tiene ninguna relaci&oacute;n con el desarrollo de los personajes ni con los temas de la novela</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El paisaje andino cumple una funci&oacute;n narrativa activa: refleja el estado interior de los personajes, participa en la cosmovisi&oacute;n andina de la novela (la Pachamama como ser viviente), marca el contraste entre la fertilidad de Rumi (vida, identidad) y la esterilidad de Yanañahui (exilio, muerte), y opera como un personaje m&aacute;s que condiciona las acciones humanas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El paisaje andino en Alegr&iacute;a es siempre hostil y amenazante: la sierra representa el atraso y la miseria; Alegr&iacute;a quiere mostrar que la modernizaci&oacute;n y la salida de ese paisaje es la única salida para los ind&iacute;genas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) El paisaje tiene funci&oacute;n exclusivamente ideol&oacute;gica: las descripciones de la sierra son propaganda aprista destinada a convencer al lector urbano de Lima de la necesidad de la reforma agraria</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Uno de los grandes logros est&eacute;ticos de Alegr&iacute;a es convertir el <B>paisaje andino en un agente narrativo</B> activo, no en mero decorado. Las funciones del paisaje son m&uacute;ltiples: (1) <B>Cosmovisi&oacute;n andina:</B> la tierra no es un objeto inerte sino la <B>Pachamama</B>, ser viviente con quien el comunero mantiene una relaci&oacute;n de reciprocidad sagrada; las monta&ntilde;as son <B>apus</B> (divinidades protectoras); el paisaje es parte de la identidad espiritual de la comunidad. (2) <B>Contraste simb&oacute;lico:</B> <B>Rumi</B> (tierras fértiles, aguas limpias, buen clima) = vida, identidad, felicidad posible; <B>Yanañahui</B> ("ojo negro", tierras altas, estériles, fr&iacute;as) = exilio, lento morir, destrucci&oacute;n. El desplazamiento geogr&aacute;fico es tambi&eacute;n un descenso en la escala vital. (3) <B>Espejo interior:</B> los cambios del clima (la llegada de la lluvia, la sequ&iacute;a, la tormenta) frecuentemente reflejan el estado emocional de los personajes o anticipan eventos dram&aacute;ticos. Esta t&eacute;cnica prefigura el uso del paisaje en el realismo m&aacute;gico latinoamericano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Qu&eacute; denuncia hace la novela a trav&eacute;s del episodio de las minas de Quiruvilca y la experiencia de Benito Castro como minero?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) El episodio elogia el trabajo minero como forma de modernizaci&oacute;n y progreso para los ind&iacute;genas que salen de la pobreza de la sierra; Benito Castro aprende habilidades modernas en Quiruvilca que luego usa para mejorar la comunidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) El episodio denuncia la doble explotaci&oacute;n del trabajador andino: el imperialismo econ&oacute;mico (minas de propiedad extranjera que extraen la riqueza nacional sin beneficiar a los peruanos), las condiciones brutales de trabajo (silicosis, accidentes, jornadas interminables, salarios m&iacute;seros), y la ausencia de protecci&oacute;n legal del trabajador; demuestra que el ind&iacute;gena que abandona la tierra no encuentra libertad sino otra forma de esclavitud</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) El episodio de Quiruvilca no tiene funci&oacute;n de denuncia; es simplemente la biograf&iacute;a de Benito Castro que Alegr&iacute;a incluye para explicar c&oacute;mo ese personaje lleg&oacute; a ser l&iacute;der; no implica ning&uacute;n juicio sobre las condiciones mineras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) El episodio denuncia exclusivamente al APRA, el partido pol&iacute;tico de Haya de la Torre, por no haber organizado a los mineros en sindicatos; Alegr&iacute;a aprovecha la voz de Benito Castro para criticar a su propio partido desde adentro</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El episodio de las <B>minas de Quiruvilca</B> es uno de los cap&iacute;tulos ep&iacute;s&oacute;dicos m&aacute;s poderosos de la novela y cumple una doble funci&oacute;n: (1) <B>Formaci&oacute;n de Benito Castro:</B> es all&iacute; donde el joven toma conciencia de su condici&oacute;n como sujeto explotado y empieza a pensar en t&eacute;rminos de clase y organizaci&oacute;n. (2) <B>Denuncia del capitalismo minero:</B> las minas de Quiruvilca eran (y son) de propiedad extranjera; la riqueza mineral del Per&uacute; era extra&iacute;da para beneficiar a las empresas estadounidenses o brit&aacute;nicas, no a los peruanos. Los trabajadores recib&iacute;an salarios m&iacute;seros, sufrían accidentes laborales frecuentes (des prendimientos, explosiones), enfermedades profesionales (especialmente la silicosis, "enfermedad del polvo de piedra" que destruye los pulmones), y no ten&iacute;an ninguna protecci&oacute;n legal. El episodio demuestra la tesis central de la novela: el ind&iacute;gena que pierde su tierra y sale al mundo moderno no encuentra libertad sino una nueva forma de explotaci&oacute;n. El t&iacute;tulo de la novela se confirma: el mundo es ancho, pero en ningún lugar hay lugar para el ind&iacute;gena.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> &iquest;En qu&eacute; sentido la novela puede leerse como una "epopeya colectiva"? &iquest;Qui&eacute;n es el verdadero protagonista: Rosendo Maqui, Benito Castro o la comunidad de Rumi?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Rosendo Maqui es claramente el &uacute;nico protagonista: toda la novela gira en torno a &eacute;l; la comunidad de Rumi es simplemente el escenario en que se desarrolla su tragedia personal</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) El verdadero protagonista es la <B>comunidad de Rumi</B> como organismo colectivo; Rosendo Maqui y Benito Castro son sus representantes en dos momentos distintos, pero ning&uacute;n individuo es el centro; la novela es una "epopeya colectiva" porque su sujeto es una comunidad humana en su totalidad: sus ritos, fiestas, valores, conflictos, resistencia y destrucci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) El protagonista es &Aacute;lvaro Amenab&aacute;r: toda la acci&oacute;n est&aacute; determinada por sus decisiones; Alegr&iacute;a lo presenta como el motor de la trama y le dedica los cap&iacute;tulos m&aacute;s extensos de la novela</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) No existe un protagonista definido porque la novela es una colecci&oacute;n de cuentos independientes sin hilo narrativo com&uacute;n; la crí tica moderna ha descartado el concepto de "novela" para esta obra y la reclasifica como antolog&iacute;a de relatos indigenistas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Uno de los rasgos m&aacute;s originales y modernos de la novela de Alegr&iacute;a es la elecci&oacute;n de la <B>comunidad como protagonista colectivo</B>. A diferencia de la novela occidental tradicional, que centra la acci&oacute;n en un individuo, <I>El mundo es ancho y ajeno</I> tiene como sujeto narrativo central a la <B>comunidad de Rumi</B>: su historia, sus ritos (las fiestas, la minka, el cabildo), sus personajes individuales (que son m&uacute;ltiples y se van sucediendo como representantes de la colectividad), su cosmovisión y su destrucci&oacute;n. Esto justifica el t&eacute;rmino de <B>"epopeya colectiva"</B>: como la <I>Il&iacute;ada</I> no es solo la historia de Aquiles sino la del pueblo griego en guerra, <I>El mundo es ancho y ajeno</I> no es solo la historia de Rosendo o Benito sino la de un pueblo andino en su lucha por sobrevivir. La estructura ep&iacute;s&oacute;dica (cap&iacute;tulos semi-aut&oacute;nomos sobre distintos personajes) refleja esta multiplicidad: todos son fragmentos de un mismo destino colectivo. Este modelo influy&oacute; en la novela latinoamericana posterior, especialmente en <I>Cien a&ntilde;os de soledad</I> de Garc&iacute;a M&aacute;rquez, donde el protagonista tambi&eacute;n es una comunidad (<B>Macondo</B>).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Analiza c&oacute;mo la novela integra elementos de la cosmovisión andina (Pachamama, apus, Nasha Suro) sin caer en el exotismo folkl&oacute;rico. &iquest;Qu&eacute; efecto produce esta integraci&oacute;n?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) La novela usa los elementos m&iacute;ticos andinos como decoraci&oacute;n ex&oacute;tica destinada a atraer al lector europeo fascinado por lo primitivo; es exactamente el exotismo folkl&oacute;rico que critica la cr&iacute;tica postcolonial moderna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Alegr&iacute;a integra los elementos m&iacute;tico-espirituales (la Pachamama, los apus, la curandera Nasha Suro, los presagios) como parte natural de la cosmovisión de los personajes, sin presentarlos como supersticiones primitivas ni como curiosidades ex&oacute;ticas; son la realidad vivida de la comunidad; este realismo m&iacute;tico crea una visi&oacute;n del mundo andino desde adentro y prefigura el "realismo m&aacute;gico" latinoamericano posterior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) La novela usa los elementos andinos exclusivamente para demostrar el atraso cultural de la comunidad ind&iacute;gena y justificar la necesidad de su modernizaci&oacute;n; los ritos y creencias son presentados como obst&aacute;culos al desarrollo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Nasha Suro y la cosmovisi&oacute;n andina solo aparecen en el primer cap&iacute;tulo de la novela como marco inicial; a partir del cap&iacute;tulo dos, Alegr&iacute;a abandona estos elementos y adopta un realismo social puro sin ningún elemento m&iacute;tico</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Uno de los logros m&aacute;s importantes de la novela es su tratamiento de los elementos de la <B>cosmovisión andina</B>. Alegr&iacute;a los integra con naturalidad: la <B>Pachamama</B> (madre tierra) no es una creencia "primitiva" que el narrador describe desde afuera con distancia etnogr&aacute;fica; es la realidad vivida de la comunidad. Los <B>apus</B> (esp&iacute;ritus de las monta&ntilde;as) condicionan las decisiones de los personajes. La curandera <B>Nasha Suro</B> cura con plantas medicinales y rituales que son parte integrante de la vida comunitaria, no exhibición folkl&oacute;rica. Los <B>presagios</B> y sueños tienen valor narrativo real: anticipan eventos. Este tratamiento anticipa lo que la cr&iacute;tica llamar&aacute; <B>"realismo m&aacute;gico"</B> latinoamericano (concepto que har&iacute;a famoso <B>Garc&iacute;a M&aacute;rquez</B> en los a&ntilde;os 60): la convivencia natural entre la realidad emp&iacute;rica y los elementos m&iacute;tico-espirituales sin jerarquía entre ellos. El efecto es crear una visi&oacute;n del mundo andino <B>desde adentro</B>, desde la perspectiva de quien lo vive como real, no como ob servador externo que juzga.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Compara el indigenismo de Ciro Alegr&iacute;a con el de Jos&eacute; Mar&iacute;a Arguedas: &iquest;cu&aacute;l de los dos representa una visi&oacute;n m&aacute;s "desde adentro" de la cultura andina y por qu&eacute;?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Alegr&iacute;a representa con m&aacute;s profundidad la cultura andina porque vivi&oacute; m&aacute;s a&ntilde;os en la sierra; Arguedas, aunque es m&aacute;s famoso internacionalmente, ten&iacute;a menos experiencia directa con las comunidades ind&iacute;genas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Arguedas representa la cultura andina "desde m&aacute;s adentro" porque era bil&inguuml;e quechua-espa&ntilde;ol, fue criado entre ind&iacute;genas, e inventa&oacute; un "castellano quechuizado" que reproduce la estructura sint&aacute;ctica del pensamiento andino; Alegr&iacute;a, siendo criollo hispanohabalnte, mira la cultura andina con simpat&iacute;a y profundidad, pero desde afuera; la diferencia es de posici&oacute;n cultural, no de calidad literaria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Ambos representan exactamente igual la cultura andina porque los dos nacieron en La Libertad y compartieron el mismo maestro (C&eacute;sar Vallejo) y la misma militancia aprista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Ninguno de los dos representa la cultura andina "desde adentro": ambos eran mestizos que mir aron al indio con la mirada del crioll o urbano; la &uacute;nica literatura verdaderamente "desde adentro" es la literatura en lengua quechua producida por autores ind&iacute;genas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta comparaci&oacute;n es uno de los temas m&aacute;s importantes del estudio del indigenismo peruano. <B>Ciro Alegr&iacute;a</B>: criollo de familia hacendada, hispanohablante, que conoció la cultura andina desde fuera como observador privilegiado (vivió entre ind&iacute;genas, los conoci&oacute; profundamente, los am&oacute;), pero desde una posición culturalmente exterior. Su indigenismo es el de quien mira al indio con simpat&iacute;a y comprensi&oacute;n profunda. <B>Jos&eacute; Mar&iacute;a Arguedas</B> (Andahuaylayas, 1911&ndash;1969): fue criado en comunidades quechuas, aprendi&oacute; el quechua antes que el espa&ntilde;ol, y vivi&oacute; la cultura andina como suya. Esto le permite en <I>Los r&iacute;os profundos</I> (1958) y otras obras inventar un "castellano quechuizado" que no es mala gram&aacute;tica sino la transposición del ritmo, la sintaxis y la cosmovisión quechua al espa&ntilde;ol. La diferencia no es de calidad literaria (ambas son obras maestras) sino de <B>posición cultural</B>: Alegr&iacute;a mira desde afuera con amor; Arguedas mira desde adentro con desgarro. Esta diferencia explica tambi&eacute;n la diferencia de tono: &eacute;pico y colectivo en Alegr&iacute;a; l&iacute;rico y desgarrado en Arguedas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Desde la perspectiva de la teor&iacute;a postcolonial (Frantz Fanon, Homi Bhabha), &iquest;c&oacute;mo puede analizarse el "colonialismo interno" que denuncia <I>El mundo es ancho y ajeno</I>?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El "colonialismo interno" no es un concepto aplicable al Per&uacute; porque el pa&iacute;s ya era independiente desde 1821; la teor&iacute;a postcolonial solo puede aplicarse a pa&iacute;ses que permanecieron bajo dominio colonial directo hasta el siglo XX</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El "colonialismo interno" describe c&oacute;mo, tras la independencia pol&iacute;tica, las estructuras de dominaci&oacute;n racial y econ&oacute;mica del colonialismo se perpet&uacute;an dentro del mismo pa&iacute;s: la &eacute;lite criolla reemplaz&oacute; a los espa&ntilde;oles en el papel de dominadores; la novela ilustra c&oacute;mo el Estado peruano independiente reproduce las mismas relaciones de poder colonial contra los ind&iacute;genas, mediante el gamonal, el juez corrupto y el ej&eacute;rcito</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) La teor&iacute;a postcolonial de Fanon y Bhabha analiza exclusivamente el colonialismo brit&aacute;nico en &Aacute;frica y Asia; aplicarla a Per&uacute; es un error metodol&oacute;gico porque las condiciones del colonialismo espa&ntilde;ol en Am&eacute;rica son completamente diferentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La novela de Alegr&iacute;a rechaza el concepto de "colonialismo interno" porque la mayor&iacute;a de los personajes opresores (el juez, el gobernador) son descendientes de ind&iacute;genas mestizos, no de espa&ntilde;oles; el colonialismo ya no existía en el Per&uacute; de los a&ntilde;os 1930</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El concepto de <B>"colonialismo interno"</B> fue formulado por el soci&oacute;logo mexicano <B>Pablo Gonz&aacute;lez Casanova</B> (1965) para describir c&oacute;mo, despu&eacute;s de la independencia formal, las estructuras de dominaci&oacute;n del colonialismo se perpetúan dentro del mismo Estado-nación: una &eacute;lite &eacute;tnica y econ&oacute;micamente dominante (criolla, mestiza) ejerce sobre los pueblos ind&iacute;genas las mismas relaciones de explotaci&oacute;n, exclusi&oacute;n y despojo que el colonialismo externo. <I>El mundo es ancho y ajeno</I> ilustra este concepto con precisi&oacute;n: (1) La <B>independencia pol&iacute;tica</B> (1821) no cambi&oacute; la situaci&oacute;n de los ind&iacute;genas; las leyes republicanas formalmente igualitarias son inaplicables cuando el poder econ&oacute;mico (Amenab&aacute;r) controla el poder judicial. (2) El <B>Estado peruano</B> envía soldados para destruir la comunidad de Yanañahui en defensa del terrateniente, exactamente como el Estado colonial usaba la fuerza para proteger al encomendero. (3) La <B>Fanon</B> en <I>Los condenados de la tierra</I> (1961) describe c&oacute;mo la burgues&iacute;a nacional postcolonial reproduce las estructuras del colonialismo europeo; Amenab&aacute;r es ese burgués/terrateniente nacional. (4) <B>Homi Bhabha</B> analizar&iacute;a la posición de Benito Castro como el sujeto colonial que "m&iacute;mics" (imita) la cultura dominante (aprende espa&ntilde;ol, sirve en el ej&eacute;rcito) pero sigue siendo exc luido.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Eval&uacute;a la tesis de que <I>El mundo es ancho y ajeno</I> es una novela "sin salida": un texto que denuncia la opresi&oacute;n pero no propone alternativas. &iquest;Es esta caracter&iacute;stica una debilidad o una fortaleza literaria?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Es una debilidad clara: toda buena literatura de denuncia social debe ofrecer alternativas pol&iacute;ticas concretas al problema que denuncia; la novela de Alegr&iacute;a falla en este deber porque no indica qu&eacute; deben hacer los ind&iacute;genas para liberarse</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Es una fortaleza literaria y una elección &eacute;tica madura: al no ofrecer soluciones f&aacute;ciles, Alegr&iacute;a evita el panfleto pol&iacute;tico y crea una obra de mayor honestidad est&eacute;tica; la "salida sin salida" fuerza al lector a confrontar la realidad directamente, sin el consuelo de una soluci&oacute;n ficticia, y genera una urgencia moral m&aacute;s poderosa que cualquier programa pol&iacute;tico incluido en el texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La novela s&iacute; ofrece una salida clara: el final del libro es optimista; la supervivencia de algunos comuneros que huyen asegura la continuidad de la cultura de Rumi; Alegr&iacute;a indica impl&iacute;citamente que la resistencia cultural es la &uacute;nica salida posible</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La falta de alternativas en la novela se debe a la censura que Alegr&iacute;a sufr&iacute;a en el exilio chileno; en sus manuscritos originales hab&iacute;a un cap&iacute;tulo final con un llamado expl&iacute;cito a la revoluci&oacute;n ind&iacute;gena, que fue eliminado por los editores</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una de las preguntas m&aacute;s debatidas sobre la novela y exige una valoraci&oacute;n cr&iacute;tica madura. La cr&iacute;tica de izquierda (especialmente la marxista) reproch&oacute; a Alegr&iacute;a no ofrecer una salida revolucionaria: la novela muestra la derrota pero no el camino a la victoria. Sin embargo, esta cr&iacute;tica confunde la <B>funci&oacute;n de la literatura</B> con la del panfleto pol&iacute;tico. Los argumentos a favor de la "novela sin salida" como fortaleza: (1) <B>Honestidad hist&oacute;rica:</B> en el Per&uacute; de los a&ntilde;os 1930, la comunidad ind&iacute;gena no ten&iacute;a salida real dentro del sistema; ofrecer una salida fácil ser&iacute;a mentira. (2) <B>Mayor impacto moral:</B> al negar al lector el consuelo de la soluci&oacute;n, la novela genera una urgencia moral m&aacute;s profunda que si Benito Castro triunfara. (3) <B>Deber de la literatura:</B> como dec&iacute;a Bertolt Brecht, la funci&oacute;n del teatro (y de la novela) de denuncia no es consolar sino incomodar, no cerrar preguntas sino abrirlas. (4) <B>Evitar el panfleto:</B> al no incluir un discurso pol&iacute;tico expl&iacute;cito ni una soluci&oacute;n ideol&oacute;gica, Alegr&iacute;a mantiene la integridad est&eacute;tica de la novela; la denuncia emerge de la narraci&oacute;n misma, no de la pr&eacute;dica. La comparaci&oacute;n con <I>Huasipungo</I> de Icaza (Ecuador, 1934), que s&iacute; tiene una coda revolucionaria expl&iacute;cita, muestra que la opción de Alegr&iacute;a produce una obra literariamente m&aacute;s duradera.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Analiza la relevancia de <I>El mundo es ancho y ajeno</I> para la realidad peruana del siglo XXI. &iquest;Las problem&aacute;ticas que denuncia siguen vigentes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) La novela es completamente anacr&oacute;nica: el gamonalismo desapareci&oacute; con la Reforma Agraria de Velasco (1969) y la redistribuci&oacute;n de tierras; los problemas que Alegr&iacute;a describe no existen en el Per&uacute; del siglo XXI</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Las problem&aacute;ticas siguen siendo vigentes en sus versiones contemporáneas: el despojo de tierras de comunidades campesinas e ind&iacute;genas por empresas mineras o agroindustriales (el "neoextractivisimo"), la debilidad del Estado para proteger los derechos territoriales de las comunidades, la corrupci&oacute;n judicial y la criminalizaci&oacute;n de la protesta social (Bagua 2009, conflictos mineros) repiten estructuralmente el patr&oacute;n que Alegr&iacute;a denunci&oacute; en 1941</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) La novela es relevante solo para la regi&oacute;n de La Libertad, donde fue escrita; sus problemas son espec&iacute;ficamente liberteños y no pueden extrapolarse a otras regiones del Per&uacute; ni a otros pa&iacute;ses latinoamericanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La novela es relevante porque proporciona una gu&iacute;a pol&iacute;tica exacta para los movimientos ind&iacute;genas del siglo XXI; sus estrategias de resistencia (la comunidad de Benito Castro) son perfectamente aplicables a los conflictos territoriales actuales sin ninguna modificaci&oacute;n</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La relevancia contemporánea de <I>El mundo es ancho y ajeno</I> es una de las pruebas m&aacute;s poderosas de la profundidad de la novela. Si bien el gamonalismo cl&aacute;sico (el hacendado serrano con poder feudal absoluto) fue debilitado por la <B>Reforma Agraria de Velasco Alvarado</B> (1969&ndash;1975), sus estructuras de fondo persisten en nuevas formas: (1) <B>Neoextractivismo:</B> empresas mineras (<B>Conga</B>, <B>Las Bambas</B>, <B>Tía María</B>), agroindustriales o hidrocarbúrferas despojan a comunidades campesinas e ind&iacute;genas de sus tierras y aguas. (2) <B>Debilidad institucional:</B> el Estado sigue sin garantizar efectivamente los derechos territoriales reconocidos en el <B>Convenio 169 de la OIT</B> (derecho a la consulta previa). (3) <B>Corrupci&oacute;n judicial:</B> los procesos legales de las comunidades para defender sus territorios siguen siendo lentos, costosos y frecuentemente adversos cuando el poder econ&oacute;mico presiona. (4) <B>Criminalizaci&oacute;n de la protesta:</B> el <B>Baguazo</B> (5 de junio de 2009), donde murieron 33 personas (nativos amazónicos y polic&iacute;as) en defensa de la tierra amazónica, repite estructuralmente el ataque a Yanañahui. El patr&oacute;n Amenab&aacute;r &rarr; juez corrupto &rarr; soldados sigue vigente, con actores diferentes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El cr&iacute;tico Antonio Cornejo Polar acu&ntilde;&oacute; el concepto de "heterogeneidad literaria" para describir la literatura latinoamericana que enfrenta culturas distintas sin resolverlas en una s&iacute;ntesis. &iquest;C&oacute;mo aplica este concepto a la novela de Alegr&iacute;a?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La novela de Alegr&iacute;a es homog&eacute;nea, no heterog&eacute;nea: Alegr&iacute;a logr&oacute; una s&iacute;ntesis perfecta entre la tradici&oacute;n oral andina y la novela europea; el resultado es una obra sin tensiones culturales internas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La "heterogeneidad" se manifiesta en la novela en la convivencia sin resoluci&oacute;n de dos sistemas de signos: el universo cultural andino (cosmovisión, quechuismos, oralidad, Pachamama) y la forma literaria occidental (la novela, el narrador omnisciente, la escritura); esta tensi&oacute;n no resuelta es productiva: crea la riqueza de la novela pero tambi&eacute;n expone sus l&iacute;mites (Alegr&iacute;a habla "sobre" los ind&iacute;genas pero no "desde" ellos)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Cornejo Polar acu&ntilde;&oacute; el concepto de "heterogeneidad" para criticar a Alegr&iacute;a: seg&uacute;n &eacute;l, la novela es un fraude porque pretende representar la cultura andina pero en realidad la deforma al traducirla a formas literarias europeas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La "heterogeneidad literaria" de Cornejo Polar se aplica exclusivamente a Arguedas, no a Alegr&iacute;a; la obra de Alegr&iacute;a es culturalmente homog&eacute;nea porque est&aacute; completamente inscrita en la tradici&oacute;n literaria criolla occidental</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Antonio Cornejo Polar</B> (Lima, 1936&ndash;1997) fue el cr&iacute;tico literario peruano m&aacute;s importante del siglo XX. En su obra <I>Los universos narrativos de Jos&eacute; Mar&iacute;a Arguedas</I> (1973) y <I>Escribir en el aire</I> (1994) desarroll&oacute; el concepto de <B>"heterogeneidad literaria"</B>: la condici&oacute;n de la literatura latinoamericana que emerge de la coexistencia de culturas radicalmente distintas (ind&iacute;gena, africana, europea) sin una s&iacute;ntesis armónica posible. Aplicado a <I>El mundo es ancho y ajeno</I>: (1) La novela usa la <B>forma occidental</B> (la novela realista del siglo XIX, el narrador omnisciente europeo) para narrar una realidad radicalmente no-occidental (la cosmovisi&oacute;n andina quechua). (2) Esta operaci&oacute;n produce una <B>tensi&oacute;n productiva</B>: la riqueza de la cosmovisión andina entra en el texto, pero filtrada por una forma literaria que le es estructuralmente ajena. (3) El resultado es "heterog&eacute;neo": no hay s&iacute;ntesis; hay coexistencia tensa de dos sistemas culturales. (4) El l&iacute;mite que Cornejo Polar señala: Alegr&iacute;a <B>habla sobre</B> los ind&iacute;genas (desde afuera, con am or) pero no <B>desde</B> ellos (como har&iacute;a Arguedas con el quechua y el "castellano quechuizado"). Esta critica no niega el valor de la novela sino que ubica su posici&oacute;n cultural con precisi&oacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> La estructura ep&iacute;s&oacute;dica de la novela ha sido comparada por la cr&iacute;tica con la &eacute;pica hom&eacute;rica (<I>Ili&aacute;da</I>, <I>Odisea</I>). &iquest;En qu&eacute; sentido la novela de Alegr&iacute;a puede considerarse una "epopeya" del mundo andino y qu&eacute; diferencias la separan del modelo &eacute;pico cl&aacute;sico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La comparaci&oacute;n con Homero es incorrecta: la &eacute;pica requiere un h&eacute;roe individual (Aquiles, Odiseo) y hazañas sobrenaturales; la novela de Alegr&iacute;a tiene un protagonista colectivo y un final de derrota, elementos completamente ajenos a la &eacute;pica cl&aacute;sica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La novela comparte con la &eacute;pica el protagonista colectivo (una comunidad / un pueblo), la estructura ep&iacute;s&oacute;dica (cap&iacute;tulos semi-aut&oacute;nomos), el tono elevado y la amplitud de la visi&oacute;n social; se diferencia en que es una "epopeya de la derrota" (no hay victoria final), en que el h&eacute;roe colectivo es un pueblo explotado (no una aristocracia guerrera), y en que usa la prosa narrativa en vez del verso; es una anti-epopeya o una epopeya del vencido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) La comparaci&oacute;n con Homero solo es v&aacute;lida en el aspecto ling&uuml;&iacute;stico: como Homero us&oacute; el griego arcaico, Alegr&iacute;a us&oacute; el espa&ntilde;ol del siglo XVI de los t&iacute;tulos coloniales que presenta en la novela; ambos autores muestran predilecci&oacute;n por el lenguaje arcaizante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La novela es una epopeya en el sentido estricto del g&eacute;nero: tiene verso (Alegr&iacute;a intercala fragmentos de huaynos y canciones en metro po&eacute;tico regular), dioses (los apus y la Pachamama), h&eacute;roe individual (Benito Castro = el Aquiles andino) y batalla final decisiva (el ataque a Yanañahui = la ca&iacute;da de Troya)</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparaci&oacute;n con la <B>&eacute;pica hom&eacute;rica</B> es frecuente en la cr&iacute;tica literaria de la novela (Luis Alberto S&aacute;nchez, entre otros, la propuso). <B>Similitudes con la &eacute;pica:</B> (1) <B>Protagonista colectivo:</B> como la <I>Ili&aacute;da</I> no es solo la historia de Aquiles sino del pueblo griego en guerra, <I>El mundo es ancho y ajeno</I> no es la historia de Rosendo o Benito sino de la comunidad de Rumi. (2) <B>Estructura episódica:</B> la &eacute;pica hom&eacute;rica tiene episodios relativamente aut&oacute;nomos (el catálogo de naves, los duelos individuales, los sue&ntilde;os); la novela tiene cap&iacute;tulos semi-independientes centrados en distintos personajes. (3) <B>Amplitud de visi&oacute;n social:</B> ambas obras pretenden retratar a un pueblo en su totalidad. <B>Diferencias fundamentales:</B> (1) <B>Epopeya de la derrota:</B> en la &eacute;pica cl&aacute;sica el h&eacute;roe triunfa o muere gloriosamente; en Alegr&iacute;a la comunidad es simplemente destruida, sin glora compensatoria. (2) <B>H&eacute;roe subalterno:</B> los h&eacute;roes de Homero son reyes y nobles guerreros; los de Alegr&iacute;a son campesinos ind&iacute;genas explotados. (3) <B>Prosa, no verso:</B> la &eacute;pica cl&aacute;sica est&aacute; en verso; la novela en prosa narrativa realista. Por esto algunos cr&iacute;ticos prefieren llamarla <B>"anti-epopeya"</B> o <B>"epopeya del vencido"</B>: tiene la ambici&oacute;n y la escala de la &eacute;pica, pero su resultado es la derrota del protagonista colectivo.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

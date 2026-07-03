@@ -1,0 +1,527 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>El Quijote - Miguel de Cervantes - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REG&Iacute;STRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="LITERATURA.HTML">&larr; Volver a los temas de Literatura</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">LITERATURA &middot; TEMA 7</DIV>
+<H1>El Quijote &mdash; Miguel de Cervantes</H1>
+<DIV CLASS="sub">Renacimiento y Barroco espa&ntilde;ol &middot; Novela moderna &middot; Don Quijote y Sancho &middot; Temas e innovaciones narrativas &middot; Legado universal</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicaci&oacute;n completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Miguel de Cervantes Saavedra: vida y contexto hist&oacute;rico</H3>
+<B>Miguel de Cervantes Saavedra</B> naci&oacute; en <B>Alcal&aacute; de Henares</B> (Espa&ntilde;a) el <B>29 de septiembre de 1547</B> y muri&oacute; en <B>Madrid</B> el <B>22 de abril de 1616</B> (curiosamente, el mismo a&ntilde;o y pr&aacute;cticamente la misma fecha que William Shakespeare, aunque no el mismo d&iacute;a exacto por la diferencia de calendarios gregoriano y juliano). Su vida fue extraordinariamente agitada y llena de adversidades que, sin embargo, le proporcionaron el material humano para crear su obra magna.
+
+<H4>Datos biogr&aacute;ficos esenciales:</H4>
+<UL>
+<LI><B>Origen:</B> hijo de Rodrigo de Cervantes, cirujano m&eacute;dico itinerante de familia hidalga pero empobrecida.</LI>
+<LI><B>Formaci&oacute;n:</B> estudi&oacute; en Madrid con el humanista <B>Juan L&oacute;pez de Hoyos</B>, quien lo llam&oacute; "mi caro y amado discípulo". Se form&oacute; en la tradici&oacute;n humanista del Renacimiento espa&ntilde;ol.</LI>
+<LI><B>Italia (1569&ndash;1575):</B> viaj&oacute; a Italia como camarero del cardenal Acquaviva; en Roma absorbi&oacute; el humanismo renacentista italiano (Ariosto, Petrarca, Dante) que marcar&iacute;a profundamente su obra.</LI>
+<LI><B>Soldado en Lepanto (1571):</B> particip&oacute; en la famosa <B>Batalla de Lepanto</B> (7 de octubre de 1571), donde la flota cristiana de la Liga Santa derrot&oacute; a los turcos otomanos. A pesar de estar enfermo de fiebre, combati&oacute; valientemente en la galera <I>La Marquesa</I> y recibi&oacute; dos arcabuzazos en el pecho y uno en la mano izquierda, que qued&oacute; inutilizada. Por esta herida fue llamado <B>"el manco de Lepanto"</B>. Cervantes siempre consider&oacute; Lepanto su mayor gloria.</LI>
+<LI><B>Cautiverio en Argel (1575&ndash;1580):</B> al regresar a Espa&ntilde;a, su barco fue capturado por piratas berberiscos; fue llevado a Argel como esclavo durante <B>cinco a&ntilde;os</B>. Intent&oacute; escapar cuatro veces sin &eacute;xito. Finalmente fue rescatado por los frailes trinitarios mediante el pago de un rescate.</LI>
+<LI><B>Regreso a Espa&ntilde;a y dificultades (1580&ndash;1604):</B> trabaj&oacute; como recaudador de impuestos en Andaluc&iacute;a; fue excomulgado (temporalmente) por requisar trigo de una iglesia; sufri&oacute; encarcelamientos por problemas de cuentas. En la c&aacute;rcel de Sevilla (o La Mancha) se dice que tuvo la primera idea del Quijote.</LI>
+<LI><B>Publicaci&oacute;n del Quijote:</B> Primera parte en <B>1605</B>; Segunda parte en <B>1615</B>, un a&ntilde;o antes de su muerte.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> Datos biogr&aacute;ficos que siempre preguntan: nacimiento en <B>Alcal&aacute; de Henares, 1547</B> &middot; muerte en <B>Madrid, 1616</B> &middot; "el manco de Lepanto" (herida en la mano izquierda, no en la derecha) &middot; cautiverio en <B>Argel 5 a&ntilde;os</B> (1575&ndash;1580) &middot; Primera parte del Quijote: <B>1605</B> &middot; Segunda parte: <B>1615</B>. Cervantes y Shakespeare murieron el mismo a&ntilde;o (1616) pero no el mismo d&iacute;a exacto.</DIV>
+
+<H3>2. Contexto literario: el Renacimiento y el Barroco espa&ntilde;ol</H3>
+El Quijote naci&oacute; en la confluencia de dos grandes movimientos culturales europeos:
+
+<H4>El Renacimiento espa&ntilde;ol (siglo XVI):</H4>
+<UL>
+<LI>Rescate de los cl&aacute;sicos greco-latinos; exaltaci&oacute;n del ser humano como centro del universo (<B>humanismo</B>).</LI>
+<LI>En literatura: el <B>petrarquismo</B> (soneto, idealismo amoroso), las <B>novelas de caballer&iacute;a</B> (<I>Amad&iacute;s de Gaula</I>, <I>Tirant lo Blanch</I>), la <B>novela pastoril</B> (<I>La Diana</I> de Montemayor), la <B>novela picaresca</B> (<I>Lazarillo de Tormes</I>, 1554).</LI>
+<LI>El <B>Erasmismo</B> espa&ntilde;ol (influencia del fil&oacute;sofo Erasmo de Rotterdam): cr&iacute;tica de las instituciones, espiritualidad interior, defensa de la raz&oacute;n.</LI>
+</UL>
+
+<H4>El Barroco espa&ntilde;ol (fines s. XVI &ndash; s. XVII):</H4>
+<UL>
+<LI>Reacci&oacute;n ante el optimismo renacentista; desengaño, pesimismo, contraste entre apariencia y realidad.</LI>
+<LI>La frase central del Barroco: <B><I>el mundo es teatro</I></B> (Calder&oacute;n de la Barca) y la vida es sue&ntilde;o o ilusin.</LI>
+<LI>En el contexto espa&ntilde;ol: el <B>Siglo de Oro</B> (s. XVI&ndash;XVII) fue el per&iacute;odo de mayor esplendor de la literatura y el arte espa&ntilde;ol: Lope de Vega, Calder&oacute;n, Quevedo, G&oacute;ngora, Tirso de Molina, y Cervantes.</LI>
+</UL>
+
+<H4>Las novelas de caballer&iacute;a: el blanco de Cervantes:</H4>
+Las <B>novelas de caballer&iacute;a</B> eran el g&eacute;nero m&aacute;s popular del siglo XVI espa&ntilde;ol: narraban las aventuras de caballeros andantes idealizados (<B>Amad&iacute;s de Gaula</B>, <B>Palmer&iacute;n de Inglat&eacute;rra</B>, etc.) en mundos fant&aacute;sticos llenos de gigantes, encantadores y damas perfectas. Eran enormemente populares pero tambi&eacute;n duramente criticadas por intelectuales como Luis Vives y Erasmo por considerarlas mentirosas, inmorales e inútiles. Cervantes, en el pr&oacute;logo del Quijote, declara expl&iacute;citamente que su intenci&oacute;n es <B>"derribar la m&aacute;quina mal fundada destos caballerescos libros"</B>.
+
+<DIV CLASS="mapa-note">&#128221; <B>El Siglo de Oro espa&ntilde;ol:</B> Per&iacute;odo de m&aacute;ximo esplendor cultural de Espa&ntilde;a (aprox. 1492&ndash;1681). Coincide parad&oacute;jicamente con el inicio del declive pol&iacute;tico del Imperio espa&ntilde;ol. Otros autores clave: <B>Lope de Vega</B> (teatro, <I>Fuenteovejuna</I>), <B>Calder&oacute;n de la Barca</B> (<I>La vida es sue&ntilde;o</I>), <B>Francisco de Quevedo</B> (poes&iacute;a barroca, <I>El Busc&oacute;n</I>), <B>Luis de G&oacute;ngora</B> (gongorismo o culteranismo), <B>Santa Teresa de &Aacute;vila</B> y <B>San Juan de la Cruz</B> (m&iacute;stica).</DIV>
+
+<DIV CLASS="cultura-titulo">&#128218; EL INGENIOSO HIDALGO DON QUIJOTE DE LA MANCHA<SPAN>Estructura, argumento y personajes de la novela m&aacute;s importante del mundo</SPAN></DIV>
+
+<H3>3. T&iacute;tulo, estructura y publicaci&oacute;n</H3>
+La obra completa tiene dos partes con t&iacute;tulos distintos:
+<UL>
+<LI><B>Primera parte (1605):</B> <I>El ingenioso hidalgo don Quijote de la Mancha</I>. Publicada en Madrid por el impresor Juan de la Cuesta, con privilegio real. Tuvo un &eacute;xito inmediato y explosivo: se agotaron las ediciones y fue traducida r&aacute;pidamente al franc&eacute;s e ingl&eacute;s.</LI>
+<LI><B>Segunda parte (1615):</B> <I>El ingenioso caballero don Quijote de la Mancha</I>. Publicada con la motivaci&oacute;n adicional de desbancar la <B>Segunda parte ap&oacute;crifa</B> de <B>Alonso Fern&aacute;ndez de Avellaneda</B> (1614), un autor desconocido que public&oacute; una continuaci&oacute;n no autorizada del Quijote.</LI>
+</UL>
+
+<H4>El Quijote ap&oacute;crifo de Avellaneda (1614):</H4>
+Este episodio es fundamental para comprender la Segunda Parte: en <B>1614</B>, mientras Cervantes trabajaba en su continuaci&oacute;n, un autor desconocido bajo el seud&oacute;nimo de <B>Alonso Fern&aacute;ndez de Avellaneda</B> public&oacute; una Segunda Parte no autorizada, de inferior calidad y ofensiva para Cervantes. En respuesta, Cervantes aceler&oacute; la publicaci&oacute;n de su propia Segunda Parte (1615) e introdujo un episodio genial: Don Quijote <I>se entera</I> de que existe la versi&oacute;n de Avellaneda y reacciona ante ella, convirti&eacute;ndose en el primer personaje literario de la historia que lee y comenta una versi&oacute;n falsa de s&iacute; mismo. Este recurso metaficcional es uno de los m&aacute;s audaces de toda la literatura universal.
+
+<H3>4. Argumento general: las tres salidas de Don Quijote</H3>
+<B>Alonso Quijano</B>, hidalgo manchego de unos <B>50 a&ntilde;os</B>, ha le&iacute;do tantas novelas de caballería que ha perdido el juicio. Se cree caballero andante, se rebautiza <B>Don Quijote de la Mancha</B>, llama <B>Rocinante</B> a su flaco caballo y convierte a una labradora llamada <B>Aldonza Lorenzo</B> en su dama imaginaria, a quien llama <B>Dulcinea del Toboso</B>. Sale tres veces en busca de aventuras:
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Salida</TH><TH>Parte</TH><TH>Compa&ntilde;ero</TH><TH>Episodios clave</TH><TH>Final</TH></TR>
+<TR><TD><B>1.&ordf; Salida</B></TD><TD>Parte I (caps. 1&ndash;5)</TD><TD>Solo</TD><TD>Venta que toma por castillo; se hace armar caballero por el ventero; libera a Andr&eacute;s (qui&eacute;n resulta golpeado peor despu&eacute;s); mercaderes de Toledo</TD><TD>Regresa apaleado; sus amigos queman su biblioteca</TD></TR>
+<TR><TD><B>2.&ordf; Salida</B></TD><TD>Parte I (caps. 7&ndash;52)</TD><TD><B>Sancho Panza</B> (como escudero)</TD><TD>Molinos de viento; ej&eacute;rcitos (que son rebaños); Mambr&iacute;no (que es baciyel mo); Princesa Micomicona; Sierra Morena; Dorotea y Fernando; Cardenio; Cueva de Montesinos</TD><TD>Regresa enjaulado en un carro de bueyes</TD></TR>
+<TR><TD><B>3.&ordf; Salida</B></TD><TD>Parte II (toda)</TD><TD><B>Sancho Panza</B></TD><TD>El Caballero de los Espejos (Sams&oacute;n Carrasco); el Carro de las Cortes de la Muerte; Clavile&ntilde;o; la Duquesa; ínsula Barataria; Barcelona; el Caballero de la Blanca Luna</TD><TD>Vencido por el Caballero de la Blanca Luna (Carrasco); regresa; recobra el juicio; muere como Alonso Quijano el Bueno</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>5. Los personajes principales</H3>
+
+<H4>Don Quijote de la Mancha (Alonso Quijano):</H4>
+<UL>
+<LI><B>Edad:</B> "roz&oacute; los cincuenta a&ntilde;os" (unos 50 a&ntilde;os).</LI>
+<LI><B>Descripci&oacute;n f&iacute;sica:</B> "de complexi&oacute;n recia, seco de carnes, enjuto de rostro"; alto y delgado.</LI>
+<LI><B>Psicolog&iacute;a:</B> genial y cuerdo en todo salvo en el tema de la caballer&iacute;a; de una bondad y nobleza de esp&iacute;ritu extraordinarias; valiente hasta la temeridad; idealista sin l&iacute;mites.</LI>
+<LI><B>Evoluci&oacute;n:</B> en la Parte I es m&aacute;s c&oacute;mico y disparatado; en la Parte II gana en profundidad psicol&oacute;gica, melancol&iacute;a y conciencia de su propio fracaso.</LI>
+<LI><B>Nombre real:</B> Cervantes da tres versiones (Quijada, Quesada, Quijana); en la Parte II se llama "Alonso Quijano el Bueno" al morir.</LI>
+</UL>
+
+<H4>Sancho Panza:</H4>
+<UL>
+<LI>Labrador vecino de Don Quijote, hombre casado (con <B>Teresa Panza</B>, llamada tambi&eacute;n Juana Guti&eacute;rrez o Mari Guti&eacute;rrez), bajo, gordo, con pollino (asno).</LI>
+<LI>Se une a Don Quijote por la promesa de gobernar una &iacute;nsula (isla). Es el contrapunto realista, pr&aacute;ctico y terrenal al idealismo del amo.</LI>
+<LI>Personaje prodigioso: evoluciona de hombre simple y codicioso a figura de autentica sabi dur&iacute;a popular y lealtad emocional.</LI>
+<LI>Sus refranes: Sancho habla en cadenas de refranes populares, lo que le da un car&aacute;cter or&aacute;culo de la sabidur&iacute;a popular castellana.</LI>
+<LI>La &Iacute;nsula Barataria (Parte II): Sancho recibe el gobierno de un pueblo fingido; y all&iacute; demuestra, contra todo pron&oacute;stico, una sagacidad y justicia sorprendentes.</LI>
+</UL>
+
+<H4>Dulcinea del Toboso:</H4>
+<UL>
+<LI>Nunca aparece directamente en la novela; es una proyecci&oacute;n mental de Don Quijote sobre <B>Aldonza Lorenzo</B>, labradora "tosca" del Toboso.</LI>
+<LI>Representa el ideal de la dama cortés de las novelas de caballer&iacute;a: perfecta, sin igual en belleza, virtud e hidalgu&iacute;a.</LI>
+<LI>En la Parte II, Sancho la "encanta" (la convierte en una labradora fea y ruda para no tener que presentarla), y Don Quijote acepta esta ficción con dolor.</LI>
+</UL>
+
+<H4>Personajes secundarios relevantes:</H4>
+<UL>
+<LI><B>Sams&oacute;n Carrasco:</B> bachiller vecino que, en la Parte II, se disfraza de caballero andante primero como el <B>Caballero de los Espejos</B> (pierde) y luego como el <B>Caballero de la Blanca Luna</B> (vence a Don Quijote en Barcelona y le obliga a retirarse un a&ntilde;o). Es el agente de la "realidad" que derrota al ideal.</LI>
+<LI><B>El Cura (Pedro P&eacute;rez) y el Barbero (Maese Nicol&aacute;s):</B> amigos de Quijano que queman su biblioteca y lo devuelven a casa. Representan la sociedad "cuerda" que intenta curar al loco.</LI>
+<LI><B>Los Duques:</B> aristócratas que, en la Parte II, se divierten cruelmente burlándose de Don Quijote y Sancho, organizando "aventuras" fingidas. Representan la crueldad del poder y la hipocresía de la aristocracia.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">&#127981; EPISODIOS FUNDAMENTALES<SPAN>Los pasajes m&aacute;s importantes y su significado simb&oacute;lico</SPAN></DIV>
+
+<H3>6. Episodios clave que debes dominar</H3>
+
+<H4>Los molinos de viento (Parte I, cap. 8):</H4>
+Don Quijote ve <B>treinta o m&aacute;s molinos de viento</B> en la llanura manchega y los identifica como <B>gigantes desaforados</B>. Sancho le advierte que son molinos; Don Quijote responde que sin duda el mago Freston los ha convertido en molinos para quitarle la gloria de vencerlos. Arremete con lanza; el aspa lo arroja por los aires. Este episodio es el s&iacute;mbolo universal del <B>idealismo que choca con la realidad</B> y de la locura noble. La frase "luchar contra molinos de viento" ha pasado al idioma universal.
+
+<H4>Los rebaños (Parte I, cap. 18):</H4>
+Don Quijote ve dos nubes de polvo levantadas por dos rebaños de ovejas y los identifica como dos ej&eacute;rcitos en batalla; describe con extraordinario detalle los reyes, h&eacute;roes y pa&iacute;ses de cada "ej&eacute;rcito". Arremete; las ovejas lo pisotean y los pastores le apedrean. La escena parodia las descripciones &eacute;picas medievales y muestra c&oacute;mo la imaginaci&oacute;n cr&oacute;nicamente transforma lo vulgar en lo sublime.
+
+<H4>El baci&eacute;lmo (baciyyelmo, Parte I, caps. 21, 44&ndash;45):</H4>
+Don Quijote ve a un barbero que lleva en la cabeza una bac&iacute;a de afeitar para protegerse de la lluvia y la identifica como el <B>yelmo de Mambrino</B> (objeto m&aacute;gico de las novelas de caballer&iacute;a). Arrebata la "bac&iacute;a" al barbero. Sancho llama al objeto "baci&eacute;lmo" (bac&iacute;a + yelmo), t&eacute;rmino que resume la ambig&uuml;edad fundamental de la novela: &iquest;qui&eacute;n tiene raz&oacute;n, Don Quijote o el barbero?
+
+<H4>La cueva de Montesinos (Parte II, cap. 23):</H4>
+Don Quijote desciende a la Cueva de Montesinos con una cuerda; al emerger cuenta que durmi&oacute; y so&ntilde;&oacute; que entró en un palacio encantado donde vio al caballero Durandarte (convertido en momia con el coraz&oacute;n en la mano) y a Dulcinea "encantada". Sancho y el primo humanista dudan de si fue un sue&ntilde;o o una visi&oacute;n real. Este episodio es el m&aacute;s enigm&aacute;tico de la novela: Cervantes nunca aclara si Don Quijote miente, so&ntilde;&oacute; o tuvo una visi&oacute;n. En el lecho de muerte, Don Quijote insin&uacute;a que "ment&iacute; un poco" en lo de la cueva.
+
+<H4>La &Iacute;nsula Barataria (Parte II, caps. 44&ndash;53):</H4>
+Los Duques nombran "gobernador" a Sancho de un pueblo que hacen pasar por &iacute;nsula. Sancho, contra todas las expectativas, gobierna con sabidur&iacute;a, resuelve pleitos con asombrosa perspicacia y dicta leyes sensatas. Este episodio invierte la parodia: el "loco" (Don Quijote) es vencido por la "realidad"; pero el "tonto" (Sancho) demuestra que la sabidur&iacute;a natural es superior a la erudici&oacute;n libresca. Renuncia voluntariamente al gobierno al ser atacado por los Duques con una falsa invasi&oacute;n.
+
+<H4>La derrota ante el Caballero de la Blanca Luna (Parte II, cap. 64):</H4>
+En la playa de Barcelona, Sams&oacute;n Carrasco (disfrazado de Caballero de la Blanca Luna) derrota a Don Quijote en combate singular. La condici&oacute;n de la derrota: Don Quijote debe retirarse a su aldea durante <B>un a&ntilde;o</B> sin ejercer la caballer&iacute;a. Don Quijote acepta, vencido. El regreso desencadena su enfermedad y muerte.
+
+<H4>La muerte de Don Quijote &mdash; Alonso Quijano el Bueno (Parte II, &uacute;lt. cap.):</H4>
+De regreso en su aldea, Don Quijote enferma. Duerme profundamente y despierta <B>curado de su locura</B>: reconoce que las novelas de caballer&iacute;a son falsas y nocivas, confiesa y testa como Alonso Quijano el Bueno, y muere en paz. Es uno de los finales m&aacute;s conmovedores de la literatura universal: la cordura del protagonista es m&aacute;s tr&aacute;gica que su locura, porque supone la muerte de un sue&ntilde;o.
+
+<DIV CLASS="cultura-titulo">&#127775; TEMAS, T&Eacute;CNICAS NARRATIVAS E IMPORTANCIA LITERARIA<SPAN>Por qu&eacute; el Quijote es la primera novela moderna</SPAN></DIV>
+
+<H3>7. Temas fundamentales de El Quijote</H3>
+
+<H4>1. La locura y la cordura / La realidad y la ficci&oacute;n:</H4>
+El tema central de la novela es la <B>frontera entre locura y cordura</B>, entre realidad e imaginaci&oacute;n. Don Quijote "transforma" la realidad mediante su voluntad: un molino es un gigante, una venta es un castillo, una labradora es una princesa. Pero Cervantes no toma partido simplemente: el "loco" Don Quijote es frecuentemente m&aacute;s noble, m&aacute;s valiente y m&aacute;s generoso que los "cuerdos" que lo rodean. La pregunta que la novela plantea y no responde es: &iquest;qui&eacute;n est&aacute; verdaderamente loco?
+
+<H4>2. El idealismo frente al pragmatismo:</H4>
+Don Quijote (idealismo, locura noble, valores caballerescos) vs. Sancho (pragmatismo, sentido com&uacute;n, necesidades materiales). A lo largo de la novela, ambos personajes se transforman: Don Quijote se va "sanchificando" (haciéndose m&aacute;s realista) y Sancho se va "quijotizando" (adoptando el idealismo del amo). Esta evoluci&oacute;n cruzada es uno de los hallazgos m&aacute;s profundos de la novela.
+
+<H4>3. La parodia y la cr&iacute;tica literaria:</H4>
+La intenci&oacute;n declarada de Cervantes fue parodiar los libros de caballer&iacute;a. Pero la parodia se desborda: El Quijote termina siendo no solo una burla del g&eacute;nero caballeresco sino una reflexi&oacute;n sobre la naturaleza misma de la literatura, la ficci&oacute;n y la verdad narrativa.
+
+<H4>4. La libertad individual:</H4>
+Don Quijote es el personaje que m&aacute;s enfáticamente defiende la libertad en toda la novela: "La libertad, Sancho, es uno de los m&aacute;s preciosos dones que a los hombres dieron los cielos." Esta defensa de la libertad tiene un trasfondo biogr&aacute;fico (Cervantes hab&iacute;a sido esclavo) e ideol&oacute;gico (el humanismo erasmista).
+
+<H4>5. La dignidad humana y la justicia social:</H4>
+A lo largo de la novela, Don Quijote interviene en situaciones de injusticia: libera a los galeotes (presos), defiende a Andr&eacute;s del amo que lo azota, protege a los d&eacute;biles. Aunque sus intervenciones suelen empeorar la situaci&oacute;n, revelan una conciencia moral aguda.
+
+<H4>6. El tiempo y la identidad:</H4>
+&iquest;Qui&eacute;n es este personaje: Alonso Quijano o Don Quijote? La novela explora la construcci&oacute;n de la identidad a trav&eacute;s de la voluntad, el deseo y la literatura. Prefigura debates filos&oacute;ficos modernos sobre el yo y la subjetividad.
+
+<H3>8. Innovaciones narrativas: por qu&eacute; el Quijote es la primera novela moderna</H3>
+El Quijote supone una revoluci&oacute;n en la historia de la literatura:
+
+<UL>
+<LI><B>Narrador m&uacute;ltiple y poco fiable:</B> Cervantes introduce un narrador que finge haber encontrado un manuscrito original en &aacute;rabe del historiador ficticio <B>Cide Hamete Benengeli</B>. As&iacute;, hay al menos tres instancias narrativas (el primer narrador an&oacute;nimo, el traductor an&oacute;nimo, y Cide Hamete), lo que genera una <B>distancia ir&oacute;nica</B> permanente entre el narrador y lo narrado. El lector nunca sabe cu&aacute;nto creer.</LI>
+<LI><B>Metaficci&oacute;n:</B> en la Parte II, los personajes saben que existe la Parte I y se han convertido en personajes famosos; don Quijote y Sancho discuten sobre su propia versi&oacute;n impresa. El Quijote ap&oacute;crifo de Avellaneda forma parte de la trama. Es uno de los primeros y m&aacute;s perfectos ejemplos de <B>novela metaficcional</B> de la historia.</LI>
+<LI><B>Perspectivismo:</B> no hay una verdad &uacute;nica. Lo que para Don Quijote es un gigante, para Sancho es un molino. Lo que para el barbero es una bac&iacute;a, para Don Quijote es el yelmo de Mambrino. Cervantes no decide qui&eacute;n tiene raz&oacute;n: presenta m&uacute;ltiples perspectivas y deja al lector juzgar. El fi l&oacute;sofo Jos&eacute; Ortega y Gasset llam&oacute; a esto el "<B>perspectivismo cervantino</B>".</LI>
+<LI><B>Parodia que se supera a s&iacute; misma:</B> naci&oacute; como parodia y se convirti&oacute; en el modelo de todo lo que vino despu&eacute;s.</LI>
+<LI><B>Psicolog&iacute;a de los personajes:</B> por primera vez en la historia de la prosa narrativa, los personajes evolucionan psicol&oacute;gicamente a lo largo del relato. Don Quijote y Sancho son m&aacute;s complejos al final que al principio.</LI>
+<LI><B>Di&aacute;logo como m&eacute;todo:</B> la mayor parte de la novela se desarrolla en los di&aacute;logos entre Don Quijote y Sancho, de una riqueza y naturalidad sin precedentes.</LI>
+<LI><B>Novelas intercaladas:</B> la Parte I incluye varias novelas cortas intercaladas dentro del relato principal (la novela del curioso impertinente, la historia de Cardenio y Luscinda, la de Dorotea y Fernando, el cautivo). Estas representan los distintos g&eacute;neros narrativos de la &eacute;poca.</LI>
+</UL>
+
+<DIV CLASS="alerta">&#9888;&#65039; <B>Para el examen:</B> La raz&oacute;n por la que el Quijote es considerado la <B>"primera novela moderna"</B> es su uso del narrador no confiable (<B>Cide Hamete Benengeli</B>), la metaficci&oacute;n, el perspectivismo y la evoluci&oacute;n psicol&oacute;gica de los personajes. Estas t&eacute;cnicas no existen en la narrativa anterior (no en las novelas de caballer&iacute;a, ni en la picaresca, ni en la novela pastoril) y anticipan la novela realista del siglo XIX y la novela experimental del XX.</DIV>
+
+<H3>9. La obra completa de Cervantes</H3>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>G&eacute;nero</TH><TH>Obra</TH><TH>A&ntilde;o</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Novela</B></TD><TD><I>El ingenioso hidalgo don Quijote de la Mancha</I> (Parte I)</TD><TD>1605</TD><TD>La obra m&aacute;s importante de la literatura en lengua espa&ntilde;ola</TD></TR>
+<TR><TD><B>Novela</B></TD><TD><I>El ingenioso caballero don Quijote de la Mancha</I> (Parte II)</TD><TD>1615</TD><TD>Supera en profundidad a la Parte I; metaficci&oacute;n plena</TD></TR>
+<TR><TD><B>Novelas cortas</B></TD><TD><I>Novelas ejemplares</I> (12 novelas)</TD><TD>1613</TD><TD>Primera colecci&oacute;n de novelas cortas originales en espa&ntilde;ol; incluye <I>La Gitanilla</I>, <I>El licenciado Vidriera</I>, <I>El coloquio de los perros</I></TD></TR>
+<TR><TD><B>Novela pastoril</B></TD><TD><I>La Galatea</I></TD><TD>1585</TD><TD>Primera obra publicada; novela pastoril al modo de Montemayor</TD></TR>
+<TR><TD><B>Teatro</B></TD><TD><I>El cerco de Numancia</I>; <I>Los tratos de Argel</I></TD><TD>1580s</TD><TD>Dramas sobre el sitio de Numancia y el cautiverio en Argel</TD></TR>
+<TR><TD><B>Poes&iacute;a &eacute;pica</B></TD><TD><I>Viaje del Parnaso</I></TD><TD>1614</TD><TD>Poema en tercetos; revista ir&oacute;nica la poes&iacute;a espa&ntilde;ola de la &eacute;poca</TD></TR>
+<TR><TD><B>Teatro (p&oacute;stumo)</B></TD><TD><I>Ocho comedias y ocho entremeses</I></TD><TD>1615</TD><TD>Sus piezas teatrales; los entremeses son admirables</TD></TR>
+<TR><TD><B>Novela</B></TD><TD><I>Los trabajos de Persiles y Sigismunda</I></TD><TD>1617 (p&oacute;st.)</TD><TD>Novela bizantina; terminada d&iacute;as antes de morir; Cervantes la consider&oacute; su obra maestra</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>10. Legado e influencia universal del Quijote</H3>
+<UL>
+<LI><B>Primera novela moderna:</B> los cr&iacute;ticos e historiadores de la literatura (Ian Watt, Claudio Guill&eacute;n, Milan Kundera, Harold Bloom) coinciden en que el Quijote inaugura la novela como forma literaria moderna, con su complejidad psicol&oacute;gica, su narrador poco fiable y su perspectivismo.</LI>
+<LI><B>Influencia universal:</B> <B>Gustave Flaubert</B> (<I>Madame Bovary</I>), <B>Fiodor Dostoievski</B> (<I>El idiota</I>), <B>Franz Kafka</B>, <B>Jorge Luis Borges</B> (<I>Pierre Menard, autor del Quijote</I>), <B>Gabriel Garc&iacute;a M&aacute;rquez</B>, <B>Henry Fielding</B>, <B>Laurence Sterne</B> son deudores directos del Quijote.</LI>
+<LI><B>El Don Quijotismo:</B> el nombre del personaje dio origen a los conceptos de <B>"quijotismo"</B> (actitud idealista y combativa contra lo imposible), <B>"quijotesco"</B> y la expresi&oacute;n "luchar contra molinos de viento".</LI>
+<LI><B>La lengua espa&ntilde;ola:</B> el Quijote es el texto fundacional de la prosa espa&ntilde;ola moderna. Contiene frases que han pasado al lenguaje com&uacute;n.</LI>
+<LI><B>Rankings:</B> en el a&ntilde;o <B>2002</B>, el <B>Instituto Nobel</B> organiz&oacute; una encuesta entre los 100 mejores escritores del mundo para elegir "el mejor libro de la historia de la literatura"; el Quijote qued&oacute; en <B>primer lugar</B>.</LI>
+</UL>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">1547</DIV><DIV CLASS="dk-label">Nacimiento de Cervantes en Alcal&aacute; de Henares (29 septiembre)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1571</DIV><DIV CLASS="dk-label">Batalla de Lepanto: "el manco de Lepanto"</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1575&ndash;80</DIV><DIV CLASS="dk-label">Cautiverio en Argel: 5 a&ntilde;os de esclavo</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1605</DIV><DIV CLASS="dk-label">Primera parte del Quijote publicada en Madrid</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1614</DIV><DIV CLASS="dk-label">Quijote ap&oacute;crifo de Avellaneda</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1615</DIV><DIV CLASS="dk-label">Segunda parte del Quijote (respuesta a Avellaneda)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">1616</DIV><DIV CLASS="dk-label">Muerte de Cervantes en Madrid (22 abril)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">2002</DIV><DIV CLASS="dk-label">El Quijote elegido "mejor libro de la historia" por 100 escritores</DIV></DIV>
+</DIV>
+
+<DIV CLASS="alerta" style="margin-top:24px;">
+&#11088; <B>RESUMEN TOTAL para el examen:</B><BR>
+&bull; <B>Cervantes:</B> Alcal&aacute; de Henares 1547 &middot; Madrid 1616 &middot; "manco de Lepanto" (mano izquierda) &middot; cautivo en Argel 5 a&ntilde;os<BR>
+&bull; <B>Obra:</B> Parte I (1605) <I>El ingenioso hidalgo</I> &middot; Parte II (1615) <I>El ingenioso caballero</I> &middot; Ap&oacute;crifo de Avellaneda (1614)<BR>
+&bull; <B>Personajes:</B> Alonso Quijano = Don Quijote &middot; Sancho Panza (Teresa Panza) &middot; Dulcinea = Aldonza Lorenzo &middot; Rocinante &middot; Sams&oacute;n Carrasco (Cab. de los Espejos / Cab. de la Blanca Luna)<BR>
+&bull; <B>3 salidas:</B> 1.&ordf; solo &middot; 2.&ordf; y 3.&ordf; con Sancho &middot; Derrotado en Barcelona por Carrasco &middot; Muere curado = Alonso Quijano el Bueno<BR>
+&bull; <B>Episodios clave:</B> molinos de viento &middot; rebaños-ej&eacute;rcitos &middot; baci&eacute;lmo &middot; Cueva de Montesinos &middot; &Iacute;nsula Barataria<BR>
+&bull; <B>Temas:</B> realidad vs. ficci&oacute;n &middot; idealismo vs. pragmatismo &middot; libertad &middot; identidad &middot; parodia<BR>
+&bull; <B>Innovaciones:</B> Cide Hamete Benengeli (narrador poco fiable) &middot; metaficci&oacute;n &middot; perspectivismo &middot; evoluci&oacute;n psicol&oacute;gica<BR>
+&bull; <B>Contexto:</B> Siglo de Oro espa&ntilde;ol &middot; Renacimiento y Barroco &middot; parodia de las novelas de caballer&iacute;a &middot; Amad&iacute;s de Gaula
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen universitario</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL B&Aacute;SICO &middot; COMPRENSI&Oacute;N</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> &iquest;D&oacute;nde naci&oacute; Miguel de Cervantes, en qu&eacute; a&ntilde;o, y por qu&eacute; se le llama "el manco de Lepanto"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Naci&oacute; en Toledo en 1547; se le llama "manco de Lepanto" porque perdi&oacute; el brazo derecho en la batalla naval de Lepanto contra los turcos en 1571</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Naci&oacute; en Alcal&aacute; de Henares el 29 de septiembre de 1547; se le llama "manco de Lepanto" porque recibi&oacute; un arcabuzazo que le inutiliz&oacute; la mano izquierda en la batalla de Lepanto (7 de octubre de 1571), donde particip&oacute; como soldado pese a estar enfermo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Naci&oacute; en Sevilla en 1550; "el manco de Lepanto" es el nombre de uno de sus personajes en <I>La Galatea</I>, no un apodo del propio Cervantes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Naci&oacute; en Madrid en 1547; perdi&oacute; la mano derecha durante su cautiverio en Argel al intentar escapar por quinta vez de sus captores berberiscos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Cervantes naci&oacute; en <B>Alcal&aacute; de Henares</B> (Madrid) el <B>29 de septiembre de 1547</B>. El sobrenombre "el manco de Lepanto" proviene de la <B>Batalla de Lepanto</B> (7 de octubre de 1571), la gran batalla naval en la que la Liga Santa cristiana derrot&oacute; a la flota turca otomana en el golfo de Lepanto (Grecia). Cervantes, que estaba enfermo de fiebres, insisti&oacute; en combatir y recibi&oacute; dos arcabuzazos en el pecho y uno en la <B>mano izquierda</B>, que qued&oacute; inutilizada para siempre. No perdi&oacute; la mano, pero la qued&oacute; anquilosada. Cervantes siempre se enorgulleci&oacute; de Lepanto, que consider&oacute; "la m&aacute;s memorable y alta ocasi&oacute;n que vieron los pasados siglos". Fue la <B>mano izquierda</B>, no la derecha.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> &iquest;Cu&aacute;ndo se publicaron la Primera y Segunda Parte del Quijote, y qu&eacute; motiv&oacute; a Cervantes a acelerar la publicaci&oacute;n de la Segunda Parte?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) La Primera Parte se public&oacute; en 1595 y la Segunda en 1610; la aceler&oacute; porque necesitaba dinero urgentemente despu&eacute;s de su segundo encarcelamiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) La Primera Parte se public&oacute; en 1605 y la Segunda en 1615; Cervantes aceler&oacute; la publicaci&oacute;n porque en 1614 Alonso Fern&aacute;ndez de Avellaneda hab&iacute;a publicado una Segunda Parte ap&oacute;crifa y ofensiva, y Cervantes quiso desbancarla con su versi&oacute;n original</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Ambas partes se publicaron juntas en 1605 en un solo volumen; la idea de que son obras separadas publicadas en distintos a&ntilde;os es un error que han corregido los estudios filos&oacute;gicos modernos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) La Primera Parte se public&oacute; en 1605 y la Segunda en 1620, cuatro a&ntilde;os despu&eacute;s de la muerte de Cervantes; fue publicada p&oacute;stumamente por su viuda Catalina de Salazar</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Primera Parte</B> del Quijote se public&oacute; en Madrid en <B>1605</B> por el impresor Juan de la Cuesta; la <B>Segunda Parte</B> en <B>1615</B>, un a&ntilde;o antes de la muerte de Cervantes. El factor decisivo que aceler&oacute; la publicaci&oacute;n fue la aparici&oacute;n en <B>1614</B> del <I>Segundo tomo del ingenioso hidalgo don Quixote de la Mancha</I> de <B>Alonso Fern&aacute;ndez de Avellaneda</B>, un autor desconocido (su identidad sigue debati&eacute;ndose hoy) que public&oacute; una continuaci&oacute;n no autorizada, de inferior calidad, con un pr&oacute;logo insultante para Cervantes. Para responder a esta usurpaci&oacute;n, Cervantes termin&oacute; su Segunda Parte e introdujo el genial episodio en que Don Quijote <I>se entera</I> del libro de Avellaneda y lo rechaza.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> &iquest;Qui&eacute;nes son los protagonistas del Quijote y cu&aacute;l es la funci&oacute;n narrativa de Sancho Panza?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Los protagonistas son Don Quijote y Dulcinea del Toboso; Sancho Panza es un personaje secundario que aparece solo en la Segunda Parte para controlar los excesos de su amo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Los protagonistas son <B>Don Quijote de la Mancha</B> (Alonso Quijano) y <B>Sancho Panza</B>; Sancho funciona como contrapunto realista y pragm&aacute;tico al idealismo del amo, y a la vez como espejo en el que Don Quijote se ve reflejado; ambos evolucionan cruzadamente a lo largo de la novela</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Los protagonistas son Don Quijote y el bachiller Sams&oacute;n Carrasco; Sancho Panza es el antagonista c&oacute;mico que busca constantemente hacer fracasar los planes de su amo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El &uacute;nico protagonista es Alonso Quijano; Sancho Panza es su hermano menor que lo acompa&ntilde;a por obligaci&oacute;n familiar y no por elecci&oacute;n propia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los dos protagonistas del Quijote son inseparables: <B>Don Quijote de la Mancha</B> (cuyo nombre real es <B>Alonso Quijano</B>) y <B>Sancho Panza</B>, su escudero. Sancho es labrador manchego casado con <B>Teresa Panza</B> (llamada tambi&eacute;n Juana Guti&eacute;rrez), bajo, gordo y con un rucio (pollino/asno). Se une a Don Quijote por la promesa de gobernar una &iacute;nsula. Su funci&oacute;n es la del <B>contrapunto</B>: es el realismo frente al idealismo, el cuerpo frente al esp&iacute;ritu, el refrán frente al discurso, el presente frente al sue&ntilde;o. Pero la novela muestra que ambos se transforman rec&iacute;procamente: Don Quijote se "sanchifica" y Sancho se "quijotiza". Esta evoluci&oacute;n cruzada es uno de los hallazgos psicol&oacute;gicos m&aacute;s profundos de toda la narrativa universal.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> &iquest;Qu&eacute; representan el episodio de los molinos de viento y c&oacute;mo reacciona Don Quijote cuando Sancho le advierte que son molinos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Don Quijote ve los molinos y acepta que son molinos, pero igual decide atacarlos para demostrar su valent&iacute;a ante la realidad prosaica del mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Don Quijote ve treinta o m&aacute;s gigantes donde hay molinos de viento; cuando Sancho le advierte, responde que el mago <B>Freston</B> los ha transformado en molinos para quitarle la gloria de vencerlos; arremete, el aspa lo derriba. El episodio simboliza el choque entre el idealismo que transforma la realidad y la realidad objetiva que termina derrotando al ide&aacute;lista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Don Quijote realmente destruye los molinos y es proclamado h&eacute;roe por los aldeanos; la victoria sobre los "gigantes" le da la confianza para emprender aventuras mayores con Sancho</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Los molinos de viento son una met&aacute;fora que usa el narrador Cide Hamete Benengeli para criticar la pol&iacute;tica del rey Felipe II; no son un episodio literal de la novela</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El episodio de los <B>molinos de viento</B> (Parte I, cap&iacute;tulo 8) es el m&aacute;s famoso de la novela y el m&aacute;s citado en la cultura universal. Don Quijote ve "<B>treinta o cuarenta molinos de viento</B>" y los identifica como "<B>gigantes desaforados</B>". Sancho lo advierte: "Mire vuestra merced que aquellos que all&aacute; se parecen no son gigantes, sino molinos de viento." Don Quijote responde que Sancho no entiende de aventuras, y que "el sabio <B>Freston</B>" &mdash;mago enemigo de Don Quijote&mdash; los ha convertido en molinos. Arremete a toda carrera; el aspa que gira lo eleva y arroja maltrecho al suelo. Es el s&iacute;mbolo perfecto del <B>idealismo que choca con la realidad</B>: Don Quijote no est&aacute; equivocado desde su mundo interior, pero el mundo exterior lo derrota. La frase "luchar contra molinos de viento" ha pasado a todas las lenguas del mundo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> &iquest;Qui&eacute;n es Dulcinea del Toboso y cu&aacute;l es su realidad en la novela?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Dulcinea del Toboso es una princesa real de la regi&oacute;n de La Mancha que Don Quijote conoce en la primera p&aacute;gina de la novela; ella lo anima a convertirse en caballero andante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Dulcinea del Toboso es la transformaci&oacute;n imaginaria que Don Quijote hace de <B>Aldonza Lorenzo</B>, una labradora del pueblo de El Toboso; nunca aparece f&iacute;sicamente en la novela; en la Parte II Sancho la "encanta" en forma de labradora fea para evitar presentarla, y Don Quijote acepta con dolor esa versi&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Dulcinea del Toboso es el nombre real de la sobrina de Don Quijote, quien vive con &eacute;l en la aldea y teme que la locura de su t&iacute;o sea hereditaria</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Dulcinea es un personaje hist&oacute;rico: era la esposa del gobernador de La Mancha y Cervantes la us&oacute; como homenaje a una mujer real que lo ayud&oacute; durante su encarcelamiento en Argamasilla de Alba</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Dulcinea del Toboso</B> es la dama imaginaria de Don Quijote: su nombre real es <B>Aldonza Lorenzo</B>, "una moza labradora de muy buen parecer" del pueblo de <B>El Toboso</B> (La Mancha), de quien Alonso Quijano estuvo "un tiempo enamorado" aunque ella nunca lo supo. Don Quijote la eleva mentalmente a la categor&iacute;a de dama perfecta de las novelas de caballer&iacute;a: "su nombre es Dulcinea del Toboso; su calidad, por lo menos, ha de ser de princesa." Nunca aparece en persona en la novela. En la Parte II, cuando Sancho debe presentarla, la "encanta" d&aacute;ndole la forma de una labradora sucia y ruda que resulta ser otra mujer; Don Quijote acepta la versi&oacute;n encantada con dolor. Dulcinea representa el poder de la mente para transformar la realidad: existe exclusivamente en el mundo interior de Don Quijote.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO &middot; AN&Aacute;LISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Explica el concepto de "perspectivismo cervantino" usando el episodio del baci&eacute;lmo como ejemplo.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) El "perspectivismo cervantino" significa que Cervantes siempre da la raz&oacute;n a Don Quijote, porque su visi&oacute;n idealizada del mundo es moralmente superior a la visi&oacute;n materialista de los dem&aacute;s personajes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El "perspectivismo" indica que Cervantes presenta la realidad desde m&uacute;ltiples puntos de vista sin decidir cu&aacute;l es el verdadero; en el baci&eacute;lmo, lo que para el barbero es una bac&iacute;a y para Don Quijote es el yelmo de Mambrino, Sancho llama "baci&eacute;lmo" (bac&iacute;a + yelmo), resumiendo la ambig&uuml;edad irresoluble: la novela no dice qui&eacute;n tiene raz&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El "perspectivismo cervantino" es una t&eacute;cnica de la poes&iacute;a barroca que consiste en usar met&aacute;foras visuales (perspectivas) para crear im&aacute;genes sorprendentes; Cervantes la import&oacute; de G&oacute;ngora al &aacute;mbito de la narrativa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) El "perspectivismo" hace referencia a la estructura en tres capas narrativas del Quijote: el narrador original, el traductor y Cide Hamete Benengeli, cada uno con una perspectiva diferente sobre los mismos hechos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El concepto de <B>"perspectivismo cervantino"</B> fue formulado por el fil&oacute;sofo espa&ntilde;ol <B>Jos&eacute; Ortega y Gasset</B> (<I>Meditaciones del Quijote</I>, 1914): Cervantes no da una sola perspectiva de la realidad sino varias, incompatibles entre s&iacute;, sin resolver el conflicto. El episodio del <B>baci&eacute;lmo</B> lo ilustra perfectamente: el barbero (Parte I, cap. 21) lleva una bac&iacute;a de afeitar en la cabeza como protecci&oacute;n contra la lluvia. Don Quijote la ve y la identifica como el <B>yelmo de Mambrino</B> (objeto m&aacute;gico de las novelas de caballer&iacute;a). Cuando el grupo discute qu&eacute; es el objeto, <B>Sancho</B> inventa la palabra <B>"baci&eacute;lmo"</B> (mezcla de bac&iacute;a y yelmo) porque entiende que los dos tienen parte de raz&oacute;n. Cervantes nunca resuelve el dilema: la realidad es perspectiva, no absoluta. Esta idea prefigura el relativismo epistemol&oacute;gico moderno.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> &iquest;Por qu&eacute; se considera el Quijote la "primera novela moderna" de la historia de la literatura occidental?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Porque fue la primera novela en ser impresa en un taller tipogr&aacute;fico con tipos m&oacute;viles; antes del Quijote, todas las novelas europeas se copiaban a mano en monasterios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Porque introduce innovaciones que no exist&iacute;an en la narrativa anterior: un narrador poco fiable (Cide Hamete Benengeli), la metaficci&oacute;n (personajes conscientes de ser personajes de una novela), el perspectivismo (m&uacute;ltiples puntos de vista sin resoluci&oacute;n), y la evoluci&oacute;n psicol&oacute;gica de los personajes a lo largo del relato</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Porque fue la primera novela de tema contempor&aacute;neo (ambientada en la Espa&ntilde;a del siglo XVII) en vez de en un mundo fant&aacute;stico o en la Antig&uuml;edad cl&aacute;sica; este realismo temporal es su &uacute;nica innovaci&oacute;n sobre la narrativa anterior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) El Quijote no es considerado la "primera novela moderna"; ese t&iacute;tulo pertenece a <I>La Celestina</I> de Fernando de Rojas (1499), cuya influencia sobre la novela posterior fue much&iacute;simo mayor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Quijote es designado "primera novela moderna" por el consenso de los principales historiadores y te&oacute;ricos de la literatura (Ian Watt, Claudio Guill&eacute;n, Milan Kundera en <I>El arte de la novela</I>, Harold Bloom en <I>El canon occidental</I>) por varias razones t&eacute;cnicas que no se encuentran en la narrativa anterior: (1) <B>Narrador poco fiable:</B> Cervantes finge que la historia viene de un manuscrito &aacute;rabe del historiador ficticio <B>Cide Hamete Benengeli</B>, creando una distancia ir&oacute;nica; nunca sabemos si el narrador dice la verdad. (2) <B>Metaficci&oacute;n:</B> en la Parte II los personajes saben que existen como personajes famosos de la Parte I; Don Quijote y Sancho discuten su propia versi&oacute;n impresa. (3) <B>Perspectivismo:</B> no hay una verdad &uacute;nica sobre la realidad. (4) <B>Evoluci&oacute;n psicol&oacute;gica:</B> los personajes cambian a lo largo del texto; son m&aacute;s complejos al final. Ninguna de estas caracter&iacute;sticas existe en la narrativa anterior.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Analiza la funci&oacute;n del personaje de Sams&oacute;n Carrasco en la Segunda Parte del Quijote.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Sams&oacute;n Carrasco es el antagonista principal de toda la novela; aparece desde la Primera Parte como el mayor enemigo de Don Quijote y lo persigue durante sus tres salidas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Sams&oacute;n Carrasco es el bachiller vecino que, en la Parte II, intenta devolver a Don Quijote a la cordura disfraz&aacute;ndose de caballero andante: primero como <B>Caballero de los Espejos</B> (pierde el duelo y queda malherido) y luego como <B>Caballero de la Blanca Luna</B> (vence a Don Quijote en Barcelona y lo obliga a retirarse un a&ntilde;o); su victoria indirectamente causa la muerte del protagonista</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) Sams&oacute;n Carrasco es el narrador principal de la Parte II; es el que escribe las cartas de Sancho a su mujer Teresa y las que Don Quijote env&iacute;a a Dulcinea; tambi&eacute;n es quien lee el Quijote ap&oacute;crifo de Avellaneda en voz alta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) Sams&oacute;n Carrasco acompa&ntilde;a a Don Quijote y Sancho en su tercera salida como tercer caballero andante; su presencia permite a Cervantes introducir una comedia de equivocaciones entre tres personas que no saben la identidad real de los dem&aacute;s</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Sams&oacute;n Carrasco</B> es uno de los personajes m&aacute;s complejos e importantes de la Parte II. Es el bachiller del pueblo, joven y enterado de la fama de Don Quijote gracias a la publicaci&oacute;n de la Parte I. Con la intenci&oacute;n de devolver a Don Quijote a casa y curarle de su locura, se disfraza de caballero: (1) <B>Caballero de los Espejos</B> (cap. 12&ndash;15): propone un duelo donde el perdedor debe hacer lo que el ganador ordene; pierde el combate (Don Quijote le derriba) y queda malherido; Cervantes convierte los "espejos" en s&iacute;mbolo: &iquest;qui&eacute;n se refleja en qui&eacute;n? (2) <B>Caballero de la Blanca Luna</B> (cap. 64): vuelve m&aacute;s preparado; derrota a Don Quijote en la playa de Barcelona; Don Quijote debe retirarse un a&ntilde;o sin ejercer la caballer&iacute;a. El regreso forzado desencadena la enfermedad y muerte del protagonista. Carrasco representa la "realidad" que derrota al idealismo, pero con un resultado paradójico: al curar al loco, lo mata.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> &iquest;Qu&eacute; es la metaficci&oacute;n en el Quijote y c&oacute;mo se manifiesta en la relaci&oacute;n entre la Parte I y la Parte II?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) La metaficci&oacute;n en el Quijote se refiere al hecho de que Cervantes utiliz&oacute; episodios de su propia vida (el cautiverio en Argel, la batalla de Lepanto) como material narrativo; la novela es por tanto una autobiograf&iacute;a disfrazada de ficci&oacute;n</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) La metaficci&oacute;n consiste en que los personajes de la Parte II son conscientes de que existe la Parte I impresa y de que son famosos por ella; don Quijote y Sancho discuten su propia versi&oacute;n literaria, encuentran personajes que los han le&iacute;do, y el propio Quijote ap&oacute;crifo de Avellaneda entra en la trama; es uno de los primeros ejemplos de metaficci&oacute;n en la historia de la literatura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) La metaficci&oacute;n del Quijote consiste en que el propio Cervantes aparece como personaje en varios cap&iacute;tulos de la Parte II, dialogando con Don Quijote y revelando que es su autor; es una forma de <I>cameo</I> autorial similar a los que Hitchcock hac&iacute;a en sus pel&iacute;culas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) La metaficci&oacute;n es una t&eacute;cnica del siglo XX (Borges, Calvino, Nabokov); atribuirla al Quijote es un anacronismo; Cervantes no ten&iacute;a conciencia de estar haciendo metaficci&oacute;n y el t&eacute;rmino no le es aplicable rigurosamente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>metaficci&oacute;n</B> (literatura que reflexiona sobre s&iacute; misma, sobre su propio car&aacute;cter de ficci&oacute;n) alcanza en el Quijote &mdash;especialmente en la Parte II (1615)&mdash; una sofisticaci&oacute;n sin parang&oacute;n hasta el siglo XX. Sus manifestaciones concretas: (1) Al comenzar la Parte II, Don Quijote y Sancho saben que existe un libro (la Parte I) que narra sus aventuras; discuten si est&aacute; bien narrado. (2) Encuentran personajes que los han le&iacute;do y que los reconocen como famosos; los Duques, por ejemplo, organizan aventuras basadas en lo que leyeron. (3) El Quijote ap&oacute;crifo de Avellaneda entra en la trama: Don Quijote se indigna al enterarse de la versi&oacute;n falsa y cambia su itinerario para demostrar que no va a Zaragoza (como hac&iacute;a el Quijote de Avellaneda). (4) Don Quijote al morir le pide a sus amigos que informen al "autor" de la novela. Este juego de espejos entre realidad y ficci&oacute;n influy&oacute; directamente en Borges, Unamuno (<I>Niebla</I>, 1914) y la novela posmoderna del siglo XX.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> &iquest;Qu&eacute; es la &Iacute;nsula Barataria y qu&eacute; revela sobre el personaje de Sancho Panza?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) La &Iacute;nsula Barataria es una isla real del Mediterr&aacute;neo que los Duques regalan a Sancho; &eacute;l la gobierna desastrosamente durante tres meses, confirmando que era demasiado ignorante para gobernar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) La &Iacute;nsula Barataria es un pueblo que los Duques hacen pasar por &iacute;nsula; Sancho gobierna all&iacute; y, contra toda expectativa, demuestra una sabidur&iacute;a natural, justicia y equidad sorprendentes al resolver pleitos; renuncia voluntariamente al gobierno. Revela que la sabidur&iacute;a popular es tan o m&aacute;s valiosa que la erudici&oacute;n libresca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) La &Iacute;nsula Barataria es el nombre que Don Quijote le da a la primera venta que toma por castillo en la Primera Salida; "barataria" significa "barata" porque en esa venta le cobran poco por la comida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) La &Iacute;nsula Barataria es el nombre del lugar donde los piratas berberiscos tenían prisionero a Cervantes en Argel; el autor la usa en la novela como homenaje a ese per&iacute;odo de su vida</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>&Iacute;nsula Barataria</B> (Parte II, caps. 44&ndash;53) es el episodio que revela la profundidad del personaje de Sancho. Los Duques, para divertirse a expensas del escudero, convierten a un pueblo en "&iacute;nsula" y nombran a Sancho "gobernador". Todo el s&eacute;quito espera que el r&uacute;stico campesino fracase estrepitosamente. Pero Sancho sorprende a todos: resuelve pleitos con una perspicacia y equidad que avergonzar&iacute;an a muchos letrados (el episodio de los viajeros que se deben entre s&iacute; el paso por el puente; el del hombre que jura mentir en su declaraci&oacute;n; la denuncia de la joven disfrazada de hombre). Dicta leyes sabias para la isla. Finalmente renuncia voluntariamente, en un gesto de gran dignidad, cuando los Duques organizan una falsa "invasi&oacute;n" que demuestra los l&iacute;mites de su gobierno. El episodio invierte la parodia de toda la novela: el "tonto" es sabio; la sabidur&iacute;a popular supera a la erudici&oacute;n.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO &middot; RAZONAMIENTO CR&Iacute;TICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Analiza la paradoja del final del Quijote: &iquest;por qu&eacute; la "curaci&oacute;n" de Don Quijote &mdash;su recuperaci&oacute;n de la cordura&mdash; es en realidad m&aacute;s tr&aacute;gica que su locura?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) No hay ninguna paradoja: el final del Quijote es completamente positivo porque Alonso Quijano recupera la raz&oacute;n, se arrepiente de sus locuras, confiesa y muere en paz; Cervantes quiso dar un final feliz y moralizante a su obra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La paradoja es que la "locura" de Don Quijote era un mundo rico en valores (nobleza, valent&iacute;a, justicia, amor ideal) que daba sentido a su existencia; al "curar" y convertirse en Alonso Quijano el Bueno, ese mundo desaparece y con &eacute;l el personaje; la muerte es la consecuencia l&oacute;gica de la cordura. La curaci&oacute;n es una muerte del esp&iacute;ritu antes que del cuerpo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) No hay paradoja porque en el Barroco espa&ntilde;ol el desengaño y la renuncia al mundo (el <I>contemptus mundi</I>) eran el desenlace l&oacute;gico y esperado de toda obra literaria; el final del Quijote sigue simplemente esa convenci&oacute;n sin ninguna originalidad especial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) La paradoja del final es puramente editorial: Cervantes mat&oacute; a Don Quijote para impedir que Avellaneda pudiera continuar escribiendo nuevas partes; la muerte es una estrategia de propiedad intelectual, no una decisi&oacute;n est&eacute;tica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El final del Quijote es uno de los m&aacute;s debatidos y admirados de toda la literatura mundial. La <B>paradoja</B>: mientras estaba "loco", Don Quijote era un ser pleno, rico en proyectos, amor ideal (Dulcinea), c&oacute;digo &eacute;tico (la caballer&iacute;a), vocaci&oacute;n (hacer justicia) y sue&ntilde;o (hacer revivir la Edad de Oro). Al "curar", recupera la raz&oacute;n pero pierde todo aquello: ya no es Don Quijote sino Alonso Quijano, un viejo manchego sin proyecto ni ilusi&oacute;n. <B>La cordura es la muerte</B>: literalmente, porque Alonso Quijano muere d&iacute;as despu&eacute;s de recobrar el juicio. El fil&oacute;sofo <B>Miguel de Unamuno</B> analiz&oacute; este final en <I>Vida de Don Quijote y Sancho</I> (1905) como la prueba de que el idealismo es la &uacute;nica forma de vida autentica. S&iacute;, la intenci&oacute;n de impedir a Avellaneda continuar tambi&eacute;n fue un motivo (la d) contiene algo de verdad), pero no es la explicaci&oacute;n est&eacute;tica completa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Compara el Don Quijote de la Primera Parte con el de la Segunda Parte: &iquest;c&oacute;mo evoluciona el personaje?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Don Quijote es id&eacute;ntico en ambas partes: Cervantes copi&oacute; mecánicamente el mismo personaje de la Parte I para no cambiar lo que ya hab&iacute;a funcionado bien con el p&uacute;blico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) En la Parte I Don Quijote es m&aacute;s c&oacute;mico, activo y disparatado (crea &eacute;l las aventuras); en la Parte II es m&aacute;s reflexivo, melanc&oacute;lico y consciente de sus limitaciones; las aventuras le ocurren (los dem&aacute;s lo manipulan); hay una profundizaci&oacute;n psicol&oacute;gica enorme. La famosa "sanchificaci&oacute;n" de Don Quijote y la "quijotizaci&oacute;n" de Sancho son procesos de la Parte II</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Don Quijote en la Parte II es completamente diferente: ya no cree en las novelas de caballer&iacute;a y solo finge la locura para divertirse; es un personaje ir&oacute;nico que sabe perfectamente que sus aventuras son ficciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La diferencia entre ambas partes es puramente de g&eacute;nero literario: la Parte I es una parodia c&oacute;mica pura; la Parte II es una tragedia griega en prosa; Cervantes cambi&oacute; de g&eacute;nero intencionalmente entre las dos entregas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La diferencia entre el Don Quijote de la Parte I y el de la Parte II es uno de los logros psicol&oacute;gicos m&aacute;s notables de Cervantes. <B>Parte I:</B> Don Quijote es el motor activo de las aventuras; las crea o las busca; su locura es exuberante y c&oacute;mica; los episodios son frecuentemente f&aacute;rsicos (los molinos, los rebaños, el baci&eacute;lmo). <B>Parte II:</B> Don Quijote se vuelve m&aacute;s receptivo; las aventuras le llegan desde fuera (los Duques las organizan para burlarse de &eacute;l); hay una dimensi&oacute;n melanc&oacute;lica creciente; tiene momentos de duda sobre su propia identidad (la cueva de Montesinos, donde quiz&aacute; miente o sueña); es consciente de que Dulcinea est&aacute; "encantada" y sufre por ello. La <B>"sanchificaci&oacute;n"</B> de Don Quijote (adopta rasgos del realismo de Sancho) y la <B>"quijotizaci&oacute;n"</B> de Sancho (adopta el idealismo del amo) son los signos m&aacute;s evidentes de esta evoluci&oacute;n cruzada que hace de la Parte II una obra a&uacute;n m&aacute;s profunda que la Parte I.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Analiza el episodio de la Cueva de Montesinos (Parte II, cap. 23) como ejemplo de la ambig&uuml;edad fundamental del Quijote.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) El episodio de la Cueva de Montesinos no tiene ninguna ambig&uuml;edad: Don Quijote miente claramente; el propio Cervantes lo indica expl&iacute;citamente en una nota marginal diciendo "este cap&iacute;tulo es pura invencion del protagonista"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La ambig&uuml;edad del episodio es total: Don Quijote desciende a la cueva con una cuerda, queda dormido y al emerger cuenta aventuras maravillosas (Durandarte, Dulcinea encantada); Sancho y el primo humanista dudan si fue sue&ntilde;o o visi&oacute;n; Cervantes nunca lo resuelve; y en el lecho de muerte Don Quijote insin&uacute;a que "ment&iacute; un poco". La cueva es el episodio donde la frontera entre realidad y ficci&oacute;n es m&aacute;s porosa e irresoluble</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) El episodio es una ale gor&iacute;a cristiana transparente: la Cueva de Montesinos simboliza el Purgatorio, Durandarte es Cristo resucitado, y Dulcinea es la Iglesia Cat&oacute;lica "encantada" por la Reforma protestante; Cervantes quer&iacute;a transmitir un mensaje teol&oacute;gico claro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La cueva de Montesinos revela que Don Quijote es un mago que puede viajar a dimensiones paralelas; Cervantes estaba influenciado por las tradiciones ocultistas del Renacimiento italiano que conoc&iacute;a de su &eacute;poca en Roma</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Cueva de Montesinos</B> (Parte II, cap. 23) es el episodio m&aacute;s enigm&aacute;tico de toda la novela, y uno de los m&aacute;s comentados por la cr&iacute;tica. Lo que ocurre: Don Quijote desciende atado con una cuerda a la cueva; al subirlo, est&aacute; dormido; al despertar, cuenta que estuvo tres d&iacute;as en un palacio encantado donde vio al caballero <B>Durandarte</B> (guardando vivo su coraz&oacute;n en la mano) y a <B>Dulcinea</B> encantada y convertida en labradora. Sancho y el primo humanista dudan de todo lo que cuenta. Las tres posibilidades que la cr&iacute;tica ha propuesto: (1) <B>Don Quijote miente</B> (quiere aparentar que su caballer&iacute;a tiene una visi&oacute;n). (2) <B>Don Quijote sue&ntilde;a</B> (su mente crea aventuras mientras duerme). (3) <B>Es una visi&oacute;n real</B> en el mundo de la novela. Cervantes <B>nunca decide</B>. La &uacute;nica pista: en el cap. 41, cuando le preguntan sobre la cueva, Don Quijote dice "un poco ment&iacute;"; pero no sabemos qu&eacute; parte minti&oacute;. Esta ambig&uuml;edad irresoluble es la clave est&eacute;tica del episodio.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO &middot; PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El fil&oacute;sofo Miguel de Unamuno escribi&oacute; que Don Quijote es el "Cristo espa&ntilde;ol": un ser que muere por su fe en un mundo que no quiere ser salvado. &iquest;C&oacute;mo se puede fundamentar esta lectura desde el texto cervantino?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La comparaci&oacute;n de Unamuno es una herej&iacute;a que no tiene ning&uacute;n fundamento en el texto; Cervantes era un cat&oacute;lico devoto y jamas habr&iacute;a permitido comparar a su personaje c&oacute;mico con Jesucristo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La lectura de Unamuno encuentra fundamento en que Don Quijote muere por defender unos valores (justicia, bondad, idealismo) en un mundo que lo rechaza y se burla de &eacute;l; como Cristo, es una figura de bondad radical incomprendida y derrotada por la realidad; su "resurrecci&oacute;n" seria cultural: vive como mito universal cuando el hombre real (Alonso Quijano) muere</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Unamuno est&aacute; equivocado porque Don Quijote no muere por sus ideales sino por una enfermedad f&iacute;sica causada por el fr&iacute;o del viaje de regreso; si hubiera llegado a casa en verano, se habr&iacute;a recuperado y la comparaci&oacute;n con Cristo no tendr&iacute;a ning&uacute;n sentido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La comparaci&oacute;n s&oacute;lo es v&aacute;lida si interpretamos al Quijote como una novela de cr&iacute;tica religiosa: Cervantes, como Erasmo, criticaba los excesos de la Iglesia Cat&oacute;lica y us&oacute; a Don Quijote como s&iacute;mbolo de la fe genuina destruida por la instituci&oacute;n</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Miguel de Unamuno</B> en <I>Vida de Don Quijote y Sancho</I> (1905) propuso la lectura m&aacute;s radical: el Quijote no es una novela c&oacute;mica sino un evangelio espa&ntilde;ol, y Don Quijote es el "Cristo de la mancha". Los elementos que sustentan esta lectura en el texto: (1) <B>Bondad radical:</B> Don Quijote es fundamentalmente bueno; libera esclavos, defiende a los d&eacute;biles, predica la justicia y el amor a Dulcinea (amor puro, no carnal). (2) <B>Mundo que lo rechaza:</B> la sociedad "cuerda" (el cura, el barbero, los Duques, Sams&oacute;n Carrasco) lo persigue, lo engaña, lo enjula y lo derrota. (3) <B>Muerte por la "verdad":</B> al final, es vencido por quienes quieren "curarlo" de sus "ilusiones"; la cordura lo mata. (4) <B>Supervivencia como mito:</B> Alonso Quijano muere pero Don Quijote es inmortal. Unamuno, en el contexto del 98 (derrota espa&ntilde;ola en Cuba y Filipinas), ley&oacute; el Quijote como s&iacute;mbolo del alma espa&ntilde;ola ideal destruida por el pragmatismo moderno. Esta lectura es un ejemplo de c&oacute;mo las grandes obras admiten interpretaciones que trascienden la intenci&oacute;n del autor.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Jorge Luis Borges escribi&oacute; el cuento "Pierre Menard, autor del Quijote" (1939), donde un escritor franc&eacute;s del siglo XX "reescribe" exactamente el Quijote sin copiarlo. &iquest;Qu&eacute; idea filos&oacute;fica sobre la literatura y la lectura ilustra este cuento borgesiano?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Borges ilustra la idea de que los grandes cl&aacute;sicos deben ser reescritos peri&oacute;dicamente porque el lenguaje envejece; "Pierre Menard" propone que cada siglo debe tener su propia versi&oacute;n actualizada del Quijote en la lengua contempor&aacute;nea</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Borges ilustra que el significado de un texto no reside &uacute;nicamente en el texto mismo sino en su relaci&oacute;n con el contexto del lector: el "mismo" texto escrito en el siglo XVII y en el XX significa cosas radicalmente diferentes porque el horizonte de lectura ha cambiado; toda lectura es una reescritura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Borges ilustra la idea de que Cervantes fue en realidad un plagiador: copi&oacute; el Quijote de una fuente &aacute;rabe perdida, y el verdadero autor fue un escritor medieval an&oacute;nimo cuya identidad Borges revela en el cuento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) "Pierre Menard" es una s&aacute;tira del nacionalismo espa&ntilde;ol que afirma que el Quijote pertenece a la humanidad y no a Espa&ntilde;a; Borges propone transferir los derechos morales de la obra a la comunidad hispanohablante de Argentina</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"<B>Pierre Menard, autor del Quijote</B>" (en <I>Ficciones</I>, 1944) es uno de los cuentos m&aacute;s influyentes del siglo XX y una de las reflexiones m&aacute;s agudas sobre la naturaleza de la lectura y la autoridad del texto. El argumento: Pierre Menard, escritor franc&eacute;s simbolista, decide no traducir ni copiar el Quijote sino reescribirlo id&eacute;nticamente mediante una inmers&oacute;n total en el mundo de Cervantes. El narrador de Borges compara dos fragmentos id&eacute;nticos (el de Cervantes y el de Menard) y concluye que <B>significan cosas distintas</B>: lo mismo escrito en el siglo XVII y en el XX tiene significados completamente diferentes porque el lector y el contexto hist&oacute;rico han cambiado. La idea filos&oacute;fica: el significado no est&aacute; en el texto sino en la relaci&oacute;n <B>texto + lector + contexto</B>. Borges anticipa la tesis de <B>Roland Barthes</B> ("La muerte del autor", 1967) y de <B>Hans Robert Jauss</B> (est&eacute;tica de la recepci&oacute;n): el autor no controla el significado de su obra; cada lector y cada &eacute;poca la reescribe. El cuento de Borges es al mismo tiempo un homenaje al Quijote, una broma erudita y una meditaci&oacute;n sobre la hermenéutica literaria.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Compara la figura del "antih&eacute;roe" en el Quijote con el "p&iacute;caro" de la novela picaresca espa&ntilde;ola (<I>Lazarillo de Tormes</I>, <I>Guzm&aacute;n de Alfarache</I>): &iquest;qu&eacute; tienen en com&uacute;n y en qu&eacute; se diferencian fundamentalmente como modelos de protagonista novelesco?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Son exactamente iguales: Don Quijote y el p&iacute;caro son el mismo tipo de protagonista; la &uacute;nica diferencia es que el p&iacute;caro es pobre y Don Quijote es hidalgo, pero ambos representan la misma cr&iacute;tica social al orden establecido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Comparten el ser protagonistas que no encajan en el orden social establecido y que fracasan en sus empresas; se diferencian en que el p&iacute;caro es un ser de bajos fondos, pragm&aacute;tico, amoral y adaptativo (sobrevive mediante el enga&ntilde;o), mientras Don Quijote es un hidalgo idealista, moralmente &iacute;ntegro y absolutamente inadaptable a la realidad; el p&iacute;caro aprende a ser m&aacute;s pillo; Don Quijote aprende a ser m&aacute;s triste</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) No tienen nada en com&uacute;n: el p&iacute;caro es un personaje realista y el Quijote es un personaje fant&aacute;stico; la novela picaresca es un g&eacute;nero realista y el Quijote es una novela de caballer&iacute;a; no puede establecerse ninguna comparaci&oacute;n l&iacute;cita entre ellos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La &uacute;nica diferencia es temporal: el p&iacute;caro es un protagonista del siglo XVI y Don Quijote del XVII; cuando la picaresca agot&oacute; sus posibilidades narrativas, Cervantes invent&oacute; el Quijote como sustituto moderno del mismo tipo de relato</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La comparaci&oacute;n Don Quijote &ndash; p&iacute;caro es un cl&aacute;sico de los ex&aacute;menes de literatura: <B>Similitudes:</B> (1) Ambos son protagonistas que no encajan en el orden social y son vistos como "raros" o "marginales". (2) Ambos son figuras dinámicas que viajan y encuentran distintos estratos sociales. (3) Ambos pertenecen al <B>Siglo de Oro</B> espa&ntilde;ol. (4) Ambos fracasan en el sentido convencional. <B>Diferencias fundamentales:</B> (1) <B>Clase social:</B> el p&iacute;caro (<I>Lazarillo</I>, <I>Guzm&aacute;n</I>) viene de los bajos fondos, es un <I>desheredado</I>; Don Quijote es hidalgo empobrecido pero honrado. (2) <B>&Eacute;tica:</B> el p&iacute;caro es amoral, adaptativo, miente y engaña para sobrevivir; Don Quijote es moralmente &iacute;ntegro hasta el ridículo. (3) <B>Motivaci&oacute;n:</B> el p&iacute;caro busca comida y dinero (necesidades materiales); Don Quijote busca la gloria, la justicia y Dulcinea (ideales puros). (4) <B>Relaci&oacute;n con la sociedad:</B> el p&iacute;caro aprende a usar el sistema; Don Quijote intenta cambiarlo y fracasa. (5) <B>Evoluci&oacute;n:</B> el p&iacute;caro "madura" volvi&eacute;ndose m&aacute;s listo; Don Quijote "envejece" y se tristece.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El cr&iacute;tico Harold Bloom sostuvo que "sin el Quijote no existir&iacute;an Flaubert, Dostoievski, Tolst&oacute;i ni Joyce". Eval&uacute;a esta afirmaci&oacute;n rastreando la huella del Quijote en alguna de estas obras o autores.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) La afirmaci&oacute;n de Bloom es exagerada; el Quijote tuvo influencia solo en la literatura espa&ntilde;ola; los autores que menciona (Flaubert, Dostoievski, Tolst&oacute;i, Joyce) desarrollaron sus obras independientemente y sin conocer el texto cervantino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) La huella es verificable: Emma Bovary (Flaubert) repite el patr&oacute;n de Don Quijote (un ser cuya mente fue formada por lecturas de novelas rom&aacute;nticas que confunde con la realidad); el pr&iacute;ncipe Mishkin (Dostoievski) es un ser de bondad radical incomprendida; Stephen Dedalus (Joyce) busca el "arte" como Don Quijote la "caballer&iacute;a"; la novela moderna no existir&iacute;a sin la invenci&oacute;n cervantina del narrador poco fiable y la conciencia metaficcional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Bloom tiene raz&oacute;n, pero por una raz&oacute;n diferente a la que &eacute;l mismo indica: la influencia del Quijote fue principalmente estil&iacute;stica (el uso del di&aacute;logo), no tem&aacute;tica; los autores que cita aprendieron de Cervantes a escribir di&aacute;logos pero no tomaron nada de sus temas o estructuras narrativas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) La afirmaci&oacute;n de Bloom se refiere al hecho de que Cervantes invent&oacute; el papel impreso en Espa&ntilde;a; sin la tecnolog&iacute;a tipogr&aacute;fica que el &eacute;xito del Quijote populariz&oacute;, los autores posteriores no habr&iacute;an podido publicar sus obras en toda Europa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR><B>Harold Bloom</B> (<I>El canon occidental</I>, 1994; <I>El genio</I>, 2002) es el cr&iacute;tico literario m&aacute;s influyente del siglo XX y uno de los m&aacute;s fervientes defensores de la centralidad del Quijote en la tradici&oacute;n novelística occidental. La huella es verificable en m&uacute;ltiples obras: (1) <B>Gustave Flaubert &mdash; <I>Madame Bovary</I> (1857):</B> Emma Bovary es una "Quijote femenina y francesa": su mente fue formada por novelas rom&aacute;nticas que confunde con la realidad; choca con la mediocridad del mundo real y muere de ese choque. El propio Flaubert ley&oacute; el Quijote toda su vida y lo consider&oacute; su modelo. (2) <B>Fiodor Dostoievski &mdash; <I>El idiota</I> (1869):</B> el pr&iacute;ncipe Mishkin es un ser de bondad radical incomprendida y burlada por la sociedad, como Don Quijote; Dostoievski declar&oacute; que quer&iacute;a escribir "un hombre perfectamente bello" como Don Quijote. (3) <B>James Joyce &mdash; <I>Ulises</I> (1922):</B> el narrador poco fiable, la multiplicidad de perspectivas, la autoconciencia metaficcional son deudas joyceas con Cervantes. (4) <B>Milan Kundera:</B> en <I>El arte de la novela</I> dice que toda la historia de la novela europea es una exploraci&oacute;n de las preguntas que el Quijote plante&oacute; en 1605.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Analiza la funci&oacute;n del narrador ficticio <B>Cide Hamete Benengeli</B> en el Quijote: &iquest;qu&eacute; efecto produce en el lector y qu&eacute; anticipaci&oacute;n narratol&oacute;gica representa?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Cide Hamete Benengeli es simplemente un recurso para dar verosimilitud a la historia: Cervantes pretende que el Quijote es un libro real encontrado en un archivo, lo que era un recurso com&uacute;n en la narrativa del siglo XVI sin ninguna originalidad especial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Cide Hamete Benengeli es el historiador &aacute;rabe ficticio cuyo manuscrito el narrador an&oacute;nimo finge haber encontrado y mandado traducir; crea un sistema de narraci&oacute;n en capas (narrador 1 → traductor → Cide Hamete) que genera distancia ir&oacute;nica permanente y un narrador inherentemente poco fiable; anticipando los conceptos de "narrador no confiable" que la teor&iacute;a literaria del siglo XX (Wayne Booth, G&eacute;rard Genette) analizar&iacute;a formalmente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Cide Hamete Benengeli es el nombre real del autor del Quijote; Cervantes no escribi&oacute; la novela sino que la encontr&oacute; realmente en un mercado de Toledo y solo la edit&oacute;; este dato lo revela el propio Cervantes en el cap&iacute;tulo 9 de la Parte I</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El uso de un narrador &aacute;rabe fue una estrategia de Cervantes para eludir la censura de la Inquisici&oacute;n: al atribuir la novela a un musulm&aacute;n, Cervantes se deslindaba de cualquier contenido potencialmente herético, que quedar&iacute;a a cargo del "infiel"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resoluci&oacute;n</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La invenci&oacute;n de <B>Cide Hamete Benengeli</B> es una de las grandes audacias narrativas de Cervantes. El sistema funciona as&iacute;: (1) En el cap. 8 de la Parte I, el narrador an&oacute;nimo dice que su fuente de informaci&oacute;n se interrumpe. (2) En el cap. 9, cuenta haber encontrado en el mercado de Toledo unos cuadernos escritos en &aacute;rabe. (3) Contrata a un traductor morisco para traducirlos; el autor resultante se llama <B>Cide Hamete Benengeli</B>, "historiador aráb&iacute;go". As&iacute;, hay tres instancias narrativas: el narrador primero (an&oacute;nimo), el traductor (an&oacute;nimo), y Cide Hamete. El efecto es triple: (1) <B>Distancia ir&oacute;nica:</B> el narrador comenta con ir&oacute;nia lo que dice Cide Hamete, creando una brecha entre lo que "ocurri&oacute;" y lo que se cuenta. (2) <B>Poco fiabilidad:</B> Cide Hamete es "historiador arab&iacute;go"; en la Espa&ntilde;a del siglo XVII, los moros eran considerados mentirosos por definici&oacute;n; por tanto todo lo narrado es sospechoso. (3) <B>Anticipaci&oacute;n te&oacute;rica:</B> la narratolog&iacute;a del siglo XX (Wayne Booth en <I>The Rhetoric of Fiction</I>, 1961; G&eacute;rard Genette en <I>Figures</I>, 1966&ndash;72) elabor&oacute; los conceptos de "narrador no confiable" y "focalizaci&oacute;n" que Cervantes practicó intuitivamente en 1605.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE &mdash; Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

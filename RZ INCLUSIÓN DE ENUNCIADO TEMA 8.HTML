@@ -1,0 +1,437 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Inclusión de Enunciado - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.parrafo{margin-top:12px;background:#F6F2EB;border-radius:10px;padding:14px 18px;font-size:16px;line-height:1.95;color:#333;font-weight:normal;}
+.parrafo b{color:#1F6A67;}
+.parrafo .hueco{color:#D7B06D;font-weight:bold;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="RAZONAMIENTO VERBAL.HTML">← Volver a los temas de Razonamiento Verbal</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">RAZONAMIENTO VERBAL · TEMA 8</DIV>
+<H1>Inclusión de Enunciado</H1>
+<DIV CLASS="sub">Progresión temática · Tópico y comentario · Marcas semánticas y gramaticales que enlazan las ideas de un texto</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. Cómo avanza la información dentro de un texto</H3>
+Cuando leemos un párrafo bien construido, tenemos la sensación de que "fluye": cada oración retoma algo de la anterior y, al mismo tiempo, aporta información nueva. Ese movimiento de lo ya conocido hacia lo nuevo, oración tras oración es lo que en lingüística textual se llama <B>progresión temática</B>: el modo en que la información avanza dentro de un texto sin perder el hilo que conecta cada idea con la que la precede.
+
+Entender la progresión temática es entender, en el fondo, por qué un texto tiene sentido como conjunto y no como una simple lista de oraciones independientes. Cada oración de un párrafo cumple una función dentro de esa cadena: retoma algo dicho, lo desarrolla, y deja una base sobre la cual la oración siguiente construirá su propio aporte.
+
+<H3>2. Tópico y comentario: las dos partes de cada oración</H3>
+Toda oración dentro de un texto puede analizarse en dos partes con funciones distintas:
+
+<H4>a) El tópico (o tema)</H4>
+Es la parte de la oración que expresa <B>información ya conocida</B> por el lector, porque fue mencionada antes en el texto o porque se sobreentiende del contexto. El tópico es el punto de partida de la oración: aquello sobre lo cual se va a decir algo.
+
+<H4>b) El comentario (o rema)</H4>
+Es la parte de la oración que aporta <B>información nueva</B> respecto de lo ya dicho. El comentario es lo que realmente hace avanzar el texto, porque añade un dato, una explicación o un matiz que el lector todavía no conocía.
+
+<DIV CLASS="ej"><B>Ejemplo:</B> "El café es una de las bebidas más consumidas del mundo. <B>Esta bebida</B> se obtiene a partir de la torrefacción y molienda de las semillas del cafeto." En la segunda oración, "esta bebida" es el <B>tópico</B> (retoma "el café", ya mencionado), y "se obtiene a partir de la torrefacción y molienda de las semillas del cafeto" es el <B>comentario</B> (la información nueva que se añade).</DIV>
+
+La progresión temática ocurre, precisamente, cuando el comentario de una oración se convierte —total o parcialmente— en el tópico de la oración siguiente, o cuando distintas oraciones comparten un mismo tópico de fondo. Ese engranaje entre tópicos y comentarios es lo que sostiene la coherencia de un párrafo de principio a fin.
+
+<H3>3. Los patrones clásicos de progresión temática</H3>
+Existen tres formas básicas en que un texto puede organizar el avance entre tópicos y comentarios:
+
+<H4>a) Progresión de tema constante</H4>
+El <B>mismo tópico</B> se mantiene a lo largo de varias oraciones, mientras que cada una aporta un comentario distinto sobre él. Es el patrón típico de los textos descriptivos o biográficos, donde se habla de un mismo referente (una persona, un lugar, un fenómeno) desde distintos ángulos.
+<DIV CLASS="ej"><B>Ejemplo:</B> "José María Arguedas nació en Andahuaylas en 1911. <B>[Arguedas]</B> vivió su infancia en contacto directo con comunidades quechuahablantes. <B>[Arguedas]</B> plasmó esa experiencia en novelas como 'Los ríos profundos'." El tópico "Arguedas" permanece constante; lo que cambia es el comentario en cada oración.</DIV>
+
+<H4>b) Progresión lineal (o encadenada)</H4>
+El <B>comentario de una oración se convierte en el tópico de la siguiente</B>, formando una cadena donde cada idea nueva se apoya directamente en la anterior. Es el patrón típico de los textos explicativos que avanzan paso a paso, como una explicación causal o un proceso.
+<DIV CLASS="ej"><B>Ejemplo:</B> "El calentamiento global provoca el deshielo de los glaciares. <B>Ese deshielo</B> incrementa el nivel del mar. <B>Dicho incremento</B> amenaza a las ciudades costeras." Cada comentario ("el deshielo de los glaciares", "el nivel del mar") se convierte en el tópico de la oración que sigue.</DIV>
+
+<H4>c) Progresión de temas derivados (o hipertema)</H4>
+Existe un <B>tema general (hipertema)</B> del cual se derivan varios subtemas, cada uno desarrollado en oraciones distintas, pero todos relacionados con ese marco común. Es el patrón típico de los textos que presentan varios aspectos o partes de un mismo tema general.
+<DIV CLASS="ej"><B>Ejemplo:</B> "El ecosistema andino alberga una notable diversidad biológica. Su fauna incluye especies como la vicuña y el cóndor. Su flora comprende desde ichu hasta la puya de Raimondi. Su clima varía drásticamente según la altitud." El hipertema "el ecosistema andino" da origen a subtemas (fauna, flora, clima) que se desarrollan de forma paralela.</DIV>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo de progresión</TH><TH>Cómo se organiza</TH><TH>Texto típico donde aparece</TH></TR>
+<TR><TD>Tema constante</TD><TD>Un mismo tópico recibe comentarios distintos</TD><TD>Biografías, descripciones, retratos</TD></TR>
+<TR><TD>Lineal o encadenada</TD><TD>El comentario de una oración es el tópico de la siguiente</TD><TD>Explicaciones causales, procesos, narraciones de eventos</TD></TR>
+<TR><TD>Temas derivados</TD><TD>Un hipertema general origina varios subtemas paralelos</TD><TD>Textos que presentan aspectos o partes de un mismo tema</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>4. Marcas semánticas y gramaticales en la progresión temática</H3>
+El engranaje entre tópicos y comentarios no ocurre de manera invisible: el propio idioma ofrece recursos concretos, tanto de significado como de gramática, que señalan cómo una oración retoma lo dicho por la anterior. Reconocer estas marcas es la clave para identificar, dentro de un párrafo, si una oración encaja realmente en la cadena o si rompe la progresión.
+
+<H4>a) Marcas gramaticales</H4>
+<UL>
+<LI><B>Pronombres:</B> "él", "ella", "esto", "aquello", "el cual", "cuyo" retoman directamente un elemento ya mencionado, sin necesidad de repetir la palabra exacta.</LI>
+<LI><B>Artículos definidos:</B> el uso de "el", "la", "los", "las" frente a un sustantivo que ya apareció (a diferencia de "un", "una", que introducen algo nuevo) señala que se está retomando información conocida. Comparar "un estudio reveló..." (información nueva) con "el estudio reveló..." (información ya presentada).</LI>
+<LI><B>Elipsis:</B> la omisión del sujeto cuando ya se sobreentiende por el contexto ("Llegó temprano. ___ Saludó a todos.") mantiene la continuidad del tópico sin necesidad de repetirlo.</LI>
+<LI><B>Concordancia de número y género:</B> los pronombres y adjetivos que concuerdan con el sustantivo ya mencionado confirman a qué elemento del texto se está haciendo referencia.</LI>
+</UL>
+
+<H4>b) Marcas semánticas</H4>
+<UL>
+<LI><B>Sinónimos y expresiones equivalentes:</B> usar una palabra distinta pero de significado cercano para referirse a algo ya mencionado ("el poeta" para retomar "César Vallejo") evita la repetición sin romper la continuidad temática.</LI>
+<LI><B>Hiperónimos e hipónimos:</B> referirse a un elemento ya mencionado mediante una categoría más general (hiperónimo: "el felino" para retomar "el jaguar") o mediante un caso más específico (hipónimo) permite avanzar en la explicación manteniendo el vínculo semántico con lo dicho antes.</LI>
+<LI><B>Campos semánticos compartidos:</B> palabras que pertenecen a un mismo campo de significado (por ejemplo, "cosecha", "siembra", "riego" dentro de un texto sobre agricultura) refuerzan que las oraciones pertenecen al mismo desarrollo temático, aunque no repitan literalmente ninguna palabra.</LI>
+<LI><B>Nominalizaciones:</B> convertir una idea completa mencionada antes (por ejemplo, una acción descrita en una oración) en un sustantivo que la resume ("Los científicos midieron el fenómeno durante meses. <B>Esa medición</B> permitió..."), de modo que el comentario extenso de una oración se condensa en el tópico breve de la siguiente.</LI>
+</UL>
+
+<DIV CLASS="cultura-titulo">POR QUÉ ESTO SIRVE PARA "INCLUIR" UN ENUNCIADO EN UN TEXTO<SPAN>Encontrar la oración que falta es, en el fondo, encontrar el eslabón que faltaba en la cadena de tópicos y comentarios</SPAN></DIV>
+
+Cuando un párrafo tiene un espacio en blanco y se pide identificar qué oración encaja allí, lo que realmente se está pidiendo es reconocer <B>cuál es el eslabón que continúa correctamente la progresión temática</B> del texto: qué tópico retoma la oración faltante, qué comentario nuevo aporta, y cómo se conecta mediante pronombres, sinónimos, hiperónimos o conectores con la oración anterior y con la siguiente. Una oración que introduce un tópico ajeno al desarrollado hasta ese punto, o que usa una referencia que no encaja con lo ya dicho, rompe la cadena aunque su contenido, aislado, sea correcto y esté bien escrito.
+
+<DIV CLASS="mapa-note"><B>En síntesis.</B> Comprender la inclusión de enunciado es comprender cómo se teje la continuidad de un texto: identificando qué información ya es conocida (tópico) y cuál es nueva (comentario) en cada oración, reconociendo el patrón de progresión que sigue el párrafo (tema constante, lineal o de temas derivados) y prestando atención a las marcas pronombres, artículos, sinónimos, hiperónimos, campos semántico que hacen visible ese engranaje entre una idea y la siguiente.</DIV>
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">3</DIV><DIV CLASS="dk-label">Patrones de progresión temática: tema constante, lineal, temas derivados</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">2</DIV><DIV CLASS="dk-label">Partes de cada oración dentro del texto: tópico y comentario</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">2</DIV><DIV CLASS="dk-label">Tipos de marcas que sostienen la progresión: gramaticales y semánticas</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Coherencia</DIV><DIV CLASS="dk-label">Resultado de una progresión temática bien construida</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Preguntas de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> En la progresión temática de un texto, ¿qué se entiende por "tópico" dentro de una oración?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) La información nueva que la oración aporta al lector</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) La parte de la oración que expresa información ya conocida, porque fue mencionada antes o se sobreentiende del contexto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) El título general del texto completo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) El conector que une dos oraciones consecutivas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El tópico (o tema) es el punto de partida de una oración: la información que el lector ya conoce, sea porque el texto la mencionó antes o porque se sobreentiende del contexto general. La opción a) describe, en realidad, al comentario (la parte nueva); c) confunde el tópico oracional con el tema global de un texto completo, que es un concepto distinto; d) describe la función de un conector, no la de un tópico.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Qué función cumple el "comentario" (o rema) dentro de una oración?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Repite exactamente la misma información que ya apareció en la oración anterior</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Aporta información nueva respecto de lo ya dicho, y es lo que realmente hace avanzar el texto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Es siempre un pronombre que reemplaza al sujeto de la oración</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Es la parte de la oración que puede eliminarse sin alterar el sentido del texto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El comentario es la porción de la oración que introduce información nueva: un dato, una explicación o un matiz que el lector no conocía antes de leer esa oración. Es, por definición, lo que hace que el texto progrese. La opción a) describe justamente lo contrario de su función; c) confunde el comentario con una categoría gramatical específica (el pronombre), cuando en realidad el comentario puede tener formas muy variadas; d) es falsa, ya que el comentario suele ser la parte más relevante de la oración, no una parte prescindible.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> En la progresión de "tema constante", ¿qué ocurre a lo largo de las oraciones del párrafo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) El tópico cambia en cada oración, mientras que el comentario permanece siempre igual</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) El mismo tópico se mantiene en varias oraciones, mientras que cada una aporta un comentario distinto sobre él</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) No existe ningún tópico identificable en este tipo de progresión</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Cada oración introduce un tema completamente independiente de las demás</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En la progresión de tema constante, un mismo referente (una persona, un objeto, un fenómeno) permanece como tópico a lo largo de varias oraciones, mientras que cada una añade una información nueva (comentario) sobre ese mismo referente. Es el patrón típico de descripciones y biografías. La opción a) invierte la relación real; c) y d) niegan la existencia de continuidad temática, que es precisamente lo que define a este patrón.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Qué caracteriza a la progresión temática "lineal o encadenada"?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) El comentario de una oración se convierte en el tópico de la oración siguiente, formando una cadena</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Todas las oraciones del párrafo comparten exactamente el mismo tópico sin ninguna variación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Cada oración presenta un subtema distinto derivado de un mismo tema general</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Las oraciones no guardan ninguna relación de significado entre sí</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>La progresión lineal se caracteriza porque lo que una oración aporta como información nueva (su comentario) pasa a ser, en la oración siguiente, el punto de partida ya conocido (su tópico), formando una cadena de ideas que avanzan paso a paso. La opción b) describe, en cambio, la progresión de tema constante; c) describe la progresión de temas derivados; d) es incorrecta porque precisamente existe una relación estrecha entre oraciones consecutivas.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> ¿Cuál de las siguientes es una marca gramatical típica que ayuda a identificar que un elemento ya fue mencionado antes en el texto?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) El uso de un artículo indefinido ("un", "una") junto al sustantivo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) El uso de un artículo definido ("el", "la") junto a un sustantivo ya presentado, o el uso de un pronombre que lo retoma</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) El uso de números en la oración</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) El uso de signos de puntuación como la coma</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El artículo definido ("el estudio", "la investigación") frente al indefinido ("un estudio", "una investigación") es una marca gramatical clara: el definido señala que el sustantivo ya fue introducido antes en el texto, mientras que el indefinido introduce algo nuevo. Los pronombres cumplen una función equivalente. La opción a) señala justamente la marca de información nueva, no de información conocida; c) y d) no tienen, por sí mismos, ninguna relación con la continuidad temática.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Complete el espacio en blanco con la oración que mantiene correctamente la progresión temática del párrafo:
+<DIV CLASS="parrafo">"La papa fue domesticada por las culturas prehispánicas andinas hace más de siete mil años. <SPAN CLASS="hueco">_______________</SPAN>. Hoy en día, más de cuatro mil variedades de este tubérculo se cultivan en el Perú."</DIV>
+</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Los incas construyeron una extensa red de caminos que atravesaba gran parte del Tahuantinsuyo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Este cultivo se adaptó progresivamente a los distintos pisos altitudinales de la región andina, lo que favoreció su enorme diversidad genética</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El maíz también fue un alimento fundamental en la dieta de las culturas prehispánicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) La gastronomía peruana ha recibido numerosos reconocimientos internacionales en los últimos años</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El párrafo sigue una progresión de tema constante: el tópico "la papa" (retomado en la oración final como "este tubérculo") debe mantenerse en la oración intermedia. La opción b) retoma ese tópico mediante "este cultivo" y aporta un comentario que conecta lógicamente el origen prehispánico con la enorme diversidad de variedades mencionada al final ("lo que favoreció su enorme diversidad genética" anticipa exactamente "más de cuatro mil variedades"). Las opciones a), c) y d) introducen tópicos distintos (los caminos incas, el maíz, la gastronomía en general) que rompen la continuidad temática del párrafo, aunque cada una sea, por separado, una oración correcta y verdadera.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Complete el espacio en blanco con la oración que mantiene correctamente la progresión temática del párrafo:
+<DIV CLASS="parrafo">"La deforestación en la Amazonía reduce significativamente la superficie de bosque primario cada año. <SPAN CLASS="hueco">_______________</SPAN>. Esta menor capacidad de absorción contribuye, a su vez, al incremento de la concentración de CO2 en la atmósfera."</DIV>
+</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) La Amazonía peruana alberga una biodiversidad excepcional de flora y fauna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Esta pérdida de bosque disminuye directamente la capacidad de los árboles para absorber dióxido de carbono de la atmósfera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Diversas comunidades indígenas habitan tradicionalmente en la región amazónica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) El turismo ecológico se ha convertido en una importante fuente de ingresos para la región</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El párrafo sigue una progresión lineal: el comentario de la primera oración ("reduce significativamente la superficie de bosque primario") debe convertirse en el tópico de la oración intermedia, que a su vez debe dejar como comentario algo que la tercera oración retome mediante "esta menor capacidad de absorción". La opción b) cumple ambos requisitos: retoma la pérdida de bosque ("esta pérdida de bosque") y aporta como comentario la disminución de la capacidad de absorción de CO2, que es exactamente lo que la última oración retoma. Las demás opciones introducen tópicos (biodiversidad, comunidades indígenas, turismo) que no continúan la cadena causal establecida.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Complete el espacio en blanco con la oración que mantiene correctamente la progresión temática del párrafo:
+<DIV CLASS="parrafo">"El sistema solar alberga una notable variedad de cuerpos celestes. Sus planetas rocosos, como Mercurio y Marte, presentan superficies sólidas y atmósferas delgadas. Sus planetas gaseosos, como Júpiter y Saturno, se caracterizan por su enorme tamaño y la ausencia de una superficie definida. <SPAN CLASS="hueco">_______________</SPAN>."</DIV>
+</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Júpiter es el planeta más grande del sistema solar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) Sus cuerpos menores, como asteroides y cometas, completan el conjunto de objetos que orbitan alrededor del Sol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) El telescopio espacial Hubble ha permitido observar galaxias muy lejanas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La Tierra es el único planeta conocido con condiciones adecuadas para la vida</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El párrafo sigue una progresión de temas derivados: el hipertema "el sistema solar" da origen a subtemas paralelos (planetas rocosos, planetas gaseosos) introducidos cada uno mediante la fórmula "sus [subtema]". La oración faltante debe continuar ese mismo patrón con un tercer subtema paralelo, y la opción b) lo hace exactamente ("sus cuerpos menores..."), completando la enumeración de los tipos de cuerpos celestes del sistema solar. La opción a) es un dato específico sobre Júpiter que ya rompe el patrón de enumeración de subtemas; c) y d) se alejan del hipertema general hacia temas distintos (observación astronómica, condiciones de vida).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> En el siguiente par de oraciones, identifica qué recurso semántico permite mantener la progresión temática sin repetir literalmente la misma palabra: "El jaguar es el felino más grande de América. <B>Este depredador</B> ocupa la cima de la cadena alimenticia en los ecosistemas donde habita."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Un conector adversativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Un hiperónimo funcional ("este depredador"), que retoma al jaguar mediante una categoría más general vinculada a su función ecológica, evitando repetir la palabra "jaguar"</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Una elipsis del sujeto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Un artículo indefinido que introduce información nueva</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"Este depredador" retoma al jaguar mediante una categoría semántica más amplia asociada a su rol dentro del ecosistema, funcionando como un hiperónimo que evita la repetición literal de "jaguar" mientras mantiene con claridad la continuidad del tópico. No hay conector adversativo (a), ya que no se está contrastando nada; no hay elipsis (c), porque el sujeto está explícito ("este depredador"), no omitido; y el artículo demostrativo "este" señala precisamente información ya conocida, no nueva (d).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> ¿Por qué la siguiente oración rompería la progresión temática si se insertara en un párrafo que viene desarrollando, de forma constante, el tema "la escritura cuneiforme"? Oración candidata: "Estos símbolos permitieron a los sumerios registrar transacciones comerciales y textos administrativos."</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) No rompería la progresión: "estos símbolos" retoma con claridad los signos cuneiformes ya mencionados como tópico, y el resto de la oración aporta un comentario nuevo coherente con el desarrollo del tema</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Rompería la progresión porque menciona a los sumerios sin haberlos presentado antes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Rompería la progresión porque usa un pronombre demostrativo, y estos nunca deben usarse dentro de un párrafo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Rompería la progresión porque no contiene ningún conector explícito como "sin embargo" o "por ello"</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: a)</B><BR>Esta pregunta evalúa si el estudiante distingue entre una ruptura real de la progresión y una continuación correcta. "Estos símbolos" es una referencia anafórica perfectamente válida si el párrafo ya presentó los signos cuneiformes como tópico; la oración aporta, además, un comentario nuevo y pertinente (su uso para registros comerciales y administrativos) que enriquece el desarrollo del tema sin desviarse de él. La opción b) da por sentado, sin fundamento, que "los sumerios" no ha sido mencionado, cuando en un párrafo sobre escritura cuneiforme ese referente suele estar implícito o ya presentado; c) generaliza incorrectamente que los pronombres demostrativos rompen siempre la coherencia, cuando en realidad son uno de los recursos principales para mantenerla; d) asume erróneamente que toda oración necesita un conector explícito para conectarse con la anterior, cuando muchas veces basta con una referencia anafórica bien construida.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · RAZONAMIENTO CRÍTICO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Complete el espacio en blanco con la oración que mantiene correctamente la progresión temática del párrafo:
+<DIV CLASS="parrafo">"La cultura Chavín desarrolló un estilo artístico caracterizado por la representación de figuras felínicas y elementos zoomorfos combinados. <SPAN CLASS="hueco">_______________</SPAN>. Esta difusión evidencia que Chavín no fue una simple aldea aislada, sino un centro de irradiación cultural sobre un territorio extenso."</DIV>
+</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) El templo de Chavín de Huántar se ubica en la actual región de Áncash, en la sierra central del Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Dicho estilo iconográfico se expandió, mediante intercambios comerciales y religiosos, hacia zonas alejadas de la costa y la sierra norte y central</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Las culturas posteriores a Chavín, como Paracas y Nazca, desarrollaron sus propios estilos artísticos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) La arqueología peruana ha experimentado avances significativos en las últimas décadas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El párrafo sigue una progresión lineal: el comentario de la primera oración (el estilo artístico felínico y zoomorfo) debe convertirse en el tópico de la oración intermedia, cuyo comentario a su vez debe ser retomado por "esta difusión" en la última oración. La opción b) cumple exactamente esa doble condición: retoma el estilo mediante "dicho estilo iconográfico" y aporta como comentario su expansión territorial, que es precisamente lo que "esta difusión" recoge después. La opción a) aporta un dato de ubicación geográfica que no conecta con "esta difusión"; c) introduce un tópico distinto (culturas posteriores) sin relación directa con la expansión mencionada al final; d) se aleja completamente del desarrollo temático del párrafo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Complete el espacio en blanco con la oración que mantiene correctamente la progresión temática del párrafo:
+<DIV CLASS="parrafo">"La resistencia bacteriana a los antibióticos surge cuando algunas bacterias desarrollan mutaciones que neutralizan el efecto de estos medicamentos. <SPAN CLASS="hueco">_______________</SPAN>. Por ello, la Organización Mundial de la Salud recomienda restringir el uso indiscriminado de antibióticos tanto en medicina humana como en la producción ganadera."</DIV>
+</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Los antibióticos fueron descubiertos por Alexander Fleming en 1928</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Estas bacterias resistentes se multiplican y transmiten su resistencia a nuevas generaciones, dificultando cada vez más el tratamiento de infecciones comunes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Existen distintos tipos de antibióticos según su mecanismo de acción sobre las bacterias</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) La penicilina revolucionó el tratamiento de infecciones bacterianas en el siglo XX</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El párrafo sigue una progresión lineal de tipo causal: la primera oración presenta el surgimiento de la resistencia bacteriana; la oración faltante debe retomar ese fenómeno como tópico y desarrollar su consecuencia inmediata, que a su vez debe justificar el "por ello" de la oración final (la recomendación de restringir el uso de antibióticos). La opción b) cumple esta cadena: retoma "estas bacterias resistentes" y explica cómo se propagan y dificultan el tratamiento, lo cual justifica exactamente la recomendación posterior. Las opciones a), c) y d) aportan información verdadera sobre antibióticos, pero ninguna continúa la cadena causal que conecta el surgimiento de la resistencia con la recomendación final; de hecho, insertarlas rompería el vínculo lógico marcado por "por ello".</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Explica por qué una oración puede ser gramaticalmente correcta y temáticamente pertinente en su contenido, y aun así no encajar en el espacio de un párrafo determinado.</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Esto nunca ocurre: si una oración es gramaticalmente correcta y trata sobre el mismo tema general, siempre encaja en cualquier parte del párrafo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Porque la progresión temática exige, además de pertenencia al tema general, que el tópico de la oración retome específicamente el comentario o el tópico inmediato anterior, y que su propio comentario prepare o conecte con la oración siguiente; una oración puede pertenecer al tema global y aun así no encajar en esa posición exacta de la cadena</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Porque las oraciones de un párrafo deben tener siempre la misma extensión en número de palabras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Porque solo importa el orden alfabético de las palabras clave dentro de cada oración</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La pertinencia temática general (que la oración trate sobre el mismo asunto del párrafo) es una condición necesaria pero no suficiente para que una oración encaje en un espacio específico. Además de eso, la progresión exige un engranaje preciso: el tópico de la oración candidata debe conectar con lo que la oración anterior dejó como comentario (o con el tópico que se viene manteniendo), y su propio comentario debe dejar una base coherente para lo que sigue. Una oración puede ser perfectamente correcta y relevante para el tema, pero fallar en ese engranaje puntual —por ejemplo, retomando un elemento distinto del que la oración anterior acaba de introducir—, y en ese caso no encaja en esa posición exacta aunque sí podría encajar en otra parte del texto. Las opciones a), c) y d) proponen criterios ajenos a la naturaleza real de la progresión temática.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Complete el espacio en blanco con la oración que mantiene correctamente la progresión temática del párrafo:
+<DIV CLASS="parrafo">"La memoria episódica permite recordar experiencias personales vinculadas a un momento y un lugar específicos. La memoria semántica, en cambio, almacena conocimientos generales sobre el mundo, independientes del contexto en que fueron adquiridos. <SPAN CLASS="hueco">_______________</SPAN>. Comprender esta distinción resulta clave para el diagnóstico de ciertos trastornos neurológicos."</DIV>
+</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El hipocampo es una estructura cerebral fundamental para la consolidación de nuevos recuerdos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Ambos tipos de memoria, aunque procesan información de naturaleza distinta, dependen de redes neuronales que pueden verse afectadas de manera diferenciada según el tipo de daño cerebral</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Existen además otros tipos de memoria, como la memoria procedimental, vinculada a habilidades motoras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El olvido es un proceso natural que cumple funciones adaptativas importantes para el cerebro</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El párrafo desarrolla una comparación entre dos términos (memoria episódica y memoria semántica) y debe cerrar con una síntesis que los reúna, antes de pasar a la conclusión final sobre su relevancia clínica ("comprender esta distinción..."). La opción b) cumple esa función de cierre comparativo mediante "ambos tipos de memoria", retomando los dos términos ya desarrollados y conectando directamente con la idea de que existen diferencias relevantes para el diagnóstico neurológico, tal como anuncia la oración final. La opción a) introduce un tercer elemento (el hipocampo) sin haberlo preparado antes; c) amplía el tema hacia un tercer tipo de memoria que desvía la comparación ya establecida entre los dos primeros; d) se aleja del contraste entre memoria episódica y semántica hacia un tema relacionado pero distinto (el olvido).</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> En un párrafo que sigue una progresión de "temas derivados" sobre el hipertema "los tres poderes del Estado", ¿qué característica debe cumplir cada una de las oraciones que desarrollan los subtemas (poder ejecutivo, poder legislativo, poder judicial)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Cada oración debe repetir textualmente la palabra "Estado" al inicio, sin ninguna variación</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Cada oración debe retomar el hipertema de forma reconocible (mediante una expresión como "el poder ejecutivo", que remite claramente al marco general de "los tres poderes"), desarrollar su subtema específico como comentario, y mantener un nivel de generalidad paralelo al de las demás oraciones del mismo grupo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Ninguna de las oraciones puede mencionar el nombre del subtema que desarrolla, para evitar redundancia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Las oraciones deben presentarse en un orden estrictamente alfabético según el nombre del subtema</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En una progresión de temas derivados, cada oración debe mantener un vínculo reconocible con el hipertema (aquí, "los tres poderes del Estado"), típicamente mediante una expresión que lo evoque directamente ("el poder ejecutivo", "el poder legislativo"), mientras desarrolla su propio subtema como comentario específico. Además, para que el conjunto se perciba como una enumeración coherente y no como tres textos independientes, conviene que las oraciones mantengan un nivel de detalle y una estructura sintáctica comparable entre sí. La opción a) exige una repetición literal innecesaria y rígida; c) contradice la necesidad de nombrar con claridad cada subtema para que la enumeración sea comprensible; d) impone un criterio de orden (alfabético) ajeno a la lógica temática real, que en este caso suele seguir, más bien, un orden convencional o funcional entre los poderes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Complete el espacio en blanco con la oración que mantiene correctamente la progresión temática del párrafo:
+<DIV CLASS="parrafo">"El Estado de derecho se sustenta en el principio de que ninguna autoridad, por elevada que sea, actúa por encima de la ley. Este principio exige, en primer término, la existencia de un marco normativo claro y accesible para toda la ciudadanía. <SPAN CLASS="hueco">_______________</SPAN>. Solo cuando estos tres elementos operan de manera articulada puede hablarse, con propiedad, de un Estado de derecho consolidado."</DIV>
+</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Montesquieu formuló la teoría clásica de la separación de poderes en el siglo XVIII</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Exige, además, mecanismos institucionales de control del poder y un sistema judicial independiente capaz de sancionar cualquier abuso de autoridad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Numerosos países latinoamericanos han enfrentado crisis institucionales en las últimas décadas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La ley debe redactarse en un lenguaje comprensible para todos los ciudadanos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El párrafo anuncia una enumeración progresiva de elementos ("en primer término, la existencia de un marco normativo...") que la conclusión final resume como "estos tres elementos". Hasta el espacio en blanco solo se ha mencionado un elemento (el marco normativo); la oración faltante debe, por tanto, aportar el o los elementos restantes necesarios para completar el conjunto de tres que la conclusión presupone. La opción b) cumple esta función mediante una elipsis del sujeto ("[este principio] exige, además...") que retoma el hipertema y añade dos elementos más (control del poder, sistema judicial independiente), completando así los tres elementos que la última oración sintetiza. La opción a) es un dato histórico que no aporta un elemento constitutivo enumerado; c) se desvía hacia ejemplos regionales sin continuar la enumeración; d) desarrolla un aspecto secundario del primer elemento ya mencionado (el marco normativo), en vez de aportar un elemento nuevo de los tres exigidos por la conclusión.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Un estudiante debe insertar una oración en un párrafo con progresión lineal sobre el ciclo del agua, y duda entre dos opciones que, ambas, retoman correctamente mediante pronombres el comentario de la oración anterior. ¿Qué criterio adicional debe aplicar para decidir cuál de las dos es la correcta?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Debe elegir la opción con menor número de palabras, ya que las oraciones más breves siempre son preferibles en un párrafo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Debe verificar, además de la referencia pronominal correcta, que el comentario de la oración candidata prepare adecuadamente el tópico de la oración siguiente, de modo que la cadena completa —no solo el enlace inmediato anterior— se mantenga coherente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Debe elegir al azar, porque si ambas retoman correctamente el pronombre, son automáticamente equivalentes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Debe elegir la que contenga más adjetivos, porque eso demuestra mayor riqueza descriptiva</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En una progresión lineal, cada oración debe encajar en la cadena por ambos extremos: debe retomar correctamente lo que la oración anterior dejó como comentario (enlace hacia atrás) y debe dejar, a su vez, un comentario que la oración siguiente pueda retomar de forma natural (enlace hacia adelante). Verificar solo el primer enlace es insuficiente cuando dos opciones lo cumplen igual de bien; el criterio decisivo, en ese caso, es comprobar cuál de las dos prepara mejor el terreno para la oración que continúa, revisando si el vocabulario, el tópico o la idea que deja pendiente esa oración se conecta con lo que sigue. Los criterios de brevedad (a), azar (c) y cantidad de adjetivos (d) no tienen relación alguna con la coherencia de la progresión temática.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Complete el espacio en blanco con la oración que mantiene correctamente la progresión temática del párrafo:
+<DIV CLASS="parrafo">"La inteligencia artificial generativa produce contenido nuevo —textos, imágenes, sonidos— a partir de patrones aprendidos de grandes volúmenes de datos previos. <SPAN CLASS="hueco">_______________</SPAN>. Este debate ha llevado a distintos países a proponer marcos regulatorios que buscan equilibrar la innovación tecnológica con la protección de los derechos de autor."</DIV>
+</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Los primeros modelos de lenguaje surgieron en la década de 1960 con propósitos limitados de traducción automática</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Precisamente por depender de esos datos previos, muchas veces protegidos por derechos de autor, ha surgido un intenso debate sobre la originalidad y la propiedad intelectual del contenido generado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Estas herramientas se emplean actualmente en sectores tan diversos como la educación, la medicina y el entretenimiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) El aprendizaje automático es una rama de la inteligencia artificial basada en el reconocimiento de patrones</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La oración final menciona "este debate" y una tensión específica entre innovación y derechos de autor, lo cual exige que la oración inmediatamente anterior haya presentado, precisamente, un debate sobre ese tema. La opción b) retoma con precisión el comentario de la primera oración ("a partir de patrones aprendidos de grandes volúmenes de datos previos") mediante "esos datos previos", y a partir de ahí construye el puente exacto hacia el debate sobre propiedad intelectual que la última oración retoma como "este debate". Las opciones a), c) y d) aportan información verdadera y relacionada con la inteligencia artificial en términos generales, pero ninguna introduce el debate específico sobre derechos de autor que la oración final presupone como ya mencionado; insertarlas dejaría a "este debate" sin un referente claro en el texto.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Analiza el siguiente párrafo con un espacio en blanco y determina qué tipo de error cometería la alternativa "El comercio electrónico ha transformado los hábitos de consumo en todo el mundo" si se insertara en el hueco:
+<DIV CLASS="parrafo">"La agricultura de precisión emplea sensores, drones y sistemas de posicionamiento satelital para optimizar el uso de recursos como el agua y los fertilizantes. <SPAN CLASS="hueco">_______________</SPAN>. Gracias a estos datos, los agricultores pueden tomar decisiones más eficientes sobre cuándo y dónde intervenir cada parte del cultivo."</DIV>
+</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) No cometería ningún error, porque ambas oraciones tratan sobre tecnología aplicada a distintos sectores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Cometería una ruptura de progresión temática por cambio de tópico no anunciado: introduce un referente (el comercio electrónico) completamente ajeno al desarrollado hasta ese punto (la agricultura de precisión), y deja además a "estos datos" de la oración final sin ningún antecedente claro al que remitir</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Cometería un error puramente gramatical de concordancia entre sujeto y verbo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Cometería un error de puntuación, ya que la oración debería terminar en dos puntos en vez de punto seguido</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta exige distinguir entre pertenencia temática amplia (ambas oraciones hablan de "tecnología") y progresión temática real (el engranaje específico entre tópicos y comentarios). Aunque el comercio electrónico y la agricultura de precisión comparten el rasgo general de ser aplicaciones tecnológicas, insertar esa oración introduce un tópico completamente distinto al que el párrafo viene desarrollando, y además deja sin antecedente a "estos datos" en la oración final, que necesita referirse a los datos generados por los sensores, drones y sistemas satelitales mencionados en la primera oración, no a nada relacionado con el comercio electrónico. La opción a) confunde relación temática superficial con progresión real; c) y d) señalan supuestos errores gramaticales o de puntuación que no son la naturaleza real del problema, que es de coherencia y referencia, no de forma.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Si tuvieras que resumir en una sola afirmación qué es, en esencia, lo que se evalúa al pedir identificar la oración que falta dentro de un párrafo, ¿cuál de las siguientes lo expresa con mayor exactitud?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Se evalúa únicamente si el estudiante conoce el significado de todas las palabras usadas en las alternativas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Se evalúa la capacidad de reconocer el patrón de progresión temática que sigue un párrafo (tema constante, lineal o de temas derivados) y de identificar, mediante marcas gramaticales y semánticas, qué oración retoma correctamente el tópico o comentario previo y prepara coherentemente lo que sigue, sin importar si el tema del párrafo es conocido o no por el lector</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Se evalúa exclusivamente la longitud de cada oración candidata, prefiriendo siempre la más extensa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Se evalúa si la oración candidata contiene algún dato numérico, ya que los datos numéricos siempre indican la respuesta correcta</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de cierre integra los conceptos centrales del tema: la progresión temática (sus tres patrones), la estructura interna de tópico y comentario, y las marcas gramaticales y semánticas que hacen visible el engranaje entre oraciones. La competencia evaluada es transferible a cualquier tema, porque no depende de conocimientos previos sobre el contenido del párrafo, sino de la capacidad de leer las señales textuales que indican continuidad. Las opciones a), c) y d) proponen criterios ajenos a la naturaleza real del ejercicio: el vocabulario aislado, la extensión de la oración o la presencia de números no determinan, por sí mismos, si una oración encaja en la cadena de progresión de un párrafo específico.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE — Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

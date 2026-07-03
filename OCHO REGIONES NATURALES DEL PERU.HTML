@@ -1,0 +1,670 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Ocho Regiones Naturales del Perú - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA · TEMA 11 · NIVEL PREUNIVERSITARIO</DIV>
+<H1>Ocho Regiones Naturales del Perú</H1>
+<DIV CLASS="sub">Sistema de Pulgar Vidal · Características altitudinales · Flora y fauna representativa · Actividades económicas por región</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="origen">1. Origen del sistema: Javier Pulgar Vidal</H3>
+
+El geógrafo peruano <B>Javier Pulgar Vidal</B> (1911–2003) propuso en 1938 la clasificación del Perú en <B>ocho regiones naturales</B>, también llamadas regiones o pisos altitudinales. Este sistema fue reconocido oficialmente por el Estado peruano y se basa en tres criterios fundamentales:
+
+<UL>
+<LI><B>Altitud sobre el nivel del mar (m.s.n.m.):</B> el factor principal que determina el clima, la flora y la fauna de cada región.</LI>
+<LI><B>Toponimia quechua:</B> los nombres de las regiones provienen del quechua, la lengua andina, recogiendo el saber ancestral de las poblaciones locales que ya diferenciaban estos pisos ecológicos.</LI>
+<LI><B>Características ecológicas:</B> cada región tiene un conjunto propio de flora, fauna, suelos, precipitaciones y actividades humanas.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El sistema de las 8 regiones naturales es obra de <B>Javier Pulgar Vidal</B>. Las regiones se ordenan de menor a mayor altitud: Chala → Yunga → Quechua → Suni → Puna → Janca → Rupa-Rupa → Omagua. Memoriza el orden y las altitudes de cada una.</DIV>
+
+<H3 ID="tabla-general">2. Cuadro resumen de las 8 regiones naturales</H3>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>#</TH><TH>Nombre</TH><TH>Altitud (m.s.n.m.)</TH><TH>Zona geográfica</TH><TH>Clima</TH></TR>
+<TR><TD>1</TD><TD><B>Chala (Costa)</B></TD><TD>0 – 500</TD><TD>Franja costera</TD><TD>Árido, templado; garúas en invierno</TD></TR>
+<TR><TD>2</TD><TD><B>Yunga</B></TD><TD>500 – 2 300</TD><TD>Valles interandinos bajos</TD><TD>Cálido, seco (Yunga marítima) o húmedo (Yunga fluvial)</TD></TR>
+<TR><TD>3</TD><TD><B>Quechua</B></TD><TD>2 300 – 3 500</TD><TD>Valles interandinos medios</TD><TD>Templado, lluvias estacionales; la más habitada</TD></TR>
+<TR><TD>4</TD><TD><B>Suni (Jalca)</B></TD><TD>3 500 – 4 000</TD><TD>Sierra media-alta</TD><TD>Frío, lluvias moderadas; heladas nocturnas</TD></TR>
+<TR><TD>5</TD><TD><B>Puna</B></TD><TD>4 000 – 4 800</TD><TD>Altiplano andino</TD><TD>Muy frío, vientos fuertes; grandes variaciones diarias</TD></TR>
+<TR><TD>6</TD><TD><B>Janca (Cordillera)</B></TD><TD>4 800 – cimas</TD><TD>Cimas nevadas</TD><TD>Glacial, nieves perpetuas; zona deshabitada</TD></TR>
+<TR><TD>7</TD><TD><B>Rupa-Rupa (Selva Alta)</B></TD><TD>400 – 1 000</TD><TD>Selva alta / ceja de selva</TD><TD>Cálido-húmedo, lluvias abundantes todo el año</TD></TR>
+<TR><TD>8</TD><TD><B>Omagua (Selva Baja)</B></TD><TD>80 – 400</TD><TD>Llanura amazónica</TD><TD>Cálido, muy húmedo; lluvias abundantes</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="mapa-note"><B>Importante:</B> Las regiones 7 (Rupa-Rupa) y 8 (Omagua) tienen altitudes <B>menores</B> que la Quechua, Suni, Puna y Janca, porque se ubican al <B>este</B> de los Andes, descendiendo hacia la Amazonia. El orden del cuadro refleja la secuencia lógica costa → sierra → selva, no necesariamente altitud ascendente entre todas las regiones.</DIV>
+
+<H3 ID="chala">3. Región Chala (Costa)</H3>
+
+<H4>Características:</H4>
+<UL>
+<LI><B>Altitud:</B> 0 a 500 m.s.n.m.</LI>
+<LI><B>Ubicación:</B> franja costera peruana, del Pacífico hasta el pie de los Andes.</LI>
+<LI><B>Clima:</B> árido y templado. La corriente de Humboldt mantiene temperaturas frescas (18–22°C en Lima). En invierno hay garúas (neblinas). La costa norte (Piura, Tumbes) es más cálida y recibe más lluvia.</LI>
+<LI><B>Suelos:</B> arenosos y desérticos. Tierras agrícolas solo en los valles de los ríos (oasis costeños).</LI>
+</UL>
+
+<H4>Flora representativa:</H4>
+<UL>
+<LI>Algarrobo (<I>Prosopis pallida</I>): árbol emblemático del bosque seco de la costa norte.</LI>
+<LI>Tillandsias (bromelias): plantas que obtienen agua de la neblina en la costa árida.</LI>
+<LI>Lomas costeras: ecosistemas estacionales de plantas que florecen con las garúas (lomas de Lachay, Atiquipa).</LI>
+<LI>Caña brava, carrizos en valles fluviales.</LI>
+</UL>
+
+<H4>Fauna representativa:</H4>
+<UL>
+<LI>Lobo marino (<I>Otaria flavescens</I>): en las orillas rocosas.</LI>
+<LI>Pelícano peruano, guanay, piquero: aves guaneras que producen el guano de islas.</LI>
+<LI>Zorro costeño (<I>Lycalopex sechurae</I>).</LI>
+<LI>Cangrejo violáceo en zonas de playa.</LI>
+</UL>
+
+<H4>Actividades económicas:</H4>
+<UL>
+<LI>Pesca industrial y artesanal (flota pesquera más importante del Perú).</LI>
+<LI>Agricultura de irrigación en valles costeños (espárragos, caña de azúcar, algodón, frutas de exportación).</LI>
+<LI>Industria y comercio (Lima concentra el 50% del PIB industrial del país).</LI>
+<LI>Extracción de petróleo y gas en la costa norte (Talara).</LI>
+</UL>
+
+<DIV CLASS="ej">💡 <B>Recuerda:</B> El vocablo "Chala" en quechua significa "maíz de costa" o hace referencia a la chala (planta del maíz). La chala también denomina la franja costera peruana como región natural.</DIV>
+
+<H3 ID="yunga">4. Región Yunga</H3>
+
+<H4>Características:</H4>
+<UL>
+<LI><B>Altitud:</B> 500 a 2 300 m.s.n.m.</LI>
+<LI><B>Dos tipos:</B>
+<UL>
+<LI><B>Yunga marítima:</B> vertiente occidental de los Andes, árida, valles encajonados de ríos de la costa.</LI>
+<LI><B>Yunga fluvial:</B> vertiente oriental de los Andes, más húmeda, con vegetación más densa.</LI>
+</UL>
+</LI>
+<LI><B>Clima:</B> cálido y seco en la marítima (24–26°C). La fluvial es más húmeda por los vientos amazónicos.</LI>
+<LI>"Yunga" en quechua significa <B>valle cálido</B>.</LI>
+</UL>
+
+<H4>Flora representativa:</H4>
+<UL>
+<LI>Tuna (<I>Opuntia ficus-indica</I>): cactus del que se extrae la cochinilla (tinte rojo).</LI>
+<LI>Molle (<I>Schinus molle</I>): árbol andino de gran importancia cultural y medicinal.</LI>
+<LI>Maguey / penca (<I>Agave</I>).</LI>
+<LI>Pájaro bobo, sauce llorón en orillas de quebradas.</LI>
+</UL>
+
+<H4>Fauna representativa:</H4>
+<UL>
+<LI>Perdiz serrana, pava andina.</LI>
+<LI>Lagartija de los andes, culebras.</LI>
+<LI>Mariposas y colibríes (picaflores) abundantes en la Yunga fluvial.</LI>
+</UL>
+
+<H4>Actividades económicas:</H4>
+<UL>
+<LI><B>Fruticultura:</B> chirimoya, palta (aguacate), lúcuma, mango, maracuyá, granadilla. La región Yunga es conocida como el "<B>paraíso de las frutas</B>".</LI>
+<LI>Producción de cochinilla (colorante natural) en zonas de tuna.</LI>
+<LI>Ganadería menor.</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Muy preguntado:</B> La Yunga es la región de las <B>frutas</B> por excelencia: chirimoya, palta, lúcuma. También se cultiva <B>coca</B> en la Yunga fluvial (uso ancestral y también ilícito). La diferencia entre Yunga <B>marítima</B> (occidental, árida) y Yunga <B>fluvial</B> (oriental, húmeda) es muy evaluada.</DIV>
+
+<H3 ID="quechua">5. Región Quechua</H3>
+
+<H4>Características:</H4>
+<UL>
+<LI><B>Altitud:</B> 2 300 a 3 500 m.s.n.m.</LI>
+<LI><B>La región más habitada del Perú:</B> históricamente concentra la mayor población andina. Ciudades como Cusco (3 399 m), Ayacucho (2 750 m), Cajamarca (2 750 m) y Huaraz (3 052 m) se ubican en esta región.</LI>
+<LI><B>Clima:</B> templado (12–18°C), con lluvias estacionales (noviembre–abril). Cielos despejados en invierno.</LI>
+<LI>"Quechua" en quechua significa <B>zona templada</B>; también es el nombre del pueblo y lengua andina.</LI>
+</UL>
+
+<H4>Flora representativa:</H4>
+<UL>
+<LI>Maíz (<I>Zea mays</I>): el cultivo andino por excelencia; el Perú es uno de los centros de origen del maíz.</LI>
+<LI>Trigo, cebada (introducidos en la época colonial).</LI>
+<LI>Nogal (<I>Juglans neotropica</I>), aliso (<I>Alnus acuminata</I>).</LI>
+<LI>Queñoa (<I>Polylepis</I>): árbol que crece a mayor altitud que cualquier otro en el mundo.</LI>
+</UL>
+
+<H4>Fauna representativa:</H4>
+<UL>
+<LI>Venado de cola blanca (<I>Odocoileus virginianus</I>).</LI>
+<LI>Cóndor andino (<I>Vultur gryphus</I>): símbolo nacional del Perú, el ave voladora más grande del mundo.</LI>
+<LI>Zorzal, tordo, picaflor.</LI>
+<LI>Trucha arcoíris (introducida) en ríos y lagunas.</LI>
+</UL>
+
+<H4>Actividades económicas:</H4>
+<UL>
+<LI>Agricultura de maíz, trigo, cebada, papa (en su límite superior), menestras, hortalizas.</LI>
+<LI>Ganadería vacuna (zonas más húmedas).</LI>
+<LI>Minería (muchos asientos mineros se ubican en la Quechua alta o transición a la Suni).</LI>
+<LI>Turismo (Cusco, Machu Picchu a 2 430 m, Cajamarca).</LI>
+</UL>
+
+<H3 ID="suni">6. Región Suni (Jalca)</H3>
+
+<H4>Características:</H4>
+<UL>
+<LI><B>Altitud:</B> 3 500 a 4 000 m.s.n.m.</LI>
+<LI><B>Clima:</B> frío (6–12°C), con frecuentes heladas nocturnas, granizadas y nieve ocasional. Las precipitaciones son moderadas a altas.</LI>
+<LI>En algunas partes del país se denomina <B>"Jalca"</B> (especialmente en el norte del Perú: Cajamarca, Amazonas).</LI>
+<LI>"Suni" en quechua significa <B>lugar elevado y estrecho</B>.</LI>
+</UL>
+
+<H4>Flora representativa:</H4>
+<UL>
+<LI>Papa (<I>Solanum tuberosum</I>): el Perú es el <B>centro de origen de la papa</B>; existen más de 3 000 variedades nativas. La Suni es la región papera por excelencia.</LI>
+<LI>Mashua (<I>Tropaeolum tuberosum</I>), oca (<I>Oxalis tuberosa</I>), olluco (<I>Ullucus tuberosus</I>): tubérculos andinos nativos.</LI>
+<LI>Quinua (<I>Chenopodium quinoa</I>) y kiwicha (<I>Amaranthus caudatus</I>): cereales andinos de alto valor nutritivo.</LI>
+</UL>
+
+<H4>Fauna representativa:</H4>
+<UL>
+<LI>Vizcacha (<I>Lagidium viscacia</I>): roedor andino parecido al conejo.</LI>
+<LI>Perdiz de altura (<I>Nothoprocta</I>).</LI>
+<LI>Zorro andino (<I>Lycalopex culpaeus</I>).</LI>
+</UL>
+
+<H4>Actividades económicas:</H4>
+<UL>
+<LI><B>Cultivo de papa, oca, olluco, mashua, quinua y kiwicha.</B></LI>
+<LI>Ganadería ovina y camélida (llamas y alpacas en el límite con la Puna).</LI>
+<LI>Minería (algunos yacimientos en esta franja altitudinal).</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> La región <B>Suni</B> es la región de los <B>tubérculos andinos</B> (papa, oca, olluco, mashua) y de la <B>quinua</B>. El Perú es centro de origen de estos cultivos. Confusión frecuente: la quinua crece en Suni y en Puna; la papa se cultiva desde la Suni hasta el límite inferior de la Puna.</DIV>
+
+<H3 ID="puna">7. Región Puna</H3>
+
+<H4>Características:</H4>
+<UL>
+<LI><B>Altitud:</B> 4 000 a 4 800 m.s.n.m.</LI>
+<LI><B>Clima:</B> muy frío (0–6°C en el día), con frecuentes heladas nocturnas (hasta -20°C en zonas como Puno), vientos fuertes, radiación solar intensa.</LI>
+<LI>Gran extensión en el sur del Perú (Puno, Cusco, Apurímac, Junín, Pasco).</LI>
+<LI>El lago Titicaca (3 812 m.s.n.m.) se ubica en la Puna.</LI>
+<LI>"Puna" en quechua significa <B>altura fría y despejada</B>.</LI>
+</UL>
+
+<H4>Flora representativa:</H4>
+<UL>
+<LI><B>Ichu</B> (<I>Stipa ichu</I>): pasto duro de altura, principal alimento del ganado camélido.</LI>
+<LI>Yareta (<I>Azorella compacta</I>): planta en cojín, de crecimiento muy lento, usada como combustible.</LI>
+<LI>Totora (<I>Schoenoplectus tatora</I>): junco del lago Titicaca; usado por el pueblo Uros para construir islas flotantes.</LI>
+<LI>Queñoa (<I>Polylepis</I>): el árbol que puede crecer a mayor altitud en el mundo (hasta 5 000 m).</LI>
+</UL>
+
+<H4>Fauna representativa:</H4>
+<UL>
+<LI><B>Llama</B> (<I>Lama glama</I>): camélido sudamericano domesticado, usado como bestia de carga y por su fibra.</LI>
+<LI><B>Alpaca</B> (<I>Vicugna pacos</I>): camélido domesticado, valorado por su fina fibra (alpaca y baby alpaca).</LI>
+<LI><B>Vicuña</B> (<I>Vicugna vicugna</I>): camélido silvestre, produce la fibra animal más fina del mundo. Símbolo del escudo nacional peruano.</LI>
+<LI>Guanaco (<I>Lama guanicoe</I>): camélido silvestre, menos abundante en el Perú.</LI>
+<LI>Suri (ñandú de la puna) (<I>Rhea pennata</I>).</LI>
+<LI>Flamenco andino o parina (<I>Phoenicoparrus andinus</I>): en lagos altoandinos.</LI>
+</UL>
+
+<H4>Actividades económicas:</H4>
+<UL>
+<LI>Ganadería de camélidos sudamericanos (llama, alpaca) y ovinos: principal actividad.</LI>
+<LI>Minería: importantes yacimientos como Cerro de Pasco (polimetálico, ~4 330 m) y Tintaya (cobre, Cusco).</LI>
+<LI>Producción de chuño y moraya (papa deshidratada mediante el método de congelación y secado ancestral).</LI>
+</UL>
+
+<DIV CLASS="ej">🦙 <B>Los 4 camélidos sudamericanos:</B> <B>Llama</B> y <B>alpaca</B> son domésticos (domesticados por los Incas). <B>Vicuña</B> y <B>guanaco</B> son silvestres. La llama proviene del guanaco; la alpaca proviene de la vicuña. La fibra de vicuña es la más cara y fina del mundo.</DIV>
+
+<H3 ID="janca">8. Región Janca (Cordillera)</H3>
+
+<H4>Características:</H4>
+<UL>
+<LI><B>Altitud:</B> desde los 4 800 m.s.n.m. hasta las cimas nevadas.</LI>
+<LI><B>Clima:</B> glacial, con temperaturas siempre bajo cero en las cimas, nieves perpetuas y glaciares.</LI>
+<LI>Zona prácticamente deshabitada; solo alpinistas y algunas comunidades de pastores en los límites inferiores.</LI>
+<LI>"Janca" en quechua significa <B>blanco</B>, en referencia a las nieves perpetuas.</LI>
+<LI>El <B>nevado Huascarán</B> (6 768 m.s.n.m., Áncash) es el punto más alto del Perú y se ubica en la Janca.</LI>
+</UL>
+
+<H4>Flora representativa:</H4>
+<UL>
+<LI><B>Puya raimondii</B> (<I>Puya raimondii</I>): la planta más grande de la familia Bromeliaceae; puede medir hasta 12 m de altura. Solo florece una vez en su vida (entre los 80–100 años) y luego muere. Vive en la Puna y Janca (3 500–4 800 m).</LI>
+<LI>Líquenes sobre las rocas en las zonas más altas.</LI>
+</UL>
+
+<H4>Fauna representativa:</H4>
+<UL>
+<LI>Cóndor andino (puede sobrevolar estas altitudes).</LI>
+<LI>Rata de los glaciares, arañas de altura.</LI>
+<LI>En los límites inferiores: vicuña.</LI>
+</UL>
+
+<H4>Importancia:</H4>
+<UL>
+<LI><B>Glaciares tropicales:</B> el Perú tiene el 70% de los glaciares tropicales del mundo. Son las principales fuentes de agua de los ríos andinos. El retroceso glaciar por el cambio climático es una amenaza crítica para el agua dulce del país.</LI>
+<LI>Turismo de alta montaña y andinismo (Huascarán, Alpamayo, Yerupajá).</LI>
+</UL>
+
+<H3 ID="rupa-rupa">9. Región Rupa-Rupa (Selva Alta)</H3>
+
+<H4>Características:</H4>
+<UL>
+<LI><B>Altitud:</B> 400 a 1 000 m.s.n.m. (en las laderas orientales de los Andes).</LI>
+<LI><B>También llamada:</B> Ceja de Selva o Ceja de Montaña.</LI>
+<LI><B>Clima:</B> cálido y muy húmedo (22–26°C), con lluvias abundantes durante todo el año (2 000–4 000 mm anuales). Es la región con mayor biodiversidad relativa del Perú.</LI>
+<LI>"Rupa-Rupa" en quechua significa <B>ardiente, caluroso</B>.</LI>
+</UL>
+
+<H4>Flora representativa:</H4>
+<UL>
+<LI>Bosque de neblina: vegetación densa, musgos, helechos, orquídeas (el Perú tiene más de 3 000 especies de orquídeas, muchas en la Rupa-Rupa).</LI>
+<LI>Árbol de la quina o cinchona (<I>Cinchona officinalis</I>): árbol nacional del Perú, fuente de la quinina (tratamiento de la malaria). Representado en el escudo nacional.</LI>
+<LI>Coca (<I>Erythroxylum coca</I>): se cultiva principalmente en la Yunga fluvial y Rupa-Rupa.</LI>
+<LI>Té, cacao, café: cultivos comerciales importantes.</LI>
+</UL>
+
+<H4>Fauna representativa:</H4>
+<UL>
+<LI>Gallito de las rocas (<I>Rupicola peruvianus</I>): <B>ave nacional del Perú</B>, de plumaje rojo-naranja brillante. Vive en la ceja de selva.</LI>
+<LI>Oso de anteojos (<I>Tremarctos ornatus</I>): el único oso de Sudamérica; habita la Rupa-Rupa y partes altas de la Quechua.</LI>
+<LI>Tapir andino o sachavaca (<I>Tapirus pinchaque</I>): el más raro de los tapires.</LI>
+<LI>Serpiente loro, reptiles y anfibios abundantes.</LI>
+</UL>
+
+<H4>Actividades económicas:</H4>
+<UL>
+<LI>Cultivo de café, cacao, té (Chanchamayo, Villa Rica en Junín).</LI>
+<LI>Cultivo de coca (zona de mayor producción del Perú: VRAEM — Valle de los Ríos Apurímac, Ene y Mantaro).</LI>
+<LI>Extracción de madera.</LI>
+<LI>Turismo ecológico (Manu, Oxapampa).</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El <B>gallito de las rocas</B> es el ave nacional del Perú y vive en la Rupa-Rupa. El <B>árbol de la quina</B> (cinchona) es el árbol nacional. Ambos son emblemas nacionales y se ubican en esta región.</DIV>
+
+<H3 ID="omagua">10. Región Omagua (Selva Baja)</H3>
+
+<H4>Características:</H4>
+<UL>
+<LI><B>Altitud:</B> 80 a 400 m.s.n.m.</LI>
+<LI><B>También llamada:</B> Selva Baja o Llano Amazónico.</LI>
+<LI><B>Clima:</B> cálido y muy húmedo (26–32°C), con lluvias casi permanentes (2 000–3 500 mm anuales) y alta humedad relativa (85–90%).</LI>
+<LI><B>La región más extensa del Perú:</B> abarca más del 60% del territorio nacional pero alberga solo el ~10% de la población.</LI>
+<LI>"Omagua" proviene del nombre de un pueblo indígena amazónico que los primeros exploradores encontraron en esta región. En quechua/tupí hace referencia a los habitantes del agua.</LI>
+</UL>
+
+<H4>Flora representativa:</H4>
+<UL>
+<LI>Árbol lupuna o ceibo (<I>Ceiba pentandra</I>): el árbol más alto de la Amazonia peruana (hasta 60 m).</LI>
+<LI>Victoria amazónica (<I>Victoria amazonica</I>): el nenúfar gigante; sus hojas pueden soportar el peso de un niño.</LI>
+<LI>Aguaje (<I>Mauritia flexuosa</I>): palmera de la selva baja; su fruto es el más consumido en la Amazonía peruana.</LI>
+<LI>Caoba (<I>Swietenia macrophylla</I>): madera preciosa en peligro de extinción por sobreexplotación.</LI>
+<LI>Shiringa o caucho (<I>Hevea brasiliensis</I>): fuente de látex natural; origen del boom del caucho (1880–1912).</LI>
+</UL>
+
+<H4>Fauna representativa:</H4>
+<UL>
+<LI><B>Paiche</B> (<I>Arapaima gigas</I>): el pez de agua dulce más grande de América (hasta 3 m y 200 kg).</LI>
+<LI>Delfín rosado o bufeo (<I>Inia geoffrensis</I>): único delfín de agua dulce de la Amazonía peruana.</LI>
+<LI>Anaconda (<I>Eunectes murinus</I>): la serpiente más pesada del mundo.</LI>
+<LI>Jaguar (<I>Panthera onca</I>): el felino más grande de América.</LI>
+<LI>Manatí (<I>Trichechus inunguis</I>): mamífero acuático herbívoro en peligro de extinción.</LI>
+</UL>
+
+<H4>Actividades económicas:</H4>
+<UL>
+<LI>Extracción maderera (madera preciosa).</LI>
+<LI>Pesca de consumo (paiche, gamitana, boquichico).</LI>
+<LI>Extracción de petróleo y gas natural (Loreto, Ucayali).</LI>
+<LI>Turismo ecológico (Reserva Nacional Pacaya-Samiria, la más grande del Perú).</LI>
+<LI>Agricultura de subsistencia y comercial (yuca, plátano, maíz).</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Área Natural Protegida más grande del Perú:</B> La <B>Reserva Nacional Pacaya-Samiria</B> (Loreto, ~2 millones de ha.) se ubica en la región Omagua. Es la reserva nacional más grande del Perú y una de las más grandes de América del Sur, hogar del paiche, el delfín rosado y miles de especies.</DIV>
+
+<H3 ID="simbolos">11. Símbolos nacionales y su región natural</H3>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Símbolo nacional</TH><TH>Especie</TH><TH>Región natural</TH></TR>
+<TR><TD>Ave nacional</TD><TD>Gallito de las rocas (<I>Rupicola peruvianus</I>)</TD><TD>Rupa-Rupa (Selva Alta)</TD></TR>
+<TR><TD>Árbol nacional</TD><TD>Árbol de la quina (<I>Cinchona officinalis</I>)</TD><TD>Rupa-Rupa / Quechua alta</TD></TR>
+<TR><TD>Animal símbolo del escudo</TD><TD>Vicuña (<I>Vicugna vicugna</I>)</TD><TD>Puna</TD></TR>
+<TR><TD>Pez más grande de agua dulce</TD><TD>Paiche (<I>Arapaima gigas</I>)</TD><TD>Omagua (Selva Baja)</TD></TR>
+<TR><TD>Planta más alta de las Bromeliáceas</TD><TD>Puya raimondii</TD><TD>Janca / Puna alta</TD></TR>
+</TABLE>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> ¿Quién propuso el sistema de las ocho regiones naturales del Perú y en qué año fue presentado oficialmente?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Antonio Raimondi, en 1874</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Javier Pulgar Vidal, en 1938</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Julio C. Tello, en 1920</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) José de la Riva Agüero, en 1910</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El geógrafo peruano <B>Javier Pulgar Vidal</B> presentó en 1938 su sistema de clasificación del territorio peruano en <B>ocho regiones naturales</B>. La clasificación se basa en la altitud, la toponimia quechua y las características ecológicas propias de cada piso. Fue reconocida oficialmente por el Estado peruano y es la más utilizada en la enseñanza escolar y preuniversitaria del Perú.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> ¿Cuál de las siguientes opciones presenta CORRECTAMENTE el orden de las ocho regiones naturales del Perú de menor a mayor altitud (costa → sierra)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Chala – Yunga – Suni – Quechua – Puna – Janca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Chala – Yunga – Quechua – Suni – Puna – Janca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Yunga – Chala – Quechua – Suni – Puna – Janca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Chala – Quechua – Yunga – Suni – Puna – Janca</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El orden correcto de las regiones del lado andino (de menor a mayor altitud) es: <B>Chala</B> (0–500 m) → <B>Yunga</B> (500–2 300 m) → <B>Quechua</B> (2 300–3 500 m) → <B>Suni</B> (3 500–4 000 m) → <B>Puna</B> (4 000–4 800 m) → <B>Janca</B> (>4 800 m). Las regiones de selva (Rupa-Rupa y Omagua) están al este de los Andes y no siguen esta secuencia de altitud.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> El ave nacional del Perú, el gallito de las rocas, habita principalmente en la región natural denominada:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Puna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Omagua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Rupa-Rupa (Selva Alta)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Quechua</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El <B>gallito de las rocas</B> (<I>Rupicola peruvianus</I>), ave nacional del Perú, habita las <B>laderas boscosas y rocosas</B> de la ceja de selva, es decir, la región <B>Rupa-Rupa</B> (Selva Alta). Su plumaje es de colores rojo-naranja brillante en el macho. Vive en altitudes entre 900 y 2 400 m en las laderas orientales de los Andes, en ambientes húmedos cercanos a quebradas y roquedales.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Cuál región natural del Perú es conocida como "el paraíso de las frutas" por la variedad de frutales que en ella se desarrollan?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) Chala</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) Yunga</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) Quechua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) Rupa-Rupa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La región <B>Yunga</B> (500–2 300 m.s.n.m.) es llamada el "<B>paraíso de las frutas</B>" porque en sus cálidos valles se producen frutas como la <b>chirimoya</b>, la <b>palta (aguacate)</b>, la <b>lúcuma</b>, el <b>mango</b>, la <b>granadilla</b> y el <b>maracuyá</b>. Su clima cálido y sus valles abrigados permiten el desarrollo de estos frutales que no prosperan en las frías alturas ni en la árida costa.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> La región natural que abarca el mayor porcentaje del territorio peruano es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Puna, porque el altiplano andino es enorme</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Omagua (Selva Baja), porque la llanura amazónica ocupa más del 60% del territorio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Quechua, porque es la región más habitada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Rupa-Rupa, porque la ceja de selva es muy extensa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La región <B>Omagua</B> (Selva Baja) es la más extensa del Perú, cubriendo más del <B>60% del territorio nacional</B>. Sin embargo, es una de las menos pobladas: solo alberga aproximadamente el 10% de la población peruana. Esta paradoja (gran territorio, poca población) se debe al aislamiento geográfico, la dificultad de acceso y las condiciones ambientales de la selva baja.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> ¿Cuál es el significado del nombre "Janca" en quechua y cuál es su característica más distintiva?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) "Ardiente": por las altas temperaturas que se registran en esta región</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) "Blanco": por las nieves y glaciares perpetuos que cubren sus cimas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) "Alto": porque es la región de mayor altitud habitada del mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) "Frío": porque sus temperaturas nunca superan los 10°C</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>"<B>Janca</B>" en quechua significa <B>blanco</B>, en referencia directa a las <b>nieves perpetuas</b> y los <b>glaciares</b> que cubren las cimas andinas por encima de los 4 800 m.s.n.m. Esta región es prácticamente <b>deshabitada</b> permanentemente por sus condiciones glaciales extremas. El <b>nevado Huascarán</B> (6 768 m, Áncash), el punto más alto del Perú, se ubica en la región Janca.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · APLICACIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Un investigador agrónomo desea estudiar la mayor diversidad de papas nativas del Perú. ¿En qué región natural debería centrar su trabajo de campo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Omagua, porque la selva baja tiene la mayor biodiversidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Chala, porque las condiciones áridas favorecen la conservación de semillas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Suni, que junto con la Puna baja es el centro de origen y diversidad de la papa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Quechua, porque es la región más habitada y la que tiene mayor producción</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El Perú es el <B>centro de origen y diversidad de la papa</B> (<I>Solanum tuberosum</I>) y de más de <B>3 000 variedades nativas</B>. La región <B>Suni</B> (3 500–4 000 m.s.n.m.) y el límite inferior de la Puna son donde se concentra la mayor diversidad de papas silvestres y cultivadas. El <b>Centro Internacional de la Papa (CIP)</b>, con sede en Lima, tiene sus colecciones y parcelas experimentales principalmente vinculadas a estas altitudes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> La diferencia fundamental entre la Yunga marítima y la Yunga fluvial es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) La altitud: la Yunga marítima llega hasta los 3 000 m y la fluvial solo hasta los 1 500 m</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) La orientación: la Yunga marítima está en la vertiente occidental (árida) y la Yunga fluvial en la vertiente oriental (húmeda) de los Andes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) La flora: la Yunga marítima tiene bosques amazónicos y la fluvial tiene cactus y algarrobos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La fauna: en la Yunga marítima hay camélidos y en la fluvial hay monos y guacamayos</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La distinción fundamental es la <B>orientación respecto a los Andes</B>: la <b>Yunga marítima</b> está en la vertiente <b>occidental</b> (hacia el Pacífico), es de clima <b>seco y árido</b> porque está bajo la influencia de la corriente de Humboldt y recibe pocas lluvias; sus valles son encajonados y secos. La <b>Yunga fluvial</b> está en la vertiente <b>oriental</b> (hacia el Atlántico), es <b>húmeda</b> porque recibe los vientos amazónico cargados de humedad; su vegetación es más exuberante.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> La Puya raimondii es considerada uno de los seres vivos más extraordinarios del Perú. ¿Qué característica la hace tan notable?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Es el árbol más alto del Perú, llegando a los 80 metros de altura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Es la planta más grande de la familia Bromeliáceas; florece solo una vez en su vida (cada 80–100 años) y luego muere</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Es la planta más venenosa de los Andes, capaz de matar a los camélidos que la ingieren</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Es una planta parásita que solo crece sobre el tronco de las queñoas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Puya raimondii</B> es la planta más grande de la familia <b>Bromeliáceas</b> (pariente gigante de la piña). Puede alcanzar <b>hasta 12 metros</b> de altura. Su ciclo de vida es extraordinario: vive entre <b>80 y 100 años</b> (algunos especímenes más), durante los cuales solo acumula energía; al final de su vida produce una <b>espiga floral gigantesca</b> con hasta 8 000 flores y millones de semillas, y luego muere. Habita entre los 3 500 y 4 800 m.s.n.m. en zonas de Puna y Janca. Su nombre honra al naturalista italiano <b>Antonio Raimondi</b>.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Una persona viaja desde Lima (Chala) hacia Cusco (Quechua) en tren o carretera. En el trayecto, ¿cuáles son las regiones naturales que atravesaría en orden, siguiendo la ruta por los Andes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Chala → Puna → Janca → Quechua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Chala → Yunga → Quechua → Suni → Puna → Quechua (Cusco)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Chala → Quechua → Puna → Suni → Quechua</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Chala → Yunga → Suni → Puna → Omagua</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Al ascender desde Lima (nivel del mar) hacia Cusco (~3 400 m), se atraviesa en orden ascendente: <b>Chala</b> (0–500 m, costa de Lima) → <b>Yunga</b> (500–2 300 m, valles de la sierra baja) → <b>Quechua</b> (2 300–3 500 m, valles templados) → <b>Suni</b> (3 500–4 000 m, el paso o abra) → <b>Puna</b> (4 000–4 800 m, los puntos más altos de la ruta) → nuevamente <b>Quechua</b> (Cusco, ~3 400 m, en el descenso hacia el Cusco). Esto ilustra cómo las regiones no son franjas continuas sino que pueden alternarse según la topografía.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> ¿Cuál de los cuatro camélidos sudamericanos produce la fibra animal más fina y costosa del mundo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) La llama, porque es el más grande de los camélidos andinos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) La alpaca baby alpaca, porque sus crías tienen la fibra más suave del Perú</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) La vicuña, cuya fibra es la más fina del mundo animal y está protegida por ser especie silvestre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) El guanaco, porque es el ancestro de la llama y tiene fibra similar a la vicuña</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La <B>vicuña</B> (<I>Vicugna vicugna</I>) produce la <b>fibra animal más fina del mundo</b>: su lana mide entre 6 y 12 micras de diámetro (el cabello humano mide ~70 micras). Por eso es llamada el "<b>oro de los Andes</b>". La vicuña es <b>silvestre</b>: no se puede domesticar. Su captura y esquila se realiza mediante el <b>chaku</b> (sistema andino ancestral de captura comunitaria), y luego se libera. Está protegida por el Estado y se encuentra en el escudo nacional del Perú.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> El chuño y la moraya son alimentos tradicionales andinos producidos principalmente en las regiones de Puna y Suni. ¿En qué consiste su proceso de elaboración?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Son papas fermentadas en agua durante varias semanas, luego secadas al sol</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Son papas deshidratadas aprovechando las heladas nocturnas de la Puna para congelarlas y la radiación solar diurna para secarlas, conservándolas por años</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Son tubérculos (oca y olluco) molidos y cocidos en horno de tierra (huatia)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Son papas hervidas y luego ahumadas con ichu para conservarlas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El <B>chuño</B> y la <B>moraya</B> son técnicas prehispánicas de <b>deshidratación de la papa</b> aprovechando las condiciones extremas de la Puna. El proceso: durante las noches de helada (temperaturas bajo cero), las papas se congelan; durante el día, el sol las descongela y la radiación evapora la humedad; se pisan para expulsar el agua interior. Repetido por varios días, produce el chuño (negro) o la moraya (blanca, lavada con agua del río). Así preservada, la papa puede durar <b>años o décadas</b>, lo que fue fundamental para la seguridad alimentaria del Imperio Inca.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Un ecólogo sostiene que "la Rupa-Rupa (Selva Alta) es la región natural con mayor biodiversidad relativa del Perú, aunque la Omagua tiene más especies en términos absolutos". ¿Cuál es el fundamento más sólido de esta afirmación?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) La Rupa-Rupa tiene mayor biodiversidad porque sus temperaturas son más estables que en la Omagua durante todo el año</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) La ceja de selva es una zona de transición (ecotono) entre los ecosistemas andinos y amazónicos; la intersección de gradientes altitudinales, climáticos y vegetales en un espacio reducido genera una concentración extraordinaria de especies endémicas por unidad de área</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) En la Rupa-Rupa llueve más que en cualquier otra región del Perú, lo que favorece una mayor producción de biomasa por hectárea</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) La menor presión humana en la Rupa-Rupa ha permitido que se conserve más biodiversidad que en la Omagua, que está más deforestada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Rupa-Rupa</B> (Ceja de Selva) es un <b>ecotono</b>: zona de transición o "borde" entre dos grandes biomas (Andes y Amazonía). En ecología, los ecotonos tienen <b>mayor biodiversidad relativa</b> que los biomas puros que unen, porque albergan especies de ambos ecosistemas y además sus propias especies endémicas adaptadas a las condiciones de transición. Además, el gradiente altitudinal de la ceja de selva es <b>muy comprimido</b>: en apenas unos kilómetros verticales conviven docenas de microhábitats distintos. Por eso el Perú tiene más del 10% de todas las especies de plantas del mundo y más del 30% de las orquídeas globales, la mayoría en la ceja de selva.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El retroceso de los glaciares tropicales peruanos (región Janca) ha sido documentado entre el 30% y el 50% de pérdida de superficie glaciar en los últimos 50 años. ¿Cuál es la implicancia directa más grave de este fenómeno para las regiones naturales adyacentes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La desaparición de los glaciares aumentará la biodiversidad de la Puna porque quedará más espacio para que crezca el ichu</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) El retroceso glaciar reducirá el aporte de agua a los ríos andinos en época de estiaje (junio–octubre), amenazando el abastecimiento de agua a las ciudades de la Quechua y la Chala que dependen de los ríos que nacen en la Janca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El derretimiento de los glaciares generará más lluvias en la Puna, compensando la pérdida de agua glacial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) Solo afecta el turismo de andinismo en la Janca, sin impacto real en las demás regiones naturales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Los glaciares tropicales de la Janca actúan como <B>reservorios de agua de largo plazo</B>: acumulan nieve durante la época lluviosa (noviembre–abril) y la liberan lentamente durante la época seca (mayo–octubre), cuando no llueve. Este aporte glacial es <b>vital</b> para mantener el caudal de los ríos andinos en estiaje. Si los glaciares desaparecen: (1) A <b>corto plazo</b>: más agua (mientras se derriten). (2) A <b>mediano y largo plazo</b>: los ríos reducen drásticamente su caudal en época seca. Ciudades como <b>Lima</b> (cuyo río Rímac depende parcialmente del glaciar Tiklla), <b>Huaraz</b> y poblaciones de la Quechua verán comprometido su acceso al agua. El Perú posee el <b>70% de los glaciares tropicales del mundo</b> y su pérdida es un problema de seguridad hídrica nacional.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Analiza la siguiente contradicción aparente: "La región Quechua es la más habitada del Perú andino, pero la región Puna, siendo más fría y hostil, también alberga importantes núcleos de población (como Puno, Cerro de Pasco y Juliaca)". ¿Qué factores históricos, económicos y culturales explican la ocupación humana de la Puna pese a sus condiciones climáticas extremas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Las ciudades de la Puna se ubicaron allí por accidente histórico; no hay factores racionales que expliquen su emplazamiento a esas altitudes</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) La Puna fue ocupada exclusivamente porque los españoles obligaron a los indígenas a subir a las minas durante la colonia</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) La combinación de ganadería de camélidos (recurso andino único), grandes yacimientos minerales (plata, zinc, cobre), rutas comerciales históricas entre la costa y la Amazonia, y la adaptación fisiológica de las poblaciones andinas durante milenios explica la ocupación de la Puna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) La Puna es más habitable que la Quechua porque las temperaturas extremas eliminan los mosquitos y enfermedades tropicales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La ocupación de la Puna responde a múltiples factores: (1) <B>Ganadería de camélidos</B>: la llama y la alpaca son únicos a estas altitudes; su crianza ha sostenido economías andinas por milenios. (2) <B>Minería</B>: la Puna peruana contiene algunos de los mayores yacimientos del mundo; Cerro de Pasco era la ciudad más alta del mundo con actividad minera continua desde la colonia. (3) <B>Adaptación fisiológica</B>: las poblaciones andinas tienen mayor capacidad pulmonar, más glóbulos rojos y adaptaciones genéticas al frío y la altitud. (4) <B>Redes de intercambio</B>: la Puna fue zona de tránsito de las caravanas de llamas que conectaban costa, sierra y selva en el sistema económico andino (complementariedad ecológica). (5) <B>Lago Titicaca</B>: su masa de agua regula el microclima y hace habitable la Puna altiplánica de Puno.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El concepto de "complementariedad ecológica vertical" o "control de pisos ecológicos" fue planteado por el etnohistoriador John Murra para explicar la organización del espacio andino prehispánico. ¿Cómo se relaciona este concepto con el sistema de las ocho regiones naturales de Pulgar Vidal y qué implicancias tuvo para la economía del Tawantinsuyu?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) El concepto de Murra contradice a Pulgar Vidal: propone solo tres pisos (costa, sierra, selva) y no ocho</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) La complementariedad ecológica explica que los ayllus andinos controlaban simultáneamente parcelas en diferentes pisos altitudinales (Chala para pescado y algodón, Yunga para frutas y coca, Quechua para maíz, Suni-Puna para papa y camélidos) para acceder a todos los recursos sin necesidad de mercado o dinero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Murra propone que los incas ignoraban las diferencias entre las regiones naturales y trataban toda la sierra por igual en su planificación agrícola</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) La complementariedad se refiere solo al intercambio comercial entre los cuatro suyus del Tawantinsuyu, sin relación con la altitud</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>John Murra acuñó el concepto de "<B>archipiélago vertical</B>" o "<b>control de pisos ecológicos</b>": los grupos andinos (ayllus, señoríos, finalmente el Tawantinsuyu) organizaban su economía enviando <b>colonias permanentes</b> (<i>mitmaqkuna</i>) a diferentes altitudes para explotar los recursos de cada piso. Un grupo en Puno podía tener colonos en la <b>Chala</b> (pescado, guano, algodón), en la <b>Yunga</b> (coca, ají, frutas), en la <b>Quechua</b> (maíz, legumbres) y en la <b>Puna</b> (papa, chuño, camélidos). Así lograban <b>autosuficiencia sin mercado</b>: todo fluía por lazos de reciprocidad. Este sistema confirma que las regiones naturales de Pulgar Vidal no son solo una clasificación académica sino la base de la economía andina durante milenios.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Desde una perspectiva biogeográfica, ¿por qué la región Omagua (Selva Baja) del Perú es considerada uno de los "hotspots" de biodiversidad más importantes del planeta, pese a que en términos de número de especies por hectárea puede ser superada por la ceja de selva?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Porque la Omagua peruana tiene las temperaturas más estables del planeta, lo que favorece la especiación continua sin extinciones</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Porque la Omagua combina la mayor extensión de bosque tropical continuo del planeta, miles de años de evolución aislada de especies por los ríos amazónicos como barreras, y la coincidencia de la mayor riqueza absoluta de especies del mundo; en el caso peruano incluye el Parque Nacional del Manu, considerado el área protegida con mayor biodiversidad documentada del planeta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) La Omagua es un hotspot solo en términos de aves; para los demás grupos taxonómicos la Puna y la Quechua tienen mayor diversidad</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Porque la Omagua peruana fue declarada Patrimonio Natural de la Humanidad por la UNESCO en 1990, lo que le dio reconocimiento internacional como zona de biodiversidad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Omagua peruana</B> es parte de la <b>Amazonia occidental</b>, considerada la región con <b>mayor biodiversidad absoluta del planeta</b> por varias razones: (1) <B>Extensión</B>: la cuenca amazónica es el bosque tropical más grande del mundo. (2) <B>Estabilidad climática histórica</B>: durante las glaciaciones, cuando otros biomas se contrajeron, la Amazonia occidental (incluyendo Perú) fue un refugio de biodiversidad que permitió la especiación acelerada. (3) <B>Ríos como barreras</B>: los grandes ríos amazónicos actuaron como barreras reproductivas, aislando poblaciones y generando nuevas especies en cada orilla. (4) <B>Parque Nacional del Manu</B> (Madre de Dios/Cusco): con un gradiente desde la Puna hasta la Omagua, tiene la mayor diversidad de aves, mariposas, reptiles y plantas documentada en cualquier área protegida del mundo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> El Perú es uno de los doce países "megadiversos" del mundo. ¿Cuál es el factor geográfico-climático que mejor explica por qué un territorio relativamente pequeño (1,285,216 km²) concentra tanta biodiversidad, relacionándolo con el sistema de regiones naturales?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) La cercanía del Perú al Ecuador geográfico, que garantiza temperaturas altas y lluvias abundantes en todo el territorio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) La compresión en un espacio reducido de gradientes altitudinales extremos (del nivel del mar hasta los 6 768 m del Huascarán), combinada con la variación latitudinal y la influencia de dos corrientes oceánicas opuestas (Humboldt y El Niño), genera una multiplicidad de microclimas y hábitats únicos equivalente a recorrer desde el desierto hasta la Amazonia en pocos kilómetros lineales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) El Perú tiene pocos ecosistemas pero cada uno es extremadamente rico en especies debido a la evolución aislada de cada región por millones de años sin conexión entre ellas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) La biodiversidad peruana se explica principalmente por la introducción de especies exóticas durante la conquista española, que se mezclaron con las nativas creando una biodiversidad única</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>megadiversidad peruana</B> tiene un origen geográfico-climático preciso: (1) <B>Gradiente altitudinal extremo</B>: del mar (0 m) al Huascarán (6 768 m) en horizontal de apenas ~200 km; cada 300 m de altitud equivale aproximadamente a desplazarse 300 km hacia el polo en términos de clima. Esto comprime decenas de zonas climáticas en muy poco espacio. (2) <B>Dos corrientes oceánicas opuestas</B>: la fría corriente de Humboldt genera el desierto costero; la influencia de masas de agua cálidas del norte genera la exuberante costa norte. (3) <B>Tres grandes regiones climáticas</B> (costa árida, sierra templada-fría, selva tropical húmeda) en un solo país. (4) <B>Consecuencia:</B> el Perú tiene 8 regiones naturales (Pulgar Vidal) que actúan como 8 "países ecológicos" distintos dentro de una misma nación, cada uno con su propia flora y fauna especializada.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Desde el punto de vista de la geografía económica, ¿cuál es la principal paradoja del modelo de desarrollo peruano en relación con las regiones naturales y cómo podría resolverse?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) La paradoja es que la Puna, siendo la más fría, tiene más turistas que la Omagua, siendo la más cálida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) La paradoja es que las regiones Omagua y Rupa-Rupa (que juntas abarcan ~60% del territorio y contienen la mayor biodiversidad y recursos naturales) están entre las más pobres y menos desarrolladas del Perú, mientras la Chala (22% del territorio, árida) concentra el 55% de la población y el mayor PIB, revelando un modelo de desarrollo costero-céntrico históricamente inequitativo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) La paradoja es que el Perú exporta recursos naturales de la selva pero importa manufacturas que podrían producirse en la sierra</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) La paradoja radica en que la Janca, pese a ser deshabitada, genera más ingresos por turismo de andinismo que todas las demás regiones juntas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La paradoja central del desarrollo peruano es el <B>desajuste entre riqueza natural y desarrollo humano</B>: (1) La <b>Omagua</b> (~60% del territorio) contiene la mayor biodiversidad, agua dulce, petróleo, gas natural y madera del Perú, pero sus regiones (Loreto, Ucayali, Madre de Dios) tienen los <b>mayores índices de pobreza</b> y los menores de desarrollo humano. (2) La <b>Chala</b> (~22% del territorio), árida y dependiente del agua que le "transvasan" de los Andes, concentra el <b>PIB industrial</b> y la población. (3) La <b>Puna y Suni</b> tienen enormes recursos mineros pero históricamente han sufrido el "<b>extractivismo</b>": los recursos salen sin procesar, los beneficios no quedan en las comunidades locales. Posibles soluciones: descentralización efectiva, industrialización regional, uso sostenible de la biodiversidad amazónica (biocomercio), turismo ecológico, y reconocer los derechos de los pueblos originarios sobre sus territorios.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Un postulante debe identificar la región natural basándose en la siguiente descripción: "Me encuentro a 3 700 m.s.n.m. El clima es frío con heladas frecuentes en las madrugadas. A mi alrededor veo campos de papa nativa de colores morado y amarillo, cultivos de quinua y oca. Las casas son de adobe y teja. Escucho el viento andino y veo cóndores sobrevolando. El suelo es algo rocoso pero fértil cuando se abona." ¿En qué región natural se encuentra?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Puna, porque la altitud supera los 4 000 m y hay presencia de cóndores</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Quechua, porque hay cultivos de papa y casas de adobe en un clima templado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Suni, porque la altitud de 3 700 m, el clima frío con heladas, la papa nativa, la quinua y la oca son indicadores propios de esta región (3 500–4 000 m)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Janca, porque la presencia de rocas y vientos fuertes indica una zona de alta montaña</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Todos los indicadores apuntan a la región <B>Suni</B> (3 500–4 000 m.s.n.m.): (1) <b>Altitud</b>: 3 700 m está dentro del rango Suni. (2) <b>Clima</b>: frío con heladas nocturnas frecuentes, pero sin el frío extremo de la Puna (>4 000 m). (3) <b>Cultivos</b>: papa nativa, quinua y oca son los cultivos emblemáticos de la Suni. En la Puna ya no se cultiva bien; en la Quechua se cultiva más maíz y trigo. (4) <b>Fauna</b>: el cóndor puede sobrevolar toda la sierra alta, pero no es exclusivo de ninguna región. (5) <b>Asentamientos humanos</b>: hay poblaciones en la Suni, a diferencia de la Janca que está deshabitada. La clave discriminante es la combinación altitud + cultivos de papa nativa + oca + quinua.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

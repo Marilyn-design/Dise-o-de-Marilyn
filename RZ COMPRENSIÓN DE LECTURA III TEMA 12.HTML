@@ -1,0 +1,712 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Comprensión de Lectura III - Textos Discontinuos - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black","Georgia",serif;margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;font-weight:bold;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;line-height:1.8;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#0D1B36;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.parrafo{margin-top:12px;background:#F6F2EB;border-radius:10px;padding:14px 18px;font-size:16px;line-height:1.95;color:#333;font-weight:normal;}
+.parrafo b{color:#1F6A67;}
+.parrafo .hueco{color:#D7B06D;font-weight:bold;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+.cultura-titulo{background:linear-gradient(135deg,#0D1B36,#1F6A67);color:white;border-radius:14px;padding:16px 24px;margin:28px 0 16px;font-size:20px;font-weight:bold;letter-spacing:1px;}
+.cultura-titulo span{color:#D7B06D;font-size:14px;font-weight:normal;display:block;margin-top:4px;letter-spacing:0.5px;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="RAZONAMIENTO VERBAL.HTML">← Volver a los temas de Razonamiento Verbal</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">RAZONAMIENTO VERBAL · TEMA 12</DIV>
+<H1>Comprensión de Lectura III</H1>
+<DIV CLASS="sub">Clases de textos discontinuos · Estrategias de lectura de textos discontinuos · Preguntas tipo examen de admisión con textos reales</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<!-- ===================== EXPLICACIÓN ===================== -->
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3>1. ¿Qué son los textos discontinuos?</H3>
+Un <B>texto discontinuo</B> es aquel cuya información no se presenta en párrafos secuenciales que se lean de inicio a fin, sino en <B>formatos visuales no lineales</B>: tablas, gráficos, mapas, diagramas, afiches, formularios o infografías. El lector no sigue un recorrido único predeterminado, sino que <B>selecciona qué zona del texto consultar</B> según la información que necesita. Esta lectura selectiva y estratégica es precisamente la habilidad que los exámenes de admisión de alto rendimiento evalúan con mayor frecuencia en este tipo de texto.
+
+<DIV CLASS="alerta"><B>Para el examen:</B> en un texto discontinuo, leer "de arriba abajo sin orden" es el error más frecuente. La estrategia correcta siempre empieza por el título y los encabezados, nunca por los datos crudos.</DIV>
+
+<H3>2. Clases de textos discontinuos</H3>
+
+<H4>a) Tablas de datos</H4>
+Organizan información cuantitativa o cualitativa en <B>filas y columnas</B>. Cada celda contiene un dato que corresponde a la intersección de una variable de fila y una variable de columna. Son el tipo de texto discontinuo más frecuente en los exámenes de admisión peruanos.
+<UL>
+<LI><B>Tablas de simple entrada:</B> una sola variable de clasificación en las filas (por ejemplo, años) y una sola variable medida en las columnas (por ejemplo, producción en toneladas).</LI>
+<LI><B>Tablas de doble entrada:</B> dos variables de clasificación cruzadas; cada celda representa la combinación de ambas (por ejemplo, región × año × indicador).</LI>
+</UL>
+<DIV CLASS="ej"><B>Clave de lectura:</B> (1) Lee el título. (2) Lee los encabezados de filas y columnas. (3) Identifica la unidad de medida. (4) Recién entonces busca el dato que la pregunta pide.</DIV>
+
+<H4>b) Gráficos estadísticos</H4>
+Representan datos numéricos de forma visual para facilitar la percepción de <B>tendencias, proporciones y comparaciones</B>. Los exámenes presentan gráficos de barras, de líneas y circulares (de sectores), con frecuencia descritos o acompañados de sus datos en una tabla anexa.
+<UL>
+<LI><B>Gráfico de barras:</B> compara cantidades entre categorías distintas. Las barras pueden ser verticales (columnas) u horizontales. Adecuado para comparar grupos en un mismo momento.</LI>
+<LI><B>Gráfico de líneas:</B> muestra la evolución de una variable a lo largo del tiempo. Cada punto en la línea representa un valor en un período; la pendiente de la línea indica si la variable sube, baja o se mantiene estable.</LI>
+<LI><B>Gráfico circular (de sectores o "torta"):</B> representa la proporción de cada parte respecto del total (100%). Es útil para visualizar distribuciones porcentuales, pero no para comparar tendencias en el tiempo.</LI>
+</UL>
+<DIV CLASS="ej"><B>Clave de lectura:</B> (1) Lee el título del gráfico. (2) Identifica qué representa cada eje (en barras y líneas) o cada sector (en circulares). (3) Lee la leyenda. (4) Identifica la unidad de medida. (5) Busca el máximo, el mínimo y la tendencia general antes de responder cualquier pregunta.</DIV>
+
+<H4>c) Infografías</H4>
+Combinan <B>texto breve, datos numéricos e imágenes o íconos</B> para sintetizar información compleja en un solo espacio visual. A diferencia de las tablas y los gráficos, las infografías mezclan canales de comunicación: el lector debe integrar lo que dice el texto verbal y lo que muestran los elementos visuales para obtener el significado completo.
+<DIV CLASS="ej"><B>Clave de lectura:</B> (1) Lee el título y el subtítulo. (2) Identifica los bloques o secciones que la organizan. (3) Lee cada bloque como una unidad independiente. (4) Al final, relaciona la información de los distintos bloques para obtener la visión de conjunto.</DIV>
+
+<H4>d) Cuadros comparativos</H4>
+Presentan dos o más elementos <B>en paralelo, según criterios comunes</B>. Su estructura permite identificar de un vistazo similitudes y diferencias entre los elementos comparados. Son frecuentes en preguntas que piden identificar qué tienen en común dos países, dos períodos o dos teorías.
+<DIV CLASS="ej"><B>Clave de lectura:</B> lee primero la columna de criterios (la columna de la izquierda), que es la que estructura la comparación; luego lee fila por fila para comparar los valores de cada elemento según cada criterio.</DIV>
+
+<H4>e) Diagramas de flujo</H4>
+Representan procesos, secuencias o decisiones mediante <B>figuras geométricas conectadas por flechas</B>. Cada figura indica un paso, una acción o una decisión; las flechas señalan la dirección del proceso. Son comunes en textos de ciencias, tecnología y procedimientos administrativos.
+<DIV CLASS="ej"><B>Clave de lectura:</B> (1) Identifica el punto de inicio y el punto de llegada. (2) Sigue las flechas en su dirección. (3) En cada nodo de decisión (figuras en forma de rombo), distingue las ramas posibles.</DIV>
+
+<H4>f) Formularios y fichas técnicas</H4>
+Organizan información mediante <B>campos predefinidos con etiquetas</B>: nombre, fecha, cantidad, categoría, etc. La información no forma oraciones completas, sino entradas breves en espacios designados. Son frecuentes en contextos administrativos, científicos y comerciales.
+<DIV CLASS="ej"><B>Clave de lectura:</B> lee primero las etiquetas (los campos), no los valores. Las preguntas de examen suelen pedir que identifiques si un valor específico pertenece al campo correcto o si un campo ha sido omitido.</DIV>
+
+<H4>g) Afiches y avisos</H4>
+Combinan <B>imagen, eslogan, información concreta y llamada a la acción</B> en un espacio reducido. Su propósito es llamar la atención e informar o persuadir en el menor tiempo posible. El orden de lectura lo define la jerarquía visual (tamaño de fuente, contraste de color, posición).
+<DIV CLASS="ej"><B>Clave de lectura:</B> (1) Identifica el elemento visual o verbal más prominente (el mensaje principal). (2) Lee el texto de menor tamaño (los detalles: fecha, lugar, condiciones). (3) Identifica a quién va dirigido el afiche y cuál es su llamada a la acción.</DIV>
+
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Clase</TH><TH>Organización</TH><TH>Propósito principal</TH><TH>Pregunta típica de examen</TH></TR>
+<TR><TD>Tabla de datos</TD><TD>Filas y columnas</TD><TD>Registrar y comparar datos</TD><TD>¿Qué valor tiene X en el año Y?</TD></TR>
+<TR><TD>Gráfico de barras</TD><TD>Barras proporcionales</TD><TD>Comparar categorías</TD><TD>¿Qué categoría tiene el mayor valor?</TD></TR>
+<TR><TD>Gráfico de líneas</TD><TD>Línea sobre eje temporal</TD><TD>Mostrar evolución en el tiempo</TD><TD>¿Entre qué años se dio el mayor aumento?</TD></TR>
+<TR><TD>Gráfico circular</TD><TD>Sectores proporcionales</TD><TD>Mostrar distribución porcentual</TD><TD>¿Qué sector representa la mayor proporción?</TD></TR>
+<TR><TD>Infografía</TD><TD>Bloques mixtos (texto + imagen)</TD><TD>Sintetizar información compleja</TD><TD>¿Qué dato del bloque X complementa al bloque Y?</TD></TR>
+<TR><TD>Cuadro comparativo</TD><TD>Columnas paralelas por criterio</TD><TD>Confrontar elementos</TD><TD>¿En qué criterio coinciden X e Y?</TD></TR>
+<TR><TD>Diagrama de flujo</TD><TD>Figuras + flechas secuenciales</TD><TD>Representar procesos</TD><TD>¿Qué paso sigue después de X?</TD></TR>
+<TR><TD>Formulario / ficha</TD><TD>Campos etiquetados</TD><TD>Registrar datos estructurados</TD><TD>¿Qué campo está incompleto o ausente?</TD></TR>
+<TR><TD>Afiche / aviso</TD><TD>Jerarquía visual</TD><TD>Informar o persuadir brevemente</TD><TD>¿A quién va dirigido? ¿Cuál es la acción que promueve?</TD></TR>
+</TABLE>
+</DIV>
+
+<H3>3. Estrategias de lectura de textos discontinuos</H3>
+La diferencia entre un lector eficiente y uno ineficiente ante un texto discontinuo no es la velocidad: es el <B>orden en que procesa la información</B>. Las siguientes cinco estrategias, aplicadas sistemáticamente, permiten responder con precisión incluso preguntas de nivel experto.
+
+<DIV CLASS="cultura-titulo">ESTRATEGIA 1 · LEER EL TÍTULO Y LOS ENCABEZADOS ANTES QUE LOS DATOS<SPAN>El título es el mapa; los datos, el territorio. Sin mapa, el territorio no tiene sentido.</SPAN></DIV>
+El título de una tabla, gráfico o infografía delimita el <B>tema</B>, el <B>período temporal</B> y la <B>fuente</B> de la información. Leerlo antes de revisar cualquier dato evita interpretar los valores fuera de contexto. Los encabezados de columnas y filas indican qué variable representa cada posición: sin leerlos, cualquier dato numérico es un número sin significado.
+
+<DIV CLASS="cultura-titulo">ESTRATEGIA 2 · IDENTIFICAR LA UNIDAD DE MEDIDA<SPAN>Un 45 en porcentajes no es igual que un 45 en miles de toneladas: la unidad determina todo.</SPAN></DIV>
+Uno de los errores más frecuentes en los exámenes es comparar datos que están en <B>unidades distintas</B>. Antes de responder cualquier pregunta que involucre números, el lector debe verificar: ¿los valores están en porcentajes, en unidades absolutas, en miles, en millones? ¿La unidad es la misma en todas las columnas o cambia entre secciones del texto?
+
+<DIV CLASS="cultura-titulo">ESTRATEGIA 3 · LOCALIZAR TENDENCIAS, MÁXIMOS Y MÍNIMOS<SPAN>La tendencia general responde el "¿qué ocurre?"; el máximo y el mínimo responden el "¿dónde más y dónde menos?"</SPAN></DIV>
+Antes de ir al detalle de un dato específico, el lector eficiente hace un <B>barrido visual rápido</B> para identificar: ¿hay una tendencia general ascendente o descendente? ¿Qué fila o columna tiene el valor más alto? ¿Cuál tiene el más bajo? ¿Hay algún valor que rompa claramente la tendencia general (un valor atípico o <I>outlier</I>)? Este barrido previo orienta todas las lecturas específicas que siguen.
+
+<DIV CLASS="cultura-titulo">ESTRATEGIA 4 · RELACIONAR DATOS ENTRE DISTINTAS PARTES DEL TEXTO<SPAN>Los textos discontinuos de alta complejidad exigen cruzar datos de distintas secciones para construir una respuesta.</SPAN></DIV>
+Cuando el texto discontinuo tiene varias secciones (por ejemplo, una tabla de producción y un gráfico de precios), las preguntas más difíciles del examen piden que el lector <B>combine información de dos secciones distintas</B> para obtener una conclusión que ninguna sección entrega por sí sola. La habilidad de relacionar datos de distintos formatos es la que marca la diferencia entre el nivel intermedio y el nivel experto.
+
+<DIV CLASS="cultura-titulo">ESTRATEGIA 5 · CONCLUIR SOLO CON LO QUE EL TEXTO MUESTRA<SPAN>Lo que no está en el texto no puede ser tu respuesta, aunque sea verdad en la realidad.</SPAN></DIV>
+El error crítico más frecuente ante textos discontinuos es agregar información externa o inferir más allá de lo que los datos permiten. Si la tabla muestra que la producción de quinua aumentó entre 2018 y 2022, eso no permite concluir que "la quinua es el cultivo más rentable del Perú": esa afirmación requeriría datos de rentabilidad que la tabla no presenta. La respuesta correcta siempre se sustenta <B>exclusivamente en lo que el texto muestra</B>, sin extrapolar ni asumir.
+
+
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">7</DIV><DIV CLASS="dk-label">Clases principales de textos discontinuos que aparecen en los exámenes de admisión</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">5</DIV><DIV CLASS="dk-label">Estrategias de lectura eficiente de textos discontinuos</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">Título</DIV><DIV CLASS="dk-label">Primera cosa que siempre debes leer antes que cualquier dato numérico</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">0</DIV><DIV CLASS="dk-label">Información externa al texto que puede usarse para justificar una respuesta</DIV></DIV>
+</DIV>
+
+</DIV>
+</DIV>
+
+<!-- ===================== PREGUNTAS ===================== -->
+<DIV CLASS="bloque">
+<H2>Preguntas de examen</H2>
+<DIV CLASS="lista-problemas">
+
+<!-- ========== NIVEL BÁSICO ========== -->
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> Lee la siguiente tabla y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Tabla: Producción nacional de papa por región — Perú 2022 (en miles de toneladas)</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Región</TH><TH>Producción (miles de TM)</TH></TR>
+<TR><TD>Puno</TD><TD>502,3</TD></TR>
+<TR><TD>Huánuco</TD><TD>488,1</TD></TR>
+<TR><TD>La Libertad</TD><TD>361,4</TD></TR>
+<TR><TD>Junín</TD><TD>327,9</TD></TR>
+<TR><TD>Cusco</TD><TD>296,5</TD></TR>
+</TABLE>
+</DIV>
+<I>Fuente: elaboración con fines didácticos basada en formato de estadísticas agrarias del Minagri.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">Según la tabla, ¿qué región registró la mayor producción de papa en 2022?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Huánuco, con 488,1 miles de toneladas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) La Libertad, con 361,4 miles de toneladas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Puno, con 502,3 miles de toneladas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Junín, con 327,9 miles de toneladas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La lectura literal de la tabla consiste en identificar el valor más alto de la columna "Producción". El valor mayor es 502,3, que corresponde a <B>Puno</B>. Esta es una pregunta de nivel básico porque requiere únicamente localizar el dato más alto en una sola columna, sin necesidad de calcular, comparar tendencias ni hacer inferencias. El error frecuente es confundir Puno con Huánuco (488,1), que ocupa el segundo lugar: la diferencia es de 14,2 miles de toneladas y ambos valores son próximos, pero la pregunta pide el mayor, y ese es Puno.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> Observa la siguiente tabla y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Tabla: Número de visitantes a museos nacionales seleccionados — Lima, 2023 (en miles de visitantes)</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Museo</TH><TH>Ene–Mar</TH><TH>Abr–Jun</TH><TH>Jul–Set</TH><TH>Oct–Dic</TH></TR>
+<TR><TD>Larco</TD><TD>41,2</TD><TD>38,7</TD><TD>53,6</TD><TD>44,1</TD></TR>
+<TR><TD>Nacional de Arqueología</TD><TD>28,4</TD><TD>25,1</TD><TD>39,2</TD><TD>30,8</TD></TR>
+<TR><TD>Arte de Lima</TD><TD>19,7</TD><TD>22,3</TD><TD>31,4</TD><TD>26,5</TD></TR>
+<TR><TD>Historia Natural</TD><TD>33,6</TD><TD>29,8</TD><TD>47,1</TD><TD>38,2</TD></TR>
+</TABLE>
+</DIV>
+<I>Fuente: elaboración con fines didácticos.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿En qué trimestre todos los museos de la tabla registraron su mayor número de visitantes?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) Enero – Marzo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) Abril – Junio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) Julio – Septiembre</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) Octubre – Diciembre</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Para responder esta pregunta hay que localizar el valor máximo de cada fila (cada museo) y verificar que todos correspondan al mismo trimestre. Larco: máximo en Jul–Set (53,6). Nacional de Arqueología: máximo en Jul–Set (39,2). Arte de Lima: máximo en Jul–Set (31,4). Historia Natural: máximo en Jul–Set (47,1). En todos los casos el máximo se ubica en el trimestre Julio–Septiembre, lo que coincide con la temporada alta de turismo nacional en el Perú (vacaciones de invierno escolar y Fiestas Patrias). La estrategia correcta es leer fila por fila buscando el mayor valor de cada una, no columna por columna.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> Lee la siguiente ficha técnica y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>FICHA TÉCNICA — PROYECTO DE REFORESTACIÓN CORDILLERA AZUL</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Campo</TH><TH>Dato</TH></TR>
+<TR><TD>Nombre del proyecto</TD><TD>Reforestación Cuenca Alta Cordillera Azul</TD></TR>
+<TR><TD>Región de ejecución</TD><TD>San Martín</TD></TR>
+<TR><TD>Área intervenida</TD><TD>4 200 hectáreas</TD></TR>
+<TR><TD>Especie principal sembrada</TD><TD>Cedro nativo (<I>Cedrela odorata</I>)</TD></TR>
+<TR><TD>Fecha de inicio</TD><TD>Marzo de 2021</TD></TR>
+<TR><TD>Fecha de término prevista</TD><TD>—</TD></TR>
+<TR><TD>Entidad ejecutora</TD><TD>SERNANP en convenio con ONG Amazonia Verde</TD></TR>
+<TR><TD>Presupuesto total</TD><TD>S/ 3 850 000</TD></TR>
+</TABLE>
+</DIV>
+<I>Fuente: elaboración con fines didácticos.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué información está ausente o incompleta en esta ficha técnica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) El presupuesto total del proyecto</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) La región de ejecución</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) La fecha de término prevista del proyecto, que aparece sin dato registrado</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) El nombre de la especie sembrada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>En una ficha técnica, la estrategia de lectura indica que se deben leer primero las etiquetas (los campos) y verificar que cada campo tenga un valor asignado. Al recorrer la columna "Dato", todos los campos tienen información excepto "Fecha de término prevista", que muestra una raya (—), indicando que ese dato no ha sido registrado o aún no está determinado. Los demás campos referidos en las opciones incorrectas sí tienen su dato: presupuesto (S/ 3 850 000), región (San Martín) y especie (<I>Cedrela odorata</I>). Identificar campos vacíos o incompletos es una habilidad básica de lectura de formularios y fichas técnicas.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> Observa el siguiente cuadro comparativo y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Cuadro comparativo: Características del texto continuo vs. texto discontinuo</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Criterio</TH><TH>Texto continuo</TH><TH>Texto discontinuo</TH></TR>
+<TR><TD>Forma de organización</TD><TD>Párrafos secuenciales</TD><TD>Formatos visuales no lineales</TD></TR>
+<TR><TD>Tipo de lectura</TD><TD>Lineal, de inicio a fin</TD><TD>Selectiva, según la información buscada</TD></TR>
+<TR><TD>Unidad básica</TD><TD>Oración / párrafo</TD><TD>Celda / sector / bloque visual</TD></TR>
+<TR><TD>Cohesión visible</TD><TD>Conectores, pronombres, elipsis</TD><TD>Títulos, encabezados, leyendas, etiquetas</TD></TR>
+<TR><TD>Ejemplo típico</TD><TD>Artículo de opinión, cuento, ensayo</TD><TD>Tabla de datos, gráfico, infografía</TD></TR>
+</TABLE>
+</DIV>
+<I>Fuente: elaboración con fines didácticos.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">Según el cuadro, ¿en qué criterio coinciden el texto continuo y el texto discontinuo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) En el tipo de lectura: ambos se leen de manera lineal, de inicio a fin</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) En la unidad básica: ambos usan oraciones y párrafos como unidad mínima</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) En ningún criterio de los presentados en el cuadro: en todos ellos los dos tipos de texto difieren</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) En la forma de organización: ambos usan párrafos secuenciales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>En un cuadro comparativo, la estrategia correcta es revisar fila por fila y comparar los valores de cada columna. Al hacerlo en este cuadro, se observa que en todos los criterios presentados (organización, tipo de lectura, unidad básica, cohesión visible y ejemplo típico), los valores de "texto continuo" y "texto discontinuo" son distintos: no hay ninguna fila en la que ambas columnas muestren el mismo valor. La opción a) es incorrecta porque el cuadro indica explícitamente que el texto discontinuo se lee de manera selectiva, no lineal. Las opciones b) y d) atribuyen al texto discontinuo características que el cuadro asigna al continuo. La respuesta c) requiere haber leído todas las filas, no solo una.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> Lee el siguiente afiche y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>— AFICHE —</B><BR><BR>
+<B>FERIA REGIONAL DE SEMILLAS NATIVAS · CUSCO 2024</B><BR><BR>
+<B>¿Cuándo?</B> Sábado 14 y domingo 15 de setiembre de 2024, de 8:00 a.m. a 5:00 p.m.<BR>
+<B>¿Dónde?</B> Plaza de Armas de Pisac, Cusco<BR>
+<B>¿Para quién?</B> Agricultores, estudiantes, familias y público en general<BR>
+<B>¿Qué encontrarás?</B> Exposición e intercambio de semillas nativas, talleres de agricultura regenerativa, gastronomía andina y charlas sobre soberanía alimentaria<BR>
+<B>Ingreso libre · Traer semillas propias para intercambio (opcional)</B><BR><BR>
+<I>Organiza: Red de Guardianes de Semillas del Sur Andino · Auspincia: Gobierno Regional del Cusco</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Cuál es la <B>acción principal</B> que el afiche promueve entre el público al que va dirigido?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Comprar semillas nativas producidas por la Red de Guardianes de Semillas del Sur Andino</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Asistir a la Feria Regional de Semillas Nativas en Pisac, Cusco, durante los días 14 y 15 de setiembre de 2024</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Presentar un trabajo de investigación sobre soberanía alimentaria ante las autoridades del Gobierno Regional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Inscribirse previamente en línea para reservar un lugar en los talleres de agricultura regenerativa</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>En un afiche, la estrategia de lectura indica identificar primero el mensaje principal (el elemento más prominente) y luego la llamada a la acción. El elemento principal del afiche es el evento: la Feria Regional de Semillas Nativas, con fecha, lugar y horario definidos. La acción que promueve es <B>asistir</B> a ese evento. La opción a) es incorrecta porque el afiche menciona "intercambio" de semillas, no compra o venta; además, la acción de intercambio es opcional ("traer semillas propias para intercambio — opcional"). La opción c) no aparece mencionada en ningún campo del afiche. La opción d) tampoco tiene respaldo: el afiche indica "ingreso libre" sin mencionar inscripción previa.</DIV></DETAILS>
+</DIV>
+
+<!-- ========== NIVEL INTERMEDIO ========== -->
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> Observa la siguiente tabla y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Tabla: Exportaciones peruanas de productos agroindustriales seleccionados — 2019–2023 (en millones de USD)</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Producto</TH><TH>2019</TH><TH>2020</TH><TH>2021</TH><TH>2022</TH><TH>2023</TH></TR>
+<TR><TD>Arándano</TD><TD>845</TD><TD>1 002</TD><TD>1 387</TD><TD>1 521</TD><TD>1 648</TD></TR>
+<TR><TD>Espárrago</TD><TD>612</TD><TD>578</TD><TD>544</TD><TD>503</TD><TD>481</TD></TR>
+<TR><TD>Quinua</TD><TD>124</TD><TD>138</TD><TD>156</TD><TD>171</TD><TD>189</TD></TR>
+<TR><TD>Uva de mesa</TD><TD>730</TD><TD>795</TD><TD>842</TD><TD>910</TD><TD>974</TD></TR>
+<TR><TD>Mango</TD><TD>218</TD><TD>196</TD><TD>231</TD><TD>247</TD><TD>259</TD></TR>
+</TABLE>
+</DIV>
+<I>Fuente: elaboración con fines didácticos basada en formato de estadísticas de comercio exterior.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué tendencia diferencia al espárrago de todos los demás productos de la tabla durante el período 2019–2023?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) El espárrago es el único producto que supera los 1 000 millones de USD en algún año del período</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) El espárrago es el único producto de la tabla que muestra una tendencia decreciente sostenida durante todo el período 2019–2023, pasando de 612 a 481 millones de USD</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) El espárrago registra el mayor crecimiento porcentual entre 2019 y 2023 de todos los productos listados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) El espárrago es el único producto que mantiene el mismo valor durante los cinco años del período</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Al aplicar la estrategia de barrido visual por filas, se observa que arándano, quinua, uva de mesa y mango presentan una tendencia general creciente (con pequeños descensos puntuales en el caso del mango en 2020). El espárrago, en cambio, desciende en todos y cada uno de los años del período sin excepción: 612 → 578 → 544 → 503 → 481, lo que representa una caída acumulada de 131 millones de USD (–21,4%). Esta es su tendencia diferenciadora. La opción a) es incorrecta: el arándano supera los 1 000 millones desde 2020, no el espárrago. La opción c) es la contraria a la verdad: el espárrago tiene el único crecimiento negativo, no el mayor crecimiento positivo. La opción d) es falsa: sus valores cambian en cada año.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> Lee la siguiente descripción de un gráfico y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Descripción de gráfico circular: Distribución porcentual de las causas de accidentes de tránsito en Lima Metropolitana — 2023</B><BR><BR>
+El gráfico circular muestra la distribución de las principales causas registradas en los partes policiales de accidentes de tránsito en Lima Metropolitana durante el año 2023. Los sectores y sus porcentajes son los siguientes:<BR><BR>
+· <B>Exceso de velocidad:</B> 34%<BR>
+· <B>Imprudencia del conductor:</B> 28%<BR>
+· <B>Estado de ebriedad:</B> 17%<BR>
+· <B>Falla mecánica:</B> 11%<BR>
+· <B>Imprudencia del peatón:</B> 7%<BR>
+· <B>Otras causas:</B> 3%<BR><BR>
+<I>Nota: los porcentajes suman 100%. Fuente: elaboración con fines didácticos.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué porcentaje del total de accidentes puede atribuirse a factores directamente relacionados con el comportamiento del conductor (incluyendo velocidad, imprudencia y ebriedad)?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) 34%, porque ese es el porcentaje del factor de mayor peso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) 62%, sumando únicamente exceso de velocidad e imprudencia del conductor</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) 79%, sumando exceso de velocidad (34%), imprudencia del conductor (28%) y estado de ebriedad (17%)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) 100%, porque todos los accidentes son en última instancia responsabilidad del conductor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La pregunta indica con precisión qué sectores deben sumarse: "exceso de velocidad, imprudencia y ebriedad". Aplicando la estrategia de relacionar datos entre secciones del gráfico, se suman los tres sectores indicados: 34% + 28% + 17% = <B>79%</B>. La opción a) toma solo el valor más alto sin sumar los demás, lo que responde solo parcialmente la pregunta. La opción b) suma solo dos de los tres factores señalados en el enunciado (excluye ebriedad), por lo que es incompleta. La opción d) va más allá de lo que el gráfico permite concluir: el texto muestra que el 21% restante se atribuye a falla mecánica, imprudencia del peatón y otras causas, por lo que afirmar que "todos los accidentes son responsabilidad del conductor" extrapola lo que los datos muestran.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> Observa el siguiente cuadro comparativo y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Cuadro comparativo: Dos sistemas de generación eléctrica</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Criterio</TH><TH>Central hidroeléctrica</TH><TH>Parque solar fotovoltaico</TH></TR>
+<TR><TD>Fuente de energía</TD><TD>Agua en movimiento (caída)</TD><TD>Radiación solar</TD></TR>
+<TR><TD>Emisiones de CO₂</TD><TD>Muy bajas (operación)</TD><TD>Nulas (operación)</TD></TR>
+<TR><TD>Dependencia climática</TD><TD>Alta (caudal del río)</TD><TD>Alta (nubosidad y estación)</TD></TR>
+<TR><TD>Impacto en ecosistema</TD><TD>Alto (inundación de áreas)</TD><TD>Bajo (uso de suelo árido)</TD></TR>
+<TR><TD>Vida útil estimada</TD><TD>50–100 años</TD><TD>25–30 años</TD></TR>
+<TR><TD>Costo de instalación</TD><TD>Muy alto</TD><TD>Moderado</TD></TR>
+<TR><TD>Generación nocturna</TD><TD>Sí</TD><TD>No</TD></TR>
+</TABLE>
+</DIV>
+<I>Fuente: elaboración con fines didácticos.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿En qué criterio o criterios coinciden ambos sistemas de generación eléctrica según el cuadro?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) En el impacto sobre el ecosistema y en la vida útil estimada</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) En las emisiones de CO₂ durante la operación y en la generación nocturna</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) En la alta dependencia climática para su funcionamiento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) En el costo de instalación y en la fuente de energía utilizada</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La estrategia para cuadros comparativos es leer fila por fila y buscar aquellas donde los valores de ambas columnas sean equivalentes o coincidentes. Al recorrer el cuadro: Emisiones de CO₂ — "muy bajas" vs. "nulas": distintas. Dependencia climática — <B>"alta" vs. "alta": coinciden</B>. Impacto en ecosistema — "alto" vs. "bajo": distintos. Vida útil — "50–100 años" vs. "25–30 años": distintas. Costo de instalación — "muy alto" vs. "moderado": distintos. Generación nocturna — "sí" vs. "no": distintos. Solo el criterio "dependencia climática" muestra el mismo valor en ambas columnas. La opción a) es incorrecta: impacto en ecosistema y vida útil difieren claramente. La opción b) es incorrecta: las emisiones difieren ("muy bajas" ≠ "nulas") y la generación nocturna también. La opción d) es incorrecta en ambos criterios.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> Observa la siguiente tabla y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Tabla: Índice de masa corporal promedio en estudiantes de secundaria — Tres colegios de Arequipa, 2023</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Colegio</TH><TH>1.° Sec.</TH><TH>2.° Sec.</TH><TH>3.° Sec.</TH><TH>4.° Sec.</TH><TH>5.° Sec.</TH></TR>
+<TR><TD>Colegio A</TD><TD>21,4</TD><TD>21,9</TD><TD>22,3</TD><TD>23,1</TD><TD>23,8</TD></TR>
+<TR><TD>Colegio B</TD><TD>20,8</TD><TD>21,2</TD><TD>21,7</TD><TD>22,4</TD><TD>23,0</TD></TR>
+<TR><TD>Colegio C</TD><TD>22,1</TD><TD>22,8</TD><TD>23,4</TD><TD>24,0</TD><TD>24,6</TD></TR>
+</TABLE>
+</DIV>
+<I>Nota: el IMC saludable para adolescentes varía según talla y edad; estos datos son referenciales. Fuente: elaboración con fines didácticos.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué tendencia comparten los tres colegios a lo largo de los cinco grados de secundaria?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) El IMC promedio disminuye progresivamente desde 1.° hasta 5.° de secundaria en los tres colegios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) El Colegio C tiene el IMC más bajo en todos los grados</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) El IMC promedio aumenta progresivamente desde 1.° hasta 5.° de secundaria en los tres colegios sin excepción</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) No existe ninguna tendencia compartida: cada colegio presenta un patrón completamente diferente</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Al leer cada fila de izquierda a derecha (de 1.° a 5.° de secundaria), se observa que los valores aumentan sin excepción en los tres colegios: Colegio A: 21,4 → 21,9 → 22,3 → 23,1 → 23,8 (aumento continuo). Colegio B: 20,8 → 21,2 → 21,7 → 22,4 → 23,0 (aumento continuo). Colegio C: 22,1 → 22,8 → 23,4 → 24,0 → 24,6 (aumento continuo). La tendencia compartida es un incremento progresivo del IMC conforme avanza el grado de secundaria. La opción a) invierte la tendencia observada. La opción b) es incorrecta: el Colegio C tiene los valores más altos, no los más bajos. La opción d) ignora la tendencia creciente común a los tres colegios, que es la característica más evidente del cuadro.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> Lee la siguiente descripción de infografía y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Infografía: "El agua en el Perú — datos clave 2023"</B><BR><BR>
+La infografía se organiza en cuatro bloques:<BR><BR>
+<B>Bloque 1 — Disponibilidad:</B> El Perú posee el 4,6% del agua dulce superficial del mundo y el 97,7% de ese recurso se concentra en la vertiente amazónica. La vertiente del Pacífico, donde vive el 70% de la población, solo concentra el 1,8% del agua disponible.<BR><BR>
+<B>Bloque 2 — Acceso:</B> El 91% de la población urbana tiene acceso a agua potable por red domiciliaria, frente al 72% en zonas rurales.<BR><BR>
+<B>Bloque 3 — Uso:</B> El 86% del agua consumida en el Perú se destina a la agricultura; el 7%, a uso industrial; el 7% restante, a consumo doméstico e institucional.<BR><BR>
+<B>Bloque 4 — Amenazas:</B> Los glaciares peruanos han perdido el 53% de su superficie desde 1962. Se estima que para 2050 el 80% de los glaciares menores de 1 km² habrá desaparecido.<BR><BR>
+<I>Fuente: elaboración con fines didácticos basada en formato de infografías hídricas del ANA.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué conclusión puede obtenerse al relacionar los datos del Bloque 1 con los del Bloque 2?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Que el 91% de acceso a agua potable en zonas urbanas se explica por la cercanía de las ciudades a la vertiente amazónica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Que el bajo acceso rural al agua potable (72%) se debe exclusivamente a la contaminación industrial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Que existe una paradoja entre disponibilidad y distribución: donde vive la mayor parte de la población (la costa, vertiente del Pacífico) se concentra apenas el 1,8% del agua disponible, lo que ayuda a explicar por qué el acceso aún no es universal pese a la abundancia nacional del recurso</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Que el Perú debería trasvasar toda el agua amazónica hacia la costa para resolver el problema de acceso</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Esta pregunta aplica la estrategia de relacionar datos entre distintas partes del texto (Estrategia 4). El Bloque 1 establece que el 70% de la población vive en la vertiente del Pacífico, que solo tiene el 1,8% del agua disponible. El Bloque 2 indica que el 91% urbano tiene acceso pero el 72% rural no. Al cruzar estos datos, puede concluirse que la <B>asimetría entre donde está la población y donde está el agua</B> es una causa estructural de los problemas de acceso, aunque el acceso urbano sea relativamente alto. La opción a) introduce información falsa: las ciudades costeñas están lejos de la Amazonía y el acceso urban depende de infraestructura, no de cercanía geográfica al Amazonas. La opción b) extrapola una causa (contaminación industrial) que ningún bloque menciona. La opción d) propone una política que los datos no respaldan ni sugieren: va más allá de lo que el texto permite concluir.</DIV></DETAILS>
+</DIV>
+
+<!-- ========== NIVEL AVANZADO ========== -->
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · RAZONAMIENTO CRÍTICO</SPAN></DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> Observa la siguiente tabla de doble entrada y responde las preguntas 11 y 12:</DIV>
+<DIV CLASS="parrafo">
+<B>Tabla: Tasa de conclusión de educación secundaria por sexo y área geográfica — Perú 2022 (%)</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Área / Sexo</TH><TH>Hombres</TH><TH>Mujeres</TH><TH>Total</TH></TR>
+<TR><TD>Lima Metropolitana</TD><TD>82,4</TD><TD>85,1</TD><TD>83,7</TD></TR>
+<TR><TD>Resto de costa</TD><TD>74,6</TD><TD>76,3</TD><TD>75,4</TD></TR>
+<TR><TD>Sierra urbana</TD><TD>71,2</TD><TD>73,8</TD><TD>72,5</TD></TR>
+<TR><TD>Sierra rural</TD><TD>48,3</TD><TD>44,7</TD><TD>46,5</TD></TR>
+<TR><TD>Selva urbana</TD><TD>63,1</TD><TD>65,4</TD><TD>64,2</TD></TR>
+<TR><TD>Selva rural</TD><TD>38,7</TD><TD>33,2</TD><TD>35,9</TD></TR>
+</TABLE>
+</DIV>
+<I>Fuente: elaboración con fines didácticos basada en formato de indicadores educativos del Minedu.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿En qué áreas geográficas las mujeres presentan una tasa de conclusión inferior a la de los hombres?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) En todas las áreas geográficas sin excepción</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) Solo en Lima Metropolitana</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) En la Sierra rural (44,7% vs. 48,3%) y en la Selva rural (33,2% vs. 38,7%): las únicas dos áreas donde la tasa femenina es menor que la masculina</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) En el Resto de costa y en la Sierra urbana</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>La estrategia correcta es comparar columna por columna (Hombres vs. Mujeres) en cada fila: Lima Metropolitana: 82,4 vs. 85,1 → mujeres mayor. Resto de costa: 74,6 vs. 76,3 → mujeres mayor. Sierra urbana: 71,2 vs. 73,8 → mujeres mayor. <B>Sierra rural: 48,3 vs. 44,7 → mujeres menor</B>. Selva urbana: 63,1 vs. 65,4 → mujeres mayor. <B>Selva rural: 38,7 vs. 33,2 → mujeres menor</B>. Solo en las dos áreas rurales (Sierra rural y Selva rural) la tasa femenina es inferior a la masculina. En todas las áreas urbanas y en la costa, las mujeres tienen tasas de conclusión más altas que los hombres. La opción a) es refutada directamente por los datos. La opción b) es incorrecta: en Lima Metropolitana las mujeres tienen la tasa mayor. La opción d) confunde áreas donde las mujeres están por encima (ambas) con las áreas donde están por debajo.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> Considerando la misma tabla de la pregunta 11, ¿qué conclusión <B>no puede obtenerse</B> a partir de los datos presentados?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) Que la brecha entre las áreas rurales y Lima Metropolitana es superior a 40 puntos porcentuales en el caso de la Selva rural</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) Que la desventaja de las mujeres en áreas rurales se debe principalmente a la falta de docentes mujeres en esas zonas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) Que en todas las áreas urbanas (Lima, Resto de costa, Sierra urbana, Selva urbana) las mujeres tienen tasas de conclusión más altas que los hombres</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) Que la Selva rural presenta las tasas de conclusión más bajas de todas las áreas registradas, tanto para hombres como para mujeres</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta aplica la Estrategia 5: concluir solo con lo que el texto muestra. Las opciones a), c) y d) pueden verificarse directamente con los datos: a) Lima Metropolitana total = 83,7%; Selva rural total = 35,9%; diferencia = 47,8 puntos porcentuales, superior a 40 → verificable. c) En todas las áreas urbanas, la columna de mujeres supera a la de hombres → verificable. d) La Selva rural tiene 38,7% (hombres) y 33,2% (mujeres), ambos los valores más bajos de la tabla → verificable. La opción b), en cambio, atribuye la desventaja femenina rural a una causa específica (falta de docentes mujeres) que la tabla no menciona ni sugiere en ningún lugar: es una inferencia que agrega información externa, lo que viola el principio básico de lectura de textos discontinuos. Por eso b) es la única conclusión que <B>no puede</B> obtenerse de la tabla.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> Lee el siguiente diagrama de flujo descrito en texto y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Diagrama de flujo: Proceso de admisión a universidad pública peruana (esquema simplificado)</B><BR><BR>
+<B>INICIO</B> → El postulante completa el formulario de inscripción en línea → ¿La documentación está completa? →<BR><BR>
+<B>SÍ:</B> Se genera el código de postulante y se habilita el pago de la tasa de admisión → ¿El pago se realizó dentro del plazo? →<BR>
+&nbsp;&nbsp;&nbsp;<B>SÍ:</B> Se confirma la inscripción y se asigna sede y turno de examen → El postulante rinde el examen de admisión → ¿El puntaje supera el puntaje de corte de la carrera elegida? →<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>SÍ:</B> El postulante es admitido → <B>FIN</B><BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B>NO:</B> El postulante no es admitido en esta convocatoria → <B>FIN</B><BR>
+&nbsp;&nbsp;&nbsp;<B>NO:</B> La inscripción queda anulada automáticamente → <B>FIN</B><BR><BR>
+<B>NO:</B> El sistema devuelve el formulario indicando los campos faltantes → El postulante corrige y vuelve a enviar → regresa al nodo de verificación de documentación<BR><BR>
+<I>Fuente: elaboración con fines didácticos.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿En qué situación la inscripción queda anulada automáticamente sin que el postulante haya rendido el examen?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Cuando el puntaje del postulante no supera el puntaje de corte de la carrera elegida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Cuando la documentación está incompleta y el postulante no la corrige</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Cuando la documentación está completa y el pago de la tasa no se realiza dentro del plazo establecido</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Cuando el postulante elige una carrera con puntaje de corte muy alto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>En un diagrama de flujo, la estrategia es seguir cada rama en su dirección y llegar al nodo de resultado indicado en la pregunta: "inscripción anulada automáticamente". Siguiendo el flujo: documentación completa (SÍ) → pago dentro del plazo (NO) → "inscripción queda anulada automáticamente" → FIN. Este es el único camino que lleva a ese resultado exacto sin que el postulante llegue a rendir el examen. La opción a) corresponde al nodo "no admitido", que sí implica haber rendido el examen. La opción b) describe el nodo de "documentación incompleta", que en el diagrama regresa al formulario para corrección y no lleva directamente a la anulación (el postulante puede corregir y reintentar). La opción d) no corresponde a ningún nodo del diagrama: el puntaje de corte solo aparece como criterio posterior al examen, no durante la inscripción.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> Observa la siguiente tabla y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Tabla: Producción de energía eléctrica por fuente — Perú 2018–2022 (en GWh)</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Fuente</TH><TH>2018</TH><TH>2019</TH><TH>2020</TH><TH>2021</TH><TH>2022</TH></TR>
+<TR><TD>Hidroeléctrica</TD><TD>30 842</TD><TD>31 204</TD><TD>30 571</TD><TD>31 890</TD><TD>32 447</TD></TR>
+<TR><TD>Termoeléctrica (gas)</TD><TD>18 631</TD><TD>17 982</TD><TD>16 740</TD><TD>15 931</TD><TD>14 823</TD></TR>
+<TR><TD>Eólica</TD><TD>1 042</TD><TD>1 287</TD><TD>1 451</TD><TD>1 738</TD><TD>2 104</TD></TR>
+<TR><TD>Solar</TD><TD>312</TD><TD>418</TD><TD>563</TD><TD>741</TD><TD>1 027</TD></TR>
+<TR><TD>Otras fuentes</TD><TD>874</TD><TD>891</TD><TD>855</TD><TD>902</TD><TD>933</TD></TR>
+</TABLE>
+</DIV>
+<I>Fuente: elaboración con fines didácticos basada en formato de estadísticas energéticas del MINEM.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué conclusión puede obtenerse al analizar conjuntamente las tendencias de la energía termoeléctrica y las energías eólica y solar?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) La energía termoeléctrica superará a la hidroeléctrica en producción antes de 2030, según los datos de la tabla</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) La energía solar y la eólica juntas ya superan a la termoeléctrica en el año 2022</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) Mientras la producción termoeléctrica disminuye de manera sostenida (de 18 631 a 14 823 GWh), la eólica y la solar crecen de forma continua en el mismo período, lo que sugiere una transición progresiva en la matriz energética hacia fuentes renovables, aunque la termoeléctrica sigue siendo la segunda mayor fuente en 2022</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) La hidroeléctrica es la única fuente cuya producción creció en todos los años del período sin excepción</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Al aplicar la Estrategia 4 (relacionar datos entre distintas partes), se observan dos tendencias opuestas que coexisten: termoeléctrica: 18 631 → 17 982 → 16 740 → 15 931 → 14 823 (descenso sostenido, –3 808 GWh en el período). Eólica: 1 042 → 1 287 → 1 451 → 1 738 → 2 104 (crecimiento sostenido). Solar: 312 → 418 → 563 → 741 → 1 027 (crecimiento sostenido). La conclusión que integra ambas tendencias sin extrapolar más allá de los datos es la opción c). La opción a) extrapola hacia 2030, año que no figura en la tabla: viola la Estrategia 5. La opción b) es numéricamente falsa: en 2022, eólica + solar = 2 104 + 1 027 = 3 131 GWh, muy por debajo de los 14 823 GWh de la termoeléctrica. La opción d) es incorrecta: la hidroeléctrica bajó en 2020 (30 571 < 30 842 de 2018 y < 31 204 de 2019), por lo que no creció en todos los años sin excepción.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> Lee el siguiente texto de infografía y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Infografía: "Residuos sólidos en el Perú — situación 2023"</B><BR><BR>
+<B>Bloque A — Generación:</B> El Perú genera aproximadamente 8,3 millones de toneladas de residuos sólidos municipales al año. Lima produce el 43% del total nacional.<BR><BR>
+<B>Bloque B — Disposición:</B> Solo el 52% de los residuos generados llega a un relleno sanitario autorizado. El 48% restante se dispone en botaderos informales, ríos, quebradas o quemas a cielo abierto.<BR><BR>
+<B>Bloque C — Reciclaje:</B> El reciclaje formal solo recupera el 1,9% del total de residuos generados. Sin embargo, el reciclaje informal (recicladores de base) recupera un porcentaje adicional estimado en 2,3%, sin reconocimiento oficial.<BR><BR>
+<B>Bloque D — Marco legal:</B> La Ley de Gestión Integral de Residuos Sólidos (D.L. 1278) establece la responsabilidad compartida entre municipios, productores y ciudadanos. Fue promulgada en 2016.<BR><BR>
+<I>Fuente: elaboración con fines didácticos.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué dato de los bloques B y C, relacionados entre sí, revela la mayor contradicción o tensión interna de la situación descrita?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Que Lima produce el 43% de los residuos y también tiene el mayor número de rellenos sanitarios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) Que la Ley de 2016 establece responsabilidad compartida pero los datos muestran que el 48% de los residuos no recibe disposición formal, y que el reciclaje informal recupera más que el formal (2,3% vs. 1,9%) pero opera sin reconocimiento oficial, lo que revela una brecha entre el marco legal y la realidad operativa</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) Que el reciclaje formal (1,9%) sumado al informal (2,3%) supera ampliamente el 52% que llega a rellenos sanitarios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Que la Ley de Gestión Integral de Residuos Sólidos fue promulgada demasiado tarde para tener algún impacto real</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La pregunta pide relacionar Bloques B, C y D para identificar la tensión interna. El Bloque D establece un marco legal de responsabilidad compartida desde 2016; el Bloque B muestra que, pese a ese marco, el 48% de residuos no recibe disposición formal; el Bloque C revela que el reciclaje informal recupera más que el formal (2,3% > 1,9%) pero sin reconocimiento oficial. La tensión es doble: por un lado, la ley no se traduce en disposición formal para casi la mitad de los residuos; por otro, los actores informales hacen más que los formales pero el sistema legal no los integra. La opción a) introduce información sobre rellenos sanitarios en Lima que los bloques no proporcionan: viola la Estrategia 5. La opción c) es matemáticamente incorrecta: 1,9 + 2,3 = 4,2%, muy lejos del 52%. La opción d) emite un juicio valorativo ("demasiado tarde", "sin impacto real") que los datos no permiten sostener.</DIV></DETAILS>
+</DIV>
+
+<!-- ========== NIVEL EXPERTO ========== -->
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · PREUNIVERSITARIO ALTO RENDIMIENTO</SPAN></DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> Observa las dos tablas siguientes y responde las preguntas 16 y 17:</DIV>
+<DIV CLASS="parrafo">
+<B>Tabla 1: Porcentaje de hogares con acceso a internet en el hogar — Perú 2019–2023</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Área</TH><TH>2019</TH><TH>2020</TH><TH>2021</TH><TH>2022</TH><TH>2023</TH></TR>
+<TR><TD>Nacional</TD><TD>33,4</TD><TD>39,1</TD><TD>45,2</TD><TD>51,3</TD><TD>56,8</TD></TR>
+<TR><TD>Urbana</TD><TD>47,2</TD><TD>54,6</TD><TD>61,3</TD><TD>67,8</TD><TD>72,4</TD></TR>
+<TR><TD>Rural</TD><TD>5,6</TD><TD>8,3</TD><TD>11,7</TD><TD>15,4</TD><TD>19,2</TD></TR>
+</TABLE>
+</DIV>
+<B>Tabla 2: Puntaje promedio en comprensión lectora digital — Estudiantes de 4.° de secundaria, Perú 2023</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Área</TH><TH>Puntaje promedio</TH><TH>% en nivel satisfactorio</TH></TR>
+<TR><TD>Urbana</TD><TD>512</TD><TD>41,3%</TD></TR>
+<TR><TD>Rural</TD><TD>448</TD><TD>18,7%</TD></TR>
+<TR><TD>Nacional</TD><TD>496</TD><TD>35,1%</TD></TR>
+</TABLE>
+</DIV>
+<I>Fuente: elaboración con fines didácticos.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué relación puede establecerse entre los datos de ambas tablas al compararlas por área geográfica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Las tablas no tienen ninguna relación posible porque miden variables completamente distintas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) El área urbana, que tiene mayor acceso a internet (72,4% en 2023), también presenta mayor puntaje promedio y mayor porcentaje en nivel satisfactorio de comprensión lectora digital (512 puntos y 41,3%); el área rural, con menor acceso (19,2%), presenta los valores más bajos (448 puntos y 18,7%): las dos tablas muestran la misma dirección de la brecha entre áreas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Las tablas demuestran que el acceso a internet causa directamente mejores resultados en comprensión lectora digital</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) El área rural creció más en acceso a internet entre 2019 y 2023, por lo que debería tener mejores resultados que el área urbana en comprensión lectora digital</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta aplica la Estrategia 4 (relacionar datos entre secciones) y la Estrategia 5 (no concluir más allá de los datos). Al cruzar las tablas por área: urbana — mayor acceso (72,4%) y mejores resultados (512 puntos, 41,3%). Rural — menor acceso (19,2%) y peores resultados (448 puntos, 18,7%). La dirección de la brecha es consistente en ambas tablas: donde hay más acceso, hay mejores resultados. Esto puede afirmarse a partir de los datos (opción b). La opción c) va un paso más allá: afirmar causalidad ("causa directamente") requiere un diseño experimental o estadístico que estas tablas no proporcionan; solo muestran correlación, no causalidad. La opción a) niega la posibilidad de relacionar las tablas, cuando su estructura paralela (mismas áreas geográficas) la permite. La opción d) comete un error de lógica: que el área rural creciera más en porcentaje (de 5,6 a 19,2, +13,6 puntos) no implica que su nivel absoluto supere al urbano (que pasó de 47,2 a 72,4, manteniéndose muy por encima).</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> Considerando las mismas dos tablas de la pregunta 16, ¿qué conclusión está <B>fuera del alcance</B> de los datos presentados?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Que en 2023 la brecha de acceso a internet entre el área urbana y el área rural es de aproximadamente 53 puntos porcentuales (72,4% − 19,2%)</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Que el crecimiento en acceso a internet rural entre 2019 y 2023 fue mayor en puntos porcentuales que el del acceso nacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Que si el acceso a internet en el área rural alcanzara el mismo nivel que el área urbana en 2023, el puntaje de comprensión lectora digital rural también subiría hasta 512 puntos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Que en el área urbana el porcentaje de estudiantes en nivel satisfactorio de comprensión lectora digital es más del doble que en el área rural</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>Esta pregunta evalúa directamente la Estrategia 5 (concluir solo con lo que el texto muestra). Las opciones a), b) y d) son verificables con los datos: a) 72,4 − 19,2 = 53,2 puntos porcentuales → verificable. b) Rural: 19,2 − 5,6 = +13,6 pp; Nacional: 56,8 − 33,4 = +23,4 pp → en realidad el rural creció menos en puntos absolutos, pero la pregunta pregunta si está "dentro del alcance", y el cálculo es posible aunque la afirmación resulte falsa (aun así, es verificable). d) Urbano: 41,3%; Rural: 18,7%; ratio = 41,3 / 18,7 ≈ 2,2 → sí, es más del doble → verificable. La opción c), en cambio, establece una relación causal y predictiva: "si el acceso fuera igual, el puntaje sería igual". Esto implica que el acceso es la única variable que determina el puntaje, lo cual las tablas no pueden demostrar: hay factores no medidos (calidad docente, entorno familiar, tiempo de uso, etc.) que también influyen. Esta conclusión va más allá de lo que los datos permiten afirmar.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> Lee la siguiente tabla y evalúa críticamente su diseño:</DIV>
+<DIV CLASS="parrafo">
+<B>Tabla: "Efectividad de dos métodos de estudio en estudiantes preuniversitarios" — Resultados de puntaje promedio en simulacro de admisión</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Grupo</TH><TH>Método</TH><TH>N.° de estudiantes</TH><TH>Duración</TH><TH>Puntaje promedio pre</TH><TH>Puntaje promedio post</TH></TR>
+<TR><TD>Grupo A</TD><TD>Método tradicional (clases expositivas)</TD><TD>42</TD><TD>8 semanas</TD><TD>61,3</TD><TD>67,8</TD></TR>
+<TR><TD>Grupo B</TD><TD>Método activo (resolución de casos)</TD><TD>38</TD><TD>8 semanas</TD><TD>58,7</TD><TD>71,4</TD></TR>
+</TABLE>
+</DIV>
+<I>Fuente: elaboración con fines didácticos.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué limitación metodológica de esta tabla impide afirmar con certeza que el Método B es superior al Método A?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Que la tabla tiene demasiadas columnas, lo que dificulta su lectura</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Que el Grupo B parte de un puntaje promedio pre (58,7) inferior al del Grupo A (61,3), lo que significa que los grupos no son equivalentes al inicio: el mayor incremento del Grupo B (+12,7 puntos) podría explicarse parcialmente por ese mayor margen de mejora inicial, y no necesariamente por la superioridad del método</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Que los dos grupos tienen distinto número de estudiantes (42 vs. 38), lo que automáticamente invalida cualquier comparación entre ellos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Que el puntaje promedio post del Grupo A (67,8) es menor que el del Grupo B (71,4), lo cual demuestra sin lugar a dudas que el Método B es mejor</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta evalúa la comprensión crítico-valorativa aplicada a un texto discontinuo: no basta con leer los datos, hay que evaluar si el diseño del instrumento permite sostener la conclusión que parece sugerir. La limitación clave es que los grupos <B>no son equivalentes al inicio</B>: el Grupo A parte de 61,3 y el Grupo B de 58,7 puntos. Si el Grupo B tiene un puntaje de partida más bajo, tiene mayor "espacio" para subir; su mayor incremento (+12,7 vs. +6,5) podría deberse en parte a ese margen diferencial de mejora (efecto suelo), no solo al método aplicado. Para afirmar con certeza que el Método B es superior, los grupos deberían haber partido del mismo nivel o la diferencia debería haber sido controlada estadísticamente. La opción c) es una exageración: una diferencia de 4 estudiantes (42 vs. 38) no invalida automáticamente la comparación, aunque sí es una limitación menor. La opción d) comete exactamente el error que la pregunta busca detectar: tomar el dato final como prueba suficiente sin cuestionar la equivalencia inicial.</DIV></DETAILS>
+</DIV>
+
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> Lee el siguiente texto continuo y la tabla que lo acompaña, y responde:</DIV>
+<DIV CLASS="parrafo">
+<B>Texto (argumentativo):</B> "El modelo de teleatención en salud implementado en las regiones de selva del Perú durante la pandemia demostró ser una alternativa viable para reducir la brecha de acceso a servicios médicos en zonas de difícil acceso. Según los registros del Ministerio de Salud, entre 2020 y 2022 se realizaron más de 480 000 consultas médicas por plataformas digitales en comunidades que previamente carecían de acceso a establecimientos de salud cercanos."<BR><BR>
+<B>Tabla complementaria: Consultas médicas por teleatención — Regiones de selva seleccionadas, 2020–2022</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Región</TH><TH>2020</TH><TH>2021</TH><TH>2022</TH><TH>Total</TH></TR>
+<TR><TD>Loreto</TD><TD>48 200</TD><TD>71 400</TD><TD>83 100</TD><TD>202 700</TD></TR>
+<TR><TD>Ucayali</TD><TD>31 500</TD><TD>44 800</TD><TD>52 300</TD><TD>128 600</TD></TR>
+<TR><TD>Amazonas</TD><TD>24 100</TD><TD>38 200</TD><TD>47 600</TD><TD>109 900</TD></TR>
+<TR><TD>San Martín</TD><TD>12 400</TD><TD>17 300</TD><TD>21 100</TD><TD>50 800</TD></TR>
+<TR><TD><B>Total</B></TD><TD><B>116 200</B></TD><TD><B>171 700</B></TD><TD><B>204 100</B></TD><TD><B>492 000</B></TD></TR>
+</TABLE>
+</DIV>
+<I>Fuente: elaboración con fines didácticos.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Qué función cumple la tabla respecto al texto argumentativo y qué precisión aporta que el texto solo no podría ofrecer?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) La tabla contradice al texto porque el total que muestra (492 000) es mayor que el dato citado en el texto ("más de 480 000"), lo que invalida el argumento</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) La tabla cumple la función de evidencia cuantitativa que sustenta la tesis del texto: permite verificar el dato global mencionado en el argumento ("más de 480 000" coincide con 492 000), y además desagrega ese total por región y por año, lo que revela tendencias adicionales (crecimiento sostenido año a año en las cuatro regiones, con Loreto como la región de mayor volumen) que el texto general no podía mostrar</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) La tabla reemplaza completamente al texto: una vez que se tiene la tabla, el texto argumentativo ya no aporta información relevante</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) La tabla solo sirve para ilustrar el texto y no puede usarse para verificar ni cuestionar los datos que el texto menciona</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta evalúa la comprensión de la relación entre un texto continuo y un texto discontinuo que lo acompaña, la habilidad más compleja del tema. La tabla cumple una doble función: (1) <B>verificar</B> el dato global del argumento: "más de 480 000" es consistente con el total real de 492 000. (2) <B>Ampliar</B> la información del texto con una desagregación por región y año que el texto verbal no proporciona: permite observar que el crecimiento fue sostenido en las cuatro regiones (sin excepción, los valores aumentan año a año) y que Loreto concentra el mayor volumen (202 700 de 492 000 = el 41,2% del total). La opción a) comete el error de considerar una contradicción lo que en realidad es consistencia: "más de 480 000" incluye a 492 000, ya que 492 000 > 480 000. La opción c) ignora que el texto aporta el contexto argumentativo (la tesis sobre la viabilidad del modelo) que los números solos no dan. La opción d) niega una función que la tabla claramente cumple.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> Un estudiante lee la siguiente tabla y concluye: "Como el colegio privado A tiene el puntaje promedio más alto, sus estudiantes son los más inteligentes y sus profesores son los mejores del país." Evalúa esta conclusión.</DIV>
+<DIV CLASS="parrafo">
+<B>Tabla: Puntaje promedio en simulacro de admisión universitaria — Cinco colegios de Lima, 2024</B>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Colegio</TH><TH>Tipo</TH><TH>N.° de alumnos evaluados</TH><TH>Puntaje promedio</TH></TR>
+<TR><TD>Colegio Privado A</TD><TD>Privado de alto costo</TD><TD>48</TD><TD>74,2</TD></TR>
+<TR><TD>Colegio Privado B</TD><TD>Privado de costo medio</TD><TD>112</TD><TD>61,8</TD></TR>
+<TR><TD>Colegio Público C</TD><TD>Público (zona urbana)</TD><TD>234</TD><TD>53,4</TD></TR>
+<TR><TD>Colegio Público D</TD><TD>Público (zona periurbana)</TD><TD>198</TD><TD>47,1</TD></TR>
+<TR><TD>Colegio Público E</TD><TD>Público (zona rural)</TD><TD>87</TD><TD>38,6</TD></TR>
+</TABLE>
+</DIV>
+<I>Fuente: elaboración con fines didácticos.</I>
+</DIV>
+<DIV CLASS="enunciado" STYLE="margin-top:14px;font-size:16px;">¿Por qué la conclusión del estudiante es un ejemplo de lectura deficiente de un texto discontinuo?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Porque el estudiante debió calcular la mediana en lugar del promedio para comparar los colegios correctamente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Porque la conclusión extrapola causas y atributos (inteligencia innata, calidad docente a nivel nacional) que la tabla no mide ni menciona, violando la estrategia de concluir solo con lo que el texto muestra; además ignora que los factores socioeconómicos, el número de alumnos evaluados y las condiciones de cada colegio son variables no controladas que podrían explicar las diferencias de puntaje sin necesidad de atribuirlas a inteligencia o calidad docente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Porque la conclusión es correcta: un mayor puntaje promedio siempre refleja mayor inteligencia y mejor enseñanza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Porque el estudiante no calculó el porcentaje que representa cada colegio del total de alumnos evaluados</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta pregunta de cierre integra todas las estrategias del tema y las aplica al error más grave de la lectura de textos discontinuos: concluir más allá de lo que los datos muestran. La tabla registra únicamente puntajes promedio en un simulacro para cinco colegios en Lima en 2024. Eso es todo lo que puede afirmarse a partir de ella. La conclusión del estudiante agrega tres afirmaciones que la tabla no permite: (1) "los estudiantes son los más inteligentes" — la tabla mide resultados en un simulacro, no inteligencia inherente; (2) "sus profesores son los mejores del país" — la tabla no mide calidad docente ni tiene alcance nacional; (3) ignora que el tipo de colegio (privado de alto costo vs. público rural) es una variable confundidora: los estudiantes de colegios de alto costo suelen tener ventajas socioeconómicas, nutricionales y de acceso a recursos que también explican el resultado. La lectura crítica de una tabla no es solo leer el número más alto: es preguntarse qué mide ese número, qué no mide y qué factores no están representados en él.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE — Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>

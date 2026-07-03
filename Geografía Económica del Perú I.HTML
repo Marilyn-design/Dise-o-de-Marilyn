@@ -1,0 +1,529 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<TITLE>Geografía Económica del Perú I - INKAEDU.PE</TITLE>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+<STYLE>
+*{margin:0;padding:0;box-sizing:border-box;}
+BODY{font-family:Arial, sans-serif;background:radial-gradient(circle at top left, rgba(255,215,0,0.18), transparent 25%),radial-gradient(circle at bottom right, rgba(0,0,119,0.12), transparent 30%),linear-gradient(to right,#F6F2EB,#F6F2EB);min-height:100vh;}
+.header{background:#0D1B36;display:flex;justify-content:space-between;align-items:center;padding:18px 30px;box-shadow:0 4px 15px rgba(0,0,0,0.25);}
+.logo{font-size:38px;font-weight:bold;letter-spacing:3px;color:white;font-family:"Lobster",cursive;}
+.logo span{color:#1F6A67;}
+.menu{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;}
+.menu button{border:none;border-radius:25px;padding:10px 15px;background:white;cursor:pointer;transition:0.3s;}
+.menu button:hover{background:#F6F2EB;transform:translateY(-3px);}
+.menu a{text-decoration:none;color:#0D1B36;font-weight:bold;}
+.menu .registrate{background:#D7B06D;}
+.volver{display:inline-block;margin:25px 0 0 40px;color:#0D1B36;text-decoration:none;font-weight:bold;}
+.volver:hover{text-decoration:underline;}
+.encabezado{text-align:center;margin-top:20px;}
+.encabezado .pre{color:#777;font-size:16px;font-weight:bold;letter-spacing:1px;}
+.encabezado h1{color:#1F6A67;font-size:40px;font-family:"Cooper Black";margin-top:6px;line-height:1.2;}
+.encabezado .sub{color:#555;font-size:17px;margin-top:10px;}
+.linea-c{width:150px;height:5px;background:#D7B06D;border-radius:10px;margin:18px auto 0;}
+.bloque{max-width:1000px;margin:60px auto 0;padding:0 40px;}
+.bloque h2{color:#0D1B36;font-size:30px;text-align:center;margin-bottom:25px;}
+.texto-exp{background:white;border-radius:20px;padding:32px 38px;box-shadow:0 5px 20px rgba(0,0,0,0.1);font-size:18px;line-height:1.85;color:#333;}
+.texto-exp b{color:#1F6A67;}
+.texto-exp h3{color:#1F6A67;font-size:22px;margin:28px 0 10px;border-left:5px solid #D7B06D;padding-left:12px;}
+.texto-exp h3:first-child{margin-top:0;}
+.texto-exp h4{color:#0D1B36;font-size:18px;margin:18px 0 6px;}
+.texto-exp ul{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp ol{margin:10px 0 0 22px;line-height:2.1;}
+.texto-exp .ej{background:#F6F2EB;border-radius:10px;padding:12px 18px;margin-top:12px;font-size:16px;}
+.texto-exp .alerta{background:#fff3cd;border-left:5px solid #D7B06D;border-radius:0 10px 10px 0;padding:12px 18px;margin-top:12px;font-size:16px;}
+.lista-problemas{max-width:820px;margin:0 auto;}
+.nivel{text-align:center;margin:38px 0 18px;}
+.nivel span{display:inline-block;padding:9px 26px;border-radius:25px;font-weight:bold;font-size:16px;color:white;letter-spacing:0.5px;}
+.nivel.basico span{background:#1F6A67;}
+.nivel.intermedio span{background:#D7B06D;color:#0D1B36;}
+.nivel.avanzado span{background:#0D1B36;}
+.nivel.experto span{background:#8B0000;}
+.problema{background:white;border-radius:16px;padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,0.08);margin-bottom:16px;border-left:6px solid #1F6A67;}
+.enunciado{color:#0D1B36;font-size:18px;font-weight:bold;line-height:1.5;}
+.enunciado .np{color:#1F6A67;margin-right:8px;}
+.opciones{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+.opciones label{cursor:pointer;background:#F6F2EB;border-radius:10px;padding:10px 16px;font-size:16px;font-weight:normal;color:#333;border:2px solid transparent;transition:0.2s;}
+.opciones label:hover{border-color:#1F6A67;background:#e8f4f3;}
+.opciones input[type="radio"]{margin-right:10px;accent-color:#1F6A67;}
+.resolucion{margin-top:14px;}
+.resolucion summary{cursor:pointer;color:#0D1B36;font-weight:bold;list-style:none;background:#D7B06D;padding:8px 18px;border-radius:20px;display:inline-block;font-size:14px;}
+.resolucion summary::-webkit-details-marker{display:none;}
+.pasos{margin-top:14px;background:#F6F2EB;border-radius:12px;padding:16px 22px;color:#333;font-size:17px;line-height:2;}
+.pasos b{color:#1F6A67;}
+.footer-espacio{height:80px;}
+.tabla-wrap{overflow-x:auto;margin-top:20px;}
+.tabla-wrap table{width:100%;border-collapse:collapse;font-size:16px;}
+.tabla-wrap th{background:#0D1B36;color:white;padding:12px 16px;text-align:left;}
+.tabla-wrap td{padding:11px 16px;border-bottom:1px solid #e5e0d8;color:#333;vertical-align:top;}
+.tabla-wrap tr:nth-child(even) td{background:#F6F2EB;}
+.tabla-wrap tr:hover td{background:#e8f4f3;}
+.dato-clave{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;}
+.dk{background:#0D1B36;color:white;border-radius:14px;padding:18px 22px;flex:1;min-width:160px;text-align:center;}
+.dk .dk-num{font-size:24px;font-weight:bold;color:#D7B06D;}
+.dk .dk-label{font-size:13px;margin-top:4px;color:#ccc;line-height:1.4;}
+.mapa-note{background:#e8f4f3;border-left:5px solid #1F6A67;border-radius:0 12px 12px 0;padding:14px 20px;margin-top:18px;font-size:16px;color:#333;line-height:1.9;}
+.mapa-note b{color:#1F6A67;}
+</STYLE>
+</HEAD>
+<BODY>
+
+<DIV CLASS="header">
+<DIV CLASS="logo">Inka<span>edu</span></DIV>
+<DIV CLASS="menu">
+<BUTTON><A HREF="INICIO.HTML">INICIO</A></BUTTON>
+<BUTTON><A HREF="MATERIAS.HTML">MATERIAS</A></BUTTON>
+<BUTTON><A HREF="RECURSOS.HTML">RECURSOS</A></BUTTON>
+<BUTTON><A HREF="CONTACTO.HTML">CONTACTO</A></BUTTON>
+<BUTTON CLASS="registrate"><A HREF="REGISTRATE.HTML">REGÍSTRATE</A></BUTTON>
+</DIV>
+</DIV>
+
+<A CLASS="volver" HREF="GEOGRAFIA.HTML">&larr; Volver a los temas de Geografía</A>
+
+<DIV CLASS="encabezado">
+<DIV CLASS="pre">GEOGRAFÍA &middot; TEMA 13 &middot; NIVEL PREUNIVERSITARIO</DIV>
+<H1>Geografía Económica del Perú I</H1>
+<DIV CLASS="sub">Sectores económicos &middot; Agricultura &middot; Ganadería &middot; Pesca &middot; Minería &middot; PEA y PBI</DIV>
+<DIV CLASS="linea-c"></DIV>
+</DIV>
+
+<DIV CLASS="bloque">
+<H2>Explicación completa</H2>
+<DIV CLASS="texto-exp">
+
+<H3 ID="economia">1. La economía peruana: visión general</H3>
+
+La <B>Geografía Económica</B> estudia la distribución espacial de las actividades productivas, los recursos naturales y los factores que determinan el desarrollo económico de un territorio. En el caso del Perú, la geografía tiene una influencia directa y determinante sobre la economía: la variedad de ecosistemas (costa, sierra, selva) genera una extraordinaria diversidad de recursos y actividades productivas.
+
+<H4>Indicadores macroeconómicos básicos del Perú:</H4>
+<DIV CLASS="dato-clave">
+<DIV CLASS="dk"><DIV CLASS="dk-num">~$240 mil M</DIV><DIV CLASS="dk-label">PBI nominal aproximado (USD, datos recientes)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~33 M</DIV><DIV CLASS="dk-label">Habitantes (población total)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">~17 M</DIV><DIV CLASS="dk-label">PEA (Población Económicamente Activa)</DIV></DIV>
+<DIV CLASS="dk"><DIV CLASS="dk-num">6°</DIV><DIV CLASS="dk-label">Economía más grande de América Latina</DIV></DIV>
+</DIV>
+
+<H4>Sectores de la economía:</H4>
+La economía peruana se organiza en tres grandes sectores:
+<UL>
+<LI><B>Sector Primario (extractivo):</B> extracción directa de recursos naturales. Incluye agricultura, ganadería, pesca, minería, silvicultura y petróleo. Aporta una alta proporción de las exportaciones peruanas.</LI>
+<LI><B>Sector Secundario (industrial / transformación):</B> transforma las materias primas en productos elaborados. Incluye industria manufacturera, construcción y generación de energía. En el Perú este sector es menos desarrollado que en países industrializados.</LI>
+<LI><B>Sector Terciario (servicios):</B> actividades que no producen bienes materiales sino servicios. Incluye comercio, turismo, transporte, banca, educación, salud y telecomunicaciones. Es el sector que más aporta al PBI peruano (~60%).</LI>
+</UL>
+
+<DIV CLASS="alerta">⚠️ <B>Para el examen:</B> El Perú es considerado un país con una economía <B>primario-exportadora</B>: aunque el sector servicios aporta más al PBI en términos porcentuales, las <B>exportaciones</B> están dominadas por productos del sector primario (minería ~60%, agro ~15%, pesca ~7%). Esta dependencia de las materias primas hace al Perú vulnerable a los ciclos de precios internacionales.</DIV>
+
+<H3 ID="agricultura">2. Agricultura peruana</H3>
+
+La agricultura es una de las actividades más antiguas e importantes del Perú. El país es heredero de una de las tradiciones agrícolas más sofisticadas del mundo: los pueblos prehispánicos desarrollaron la terraza o <B>andén</B>, sistemas de irrigación, el drenaje de tierras encharcadas (<B>camellones o waru-waru</B>) y domesticaron más de <B>180 especies de plantas cultivadas</B>, incluyendo la papa, el maíz, el tomate, el cacao, la quinua y la kiwicha.
+
+<H4>Características de la agricultura peruana:</H4>
+<UL>
+<LI><B>Minifundismo:</B> predominio de pequeñas parcelas (menos de 5 hectáreas) en la sierra, lo que dificulta la mecanización y reduce la productividad.</LI>
+<LI><B>Dualismo agrario:</B> coexistencia de agricultura tradicional de subsistencia (sierra, selva) y agricultura moderna de exportación (costa: espárragos, palta, uvas, arándanos).</LI>
+<LI><B>Dependencia del agua:</B> la costa árida requiere irrigación artificial total; la sierra depende de las lluvias estacionales; la selva tiene exceso de humedad pero suelos pobres.</LI>
+<LI><B>Diversidad altitudinal:</B> el Perú cultiva desde productos tropicales en la selva baja hasta cultivos de altura (quinua, papa nativa) en los Andes.</LI>
+</UL>
+
+<H4>Principales productos agrícolas según región:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Región</TH><TH>Productos principales</TH><TH>Características</TH></TR>
+<TR><TD><B>Costa</B></TD><TD>Espárragos, palta (aguacate), uva, arándano, mango, caña de azúcar, algodón, aceituna, marigold</TD><TD>Agricultura tecnificada de exportación. Requiere irrigación. Valles costeños muy productivos. Perú es el 1° exportador mundial de espárragos y arándanos.</TD></TR>
+<TR><TD><B>Sierra</B></TD><TD>Papa, maíz, quinua, kiwicha (amaranto), cebada, trigo, habas, oca, mashua, olluco, maca</TD><TD>Cultivos andinos tradicionales. Minifundismo predominante. La quinua ha ganado mercado internacional (boom de la quinua 2010-2020). Papa: ~3 000 variedades en el Perú.</TD></TR>
+<TR><TD><B>Selva</B></TD><TD>Café, cacao, palma aceitera, yuca, plátano, maíz amazónico, coca (ilícita), arroz, frutas tropicales</TD><TD>El café peruano (Junín, Cajamarca, San Martín) gana reconocimientos internacionales. El cacao fino de aroma peruano es muy valorado (Piura, Amazonas, Cusco).</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Productos bandera de la agricultura de exportación:</H4>
+<UL>
+<LI><B>Espárrago:</B> el Perú es el <B>primer exportador mundial</B>. Se cultiva principalmente en La Libertad (Virú, Chao), Ica y Áncash. El clima desértico de la costa y el agua de los ríos irrigados permiten cosechas todo el año.</LI>
+<LI><B>Palta (Hass):</B> el Perú es el <B>segundo exportador mundial</B> (tras México). Se cultiva en La Libertad, Ica, Lima, Arequipa. Principal destino: Europa y EE.UU.</LI>
+<LI><B>Arándano:</B> el Perú se convirtió en el <B>primer exportador mundial</B> en 2020, superando a Chile. Se cultiva en La Libertad y Áncash.</LI>
+<LI><B>Uva de mesa:</B> exportaciones crecientes. Ica, La Libertad, Piura.</LI>
+<LI><B>Quinua:</B> el Perú y Bolivia son los principales productores mundiales. Puno es la principal región productora peruana. Rica en proteínas (contiene todos los aminoácidos esenciales).</LI>
+<LI><B>Café orgánico:</B> reconocido internacionalmente. San Martín, Junín, Cajamarca y Amazonas son las principales regiones productoras.</LI>
+</UL>
+
+<DIV CLASS="ej">🌱 <B>El Perú: centro de origen de la agricultura mundial.</B> El geógrafo ruso Nikolái Vavilov identificó los Andes peruano-bolivianos como uno de los <b>ocho centros de origen de la agricultura mundial</b>. Desde aquí se domesticaron: la papa (~3 000 variedades silvestres en los Andes), el maíz (junto con Mesoamérica), la quinua, el tomate, el cacao, el maní, el ají/pimiento, la chirimoya, la lúcuma y muchas otras plantas que hoy alimentan al mundo.</DIV>
+
+<H4>Principales zonas agroindustriales del Perú:</H4>
+<UL>
+<LI><B>Proyecto Especial Chavimochic</B> (La Libertad): irriga ~150 000 ha del desierto costero. Producción de espárrago, palta, uva y arándano para exportación.</LI>
+<LI><B>Proyecto Especial Olmos</B> (Lambayeque): trasvase del río Huancabamba hacia la costa. Producción de caña de azúcar, uva y cítricos.</LI>
+<LI><B>Valle de Ica:</B> pisco, uva, espárrago, palta. Zona de alto valor agrícola.</LI>
+<LI><B>Valle del Santa (Áncash):</B> espárragos y caña de azúcar.</LI>
+</UL>
+
+<H3 ID="ganaderia">3. Ganadería peruana</H3>
+
+<H4>Características generales:</H4>
+La ganadería peruana se desarrolla principalmente en la <B>sierra</B> (pastos naturales de puna y jalca) y en menor medida en la <B>selva</B> (ganadería bovina extensiva) y la <B>costa</B> (ganadería estabulada tecnificada).
+
+<H4>Principales especies ganaderas:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Especie</TH><TH>Zona principal</TH><TH>Importancia</TH></TR>
+<TR><TD><B>Ganado vacuno (bovino)</B></TD><TD>Sierra (Cajamarca, Junín, Cusco) y Selva</TD><TD>Producción de leche y carne. Cajamarca es el principal productor de leche del Perú (Gloria S.A. tiene planta en Cajamarca).</TD></TR>
+<TR><TD><B>Ganado ovino</B></TD><TD>Sierra (Puno, Cusco, Junín, Áncash)</TD><TD>Carne y lana. Puno tiene la mayor población ovina del Perú. La lana de oveja se usa en textilería artesanal.</TD></TR>
+<TR><TD><B>Alpaca</B></TD><TD>Sierra alta (Puno, Cusco, Arequipa, Áncash)</TD><TD>La fibra de alpaca es uno de los productos de exportación más valiosos del Perú. El Perú tiene el <B>80% de la población mundial de alpacas</B>. Fibra muy cotizada en mercados de lujo internacionales.</TD></TR>
+<TR><TD><B>Llama</B></TD><TD>Sierra (Puno, Cusco, Arequipa)</TD><TD>Carne (charqui) y transporte de carga en zonas de difícil acceso. Fibra de menor calidad que la alpaca.</TD></TR>
+<TR><TD><B>Vicuña</B></TD><TD>Sierra alta (Puno, Áncash, Arequipa, Ayacucho)</TD><TD>La fibra de vicuña es la más fina y cara del mundo (hasta $500/kg). Fue protegida desde la época incaica (chacus). Es un animal silvestre protegido por ley; el Perú es el principal país con vicuñas (~200 000 individuos).</TD></TR>
+<TR><TD><B>Cuy (cobayo)</B></TD><TD>Sierra (toda la región)</TD><TD>Animal de crianza familiar. Consumo de carne local muy importante. Proteína accesible para las familias andinas. Se exporta carne de cuy congelada.</TD></TR>
+<TR><TD><B>Ganado porcino</B></TD><TD>Costa y Sierra</TD><TD>Producción de carne. Lima concentra gran parte de la crianza porcina industrial.</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Muy frecuente en exámenes:</B> El Perú concentra el <B>80% de las alpacas del mundo</B> y es el primer productor de fibra de alpaca. La vicuña produce la fibra animal <B>más fina del mundo</B> y fue declarada Patrimonio Natural del Perú. Distingue: <b>alpaca</b> = animal doméstico; <b>vicuña</b> = animal silvestre protegido.</DIV>
+
+<H3 ID="pesca">4. Pesca peruana</H3>
+
+El Perú es una de las grandes potencias pesqueras del mundo, gracias a la <B>Corriente de Humboldt</B> (o Corriente Peruana), que baña la costa peruana trayendo aguas frías y ricas en nutrientes desde la Antártida. Estos nutrientes alimentan al fitoplancton, que a su vez alimenta al zooplancton y a millones de peces.
+
+<H4>La Corriente de Humboldt y su influencia pesquera:</H4>
+<UL>
+<LI>Aguas frías (~14–18°C) ricas en oxígeno y nutrientes (nitratos, fosfatos).</LI>
+<LI>Genera el fenómeno de <B>afloramiento costero (surgencia)</B>: aguas profundas y frías ricas en nutrientes suben a la superficie.</LI>
+<LI>Este ecosistema sostiene una de las mayores biomasas de peces del planeta.</LI>
+<LI>El Perú fue el <B>primer productor mundial de harina de pescado</B> durante décadas y sigue siendo el primero o segundo según el año.</LI>
+</UL>
+
+<H4>Tipos de pesca en el Perú:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Tipo</TH><TH>Especie principal</TH><TH>Producto / Destino</TH><TH>Zona</TH></TR>
+<TR><TD><B>Pesca industrial</B></TD><TD>Anchoveta (<I>Engraulis ringens</I>)</TD><TD>Harina y aceite de pescado (exportación). El Perú captura ~6–9 millones de TM/año de anchoveta.</TD><TD>Costa frente a Chimbote, Callao, Pisco, Ilo</TD></TR>
+<TR><TD><B>Pesca para consumo humano directo</B></TD><TD>Jurel, caballa, bonito, merluza, pota (calamar gigante), conchas de abanico</TD><TD>Consumo nacional y exportación (pota congelada a España y Asia).</TD><TD>Toda la costa; pota principalmente en Paita (Piura)</TD></TR>
+<TR><TD><B>Pesca artesanal</B></TD><TD>Diversas especies según zona</TD><TD>Mercados locales y consumo familiar. Muy importante para la seguridad alimentaria costera.</TD><TD>Todos los puertos artesanales del litoral</TD></TR>
+<TR><TD><B>Acuicultura</B></TD><TD>Trucha (sierra), conchas de abanico (Sechura, Piura), camarón, tilapia</TD><TD>Exportación e consumo interno. La trucha de Puno y Junín se exporta a Europa.</TD><TD>Sierra (trucha), Costa norte (conchas), Selva (tilapia)</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>La anchoveta y la harina de pescado:</H4>
+La <B>anchoveta peruana</B> (<I>Engraulis ringens</I>) es el pez más capturado del mundo por una sola especie. Se usa principalmente para producir <B>harina de pescado</B> (alimento para acuacultura y ganadería mundial) y <B>aceite de pescado</B> (omega-3 para suplementos alimenticios). Los principales puertos pesqueros industriales son <B>Chimbote</B> (Áncash, el más importante), <B>Paita</B> (Piura), <B>Callao</B> (Lima), <B>Ilo</B> (Moquegua) y <B>Pisco</B> (Ica).
+
+<DIV CLASS="mapa-note"><B>El Niño y la pesca:</B> El Fenómeno El Niño calienta las aguas del Pacífico peruano, destruyendo la surgencia costera. Las aguas calientes no tienen los nutrientes de las aguas frías profundas, y la anchoveta desaparece o migra. En 1972-73 y 1982-83, los eventos El Niño provocaron el colapso de la pesca de anchoveta, con dramáticas consecuencias económicas. El Niño de 1972 fue tan grave que la anchoveta tardó décadas en recuperarse parcialmente.</DIV>
+
+<H3 ID="mineria">5. Minería peruana</H3>
+
+La minería es el <B>principal sector de exportación</B> del Perú, aportando aproximadamente el <B>60% del valor de las exportaciones totales</B>. El Perú es uno de los mayores productores mundiales de varios metales.
+
+<H4>Posición del Perú en la producción mundial de minerales:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Mineral</TH><TH>Posición en el mundo</TH><TH>Posición en Latinoamérica</TH><TH>Principal mina / región</TH></TR>
+<TR><TD><B>Plata</B></TD><TD>2°</TD><TD>1°</TD><TD>Antamina (Áncash), Cerro de Pasco (Pasco)</TD></TR>
+<TR><TD><B>Cobre</B></TD><TD>2°</TD><TD>2° (tras Chile)</TD><TD>Las Bambas (Apurímac), Antamina (Áncash), Cerro Verde (Arequipa), Toquepala (Tacna)</TD></TR>
+<TR><TD><B>Zinc</B></TD><TD>2°</TD><TD>1°</TD><TD>Antamina (Áncash), Cerro de Pasco</TD></TR>
+<TR><TD><B>Plomo</B></TD><TD>3°</TD><TD>1°</TD><TD>Cerro de Pasco, Antamina</TD></TR>
+<TR><TD><B>Oro</B></TD><TD>6°</TD><TD>1°</TD><TD>Yanacocha (Cajamarca), La Arena (La Libertad), Lagunas Norte (La Libertad)</TD></TR>
+<TR><TD><B>Estaño</B></TD><TD>3°</TD><TD>1°</TD><TD>Minsur-San Rafael (Puno)</TD></TR>
+<TR><TD><B>Molibdeno</B></TD><TD>4°</TD><TD>2°</TD><TD>Cerro Verde (Arequipa), Las Bambas (Apurímac)</TD></TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="alerta">⚠️ <B>Lista para memorizar (muy preguntada):</B> El Perú es <B>1° en Latinoamérica</B> en producción de: <b>plata, zinc, plomo, estaño y oro</b>. Es <B>2° en el mundo</B> en: <b>plata, cobre y zinc</b>. El principal producto de exportación minera es el <b>cobre</b>. La mina más grande del Perú por valor de producción es <b>Antamina</b> (polimetálica: cobre, zinc, plata).</DIV>
+
+<H4>Principales zonas mineras del Perú:</H4>
+<UL>
+<LI><B>Cajamarca:</B> oro (Yanacocha, la mina de oro a tajo abierto más grande de América Latina y segunda del mundo). Lagunas Norte.</LI>
+<LI><B>Áncash:</B> Antamina (cobre, zinc, plata, molibdeno). Una de las minas más grandes del mundo.</LI>
+<LI><B>Pasco / Junín:</B> Cerro de Pasco (plomo, zinc, plata; una de las ciudades mineras más altas del mundo ~4 300 m). Milpo.</LI>
+<LI><B>Apurímac:</B> Las Bambas (cobre; la mayor mina de cobre del Perú). Constancia.</LI>
+<LI><B>Arequipa:</B> Cerro Verde (cobre, molibdeno). Tía María (proyecto en evaluación).</LI>
+<LI><B>Tacna / Moquegua:</B> Toquepala y Cuajone (cobre; Southern Copper Corporation). Quellaveco (cobre, Moquegua).</LI>
+<LI><B>Puno:</B> San Rafael (estaño; la mina de estaño más rica del mundo). Aruntani (oro).</LI>
+<LI><B>La Libertad:</B> La Arena, Lagunas Norte (oro).</LI>
+</UL>
+
+<H4>Tipos de minería según escala:</H4>
+<UL>
+<LI><B>Gran minería:</B> grandes empresas (nacionales y transnacionales) con alta tecnología y gran capital. Representan la mayor parte de las exportaciones mineras.</LI>
+<LI><B>Mediana minería:</B> empresas medianas con tecnología intermedia.</LI>
+<LI><B>Pequeña minería y minería artesanal (MAPE):</B> importantes en zonas como Madre de Dios (oro aluvial), Puno e Ica. La minería ilegal en Madre de Dios genera grave deforestación y contaminación por mercurio.</LI>
+</UL>
+
+<DIV CLASS="ej">⛏️ <B>El canon minero:</B> El canon minero es el porcentaje de los ingresos y rentas obtenidos por el Estado por la explotación de minerales que se transfiere a los gobiernos regionales y locales donde se ubica la actividad minera. Es el mecanismo por el que la minería financia escuelas, hospitales y carreteras en las regiones mineras. Sin embargo, su distribución y uso eficiente son temas de constante debate político y social en el Perú.</DIV>
+
+<H3 ID="pbi-pea">6. PBI y PEA del Perú: conceptos y estructura</H3>
+
+<H4>Producto Bruto Interno (PBI):</H4>
+El <B>PBI</B> es el valor monetario total de todos los bienes y servicios finales producidos en el país durante un año. Es el indicador más usado para medir el tamaño y crecimiento de una economía.
+<UL>
+<LI><B>PBI nominal:</B> expresado en precios corrientes del año.</LI>
+<LI><B>PBI real:</B> descontando el efecto de la inflación; permite comparaciones entre años.</LI>
+<LI><B>PBI per cápita:</B> PBI dividido entre la población total. Indicador del nivel de vida promedio (aunque no mide desigualdad).</LI>
+</UL>
+
+<H4>Estructura del PBI peruano por sectores:</H4>
+<DIV CLASS="tabla-wrap">
+<TABLE>
+<TR><TH>Sector</TH><TH>Contribución al PBI</TH><TH>Actividades principales</TH></TR>
+<TR><TD><B>Servicios (terciario)</B></TD><TD>~60%</TD><TD>Comercio, turismo, transporte, finanzas, salud, educación, telecomunicaciones</TD></TR>
+<TR><TD><B>Manufactura (secundario)</B></TD><TD>~13%</TD><TD>Alimentos procesados, textiles, metales básicos, química</TD></TR>
+<TR><TD><B>Minería e hidrocarburos</B></TD><TD>~12%</TD><TD>Cobre, oro, zinc, plata, gas natural (Camisea), petróleo</TD></TR>
+<TR><TD><B>Construcción</B></TD><TD>~6%</TD><TD>Obras de infraestructura, vivienda, proyectos mineros</TD></TR>
+<TR><TD><B>Agropecuario</B></TD><TD>~6%</TD><TD>Agricultura de exportación, ganadería, silvicultura</TD></TR>
+<TR><TD><B>Pesca</B></TD><TD>~1%</TD><TD>Harina de pescado, conservas, consumo fresco</TD></TR>
+</TABLE>
+</DIV>
+
+<H4>Población Económicamente Activa (PEA):</H4>
+La <B>PEA</B> es el conjunto de personas en edad de trabajar (14 años o más en el Perú) que están trabajando (PEA ocupada) o buscan activamente empleo (PEA desocupada).
+<UL>
+<LI><B>PEA ocupada:</B> personas con empleo. Incluye empleo formal e informal.</LI>
+<LI><B>PEA desocupada:</B> personas sin empleo pero que lo buscan activamente (desempleo abierto).</LI>
+<LI><B>Informalidad laboral:</B> el Perú tiene una de las tasas de informalidad más altas de América Latina: ~70-75% de la PEA trabaja en el sector informal (sin contrato, sin seguro, sin beneficios laborales).</LI>
+<LI><B>Distribución de la PEA por sectores:</B> Servicios (~45%), Agricultura (~25%), Comercio (~18%), Industria (~10%), Construcción (~6%).</LI>
+</UL>
+
+<DIV CLASS="mapa-note"><B>Nota importante:</B> Aunque la minería aporta ~60% de las exportaciones del Perú, solo emplea directamente al <b>~2% de la PEA</b>. La agricultura, en cambio, emplea al <b>~25% de la PEA</b> pero aporta solo el ~6% del PBI. Esto refleja la baja productividad de la agricultura tradicional de subsistencia frente a la alta productividad del capital intensivo de la minería.</DIV>
+
+</DIV>
+</DIV>
+
+<!-- PREGUNTAS -->
+<DIV CLASS="bloque">
+<H2>Banco de preguntas</H2>
+<DIV CLASS="lista-problemas">
+
+<DIV CLASS="nivel basico"><SPAN>NIVEL BÁSICO · COMPRENSIÓN</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">1.</SPAN> El Perú es el primer exportador mundial de:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="a"> a) Cobre y oro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="b"> b) Espárragos y arándanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="c"> c) Harina de trigo y arroz</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p1" VALUE="d"> d) Café y cacao</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Perú es el <B>primer exportador mundial de espárragos</B> (desde hace décadas) y desde 2020 también el <B>primer exportador mundial de arándanos</B>, superando a Chile. Estos logros se deben a los proyectos de irrigación (Chavimochic, Olmos), el clima desértico de la costa (que permite cosechas sin lluvias parásitas) y los bajos costos laborales relativos. El Perú es importante en cobre y oro, pero no el primero del mundo en exportarlos.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">2.</SPAN> La principal especie capturada en la pesca industrial peruana, usada para producir harina de pescado, es:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="a"> a) El jurel</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="b"> b) La anchoveta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="c"> c) La merluza</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p2" VALUE="d"> d) El bonito</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>anchoveta</B> (<I>Engraulis ringens</I>) es el pez más capturado del Perú y del mundo por una sola especie. Se usa principalmente para producir <b>harina de pescado</b> (proteína para acuacultura y ganadería) y <b>aceite de pescado</b> (omega-3). El principal puerto pesquero industrial es <b>Chimbote</b> (Áncash). La anchoveta prospera gracias a la Corriente de Humboldt y la surgencia costera.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">3.</SPAN> ¿En qué posición se ubica el Perú como productor mundial de plata?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="a"> a) Primero en el mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="b"> b) Segundo en el mundo y primero en Latinoamérica</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="c"> c) Quinto en el mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p3" VALUE="d"> d) Primero en el mundo y segundo en Latinoamérica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El Perú es el <B>2° productor mundial de plata</B> (tras México) y el <B>1° en Latinoamérica</B>. También es 2° mundial y 1° en Latinoamérica en zinc y plomo. En cobre es 2° mundial (tras Chile). En oro es 6° mundial pero 1° en Latinoamérica. La plata se extrae principalmente de Antamina (Áncash) y Cerro de Pasco.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">4.</SPAN> ¿Qué porcentaje aproximado de las alpacas del mundo se encuentra en el Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="a"> a) 30%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="b"> b) 50%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="c"> c) 80%</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p4" VALUE="d"> d) 95%</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: c)</B><BR>El Perú concentra el <B>~80% de la población mundial de alpacas</B>. La región de Puno es la principal criadora, seguida de Cusco, Arequipa y Áncash. La fibra de alpaca es uno de los productos de exportación no tradicionales más valiosos del Perú, muy cotizada en mercados de moda de lujo en Europa, Japón y EE.UU. por su suavidad y resistencia.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">5.</SPAN> La Corriente de Humboldt favorece la pesca peruana principalmente porque:</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="a"> a) Calienta las aguas del Pacífico y aumenta la reproducción de los peces</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="b"> b) Trae aguas frías ricas en nutrientes que generan surgencia costera, alimentando cadenas tróficas extraordinariamente productivas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="c"> c) Reduce las tormentas marinas facilitando la navegación de los barcos pesqueros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p5" VALUE="d"> d) Transporta peces desde Chile y Ecuador hacia las costas peruanas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <B>Corriente de Humboldt</B> (o Corriente Peruana) es una corriente marina fría que sube desde la Antártida a lo largo de la costa occidental de América del Sur. Al llegar a la costa peruana, genera el fenómeno de <b>surgencia o afloramiento costero</b>: aguas profundas frías ricas en nitratos, fosfatos y oxígeno disuelto suben a la superficie. Estos nutrientes alimentan al fitoplancton → zooplancton → anchoveta → aves y mamíferos marinos → una de las cadenas tróficas más productivas del planeta.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel intermedio"><SPAN>NIVEL INTERMEDIO · ANÁLISIS</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">6.</SPAN> El Perú tiene una economía calificada como "primario-exportadora". ¿Cuál es la principal vulnerabilidad que genera esta característica?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="a"> a) Que el Perú no puede desarrollar el sector servicios por depender demasiado de los recursos naturales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="b"> b) Que los ingresos del Estado y las exportaciones dependen fuertemente de los precios internacionales de materias primas, los cuales son volátiles y el Perú no puede controlarlos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="c"> c) Que el sector primario contamina tanto el medio ambiente que hace insostenible el crecimiento económico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p6" VALUE="d"> d) Que la agricultura, la pesca y la minería no generan empleo, por lo que el desempleo es estructuralmente alto</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La principal vulnerabilidad de una economía <b>primario-exportadora</b> es la dependencia de los <b>precios internacionales de commodities</b> (materias primas), que son fijados en mercados mundiales donde el Perú no tiene influencia. Cuando el precio del cobre baja en la bolsa de metales de Londres, los ingresos por exportaciones peruanas caen drásticamente, afectando el PBI, el canon minero y el presupuesto del Estado. Esto se llama la "<b>maldición de los recursos naturales</b>" o "<b>enfermedad holandesa</b>" cuando la dependencia extractiva frena el desarrollo industrial.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">7.</SPAN> La mina de cobre Las Bambas (Apurímac) y la mina de oro Yanacocha (Cajamarca) representan dos modelos diferentes de conflicto socioambiental en el Perú. ¿Qué tienen en común?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="a"> a) Ambas son operadas por empresas estatales peruanas sin participación extranjera</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="b"> b) Ambas generan tensiones entre las comunidades locales (que cuestionan impactos ambientales y distribución de beneficios) y las empresas mineras, evidenciando el conflicto entre desarrollo extractivo y derechos de las comunidades</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="c"> c) Ambas han sido cerradas por el gobierno peruano debido a daños ambientales irreparables</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p7" VALUE="d"> d) Ambas están ubicadas en la selva peruana, donde los conflictos con comunidades nativas son más frecuentes</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Tanto <b>Las Bambas</b> (Apurímac, cobre, MMG Limited de capital chino) como <b>Yanacocha</b> (Cajamarca, oro, Newmont/Buenaventura) han generado importantes <b>conflictos socioambientales</b> con comunidades locales. Los temas recurrentes son: (1) <b>Impacto ambiental</b> sobre el agua, suelos y salud. (2) <b>Distribución del canon</b> y beneficios percibidos como insuficientes por la población local. (3) <b>Consulta previa</b> a comunidades. (4) <b>Cambios en los contratos o rutas de transporte</b> sin consulta (caso Las Bambas). El Perú registra uno de los mayores números de conflictos socioambientales de América Latina, según la Defensoría del Pueblo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">8.</SPAN> El "boom agroexportador" peruano de los últimos 20 años (espárragos, palta, arándanos) se concentra principalmente en la costa norte y centro. ¿Cuál es el factor geográfico que lo hace posible?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="a"> a) Las lluvias abundantes de la costa norte que eliminan la necesidad de irrigación artificial</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="b"> b) La combinación de clima desértico (sin lluvias que generen hongos y plagas), alta radiación solar, suelos vírgenes y agua de ríos andinos llevada por proyectos de irrigación como Chavimochic y Olmos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="c"> c) La alta densidad de población agrícola de la costa norte que provee mano de obra barata e inagotable</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p8" VALUE="d"> d) La proximidad de los puertos de Salaverry y Paita que reducen los costos de exportación a niveles únicos en el mundo</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El éxito del agro exportador peruano tiene una base geográfica muy precisa: (1) <b>Clima desértico</b>: la ausencia de lluvias en la costa permite producir frutas y verduras sin hongos ni enfermedades, con mínimo uso de fungicidas (ventaja para mercados europeos exigentes en residuos). (2) <b>Alta radiación solar</b>: permite rápido crecimiento y alta concentración de azúcares en las frutas. (3) <b>Agua controlada</b>: el riego por goteo con agua de proyectos como Chavimochic permite precisión y eficiencia. (4) <b>Suelos vírgenes</b>: los desiertos costeros irrigados tienen suelos sin historia de uso agrícola, sin resistencia a plagas ni depleción de nutrientes.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">9.</SPAN> La informalidad laboral en el Perú (~70-75% de la PEA) tiene consecuencias económicas directas. ¿Cuál de las siguientes es la más grave en términos de desarrollo económico?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="a"> a) Reduce el consumo de productos importados porque los trabajadores informales prefieren productos nacionales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="b"> b) Reduce la base tributaria del Estado, limitando los ingresos fiscales para invertir en infraestructura, educación y salud, y excluye a millones de trabajadores del sistema de pensiones y seguro de salud</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="c"> c) Impide que el Perú exporte productos porque las empresas informales no pueden obtener certificaciones internacionales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p9" VALUE="d"> d) Aumenta artificialmente el PBI porque los trabajadores informales producen más que los formales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La informalidad laboral tiene múltiples consecuencias negativas, pero las más graves son: (1) <b>Reducción de ingresos fiscales</b>: los trabajadores y empresas informales no pagan impuestos (IGV, impuesto a la renta), reduciendo el presupuesto del Estado. (2) <b>Exclusión social</b>: los trabajadores informales no tienen acceso a seguro de salud (EsSalud), sistema de pensiones (AFP/ONP), vacaciones pagadas, CTS ni seguro de desempleo. (3) <b>Baja productividad</b>: las empresas informales son generalmente pequeñas y no tienen acceso a crédito formal, tecnología ni mercados internacionales. La informalidad es el principal obstáculo estructural del desarrollo peruano.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">10.</SPAN> La fibra de vicuña es la más cara del mundo (~$500/kg). ¿Por qué es tan costosa y cuál es la legislación que protege a este animal en el Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="a"> a) Porque la vicuña es difícil de criar en cautiverio y su lana debe teñirse con tintes muy raros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="b"> b) Porque la vicuña es un animal silvestre protegido que solo puede ser esquilado una vez cada dos años mediante el chaku (arreo comunal), produciendo muy poca fibra por animal, lo que limita la oferta</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="c"> c) Porque el gobierno peruano aplica un impuesto altísimo a la exportación de fibra de vicuña para mantener los precios altos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p10" VALUE="d"> d) Porque la vicuña solo vive en el Perú y está en peligro de extinción con menos de 1 000 ejemplares</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La fibra de vicuña es extremadamente cara por razones de oferta limitada y calidad excepcional. La vicuña (<I>Vicugna vicugna</I>) es un <b>animal silvestre protegido</b> por ley peruana (y por el convenio CITES). Solo puede ser esquilada cada <b>2-3 años</b> mediante el <b>chaku</b> (técnica ancestral inca de arreo comunitario que captura, esquila y libera al animal). Cada vicuña produce apenas <b>150-250 gramos de fibra</b> por esquila. Su diámetro de fibra (~12-13 micras) es el más fino de todos los animales, siendo más delgada que el cachemira y la alpaca. El Perú tiene ~200 000-250 000 vicuñas, el 80% de la población mundial.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel avanzado"><SPAN>NIVEL AVANZADO · PREUNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">11.</SPAN> El Perú es reconocido como uno de los "centros de origen de la agricultura mundial" según Nikolái Vavilov. ¿Cuál es la importancia geopolítica y económica de esta condición en el siglo XXI?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="a"> a) Permite al Perú cobrar regalías a todos los países que cultiven papa, maíz o quinua en el mundo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="b"> b) El Perú alberga una extraordinaria diversidad genética agrícola que representa una reserva invaluable de variedades resistentes a enfermedades, sequías y cambio climático, con potencial biotecnológico enorme</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="c"> c) Implica que el Perú tiene la obligación de abastecer de semillas a todos los países del mundo sin costo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p11" VALUE="d"> d) Le da al Perú asiento permanente en el Consejo de Seguridad de la ONU por su contribución a la seguridad alimentaria mundial</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Ser un centro de origen de la agricultura significa que los Andes peruanos albergan la <b>mayor diversidad genética</b> de plantas cultivadas que en él se domesticaron: ~3 000 variedades de papa, ~55 variedades de maíz andino, ~3 000 variedades de ají, decenas de variedades de quinua. Esta biodiversidad genética es estratégica porque: (1) Contiene genes de resistencia a enfermedades, heladas, sequías y salinidad que los cultivares modernos han perdido. (2) Frente al cambio climático, estas variedades adaptadas a condiciones extremas son vitales para la <b>seguridad alimentaria mundial</b>. (3) Son materia prima para la <b>biotecnología agrícola</b>. El CIP (Centro Internacional de la Papa), con sede en Lima, es el mayor banco genético de papa del mundo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">12.</SPAN> La minería ilegal de oro en Madre de Dios usa mercurio para amalgamar el oro. ¿Por qué esto es especialmente grave desde una perspectiva ambiental y de salud pública?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="a"> a) El mercurio hace que el oro peruano tenga menor pureza, reduciendo su precio internacional</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="b"> b) El mercurio contamina ríos y suelos, se bioacumula en la cadena alimentaria (peces → humanos), causando daño neurológico irreversible, y la minería ilegal destruye miles de hectáreas de bosque amazónico</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="c"> c) El mercurio calienta el ambiente local, acelerando el deshielo de los glaciares andinos cercanos a Madre de Dios</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p12" VALUE="d"> d) El mercurio solo afecta a los mineros ilegales directamente y no tiene impacto en las comunidades indígenas vecinas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La minería ilegal de oro en <b>Madre de Dios</b> (principalmente en zonas como La Pampa y el Corredor Minero del Sur) genera una doble catástrofe: (1) <b>Contaminación por mercurio</b>: el mercurio líquido se vierte a los ríos, donde bacterias lo convierten en <b>metilmercurio</b>, la forma más tóxica. Se bioacumula en los peces y se biomagnifica: los peces grandes tienen más mercurio que los pequeños; los humanos que comen pescado de ríos contaminados acumulan mercurio. Estudios del MINSA han encontrado niveles de mercurio peligrosos en sangre de comunidades indígenas de Madre de Dios. (2) <b>Deforestación masiva</b>: la minería ilegal ha destruido más de 100 000 ha de bosque amazónico en Madre de Dios, convirtiendo selva primaria en desiertos de arena estéril imposibles de reforestar a corto plazo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">13.</SPAN> La producción de harina de pescado de anchoveta peruana se usa principalmente como alimento para acuacultura (salmones en Chile y Noruega, camarones en Asia). ¿Qué paradoja ética y económica genera esta situación?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="a"> a) Que el Perú importa los mismos peces que exporta en forma de harina, generando un ciclo económico ineficiente</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="b"> b) Que el Perú extrae millones de toneladas de proteína de alta calidad de su mar (anchoveta), que podría alimentar a peruanos desnutridos, y en cambio la exporta como harina para alimentar salmones que consumen los países ricos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="c"> c) Que las empresas pesqueras extranjeras capturan la anchoveta peruana sin pagar impuestos al Estado peruano</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p13" VALUE="d"> d) Que la anchoveta es un pez sagrado para las comunidades costeras y su captura industrial viola derechos culturales</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una de las grandes paradojas de la economía pesquera peruana: el Perú captura anualmente <b>6-9 millones de toneladas de anchoveta</b>, una proteína de altísimo valor nutricional (rica en omega-3, EPA y DHA). Sin embargo, más del <b>90% se convierte en harina de pescado</b> que se exporta para alimentar salmones en Chile/Noruega y camarones en China/Vietnam. Esos salmones y camarones son consumidos en países ricos. Mientras tanto, el Perú tiene índices de desnutrición crónica infantil del <b>~12%</b> (sobre todo en sierra y selva). Los economistas denominan esto <b>"proteína perdida"</b>: el Perú podría usar esa proteína para la seguridad alimentaria interna, pero la ecuación económica (precio de la harina vs. precio del pescado fresco para consumo local) favorece la exportación industrial.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">14.</SPAN> El canon minero distribuye el 50% del Impuesto a la Renta pagado por las empresas mineras a los gobiernos regionales y locales. Sin embargo, en muchas regiones mineras los índices de pobreza siguen siendo altos. ¿Cuál es la principal explicación de esta paradoja?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="a"> a) El canon minero es robado íntegramente por los alcaldes y gobernadores, sin que llegue ningún sol a la población</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="b"> b) Los gobiernos subnacionales tienen limitada capacidad de gasto e inversión eficiente: acumulan canon no ejecutado, priorizan obras de baja utilidad y carecen de recursos humanos calificados para gestionar los fondos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="c"> c) El canon minero solo puede usarse para comprar maquinaria minera y no puede invertirse en servicios sociales básicos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p14" VALUE="d"> d) El canon minero se distribuye solo a Lima y las ciudades grandes, excluyendo a las comunidades rurales cercanas a las minas</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <b>"paradoja del canon"</b> es un fenómeno documentado en economía del desarrollo: regiones como Áncash (con canon de Antamina) y Cajamarca (con canon de Yanacocha) reciben miles de millones de soles en canon pero mantienen altos índices de pobreza y desnutrición. Las causas incluyen: (1) <b>Baja capacidad de ejecución presupuestal</b>: municipios rurales pequeños sin personal técnico calificado no pueden ejecutar proyectos complejos. (2) <b>Restricciones legales</b>: el canon solo puede usarse en inversión pública (obras), no en gasto corriente (salarios de médicos, maestros, medicamentos). (3) <b>Corrupción y sobreprecios</b> en licitaciones. (4) <b>Enfermedad holandesa local</b>: los ingresos del canon generan inflación local sin diversificación productiva. Según la Contraloría, históricamente el 30-40% del canon no se ejecutó cada año.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">15.</SPAN> La quinua peruana experimentó un "boom" de precios entre 2012 y 2014, cuando su precio se triplicó en los mercados internacionales. ¿Qué consecuencias paradójicas generó este boom para los productores andinos de Puno?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="a"> a) Los productores de Puno se enriquecieron masivamente y dejaron de cultivar quinua para invertir en turismo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="b"> b) El alto precio internacional hizo que muchos campesinos vendieran toda su quinua para exportación, dejando de consumirla localmente, lo que paradójicamente aumentó la desnutrición en las zonas productoras</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="c"> c) El boom atrajo inversión extranjera que desplazó completamente a los productores locales artesanales</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p15" VALUE="d"> d) Los precios altos incentivaron a Bolivia a robar las semillas peruanas, eliminando la ventaja competitiva del Perú</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>Esta es una paradoja clásica del desarrollo: el boom de la quinua (declarada "Año Internacional de la Quinua" por la ONU en 2013) elevó su precio de ~$1/kg a ~$3-4/kg. Los campesinos de Puno, racionalmente, vendían toda su producción para maximizar ingresos. Sin embargo, la quinua era la fuente principal de proteína en la dieta andina tradicional. Al dejar de consumirla localmente, los estudios documentaron un <b>aumento de la desnutrición infantil</b> en zonas productoras de Puno, donde paradójicamente los niños dejaron de comer la quinua que sus padres cultivaban porque era "demasiado cara". Además, el boom atrajo cultivos en la costa (Lima, Arequipa) con tecnología que desplazó parcialmente a los productores andinos cuando los precios cayeron en 2015-2016.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="nivel experto"><SPAN>NIVEL EXPERTO · INGRESO UNIVERSITARIO</SPAN></DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">16.</SPAN> El concepto de "enfermedad holandesa" (Dutch Disease) describe un fenómeno económico relevante para el Perú. ¿En qué consiste y cómo podría afectar al Perú?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="a"> a) Es una enfermedad de los tulipanes que afecta a los campos agrícolas de la costa peruana importados desde Holanda</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="b"> b) Es el fenómeno por el cual el auge exportador de un recurso natural (minería en Perú) aprecia el tipo de cambio y encarece las exportaciones no tradicionales, desincentivando el desarrollo industrial y agrícola no extractivo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="c"> c) Es la dependencia del Perú de la inversión extranjera holandesa en sus proyectos mineros</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p16" VALUE="d"> d) Es el nombre del fenómeno El Niño cuando afecta específicamente a los Países Bajos y Europa occidental</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <b>enfermedad holandesa</b> (acuñada en 1977 por The Economist, en referencia al auge del gas natural en Holanda en los años 60) describe el siguiente mecanismo: (1) Boom exportador de un recurso natural (cobre, oro) → (2) Gran ingreso de divisas (dólares) → (3) Apreciación del tipo de cambio (el sol se fortalece frente al dólar) → (4) Las exportaciones no extractivas (textiles, manufactura, agro) se encarecen en dólares y pierden competitividad internacional → (5) El sector no extractivo se desindustrializa. En el Perú, economistas como Waldo Mendoza han documentado síntomas de esta enfermedad durante los booms mineros de 2004-2008 y 2010-2013. La solución teórica son los fondos de estabilización (como el Fondo de Estabilización Fiscal peruano) y la diversificación productiva.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">17.</SPAN> El gas natural de Camisea (Cusco) fue descubierto en los años 80 y empezó a producirse en 2004. ¿Por qué su explotación transformó la matriz energética del Perú y cuáles son sus implicancias geográficas?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="a"> a) Camisea permitió al Perú exportar gas a todos los países de América del Sur a través de gasoductos transfronterizos ya construidos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="b"> b) Camisea convirtió al Perú de importador de gas a exportador (GNL por el puerto de Melchorita), redujo la dependencia del petróleo, abarató la energía industrial y doméstica, y generó el canon gasífero que transformó Cusco</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="c"> c) Camisea reemplazó completamente la energía hidroeléctrica en el Perú, cerrando todas las centrales del río Mantaro</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p17" VALUE="d"> d) Camisea solo beneficia a la región Cusco y no tiene impacto en la economía del resto del país</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El proyecto <b>Camisea</b> (yacimiento en el Bajo Urubamba, Cusco, operado por Pluspetrol) tiene reservas de ~12 trillones de pies cúbicos de gas natural. Su impacto fue transformador: (1) <b>Seguridad energética</b>: el Perú pasó de importar gas natural a exportarlo como <b>Gas Natural Licuado (GNL)</b> desde la planta de Melchorita (Lima), enviándolo a México y otras naciones. (2) <b>Democratización energética</b>: el gas llegó por gasoducto a Lima y otras ciudades, reduciendo el costo de la energía industrial y doméstica (~40% más barato que el petróleo). (3) <b>Canon gasífero</b>: Cusco recibe miles de millones de soles anuales, financiando obras de infraestructura. (4) <b>Petroquímica</b>: el etano de Camisea alimenta la planta petroquímica de Etileno XXI (en desarrollo). Sin embargo, el gasoducto del sur (para llevar gas a Arequipa, Puno y Moquegua) sigue siendo un proyecto pendiente y políticamente conflictivo.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">18.</SPAN> La acuicultura de truchas en el lago Titicaca (Puno) y la pesca de la rana Telmatobius culeus (rana gigante del Titicaca) ilustran tensiones entre producción económica y conservación. ¿Cuál es el principal riesgo ambiental de la expansión de jaulas de trucha en el Titicaca?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="a"> a) Las truchas se escapan y contaminan el lago con sus escamas metálicas que son tóxicas</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="b"> b) Las jaulas de trucha generan eutrofización (exceso de nutrientes por los desechos de los peces y alimento no consumido), reduciendo el oxígeno disuelto y afectando a las especies nativas endémicas del Titicaca</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="c"> c) Las truchas atacan a los botes de los pescadores artesanales Uros, poniendo en riesgo su modo de vida</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p18" VALUE="d"> d) Las jaulas bloquean la navegación en el lago, impidiendo el turismo y el comercio entre Perú y Bolivia</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>La <b>eutrofización</b> es el principal riesgo ambiental de la acuicultura intensiva en el lago Titicaca. El proceso es: las jaulas de trucha concentran grandes cantidades de peces → los peces excretan amonio y nitratos → el alimento balanceado no consumido se hunde → se produce descomposición bacteriana aeróbica → el oxígeno disuelto del fondo del lago disminuye (<b>hipoxia</b>) → las especies endémicas sensibles al oxígeno (como la rana gigante <I>Telmatobius culeus</I>, que respira por su piel en el agua) mueren. Además, la trucha (<I>Oncorhynchus mykiss</I>) es una especie <b>introducida</b> (no nativa del Titicaca) que compite con y depreda a las especies nativas del lago, muchas de ellas endémicas y en peligro de extinción.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">19.</SPAN> El Perú firmó más de 20 Tratados de Libre Comercio (TLC) con economías como EE.UU. (2009), la UE (2013) y China (2010). Desde una perspectiva de geografía económica, ¿cuál ha sido el impacto diferenciado de estos TLC en los distintos sectores productivos peruanos?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="a"> a) Los TLC beneficiaron por igual a todos los sectores peruanos, generando crecimiento económico homogéneo en todo el territorio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="b"> b) Los TLC favorecieron la agroexportación tecnificada de la costa y la minería, pero perjudicaron a la agricultura tradicional de la sierra al exponer a los pequeños agricultores a competencia de productos agrícolas subsidiados del extranjero</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="c"> c) Los TLC solo beneficiaron al sector servicios en Lima, sin impacto en las exportaciones de bienes peruanos</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p19" VALUE="d"> d) Los TLC eliminaron la minería peruana al abrir el mercado a minerales más baratos de Australia y Sudáfrica</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El impacto de los TLC peruanos ha sido <b>asimétrico y diferenciado geográfica y sectorialmente</b>: (1) <b>Ganadores</b>: la agroexportación de la costa (espárragos, palta, uvas al mercado de EE.UU. y UE sin aranceles), la minería y la pesca exportadora se beneficiaron enormemente del acceso preferencial a grandes mercados. (2) <b>Perdedores</b>: los pequeños agricultores de la sierra que producen maíz, trigo, papa y cebada enfrentan competencia de productos subsidiados de EE.UU. (maíz amarillo duro subsidiado por el Farm Bill) que entran a precios muy bajos. Esto ha generado protestas (como las marchas cocaleras y la "rondas campesinas" contra el TLC). La <b>geografía del impacto</b>: costa urbanizada gana; sierra rural pierde. Esta dualidad amplía la brecha entre la agricultura de exportación tecnificada y la agricultura de subsistencia andina.</DIV></DETAILS>
+</DIV>
+
+<DIV CLASS="problema">
+<DIV CLASS="enunciado"><SPAN CLASS="np">20.</SPAN> El concepto de "valor agregado" en las exportaciones peruanas es central en los debates sobre desarrollo económico. ¿Por qué se considera más beneficioso exportar cobre refinado o productos de cobre (cables, tubos) que exportar concentrado de cobre?</DIV>
+<DIV CLASS="opciones">
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="a"> a) Porque el cobre refinado pesa menos que el concentrado, reduciendo los costos de transporte marítimo</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="b"> b) Porque al refinar y procesar el cobre en el Perú se genera más empleo calificado local, mayor recaudación tributaria, más ingresos por kilogramo exportado y se desarrolla industria nacional en lugar de exportar solo materia prima</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="c"> c) Porque los compradores internacionales pagan menos por el cobre refinado, siendo más competitivo en precio</LABEL>
+<LABEL><INPUT TYPE="radio" NAME="p20" VALUE="d"> d) Porque el cobre refinado peruano tiene mayor pureza que el producido en Chile, lo que le da una ventaja natural de calidad</LABEL>
+</DIV>
+<DETAILS CLASS="resolucion"><SUMMARY>Ver resolución</SUMMARY><DIV CLASS="pasos"><B>Respuesta: b)</B><BR>El concepto de <b>valor agregado</b> es fundamental en economía del desarrollo. El concentrado de cobre (~25-30% de pureza) es la forma más básica en que se exporta el mineral: el país que lo compra (China, Japón, Alemania) lo refina y fabrica productos manufacturados, capturando el mayor valor. Si el Perú refinara el cobre (~99,99% de pureza) y luego fabricara productos (cables eléctricos, tuberías, componentes electrónicos), capturaría: (1) <b>Mayor precio por tonelada</b>. (2) <b>Más empleos calificados</b> (metalúrgicos, ingenieros, técnicos). (3) <b>Más impuestos recaudados</b>. (4) <b>Encadenamientos productivos</b> con otras industrias. Este es el argumento central del debate sobre <b>industrialización vs. primarización</b> de la economía peruana. La fundición de Ilo (Southern Copper) es uno de los pocos ejemplos de refinación en el Perú.</DIV></DETAILS>
+</DIV>
+
+</DIV>
+</DIV>
+
+<DIV CLASS="footer-espacio"></DIV>
+<HR>
+<CENTER>
+<FONT face="Comic Sans MS" size="3" color="#1A237E">INKAEDU.PE - Aprendemos juntos, crecemos juntos.</FONT>
+</CENTER>
+</BODY>
+</HTML>
